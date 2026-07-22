@@ -42,13 +42,11 @@ static bool IsStubMode()
 static napi_value IsinfNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
-    if (func(INFINITY) != 1)
-    {
+    if (func(INFINITY) != 1) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -58,13 +56,11 @@ static napi_value IsinfNormal001(napi_env env, napi_callback_info info)
 static napi_value IsinfNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
-    if (func(-INFINITY) != -1)
-    {
+    if (func(-INFINITY) != -1) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -74,13 +70,11 @@ static napi_value IsinfNormal002(napi_env env, napi_callback_info info)
 static napi_value IsinfNormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
-    if (func(NAN) != 0)
-    {
+    if (func(NAN) != 0) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -90,30 +84,24 @@ static napi_value IsinfNormal003(napi_env env, napi_callback_info info)
 static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(0.0) != 0)
-    {
+    if (func(0.0) != 0) {
         allPassed = false;
     }
-    if (func(finitetest) != 0)
-    {
+    if (func(finitetest) != 0) {
         allPassed = false;
     }
-    if (func(-finitetest) != 0)
-    {
+    if (func(-finitetest) != 0) {
         allPassed = false;
     }
-    if (func(largeFinite) != 0)
-    {
+    if (func(largeFinite) != 0) {
         allPassed = false;
     }
-    if (func(-largeFinite) != 0)
-    {
+    if (func(-largeFinite) != 0) {
         allPassed = false;
     }
 
@@ -126,26 +114,21 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
 static napi_value IsinfBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(DBL_MAX) != 0)
-    {
+    if (func(DBL_MAX) != 0) {
         allPassed = false;
     }
-    if (func(DBL_MIN) != 0)
-    {
+    if (func(DBL_MIN) != 0) {
         allPassed = false;
     }
-    if (func(-DBL_MAX) != 0)
-    {
+    if (func(-DBL_MAX) != 0) {
         allPassed = false;
     }
-    if (func(-DBL_MIN) != 0)
-    {
+    if (func(-DBL_MIN) != 0) {
         allPassed = false;
     }
 
@@ -156,19 +139,16 @@ static napi_value IsinfBoundary001(napi_env env, napi_callback_info info)
 static napi_value IsinfBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     double nearInf = 1.7976931348623157e+308;
-    if (func(nearInf) != 0)
-    {
+    if (func(nearInf) != 0) {
         allPassed = false;
     }
-    if (func(-nearInf) != 0)
-    {
+    if (func(-nearInf) != 0) {
         allPassed = false;
     }
 
@@ -181,31 +161,26 @@ static napi_value IsinfBoundary002(napi_env env, napi_callback_info info)
 static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(NAN) != 0)
-    {
+    if (func(NAN) != 0) {
         allPassed = false;
     }
 
     union { double f; uint64_t i; } nan1 = { .i = 0x7FF8000000000001ULL };
     union { double f; uint64_t i; } nan2 = { .i = 0x7FF8000000000002ULL };
-    if (func(nan1.f) != 0)
-    {
+    if (func(nan1.f) != 0) {
         allPassed = false;
     }
-    if (func(nan2.f) != 0)
-    {
+    if (func(nan2.f) != 0) {
         allPassed = false;
     }
 
     union { double f; uint64_t i; } snan = { .i = 0x7FF4000000000000ULL };
-    if (func(snan.f) != 0)
-    {
+    if (func(snan.f) != 0) {
         allPassed = false;
     }
 
@@ -216,29 +191,24 @@ static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info)
 static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Positive and negative infinity should return different signs
-    if (func(INFINITY) != 1)
-    {
+    if (func(INFINITY) != 1) {
         allPassed = false;
     }
-    if (func(-INFINITY) != -1)
-    {
+    if (func(-INFINITY) != -1) {
         allPassed = false;
     }
 
     // But sign does not affect finite values
-    if (func(0.0) != 0)
-    {
+    if (func(0.0) != 0) {
         allPassed = false;
     }
-    if (func(-0.0) != 0)
-    {
+    if (func(-0.0) != 0) {
         allPassed = false;
     }
 
@@ -251,8 +221,7 @@ static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info)
 static napi_value IsinfStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -261,24 +230,19 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
     int testCount = 5;
     int results[testCount];
 
-    for (int i = 0; i < testCount; ++i)
-    {
+    for (int i = 0; i < testCount; ++i) {
         results[i] = func(testVals[i]);
     }
 
     int roundCount = 20;
-    for (int round = 0; round < roundCount; ++round)
-    {
-        for (int i = 0; i < testCount; ++i)
-        {
-            if (func(testVals[i]) != results[i])
-            {
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < testCount; ++i) {
+            if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;
             }
         }
-        if (!allPassed)
-        {
+        if (!allPassed) {
             break;
         }
     }
@@ -290,20 +254,17 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
 static napi_value IsinfStable002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         double val = (i % 100) / 10.0 - 5.0;
         int expected = 0;
         int actual = func(val);
-        if (actual != expected)
-        {
+        if (actual != expected) {
             allPassed = false;
             break;
         }
@@ -318,8 +279,7 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
 static napi_value IsinfThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -330,15 +290,12 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
     double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
     int expected[] = {0, 0, 1, -1, 0};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, expected, iterationsPerThread]()
         {
-            for (int i = 0; i < iterationsPerThread; ++i)
-            {
+            for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = i % 5;
-                if (func(testVals[idx]) != expected[idx])
-                {
+                if (func(testVals[idx]) != expected[idx]) {
                     hasError = true;
                     return;
                 }
@@ -346,8 +303,7 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 
@@ -358,8 +314,7 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
 static napi_value IsinfThread002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -367,30 +322,24 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError]()
         {
             int roundCount = 10;
-            for (int round = 0; round < roundCount; ++round)
-            {
-                if (func(INFINITY) != 1)
-                {
+            for (int round = 0; round < roundCount; ++round) {
+                if (func(INFINITY) != 1) {
                     hasError = true;
                     return;
                 }
-                if (func(-INFINITY) != -1)
-                {
+                if (func(-INFINITY) != -1) {
                     hasError = true;
                     return;
                 }
-                if (func(NAN) != 0)
-                {
+                if (func(NAN) != 0) {
                     hasError = true;
                     return;
                 }
-                if (func(0.0) != 0)
-                {
+                if (func(0.0) != 0) {
                     hasError = true;
                     return;
                 }
@@ -398,8 +347,7 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 

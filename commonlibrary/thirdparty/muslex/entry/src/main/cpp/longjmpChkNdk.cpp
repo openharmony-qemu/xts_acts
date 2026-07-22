@@ -41,15 +41,13 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value LongjmpChkNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, 1);
     }
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
@@ -57,16 +55,14 @@ static napi_value LongjmpChkNormal001(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     int longjmpVal456 = 456;
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, longjmpVal456);
     }
     return ReturnInt32(env, (ret == longjmpVal456) ? 1 : 0);
@@ -74,15 +70,13 @@ static napi_value LongjmpChkNormal002(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, 0);
     }
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
@@ -90,15 +84,13 @@ static napi_value LongjmpChkNormal003(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, -1);
     }
     return ReturnInt32(env, (ret == -1) ? 1 : 0);
@@ -106,15 +98,13 @@ static napi_value LongjmpChkAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, INT_MAX);
     }
     return ReturnInt32(env, (ret == INT_MAX) ? 1 : 0);
@@ -122,15 +112,13 @@ static napi_value LongjmpChkAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf jb;
     int ret = setjmp(jb);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         func(jb, 1);
     }
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
@@ -138,20 +126,17 @@ static napi_value LongjmpChkBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     jmp_buf outer_jb;
     int outer_ret = setjmp(outer_jb);
-    if (outer_ret == 0)
-    {
+    if (outer_ret == 0) {
         jmp_buf innerJb;
         volatile int innerRet = setjmp(innerJb);
         int longjmpVal42 = 42;
-        if (innerRet == 0)
-        {
+        if (innerRet == 0) {
             func(innerJb, longjmpVal42);
         }
         func(outer_jb, (innerRet == longjmpVal42) ? 1 : 2);
@@ -161,22 +146,18 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     volatile int passCount = 0;
-    for (volatile int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (volatile int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         jmp_buf jb;
         int ret = setjmp(jb);
-        if (ret == 0)
-        {
+        if (ret == 0) {
             func(jb, 1);
         }
-        if (ret == 1)
-        {
+        if (ret == 1) {
             passCount++;
         }
     }
@@ -185,36 +166,30 @@ static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
 
 static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<int> successCount{0};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&successCount]()
         {
             auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
             volatile int localCount = 0;
-            for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 jmp_buf jb;
                 int ret = setjmp(jb);
-                if (ret == 0)
-                {
+                if (ret == 0) {
                     func(jb, 1);
                 }
-                if (ret == 1)
-                {
+                if (ret == 1) {
                     localCount++;
                 }
             }
             successCount += localCount;
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, (successCount == K_THREAD_COUNT * K_ITER_PER_THREAD) ? 1 : 0);

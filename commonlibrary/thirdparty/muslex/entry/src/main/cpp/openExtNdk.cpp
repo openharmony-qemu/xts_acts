@@ -37,8 +37,7 @@ static int CallOpen2(const char *pathname, int flags)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = reinterpret_cast<int (*)(const char*, int)>(loader.GetOpen2());
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -48,8 +47,7 @@ static int CallOpen2(const char *pathname, int flags)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetOpen2())
-    {
+    if (!loader.GetOpen2()) {
         return true;
     }
     errno = 0;
@@ -59,18 +57,15 @@ static bool IsStubMode()
 
 static bool CheckAbortForOpen(const char *path, int flags)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return false;
     }
     int status;
     pid_t pid = fork();
-    if (pid == -1)
-    {
+    if (pid == -1) {
         return false;
     }
-    if (pid == 0)
-    {
+    if (pid == 0) {
         CallOpen2(path, flags);
         _exit(0);
     }
@@ -88,13 +83,11 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 /* ----- Original simple test ----- */
 static napi_value Open2(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_RDONLY);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -104,13 +97,11 @@ static napi_value Open2(napi_env env, napi_callback_info info)
 /* ---------- Normal parameter tests ---------- */
 static napi_value Open2Normal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_WRONLY | O_APPEND);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -119,13 +110,11 @@ static napi_value Open2Normal003(napi_env env, napi_callback_info info)
 
 static napi_value Open2Normal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_WRONLY | O_TRUNC);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -136,14 +125,12 @@ static napi_value Open2Normal004(napi_env env, napi_callback_info info)
 // empty path (should fail with ENOENT)
 static napi_value Open2Abnormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("", O_RDONLY);
-    if (fd == -1 && errno == ENOENT)
-    {
+    if (fd == -1 && errno == ENOENT) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -152,18 +139,15 @@ static napi_value Open2Abnormal004(napi_env env, napi_callback_info info)
 // invalid flags (EINVAL expected)
 static napi_value Open2Abnormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/dev/null", O_RDONLY | O_WRONLY);
-    if (fd == -1 && (errno == EINVAL || errno == ENOSYS))
-    {
+    if (fd == -1 && (errno == EINVAL || errno == ENOSYS)) {
         return ReturnInt32(env, 1);
     }
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -173,14 +157,12 @@ static napi_value Open2Abnormal005(napi_env env, napi_callback_info info)
 // non-existent file (ENOENT expected)
 static napi_value Open2Abnormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/nonexistent_file_test_12345", O_RDONLY);
-    if (fd == -1 && errno == ENOENT)
-    {
+    if (fd == -1 && errno == ENOENT) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -189,14 +171,12 @@ static napi_value Open2Abnormal006(napi_env env, napi_callback_info info)
 // open directory with O_WRONLY (EISDIR expected)
 static napi_value Open2Abnormal007(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/", O_WRONLY);
-    if (fd == -1 && errno == EISDIR)
-    {
+    if (fd == -1 && errno == EISDIR) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -206,15 +186,13 @@ static napi_value Open2Abnormal007(napi_env env, napi_callback_info info)
 // path length > PATH_MAX (ENAMETOOLONG expected)
 static napi_value Open2Boundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::string longPath(K_LONG_PATH_LEN, 'a');
     errno = 0;
     int fd = CallOpen2(longPath.c_str(), O_RDONLY);
-    if (fd == -1 && errno == ENAMETOOLONG)
-    {
+    if (fd == -1 && errno == ENAMETOOLONG) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -223,13 +201,11 @@ static napi_value Open2Boundary001(napi_env env, napi_callback_info info)
 // flags = 0 (O_RDONLY)
 static napi_value Open2Boundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", 0);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -239,17 +215,14 @@ static napi_value Open2Boundary002(napi_env env, napi_callback_info info)
 // O_CLOEXEC flag, verify FD_CLOEXEC set
 static napi_value Open2Boundary003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_CLOEXEC);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         int flags = fcntl(fd, F_GETFD);
         close(fd);
-        if (flags != -1 && (flags & FD_CLOEXEC))
-        {
+        if (flags != -1 && (flags & FD_CLOEXEC)) {
             return ReturnInt32(env, 1);
         }
     }
@@ -259,8 +232,7 @@ static napi_value Open2Boundary003(napi_env env, napi_callback_info info)
 // symlink test (skipped)
 static napi_value Open2Boundary005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -270,8 +242,7 @@ static napi_value Open2Boundary005(napi_env env, napi_callback_info info)
 // compare open2 with standard open
 static napi_value Open2Func001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* path = "/dev/null";
@@ -282,12 +253,10 @@ static napi_value Open2Func001(napi_env env, napi_callback_info info)
     int fd2 = open(path, O_RDONLY);
     int err2 = errno;
     bool pass = (fd1 >= 0 && fd2 >= 0) || (fd1 == -1 && fd2 == -1 && err1 == err2);
-    if (fd1 >= 0)
-    {
+    if (fd1 >= 0) {
         close(fd1);
     }
-    if (fd2 >= 0)
-    {
+    if (fd2 >= 0) {
         close(fd2);
     }
     return ReturnInt32(env, pass ? 1 : 0);
@@ -296,13 +265,11 @@ static napi_value Open2Func001(napi_env env, napi_callback_info info)
 // verify function works in full mode
 static napi_value Open2Func003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_RDONLY);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
@@ -312,19 +279,16 @@ static napi_value Open2Func003(napi_env env, napi_callback_info info)
 // O_DIRECT flag test
 static napi_value Open2Func004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/dev/null", O_RDONLY | O_DIRECT);
-    if (fd >= 0)
-    {
+    if (fd >= 0) {
         close(fd);
         return ReturnInt32(env, 1);
     }
-    if (errno == EINVAL)
-    {
+    if (errno == EINVAL) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -333,18 +297,14 @@ static napi_value Open2Func004(napi_env env, napi_callback_info info)
 /* ---------- Stability tests ---------- */
 static napi_value Open2Stable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         int fd = CallOpen2("/dev/null", O_RDONLY);
-        if (fd >= 0)
-        {
+        if (fd >= 0) {
             close(fd);
-        } else
-        {
+        } else {
             return ReturnInt32(env, 0);
         }
     }
@@ -353,18 +313,15 @@ static napi_value Open2Stable001(napi_env env, napi_callback_info info)
 
 static napi_value Open2Stable002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> allSuccess(true);
     auto worker = [&allSuccess](int)
     {
-        for (int i = 0; i < K_THREAD_WORK_LOOP; ++i)
-        {
+        for (int i = 0; i < K_THREAD_WORK_LOOP; ++i) {
             int fd = CallOpen2("/dev/null", O_RDONLY);
-            if (fd < 0)
-            {
+            if (fd < 0) {
                 allSuccess.store(false);
                 break;
             }
@@ -372,12 +329,10 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
         }
     };
     std::vector<std::thread> threads;
-    for (int id = K_THREAD_START_ID; id < K_THREAD_START_ID + K_THREAD_COUNT; ++id)
-    {
+    for (int id = K_THREAD_START_ID; id < K_THREAD_START_ID + K_THREAD_COUNT; ++id) {
         threads.emplace_back(worker, id);
     }
-    for (auto& t : threads)
-    {
+    for (auto& t : threads) {
         t.join();
     }
     return ReturnInt32(env, allSuccess.load() ? 1 : 0);
@@ -385,25 +340,21 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
 
 static napi_value Open2Stable003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::vector<int> fds;
     int fd;
-    while ((fd = open("/dev/null", O_RDONLY)) >= 0)
-    {
+    while ((fd = open("/dev/null", O_RDONLY)) >= 0) {
         fds.push_back(fd);
     }
     errno = 0;
     int ret = CallOpen2("/dev/null", O_RDONLY);
     int savedErrno = errno;
-    for (int f : fds)
-    {
+    for (int f : fds) {
         close(f);
     }
-    if (ret == -1 && (savedErrno == EMFILE || savedErrno == ENFILE))
-    {
+    if (ret == -1 && (savedErrno == EMFILE || savedErrno == ENFILE)) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);

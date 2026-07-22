@@ -31,8 +31,7 @@ static float CallLog2fFinite(float x)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetLog2fFinite();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0.0f;
     }
@@ -55,13 +54,11 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value Log2fFiniteNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(1.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (result == 0.0f) ? 1 : 0);
@@ -69,13 +66,11 @@ static napi_value Log2fFiniteNormal001(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(2.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     float expected = std::log2(2.0f);
@@ -84,13 +79,11 @@ static napi_value Log2fFiniteNormal002(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(4.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     float expected = std::log2(4.0f);
@@ -99,13 +92,11 @@ static napi_value Log2fFiniteNormal003(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(8.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     float expected = std::log2(8.0f);
@@ -114,13 +105,11 @@ static napi_value Log2fFiniteNormal004(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(NAN);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
@@ -128,13 +117,11 @@ static napi_value Log2fFiniteAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(-1.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
@@ -142,14 +129,12 @@ static napi_value Log2fFiniteAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallLog2fFinite(FLT_MIN);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     bool pass = std::isfinite(result) && result < 0 && errno == 0;
@@ -158,14 +143,12 @@ static napi_value Log2fFiniteBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallLog2fFinite(FLT_MAX);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     bool pass = std::isfinite(result) && result > 0 && errno == 0;
@@ -174,21 +157,17 @@ static napi_value Log2fFiniteBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     float expected = std::log2(2.0f);
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         float result = CallLog2fFinite(2.0f);
-        if (errno == ENOSYS)
-        {
+        if (errno == ENOSYS) {
             return ReturnInt32(env, 1);
         }
-        if (fabsf(result - expected) > 1e-6f)
-        {
+        if (fabsf(result - expected) > 1e-6f) {
             pass = false;
             break;
         }
@@ -198,8 +177,7 @@ static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
 
 static napi_value Log2fFiniteThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
@@ -207,30 +185,25 @@ static napi_value Log2fFiniteThread001(napi_env env, napi_callback_info info)
     float testVals[] = {1.0f, 2.0f, 4.0f, 8.0f, 0.5f};
 
     CallLog2fFinite(2.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 float expected = std::log2(testVals[idx]);
                 float result = CallLog2fFinite(testVals[idx]);
-                if (fabsf(result - expected) > 1e-6f)
-                {
+                if (fabsf(result - expected) > 1e-6f) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

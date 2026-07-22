@@ -30,8 +30,7 @@ static int CallIsnanf(float x)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetIsnanf();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0;
     }
@@ -42,8 +41,7 @@ static int CallIsnanf(float x)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetIsnanf())
-    {
+    if (!loader.GetIsnanf()) {
         return true;
     }
     errno = 0;
@@ -63,8 +61,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: NaN should return non-zero */
 static napi_value IsnanfNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(NAN);
@@ -74,8 +71,7 @@ static napi_value IsnanfNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Positive infinity should return 0 */
 static napi_value IsnanfNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(INFINITY);
@@ -85,8 +81,7 @@ static napi_value IsnanfNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Negative infinity should return 0 */
 static napi_value IsnanfNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(-INFINITY);
@@ -96,8 +91,7 @@ static napi_value IsnanfNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Zero should return 0 */
 static napi_value IsnanfNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(0.0f);
@@ -107,8 +101,7 @@ static napi_value IsnanfNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Normal finite value should return 0 */
 static napi_value IsnanfNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(3.14f);
@@ -118,8 +111,7 @@ static napi_value IsnanfNormal005(napi_env env, napi_callback_info info)
 /* TC-006: Negative finite value should return 0 */
 static napi_value IsnanfNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(-3.14f);
@@ -131,8 +123,7 @@ static napi_value IsnanfNormal006(napi_env env, napi_callback_info info)
 /* TC-007: FLT_MAX should return 0 */
 static napi_value IsnanfBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(FLT_MAX);
@@ -142,8 +133,7 @@ static napi_value IsnanfBoundary001(napi_env env, napi_callback_info info)
 /* TC-008: FLT_MIN should return 0 */
 static napi_value IsnanfBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(FLT_MIN);
@@ -155,8 +145,7 @@ static napi_value IsnanfBoundary002(napi_env env, napi_callback_info info)
 /* TC-009: Signaling NaN should return non-zero */
 static napi_value IsnanfAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     union { float f; uint32_t i; } snan;
@@ -168,20 +157,17 @@ static napi_value IsnanfAbnormal001(napi_env env, napi_callback_info info)
 /* TC-010: Various NaN bit patterns */
 static napi_value IsnanfAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     union { float f; uint32_t i; } nan1, nan2;
     nan1.i = 0x7FC00001;
     nan2.i = 0x7FC00002;
-    if (CallIsnanf(nan1.f) == 0)
-    {
+    if (CallIsnanf(nan1.f) == 0) {
         pass = false;
     }
-    if (CallIsnanf(nan2.f) == 0)
-    {
+    if (CallIsnanf(nan2.f) == 0) {
         pass = false;
     }
     return ReturnInt32(env, pass ? 1 : 0);
@@ -192,20 +178,16 @@ static napi_value IsnanfAbnormal002(napi_env env, napi_callback_info info)
 /* TC-011: 10000 repeated calls stability */
 static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
-        if (CallIsnanf(NAN) == 0)
-        {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
+        if (CallIsnanf(NAN) == 0) {
             pass = false;
             break;
         }
-        if (CallIsnanf(3.14f) != 0)
-        {
+        if (CallIsnanf(3.14f) != 0) {
             pass = false;
             break;
         }
@@ -216,8 +198,7 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
 /* TC-012: Multi-thread safety */
 static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
@@ -225,24 +206,20 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
     float testVals[] = {NAN, INFINITY, -INFINITY, 0.0f, 3.14f};
     int expected[] = {1, 0, 0, 0, 0};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 int ret = CallIsnanf(testVals[idx]);
-                if ((ret != 0) != (expected[idx] != 0))
-                {
+                if ((ret != 0) != (expected[idx] != 0)) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

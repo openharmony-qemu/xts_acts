@@ -35,8 +35,7 @@ static time_t CallMktimeNoenv(struct tm* tm)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetMktimeNoenv();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -59,8 +58,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -76,8 +74,7 @@ static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -90,8 +87,7 @@ static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -106,8 +102,7 @@ static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -115,8 +110,7 @@ static napi_value MktimeNoenvNormal004(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -130,8 +124,7 @@ static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -144,8 +137,7 @@ static napi_value MktimeNoenvAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -165,8 +157,7 @@ static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -179,20 +170,17 @@ static napi_value MktimeNoenvBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         struct tm t = {};
         t.tm_year = testYear2026 - TM_YEAR_BASE;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallMktimeNoenv(&t);
-        if (ret == -1 && errno == EOVERFLOW)
-        {
+        if (ret == -1 && errno == EOVERFLOW) {
             pass = false;
             break;
         }
@@ -202,33 +190,28 @@ static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 struct tm tmVal = {};
                 tmVal.tm_year = testYear2026 - TM_YEAR_BASE;
                 tmVal.tm_mon = 0;
                 tmVal.tm_mday = 1;
                 time_t ret = CallMktimeNoenv(&tmVal);
-                if (ret == -1 && errno == EOVERFLOW)
-                {
+                if (ret == -1 && errno == EOVERFLOW) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

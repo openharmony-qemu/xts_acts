@@ -31,8 +31,7 @@ static double CallPowFinite(double x, double y)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPowFinite();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0.0;
     }
@@ -55,8 +54,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value PowFiniteNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(2.0, 3.0);
@@ -66,8 +64,7 @@ static napi_value PowFiniteNormal001(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(10.0, 2.0);
@@ -77,8 +74,7 @@ static napi_value PowFiniteNormal002(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(4.0, 0.5);
@@ -88,8 +84,7 @@ static napi_value PowFiniteNormal003(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(1.0, 100.0);
@@ -98,8 +93,7 @@ static napi_value PowFiniteNormal004(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(NAN, 2.0);
@@ -108,8 +102,7 @@ static napi_value PowFiniteAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double result = CallPowFinite(-1.0, 0.5);
@@ -118,8 +111,7 @@ static napi_value PowFiniteAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
@@ -130,8 +122,7 @@ static napi_value PowFiniteBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
@@ -142,17 +133,14 @@ static napi_value PowFiniteBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     double expected = std::pow(2.0, 3.0);
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         double result = CallPowFinite(2.0, 3.0);
-        if (fabs(result - expected) > 1e-12)
-        {
+        if (fabs(result - expected) > 1e-12) {
             pass = false;
             break;
         }
@@ -162,8 +150,7 @@ static napi_value PowFiniteStable001(napi_env env, napi_callback_info info)
 
 static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
@@ -171,25 +158,21 @@ static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
     double testX[] = {2.0, 10.0, 4.0, 1.0, 3.0};
     double testY[] = {3.0, 2.0, 0.5, 100.0, 2.0};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testX, testY]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 double expected = std::pow(testX[idx], testY[idx]);
                 double result = CallPowFinite(testX[idx], testY[idx]);
-                if (fabs(result - expected) > 1e-12)
-                {
+                if (fabs(result - expected) > 1e-12) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

@@ -34,8 +34,7 @@ static int CallHilogBasePrint(int type, int level, unsigned int domain, const ch
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetHilogBasePrint();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -62,8 +61,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "test message");
@@ -72,8 +70,7 @@ static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info)
 
 static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_CORE, K_LOG_ERROR, 0xD000900, "TEST_TAG", "error message %d", 42);
@@ -82,8 +79,7 @@ static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info)
 
 static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "msg %s %d", "hello", 123);
@@ -92,8 +88,7 @@ static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info)
 
 static napi_value HilogBasePrintNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -101,8 +96,7 @@ static napi_value HilogBasePrintNormal004(napi_env env, napi_callback_info info)
 
 static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, nullptr, "test");
@@ -111,8 +105,7 @@ static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info inf
 
 static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", nullptr);
@@ -121,8 +114,7 @@ static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info inf
 
 static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "");
@@ -131,8 +123,7 @@ static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info inf
 
 static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int msgSize = 2000;
@@ -143,16 +134,13 @@ static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info inf
 
 static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int successCount = 0;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "stable test %d", i);
-        if (ret >= 0)
-        {
+        if (ret >= 0) {
             successCount++;
         }
     }
@@ -161,29 +149,24 @@ static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
 
 static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "thread test %d", i);
-                if (ret < 0)
-                {
+                if (ret < 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

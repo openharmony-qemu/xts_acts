@@ -35,8 +35,7 @@ static bool CallHilogBaseIsLoggable(unsigned int domain, const char* tag, int le
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetHilogBaseIsLoggable();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return false;
     }
@@ -59,8 +58,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
@@ -69,8 +67,7 @@ static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info 
 
 static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_DEBUG);
@@ -79,8 +76,7 @@ static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info 
 
 static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_ERROR);
@@ -89,8 +85,7 @@ static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info 
 
 static napi_value HilogBaseIsLoggableNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -98,8 +93,7 @@ static napi_value HilogBaseIsLoggableNormal004(napi_env env, napi_callback_info 
 
 static napi_value HilogBaseIsLoggableAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0, "TEST_TAG", -1);
@@ -108,8 +102,7 @@ static napi_value HilogBaseIsLoggableAbnormal001(napi_env env, napi_callback_inf
 
 static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0xD000900, nullptr, K_LOG_INFO);
@@ -118,8 +111,7 @@ static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_inf
 
 static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_FATAL);
@@ -128,8 +120,7 @@ static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_inf
 
 static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallHilogBaseIsLoggable(0, "TEST_TAG", K_LOG_INFO);
@@ -138,13 +129,11 @@ static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_inf
 
 static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
     }
     return ReturnInt32(env, pass ? 1 : 0);
@@ -152,24 +141,20 @@ static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info 
 
 static napi_value HilogBaseIsLoggableThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
