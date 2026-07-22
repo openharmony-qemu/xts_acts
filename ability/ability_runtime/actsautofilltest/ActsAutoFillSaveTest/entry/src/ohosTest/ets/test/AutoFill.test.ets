@@ -56,14 +56,14 @@ export default function autoFillTest() {
                 left: PARAM_1, top: PARAM_1, width: PARAM_1, height: PARAM_1,
               },
               isFocus: false
-            }
+            } as autoFillManager.PageNodeInfo
           ],
           pageRect: {
             left: PARAM_1, top: PARAM_1, width: PARAM_1, height: PARAM_1
           },
           isUserSelected: true,
           isOtherAccount: true
-        }
+        } as autoFillManager.ViewData
       };
       let callback: autoFillManager.AutoSaveCallback = {
         onSuccess: () => {
@@ -341,7 +341,7 @@ export default function autoFillTest() {
           ],
           pageRect: {
             left: PARAM_1, top: PARAM_1, width: PARAM_1, height: PARAM_1
-          },
+          } as autoFillManager.AutoFillRect,
           isUserSelected: true,
           isOtherAccount: true
         },
