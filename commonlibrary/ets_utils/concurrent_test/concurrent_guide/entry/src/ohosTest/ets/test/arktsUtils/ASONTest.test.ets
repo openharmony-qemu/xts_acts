@@ -38,7 +38,9 @@ export default function ASONTest(): void {
      */
     it('ASONTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let jsonStr: string = '{"name":"test","age":42}'
-      let result: Object = ArkTSUtils.ASON.parse(jsonStr) as Object
+      let result: Record<string, Object> = ArkTSUtils.ASON.parse(jsonStr) as Record<string, Object>
+      expect(result['name'] as string).assertEqual('test')
+      expect(result['age'] as number).assertEqual(42)
       let jsonOut: string = ArkTSUtils.ASON.stringify(result)
       expect(jsonOut).assertEqual('{"name":"test","age":42}')
     })

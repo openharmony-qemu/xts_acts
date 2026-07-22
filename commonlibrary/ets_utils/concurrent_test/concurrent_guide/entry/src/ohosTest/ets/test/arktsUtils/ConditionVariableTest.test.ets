@@ -32,16 +32,19 @@ class WaitCounter {
 
 @Concurrent
 async function waitInTask(cv: ArkTSUtils.locks.ConditionVariable, result: TaskResult): Promise<void> {
+  // Register wait first, then publish waiting so host notify cannot be lost
+  let waitPromise: Promise<void> = cv.wait()
   result.waiting = true
-  await cv.wait()
+  await waitPromise
   result.value = 'task awakened'
 }
 
 @Concurrent
 async function waitAndIncrement(cv: ArkTSUtils.locks.ConditionVariable,
   counter: WaitCounter): Promise<void> {
+  let waitPromise: Promise<void> = cv.wait()
   counter.waiting = true
-  await cv.wait()
+  await waitPromise
   counter.count++
   counter.done = true
 }
@@ -85,8 +88,8 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // One short yield so wait() registers; avoid Promise.resolve race assumptions
-      await sleep(1)
+      // Same-thread event loop: one microtask yield is enough for wait() to register
+      await Promise.resolve()
       expect(notified).assertFalse()
       cv1.notifyOne()
       await waitPromise
@@ -109,8 +112,8 @@ export default function ConditionVariableTest(): void {
         notified = true
       })
 
-      // One short yield so wait() registers; avoid Promise.resolve race assumptions
-      await sleep(1)
+      // Same-thread event loop: one microtask yield is enough for wait() to register
+      await Promise.resolve()
       expect(notified).assertFalse()
 
       cv.notifyOne()
@@ -157,8 +160,8 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // One short yield so waiters register before notify
-      await sleep(1)
+      // Same-thread event loop: one microtask yield is enough for waiters to register
+      await Promise.resolve()
       expect(wakeCount).assertEqual(0)
       cv.notifyOne()
       // Wait for one waiter to complete
@@ -186,8 +189,8 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // One short yield so waiters register before notify
-      await sleep(1)
+      // Same-thread event loop: one microtask yield is enough for waiters to register
+      await Promise.resolve()
       expect(wakeCount).assertEqual(0)
       cv.notifyAll()
       await Promise.all([waiter1, waiter2, waiter3])
@@ -209,12 +212,9 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Notify-retry vs execPromise (not shared-flag sleep poll): early notify may be lost
-      // before wait(); short sleep(1) yields only. Rejection handler avoids unhandled reject.
+      // Wait until worker registered wait() (result.waiting), then notify once
       try {
-        let finished: boolean = false
-        while (!finished) {
-          cv.notifyOne()
+        while (!result.waiting) {
           let raced: string = await Promise.race([
             execPromise.then((): string => 'done', (): string => 'failed'),
             sleep(1).then((): string => 'retry')
@@ -222,14 +222,18 @@ export default function ConditionVariableTest(): void {
           if (raced === 'failed') {
             await execPromise
           }
-          finished = raced === 'done'
+          if (raced === 'done') {
+            break
+          }
         }
+        expect(result.waiting).assertTrue()
+        cv.notifyOne()
         await execPromise
       } catch (e) {
         if (e instanceof Error) {
           throw e
         }
-        throw new Error('ConditionVariable notify-retry task failed')
+        throw new Error('ConditionVariableTest0700 task failed')
       }
       expect(result.value).assertEqual('task awakened')
     })
@@ -301,12 +305,9 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Notify-retry vs execPromise (not shared-flag sleep poll): early notify may be lost
-      // before wait(); short sleep(1) yields only. Rejection handler avoids unhandled reject.
+      // Wait until worker registered wait() (counter.waiting), then notify once
       try {
-        let finished: boolean = false
-        while (!finished) {
-          cv.notifyOne()
+        while (!counter.waiting) {
           let raced: string = await Promise.race([
             execPromise.then((): string => 'done', (): string => 'failed'),
             sleep(1).then((): string => 'retry')
@@ -314,14 +315,18 @@ export default function ConditionVariableTest(): void {
           if (raced === 'failed') {
             await execPromise
           }
-          finished = raced === 'done'
+          if (raced === 'done') {
+            break
+          }
         }
+        expect(counter.waiting).assertTrue()
+        cv.notifyOne()
         await execPromise
       } catch (e) {
         if (e instanceof Error) {
           throw e
         }
-        throw new Error('ConditionVariable notify-retry task failed')
+        throw new Error('ConditionVariableTest1100 task failed')
       }
       expect(counter.done).assertTrue()
       expect(counter.count).assertEqual(1)
@@ -343,8 +348,8 @@ export default function ConditionVariableTest(): void {
         wokeEarly = true
       })
 
-      // One short yield so waitFor() registers before notify
-      await sleep(1)
+      // Same-thread event loop: one microtask yield is enough for waitFor() to register
+      await Promise.resolve()
       expect(wokeEarly).assertFalse()
       cv.notifyOne()
       let result: void = await waitPromise
