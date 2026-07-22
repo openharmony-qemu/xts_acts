@@ -565,7 +565,9 @@ export default function BuiltinsApiResponseCacheTest(): void {
       } catch (e) {
         caught = true
         const err: BusinessError = e as BusinessError
+        expect(err instanceof Error).assertTrue()
         expect(err.code).assertEqual(401)
+        expect(err.message).assertContain('Parameter error')
       }
       expect(caught).assertTrue()
     })

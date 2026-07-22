@@ -428,8 +428,13 @@ export default function BuiltinsAppSettingsTest(): void {
           }
         })
       })
+      const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
+        setTimeout((): void => {
+          reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
+        }, 5000)
+      })
       await taskpool.execute(task)
-      await receivePromise
+      await Promise.race([receivePromise, timeoutPromise])
       expect(notifications.length).assertEqual(3)
       expect(notifications[0]['key'] as string).assertEqual('key1')
       expect(notifications[2]['key'] as string).assertEqual('key3')
