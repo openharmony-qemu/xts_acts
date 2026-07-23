@@ -127,9 +127,12 @@ export default function subwindowDialog() {
 
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
-
-      await buttonCloseDialog.click();
+      let menuBtn = await driver.findComponent(ON.text('菜单选项'));
       await CommonFunc.sleep(1000);
+      await menuBtn.click();
+      
+      await CommonFunc.sleep(2000);
+      await buttonCloseDialog.click();
       console.info('[subwindowDialog_0200] END');
       done();
     });
