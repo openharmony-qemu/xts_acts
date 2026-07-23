@@ -47,7 +47,16 @@
                 "./resource/image/test_DMA_2999_3742.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
                 "./resource/image/test_DMA_3071_4095.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
                 "./resource/image/test_DMA_3072_4096.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
-                "./resource/image/test_DMA_1801_4041.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files"
+                "./resource/image/test_DMA_1801_4041.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/jpeg_exif_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/jpeg_no_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/heif_exif_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/heif_box_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/heif_no_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/300_100.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/generateThumbnailFailed.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/empty_image.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files",
+                "./resource/image/jpeg_exif_thumbnail_too_large.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePixelmap.Static/haps/entry/files"
             ]
         },
         {
