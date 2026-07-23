@@ -887,5 +887,64 @@ export default function cameraPhotoSessionTest() {
       }
     })
     
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.desc      test sub multimedia camera zoomPointInfos properties
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let zoomPointInfos = mCameraSession!.getZoomPointInfos()
+        for (let i = 0; i < zoomPointInfos.length; i++) {
+          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio},
+            equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
+        }
+        if (zoomPointInfos.length > 0) {
+          mCameraSession.setZoomRatio(zoomPointInfos[0].zoomRatio);
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+        await releaseCameraSession();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300
+    * @tc.number SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300
+    * @tc.desc   IsTorchLevelControlSupported(); return boolean
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300';
+      try {
+        let isSupported = mCameraManager!.isTorchLevelControlSupported();
+        console.info(TAG,testName,`IsTorchLevelControlSupported: ${isSupported}`);
+        expect(isSupported == true || isSupported == false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG,testName,`fail err` + error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
