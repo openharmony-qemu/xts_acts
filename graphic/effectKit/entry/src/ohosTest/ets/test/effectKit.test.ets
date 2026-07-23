@@ -2429,5 +2429,83 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         })
       })
 
+    /**
+     * @tc.name   testEffectBlurNull
+     * @tc.number SUB_GRAPHIC_EFFECTKIT_blur_Null
+     * @tc.desc   effectKit blur null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectBlurNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let msgStr = 'www data testEffectBlurNull';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create createEffect.start");
+        let headFilter = effectKit.createEffect(pixelMap);
+        if (headFilter == null) {
+          console.log(msgStr + "effectKitTest blur2 createEffect failed");
+          expect(true).assertFail();
+          done();
+        }
+        try {
+          let blurFilter = headFilter.blur(10, null);
+          console.log(msgStr + "blurFilter null success", JSON.stringify(blurFilter));
+        } catch (err) {
+          console.log(msgStr + "blurFilter null error ", err.code);
+          expect().assertFail();
+        }
+        done();
+      }).catch((ex: BusinessError) => {
+        console.error(msgStr + "Napi pixelMap.error=" + ex.toString());
+        expect(true).assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   testEffectBlurUndefined
+     * @tc.number SUB_GRAPHIC_EFFECTKIT_blur_Undefined
+     * @tc.desc   effectKit blur undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectBlurUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let msgStr = 'www data testEffectBlurUndefined';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create createEffect.start");
+        let headFilter = effectKit.createEffect(pixelMap);
+        if (headFilter == null) {
+          console.log(msgStr + "effectKitTest blur2 createEffect failed");
+          expect(true).assertFail();
+          done();
+        }
+        try {
+          let blurFilter = headFilter.blur(10, undefined);
+          console.log(msgStr + "blurFilter undefined success", JSON.stringify(blurFilter));
+        } catch (err) {
+          console.log(msgStr + "blurFilter undefined error ", err.code);
+          expect().assertFail();
+        }
+        done();
+      }).catch((ex: BusinessError) => {
+        console.error(msgStr + "Napi pixelMap.error=" + ex.toString());
+        expect(true).assertFail();
+        done();
+      })
+    })
+
   })
 }
