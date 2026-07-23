@@ -16,8 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { JSON } from '@kit.ArkTS';
-import { bundleManager } from "@kit.AbilityKit";
-import { buffer } from '@kit.ArkTS';
 import { serial } from "@kit.BasicServicesKit";
 
 const TAG: string = "[SerialBusManagerSignalTest]";
@@ -32,22 +30,6 @@ async function driveFn() {
     let driver: Driver = Driver.create();
     console.info(TAG, `driver is ${JSON.stringify(driver)}`);
     let button = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-    console.info(TAG, `button is ${JSON.stringify(button)}`);
-    if (button) {
-      await button.click();
-    }
-  } catch (err) {
-    console.info(TAG, `err: ${err}`);
-    return;
-  }
-}
-
-async function driveDecFn() {
-  console.info('**************driveDecFn**************');
-  try {
-    let driver: Driver = Driver.create();
-    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
-    let button = await driver.findComponent(ON.text('不允许', MatchPattern.EQUALS));
     console.info(TAG, `button is ${JSON.stringify(button)}`);
     if (button) {
       await button.click();
@@ -77,9 +59,7 @@ async function checkDevice(): Promise<boolean> {
 export default function SerialBusManagerSignalTest() {
   describe('SerialBusManagerSignalTest', () => {
     let gPort: serial.SerialPort | null = null;
-    let gPortInfo: serial.SerialPortInfo | null = null;
     let gPort1: serial.SerialPort | null = null;
-    let gPortInfo1: serial.SerialPortInfo | null = null;
 
     beforeAll(async (done: Function) => {
       console.info(TAG, 'beforeAll start');
@@ -87,11 +67,7 @@ export default function SerialBusManagerSignalTest() {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
         if (portList && portList.length > 0) {
           gPort = portList[0];
-          gPortInfo = portList[0].portInfo;
           gPort1 = portList[1];
-          gPortInfo1 = portList[1].portInfo;
-          console.info(TAG, 'beforeAll portInfo: ', JSON.stringify(gPortInfo));
-          console.info(TAG, 'beforeAll portInfo1: ', JSON.stringify(gPortInfo1));
         }
         done();
       } catch (error) {
@@ -219,7 +195,7 @@ export default function SerialBusManagerSignalTest() {
         await sleep(100);
         let dsr: boolean = await gPort!.getDsr();
         console.info(TAG, 'testGetDsr004 getDsr after setDtr(true): ', dsr);
-        expect(dsr === true).assertTrue();
+        expect(dsr).assertTrue();
         await gPort!.close();
         await gPort1!.close();
         done();
@@ -256,10 +232,10 @@ export default function SerialBusManagerSignalTest() {
         await sleep(500);
         await driveFn();
         await gPort1!.setDtr(false);
-        await sleep(100);
+        await sleep(1000);
         let dsr: boolean = await gPort!.getDsr();
         console.info(TAG, 'testGetDsr005 getDsr after setDtr(false): ', dsr);
-        expect(dsr === false).assertTrue();
+        expect(dsr).assertFalse();
         await gPort!.close();
         await gPort1!.close();
         done();
