@@ -98,62 +98,6 @@ static constexpr int OGG_SKIP_FRAME_INDEX_6862 = 6862;
 
 // GET_FILE_SIZE 已在 FuncHelperTest.h 中定义为宏
 
-static int OpenFile(const char *fileName, int fd, OH_AVSource **src, OH_AVDemuxer **audioDemuxer)
-{
-    int64_t size = GET_FILE_SIZE(fileName);
-    cout << fileName << "----------------------" << fd << "---------" << size << endl;
-    *src = OH_AVSource_CreateWithFD(fd, 0, size);
-    if (*src == nullptr) { return -1; }
-
-    *audioDemuxer = OH_AVDemuxer_CreateWithSource(*src);
-    if (*audioDemuxer == nullptr) { return -1; }
-    return 0;
-}
-
-static int CheckTrackCount(OH_AVFormat **srcFormat, OH_AVSource *src, int32_t *trackCount, int trackNum)
-{
-    *srcFormat = OH_AVSource_GetSourceFormat(src);
-    if (!(OH_AVFormat_GetIntValue(*srcFormat, OH_MD_KEY_TRACK_COUNT, trackCount))) { return -1; }
-    if (*trackCount != trackNum) { return -1; }
-    return 0;
-}
-
-static int CheckTrackSelect(int32_t trackCount, OH_AVDemuxer *audioDemuxer)
-{
-    for (int32_t index = 0; index < trackCount; index++) {
-        if (OH_AVDemuxer_SelectTrackByID(audioDemuxer, index) != AV_ERR_OK) { return -1; }
-    }
-    return 0;
-}
-
-static int CountAudioFrames(OH_AVDemuxer *audioDemuxer, OH_AVMemory *mem,
-    int32_t trackCount, int audioFrameNum, int audioKeyNum)
-{
-    int audioFrame = 0;
-    int keyCount = 0;
-    bool audioIsEnd = false;
-    OH_AVCodecBufferAttr attr;
-
-    while (!audioIsEnd) {
-        for (int32_t index = 0; index < trackCount; index++) {
-            if (OH_AVDemuxer_ReadSample(audioDemuxer, index, mem, &attr) != AV_ERR_OK) { return -1; }
-            if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
-                audioIsEnd = true;
-                cout << audioFrame << "    audio is end !!!!!!!!!!!!!!!" << endl;
-                continue;
-            }
-
-            audioFrame++;
-            if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_SYNC_FRAME) {
-                keyCount++;
-            }
-        }
-    }
-    if (audioFrameNum != audioFrame) { return -1; }
-    if (audioKeyNum != keyCount) { return -1; }
-    return 0;
-}
-
 static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &videoFrame)
 {
     if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
@@ -787,10 +731,11 @@ int DemuxerWavAlawFunc0001()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_410_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    CountAudioFrames(demuxer, memory, g_trackCount, 1, 1);
+    wavParamInfo info = {file, fd, 1, 1, SEEK_MODE_NEXT_SYNC, 0, false};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -800,11 +745,11 @@ int DemuxerWavAlawFunc0002()
     int64_t seekTime = 0;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_410_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    if (OH_AVDemuxer_SeekToTime(demuxer, seekTime, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) { return -1; }
-    CountAudioFrames(demuxer, memory, g_trackCount, 1, 1);
+    wavParamInfo info = {file, fd, 1, 1, SEEK_MODE_NEXT_SYNC, seekTime, true};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -813,10 +758,11 @@ int DemuxerWavAlawFunc0003()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_8K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_20, EXPECTED_AUDIO_FRAMES_20);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_20, EXPECTED_AUDIO_FRAMES_20, SEEK_MODE_NEXT_SYNC, 0, false};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -827,11 +773,12 @@ int DemuxerWavAlawFunc0004()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_8K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    if (OH_AVDemuxer_SeekToTime(demuxer, seekTime / thousand, SEEK_MODE_PREVIOUS_SYNC) != AV_ERR_OK) { return -1; }
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11, SEEK_MODE_PREVIOUS_SYNC,
+        seekTime / thousand, true};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -840,10 +787,11 @@ int DemuxerWavAlawFunc0005()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_16K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_40, EXPECTED_AUDIO_FRAMES_40);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_40, EXPECTED_AUDIO_FRAMES_40, SEEK_MODE_NEXT_SYNC, 0, false};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -854,11 +802,12 @@ int DemuxerWavAlawFunc0006()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_16K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    if (OH_AVDemuxer_SeekToTime(demuxer, seekTime / thousand, SEEK_MODE_CLOSEST_SYNC) != AV_ERR_OK) { return -1; }
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_21, EXPECTED_AUDIO_FRAMES_21);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_21, EXPECTED_AUDIO_FRAMES_21, SEEK_MODE_CLOSEST_SYNC,
+        seekTime / thousand, true};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -867,10 +816,11 @@ int DemuxerWavAlawFunc0007()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_48K_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_59, EXPECTED_AUDIO_FRAMES_59);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_59, EXPECTED_AUDIO_FRAMES_59, SEEK_MODE_NEXT_SYNC, 0, false};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -881,11 +831,12 @@ int DemuxerWavAlawFunc0008()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_48K_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    if (OH_AVDemuxer_SeekToTime(demuxer, seekTime / thousand, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) { return -1; }
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_26, EXPECTED_AUDIO_FRAMES_26);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_26, EXPECTED_AUDIO_FRAMES_26, SEEK_MODE_NEXT_SYNC,
+        seekTime / thousand, true};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -894,10 +845,12 @@ int DemuxerWavAlawFunc0009()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_768001_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_1876, EXPECTED_AUDIO_FRAMES_1876);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_1876, EXPECTED_AUDIO_FRAMES_1876,
+        SEEK_MODE_NEXT_SYNC, 0, false};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -908,11 +861,12 @@ int DemuxerWavAlawFunc0010()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_768001_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    OpenFile(file, fd, &source, &demuxer);
-    CheckTrackCount(&sourceFormat, source, &g_trackCount, 1);
-    CheckTrackSelect(g_trackCount, demuxer);
-    if (OH_AVDemuxer_SeekToTime(demuxer, seekTime / thousand, SEEK_MODE_PREVIOUS_SYNC) != AV_ERR_OK) { return -1; }
-    CountAudioFrames(demuxer, memory, g_trackCount, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11);
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11, SEEK_MODE_PREVIOUS_SYNC,
+        seekTime / thousand, true};
+    if (WavCheckResult(info)) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
