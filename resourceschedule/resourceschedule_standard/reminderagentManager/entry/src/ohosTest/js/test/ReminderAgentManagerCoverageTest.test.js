@@ -1824,7 +1824,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.publishReminder(calendar, (err, reminderId) => {
                     if (err) {
                         console.info('publishReminder_callback_emptyWant_001 callback err.code is :' + err.code);
-                        expect(err.code).assertEqual(401);
+                        expect(err.code == 401).assertTrue();
                         done(); 
                     } else {
                         console.info('publishReminder_callback_emptyWant_001 callback reminderId = ' + reminderId);
@@ -1920,7 +1920,7 @@ export default function ReminderAgentManagerCoverageTest() {
         })
 
         /**
-         * @tc.name   addNotificationSlot_callback_undefined_001
+         * @tc.name   removeNotificationSlot_callback_undefined_001
          * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_CALLBACK_UNDEFINED_001
          * @tc.desc   test removeNotificationSlot callback with slot undefined.
          * @tc.type   FUNCTION
