@@ -2646,7 +2646,7 @@ static napi_value StartNativeChildProcess_0700(napi_env env, napi_callback_info 
       napi_value result;
       napi_create_int32(env, 0, &result);
       return result;
-    }else{
+    } else {
       napi_value result;
       napi_create_int32(env, 1, &result);
       return result;
@@ -2675,10 +2675,10 @@ static napi_value ContextGetLogPath_0100(napi_env env, napi_callback_info info)
     if(errCode == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST){
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2829,13 +2829,13 @@ static napi_value NotifyPageChanged_0400(napi_env env, napi_callback_info info)
     int32_t testWindowId = 12; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(nullptr, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2851,13 +2851,13 @@ static napi_value NotifyPageChanged_0500(napi_env env, napi_callback_info info)
     int32_t testWindowId = 12; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2873,13 +2873,13 @@ static napi_value NotifyPageChanged_0600(napi_env env, napi_callback_info info)
     int32_t testWindowId = 0; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2895,13 +2895,13 @@ static napi_value NotifyPageChanged_0700(napi_env env, napi_callback_info info)
     int32_t testWindowId = -1; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2918,13 +2918,13 @@ static napi_value NotifyPageChanged_0800(napi_env env, napi_callback_info info)
     int32_t testWindowId = -1; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2945,11 +2945,11 @@ static napi_value NdkGetStartOptionsWindowModeValue_0100(napi_env env, napi_call
         errCode, getWindowMode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -2962,11 +2962,11 @@ static napi_value NdkGetStartOptionsWindowModeValue_0200(napi_env env, napi_call
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWindowModeValue(nullptr, &windowMode);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowModeValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -2980,11 +2980,11 @@ static napi_value NdkGetStartOptionsWindowModeValue_0300(napi_env env, napi_call
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowModeValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3003,11 +3003,11 @@ static napi_value NdkGetStartOptionsDisplayIdValue_0100(napi_env env, napi_callb
         errCode, getDisplayId);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3022,11 +3022,11 @@ static napi_value NdkGetStartOptionsDisplayIdValue_0200(napi_env env, napi_callb
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3040,11 +3040,11 @@ static napi_value NdkGetStartOptionsDisplayIdValue_0300(napi_env env, napi_callb
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsDisplayIdValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3063,11 +3063,11 @@ static napi_value NdkGetStartOptionsWithAnimationValue_0100(napi_env env, napi_c
         errCode, getWithAnimation);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3080,11 +3080,11 @@ static napi_value NdkGetStartOptionsWithAnimationValue_0200(napi_env env, napi_c
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWithAnimationValue(nullptr, &withAnimation);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWithAnimationValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3098,11 +3098,11 @@ static napi_value NdkGetStartOptionsWithAnimationValue_0300(napi_env env, napi_c
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWithAnimationValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3121,11 +3121,11 @@ static napi_value NdkGetStartOptionsWindowLeftValue_0100(napi_env env, napi_call
         errCode, getWindowLeft);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3138,11 +3138,11 @@ static napi_value NdkGetStartOptionsWindowLeftValue_0200(napi_env env, napi_call
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWindowLeftValue(nullptr, &windowLeft);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowLeftValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3156,11 +3156,11 @@ static napi_value NdkGetStartOptionsWindowLeftValue_0300(napi_env env, napi_call
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowLeftValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3179,11 +3179,11 @@ static napi_value NdkGetStartOptionsWindowTopValue_0100(napi_env env, napi_callb
         errCode, getWindowTop);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3196,11 +3196,11 @@ static napi_value NdkGetStartOptionsWindowTopValue_0200(napi_env env, napi_callb
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWindowTopValue(nullptr, &windowTop);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowTopValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3214,11 +3214,11 @@ static napi_value NdkGetStartOptionsWindowTopValue_0300(napi_env env, napi_callb
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowTopValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3237,11 +3237,11 @@ static napi_value NdkGetStartOptionsWindowHeightValue_0100(napi_env env, napi_ca
         errCode, getWindowHeight);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3254,11 +3254,11 @@ static napi_value NdkGetStartOptionsWindowHeightValue_0200(napi_env env, napi_ca
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWindowHeightValue(nullptr, &windowHeight);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowHeightValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3272,11 +3272,11 @@ static napi_value NdkGetStartOptionsWindowHeightValue_0300(napi_env env, napi_ca
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowHeightValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3295,11 +3295,11 @@ static napi_value NdkGetStartOptionsWindowWidthValue_0100(napi_env env, napi_cal
         errCode, getWindowWidth);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3312,11 +3312,11 @@ static napi_value NdkGetStartOptionsWindowWidthValue_0200(napi_env env, napi_cal
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsWindowWidthValue(nullptr, &windowWidth);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowWidthValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3330,11 +3330,11 @@ static napi_value NdkGetStartOptionsWindowWidthValue_0300(napi_env env, napi_cal
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsWindowWidthValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3353,11 +3353,11 @@ static napi_value NdkGetStartOptionsStartVisibilityValue_0100(napi_env env, napi
         errCode, getVisibility);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3370,11 +3370,11 @@ static napi_value NdkGetStartOptionsStartVisibilityValue_0200(napi_env env, napi
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsStartVisibilityValue(nullptr, &visibility);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsStartVisibilityValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3388,11 +3388,11 @@ static napi_value NdkGetStartOptionsStartVisibilityValue_0300(napi_env env, napi
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsStartVisibilityValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3415,11 +3415,11 @@ static napi_value NdkGetStartOptionsStartWindowBackgroundColorValue_0100(napi_en
     }
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3433,11 +3433,11 @@ static napi_value NdkGetStartOptionsStartWindowBackgroundColorValue_0200(napi_en
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue(nullptr, &color, &size);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3452,11 +3452,11 @@ static napi_value NdkGetStartOptionsStartWindowBackgroundColorValue_0300(napi_en
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3471,11 +3471,11 @@ static napi_value NdkGetStartOptionsStartWindowBackgroundColorValue_0400(napi_en
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue_0400 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3504,11 +3504,11 @@ static napi_value NdkGetStartOptionsSupportedWindowModesValue_0100(napi_env env,
     }
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3522,11 +3522,11 @@ static napi_value NdkGetStartOptionsSupportedWindowModesValue_0200(napi_env env,
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsSupportedWindowModesValue(nullptr, &modes, &size);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsSupportedWindowModesValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3541,11 +3541,11 @@ static napi_value NdkGetStartOptionsSupportedWindowModesValue_0300(napi_env env,
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsSupportedWindowModesValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3560,11 +3560,11 @@ static napi_value NdkGetStartOptionsSupportedWindowModesValue_0400(napi_env env,
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsSupportedWindowModesValue_0400 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3583,11 +3583,11 @@ static napi_value NdkGetStartOptionsMinWindowWidthValue_0100(napi_env env, napi_
         errCode, getMinWidth);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3600,11 +3600,11 @@ static napi_value NdkGetStartOptionsMinWindowWidthValue_0200(napi_env env, napi_
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue(nullptr, &minWidth);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMinWindowWidthValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3618,11 +3618,11 @@ static napi_value NdkGetStartOptionsMinWindowWidthValue_0300(napi_env env, napi_
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMinWindowWidthValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3641,11 +3641,11 @@ static napi_value NdkGetStartOptionsMaxWindowWidthValue_0100(napi_env env, napi_
         errCode, getMaxWidth);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3658,11 +3658,11 @@ static napi_value NdkGetStartOptionsMaxWindowWidthValue_0200(napi_env env, napi_
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue(nullptr, &maxWidth);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMaxWindowWidthValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3676,11 +3676,11 @@ static napi_value NdkGetStartOptionsMaxWindowWidthValue_0300(napi_env env, napi_
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMaxWindowWidthValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3699,11 +3699,11 @@ static napi_value NdkGetStartOptionsMinWindowHeightValue_0100(napi_env env, napi
         errCode, getMinHeight);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3716,11 +3716,11 @@ static napi_value NdkGetStartOptionsMinWindowHeightValue_0200(napi_env env, napi
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue(nullptr, &minHeight);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMinWindowHeightValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3734,11 +3734,11 @@ static napi_value NdkGetStartOptionsMinWindowHeightValue_0300(napi_env env, napi
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMinWindowHeightValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3757,11 +3757,11 @@ static napi_value NdkGetStartOptionsMaxWindowHeightValue_0100(napi_env env, napi
         errCode, getMaxHeight);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     }
@@ -3774,11 +3774,11 @@ static napi_value NdkGetStartOptionsMaxWindowHeightValue_0200(napi_env env, napi
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue(nullptr, &maxHeight);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMaxWindowHeightValue_0200 errCode=%{public}d", errCode);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
@@ -3792,11 +3792,11 @@ static napi_value NdkGetStartOptionsMaxWindowHeightValue_0300(napi_env env, napi
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetStartOptionsMaxWindowHeightValue_0300 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
     napi_value result;
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, errCode, &result);
         return result;
-    }else{
+    } else {
         napi_create_int32(env, -1, &result);
         return result;
     };
