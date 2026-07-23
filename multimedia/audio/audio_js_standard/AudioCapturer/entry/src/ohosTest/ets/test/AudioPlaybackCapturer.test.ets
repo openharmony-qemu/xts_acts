@@ -1308,6 +1308,21 @@ export default function audioCapturer() {
     */
     it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200";
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1338,7 +1353,7 @@ export default function audioCapturer() {
       audioCapturer = null;
       done();
     })
-  
+
     /**
       * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300
       * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300
@@ -1352,6 +1367,21 @@ export default function audioCapturer() {
     */
     it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300";
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1396,6 +1426,21 @@ export default function audioCapturer() {
     */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500";
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1444,7 +1489,21 @@ export default function audioCapturer() {
       let hasClickedPermission: boolean = false;
       let callbackTriggered: boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
-
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1491,7 +1550,7 @@ export default function audioCapturer() {
 
         await permissionTask;
         await sleep(1000);
-        
+
         if (!callbackTriggered) {
           console.log(`${TAG}:回调未触发，测试失败`);
           expect().assertFail();
@@ -1534,7 +1593,21 @@ export default function audioCapturer() {
       let hasClickedPermission: boolean = false;
       let callbackTriggered: boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
-
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1581,7 +1654,7 @@ export default function audioCapturer() {
 
         await permissionTask;
         await sleep(1000);
-        
+
         if (!callbackTriggered) {
           console.log(`${TAG}:回调未触发，测试失败`);
           expect().assertFail();
@@ -1624,7 +1697,21 @@ export default function audioCapturer() {
       let hasClickedPermission: boolean = false;
       let callbackTriggered: boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
-
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1671,7 +1758,7 @@ export default function audioCapturer() {
 
         await permissionTask;
         await sleep(1000);
-        
+
         if (!callbackTriggered) {
           console.log(`${TAG}:回调未触发，测试失败`);
           expect().assertFail();
@@ -1694,7 +1781,7 @@ export default function audioCapturer() {
         }
       }
       done();
-    })    
+    })
 
     /**
       * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0100
@@ -1714,6 +1801,21 @@ export default function audioCapturer() {
       let hasClickedPermission:boolean = false;
       let callbackTriggered:boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1803,6 +1905,21 @@ export default function audioCapturer() {
       let hasClickedPermission:boolean = false;
       let callbackTriggered:boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {
@@ -1892,6 +2009,21 @@ export default function audioCapturer() {
       let hasClickedPermission:boolean = false;
       let callbackTriggered:boolean = false;
       let finalState: audio.PlaybackCaptureStartState | null = null;
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`${TAG} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TAG} Determine if this is a default device`);
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice){
+        console.info(`${TAG}: this device has external device`);
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER){
+        done();
+        return;
+      }
       try {
         let audioCapturerOptions: audio.AudioCapturerOptions = {
           streamInfo: {

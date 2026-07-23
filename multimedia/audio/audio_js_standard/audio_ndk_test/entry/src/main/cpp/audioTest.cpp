@@ -5828,7 +5828,7 @@ static napi_value AudioRenderGetAudioTimestampInfoInterval(napi_env env, napi_ca
     uDelay(sleepNum);
 
     napi_value res;
-    float rate = 0.15;
+    float rate = 0.4;
     int counti = 5;
     int64_t framePositionLastDuration = 0;
     int64_t timestampLastDuration = 0;

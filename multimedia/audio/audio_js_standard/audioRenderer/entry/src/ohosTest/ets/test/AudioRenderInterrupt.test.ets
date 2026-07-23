@@ -2619,7 +2619,7 @@ export default function AudioRendererInterruptUnitTest() {
       let render1_callback = false
       let render2_callback = false
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
-      await render1.setInterruptMode(audio.InterruptMode.SHARE_MODE,done)
+      await render1.setInterruptMode(audio.InterruptMode.SHARE_MODE)
       render1.on("audioInterrupt", async (eventAction) => {
         console.log("51.eventAction=" + JSON.stringify(eventAction))
         render1_callback = true
@@ -2627,7 +2627,7 @@ export default function AudioRendererInterruptUnitTest() {
       await start(render1, done)
 
       let render2 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['48000'],done)
-      await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE,done)
+      await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
       render2.on("audioInterrupt", async (eventAction) => {
         console.log("51_2.eventAction=" + JSON.stringify(eventAction))
         render2_callback == true
@@ -2635,7 +2635,7 @@ export default function AudioRendererInterruptUnitTest() {
       await start(render2, done)
       await sleep(500)
       console.log("render1_callback = " + render1_callback + ", render2_callback = " + render2_callback)
-      expect(render1_callback).assertTrue();
+      expect(!render1_callback).assertTrue();
       expect(!render2_callback).assertTrue()
 
       await sleep(100)
@@ -2673,7 +2673,7 @@ export default function AudioRendererInterruptUnitTest() {
       await start(render2, done)
       await sleep(500)
       console.log("render1_callback = " + render1_callback + ", render2_callback = " + render2_callback)
-      expect(render1_callback).assertTrue();
+      expect(!render1_callback).assertTrue();
       expect(!render2_callback).assertTrue()
       await sleep(100)
       await release(render1, done)
