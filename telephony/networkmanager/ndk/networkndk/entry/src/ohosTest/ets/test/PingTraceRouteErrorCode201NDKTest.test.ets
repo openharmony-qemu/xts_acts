@@ -78,6 +78,52 @@ export default function PingTraceRouteErrorCode201NDKTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_errorCode201
+     * @tc.number SUB_NetworkManager_OHNetStackCreateAndVerifySortedCertChain_ErrorCode201
+     * @tc.desc   Test OHNetStackCreateAndVerifySortedCertChain returns Error Code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testOHNetStackCreateAndVerifySortedCertChain_errorCode201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testOHNetStackCreateAndVerifySortedCertChain_errorCode201';
+      console.info(`${caseName}---Start`);
+      try{
+        let re: number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_201");
+        console.log(`${caseName} --test result is `, re);
+        expect(re).assertEqual(201);
+        done();
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
 
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_errorCode201
+     * @tc.number SUB_NetworkManager_OHNetStackFreeCertChain_ErrorCode201
+     * @tc.desc   Test OHNetStackFreeCertChain returns Error Code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testOHNetStackFreeCertChain_errorCode201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testOHNetStackFreeCertChain_errorCode201';
+      console.info(`${caseName}---Start`);
+      try{
+        let re: number = wsAPI.OHNetStackFreeCertChain("ERROR_201");
+        console.log(`${caseName} --test result is `, re);
+        expect(re).assertEqual(201);
+        done();
+      }catch (err){
+        console.log(`${caseName} --test end`);
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
