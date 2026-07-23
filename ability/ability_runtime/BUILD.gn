@@ -116,6 +116,7 @@ group("ability_runtime") {
       "actsstartrunnertest:ActsStartRunnerTest",
       "actsstartuiserviceextensiontest:ActsStartuiServiceExtension",
       "actsstartupruleoptimizetest:actsstartupruleoptimizetest",
+      "actsappmemoryoptimizertest:actsappmemoryoptimizertest",
       "actsstserviceabilityclientcase:ActsStServiceAbilityClientCaseTest",
       "actssupportfunction:actssupportfunction",
       "actssystemapitest:ActsSystemAPITest",

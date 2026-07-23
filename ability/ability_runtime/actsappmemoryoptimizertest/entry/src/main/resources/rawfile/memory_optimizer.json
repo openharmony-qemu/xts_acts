@@ -1,0 +1,5 @@
+{
+  "evictFilePages": [
+    "libentry.so"
+  ]
+}
