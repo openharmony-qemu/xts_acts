@@ -115,7 +115,7 @@ int SUBAIMindSporeContextCreate0001()
     ASSERT_NE(inputs.handle_num, 0);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -306,7 +306,7 @@ int SUBAIMindSporeContextCreate0009()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -1730,7 +1730,7 @@ int SUBAIMindSporeContextDestroy0001()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_headpose_pb2tflite", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(
@@ -1768,7 +1768,7 @@ int SUBAIMindSporeContextDestroy0002()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_headpose_pb2tflite", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(

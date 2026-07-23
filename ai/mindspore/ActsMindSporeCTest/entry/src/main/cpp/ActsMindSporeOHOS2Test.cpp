@@ -123,7 +123,7 @@ int OHOSInput0002()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_headpose_pb2tflite", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(
@@ -160,7 +160,7 @@ int OHOSInput0003()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillUint8Inputs(inputs, imageBuf, size1);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========GetOutput==========\n");
@@ -268,7 +268,7 @@ int OHOSMultiple0003()
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     for (size_t i = 0; i < ActsMindSporeValues::DEFAULT_PREDICT_LOOP; ++i) {
         OHPrintf("==========Model Predict==========\n");
         OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
@@ -402,7 +402,7 @@ int OHOSCompatible0001()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
@@ -444,7 +444,7 @@ int OHOSOfflineModel0001()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
@@ -486,7 +486,7 @@ int OHOSOfflineModel0002()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_headpose_pb2tflite", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(
@@ -528,7 +528,7 @@ int OHOSOfflineModel0004()
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     for (size_t i = 0; i < ActsMindSporeValues::DEFAULT_PREDICT_LOOP; ++i) {
         OHPrintf("==========Model Predict==========\n");
         OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
@@ -607,8 +607,8 @@ int OHOSOfflineModel0006()
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray inputs;
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray inputs = {0, nullptr};
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========Model Predict return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
@@ -678,7 +678,7 @@ int OHOSOfflineModel0008()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_ocr_cn", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_ocr_cn");
@@ -730,7 +730,7 @@ int OHOSOfflineModel0009()
         }
     }
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OH_AI_ContextDestroy(&context);

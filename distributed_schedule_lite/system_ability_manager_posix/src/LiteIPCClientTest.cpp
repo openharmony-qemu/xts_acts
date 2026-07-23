@@ -285,7 +285,8 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0130, Function | MediumTest | Level2)
 {
     SvcIdentity svcIdentity = SAMGR_GetRemoteIdentity("noExistService", "noExistFeature");
     ASSERT_EQ(svcIdentity.handle == 0xffffffff, TRUE);
-    ASSERT_EQ(svcIdentity.token == 0xffffffff, TRUE);
+    // token type is uintptr_t
+    ASSERT_EQ(svcIdentity.token == INVALID_INDEX, TRUE);
 };
 
 /**

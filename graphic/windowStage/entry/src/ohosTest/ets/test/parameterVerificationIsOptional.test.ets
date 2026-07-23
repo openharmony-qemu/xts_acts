@@ -1081,6 +1081,7 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
         console.error(msgStr + 'Failed to show the window. Cause: ' + JSON.stringify(err));
         expect().assertFail();
       });
+      await sleep(800);
       let lastWindow: ohosWindow.Window | void = await ohosWindow.getLastWindow(context).catch((err: BusinessError) => {
         console.error(msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(err));
         expect().assertFail();

@@ -638,7 +638,8 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_SYNC_HW265_FUNC_0020, TestSize.Level2)
  */
 HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_SYNC_HW265_FUNC_0040, TestSize.Level0)
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = inpDirVivid;
         vDecSample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
@@ -1044,7 +1045,8 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_LOW_LATENCY_0006, TestSize.Level2)
  */
 HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_LOW_LATENCY_0007, TestSize.Level2)
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = INP_DIR_IPB_265_10bit;
         vDecSample->DEFAULT_WIDTH = 176;
@@ -1097,7 +1099,8 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_LOW_LATENCY_0008, TestSize.Level2)
  */
 HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_LOW_LATENCY_0009, TestSize.Level2)
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = INP_DIR_IPB_265_10bit;
         vDecSample->DEFAULT_WIDTH = 176;

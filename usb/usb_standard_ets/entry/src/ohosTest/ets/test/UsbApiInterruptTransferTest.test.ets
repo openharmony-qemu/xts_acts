@@ -23,8 +23,24 @@ export interface gPipe {
   devAddress: number;
 }
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
 function sleep(ms: number): Promise<void> {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
+}
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
 }
 
 async function getPermission(gDeviceList: Array<usbMgr.USBDevice>) {
@@ -91,15 +107,17 @@ export default function UsbApiInterruptTransferTest() {
       console.log(TAG, '*************Usb Unit UsbApiParamErrJsunitTest Begin*************');
       let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
       console.info(TAG, 'usb unit begin test getDevices **********', JSON.stringify(gDeviceList));
-      isDeviceConnected = deviceConnected(gDeviceList);
+      let filteredList: Array<usbMgr.USBDevice> = gDeviceList.filter(device => !isFilteredDevice(device));
+      console.info(TAG, 'filter device list:', JSON.stringify(filteredList));
+      isDeviceConnected = deviceConnected(filteredList);
       console.info(TAG, 'isDeviceConnected:', isDeviceConnected);
       if (isDeviceConnected) {
-        devices = gDeviceList[0];
+        devices = filteredList[0];
         let hasRight: boolean = usbMgr.hasRight(devices.name);
         console.info(TAG, `beforeAll: usb requestRight start`);
         if (!hasRight) {
           console.info(TAG, `beforeAll: usb requestRight start`);
-          await getPermission(gDeviceList);
+          await getPermission(filteredList);
           await sleep(3000);
           await driveFn();
           await sleep(1000);

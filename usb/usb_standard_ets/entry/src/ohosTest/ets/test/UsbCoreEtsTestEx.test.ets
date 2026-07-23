@@ -25,6 +25,16 @@ let devices: usbMgr.USBDevice | null;
 let isDeviceConnected: boolean = true;
 const TAG = "[UsbCoreEtsTestEx]";
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
 function deviceConnected() {
   if (gDeviceList.length > 0) {
     console.info(TAG, "Test USB device is connected");
@@ -32,6 +42,12 @@ function deviceConnected() {
   }
   console.info(TAG, "Test USB device is not connected");
   return false;
+}
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
 }
 
 async function driveFn() {
@@ -83,7 +99,7 @@ export default function UsbCoreEtsTestEx() {
       console.log(TAG, '*************Usb Unit UsbCoreEtsTestEx Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -99,7 +115,7 @@ export default function UsbCoreEtsTestEx() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));

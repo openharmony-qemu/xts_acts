@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,18 +22,16 @@
 #include "cmsis_os2.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define OPER_INTERVAL 200  // 200ms
 #define TARGET_NUM 2
 
 static const char *GetName(Service *service);
-static BOOL Initialize(Service *service, Identity identity);
 static BOOL MessageHandle(Service *service, Request *msg);
 static TaskConfig GetTaskConfig(Service *service);
 
-static const char *FEATURE_GetName(Feature *feature);
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity);
-static void FEATURE_OnStop(Feature *feature, Identity identity);
 static BOOL FEATURE_OnMessage(Feature *feature, Request *request);
 
 static void *g_threadID11;  // for the first service threadID
@@ -69,52 +67,30 @@ typedef struct DemoService {
     int serviceCalledCount;
 } DemoService;
 
-static BOOL DefaultApi001(IUnknown *iUnknown, char *para1)
-{
-    (void)iUnknown;
-    (void)para1;
-    return TRUE;
-}
-static int32 SendRequestProxyDF(const Identity *identity, const Request *request, Handler handler)
-{
-    return SAMGR_SendRequest(identity, request, handler);
-}
-
-static BOOL FeatureApi001(IUnknown *iUnknown, char *para1)
-{
-    (void)iUnknown;
-    (void)para1;
-    return TRUE;
-}
-static int32 SendRequestProxyF(const Identity *identity, const Request *request, Handler handler)
-{
-    return SAMGR_SendRequest(identity, request, handler);
-}
-
 static DemoService g_service[] = {
     {
         .GetName = GetName,
-        .Initialize = Initialize,
+        .Initialize = SamgrTestServiceInitializeId40,
         .MessageHandle = MessageHandle,
         .GetTaskConfig = GetTaskConfig,
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     },
     {
         .GetName = GetName,
-        .Initialize = Initialize,
+        .Initialize = SamgrTestServiceInitializeId40,
         .MessageHandle = MessageHandle,
         .GetTaskConfig = GetTaskConfig,
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     }
@@ -127,14 +103,6 @@ static const char *GetName(Service *service)
     } else {
         return "SharedTask02";
     }
-}
-
-static BOOL Initialize(Service *service, Identity identity)
-{
-    DemoService *demoService = (DemoService *)service;
-    demoService->identity = identity;
-    
-    return TRUE;
 }
 
 static BOOL MessageHandle(Service *service, Request *msg)
@@ -163,53 +131,34 @@ static TaskConfig GetTaskConfig(Service *service)
 
 static DemoFeature g_createFeature[] = {
     {
-        .GetName = FEATURE_GetName,
-        .OnInitialize = FEATURE_OnInitialize,
-        .OnStop = FEATURE_OnStop,
+    .GetName = SamgrTestGetFeatureName501,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+        .OnStop = SamgrTestFeatureOnStop,
         .OnMessage = FEATURE_OnMessage,
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .FeatureApi001 = FeatureApi001,
-            .SendRequestProxyF = SendRequestProxyF,
+            .FeatureApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyF = SamgrTestSendRequestProxy,
         },
         .identity = {-1, -1, NULL},
         .featureCalledCount = 0,
     },
     {
-        .GetName = FEATURE_GetName,
-        .OnInitialize = FEATURE_OnInitialize,
-        .OnStop = FEATURE_OnStop,
+    .GetName = SamgrTestGetFeatureName501,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+        .OnStop = SamgrTestFeatureOnStop,
         .OnMessage = FEATURE_OnMessage,
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .FeatureApi001 = FeatureApi001,
-            .SendRequestProxyF = SendRequestProxyF,
+            .FeatureApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyF = SamgrTestSendRequestProxy,
         },
         .identity = {-1, -1, NULL},
         .featureCalledCount = 0,
     },
 };
-
-static const char *FEATURE_GetName(Feature *feature)
-{
-    (void)feature;
-    return "featureName501";
-}
-
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    (void)parent;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-}
-
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
 
 static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
 {
@@ -228,7 +177,7 @@ static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
 static void ServiceInit(void)
 {
     for (int i = 0; i < TARGET_NUM; i++) {
-        SAMGR_GetInstance()->RegisterService((Service *)&g_service[i]);
+        SamgrTestRegisterService((Service *)&g_service[i]);
     }
 }
 SYS_SERVICE_INIT(ServiceInit);
@@ -236,46 +185,15 @@ SYS_SERVICE_INIT(ServiceInit);
 static void FeatureInit(void)
 {
     for (int i = 0; i < TARGET_NUM; i++) {
-        SAMGR_GetInstance()->RegisterDefaultFeatureApi(g_service[i].GetName((Service *)&g_service[i]),
-                                                       GET_IUNKNOWN(g_service[i]));
-
-        SAMGR_GetInstance()->RegisterFeature(g_service[i].GetName((Service *)&g_service[i]),
-                                             (Feature *)&g_createFeature[i]);
-        SAMGR_GetInstance()->RegisterFeatureApi(g_service[i].GetName((Service *)&g_service[i]), "featureName501",
-                                                GET_IUNKNOWN(g_createFeature[i]));
+        SamgrTestRegisterDefaultFeatureApi(g_service[i].GetName((Service *)&g_service[i]),
+                                           GET_IUNKNOWN(g_service[i]));
+        SamgrTestRegisterFeature(g_service[i].GetName((Service *)&g_service[i]),
+                                 (Feature *)&g_createFeature[i]);
+        SamgrTestRegisterFeatureApi(g_service[i].GetName((Service *)&g_service[i]), "featureName501",
+                                    GET_IUNKNOWN(g_createFeature[i]));
     }
 }
 SYS_FEATURE_INIT(FeatureInit);
-
-static DemoApi *GetIUnknown(const char *serviceName, const char *featureName)
-{
-    DemoApi *demoApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(serviceName, featureName);
-    if (iUnknown == NULL) {
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&demoApi);
-    if (result == 0 && demoApi != NULL) {
-        return demoApi;
-    } else {
-        return NULL;
-    }
-}
-
-static DefaultFeatureApi *GetDefaultIUnknown(const char *serviceName)
-{
-    DefaultFeatureApi *defaultApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetDefaultFeatureApi(serviceName);
-    if (iUnknown == NULL) {
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&defaultApi);
-    if (result == 0 && defaultApi != NULL) {
-        return defaultApi;
-    } else {
-        return NULL;
-    }
-}
 
 LITE_TEST_SUIT(distributedschedule, taskpool, ShareTaskFuncTestSuite);
 
@@ -287,6 +205,16 @@ static BOOL ShareTaskFuncTestSuiteSetUp(void)
 
 static BOOL ShareTaskFuncTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("SharedTask01", "featureName501");
+    SAMGR_GetInstance()->UnregisterFeature("SharedTask01", "featureName501");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("SharedTask01");
+    SAMGR_GetInstance()->UnregisterService("SharedTask01");
+
+    SAMGR_GetInstance()->UnregisterFeatureApi("SharedTask02", "featureName501");
+    SAMGR_GetInstance()->UnregisterFeature("SharedTask02", "featureName501");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("SharedTask02");
+    SAMGR_GetInstance()->UnregisterService("SharedTask02");
+
     return TRUE;
 }
 
@@ -300,7 +228,7 @@ static BOOL ShareTaskFuncTestSuiteTearDown(void)
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SharedTask01", "featureName501");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("SharedTask01", "featureName501");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -322,7 +250,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(g_createFeature[0].featureCalledCount == 1, TRUE);
 
     // *************************** //
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SharedTask01");
+    DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask01");
     if (defaultApi == NULL) {
         TEST_FAIL();
     }
@@ -343,10 +271,8 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
 
-    free(request.data);
-    request.data = NULL;
-    free(request2.data);
-    request2.data = NULL;
+    defaultApi->Release((IUnknown *)defaultApi);
+    demoApi->Release((IUnknown *)demoApi);
 };
 
 /**
@@ -359,7 +285,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SharedTask02", "featureName501");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("SharedTask02", "featureName501");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -381,7 +307,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(g_createFeature[1].featureCalledCount == 1, TRUE);
 
     // *************************** //
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SharedTask02");
+    DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask02");
     if (defaultApi == NULL) {
         TEST_FAIL();
     }
@@ -402,10 +328,8 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[1].serviceCalledCount == 1, TRUE);
 
-    free(request.data);
-    request.data = NULL;
-    free(request2.data);
-    request2.data = NULL;
+    defaultApi->Release((IUnknown *)defaultApi);
+    demoApi->Release((IUnknown *)demoApi);
 };
 
 /**
@@ -418,7 +342,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest | Level2)
 {
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SharedTask01");
+    DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask01");
     if (defaultApi == NULL) {
         TEST_FAIL();
     }
@@ -432,7 +356,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
     strcpy_s(request.data, request.len, body);
     defaultApi->SendRequestProxyDF(&(g_service[0].identity), &request, NULL);
 
-    DefaultFeatureApi *defaultApi2 = GetDefaultIUnknown("SharedTask01");
+    DefaultFeatureApi *defaultApi2 = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask01");
     if (defaultApi2 == NULL) {
         TEST_FAIL();
     }
@@ -447,11 +371,8 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID11 == g_threadID21, TRUE);
-
-    free(request.data);
-    request.data = NULL;
-    free(request2.data);
-    request2.data = NULL;
+    defaultApi2->Release((IUnknown *)defaultApi2);
+    defaultApi->Release((IUnknown *)defaultApi);
 };
 
 /**
@@ -464,7 +385,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SharedTask01", "featureName501");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("SharedTask01", "featureName501");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -478,7 +399,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest
     strcpy_s(request1.data, request1.len, body);
     demoApi->SendRequestProxyF(&(g_createFeature[0].identity), &request1, NULL);
 
-    DemoApi *demoApi2 = GetIUnknown("SharedTask02", "featureName501");
+    DemoApi *demoApi2 = (DemoApi *)SamgrTestGetIUnknown("SharedTask02", "featureName501");
     if (demoApi2 == NULL) {
         TEST_FAIL();
     }
@@ -493,10 +414,7 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID12 == g_threadID22, TRUE);
-
-    free(request1.data);
-    request1.data = NULL;
-    free(request2.data);
-    request2.data = NULL;
+    demoApi2->Release((IUnknown *)demoApi2);
+    demoApi->Release((IUnknown *)demoApi);
 };
 RUN_TEST_SUITE(ShareTaskFuncTestSuite);

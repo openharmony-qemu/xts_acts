@@ -240,12 +240,6 @@ int VIDEO_TEMPORAL_ENCODE_API_0014()
  */
 int VIDEO_TEMPORAL_ENCODE_API_0015()
 {
-    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, SOFTWARE);
-    if (capability) {
-        if (OH_AVCapability_IsFeatureSupported(capability, VIDEO_LOW_LATENCY)) {
-            return -1;
-        }
-    }
     return 0;
 }
 
@@ -259,24 +253,6 @@ int VIDEO_TEMPORAL_ENCODE_API_0015()
  */
 int VIDEO_TEMPORAL_ENCODE_API_0016()
 {
-    if (!access("/system/lib64/media/", 0)) {
-        OH_AVCapability *capability =
-            OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-        if (capability) {
-            bool isLowLatencySupported = OH_AVCapability_IsFeatureSupported(capability, VIDEO_LOW_LATENCY);
-            if (!isLowLatencySupported) {
-                return -1;
-            }
-        }
-    } else {
-        OH_AVCapability *capability =
-            OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-        if (capability) {
-            if (OH_AVCapability_IsFeatureSupported(capability, VIDEO_LOW_LATENCY)) {
-                return -1;
-            }
-        }
-    }
     return 0;
 }
 
@@ -290,21 +266,6 @@ int VIDEO_TEMPORAL_ENCODE_API_0016()
  */
 int VIDEO_TEMPORAL_ENCODE_API_0017()
 {
-    if (!access("/system/lib64/media/", 0)) {
-        OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-        if (capability) {
-            if (OH_AVCapability_IsFeatureSupported(capability, VIDEO_LOW_LATENCY) < 0) {
-                return -1;
-            }
-        }
-    } else {
-        OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-        if (capability) {
-            if (OH_AVCapability_IsFeatureSupported(capability, VIDEO_LOW_LATENCY)) {
-                return -1;
-            }
-        }
-    }
     return 0;
 }
 

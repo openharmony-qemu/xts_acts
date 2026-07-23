@@ -16,6 +16,21 @@
 import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import usbMgr from "@ohos.usbManager"
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
+}
 
 export default function UsbSceneEtsTest() {
   
@@ -23,7 +38,8 @@ export default function UsbSceneEtsTest() {
   describe('UsbSceneEtsTest', () => {
 
     const TAG: string = "[UsbSceneEtsTest]";
-    let deviceList = usbMgr.getDevices();
+
+    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
     let portCurrentMode = 0;
     
 

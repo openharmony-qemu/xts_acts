@@ -718,12 +718,10 @@ HWTEST_F(AbilityMgrTest, testDisConnectAbility, Function | MediumTest | Level1)
     sem_timedwait(&g_sem, &ts);
     printf("sem exit \n");
     printf("ret of connect is %d \n ", result);
-    if (g_errorCode == 16) {
-        result = DisconnectAbility(&g_conn);
-        usleep(900000);
-        EXPECT_EQ(result, 0);
-        printf("ret of disconnect is %d \n ", result);
-    }
+    result = DisconnectAbility(&g_conn);
+    usleep(900000);
+    EXPECT_EQ(result, 0);
+    printf("ret of disconnect is %d \n ", result);
     ClearElement(&element);
     ClearWant(&want);
     printf("------end testDisConnectAbility------\n");

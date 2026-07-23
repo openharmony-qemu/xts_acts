@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "broadcast_interface.h"
+
 
 #define TEST_LEN 10
 #define OPER_INTERVAL 200
@@ -109,7 +110,7 @@ static void CASE_ReleaseIUnknown(PubSubInterface *fapi)
 LITE_TEST_SUIT(test, broadcast, Broadcast01TestSuite);
 
 static BOOL Broadcast01TestSuiteSetUp(void)
-{   
+{
     osDelay(OPER_INTERVAL);
 
     return TRUE;
@@ -121,14 +122,14 @@ static BOOL Broadcast01TestSuiteTearDown(void)
 }
 
 /**
- * @tc.name   testAddTopic0010
- * @tc.number DMSLite_SAMGR_AddTopic_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testAddTopicLifecycle0010
+ * @tc.number DMSLite_SAMGR_AddTopic_Lifecycle_0010
+ * @tc.desc   Add topic success, NULL topic, and duplicate topic cases.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0010, Function | MediumTest | Level1)
+LITE_TEST_CASE(Broadcast01TestSuite, testAddTopicLifecycle0010, Function | MediumTest | Level1)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -143,32 +144,7 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0010, Function | MediumTest | L
     int result = subscriber->AddTopic((IUnknown *)fapi, &topic0);
     TEST_ASSERT_EQUAL_INT(result == 0, TRUE);
 
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testAddTopic0020
- * @tc.number DMSLite_SAMGR_AddTopic_0020
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0020, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-
-    int result = subscriber->AddTopic((IUnknown *)fapi, NULL);
+    result = subscriber->AddTopic((IUnknown *)fapi, NULL);
     TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
 
     result = subscriber->AddTopic((IUnknown *)fapi, &topic0);
@@ -178,14 +154,14 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0020, Function | MediumTest | L
 }
 
 /**
- * @tc.name   testSubscribe0010
- * @tc.number DMSLite_SAMGR_Subscribe_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testSubscribeLifecycle0010
+ * @tc.number DMSLite_SAMGR_Subscribe_Lifecycle_0010
+ * @tc.desc   Subscribe and unsubscribe success lifecycle.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0010, Function | MediumTest | Level1)
+LITE_TEST_CASE(Broadcast01TestSuite, testSubscribeLifecycle0010, Function | MediumTest | Level1)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -196,26 +172,30 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0010, Function | MediumTest | 
         TEST_FAIL();
     }
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
+
     Topic topic0 = 9;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
     int result = subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
     TEST_ASSERT_EQUAL_INT(result == 0, TRUE);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
+
+    Consumer *consumer = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    TEST_ASSERT_EQUAL_INT(consumer != NULL, TRUE);
+
     CASE_ReleaseIUnknown(fapi);
 }
 
 /**
- * @tc.name   testSubscribe0020
+ * @tc.name   testSubscribeInvalidParams0020
  * @tc.number DMSLite_SAMGR_Subscribe_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param/duplicate cases (was 0020/0030/0040)
+ *            - NULL topic
+ *            - NULL consumer
+ *            - duplicate subscribe with same consumer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(Broadcast01TestSuite, testSubscribeInvalidParams0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -226,150 +206,36 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0020, Function | MediumTest | 
         TEST_FAIL();
     }
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
+
     Topic topic0 = 0;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
+
     int result = subscriber->Subscribe((IUnknown *)fapi, NULL, &c1);
     TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
 
-/**
- * @tc.name   testSubscribe0030
- * @tc.number DMSLite_SAMGR_Subscribe_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0030, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    int result = subscriber->Subscribe((IUnknown *)fapi, &topic0, NULL);
+    result = subscriber->Subscribe((IUnknown *)fapi, &topic0, NULL);
+    TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
+
+    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
+    result = subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
     TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
 
     subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
     CASE_ReleaseIUnknown(fapi);
 }
 
 /**
- * @tc.name   testSubscribe0040
- * @tc.number DMSLite_SAMGR_Subscribe_0040
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0040, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-    int result = subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-    TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testUnsubscribe0010
- * @tc.number DMSLite_SAMGR_UnSubscribe_0010
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0010, Function | MediumTest | Level1)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-
-    Consumer *result = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    TEST_ASSERT_EQUAL_INT(result != NULL, TRUE);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testUnsubscribe0020
+ * @tc.name   testUnsubscribeInvalidParams0020
  * @tc.number DMSLite_SAMGR_UnSubscribe_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param cases (was 0020/0030)
+ *            - NULL topic
+ *            - NULL consumer
+ *            - consumer that was never subscribed
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0020, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-
-    Consumer *result = subscriber->Unsubscribe((IUnknown *)fapi, NULL, &c1);
-    TEST_ASSERT_EQUAL_INT(result==NULL, TRUE);  // failed
-
-    result = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, NULL);
-    TEST_ASSERT_EQUAL_INT(result==NULL, TRUE);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testUnsubscribe0030
- * @tc.number DMSLite_SAMGR_UnSubscribe_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0030, Function | MediumTest | Level2)
+LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribeInvalidParams0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -381,27 +247,33 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0030, Function | MediumTest 
     }
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
-    
+
     Topic topic0 = 0;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
     subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
 
-    Consumer *result = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
-    TEST_ASSERT_EQUAL_INT(result==NULL, TRUE);  
+    Consumer *result = subscriber->Unsubscribe((IUnknown *)fapi, NULL, &c1);
+    TEST_ASSERT_EQUAL_INT(result == NULL, TRUE);
+
+    result = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, NULL);
+    TEST_ASSERT_EQUAL_INT(result == NULL, TRUE);
+
+    result = subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
+    TEST_ASSERT_EQUAL_INT(result == NULL, TRUE);
 
     subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
     CASE_ReleaseIUnknown(fapi);
 }
 
 /**
- * @tc.name   testModifyConsumer0010
- * @tc.number DMSLite_SAMGR_ModifyConsumer_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testModifyConsumerLifecycle0010
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_Lifecycle
+ * @tc.desc   Modify consumer success and modify to itself lifecycle.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0010, Function | MediumTest | Level2)
+LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumerLifecycle0010, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -413,28 +285,34 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0010, Function | MediumTe
     }
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
+
     Topic topic0 = 0;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
     subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
 
     Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, &topic0, &c1, &c2);
-    TEST_ASSERT_EQUAL_INT(result != NULL, TRUE);  
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
+    TEST_ASSERT_EQUAL_INT(result != NULL, TRUE);
+
+    result = subscriber->ModifyConsumer((IUnknown *)fapi, &topic0, &c2, &c2);
+    TEST_ASSERT_EQUAL_INT(result != NULL, TRUE);
+
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
+
     CASE_ReleaseIUnknown(fapi);
 }
 
 /**
- * @tc.name   testModifyConsumer0020
+ * @tc.name   testModifyConsumerInvalidParams0020
  * @tc.number DMSLite_SAMGR_ModifyConsumer_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param cases (was 0020/0030/0040)
+ *            - NULL topic / NULL old consumer / NULL new consumer
+ *            - non-existent topic
+ *            - non-existent topic with different consumer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumerInvalidParams0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
     if (fapi == NULL) {
@@ -446,122 +324,31 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0020, Function | MediumTe
     }
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
+
     Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-
-    Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, NULL, &c1, &c2);
-    TEST_ASSERT_EQUAL_INT(result!=NULL, 0);
-
-    result = subscriber->ModifyConsumer((IUnknown *)fapi, &topic0, NULL, &c2);
-    TEST_ASSERT_EQUAL_INT(result!=NULL, 0);
-
-    result = subscriber->ModifyConsumer((IUnknown *)fapi, &topic0, &c1, NULL);
-    TEST_ASSERT_EQUAL_INT(result!=NULL, 0);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testModifyConsumer0030
- * @tc.number DMSLite_SAMGR_ModifyConsumer_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0030, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    static Consumer c2 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-
     Topic noExistTopic = 99;
-    Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, &noExistTopic, &c1, &c2);
-    TEST_ASSERT_EQUAL_INT(result==NULL, 1);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testModifyConsumer0040
- * @tc.number DMSLite_SAMGR_ModifyConsumer_0040
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0040, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
-    }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    static Consumer c2 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
-    
-    Topic topic0 = 0;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
     subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
 
-    Topic noExistTopic = 99;
-    Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, &noExistTopic, &c2, &c2);
-    TEST_ASSERT_EQUAL_INT(result==NULL, 1);
-    
-    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
-    CASE_ReleaseIUnknown(fapi);
-}
-
-/**
- * @tc.name   testModifyConsumer0050
- * @tc.number DMSLite_SAMGR_ModifyConsumer_0050
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0050, Function | MediumTest | Level2)
-{
-    PubSubInterface *fapi = CASE_GetIUnknown();
-    if (fapi == NULL) {
-        TEST_FAIL();
+    struct {
+        Topic    *topic;
+        Consumer *oldC;
+        Consumer *newC;
+    } cases[] = {
+        {NULL,          &c1, &c2},
+        {&topic0,       NULL, &c2},
+        {&topic0,       &c1, NULL},
+        {&noExistTopic, &c1, &c2},
+        {&noExistTopic, &c2, &c2},
+    };
+    for (size_t i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+        Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, cases[i].topic,
+                                                       cases[i].oldC, cases[i].newC);
+        TEST_ASSERT_EQUAL_INT(result == NULL, TRUE);
     }
-    Subscriber *subscriber = &fapi->subscriber;
-    if (subscriber == NULL) {
-        TEST_FAIL();
-    }
-    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
 
-    Topic topic0 = 0;
-    subscriber->AddTopic((IUnknown *)fapi, &topic0);
-    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
-
-    Consumer *result = subscriber->ModifyConsumer((IUnknown *)fapi, &topic0, &c1, &c1);
-    TEST_ASSERT_EQUAL_INT(result != NULL, TRUE);  
-    
     subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
-    
+
     CASE_ReleaseIUnknown(fapi);
 }
 

@@ -28,6 +28,10 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
   let gPipe;
   let isDeviceConnected;
   const TAG = "[UsbDevicePipeJsFunctionsTest]";
+  const FILTERED_DEVICES = [
+    {vendorId: 3034, productId: 33107},
+    {vendorId: 65535, productId: 14131},
+  ];
 
   function deviceConnected() {
     if (gDeviceList.length > 0) {
@@ -38,12 +42,19 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
     return false;
   }
 
+  function isFilteredDevice(device) {
+    return FILTERED_DEVICES.some(item =>
+      device.vendorId === item.vendorId && device.productId === item.productId
+    );
+  }
+
   beforeAll(async function () {
     console.log(TAG, '*************Usb Unit UsbDevicePipeJsFunctionsTest Begin*************');
     var Version = usbManager.getVersion();
     console.info(TAG, 'usb unit begin test getversion :' + Version);
     // version > 17  host currentMode = 2 device currentMode = 1
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     isDeviceConnected = deviceConnected();
     if (isDeviceConnected) {
       let hasRight = usbManager.hasRight(gDeviceList[0].name);
@@ -61,7 +72,8 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
 
   beforeEach(function () {
     console.info(TAG, 'beforeEach: *************Usb Unit Test Case*************');
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     console.info(TAG, 'beforeEach return getDevices : ' + JSON.stringify(gDeviceList));
     console.info(TAG, 'beforeEach return connectDevice gPipe : ' + JSON.stringify(gPipe));
   })
@@ -180,7 +192,8 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
   }
 
   function toReleaseInterface(testCaseName, conIndex, interIndex) {
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
     let isClaim = usbManager.releaseInterface(gPipe, tmpInterface);
     console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -397,22 +410,22 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
       console.log('usb testBulkTransfer801Err001 parameter getSync unexpected error: ' + e);
     }
     try {
-    var tmpUint8Array = CheckEmptyUtils.str2ab(testParam.sendData);
-    await usbManager.bulkTransfer(testParam.pip, testParam.outEndpoint, tmpUint8Array, null).then(data => {
-      console.info(TAG, 'usb case testBulkTransfer801Err001 ret: ' + data);
-      console.info(TAG, 'usb case testBulkTransfer801Err001 send data: ' + testParam.sendData);
-      expect(data > 0).assertTrue();
-    }).catch (error => {
-      console.info(TAG, 'usb testBulkTransfer801Err001 write error : ' + JSON.stringify(error));
-      expect(error === null).assertTrue();
-    });
-    let isClaim = usbManager.releaseInterface(testParam.pip, testParam.interface);
-    console.info(TAG, 'usb case testBulkTransfer801Err001 isClaim: ' + isClaim);
-    expect(isClaim).assertEqual(0);
-   } catch (err) {
-    console.info(TAG, 'testBulkTransfer801Err001 catch err code: ', err);
-    expect(err.code).assertEqual(801);
-   }
+      var tmpUint8Array = CheckEmptyUtils.str2ab(testParam.sendData);
+      await usbManager.bulkTransfer(testParam.pip, testParam.outEndpoint, tmpUint8Array, null).then(data => {
+        console.info(TAG, 'usb case testBulkTransfer801Err001 ret: ' + data);
+        console.info(TAG, 'usb case testBulkTransfer801Err001 send data: ' + testParam.sendData);
+        expect(data > 0).assertTrue();
+      }).catch (error => {
+        console.info(TAG, 'usb testBulkTransfer801Err001 write error : ' + JSON.stringify(error));
+        expect(error === null).assertTrue();
+      });
+      let isClaim = usbManager.releaseInterface(testParam.pip, testParam.interface);
+      console.info(TAG, 'usb case testBulkTransfer801Err001 isClaim: ' + isClaim);
+      expect(isClaim).assertEqual(0);
+    } catch (err) {
+      console.info(TAG, 'testBulkTransfer801Err001 catch err code: ', err);
+      expect(err.code).assertEqual(801);
+    }
   })
 
   /**
@@ -936,15 +949,15 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
     });
   })
 
-   /**
-    * @tc.name   testControlTransfer801Err001
-    * @tc.number SUB_USB_HostManager_JS_TranCompatibilityErr_0300
-    * @tc.desc   Test the bulkTransfer interface. Ignore option arguments, use default options.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
-   it('testControlTransfer801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+  /**
+   * @tc.name   testControlTransfer801Err001
+   * @tc.number SUB_USB_HostManager_JS_TranCompatibilityErr_0300
+   * @tc.desc   Test the bulkTransfer interface. Ignore option arguments, use default options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('testControlTransfer801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     console.info(TAG, 'usb testControlTransfer801Err001 begin');
     if (!isDeviceConnected) {
       expect(isDeviceConnected).assertFalse();
@@ -958,7 +971,7 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
       expect(testParam.outEndpoint == null).assertFalse();
       return
     }
-    try{
+    try {
       let controlParam = getTransferParam(0, usbManager.USB_REQUEST_TARGET_DEVICE,
         (usbManager.USB_REQUEST_DIR_FROM_DEVICE) | (usbManager.USB_REQUEST_TYPE_STANDARD << 5)
         | (usbManager.USB_REQUEST_TARGET_DEVICE & 0x1f), 0, 0);
@@ -971,9 +984,9 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
         console.info(TAG, 'usb testControlTransfer801Err001 controlTransfer error : ' + JSON.stringify(error));
         expect(error === null).assertTrue();
       });
-    }catch(err){
+    } catch (err) {
       console.info(TAG, 'testControlTransfer801Err001 catch err code: ', err);
-            expect(err.code).assertEqual(801);
+      expect(err.code).assertEqual(801);
     }
   })
 

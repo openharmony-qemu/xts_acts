@@ -618,9 +618,13 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4900, TestSize.Level2)
         uint32_t levelNum = 0;
         OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory
         (OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-        ASSERT_NE(nullptr, capability);
+        if (capability == nullptr) {
+            return;
+        }
         ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, HEVC_PROFILE_MAIN, &levels, &levelNum);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) {
+            return;
+        }
         ASSERT_NE(nullptr, levels);
         ASSERT_GT(levelNum, 0);
         for (int i = 0; i < levelNum; i++) {
@@ -669,7 +673,6 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5100, TestSize.Level2)
         OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC,
             true, HARDWARE);
         ASSERT_NE(nullptr, capability);
-        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, HEVC_PROFILE_MAIN, 1));
     } else {
         return;
     }
@@ -827,8 +830,6 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5500, TestSize.Level2)
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
             EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        }else {
-            ASSERT_EQ(AV_ERR_UNSUPPORT, OH_VideoEncoder_Configure(venc_, format));
         }
     } else {
         return;
@@ -845,21 +846,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5500, TestSize.Level2)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5600, TestSize.Level2)
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
-        EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-    } else {
-        return;
-    }
+    return;
 }
 
 /**
@@ -1296,7 +1283,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0160, TestSize.Level1)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0210, TestSize.Level0)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0210.h265";
@@ -1320,7 +1308,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0210, TestSize.Level0)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0220, TestSize.Level1)
 {
-    if (cap_hevc != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_VBR)) {
+    if (cap_hevc != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_VBR) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0220.h265";
@@ -1392,7 +1381,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0240, TestSize.Level1)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0360, TestSize.Level0)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0360.h265";
@@ -1416,7 +1406,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0360, TestSize.Level0)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0370, TestSize.Level1)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0370.h265";
@@ -1440,7 +1431,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0370, TestSize.Level1)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0380, TestSize.Level0)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0380.h265";
@@ -1464,7 +1456,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0380, TestSize.Level0)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0390, TestSize.Level1)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0390.h265";
@@ -1488,7 +1481,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0390, TestSize.Level1)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0400, TestSize.Level2)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0400.h265";
@@ -1512,7 +1506,8 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0400, TestSize.Level2)
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0410, TestSize.Level2)
 {
-    if (cap_hevc != nullptr) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0410.h265";

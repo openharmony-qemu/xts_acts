@@ -23,6 +23,22 @@ export interface gPipe {
     devAddress: number;
 }
 
+interface FilteredDevice {
+    vendorId: number;
+    productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+    { vendorId: 3034, productId: 33107 },
+    { vendorId: 65535, productId: 14131 },
+];
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+    return FILTERED_DEVICES.some(item =>
+        device.vendorId === item.vendorId && device.productId === item.productId
+    );
+}
+
 function sleep(ms: number): Promise<void> {
     return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
@@ -90,7 +106,7 @@ export default function UsbApiBulkTransferTest() {
 
     beforeAll( async (done: Function) => {
         console.log(TAG, '*************Usb Unit UsbApiParamErrJsunitTest Begin*************');
-        let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+        let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
         console.info(TAG, 'usb unit begin test getDevices **********', JSON.stringify(gDeviceList));
         isDeviceConnected = deviceConnected(gDeviceList);
         console.info(TAG, 'isDeviceConnected:', isDeviceConnected);

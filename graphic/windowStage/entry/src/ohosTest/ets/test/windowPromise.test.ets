@@ -1874,11 +1874,36 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     it("testSetWindowMask_Function_Promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let msgStr = "testSetWindowMask_Function_Promise";
       console.log(msgStr + " begin")
+      let wnd: ohosWindow.Window | void;
+      wnd = await windowStage.createSubWindow('nowWindowA').catch((err: BusinessError) => {
+        console.log(msgStr + ' Failed to createSubWindow. Cause: ' + JSON.stringify(err));
+        expect().assertFail();
+      })
+      console.log(msgStr + " createSubWindow OK ")
+      let windowLimits: ohosWindow.WindowLimits;
+      let minWidth: number = 500;
+      let minHeight: number = 500;
+      try {
+        windowLimits = (wnd as ohosWindow.Window).getWindowLimits();
+        minWidth = windowLimits.minWidth ?? 500;
+        minHeight = windowLimits.minHeight ?? 500;
+        console.log(msgStr + ' windowLimits is: ' + JSON.stringify(windowLimits));
+        console.log(msgStr + ' minWidth is: ' + minWidth + ' minHeight is: ' + minHeight);
+      } catch (exception) {
+        if (exception.code != 801) {
+          console.error(msgStr + ' Failed to getWindowLimits. Cause: ' + JSON.stringify(exception));
+          expect().assertFail();
+        } else {
+          console.log(msgStr + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+          console.log(msgStr + JSON.stringify(exception));
+          expect(exception.code).assertEqual(801);
+        }
+      }
       let windowMask: Array<Array<number>> = new Array<Array<number>>()
-      for (let i = 0; i < 500; i++) {
-        let arr: Array<number> = new Array<number>(500);
-        for (let j = 0; j < 500; j++) {
-          if (i + j < 500) {
+      for (let i = 0; i < minHeight; i++) {
+        let arr: Array<number> = new Array<number>(minWidth);
+        for (let j = 0; j < minWidth; j++) {
+          if (i + j < minWidth) {
             arr[j] = 0
           } else {
             arr[j] = 1
@@ -1886,14 +1911,8 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         }
         windowMask.push(arr)
       }
-      console.log(msgStr + " windowMask OK ")
-      let wnd: ohosWindow.Window | void;
-      wnd = await windowStage.createSubWindow('nowWindowA').catch((err: BusinessError) => {
-        console.log(msgStr + ' Failed to createSubWindow. Cause: ' + JSON.stringify(err));
-        expect().assertFail();
-      })
-      console.log(msgStr + " createSubWindow OK ")
-      await (wnd as ohosWindow.Window).resize(500, 500);
+      console.log(msgStr + " windowMask OK, size: " + minHeight + " x " + minWidth)
+      await (wnd as ohosWindow.Window).resize(minWidth, minHeight);
       console.log(msgStr + " resize OK ")
       await (wnd as ohosWindow.Window).setWindowMask(windowMask).then(() => {
         console.log(msgStr + ' Succeeded in setting the window mask.');

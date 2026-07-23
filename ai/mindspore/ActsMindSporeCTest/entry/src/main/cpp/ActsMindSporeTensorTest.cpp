@@ -142,13 +142,13 @@ int SUBAIMindSporeTensorCreate0005()
     int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
     OH_AI_TensorHandle tensor =
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     inTensorArray.handle_num = 1;
     inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * 1);
     inTensorArray.handle_list[0] = tensor;
     FillInputsData(inTensorArray, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inTensorArray, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -185,13 +185,13 @@ int SUBAIMindSporeTensorCreate0006()
     int64_t createShape[createShapeNum] = { 1, 224, 224, 3 };
     OH_AI_TensorHandle tensor =
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_UINT8, createShape, createShapeNum, nullptr, 0);
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     inTensorArray.handle_num = 1;
     inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * 1);
     inTensorArray.handle_list[0] = tensor;
     FillInputsData(inTensorArray, "aiy_vision_classifier_plants_V1_3", false);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inTensorArray, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -299,7 +299,7 @@ int SUBAIMindSporeTensorCreate0008()
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     OH_AI_ModelHandle model = OH_AI_ModelCreate();
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     CreateAndSetTensor(model, context, &inTensorArray, true);
     FillInputsData(inTensorArray, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
@@ -313,7 +313,7 @@ int SUBAIMindSporeTensorCreate0008()
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
     OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
-    OH_AI_TensorHandleArray inTensorArray2;
+    OH_AI_TensorHandleArray inTensorArray2 = {0, nullptr};
     CreateAndSetTensor(model2, context2, &inTensorArray2, false);
     FillInputsData(inTensorArray2, "aiy_vision_classifier_plants_V1_3", false);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
