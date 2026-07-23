@@ -2081,6 +2081,5 @@ export default function imageDecodeAvif() {
         done();
       }
     });
-
   });
 }
