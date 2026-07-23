@@ -1,12 +1,41 @@
 'use static';
 import {
-  Entry, ComponentV2, Column, Builder, Flex, FlexDirection, FlexAlign, ItemAlign, TextAlign, ClickEvent, HorizontalAlign,
-  Divider, Resource, SideBarContainer, SideBarContainerType, LineCapStyle, ColumnOptions, Button, ButtonType, Text, $r,
-  Row, State, Image, Color, Local, ControlSize
-}from '@kit.ArkUI';
+  Entry,
+  ComponentV2,
+  Column,
+  Builder,
+  Flex,
+  FlexDirection,
+  FlexAlign,
+  ItemAlign,
+  TextAlign,
+  ClickEvent,
+  HorizontalAlign,
+  Divider,
+  Resource,
+  SideBarContainer,
+  SideBarContainerType,
+  LineCapStyle,
+  ColumnOptions,
+  Button,
+  ButtonType,
+  Text,
+  $r,
+  Row,
+  State,
+  Image,
+  Color,
+  Local,
+  ControlSize
+} from '@kit.ArkUI';
 
 import {
-  TreeControllerV2,  TreeListenerV2,  TreeListenerManagerV2,  NodeParamV2,  TreeViewV2,  CallbackParamV2
+  TreeControllerV2,
+  TreeListenerV2,
+  TreeListenerManagerV2,
+  NodeParamV2,
+  TreeViewV2,
+  CallbackParamV2
 } from '@ohos.arkui.advanced.TreeViewV2';
 
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
@@ -74,7 +103,7 @@ struct TreeViewDemo {
   // 边界值测试方法
   testBoundaryCase(caseType: string): void {
     try {
-      switch(caseType) {
+      switch (caseType) {
         case 'emptyTitle':
           this.treeController.addNode({
             parentNodeId: -1,
@@ -131,44 +160,54 @@ struct TreeViewDemo {
     // 注册监听
     this.treeListener.onNodeClick((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeModify((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeMove((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeClick((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeModify((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeMove((callbackParam: CallbackParamV2) => {
       this.onceMoveCount++;
       this.clickId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}, onceMoveCount:${this.onceMoveCount}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}, onceMoveCount:${this.onceMoveCount}`;
     })
     // 注册off*验证用的回调
     this.treeListener.onNodeClick(this.offClickCallback);
@@ -305,36 +344,63 @@ struct TreeViewDemo {
           Divider().vertical(true).strokeWidth(2).color(0x000000).lineCap(LineCapStyle.Round)
           Column({ space: 5 } as ColumnOptions) {
             Text('ClickId=' + this.clickId).fontSize(8).id('clickIdText')
-            Text('CallbackParam: ' + this.callbackParamDisplay).fontSize(8).fontColor(Color.Blue).id('callbackParamText')
+            Text('CallbackParam: ' + this.callbackParamDisplay)
+              .fontSize(8)
+              .fontColor(Color.Blue)
+              .id('callbackParamText')
             Button('Add', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(90).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(90)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.addNode();
               })
             Button('Modify', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(90).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(90)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.modifyNode();
               })
             Button('Remove', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(120).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(120)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.removeNode();
               })
             Divider().strokeWidth(1).color(0xCCCCCC)
             Text('Boundary Tests:').fontSize(8).fontColor(Color.Orange)
             Button('Test Empty Title', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0xFF5722).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.testBoundaryCase('emptyTitle');
               })
             Button('Test Long Title', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0xFF5722).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.testBoundaryCase('longTitle');
               })
             Button('Test Invalid Parent', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0xFF5722).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.testBoundaryCase('invalidParent');
               })
@@ -342,35 +408,55 @@ struct TreeViewDemo {
             Divider().strokeWidth(1).color(0xCCCCCC)
             Text('Off Verification:').fontSize(8).fontColor(0x9C27B0)
             Button('Test offClick', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x9C27B0).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offClickResult = 'offClickNotTriggered';
                 this.treeListener.offNodeClick(this.offClickCallback);
               })
             Text(this.offClickResult).fontSize(8).fontColor(0x9C27B0).id('offClickResult')
             Button('Test offAdd', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x9C27B0).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offAddResult = 'offAddNotTriggered';
                 this.treeListener.offNodeAdd(this.offAddCallback);
               })
             Text(this.offAddResult).fontSize(8).fontColor(0x9C27B0).id('offAddResult')
             Button('Test offDelete', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x9C27B0).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offDeleteResult = 'offDeleteNotTriggered';
                 this.treeListener.offNodeDelete(this.offDeleteCallback);
               })
             Text(this.offDeleteResult).fontSize(8).fontColor(0x9C27B0).id('offDeleteResult')
             Button('Test offModify', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x9C27B0).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offModifyResult = 'offModifyNotTriggered';
                 this.treeListener.offNodeModify(this.offModifyCallback);
               })
             Text(this.offModifyResult).fontSize(8).fontColor(0x9C27B0).id('offModifyResult')
             Button('Test offMove', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x9C27B0).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offMoveResult = 'offMoveNotTriggered';
                 this.treeListener.offNodeMove(this.offMoveCallback);
@@ -379,7 +465,11 @@ struct TreeViewDemo {
             Divider().strokeWidth(1).color(0xCCCCCC)
             Text('Refresh Verification:').fontSize('14fp').fontColor(0x4CAF50)
             Button('Test refreshNode', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x4CAF50).width(150).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x4CAF50)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.refreshNode(1, 'NewParentSub', 'NewChildSub');
                 this.refreshResult = 'refreshCalled';
@@ -388,7 +478,11 @@ struct TreeViewDemo {
             Divider().strokeWidth(1).color(0xCCCCCC)
             Text('Add After BuildDone:').fontSize('14fp').fontColor(0x795548)
             Button('Test addAfterBuildDone', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x795548).width(180).controlSize(ControlSize.SMALL).fontSize(8)
+              .borderRadius(8)
+              .backgroundColor(0x795548)
+              .width(180)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 try {
                   this.treeController.addNode({

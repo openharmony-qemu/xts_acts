@@ -1,4 +1,12 @@
-import { TreeControllerV2, TreeListenerV2, TreeListenerManagerV2, NodeParamV2, TreeViewV2, CallbackParamV2, SymbolGlyphModifier } from '@kit.ArkUI';
+import {
+  TreeControllerV2,
+  TreeListenerV2,
+  TreeListenerManagerV2,
+  NodeParamV2,
+  TreeViewV2,
+  CallbackParamV2,
+  SymbolGlyphModifier
+} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -17,26 +25,40 @@ struct TreeViewV2Demo {
     this.treeListenerV2.offNodeMove();
   }
 
-  @Builder menuBuilder(): void {
+  @Builder
+  menuBuilder(): void {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-      Text('新增').fontSize(16).width(100).height(30).textAlign(TextAlign.Center)
+      Text('新增')
+        .fontSize(16)
+        .width(100)
+        .height(30)
+        .textAlign(TextAlign.Center)
         .onClick((event: ClickEvent) => {
           this.treeControllerV2.addNode();
         })
       Divider()
-      Text('删除').fontSize(16).width(100).height(30).textAlign(TextAlign.Center)
+      Text('删除')
+        .fontSize(16)
+        .width(100)
+        .height(30)
+        .textAlign(TextAlign.Center)
         .onClick((event: ClickEvent) => {
           this.treeControllerV2.removeNode();
         })
       Divider()
-      Text('重命名').fontSize(16).width(100).height(30).textAlign(TextAlign.Center)
+      Text('重命名')
+        .fontSize(16)
+        .width(100)
+        .height(30)
+        .textAlign(TextAlign.Center)
         .onClick((event: ClickEvent) => {
           this.treeControllerV2.modifyNode();
         })
-    }.width(100).border({width: 1, color: 0x80808a, radius: '16dp'})
+    }.width(100).border({ width: 1, color: 0x80808a, radius: '16dp' })
   }
 
-  @Builder customContainer(): void {
+  @Builder
+  customContainer(): void {
     Row() {
       Image($r('sys.media.ohos_ic_public_edit')).width(20).height(20)
       Text('Custom Component').fontSize(12).fontColor(Color.Red)
@@ -44,17 +66,32 @@ struct TreeViewV2Demo {
   }
 
   testBoundaryCase(caseType: string): void {
-    switch(caseType) {
+    switch (caseType) {
       case 'emptyTitle':
-        this.treeControllerV2.addNode({ parentNodeId: -1, currentNodeId: 200, primaryTitle: '', isFolder: false });
+        this.treeControllerV2.addNode({
+          parentNodeId: -1,
+          currentNodeId: 200,
+          primaryTitle: '',
+          isFolder: false
+        });
         this.testMessage = 'Added node with empty title';
         break;
       case 'longTitle':
-        this.treeControllerV2.addNode({ parentNodeId: -1, currentNodeId: 201, primaryTitle: '超长标题测试字符串超过一百字符测试边界值显示效果验证', isFolder: false });
+        this.treeControllerV2.addNode({
+          parentNodeId: -1,
+          currentNodeId: 201,
+          primaryTitle: '超长标题测试字符串超过一百字符测试边界值显示效果验证',
+          isFolder: false
+        });
         this.testMessage = 'Added node with long title';
         break;
       case 'invalidParent':
-        this.treeControllerV2.addNode({ parentNodeId: 999, currentNodeId: 202, primaryTitle: 'Invalid Parent', isFolder: false });
+        this.treeControllerV2.addNode({
+          parentNodeId: 999,
+          currentNodeId: 202,
+          primaryTitle: 'Invalid Parent',
+          isFolder: false
+        });
         this.testMessage = 'Added node with invalid parent ID';
         break;
     }
@@ -63,44 +100,54 @@ struct TreeViewV2Demo {
   aboutToAppear(): void {
     this.treeListenerV2.onNodeClick((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onNodeModify((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onNodeMove((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
       console.info(`Node moved to index: ${callbackParam.childIndex}`);
     })
     this.treeListenerV2.onceNodeClick((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onceNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onceNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onceNodeModify((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListenerV2.onceNodeMove((callbackParam: CallbackParamV2) => {
       this.clickNodeId = callbackParam.currentNodeId;
-      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
       console.info(`Node moved to index: ${callbackParam.childIndex}`);
     })
 
@@ -109,7 +156,7 @@ struct TreeViewV2Demo {
     let editResource: Resource = $r('sys.media.ohos_ic_public_edit');
 
     let nodeParam: NodeParamV2 = {
-      parentNodeId:-1,
+      parentNodeId: -1,
       currentNodeId: 1,
       isFolder: true,
       icon: normalResource,
@@ -121,36 +168,115 @@ struct TreeViewV2Demo {
 
     this.treeControllerV2
       .addNode(nodeParam)
-      .addNode({parentNodeId:1, currentNodeId: 2, isFolder: false, primaryTitle: '项目1_1' })
-      .addNode({ parentNodeId:-1, currentNodeId: 7, isFolder: true, primaryTitle: 'Folder 1' })
-      .addNode({ parentNodeId:7, currentNodeId: 71, isFolder: false, primaryTitle: 'File 2' })
-      .addNode({ parentNodeId:-1, currentNodeId: 23, isFolder: true,
-        icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: '目录3' })
-      .addNode({ parentNodeId:-1, currentNodeId: 24, isFolder: false, primaryTitle: 'File 1' })
-      .addNode({ parentNodeId:-1, currentNodeId: 31, isFolder: true,
-        icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: '目录5', secondaryTitle: '0' })
-      .addNode({ parentNodeId:-1, currentNodeId: 32, isFolder: true,
-        icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: '目录6', secondaryTitle: '0' })
-      .addNode({ parentNodeId:32, currentNodeId: 35, isFolder: true,
-        icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: '目录6-1', secondaryTitle: '0' })
-      .addNode({ parentNodeId:-1, currentNodeId: 33, isFolder: true,
-        icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: '目录7', secondaryTitle: '0' })
-      .addNode({ parentNodeId:33, currentNodeId: 34, isFolder: false, primaryTitle: '项目8' })
-      .addNode({ parentNodeId:-1, currentNodeId: 36, isFolder: false, primaryTitle: '项目9' })
-      .addNode({ parentNodeId: -1, currentNodeId: 100, isFolder: true,
+      .addNode({
+        parentNodeId: 1,
+        currentNodeId: 2,
+        isFolder: false,
+        primaryTitle: '项目1_1'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 7,
+        isFolder: true,
+        primaryTitle: 'Folder 1'
+      })
+      .addNode({
+        parentNodeId: 7,
+        currentNodeId: 71,
+        isFolder: false,
+        primaryTitle: 'File 2'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 23,
+        isFolder: true,
+        icon: normalResource,
+        selectedIcon: selectedResource,
+        editIcon: editResource,
+        primaryTitle: '目录3'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 24,
+        isFolder: false,
+        primaryTitle: 'File 1'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 31,
+        isFolder: true,
+        icon: normalResource,
+        selectedIcon: selectedResource,
+        editIcon: editResource,
+        primaryTitle: '目录5',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 32,
+        isFolder: true,
+        icon: normalResource,
+        selectedIcon: selectedResource,
+        editIcon: editResource,
+        primaryTitle: '目录6',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: 32,
+        currentNodeId: 35,
+        isFolder: true,
+        icon: normalResource,
+        selectedIcon: selectedResource,
+        editIcon: editResource,
+        primaryTitle: '目录6-1',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 33,
+        isFolder: true,
+        icon: normalResource,
+        selectedIcon: selectedResource,
+        editIcon: editResource,
+        primaryTitle: '目录7',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: 33,
+        currentNodeId: 34,
+        isFolder: false,
+        primaryTitle: '项目8'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 36,
+        isFolder: false,
+        primaryTitle: '项目9'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 100,
+        isFolder: true,
         symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.folder')),
         symbolSelectedIconStyle: new SymbolGlyphModifier($r('sys.symbol.checkmark_circle')),
         symbolEditIconStyle: new SymbolGlyphModifier($r('sys.symbol.house_circle')),
-        primaryTitle: 'Symbol Folder', secondaryTitle: '0' })
-      .addNode({ parentNodeId: 100, currentNodeId: 101, isFolder: false,
-        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')), primaryTitle: 'Symbol File' })
-      .addNode({ parentNodeId: -1, currentNodeId: 102, isFolder: false,
-        primaryTitle: 'Container Node', container: this.customContainer })
+        primaryTitle: 'Symbol Folder',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: 100,
+        currentNodeId: 101,
+        isFolder: false,
+        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')),
+        primaryTitle: 'Symbol File'
+      })
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 102,
+        isFolder: false,
+        primaryTitle: 'Container Node',
+        container: this.customContainer
+      })
       .buildDone();
 
     this.treeControllerV2.refreshNode(-1, '父节点', '子节点');
