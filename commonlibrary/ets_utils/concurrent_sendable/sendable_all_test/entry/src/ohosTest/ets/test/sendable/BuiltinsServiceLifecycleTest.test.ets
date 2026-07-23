@@ -17,14 +17,8 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { ServiceState } from './SendableTestEnums'
 
-const enum ServiceState {
-  CREATED = 0,
-  INITIALIZED = 1,
-  RUNNING = 2,
-  STOPPED = 3,
-  DESTROYED = 4
-}
 
 @Sendable
 class LifecycleManagedService {

@@ -16,13 +16,8 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import Utils from '../utils'
+import { RequestType } from './SendableTestEnums'
 
-const enum RequestType {
-  GET = 0,
-  POST = 1,
-  PUT = 2,
-  DELETE = 3
-}
 
 @Sendable
 class RequestCounter {
@@ -108,24 +103,28 @@ export default function BuiltinsSharedCounterRequestTest(): void {
     beforeEach((): void => {
       counter = new RequestCounter()
     })
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.GET)).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.POST, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.POST)).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, false)
       expect(counter.getFailed()).assertEqual(1)
       expect(counter.getSuccess()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
@@ -144,6 +143,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getSuccess()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterRequest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
@@ -163,6 +163,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getTotal()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterRequest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 100; i++) {
@@ -177,6 +178,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getSuccess()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const threshold: number = 10
       for (let i = 0; i < threshold; i++) {
@@ -185,6 +187,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.checkThreshold(threshold)).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const threshold: number = 100
       for (let i = 0; i < 10; i++) {
@@ -193,6 +196,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.checkThreshold(threshold)).assertFalse()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterRequest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 30; i++) {
@@ -214,6 +218,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(success + failed).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)
@@ -222,6 +227,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getByType(RequestType.POST)).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterRequest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)

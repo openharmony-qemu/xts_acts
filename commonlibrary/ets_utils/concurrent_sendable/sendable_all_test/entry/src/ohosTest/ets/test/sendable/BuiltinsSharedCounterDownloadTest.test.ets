@@ -104,12 +104,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
     beforeEach((): void => {
       progress = new DownloadProgress(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterDownload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       expect(progress.getChunkProgress(0)).assertEqual(0)
       expect(await progress.getTotalProgress()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterDownload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       await progress.updateChunkProgress(0, 50)
@@ -117,6 +119,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterDownload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       await progress.updateChunkProgress(0, 100)
@@ -125,6 +128,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterDownload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(5)
       const tasks: taskpool.Task[] = []
@@ -143,6 +147,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getTotalProgress()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterDownload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(10)
       for (let i = 0; i < 10; i++) {
@@ -152,6 +157,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterDownload0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(3)
       const task0 = new taskpool.Task(downloadChunk, 0)
@@ -170,6 +176,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getCompletedChunks()).assertLargerOrEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterDownload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(3)
       const task = new taskpool.Task(downloadChunk, 0)
@@ -178,6 +185,7 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterDownload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(2)
       await progress.updateChunkProgress(0, 100)

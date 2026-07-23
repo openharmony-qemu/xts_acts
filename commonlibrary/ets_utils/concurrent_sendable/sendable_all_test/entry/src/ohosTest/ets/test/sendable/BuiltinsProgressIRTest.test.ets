@@ -124,6 +124,7 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsProgressIRTest(): void {
   describe('BuiltinsProgressIRTest', () => {
+    /** @tc.level  LEVEL0 */
     it('testProgressIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -131,6 +132,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getAccessCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testProgressIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -139,6 +141,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getProgress()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testProgressIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -153,6 +156,7 @@ export default function BuiltinsProgressIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL0 */
     it('testProgressIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.updateFields()
@@ -161,6 +165,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testProgressIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -173,6 +178,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(15)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testProgressIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker1: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       const tracker2: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
@@ -184,6 +190,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker2.getProgress()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testProgressIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -194,6 +201,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testProgressIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(50)
@@ -204,6 +212,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testProgressIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -216,6 +225,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(30)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testProgressIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)

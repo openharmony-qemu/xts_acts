@@ -123,11 +123,13 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
     beforeEach((): void => {
       collector = new TimeoutResultCollector(new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       await collector.markCompleted(1, 'result_1')
@@ -135,6 +137,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.markTimeout(1)
@@ -142,6 +145,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTimeoutResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       const beforeTimeout: number = Date.now()
@@ -155,6 +159,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'quick_task')
       const task = new taskpool.Task(quickTask, 1)
@@ -165,17 +170,24 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getCompletedResult(1)).assertEqual('result_1')
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTimeoutResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       const task = new taskpool.Task(quickTask, 1)
+      let timeoutId: number = -1
       const timeoutPromise: Promise<string> = new Promise<string>((resolve: Function): void => {
-        setTimeout((): void => resolve('timeout'), 5000)
+        timeoutId = setTimeout((): void => resolve('timeout'), 5000)
       })
       const taskPromise: Promise<Object> = taskpool.execute(task)
-      const raceResult: string | Object = await Promise.race([taskPromise, timeoutPromise])
-      expect(raceResult).assertEqual('result_1')
+      try {
+        const raceResult: string | Object = await Promise.race([taskPromise, timeoutPromise])
+        expect(raceResult).assertEqual('result_1')
+      } finally {
+        clearTimeout(timeoutId)
+      }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTimeoutResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         collector.addPendingTask(i, `task_${i}`)
@@ -197,6 +209,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getTimeoutCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTimeoutResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.addPendingTask(2, 'task_2')
@@ -206,6 +219,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(timeoutIds.length).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTimeoutResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.addPendingTask(2, 'task_2')
@@ -215,6 +229,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(completedIds.length).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTimeoutResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.markTimeout(1)
@@ -223,6 +238,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getCompletedCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
@@ -230,6 +246,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTimeoutResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
@@ -237,6 +254,7 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTimeoutResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         collector.addPendingTask(i, `task_${i}`)

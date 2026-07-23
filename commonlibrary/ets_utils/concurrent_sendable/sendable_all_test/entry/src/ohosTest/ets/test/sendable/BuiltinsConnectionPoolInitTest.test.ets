@@ -128,18 +128,21 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       await pool.shutdown()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionPoolInit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       expect(await pool.getTotalCount()).assertEqual(5)
       expect(await pool.getActiveCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionPoolInit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       const conn: SendableConnection | null = await pool.getConnection()
       expect(await pool.getActiveCount()).assertEqual(4)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionPoolInit0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       const conn: SendableConnection | null = await pool.getConnection()
@@ -147,17 +150,20 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(await pool.getActiveCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionPoolInit0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(1)
       expect(await pool.getMaxPoolSize()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionPoolInit0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(0)
       expect(await pool.getTotalCount()).assertEqual(0)
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionPoolInit0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn1: SendableConnection | null = await pool.getConnection()
@@ -166,6 +172,7 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionPoolInit0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: SendableConnection | null = await pool.getConnection()
@@ -174,12 +181,14 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(conn3).assertEqual(null)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionPoolInit0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: SendableConnection | null = await pool.getConnection()
       expect((conn as SendableConnection).id_ >= 0).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionPoolInit0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(5)
       await pool.shutdown()
@@ -187,6 +196,7 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionPoolInit1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.initialize(5)

@@ -17,15 +17,7 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
-
-const enum ApprovalState {
-  DRAFT = 0,
-  PENDING = 1,
-  APPROVING = 2,
-  APPROVED = 3,
-  REJECTED = 4,
-  WITHDRAWN = 5
-}
+import { ApprovalState } from './SendableTestEnums'
 
 @Sendable
 class ApprovalTransitionRecord {

@@ -93,11 +93,13 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
     beforeEach((): void => {
       queue = new TaskDispatchQueue(new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testTaskDispatchQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(1)
       expect(await queue.getPendingSize()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTaskDispatchQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(1)
       const taskId: number | undefined = await queue.dequeue()
@@ -105,11 +107,13 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testTaskDispatchQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.isPendingEmpty()).assertTrue()
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskDispatchQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -117,6 +121,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskDispatchQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 50; i++) {
         await queue.enqueue(i)
@@ -124,6 +129,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskDispatchQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -135,6 +141,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.isPendingEmpty()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskDispatchQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
@@ -151,6 +158,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskDispatchQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -174,6 +182,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskDispatchQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const producerTasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -199,6 +208,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskDispatchQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterations: number = 100
       const enqueuePromises: Promise<void>[] = []
@@ -216,6 +226,7 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskDispatchQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await queue.enqueue(1)
       await queue.enqueue(2)

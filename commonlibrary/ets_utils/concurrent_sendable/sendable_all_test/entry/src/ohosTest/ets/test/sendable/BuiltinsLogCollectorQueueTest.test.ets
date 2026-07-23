@@ -18,13 +18,8 @@ import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import { LogEntry } from '../../../workers/sendable'
 import Utils from '../utils'
+import { LogLevel } from './SendableTestEnums'
 
-const enum LogLevel {
-  DEBUG = 0,
-  INFO = 1,
-  WARN = 2,
-  ERROR = 3
-}
 
 @Sendable
 class LogCollectorQueue {
@@ -109,12 +104,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
     beforeEach((): void => {
       logQueue = new LogCollectorQueue(new collections.Array<LogEntry>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
       expect(success).assertTrue()
       expect(await logQueue.size()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testLogCollectorQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await logQueue.enqueue(LogLevel.DEBUG, 'debug log', Date.now())
       await logQueue.enqueue(LogLevel.INFO, 'info log', Date.now())
@@ -123,6 +120,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(4)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testLogCollectorQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -132,6 +130,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testLogCollectorQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 100; i++) {
@@ -149,6 +148,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testLogCollectorQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
@@ -167,6 +167,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalEnqueued()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testLogCollectorQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       logQueue.capacity_ = 50
       for (let i = 0; i < 50; i++) {
@@ -177,6 +178,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertFalse()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testLogCollectorQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       logQueue.capacity_ = 10
       for (let i = 0; i < 10; i++) {
@@ -188,6 +190,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testLogCollectorQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -197,6 +200,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalDequeued()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testLogCollectorQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -206,6 +210,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.isEmpty()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testLogCollectorQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 50; i++) {

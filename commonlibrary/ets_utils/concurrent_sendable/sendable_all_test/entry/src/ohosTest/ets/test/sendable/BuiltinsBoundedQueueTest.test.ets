@@ -94,17 +94,20 @@ export default function BuiltinsBoundedQueueTest(): void {
     beforeEach((): void => {
       queue = new BoundedQueue(10, new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testBoundedQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.size()).assertEqual(0)
       expect(await queue.isEmpty()).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testBoundedQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await queue.offer(1)
       expect(success).assertTrue()
       expect(await queue.size()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testBoundedQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
@@ -114,6 +117,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(success).assertFalse()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testBoundedQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.offer(1)
       await queue.offer(2)
@@ -123,11 +127,13 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(item2).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testBoundedQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const item: number | undefined = await queue.poll()
       expect(item === undefined).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testBoundedQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await queue.offer(1)
       await queue.offer(2)
@@ -136,6 +142,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testBoundedQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 20; i++) {
@@ -152,6 +159,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testBoundedQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
@@ -171,6 +179,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.isEmpty()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testBoundedQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -187,6 +196,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testBoundedQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
@@ -197,6 +207,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testBoundedQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const smallQueue: BoundedQueue = new BoundedQueue(5, new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 5; i++) {
@@ -208,6 +219,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(overflow).assertFalse()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testBoundedQueue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)

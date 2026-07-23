@@ -115,6 +115,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       await progress.reset()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testMultiStageProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -125,6 +126,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCurrentStage()).assertEqual('init')
     })
 
+    /** @tc.level  LEVEL0 */
     it('testMultiStageProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -134,6 +136,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testMultiStageProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -144,6 +147,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCompletedStages()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testMultiStageProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -157,6 +161,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -168,6 +173,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -177,6 +183,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('init')).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -186,6 +193,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('unknown')).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiStageProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -201,6 +209,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.isAllCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -213,6 +222,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCompletedStages()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -223,6 +233,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(65)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
@@ -231,6 +242,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('init')).assertEqual(150)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testMultiStageProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const emptyStages: collections.Array<string> = new collections.Array<string>()
       await progress.setStages(emptyStages)

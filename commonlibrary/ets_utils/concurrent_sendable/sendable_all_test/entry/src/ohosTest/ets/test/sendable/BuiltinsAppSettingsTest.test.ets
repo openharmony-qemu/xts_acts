@@ -16,6 +16,7 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
+import { SettingsNotification } from './SendableTestData'
 
 @Sendable
 class AppSettingsManager {
@@ -143,14 +144,14 @@ async function checkFeatureFlagTask(manager: AppSettingsManager, flagName: strin
 
 @Concurrent
 function notifySettingsChangeTask(): void {
-  taskpool.Task.sendData({ type: 'settings_changed', key: 'updated_key' })
+  taskpool.Task.sendData(new SettingsNotification('settings_changed', 'updated_key'))
 }
 
 @Concurrent
 function multiNotifySettingsTask(): void {
-  taskpool.Task.sendData({ type: 'change1', key: 'key1' })
-  taskpool.Task.sendData({ type: 'change2', key: 'key2' })
-  taskpool.Task.sendData({ type: 'change3', key: 'key3' })
+  taskpool.Task.sendData(new SettingsNotification('change1', 'key1'))
+  taskpool.Task.sendData(new SettingsNotification('change2', 'key2'))
+  taskpool.Task.sendData(new SettingsNotification('change3', 'key3'))
 }
 
 @Concurrent
@@ -395,8 +396,11 @@ export default function BuiltinsAppSettingsTest(): void {
       const task: taskpool.Task = new taskpool.Task(notifySettingsChangeTask)
       const receivePromise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
         task.onReceiveData((data: Object): void => {
-          const d: Record<string, Object> = data as Record<string, Object>
-          resolve(d['key'] as string)
+          if (data instanceof SettingsNotification) {
+            resolve(data.key)
+          } else {
+            resolve('')
+          }
         })
       })
       await taskpool.execute(task)
@@ -413,26 +417,39 @@ export default function BuiltinsAppSettingsTest(): void {
      * @tc.level  LEVEL1
      */
     it('testAppSettings1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const notifications: Record<string, Object>[] = []
+      const notifications: SettingsNotification[] = []
+      let invalidNotification: boolean = false
       const task: taskpool.Task = new taskpool.Task(multiNotifySettingsTask)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
         task.onReceiveData((data: Object): void => {
-          notifications.push(data as Record<string, Object>)
+          if (data instanceof SettingsNotification) {
+            notifications.push(data)
+          } else {
+            invalidNotification = true
+            resolve()
+            return
+          }
           if (notifications.length >= 3) {
             resolve()
           }
         })
       })
-      const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
-        setTimeout((): void => {
-          reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
-        }, 5000)
-      })
-      await taskpool.execute(task)
-      await Promise.race([receivePromise, timeoutPromise])
+      let timeoutId: number = -1
+      try {
+        await taskpool.execute(task)
+        const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
+          timeoutId = setTimeout((): void => {
+            reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
+          }, 5000)
+        })
+        await Promise.race([receivePromise, timeoutPromise])
+      } finally {
+        clearTimeout(timeoutId)
+      }
+      expect(invalidNotification).assertFalse()
       expect(notifications.length).assertEqual(3)
-      expect(notifications[0]['key'] as string).assertEqual('key1')
-      expect(notifications[2]['key'] as string).assertEqual('key3')
+      expect(notifications[0].key).assertEqual('key1')
+      expect(notifications[2].key).assertEqual('key3')
     })
 
     /**

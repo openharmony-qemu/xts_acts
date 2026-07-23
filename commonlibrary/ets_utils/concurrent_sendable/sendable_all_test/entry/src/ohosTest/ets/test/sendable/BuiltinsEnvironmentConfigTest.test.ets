@@ -17,36 +17,32 @@ import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/h
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { Environment } from './SendableTestEnums'
 
-const enum Environment {
-  DEVELOPMENT = 'dev',
-  TESTING = 'test',
-  PRODUCTION = 'prod'
-}
 
 @Sendable
 class EnvironmentConfigManager {
-  public currentEnv_: Environment = Environment.DEVELOPMENT
-  public envConfigs_: collections.Map<Environment, collections.Map<string, string>>
+  public currentEnv_: string = Environment.DEVELOPMENT
+  public envConfigs_: collections.Map<string, collections.Map<string, string>>
   public lock_: ArkTSUtils.locks.AsyncLock
 
 
-  constructor(lock_: ArkTSUtils.locks.AsyncLock, envConfigs_: collections.Map<Environment, collections.Map<string, string>>) {
+  constructor(lock_: ArkTSUtils.locks.AsyncLock, envConfigs_: collections.Map<string, collections.Map<string, string>>) {
     this.envConfigs_ = envConfigs_
     this.lock_ = lock_
   }
 
-  async switchEnvironment(env: Environment): Promise<void> {
+  async switchEnvironment(env: string): Promise<void> {
     await this.lock_.lockAsync((): void => {
       this.currentEnv_ = env
     })
   }
 
-  async getCurrentEnvironment(): Promise<Environment> {
-    return await this.lock_.lockAsync((): Environment => this.currentEnv_)
+  async getCurrentEnvironment(): Promise<string> {
+    return await this.lock_.lockAsync((): string => this.currentEnv_)
   }
 
-  async setEnvConfig(env: Environment, key: string, value: string): Promise<void> {
+  async setEnvConfig(env: string, key: string, value: string): Promise<void> {
     await this.lock_.lockAsync((): void => {
       const configMap: collections.Map<string, string> | undefined = this.envConfigs_.get(env)
       if (configMap) {
@@ -55,7 +51,7 @@ class EnvironmentConfigManager {
     })
   }
 
-  async getEnvConfig(env: Environment, key: string): Promise<string | undefined> {
+  async getEnvConfig(env: string, key: string): Promise<string | undefined> {
     return await this.lock_.lockAsync((): string | undefined => {
       const configMap: collections.Map<string, string> | undefined = this.envConfigs_.get(env)
       if (configMap) {
@@ -75,7 +71,7 @@ class EnvironmentConfigManager {
     })
   }
 
-  async loadEnvConfigs(env: Environment, keys: string[], values: string[]): Promise<void> {
+  async loadEnvConfigs(env: string, keys: string[], values: string[]): Promise<void> {
     await this.lock_.lockAsync((): void => {
       const configMap: collections.Map<string, string> | undefined = this.envConfigs_.get(env)
       if (configMap) {
@@ -86,7 +82,7 @@ class EnvironmentConfigManager {
     })
   }
 
-  async getEnvConfigSize(env: Environment): Promise<number> {
+  async getEnvConfigSize(env: string): Promise<number> {
     return await this.lock_.lockAsync((): number => {
       const configMap: collections.Map<string, string> | undefined = this.envConfigs_.get(env)
       if (configMap) {
@@ -116,7 +112,7 @@ function readEnvConfigTask(manager: EnvironmentConfigManager, key: string): stri
 }
 
 @Concurrent
-function getCurrentEnvTask(manager: EnvironmentConfigManager): Environment {
+function getCurrentEnvTask(manager: EnvironmentConfigManager): string {
   return manager.currentEnv_
 }
 
@@ -125,7 +121,7 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     let envManager: EnvironmentConfigManager
 
     beforeEach((): void => {
-      const envConfigs: collections.Map<Environment, collections.Map<string, string>> = new collections.Map<Environment, collections.Map<string, string>>()
+      const envConfigs: collections.Map<string, collections.Map<string, string>> = new collections.Map<string, collections.Map<string, string>>()
       envConfigs.set(Environment.DEVELOPMENT, new collections.Map<string, string>())
       envConfigs.set(Environment.TESTING, new collections.Map<string, string>())
       envConfigs.set(Environment.PRODUCTION, new collections.Map<string, string>())
@@ -333,7 +329,7 @@ export default function BuiltinsEnvironmentConfigTest(): void {
       const results: Object[] = await Promise.all(promises)
       expect(results.length).assertEqual(5)
       for (let i = 0; i < results.length; i++) {
-        expect(results[i] as Environment).assertEqual(Environment.DEVELOPMENT)
+        expect(results[i] as string).assertEqual(Environment.DEVELOPMENT)
       }
     })
 

@@ -17,14 +17,8 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { DeviceState } from './SendableTestEnums'
 
-const enum DeviceState {
-  OFFLINE = 0,
-  ONLINE = 1,
-  BUSY = 2,
-  IDLE = 3,
-  ERROR = 4
-}
 
 @Sendable
 class DeviceTransitionRecord {
@@ -179,12 +173,14 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       await deviceSM.reset()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
       expect(await deviceSM.getDeviceId()).assertEqual('device_001')
       expect(await deviceSM.getHistoryCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await deviceSM.transition(DeviceState.ONLINE)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ONLINE)
@@ -192,6 +188,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getHistoryCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
@@ -199,6 +196,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.isOnline()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -206,6 +204,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.BUSY)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -214,6 +213,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
@@ -221,6 +221,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.isOnline()).assertFalse()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -228,6 +229,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ERROR)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.ERROR)
@@ -235,12 +237,14 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDeviceStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
       expect(await deviceSM.getHistoryCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDeviceStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -248,6 +252,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDeviceStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -265,6 +270,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
@@ -279,6 +285,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDeviceStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const notifications: string[] = []
       const task: taskpool.Task = new taskpool.Task(deviceOnlineNotifyTask, deviceSM)
@@ -294,6 +301,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(notifications[0]).assertEqual('online')
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDeviceStateMachine1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const deviceSM1: DeviceStateMachine = new DeviceStateMachine('device_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
       const deviceSM2: DeviceStateMachine = new DeviceStateMachine('device_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
@@ -310,6 +318,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       await deviceSM2.reset()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDeviceStateMachine1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const historyBefore: number = await deviceSM.getHistoryCount()
       expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()

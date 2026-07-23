@@ -123,11 +123,13 @@ export default function BuiltinsParallelComputeResultTest(): void {
     beforeEach((): void => {
       collector = new NumericResultCollector(new collections.Array<number>(), new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       expect(collector.getCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -135,6 +137,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getSum()).assertEqual(60)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -142,6 +145,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getAverage()).assertEqual(20)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
@@ -149,6 +153,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getMax()).assertEqual(15)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
@@ -156,6 +161,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getMin()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testParallelComputeResult0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
@@ -175,6 +181,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(4)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testParallelComputeResult0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
@@ -197,6 +204,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(shard1 !== undefined).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -208,6 +216,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(values[2]).assertEqual(30)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testParallelComputeResult0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
@@ -215,6 +224,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getShardResult('shard_1')).assertEqual(200)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testParallelComputeResult1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 10
@@ -239,6 +249,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testParallelComputeResult1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
@@ -247,6 +258,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getAverage()).assertEqual(200)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testParallelComputeResult1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {

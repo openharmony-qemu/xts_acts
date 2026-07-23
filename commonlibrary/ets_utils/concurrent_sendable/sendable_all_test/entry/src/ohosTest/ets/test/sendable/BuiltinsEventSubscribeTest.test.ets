@@ -131,23 +131,27 @@ export default function BuiltinsEventSubscribeTest(): void {
       await bus.reset()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
       expect(await bus.getSubscriberCount('click')).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
@@ -155,10 +159,12 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await bus.getSubscriberCount('unknown')).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventSubscribe0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('hover', 'handler_2')
@@ -166,11 +172,13 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('hover')).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventSubscribe0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testEventSubscribe0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void>[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -180,6 +188,7 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventSubscribe0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.subscribe('click', `handler_${i}`)
@@ -188,6 +197,7 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventSubscribe1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_1')

@@ -109,6 +109,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       await bus.reset()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -118,6 +119,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.subscribe('click', 'handler_1')
       const tasks: taskpool.Task[] = []
@@ -128,6 +130,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 10).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const subTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -142,6 +145,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 5).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const subTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -153,6 +157,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('hover')).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 20; i++) {
@@ -163,6 +168,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getQueueLength() >= 20).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -177,6 +183,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 20).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 50; i++) {
@@ -186,6 +193,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -197,6 +205,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('event_2') > 0).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -206,6 +215,7 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getQueueLength() >= 10).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testMultiThreadEvent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {

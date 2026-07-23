@@ -156,6 +156,7 @@ function computeResult(id: number): number {
 
 export default function BuiltinsResultCollectIRTest(): void {
   describe('BuiltinsResultCollectIRTest', (): void => {
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>())
       collector.total_ = 100
@@ -163,6 +164,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(stats[0]).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: LargeResultCollector = new LargeResultCollector(new collections.Map<number, string>())
       for (let i = 0; i < 1025; i++) {
@@ -171,6 +173,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(1025)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testResultCollectIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: IRConsistentCollector = new IRConsistentCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -188,6 +191,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.count_).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: StatsCollector = new StatsCollector()
       for (let i = 0; i < 50; i++) {
@@ -196,6 +200,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.getSuccessCount()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: ArrayResultCollector = new ArrayResultCollector(new collections.Array<number>())
       for (let i = 0; i < 100; i++) {
@@ -204,6 +209,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.length).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector1: SharedResultCollector = new SharedResultCollector()
       const collector2: SharedResultCollector = new SharedResultCollector()
@@ -212,6 +218,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector1.total_).assertEqual(collector2.total_)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testResultCollectIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: StableResultCollector = new StableResultCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -229,6 +236,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(256)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1024; i++) {
@@ -237,6 +245,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
@@ -247,6 +256,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.get('result_1024')).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testResultCollectIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: CrossThreadCollector = new CrossThreadCollector()
       const tasks: taskpool.Task[] = []
@@ -263,6 +273,7 @@ export default function BuiltinsResultCollectIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testResultCollectIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: TimestampCollector = new TimestampCollector()
       const start: number = collector.getStartTime()

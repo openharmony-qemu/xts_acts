@@ -122,18 +122,21 @@ export default function BuiltinsEventQueueTest(): void {
       await bus.reset()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = await bus.enqueue('click', 'data', 1)
       expect(result).assertTrue()
       expect(await bus.getQueueLength()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.enqueue('click', 'data_1', 1)
       await bus.enqueue('click', 'data_2', 2)
       expect(await bus.getQueueLength()).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.enqueue('click', 'data', 1)
       const item: EventQueueItem | null = await bus.dequeue()
@@ -141,17 +144,20 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getQueueLength()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const item: EventQueueItem | null = await bus.dequeue()
       expect(item === null).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testEventQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.enqueue('click', 'data', 1)
       const item: EventQueueItem | null = await bus.peek()
       expect(await bus.getQueueLength()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.setMaxSize(2)
       const r1: boolean = await bus.enqueue('click', 'data_1', 1)
@@ -163,6 +169,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getDroppedCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testEventQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -172,6 +179,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getQueueLength()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testEventQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.setMaxSize(5)
       const tasks: taskpool.Task[] = []
@@ -183,6 +191,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getDroppedCount() >= 5).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.enqueue('click', `data_${i}`, 1)
@@ -191,6 +200,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getQueueLength()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.enqueue('click', 'data_1', 1)
       await bus.enqueue('click', 'data_2', 2)
@@ -200,6 +210,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect((item2 as EventQueueItem).data_).assertEqual('data_2')
     })
 
+    /** @tc.level  LEVEL1 */
     it('testEventQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.enqueue('click', 'data', 1)
       await bus.reset()
@@ -207,6 +218,7 @@ export default function BuiltinsEventQueueTest(): void {
       expect(await bus.getDroppedCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testEventQueue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 20; i++) {
         await bus.enqueue('click', `data_${i}`, 1)

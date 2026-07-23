@@ -118,12 +118,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       await dp.reset()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testDataProcessProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       expect(await dp.getPercentage()).assertEqual(0)
       expect(await dp.getProcessedRows()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testDataProcessProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       const p: number = await dp.addProcessedRows(50)
@@ -131,6 +133,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getProcessedRows()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testDataProcessProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)
@@ -138,6 +141,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(150)
@@ -145,6 +149,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(80)
@@ -153,6 +158,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDataProcessProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(50)
       const tasks: taskpool.Task[] = []
@@ -164,6 +170,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testDataProcessProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
@@ -175,6 +182,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.isCompleted()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(50)
@@ -184,11 +192,13 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(0)
       expect(await dp.getPercentage()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(30)
@@ -197,6 +207,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL3 */
     it('testDataProcessProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
@@ -207,6 +218,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getProcessedRows()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testDataProcessProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)

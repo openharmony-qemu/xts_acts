@@ -1,15 +1,10 @@
 {
     "devices": {
-        "general": [
-            "default",
-            "tablet"
+        "default": [
+            "SystemCapability.Utils.Lang"
         ],
-        "custom": [
-            {
-                "xts": [
-                    "SystemCapability.Utils.Lang"
-                ]
-            }
+        "tablet": [
+            "SystemCapability.Utils.Lang"
         ]
     }
 }

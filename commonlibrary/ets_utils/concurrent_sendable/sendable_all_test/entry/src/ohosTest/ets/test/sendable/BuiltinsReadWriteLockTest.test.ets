@@ -96,12 +96,14 @@ export default function BuiltinsReadWriteLockTest(): void {
     beforeEach((): void => {
       resource = new ReadWriteResource(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
     })
+    /** @tc.level  LEVEL0 */
     it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(100)
       const value: number = await resource.read()
       expect(value).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testReadWriteLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
@@ -111,6 +113,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testReadWriteLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -121,6 +124,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(value >= 0 && value < 10).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testReadWriteLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(50)
       const promises: Promise<number>[] = []
@@ -133,6 +137,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testReadWriteLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await resource.write(100)
       const promises: Promise<number>[] = []
@@ -143,6 +148,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testReadWriteLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await resource.write(0)
       const readTasks: taskpool.Task[] = []
@@ -162,6 +168,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertLargerOrEqual(3)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testReadWriteLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let readCompleted: boolean = false
       const writePromise: Promise<void> = resource.write(200)
@@ -174,6 +181,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(readCompleted).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testReadWriteLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await resource.write(i * 10)
@@ -184,6 +192,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testReadWriteLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void | number>[] = []
       for (let i = 0; i < 20; i++) {

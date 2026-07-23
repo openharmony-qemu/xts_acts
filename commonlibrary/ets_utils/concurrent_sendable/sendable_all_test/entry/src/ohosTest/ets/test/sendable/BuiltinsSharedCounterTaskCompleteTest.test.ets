@@ -87,12 +87,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
     beforeEach((): void => {
       counter = new TaskCompletionCounter()
     })
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterTaskComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(counter.getCompleted()).assertEqual(0)
       expect(counter.getFailed()).assertEqual(0)
       expect(counter.getTotal()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterTaskComplete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.setTotal(1)
       const task = new taskpool.Task(taskGroupItem, counter)
@@ -100,6 +102,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(result as number).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterTaskComplete0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let caught: boolean = false
       counter.setTotal(1)
@@ -111,13 +114,13 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
         const err: Error = e as Error
         expect(err.message).assertContain('task failed')
       }
-      // execute may surface the throw, or only record failed_ before reject; accept either observed path.
       expect(caught || counter.getFailed() > 0).assertTrue()
       if (!caught) {
         expect(counter.getFailed()).assertLargerOrEqual(1)
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(3)
       const tasks: taskpool.Task[] = []
@@ -132,6 +135,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const tasks: taskpool.Task[] = []
@@ -146,6 +150,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(10)
       const tasks: taskpool.Task[] = []
@@ -160,6 +165,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(100)
       const tasks: taskpool.Task[] = []
@@ -174,6 +180,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const tasks: taskpool.Task[] = []
@@ -201,6 +208,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(failCount).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(1)
       const task = new taskpool.Task(sendDataCountTask, counter)
@@ -221,6 +229,7 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(counter.getCompleted()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterTaskComplete1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const group = new taskpool.TaskGroup()

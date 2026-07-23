@@ -195,8 +195,13 @@ export default function BuiltinsSharedModuleNestedTest(): void {
      */
     it('testSharedModuleNested0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-      taskpool.execute(task)
+      const executePromise: Promise<Object> = taskpool.execute(task)
       taskpool.cancel(task)
+      try {
+        await executePromise
+      } catch (e) {
+        expect(e instanceof Error).assertTrue()
+      }
 
       await Utils.sleep(200)
       expect(counter.getCount() >= 0).assertTrue()

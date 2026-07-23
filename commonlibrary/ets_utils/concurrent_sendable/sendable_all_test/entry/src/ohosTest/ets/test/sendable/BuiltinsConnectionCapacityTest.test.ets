@@ -145,11 +145,13 @@ export default function BuiltinsConnectionCapacityTest(): void {
       await pool.shutdown()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionCapacity0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       expect(await pool.getMaxPoolSize()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConnectionCapacity0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conns: CapacityConnection[] = []
@@ -165,6 +167,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: CapacityConnection | null = await pool.tryAcquire()
@@ -174,6 +177,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getRejectedCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: CapacityConnection | null = await pool.tryAcquire()
@@ -182,6 +186,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       const conn3: CapacityConnection | null = await pool.tryAcquire()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testConnectionCapacity0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await pool.initialize(3)
       const tasks: taskpool.Task[] = []
@@ -192,6 +197,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getTotalCount() <= 3).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(1)
       const conn1: CapacityConnection | null = await pool.tryAcquire()
@@ -199,12 +205,14 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(conn2).assertEqual(null)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(0)
       const conn: CapacityConnection | null = await pool.tryAcquire()
       expect(conn).assertEqual(null)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testConnectionCapacity0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await pool.initialize(5)
       const tasks: taskpool.Task[] = []
@@ -216,6 +224,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getRejectedCount() >= 15).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn1: CapacityConnection | null = await pool.tryAcquire()
@@ -227,6 +236,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: CapacityConnection | null = await pool.tryAcquire()
@@ -234,6 +244,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getTotalCount()).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConnectionCapacity1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       for (let i: number = 0; i < 3; i++) {
@@ -242,6 +253,7 @@ export default function BuiltinsConnectionCapacityTest(): void {
       expect(await pool.getRejectedCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testConnectionCapacity1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await pool.initialize(2)
       const tasks: taskpool.Task[] = []

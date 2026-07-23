@@ -137,6 +137,7 @@ export default function BuiltinsImageResultCollectTest(): void {
     beforeEach((): void => {
       collector = new ImageResultCollector(new collections.Array<string>(), new collections.Array<string>(), new collections.Map<number, string>(), new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'processed_image_1')
       expect(collector.getSuccessCount()).assertEqual(1)
@@ -144,6 +145,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(result).assertEqual('processed_image_1')
     })
 
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addFailedResult(1, 'processing_error')
       expect(collector.getFailedCount()).assertEqual(1)
@@ -151,12 +153,14 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(result).assertEqual('error:processing_error')
     })
 
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addThumbnailResult(1, 'thumbnail_1')
       const result: string | undefined = collector.getResultByImageId(1)
       expect(result).assertEqual('thumbnail_1')
     })
 
+    /** @tc.level  LEVEL2 */
     it('testImageResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -174,6 +178,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getSuccessCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'processed_image_1')
       await collector.addSuccessResult(2, 'processed_image_2')
@@ -183,12 +188,14 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getResultByImageId(3)).assertEqual('processed_image_3')
     })
 
+    /** @tc.level  LEVEL1 */
     it('testImageResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addSuccessResult(1, 'processed_image_1')
       const result: string | undefined = collector.getResultByImageId(999)
       expect(result === undefined).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testImageResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const successTasks: taskpool.Task[] = []
       const failTasks: taskpool.Task[] = []
@@ -216,6 +223,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getFailedCount()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 5; i++) {
         await collector.addSuccessResult(i, `processed_image_${i}`)
@@ -223,6 +231,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getSuccessCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testImageResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 3; i++) {
         await collector.addFailedResult(i, 'timeout_error')
@@ -230,6 +239,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getFailedCount()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testImageResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addProcessingTime(10)
       await collector.addProcessingTime(20)
@@ -237,6 +247,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getTotalProcessingTime()).assertEqual(60)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testImageResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -254,6 +265,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(collector.getTotalProcessingTime()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testImageResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addSuccessResult(1, 'ok_1')
       await collector.addSuccessResult(2, 'ok_2')
@@ -265,6 +277,7 @@ export default function BuiltinsImageResultCollectTest(): void {
       expect(failedIds.length).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testImageResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const successTasks: taskpool.Task[] = []
       const failTasks: taskpool.Task[] = []

@@ -147,6 +147,7 @@ function produceIRTask(v: number): number {
 
 export default function BuiltinsQueueIRTest(): void {
   describe('BuiltinsQueueIRTest', (): void => {
+    /** @tc.level  LEVEL1 */
     it('testQueueIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1024; i++) {
@@ -155,6 +156,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
@@ -168,6 +170,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(lastItem).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pcQueue: ProducerConsumerIRQueue = new ProducerConsumerIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
@@ -179,6 +182,7 @@ export default function BuiltinsQueueIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -200,6 +204,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let cycle = 0; cycle < 10; cycle++) {
@@ -213,6 +218,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertEqual(500)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: ElementIRQueue = new ElementIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.lock_.lockAsync((): void => {
@@ -224,6 +230,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getElement(99)).assertEqual(99)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.enqueue(1)
@@ -233,6 +240,7 @@ export default function BuiltinsQueueIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: CapacityIRQueue = new CapacityIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       expect(await queue.getCapacity()).assertEqual(1024)
@@ -244,6 +252,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(queue.items_.length).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue1: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       const queue2: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
@@ -253,6 +262,7 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue2.getSize()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testQueueIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.lock_.lockAsync((): void => {

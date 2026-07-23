@@ -24,9 +24,12 @@ const API_CACHE_LOCK_THROW_MSG: string = 'Test exception in ApiCacheManager lock
 
 @Sendable
 class ApiCacheManager {
-  public cache_: ArkTSUtils.SendableLruCache<string, string>
-  public timestamps_: collections.Map<string, number>
-  public lock_: ArkTSUtils.locks.AsyncLock
+  private cache_: ArkTSUtils.SendableLruCache<string, string>
+  private timestamps_: collections.Map<string, number>
+  private lock_: ArkTSUtils.locks.AsyncLock
+  private ttlMs_: number = 5000
+  private hitCount_: number = 0
+  private missCount_: number = 0
 
   constructor(timestamps_: collections.Map<string, number>, cache_: ArkTSUtils.SendableLruCache<string, string>, lock_: ArkTSUtils.locks.AsyncLock) {
     this.cache_ = cache_
@@ -34,14 +37,26 @@ class ApiCacheManager {
     this.lock_ = lock_
   }
 
-  public ttlMs_: number = 5000
-  public hitCount_: number = 0
-  public missCount_: number = 0
-
   private checkKey(key: string): void {
     if (key.length === 0) {
       throw new Error('ApiCacheManager key is empty')
     }
+  }
+
+  setTtlForTest(ttlMs: number): void {
+    this.ttlMs_ = ttlMs
+  }
+
+  async setTimestampForTest(key: string, timestamp: number): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      this.timestamps_.set(key, timestamp)
+    })
+  }
+
+  async throwInsideLockForTest(): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      throw new Error('Test exception in ApiCacheManager lock')
+    })
   }
 
   async set(key: string, value: string): Promise<void> {
@@ -218,7 +233,7 @@ export default function BuiltinsApiResponseCacheTest(): void {
       const shortTtlTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const shortTtlCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       const shortTtlCache: ApiCacheManager = new ApiCacheManager(shortTtlTimestamps, shortTtlCacheArg, new ArkTSUtils.locks.AsyncLock())
-      shortTtlCache.ttlMs_ = 100
+      shortTtlCache.setTtlForTest(100)
       await shortTtlCache.set('expiring_key', 'expiring_value')
       expect(await shortTtlCache.has('expiring_key')).assertTrue()
       await Utils.sleep(150)
@@ -453,9 +468,7 @@ export default function BuiltinsApiResponseCacheTest(): void {
       await cache.set('before_throw', 'v1')
       let caught: boolean = false
       try {
-        await cache.lock_.lockAsync((): void => {
-          throw new Error('Test exception in ApiCacheManager lock')
-        })
+        await cache.throwInsideLockForTest()
         expect().assertFail()
       } catch (e) {
         caught = true
@@ -554,17 +567,19 @@ export default function BuiltinsApiResponseCacheTest(): void {
      */
     it('testApiResponseCache2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let caught: boolean = false
+      let err: BusinessError | null = null
       try {
+        // Must throw for capacity 0; do not put assertFail inside try (it would be caught too).
         new ArkTSUtils.SendableLruCache<string, string>(0)
-        expect().assertFail()
       } catch (e) {
         caught = true
-        const err: BusinessError = e as BusinessError
+        err = e as BusinessError
         expect(err instanceof Error).assertTrue()
         expect(err.code).assertEqual(401)
         expect(err.message).assertContain('Parameter error')
       }
       expect(caught).assertTrue()
+      expect(err !== null).assertTrue()
     })
 
     /**
@@ -579,12 +594,11 @@ export default function BuiltinsApiResponseCacheTest(): void {
       const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      ttlCache.ttlMs_ = 1000
+      const ttlMs: number = 1000
+      ttlCache.setTtlForTest(ttlMs)
       await ttlCache.set('exact_ttl', 'still_valid')
-      await ttlCache.lock_.lockAsync((): void => {
-        // Keep a stable margin under TTL so wall-clock drift cannot cross the '>' boundary.
-        ttlCache.timestamps_.set('exact_ttl', Date.now() - ttlCache.ttlMs_ + 200)
-      })
+      // Keep a stable margin under TTL so wall-clock drift cannot cross the '>' boundary.
+      await ttlCache.setTimestampForTest('exact_ttl', Date.now() - ttlMs + 200)
       expect(await ttlCache.isExpired('exact_ttl')).assertFalse()
       expect(await ttlCache.get('exact_ttl')).assertEqual('still_valid')
     })
@@ -601,11 +615,10 @@ export default function BuiltinsApiResponseCacheTest(): void {
       const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      ttlCache.ttlMs_ = 1000
+      const ttlMs: number = 1000
+      ttlCache.setTtlForTest(ttlMs)
       await ttlCache.set('over_ttl', 'will_expire')
-      await ttlCache.lock_.lockAsync((): void => {
-        ttlCache.timestamps_.set('over_ttl', Date.now() - ttlCache.ttlMs_ - 1)
-      })
+      await ttlCache.setTimestampForTest('over_ttl', Date.now() - ttlMs - 1)
       expect(await ttlCache.isExpired('over_ttl')).assertTrue()
       const value: string | undefined = await ttlCache.get('over_ttl')
       expect(value === undefined).assertTrue()
@@ -623,7 +636,7 @@ export default function BuiltinsApiResponseCacheTest(): void {
       const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      ttlCache.ttlMs_ = 0
+      ttlCache.setTtlForTest(0)
       await ttlCache.set('ttl_zero', 'zero_ttl_value')
       await Utils.sleep(10)
       expect(await ttlCache.isExpired('ttl_zero')).assertTrue()

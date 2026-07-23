@@ -227,6 +227,7 @@ export default function BuiltinsConditionVariableTest(): void {
       waitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       cvManager = new ConditionVariableManager(new ArkTSUtils.locks.AsyncLock(), new collections.Array<WaitQueueItem>(), new ArkTSUtils.locks.ConditionVariable())
     })
+    /** @tc.level  LEVEL0 */
     it('testConditionVariable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const size: number = await buffer.size()
       expect(size).assertEqual(0)
@@ -242,6 +243,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(takeResult).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConditionVariable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await buffer.put(50)
       const takePromise: Promise<number> = buffer.take()
@@ -250,6 +252,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(sizeAfterTake).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConditionVariable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const target: number = 5
       let reached: boolean = false
@@ -265,6 +268,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(await waitCounter.getCount()).assertEqual(5)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testConditionVariable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let counter: number = 0
       const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
@@ -278,6 +282,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(counter).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConditionVariable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await buffer.put(1)
       await buffer.put(2)
@@ -292,6 +297,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(await buffer.size()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testConditionVariable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         await buffer.put(i * 10)
@@ -304,6 +310,7 @@ export default function BuiltinsConditionVariableTest(): void {
       expect(await buffer.getTakeCount()).assertLargerOrEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testConditionVariable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await waitCounter.increment()
       await waitCounter.increment()

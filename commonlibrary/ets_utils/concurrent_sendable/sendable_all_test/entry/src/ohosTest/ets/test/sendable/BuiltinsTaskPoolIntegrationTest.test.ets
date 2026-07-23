@@ -267,8 +267,13 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
      */
     it('testTaskPoolIntegration1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
-      taskpool.execute(task)
+      const executePromise: Promise<Object> = taskpool.execute(task)
       taskpool.cancel(task)
+      try {
+        await executePromise
+      } catch (e) {
+        expect(e instanceof Error).assertTrue()
+      }
 
       await Utils.sleep(200)
       expect(sharedData.getCounter() >= 0).assertTrue()

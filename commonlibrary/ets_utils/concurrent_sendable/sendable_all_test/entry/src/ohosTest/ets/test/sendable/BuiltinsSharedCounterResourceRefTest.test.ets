@@ -91,17 +91,20 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
     beforeEach((): void => {
       refCounter = new ResourceRefCounter('test_resource', new collections.Array<string>())
     })
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(refCounter.getRefCount()).assertEqual(0)
       expect(refCounter.isReferenced()).assertFalse()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const count: number = refCounter.acquire('holder_1')
       expect(count).assertEqual(1)
       expect(refCounter.isReferenced()).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       refCounter.acquire('holder_1')
       const count: number = refCounter.release('holder_1')
@@ -109,6 +112,7 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.canRelease()).assertTrue()
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       refCounter.acquire('holder_1')
       refCounter.acquire('holder_2')
@@ -116,6 +120,7 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.getRefCount()).assertEqual(3)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       refCounter.acquire('holder_1')
       refCounter.acquire('holder_2')
@@ -125,6 +130,7 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.canRelease()).assertTrue()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterResourceRef0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         refCounter.acquire(`holder_${i}`)
@@ -132,6 +138,7 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.getRefCount()).assertEqual(10)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterResourceRef0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         refCounter.acquire(`holder_${i}`)
@@ -148,6 +155,7 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.getRefCount()).assertLargerOrEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterResourceRef0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         refCounter.acquire(`holder_${i}`)
@@ -159,15 +167,18 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
       expect(refCounter.getRefCount()).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       refCounter.release('non_exist')
       expect(refCounter.getRefCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterResourceRef1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(refCounter.getResourceId()).assertEqual('test_resource')
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterResourceRef1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 15; i++) {
         refCounter.acquire(`holder_${i}`)

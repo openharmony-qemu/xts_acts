@@ -75,6 +75,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
     beforeEach((): void => {
       counter = new IRCounter(new collections.Map<string, number>())
     })
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.count_ = 10
       counter.threshold_ = 50
@@ -85,6 +86,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(props[2]).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 100; i++) {
         counter.increment()
@@ -92,6 +94,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter.getCount()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter1: IRCounter = new IRCounter(new collections.Map<string, number>())
       const counter2: IRCounter = new IRCounter(new collections.Map<string, number>())
@@ -101,6 +104,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter2.getCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.count_ = 100
       const tasks: taskpool.Task[] = []
@@ -117,6 +121,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 1025; i++) {
         counter.addMetric(`metric_${i}`, i)
@@ -126,6 +131,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter.getMetric('metric_1024')).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.count_ = 50
       for (let i = 0; i < 1025; i++) {
@@ -135,6 +141,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter.getMetric('m_1024')).assertEqual(1024)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.increment()
       expect(counter.getCount()).assertEqual(1)
@@ -142,6 +149,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter.getCount()).assertEqual(999)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 100; i++) {
@@ -155,6 +163,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(counter.getCount()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const start: number = Date.now()
       for (let i = 0; i < 1000; i++) {
@@ -165,6 +174,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       expect(end - start).assertLargerOrEqual(0)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testSharedCounterIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const props: number[] = counter.getIRProperties()
       expect(props.length).assertEqual(4)
@@ -173,6 +183,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 1025; i++) {
         counter.addMetric(`perf_${i}`, i)
@@ -183,6 +194,7 @@ export default function BuiltinsSharedCounterIRTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL2 */
     it('testSharedCounterIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.count_ = 1000
       const tasks: taskpool.Task[] = []

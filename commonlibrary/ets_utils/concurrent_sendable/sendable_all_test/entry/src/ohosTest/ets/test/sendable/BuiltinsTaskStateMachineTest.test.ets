@@ -17,14 +17,8 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { TaskState } from './SendableTestEnums'
 
-const enum TaskState {
-  PENDING = 0,
-  RUNNING = 1,
-  COMPLETED = 2,
-  FAILED = 3,
-  CANCELLED = 4
-}
 
 @Sendable
 class TaskTransitionRecord {
@@ -161,12 +155,14 @@ export default function BuiltinsTaskStateMachineTest(): void {
       await taskSM.reset()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await taskSM.getCurrentState()).assertEqual(TaskState.PENDING)
       expect(await taskSM.getHistoryCount()).assertEqual(0)
       expect(await taskSM.getTaskId()).assertEqual('test_task_001')
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await taskSM.transition(TaskState.RUNNING)).assertTrue()
       expect(await taskSM.getCurrentState()).assertEqual(TaskState.RUNNING)
@@ -177,6 +173,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(await taskSM.isFinalState()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await taskSM.transition(TaskState.RUNNING)
       expect(await taskSM.transition(TaskState.FAILED)).assertTrue()
@@ -184,6 +181,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(await taskSM.isFinalState()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
       expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
@@ -191,12 +189,14 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(await taskSM.isFinalState()).assertTrue()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await taskSM.transition(TaskState.RUNNING)
       expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
       expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await taskSM.transition(TaskState.RUNNING)
       await taskSM.transition(TaskState.COMPLETED)
@@ -204,6 +204,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(await taskSM.getCurrentState()).assertEqual(TaskState.COMPLETED)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await taskSM.isInState(TaskState.PENDING)).assertTrue()
       expect(await taskSM.isInState(TaskState.RUNNING)).assertFalse()
@@ -212,6 +213,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(await taskSM.isInState(TaskState.PENDING)).assertFalse()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const stateUpdates: string[] = []
       const task: taskpool.Task = new taskpool.Task(sendDataRunningTask, taskSM)
@@ -227,6 +229,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       expect(stateUpdates[0]).assertEqual('running')
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await taskSM.transition(TaskState.RUNNING)
       const tasks: taskpool.Task[] = []
@@ -243,6 +246,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testTaskStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const taskSM1: TaskStateMachine = new TaskStateMachine('task_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
       const taskSM2: TaskStateMachine = new TaskStateMachine('task_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
@@ -256,6 +260,7 @@ export default function BuiltinsTaskStateMachineTest(): void {
       await taskSM2.reset()
     })
 
+    /** @tc.level  LEVEL2 */
     it('testTaskStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await taskSM.transition(TaskState.RUNNING)
       await taskSM.transition(TaskState.FAILED)

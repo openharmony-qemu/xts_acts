@@ -17,16 +17,8 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { OrderState } from './SendableTestEnums'
 
-const enum OrderState {
-  CREATED = 0,
-  PENDING_PAYMENT = 1,
-  PAID = 2,
-  SHIPPED = 3,
-  DELIVERED = 4,
-  CANCELLED = 5,
-  REFUNDED = 6
-}
 
 @Sendable
 class OrderTransitionRecord {
@@ -151,11 +143,13 @@ export default function BuiltinsOrderStateMachineTest(): void {
       await orderSM.reset()
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
       expect(await orderSM.getHistoryCount()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result: boolean = await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit order')
       expect(result).assertTrue()
@@ -164,6 +158,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')).assertTrue()
       expect(await orderSM.transition(OrderState.PAID, 'pay')).assertTrue()
@@ -173,6 +168,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(4)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const result: boolean = await orderSM.transition(OrderState.CANCELLED, 'user cancel')
@@ -181,6 +177,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(2)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
@@ -189,12 +186,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.REFUNDED)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testOrderStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result: boolean = await orderSM.transition(OrderState.PAID, 'skip payment')
       expect(result).assertFalse()
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testOrderStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
@@ -205,6 +204,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testOrderStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.CANCELLED, 'cancel')
@@ -213,6 +213,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testOrderStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const tasks: taskpool.Task[] = []
@@ -229,6 +230,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'user submit order')
       await orderSM.transition(OrderState.PAID, 'alipay payment')
@@ -242,6 +244,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
+    /** @tc.level  LEVEL1 */
     it('testOrderStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'step1')
       await orderSM.transition(OrderState.PAID, 'step2')

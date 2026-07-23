@@ -104,12 +104,14 @@ export default function BuiltinsRequestBufferQueueTest(): void {
     beforeEach((): void => {
       bufferQueue = new RequestBufferQueue(new collections.Array<Request>(), new ArkTSUtils.locks.AsyncLock())
     })
+    /** @tc.level  LEVEL0 */
     it('testRequestBufferQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await bufferQueue.bufferRequest(1, 'GET', 'test')
       expect(success).assertTrue()
       expect(await bufferQueue.size()).assertEqual(1)
     })
 
+    /** @tc.level  LEVEL0 */
     it('testRequestBufferQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bufferQueue.bufferRequest(1, 'GET', 'test')
       const batch: Request[] = await bufferQueue.processBatch(1)
@@ -118,10 +120,12 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.size()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testRequestBufferQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await bufferQueue.size()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testRequestBufferQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 100; i++) {
@@ -138,6 +142,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.size()).assertEqual(100)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testRequestBufferQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       bufferQueue.capacity_ = 50
       const promises: Promise<boolean>[] = []
@@ -155,6 +160,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.getDroppedCount()).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testRequestBufferQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 50; i++) {
         await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
@@ -167,6 +173,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.size()).assertEqual(0)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testRequestBufferQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 100; i++) {
         await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
@@ -175,6 +182,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(utilization).assertEqual(50)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testRequestBufferQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
@@ -192,6 +200,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.size()).assertLargerOrEqual(1)
     })
 
+    /** @tc.level  LEVEL1 */
     it('testRequestBufferQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 30; i++) {
         await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
@@ -200,6 +209,7 @@ export default function BuiltinsRequestBufferQueueTest(): void {
       expect(await bufferQueue.getProcessedCount()).assertEqual(30)
     })
 
+    /** @tc.level  LEVEL2 */
     it('testRequestBufferQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       bufferQueue.capacity_ = 20
       for (let i = 0; i < 20; i++) {
