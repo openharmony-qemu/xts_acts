@@ -23,12 +23,29 @@
 
 constexpr int PHYSICS_STATE_SIZE = 10;
 constexpr int PHYSICS_STATE_BYTES = PHYSICS_STATE_SIZE * sizeof(float);
+constexpr int STATE_POS_X = 0;
+constexpr int STATE_POS_Y = 1;
+constexpr int STATE_POS_Z = 2;
+constexpr int STATE_VEL_X = 3;
+constexpr int STATE_VEL_Y = 4;
+constexpr int STATE_VEL_Z = 5;
+constexpr int STATE_FORCE_X = 6;
+constexpr int STATE_FORCE_Y = 7;
+constexpr int STATE_FORCE_Z = 8;
+constexpr int STATE_GRAVITY_INDEX = 9;
 constexpr int MAX_ALLOC_SIZE = 1024 * 1024;
 constexpr int MAX_TASK_COUNT = 8;
 constexpr int MIN_TASK_COUNT = 2;
 constexpr int FEATURE_SAMPLE_INTERVAL = 4;
 constexpr int ASYNC_DELAY_MS = 100;
 constexpr int INCREMENTS_PER_THREAD = 10000;
+constexpr int ADD_ARG_A = 3;
+constexpr int ADD_ARG_B = 5;
+constexpr int SUB_ARG_A = 10;
+constexpr int SUB_ARG_B = 4;
+constexpr int DYN_FUNC_ARGC = 2;
+constexpr int ARRAY_DOUBLE_FACTOR = 2;
+constexpr size_t MAX_PATH_SIZE = 4096;
 
 static std::unordered_set<uintptr_t> g_validHandles;
 static std::mutex g_handleMutex;
@@ -79,7 +96,7 @@ static napi_value TestCase01ArrayDouble(napi_env env, napi_callback_info info)
         }
 
         napi_value boxed;
-        if (napi_create_int32(env, val * 2, &boxed) != napi_ok) {
+        if (napi_create_int32(env, val * ARRAY_DOUBLE_FACTOR, &boxed) != napi_ok) {
             napi_throw_error(env, nullptr, "TestCase01ArrayDouble: failed to create number");
             return nullptr;
         }
@@ -93,27 +110,67 @@ static napi_value TestCase01ArrayDouble(napi_env env, napi_callback_info info)
     return result;
 }
 
+static bool ValidateArrayBufferInput(napi_env env, napi_value arg, void **data, size_t *size)
+{
+    bool isArrayBuffer = false;
+    napi_is_arraybuffer(env, arg, &isArrayBuffer);
+    if (!isArrayBuffer) {
+        napi_throw_type_error(env, nullptr, "TestCase02MatrixTranspose: argument 0 must be an ArrayBuffer");
+        return false;
+    }
+    if (napi_get_arraybuffer_info(env, arg, data, size) != napi_ok) {
+        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: failed to get ArrayBuffer info");
+        return false;
+    }
+    if (*data == nullptr) {
+        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: ArrayBuffer data is null");
+        return false;
+    }
+    return true;
+}
+
+static napi_value CreateTransposedBuffer(napi_env env, const void *srcData, int32_t rows, int32_t cols)
+{
+    size_t expectedSize = static_cast<size_t>(rows) * static_cast<size_t>(cols) * sizeof(float);
+    void *dstData = nullptr;
+    napi_value result;
+    if (napi_create_arraybuffer(env, expectedSize, &dstData, &result) != napi_ok) {
+        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: failed to create ArrayBuffer");
+        return nullptr;
+    }
+    const float *src = static_cast<const float *>(srcData);
+    float *dst = static_cast<float *>(dstData);
+    for (int32_t r = 0; r < rows; r++) {
+        for (int32_t c = 0; c < cols; c++) {
+            dst[c * rows + r] = src[r * cols + c];
+        }
+    }
+    return result;
+}
+
 static napi_value TestCase02MatrixTranspose(napi_env env, napi_callback_info info)
 {
-    size_t argc = 3;
-    napi_value args[3] = {nullptr};
+    constexpr size_t matrixArgc = 3;
+    size_t argc = matrixArgc;
+    napi_value args[matrixArgc] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    if (argc != 3) {
+    if (argc != matrixArgc) {
         napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: expected exactly 3 arguments");
         return nullptr;
     }
 
-    bool isArrayBuffer = false;
-    napi_is_arraybuffer(env, args[0], &isArrayBuffer);
-    if (!isArrayBuffer) {
-        napi_throw_type_error(env, nullptr, "TestCase02MatrixTranspose: argument 0 must be an ArrayBuffer");
+    void *srcData = nullptr;
+    size_t srcSize = 0;
+    if (!ValidateArrayBufferInput(env, args[0], &srcData, &srcSize)) {
         return nullptr;
     }
 
     int32_t rows = 0;
     int32_t cols = 0;
-    if (napi_get_value_int32(env, args[1], &rows) != napi_ok || napi_get_value_int32(env, args[2], &cols) != napi_ok) {
+    constexpr size_t matrixRowIdx = 1;
+    constexpr size_t matrixColIdx = 2;
+    if (napi_get_value_int32(env, args[matrixRowIdx], &rows) != napi_ok || napi_get_value_int32(env, args[matrixColIdx], &cols) != napi_ok) {
         napi_throw_type_error(env, nullptr, "TestCase02MatrixTranspose: rows and cols must be integers");
         return nullptr;
     }
@@ -129,42 +186,13 @@ static napi_value TestCase02MatrixTranspose(napi_env env, napi_callback_info inf
         return nullptr;
     }
 
-    void *srcData = nullptr;
-    size_t srcSize = 0;
-    if (napi_get_arraybuffer_info(env, args[0], &srcData, &srcSize) != napi_ok) {
-        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: failed to get ArrayBuffer info");
-        return nullptr;
-    }
-
     size_t expectedSize = static_cast<size_t>(rows) * static_cast<size_t>(cols) * sizeof(float);
-
     if (srcSize < expectedSize) {
         napi_throw_range_error(env, nullptr, "TestCase02MatrixTranspose: ArrayBuffer too small");
         return nullptr;
     }
 
-    if (srcData == nullptr) {
-        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: ArrayBuffer data is null");
-        return nullptr;
-    }
-
-    void *dstData = nullptr;
-    napi_value result;
-    if (napi_create_arraybuffer(env, expectedSize, &dstData, &result) != napi_ok) {
-        napi_throw_error(env, nullptr, "TestCase02MatrixTranspose: failed to create ArrayBuffer");
-        return nullptr;
-    }
-
-    const float *src = static_cast<const float *>(srcData);
-    float *dst = static_cast<float *>(dstData);
-
-    for (int32_t r = 0; r < rows; r++) {
-        for (int32_t c = 0; c < cols; c++) {
-            dst[c * rows + r] = src[r * cols + c];
-        }
-    }
-
-    return result;
+    return CreateTransposedBuffer(env, srcData, rows, cols);
 }
 
 static napi_value TestCase03XorEncrypt(napi_env env, napi_callback_info info)
@@ -208,62 +236,28 @@ static napi_value TestCase03XorEncrypt(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value TestCase04FileCopy(napi_env env, napi_callback_info info)
+static char *ResolveStringArg(napi_env env, napi_value arg, const char *name)
 {
-    size_t argc = 3;
-    napi_value args[3] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    if (argc != 3) {
-        napi_throw_error(env, nullptr, "TestCase04FileCopy: expected 3 arguments");
+    constexpr size_t probeSize = 64;
+    char probe[probeSize];
+    size_t needed = 0;
+    napi_get_value_string_utf8(env, arg, probe, sizeof(probe), &needed);
+    if (needed == 0 || needed > MAX_PATH_SIZE) {
         return nullptr;
     }
-
-    constexpr size_t PATH_PROBE_SIZE = 64;
-    char probe[PATH_PROBE_SIZE];
-    size_t srcNeeded = 0;
-    napi_get_value_string_utf8(env, args[0], probe, sizeof(probe), &srcNeeded);
-    size_t dstNeeded = 0;
-    napi_get_value_string_utf8(env, args[1], probe, sizeof(probe), &dstNeeded);
-
-    if (srcNeeded == 0 || dstNeeded == 0) {
-        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: paths must be non-empty strings");
+    char *buf = static_cast<char *>(malloc(needed + 1));
+    if (buf == nullptr) {
         return nullptr;
     }
-
-    char *srcBuf = static_cast<char *>(malloc(srcNeeded + 1));
-    char *dstBuf = static_cast<char *>(malloc(dstNeeded + 1));
-    if (srcBuf == nullptr || dstBuf == nullptr) {
-        free(srcBuf);
-        free(dstBuf);
-        napi_throw_error(env, nullptr, "TestCase04FileCopy: failed to allocate path buffers");
+    if (napi_get_value_string_utf8(env, arg, buf, needed + 1, &needed) != napi_ok) {
+        free(buf);
         return nullptr;
     }
+    return buf;
+}
 
-    size_t srcLen = 0;
-    if (napi_get_value_string_utf8(env, args[0], srcBuf, srcNeeded + 1, &srcLen) != napi_ok) {
-        free(srcBuf);
-        free(dstBuf);
-        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: arg 0 must be a string path");
-        return nullptr;
-    }
-
-    size_t dstLen = 0;
-    if (napi_get_value_string_utf8(env, args[1], dstBuf, dstNeeded + 1, &dstLen) != napi_ok) {
-        free(srcBuf);
-        free(dstBuf);
-        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: arg 1 must be a string path");
-        return nullptr;
-    }
-
-    int64_t size = 0;
-    if (napi_get_value_int64(env, args[2], &size) != napi_ok || size <= 0) {
-        free(srcBuf);
-        free(dstBuf);
-        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: size must be a positive integer");
-        return nullptr;
-    }
-
+static napi_value FileCopyImpl(napi_env env, char *srcBuf, char *dstBuf, int64_t size)
+{
     int srcFd = open(srcBuf, O_RDONLY);
     if (srcFd < 0) {
         free(srcBuf);
@@ -283,6 +277,7 @@ static napi_value TestCase04FileCopy(napi_env env, napi_callback_info info)
 
     off_t offset = 0;
     ssize_t ret = sendfile(dstFd, srcFd, &offset, static_cast<size_t>(size));
+    bool passed = (ret == size);
 
     close(srcFd);
     close(dstFd);
@@ -290,8 +285,45 @@ static napi_value TestCase04FileCopy(napi_env env, napi_callback_info info)
     free(dstBuf);
 
     napi_value result;
-    napi_get_boolean(env, (ret == size), &result);
+    napi_get_boolean(env, passed, &result);
     return result;
+}
+
+static napi_value TestCase04FileCopy(napi_env env, napi_callback_info info)
+{
+    constexpr size_t filecopyArgc = 3;
+    size_t argc = filecopyArgc;
+    napi_value args[filecopyArgc] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    if (argc != filecopyArgc) {
+        napi_throw_error(env, nullptr, "TestCase04FileCopy: expected 3 arguments");
+        return nullptr;
+    }
+
+    char *srcBuf = ResolveStringArg(env, args[0], "src");
+    if (srcBuf == nullptr) {
+        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: invalid src path");
+        return nullptr;
+    }
+
+    char *dstBuf = ResolveStringArg(env, args[1], "dst");
+    if (dstBuf == nullptr) {
+        free(srcBuf);
+        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: invalid dst path");
+        return nullptr;
+    }
+
+    constexpr size_t copySizeIdx = 2;
+    int64_t size = 0;
+    if (napi_get_value_int64(env, args[COPY_SIZE_IDX], &size) != napi_ok || size <= 0) {
+        free(srcBuf);
+        free(dstBuf);
+        napi_throw_type_error(env, nullptr, "TestCase04FileCopy: size must be a positive integer");
+        return nullptr;
+    }
+
+    return FileCopyImpl(env, srcBuf, dstBuf, size);
 }
 
 static napi_value TestCase05SysInfo(napi_env env, napi_callback_info info)
@@ -339,8 +371,8 @@ static napi_value TestCase06CreatePhysics(napi_env env, napi_callback_info info)
         napi_create_int64(env, 0, &result);
         return result;
     }
-    memset(state, 0, PHYSICS_STATE_BYTES);
-    state[9] = static_cast<float>(gravity);
+    memset_s(state, PHYSICS_STATE_BYTES, 0, PHYSICS_STATE_BYTES);
+    state[STATE_GRAVITY_INDEX] = static_cast<float>(gravity);
 
     {
         std::lock_guard<std::mutex> lock(g_handleMutex);
@@ -354,11 +386,12 @@ static napi_value TestCase06CreatePhysics(napi_env env, napi_callback_info info)
 
 static napi_value TestCase06StepPhysics(napi_env env, napi_callback_info info)
 {
-    size_t argc = 2;
-    napi_value args[2] = {nullptr};
+    constexpr size_t stepPhysicsArgc = 2;
+    size_t argc = stepPhysicsArgc;
+    napi_value args[stepPhysicsArgc] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    if (argc < 2) {
+    if (argc < stepPhysicsArgc) {
         napi_throw_error(env, nullptr, "TestCase06StepPhysics: expected 2 arguments");
         return nullptr;
     }
@@ -393,22 +426,22 @@ static napi_value TestCase06StepPhysics(napi_env env, napi_callback_info info)
         return result;
     }
 
-    if (fabsf(state[9]) < 1e-3f) {
+    if (fabsf(state[STATE_GRAVITY_INDEX]) < 1e-3f) {
         napi_value result;
         napi_create_double(env, 0.0, &result);
         return result;
     }
 
-    float invMass = 1.0f / state[9];
-    state[3] += state[6] * invMass * static_cast<float>(dt);
-    state[4] += state[7] * invMass * static_cast<float>(dt);
-    state[5] += state[8] * invMass * static_cast<float>(dt);
-    state[0] += state[3] * static_cast<float>(dt);
-    state[1] += state[4] * static_cast<float>(dt);
-    state[2] += state[5] * static_cast<float>(dt);
+    float invMass = 1.0f / state[STATE_GRAVITY_INDEX];
+    state[STATE_VEL_X] += state[STATE_FORCE_X] * invMass * static_cast<float>(dt);
+    state[STATE_VEL_Y] += state[STATE_FORCE_Y] * invMass * static_cast<float>(dt);
+    state[STATE_VEL_Z] += state[STATE_FORCE_Z] * invMass * static_cast<float>(dt);
+    state[STATE_POS_X] += state[STATE_VEL_X] * static_cast<float>(dt);
+    state[STATE_POS_Y] += state[STATE_VEL_Y] * static_cast<float>(dt);
+    state[STATE_POS_Z] += state[STATE_VEL_Z] * static_cast<float>(dt);
 
     napi_value result;
-    napi_create_double(env, static_cast<double>(dt * state[9]), &result);
+    napi_create_double(env, static_cast<double>(dt * state[STATE_GRAVITY_INDEX]), &result);
     return result;
 }
 
@@ -436,7 +469,7 @@ static napi_value TestCase06DestroyPhysics(napi_env env, napi_callback_info info
             g_validHandles.erase(handleAddr);
         }
         auto *state = reinterpret_cast<float *>(handleAddr);
-        memset(state, 0, PHYSICS_STATE_BYTES);
+        memset_s(state, PHYSICS_STATE_BYTES, 0, PHYSICS_STATE_BYTES);
         free(state);
     }
 
@@ -535,10 +568,12 @@ static napi_value TestCase09ParallelSum(napi_env env, napi_callback_info info)
     if (argc >= 1) {
         napi_get_value_int32(env, args[0], &taskCount);
     }
-    if (taskCount < MIN_TASK_COUNT)
+    if (taskCount < MIN_TASK_COUNT) {
         taskCount = MIN_TASK_COUNT;
-    if (taskCount > MAX_TASK_COUNT)
+    }
+    if (taskCount > MAX_TASK_COUNT) {
         taskCount = MAX_TASK_COUNT;
+    }
 
     std::atomic<int> sum{0};
     std::vector<std::thread> threads;
@@ -601,7 +636,7 @@ static napi_value TestCase10AsyncCompute(napi_env env, napi_callback_info info)
     }
 
     napi_value asyncName;
-    napi_create_string_utf8(env, "asyncCallback", 13, &asyncName);
+    napi_create_string_utf8(env, "asyncCallback", NAPI_AUTO_LENGTH, &asyncName);
     napi_create_threadsafe_function(env, callback, nullptr, asyncName, 0, 1, nullptr, nullptr, nullptr, nullptr,
                                     &g_tsfn);
 
@@ -641,7 +676,7 @@ static napi_value TestCase11CachedLookup(napi_env env, napi_callback_info info)
     napi_get_reference_value(env, g_cachedStringCtor, &cached);
 
     napi_value arg;
-    napi_create_string_utf8(env, "hello", 5, &arg);
+    napi_create_string_utf8(env, "hello", NAPI_AUTO_LENGTH, &arg);
     napi_value strObj;
     napi_status status = napi_new_instance(env, cached, 1, &arg, &strObj);
 
@@ -656,7 +691,8 @@ static napi_value DynAdd(napi_env env, napi_callback_info info)
     napi_value args[2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    int32_t a = 0, b = 0;
+    int32_t a = 0;
+    int32_t b = 0;
     napi_get_value_int32(env, args[0], &a);
     napi_get_value_int32(env, args[1], &b);
 
@@ -671,7 +707,8 @@ static napi_value DynSub(napi_env env, napi_callback_info info)
     napi_value args[2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    int32_t a = 0, b = 0;
+    int32_t a = 0;
+    int32_t b = 0;
     napi_get_value_int32(env, args[0], &a);
     napi_get_value_int32(env, args[1], &b);
 
@@ -691,7 +728,6 @@ static napi_value TestCase12DynamicRegistration(napi_env env, napi_callback_info
     };
 
     napi_status regStatus = napi_define_properties(env, obj, 2, methods);
-
     if (regStatus != napi_ok) {
         napi_value result;
         napi_get_boolean(env, false, &result);
@@ -701,20 +737,20 @@ static napi_value TestCase12DynamicRegistration(napi_env env, napi_callback_info
     napi_value addFn;
     napi_get_named_property(env, obj, "add", &addFn);
     napi_value addArgs[2];
-    napi_create_int32(env, 3, &addArgs[0]);
-    napi_create_int32(env, 5, &addArgs[1]);
+    napi_create_int32(env, ADD_ARG_A, &addArgs[0]);
+    napi_create_int32(env, ADD_ARG_B, &addArgs[1]);
     napi_value addResult;
-    napi_call_function(env, obj, addFn, 2, addArgs, &addResult);
+    napi_call_function(env, obj, addFn, DYN_FUNC_ARGC, addArgs, &addResult);
     int32_t addVal = 0;
     napi_get_value_int32(env, addResult, &addVal);
 
     napi_value subFn;
     napi_get_named_property(env, obj, "sub", &subFn);
-    napi_value subArgs[2];
-    napi_create_int32(env, 10, &subArgs[0]);
-    napi_create_int32(env, 4, &subArgs[1]);
+    napi_value subArgs[DYN_FUNC_ARGC];
+    napi_create_int32(env, SUB_ARG_A, &subArgs[0]);
+    napi_create_int32(env, SUB_ARG_B, &subArgs[1]);
     napi_value subResult;
-    napi_call_function(env, obj, subFn, 2, subArgs, &subResult);
+    napi_call_function(env, obj, subFn, DYN_FUNC_ARGC, subArgs, &subResult);
     int32_t subVal = 0;
     napi_get_value_int32(env, subResult, &subVal);
 
