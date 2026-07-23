@@ -63,7 +63,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL0
      * @co.authored.by.agent
      */
-    it('testGattConnectNormal001', Level.LEVEL0, () => {
+    it('testGattConnectNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('00:22:33:44:55:66');
@@ -88,7 +88,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectNormal002', Level.LEVEL2, () => {
+    it('testGattConnectNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('00:22:33:44:55:66',true);
@@ -113,7 +113,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectNormal003', Level.LEVEL2, () => {
+    it('testGattConnectNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('00:22:33:44:55:66',false);
@@ -138,7 +138,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectError005', Level.LEVEL2, () => {
+    it('testGattConnectError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('00:22:33:44:55:');
@@ -163,7 +163,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectError006', Level.LEVEL2, () => {
+    it('testGattConnectError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('');
@@ -188,7 +188,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectError007', Level.LEVEL2, () => {
+    it('testGattConnectError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect(null);
@@ -213,7 +213,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectError008', Level.LEVEL2, () => {
+    it('testGattConnectError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect(undefined);
@@ -238,7 +238,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattDisconnectError002', Level.LEVEL0, () => {
+    it('testGattDisconnectError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.disconnect('00:22:33:44:55:');
@@ -262,7 +262,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattDisconnectError005', Level.LEVEL2, () => {
+    it('testGattDisconnectError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.disconnect('00:22:33:44:55:66');
@@ -287,7 +287,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattDisconnectError006', Level.LEVEL0, () => {
+    it('testGattDisconnectError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.disconnect('');
@@ -312,7 +312,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattDisconnectError007', Level.LEVEL0, () => {
+    it('testGattDisconnectError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.disconnect(null);
@@ -337,7 +337,7 @@ export default function GattConnectTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattDisconnectError008', Level.LEVEL0, () => {
+    it('testGattDisconnectError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.disconnect(undefined);

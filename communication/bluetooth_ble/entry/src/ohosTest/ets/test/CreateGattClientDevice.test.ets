@@ -35,7 +35,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL0
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNormal001', Level.LEVEL0, () => {
+    it('testCreateGattClientDeviceNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:66', defaultSetting);
         console.info('testCreateGattClientDeviceNormal001 device=' + device);
@@ -60,7 +60,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL0
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNormal002', Level.LEVEL0, () => {
+    it('testCreateGattClientDeviceNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('AA:BB:CC:DD:EE:FF', defaultSetting);
         console.info('testCreateGattClientDeviceNormal002 device=' + device);
@@ -85,7 +85,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNormal003', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('aa:bb:cc:dd:ee:ff', defaultSetting);
         console.info('testCreateGattClientDeviceNormal003 device=' + device);
@@ -110,7 +110,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNormal004', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('Aa:Bb:Cc:Dd:Ee:Ff', defaultSetting);
         console.info('testCreateGattClientDeviceNormal004 device=' + device);
@@ -135,7 +135,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceEmptyString001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('', defaultSetting);
         console.info('testCreateGattClientDeviceEmptyString001 device=' + device);
@@ -160,7 +160,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNull001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice(null, defaultSetting);
         console.info('testCreateGattClientDeviceNull001 device=' + device);
@@ -185,7 +185,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceUndefined001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice(undefined, defaultSetting);
         console.info('testCreateGattClientDeviceUndefined001 device=' + device);
@@ -210,7 +210,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceInvalidFormat001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceInvalidFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11-22-33-44-55-66', defaultSetting);
         console.info('testCreateGattClientDeviceInvalidFormat001 device=' + device);
@@ -235,7 +235,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceIncomplete001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceIncomplete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55', defaultSetting);
         console.info('testCreateGattClientDeviceIncomplete001 device=' + device);
@@ -260,7 +260,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTooLong001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceTooLong001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:66:77', defaultSetting);
         console.info('testCreateGattClientDeviceTooLong001 device=' + device);
@@ -285,7 +285,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceNonHex001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceNonHex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('GG:HH:II:JJ:KK:LL', defaultSetting);
         console.info('testCreateGattClientDeviceNonHex001 device=' + device);
@@ -310,7 +310,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceSpecialChar001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceSpecialChar001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:$$', defaultSetting);
         console.info('testCreateGattClientDeviceSpecialChar001 device=' + device);
@@ -335,7 +335,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceChinese001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceChinese001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('十一:二十二:三十三:四十四:五十五:六十六', defaultSetting);
         console.info('testCreateGattClientDeviceChinese001 device=' + device);
@@ -360,7 +360,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL0
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceOptional001', Level.LEVEL0, () => {
+    it('testCreateGattClientDeviceOptional001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:66', defaultSetting);
         console.info('testCreateGattClientDeviceOptional001 device=' + device);
@@ -385,7 +385,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceOptional002', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceOptional002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: true,
@@ -414,7 +414,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceOptional003', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceOptional003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false,
@@ -443,7 +443,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceOptional004', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceOptional004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: true,
@@ -472,7 +472,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceError001', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('invalid', defaultSetting);
         console.info('testCreateGattClientDeviceError001 device=' + device);
@@ -498,7 +498,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL0
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceReturn001', Level.LEVEL0, () => {
+    it('testCreateGattClientDeviceReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:66', defaultSetting);
         console.info('testCreateGattClientDeviceReturn001 device=' + device);
@@ -526,7 +526,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceReturn002', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceReturn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let device: ble.GattClientDevice = ble.createGattClientDevice('11:22:33:44:55:66', defaultSetting);
         console.info('testCreateGattClientDeviceReturn002 device=' + device);
@@ -553,7 +553,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTransport001', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceTransport001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false,
@@ -582,7 +582,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTransport002', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceTransport002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false,
@@ -611,7 +611,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTransport003', Level.LEVEL1, () => {
+    it('testCreateGattClientDeviceTransport003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false,
@@ -641,7 +641,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTransport006', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceTransport006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false,
@@ -670,7 +670,7 @@ export default function CreateGattClientDeviceTest() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testCreateGattClientDeviceTransport007', Level.LEVEL2, () => {
+    it('testCreateGattClientDeviceTransport007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let setting: ble.GattSetting = {
           autoConnect: false
