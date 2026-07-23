@@ -15,7 +15,10 @@
  */
 
 import networkManagerWithoutCardTest from './NetworkManagerWithoutNet.test';
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
+  if(netHandle.netId != 0){
   networkManagerWithoutCardTest();
+  }
 }
