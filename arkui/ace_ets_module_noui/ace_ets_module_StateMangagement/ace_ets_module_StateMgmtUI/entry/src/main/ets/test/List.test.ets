@@ -40,6 +40,8 @@ import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsun
 import WrapBuilder0010TestJsunit from './wrap_builder/WrapBuilder0010TestJsunit.test';
 import WrapBuilder0020Test from './wrap_builder/WrapBuilder0020Test.test';
 import EntryParamsTest from './entryTest/EntryParamsTest.test';
+import EntryParams2Test from './entryTest/EntryParams2Test.test';
+import EntryParamsUndefinedTest from './entryTest/EntryParamsUndefinedTest.test';
 import Styles0010TestJsunit from './styles/Styles0010TestJsunit.test';
 import LifeCycleTest0510 from './lifecycle/LifeCycleTest0510.test';
 import LifeCycleTest0100 from './lifecycle/LifeCycleTest0100.test';
@@ -79,6 +81,8 @@ export default function testsuite() {
     WrapBuilder0010TestJsunit();
     WrapBuilder0020Test();
     EntryParamsTest();
+    EntryParams2Test();
+    EntryParamsUndefinedTest();
     Styles0010TestJsunit();
     LifeCycleTest0510();
     LifeCycleTest0100();

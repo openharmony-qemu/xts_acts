@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +14,7 @@
  * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
+import Utils from '../../../../Util.test'
 
 enum TypedEnum: byte { First = -1, Second = 0, Third = 1}
 
@@ -108,11 +100,6 @@ enum TypedEnum23: double {
   Pos = 1.1
 }
 
-
-
-
-
-
 export default function UnaryExpressionsTest(): void {
   describe('UnaryExpressionsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -125,7 +112,7 @@ export default function UnaryExpressionsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -138,7 +125,6 @@ export default function UnaryExpressionsTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
 
     /**
      * @tc.number    SUB_UNARY_EXPRESSIONS_XTSTEST_0100
@@ -156,7 +142,6 @@ export default function UnaryExpressionsTest(): void {
       expect(~a).assertEqual(0)
       expect(~b).assertEqual(-1)
       expect(~c).assertEqual(-2)
-
     });
 
     /**
@@ -175,7 +160,6 @@ export default function UnaryExpressionsTest(): void {
       expect(!a).assertEqual(false)
       expect(!b).assertEqual(true)
       expect(!c).assertEqual(false)
-
     });
 
     /**
@@ -194,7 +178,6 @@ export default function UnaryExpressionsTest(): void {
       let p = -TypedEnum12.Pos
       expect(p).assertEqual(TypedEnum12.Neg)
       expect(-p).assertEqual(TypedEnum12.Pos)
-
     });
 
     /**
@@ -213,7 +196,6 @@ export default function UnaryExpressionsTest(): void {
       let p = +TypedEnum18.Pos
       expect(p).assertEqual(TypedEnum18.Pos)
       expect(+p).assertEqual(TypedEnum18.Pos)
-
     });
   })
 }

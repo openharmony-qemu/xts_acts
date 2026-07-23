@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,13 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
+
 function check_value_1(v: Object, v_id: number): void {
   if (v_id == 1) {
     expect(v as "Done" | "In Progress").assertEqual("In Progress");
@@ -84,77 +79,6 @@ function check_is_in_T_type_1(v: "Done" | "In Progress" | "On Review", v_id: num
   }
 }
 
-namespace testNS2_2 {
-  function check_value_2(v: Object, v_id: number): void {
-    if (v_id == 1) {
-      expect(v as "Done" | "In Progress" | "Blocked" | number).assertEqual(123);
-      expect(v as number | "In Progress" | "On Review").assertEqual(123);
-    } else if (v_id == 2) {
-      expect(v as "Done" | "In Progress" | "Blocked" | number).assertEqual("Done");
-    } else {
-      expect(v as number | "In Progress" | "On Review").assertEqual("On Review");
-    }
-  }
-
-  function check_value_as_type_T_2(v: Object, v_id: number): void {
-    expect(typeof v === 'string' || typeof v === 'number' || typeof v === 'string' || typeof v === 'number').assertTrue();
-    expect((v === "Done" || v === "In Progress" || v === "Blocked" || typeof v === 'number') ||
-      (typeof v === 'number' || v === "In Progress" || v === "On Review")).assertTrue();
-    check_value_2(v as "Done" | "In Progress" | "Blocked" | number | "On Review", v_id);
-  }
-
-  function check_is_in_T_type_2(v: "Done" | "In Progress" | "Blocked" | number | "On Review", v_id: number): boolean {
-    check_value_2(v, v_id);
-    if (v === "Done" || v === "In Progress" || v === "Blocked" || typeof v === 'number') {
-      check_value_2(v, v_id);
-      if (typeof v === 'number' || v === "In Progress" || v === "On Review") {
-        expect(v_id).assertEqual(1);
-        check_value_2(v, v_id);
-        expect(typeof v === 'string' || typeof v === 'number').assertTrue();
-        expect(v).assertEqual(123);
-        expect(typeof v === 'string' || typeof v === 'number').assertTrue();
-        expect(v instanceof Object).assertTrue();
-        expect(v instanceof Object).assertTrue();
-        if (v instanceof Object) {
-          check_value_as_type_T_2(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        expect(v_id).assertEqual(2);
-        check_value_2(v, v_id);
-        expect(v).assertEqual("Done");
-        if (v instanceof Object) {
-          expect(v instanceof Object).assertTrue();
-          check_value_as_type_T_2(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
-      }
-    } else {
-      expect(v_id).assertEqual(3);
-      check_value_2(v, v_id);
-      expect(v).assertEqual("On Review");
-      if (v instanceof Object) {
-        expect(v instanceof Object).assertTrue();
-        check_value_as_type_T_2(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  export function runTest_2(): boolean {
-    let res1: boolean = check_is_in_T_type_2(123, 1);
-    let res2: boolean = check_is_in_T_type_2("Done", 2);
-    let res3: boolean = check_is_in_T_type_2("On Review", 3);
-    expect(res1 && (res2 || res3)).assertTrue();
-    return true;
-  }
-}
 
 function check_value_2(v: Object, v_id: number): void {
   if (v_id == 1) {
@@ -305,7 +229,7 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -330,12 +254,10 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1: boolean = check_is_in_T_type_1("In Progress", 1)
       let res2: boolean = check_is_in_T_type_1("Done", 2)
       let res3: boolean = check_is_in_T_type_1("On Review", 3)
       expect(res1 && (res2 || res3)).assertTrue()
-
     });
 
     /**
@@ -349,13 +271,10 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1: boolean = check_is_in_T_type_2("In Progress", 1)
       let res2: boolean = check_is_in_T_type_2("Done", 2)
       let res3: boolean = check_is_in_T_type_2("On Review", 3)
       expect(res1 && (res2 || res3)).assertTrue()
-
-      expect(testNS2_2.runTest_2()).assertTrue()
 
     });
 
@@ -370,13 +289,10 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1: boolean = check_is_in_T_type_3("In Progress", 1)
       let res2: boolean = check_is_in_T_type_3("Done", 2)
       let res3: boolean = check_is_in_T_type_3("On Review", 3)
       expect(res1 && (res2 || res3)).assertTrue()
-
     });
-
   })
 }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -26,14 +26,7 @@ import {
   afterEach,
   afterAll
 } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 
 
@@ -53,14 +46,12 @@ namespace ns00 {
   export let i00: string = "";
 }
 
-
 namespace ns01 {
   export let f01: number;
   static {
     f01 = 1;
   }
 }
-
 
 namespace ns02 {
   export function foo02(): number {
@@ -72,7 +63,6 @@ namespace ns02 {
   }
 }
 
-
 interface I03 { i: string }
 namespace ns03 {
   export interface I03 { i: string }
@@ -81,7 +71,6 @@ namespace ns03 {
     v03 = { i: "some str" };
   }
 }
-
 
 let seqstr04 = "";
 function seq04(i: string) {
@@ -101,7 +90,6 @@ namespace ns0401 {
   }
 }
 
-
 let seqstr05 = "";
 function seq05(i: string) {
   seqstr05 += ":" + i;
@@ -119,7 +107,6 @@ namespace ns0501 {
     }
   }
 }
-
 
 namespace ns0601 {
   export let i0601: string;
@@ -142,7 +129,6 @@ namespace ns0603 {
   }
 }
 
-
 export default function StaticInitializationNamespaceTest():void {
   describe('StaticInitializationNamespaceTest', () => {
     beforeAll(() => {
@@ -154,7 +140,7 @@ export default function StaticInitializationNamespaceTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -266,5 +252,4 @@ export default function StaticInitializationNamespaceTest():void {
       expect(ns0603.i0603).assertEqual(2);
     });
   })
-
 }

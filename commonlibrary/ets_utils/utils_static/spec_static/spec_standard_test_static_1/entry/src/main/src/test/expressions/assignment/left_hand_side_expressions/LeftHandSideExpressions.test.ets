@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "../../../../../../hypium/index";
 
 type FixedArray<T> = T[];
 type Keys = "key1" | "key2" | "key3";

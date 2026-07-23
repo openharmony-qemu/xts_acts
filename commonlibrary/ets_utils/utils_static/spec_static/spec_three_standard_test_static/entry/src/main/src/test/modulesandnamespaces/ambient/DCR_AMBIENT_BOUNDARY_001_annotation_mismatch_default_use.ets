@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,4 +21,3 @@ class DcrAmbientBoundary001Class {}
 function main(): void {
   arktest.assertTrue(new DcrAmbientBoundary001Class() instanceof DcrAmbientBoundary001Class)
 }
-

@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,14 +91,34 @@ export default function ComponentContentIsDisposedTest() {
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
+      let button3 = await driver.findComponent(ON.id('btn_rendNode_isDisposed'));
+      await (button3?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+      let button4 = await driver.findComponent(ON.id('btn_reactiveBuilderNode_isDisposed'));
+      await (button4?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
       expect(AppStorage.get<boolean>('componentContentIsDisposed1')).assertEqual(false);
       expect(AppStorage.get<boolean>('componentContentIsDisposed2')).assertEqual(true);
       expect(AppStorage.get<boolean>('reactiveComponentContentIsDisposed1')).assertEqual(false);
       expect(AppStorage.get<boolean>('reactiveComponentContentIsDisposed2')).assertEqual(true);
+      expect(AppStorage.get<boolean>('rendNodeIsDisposed1')).assertEqual(false);
+      expect(AppStorage.get<boolean>('rendNodeIsDisposed2')).assertEqual(true);
+      expect(AppStorage.get<boolean>('reactiveBuilderNodeIsDisposed1')).assertEqual(false);
+      expect(AppStorage.get<boolean>('reactiveBuilderNodeIsDisposed2')).assertEqual(true);
+      expect(AppStorage.get<FrameNode|null>('reactiveBuilderNodeGetFrameNode')).assertEqual(null);
+
       AppStorage.delete('componentContentIsDisposed1');
       AppStorage.delete('componentContentIsDisposed2');
       AppStorage.delete('reactiveComponentContentIsDisposed1');
       AppStorage.delete('reactiveComponentContentIsDisposed2');
+      AppStorage.delete('rendNodeIsDisposed1');
+      AppStorage.delete('rendNodeIsDisposed2');
+      AppStorage.delete('reactiveBuilderNodeIsDisposed1');
+      AppStorage.delete('reactiveBuilderNodeIsDisposed2');
+      AppStorage.delete('reactiveBuilderNodeGetFrameNode');
+
       console.info('[ComponentContentIsDisposedTest_0100] END');
       done();
     })

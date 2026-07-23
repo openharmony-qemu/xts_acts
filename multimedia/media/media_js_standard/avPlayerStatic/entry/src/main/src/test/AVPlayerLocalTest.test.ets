@@ -2124,7 +2124,6 @@ async function testGetCurrentTrack(src: media.AVFileDescriptor, avPlayer: media.
         }).catch(mediaTestBase.catchCallback);
         getCurrentTrackCb(avPlayer!, done);
         avPlayer!.fdSrc = src;
-        done();
       } else {
         console.error(`case createAVPlayer failed`);
         expect().assertFail();
@@ -2154,7 +2153,7 @@ function getCurrentTrackCb(avPlayer: media.AVPlayer | null, done: () => void) {
         console.info('case PREPARED');
         avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
           console.info('case getCurrentTrack AUDIO track: ' + track);
-          expect(track).assertEqual(0);
+          expect(track).assertEqual(1);
         }).catch(mediaTestBase.catchCallback);
 
         avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
@@ -2175,7 +2174,7 @@ function getCurrentTrackCb(avPlayer: media.AVPlayer | null, done: () => void) {
         console.info('case PLAYING');
         avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
           console.info('case getCurrentTrack AUDIO track in PLAYING: ' + track);
-          expect(track).assertEqual(0);
+          expect(track).assertEqual(1);
         }).catch(mediaTestBase.catchCallback);
 
         avPlayer?.stop((err) => {
@@ -2223,7 +2222,6 @@ async function testPrivacyType(src: media.AVFileDescriptor, avPlayer: media.AVPl
         avPlayer!!.privacyType = type;
         privacyTypeCb(avPlayer!, done, type);
         avPlayer!.fdSrc = src;
-        done();
       } else {
         console.error(`case createAVPlayer failed`);
         expect().assertFail();

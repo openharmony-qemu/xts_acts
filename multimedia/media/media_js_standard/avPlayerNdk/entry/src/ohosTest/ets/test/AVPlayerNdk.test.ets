@@ -2560,5 +2560,95 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   OhAvPlayerSetVideoSideOutput_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_VIDEO_SIDE_OUTPUT_0100
+     * @tc.desc   test OH_AVPlayer_SetVideoSideOutput 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerSetVideoSideOutput_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetVideoSideOutput();
+      console.info(`OhAvPlayerSetVideoSideOutput_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OhAvPlayerSetVideoSideOutput_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_VIDEO_SIDE_OUTPUT_0200
+     * @tc.desc   test OH_AVPlayer_SetVideoSideOutput
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerSetVideoSideOutput_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetVideoSideOutputOne();
+      console.info(`OhAvPlayerSetVideoSideOutput_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OhAvPlayerSetVideoSideOutput_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_VIDEO_SIDE_OUTPUT_0300
+     * @tc.desc   test OH_AVPlayer_SetVideoSideOutput
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerSetVideoSideOutput_0300', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetVideoSideOutputTwo();
+      console.info(`OhAvPlayerSetVideoSideOutput_0300 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OhAvPlayerSetVideoSideOutput_0400
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_VIDEO_SIDE_OUTPUT_0400
+     * @tc.desc   test OH_AVPlayer_SetVideoSideOutput
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerSetVideoSideOutput_0400', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetVideoSideOutputThree();
+      console.info(`OhAvPlayerSetVideoSideOutput_0400 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OhAvPlayerGetNewestVideoSample_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_GET_NEWEST_VIDEO_SAMPLE_0100
+     * @tc.desc   test OH_AVPlayerVideoOutput_GetNewestVideoSample
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerGetNewestVideoSample_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerGetNewestVideoSample();
+      console.info(`OhAvPlayerGetNewestVideoSample_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OhAvPlayerGetNewestVideoSample_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_GET_NEWEST_VIDEO_SAMPLE_0200
+     * @tc.desc   test OH_AVPlayerVideoOutput_GetNewestVideoSample
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAvPlayerGetNewestVideoSample_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerGetNewestVideoSampleAbnormal();
+      console.info(`OhAvPlayerGetNewestVideoSample_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

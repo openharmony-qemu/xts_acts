@@ -1770,10 +1770,10 @@ function testSetDisallowedForAccountPolicy26() {
         DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -1797,10 +1797,10 @@ function testGetDisallowedForAccountPolicy26() {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);

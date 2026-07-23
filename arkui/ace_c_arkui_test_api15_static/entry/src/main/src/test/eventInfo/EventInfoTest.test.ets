@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium'
+import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index'
 import { Driver, ON, Component,MouseButton,Point } from '@ohos.UiTest'
 import Utils from '../common/Utils'
 import {LibUtil} from '../../../ets/pages/LibUtil'

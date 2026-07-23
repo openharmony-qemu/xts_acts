@@ -534,6 +534,13 @@ export default function latticeTest() {
         expect(e.code).assertEqual(401);
       }
       try {
+        drawing.Lattice.createImageLattice([1], [2], 1, 1, fBounds, [], [ color, color, color, color ]);
+        console.info(msg + ' 11 [] createImageLattice succeeded');
+      } catch( e ) {
+        console.info(msg + ` 11 [] createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
         drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, undefined, [ color ]);
         console.info(msg + ' 12 createImageLattice succeeded');
         expect().assertFail();
@@ -658,6 +665,13 @@ export default function latticeTest() {
       } catch( e ) {
         console.info(msg + ` 11 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [], colorArray);
+        console.info(msg + ' 11 [] createImageLattice succeeded');
+      } catch( e ) {
+        console.info(msg + ` 11 [] createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
       try {
         drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, undefined, colorArray);

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,16 +25,9 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class A_F991 {
     static v: number = 4
@@ -1072,7 +1065,7 @@ export default function FieldInitializationTenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -2787,7 +2780,7 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C_F1086.field instanceof HandlerNothing_F1086).assertTrue()
+      expect(C_F1086.field instanceof (() => never)).assertTrue()
       expect(C_F1086.field(new B_F1086, 7).v).assertEqual(-567)
     })
 
@@ -2800,7 +2793,7 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C_F1087.field instanceof HandlerA_F1087).assertTrue()
+      expect(C_F1087.field instanceof ((a: Any) => never)).assertTrue()
       expect(C_F1087.field(new B_F1087, 7).v).assertEqual(13)
     })
 
@@ -2813,7 +2806,7 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C_F1088.field instanceof HandlerAInt_F1088).assertTrue()
+      expect(C_F1088.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(C_F1088.field(new B_F1088, 7).v).assertEqual(-20)
     })
 

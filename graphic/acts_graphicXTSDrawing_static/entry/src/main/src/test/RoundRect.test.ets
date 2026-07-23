@@ -19,7 +19,7 @@ import drawing from '@ohos.graphics.drawing';
 import { BusinessError } from '@ohos.base';
 import { getRandomNumber } from './Util.test';
 
-export default function roundRectTest() {
+export default function roundRectTest(): void {
   describe('DrawingTsRoundRectTest', () => {
     const DEFAULT = 0;
 
@@ -522,7 +522,7 @@ export default function roundRectTest() {
         bottom: 400
       }, 0, 0);
       try {
-        // let roundRect2 = new drawing.RoundRect(roundRect);
+        let roundRect2 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect2 succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -534,7 +534,7 @@ export default function roundRectTest() {
       roundRect.setCorner(drawing.CornerPos.BOTTOM_LEFT_POS, 20, 20);
       roundRect.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 20, 20);
       try {
-        // let roundRect3 = new drawing.RoundRect(roundRect);
+        let roundRect3 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect3 succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -546,7 +546,7 @@ export default function roundRectTest() {
       roundRect.setCorner(drawing.CornerPos.BOTTOM_LEFT_POS, 30, 10);
       roundRect.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 40, 40);
       try {
-        // let roundRect4 = new drawing.RoundRect(roundRect);
+        let roundRect4 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect4 succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -572,7 +572,7 @@ export default function roundRectTest() {
             right: Math.random() * 30,
             bottom: Math.random() * 40
           }, Math.random() * 10, Math.random() * 20);
-          // let roundRect2 = new drawing.RoundRect(roundRect);
+          let roundRect2 = new drawing.RoundRect(roundRect);
           console.info(msg + `drawing RoundRect success step: ` + i);
         } catch (e) {
           e = e as BusinessError;

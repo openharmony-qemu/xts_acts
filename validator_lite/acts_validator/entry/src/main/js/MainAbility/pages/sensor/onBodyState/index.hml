@@ -15,7 +15,7 @@ limitations under the License.
 
 <div class="container">
     <div class="content-title">
-        <text style="width:60%;height:50px;text-align: center;">设备佩戴状态</text>
+        <text style="width:150px;height:50px;text-align: center;font-size:16px;">设备佩戴状态</text>
         <input type="button" value="?" class="backBtnHelp" onclick="help" />
     </div>
 
@@ -30,8 +30,8 @@ limitations under the License.
     </div>
 
     <div class="bottom-bt">
-        <input type="button" value="pass" class="button" onclick="changeResult(pass)" />
-        <input type="button" value="fail" class="button" onclick="changeResult(fail)" />
+        <input type="button" value="pass" class="button" onclick="changeResultPass" />
+        <input type="button" value="fail" class="button" onclick="changeResultFail" />
         <input type="button" value="返回" class="button" onclick="back" />
     </div>
 </div>

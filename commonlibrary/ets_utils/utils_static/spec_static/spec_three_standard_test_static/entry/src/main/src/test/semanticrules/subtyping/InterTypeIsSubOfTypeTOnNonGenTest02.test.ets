@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,122 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
-namespace testNS2_5 {
-  interface I_5 {}
-  interface II1_5 extends I_5 {}
-  interface II2_5 extends I_5 {}
-  interface III1_5 extends II1_5 {}
-  interface III2_5 extends II1_5 {}
-  class C1_5 implements III1_5, III2_5 {v: bigint = 123n}
-  class C2_5 implements II2_5, III2_5 {v: int = 321}
-  class C3_5 implements III1_5 {v: number = 7.8}
-  function check_C1_5(a: Any) {
-    expect(a instanceof C1_5).assertEqual(true)
-    expect(a instanceof III1_5).assertEqual(true)
-    expect(a instanceof III2_5).assertEqual(true)
-    expect(a instanceof II1_5).assertEqual(true)
-    expect(a instanceof I_5).assertEqual(true)
-    expect((a as C1_5).v).assertEqual(123n)
-  }
-  function check_C2_5(a: Any) {
-    expect(a instanceof C2_5).assertEqual(true)
-    expect(a instanceof II2_5).assertEqual(true)
-    expect(a instanceof III2_5).assertEqual(true)
-    expect(a instanceof II1_5).assertEqual(true)
-    expect(a instanceof I_5).assertEqual(true)
-    expect((a as C2_5).v).assertEqual(321)
-  }
-  function check_C3_5(a: Any) {
-    expect(a instanceof C3_5).assertEqual(true)
-    expect(a instanceof III1_5).assertEqual(true)
-    expect(a instanceof II1_5).assertEqual(true)
-    expect(a instanceof I_5).assertEqual(true)
-    expect((a as C3_5).v).assertEqual(7.8)
-  }
-  function check_bigint_5(a: Any) {
-    expect(a instanceof bigint).assertEqual(true)
-    expect(a as bigint).assertEqual(5n)
-  }
-  function check_value_5(v: Any, v_id: int): void {
-    if (v_id == 1) {
-      check_C2_5(v)
-      check_C2_5(v as III1_5 | III2_5 | II2_5)
-      check_C2_5(v as III2_5 | bigint)
-    }
-    else if (v_id == 2) {
-      check_C3_5(v)
-      check_C3_5(v as III1_5 | III2_5 | II2_5)
-    }
-    else {
-      check_bigint_5(v)
-      check_bigint_5(v as III2_5 | bigint)
-    }
-  }
-  function check_value_as_type_T_5(v: II1_5 | II2_5, v_id: int): void {
-    expect(v instanceof III1_5 | III2_5 | II2_5 || v instanceof III2_5 | bigint).assertEqual(true)
-    check_value_5(v, v_id)
-  }
-  function check_is_in_T_type_5(v: III1_5 | III2_5 | II2_5 | III2_5 | bigint, v_id: int): boolean {
-    check_value_5(v, v_id)
-    if (v instanceof III1_5 | III2_5 | II2_5) {
-      check_value_5(v, v_id)
-      if (v instanceof III2_5 | bigint) {
-        expect(v_id).assertEqual(1)
-        check_value_5(v, v_id)
-        expect(v instanceof III1_5 | III2_5 | II2_5).assertEqual(true)
-        expect(v instanceof II1_5 | II2_5).assertEqual(true)
-        if (v instanceof II1_5 | II2_5) {
-          check_value_as_type_T_5(v, v_id)
-          return true
-        } else {
-          return false
-        }
-      }
-      else {
-        expect(v_id).assertEqual(2)
-        check_value_5(v, v_id)
-        if (v instanceof II1_5 | II2_5) {
-          check_value_as_type_T_5(v, v_id)
-          return true
-        } else {
-          return false
-        }
-      }
-    }
-    else {
-      expect(v_id).assertEqual(3)
-      check_value_5(v, v_id)
-      if (v instanceof II1_5 | II2_5) {
-        check_value_as_type_T_5(v, v_id)
-        return true
-      } else {
-        return false
-      }
-    }
-  }
-  export function runTest_5(): boolean {
-    let res1_5: boolean = check_is_in_T_type_5(new C2_5(), 1)
-    let res2_5: boolean = check_is_in_T_type_5(new C3_5(), 2)
-    let res3_5: boolean = check_is_in_T_type_5(5n, 3)
-    expect(res1_5 && (res2_5 || res3_5)).assertEqual(true)
-    return true
-  }
-}
+import { Neg, Pos } from '../types.test';
+import Utils from '../../Util.test'
 
 interface I_5 {}
 interface II1_5 extends I_5 {}
@@ -331,7 +217,7 @@ export default function InterTypeIsSubOfTypeTOnNonGenTest02(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -356,13 +242,10 @@ export default function InterTypeIsSubOfTypeTOnNonGenTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnNonGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1_5: boolean = check_is_in_T_type_5(new C1_5(), 1)
       let res2_5: boolean = check_is_in_T_type_5(new C3_5(), 2)
       let res3_5: boolean = check_is_in_T_type_5(5n, 3)
       expect(res1_5 && (res2_5 || res3_5)).assertEqual(true)
-
-      expect(testNS2_5.runTest_5()).assertEqual(true)
 
     });
   })

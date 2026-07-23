@@ -1,5 +1,5 @@
 'use static';
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import sleep  from './Util.test';
 
 // Class with static shared SharedArrayBuffer

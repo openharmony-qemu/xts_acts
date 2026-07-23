@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import {
   Component,
   DisplayRotation,

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
@@ -629,7 +629,7 @@ export default function WebSocketTest() {
         try {
           let webSocketConnection: webSocket.WebSocketConnection = {
             clientIP: "",
-            clientPort: 8080
+            clientPort: 8081
           }
           let webSocketMessage: webSocket.WebSocketMessage = {
             data: "",
@@ -1443,7 +1443,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8058,
+            serverPort: 8059,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -1475,7 +1475,7 @@ export default function WebSocketTest() {
 
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
-          client.connect('ws://127.0.0.1:8058', (err: BusinessError<void> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8059', (err: BusinessError<void> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
             } else {
@@ -1519,7 +1519,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8058,
+            serverPort: 8060,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -1561,7 +1561,7 @@ export default function WebSocketTest() {
 
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
-          client.connect('ws://127.0.0.1:8058', (err: BusinessError<void> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8060', (err: BusinessError<void> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
             } else {
@@ -1605,7 +1605,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8058,
+            serverPort: 8061,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -1655,7 +1655,7 @@ export default function WebSocketTest() {
 
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
-          client.connect('ws://127.0.0.1:8058', (err: BusinessError<void> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8061', (err: BusinessError<void> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
             } else {
@@ -1849,7 +1849,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8099,
+            serverPort: 8097,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -1857,7 +1857,7 @@ export default function WebSocketTest() {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
               let client: webSocket.WebSocket = webSocket.createWebSocket();
-              client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
+              client.connect('ws://127.0.0.1:8097', (err: BusinessError<void> | null, value: boolean | undefined) => {
                 if (value) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
                 } else {
@@ -1875,7 +1875,7 @@ export default function WebSocketTest() {
               } else {
                 let connection: webSocket.WebSocketConnection = {
                   clientIP: '0.0.0.0',
-                  clientPort: 8099
+                  clientPort: 8097
                 }
                 server.send("hello client", connection).then((value: boolean | undefined) => {
                   if (value) {
@@ -1958,7 +1958,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8098,
+            serverPort: 8100,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -2007,7 +2007,7 @@ export default function WebSocketTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8076,
+            serverPort: 8101,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -2021,7 +2021,7 @@ export default function WebSocketTest() {
           })
 
           let client: webSocket.WebSocket = webSocket.createWebSocket();
-          client.connect('ws://127.0.0.1:8076', (err: BusinessError<void> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8101', (err: BusinessError<void> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
               done();
@@ -2080,7 +2080,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8076,
+      serverPort: 8102,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2094,7 +2094,7 @@ async (done: () => void): Promise<void> => {
     })
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8076', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8102', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2155,7 +2155,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8103,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2177,7 +2177,7 @@ async (done: () => void): Promise<void> => {
     server.onConnect(callback)
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8103', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2230,7 +2230,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8104,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2253,7 +2253,7 @@ async (done: () => void): Promise<void> => {
     server.onConnect(callback);
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8104', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2306,7 +2306,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8105,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2333,7 +2333,7 @@ async (done: () => void): Promise<void> => {
     server.onMessageReceive(callback);
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8105', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2352,7 +2352,7 @@ async (done: () => void): Promise<void> => {
     } else {
       let connection: webSocket.WebSocketConnection = {
         clientIP: '0.0.0.0',
-        clientPort: 8077
+        clientPort: 8105
       }
       server.send("hi", connection).then((value: boolean | undefined) => {
         if (value) {
@@ -2386,7 +2386,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8106,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2414,7 +2414,7 @@ async (done: () => void): Promise<void> => {
     server.offMessageReceive(callback);
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8106', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2433,7 +2433,7 @@ async (done: () => void): Promise<void> => {
     } else {
       let connection: webSocket.WebSocketConnection = {
         clientIP: '0.0.0.0',
-        clientPort: 8077
+        clientPort: 8106
       }
       server.send("hi", connection).then((value: boolean | undefined) => {
         if (value) {
@@ -2467,7 +2467,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8107,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2490,7 +2490,7 @@ async (done: () => void): Promise<void> => {
 
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8107', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2509,7 +2509,7 @@ async (done: () => void): Promise<void> => {
     } else {
       let connection: webSocket.WebSocketConnection = {
         clientIP: '0.0.0.0',
-        clientPort: 8077
+        clientPort: 8107
       }
       server.send("hi", connection).then((value: boolean | undefined) => {
         if (value) {
@@ -2543,7 +2543,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8078,
+      serverPort: 8108,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2568,7 +2568,7 @@ async (done: () => void): Promise<void> => {
 
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8078', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8108', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2587,7 +2587,7 @@ async (done: () => void): Promise<void> => {
     } else {
       let connection: webSocket.WebSocketConnection = {
         clientIP: '0.0.0.0',
-        clientPort: 8078
+        clientPort: 8108
       }
       server.send("hi", connection).then((value: boolean | undefined) => {
         if (value) {
@@ -2621,7 +2621,7 @@ async (done: () => void): Promise<void> => {
     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
     let serverConfig: webSocket.WebSocketServerConfig = {
       serverIP: "0.0.0.0",
-      serverPort: 8077,
+      serverPort: 8109,
       maxConcurrentClientsNumber: 10,
       maxConnectionsForOneClient: 4,
     }
@@ -2646,7 +2646,7 @@ async (done: () => void): Promise<void> => {
 
 
     let client: webSocket.WebSocket = webSocket.createWebSocket();
-    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+    client.connect('ws://127.0.0.1:8109', (err: BusinessError<void> | null, value: boolean | undefined) => {
       if (value) {
         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
         done();
@@ -2665,7 +2665,7 @@ async (done: () => void): Promise<void> => {
     } else {
       let connection: webSocket.WebSocketConnection = {
         clientIP: '0.0.0.0',
-        clientPort: 8077
+        clientPort: 8109
       }
       server.send("hi", connection).then((value: boolean | undefined) => {
         if (value) {

@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "../../../../../../hypium/index";
 
 export default function IntegerBitwiseOperatorsTruthTableTest(): void {
   describe("IntegerBitwiseOperatorsTruthTableTest", () => {

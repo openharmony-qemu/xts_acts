@@ -19,6 +19,7 @@ import getAudioSceneApi12 from "./GetAudioScene.test"
 import audioRoutingManager from "./AudioRoutingManager.test"
 import audioLoopBack from './AudioLoopBack.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
+import audioSpatializationManager2 from './AudioSpatializationManager2.test';
 import audioSessionManagerTest from './AudioSessionManager.test';
 import audioDeviceEnhanceManager from './AudioDeviceEnhanceManagerTest.test';
 import audioDebuggingManager from './AudioDebuggingManager.test';
@@ -72,4 +73,5 @@ export default function testsuite() {
     getAudioSceneApi12();
     audioLoopBack();
     audioSpatializationManager();
+    audioSpatializationManager2();
 }

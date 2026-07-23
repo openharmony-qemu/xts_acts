@@ -18,63 +18,26 @@
 #include <vector>
 #include <functional>
 
-using TestFunction = std::function<int()>;
-
-static const std::vector<TestFunction> funcTestFunctions = {
-    VideoDecodeSyncSw263Func0010Test,
-    VideoDecodeSyncSw263Func0020Test,
-    VideoDecodeSyncSw263Func0040Test,
-    VideoDecodeSw263BlankFrame0010Test
-};
-
-static napi_value CreateResultValue(napi_env env, int result)
-{
-    napi_value resultValue;
-    napi_create_int32(env, result, &resultValue);
-    return resultValue;
-}
-
-static napi_value RunFuncTest(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1];
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok || argc < 1) {
-        return CreateResultValue(env, -1);
-    }
-
-    napi_valuetype valuetype;
-    napi_typeof(env, args[0], &valuetype);
-    if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return CreateResultValue(env, -1);
-    }
-
-    int32_t testCase = -1;
-    status = napi_get_value_int32(env, args[0], &testCase);
-    if (status != napi_ok) {
-        return CreateResultValue(env, -1);
-    }
-
-    int result = -1;
-    if (testCase >= 0 && testCase < static_cast<int>(funcTestFunctions.size())
-        && funcTestFunctions[testCase] != nullptr) {
-        result = funcTestFunctions[testCase]();
-    } else {
-        napi_throw_type_error(env, nullptr, "Invalid test case number");
-        return CreateResultValue(env, -1);
-    }
-
-    return CreateResultValue(env, result);
-}
-
 EXTERN_C_START
+
+static napi_property_descriptor XL(const char *functionName, napi_callback func)
+{
+    return {functionName, nullptr, func, nullptr, nullptr, nullptr, napi_default, nullptr};
+}
+
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoDecodeSyncSw263Func0010Test", VideoDecodeSyncSw263Func0010Test));
+    desc.push_back(XL("VideoDecodeSyncSw263Func0020Test", VideoDecodeSyncSw263Func0020Test));
+    desc.push_back(XL("VideoDecodeSyncSw263Func0040Test", VideoDecodeSyncSw263Func0040Test));
+    desc.push_back(XL("VideoDecodeSw263BlankFrame0010Test", VideoDecodeSw263BlankFrame0010Test));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        { "runFuncTest", nullptr, RunFuncTest, nullptr, nullptr, nullptr, napi_default, nullptr }
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    std::vector<napi_property_descriptor> desc;
+    InitPush1(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

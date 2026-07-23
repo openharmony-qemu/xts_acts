@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
+} from '../../../../../../../hypium/index';
 
 // 14
 class Pa_0<T> {

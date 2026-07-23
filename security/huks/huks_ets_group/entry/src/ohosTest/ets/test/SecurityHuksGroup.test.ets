@@ -185,7 +185,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7200
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7200
-     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
+     * @tc.desc   test alias Agree group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -215,7 +215,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7210
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7210
-     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
+     * @tc.desc   test alias Agree group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -247,7 +247,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7300
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7300
-     * @tc.desc   test alias DeriveAgree group_alias not configured, errcode 12000018
+     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -264,6 +264,35 @@ export default function SecurityHuksGroupAPI23Test() {
         await huks.generateKeyItem(testNumber, genKeyOptions);
         try {
           await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7310
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7310
+     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7310";
+        let genKeyOptions = GetAesGenerateOptions(256);
+        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
+        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
+        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
+        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
+        await huksCallbackUtils.generateKeyItem(testNumber, genKeyOptions);
+        let handle: number = (await huksCallbackUtils.initSession(testNumber, deriveInitOptions)).handle;
+        await huksCallbackUtils.updateSession(handle, deriveInitOptions);
+        try {
+          await huksCallbackUtils.finishSession(handle, deriveFinishOptions);
           expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
@@ -318,7 +347,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7500
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7500
-     * @tc.desc   test exportKeyItem group_alias not configured, errcode 12000018
+     * @tc.desc   test wrapKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -552,7 +581,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8200
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8200
-     * @tc.desc   test deleteKeyItem group_alias not exist, errcode 12000018
+     * @tc.desc   test deleteKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -574,7 +603,7 @@ export default function SecurityHuksGroupAPI23Test() {
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8210
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8210
-     * @tc.desc   test deleteKeyItem group_alias not exist, errcode 12000018
+     * @tc.desc   test deleteKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -81,7 +81,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let b1 = new B2();
       let b2 = new B2();
       let instance: Object[] = [b1, b2];
@@ -98,7 +97,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let b1 = B3.create();
       let b2 = B3.create();
       let instance: A[] = [b1, b2];
@@ -117,7 +115,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instance: Object[] = [1, 2];
       expect(typeof instance[0]).assertEqual('int');
       expect(typeof instance[1]).assertEqual('int');

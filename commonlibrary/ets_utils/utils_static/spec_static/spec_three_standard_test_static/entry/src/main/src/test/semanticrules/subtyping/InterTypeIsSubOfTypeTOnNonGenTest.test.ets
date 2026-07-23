@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 class Animal_1 {}
 class Cat_1 extends Animal_1 {v_1: string = "cat"}
@@ -205,7 +199,7 @@ export default function InterTypeIsSubOfTypeTOnNonGenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -230,7 +224,6 @@ export default function InterTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnNonGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1_1: boolean = check_is_in_T_type_1(
         new Dog_1(), 1)
       let res2_1: boolean = check_is_in_T_type_1(
@@ -251,7 +244,6 @@ export default function InterTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnNonGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1_2: boolean = check_is_in_T_type_2(
         new C1_2(), 1)
       let res2_2: boolean = check_is_in_T_type_2(

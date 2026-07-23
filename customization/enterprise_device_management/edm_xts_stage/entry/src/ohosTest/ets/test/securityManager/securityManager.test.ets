@@ -2224,10 +2224,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
     }
     done();
@@ -2251,10 +2251,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2279,10 +2279,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2305,10 +2305,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2331,10 +2331,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0500 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2357,10 +2357,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0600 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2385,10 +2385,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
     }
     done();
@@ -2412,10 +2412,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2440,10 +2440,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2466,10 +2466,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2496,8 +2496,8 @@ function testIsScreenLockDisabledForAccount() {
       expect(result2).assertFalse();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0500 error is not expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(false).assertTrue();
       }
@@ -2529,7 +2529,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(Number(error.code) == 9200001).assertTrue();
     }
     done();
   });
@@ -2548,7 +2548,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(Number(error.code) == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

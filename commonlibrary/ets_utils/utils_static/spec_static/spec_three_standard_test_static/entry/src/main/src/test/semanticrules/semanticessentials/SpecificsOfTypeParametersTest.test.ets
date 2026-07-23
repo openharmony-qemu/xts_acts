@@ -17,10 +17,7 @@
 import {
     afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType
 } from '../../../../../hypium/index';
-
-class Pos<T extends number> {
-    constructor(x: T) {}
-}
+import { Pos } from '../types.test'
 
 export default function SpecificsOfTypeParametersTest(): void {
     describe('SpecificsOfTypeParametersTest', () => {

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 interface I1_4<U, V> {}
 interface I2_4<U, V> {}
@@ -241,7 +235,7 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -266,7 +260,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: III1_4 | II2_4 | III2_4 = new C1_4(123)
       let v2: III1_4 | II2_4 | III2_4 = new C3_4(321n)
       let res: boolean =
@@ -286,7 +279,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: III1_5<number, null> | III1_5<bigint, undefined> | number = new C1_5<number, null>(123)
       let v2: III1_5<number, null> | III1_5<bigint, undefined> | number = new C3_5<bigint, undefined>(321n)
       let res: boolean =
@@ -306,7 +298,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: C1_6<Derived_6, Base_6> | C2_6<Base_6, Derived_6> = new C2_6<Derived_6, Base_6>(new Derived_6(321))
       let v2: C1_6<Derived_6, Base_6> | C2_6<Base_6, Derived_6> = new C1_6<Base_6, Base_6>(new Base_6(123n))
       let res: boolean =

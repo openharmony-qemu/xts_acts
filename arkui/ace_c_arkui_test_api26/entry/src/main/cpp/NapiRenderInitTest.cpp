@@ -23,6 +23,8 @@
 #include "getSizeLimitation/GetSizeLimitation.h"
 #include "shouldRecognizerParallelWith/shouldRecognizerParallelWith.h"
 #include "arcList/ArcListEventCallbackTest.h"
+#include "arcSwiper/ArcSwiperEventCallbackTest.h"
+#include "arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -51,6 +53,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetTouchEventData", nullptr, GestureInterfaceCancelTest::GetTouchEventData,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ArcListEventCallbackTest", nullptr, ArcListEventCallbackTest::CreateNativeNode, 
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ArcSwiperEventCallbackTest", nullptr, ArcSwiperEventCallbackTest::CreateNativeNode, 
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ArcAlphabetIndexerEventCallbackTest", nullptr, ArcAlphabetIndexerEventCallbackTest::CreateNativeNode, 
                 nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

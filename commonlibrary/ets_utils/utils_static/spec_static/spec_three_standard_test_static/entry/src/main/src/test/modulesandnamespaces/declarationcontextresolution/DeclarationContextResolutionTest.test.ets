@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,14 +21,7 @@ import { dcrPick } from "../modules/dcr_overload_defaults"
 import { dcrAcceptPublicUnion, dcrMakePublicUnion } from "../modules/dcr_type_alias_defaults"
 import { DcrGenericBox, dcrGenericDefaultFunction } from "../modules/dcr_generic_defaults"
 import { DcrAmbientAnno } from "../ambient/dcr_ambient_annotation"
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 class DcrDerivedCtorDefaultClass extends DcrCtorDefaultClass {
   constructor() {
@@ -45,7 +38,7 @@ export default function DeclarationContextResolutionTest(): void {
     })
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {

@@ -150,8 +150,9 @@ export default function audioCapturer() {
       console.info('beforeEach called')
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       console.info('afterEach called')
+      await Utils.msSleep(500);
     })
 
     let recPromise =
@@ -5505,8 +5506,8 @@ export default function audioCapturer() {
             streamInfo: audioStreamInfo,
             capturerInfo: audioCapturerInfo
           };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
           if (audioCapturer) {
-            audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
             await audioCapturer!.start();
             await audioCapturer!.stop();
 
@@ -5521,7 +5522,7 @@ export default function audioCapturer() {
           }
 
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(false).assertTrue();
         } finally {
           if (audioCapturer) {
@@ -5621,8 +5622,8 @@ export default function audioCapturer() {
             streamInfo: audioStreamInfo,
             capturerInfo: audioCapturerInfo
           };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
           if (audioCapturer) {
-            audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
             await audioCapturer!.release();
             audioCapturer!.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
             console.info(`${TAG}: setNoiseReductionMode in released state should fail`);

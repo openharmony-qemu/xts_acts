@@ -550,7 +550,7 @@ export class XComponentModifier implements AttributeModifier<XComponentAttribute
 @Entry
 @Component
 struct borderColorPage {
-  @State _borderColor: number | string = Color.Brown
+  @State _borderColor: Color = Color.Brown
   @State _borderColorAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _borderColorBadgeMod: BadgeModifier = new BadgeModifier()
   @State _borderColorBlankMod: BlankModifier = new BlankModifier()

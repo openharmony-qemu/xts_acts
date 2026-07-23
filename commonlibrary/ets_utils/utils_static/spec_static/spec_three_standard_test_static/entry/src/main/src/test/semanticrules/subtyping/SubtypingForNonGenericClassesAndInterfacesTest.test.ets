@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -276,10 +276,8 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericCastToObject0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instance: Object = new B1();
       expect(instance instanceof B1).assertTrue()
-
     });
 
     /**
@@ -291,7 +289,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericCastToSuperclass0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instanceA = new A3()
       let instanceB = new B3()
       let instanceC = new C3()
@@ -315,7 +312,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping00007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = (t7 = new T7)
       let derived = (t7 = new S7)
       expect(base instanceof T7).assertTrue()
@@ -334,7 +330,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = (t8 = new Object)
       let derived = (t8 = new S8)
       expect(base instanceof Object).assertTrue()
@@ -353,7 +348,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       t9 = {}
       let base = (a9 = t9)
       let derived = (a9 = t9 = s9)
@@ -373,7 +367,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = (a10 = t10)
       let derived = (a10 = s10)
       expect(base instanceof T10).assertTrue()
@@ -392,7 +385,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = (a11 = new Object)
       let derived = (a11 = s11)
       expect(base instanceof Object).assertTrue()
@@ -411,7 +403,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = foo12(new T12)
       let derived = foo12(new S12)
       expect(base instanceof T12).assertTrue()
@@ -430,7 +421,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = foo13(new Object)
       let derived = foo13(new S13)
       expect(base instanceof Object).assertTrue()
@@ -449,7 +439,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       t14 = {}
       let base = foo14(t14)
       let derived = foo14(t14 = s14)
@@ -469,7 +458,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = foo15(t15)
       let derived = foo15(s15)
       expect(base instanceof T15).assertTrue()
@@ -488,7 +476,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = foo16(new Object())
       let derived = foo16(s16)
       expect(base instanceof T16).assertFalse()
@@ -507,7 +494,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new A17().foo17(new T17)
       let derived = new A17().foo17(new S17)
       expect(base instanceof T17).assertTrue()
@@ -526,7 +512,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       t18 = {}
       let base = new A18().foo18(t18)
       let derived = new A18().foo18(t18 = s18)
@@ -546,7 +531,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new C19().foo19(t19)
       let derived = new C19().foo19(s19)
       expect(base instanceof T19).assertTrue()
@@ -565,7 +549,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new A20().foo20(new Object)
       let derived = new A20().foo20(s20)
       expect(base instanceof Object).assertTrue()
@@ -584,7 +567,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = A21.foo21(new T21)
       let derived = A21.foo21(new S21)
       expect(base instanceof T21).assertTrue()
@@ -603,7 +585,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = A22.foo22(new Object)
       let derived = A22.foo22(new S22)
       expect(base instanceof Object).assertTrue()
@@ -622,7 +603,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       t23 = {}
       let base = A23.foo23(t23)
       let derived = A23.foo23(t23 = s23)
@@ -642,7 +622,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = C24.foo24(t24)
       let derived = C24.foo24(s24)
       expect(base instanceof T24).assertTrue()
@@ -661,7 +640,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = A25.foo25(new Object)
       let derived = A25.foo25(s25)
       expect(base instanceof Object).assertTrue()
@@ -680,7 +658,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new A26(new T26).a26
       let derived = new A26(new S26).a26
       expect(base instanceof T26).assertTrue()
@@ -699,7 +676,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping00227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new A27(new Object).a27
       let derived = new A27(new S27).a27
       expect(base instanceof Object).assertTrue()
@@ -718,7 +694,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       t28 = {}
       let base = new A28(t28).a28
       let derived = new A28(t28 = s28).a28
@@ -738,7 +713,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new C29(t29).c29
       let derived = new C29(s29).c29
       expect(base instanceof T29).assertTrue()
@@ -757,7 +731,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let base = new A30(new Object()).a30
       let derived = new A30(s30).a30
       expect(base instanceof T30).assertFalse()
@@ -776,7 +749,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericSuperinterface0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instanceB: B31 = {}
       let instanceA: A31 = instanceB
       expect(instanceA instanceof B31).assertTrue()

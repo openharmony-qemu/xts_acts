@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -31,7 +31,7 @@ import * as all_Index from '../export_tuple/Index';
 import * as all_Index2 from '../export_tuple/Index2';
 
 
-export default function exportTupleTest() {
+export default function exportTupleTest():void {
   describe('ExportTupleTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

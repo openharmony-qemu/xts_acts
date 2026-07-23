@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test';
+import Utils from '../../Util.test'
 
 namespace testNS2_15 {
   function foo(v: Object | undefined | Any): void {
@@ -104,7 +92,7 @@ export default function DiffTypeIsSubOfTypeTOnPredefinedTest01(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -128,14 +116,11 @@ export default function DiffTypeIsSubOfTypeTOnPredefinedTest01(): void {
  * @tc.level     Level 2
  */
 it("testDiffTypeIsSubOfTypeTOnPredefined0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
   let res: number = f1_15(null);
   expect(res).assertEqual(1);
   res = f1_15(5n);
   expect(res).assertEqual(2);
-  expect(testNS2_15.runTest()).assertEqual(true);
 
 });
-
   })
 }

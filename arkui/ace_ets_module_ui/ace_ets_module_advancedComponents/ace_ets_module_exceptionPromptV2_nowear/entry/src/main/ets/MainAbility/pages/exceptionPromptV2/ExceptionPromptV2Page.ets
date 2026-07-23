@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { ExceptionPromptV2, PromptOptionsV2, MarginTypeV2 } from '@ohos.arkui.advanced.ExceptionPromptV2';
+import { ExceptionPromptV2, PromptOptionsV2, MarginTypeV2, PromptOptionsV2Config } from '@ohos.arkui.advanced.ExceptionPromptV2';
+import { SymbolGlyphModifier } from '@kit.ArkUI'
 
 @Entry
 @ComponentV2
@@ -24,24 +25,41 @@ struct ExceptionPromptV2Example {
   @Local isShown4: boolean = true;
   @Local tipClickCount: number = 0;
   @Local actionClickCount: number = 0;
+  @Local promptOptions: PromptOptionsV2Config = {
+    marginType: MarginTypeV2.DEFAULT_MARGIN,
+    marginTop: 420,
+    icon: $r('sys.media.ohos_ic_public_edit'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.wifi')),
+    actionText: '设置',
+    tip: '服务器连接失败',
+    isShown: this.isShown3
+  };
+  @Local prompt: PromptOptionsV2 = new PromptOptionsV2(this.promptOptions)
 
   build() {
     Column() {
       Scroll() {
         Column({ space: 12 }) {
           Text('ExceptionPromptV2 测试页面')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ bottom: 20 })
-
-          Text('测试1: 默认边距类型')
             .fontSize(16)
-            .fontWeight(FontWeight.Medium)
+            .fontWeight(FontWeight.Bold)
+
+          Row(){
+            Text('测试1: 默认边距类型')
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+            Button('切换显示状态1')
+              .onClick(() => {
+                this.isShown1 = !this.isShown1;
+              })
+          }
 
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.DEFAULT_MARGIN,
-              marginTop: 10,
+              marginTop: 320,
+              icon: $r('sys.symbol.phone'),
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Blue]),
               tip: '网络未连接',
               isShown: this.isShown1
             }),
@@ -51,19 +69,21 @@ struct ExceptionPromptV2Example {
             }
           })
 
-          Button('切换显示状态1')
-            .onClick(() => {
-              this.isShown1 = !this.isShown1;
-            })
-
-          Text('测试2: 适配边距类型')
-            .fontSize(16)
-            .fontWeight(FontWeight.Medium)
+          Row(){
+            Text('测试2: 适配边距类型')
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+            Button('切换显示状态2')
+              .onClick(() => {
+                this.isShown2 = !this.isShown2;
+              })
+          }
 
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.FIT_MARGIN,
-              marginTop: 10,
+              marginTop: 370,
+              icon: $r('sys.symbol.phone'),
               tip: '网络连接不稳定',
               actionText: '设置',
               isShown: this.isShown2
@@ -74,38 +94,34 @@ struct ExceptionPromptV2Example {
             }
           })
 
-          Button('切换显示状态2')
-            .onClick(() => {
-              this.isShown2 = !this.isShown2;
-            })
-
-          Text('测试3: 带图标')
-            .fontSize(16)
-            .fontWeight(FontWeight.Medium)
+          Row(){
+            Text('测试3: 带图标')
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+            Button('切换显示状态3')
+              .onClick(() => {
+                this.isShown3 = !this.isShown3;
+              })
+          }
 
           ExceptionPromptV2({
-            options: new PromptOptionsV2({
-              marginType: MarginTypeV2.DEFAULT_MARGIN,
-              marginTop: 10,
-              icon: $r('sys.media.ohos_ic_public_edit'),
-              tip: '服务器连接失败',
-              isShown: this.isShown3
-            })
+            options: this.prompt,
           })
 
-          Button('切换显示状态3')
-            .onClick(() => {
-              this.isShown3 = !this.isShown3;
-            })
-
-          Text('测试4: 完整配置')
-            .fontSize(16)
-            .fontWeight(FontWeight.Medium)
+          Row(){
+            Text('测试4: 完整配置')
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+            Button('切换显示状态4')
+              .onClick(() => {
+                this.isShown4 = !this.isShown4;
+              })
+          }
 
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.FIT_MARGIN,
-              marginTop: 20,
+              marginTop: 470,
               icon: $r('sys.media.ohos_ic_public_edit'),
               tip: '无法获取位置信息',
               actionText: '刷新',
@@ -121,66 +137,20 @@ struct ExceptionPromptV2Example {
             }
           })
 
-          Button('切换显示状态4')
-            .onClick(() => {
-              this.isShown4 = !this.isShown4;
-            })
-
           Text('事件统计:')
             .fontSize(16)
-            .margin({ top: 20 })
+            .margin({ top: 5 })
 
           Text('tip点击次数: ' + this.tipClickCount)
-            .fontSize(14)
+            .fontSize(12)
 
           Text('action点击次数: ' + this.actionClickCount)
-            .fontSize(14)
-
-          Text('测试5: 动态更新属性')
-            .fontSize(16)
-            .fontWeight(FontWeight.Medium)
-            .margin({ top: 20 })
-
-          DynamicUpdateTest()
+            .fontSize(12)
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
-        .margin({ top: 50 })
+        .height('100%')
       }
-    }
-  }
-}
-
-@ComponentV2
-struct DynamicUpdateTest {
-  @Local dynamicTip: string = '初始提示文本';
-  @Local dynamicIsShown: boolean = true;
-
-  build() {
-    Column({ space: 10 }) {
-      ExceptionPromptV2({
-        options: new PromptOptionsV2({
-          marginType: MarginTypeV2.DEFAULT_MARGIN,
-          marginTop: 10,
-          tip: this.dynamicTip,
-          isShown: this.dynamicIsShown
-        })
-      })
-
-      Button('更改提示文本')
-        .onClick(() => {
-          this.dynamicTip = '更新后的提示文本';
-        })
-
-      Button('隐藏组件')
-        .onClick(() => {
-          this.dynamicIsShown = false;
-        })
-
-      Button('显示组件')
-        .onClick(() => {
-          this.dynamicIsShown = true;
-        })
     }
   }
 }

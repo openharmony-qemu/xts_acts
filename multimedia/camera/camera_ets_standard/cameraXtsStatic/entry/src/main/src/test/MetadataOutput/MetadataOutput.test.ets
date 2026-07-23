@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium/index';
 import { camera } from '@kit.CameraKit';
 import {
   getFd, getPermission, resourceName, sleep
@@ -309,8 +309,27 @@ export default function MetadataOutputStaticTest():void {
         const mode = camera.SceneMode.NORMAL_VIDEO;
         mCameraOutputCap = mCameraManager!.getSupportedOutputCapability(device, mode);
         mCameraInput = mCameraManager!.createCameraInput(device);
-        mPreviewOutput = mCameraManager!.createPreviewOutput(mCameraOutputCap!.previewProfiles[0], indexSurfaceId);
-        mVideoOutput = mCameraManager!.createVideoOutput(mCameraOutputCap!.videoProfiles[0], mVideoSurfaceId!);
+        // 预览和录像宽高比及格式匹配选择
+        const previewProfiles = mCameraOutputCap!.previewProfiles;
+        const videoProfiles = mCameraOutputCap!.videoProfiles;
+        let isMatchFound = false;
+        // 优先选择第一个预览配置和第一个视频配置的宽高比和格式
+        for (const nPreviewProfile of previewProfiles) {
+          const previewRatio = nPreviewProfile.size.width / nPreviewProfile.size.height;
+          for (const nVideoProfile of videoProfiles) {
+            const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+            // 匹配宽高比和格式
+            if (previewRatio === videoRatio && nPreviewProfile.format === nVideoProfile.format) {
+              console.info(TAG, testName + ' nPreviewProfile is ' + JSON.stringify(nPreviewProfile));
+              console.info(TAG, testName + ' nVideoProfile is ' + JSON.stringify(nVideoProfile));
+              mPreviewOutput = mCameraManager!.createPreviewOutput(nPreviewProfile, indexSurfaceId);
+              mVideoOutput = mCameraManager!.createVideoOutput(nVideoProfile, mVideoSurfaceId!);
+              isMatchFound = true;
+              break;
+            }
+          }
+          if (isMatchFound) break;
+        }
         mMetadataObjectTypes = mCameraOutputCap!.supportedMetadataObjectTypes;
         console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
         mMetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);

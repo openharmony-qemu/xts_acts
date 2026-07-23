@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
 
 let arr: int[] = [0, 0, 0, 0]
 function foo_abrupt_0(cnt: int): int  {

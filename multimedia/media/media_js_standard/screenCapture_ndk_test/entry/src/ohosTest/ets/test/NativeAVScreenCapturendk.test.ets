@@ -1513,6 +1513,20 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0200
+     * @tc.desc   OH_AVScreenCapture_PauseScreenCapture with errcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCapturePauseScreenCaptureError();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100
      * @tc.desc   OH_AVScreenCapture_ResumeScreenCapture with nullptr
@@ -1522,6 +1536,20 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureResumeScreenCaptureErr();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0200
+     * @tc.desc   OH_AVScreenCapture_ResumeScreenCapture with errcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureResumeScreenCaptureError();
       expect(result).assertEqual(0);
       done();
     });

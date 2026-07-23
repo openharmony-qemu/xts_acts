@@ -26,7 +26,7 @@ import {
   expect,
   Level,
   Hypium
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
 

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum Enum22: short {
   Red,
@@ -464,7 +458,7 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -508,7 +502,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(testNS50.runTest()).assertEqual(true);
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_0300
      * @tc.name      testEnumerationWithExplicitType0071
@@ -548,7 +541,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(testNS52.runTest()).assertEqual(true);
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_0500
      * @tc.name      testEnumerationWithExplicitType0073
@@ -578,7 +570,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(Enum23.oNe.toString()).assertEqual("1");
       expect(testNS54.runTest()).assertEqual(true);
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_0700
@@ -619,7 +610,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(testNS56.runTest()).assertEqual(true);
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1300
      * @tc.name      testEnumerationWithExplicitType0081
@@ -646,7 +636,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(Enum25.oNe.toString()).assertEqual("one");
       expect(testNS62.runTest()).assertEqual(true);
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1500
@@ -681,6 +670,5 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(c.toString()).assertEqual("one");
       expect(testNS64.runTest()).assertEqual(true);
     });
-
   })
 }

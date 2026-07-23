@@ -805,7 +805,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         rdbstore = await relationalStore.getRdbStore(context!, storeConfig);
         expect(rdbstore !== undefined).assertTrue();
         hilog.info(DOMAIN, TAG, "Step 2: Execute SQL and insert data");
-        rdbstore.executeSql(SQL_CREATE_TABLE);
+        await rdbstore.executeSql(SQL_CREATE_TABLE);
         rdbstore!.insertSync('EMPLOYEE', valueBucket);
         hilog.info(DOMAIN, TAG, "Step 3: Close database");
         hilog.info(DOMAIN, TAG, "Step 4: Reopen database with getRdbStoreSync (sync)");

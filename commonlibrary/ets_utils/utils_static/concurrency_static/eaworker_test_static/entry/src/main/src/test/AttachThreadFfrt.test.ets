@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
 import {sensor} from '@kit.SensorServiceKit'
 import hilog from '@ohos.hilog'

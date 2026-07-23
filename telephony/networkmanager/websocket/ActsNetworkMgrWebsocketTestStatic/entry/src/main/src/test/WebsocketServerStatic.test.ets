@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
@@ -228,6 +228,100 @@ export default function WebsocketServerStaticTest() {
           ExpectTrue(err.code === 2302999, `${caseName} test result error ${JSON.stringify(error)}`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', `${caseName} catch error ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStartStatic0500
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStartStatic_0500
+     * @tc.desc   Start a WebSocketServer with port already occupied (errorCode:2302007)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketWebSocketServerStartStatic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStartStatic0500';
+      hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+      try {
+        let server1: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        hilog.info(domain, tag, '%{public}s', `${caseName} --> server1: ${server1}`);
+        let serverConfig: webSocket.WebSocketServerConfig = {
+          serverIP: "0.0.0.0",
+          serverPort: 9058,
+          maxConcurrentClientsNumber: 10,
+          maxConnectionsForOneClient: 11,
+        };
+
+        server1.start(serverConfig).then(async (success: boolean) => {
+          if (success) {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success`);
+            let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+            hilog.info(domain, tag, '%{public}s', `${caseName} --> server2: ${server2}`);
+
+            server2.start(serverConfig).then(async (success2: boolean) => {
+              if (success2) {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
+                expectFail(`${caseName} server2 should fail with port occupied`);
+                server2.stop();
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start fail - port may be occupied`);
+                expectFail(`${caseName} server2 should fail with specific error code`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              }
+            }).catch((error: Error) => {
+              let err = error as BusinessError;
+              hilog.info(domain, tag, '%{public}s', `${caseName} server2 error ${JSON.stringify(error)}`);
+              if (err && (err.code === 2302007 || err.code === 2302999)) {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 correctly failed with error code ${err.code}`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else if (err && err.code) {
+                ExpectTrue(err.code === 2302007 || err.code === 2302999, `${caseName} test result error ${JSON.stringify(error)}`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 failed with empty error object - may be port occupied`);
+                ExpectTrue(false, `${caseName} server2 should fail with port occupied error code 2302007 or generic error 2302999, but got empty error object`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              }
+            });
+          } else {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start fail - port may already be occupied`);
+            expectFail(`${caseName} server1 failed to start, but this may be due to port occupation`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          }
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `${caseName} server1 error ${JSON.stringify(error)}`);
+          if (err && (err.code === 2302007 || err.code === 2302999)) {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 failed with error code ${err.code} - test passes`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          } else if (err && err.code) {
+            ExpectTrue(err.code === 2302007 || err.code === 2302999, `${caseName} server1 should fail with port occupied error code 2302007 or generic error 2302999, but got ${err.code}`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          } else {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 failed with empty error object - may be port occupied`);
+            ExpectTrue(false, `${caseName} server1 should fail with port occupied error code 2302007 or generic error 2302999, but got empty error object`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', `${caseName} catch error ${JSON.stringify(err)}`);

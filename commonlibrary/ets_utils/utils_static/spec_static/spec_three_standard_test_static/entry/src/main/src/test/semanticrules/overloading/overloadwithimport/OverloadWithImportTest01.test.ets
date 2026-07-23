@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,19 +15,12 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 // ============================================================================
-// Data Setup for extended_class_methods_overload_0
+// Data Setup for extended_class_methods_overload_compile_time
 // ============================================================================
-namespace ext_overload_0 {
+namespace ext_overload_compile_time {
   export class A {
     a: string = "a";
     foo(x: A): string { return this.a; }
@@ -47,115 +40,9 @@ namespace ext_overload_0 {
 }
 
 // ============================================================================
-// Data Setup for extended_class_methods_overload_1
+// Data Setup for extended_class_methods_overload_smart_type
 // ============================================================================
-namespace ext_overload_1 {
-  export class A {
-    a: string = "a";
-    foo(x: A): string { return this.a; }
-  }
-  export class B extends A {
-    a: string = "b";
-    foo(x: A): string { return this.a; }
-  }
-  export class C extends B {
-    a: string = "c";
-    foo(x: A): string { return this.a; }
-  }
-
-  export function testCompileTime(a: A): string {
-    return a.foo(a);
-  }
-}
-
-// ============================================================================
-// Data Setup for extended_class_methods_overload_2
-// ============================================================================
-namespace ext_overload_2 {
-  export class A {
-    a: string = "a";
-    foo(x: A): string { return this.a; }
-  }
-  export class B extends A {
-    a: string = "b";
-    foo(x: A): string { return this.a; }
-  }
-  export class C extends B {
-    a: string = "c";
-    foo(x: A): string { return this.a; }
-  }
-
-  export function testCompileTime(a: A): string {
-    return a.foo(a);
-  }
-}
-
-// ============================================================================
-// Data Setup for extended_class_methods_overload_3
-// ============================================================================
-namespace ext_overload_3 {
-  export class A {
-    a: string = "a";
-    foo(x: A): string { return this.a; }
-  }
-  export class B extends A {
-    a: string = "b";
-    foo(x: A): string { return this.a; }
-  }
-  export class C extends B {
-    a: string = "c";
-    foo(x: A): string { return this.a; }
-  }
-
-  export function testSmartType(a: A): string {
-    if (a instanceof C) {
-      return a.foo(a);
-    }
-    if (a instanceof B) {
-      return a.foo(a);
-    }
-    if (a instanceof A) {
-      return a.foo(a);
-    }
-    return "";
-  }
-}
-
-// ============================================================================
-// Data Setup for extended_class_methods_overload_4
-// ============================================================================
-namespace ext_overload_4 {
-  export class A {
-    a: string = "a";
-    foo(x: A): string { return this.a; }
-  }
-  export class B extends A {
-    a: string = "b";
-    foo(x: A): string { return this.a; }
-  }
-  export class C extends B {
-    a: string = "c";
-    foo(x: A): string { return this.a; }
-  }
-
-  export function testSmartType(a: A): string {
-    if (a instanceof C) {
-      return a.foo(a);
-    }
-    if (a instanceof B) {
-      return a.foo(a);
-    }
-    if (a instanceof A) {
-      return a.foo(a);
-    }
-    return "";
-  }
-}
-
-// ============================================================================
-// Data Setup for extended_class_methods_overload_5
-// ============================================================================
-namespace ext_overload_5 {
+namespace ext_overload_smart_type {
   export class A {
     a: string = "a";
     foo(x: A): string { return this.a; }
@@ -195,7 +82,7 @@ export default function OverloadWithImportTestOne():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -218,7 +105,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ext_overload_0.testCompileTime(new ext_overload_0.A())).assertEqual('a');
+      expect(ext_overload_compile_time.testCompileTime(new ext_overload_compile_time.A())).assertEqual('a');
     });
 
     /**
@@ -230,8 +117,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Dynamic dispatch ensures the subclass `foo` is called which returns its localized `a` property
-      expect(ext_overload_1.testCompileTime(new ext_overload_1.B())).assertEqual('b');
+      expect(ext_overload_compile_time.testCompileTime(new ext_overload_compile_time.B())).assertEqual('b');
     });
 
     /**
@@ -243,7 +129,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ext_overload_2.testCompileTime(new ext_overload_2.C())).assertEqual('c');
+      expect(ext_overload_compile_time.testCompileTime(new ext_overload_compile_time.C())).assertEqual('c');
     });
 
     /**
@@ -255,7 +141,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ext_overload_3.testSmartType(new ext_overload_3.A())).assertEqual('a');
+      expect(ext_overload_smart_type.testSmartType(new ext_overload_smart_type.A())).assertEqual('a');
     });
 
     /**
@@ -267,7 +153,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ext_overload_4.testSmartType(new ext_overload_4.B())).assertEqual('b');
+      expect(ext_overload_smart_type.testSmartType(new ext_overload_smart_type.B())).assertEqual('b');
     });
 
     /**
@@ -279,8 +165,7 @@ export default function OverloadWithImportTestOne():void {
      * @tc.level     Level 2
      */
     it("testExtendedClassMethodsOverload0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ext_overload_5.testSmartType(new ext_overload_5.C())).assertEqual('c');
+      expect(ext_overload_smart_type.testSmartType(new ext_overload_smart_type.C())).assertEqual('c');
     });
-
   })
 }

@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 interface GenericInterfaceWithMethod_0 {
   getValue<T>(value: T): string;

@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium";
+} from "../../../../hypium/index";
 
 let x: FixedArray<Number> = [1, 2, 3];
 let y: FixedArray<Object> = x;

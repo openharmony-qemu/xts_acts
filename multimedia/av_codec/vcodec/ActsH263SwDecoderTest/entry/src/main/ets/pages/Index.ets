@@ -11,7 +11,7 @@ struct Index {
     Row() {
       Column() {
         Text(this.message)
-          .fontSize($r('app.float.page_text_font_size'))
+          .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
             this.message = 'Welcome';

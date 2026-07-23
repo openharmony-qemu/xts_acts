@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../../Util.test'
 
 enum TypedEnum: byte { A = 1, B = 4, C = 3, D = 6 }
 
@@ -35,7 +29,6 @@ enum TypedEnum4: float { A = 1.0f, B = 4.0f, C = 3.0f, D = 6.0f }
 
 enum TypedEnum5: double { A = 1.0, B = 4.0, C = 3.0, D = 6.0 }
 
-
 export default function BitwiseExpressionsTest(): void {
   describe('BitwiseExpressionsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -48,7 +41,7 @@ export default function BitwiseExpressionsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -62,7 +55,6 @@ export default function BitwiseExpressionsTest(): void {
       // This API supports only one parameter: clear action function.
     })
 
-
     /**
      * @tc.number    SUB_BITWISE_EXPRESSIONS_XTSTEST_0100
      * @tc.name      testBitwiseExpressions0001
@@ -72,7 +64,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum.A & TypedEnum.B
       let res_and_2 = TypedEnum.C & TypedEnum.D
       expect(res_and_1).assertEqual(0)
@@ -87,7 +78,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum.C | TypedEnum.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
 
     /**
@@ -99,7 +89,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum1.A & TypedEnum1.B
       let res_and_2 = TypedEnum1.C & TypedEnum1.D
       expect(res_and_1).assertEqual(0)
@@ -114,7 +103,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum1.C | TypedEnum1.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
 
     /**
@@ -126,7 +114,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum2.A & TypedEnum2.B
       let res_and_2 = TypedEnum2.C & TypedEnum2.D
       expect(res_and_1).assertEqual(0)
@@ -141,7 +128,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum2.C | TypedEnum2.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
 
     /**
@@ -153,7 +139,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum3.A & TypedEnum3.B
       let res_and_2 = TypedEnum3.C & TypedEnum3.D
       expect(res_and_1).assertEqual(0)
@@ -168,7 +153,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum3.C | TypedEnum3.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
 
     /**
@@ -180,7 +164,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum4.A & TypedEnum4.B
       let res_and_2 = TypedEnum4.C & TypedEnum4.D
       expect(res_and_1).assertEqual(0)
@@ -195,7 +178,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum4.C | TypedEnum4.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
 
     /**
@@ -207,7 +189,6 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it("testBitwiseExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res_and_1 = TypedEnum5.A & TypedEnum5.B
       let res_and_2 = TypedEnum5.C & TypedEnum5.D
       expect(res_and_1).assertEqual(0)
@@ -222,7 +203,6 @@ export default function BitwiseExpressionsTest(): void {
       let res_inc_or_2 = TypedEnum5.C | TypedEnum5.D
       expect(res_inc_or_1).assertEqual(5)
       expect(res_inc_or_2).assertEqual(7)
-
     });
   })
 }

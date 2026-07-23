@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 // 30
 type MyArray_0<T> = T[]

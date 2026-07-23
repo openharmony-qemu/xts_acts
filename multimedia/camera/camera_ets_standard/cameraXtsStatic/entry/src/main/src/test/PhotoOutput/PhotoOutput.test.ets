@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium/index';
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {
@@ -1449,6 +1449,151 @@ export default function PhotoOutputToStaticTest():void {
       }
     })
 
+        /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOAUTOEXTENDEDGAINMAPDELIVERYSUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOAUTOEXTENDEDGAINMAPDELIVERYSUPPORTED_STATIC_0100
+     * @tc.desc   isAutoExtendedGainmapDeliverySupported normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOAUTOEXTENDEDGAINMAPDELIVERYSUPPORTED_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOAUTOEXTENDEDGAINMAPDELIVERYSUPPORTED_STATIC_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let isSupport = mPhotoOutput!.isAutoExtendedGainmapDeliverySupported();
+          console.info(TAG, testName + ' isAutoExtendedGainmapDeliverySupported = ' + isSupport);
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0100
+     * @tc.desc   enableAutoExtendedGainmapDelivery normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let isSupport = mPhotoOutput!.isAutoExtendedGainmapDeliverySupported();
+          console.info(TAG, testName + ' isAutoExtendedGainmapDeliverySupported = ' + isSupport);
+          if (isSupport) {
+            mPhotoOutput!.enableAutoExtendedGainmapDelivery(true);
+            console.info(TAG, testName + ' enable success');
+          } else {
+            console.info(TAG, testName + ' the device does not support extended gainmap delivery');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0200
+     * @tc.desc   enableAutoExtendedGainmapDelivery is not support test enable true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0200';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let isSupport = mPhotoOutput!.isAutoExtendedGainmapDeliverySupported();
+          console.info(TAG, testName + ' isAutoExtendedGainmapDeliverySupported = ' + isSupport);
+          if (isSupport === false) {
+            try {
+            mPhotoOutput!.enableAutoExtendedGainmapDelivery(true);
+            console.info(TAG, testName + ' enable success');
+            expect().assertFail();
+            } catch (error) {
+              console.error(TAG, testName, JSON.stringify(error), error.code);
+              expect(error.code).assertEqual(7400102);
+            }
+          } else {
+            console.info(TAG, testName + ' the device does is support extended gainmap delivery');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0300
+     * @tc.desc   enableAutoExtendedGainmapDelivery is not support test enable false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_STATIC_0300';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let isSupport = mPhotoOutput!.isAutoExtendedGainmapDeliverySupported();
+          console.info(TAG, testName + ' isAutoExtendedGainmapDeliverySupported = ' + isSupport);
+          if (isSupport === false) {
+            try {
+            mPhotoOutput!.enableAutoExtendedGainmapDelivery(false);
+            console.info(TAG, testName + ' enable success');
+            expect().assertFail();
+            } catch (error) {
+              console.error(TAG, testName, JSON.stringify(error), error.code);
+              expect(error.code).assertEqual(7400102);
+            }
+          } else {
+            console.info(TAG, testName + ' the device does is support extended gainmap delivery');
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
 
   })
 }

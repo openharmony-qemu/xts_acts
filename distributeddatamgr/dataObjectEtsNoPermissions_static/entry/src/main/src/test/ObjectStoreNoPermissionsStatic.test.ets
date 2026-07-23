@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../hypium";
+} from "../../../hypium/index";
 import distributedObject from '@ohos.data.distributedDataObject';
 import commonType from '@ohos.data.commonType';
 import common from "@ohos.app.ability.common";

@@ -15,7 +15,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium/index';
 import { common } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
 

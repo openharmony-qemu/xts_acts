@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 function check_1(v: Object,
   is_subtype_of_A: boolean, v_id: number): boolean {
@@ -166,7 +160,7 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -210,7 +204,6 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnPredefined0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: Object = "abc"
       let v2: Object = 123
       let res: boolean =
@@ -230,7 +223,6 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnPredefined0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: number = 123
       let v2: number = 456
       let res: boolean =

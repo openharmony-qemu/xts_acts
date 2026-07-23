@@ -312,7 +312,7 @@ export default function LongConstructor2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongConstructor2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(c'A' as long);
+      const value: Long = new Long(c'A'.toLong());
       expect(value.toLong()).assertEqual(CON2_65);
     });
 
@@ -325,7 +325,7 @@ export default function LongConstructor2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongConstructor2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(c'0' as long);
+      const value: Long = new Long(c'0'.toLong());
       expect(value.toLong()).assertEqual(CON2_48);
     });
 

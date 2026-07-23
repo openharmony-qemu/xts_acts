@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 namespace testNS {
   // enum_explicit_type_fromvalue_4.ets
@@ -147,60 +141,6 @@ namespace testNS {
     expect(c.valueOf() instanceof int).assertTrue();
     expect(c.valueOf()).assertEqual(Enum3.oNe.valueOf());
     expect(Enum3[c]).assertEqual("oNe");
-
-    return true;
-  }
-
-  // enum_explicit_type_fromvalue_1.ets
-  export function runTest1(): boolean {
-    let c = Enum3.fromValue(0)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.Red)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.Red.valueOf())
-    expect(Enum3[c]).assertEqual("Red")
-
-    c = Enum3.fromValue(10)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.Green)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.Green.valueOf())
-    expect(Enum3[c]).assertEqual("Green")
-
-    c = Enum3.fromValue(11)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.Blue)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.Blue.valueOf())
-    expect(Enum3[c]).assertEqual("Blue")
-
-    c = Enum3.fromValue(-2147483648)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.First)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.First.valueOf())
-    expect(Enum3[c]).assertEqual("First")
-
-    c = Enum3.fromValue(12345)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.Second)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.Second.valueOf())
-    expect(Enum3[c]).assertEqual("Second")
-
-    c = Enum3.fromValue(2147483647)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.Third)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.Third.valueOf())
-    expect(Enum3[c]).assertEqual("Third")
-
-    c = Enum3.fromValue(1)
-    expect(c instanceof Enum3).assertTrue()
-    expect(c).assertEqual(Enum3.oNe)
-    expect(c.valueOf() instanceof int).assertTrue()
-    expect(c.valueOf()).assertEqual(Enum3.oNe.valueOf())
-    expect(Enum3[c]).assertEqual("oNe")
 
     return true;
   }
@@ -404,60 +344,6 @@ namespace testNS {
     expect(c.valueOf() instanceof string).assertTrue();
     expect(c.valueOf()).assertEqual(Enum7.oNe.valueOf());
     expect(Enum7[c]).assertEqual("oNe");
-
-    return true;
-  }
-
-  // enum_implicit_type_fromvalue_0.ets
-  export function runTest154(): boolean {
-    let c = Enum3.fromValue(0);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.Red);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.Red.valueOf());
-    expect(Enum3[c]).assertEqual("Red");
-
-    c = Enum3.fromValue(10);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.Green);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.Green.valueOf());
-    expect(Enum3[c]).assertEqual("Green");
-
-    c = Enum3.fromValue(11);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.Blue);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.Blue.valueOf());
-    expect(Enum3[c]).assertEqual("Blue");
-
-    c = Enum3.fromValue(-2147483648);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.First);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.First.valueOf());
-    expect(Enum3[c]).assertEqual("First");
-
-    c = Enum3.fromValue(12345);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.Second);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.Second.valueOf());
-    expect(Enum3[c]).assertEqual("Second");
-
-    c = Enum3.fromValue(2147483647);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.Third);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.Third.valueOf());
-    expect(Enum3[c]).assertEqual("Third");
-
-    c = Enum3.fromValue(1);
-    expect(c instanceof Enum3).assertTrue();
-    expect(c).assertEqual(Enum3.oNe);
-    expect(c.valueOf() instanceof int).assertTrue();
-    expect(c.valueOf()).assertEqual(Enum3.oNe.valueOf());
-    expect(Enum3[c]).assertEqual("oNe");
 
     return true;
   }
@@ -898,7 +784,6 @@ namespace testNS {
 
     return true;
   }
-
 }
 
 // enum_explicit_type_fromvalue_4.ets
@@ -954,7 +839,7 @@ export default function EnumerationMethodsTest01(): void {
     })
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -1023,67 +908,6 @@ export default function EnumerationMethodsTest01(): void {
       expect(Enum3[c]).assertEqual("oNe");
 
       expect(testNS.runTest()).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
-     * @tc.name      testEnumerationMethods0002
-     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c = Enum3.fromValue(0);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Red);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Red.valueOf());
-      expect(Enum3[c]).assertEqual("Red");
-
-      c = Enum3.fromValue(10);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Green);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Green.valueOf());
-      expect(Enum3[c]).assertEqual("Green");
-
-      c = Enum3.fromValue(11);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Blue);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Blue.valueOf());
-      expect(Enum3[c]).assertEqual("Blue");
-
-      c = Enum3.fromValue(-2147483648);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.First);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.First.valueOf());
-      expect(Enum3[c]).assertEqual("First");
-
-      c = Enum3.fromValue(12345);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Second);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Second.valueOf());
-      expect(Enum3[c]).assertEqual("Second");
-
-      c = Enum3.fromValue(2147483647);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Third);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Third.valueOf());
-      expect(Enum3[c]).assertEqual("Third");
-
-      c = Enum3.fromValue(1);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.oNe);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.oNe.valueOf());
-      expect(Enum3[c]).assertEqual("oNe");
-
-      expect(testNS.runTest1()).assertTrue();
     });
 
     /**
@@ -1319,68 +1143,6 @@ export default function EnumerationMethodsTest01(): void {
 
     // fromValue subset tests
     /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
-     * @tc.name      testEnumerationMethods0007
-     * @tc.desc      Checking for enum with implicit int type constant for fromValue method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c = Enum3.fromValue(0);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Red);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Red.valueOf());
-      expect(Enum3[c]).assertEqual("Red");
-
-      c = Enum3.fromValue(10);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Green);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Green.valueOf());
-      expect(Enum3[c]).assertEqual("Green");
-
-      c = Enum3.fromValue(11);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Blue);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Blue.valueOf());
-      expect(Enum3[c]).assertEqual("Blue");
-
-      c = Enum3.fromValue(-2147483648);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.First);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.First.valueOf());
-      expect(Enum3[c]).assertEqual("First");
-
-      c = Enum3.fromValue(12345);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Second);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Second.valueOf());
-      expect(Enum3[c]).assertEqual("Second");
-
-      c = Enum3.fromValue(2147483647);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.Third);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.Third.valueOf());
-      expect(Enum3[c]).assertEqual("Third");
-
-      c = Enum3.fromValue(1);
-      expect(c instanceof Enum3).assertTrue();
-      expect(c).assertEqual(Enum3.oNe);
-      expect(c.valueOf() instanceof int).assertTrue();
-      expect(c.valueOf()).assertEqual(Enum3.oNe.valueOf());
-      expect(Enum3[c]).assertEqual("oNe");
-
-
-      expect(testNS.runTest154()).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
      * @tc.name      testEnumerationMethods0008
      * @tc.desc      Checking for enum with implicit long type constant for fromValue method support.
@@ -1438,9 +1200,7 @@ export default function EnumerationMethodsTest01(): void {
       expect(c.valueOf()).assertEqual(Enum4.oNe.valueOf());
       expect(Enum4[c]).assertEqual("oNe");
 
-
       expect(testNS.runTest156()).assertTrue();
-
     });
 
     /**
@@ -1487,7 +1247,6 @@ export default function EnumerationMethodsTest01(): void {
       expect(c.valueOf() instanceof String).assertTrue();
       expect(c.valueOf()).assertEqual(Enum7.oNe.valueOf());
       expect(Enum7[c]).assertEqual("oNe");
-
 
       expect(testNS.runTest158()).assertTrue();
     });
@@ -1798,7 +1557,6 @@ export default function EnumerationMethodsTest01(): void {
 
       expect(Enum3.oNe.valueOf() instanceof int).assertTrue();
       expect(Enum3.oNe.valueOf()).assertEqual(1);
-
 
       expect(testNS.runTest202()).assertTrue();
     });

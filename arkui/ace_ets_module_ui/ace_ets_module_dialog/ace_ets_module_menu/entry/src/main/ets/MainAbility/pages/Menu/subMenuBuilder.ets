@@ -55,35 +55,45 @@ struct subMenuBuilderIndex {
     Menu() {
       MenuItem({ content: 'ItemNoSub' })
         .id('menuItemNoSub')
+        .height('15%')
         .onClick(() => {
           this.clickResult = 'ItemNoSub';
         })
       MenuItem({ content: 'ItemWithSubA' })
         .id('menuItemWithSubA')
+        .height('15%')
         .subMenuBuilder(this.SubMenuA)
       MenuItem({ content: 'ItemWithSubB' })
         .id('menuItemWithSubB')
+        .height('15%')
         .subMenuBuilder(this.SubMenuB)
       MenuItem({ content: 'ItemSubUndefined' })
         .id('menuItemSubUndefined')
+        .height('15%')
         .subMenuBuilder(undefined)
       MenuItem({ content: 'ItemChaining' })
         .id('menuItemChaining')
+        .height('15%')
         .subMenuBuilder(this.SubMenuC)
         .selected(true)
         .selectIcon(true)
       MenuItem({ content: 'ItemSubReset' })
         .id('menuItemSubReset')
+        .height('15%')
         .subMenuBuilder(this.SubMenuA)
-    }.id('parentMenu')
+    }
+    .id('parentMenu')
+    .height('180vp')
+    .fontSize('10vp')
   }
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Button('ShowMenu')
+        .margin({top:'10vp'})
         .id('showMenuBtn')
-        .width(200)
-        .height(50)
+        .width('50%')
+        .height('5%')
         .onClick(() => {
           this.isShow = !this.isShow;
         })
@@ -102,8 +112,6 @@ struct subMenuBuilderIndex {
         .id('isShowText')
         .fontSize(14)
     }
-    .width('100%')
-    .height('100%')
-    .justifyContent(FlexAlign.Center)
+
   }
 }

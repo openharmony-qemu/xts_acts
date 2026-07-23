@@ -59,8 +59,8 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200001).assertTrue();
       }
@@ -82,8 +82,8 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200002).assertTrue();
       }
@@ -107,10 +107,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -131,10 +131,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(null, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -153,10 +153,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(undefined, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -176,10 +176,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -201,10 +201,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -226,10 +226,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -251,10 +251,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, 999);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -275,10 +275,10 @@ function testSetDefaultData() {
     try {
       telephonyManager.setDefaultData(SELFWANT, 0);
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9201020).assertTrue();
+        expect(error.code === 9201020).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -304,7 +304,7 @@ function testSetDefaultData() {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 203).assertTrue();
+        expect(error.code === 203).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -327,8 +327,8 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code === 9200001).assertTrue();
       }
@@ -350,8 +350,8 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code === 9200002).assertTrue();
       }
@@ -375,10 +375,10 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -399,10 +399,10 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(null);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -421,10 +421,10 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -444,8 +444,8 @@ function testGetDefaultData() {
       let result: number = telephonyManager.getDefaultData(SELFWANT);
       expect(typeof result === 'number').assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3319,8 +3319,8 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200001).assertTrue();
       }
@@ -3342,8 +3342,8 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200002).assertTrue();
       }
@@ -3367,10 +3367,10 @@ function testActiveSim() {
       telephonyManager.activeSim(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3391,10 +3391,10 @@ function testActiveSim() {
       telephonyManager.activeSim(null, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -3413,10 +3413,10 @@ function testActiveSim() {
       telephonyManager.activeSim(undefined, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -3436,10 +3436,10 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3461,10 +3461,10 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3486,10 +3486,10 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3511,10 +3511,10 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, 999);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3535,10 +3535,10 @@ function testActiveSim() {
     try {
       telephonyManager.activeSim(SELFWANT, 0);
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9201017).assertTrue();
+        expect(error.code === 9201017).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3564,7 +3564,7 @@ function testActiveSim() {
         expect(Number(error.code) === 801).assertTrue();
       } else {
         telephonyManager.setSimEnabled(SELFWANT, 0);
-        expect(Number(error.code) === 203).assertTrue();
+        expect(error.code === 203).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3587,8 +3587,8 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200001).assertTrue();
       }
@@ -3610,8 +3610,8 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(error.code == 9200002).assertTrue();
       }
@@ -3635,10 +3635,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(INVALID_WANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3659,10 +3659,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(null, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -3681,10 +3681,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(undefined, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -3704,10 +3704,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3729,10 +3729,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3754,10 +3754,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, -1);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3779,10 +3779,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, 999);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3803,10 +3803,10 @@ function testDeactiveSim() {
     try {
       telephonyManager.deactiveSim(SELFWANT, 0);
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9201017).assertTrue();
+        expect(error.code === 9201017).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3832,7 +3832,7 @@ function testDeactiveSim() {
         expect(Number(error.code) === 801).assertTrue();
       } else {
         telephonyManager.setSimEnabled(SELFWANT, 0);
-        expect(Number(error.code) === 203).assertTrue();
+        expect(error.code === 203).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

@@ -318,5 +318,40 @@ export default function TextTailIndentsTest() {
       console.info('[TextTailIndentsTest_0160] END');
       done();
     });
+    /**
+     * @tc.name   TextTailIndentsTest_0170
+     * @tc.number SUB_ACE_TextTailIndentsTest_0170
+     * @tc.desc   test the attr of Text: tailIndents([]) empty array treated as default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextTailIndentsTest_0170', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextTailIndentsTest_0170] START');
+      let strJson = getInspectorByKey('Text_tailIndents_emptyArray');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[TextTailIndentsTest_0170] tailIndents: ' + JSON.stringify(obj.$attrs.tailIndents));
+      expect(obj.$attrs.tailIndents).assertEqual('[]');
+      console.info('[TextTailIndentsTest_0170] END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextTailIndentsTest_0180
+     * @tc.number SUB_ACE_TextTailIndentsTest_0180
+     * @tc.desc   test the attr of TextModifier: tailIndents([]) empty array treated as default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextTailIndentsTest_0180', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextTailIndentsTest_0180] START');
+      let strJson = getInspectorByKey('TextModifier_tailIndents_emptyArray');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[TextTailIndentsTest_0180] tailIndents: ' + JSON.stringify(obj.$attrs.tailIndents));
+      expect(obj.$attrs.tailIndents).assertEqual('[]');
+      console.info('[TextTailIndentsTest_0180] END');
+      done();
+    });
   })
 }

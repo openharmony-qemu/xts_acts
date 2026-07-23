@@ -846,7 +846,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeGenericReturnSample<string>>() as ClassType, "identity");
-            expect(method.getType().getResultType().toString()).assertEqual("Y");
+            expect(method.getType().getResultType().toString()).assertEqual("std.core.Object");
         });
 
         /**

@@ -22,7 +22,7 @@ import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { Component, Context } from '@kit.ArkUI';
 import Utils from './Util.test';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { expect, Hypium } from '../../../hypium';
+import { expect, Hypium } from '../../../hypium/index';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';

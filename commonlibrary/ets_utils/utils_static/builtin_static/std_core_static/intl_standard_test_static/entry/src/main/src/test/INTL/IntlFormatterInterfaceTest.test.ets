@@ -41,7 +41,7 @@ it('testCollatorConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
      */
 it('testCollatorConstructor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US");
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -67,7 +67,7 @@ it('testCollatorConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
      */
 it('testCollatorConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator(undefined, { sensitivity: "accent" });
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -97,10 +97,10 @@ it('testCollatorLocale006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
       let c2: Intl.Collator = new Intl.Collator("zh-CN");
       let c3: Intl.Collator = new Intl.Collator("ja-JP");
       let c4: Intl.Collator = new Intl.Collator("de-DE");
-      expect(typeof c1.compare("a", "b") === "int").assertTrue();
-      expect(typeof c2.compare("你好", "世界") === "int").assertTrue();
-      expect(typeof c3.compare("中文", "测试") === "int").assertTrue();
-      expect(typeof c4.compare("a", "z") === "int").assertTrue();
+      expect(typeof c1.compare("a", "b") === "number").assertTrue();
+      expect(typeof c2.compare("你好", "世界") === "number").assertTrue();
+      expect(typeof c3.compare("中文", "测试") === "number").assertTrue();
+      expect(typeof c4.compare("a", "z") === "number").assertTrue();
     });
 
     /**
@@ -113,7 +113,7 @@ it('testCollatorLocale006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
      */
 it('testCollatorLocale007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en");
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -127,8 +127,8 @@ it('testCollatorLocale007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
 it('testCollatorLocale008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let c1: Intl.Collator = new Intl.Collator(["en-US", "zh-CN"]);
       let c2: Intl.Collator = new Intl.Collator(["ja-JP"]);
-      expect(typeof c1.compare("a", "b") === "int").assertTrue();
-      expect(typeof c2.compare("a", "b") === "int").assertTrue();
+      expect(typeof c1.compare("a", "b") === "number").assertTrue();
+      expect(typeof c2.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -145,9 +145,9 @@ it('testCollatorOptions009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       let cAccent: Intl.Collator = new Intl.Collator("en-US", { sensitivity: "accent" });
       let cVariant: Intl.Collator = new Intl.Collator("en-US", { sensitivity: "variant" });
       expect(cBase.compare("a", "A") === 0).assertTrue();
-      expect(typeof cCase.compare("a", "A") === "int").assertTrue();
-      expect(typeof cAccent.compare("a", "A") === "int").assertTrue();
-      expect(typeof cVariant.compare("a", "A") === "int").assertTrue();
+      expect(typeof cCase.compare("a", "A") === "number").assertTrue();
+      expect(typeof cAccent.compare("a", "A") === "number").assertTrue();
+      expect(typeof cVariant.compare("a", "A") === "number").assertTrue();
     });
 
     /**
@@ -175,7 +175,7 @@ it('testCollatorOptions010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
      */
 it('testCollatorOptions011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US", { ignorePunctuation: true });
-      expect(typeof collator.compare("hello", "hello!") === "int").assertTrue();
+      expect(typeof collator.compare("hello", "hello!") === "number").assertTrue();
     });
 
     /**
@@ -189,8 +189,8 @@ it('testCollatorOptions011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
 it('testCollatorOptions012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cUpper: Intl.Collator = new Intl.Collator("en-US", { caseFirst: "upper" });
       let cLower: Intl.Collator = new Intl.Collator("en-US", { caseFirst: "lower" });
-      expect(typeof cUpper.compare("a", "A") === "int").assertTrue();
-      expect(typeof cLower.compare("a", "A") === "int").assertTrue();
+      expect(typeof cUpper.compare("a", "A") === "number").assertTrue();
+      expect(typeof cLower.compare("a", "A") === "number").assertTrue();
     });
 
     /**
@@ -204,8 +204,8 @@ it('testCollatorOptions012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
 it('testCollatorOptions013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cSort: Intl.Collator = new Intl.Collator("en-US", { usage: "sort" });
       let cSearch: Intl.Collator = new Intl.Collator("en-US", { usage: "search" });
-      expect(typeof cSort.compare("a", "b") === "int").assertTrue();
-      expect(typeof cSearch.compare("a", "b") === "int").assertTrue();
+      expect(typeof cSort.compare("a", "b") === "number").assertTrue();
+      expect(typeof cSearch.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -218,7 +218,7 @@ it('testCollatorOptions013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
      */
 it('testCollatorCompare014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US");
-      expect(typeof collator.compare("hello", "world") === "int").assertTrue();
+      expect(typeof collator.compare("hello", "world") === "number").assertTrue();
     });
 
     /**
@@ -231,7 +231,7 @@ it('testCollatorCompare014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
      */
 it('testCollatorCompare015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US");
-      expect(typeof collator.compare("", "a") === "int").assertTrue();
+      expect(typeof collator.compare("", "a") === "number").assertTrue();
       expect(collator.compare("", "") === 0).assertTrue();
     });
 
@@ -259,8 +259,8 @@ it('testCollatorCompare016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
 it('testCollatorCompare017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cZH: Intl.Collator = new Intl.Collator("zh-CN");
       let cEN: Intl.Collator = new Intl.Collator("en-US");
-      expect(typeof cZH.compare("中文", "测试") === "int").assertTrue();
-      expect(typeof cEN.compare(" ", " ") === "int").assertTrue();
+      expect(typeof cZH.compare("中文", "测试") === "number").assertTrue();
+      expect(typeof cEN.compare(" ", " ") === "number").assertTrue();
     });
 
     /**
@@ -304,7 +304,7 @@ it('testCollatorReturn020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
       let collator: Intl.Collator = new Intl.Collator("en-US");
       let longStr1: string = "a".repeat(10000);
       let longStr2: string = "b".repeat(10000);
-      expect(typeof collator.compare(longStr1, longStr2) === "int").assertTrue();
+      expect(typeof collator.compare(longStr1, longStr2) === "number").assertTrue();
     });
 
     /**
@@ -317,7 +317,7 @@ it('testCollatorReturn020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
      */
 it('testCollatorReturn021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("de-DE");
-      expect(typeof collator.compare("café", "cafe") === "int").assertTrue();
+      expect(typeof collator.compare("café", "cafe") === "number").assertTrue();
     });
 
     /**
@@ -330,7 +330,7 @@ it('testCollatorReturn021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
      */
 it('testCollatorType022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US");
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -2461,7 +2461,7 @@ it('testSegmenterReturn163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
       let segments = segmenter.segment("hello world");
       for (let seg of segments) {
-        expect(typeof seg.index === "int").assertTrue();
+        expect(typeof seg.index === "number").assertTrue();
         expect(typeof seg.isWordLike === "boolean").assertTrue();
       }
     });

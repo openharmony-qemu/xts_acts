@@ -23,6 +23,7 @@ import SelectionContainerBindSelectionMenuTest from './selectioncontainer/Select
 import SelectionContainerEditMenuOptionsTest from './selectioncontainer/SelectionContainerEditMenuOptions.test';
 import SelectionContainerEventsTest from './selectioncontainer/SelectionContainerEvents.test';
 import SelectionContainerModifierTest from './selectioncontainer/SelectionContainerModifier.test';
+import SelectionContainerControllerTest from './selectioncontainer/SelectionContainerController.test';
 
 export default function testsuite() {
   SelectionContainerConstructorTest();
@@ -35,4 +36,5 @@ export default function testsuite() {
   SelectionContainerEditMenuOptionsTest();
   SelectionContainerEventsTest();
   SelectionContainerModifierTest();
+  SelectionContainerControllerTest();
 }

@@ -652,7 +652,6 @@ export default function ArrayInvoke1Test(): void {
       const arr = new Array<int | undefined>();
 
       expect(arr.length).assertEqual(0);
-      expect(arr.length > 0).assertFalse();
 
       try {
         arr[0];

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -22,13 +22,13 @@ export interface GeneratedObjectLiteralInterface_1 {
   bool1: boolean;
 };
 
-export const appConfig4 = {
+export const appConfig4:GeneratedObjectLiteralInterface_1 = {
   bool1: false,
   bool: true,
 } as GeneratedObjectLiteralInterface_1;
 
 
-const appConfig5 = {
+const appConfig5:GeneratedObjectLiteralInterface_1 = {
   bool1: false,
   bool: true,
 } as GeneratedObjectLiteralInterface_1;
@@ -36,7 +36,7 @@ const appConfig5 = {
 export { appConfig5 };
 
 
-const appConfig6 = {
+const appConfig6:GeneratedObjectLiteralInterface_1 = {
   bool1: false,
   bool: true,
 } as GeneratedObjectLiteralInterface_1;

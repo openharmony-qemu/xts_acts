@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
 class FieldInheritRt001Base {
   field: Object = 5
@@ -99,6 +100,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     beforeAll((): void => {
     })
     beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })

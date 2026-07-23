@@ -29,13 +29,18 @@ import {
   AISessionEvent,
   AISessionResultType,
   AISessionType,
-  OnAISessionCallback
+  OnAISessionCallback,
+  OnInputmethodAttachedCallback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview';
+
+ const callbackEvent: OnInputmethodAttachedCallback  = ()=> {
+ 	   console.log('inputmethod attached');
+ 	 }
 
 @Entry
 @Component
@@ -150,6 +155,7 @@ struct WebAttributeTest {
 
       Web({ src: 'resource://rawfile/webAttributeTest.html', controller: this.controller })
         .key('webAttributeWeb')
+        .onInputmethodAttached(callbackEvent)
         .enableDrag(this.enableDragValue)
         .scrollbarLayoutPolicy(this.scrollBarPolicy)
         .enableScrollDirectionalLock(this.lockEnabled, this.lockType)

@@ -71,7 +71,7 @@ void ThrowAsyncError(ani_env *env, const char *message)
     ani_class errorCls {};
     ani_method ctor {};
     ani_object errorObj {};
-    if (env->FindClass("std.core.Error", &errorCls) != ANI_OK) {
+    if (env->FindClass("escompat.Error", &errorCls) != ANI_OK) {
         return;
     }
     if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor) != ANI_OK) {
@@ -114,7 +114,7 @@ ani_object CreateRejectedPromise(ani_env *env, const char *message)
     ani_class errorCls {};
     ani_method ctor {};
     ani_object errorObj {};
-    if (env->FindClass("std.core.Error", &errorCls) != ANI_OK) {
+    if (env->FindClass("escompat.Error", &errorCls) != ANI_OK) {
         return promise;
     }
     if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor) != ANI_OK) {

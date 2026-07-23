@@ -94,10 +94,6 @@ export default function ArrayEntriesTest(): void {
       const firstEntry = first.value as [int, int] | undefined;
       const secondEntry = second.value as [int, int] | undefined;
       const thirdEntry = third.value as [int, int] | undefined;
-
-      expect(firstEntry != undefined).assertTrue();
-      expect(secondEntry != undefined).assertTrue();
-      expect(thirdEntry != undefined).assertTrue();
       if (firstEntry != undefined && secondEntry != undefined && thirdEntry != undefined) {
         expect(firstEntry[0]).assertEqual(0);
         expect(firstEntry[1]).assertEqual(10);
@@ -105,6 +101,8 @@ export default function ArrayEntriesTest(): void {
         expect(secondEntry[1]).assertEqual(20);
         expect(thirdEntry[0]).assertEqual(2);
         expect(thirdEntry[1]).assertEqual(30);
+      }else {
+        expect().assertFail();
       }
       expect(end.done).assertTrue();
     });
@@ -153,10 +151,11 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       const first = iterator.next().value as [int, int] | undefined;
       const end = iterator.next();
-      expect(first != undefined).assertTrue();
       if (first != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertEqual(42);
+      }else {
+        expect().assertFail();
       }
       expect(end.done).assertTrue();
     });
@@ -172,10 +171,11 @@ export default function ArrayEntriesTest(): void {
     it('testArrayEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const first = arr.entries().next().value as [int, string] | undefined;
-      expect(first != undefined).assertTrue();
       if (first != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertEqual('a');
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -192,13 +192,13 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       const first = iterator.next().value as [int, boolean] | undefined;
       const second = iterator.next().value as [int, boolean] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(second != undefined).assertTrue();
       if (first != undefined && second != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertTrue();
         expect(second[0]).assertEqual(1);
         expect(second[1]).assertFalse();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -217,12 +217,12 @@ export default function ArrayEntriesTest(): void {
       const first1 = iterator1.next().value as [int, int] | undefined;
       const first2 = iterator2.next().value as [int, int] | undefined;
       expect(iterator1 === iterator2).assertFalse();
-      expect(first1 != undefined).assertTrue();
-      expect(first2 != undefined).assertTrue();
       if (first1 != undefined && first2 != undefined) {
         expect(first1[0]).assertEqual(0);
         expect(first2[0]).assertEqual(0);
         expect(first1[1]).assertEqual(first2[1]);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -239,10 +239,11 @@ export default function ArrayEntriesTest(): void {
       const entry = arr.entries().next().value as [int, int] | undefined;
       const key = arr.keys().next().value as int;
       const value = arr.values().next().value as int;
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry[0]).assertEqual(key);
         expect(entry[1]).assertEqual(value);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -261,10 +262,11 @@ export default function ArrayEntriesTest(): void {
       item2.value = 2;
       const arr = new Array<EntryItem010>(item1, item2);
       const entry = arr.entries().next().value as [int, EntryItem010] | undefined;
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry[0]).assertEqual(0);
         expect(entry[1] === item1).assertTrue();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -284,10 +286,11 @@ export default function ArrayEntriesTest(): void {
       let result = iterator.next();
       while (!result.done) {
         const entry = result.value as [int, int] | undefined;
-        expect(entry != undefined).assertTrue();
         if (entry != undefined) {
           indexSum += entry[0];
           sum += entry[1];
+        }else {
+          expect().assertFail();
         }
         result = iterator.next();
       }
@@ -308,10 +311,11 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       iterator.next();
       const second = iterator.next().value as [int, int | undefined] | undefined;
-      expect(second != undefined).assertTrue();
       if (second != undefined) {
         expect(second[0]).assertEqual(1);
         expect(second[1]).assertUndefined();
+      }else {
+        expect().assertFail();
       }
     });
     /**
@@ -327,13 +331,13 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       const first = iterator.next().value as [int, boolean] | undefined;
       const second = iterator.next().value as [int, boolean] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(second != undefined).assertTrue();
       if (first != undefined && second != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertTrue();
         expect(second[0]).assertEqual(1);
         expect(second[1]).assertFalse();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -356,11 +360,12 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       const secondEntry = iterator.next();
       const target = iterator.next().value as [int, EntryObject014] | undefined;
-      expect(target != undefined).assertTrue();
       if (target != undefined) {
         expect(target[0]).assertEqual(1);
         expect(target[1] === secondItem).assertTrue();
         expect(target[1].name).assertEqual('second');
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -378,9 +383,6 @@ export default function ArrayEntriesTest(): void {
       const first = iterator.next().value as [int, int | string | boolean] | undefined;
       const second = iterator.next().value as [int, int | string | boolean] | undefined;
       const third = iterator.next().value as [int, int | string | boolean] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(second != undefined).assertTrue();
-      expect(third != undefined).assertTrue();
       if (first != undefined && second != undefined && third != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertEqual(7);
@@ -388,6 +390,8 @@ export default function ArrayEntriesTest(): void {
         expect(second[1]).assertEqual('arkts');
         expect(third[0]).assertEqual(2);
         expect(third[1]).assertTrue();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -409,13 +413,13 @@ export default function ArrayEntriesTest(): void {
       expect(end.done).assertTrue();
       const firstEntry = first.value as [int, int] | undefined;
       const secondEntry = second.value as [int, int] | undefined;
-      expect(firstEntry != undefined).assertTrue();
-      expect(secondEntry != undefined).assertTrue();
       if (firstEntry != undefined && secondEntry != undefined) {
         expect(firstEntry[0]).assertEqual(0);
         expect(firstEntry[1]).assertEqual(11);
         expect(secondEntry[0]).assertEqual(1);
         expect(secondEntry[1]).assertEqual(22);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -434,9 +438,10 @@ export default function ArrayEntriesTest(): void {
       let next = iterator.next();
       while (!next.done) {
         const entry = next.value as [int, string] | undefined;
-        expect(entry != undefined).assertTrue();
         if (entry != undefined) {
           order += entry[0] + ':' + entry[1] + ';';
+        }else {
+          expect().assertFail();
         }
         next = iterator.next();
       }
@@ -477,11 +482,12 @@ export default function ArrayEntriesTest(): void {
       const result = new Array<int>(9, 18).entries().next();
       const entry = result.value as [int, int] | undefined;
       expect(result.done).assertFalse();
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry.length).assertEqual(2);
         expect(entry[0]).assertEqual(0);
         expect(entry[1]).assertEqual(9);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -501,13 +507,13 @@ export default function ArrayEntriesTest(): void {
       const firstKey = keyIterator.next().value as int;
       const secondEntry = entryIterator.next().value as [int, int] | undefined;
       const secondKey = keyIterator.next().value as int;
-      expect(firstEntry != undefined).assertTrue();
-      expect(secondEntry != undefined).assertTrue();
       if (firstEntry != undefined && secondEntry != undefined) {
         expect(firstEntry[0]).assertEqual(firstKey);
         expect(secondEntry[0]).assertEqual(secondKey);
         expect(firstEntry[1]).assertEqual(10);
         expect(secondEntry[1]).assertEqual(20);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -524,10 +530,11 @@ export default function ArrayEntriesTest(): void {
       const entry = arr.entries().next().value as [int, string] | undefined;
       const key = arr.keys().next().value as int;
       const value = arr.values().next().value as string;
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry[0]).assertEqual(key);
         expect(entry[1]).assertEqual(value);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -547,11 +554,11 @@ export default function ArrayEntriesTest(): void {
       const firstValue = valueIterator.next().value as int;
       const secondEntry = entryIterator.next().value as [int, int] | undefined;
       const secondValue = valueIterator.next().value as int;
-      expect(firstEntry != undefined).assertTrue();
-      expect(secondEntry != undefined).assertTrue();
       if (firstEntry != undefined && secondEntry != undefined) {
         expect(firstEntry[1]).assertEqual(firstValue);
         expect(secondEntry[1]).assertEqual(secondValue);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -615,15 +622,14 @@ export default function ArrayEntriesTest(): void {
       const first1 = iterator1.next().value as [int, int] | undefined;
       const second1 = iterator1.next().value as [int, int] | undefined;
       const first2 = iterator2.next().value as [int, int] | undefined;
-      expect(first1 != undefined).assertTrue();
-      expect(second1 != undefined).assertTrue();
-      expect(first2 != undefined).assertTrue();
       if (first1 != undefined && second1 != undefined && first2 != undefined) {
         expect(first1[0]).assertEqual(0);
         expect(second1[0]).assertEqual(1);
         expect(first2[0]).assertEqual(0);
         expect(second1[1]).assertEqual(200);
         expect(first2[1]).assertEqual(100);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -726,13 +732,13 @@ export default function ArrayEntriesTest(): void {
       const first = iterator.next().value as [int, int | null] | undefined;
       iterator.next();
       const third = iterator.next().value as [int, int | null] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(third != undefined).assertTrue();
       if (first != undefined && third != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertNull();
         expect(third[0]).assertEqual(2);
         expect(third[1]).assertNull();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -750,13 +756,13 @@ export default function ArrayEntriesTest(): void {
       const first = iterator.next().value as [int, int | undefined] | undefined;
       iterator.next();
       const third = iterator.next().value as [int, int | undefined] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(third != undefined).assertTrue();
       if (first != undefined && third != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1]).assertUndefined();
         expect(third[0]).assertEqual(2);
         expect(third[1]).assertUndefined();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -774,11 +780,11 @@ export default function ArrayEntriesTest(): void {
       const first = iterator.next().value as [int, int] | undefined;
       iterator.next();
       const third = iterator.next().value as [int, int] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(third != undefined).assertTrue();
       if (first != undefined && third != undefined) {
         expect(first[1]).assertEqual(0);
         expect(third[1]).assertEqual(0);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -795,11 +801,11 @@ export default function ArrayEntriesTest(): void {
       const iterator = arr.entries();
       const first = iterator.next().value as [int, string] | undefined;
       const second = iterator.next().value as [int, string] | undefined;
-      expect(first != undefined).assertTrue();
-      expect(second != undefined).assertTrue();
       if (first != undefined && second != undefined) {
         expect(first[1]).assertEqual('');
         expect(second[1]).assertEqual('filled');
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -816,11 +822,12 @@ export default function ArrayEntriesTest(): void {
       item.id = 99;
       item.name = 'generic';
       const entry = Array.create<EntryObject014>(1, item).entries().next().value as [int, EntryObject014] | undefined;
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry[0]).assertEqual(0);
         expect(entry[1].id).assertEqual(99);
         expect(entry[1].name).assertEqual('generic');
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -835,11 +842,12 @@ export default function ArrayEntriesTest(): void {
     it('testArrayEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<[string, int]>(['age', 18], ['score', 95]);
       const first = arr.entries().next().value as [int, [string, int]] | undefined;
-      expect(first != undefined).assertTrue();
       if (first != undefined) {
         expect(first[0]).assertEqual(0);
         expect(first[1][0]).assertEqual('age');
         expect(first[1][1]).assertEqual(18);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -861,13 +869,12 @@ export default function ArrayEntriesTest(): void {
       const intEntry = intArray.entries().next().value as [int, int] | undefined;
       const stringEntry = stringArray.entries().next().value as [int, string] | undefined;
       const booleanEntry = booleanArray.entries().next().value as [int, boolean] | undefined;
-      expect(intEntry != undefined).assertTrue();
-      expect(stringEntry != undefined).assertTrue();
-      expect(booleanEntry != undefined).assertTrue();
       if (intEntry != undefined && stringEntry != undefined && booleanEntry != undefined) {
         expect(intEntry[1]).assertEqual(1);
         expect(stringEntry[1]).assertEqual('one');
         expect(booleanEntry[1]).assertFalse();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -968,10 +975,11 @@ export default function ArrayEntriesTest(): void {
       let firstValueTotal = 0;
       for (let i = 0; i < 5; i++) {
         const entry = arr.entries().next().value as [int, int] | undefined;
-        expect(entry != undefined).assertTrue();
         if (entry != undefined) {
           expect(entry[0]).assertEqual(0);
           firstValueTotal += entry[1];
+        }else {
+          expect().assertFail();
         }
       }
       expect(firstValueTotal).assertEqual(45);
@@ -1009,11 +1017,12 @@ export default function ArrayEntriesTest(): void {
       const result = new Array<string>('x', 'y').entries().next();
       const entry = result.value as [int, string] | undefined;
       expect(result.done).assertFalse();
-      expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry.length).assertEqual(2);
         expect(entry[0]).assertEqual(0);
         expect(entry[1]).assertEqual('x');
+      }else {
+        expect().assertFail();
       }
     });
 

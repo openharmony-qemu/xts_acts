@@ -26,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../../hypium"
+} from "../../../../../../../hypium/index"
 
 class Int1 {
   value: int = 0

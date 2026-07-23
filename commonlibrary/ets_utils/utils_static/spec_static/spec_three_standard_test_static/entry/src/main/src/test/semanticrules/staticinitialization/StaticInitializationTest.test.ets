@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -26,14 +26,7 @@ import {
   afterEach,
   afterAll
 } from "../../../../../hypium/index";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 // ==================== Class Definitions ====================
 
@@ -48,20 +41,6 @@ class C15 {
   static v: number;
   static {
     C15.v = 2;
-  }
-}
-
-class C16 {
-  static v: number;
-  static {
-    C16.v = 2;
-  }
-}
-
-class C17 {
-  static v: number;
-  static {
-    C17.v = 2;
   }
 }
 
@@ -414,7 +393,7 @@ export default function StaticInitializationTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -450,30 +429,6 @@ export default function StaticInitializationTest():void {
      */
     it("testStaticInitializersTypes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(C15.v).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_ABC_STATIC_INITIALIZATION_0300
-     * @tc.name      testStaticInitializersTypes0003
-     * @tc.desc      Static initialization works with numerous types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticInitializersTypes0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C16.v).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_ABC_STATIC_INITIALIZATION_0400
-     * @tc.name      testStaticInitializersTypes0004
-     * @tc.desc      Static initialization works with numerous types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticInitializersTypes0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C17.v).assertEqual(2);
     });
 
     /**
@@ -779,5 +734,4 @@ export default function StaticInitializationTest():void {
       expect(CMany.var99).assertEqual(99);
     });
   })
-
 }

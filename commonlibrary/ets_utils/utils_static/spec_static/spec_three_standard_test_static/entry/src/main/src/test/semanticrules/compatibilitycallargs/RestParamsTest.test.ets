@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
 class A1 {
   field: Array<number>;
 
@@ -149,7 +138,6 @@ function foo8(...callee: Array<B8>): B8[] {
   return callee;
 }
 
-
 export default function RestParamsTest(): void {
   describe('RestParamsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -162,7 +150,7 @@ export default function RestParamsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -186,8 +174,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A1 = new A1(0, -128, 127);
       let method_result = a.bar1(0, -128, 127);
       let func_result = foo1(0, -128, 127);
@@ -212,8 +198,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A2 = new A2(0, -128, 127);
       let method_result = a.bar2(0, -128, 127);
       let func_result = foo2(0, -128, 127);
@@ -238,8 +222,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A3 = new A3(0, -128, 127);
       let method_result = a.bar3(0, -128, 127);
       let func_result = foo3(0, -128, 127);
@@ -267,8 +249,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A4 = new A4(0, -128, 127);
       let method_result = a.bar4(0, -128, 127);
       let func_result = foo4(0, -128, 127);
@@ -296,8 +276,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A5 = new A5(0, -32768, 32767);
       let method_result = a.bar5(0, -32768, 32767);
       let func_result = foo5(0, -32768, 32767);
@@ -325,8 +303,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a: A6 = new A6(0, -32768, 32767);
       let method_result = a.bar6(0, -32768, 32767);
       let func_result = foo6(0, -32768, 32767);

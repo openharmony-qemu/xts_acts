@@ -30,6 +30,12 @@ class TextModifier5 implements AttributeModifier<TextAttribute> {
   }
 }
 
+class TextModifier6 implements AttributeModifier<TextAttribute> {
+  applyNormalAttribute(instance: TextAttribute): void {
+    instance.tailIndents([])
+  }
+}
+
 @Entry
 @Component
 struct TextTailIndents {
@@ -38,6 +44,7 @@ struct TextTailIndents {
   @State modifier3: TextModifier3 = new TextModifier3()
   @State modifier4: TextModifier4 = new TextModifier4()
   @State modifier5: TextModifier5 = new TextModifier5()
+  @State modifier6: TextModifier6 = new TextModifier6()
 
   build() {
     Scroll() {
@@ -111,6 +118,11 @@ struct TextTailIndents {
           .tailIndents(LengthMetrics.percent(0.5))
           .height('5%')
 
+        Text('Text: tailIndents(emptyArray)')
+          .id('Text_tailIndents_emptyArray')
+          .tailIndents([])
+          .height('5%')
+
         Text('TextModifier: vp20')
           .attributeModifier(this.modifier1)
           .id('TextModifier_tailIndents_vp20')
@@ -138,6 +150,12 @@ struct TextTailIndents {
         Text('TextModifier: array')
           .attributeModifier(this.modifier5)
           .id('TextModifier_tailIndents_array')
+          .height('5%')
+          .borderWidth(1)
+
+        Text('TextModifier: emptyArray')
+          .attributeModifier(this.modifier6)
+          .id('TextModifier_tailIndents_emptyArray')
           .height('5%')
           .borderWidth(1)
       }.height('100%')

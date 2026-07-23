@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "../../../../../../hypium/index";
 
 let a_0: boolean[] = [true, true, true, true, true, true];
 let a_1: number[] = [];

@@ -1,6 +1,6 @@
 'use static';
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 
 export function sleep(time: int): Promise<number> {
   return new Promise<number>((re, je): void => {

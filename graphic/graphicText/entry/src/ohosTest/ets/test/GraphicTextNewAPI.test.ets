@@ -854,7 +854,251 @@ export default function graphicTextNewAPI() {
       }
     })
 
+    /**
+     * @tc.name   testSetTextHighContrastNull
+     * @tc.number SUB_GRAPHIC_text_testSetTextHighContrastNull_0100
+     * @tc.desc   Test setTextHighContrast property set to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextHighContrastNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextHighContrastNull===="
+      try {
+        text.setTextHighContrast(null);
+        console.info(msgStr + ' setTextHighContrast success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextHighContrast error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
 
+    /**
+     * @tc.name   testSetTextHighContrastUndefined
+     * @tc.number SUB_GRAPHIC_text_testSetTextHighContrastUndefined_0100
+     * @tc.desc   Test setTextHighContrast property set to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextHighContrastUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextHighContrastUndefined===="
+      try {
+        text.setTextHighContrast(undefined);
+        console.info(msgStr + ' setTextHighContrast success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextHighContrast error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetTextUndefinedGlyphDisplayNull
+     * @tc.number SUB_GRAPHIC_text_setTextUndefinedGlyphDisplayNull_0100
+     * @tc.desc   Test setTextUndefinedGlyphDisplay property set to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextUndefinedGlyphDisplayNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr = "==== www data testSetTextUndefinedGlyphDisplayNull===="
+      try {
+        text.setTextUndefinedGlyphDisplay(null);
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetTextUndefinedGlyphDisplayUndefined
+     * @tc.number SUB_GRAPHIC_text_setTextUndefinedGlyphDisplayUndefined_0100
+     * @tc.desc   Test setTextUndefinedGlyphDisplay property set to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextUndefinedGlyphDisplayUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextUndefinedGlyphDisplayUndefined===="
+      try {
+        text.setTextUndefinedGlyphDisplay(undefined);
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   getRectsForRangeNull
+     * @tc.number SUB_GRAPHIC_Text_getRectsForRange_null_0100
+     * @tc.desc   Paragraph getRectsForRange null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getRectsForRangeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data getRectsForRangeNull';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          const range: text.Range = { start: 0, end: 4 };
+          const rects = paragraph.getRectsForRange(
+            range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE
+          );
+          try {
+            const rects = paragraph.getRectsForRange(range, null, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          try {
+            const rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, null);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err.code);
+          expect(true).assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   getRectsForRangeUndefined
+     * @tc.number SUB_GRAPHIC_Text_getRectsForRange_undefined_0100
+     * @tc.desc   Paragraph getRectsForRange undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getRectsForRangeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data getRectsForRangeUndefined';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          const range: text.Range = { start: 0, end: 4 };
+          try {
+            const rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, undefined);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          try {
+            const rects = paragraph.getRectsForRange(range, undefined, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} getRectsForRangeHeightStyleIncludeLineSpaceMiddle error `, err);
+          expect(true).assertFail();
+          done();
+        }
+      });
+    /**
+     * @tc.name   testGetActualTextRangeNull
+     * @tc.number SUB_GRAPHIC_Text_testGetActualTextRange_Null_0100
+     * @tc.desc   Paragraph getActualTextRange lineNumber parameter null test 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetActualTextRangeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data testGetActualTextRangeNull';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          try {
+            const result = paragraph.getActualTextRange(0, null);
+            console.info(`${msgStr} success `, result);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err);
+          expect().assertFail();
+          done();
+        }
+      });
+      
+    /**
+     * @tc.name   testGetActualTextRangeUndefined
+     * @tc.number SUB_GRAPHIC_Text_testGetActualTextRange_Undefined_0100
+     * @tc.desc   Paragraph getActualTextRange lineNumber parameter undefined test 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetActualTextRangeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data testGetActualTextRangeUndefined';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          try {
+            const result = paragraph.getActualTextRange(0, undefined);
+            console.info(`${msgStr} success `, result);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err);
+          expect().assertFail();
+          done();
+        }
+      });
 
   })
 }

@@ -6,7 +6,24 @@ import common from '@ohos.app.ability.common';
 export default function audioGetCapturerInfoTest() {
   describe('audioCapturerGetCapturerInfo', () => {
     const Tag: string = 'AudioCapturerGetCapturerInfo';
+    let sleep = (ms: number): Promise<ESObject> => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    beforeAll(async () => {
+      console.info('beforeAll called')
+    })
+    afterAll(() => {
+      console.info('afterAll called')
+    })
 
+    beforeEach(() => {
+      console.info('beforeEach called')
+    })
+
+    afterEach(async () => {
+      console.info('afterEach called')
+      await sleep(500);
+    })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_CAPTURER_INFO_SOURCE_001
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_CAPTURER_INFO_SOURCE_001
@@ -124,7 +141,24 @@ export default function audioGetCapturerInfoTest() {
 
   describe('audioCapturerGetStreamInfo', () => {
     const Tag: string = 'AudioCapturerGetStreamInfo';
+    let sleep = (ms: number): Promise<ESObject> => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    beforeAll(async () => {
+      console.info('beforeAll called')
+    })
+    afterAll(() => {
+      console.info('afterAll called')
+    })
 
+    beforeEach(() => {
+      console.info('beforeEach called')
+    })
+
+    afterEach(async () => {
+      console.info('afterEach called')
+      await sleep(500);
+    })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_STREAM_INFO_SAMPLINGRATE_001
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_STREAM_INFO_SAMPLINGRATE_001
@@ -184,7 +218,24 @@ export default function audioGetCapturerInfoTest() {
   });
   describe('audioCreateAudioCapturer', () => {
     const Tag: string = 'AudioCreateAudioCapturer';
+    let sleep = (ms: number): Promise<ESObject> => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    beforeAll(async () => {
+      console.info('beforeAll called')
+    })
+    afterAll(() => {
+      console.info('afterAll called')
+    })
 
+    beforeEach(() => {
+      console.info('beforeEach called')
+    })
+
+    afterEach(async () => {
+      console.info('afterEach called')
+      await sleep(500);
+    })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_CREATE_CAPTURER_SAMPLING_RATE_8000_001
      * @tc.number SUB_MULTIMEDIA_AUDIO_CREATE_CAPTURER_SAMPLING_RATE_8000_001

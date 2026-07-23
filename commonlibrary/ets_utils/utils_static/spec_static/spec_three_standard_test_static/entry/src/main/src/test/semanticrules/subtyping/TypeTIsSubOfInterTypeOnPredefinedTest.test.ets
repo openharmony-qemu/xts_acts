@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,100 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index'
 
-namespace testNS2_3 {
-  function check_value_3(v: Object | null | undefined,
-    is_subtype_of_inter_type: boolean,
-    v_id: int): void {
-    expect(v instanceof long).assertTrue()
-    if (v_id == 1) {
-      expect((v as long)).assertEqual(123)
-      if (is_subtype_of_inter_type) {
-        expect(v instanceof undefined | string | null | bigint &&
-          v instanceof bigint | int | null).assertTrue()
-        expect((v as undefined | string | null | bigint)).assertEqual(123)
-        expect((v as bigint | int | null)).assertEqual(123)
-      }
-    }
-    else {
-      expect((v as long)).assertEqual(456)
-      if (is_subtype_of_inter_type) {
-        expect(v instanceof undefined | string | null | bigint &&
-          v instanceof bigint | int | null).assertTrue()
-        expect((v as undefined | string | null | bigint)).assertEqual(456)
-        expect((v as bigint | int | null)).assertEqual(456)
-      }
-    }
-  }
-  function check_3(v: long,
-    is_subtype_of_inter_type: boolean,
-    v_id: int): boolean {
-    let res: boolean = false
-    expect(v instanceof undefined | string | null | bigint &&
-      v instanceof bigint | int | null).assertEqual(is_subtype_of_inter_type)
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    if (v instanceof undefined | string | null | bigint) {
-      check_value_3(v, is_subtype_of_inter_type, v_id)
-      if (v_id == 1) {
-        expect((v as undefined | string | null | bigint)).assertEqual(123)
-      }
-      else {
-        expect((v as undefined | string | null | bigint)).assertEqual(456)
-      }
-      res = check_is_in_inter_type_3(v, is_subtype_of_inter_type, v_id)
-      if (!res) {
-        expect(v instanceof bigint | int | null).assertFalse()
-        check_is_not_in_I2_type_3(v, is_subtype_of_inter_type, v_id)
-      }
-    }
-    return res
-  }
-  function check_is_in_inter_type_3(v: undefined | string | null | bigint,
-    is_subtype_of_inter_type: boolean,
-    v_id: int): boolean {
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    if (v_id == 1) {
-      expect((v as undefined | string | null | bigint)).assertEqual(123)
-    }
-    else {
-      expect((v as undefined | string | null | bigint)).assertEqual(456)
-    }
-    if (v instanceof bigint | int | null) {
-      expect(is_subtype_of_inter_type).assertTrue()
-      check_value_3(v, is_subtype_of_inter_type, v_id)
-      if (v_id == 1) {
-        expect((v as bigint | int | null)).assertEqual(123)
-      }
-      else {
-        expect((v as bigint | int | null)).assertEqual(456)
-      }
-      let b: bigint | int | null = v as bigint | int | null
-      check_value_3(b, is_subtype_of_inter_type, v_id)
-      return true
-    }
-    else {
-      return false
-    }
-  }
-  function check_is_not_in_I2_type_3(v: Object | null | undefined,
-    is_subtype_of_inter_type: boolean,
-    v_id: int): void {
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    expect(v instanceof bigint | int | null).assertFalse()
-    expect(() => {
-      let b: bigint | int | null = v as bigint | int | null
-    }).assertThrow("error")
-  }
-
-  export function runTest_3(): boolean {
-    let v1: long = 123
-    let v2: long = 456
-    let res: boolean =
-      check_3(v1, false, 1) &&
-      check_3(v2, false, 2)
-    expect(res).assertEqual(false)
-    return true
-  }
-}
 
 function check_value_3(v: Object | null | undefined,
   is_subtype_of_inter_type: boolean,
@@ -195,8 +101,8 @@ function check_is_not_in_I2_type_3(v: Object | null | undefined,
   }).assertThrow("error")
 }
 
-export default function TypeTIsSubOfInterTypeOnPredefinedTest01(): void {
-  describe('TypeTIsSubOfInterTypeOnPredefinedTest01', () => {
+export default function TypeTIsSubOfInterTypeOnPredefinedTest(): void {
+  describe('TypeTIsSubOfInterTypeOnPredefinedTest', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -236,8 +142,6 @@ export default function TypeTIsSubOfInterTypeOnPredefinedTest01(): void {
         check_3(v2, false, 2)
       expect(res).assertEqual(false)
 
-      expect(testNS2_3.runTest_3()).assertTrue()
     })
-
   })
 }

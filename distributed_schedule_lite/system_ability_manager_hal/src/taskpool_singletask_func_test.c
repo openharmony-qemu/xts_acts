@@ -36,7 +36,11 @@ static BOOL Initialize(Service *service, Identity identity);
 static BOOL MessageHandle(Service *service, Request *msg);
 static TaskConfig GetTaskConfig(Service *service);
 
+#ifdef XTS_OVERLAY_ENABLE
+static Vector g_nodeVector __attribute__((section(".sbss")));
+#else
 static Vector g_nodeVector;
+#endif
 typedef struct Node {
     int id;
     const char *name;
@@ -150,7 +154,11 @@ static const char *GetName(Service *service)
     }
 }
 
+#ifdef XTS_OVERLAY_ENABLE
+static int g_initlizationOrder __attribute__((section(".sbss")));
+#else
 static int g_initlizationOrder = 0;
+#endif
 static BOOL Initialize(Service *service, Identity identity)
 {
     DemoService *demoService = (DemoService *)service;
@@ -281,8 +289,6 @@ static void CheckSingleTaskFeatureApi(const char *serviceName)
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
     demoApi->Release((IUnknown *)demoApi);
 }
 
@@ -307,8 +313,6 @@ static void CheckSingleTaskDefaultApi(const char *serviceName, Identity *identit
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(*calledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
     defaultApi->Release((IUnknown *)defaultApi);
 }
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level } from '../../../../hypium';
+import { beforeAll, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'

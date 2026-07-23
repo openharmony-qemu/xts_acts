@@ -67,7 +67,7 @@ export default function menuTransition() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('menuTransition_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('menuTransition_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('menuTransition_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

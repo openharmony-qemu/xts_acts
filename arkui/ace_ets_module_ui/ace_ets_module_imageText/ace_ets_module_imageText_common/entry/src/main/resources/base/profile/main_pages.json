@@ -66,7 +66,8 @@
         "MainAbility/pages/Scroll/Marquee",
         "MainAbility/pages/Scroll/Marquee_null",
         "MainAbility/pages/Scroll/Marquee_undefined",
-        "MainAbility/pages/EllipsisModeTest/TextInputEllipsisModeTest"
+        "MainAbility/pages/EllipsisModeTest/TextInputEllipsisModeTest",
+        "MainAbility/pages/WithEnv/TextSymbolWithEnvFontScale"
 
     ]
 }

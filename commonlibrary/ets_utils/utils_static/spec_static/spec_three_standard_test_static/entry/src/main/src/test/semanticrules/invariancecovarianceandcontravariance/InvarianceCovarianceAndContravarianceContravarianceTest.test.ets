@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,7 +16,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
    from '../../../../../hypium/index';
-
 
  let res: number = 0
 
@@ -79,8 +78,6 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
      */
     it("testInvarianceCovarianceAndContravarianceContravariance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-
-
         let a = new Base();
         let b = new Derived();
 

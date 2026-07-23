@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,22 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
+import { Neg, Pos } from '../types.test'
+import { checkTypeIdentity, checkTypeIdentityOfAny } from '../../Util.test';
+import Utils from '../../Util.test'
 
 interface MyInterface1 {
   method1(): void;
@@ -49,10 +36,6 @@ class MyClass2 implements MyInterface2 {
   method2() {}
 }
 
-function checkTypeIdentity1(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-
 interface MyInterface3 {
   method3(): void;
   method4(): void;
@@ -62,15 +45,6 @@ class MyClass3 implements MyInterface3 {
   method3() {}
   method4() {}
 }
-
-function checkTypeIdentity2(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-
-
-
-
-
 
 export default function InterfaceImplementationCompatibilityCaseTest(): void {
   describe('InterfaceImplementationCompatibilityCaseTest', () => {
@@ -84,7 +58,7 @@ export default function InterfaceImplementationCompatibilityCaseTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -108,12 +82,10 @@ export default function InterfaceImplementationCompatibilityCaseTest(): void {
      */
     it("testInterfaceImplementationCompatibilityCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: MyClass2 = new MyClass2();
       const val2: MyInterface2 = val1;
 
-      const result = checkTypeIdentity1(val1, val2);
+      const result = checkTypeIdentity(val1, val2);
       expect(result).assertEqual(true);
     });
 
@@ -127,15 +99,11 @@ export default function InterfaceImplementationCompatibilityCaseTest(): void {
      */
     it("testInterfaceImplementationCompatibilityCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: MyClass3 = new MyClass3();
       const val2: MyInterface3 = val1;
 
-      const result = checkTypeIdentity2(val1, val2);
+      const result = checkTypeIdentity(val1, val2);
       expect(result).assertEqual(true);
     });
   })
 }
-
-

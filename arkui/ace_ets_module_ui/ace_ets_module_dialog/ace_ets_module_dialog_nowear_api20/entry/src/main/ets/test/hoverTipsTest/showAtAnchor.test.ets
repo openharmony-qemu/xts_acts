@@ -54,6 +54,7 @@ export default function showAtAnchorTest() {
     it('showAtAnchor_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0001 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let TipsButton = await driver.findComponent(ON.id('oriBtn'));
       let center1: Point = await TipsButton.getBoundsCenter();
       console.info('showAtAnchor_value_0001 component obj is: ' + JSON.stringify(center1));
@@ -97,6 +98,7 @@ export default function showAtAnchorTest() {
     it('showAtAnchor_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0002 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showAtAnchorBth'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -143,6 +145,7 @@ export default function showAtAnchorTest() {
     it('showAtAnchor_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0003 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showAtAnchorBth'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -189,6 +192,7 @@ export default function showAtAnchorTest() {
     it('showAtAnchor_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0004 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showAtAnchorBth'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -234,6 +238,7 @@ export default function showAtAnchorTest() {
     it('showAtAnchor_value_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0005 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showAtAnchorBth'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);

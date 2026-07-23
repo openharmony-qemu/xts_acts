@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -100,7 +100,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       a1 = 'abc'
       b1 = 42
       expect(a1 instanceof String).assertTrue()
@@ -119,7 +118,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       x2 = new Base2
       expect(x2 instanceof Base2).assertTrue()
       x2 = y2
@@ -135,7 +133,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       u3 = 'aa'
       expect(u3 instanceof String).assertTrue()
       u3 = 1
@@ -151,7 +148,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(a4 instanceof String).assertTrue()
       let b4: string = a4
       expect(b4 instanceof String).assertTrue()
@@ -167,7 +163,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       u5 = 'xyz'
       expect(u5 instanceof String).assertTrue()
     });
@@ -181,7 +176,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       ab6 = a6
       expect(ab6 instanceof Array).assertTrue()
     });
@@ -195,7 +189,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(b7 instanceof Array).assertTrue()
       ac7 = b7 as Array<A7> | Array<C7>
       expect(ac7 instanceof Array).assertTrue()
@@ -210,7 +203,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       v9 = Color9.Green
       expect(v9 instanceof Color9).assertTrue()
       v9 = 'a'
@@ -229,7 +221,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let abe10: A10|B10|E10 =  new E10
       expect(abe10 instanceof E10).assertTrue()
       abe10 = cd10
@@ -245,7 +236,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let abe11: A11|B11|E11 =  new E11
       expect(abe11 instanceof E11).assertTrue()
       abe11 = cdf11
@@ -261,7 +251,6 @@ export default function SubtypingForUnionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositive0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let ab12: A12|B12 =  new B12
       expect(ab12 instanceof B12).assertTrue()
       ab12 = cdf12

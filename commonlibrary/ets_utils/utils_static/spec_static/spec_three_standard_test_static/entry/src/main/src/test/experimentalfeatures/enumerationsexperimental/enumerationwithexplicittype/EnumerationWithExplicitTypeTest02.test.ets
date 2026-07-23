@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum Enum12: int {
   Red,
@@ -95,7 +88,6 @@ enum Enum17: float {
   one = 1.0f,
   oNe = 1.0f
 }
-
 
 namespace testNS10 {
   enum Enum: int {
@@ -925,8 +917,6 @@ namespace testNS33 {
   }
 }
 
-
-
 export default function EnumerationWithExplicitTypeTest02(): void {
   describe('EnumerationWithExplicitTypeTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -939,7 +929,7 @@ export default function EnumerationWithExplicitTypeTest02(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {

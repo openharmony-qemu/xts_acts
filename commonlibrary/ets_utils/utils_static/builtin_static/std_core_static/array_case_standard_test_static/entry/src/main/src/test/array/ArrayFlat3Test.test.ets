@@ -158,11 +158,11 @@ export default function ArrayFlat3Test(): void {
       const nested: Array<Array<FlatNoArgItem005>> = [[item1], [item2]];
       const result: Array<FlatNoArgItem005> = nested.flat<FlatNoArgItem005>();
       expect(result.length).assertEqual(2);
-      expect(result[0] != undefined).assertTrue();
-      expect(result[1] != undefined).assertTrue();
       if (result[0] != undefined && result[1] != undefined) {
         expect(result[0].value).assertEqual(1);
         expect(result[1].value).assertEqual(2);
+      }else {
+        expect().assertFail();
       }
     });
 

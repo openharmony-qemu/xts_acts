@@ -44,6 +44,7 @@ export default function testsuite() {
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
     ImportContactsViaUITest();
+    ContactSyncTest();
   } 
   QueryKeyTest();
   QueryByEmailTest();
@@ -57,5 +58,4 @@ export default function testsuite() {
   EmptyParamTest();
   EmptyParamCardTest();
   HasMatchedCallLogTest();
-  ContactSyncTest();
 }

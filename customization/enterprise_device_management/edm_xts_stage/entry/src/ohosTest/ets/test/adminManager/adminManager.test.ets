@@ -2449,10 +2449,10 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_enableSelfDeviceAdmin_0100 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(error.code === 401).assertTrue();
         }
       }
       done();
@@ -2475,10 +2475,10 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_enableSelfDeviceAdmin_0200 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(error.code === 401).assertTrue();
         }
       }
       done();
@@ -2501,10 +2501,10 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_enableSelfDeviceAdmin_0300 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(error.code === 401).assertTrue();
         }
       }
       done();
@@ -2527,10 +2527,10 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_enableSelfDeviceAdmin_0400 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(error.code === 401).assertTrue();
         }
       }
       done();
@@ -2553,10 +2553,10 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_enableSelfDeviceAdmin_0500 error code: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 9200018).assertTrue();
+          expect(error.code === 9200018).assertTrue();
         }
       }
       done();

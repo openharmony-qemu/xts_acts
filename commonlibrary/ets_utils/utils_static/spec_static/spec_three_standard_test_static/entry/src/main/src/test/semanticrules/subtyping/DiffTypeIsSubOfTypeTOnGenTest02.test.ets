@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,92 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
-namespace testNS2_14 {
-  interface I1<U, V> {}
-  interface I2<U, V> {}
-  interface II1<U, V> extends I1<U, V>, I2<U, V> {}
-  interface II2<U, V> extends I1<U, V>, I2<U, V> {}
-  interface III1<U, V> extends II1<U, V> {}
-  interface III2<U, V> extends II1<U, V> {}
-  class C1<U, V> implements III1<U, V> {
-    c1_v: U | V
-    constructor (p: U | V) {
-      this.c1_v = p
-    }
-  }
-  class C2<U, V> implements III2<U, V>  {
-    c2_v: U | V
-    constructor (p: U | V) {
-      this.c2_v = p
-    }
-  }
-  class C3<U, V> implements II2<U, V>  {
-    c3_v: U | V
-    constructor (p: U | V) {
-      this.c3_v = p
-    }
-  }
-  function check_C1(a: object) {
-    expect(a instanceof C1).assertTrue();
-    expect((a as C1<number, null>).c1_v as number).assertEqual(123);
-  }
-  function check_C2(a: object) {
-    expect(a instanceof C2).assertTrue();
-    expect((a as C2<number, string>).c2_v as number).assertEqual(6.7);
-  }
-  function check_C3(a: object) {
-    expect(a instanceof C3).assertTrue();
-    expect((a as C3<bigint, undefined>).c3_v as bigint).assertEqual(321n);
-  }
-  function foo(v: I2<number, null> | I2<number, string> | I2<bigint, undefined>): void {
-    expect(v instanceof C1 || v instanceof C2 || v instanceof C3).assertTrue();
-  }
-  function f1(v: III1<number, null> | III2<number, string> | II2<bigint, undefined>): number {
-    if (v instanceof C1 || v instanceof C2 || v instanceof C3) {
-      foo(v as I2<number, null> | I2<number, string> | I2<bigint, undefined>);
-      return f2(v);
-    }
-    else {
-      return 0;
-    }
-  }
-  function f2(v: III1<number, null> | III2<number, string> | II2<bigint, undefined>): number {
-    if (v instanceof C1 || v instanceof C2) { // II1 check
-      check_C1(v);
-      return 1;
-    }
-    else {
-      expect(v instanceof C1 || v instanceof C2 || v instanceof C3).assertTrue();
-      expect(v instanceof C1 || v instanceof C2 || v instanceof C3).assertTrue();
-      foo(v as I2<number, null> | I2<number, string> | I2<bigint, undefined>);
-      check_C3(v);
-      return 2;
-    }
-  }
-
-  export function runTest_14(): boolean {
-    let res: number = f1(new C1<number, null>(123));
-    expect(res).assertEqual(1);
-    res = f1(new C3<bigint, undefined>(321n));
-    expect(res).assertEqual(2);
-    return true;
-  }
-}
+import { Neg, Pos } from '../types.test';
+import Utils from '../../Util.test'
 
 interface I1_14<U, V> {}
 interface I2_14<U, V> {}
@@ -365,7 +281,7 @@ export default function DiffTypeIsSubOfTypeTOnGenTest02(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -393,7 +309,6 @@ export default function DiffTypeIsSubOfTypeTOnGenTest02(): void {
       expect(res).assertEqual(1)
       res = f1_14(new C3_14<bigint, undefined>(321n))
       expect(res).assertEqual(2)
-      expect(testNS2_14.runTest_14()).assertTrue()
     });
 
     /**

@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 
 enum IntEnum { Zero, One, Two }
 enum IntEnum2 { Zero, Five = 5, Seven = 7 }

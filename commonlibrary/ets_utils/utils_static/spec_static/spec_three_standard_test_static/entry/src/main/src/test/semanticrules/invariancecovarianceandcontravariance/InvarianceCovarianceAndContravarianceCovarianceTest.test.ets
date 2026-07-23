@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -30,14 +30,12 @@ class Derived extends Base {
   }
 }
 
-
 class Base2 {}
 class Derived2 extends Base2 {}
 
 function foo2(i: Base2) {
   return 1;
 }
-
 
 export default function InvarianceCovarianceAndContravarianceCovarianceTest(): void {
   describe('InvarianceCovarianceAndContravarianceCovarianceTest', () => {
@@ -75,20 +73,15 @@ export default function InvarianceCovarianceAndContravarianceCovarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceCovariance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
         let a = new Base();
         let b = new Derived();
 
         let res1 = a.foo(b);
         let res2 = b.foo(b);
 
-
         expect(res1 instanceof Base).assertTrue();
-
         expect(res1 instanceof Derived).assertFalse();
-
         expect(res2 instanceof Derived).assertTrue();
-
     });
 
     /**
@@ -101,7 +94,6 @@ export default function InvarianceCovarianceAndContravarianceCovarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceCovariance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       expect(foo2(new Base2())).assertEqual(foo2(new Derived2()));
     });
   });

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,16 +25,9 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class A_F001 {
     field: long = 4
@@ -662,7 +655,7 @@ export default function FieldInitializationTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -2222,11 +2215,11 @@ export default function FieldInitializationTest(): void {
           let c: C_F092 = new C_F092()
           b.field = handlerA
           c.field = handlerAInt
-      expect(a.field instanceof HandlerNothing_F092).assertTrue()
+      expect(a.field instanceof (() => never)).assertTrue()
       expect(a.field(new B_F092, 7).v).assertEqual(-567)
-      expect(b.field instanceof HandlerA_F092).assertTrue()
+      expect(b.field instanceof ((a: Any) => never)).assertTrue()
       expect(b.field(new B_F092, 7).v).assertEqual(13)
-      expect(c.field instanceof HandlerAInt_F092).assertTrue()
+      expect(c.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(c.field(new B_F092, 7).v).assertEqual(-20)
     })
 

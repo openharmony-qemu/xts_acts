@@ -300,10 +300,10 @@ function testActiveSim() {
       telephonyManager.activeSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -327,10 +327,10 @@ function testDeactiveSim() {
       telephonyManager.deactiveSim(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -354,10 +354,10 @@ function testSetDefaultData() {
       telephonyManager.setDefaultData(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -381,10 +381,10 @@ function testGetDefaultData() {
       telephonyManager.getDefaultData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);

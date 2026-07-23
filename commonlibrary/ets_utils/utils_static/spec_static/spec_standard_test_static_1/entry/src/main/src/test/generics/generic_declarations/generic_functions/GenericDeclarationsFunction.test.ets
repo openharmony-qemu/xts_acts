@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 function processType_0<T>(input: T): T {
   if (typeof input === "string") {

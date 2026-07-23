@@ -16,7 +16,7 @@
 
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium/index';
 
 const TAG =  'xtsStatic_getAllPropertiesStatic';
 let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;

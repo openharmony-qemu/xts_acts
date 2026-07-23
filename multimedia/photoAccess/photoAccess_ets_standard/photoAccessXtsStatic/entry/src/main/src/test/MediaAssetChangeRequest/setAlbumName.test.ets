@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level, Hypium } from '../../../../hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level, Hypium } from '../../../../hypium/index';
 import { getPermission, LOG_TAG, createUserAlbum } from '../common';
 import common from '@ohos.app.ability.common';
 import { Context } from '@ohos.arkui.UIContext';

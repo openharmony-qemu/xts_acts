@@ -39,8 +39,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：长按彩色区域',
-        result: '预期结果：x、y、timeStamp、彩色区颜色随长按事件变化而变化',
+                step: '操作步骤：长按彩色区域',
+                result: '预期结果：x、y、timeStamp、彩色区颜色随长按事件变化而变化',
         url: 'pages/event/longpress/index',
         itemIndex: this.itemIndex
       }
@@ -61,4 +61,12 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };

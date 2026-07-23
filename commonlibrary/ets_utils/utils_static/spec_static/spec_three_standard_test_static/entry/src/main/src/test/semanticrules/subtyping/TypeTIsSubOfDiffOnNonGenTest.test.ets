@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 class Animal_1 {}
 class Cat_1 extends Animal_1 {v: string = "cat"}
@@ -222,7 +216,7 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -247,7 +241,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: Cat_1 | Dog_1 | number = 123
       let v2: Cat_1 | Dog_1 | number = new Dog_1()
       let res: boolean =
@@ -267,7 +260,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: B2_2 | Other_2 | C1_2 = new C1_2()
       let v2: B2_2 | Other_2 | C1_2 = new B2_2()
       let res: boolean =
@@ -287,7 +279,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: III1_3 | II2_3 | III2_3 = new C1_3()
       let v2: III1_3 | II2_3 | III2_3 = new C3_3()
       let res: boolean =

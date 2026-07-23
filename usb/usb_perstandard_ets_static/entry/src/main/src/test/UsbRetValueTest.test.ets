@@ -1293,7 +1293,7 @@ export default function UsbRetValueTest() {
             hilog.info(domain, tag, `testUsbControlTransferRet name = ${devicesList[0].name}`);
             let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
             let timeout: int | undefined = 30;
-            let retVal = UsbMgr.usbControlTransfer(devicePipe, param, timeout);
+            let retVal = await UsbMgr.usbControlTransfer(devicePipe, param, timeout);
             hilog.info(domain, tag, `testUsbControlTransferRet size= ${retVal}`);
             hilog.info(domain, tag, `testUsbControlTransferRet : ${typeof(retVal)}`);
             expect(typeof(retVal)).assertEqual("int");
@@ -1445,7 +1445,7 @@ export default function UsbRetValueTest() {
             await UsbMgr.requestRight(devicesList[0].name);
             hilog.info(domain, tag, `testUsbControlTransferUndefined name = ${devicesList[0].name}`);
             let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-            let retVal = UsbMgr.usbControlTransfer(devicePipe, param, undefined);
+            let retVal = await UsbMgr.usbControlTransfer(devicePipe, param, undefined);
             hilog.info(domain, tag, `testUsbControlTransferUndefined size= ${retVal}`);
             expect(retVal == 18).assertTrue();
             UsbMgr.removeRight(devicesList[0].name);

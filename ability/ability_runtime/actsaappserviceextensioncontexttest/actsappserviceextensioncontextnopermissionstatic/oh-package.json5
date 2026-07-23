@@ -16,8 +16,6 @@
 {
   "modelVersion": "6.0.0",
   "description": "Please describe the basic information.",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

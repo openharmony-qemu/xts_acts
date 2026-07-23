@@ -30,7 +30,7 @@ import {
 import { BusinessError,Callback, RecordData } from '@ohos.base'
 import emitter from '@ohos.events.emitter'
 import events_emitter from '@ohos.events.emitter'
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
 

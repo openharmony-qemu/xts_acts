@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,13 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
+
 namespace testNS2_1 {
   function check_value_1(v: Any, v_id: int): void {
     if (v_id == 1) {
@@ -159,7 +154,7 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -183,13 +178,10 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1_1: boolean = check_is_in_T_type_1(undefined, 1)
       let res2_1: boolean = check_is_in_T_type_1(5n, 2)
       let res3_1: boolean = check_is_in_T_type_1(null, 3)
       expect(res1_1 && (res2_1 || res3_1)).assertEqual(true)
-
-      expect(testNS2_1.runTest_1()).assertEqual(true)
 
     });
   })

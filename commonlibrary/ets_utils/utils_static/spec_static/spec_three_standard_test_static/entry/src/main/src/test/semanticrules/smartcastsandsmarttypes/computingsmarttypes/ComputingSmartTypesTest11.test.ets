@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -15,14 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum VarType { T_inter_A, T_diff_A }
 
@@ -89,7 +82,6 @@ function check_01(v: T_01, v_type: VarType, v_id: int): void {
     check_as_type_T_diff_A_01(v as T_diff_A_01, v_id)
   }
 }
-
 
 // ============================================================================
 // Data Setup for testUserDefinedInFn0002
@@ -163,7 +155,6 @@ function check_02(v: T_02, v_type: VarType, v_id: int): void {
   }
 }
 
-
 // ============================================================================
 // Data Setup for testUserDefinedInFn0003
 // ============================================================================
@@ -233,7 +224,6 @@ function check_03(v: T_03, v_type: VarType, v_id: int): void {
     check_as_type_T_diff_A_03(v as T_diff_A_03, v_id)
   }
 }
-
 
 // ============================================================================
 // Data Setup for testUserDefinedInFn0004
@@ -305,7 +295,6 @@ function check_04(v: T_04, v_type: VarType, v_id: int): void {
     check_as_type_T_diff_A_04(v as T_diff_A_04, v_id)
   }
 }
-
 
 // ============================================================================
 // Data Setup for testUserDefinedInFn0005
@@ -452,7 +441,6 @@ function check_06(v: T_06, v_type: VarType, v_id: int): void {
   }
 }
 
-
 // ============================================================================
 // Data Setup for testUserDefinedInFn0007
 // ============================================================================
@@ -519,7 +507,6 @@ function check_07(v: T_07, v_type: VarType, v_id: int): void {
   }
 }
 
-
 // ============================================================================
 // Data Setup for testUserDefinedInFn0008
 // ============================================================================
@@ -580,7 +567,6 @@ function check_08(v: T_08, v_type: VarType, v_id: int): void {
   }
 }
 
-
 // ============================================================================
 // Data Setup for testUserDefinedInFn0009
 // ============================================================================
@@ -640,7 +626,6 @@ function check_09(v: T_09, v_type: VarType, v_id: int): void {
     check_as_type_T_diff_A_09(v as T_diff_A_09, v_id)
   }
 }
-
 
 // ============================================================================
 // Data Setup for testUserDefinedInFn0010 (Function types)
@@ -722,7 +707,6 @@ function check_10(v: T_10, v_type: VarType, v_id: int): void {
   }
 }
 
-
 export default function ComputingSmartTypesTest11():void {
   describe('ComputingSmartTypesTest11', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -735,7 +719,7 @@ export default function ComputingSmartTypesTest11():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -918,6 +902,5 @@ export default function ComputingSmartTypesTest11():void {
       }
       expect(checks_number).assertEqual(check_values_number_10)
     });
-
   })
 }

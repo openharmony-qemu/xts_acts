@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
 class A1 {
   constructor(pa: number[]) {
@@ -162,7 +150,7 @@ export default function SpecExamples2Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -186,8 +174,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamplesOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let my_lambda_var: my_lambda1 = (pa: number[]): void => {
         expect(pa[0]).assertEqual(1)
         expect(pa[1]).assertEqual(2)
@@ -221,8 +207,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamplesOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let my_lambda_var: my_lambda2 = (p1: number, p2: number[]): void => {
         expect(p1).assertEqual(1)
         expect(p2[0]).assertEqual(2)
@@ -256,8 +240,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamplesOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let my_lambda_var: my_lambda3 = (pc: TestMix[]): void => {
         expect(pc[0]).assertEqual(1)
         expect(pc[1]).assertEqual("str")
@@ -293,8 +275,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamplesOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let my_lambda_var: my_lambda4 = (p: Object[]): void => {
         expect(p[0]).assertEqual(1)
         expect(p[1]).assertEqual("str")

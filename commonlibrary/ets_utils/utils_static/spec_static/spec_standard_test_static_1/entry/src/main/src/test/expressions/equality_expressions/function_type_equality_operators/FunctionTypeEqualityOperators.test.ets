@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 
 function foo_1() {
 }

@@ -1,17 +1,23 @@
-'use static';
+'use static'
+/*
+* Copyright (c) 2021-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 class A {}
 let f = (this: A): void => {}
-
 class A1 {}
 let f1 = (this: A1): void => {}
 
@@ -22,8 +28,6 @@ interface I1 {}
 let f3 = (this: I1): void => {}
 
 let f4 = (this: number[]): void => {}
-
-let f5 = (this: number[]): void => {}
 
 class A2 {
   f6(): string { return "A" }
@@ -59,61 +63,23 @@ interface I2 {
 
 let f14 = (this: Number): void => {}
 
-let f15 = (this: Number): void => {}
-
 interface I3 {}
 let f16 = (this: I3): void => {}
 
 interface I4 {}
 let f17 = (this: I4): void => {}
-
 let f18 = (this: number): void => {}
-
-let f19 = (this: number): void => {}
-
 let f20 = (this: byte): void => {}
-
-let f21 = (this: byte): void => {}
-
 let f22 = (this: short): void => {}
-
-let f23 = (this: short): void => {}
-
 let f24 = (this: int): void => {}
-
-let f25 = (this: int): void => {}
-
 let f26 = (this: long): void => {}
-
-let f27 = (this: long): void => {}
-
 let f28 = (this: bigint): void => {}
-
-let f29 = (this: bigint): void => {}
-
 let f30 = (this: float): void => {}
-
-let f31 = (this: float): void => {}
-
 let f32 = (this: double): void => {}
-
-let f33 = (this: double): void => {}
-
 let f34 = (this: boolean): void => {}
-
-let f35 = (this: boolean): void => {}
-
 let f36 = (this: string): void => {}
-
-let f37 = (this: string): void => {}
-
 let f38 = (this: char): void => {}
-
-let f39 = (this: char): void => {}
-
 let f40 = (this: Function): void => {}
-
-let f41 = (this: Function): void => {}
 
 export default function LambdaExpressionsWithReceiverTest(): void {
   describe('LambdaExpressionsWithReceiverTest', () => {
@@ -127,7 +93,7 @@ export default function LambdaExpressionsWithReceiverTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {

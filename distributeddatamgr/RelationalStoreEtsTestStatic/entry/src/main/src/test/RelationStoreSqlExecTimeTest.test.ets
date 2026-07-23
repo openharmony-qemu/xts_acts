@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../hypium";
+} from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';

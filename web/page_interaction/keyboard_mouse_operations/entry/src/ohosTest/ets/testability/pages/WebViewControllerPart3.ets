@@ -21,6 +21,7 @@ import { JsProxyObject } from '../../test/Interfaces';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 175301;
 
@@ -28,6 +29,7 @@ const EVENT_ID_SET_SUITE_KEY = 175301;
 @Component
 struct WebViewControllerPart3 {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerTwo: webView.WebviewController = new webView.WebviewController();
   nativePort: webView.WebMessagePort | null = null;
   message: webView.WebMessageExt = new webView.WebMessageExt();
@@ -61,6 +63,10 @@ struct WebViewControllerPart3 {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -119,7 +125,7 @@ struct WebViewControllerPart3 {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
-      Web({ src: $rawfile('indexTwo.html'), controller: this.controllerTwo })
+      Web({ src: this.mServer.getAssetUrl('indexTwo.html'), controller: this.controllerTwo })
         .id('2')
         .key('web2')
         .javaScriptAccess(this.javaScriptAccess)

@@ -2942,11 +2942,63 @@ static napi_value normalAVScreenCapturePauseScreenCaptureErr(napi_env env, napi_
     return res;
 }
 
+static napi_value normalAVScreenCapturePauseScreenCaptureError(napi_env env, napi_callback_info info)
+{
+    screenCapturePauseResume = OH_AVScreenCapture_Create();
+    if (screenCapturePauseResume == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapturePauseResume is not nullptr");
+    }
+    OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
+
+    bool isMicrophone = false;
+    OH_AVScreenCapture_SetMicrophoneEnabled(screenCapturePauseResume, isMicrophone);
+    OH_AVScreenCapture_SetErrorCallback(screenCapturePauseResume, OnError, nullptr);
+    OH_AVScreenCapture_SetStateCallback(screenCapturePauseResume, OnStateChange, nullptr);
+    OH_AVScreenCapture_SetDataCallback(screenCapturePauseResume, OnBufferAvailable, nullptr);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_Init(screenCapturePauseResume, config_);
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_PauseScreenCapture(screenCapturePauseResume);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureResumeScreenCaptureErr(napi_env env, napi_callback_info info)
 {
     OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResumeScreenCapture(nullptr);
     int resCapture = TEST_FAILED;
     if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureResumeScreenCaptureError(napi_env env, napi_callback_info info)
+{
+    screenCapturePauseResume = OH_AVScreenCapture_Create();
+    if (screenCapturePauseResume == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapturePauseResume is not nullptr");
+    }
+    OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
+
+    bool isMicrophone = false;
+    OH_AVScreenCapture_SetMicrophoneEnabled(screenCapturePauseResume, isMicrophone);
+    OH_AVScreenCapture_SetErrorCallback(screenCapturePauseResume, OnError, nullptr);
+    OH_AVScreenCapture_SetStateCallback(screenCapturePauseResume, OnStateChange, nullptr);
+    OH_AVScreenCapture_SetDataCallback(screenCapturePauseResume, OnBufferAvailable, nullptr);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_Init(screenCapturePauseResume, config_);
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResumeScreenCapture(screenCapturePauseResume);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -3328,8 +3380,12 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCapturePauseResumeTestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCapturePauseScreenCaptureErr", nullptr,
             normalAVScreenCapturePauseScreenCaptureErr, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCapturePauseScreenCaptureError", nullptr,
+            normalAVScreenCapturePauseScreenCaptureError, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureResumeScreenCaptureErr", nullptr,
             normalAVScreenCaptureResumeScreenCaptureErr, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureResumeScreenCaptureError", nullptr,
+            normalAVScreenCaptureResumeScreenCaptureError, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

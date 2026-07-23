@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,59 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-namespace testNS2_1 {
-  function check_value_from_type_A_1(v: Any): boolean {
-    if (v instanceof string) {
-      return v === "Done" ||
-        v === "In Progress" ||
-        v === "On Review";
-    } else {
-      return false;
-    }
-  }
-
-  function check_value_from_type_T_1(v: Any): boolean {
-    return true;
-  }
-
-  function foo_1(v: Any): void {
-    expect(check_value_from_type_A_1(v)).assertEqual(true);
-  }
-
-  function f1_1(v: "Done" | "In Progress" | "On Review"): number {
-    expect(check_value_from_type_T_1(v)).assertEqual(true);
-    foo_1(v);
-    return f2_1(v);
-  }
-
-  function f2_1(v: "Done" | "In Progress" | "On Review"): number {
-    if (v === "In Progress") {
-      expect(v).assertEqual("In Progress");
-      return 1;
-    } else {
-      expect(check_value_from_type_A_1(v)).assertEqual(true);
-      expect(check_value_from_type_T_1(v)).assertEqual(true);
-      foo_1(v);
-      expect(v).assertEqual("On Review");
-      return 2;
-    }
-  }
-
-  export function runTest_1(): boolean {
-    let res: number = f1_1("In Progress");
-    expect(res).assertEqual(1);
-    res = f1_1("On Review");
-    expect(res).assertEqual(2);
-    return true;
-  }
-}
+import Utils from '../../Util.test'
 
 function check_value_from_type_A_1(v: Any): boolean {
   if (v instanceof string) {
@@ -183,7 +131,7 @@ export default function DiffTypeIsSubOfTypeTOnStrLitTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -207,14 +155,10 @@ export default function DiffTypeIsSubOfTypeTOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res: number = f1_1("In Progress")
       expect(res).assertEqual(1)
       res = f1_1("Done")
       expect(res).assertEqual(2)
-
-      expect(testNS2_1.runTest_1()).assertEqual(true)
-
     });
 
     /**
@@ -227,7 +171,6 @@ export default function DiffTypeIsSubOfTypeTOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res: number = f1_2("In Progress")
       expect(res).assertEqual(1)
       res = f1_2("Done")

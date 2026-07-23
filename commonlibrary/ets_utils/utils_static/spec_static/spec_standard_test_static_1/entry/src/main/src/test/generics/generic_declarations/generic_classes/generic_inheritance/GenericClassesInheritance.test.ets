@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../../hypium"
+} from "../../../../../../../hypium/index"
 
 // 22
 class GenericParent_0<T> {

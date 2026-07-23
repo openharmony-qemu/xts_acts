@@ -68,6 +68,8 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_download_static:ActsAceEtsModuleDialogDownloadStaticTest",
       "ace_ets_module_dialog_ActionSheet:ActsAceEtsModuleSheetTest",
       "ace_ets_module_dialog_AlertDalog:ActsAceEtsModuleAlertDialogTest",
+      "ace_ets_module_dialog_AlertDalog_static:ActsAceEtsModuleAlertDialogStaticTest",
+      "ace_ets_module_dialog_ErrorCode:ActsAceEtsModuleDialogErrorCodeTest",
       "ace_ets_module_dialog_NoWear:ActsAceEtsModuleNoWearTest",
       "ace_ets_module_dialog_Popup:ActsAceEtsModulePopupTest",
       "ace_ets_module_dialog_Popup_static:ActsAceEtsModuleDialogPopupStaticTest",

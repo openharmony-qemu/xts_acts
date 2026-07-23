@@ -30,34 +30,35 @@ let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
 function sleep(delay: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay));
 }
-async function tryToDisableWifi() {
-  try {
-    if (wifiManager.isWifiActive()) {
-      console.info('[wifi_js] wifi turn on:' + JSON.stringify(wifiManager.isWifiActive()));
-      wifiManager.disableWifi();
-    } else {
-      console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
+async function tryToDisableWifi(){
+  if(wifiManager.isWifiActive()){
+    console.info("wifi_test disable wifi:" + wifiManager.disableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (!wifiManager.isWifiActive()) {
+        console.info("WiFi已成功关闭");
+        break;
+      }
+      console.info("等待WiFi关闭中...");
+      await sleep(100);
     }
-  } catch (error) {
-    console.error('[wifi_js] switch error.code:' + JSON.stringify(error.code) + 'error.message:' +
-      JSON.stringify(error.message));
   }
+  console.info("wifi_test/wifi status:" + wifiManager.isWifiActive());
 }
 
-async function tryToEnableWifi() {
-  try {
-    if (wifiManager.isWifiActive()) {
-      console.info('[wifi_js] wifi turn on:' + JSON.stringify(wifiManager.isWifiActive()));
-    } else {
-      console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
-      wifiManager.enableWifi();
+async function tryToEnableWifi(){
+  if(!wifiManager.isWifiActive()){
+    console.info("wifi_test enable wifi:" + wifiManager.enableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (wifiManager.isWifiActive()) {
+        console.info("WiFi已成功开启");
+        break;
+      }
+      console.info("等待WiFi开启中...");
+      await sleep(100);
     }
-  } catch (error) {
-    console.error('[wifi_js] switch error.code:' + JSON.stringify(error.code) + 'error.message:' +
-      JSON.stringify(error.message));
   }
+  console.info("wifi_test/wifi status:" + wifiManager.isWifiActive());
 }
-
 async function clickRequestPermission(text: string) {
   console.info('[bluetooth_js] clickRequestPermission start');
   let driver = Driver.create();

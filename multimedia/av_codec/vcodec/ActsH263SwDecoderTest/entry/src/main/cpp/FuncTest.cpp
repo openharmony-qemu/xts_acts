@@ -22,6 +22,7 @@
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avformat.h>
+#include <napi/native_api.h>
 
 #ifdef SUPPORT_DRM
 #include "native_mediakeysession.h"
@@ -45,6 +46,13 @@ constexpr uint32_t VIDEO_WIDTH_20 = 20;
 constexpr uint32_t VIDEO_HEIGHT_20 = 20;
 constexpr uint32_t VIDEO_FRAME_RATE_30 = 30;
 
+napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
 void InitH263Capability()
 {
     if (g_cap263 == nullptr) {
@@ -63,11 +71,11 @@ void InitH263Capability()
     }
 }
 
-int VideoDecodeSyncSw263Func0010Test()
+napi_value VideoDecodeSyncSw263Func0010Test(napi_env env, napi_callback_info info)
 {
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
@@ -78,33 +86,33 @@ int VideoDecodeSyncSw263Func0010Test()
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     if (vDecSample->errCount != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoDecodeSyncSw263Func0020Test()
+napi_value VideoDecodeSyncSw263Func0020Test(napi_env env, napi_callback_info info)
 {
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
@@ -115,33 +123,33 @@ int VideoDecodeSyncSw263Func0020Test()
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
     
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     if (vDecSample->errCount != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoDecodeSyncSw263Func0040Test()
+napi_value VideoDecodeSyncSw263Func0040Test(napi_env env, napi_callback_info info)
 {
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
@@ -152,33 +160,33 @@ int VideoDecodeSyncSw263Func0040Test()
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     if (vDecSample->errCount != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoDecodeSw263BlankFrame0010Test()
+napi_value VideoDecodeSw263BlankFrame0010Test(napi_env env, napi_callback_info info)
 {
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = "/data/storage/el2/base/files/media/20x20.h263";
@@ -188,28 +196,28 @@ int VideoDecodeSw263BlankFrame0010Test()
     vDecSample->enbleBlankFrame = 1;
     
     if (vDecSample->CreateVideoDecoder("OH.Media.Codec.Decoder.Video.H263") != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     if (vDecSample->errCount != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     if (vDecSample->outFrameCount != FRAMESIZE75) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }

@@ -57,7 +57,7 @@ inline ani_object MtBoxInt(ani_env *env, ani_int value)
 ani_error MtCreateError(ani_env *env, const std::string &message)
 {
     ani_class errorCls {};
-    ani_status status = env->FindClass("std.core.Error", &errorCls);
+    ani_status status = env->FindClass("escompat.Error", &errorCls);
     if (status != ANI_OK) {
         status = env->FindClass("escompat.Error", &errorCls);
     }

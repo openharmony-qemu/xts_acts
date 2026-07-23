@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -26,14 +26,7 @@ import {
   afterEach,
   afterAll
 } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 class A00 {
   static a00: Object;
@@ -44,7 +37,6 @@ class A00 {
   }
 }
 
-
 abstract class A01 {
   static a01: Object;
   static b01: Object;
@@ -53,7 +45,6 @@ abstract class A01 {
     A01.b01 = new Object();
   }
 }
-
 
 class A02 {
   static a02: Object;
@@ -68,7 +59,6 @@ class C03 {
   }
 }
 
-
 abstract class A04 {
   static a04: Object;
   static {
@@ -81,7 +71,6 @@ abstract class C05 {
     C05.c05 = A04.a04;
   }
 }
-
 
 class A06 {
   static a06: Object;
@@ -102,7 +91,6 @@ class C08 {
   }
 }
 
-
 export default function StaticInitializationSafetyTest():void {
   describe('StaticInitializationSafetyTest', () => {
     beforeAll(() => {
@@ -114,7 +102,7 @@ export default function StaticInitializationSafetyTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {

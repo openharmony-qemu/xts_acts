@@ -26,7 +26,7 @@ import {
   expect,
   Level,
   Hypium
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 
 const TAG = 'Image.GetComponent'

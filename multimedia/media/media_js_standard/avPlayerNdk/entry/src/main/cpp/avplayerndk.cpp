@@ -3835,6 +3835,146 @@ static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperNotPermit(napi_env env, 
     return result;
 }
 
+static napi_value OhAvPlayerSetVideoSideOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayer *player = OH_AVPlayer_Create();
+        AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+        OH_AVPlayer_SetPlayerCallback(player, cb);
+        waitAvPlayerStateChange(player, AV_IDLE);
+        GetFDSourceInfo(player);
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window);
+        if (videoOutput != nullptr) {
+            backParam = SUCCESS;
+        }
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_ReleaseSync(player);
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputOne(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(nullptr, nullptr);
+    if (videoOutput == nullptr) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputTwo(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player);
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, nullptr);
+    if (videoOutput == nullptr) {
+        backParam = SUCCESS;
+    }
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputThree(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(nullptr, window);
+        if (videoOutput == nullptr) {
+            backParam = SUCCESS;
+        }
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerGetNewestVideoSample(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayer *player = OH_AVPlayer_Create();
+        AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+        OH_AVPlayer_SetPlayerCallback(player, cb);
+        waitAvPlayerStateChange(player, AV_IDLE);
+        GetFDSourceInfo(player);
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_SetVideoSurface(player, window);
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window);
+        OH_AVPlayer_Prepare(player);
+        waitAvPlayerStateChange(player, AV_PREPARED);
+        OH_AVPlayer_Play(player);
+        waitAvPlayerStateChange(player, AV_PLAYING);
+        if (videoOutput != nullptr) {
+            OH_VideoOutputResult videoResult = OH_AVPlayerVideoOutput_GetNewestVideoSample(videoOutput);
+            if (videoResult == OH_VIDEO_OUTPUT_OK) {
+                backParam = SUCCESS;
+            }
+        }
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_ReleaseSync(player);
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerGetNewestVideoSampleAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_VideoOutputResult videoResult = OH_AVPlayerVideoOutput_GetNewestVideoSample(nullptr);
+    if (videoResult == OH_VIDEO_OUTPUT_NO_IMAGE) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4040,6 +4180,18 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"avPlayerSetPCMProcessorMaxLenNotPermit", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperNotPermit,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetVideoSideOutput", nullptr, OhAvPlayerSetVideoSideOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputOne", nullptr, OhAvPlayerSetVideoSideOutputOne, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputTwo", nullptr, OhAvPlayerSetVideoSideOutputTwo, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputThree", nullptr, OhAvPlayerSetVideoSideOutputThree, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerGetNewestVideoSample", nullptr, OhAvPlayerGetNewestVideoSample, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerGetNewestVideoSampleAbnormal", nullptr, OhAvPlayerGetNewestVideoSampleAbnormal, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

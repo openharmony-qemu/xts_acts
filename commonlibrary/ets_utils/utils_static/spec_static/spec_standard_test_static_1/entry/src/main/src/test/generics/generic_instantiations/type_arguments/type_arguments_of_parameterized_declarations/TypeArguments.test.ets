@@ -27,7 +27,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../../hypium";
+} from "../../../../../../../hypium/index";
 
 interface IEmpty {}
 class XClass implements IEmpty {}

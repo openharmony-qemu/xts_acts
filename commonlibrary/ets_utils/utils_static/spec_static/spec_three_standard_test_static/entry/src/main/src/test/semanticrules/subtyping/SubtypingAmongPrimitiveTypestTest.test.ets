@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -89,7 +89,6 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
      * @tc.level     Level 2
      */
     it("testPrimitiveStaticFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instance: long = 5 as int;
       expect(instance).assertEqual(5);
     });
@@ -103,7 +102,6 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
      * @tc.level     Level 2
      */
     it("testPrimitiveStaticFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instance: int = 5 as short;
       expect(instance).assertEqual(5);
     });
@@ -117,7 +115,6 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
      * @tc.level     Level 2
      */
     it("testPrimitiveStaticFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let instance: short = 5 as byte;
       expect(instance).assertEqual(5 as number);
     });

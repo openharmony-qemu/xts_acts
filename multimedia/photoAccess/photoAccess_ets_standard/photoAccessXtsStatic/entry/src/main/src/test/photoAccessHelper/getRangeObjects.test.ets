@@ -16,7 +16,7 @@
 
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level, Hypium } from '../../../../hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level, Hypium } from '../../../../hypium/index';
 import { fetchAllOption, getPermission, fetchOption, LOG_TAG, sleep } from '../common';
 import common from '@ohos.app.ability.common';
 import { Context } from '@kit.ArkUI';

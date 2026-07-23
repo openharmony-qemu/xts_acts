@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -25,14 +25,7 @@ import {
   afterEach,
   afterAll
 } from "../../../../../../hypium/index";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 class TestContainer {
   public value: Object|null = null;
@@ -59,7 +52,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -75,7 +68,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0001
+     * @tc.name      testConditionalExpression0001
      * @tc.desc      ArkTS provides extended semantics for conditional expression with falsy value (null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -88,7 +81,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0200
-     * @tc.name    testConditionalExpression0002
+     * @tc.name      testConditionalExpression0002
      * @tc.desc      ArkTS provides extended semantics for conditional expression with truthy value
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -101,7 +94,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0300
-     * @tc.name    testConditionalExpression0003
+     * @tc.name      testConditionalExpression0003
      * @tc.desc      Do-while loop with falsy condition (null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -122,7 +115,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0400
-     * @tc.name    testConditionalExpression0004
+     * @tc.name      testConditionalExpression0004
      * @tc.desc      Do-while loop with truthy condition
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -145,7 +138,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0500
-     * @tc.name    testConditionalExpression0005
+     * @tc.name      testConditionalExpression0005
      * @tc.desc      For loop with falsy condition (null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -166,7 +159,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0600
-     * @tc.name    testConditionalExpression0006
+     * @tc.name      testConditionalExpression0006
      * @tc.desc      For loop with truthy condition
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -187,7 +180,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0700
-     * @tc.name    testConditionalExpression0007
+     * @tc.name      testConditionalExpression0007
      * @tc.desc      If statement with falsy condition (null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -203,7 +196,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0800
-     * @tc.name    testConditionalExpression0008
+     * @tc.name      testConditionalExpression0008
      * @tc.desc      If statement with truthy condition
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -219,7 +212,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0900
-     * @tc.name    testConditionalExpression0009
+     * @tc.name      testConditionalExpression0009
      * @tc.desc      While loop with falsy condition (null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -240,7 +233,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1000
-     * @tc.name    testConditionalExpression0010
+     * @tc.name      testConditionalExpression0010
      * @tc.desc      While loop with truthy condition
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -262,7 +255,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1100
-     * @tc.name    testConditionalExpression0011
+     * @tc.name      testConditionalExpression0011
      * @tc.desc      Conditional-and and conditional-or with falsy values (0, null)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -283,7 +276,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1200
-     * @tc.name    testConditionalExpression0012
+     * @tc.name      testConditionalExpression0012
      * @tc.desc      Conditional-and and conditional-or with truthy values
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -304,7 +297,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1300
-     * @tc.name    testConditionalExpression0013
+     * @tc.name      testConditionalExpression0013
      * @tc.desc      Conditional-and and conditional-or with null and undefined
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -327,7 +320,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1400
-     * @tc.name    testConditionalExpression0014
+     * @tc.name      testConditionalExpression0014
      * @tc.desc      Conditional-and and conditional-or with different number types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -350,7 +343,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1500
-     * @tc.name    testConditionalExpression0015
+     * @tc.name      testConditionalExpression0015
      * @tc.desc      Conditional-and and conditional-or with NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -369,7 +362,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1600
-     * @tc.name    testConditionalExpression0016
+     * @tc.name      testConditionalExpression0016
      * @tc.desc      Conditional-and and conditional-or with string types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -395,7 +388,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1700
-     * @tc.name    testConditionalExpression0017
+     * @tc.name      testConditionalExpression0017
      * @tc.desc      Conditional-and and conditional-or with boolean types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -420,7 +413,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1800
-     * @tc.name    testConditionalExpression0018
+     * @tc.name      testConditionalExpression0018
      * @tc.desc      Conditional-and and conditional-or with array types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -444,7 +437,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_1900
-     * @tc.name    testConditionalExpression0019
+     * @tc.name      testConditionalExpression0019
      * @tc.desc      Conditional-and and conditional-or with bigint types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -464,7 +457,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2000
-     * @tc.name    testConditionalExpression0020
+     * @tc.name      testConditionalExpression0020
      * @tc.desc      Test short-circuit evaluation in conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -487,7 +480,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2100
-     * @tc.name    testConditionalExpression0021
+     * @tc.name      testConditionalExpression0021
      * @tc.desc      Conditional-and and conditional-or in complex expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -513,7 +506,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2200
-     * @tc.name    testConditionalExpression0022
+     * @tc.name      testConditionalExpression0022
      * @tc.desc      Negation with conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -535,7 +528,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2300
-     * @tc.name    testConditionalExpression0023
+     * @tc.name      testConditionalExpression0023
      * @tc.desc      Nested conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -558,7 +551,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2400
-     * @tc.name    testConditionalExpression0024
+     * @tc.name      testConditionalExpression0024
      * @tc.desc      Conditional-and and conditional-or with Object types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -577,7 +570,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2500
-     * @tc.name    testConditionalExpression0025
+     * @tc.name      testConditionalExpression0025
      * @tc.desc      Conditional expression with undefined
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -590,7 +583,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2600
-     * @tc.name    testConditionalExpression0026
+     * @tc.name      testConditionalExpression0026
      * @tc.desc      Conditional expression with empty string (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -603,7 +596,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2700
-     * @tc.name    testConditionalExpression0027
+     * @tc.name      testConditionalExpression0027
      * @tc.desc      Conditional expression with zero number (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -616,7 +609,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2800
-     * @tc.name    testConditionalExpression0028
+     * @tc.name      testConditionalExpression0028
      * @tc.desc      Conditional expression with negative zero (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -629,7 +622,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_2900
-     * @tc.name    testConditionalExpression0029
+     * @tc.name      testConditionalExpression0029
      * @tc.desc      Conditional expression with non-empty string (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -642,7 +635,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3000
-     * @tc.name    testConditionalExpression0030
+     * @tc.name      testConditionalExpression0030
      * @tc.desc      Conditional expression with positive number (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -655,7 +648,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3100
-     * @tc.name    testConditionalExpression0031
+     * @tc.name      testConditionalExpression0031
      * @tc.desc      Conditional expression with boolean values
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -676,7 +669,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3200
-     * @tc.name    testConditionalExpression0032
+     * @tc.name      testConditionalExpression0032
      * @tc.desc      Conditional expression with object instances
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -692,7 +685,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3300
-     * @tc.name    testConditionalExpression0033
+     * @tc.name      testConditionalExpression0033
      * @tc.desc      Assignment with conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -712,7 +705,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3400
-     * @tc.name    testConditionalExpression0034
+     * @tc.name      testConditionalExpression0034
      * @tc.desc      Conditional expressions in function arguments
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -725,7 +718,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3500
-     * @tc.name    testConditionalExpression0035
+     * @tc.name      testConditionalExpression0035
      * @tc.desc      Conditional expression in template literals
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -741,7 +734,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3600
-     * @tc.name    testConditionalExpression0036
+     * @tc.name      testConditionalExpression0036
      * @tc.desc      Chained conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -759,7 +752,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3700
-     * @tc.name    testConditionalExpression0037
+     * @tc.name      testConditionalExpression0037
      * @tc.desc      Compare &&/|| behavior
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -780,7 +773,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3800
-     * @tc.name    testConditionalExpression0038
+     * @tc.name      testConditionalExpression0038
      * @tc.desc      Conditional expressions in return statements
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -797,7 +790,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_3900
-     * @tc.name    testConditionalExpression0039
+     * @tc.name      testConditionalExpression0039
      * @tc.desc      Conditional expressions in arrow functions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -812,7 +805,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4000
-     * @tc.name    testConditionalExpression0040
+     * @tc.name      testConditionalExpression0040
      * @tc.desc      Combined with optional chaining
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -829,7 +822,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4100
-     * @tc.name    testConditionalExpression0041
+     * @tc.name      testConditionalExpression0041
      * @tc.desc      Compare &&/|| with bitwise operators
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -849,7 +842,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4200
-     * @tc.name    testConditionalExpression0042
+     * @tc.name      testConditionalExpression0042
      * @tc.desc      Conditional expression with Long.MIN_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -866,7 +859,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4300
-     * @tc.name    testConditionalExpression0043
+     * @tc.name      testConditionalExpression0043
      * @tc.desc      Conditional expression with Infinity values (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -888,7 +881,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4400
-     * @tc.name    testConditionalExpression0044
+     * @tc.name      testConditionalExpression0044
      * @tc.desc      Conditional expression with Number.MAX_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -905,7 +898,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4500
-     * @tc.name    testConditionalExpression0045
+     * @tc.name      testConditionalExpression0045
      * @tc.desc      Conditional expression with Number.MIN_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -922,7 +915,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4600
-     * @tc.name    testConditionalExpression0046
+     * @tc.name      testConditionalExpression0046
      * @tc.desc      Conditional expression with non-zero bigint (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -939,7 +932,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4700
-     * @tc.name    testConditionalExpression0047
+     * @tc.name      testConditionalExpression0047
      * @tc.desc      Conditional expression with non-empty array (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -956,7 +949,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4800
-     * @tc.name    testConditionalExpression0048
+     * @tc.name      testConditionalExpression0048
      * @tc.desc      Conditional expression with non-null assertion
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -973,7 +966,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_4900
-     * @tc.name    testConditionalExpression0049
+     * @tc.name      testConditionalExpression0049
      * @tc.desc      Multiple branches with conditional expressions
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -991,7 +984,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5000
-     * @tc.name    testConditionalExpression0050
+     * @tc.name      testConditionalExpression0050
      * @tc.desc      Test that side effects are handled correctly
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1011,7 +1004,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5100
-     * @tc.name    testConditionalExpression0051
+     * @tc.name      testConditionalExpression0051
      * @tc.desc      Conditional expression with byte falsy value (new byte)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1024,7 +1017,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5200
-     * @tc.name    testConditionalExpression0052
+     * @tc.name      testConditionalExpression0052
      * @tc.desc      Conditional expression with Short falsy value (new Short())
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1037,7 +1030,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5300
-     * @tc.name    testConditionalExpression0053
+     * @tc.name      testConditionalExpression0053
      * @tc.desc      Conditional expression with Short truthy value (new Short(-1))
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1050,7 +1043,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5400
-     * @tc.name    testConditionalExpression0054
+     * @tc.name      testConditionalExpression0054
      * @tc.desc      Conditional expression with Float.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1063,7 +1056,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5500
-     * @tc.name    testConditionalExpression0055
+     * @tc.name      testConditionalExpression0055
      * @tc.desc      Conditional expression with Float.MAX_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1076,7 +1069,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5600
-     * @tc.name    testConditionalExpression0056
+     * @tc.name      testConditionalExpression0056
      * @tc.desc      Conditional expression with Double.MAX_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1089,7 +1082,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5700
-     * @tc.name    testConditionalExpression0057
+     * @tc.name      testConditionalExpression0057
      * @tc.desc      Conditional expression with Double.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1102,7 +1095,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5800
-     * @tc.name    testConditionalExpression0058
+     * @tc.name      testConditionalExpression0058
      * @tc.desc      Conditional expression with Long.MAX_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1115,7 +1108,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_5900
-     * @tc.name    testConditionalExpression0059
+     * @tc.name      testConditionalExpression0059
      * @tc.desc      Conditional expression with new Long() (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1128,7 +1121,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6000
-     * @tc.name    testConditionalExpression0060
+     * @tc.name      testConditionalExpression0060
      * @tc.desc      Conditional expression with Int.MAX_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1141,7 +1134,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6100
-     * @tc.name    testConditionalExpression0061
+     * @tc.name      testConditionalExpression0061
      * @tc.desc      Conditional expression with empty string expression ("" + "")
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1154,7 +1147,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6500
-     * @tc.name    testConditionalExpression0065
+     * @tc.name      testConditionalExpression0065
      * @tc.desc      Conditional expression with negative zero -0 (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1167,7 +1160,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6600
-     * @tc.name    testConditionalExpression0066
+     * @tc.name      testConditionalExpression0066
      * @tc.desc      Conditional expression with enum first value (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1180,7 +1173,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6700
-     * @tc.name    testConditionalExpression0067
+     * @tc.name      testConditionalExpression0067
      * @tc.desc      Conditional expression with non-first enum value (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1193,7 +1186,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6800
-     * @tc.name    testConditionalExpression0068
+     * @tc.name      testConditionalExpression0068
      * @tc.desc      Conditional expression with Number wrapper objects
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1209,7 +1202,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6900
-     * @tc.name    testConditionalExpression0069
+     * @tc.name      testConditionalExpression0069
      * @tc.desc      Conditional expression with Char wrapper objects
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1225,7 +1218,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7000
-     * @tc.name    testConditionalExpression0070
+     * @tc.name      testConditionalExpression0070
      * @tc.desc      If statement with Float.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1241,7 +1234,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7100
-     * @tc.name    testConditionalExpression0071
+     * @tc.name      testConditionalExpression0071
      * @tc.desc      If statement with empty string expression ("" + "")
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1257,7 +1250,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7200
-     * @tc.name    testConditionalExpression0072
+     * @tc.name      testConditionalExpression0072
      * @tc.desc      If statement with Double.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1273,7 +1266,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7300
-     * @tc.name    testConditionalExpression0073
+     * @tc.name      testConditionalExpression0073
      * @tc.desc      If statement with negative zero (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1289,7 +1282,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7400
-     * @tc.name    testConditionalExpression0074
+     * @tc.name      testConditionalExpression0074
      * @tc.desc      If statement with first enum value (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1305,7 +1298,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7500
-     * @tc.name    testConditionalExpression0075
+     * @tc.name      testConditionalExpression0075
      * @tc.desc      For loop with Float.NaN condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1326,7 +1319,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7600
-     * @tc.name    testConditionalExpression0076
+     * @tc.name      testConditionalExpression0076
      * @tc.desc      For loop with negative zero condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1347,7 +1340,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7700
-     * @tc.name    testConditionalExpression0077
+     * @tc.name      testConditionalExpression0077
      * @tc.desc      While loop with Float.NaN condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1368,7 +1361,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7800
-     * @tc.name    testConditionalExpression0078
+     * @tc.name      testConditionalExpression0078
      * @tc.desc      While loop with negative zero condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1389,7 +1382,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_7900
-     * @tc.name    testConditionalExpression0079
+     * @tc.name      testConditionalExpression0079
      * @tc.desc      Do-while loop with Float.NaN condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1410,7 +1403,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8000
-     * @tc.name    testConditionalExpression0080
+     * @tc.name      testConditionalExpression0080
      * @tc.desc      Do-while loop with negative zero condition (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1431,7 +1424,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8100
-     * @tc.name    testConditionalExpression0081
+     * @tc.name      testConditionalExpression0081
      * @tc.desc      Conditional-and and conditional-or with Long.MIN_VALUE (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1452,7 +1445,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8200
-     * @tc.name    testConditionalExpression0082
+     * @tc.name      testConditionalExpression0082
      * @tc.desc      Conditional-and and conditional-or with char '\u0000' (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1473,7 +1466,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8300
-     * @tc.name    testConditionalExpression0083
+     * @tc.name      testConditionalExpression0083
      * @tc.desc      Conditional-and and conditional-or with first enum value (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1492,7 +1485,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8400
-     * @tc.name    testConditionalExpression0084
+     * @tc.name      testConditionalExpression0084
      * @tc.desc      Conditional-and and conditional-or with non-first enum value (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1511,7 +1504,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8500
-     * @tc.name    testConditionalExpression0085
+     * @tc.name      testConditionalExpression0085
      * @tc.desc      Conditional-and and conditional-or with Char wrapper '\u0000' (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1530,7 +1523,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8600
-     * @tc.name    testConditionalExpression0086
+     * @tc.name      testConditionalExpression0086
      * @tc.desc      Conditional-and and conditional-or with Number.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1549,7 +1542,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8700
-     * @tc.name    testConditionalExpression0087
+     * @tc.name      testConditionalExpression0087
      * @tc.desc      Conditional-and and conditional-or with Long wrapper (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1568,7 +1561,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8800
-     * @tc.name    testConditionalExpression0088
+     * @tc.name      testConditionalExpression0088
      * @tc.desc      Conditional-and and conditional-or with Long wrapper (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1587,7 +1580,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_8900
-     * @tc.name    testConditionalExpression0089
+     * @tc.name      testConditionalExpression0089
      * @tc.desc      Conditional-and and conditional-or with Double.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1606,7 +1599,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9000
-     * @tc.name    testConditionalExpression0090
+     * @tc.name      testConditionalExpression0090
      * @tc.desc      Conditional-and and conditional-or with Float.NaN (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1625,7 +1618,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9100
-     * @tc.name    testConditionalExpression0091
+     * @tc.name      testConditionalExpression0091
      * @tc.desc      Conditional-and and conditional-or with Byte truthy
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1644,7 +1637,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9200
-     * @tc.name    testConditionalExpression0092
+     * @tc.name      testConditionalExpression0092
      * @tc.desc      Conditional-and and conditional-or with Short truthy
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1663,7 +1656,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9300
-     * @tc.name    testConditionalExpression0093
+     * @tc.name      testConditionalExpression0093
      * @tc.desc      Conditional-and and conditional-or with Short falsy
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1682,7 +1675,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9400
-     * @tc.name    testConditionalExpression0094
+     * @tc.name      testConditionalExpression0094
      * @tc.desc      Conditional-and and conditional-or with NEGATIVE_INFINITY (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1701,7 +1694,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9500
-     * @tc.name    testConditionalExpression0095
+     * @tc.name      testConditionalExpression0095
      * @tc.desc      Conditional-and and conditional-or with POSITIVE_INFINITY (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1720,7 +1713,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9600
-     * @tc.name    testConditionalExpression0096
+     * @tc.name      testConditionalExpression0096
      * @tc.desc      Conditional-and and conditional-or with negative zero (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1739,7 +1732,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9700
-     * @tc.name    testConditionalExpression0097
+     * @tc.name      testConditionalExpression0097
      * @tc.desc      Test short-circuit evaluation with falsy first operand
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1757,7 +1750,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9800
-     * @tc.name    testConditionalExpression0098
+     * @tc.name      testConditionalExpression0098
      * @tc.desc      Test short-circuit evaluation with truthy first operand in OR
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1775,7 +1768,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_9900
-     * @tc.name    testConditionalExpression0099
+     * @tc.name      testConditionalExpression0099
      * @tc.desc      Conditional expression with single char '\u0000' (truthy per ArkTS)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1789,7 +1782,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_ONE_EXPRESSIONS_1000
-     * @tc.name    testConditionalExpression0100
+     * @tc.name      testConditionalExpression0100
      * @tc.desc      Conditional-and and conditional-or with string method results
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1809,7 +1802,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_THIRTEEN_EXPRESSIONS_0200
-     * @tc.name    testConditionalExpression0491
+     * @tc.name      testConditionalExpression0491
      * @tc.desc      If statement with falsy value (boolean false)
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1823,6 +1816,5 @@ export default function ExtendedConditionalExpressionsTest01():void {
       }
       expect(res).assertEqual(0);
     });
-
   })
 }

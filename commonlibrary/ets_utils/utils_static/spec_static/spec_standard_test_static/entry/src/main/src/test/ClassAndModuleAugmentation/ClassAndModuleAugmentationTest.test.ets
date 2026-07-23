@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium";
+} from "../../../../hypium/index";
 
 let res = 0;
 

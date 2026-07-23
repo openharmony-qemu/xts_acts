@@ -161,6 +161,7 @@ async function captureWithSettingsCallback(done: Function, testName: string,
       mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
       mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
       await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+      let isCaptureCallback = false;
       mPhotoOutput.capture(settings as camera.PhotoCaptureSetting, (error) => {
         if (error !== undefined && error.code !== 0) {
           console.error(TAG, testName + ' failed to capture, err: ' + error.code + ', msg: ' + error.message);
@@ -169,7 +170,15 @@ async function captureWithSettingsCallback(done: Function, testName: string,
           console.info(TAG, testName + ' capture passed.');
           expect(true).assertTrue();
         }
+        isCaptureCallback = true;
       });
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (isCaptureCallback) {
+          break;
+        }
+      }
+      expect(isCaptureCallback).assertTrue();
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }
@@ -268,6 +277,7 @@ export default function PhotoOutputBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCaptureCallback = false;
           mPhotoOutput.capture((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG, testName + ' failed to capture, err: ' + error.code + ', msg: ' + error.message);
@@ -276,7 +286,15 @@ export default function PhotoOutputBackTest() {
               console.info(TAG, testName + ' capture passed.');
               expect(true).assertTrue();
             }
+            isCaptureCallback = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (isCaptureCallback) {
+              break;
+            }
+          }
+          expect(isCaptureCallback).assertTrue();
           console.info(TAG, testName + ' capture end.');
           await releasePhotoSession();
         }
@@ -668,20 +686,13 @@ export default function PhotoOutputBackTest() {
             }
           });
           mPhotoOutput.capture();
-          // 设置超时循环检查
-          const maxRetry = 50; // 最大重试次数
-          const interval = 200; // 检查间隔200ms
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCapture) {
-              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
               break;
             }
-            if (i === maxRetry - 1) { // 最后一次循环
-              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
-              expect().assertFail();
-            }
           }
+          expect(isCapture).assertTrue();
           await releasePhotoSession();
         }
         done();
@@ -731,20 +742,13 @@ export default function PhotoOutputBackTest() {
             }
           });
           mPhotoOutput.capture();
-          // 设置超时循环检查
-          const maxRetry = 50; // 最大重试次数
-          const interval = 200; // 检查间隔200ms
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCapture) {
-              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
               break;
             }
-            if (i === maxRetry - 1) { // 最后一次循环
-              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
-              expect().assertFail();
-            }
           }
+          expect(isCapture).assertTrue();
           mPhotoOutput.off('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,

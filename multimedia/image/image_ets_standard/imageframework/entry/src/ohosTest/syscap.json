@@ -4,9 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Account.AppAccount",
-                    "SystemCapability.Account.OsAccount",
-                    "SystemCapability.FileManagement.File.FileIO"
+                    "SystemCapability.Multimedia.Image.Core"
                 ]
             }
         ]

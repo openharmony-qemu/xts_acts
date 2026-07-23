@@ -16,7 +16,7 @@
 
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect, Level} from '../../../../../../hypium';
+import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect, Level} from '../../../../../../hypium/index';
 
 const TAG = 'ImageXts.createPixelMap';
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level } from '../../../../hypium';
+import { beforeAll, describe, expect, it, Level } from '../../../../hypium/index';
 import { ComponentInfo } from '../common/Interfaces';
 import Utils from '../common/Utils';
 import inspector from '@ohos.arkui.inspector';

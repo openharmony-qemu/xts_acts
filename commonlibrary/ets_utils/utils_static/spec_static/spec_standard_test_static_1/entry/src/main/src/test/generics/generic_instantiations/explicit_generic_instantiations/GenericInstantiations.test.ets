@@ -26,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 class Cls_0<T, U> {
   a: T
@@ -661,7 +661,7 @@ export default function GenericInstantiationsTest(): void {
      */
     it("testGenericInstantiations0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = new GenericClass<fooBaseType_30>(fooSubtype_30);
-      expect(cls.a instanceof fooBaseType_30).assertTrue();
+      expect(cls.a instanceof ((d1: Any, d2: Any) => never)).assertTrue();
     })
   });
 }

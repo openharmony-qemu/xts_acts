@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,24 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-
-
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
+import { Neg, Pos } from '../types.test'
+import { checkTypeIdentity, checkTypeIdentityOfAny } from '../../Util.test';
+import Utils from '../../Util.test'
 
 class Parent1 {}
 class Child1 extends Parent1 {}
@@ -52,17 +37,9 @@ class MyClass1 implements MyInterface1 {
 class Parent4<T> {}
 class Child4<T> extends Parent4<T> {}
 
-function checkTypeIdentity1(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-
 class GrandParent1 {}
 class Parent5 extends GrandParent1 {}
 class Child5 extends Parent5 {}
-
-function checkTypeIdentity2(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
 
 class Base1 {
   methodOne(_p: object): string {
@@ -74,30 +51,15 @@ class Derived extends Base1 {
     return "derivedValue";
   }
 }
-function checkTypeIdentity3(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
 
 interface ParentInterface1 {}
 interface ChildInterface1 extends ParentInterface1 {}
 
-function checkTypeIdentity4(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
+abstract class AbstractClass1 {
 }
 
-abstract class AbstractClass1 {}
-class ConcreteClass1 extends AbstractClass1 {}
-
-function checkTypeIdentity5(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
+class ConcreteClass1 extends AbstractClass1 {
 }
-
-
-
-
-
-
-
 
 export default function InheritanceRelationshipCompatibilityCaseTest(): void {
   describe('InheritanceRelationshipCompatibilityCaseTest', () => {
@@ -111,7 +73,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -135,8 +97,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: Child1 = new Child1();
       const val2: Parent1 = new Parent1();
 
@@ -144,7 +104,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
       expect(val1 instanceof Parent1).assertEqual(true);
       expect(val2 instanceof Child1).assertEqual(false);
       expect(val2 instanceof Parent1).assertEqual(true);
-
     });
 
     /**
@@ -157,8 +116,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: Child2 = new Child2();
       const val2: Parent2 = new Parent2();
 
@@ -177,8 +134,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: MyClass1 = new MyClass1();
       const val2: MyInterface1 = { method(): void {} };
 
@@ -198,12 +153,10 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: Child4<string> = new Child4<string>();
       const val2: Parent4<string> = new Parent4<string>();
 
-      const result1 = checkTypeIdentity1(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
       expect(result1).assertEqual(false);
     });
 
@@ -217,12 +170,10 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: Child5 = new Child5();
       const val2: GrandParent1 = new GrandParent1();
 
-      const result1 = checkTypeIdentity2(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
       expect(result1).assertEqual(false);
     });
 
@@ -236,13 +187,11 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       let a = new Base1();
       let b = new Derived();
       let resultA = a.methodOne(a);
       let resultB = b.methodOne(a);
-      const result1 = checkTypeIdentity3(resultA, resultB);
+      const result1 = checkTypeIdentity(resultA, resultB);
       expect(result1).assertEqual(true);
     });
 
@@ -256,10 +205,9 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-    
       const val1: ChildInterface1 = {};
       const val2: ParentInterface1 = {};
-      const result1 = checkTypeIdentity4(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
       expect(result1).assertEqual(false);
     });
 
@@ -273,11 +221,9 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("testInheritanceRelationshipCompatibilityCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
       const val1: ConcreteClass1 = new ConcreteClass1();
       const val2: AbstractClass1 = new ConcreteClass1();
-      const result1 = checkTypeIdentity5(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
       expect(result1).assertEqual(true);
     });
   })

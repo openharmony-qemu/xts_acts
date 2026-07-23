@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 // 3
 interface Producer_0<T> {

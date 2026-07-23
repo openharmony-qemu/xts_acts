@@ -111,6 +111,8 @@ export default function ArrayFindTest(): void {
       expect(result).assertEqual(20);
       if (result != undefined) {
         expect(arr.indexOf(result)).assertEqual(1);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -146,10 +148,11 @@ export default function ArrayFindTest(): void {
       item2.name = 'second';
       const arr = new Array<FindItem006>(item1, item2);
       const found = arr.find((item: FindItem006): boolean => item.id == 2);
-      expect(found != undefined).assertTrue();
       if (found != undefined) {
         expect(found.name).assertEqual('second');
         expect(found === item2).assertTrue();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -197,10 +200,11 @@ export default function ArrayFindTest(): void {
       arr.push(item);
 
       const found = arr.find((value: Item): boolean => value.id == 100);
-      expect(found != undefined).assertTrue();
       if (found != undefined) {
         expect(found.name).assertEqual('test');
         expect(found === item).assertTrue();
+      }else {
+        expect().assertFail();
       }
     });
 

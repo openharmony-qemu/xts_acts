@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 ﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,15 +25,9 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
+import Utils from '../../../Util.test'
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 let str1000 = "5H0lJ03LOnqZk4UnvHppXNcDZdEqKbjUN9YezEl44zQq2ZgBiiVkA29vWRmJvyDH7GJYB0NoTwKaDWYdsn2LvrHX2SGeR78gOylELEQ6yCn4BKAYanynLVt1UMIUArUv1C0247TAWI0vXQSEp0TNHWvPrCBkRAP0fTTPHwybLmPE5KzUw9Am9P7IPMeItfY5qnNePPq60yLS7PEIldwQiktR1LP32gdyqDG8aUxh6LYlFtxwipAHcIFrVuRsh3QCHS1eE8F8NLGSVWHPcGVU1PKmzi9ODHk5DwaiZMRxZR21tpNDm9wP4iGYncb2wlYckoJZi9YY2HdysfUm2WajQ1USIRJBxhp2WVBDLgnJt9Mx8lV0En3FBI4xKNXUEgPKQM5XujCaB1vnxgDng07mwTfpKj3xlBiFGBq3SlK0Ah5R6OmXvL1BW2eT32o2w0dWo4E53G76BIxcVq42qZqkLhOtm0Wn5pLBw7jffc4AWPxxUgPcWmXG4Pi1VdEPIvyQBI3GEpffYVGrh41GdAf7lYGEF5Rflk3qREhOGwKn53v3HRZhHeLt3WxGl4f8914cBT3vAKgmPpwx68F6c4NQrOWSEBEpaowOTG13EgzPuYlWwLmjKAXqD0kiCIExLxZ18m2oUzsAqG29PVJT8gVcprjNREXecPajXqlKHroM9haKAkxbMitJB09kJiUSagrvmKEgKlKgxcfwK1UB4sAXWUMz0ir0NUbNxWrdr1Ez69v2qGkgF8eS6Ro1igfSJAs1nG6ZFEVc7Lfq81KVW4X6zPH77Z5FudgRwIvBmaVqrxudeKxgNJL6EHtDeEQVOrjekOjlZwu80tqUphqWpFj0JzVufPOuNUiLejVUwDEefgsa0rCSu3yVCsjupPHzfhHgOc4N76syNvTMlRLalmpAnuhaaVh8O2vYrGb2ZcsbsQkSk0ANTYbybE7qhagL8O1sIImgjmq8J0EUuRWb8s9mWYVhmcNx3wCRIS87cNYV"
 let str1001 = "5H0lJ03LOnqZk4UnvHppXNcDZdEqKbjUN9YezEl44zQq2ZgBiiVkA29vWRmJvyDH7GJYB0NoTwKaDWYdsn2LvrHX2SGeR78gOylELEQ6yCn4BKAYanynLVt1UMIUArUv1C0247TAWI0vXQSEp0TNHWvPrCBkRAP0fTTPHwybLmPE5KzUw9Am9P7IPMeItfY5qnNePPq60yLS7PEIldwQiktR1LP32gdyqDG8aUxh6LYlFtxwipAHcIFrVuRsh3QCHS1eE8F8NLGSVWHPcGVU1PKmzi9ODHk5DwaiZMRxZR21tpNDm9wP4iGYncb2wlYckoJZi9YY2HdysfUm2WajQ1USIRJBxhp2WVBDLgnJt9Mx8lV0En3FBI4xKNXUEgPKQM5XujCaB1vnxgDng07mwTfpKj3xlBiFGBq3SlK0Ah5R6OmXvL1BW2eT32o2w0dWo4E53G76BIxcVq42qZqkLhOtm0Wn5pLBw7jffc4AWPxxUgPcWmXG4Pi1VdEPIvyQBI3GEpffYVGrh41GdAf7lYGEF5Rflk3qREhOGwKn53v3HRZhHeLt3WxGl4f8914cBT3vAKgmPpwx68F6c4NQrOWSEBEpaowOTG13EgzPuYlWwLmjKAXqD0kiCIExLxZ18m2oUzsAqG29PVJT8gVcprjNREXecPajXqlKHroM9haKAkxbMitJB09kJiUSagrvmKEgKlKgxcfwK1UB4sAXWUMz0ir0NUbNxWrdr1Ez69v2qGkgF8eS6Ro1igfSJAs1nG6ZFEVc7Lfq81KVW4X6zPH77Z5FudgRwIvBmaVqrxudeKxgNJL6EHtDeEQVOrjekOjlZwu80tqUphqWpFj0JzVufPOuNUiLejVUwDEefgsa0rCSu3yVCsjupPHzfhHgOc4N76syNvTMlRLalmpAnuhaaVh8O2vYrGb2ZcsbsQkSk0ANTYbybE7qhagL8O1sIImgjmq8J0EUuRWb8s9mWYVhmcNx3wCRIS87cNYV1"
 
@@ -48,7 +42,7 @@ export default function StringRelationalOperatorsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -15,7 +15,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../../../../hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../../../../hypium/index';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = 'xts.CreateUnpremultipliedPixelMapSuppTest';

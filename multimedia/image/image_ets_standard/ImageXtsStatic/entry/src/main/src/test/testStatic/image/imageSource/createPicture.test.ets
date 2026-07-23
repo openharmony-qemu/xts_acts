@@ -16,7 +16,7 @@
 
 import { image } from '@kit.ImageKit';
 import { Context } from '@kit.AbilityKit';
-import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '../../../../../../hypium';
+import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '../../../../../../hypium/index';
 
 const TAG = 'xts.createPicture';
 

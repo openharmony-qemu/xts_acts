@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
+} from '../../../../../../../hypium/index';
 
 // ---- Combined usage of in, out, and invariant modifiers ----
 

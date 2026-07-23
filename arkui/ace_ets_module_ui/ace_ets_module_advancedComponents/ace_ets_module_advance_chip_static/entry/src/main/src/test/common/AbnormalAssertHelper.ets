@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from '../../../../hypium';
+import { expect } from '../../../../hypium/index';
 import {
   readAttrString,
   countChildren,

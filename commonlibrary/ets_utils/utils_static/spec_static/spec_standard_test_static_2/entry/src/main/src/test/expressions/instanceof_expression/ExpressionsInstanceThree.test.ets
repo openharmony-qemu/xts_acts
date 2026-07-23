@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,10 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
+import { I8, J, A17, B, C } from '../../Util.test'
+
 
 function pass_through(value: Any): Any { return value }
 
@@ -58,20 +61,8 @@ let a21 = [elem21, elem21]
 let a22 = [undefined, undefined]
 let a28 = [1.0f, 1.0f]
 let a32 = [c'a', c'a']
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 type my_type5 = null[]
 type my_type6 = Array<null>
-interface I8<T> {}
-interface J<T> {}
-class A17<T> implements I8<T> {}
-class B<T> extends A17<T> implements J<T> {}
-class C<T> {}
 class D<T> extends C<T> {}
 
 
@@ -434,7 +425,7 @@ export default function ExpressionsInstanceThreeTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -542,7 +533,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Object) => string)).assertTrue()
+      expect(func2 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -555,7 +546,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: string) => Object)).assertTrue()
+      expect(func2 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -568,7 +559,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Object) => 'a')).assertTrue()
+      expect(func2 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -581,7 +572,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Any) => Object)).assertTrue()
+      expect(func2 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -594,7 +585,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x?: Object) => string)).assertFalse()
+      expect(func2 instanceof (() => never)).assertFalse()
     });
 
     /**
@@ -607,7 +598,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof (() => string)).assertFalse()
+      expect(func2 instanceof (() => never)).assertFalse()
     });
 
     /**
@@ -620,7 +611,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Object, y: Object) => string)).assertTrue()
+      expect(func2 instanceof ((x: Any, y: Any) => never)).assertTrue()
     });
 
     /**
@@ -633,7 +624,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Object, y?: Object) => string)).assertTrue()
+      expect(func2 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -646,7 +637,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func2 instanceof ((x: Object, ...y: Array) => string)).assertTrue()
+      expect(func2 instanceof ((x: Any, ...y: Array) => never)).assertTrue()
     });
 
     /**
@@ -659,7 +650,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func3 instanceof ((...x: Array) => null)).assertFalse()
+      expect(func3 instanceof ((...x: Array) => never)).assertFalse()
     });
 
     /**
@@ -672,7 +663,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func4 instanceof ((x: float, y: Any) => undefined)).assertTrue()
+      expect(func4 instanceof ((x: Any, y: Any) => never)).assertTrue()
     });
 
     /**
@@ -685,7 +676,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func5 instanceof ((x: Object, y: 'a') => undefined)).assertTrue()
+      expect(func5 instanceof ((x: Any, y: Any) => never)).assertTrue()
     });
 
     /**
@@ -698,7 +689,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func6 instanceof ((x: float, y: 'a') => undefined)).assertTrue()
+      expect(func6 instanceof ((x: Any, y: Any) => never)).assertTrue()
     });
 
     /**
@@ -711,7 +702,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func7 instanceof ((x: Parent1, y?: Child1, z?: GrandChild1) => GrandChild1)).assertTrue()
+      expect(func7 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -724,7 +715,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func8 instanceof ((x: GrandChild2, y?: GrandChild2, z?: GrandChild2) => Parent2)).assertTrue()
+      expect(func8 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -737,7 +728,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func9 instanceof ((x: Parent3) => GrandChild3)).assertTrue()
+      expect(func9 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -750,7 +741,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func10 instanceof ((x: Parent4, y?: Child4) => GrandChild4)).assertTrue()
+      expect(func10 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -763,7 +754,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func11 instanceof ((x: Parent5, y?: Parent5, z?: GrandChild5) => GrandChild5)).assertTrue()
+      expect(func11 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -776,7 +767,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func12 instanceof ((x: Parent6, y: Child6, z?: GrandChild6) => GrandChild6)).assertTrue()
+      expect(func12 instanceof ((x: Any, y: Any) => never)).assertTrue()
     });
 
     /**
@@ -789,7 +780,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func13 instanceof ((x?: Parent7, y?: Child7, z?: GrandChild7) => GrandChild7)).assertFalse()
+      expect(func13 instanceof (() => never)).assertFalse()
     });
 
     /**
@@ -802,7 +793,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func14 instanceof ((x: bigint, y?: char) => void)).assertTrue()
+      expect(func14 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -815,7 +806,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func19 instanceof ((x: boolean, ...y: Array) => Any)).assertTrue()
+      expect(func19 instanceof ((x: Any, ...y: Array) => never)).assertTrue()
     });
 
     /**
@@ -828,7 +819,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func20 instanceof ((x: boolean, y: Array) => Object)).assertFalse()
+      expect(func20 instanceof ((x: Any, y: Any) => never)).assertFalse()
     });
 
     /**
@@ -841,7 +832,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func21 instanceof ((x: boolean, y: Array, ...z: Array) => Object)).assertTrue()
+      expect(func21 instanceof ((x: Any, y: Any, ...z: Array) => never)).assertTrue()
     });
 
     /**
@@ -854,7 +845,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func22 instanceof ((x: boolean, ...y: Array) => Object)).assertTrue()
+      expect(func22 instanceof ((x: Any, ...y: Array) => never)).assertTrue()
     });
 
     /**
@@ -867,7 +858,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func23 instanceof ((x: Array, y: string, z: null) => undefined)).assertFalse()
+      expect(func23 instanceof ((x: Any, y: Any, z: Any) => never)).assertFalse()
     });
 
     /**
@@ -880,7 +871,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func24 instanceof ((x: Array, y: 'a', z: null) => void)).assertTrue()
+      expect(func24 instanceof ((x: Any, y: Any, z: Any) => never)).assertTrue()
     });
 
     /**
@@ -893,7 +884,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func25 instanceof ((x: FixedArray<number>, y: string, z: null) => undefined)).assertTrue()
+      expect(func25 instanceof ((x: Any, y: Any, z: Any) => never)).assertTrue()
     });
 
     /**
@@ -906,7 +897,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func26 instanceof ((x: Array, y: string, z: never) => undefined)).assertTrue()
+      expect(func26 instanceof ((x: Any, y: Any, z: Any) => never)).assertTrue()
     });
 
     /**
@@ -919,7 +910,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func27 instanceof (((x: Tuple) => Tuple))).assertFalse()
+      expect(func27 instanceof ((x: Any) => never)).assertFalse()
     });
 
     /**
@@ -932,7 +923,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func28 instanceof (((x: Tuple) => Array))).assertTrue()
+      expect(func28 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -945,7 +936,7 @@ export default function ExpressionsInstanceThreeTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceThree0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(func29 instanceof (((x: Array) => Array))).assertTrue()
+      expect(func29 instanceof ((x: Any) => never)).assertTrue()
     });
 
     /**
@@ -1228,10 +1219,10 @@ export default function ExpressionsInstanceThreeTest(): void {
       let d2 = fCall(test16)
       let d3 = ((input: Any): Any => { return input })(test16)
       let d4 = ((input: Any): Any => { return input })(fCall(Pass16.pass(runner.dpass(test16))))
-      expect(d1 instanceof TT16).assertTrue()
-      expect(d2 instanceof TT16).assertTrue()
-      expect(d3 instanceof TT16).assertTrue()
-      expect(d4 instanceof TT16).assertTrue()
+      expect(d1 instanceof Tuple2).assertTrue()
+      expect(d2 instanceof Tuple2).assertTrue()
+      expect(d3 instanceof Tuple2).assertTrue()
+      expect(d4 instanceof Tuple2).assertTrue()
     });
 
     /**
@@ -1250,10 +1241,10 @@ export default function ExpressionsInstanceThreeTest(): void {
       let d2 = fCall(test17)
       let d3 = ((input: Any): Any => { return input })(test17)
       let d4 = ((input: Any): Any => { return input })(fCall(Pass17.pass(runner.dpass(test17))))
-      expect(d1 instanceof TT17).assertTrue()
-      expect(d2 instanceof TT17).assertTrue()
-      expect(d3 instanceof TT17).assertTrue()
-      expect(d4 instanceof TT17).assertTrue()
+      expect(d1 instanceof Tuple2).assertTrue()
+      expect(d2 instanceof Tuple2).assertTrue()
+      expect(d3 instanceof Tuple2).assertTrue()
+      expect(d4 instanceof Tuple2).assertTrue()
     });
 
     /**
@@ -1272,10 +1263,10 @@ export default function ExpressionsInstanceThreeTest(): void {
       let d2 = fCall(test18)
       let d3 = ((input: Any): Any => { return input })(test18)
       let d4 = ((input: Any): Any => { return input })(fCall(Pass18.pass(runner.dpass(test18))))
-      expect(d1 instanceof TT18).assertTrue()
-      expect(d2 instanceof TT18).assertTrue()
-      expect(d3 instanceof TT18).assertTrue()
-      expect(d4 instanceof TT18).assertTrue()
+      expect(d1 instanceof (() => never)).assertTrue()
+      expect(d2 instanceof (() => never)).assertTrue()
+      expect(d3 instanceof (() => never)).assertTrue()
+      expect(d4 instanceof (() => never)).assertTrue()
     });
 
     /**
@@ -1294,10 +1285,10 @@ export default function ExpressionsInstanceThreeTest(): void {
       let d2 = fCall(test19)
       let d3 = ((input: Any): Any => { return input })(test19)
       let d4 = ((input: Any): Any => { return input })(fCall(Pass19.pass(runner.dpass(test19))))
-      expect(d1 instanceof TT19).assertTrue()
-      expect(d2 instanceof TT19).assertTrue()
-      expect(d3 instanceof TT19).assertTrue()
-      expect(d4 instanceof TT19).assertTrue()
+      expect(d1 instanceof FixedArray<string | undefined>).assertTrue()
+      expect(d2 instanceof FixedArray<string | undefined>).assertTrue()
+      expect(d3 instanceof FixedArray<string | undefined>).assertTrue()
+      expect(d4 instanceof FixedArray<string | undefined>).assertTrue()
     });
 
     /**

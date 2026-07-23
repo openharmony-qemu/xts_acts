@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -15,14 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum VarType { T_inter_A, T_diff_A }
 
@@ -310,10 +303,6 @@ function check_as_type_T_inter_A7(v: T_inter_A7, v_id: int): void {
   expect(v).assertEqual(check_values_7[v_id][0])
 }
 
-function check_as_type_T_diff_A7(v: T_diff_A7, v_id: int): void {
-  expect(v).assertEqual(check_values_7[v_id][0])
-}
-
 function check7(v: T7, v_type: VarType, v_id: int): void {
   // ArkTS 的 typeof 会直接返回精确定义的底层类型
   if (typeof v === 'int') {
@@ -323,7 +312,7 @@ function check7(v: T7, v_type: VarType, v_id: int): void {
   } else {
     expect(v_type).assertEqual(VarType.T_diff_A)
     expect(v).assertEqual(check_values_7[v_id][0])
-    check_as_type_T_diff_A7(v as T_diff_A7, v_id)
+    expect(v as bigint).assertEqual(check_values_7[v_id][0])
   }
 }
 
@@ -699,7 +688,7 @@ export default function ComputingSmartTypesTest01():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -1036,6 +1025,5 @@ export default function ComputingSmartTypesTest01():void {
       }
       expect(checks_number).assertEqual(check_values_number_17)
     });
-
   })
 }

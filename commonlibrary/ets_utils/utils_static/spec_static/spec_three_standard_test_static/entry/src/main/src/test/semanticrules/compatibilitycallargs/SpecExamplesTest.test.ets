@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
 class B1 {
   bar1(p1: Object): void {
@@ -68,7 +56,6 @@ class A3 {
     expect(p3).assertEqual(1)
   }
 }
-
 
 class B3 {
   bar(p3: Object): void {
@@ -140,14 +127,12 @@ class A7 {
   }
 }
 
-
 class B7 {
   bar7(...p7: Object[]): void {
     expect(p7[0]).assertEqual(1)
     expect(p7[1]).assertEqual("111")
   }
 }
-
 
 type my_lambda7 = (...p7: Object[]) => void
 
@@ -206,7 +191,6 @@ class A11 {
   }
 }
 
-
 class B11 {
   bar11(...p11: (number|string)[]): void {
     expect(p11[0]).assertEqual(1)
@@ -258,8 +242,7 @@ class B14 {
   }
 }
 
-
-type my_lambda14 = (...p14: (number|string)[]) => void
+type my_lambda14 = (...p14: (number | string)[]) => void
 
 interface I14 {
   bar14(...p14: (number|string)[]): void
@@ -272,14 +255,12 @@ class A15 {
   }
 }
 
-
 class B15 {
   bar15(...p15: (number|string)[]): void {
     expect(p15[0]).assertEqual(1)
     expect(p15[1]).assertEqual("111")
   }
 }
-
 
 type my_lambda15 = (...p15: (number|string)[]) => void
 
@@ -343,7 +324,6 @@ class A19 {
   }
 }
 
-
 class B19 {
   bar19(...p19: [number, string]): void {
     expect(p19[0]).assertEqual(1)
@@ -392,7 +372,7 @@ export default function SpecExamplesTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -417,10 +397,11 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0006';
-      
 
-      let my_lambda_var: my_lambda6 = (...p6: Object[]): void => { expect(p6[0]).assertEqual(1)
-        expect(p6[1]).assertEqual("111") }
+      let my_lambda_var: my_lambda6 = (...p6: Object[]): void => {
+        expect(p6[0]).assertEqual(1)
+        expect(p6[1]).assertEqual("111")
+      }
       my_lambda_var(1, "111")
     });
 
@@ -435,8 +416,10 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0010';
-      let my_lambda_var: my_lambda10 = (...p10: (number|string)[]): void => { expect(p10[0]).assertEqual(1)
-        expect(p10[1]).assertEqual("111") }
+      let my_lambda_var: my_lambda10 = (...p10: (number | string)[]): void => {
+        expect(p10[0]).assertEqual(1)
+        expect(p10[1]).assertEqual("111")
+      }
       my_lambda_var(1, "111")
     });
 
@@ -451,9 +434,10 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0014';
-      let my_lambda_var: my_lambda14 = (...p14: (number|string)[]): void => {
+      let my_lambda_var: my_lambda14 = (...p14: (number | string)[]): void => {
         expect(p14[0]).assertEqual(1)
-        expect(p14[1]).assertEqual("111") }
+        expect(p14[1]).assertEqual("111")
+      }
       my_lambda_var(...[1, "111"])
     });
 
@@ -468,11 +452,11 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0018';
-      let my_lambda_var: my_lambda18 = (...p18: [number, string]): void => { expect(p18[0]).assertEqual(1)
-        expect(p18[1]).assertEqual("111") }
+      let my_lambda_var: my_lambda18 = (...p18: [number, string]): void => {
+        expect(p18[0]).assertEqual(1)
+        expect(p18[1]).assertEqual("111")
+      }
       my_lambda_var(...[1, "111"])
     });
   })
 }
-
-

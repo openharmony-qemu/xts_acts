@@ -25,7 +25,7 @@ import {
   Hypium,
   Size,
   TestType
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import { camera } from '@kit.CameraKit';
 import {
   getPermission, resourceName,

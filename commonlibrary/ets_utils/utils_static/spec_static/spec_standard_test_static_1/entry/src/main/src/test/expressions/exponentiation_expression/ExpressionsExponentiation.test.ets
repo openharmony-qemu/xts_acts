@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../hypium';
+} from '../../../../../hypium/index';
 
 export default function ExpressionsExponentiationTest(): void {
   describe("ExpressionsExponentiationTest", () => {
@@ -1005,36 +1005,241 @@ export default function ExpressionsExponentiationTest(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7000
      * @tc.name      testExpressionsExponentiation0070
-     * @tc.desc      Test power operator ** with integer types (byte/short/int) - basic functionality and type casting
+     * @tc.desc      Test power operator ** with byte and byte - basic functionality and type casting
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsExponentiation0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(10 as byte ** 2 as byte).assertEqual(100);
-      expect(2 as byte ** 3 as byte).assertEqual(8);
-      expect(5 as byte ** 3).assertEqual(125);
-      expect(10 as short ** 2 as short).assertEqual(100);
-      expect(3 as short ** 4 as short).assertEqual(81);
-      expect(4 as short ** 3).assertEqual(64);
-      expect(10 ** 2).assertEqual(100);
-      expect(2 ** 10).assertEqual(1024);
-      expect(2 as byte ** 4 as short).assertEqual(16);
-      expect(3 as short ** 3 as byte).assertEqual(27);
-      expect(65536 ** 2).assertEqual(4294967296);
+      let a: byte = 10;
+      let b: byte = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(100);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7100
+     * @tc.name      testExpressionsExponentiation0071
+     * @tc.desc      Test power operator ** with byte and byte - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 2;
+      let b: byte = 3;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(8);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7200
+     * @tc.name      testExpressionsExponentiation0072
+     * @tc.desc      Test power operator ** with byte and int - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 5;
+      let b: int = 3;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(125);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7300
+     * @tc.name      testExpressionsExponentiation0073
+     * @tc.desc      Test power operator ** with short and short - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 10;
+      let b: short = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(100);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7400
+     * @tc.name      testExpressionsExponentiation0074
+     * @tc.desc      Test power operator ** with short and short - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 3;
+      let b: short = 4;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(81);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7500
+     * @tc.name      testExpressionsExponentiation0075
+     * @tc.desc      Test power operator ** with short and int - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 4;
+      let b: int = 3;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(64);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7600
+     * @tc.name      testExpressionsExponentiation0076
+     * @tc.desc      Test power operator ** with int and int - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: int = 10;
+      let b: int = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(100);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7700
+     * @tc.name      testExpressionsExponentiation0077
+     * @tc.desc      Test power operator ** with int and int - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: int = 2;
+      let b: int = 10;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(1024);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7800
+     * @tc.name      testExpressionsExponentiation0078
+     * @tc.desc      Test power operator ** with byte and short - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 2;
+      let b: short = 4;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(16);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_7900
+     * @tc.name      testExpressionsExponentiation0079
+     * @tc.desc      Test power operator ** with short and byte - basic functionality and type casting
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 3;
+      let b: byte = 3;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(27);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8000
+     * @tc.name      testExpressionsExponentiation0080
+     * @tc.desc      Test power operator ** with BigInt - Basic BigInt power operation
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: bigint = new bigint(10);
+      let b: bigint = new bigint(2);
+      let result = a ** b;
+      expect(result instanceof bigint).assertTrue();
+      expect(result).assertEqual(new bigint(100));
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8100
+     * @tc.name      testExpressionsExponentiation0081
+     * @tc.desc      Test power operator ** with BigInt - Large BigInt power operation
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: bigint = new bigint(2);
+      let b: bigint = new bigint(50);
+      let result = a ** b;
+      expect(result instanceof bigint).assertTrue();
+      expect(result).assertEqual(new bigint(1125899906842624));
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8200
+     * @tc.name      testExpressionsExponentiation0082
+     * @tc.desc      Test power operator ** with BigInt - BigInt with zero exponent
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: bigint = new bigint(123456789);
+      let b: bigint = new bigint(0);
+      let result = a ** b;
+      expect(result instanceof bigint).assertTrue();
+      expect(result).assertEqual(new bigint(1));
     })
 
     /**
      * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8300
      * @tc.name      testExpressionsExponentiation0083
-     * @tc.desc      Test power operator ** edge cases - Zero exponent/zero base
+     * @tc.desc      Test power operator ** edge cases - Zero exponent for byte
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsExponentiation0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(10 as byte ** 0 as byte).assertEqual(1);
-      expect(0 as short ** 5 as short).assertEqual(0);
+      let base: byte = 10;
+      let exponent: byte = 0;
+      let result = base ** exponent;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(1);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8400
+     * @tc.name      testExpressionsExponentiation0084
+     * @tc.desc      Test power operator ** edge cases - Zero base for short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let base: short = 0;
+      let exponent: short = 5;
+      let result = base ** exponent;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(0);
     })
 
     /**
@@ -1085,15 +1290,145 @@ export default function ExpressionsExponentiationTest(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8800
      * @tc.name      testExpressionsExponentiation0088
-     * @tc.desc      Test power operator ** with long type
+     * @tc.desc      Test power operator ** with Long - Basic Long power operation
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsExponentiation0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(10 as long ** 2 as long).assertEqual(100);
-      expect(2 as long ** 50 as long).assertEqual(1125899906842624);
-      expect(123456789 as long ** 0 as long).assertEqual(1);
+      let a: long = 10;
+      let b: long = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(100);
     })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_8900
+     * @tc.name      testExpressionsExponentiation0089
+     * @tc.desc      Test power operator ** with Long - Large Long power operation
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: long = 2;
+      let b: long = 50;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(1125899906842624);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9000
+     * @tc.name      testExpressionsExponentiation0090
+     * @tc.desc      Test power operator ** with Long - Long with zero exponent
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: long = 123456789;
+      let b: long = 0;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(1);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9100
+     * @tc.name      testExpressionsExponentiation0091
+     * @tc.desc      Test power operator ** overflow behavior with byte and byte
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 10;
+      let b: byte = 3;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(1000);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9200
+     * @tc.name      testExpressionsExponentiation0092
+     * @tc.desc      Test power operator ** overflow behavior with byte and byte
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 16;
+      let b: byte = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(256);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9300
+     * @tc.name      testExpressionsExponentiation0093
+     * @tc.desc      Test power operator ** overflow behavior with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 100;
+      let b: short = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(10000);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9400
+     * @tc.name      testExpressionsExponentiation0094
+     * @tc.desc      Test power operator ** overflow behavior with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: short = 200;
+      let b: short = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(40000);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9500
+     * @tc.name      testExpressionsExponentiation0095
+     * @tc.desc      Test power operator ** overflow behavior with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: int = 65536;
+      let b: int = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(4294967296);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_EXPONENTIATION_TEST_9600
+     * @tc.name      testExpressionsExponentiation0096
+     * @tc.desc      Test power operator ** overflow behavior with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsExponentiation0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: int = 2147483647;
+      let b: int = 2;
+      let result = a ** b;
+      expect(result instanceof double).assertTrue();
+      expect(result).assertEqual(4611686014132420600);
+    });
   });
 }

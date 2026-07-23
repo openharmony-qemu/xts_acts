@@ -63,7 +63,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200002).assertTrue();
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -83,7 +83,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(null, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -101,7 +101,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(undefined, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -119,7 +119,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(INVALID_WANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -138,7 +138,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -159,7 +159,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -201,7 +201,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200001).assertTrue();
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -220,7 +220,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, INVALID_PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200012).assertTrue();
+      expect(error.code === 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -242,7 +242,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200001).assertTrue();
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -261,7 +261,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200002).assertTrue();
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -281,7 +281,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -299,7 +299,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -317,7 +317,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });

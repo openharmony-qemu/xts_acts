@@ -25,7 +25,7 @@ import {
   Hypium,
   it,
   Level
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 import { image } from '@kit.ImageKit';
 
 const TAG = 'xts.createPixelMapSync ';

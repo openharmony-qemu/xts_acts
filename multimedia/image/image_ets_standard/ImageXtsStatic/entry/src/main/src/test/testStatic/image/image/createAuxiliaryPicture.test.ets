@@ -16,7 +16,7 @@
 
 import { Context } from '@kit.AbilityKit';
 import { image } from '@kit.ImageKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium} from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium} from '../../../../../../hypium/index';
 
 const TAG = 'ImageXts.createAuxiliaryPicture';
 

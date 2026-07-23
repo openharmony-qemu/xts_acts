@@ -91,4 +91,6 @@ export const normalAVScreenCaptureStrategyForPauseTrue: () => number;
 export const normalAVScreenCapturePauseResumeTest: () => number;
 export const normalAVScreenCapturePauseResumeTestStop: () => number;
 export const normalAVScreenCapturePauseScreenCaptureErr: () => number;
+export const normalAVScreenCapturePauseScreenCaptureError: () => number;
 export const normalAVScreenCaptureResumeScreenCaptureErr: () => number;
+export const normalAVScreenCaptureResumeScreenCaptureError: () => number;

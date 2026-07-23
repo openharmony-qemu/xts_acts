@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "multimedia/player_framework/avplayer.h"
 #include "multimedia/player_framework/avplayer_base.h"
+#include "native_window/external_window.h"
 #include <bits/alltypes.h>
 #include <iostream>
 #include "multimedia/player_framework/native_averrors.h"
@@ -24,6 +25,7 @@
 #include <fcntl.h>
 #include <hilog/log.h>
 #include <cstdio>
+#include <sys/stat.h>
 
 static int32_t g_playTime = 1;
 
@@ -31,12 +33,34 @@ static int32_t g_playTime = 1;
     if (!(cond)) {                                                                                                     \
         (void)printf(fmt, ##__VA_ARGS__);                                                                              \
     }
+#define PARAM_0 0
+#define PARAM_0666 0666
+#define MP3_PATH "/data/storage/el2/base/files/01.mp3"
+
+
+static int64_t GetFileSize(const char *fileName)
+{
+    int64_t fileSize = PARAM_0;
+    if (fileName != nullptr) {
+        struct stat fileStatus;
+        fileSize = static_cast<size_t>(fileStatus.st_size);
+    }
+    return fileSize;
+}
+
+static OH_AVErrCode GetFDSourceInfo(OH_AVPlayer *player, const char* fileName)
+{
+    int fileDescribe = open(fileName, O_RDONLY, PARAM_0666);
+    int64_t fileSize = GetFileSize(fileName);
+    OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(player, fileDescribe, PARAM_0, fileSize);
+    close(fileDescribe);
+    return errCode;
+}
 
 // OH_PLAYER_PlayerStateSetURLSource_001
 static napi_value PlayerStateSetURLSource(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Release(player);
     napi_value res;
     OH_AVErrCode result;
@@ -51,8 +75,7 @@ static napi_value PlayerStateSetURLSource(napi_env env, napi_callback_info info)
 // OH_PLAYER_PlayerStatePrepare_002
 static napi_value PlayerStatePrepare(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     sleep(g_playTime);
     OH_AVPlayer_Release(player);
@@ -70,8 +93,7 @@ static napi_value PlayerStatePrepare(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStatePlayer_003
 static napi_value PlayerStatePlayer(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -90,8 +112,7 @@ static napi_value PlayerStatePlayer(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStatePause_004
 static napi_value PlayerStatePause(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -111,8 +132,7 @@ static napi_value PlayerStatePause(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStateStop_005
 static napi_value PlayerStateStop(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_Stop(player);
     OH_AVPlayer_Release(player);
@@ -129,8 +149,7 @@ static napi_value PlayerStateStop(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStateReset_006
 static napi_value PlayerStateReset(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Reset(player);
     OH_AVPlayer_Release(player);
     napi_value res;
@@ -149,8 +168,7 @@ static napi_value PlayerStateSetvolume(napi_env env, napi_callback_info info) {
     float leftVolume = 0.5;
     float rightVolume = 0.5;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_SetVolume(player, leftVolume, rightVolume);
     OH_AVPlayer_Release(player);
@@ -169,8 +187,7 @@ static napi_value PlayerStateSetvolume(napi_env env, napi_callback_info info) {
 static napi_value PlayerStateSeek(napi_env env, napi_callback_info info) {
     int32_t mSeconds = 5000;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -190,8 +207,7 @@ static napi_value PlayerStateSeek(napi_env env, napi_callback_info info) {
 static napi_value PlayerStateGetCurrentTime(napi_env env, napi_callback_info info) {
     int current = 0;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -211,8 +227,7 @@ static napi_value PlayerStateGetCurrentTime(napi_env env, napi_callback_info inf
 // OH_PLAYER_PlayerStateSetSpeed_010
 static napi_value PlayerStateSetSpeed(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -234,8 +249,7 @@ static napi_value PlayerStateSetSpeed(napi_env env, napi_callback_info info) {
 static napi_value PlayerStateGetSpeed(napi_env env, napi_callback_info info) {
     AVPlaybackSpeed speed;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVErrCode result1 = OH_AVPlayer_SetURLSource(player, path);
+    OH_AVErrCode result1 = GetFDSourceInfo(player, MP3_PATH);
     OH_AVErrCode result2 = OH_AVPlayer_Prepare(player);
     OH_AVErrCode result3 = OH_AVPlayer_Play(player);
     OH_AVPlayer_GetPlaybackSpeed(player, &speed);
@@ -255,8 +269,7 @@ static napi_value PlayerStateGetSpeed(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStateIsPlaying_012
 static napi_value PlayerStateIsPlaying(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     bool result1 = OH_AVPlayer_IsPlaying(player);
@@ -277,8 +290,7 @@ static napi_value PlayerStateIsPlaying(napi_env env, napi_callback_info info) {
 static napi_value PlayerStateGetDuration(napi_env env, napi_callback_info info) {
     int duration = 0;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVErrCode result1 = OH_AVPlayer_GetDuration(player, &duration);
     OH_AVPlayer_Release(player);
@@ -297,8 +309,7 @@ static napi_value PlayerStateGetDuration(napi_env env, napi_callback_info info) 
 static napi_value PlayerStateLoop(napi_env env, napi_callback_info info) {
     bool loop = 1;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     OH_AVErrCode result1 = OH_AVPlayer_SetLooping(player, loop);
@@ -319,8 +330,7 @@ static napi_value PlayerStateLoop(napi_env env, napi_callback_info info) {
 // OH_PLAYER_PlayerStateSetSpeed_1_25_X_015
 static napi_value PlayerStateSetSpeed_1_25_X(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -340,8 +350,7 @@ static napi_value PlayerStateSetSpeed_1_25_X(napi_env env, napi_callback_info in
 // OH_PLAYER_PlayerStateSetSpeed_1_75_X_016
 static napi_value PlayerStateSetSpeed_1_75_X(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     sleep(g_playTime);
@@ -361,8 +370,7 @@ static napi_value PlayerStateSetSpeed_1_75_X(napi_env env, napi_callback_info in
 // OH_PLAYER_PlayerStateSetSpeed_2_00_X_017
 static napi_value PlayerStateSetSpeed_2_00_X(napi_env env, napi_callback_info info) {
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    const char *path = "data/test/01.mp3";
-    OH_AVPlayer_SetURLSource(player, path);
+    GetFDSourceInfo(player, MP3_PATH);
     OH_AVPlayer_Prepare(player);
     OH_AVPlayer_Play(player);
     sleep(g_playTime);

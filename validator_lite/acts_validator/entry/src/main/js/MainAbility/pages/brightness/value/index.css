@@ -15,17 +15,17 @@
 
 .container {
     width: 100%;
-    height: 454px;
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .content-title {
-    width: 60%;
+    width: 90%;
     height: 60px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .backBtnHelp{
@@ -42,33 +42,42 @@
     margin: 10px;
 }
 
+.content-info {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
 .sliderStyle {
     color: #b22222;
     height: 30px;
-    width: 250px;
+    width: 80%;
     selected-color: #00ff00;
     border-radius: 10px;
     margin: 20px;
 }
 
 .button-operate {
-    width:150px;
+    width: 80%;
     height:50px;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .bottom-bt {
-    width: 80%;
+    width: 60%;
     height: 60px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .button {
-    width:100px;
+    width: 31%;
     height:50px;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 .button:active {

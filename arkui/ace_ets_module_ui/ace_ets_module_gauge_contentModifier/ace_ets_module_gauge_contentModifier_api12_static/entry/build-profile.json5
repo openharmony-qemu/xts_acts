@@ -14,8 +14,7 @@
  */
 {
   "apiType": "stageMode",
-  "buildOption": {
-  },
+  "buildOption": {},
   "buildOptionSet": [
     {
       "name": "release",
@@ -23,19 +22,18 @@
         "obfuscation": {
           "ruleOptions": {
             "enable": false,
-            "files": [
-            ]
+            "files": []
           }
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

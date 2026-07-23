@@ -139,6 +139,9 @@ export default function GridItemJsunit() {
       let strJson = getInspectorByKey('gridItem1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[GridItemJsunit_0300] component obj is: " + JSON.stringify(obj));
+      console.info("[GridItemJsunit_0300] rowStart1: " + JSON.stringify(obj.$attrs.rowStart));
+      console.info("[GridItemJsunit_0300] rowEnd1: " + JSON.stringify(obj.$attrs.rowEnd));
+      console.info("[GridItemJsunit_0300] selectable1: " + JSON.stringify(obj.$attrs.selectable));
       expect(Math.abs(Number(obj.$attrs.rowStart)) <= 1).assertTrue();
       expect(Math.abs(Number(obj.$attrs.rowEnd)) <= 1).assertTrue();
       expect(obj.$attrs.selectable).assertEqual('true');
@@ -146,6 +149,9 @@ export default function GridItemJsunit() {
       let strJson2 = getInspectorByKey('gridItem2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[GridItemJsunit_0300] component obj2 is: " + JSON.stringify(obj2));
+      console.info("[GridItemJsunit_0300] columnStart2: " + JSON.stringify(obj.$attrs.columnStart));
+      console.info("[GridItemJsunit_0300] columnEnd2: " + JSON.stringify(obj.$attrs.columnEnd));
+      console.info("[GridItemJsunit_0300] forceRebuild2: " + JSON.stringify(obj2.$attrs.forceRebuild));
       expect(Math.abs(Number(obj.$attrs.columnStart)) <= 1).assertTrue();
       expect(Math.abs(Number(obj.$attrs.columnEnd)) <= 1).assertTrue();
       expect(obj2.$attrs.forceRebuild).assertEqual('false');

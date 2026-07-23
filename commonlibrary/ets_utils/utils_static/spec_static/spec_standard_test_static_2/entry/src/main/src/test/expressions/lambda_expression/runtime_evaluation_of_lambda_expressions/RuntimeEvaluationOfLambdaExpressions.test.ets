@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,15 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from "../../../../../../hypium/index";
+import Utils from '../../../Util.test'
 
 type function_type = () => void
 
@@ -48,7 +41,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -113,7 +106,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const lambda: () => void = () => { }
-        expect(lambda instanceof function_type).assertTrue()
+        expect(lambda instanceof (() => never)).assertTrue()
     })
 
     /**
@@ -126,7 +119,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const lambda: (p: int) => void = (p: int) => { }
-        expect(lambda instanceof function_type).assertFalse()
+        expect(lambda instanceof (() => never)).assertFalse()
     })
 
     /**
@@ -139,7 +132,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const lambda: (p: int, q: int) => void = (p: int, q: int) => { }
-        expect(lambda instanceof function_type).assertFalse()
+        expect(lambda instanceof (() => never)).assertFalse()
     })
 
     /**
@@ -152,7 +145,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let lambda: () => void = () => { }
-        expect(lambda instanceof function_type).assertTrue()
+        expect(lambda instanceof (() => never)).assertTrue()
     })
 
     /**
@@ -165,7 +158,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let lambda: (p: int) => void = (p: int) => { }
-        expect(lambda instanceof function_type).assertFalse()
+        expect(lambda instanceof (() => never)).assertFalse()
     })
 
     /**
@@ -178,7 +171,7 @@ export default function RuntimeEvaluationOfLambdaExpressions(): void {
      */
     it("testRuntimeEvaluationOfLambdaExpressions0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let lambda: (p: int, q: int) => void = (p: int, q: int) => { }
-        expect(lambda instanceof function_type).assertFalse()
+        expect(lambda instanceof (() => never)).assertFalse()
     })
 
     /**

@@ -1,6 +1,130 @@
-'use static';
+'use static'
 
-import ability from './Ability.test';
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+import Uint8ArrayGetTest from './Uint8Array/Uint8ArrayGetTest.test';
+import Uint8ArrayIteratorTest from './Uint8Array/Uint8ArrayIteratorTest.test';
+import Uint8ArrayAttribute01Test from './Uint8Array/Uint8ArrayAttribute01Test.test';
+import Uint8ArrayAttribute02Test from './Uint8Array/Uint8ArrayAttribute02Test.test';
+import Uint8ArrayAtTest from './Uint8Array/Uint8ArrayAtTest.test';
+import Uint8ArrayEntriesTest from './Uint8Array/Uint8ArrayEntriesTest.test';
+import Uint8ArrayEveryTest from './Uint8Array/Uint8ArrayEveryTest.test';
+import Uint8ArrayFill01Test from './Uint8Array/Uint8ArrayFill01Test.test';
+import Uint8ArrayFill02Test from './Uint8Array/Uint8ArrayFill02Test.test';
+import Uint8ArrayFilterTest from './Uint8Array/Uint8ArrayFilterTest.test';
+import Uint8ArrayFind01Test from './Uint8Array/Uint8ArrayFind01Test.test';
+import Uint8ArrayFindLast01Test from './Uint8Array/Uint8ArrayFindLast01Test.test';
+import Uint8ArrayFindLast02Test from './Uint8Array/Uint8ArrayFindLast02Test.test';
+import Uint8ArrayFindLastTest from './Uint8Array/Uint8ArrayFindLastTest.test';
+import Uint8ArrayFindIndex01Test from './Uint8Array/Uint8ArrayFindIndex01Test.test';
+import Uint8ArrayFindIndex02Test from './Uint8Array/Uint8ArrayFindIndex02Test.test';
+import Uint8ArrayFindIndexTest from './Uint8Array/Uint8ArrayFindIndexTest.test';
+import Uint8ArrayFindLastIndex01Test from './Uint8Array/Uint8ArrayFindLastIndex01Test.test';
+import Uint8ArrayFindLastIndexTest from './Uint8Array/Uint8ArrayFindLastIndexTest.test';
+import Uint8ArrayFrom01Test from './Uint8Array/Uint8ArrayFrom01Test.test';
+import Uint8ArrayFrom02Test from './Uint8Array/Uint8ArrayFrom02Test.test';
+import Uint8ArrayFrom03Test from './Uint8Array/Uint8ArrayFrom03Test.test';
+import Uint8ArrayIncludes01Test from './Uint8Array/Uint8ArrayIncludes01Test.test';
+import Uint8ArrayIncludes02Test from './Uint8Array/Uint8ArrayIncludes02Test.test';
+import Uint8ArrayIndexOf01Test from './Uint8Array/Uint8ArrayIndexOf01Test.test';
+import Uint8ArrayIndexOf2Test from './Uint8Array/Uint8ArrayIndexOf2Test.test';
+import Uint8ArrayJoinTest from './Uint8Array/Uint8ArrayJoinTest.test';
+import Uint8ArrayKeysTest from './Uint8Array/Uint8ArrayKeysTest.test';
+import Uint8ArrayLastIndexOf01Test from './Uint8Array/Uint8ArrayLastIndexOf01Test.test';
+import Uint8ArrayLastIndexOf2Test from './Uint8Array/Uint8ArrayLastIndexOf2Test.test';
+import Uint8ArrayMapTest from './Uint8Array/Uint8ArrayMapTest.test';
+import Uint8ArrayOf01Test from './Uint8Array/Uint8ArrayOf01Test.test';
+import Uint8ArrayOf02Test from './Uint8Array/Uint8ArrayOf02Test.test';
+import Uint8ArrayReduce01Test from './Uint8Array/Uint8ArrayReduce01Test.test';
+import Uint8ArrayReduce02Test from './Uint8Array/Uint8ArrayReduce02Test.test';
+import Uint8ArrayReduceRight01Test from './Uint8Array/Uint8ArrayReduceRight01Test.test';
+import Uint8ArrayReduceRight02Test from './Uint8Array/Uint8ArrayReduceRight02Test.test';
+import Uint8ArrayReverse01Test from './Uint8Array/Uint8ArrayReverse01Test.test';
+import Uint8ArrayReverse02Test from './Uint8Array/Uint8ArrayReverse02Test.test';
+import Uint8ArraySlice01Test from './Uint8Array/Uint8ArraySlice01Test.test';
+import Uint8ArraySlice02Test from './Uint8Array/Uint8ArraySlice02Test.test';
+import Uint8ArraySubarrayTest from './Uint8Array/Uint8ArraySubarrayTest.test';
+import Uint8ArrayToLocaleString01Test from './Uint8Array/Uint8ArrayToLocaleString01Test.test';
+import Uint8ArrayToLocaleString02Test from './Uint8Array/Uint8ArrayToLocaleString02Test.test';
+import Uint8ArrayToReversedTest from './Uint8Array/Uint8ArrayToReversedTest.test';
+import Uint8ArrayToSortedTest from './Uint8Array/Uint8ArrayToSortedTest.test';
+import Uint8ArrayToStringTest from './Uint8Array/Uint8ArrayToStringTest.test';
+import Uint8ArrayTotal01Test from './Uint8Array/Uint8ArrayTotal01Test.test';
+import Uint8ArrayTotal02Test from './Uint8Array/Uint8ArrayTotal02Test.test';
+import Uint8ArrayTotal03Test from './Uint8Array/Uint8ArrayTotal03Test.test';
+import Uint8ArrayTotal04Test from './Uint8Array/Uint8ArrayTotal04Test.test';
+import Uint8ArrayFind02Test from './Uint8Array/Uint8ArrayFind02Test.test';
+import Uint8ArrayForEachTest from './Uint8Array/Uint8ArrayForEachTest.test';
+import Uint8ArrayValueOfTest from './Uint8Array/Uint8ArrayValueOfTest.test';
+import Uint8ArrayWithTest from './Uint8Array/Uint8ArrayWithTest.test';
+
 export default function testsuite(): void {
-  ability();
+  Uint8ArrayGetTest();
+  Uint8ArrayIteratorTest();
+  Uint8ArrayAttribute01Test();
+  Uint8ArrayAttribute02Test();
+  Uint8ArrayAtTest();
+  Uint8ArrayEntriesTest();
+  Uint8ArrayEveryTest();
+  Uint8ArrayFill01Test();
+  Uint8ArrayFill02Test();
+  Uint8ArrayFilterTest();
+  Uint8ArrayFind01Test();
+  Uint8ArrayFindLast01Test();
+  Uint8ArrayFindLast02Test();
+  Uint8ArrayFindLastTest();
+  Uint8ArrayFindIndex01Test();
+  Uint8ArrayFindIndex02Test();
+  Uint8ArrayFindIndexTest();
+  Uint8ArrayFindLastIndex01Test();
+  Uint8ArrayFindLastIndexTest();
+  Uint8ArrayFrom01Test();
+  Uint8ArrayFrom02Test();
+  Uint8ArrayFrom03Test();
+  Uint8ArrayIncludes01Test();
+  Uint8ArrayIncludes02Test();
+  Uint8ArrayIndexOf01Test();
+  Uint8ArrayIndexOf2Test();
+  Uint8ArrayJoinTest();
+  Uint8ArrayKeysTest();
+  Uint8ArrayLastIndexOf01Test();
+  Uint8ArrayLastIndexOf2Test();
+  Uint8ArrayMapTest();
+  Uint8ArrayOf01Test();
+  Uint8ArrayOf02Test();
+  Uint8ArrayReduce01Test();
+  Uint8ArrayReduce02Test();
+  Uint8ArrayReduceRight01Test();
+  Uint8ArrayReduceRight02Test();
+  Uint8ArrayReverse01Test();
+  Uint8ArrayReverse02Test();
+  Uint8ArraySlice01Test();
+  Uint8ArraySlice02Test();
+  Uint8ArraySubarrayTest();
+  Uint8ArrayToLocaleString01Test();
+  Uint8ArrayToLocaleString02Test();
+  Uint8ArrayToReversedTest();
+  Uint8ArrayToSortedTest();
+  Uint8ArrayToStringTest();
+  Uint8ArrayTotal01Test();
+  Uint8ArrayTotal02Test();
+  Uint8ArrayTotal03Test();
+  Uint8ArrayTotal04Test();
+  Uint8ArrayFind02Test();
+  Uint8ArrayForEachTest();
+  Uint8ArrayValueOfTest();
+  Uint8ArrayWithTest();
 }

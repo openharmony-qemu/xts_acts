@@ -58,6 +58,13 @@
         "usedScene": {
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.MANAGE_SYSTEM_AUDIO_EFFECTS",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "when": "always"
+        }
       }
     ]
   }

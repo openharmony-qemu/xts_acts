@@ -16,7 +16,7 @@
 
 import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 let bundleFlags = bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE;
 
 export default function getInstalledBundleList(): void {

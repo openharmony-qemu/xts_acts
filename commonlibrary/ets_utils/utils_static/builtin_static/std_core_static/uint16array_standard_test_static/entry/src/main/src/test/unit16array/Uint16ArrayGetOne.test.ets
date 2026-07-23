@@ -1,0 +1,1238 @@
+'use static'
+
+
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+export default function uint16Array$Get01Test(): void {
+  describe('Uint16Array$Get01Test', () => {
+    beforeAll(() => {
+    });
+
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0001
+     * @tc.name testUint16ArrayGetOne001
+     * @tc.desc Verify $_get returns the element at index zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(42);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0002
+     * @tc.name testUint16ArrayGetOne002
+     * @tc.desc Verify $_get on an empty array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array();
+      try {
+        let v = arr.$_get(0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0003
+     * @tc.name testUint16ArrayGetOne003
+     * @tc.desc Verify index=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(10, 20, 30);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0004
+     * @tc.name testUint16ArrayGetOne004
+     * @tc.desc Verify index=0 from
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.from(Array.of<number>(10.0, 20.0, 30.0), (v: Double): Double => v);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0005
+     * @tc.name testUint16ArrayGetOne005
+     * @tc.desc Verify index=0 from
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.from(Array.of<number>(1.0, 2.0, 3.0), (v: Double): Double => v * 10.0);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0006
+     * @tc.name testUint16ArrayGetOne006
+     * @tc.desc Verify index=length index=3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(10, 20, 30);
+      try {
+        let v = arr.$_get(3);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0007
+     * @tc.name testUint16ArrayGetOne007
+     * @tc.desc Verify index=length index=1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(42);
+      try {
+        let v = arr.$_get(1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0008
+     * @tc.name testUint16ArrayGetOne008
+     * @tc.desc Verify index=length+10
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(42);
+      try {
+        let v = arr.$_get(11);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0009
+     * @tc.name testUint16ArrayGetOne009
+     * @tc.desc Verify index=65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      try {
+        let v = arr.$_get(65535);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0010
+     * @tc.name testUint16ArrayGetOne010
+     * @tc.desc Verify index=2147483647 int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      try {
+        let v = arr.$_get(2147483647);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0011
+     * @tc.name testUint16ArrayGetOne011
+     * @tc.desc Verify index=0x7FFFFFFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2);
+      try {
+        let v = arr.$_get(2147483647);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0012
+     * @tc.name testUint16ArrayGetOne012
+     * @tc.desc Verify index=0x10000
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2);
+      try {
+        let v = arr.$_get(0x10000);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0013
+     * @tc.name testUint16ArrayGetOne013
+     * @tc.desc Verify $_get with index -1 throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(10, 20, 30);
+      try {
+        let v = arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0014
+     * @tc.name testUint16ArrayGetOne014
+     * @tc.desc Verify index=-2147483648 int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      try {
+        let v = arr.$_get(-2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0015
+     * @tc.name testUint16ArrayGetOne015
+     * @tc.desc Verify index=-65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      try {
+        let v = arr.$_get(-65535);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0016
+     * @tc.name testUint16ArrayGetOne016
+     * @tc.desc Verify $_get with index -1 on an empty array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array();
+      try {
+        let v = arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0017
+     * @tc.name testUint16ArrayGetOne017
+     * @tc.desc Verify 100 index=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0018
+     * @tc.name testUint16ArrayGetOne018
+     * @tc.desc Verify 100 index=49
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(49);
+      expect(v).assertEqual(49);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0019
+     * @tc.name testUint16ArrayGetOne019
+     * @tc.desc Verify 100 index=99
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(99);
+      expect(v).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0020
+     * @tc.name testUint16ArrayGetOne020
+     * @tc.desc Verify $_get at index 100 for length 100 throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      try {
+        let v = arr.$_get(100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0021
+     * @tc.name testUint16ArrayGetOne021
+     * @tc.desc Verify $_get at index -1 for length 100 throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      try {
+        let v = arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0022
+     * @tc.name testUint16ArrayGetOne022
+     * @tc.desc Verify 1000 index=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0023
+     * @tc.name testUint16ArrayGetOne023
+     * @tc.desc Verify 1000 index=500
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(500);
+      expect(v).assertEqual(500);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0024
+     * @tc.name testUint16ArrayGetOne024
+     * @tc.desc Verify 1000 index=999
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(999);
+      expect(v).assertEqual(999);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0025
+     * @tc.name testUint16ArrayGetOne025
+     * @tc.desc Verify index=0xFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(256);
+      for (let i = 0; i < 256; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(0xFF);
+      expect(v).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0026
+     * @tc.name testUint16ArrayGetOne026
+     * @tc.desc Verify index=0xFF+1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try{
+        let arr = new Uint16Array(256);
+        for (let i = 0; i < 256; i++) {
+          arr.$_set(i, i);
+        }
+        let v = arr.$_get(0x100);
+        expect().assertFail();
+      }catch(e){
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0027
+     * @tc.name testUint16ArrayGetOne027
+     * @tc.desc Verify index=0o77
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(0o77);
+      expect(v).assertEqual(63);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0028
+     * @tc.name testUint16ArrayGetOne028
+     * @tc.desc Verify index=0b1010
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr.$_set(i, i);
+      }
+      let v = arr.$_get(0b1010);
+      expect(v).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0029
+     * @tc.name testUint16ArrayGetOne029
+     * @tc.desc Verify index=0xA
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(0,1,2,3,4,5,6,7,8,9,20);
+      let v = arr.$_get(0xA);
+      expect(v).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0030
+     * @tc.name testUint16ArrayGetOne030
+     * @tc.desc Verify $_get $_set 100 100
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 100);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0031
+     * @tc.name testUint16ArrayGetOne031
+     * @tc.desc Verify $_get $_set 65535 65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 65535);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0032
+     * @tc.name testUint16ArrayGetOne032
+     * @tc.desc Verify $_get $_set 0 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 0);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0033
+     * @tc.name testUint16ArrayGetOne033
+     * @tc.desc Verify $_get $_set 32768 32768
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 32768);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(32768);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0034
+     * @tc.name testUint16ArrayGetOne034
+     * @tc.desc Verify $_get $_set 1 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 1);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0035
+     * @tc.name testUint16ArrayGetOne035
+     * @tc.desc Verify $_get of
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(5, 10, 15);
+      expect(arr.$_get(0)).assertEqual(5);
+      expect(arr.$_get(1)).assertEqual(10);
+      expect(arr.$_get(2)).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0036
+     * @tc.name testUint16ArrayGetOne036
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let src = Uint16Array.of(100, 200, 300);
+      let arr = new Uint16Array(src);
+      expect(arr.$_get(0)).assertEqual(100);
+      expect(arr.$_get(1)).assertEqual(200);
+      expect(arr.$_get(2)).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0037
+     * @tc.name testUint16ArrayGetOne037
+     * @tc.desc Verify $_get FixedArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array([7, 14, 21]);
+      expect(arr.$_get(0)).assertEqual(7);
+      expect(arr.$_get(1)).assertEqual(14);
+      expect(arr.$_get(2)).assertEqual(21);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0038
+     * @tc.name testUint16ArrayGetOne038
+     * @tc.desc Verify $_get number 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
+      expect(arr.$_get(2)).assertEqual(0);
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0039
+     * @tc.name testUint16ArrayGetOne039
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(99, 199, 299);
+      let v1 = arr.$_get(1);
+      let v2 = arr.$_get(1);
+      expect(v1).assertEqual(v2);
+      expect(v1).assertEqual(199);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0040
+     * @tc.name testUint16ArrayGetOne040
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      let lenBefore = arr.length;
+      let v = arr.$_get(0);
+      expect(arr.length).assertEqual(lenBefore);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0041
+     * @tc.name testUint16ArrayGetOne041
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(10, 20, 30);
+      let v = arr.$_get(1);
+      expect(arr.$_get(0)).assertEqual(10);
+      expect(arr.$_get(2)).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0042
+     * @tc.name testUint16ArrayGetOne042
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3, 4, 5);
+      for (let i = 0; i < 5; i++) {
+        expect(arr.$_get(i)).assertEqual(i + 1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0043
+     * @tc.name testUint16ArrayGetOne043
+     * @tc.desc Verify $_get $_set
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array(3);
+      arr.$_set(0, 5);
+      expect(arr.$_get(0)).assertEqual(5);
+      arr.$_set(0, 10);
+      expect(arr.$_get(0)).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0044
+     * @tc.name testUint16ArrayGetOne044
+     * @tc.desc Verify $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2, 3);
+      arr.$_set(1, 99);
+      expect(arr.$_get(0)).assertEqual(1);
+      expect(arr.$_get(2)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0045
+     * @tc.name testUint16ArrayGetOne045
+     * @tc.desc Verify $_get of
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(0, 1, 32767, 32768, 65534, 65535);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(1);
+      expect(arr.$_get(2)).assertEqual(32767);
+      expect(arr.$_get(3)).assertEqual(32768);
+      expect(arr.$_get(4)).assertEqual(65534);
+      expect(arr.$_get(5)).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0046
+     * @tc.name testUint16ArrayGetOne046
+     * @tc.desc Verify of(65536) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(65536);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0047
+     * @tc.name testUint16ArrayGetOne047
+     * @tc.desc Verify of(65537) 1 $_get(0) 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(65537);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0048
+     * @tc.name testUint16ArrayGetOne048
+     * @tc.desc Verify of(131071) 65535 $_get(0) 65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(131071);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0049
+     * @tc.name testUint16ArrayGetOne049
+     * @tc.desc Verify of(-1) 65535 $_get(0) 65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-1);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0050
+     * @tc.name testUint16ArrayGetOne050
+     * @tc.desc Verify of(-65536) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-65536);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0051
+     * @tc.name testUint16ArrayGetOne051
+     * @tc.desc Verify of(-65537) 65535 $_get(0) 65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-65537);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0052
+     * @tc.name testUint16ArrayGetOne052
+     * @tc.desc Verify of(3.14) 3 $_get(0) 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(3.14);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0053
+     * @tc.name testUint16ArrayGetOne053
+     * @tc.desc Verify of(65535.9) 65535 $_get(0) 65535
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(65535.9);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0054
+     * @tc.name testUint16ArrayGetOne054
+     * @tc.desc Verify of(0.999) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(0.999);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0055
+     * @tc.name testUint16ArrayGetOne055
+     * @tc.desc Verify of(-0.5) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-0.5);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0056
+     * @tc.name testUint16ArrayGetOne056
+     * @tc.desc Verify of(NaN) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(Number.NaN);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0057
+     * @tc.name testUint16ArrayGetOne057
+     * @tc.desc Verify of(Infinity) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(Number.POSITIVE_INFINITY);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0058
+     * @tc.name testUint16ArrayGetOne058
+     * @tc.desc Verify of(-Infinity) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-Number.POSITIVE_INFINITY);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0059
+     * @tc.name testUint16ArrayGetOne059
+     * @tc.desc Verify of(65536*2) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(131072);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0060
+     * @tc.name testUint16ArrayGetOne060
+     * @tc.desc Verify of(-65536*2) 0 $_get(0) 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-131072);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0061
+     * @tc.name testUint16ArrayGetOne061
+     * @tc.desc Verify of(-2) 65534 $_get(0) 65534
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(-2);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(65534);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0062
+     * @tc.name testUint16ArrayGetOne062
+     * @tc.desc Verify of(1e5) 100000%65536=34464 $_get(0) 34464
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(100000);
+      let v = arr.$_get(0);
+      expect(v).assertEqual(34464);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0063
+     * @tc.name testUint16ArrayGetOne063
+     * @tc.desc Verify $_get with Int.MAX_VALUE throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2);
+      try {
+        let v = arr.$_get(0x7FFFFFFF);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0064
+     * @tc.name testUint16ArrayGetOne064
+     * @tc.desc Verify $_get with Int.MIN_VALUE throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(1, 2);
+      try {
+        let v = arr.$_get(-2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0065
+     * @tc.name testUint16ArrayGetOne065
+     * @tc.desc Verify $_get with index 65537 on an empty array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = new Uint16Array();
+      try {
+        let v = arr.$_get(65537);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0066
+     * @tc.name testUint16ArrayGetOne066
+     * @tc.desc Verify $_get with float index 2.9 (should truncate to 2)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(10, 20, 30, 40);
+      let v = arr.$_get(Double.toInt(2.9));
+      expect(v).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0067
+     * @tc.name testUint16ArrayGetOne067
+     * @tc.desc Verify $_get on ArrayBuffer view with offset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let buffer = new ArrayBuffer(12);
+      let view1 = new Uint16Array(buffer, 2, 4);
+      view1.$_set(0, 100);
+      view1.$_set(1, 200);
+      view1.$_set(2, 300);
+      view1.$_set(3, 400);
+      let view2 = new Uint16Array(buffer, 2, 4);
+      expect(view2.$_get(0)).assertEqual(100);
+      expect(view2.$_get(2)).assertEqual(300);
+      expect(view2.$_get(3)).assertEqual(400);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0068
+     * @tc.name testUint16ArrayGetOne068
+     * @tc.desc Verify $_get with multiple boundary values in one array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr = Uint16Array.of(0, 1, 32767, 32768, 65534, 65535);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(2)).assertEqual(32767);
+      expect(arr.$_get(3)).assertEqual(32768);
+      expect(arr.$_get(5)).assertEqual(65535);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0069
+     * @tc.name testUint16ArrayGetOne069
+     * @tc.desc Verify indexed get offset-view index zero reads from its byte offset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let all: Uint16Array = Uint16Array.of(10, 20, 30);
+      let view: Uint16Array = new Uint16Array(all.buffer, 2, 2);
+      expect(view.$_get(0)).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0070
+     * @tc.name testUint16ArrayGetOne070
+     * @tc.desc Verify indexed get offset-view last index reads the final view element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let all: Uint16Array = Uint16Array.of(10, 20, 30, 40);
+      let view: Uint16Array = new Uint16Array(all.buffer, 2, 2);
+      expect(view.$_get(1)).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0071
+     * @tc.name testUint16ArrayGetOne071
+     * @tc.desc Verify indexed get read reflects a write through an overlapping view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let first: Uint16Array = new Uint16Array(buffer, 0, 3);
+      let second: Uint16Array = new Uint16Array(buffer, 2, 3);
+      second[0] = 91;
+      expect(first.$_get(1)).assertEqual(91);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0072
+     * @tc.name testUint16ArrayGetOne072
+     * @tc.desc Verify indexed get read reflects a DataView little-endian write
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer: ArrayBuffer = new ArrayBuffer(4);
+      let view: DataView = new DataView(buffer);
+      view.setUint16(2, 2048, true);
+      let arr: Uint16Array = new Uint16Array(buffer);
+      expect(arr.$_get(1)).assertEqual(2048);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0073
+     * @tc.name testUint16ArrayGetOne073
+     * @tc.desc Verify indexed get read of maximum Uint16 returns a number value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Uint16Array = Uint16Array.of(65535);
+      let value: number = arr.$_get(0);
+      expect(value).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0074
+     * @tc.name testUint16ArrayGetOne074
+     * @tc.desc Verify indexed get repeated indexed reads do not change receiver metadata
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Uint16Array = Uint16Array.of(1, 2);
+      arr.$_get(0);
+      arr.$_get(1);
+      expect(arr.length).assertEqual(2);
+      expect(arr.byteLength).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_GET_ONE_0075
+     * @tc.name testUint16ArrayGetOne075
+     * @tc.desc Verify an out-of-range read on an offset view cannot access a backing element outside the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayGetOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let backing: Uint16Array = Uint16Array.of(10, 20, 30, 40);
+      let view: Uint16Array = new Uint16Array(backing.buffer, 2, 2);
+      try {
+        view.$_get(2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(backing.at(3)).assertEqual(40);
+    });
+
+  });
+}

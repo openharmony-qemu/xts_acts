@@ -41,8 +41,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：在彩色区域滑动',
-        result: '预期结果：方向、距离、timeStamp、彩色区颜色随滑动事件变化而变化',
+                step: '操作步骤：在彩色区域滑动',
+                result: '预期结果：方向、距离、timeStamp、彩色区颜色随滑动事件变化而变化',
         url: 'pages/event/swipe/index',
         itemIndex: this.itemIndex
       }
@@ -63,4 +63,12 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };

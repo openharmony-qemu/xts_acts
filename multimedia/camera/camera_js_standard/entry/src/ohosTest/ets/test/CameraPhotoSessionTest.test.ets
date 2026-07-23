@@ -82,6 +82,9 @@ export default function CameraPhotoSessionTest() {
     if (data == null || data == undefined) {
       return true;
     }
+    if (Array.isArray(data) && data.length === 0) {
+      return true;
+    }
     return false;
   }
 
@@ -2217,10 +2220,9 @@ export default function CameraPhotoSessionTest() {
 
         mCameraSession.start()
 
-        let startTime = Date.now()
-        while (!isExposureFinish) {
-          await sleep(100);
-          if (Date.now() - startTime > 5000) {
+        for (let i = 0; i < 10; i++) {
+          await sleep(200);
+          if (isExposureFinish) {
             break;
           }
         }
@@ -2267,10 +2269,9 @@ export default function CameraPhotoSessionTest() {
 
         mCameraSession.start()
 
-        let startTime = Date.now()
-        while (!isExposureFinish) {
-          await sleep(100);
-          if (Date.now() - startTime > 5000) {
+        for (let i = 0; i < 10; i++) {
+          await sleep(200);
+          if (isExposureFinish) {
             break;
           }
         }

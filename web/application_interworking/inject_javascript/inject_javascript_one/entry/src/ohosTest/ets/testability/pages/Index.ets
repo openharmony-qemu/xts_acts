@@ -84,7 +84,7 @@ struct Index {
   @State name: string = ''
   @State str: string = ''
   @State emitKey: string = '';
-  @State incognitoMode: boolean = true
+  @State incognitoMode: boolean = false
   origin: string = 'file:///'
   @State src: string | Resource = $rawfile('index1.html')
   @State header: string = 'https'

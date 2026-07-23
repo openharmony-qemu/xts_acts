@@ -487,7 +487,7 @@ export default function CharToStringTest(): void {
       const str = c.toString();
       const ch = c.toChar();
       expect(str).assertEqual("A");
-      expect(str.charCodeAt(0)).assertEqual(ch as number);
+      expect(str.charCodeAt(0)).assertEqual(ch.toDouble());
     });
 
     /**

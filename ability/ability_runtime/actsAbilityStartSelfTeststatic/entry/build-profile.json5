@@ -1,3 +1,4 @@
+
 {
   "apiType": "stageMode",
   "buildOption": {
@@ -35,14 +36,14 @@
           "exclude": []
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

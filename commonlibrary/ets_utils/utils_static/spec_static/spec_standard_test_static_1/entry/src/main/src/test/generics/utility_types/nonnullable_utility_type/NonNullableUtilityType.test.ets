@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 type NullableString = null | undefined | string
 type ClearedString = NonNullable<NullableString>

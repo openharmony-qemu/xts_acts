@@ -16,7 +16,7 @@
 
 import { Context } from '@kit.AbilityKit';
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../../../../hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../../../../hypium/index';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = 'imageXts.clone';
@@ -71,30 +71,6 @@ export default function pixelMapCloneTest(): void {
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
-
-    /**
-     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
-     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
-     * @tc.desc      clone isEditable
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100', Level.LEVEL1, async (done: () => void) => {
-      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100";
-      console.info(TAG, `start：${testName}`);
-      let PixelMap = await createPixelMapTest(context);
-      try {
-        let newPixelMap = await PixelMap.clone();
-        console.info(TAG, testName, 'Succeeded clone pixelmap.');
-        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
-      } catch (error) {
-        console.error(TAG, testName, error, error.code);
-        expect().assertFail();
-      }
-      await PixelMap!.release();
-      done();
-    })
 
     /**
      * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200

@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 .container {
-  left: 0px;
-  top: 0px;
+
   width: 100%;
-  height: 454px;
+  height: 100%;
   flex-direction: column;
 }
 
@@ -28,10 +27,9 @@
 }
 
 .todo-wraper {
-  left: 0px;
-  top: 10px;
+
   width: 100%;
-  height: 380px;
+  height: 80%;
 }
 
 .listItem {
@@ -41,6 +39,6 @@
 }
 
 .buttonStyle {
-  width: 240px;
+  width: 60%;
   height: 60px;
 }

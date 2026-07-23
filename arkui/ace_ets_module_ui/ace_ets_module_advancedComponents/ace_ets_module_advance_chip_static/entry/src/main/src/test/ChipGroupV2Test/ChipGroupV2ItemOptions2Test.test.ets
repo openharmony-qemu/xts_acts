@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Driver,

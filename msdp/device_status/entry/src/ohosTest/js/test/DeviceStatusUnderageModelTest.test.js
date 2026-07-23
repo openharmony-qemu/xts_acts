@@ -195,5 +195,41 @@ export default function DeviceStatusUnderageModelTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0700
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0700
+     * @tc.desc   on_userAgeGroupDetected multicallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_UnderageModel_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+      console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0700 enter`);
+      let callback1 = (data) => {
+        console.info('callback1 success, ageGroup:' + data.ageGroup + ', confidence: ' + data.confidence);
+      }
+      let callback2 = (data) => {
+        console.info('callback2 success, ageGroup:' + data.ageGroup + ', confidence: ' + data.confidence);
+      }
+      try {
+        userStatus.on('userAgeGroupDetected', callback1);
+        userStatus.on('userAgeGroupDetected', callback2);
+        sleep(1000);
+        userStatus.off('userAgeGroupDetected', callback1);
+        userStatus.off('userAgeGroupDetected', callback2);
+        console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0700 success`);
+        done();
+      } catch (error) {
+        console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0700 failed: ${JSON.stringify(error, ['code', 'message'])}`);
+        if(error.code == 801) {
+          expect(error.message == "The device does not support this API.");
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
   })
 }

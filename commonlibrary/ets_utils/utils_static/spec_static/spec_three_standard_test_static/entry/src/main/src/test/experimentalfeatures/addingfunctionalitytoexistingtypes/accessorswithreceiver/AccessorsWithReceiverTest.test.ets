@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,13 +17,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,
   Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
+
 
 class Person {
   firstName: string
@@ -103,13 +98,12 @@ namespace myNamespace {
 get _x(this: myNamespace.I1): long {return this.x}
 set _x(this: myNamespace.I1, param: long) {this.x = param.toInt()}
 
-
 export default function AccessorsWithReceiverTest() :void{
   describe('AccessorsWithReceiverTest', () => {
     beforeAll(() => {})
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {})
@@ -128,11 +122,9 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let c = new Person("John", "Doe")
       expect(c.fullName).assertEqual("John Doe");
     });
-
 
     /**
      * @tc.number    SUB_ACCESSORS_WITH_RECEIVERTEST_0200
@@ -146,7 +138,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a = new A()
       a.m = 1
       expect(a.member).assertEqual(1);
@@ -164,7 +155,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a = new A1()
       a.m++
       expect(a.m).assertEqual(1);
@@ -182,7 +172,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a = new A2()
       a.m++
       expect(a.m).assertEqual(2);
@@ -200,7 +189,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a = new A3()
       a.m++
       expect(a.m).assertEqual(2);
@@ -218,7 +206,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let tstI: I = {x: 1}
       expect(tstI.x instanceof int).assertEqual(true);
       expect(tstI._x instanceof long).assertEqual(true);
@@ -239,7 +226,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a = new myNamespace.A4()
       a.m++
       expect(a.m).assertEqual(1);
@@ -257,7 +243,6 @@ export default function AccessorsWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testAccessorsWithReceiver0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let tstI: myNamespace.I1 = {x: 1}
       expect(tstI.x instanceof int).assertEqual(true);
       expect(tstI._x instanceof long).assertEqual(true);
@@ -265,7 +250,5 @@ export default function AccessorsWithReceiverTest() :void{
       tstI._x = new long(0x7FFF_FFFF_1)
       expect(tstI._x).assertEqual(-15);
     });
-
-
   })
 }

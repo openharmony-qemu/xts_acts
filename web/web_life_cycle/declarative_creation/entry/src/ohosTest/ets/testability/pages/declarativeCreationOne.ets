@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @CustomDialog
 struct NewWebViewComp {
@@ -55,6 +56,7 @@ struct WebViewEnumAndSetWebController {
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -66,6 +68,10 @@ struct WebViewEnumAndSetWebController {
 
   onPageHide() {
     events_emitter.off(138400)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,7 +96,7 @@ struct WebViewEnumAndSetWebController {
           switch (this.str) {
             case 'emitSetWebController': {
               this.isPageEnd = -1;
-              this.controller.loadUrl($rawfile('openNewWindow.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('openNewWindow.html'));
               await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript('openWindowAll()');
               await waitForExist(() => this.isOpenNewWindow, this.str, 0);

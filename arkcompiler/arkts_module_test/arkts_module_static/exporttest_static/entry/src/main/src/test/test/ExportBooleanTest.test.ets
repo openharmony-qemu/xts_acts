@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -23,7 +23,7 @@ import * as appConfig8 from '../Bool/BoolExport4';
 import { sleep } from '../utils/Utils';
 
 
-export default function ExportBooleanTest() {
+export default function ExportBooleanTest():void {
   describe('ExportBooleanTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

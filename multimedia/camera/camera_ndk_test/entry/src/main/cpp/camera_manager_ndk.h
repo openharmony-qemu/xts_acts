@@ -160,7 +160,7 @@ public:
     uint32_t effectTypeSize_;
     Camera_ControlCenterEffectType* controlCenterEffectType_;
     uint32_t zoomPointInfoSize_;
-    OH_Camera_ZoomPointInfo* zoomPointInfo_;
+    OH_Camera_ZoomPointInfo* zoomPointInfo_ = nullptr;
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;
@@ -492,6 +492,10 @@ public:
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
+	
+    // log view assist
+    bool IsLogViewAssistSupported(int useCaseCode);
+    Camera_ErrorCode SetLogViewAssist(int useCaseCode, bool enable);
 
     Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
     Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);

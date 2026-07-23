@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index'
 
-async function sleep_1(time: int): Promise<int> {
-  return new Promise<int>((resolve) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 namespace testNS2_2_0 {
   function check_value_from_type_I1_2_0(v: Object): boolean {
@@ -223,7 +217,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep_1(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -248,7 +242,6 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnStrLitOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let res1: boolean = check_is_in_T_type_2_0("In Progress", 1)
       let res2: boolean = check_is_in_T_type_2_0("Done", 2)
       let res3: boolean = check_is_in_T_type_2_0("On Review", 3)

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -25,7 +25,7 @@ import { EnumOrderStatus4 } from '../enumeration/UtilOrderStatus';
 import { OrderStatus5 } from '../enumeration/UtilOrderStatus1';
 import { sleep } from '../utils/Utils';
 
-export default function exportEnumerationTest() {
+export default function exportEnumerationTest():void {
   describe('ExportEnumerationTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

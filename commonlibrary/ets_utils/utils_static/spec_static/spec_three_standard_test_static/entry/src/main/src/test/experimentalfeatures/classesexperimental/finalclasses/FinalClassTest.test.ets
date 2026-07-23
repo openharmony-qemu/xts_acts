@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +14,7 @@
  * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 interface I {}
 class A {
@@ -42,9 +35,6 @@ class A2 {
 
 final class B extends A2 {}
 
-
-
-
 export default function FinalClassTest(): void {
   describe('FinalClassTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -57,7 +47,7 @@ export default function FinalClassTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -70,7 +60,6 @@ export default function FinalClassTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
 
     /**
      * @tc.number    SUB_FINAL_CLASS_XTSTEST_0100
@@ -86,7 +75,6 @@ export default function FinalClassTest(): void {
       expect(f instanceof F && f instanceof A && f instanceof I && f.fld == '' ).assertTrue()
       f = { fld: 'ABC' }
       expect(f.fld).assertEqual('ABC' )
-
     });
 
     /**
@@ -101,7 +89,6 @@ export default function FinalClassTest(): void {
     it("testFinalClass0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let f: F1<I1> = new F1<I1>()
       expect( f instanceof F1 ).assertTrue()
-
     });
 
     /**
@@ -115,7 +102,6 @@ export default function FinalClassTest(): void {
     it("testFinalClass0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let instance: B = new B();
       expect(instance.bar()).assertEqual(5);
-
     });
   })
 }

@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { BusinessError } from '@ohos.base'
-import { describe, it, expect, beforeAll, Level, afterAll, Hypium } from '../../../../hypium'
+import { describe, it, expect, beforeAll, Level, afterAll, Hypium } from '../../../../hypium/index'
 import { sleep, getPermission, fetchAllOption} from '../common'
 import { Context } from '@kit.ArkUI'
 

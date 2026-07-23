@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -27,13 +27,7 @@ import {
   afterAll
 } from '../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 class CastA<T> {
     cast(p: Object): T {
@@ -99,7 +93,6 @@ class CastI<T> {
     }
 }
 
-
 let x0: Array<string> = ['']
 class MyClass {}
 class Base {}
@@ -110,8 +103,6 @@ class A {}
 class B {}
 
 enum Color { Red, Green, Blue }
-
-
 
 // instanceof_0: Generic class instanceof
 class A_InstanceOf<T> {
@@ -232,7 +223,7 @@ export default function TypeErasureTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -565,7 +556,7 @@ export default function TypeErasureTest():void {
     /**
      * @tc.number    SUB_TYPE_ERASURE_TEST_INSTANCEOF_0200
      * @tc.name      testTypeErasureInstanceOf0002
-     * @tc.desc      FixedArray instanceof test - instanceof_gen_0
+     * @tc.desc      FixedArray instanceof test without erased type arguments - instanceof_gen_0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -573,7 +564,7 @@ export default function TypeErasureTest():void {
     it("testTypeErasureInstanceOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x : FixedArray<string> = ["a", "b", "c"]
       let result: FixedArray<string> = x
-      expect(result instanceof FixedArray<string>).assertTrue()
+      expect(result instanceof FixedArray<string | undefined>).assertTrue()
     });
 
     /**

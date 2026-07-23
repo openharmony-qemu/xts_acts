@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -86,10 +86,8 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testLiteralType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       b1 = a1
       expect(b1 instanceof strLiteral1).assertTrue()
-
     });
 
     /**
@@ -101,7 +99,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testLiteralType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: UnionNarrow2 = foo2()
       let b: UnionWide2 = a
       expect(b).assertEqual("some_other_string")
@@ -118,7 +115,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A3 = new A3();
       let b: A3 = new B3();
       expect(a.foo('a')).assertEqual('a')
@@ -134,7 +130,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let bar = foo2_4
       expect(bar('b')).assertEqual('b')
       bar = foo4;
@@ -150,7 +145,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       x5 = y5
       x5 = null
       y5 = x5
@@ -168,9 +162,7 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foo7('some_string', 'some_string')).assertTrue()
-
     });
   })
 }

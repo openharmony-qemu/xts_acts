@@ -58,8 +58,8 @@ export default function getUIContextApi03() {
      */
     it('setImageCacheCount1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('setImageCacheCount1001 START');
-      await CommonFunc.sleep(SLEEP_TIME);
       let driver = await Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
       let button4 = await driver.findComponent(ON.id('Button001'));
       await button4.click();
       console.info('button1 click success');
@@ -83,8 +83,8 @@ export default function getUIContextApi03() {
      */
     it('setImageRawDataCacheSize1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('setImageRawDataCacheSize1002 START');
-      await CommonFunc.sleep(SLEEP_TIME);
       let driver = await Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
       let button4 = await driver.findComponent(ON.id('Button001'));
       await button4.click();
       console.info('button1 click success');

@@ -15,16 +15,16 @@ limitations under the License.
 
 <div class="container">
   <div class="content-title">
-    <text style="width:80%;height:50px;text-align: center;">image-animator</text>
+    <text style="width:130px;height:50px;text-align: center;font-size:14px;">image-animator</text>
     <input type="button" value="?" class="backBtnHelp" onclick="help" />
   </div>
-  <text style="width: 60%;height: 40px;text-align: center;">{{state}}</text>
+  <text style="width: 80%;height: 48px;text-align: center;">{{state}}</text>
   <image-animator
     ref="animator"
     class="image-animator"
     images="{{frames}}"
     duration="1s"
-    style="height: 178px; width: 178px;"
+    style="height: 176px; width: 176px;"
     onstop="logStop"
   ></image-animator>
   <div class="content-bt">
@@ -35,8 +35,8 @@ limitations under the License.
   </div>
 
   <div class="bottom-bt">
-    <input type="button" value="pass" class="button" onclick="changeResult(pass)" />
-    <input type="button" value="fail" class="button" onclick="changeResult(fail)" />
+    <input type="button" value="pass" class="button" onclick="changeResultPass" />
+    <input type="button" value="fail" class="button" onclick="changeResultFail" />
     <input type="button" value="返回" class="button" onclick="back" />
   </div>
 </div>

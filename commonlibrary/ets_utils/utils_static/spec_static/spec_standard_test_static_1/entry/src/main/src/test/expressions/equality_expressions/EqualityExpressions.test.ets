@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../hypium';
+} from '../../../../../hypium/index';
 
 export default function EqualityExpressionsTest(): void {
   describe("EqualityExpressionsTest", () => {

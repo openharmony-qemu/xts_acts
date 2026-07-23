@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../hypium';
+} from '../../../hypium/index';
 import data_preferences from '@ohos.data.preferences';
 import preferences from '@ohos.data.preferences';
 import fs from '@ohos.file.fs';

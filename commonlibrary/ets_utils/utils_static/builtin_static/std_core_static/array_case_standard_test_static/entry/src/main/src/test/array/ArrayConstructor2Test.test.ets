@@ -651,7 +651,6 @@ export default function ArrayConstructor2Test(): void {
     it('testArrayConstructor2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
-      expect(arr.length > 0).assertFalse();
 
       try {
         arr[0];

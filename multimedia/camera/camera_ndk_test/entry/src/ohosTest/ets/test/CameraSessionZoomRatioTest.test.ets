@@ -422,10 +422,13 @@ export default function cameraSessionZoomRatioTest() {
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100--------------");
       let ret = cameraObj.sessionGetZoomPointInfos(0);
+      let size = cameraObj.sessionGetZoomPointInfoSize();
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 finish");
       if (ret == 0) {
+        if(size != 0) {
+          cameraObj.sessionDeleteZoomPointInfos(0);
+        }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 PASSED");
-        cameraObj.sessionDeleteZoomPointInfos(0);
       }
       else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 FAILED");
@@ -507,7 +510,8 @@ export default function cameraSessionZoomRatioTest() {
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100--------------");
       let ret = cameraObj.sessionGetZoomPointInfos(0);
-      if (ret == 0) {
+      let size = cameraObj.sessionGetZoomPointInfoSize();
+      if (ret == 0 && size != 0) {
         ret = cameraObj.sessionDeleteZoomPointInfos(0);
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100 finish");
         if (ret == 0) {

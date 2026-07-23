@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
 class A1 {
   field: number;
@@ -398,7 +386,6 @@ function foo24(callee: number): number {
   return callee;
 }
 
-
 export default function SingleParamsTest(): void {
   describe('SingleParamsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -411,7 +398,7 @@ export default function SingleParamsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -436,8 +423,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A1 = new A1(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar1(0)).assertEqual(0);
@@ -465,8 +450,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A2 = new A2(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar2(0)).assertEqual(0);
@@ -494,8 +477,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A3 = new A3(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar3(0)).assertEqual(0);
@@ -523,8 +504,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A4 = new A4(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar4(0)).assertEqual(0.0);
@@ -552,8 +531,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A5 = new A5(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar5(0)).assertEqual(0.0);
@@ -581,8 +558,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A6 = new A6(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar6(0)).assertEqual(0.0);
@@ -610,8 +585,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A7 = new A7(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar7(0)).assertEqual(0);
@@ -639,8 +612,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A8 = new A8(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar8(0)).assertEqual(0);
@@ -668,8 +639,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A9 = new A9(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar9(0)).assertEqual(0.0);
@@ -697,8 +666,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A10 = new A10(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar10(0)).assertEqual(0.0);
@@ -726,8 +693,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A11 = new A11(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar11(0)).assertEqual(0.0);
@@ -755,8 +720,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A12 = new A12(0);
       expect(a1.field).assertEqual(0);
       expect(a1.bar12(0)).assertEqual(0);
@@ -784,8 +747,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A13 = new A13(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar13(0)).assertEqual(0.0);
@@ -813,8 +774,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A14 = new A14(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar14(0)).assertEqual(0.0);
@@ -842,8 +801,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A15 = new A15(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar15(0)).assertEqual(0.0);
@@ -871,8 +828,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A16 = new A16(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar16(0)).assertEqual(0.0);
@@ -900,8 +855,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A17 = new A17(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar17(0)).assertEqual(0.0);
@@ -929,8 +882,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A18 = new A18(0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar18(0)).assertEqual(0.0);
@@ -958,8 +909,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A19 = new A19(0.0);
       expect(a1.field).assertEqual(0.0);
       expect(a1.bar19(0.0)).assertEqual(0.0);
@@ -1002,8 +951,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A20 = new A20(Color20.Red);
       expect(a1.field).assertEqual(0);
       expect(a1.bar20(Color20.Red)).assertEqual(0);
@@ -1031,8 +978,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A21 = new A21(Color21.Red);
       expect(a1.field).assertEqual(100);
       expect(a1.bar21(Color21.Red)).assertEqual(100);
@@ -1060,8 +1005,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A22 = new A22(Color22.Red);
       expect(a1.field).assertEqual(10.0);
       expect(a1.bar22(Color22.Red)).assertEqual(10.0);
@@ -1089,8 +1032,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let a1: A23 = new A23(Color23.Red);
       expect(a1.field).assertEqual(10001.0);
       expect(a1.bar23(Color23.Red)).assertEqual(10001.0);
@@ -1118,9 +1059,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
-
       let a1: A24 = new A24(Color24.Red);
       expect(a1.field).assertEqual(20001.0);
       expect(a1.bar24(Color24.Red)).assertEqual(20001.0);
@@ -1138,4 +1076,3 @@ export default function SingleParamsTest(): void {
     });
   })
 }
-

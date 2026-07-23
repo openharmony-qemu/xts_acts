@@ -50,7 +50,7 @@ export default function bindSheetKeyboardAvoidMode(){
      */
     it('bindSheetKeyboardAvoidMode_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0100 START');
-      let driver = await Driver.create()
+      let driver = await Driver.create();
       await CommonFunc.sleep(2000);
       let btn1 = await driver.findComponent(ON.id('popupButton'));
       await btn1.click()

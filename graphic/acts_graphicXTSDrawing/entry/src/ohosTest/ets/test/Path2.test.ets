@@ -568,6 +568,16 @@ export default function drawingTsPath2Test() {
         console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        path.addOval({
+          left: 10, right: 400, top: 100, bottom: 300
+        }, 5, undefined);
+        console.info(msg + `addOval undefined error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `undefined successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
 
       try {
         path.addOval(undefined, 5, drawing.PathDirection.CLOCKWISE);

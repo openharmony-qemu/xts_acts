@@ -11,7 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsAceCArkUI26SystemMaterialTest.hap"
+                "ActsAceCArkUI26SystemMaterialTest.hap",
+                "ActsAceCArkUI26SystemMaterial.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

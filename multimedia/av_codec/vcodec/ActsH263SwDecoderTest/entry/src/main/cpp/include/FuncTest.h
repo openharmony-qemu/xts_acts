@@ -15,10 +15,11 @@
 
 #ifndef FUNC_TEST_H
 #define FUNC_TEST_H
+#include <napi/native_api.h>
 
-int VideoDecodeSyncSw263Func0010Test();
-int VideoDecodeSyncSw263Func0020Test();
-int VideoDecodeSyncSw263Func0040Test();
-int VideoDecodeSw263BlankFrame0010Test();
+napi_value VideoDecodeSyncSw263Func0010Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSw263Func0020Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSw263Func0040Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSw263BlankFrame0010Test(napi_env env, napi_callback_info info);
 
 #endif // FUNC_TEST_H

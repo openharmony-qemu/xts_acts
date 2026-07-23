@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium";
+import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from "@kit.BasicServicesKit";

@@ -435,7 +435,6 @@ export default function cameraVideoMirrorTest() {
       await getVideoReceiveSurface();
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
-      createCameraSessionInstance();
       await Utils.msSleep(500);
       console.info('beforeAll case');
     });
@@ -451,7 +450,6 @@ export default function cameraVideoMirrorTest() {
 
     afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
-      await releaseCameraSessionInstance();
       await Utils.msSleep(1000);
       console.info('afterAll case');
     })
@@ -475,6 +473,7 @@ export default function cameraVideoMirrorTest() {
       } else {
         try {
           for (let i = 0; i < mCameraNum; i++) {
+            createCameraSessionInstance();
             console.info(TAG + caseName + " start for camera " + i);
             await startCameraSession(i);
             if (isVideoOutputCreated) {
@@ -483,6 +482,9 @@ export default function cameraVideoMirrorTest() {
             }
             await Utils.msSleep(1000);
             await stopCameraSession();
+            console.info(TAG + caseName + " finish stopCameraSession");
+            await Utils.msSleep(100);
+            await releaseCameraSessionInstance();
             console.info(TAG + caseName + " end for camera " + i);
           }
           console.info(TAG + caseName + "success");
@@ -512,6 +514,7 @@ export default function cameraVideoMirrorTest() {
         done();
       } else {
         for (let i = 0; i < mCameraNum; i++) {
+          createCameraSessionInstance();
           console.info(TAG + caseName + " start for camera " + i);
           await startCameraSession(i);
           if (isVideoOutputCreated) {
@@ -531,6 +534,9 @@ export default function cameraVideoMirrorTest() {
           }
           await Utils.msSleep(1000);
           await stopCameraSession();
+          console.info(TAG + caseName + " finish stopCameraSession");
+          await Utils.msSleep(100);
+          await releaseCameraSessionInstance();
           console.info(TAG + caseName + " end for camera " + i);
         }
         console.info(TAG + caseName + "success");

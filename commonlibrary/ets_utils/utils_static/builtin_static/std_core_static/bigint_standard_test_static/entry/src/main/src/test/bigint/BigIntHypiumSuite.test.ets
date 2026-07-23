@@ -26,6 +26,21 @@ import BigIntPerformanceLargeIntegerTest from './BigIntPerformanceLargeIntegerTe
 import BigIntPerformanceBatchCompareTest from './BigIntPerformanceBatchCompareTest.test';
 import BigIntBoundaryValuesTest from './BigIntBoundaryValuesTest.test';
 
+import BigIntAsUintN2Test from './BigIntAsUintN2Test.test';
+import BigIntAsIntN2Test from './BigIntAsIntN2Test.test';
+import BigIntBoundaryValues2Test from './BigIntBoundaryValues2Test.test';
+import BigIntConstructorCopy2Test from './BigIntConstructorCopy2Test.test';
+import BigIntConstructorBoolean2Test from './BigIntConstructorBoolean2Test.test';
+import BigIntConstructorDouble2Test from './BigIntConstructorDouble2Test.test';
+import BigIntConstructorIntegral2Test from './BigIntConstructorIntegral2Test.test';
+import BigIntConstructorNoArg2Test from './BigIntConstructorNoArg2Test.test';
+import BigIntConstructorString2Test from './BigIntConstructorString2Test.test';
+import BigIntPerformance2Test from './BigIntPerformance2Test.test';
+import BigIntPerformanceBatchCompare2Test from './BigIntPerformanceBatchCompare2Test.test';
+import BigIntPerformanceLargeInteger2Test from './BigIntPerformanceLargeInteger2Test.test';
+
+
+
 export default function runBigIntHypiumTests(): void {
   BigIntConstructorNoArgTest();
   BigIntConstructorIntegralTest();
@@ -39,4 +54,19 @@ export default function runBigIntHypiumTests(): void {
   BigIntPerformanceTest();
   BigIntPerformanceLargeIntegerTest();
   BigIntPerformanceBatchCompareTest();
+
+  BigIntAsUintN2Test();
+  BigIntAsIntN2Test();
+  BigIntBoundaryValues2Test();
+  BigIntConstructorBoolean2Test();
+  BigIntConstructorCopy2Test();
+  BigIntConstructorDouble2Test();
+  BigIntConstructorIntegral2Test();
+  BigIntConstructorNoArg2Test();
+  BigIntConstructorString2Test();
+  BigIntPerformance2Test();
+  BigIntPerformanceBatchCompare2Test();
+  BigIntPerformanceLargeInteger2Test();
+
+
 }

@@ -87,7 +87,7 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
     ArkUI_NumberValue width_value[] = {{.f32 = 200}};
     ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(list, NODE_WIDTH, &width_item);
-    ArkUI_NumberValue height_value[] = {{.f32 = 250}};
+    ArkUI_NumberValue height_value[] = {{.f32 = 150}};
     ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(list, NODE_HEIGHT, &height_item);
  
