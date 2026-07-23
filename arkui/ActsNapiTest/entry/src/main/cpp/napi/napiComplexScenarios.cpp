@@ -170,7 +170,8 @@ static napi_value TestCase02MatrixTranspose(napi_env env, napi_callback_info inf
     int32_t cols = 0;
     constexpr size_t matrixRowIdx = 1;
     constexpr size_t matrixColIdx = 2;
-    if (napi_get_value_int32(env, args[matrixRowIdx], &rows) != napi_ok || napi_get_value_int32(env, args[matrixColIdx], &cols) != napi_ok) {
+    if (napi_get_value_int32(env, args[matrixRowIdx], &rows) != napi_ok ||
+        napi_get_value_int32(env, args[matrixColIdx], &cols) != napi_ok) {
         napi_throw_type_error(env, nullptr, "TestCase02MatrixTranspose: rows and cols must be integers");
         return nullptr;
     }
@@ -558,6 +559,42 @@ static napi_value TestCase08ErrorTrigger(napi_env env, napi_callback_info info)
     return result;
 }
 
+static bool RunParallelSumTest(int taskCount)
+{
+    std::atomic<int> sum{0};
+    std::vector<std::thread> threads;
+    for (int i = 0; i < taskCount; i++) {
+        threads.emplace_back([i, &sum]() {
+            sum.fetch_add(i * i, std::memory_order_relaxed);
+        });
+    }
+    for (auto &t : threads) {
+        t.join();
+    }
+    int expected = 0;
+    for (int i = 0; i < taskCount; i++) {
+        expected += i * i;
+    }
+    return sum.load() == expected;
+}
+
+static bool RunContentionTest(int taskCount)
+{
+    std::atomic<int> counter{0};
+    std::vector<std::thread> threads;
+    for (int i = 0; i < taskCount; i++) {
+        threads.emplace_back([&counter]() {
+            for (int j = 0; j < INCREMENTS_PER_THREAD; j++) {
+                counter.fetch_add(1, std::memory_order_relaxed);
+            }
+        });
+    }
+    for (auto &t : threads) {
+        t.join();
+    }
+    return counter.load() == taskCount * INCREMENTS_PER_THREAD;
+}
+
 static napi_value TestCase09ParallelSum(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -575,36 +612,8 @@ static napi_value TestCase09ParallelSum(napi_env env, napi_callback_info info)
         taskCount = MAX_TASK_COUNT;
     }
 
-    std::atomic<int> sum{0};
-    std::vector<std::thread> threads;
-    for (int i = 0; i < taskCount; i++) {
-        threads.emplace_back([i, &sum]() {
-            sum.fetch_add(i * i, std::memory_order_relaxed);
-        });
-    }
-    for (auto &t : threads)
-        t.join();
-
-    int expectedSum = 0;
-    for (int i = 0; i < taskCount; i++) {
-        expectedSum += i * i;
-    }
-    bool sumCorrect = (sum.load() == expectedSum);
-
-    std::atomic<int> counter{0};
-    std::vector<std::thread> contentionThreads;
-    for (int i = 0; i < taskCount; i++) {
-        contentionThreads.emplace_back([&counter]() {
-            for (int j = 0; j < INCREMENTS_PER_THREAD; j++) {
-                counter.fetch_add(1, std::memory_order_relaxed);
-            }
-        });
-    }
-    for (auto &t : contentionThreads)
-        t.join();
-
-    int expectedCount = taskCount * INCREMENTS_PER_THREAD;
-    bool contentionCorrect = (counter.load() == expectedCount);
+    bool sumCorrect = RunParallelSumTest(taskCount);
+    bool contentionCorrect = RunContentionTest(taskCount);
 
     napi_value obj;
     napi_create_object(env, &obj);
