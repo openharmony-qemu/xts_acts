@@ -1,0 +1,5 @@
+{
+  "evictFilePages": [
+    "invalid.txt"
+  ]
+}
