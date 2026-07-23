@@ -16,8 +16,10 @@
 import imagePixelMapForDMA from './imagePixelMapForDMATest';
 import imagePixelMapTest from './ImagePixelMap.test';
 import imagePixelMapForThumbnail from './ImagePixelmapForThumbnailTest.test.ets';
+import imageDecodeAvif from './ImageDecodeAvif.test.ets';
 
 export default function testsuite() {
+  imageDecodeAvif();
   imagePixelMapForDMA();
   imagePixelMapTest();
   imagePixelMapForThumbnail();
