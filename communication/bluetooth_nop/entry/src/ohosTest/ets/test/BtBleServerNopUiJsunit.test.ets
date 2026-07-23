@@ -554,7 +554,7 @@ export default function btBleServerNopUiJsunit() {
      * @tc.level LEVEL2
      * @co.authored.by.agent
      */
-    it('testGattConnectError001', Level.LEVEL2, () => {
+    it('testGattConnectError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let device: ble.GattServer = ble.createGattServer();
         device.connect('00:22:33:44:55:66');
