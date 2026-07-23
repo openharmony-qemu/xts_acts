@@ -21,7 +21,9 @@
         "MainAbility/pages/Progress/ProgressStyleTest",
         "MainAbility/pages/Progress/LoadingProgressPropertiesNullUndefinedTest",
         "MainAbility/pages/Progress/ProgressPropertiesNullUndefinedTest",
+        "MainAbility/pages/Progress/ProgressModifier",
 
+        "MainAbility/pages/TextClock/TextClockModifier",
         "MainAbility/pages/TextClock/TextClockApiTest",
         "MainAbility/pages/TextClock/TextClockJsunit",
         "MainAbility/pages/TextClock/TextClockJsunit2",
@@ -31,6 +33,7 @@
         "MainAbility/pages/TextClock/TextClockNodeTest",
         "MainAbility/pages/TextClock/TextClockPropertiesNullUndefined",
 
+        "MainAbility/pages/TextTimer/TextTimerModifier",
         "MainAbility/pages/TextTimer/TextTimerApi",
         "MainAbility/pages/TextTimer/TextTimerJsunit",
         "MainAbility/pages/TextTimer/TextTimerJsunit2",
