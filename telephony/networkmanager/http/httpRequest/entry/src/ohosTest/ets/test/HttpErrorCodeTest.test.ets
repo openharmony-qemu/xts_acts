@@ -1864,6 +1864,14 @@ export default function HttpErrorCodeTest() {
             } else {
               console.info(`${caseName} Network connected`);
               let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                console.info(`${caseName} remoteValidation_callback called`);
+                ExpectTrue(context !== undefined);
+                ExpectTrue(context !== null);
+                ExpectTrue(typeof context === 'object');
+                ExpectTrue(context.pemCerts !== undefined);
+                ExpectTrue(context.x509Certs !== undefined);
+                ExpectTrue(context.ip !== undefined);
+                ExpectTrue(context.host !== undefined);
                 return true;
               };
               let httpRequestOptions: http.HttpRequestOptions = {
@@ -1913,6 +1921,14 @@ export default function HttpErrorCodeTest() {
             } else {
               console.info(`${caseName} Network connected`);
               let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                console.info(`${caseName} remoteValidation_callback called`);
+                ExpectTrue(context !== undefined);
+                ExpectTrue(context !== null);
+                ExpectTrue(typeof context === 'object');
+                ExpectTrue(context.pemCerts !== undefined);
+                ExpectTrue(context.x509Certs !== undefined);
+                ExpectTrue(context.ip !== undefined);
+                ExpectTrue(context.host !== undefined);
                 return false;
               };
               let httpRequestOptions: http.HttpRequestOptions = {
@@ -1965,6 +1981,19 @@ export default function HttpErrorCodeTest() {
                 context.x509Certs = [];
                 context.ip = '';
                 context.host = '';
+
+                console.info(`${caseName} pemCerts length: ${context.pemCerts?.length}`);
+                ExpectTrue(context.pemCerts instanceof Array);
+
+                console.info(`${caseName} x509Certs length: ${context.x509Certs?.length}`);
+                ExpectTrue(context.x509Certs instanceof Array);
+
+                console.info(`${caseName} ip: ${context.ip}`);
+                ExpectTrue(typeof context.ip === 'string');
+
+                console.info(`${caseName} host: ${context.host}`);
+                ExpectTrue(typeof context.host === 'string');
+
                 return true;
               };
               let httpRequestOptions: http.HttpRequestOptions = {
