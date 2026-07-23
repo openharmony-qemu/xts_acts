@@ -320,5 +320,119 @@ export default function webInitTest() {
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeStatic01
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0015
+    * @tc.desc         test setErrorPageEnabled(true, true) getErrorPageEnabled true getSubframeErrorPageEnabled true
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe01', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic01', 'true,true', 60620, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeStatic02
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0016
+    * @tc.desc         test setErrorPageEnabled(true, false) getErrorPageEnabled true getSubframeErrorPageEnabled false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe02', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic02', 'true,false', 60621, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeStatic03
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0017
+    * @tc.desc         test setErrorPageEnabled(false, true); when enable is false, subframe error page stays disabled
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe03', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic03', 'false,false', 60622, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeStatic04
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0018
+    * @tc.desc         test setErrorPageEnabled(false, false) getErrorPageEnabled false getSubframeErrorPageEnabled false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeStatic04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe04', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic04', 'false,false', 60623, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeErrorCodeStatic01
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0019
+    * @tc.desc         test setErrorPageEnabled(enable, includeSubframe) init error 17100001
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeErrorCodeStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeErrorCode01', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetErrorPageEnabledWithSubframeErrorCodeStatic01', 17100001, 60624, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testGetSubframeErrorPageEnabledErrorCodeStatic01
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0020
+    * @tc.desc         test getSubframeErrorPageEnabled init error 17100001
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testGetSubframeErrorPageEnabledErrorCodeStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitGetSubframeErrorPageEnabledErrorCode01', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testGetSubframeErrorPageEnabledErrorCodeStatic01', 17100001, 60625, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
   })
 }
