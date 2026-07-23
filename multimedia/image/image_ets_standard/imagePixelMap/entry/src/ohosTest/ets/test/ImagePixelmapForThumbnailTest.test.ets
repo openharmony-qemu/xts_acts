@@ -653,7 +653,7 @@ export default function imagePixelMapForThumbnail() {
         pixelMap = imageSource.createThumbnailSync(decodingOptions);
       } catch (error) {
         logger.log("create Thumbnail failed, errorcode: " + error.code + " message is: " + error.message);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       done();
     })
@@ -809,7 +809,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(Number(error.code)).assertEqual(ERR_GENERATE_THUMBNAIL);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1270,7 +1270,7 @@ export default function imagePixelMapForThumbnail() {
         pixelMap = await imageSource.createThumbnail(decodingOptions);
       } catch (error) {
         logger.log("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       done();
     })
@@ -1426,7 +1426,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(Number(error.code)).assertEqual(ERR_GENERATE_THUMBNAIL);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1459,7 +1459,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+        expect(error.code == DECODE_FAILED).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1492,7 +1492,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+        expect(error.code == DECODE_FAILED).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1525,7 +1525,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1558,7 +1558,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
