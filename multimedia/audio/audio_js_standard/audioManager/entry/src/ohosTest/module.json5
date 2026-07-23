@@ -68,10 +68,6 @@
             {
                 "name": "ohos.permission.USE_BLUETOOTH",
                 "reason": "$string:EntryAbility_desc"
-            },
-            {
-                "name":"ohos.permission.MANAGE_SYSTEM_AUDIO_EFFECTS",
-                "reason": "$string:EntryAbility_desc"
             }
         ]
     }
