@@ -14,8 +14,8 @@
  */
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
-import {ble, connection} from '@kit.ConnectivityKit';
-import {BusinessError} from '@kit.BasicServicesKit';
+import ble from '@ohos.bluetooth.ble';
+import {BusinessError} from '@ohos.base';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 
