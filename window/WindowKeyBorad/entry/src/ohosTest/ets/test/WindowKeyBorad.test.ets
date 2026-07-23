@@ -358,9 +358,9 @@ export default function windowKeyBorad() {
           await input.click();
           if(deviceType === "phone" || deviceType === "tablet"){
             expect(conunt).assertEqual(1);
-            done();
           }else{
             expect(conunt).assertEqual(0);
+            done();
           }
           await sleep(500);
          
@@ -428,9 +428,9 @@ export default function windowKeyBorad() {
           await input.click();
          if(deviceType === "phone" || deviceType === "tablet"){
             expect(conunt).assertEqual(1);
-            done();
           }else{
             expect(conunt).assertEqual(0);
+            done();
           }
           await sleep(1000);
           

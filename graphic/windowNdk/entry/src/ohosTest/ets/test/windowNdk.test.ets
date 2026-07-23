@@ -537,7 +537,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
