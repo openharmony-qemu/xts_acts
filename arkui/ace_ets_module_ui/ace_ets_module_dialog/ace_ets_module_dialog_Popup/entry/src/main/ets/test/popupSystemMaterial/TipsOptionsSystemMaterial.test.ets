@@ -81,7 +81,9 @@ export default function TipsOptionsSystemMaterial() {
 		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
 		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
+      await driver.mouseMoveTo({ x: 1, y: 1 });
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0100 END');
       done();
     });
@@ -111,10 +113,10 @@ export default function TipsOptionsSystemMaterial() {
       let popupText = await driver.findComponent(ON.text('TipsOptions HDS THICK Test'));
       expect(popupText).not().assertUndefined();
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0200 END');
       done();
     });
@@ -142,17 +144,11 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0300 Button with SEMI_TRANSPARENT systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions SEMI_TRANSPARENT Test'));
 
-
       expect(popupText).not().assertUndefined();
-
-      
-      
-    
-
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0300 END');
       done();
     });
@@ -180,14 +176,12 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0400 Button with Immersive THICK systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions Immersive THICK Test'));
       
-
       expect(popupText).not().assertUndefined();
       
-      
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0400 END');
       done();
     });
@@ -217,10 +211,10 @@ export default function TipsOptionsSystemMaterial() {
 
       expect(popupText).not().assertUndefined();
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0500 END');
       done();
     });
@@ -250,10 +244,9 @@ export default function TipsOptionsSystemMaterial() {
  
       expect(popupText).not().assertUndefined();
 
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
-
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       console.info('TipsOptionsSystemMaterial_0600 END');
       done();
     });
