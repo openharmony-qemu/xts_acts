@@ -910,7 +910,7 @@ export default function cameraPhotoSessionTest() {
             equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
         }
         if (zoomPointInfos.length > 0) {
-          mCameraSession.setZoomRatio(zoomPointInfos[0].zoomRatio);
+          mCameraSession!.setZoomRatio(zoomPointInfos[0].zoomRatio);
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
