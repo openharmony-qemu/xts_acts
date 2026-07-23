@@ -1,29 +1,69 @@
 'use static';
 import {
-  Entry, Component, Column, Builder, Flex, FlexDirection, FlexAlign, ItemAlign, TextAlign, ClickEvent, HorizontalAlign,
-  Divider, Resource, SideBarContainer, SideBarContainerType, LineCapStyle, ColumnOptions, Button, ButtonType, Text, $r,
-  Row, State
-}from '@kit.ArkUI';
+  Entry,
+  ComponentV2,
+  Column,
+  Builder,
+  Flex,
+  FlexDirection,
+  FlexAlign,
+  ItemAlign,
+  TextAlign,
+  ClickEvent,
+  HorizontalAlign,
+  Divider,
+  Resource,
+  SideBarContainer,
+  SideBarContainerType,
+  LineCapStyle,
+  ColumnOptions,
+  Button,
+  ButtonType,
+  Text,
+  $r,
+  Row,
+  State,
+  Image,
+  Color,
+  Local,
+  ControlSize
+} from '@kit.ArkUI';
 
 import {
-  TreeControllerV2,  TreeListenerV2,  TreeListenerManagerV2,  NodeParamV2,  TreeViewV2,  CallbackParamV2
+  TreeControllerV2,
+  TreeListenerV2,
+  TreeListenerManagerV2,
+  NodeParamV2,
+  TreeViewV2,
+  CallbackParamV2
 } from '@ohos.arkui.advanced.TreeViewV2';
 
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 
 @Entry
-@Component
+@ComponentV2
 struct TreeViewDemo {
   // 创建树视图组件的控制器
   private treeController: TreeControllerV2 = new TreeControllerV2();
   // 创建树视图组件的监听器
   private treeListener: TreeListenerV2 = TreeListenerManagerV2.getInstance().getTreeListener();
-  @State clickId: number = 0;
+  @Local clickId: number = 0;
+  @Local callbackParamDisplay: string = 'No callback yet';
+  @Local testMessage: string = '';
+  @Local offClickResult: string = 'offClickNotTested';
+  @Local offAddResult: string = 'offAddNotTested';
+  @Local offDeleteResult: string = 'offDeleteNotTested';
+  @Local offModifyResult: string = 'offModifyNotTested';
+  @Local offMoveResult: string = 'offMoveNotTested';
+  @Local refreshResult: string = 'refreshNotTested';
+  @Local addAfterBuildDoneResult: string = 'addAfterBuildDoneNotTested';
 
   aboutToDisappear(): void {
     // 取消监听
     this.treeListener.offNodeClick(undefined);
     this.treeListener.offNodeAdd(undefined);
     this.treeListener.offNodeDelete(undefined);
+    this.treeListener.offNodeModify(undefined);
     this.treeListener.offNodeMove(undefined);
   }
 
@@ -60,20 +100,121 @@ struct TreeViewDemo {
     }.width(100).border({ width: 1, color: 0x80808a, radius: '16dp' })
   }
 
+  // 边界值测试方法
+  testBoundaryCase(caseType: string): void {
+    try {
+      switch (caseType) {
+        case 'emptyTitle':
+          this.treeController.addNode({
+            parentNodeId: -1,
+            currentNodeId: 200,
+            primaryTitle: '',
+            isFolder: false
+          });
+          this.testMessage = 'Added node with empty title';
+          break;
+        case 'longTitle':
+          this.treeController.addNode({
+            parentNodeId: -1,
+            currentNodeId: 201,
+            primaryTitle: '超长标题测试字符串超过一百字符测试边界值显示效果验证',
+            isFolder: false
+          });
+          this.testMessage = 'Added node with long title (>50 chars)';
+          break;
+        case 'invalidParent':
+          this.treeController.addNode({
+            parentNodeId: 999,
+            currentNodeId: 202,
+            primaryTitle: 'Invalid Parent Node',
+            isFolder: false
+          });
+          this.testMessage = 'Added node with invalid parent ID (999)';
+          break;
+      }
+    } catch (e) {
+      this.testMessage = 'Boundary test error: ' + caseType;
+    }
+  }
+
+  // off*验证用的命名回调
+  private offClickCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offClickResult = 'offClickTriggered';
+  }
+  private offAddCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offAddResult = 'offAddTriggered';
+  }
+  private offDeleteCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offDeleteResult = 'offDeleteTriggered';
+  }
+  private offModifyCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offModifyResult = 'offModifyTriggered';
+  }
+  private offMoveCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offMoveResult = 'offMoveTriggered';
+  }
+  // onceNodeMove验证用的计数器
+  private onceMoveCount: number = 0;
+
   aboutToAppear(): void {
     // 注册监听
     this.treeListener.onNodeClick((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onNodeModify((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onNodeMove((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeClick((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeAdd((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeDelete((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeModify((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeMove((callbackParam: CallbackParamV2) => {
+      this.onceMoveCount++;
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ??
+        -1}, index:${callbackParam.childIndex ?? -1}, onceMoveCount:${this.onceMoveCount}`;
     })
+    // 注册off*验证用的回调
+    this.treeListener.onNodeClick(this.offClickCallback);
+    this.treeListener.onNodeAdd(this.offAddCallback);
+    this.treeListener.onNodeDelete(this.offDeleteCallback);
+    this.treeListener.onNodeModify(this.offModifyCallback);
+    this.treeListener.onNodeMove(this.offMoveCallback);
 
     // 系统文件夹图片资源
     let normalResource: Resource = $r('sys.media.ohos_ic_normal_white_grid_folder');
@@ -167,10 +308,29 @@ struct TreeViewDemo {
         isFolder: false,
         primaryTitle: '项目8'
       })
-      .addNode({ parentNodeId: -1,
+      .addNode({
+        parentNodeId: -1,
         currentNodeId: 36,
         isFolder: false,
         primaryTitle: '项目9'
+      })
+      // SymbolGlyphModifier测试节点
+      .addNode({
+        parentNodeId: 1000,
+        currentNodeId: 100,
+        isFolder: true,
+        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+        symbolSelectedIconStyle: new SymbolGlyphModifier($r('sys.symbol.checkmark_circle')),
+        symbolEditIconStyle: new SymbolGlyphModifier($r('sys.symbol.trash')),
+        primaryTitle: 'Symbol Folder',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: 100,
+        currentNodeId: 101,
+        isFolder: false,
+        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')),
+        primaryTitle: 'Symbol File'
       })
       .buildDone();
     this.treeController.refreshNode(-1, '父节点', '子节点');
@@ -182,23 +342,161 @@ struct TreeViewDemo {
         TreeViewV2({ treeControllerV2: this.treeController })
         Row() {
           Divider().vertical(true).strokeWidth(2).color(0x000000).lineCap(LineCapStyle.Round)
-          Column({ space: 30 } as ColumnOptions) {
-            Text('ClickId=' + this.clickId).fontSize('16fp')
+          Column({ space: 5 } as ColumnOptions) {
+            Text('ClickId=' + this.clickId).fontSize(8).id('clickIdText')
+            Text('CallbackParam: ' + this.callbackParamDisplay)
+              .fontSize(8)
+              .fontColor(Color.Blue)
+              .id('callbackParamText')
             Button('Add', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(90)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(90)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.addNode();
               })
             Button('Modify', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(90)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(90)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.modifyNode();
               })
             Button('Remove', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(120)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width(120)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.treeController.removeNode();
               })
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Boundary Tests:').fontSize(8).fontColor(Color.Orange)
+            Button('Test Empty Title', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('emptyTitle');
+              })
+            Button('Test Long Title', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('longTitle');
+              })
+            Button('Test Invalid Parent', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0xFF5722)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('invalidParent');
+              })
+            Text(this.testMessage).fontSize(8).fontColor(Color.Red).id('testMessage')
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Off Verification:').fontSize(8).fontColor(0x9C27B0)
+            Button('Test offClick', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offClickResult = 'offClickNotTriggered';
+                this.treeListener.offNodeClick(this.offClickCallback);
+              })
+            Text(this.offClickResult).fontSize(8).fontColor(0x9C27B0).id('offClickResult')
+            Button('Test offAdd', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offAddResult = 'offAddNotTriggered';
+                this.treeListener.offNodeAdd(this.offAddCallback);
+              })
+            Text(this.offAddResult).fontSize(8).fontColor(0x9C27B0).id('offAddResult')
+            Button('Test offDelete', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offDeleteResult = 'offDeleteNotTriggered';
+                this.treeListener.offNodeDelete(this.offDeleteCallback);
+              })
+            Text(this.offDeleteResult).fontSize(8).fontColor(0x9C27B0).id('offDeleteResult')
+            Button('Test offModify', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offModifyResult = 'offModifyNotTriggered';
+                this.treeListener.offNodeModify(this.offModifyCallback);
+              })
+            Text(this.offModifyResult).fontSize(8).fontColor(0x9C27B0).id('offModifyResult')
+            Button('Test offMove', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offMoveResult = 'offMoveNotTriggered';
+                this.treeListener.offNodeMove(this.offMoveCallback);
+              })
+            Text(this.offMoveResult).fontSize(8).fontColor(0x9C27B0).id('offMoveResult')
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Refresh Verification:').fontSize('14fp').fontColor(0x4CAF50)
+            Button('Test refreshNode', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x4CAF50)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.treeController.refreshNode(1, 'NewParentSub', 'NewChildSub');
+                this.refreshResult = 'refreshCalled';
+              })
+            Text(this.refreshResult).fontSize(8).fontColor(0x4CAF50).id('refreshResult')
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Add After BuildDone:').fontSize('14fp').fontColor(0x795548)
+            Button('Test addAfterBuildDone', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x795548)
+              .width(180)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                try {
+                  this.treeController.addNode({
+                    parentNodeId: -1,
+                    currentNodeId: 300,
+                    isFolder: false,
+                    primaryTitle: 'AfterBuild'
+                  });
+                  this.addAfterBuildDoneResult = 'addAfterBuildDoneSuccess';
+                } catch (e) {
+                  this.addAfterBuildDoneResult = 'addAfterBuildDoneError';
+                }
+              })
+            Text(this.addAfterBuildDoneResult).fontSize(8).fontColor(0x795548).id('addAfterBuildDoneResult')
           }.height('100%').width('70%').alignItems(HorizontalAlign.Start).margin(10)
         }
       }
