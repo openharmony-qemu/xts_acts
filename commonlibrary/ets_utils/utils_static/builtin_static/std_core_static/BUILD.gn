@@ -64,6 +64,20 @@ group("std_core_static") {
       "uint8clampedarray_standard_test_static:ActsUint8clampedarrayCaseStaticTest",
       "uint16array_standard_test_static:ActsUint16arrayCaseStaticTest",
       "uint32array_standard_test_static:ActsUint32arrayCaseStaticTest",
+      "bigint64array2_standard_test_static:ActsBigint64array2CaseStaticTest",
+      "float32array2_standard_test_static:ActsFloat32array2CaseStaticTest",
+      "float64array2_standard_test_static:ActsFloat64array2CaseStaticTest",
+      "int8array2_standard_test_static:ActsInt8array2CaseStaticTest",
+      "int16array2_standard_test_static:ActsInt16array2CaseStaticTest",
+      "int32array2_standard_test_static:ActsInt32array2CaseStaticTest",
+      "int32array3_standard_test_static:ActsInt32array3CaseStaticTest",
+      "uarrays2_standard_test_static:ActsUarrays2CaseStaticTest",
+      "biguint64array2_standard_test_static:ActsBiguint64array2CaseStaticTest",
+      "uint8array2_standard_test_static:ActsUint8array2CaseStaticTest",
+      "uint8clampedarray2_standard_test_static:ActsUint8clampedarray2CaseStaticTest",
+      "uint16array2_standard_test_static:ActsUint16array2CaseStaticTest",
+      "uint32array2_standard_test_static:ActsUint32array2CaseStaticTest",
+      
     ]
   }
 }
