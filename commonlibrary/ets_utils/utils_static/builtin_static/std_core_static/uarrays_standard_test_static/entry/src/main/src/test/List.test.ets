@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import typedUArraysAt01 from './typeduarrays/TypedUArraysAt01.test';
 import typedUArraysAt02 from './typeduarrays/TypedUArraysAt02.test';
