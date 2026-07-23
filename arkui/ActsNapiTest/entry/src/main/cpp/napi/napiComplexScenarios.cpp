@@ -1,4 +1,5 @@
 #include "napi/native_api.h"
+#include <securec.h>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -317,7 +318,7 @@ static napi_value TestCase04FileCopy(napi_env env, napi_callback_info info)
 
     constexpr size_t copySizeIdx = 2;
     int64_t size = 0;
-    if (napi_get_value_int64(env, args[COPY_SIZE_IDX], &size) != napi_ok || size <= 0) {
+    if (napi_get_value_int64(env, args[copySizeIdx], &size) != napi_ok || size <= 0) {
         free(srcBuf);
         free(dstBuf);
         napi_throw_type_error(env, nullptr, "TestCase04FileCopy: size must be a positive integer");
