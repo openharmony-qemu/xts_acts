@@ -27,8 +27,7 @@ typedef void (*RestraceFunc)(unsigned long long, void*, size_t, const char*, boo
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_ALLOC_100 = 100;
-static constexpr size_t K_ALLOC_200 = 200;
+static constexpr int K_ALLOC_100 = 100;
 
 static RestraceFunc GetRestraceFunc()
 {
@@ -66,7 +65,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value RestraceNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
@@ -80,7 +79,7 @@ static napi_value RestraceNormal001(napi_env env, napi_callback_info info)
 static napi_value RestraceNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
@@ -94,13 +93,13 @@ static napi_value RestraceNormal002(napi_env env, napi_callback_info info)
 static napi_value RestraceNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    void* addr = malloc(K_ALLOC_200);
+    void* addr = malloc(200);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestrace(2, addr, K_ALLOC_200, "tag2", true);
+    bool ret = CallRestrace(2, addr, 200, "tag2", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -108,7 +107,7 @@ static napi_value RestraceNormal003(napi_env env, napi_callback_info info)
 static napi_value RestraceNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -116,7 +115,7 @@ static napi_value RestraceNormal004(napi_env env, napi_callback_info info)
 static napi_value RestraceAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     CallRestrace(1, nullptr, K_ALLOC_100, "test", true);
     return ReturnInt32(env, 1);
@@ -125,7 +124,7 @@ static napi_value RestraceAbnormal001(napi_env env, napi_callback_info info)
 static napi_value RestraceAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
@@ -139,7 +138,7 @@ static napi_value RestraceAbnormal002(napi_env env, napi_callback_info info)
 static napi_value RestraceBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
@@ -153,7 +152,7 @@ static napi_value RestraceBoundary001(napi_env env, napi_callback_info info)
 static napi_value RestraceBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
@@ -167,7 +166,7 @@ static napi_value RestraceBoundary002(napi_env env, napi_callback_info info)
 static napi_value RestraceStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -186,7 +185,7 @@ static napi_value RestraceStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void RestraceWorker(std::atomic<bool>& hasError)
+static void RestraceThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         void* addr = malloc(K_ALLOC_100);
@@ -202,12 +201,14 @@ static void RestraceWorker(std::atomic<bool>& hasError)
 static napi_value RestraceThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(RestraceWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            RestraceThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

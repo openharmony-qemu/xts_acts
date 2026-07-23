@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import ohos_log2ffinitendktest from 'libohos_log2ffinitendktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function Log2fFiniteNdkTest() {
   describe('Log2fFiniteNdkTest', () => {
@@ -33,7 +32,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteNormal001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -47,7 +46,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteNormal002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -61,7 +60,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteNormal003();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -75,9 +74,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && (resNum == 0 || resNum == 1));
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -91,7 +88,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteAbnormal001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -105,7 +102,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteAbnormal002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -119,7 +116,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteBoundary001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -133,7 +130,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteBoundary002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -147,7 +144,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteStable001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,7 +158,7 @@ export default function Log2fFiniteNdkTest() {
      */
     it('testLog2fFiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = ohos_log2ffinitendktest.log2fFiniteThread001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

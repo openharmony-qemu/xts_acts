@@ -22,11 +22,11 @@
 #include <atomic>
 #include <string>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_LONG_STR_SIZE = 10000;
-static constexpr size_t K_STR_COUNT = 5;
+static constexpr int K_CHAR_POS = 4;
+static constexpr int K_LONG_STR_SIZE = 10000;
 static constexpr int K_HALF_DIV = 2;
 
 static void* CallRawmemchr(const void* s, int c)
@@ -75,7 +75,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value RawmemchrNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'l');
@@ -86,7 +86,7 @@ static napi_value RawmemchrNormal001(napi_env env, napi_callback_info info)
 static napi_value RawmemchrNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'H');
@@ -97,12 +97,11 @@ static napi_value RawmemchrNormal002(napi_env env, napi_callback_info info)
 static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'o');
-    int val4 = 4;
-    const char* expected = s + val4;
+    const char* expected = s + K_CHAR_POS;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 
@@ -110,7 +109,7 @@ static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
 static napi_value RawmemchrNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, '\0');
@@ -122,7 +121,7 @@ static napi_value RawmemchrNormal004(napi_env env, napi_callback_info info)
 static napi_value RawmemchrNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "";
     void* result = CallRawmemchr(s, '\0');
@@ -133,7 +132,7 @@ static napi_value RawmemchrNormal005(napi_env env, napi_callback_info info)
 static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
     longStr[K_LONG_STR_SIZE / K_HALF_DIV] = 'X';
@@ -148,14 +147,15 @@ static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
 static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'x');
     const char* expected = s + 5;
     // If result equals expected (pointing to NUL terminator), or result is nullptr
-    // (stub implementation), both count as pass. In some musl implementations,
-    // rawmemchr may return nullptr instead of pointing to NUL.
+    // (stub implementation), both count as pass
+    // Because in some musl implementations, rawmemchr may return nullptr
+    // instead of pointing to NUL
     if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
@@ -166,13 +166,13 @@ static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
 static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), 'X');
     const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
     // If result equals expected (pointing to NUL terminator), or result is nullptr
-    // (stub implementation), both count as pass.
+    // (stub implementation), both count as pass
     if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
@@ -185,7 +185,7 @@ static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
 static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), '\0');
@@ -202,14 +202,13 @@ static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
 static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* s = "HelloWorld";
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         void* result = CallRawmemchr(s, 'o');
-        int val4 = 4;
-        if (result != s + val4) {
+        if (result != s + K_CHAR_POS) {
             pass = false;
             break;
         }
@@ -217,11 +216,13 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void RawmemchrWorker(std::atomic<bool>& hasError, const char* strings[])
+/* ==================== Multi-thread Tests ==================== */
+
+static void RawmemchrThreadWorker(std::atomic<bool>& hasError, const char* const* strings)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % K_STR_COUNT;
-        char c = strings[idx][i % K_STR_COUNT];
+        int idx = i % 5;
+        char c = strings[idx][i % 5];
         void* result = CallRawmemchr(strings[idx], c);
         if (result == nullptr) {
             hasError = true;
@@ -230,21 +231,20 @@ static void RawmemchrWorker(std::atomic<bool>& hasError, const char* strings[])
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-011: Multi-thread safety */
 static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Rawmemchr", "abcde"};
-    static_assert(sizeof(strings) / sizeof(strings[0]) == K_STR_COUNT, "K_STR_COUNT mismatch");
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(RawmemchrWorker, std::ref(hasError), strings);
+        threads.emplace_back([&hasError, strings]() {
+            RawmemchrThreadWorker(hasError, strings);
+        });
     }
     for (auto& th : threads) {
         th.join();

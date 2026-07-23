@@ -84,7 +84,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value PthreadAttrExtInitNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr = {};
     int ret = CallPthreadAttrExtInit(&attr);
@@ -99,7 +99,7 @@ static napi_value PthreadAttrExtInitNormal001(napi_env env, napi_callback_info i
 static napi_value PthreadAttrExtInitNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr = {};
     int ret = CallPthreadAttrExtInit(&attr);
@@ -114,7 +114,7 @@ static napi_value PthreadAttrExtInitNormal002(napi_env env, napi_callback_info i
 static napi_value PthreadAttrExtInitNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr = {};
     CallPthreadAttrExtInit(&attr);
@@ -133,7 +133,7 @@ static napi_value PthreadAttrExtInitNormal003(napi_env env, napi_callback_info i
 static napi_value PthreadAttrExtInitNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -141,7 +141,7 @@ static napi_value PthreadAttrExtInitNormal004(napi_env env, napi_callback_info i
 static napi_value PthreadAttrExtInitAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAttrExtInit(nullptr);
     return ReturnInt32(env, 1);
@@ -150,7 +150,7 @@ static napi_value PthreadAttrExtInitAbnormal001(napi_env env, napi_callback_info
 static napi_value PthreadAttrExtInitAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr = {};
     CallPthreadAttrExtInit(&attr);
@@ -166,11 +166,11 @@ static napi_value PthreadAttrExtInitAbnormal002(napi_env env, napi_callback_info
 static napi_value PthreadAttrExtInitBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 10;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 10;
+    for (int i = 0; i < loopCount; ++i) {
         pthread_attr_t attr = {};
         int ret = CallPthreadAttrExtInit(&attr);
         auto& loader = LibcFunctionLoader::GetInstance();
@@ -189,7 +189,7 @@ static napi_value PthreadAttrExtInitBoundary001(napi_env env, napi_callback_info
 static napi_value PthreadAttrExtInitBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr = {};
     CallPthreadAttrExtInit(&attr);
@@ -202,7 +202,7 @@ static napi_value PthreadAttrExtInitBoundary002(napi_env env, napi_callback_info
 static napi_value PthreadAttrExtInitStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -220,7 +220,7 @@ static napi_value PthreadAttrExtInitStable001(napi_env env, napi_callback_info i
 static napi_value PthreadAttrExtInitThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;

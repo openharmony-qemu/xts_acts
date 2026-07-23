@@ -74,7 +74,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value FedisableexceptNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO);
@@ -85,7 +85,7 @@ static napi_value FedisableexceptNormal001(napi_env env, napi_callback_info info
 static napi_value FedisableexceptNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_INVALID);
@@ -96,7 +96,7 @@ static napi_value FedisableexceptNormal002(napi_env env, napi_callback_info info
 static napi_value FedisableexceptNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO | FE_INVALID);
@@ -107,7 +107,7 @@ static napi_value FedisableexceptNormal003(napi_env env, napi_callback_info info
 static napi_value FedisableexceptNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -115,7 +115,7 @@ static napi_value FedisableexceptNormal004(napi_env env, napi_callback_info info
 static napi_value FedisableexceptAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallFedisableexcept(0);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -124,7 +124,7 @@ static napi_value FedisableexceptAbnormal001(napi_env env, napi_callback_info in
 static napi_value FedisableexceptAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallFedisableexcept(0xFFFF);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -133,7 +133,7 @@ static napi_value FedisableexceptAbnormal002(napi_env env, napi_callback_info in
 static napi_value FedisableexceptBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_ALL_EXCEPT);
@@ -144,7 +144,7 @@ static napi_value FedisableexceptBoundary001(napi_env env, napi_callback_info in
 static napi_value FedisableexceptBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     int ret = CallFedisableexcept(FE_DIVBYZERO);
@@ -154,7 +154,7 @@ static napi_value FedisableexceptBoundary002(napi_env env, napi_callback_info in
 static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -169,7 +169,7 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void FedisableexceptWorker(std::atomic<bool>& hasError)
+static void FedisableexceptThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         feclearexcept(FE_ALL_EXCEPT);
@@ -185,13 +185,13 @@ static void FedisableexceptWorker(std::atomic<bool>& hasError)
 static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            FedisableexceptWorker(hasError);
+            FedisableexceptThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

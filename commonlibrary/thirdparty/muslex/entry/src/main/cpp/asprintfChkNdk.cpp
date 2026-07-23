@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,12 @@
 #include <thread>
 #include <vector>
 
-static constexpr int K_STABLE_LOOP1000 = 20;
-static constexpr int K_MEM_LOOP100 = 10;
+static constexpr int K_STABLE_LOOP_1000 = 20;
+static constexpr int K_MEM_LOOP_100 = 10;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_THREAD_LOOP = 100;
-static constexpr int K_STRLEN_TEST = 4;
-static constexpr int K_STRLEN_HELLO = 5;
-static constexpr int K_STRLEN_FORMATTED = 8;
+static constexpr int STRLEN_TEST = 4;
+static constexpr int STRLEN_HELLO = 5;
 
 static int CallAsprintfChk(char** strp, int flag, const char* fmt, ...)
 {
@@ -71,12 +70,13 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 static napi_value AsprintfChkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     errno = 0;
+    int expectedLen = 8;
     int ret = CallAsprintfChk(&buf, 0, "hello %d", 42);
-    if (ret != K_STRLEN_FORMATTED) {
+    if (ret != expectedLen) {
         if (buf) {
             free(buf);
         }
@@ -100,12 +100,13 @@ static napi_value AsprintfChkNormal001(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     errno = 0;
+    int expectedLen = 8;
     int ret = CallAsprintfChk(&buf, 1, "%s-%d", "test", 100);
-    if (ret != K_STRLEN_FORMATTED) {
+    if (ret != expectedLen) {
         if (buf) {
             free(buf);
         }
@@ -125,7 +126,7 @@ static napi_value AsprintfChkNormal002(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     errno = 0;
@@ -143,7 +144,7 @@ static napi_value AsprintfChkNormal003(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf0 = nullptr;
     char* buf1 = nullptr;
@@ -176,11 +177,12 @@ static napi_value AsprintfChkNormal004(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkFunc001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "%d", 12345);
-    if (ret != K_STRLEN_HELLO) {
+    int helloLen = 5;
+    if (ret != helloLen) {
         if (buf) {
             free(buf);
         }
@@ -200,7 +202,7 @@ static napi_value AsprintfChkFunc001(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkFunc002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "");
@@ -224,9 +226,9 @@ static napi_value AsprintfChkFunc002(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkFunc003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_MEM_LOOP100; ++i) {
+    for (int i = 0; i < K_MEM_LOOP_100; ++i) {
         char* buf = nullptr;
         int ret = CallAsprintfChk(&buf, 0, "iter %d", i);
         if (ret <= 0 || buf == nullptr) {
@@ -241,13 +243,13 @@ static napi_value AsprintfChkFunc003(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int failCount = 0;
-    for (int i = 0; i < K_STABLE_LOOP1000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_1000; ++i) {
         char* buf = nullptr;
         int ret = CallAsprintfChk(&buf, 0, "test");
-        if (ret != K_STRLEN_TEST || buf == nullptr || strcmp(buf, "test") != 0) {
+        if (ret != STRLEN_TEST || buf == nullptr || strcmp(buf, "test") != 0) {
             failCount++;
         }
         if (buf) {
@@ -261,7 +263,7 @@ static napi_value AsprintfChkStable001(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkStable002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::vector<std::thread> threads;
     bool allPassed = true;
@@ -291,11 +293,11 @@ static napi_value AsprintfChkStable002(napi_env env, napi_callback_info info)
 static napi_value AsprintfChkSpec001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "hello");
-    if (ret != K_STRLEN_HELLO || buf == nullptr || strcmp(buf, "hello") != 0) {
+    if (ret != STRLEN_HELLO || buf == nullptr || strcmp(buf, "hello") != 0) {
         if (buf) {
             free(buf);
         }
@@ -312,11 +314,11 @@ static napi_value AsprintfChkSpec002(napi_env env, napi_callback_info info)
     void* sym = dlsym(RTLD_DEFAULT, "__asprintf_chk");
     auto funcPtr = reinterpret_cast<int (*)(char**, int, const char*, ...)>(sym);
     if (funcPtr == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* buf = nullptr;
     int ret = funcPtr(&buf, 0, "hello");
-    if (ret != K_STRLEN_HELLO || buf == nullptr) {
+    if (ret != STRLEN_HELLO || buf == nullptr) {
         if (buf) {
             free(buf);
         }
@@ -333,9 +335,9 @@ static napi_value AsprintfChkSpec003(napi_env env, napi_callback_info info)
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "test");
     if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    if (ret == K_STRLEN_TEST && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
+    if (ret == STRLEN_TEST && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
         free(buf);
         return ReturnInt32(env, 1);
     }
@@ -350,12 +352,13 @@ static napi_value AsprintfChkSpec004(napi_env env, napi_callback_info info)
 {
     bool isStub = IsStubMode();
     if (isStub) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "test");
-    if (ret == K_STRLEN_TEST && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
+    int strLen4 = 4;
+    if (ret == strLen4 && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
         free(buf);
         return ReturnInt32(env, 1);
     }
@@ -373,12 +376,10 @@ static napi_value AsprintfChkSpec005(napi_env env, napi_callback_info info)
     int ret = CallAsprintfChk(&buf, 0, "test");
     int e = errno;
     if (e == ENOSYS) {
-        if (ret == -1) {
-            return ReturnInt32(env, 0);
-        }
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     } else {
-        if (ret == K_STRLEN_TEST && e == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
+        int strLen4 = 4;
+        if (ret == strLen4 && e == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
             free(buf);
             return ReturnInt32(env, 1);
         }

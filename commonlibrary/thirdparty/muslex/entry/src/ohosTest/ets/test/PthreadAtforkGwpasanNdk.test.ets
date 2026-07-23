@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libpthreadatforkgwpasanndktest from 'libpthreadatforkgwpasanndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function PthreadAtforkGwpasanNdkTest() {
   describe('PthreadAtforkGwpasanNdkTest', () => {
@@ -33,9 +32,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function PthreadAtforkGwpasanNdkTest() {
      */
     it('testpthreadAtforkGwpasanThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadatforkgwpasanndktest.pthreadAtforkGwpasanThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

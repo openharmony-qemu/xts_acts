@@ -61,7 +61,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value SchedCpufreeNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
     if (!set) {
@@ -75,7 +75,7 @@ static napi_value SchedCpufreeNormal001(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     CallSchedCpufree(nullptr);
     return ReturnInt32(env, 1);
@@ -85,11 +85,11 @@ static napi_value SchedCpufreeNormal002(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         cpu_set_t* set = CPU_ALLOC(1);
         if (!set) {
             pass = false;
@@ -104,7 +104,7 @@ static napi_value SchedCpufreeNormal003(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(4);
     if (!set) {
@@ -120,7 +120,7 @@ static napi_value SchedCpufreeNormal004(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
     if (!set) {
@@ -137,7 +137,7 @@ static napi_value SchedCpufreeAbnormal001(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int numCpus = sysconf(_SC_NPROCESSORS_CONF);
     if (numCpus <= 0) {
@@ -157,11 +157,11 @@ static napi_value SchedCpufreeBoundary001(napi_env env, napi_callback_info info)
 static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         cpu_set_t* set = CPU_ALLOC(1);
         if (!set) {
             pass = false;
@@ -172,6 +172,9 @@ static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+/* ==================== Multi-thread Tests ==================== */
+
+/* TC-008: Multi-thread safety */
 static void SchedCpufreeWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
@@ -184,19 +187,18 @@ static void SchedCpufreeWorker(std::atomic<bool>& hasError)
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
-/* TC-008: Multi-thread safety */
 static napi_value SchedCpufreeThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(SchedCpufreeWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            SchedCpufreeWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

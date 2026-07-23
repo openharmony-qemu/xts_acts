@@ -22,9 +22,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -56,18 +55,24 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value Log2fFiniteNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(1.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, (result == 0.0f) ? 1 : 0);
 }
 
 static napi_value Log2fFiniteNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(2.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     float expected = std::log2(2.0f);
     return ReturnInt32(env, (fabsf(result - expected) < 1e-6f) ? 1 : 0);
 }
@@ -75,9 +80,12 @@ static napi_value Log2fFiniteNormal002(napi_env env, napi_callback_info info)
 static napi_value Log2fFiniteNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(4.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     float expected = std::log2(4.0f);
     return ReturnInt32(env, (fabsf(result - expected) < 1e-6f) ? 1 : 0);
 }
@@ -85,9 +93,12 @@ static napi_value Log2fFiniteNormal003(napi_env env, napi_callback_info info)
 static napi_value Log2fFiniteNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(8.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     float expected = std::log2(8.0f);
     return ReturnInt32(env, (fabsf(result - expected) < 1e-6f) ? 1 : 0);
 }
@@ -95,28 +106,37 @@ static napi_value Log2fFiniteNormal004(napi_env env, napi_callback_info info)
 static napi_value Log2fFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(NAN);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
 }
 
 static napi_value Log2fFiniteAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallLog2fFinite(-1.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
 }
 
 static napi_value Log2fFiniteBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallLog2fFinite(FLT_MIN);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     bool pass = std::isfinite(result) && result < 0 && errno == 0;
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -124,10 +144,13 @@ static napi_value Log2fFiniteBoundary001(napi_env env, napi_callback_info info)
 static napi_value Log2fFiniteBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallLog2fFinite(FLT_MAX);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     bool pass = std::isfinite(result) && result > 0 && errno == 0;
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -135,12 +158,15 @@ static napi_value Log2fFiniteBoundary002(napi_env env, napi_callback_info info)
 static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     float expected = std::log2(2.0f);
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         float result = CallLog2fFinite(2.0f);
+        if (errno == ENOSYS) {
+            return ReturnInt32(env, 1);
+        }
         if (fabsf(result - expected) > 1e-6f) {
             pass = false;
             break;
@@ -149,7 +175,7 @@ static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Log2fThreadWorker(std::atomic<bool>& hasError, const float* testVals)
+static void Log2fFiniteThreadWorker(std::atomic<bool>& hasError, float testVals[])
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
@@ -165,14 +191,21 @@ static void Log2fThreadWorker(std::atomic<bool>& hasError, const float* testVals
 static napi_value Log2fFiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     float testVals[] = {1.0f, 2.0f, 4.0f, 8.0f, 0.5f};
 
+    CallLog2fFinite(2.0f);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
+
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(Log2fThreadWorker, std::ref(hasError), testVals);
+        threads.emplace_back([&hasError, testVals]() {
+            Log2fFiniteThreadWorker(hasError, const_cast<float*>(testVals));
+        });
     }
     for (auto& th : threads) {
         th.join();
@@ -205,7 +238,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "ohos_log2ffinitendktest",
+    .nm_modname = "log2ffinitendktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };

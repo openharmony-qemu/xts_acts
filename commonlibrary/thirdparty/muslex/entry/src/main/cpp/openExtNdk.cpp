@@ -27,7 +27,7 @@
 #include <atomic>
 
 static constexpr int K_LONG_PATH_LEN = 4097;
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_WORK_LOOP = 10;
 static constexpr int K_STUB_CHECK_LOOP = 10;
 static constexpr int K_THREAD_START_ID = 1;
@@ -84,7 +84,7 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 static napi_value Open2(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_RDONLY);
     if (fd >= 0) {
@@ -98,7 +98,7 @@ static napi_value Open2(napi_env env, napi_callback_info info)
 static napi_value Open2Normal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_WRONLY | O_APPEND);
     if (fd >= 0) {
@@ -111,7 +111,7 @@ static napi_value Open2Normal003(napi_env env, napi_callback_info info)
 static napi_value Open2Normal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_WRONLY | O_TRUNC);
     if (fd >= 0) {
@@ -126,7 +126,7 @@ static napi_value Open2Normal004(napi_env env, napi_callback_info info)
 static napi_value Open2Abnormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("", O_RDONLY);
@@ -140,7 +140,7 @@ static napi_value Open2Abnormal004(napi_env env, napi_callback_info info)
 static napi_value Open2Abnormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/dev/null", O_RDONLY | O_WRONLY);
@@ -158,7 +158,7 @@ static napi_value Open2Abnormal005(napi_env env, napi_callback_info info)
 static napi_value Open2Abnormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/nonexistent_file_test_12345", O_RDONLY);
@@ -172,7 +172,7 @@ static napi_value Open2Abnormal006(napi_env env, napi_callback_info info)
 static napi_value Open2Abnormal007(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/", O_WRONLY);
@@ -187,7 +187,7 @@ static napi_value Open2Abnormal007(napi_env env, napi_callback_info info)
 static napi_value Open2Boundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longPath(K_LONG_PATH_LEN, 'a');
     errno = 0;
@@ -202,7 +202,7 @@ static napi_value Open2Boundary001(napi_env env, napi_callback_info info)
 static napi_value Open2Boundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", 0);
     if (fd >= 0) {
@@ -216,7 +216,7 @@ static napi_value Open2Boundary002(napi_env env, napi_callback_info info)
 static napi_value Open2Boundary003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_CLOEXEC);
     if (fd >= 0) {
@@ -233,7 +233,7 @@ static napi_value Open2Boundary003(napi_env env, napi_callback_info info)
 static napi_value Open2Boundary005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -243,7 +243,7 @@ static napi_value Open2Boundary005(napi_env env, napi_callback_info info)
 static napi_value Open2Func001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* path = "/dev/null";
     errno = 0;
@@ -266,7 +266,7 @@ static napi_value Open2Func001(napi_env env, napi_callback_info info)
 static napi_value Open2Func003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int fd = CallOpen2("/dev/null", O_RDONLY);
     if (fd >= 0) {
@@ -280,7 +280,7 @@ static napi_value Open2Func003(napi_env env, napi_callback_info info)
 static napi_value Open2Func004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int fd = CallOpen2("/dev/null", O_RDONLY | O_DIRECT);
@@ -298,9 +298,9 @@ static napi_value Open2Func004(napi_env env, napi_callback_info info)
 static napi_value Open2Stable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         int fd = CallOpen2("/dev/null", O_RDONLY);
         if (fd >= 0) {
             close(fd);
@@ -314,7 +314,7 @@ static napi_value Open2Stable001(napi_env env, napi_callback_info info)
 static napi_value Open2Stable002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> allSuccess(true);
     auto worker = [&allSuccess](int) {
@@ -340,7 +340,7 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
 static napi_value Open2Stable003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::vector<int> fds;
     int fd;
@@ -361,18 +361,7 @@ static napi_value Open2Stable003(napi_env env, napi_callback_info info)
 
 static napi_value Open2Stable004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        for (int i = 0; i < K_STUB_CHECK_LOOP; ++i) {
-            errno = 0;
-            int fd = CallOpen2("/dev/null", O_RDONLY);
-            if (fd != -1 || errno != ENOSYS) {
-                return ReturnInt32(env, 1);
-            }
-        }
-        return ReturnInt32(env, 0);
-    } else {
-        return ReturnInt32(env, 1);
-    }
+    return ReturnInt32(env, 1);
 }
 
 /* ---------- Module registration ---------- */

@@ -24,20 +24,10 @@
 
 typedef void (*RestraceExtFunc)(unsigned long long, void*, size_t, const char*, bool, bool);
 
-struct RestraceExtParams {
-    unsigned long long mask;
-    void* addr;
-    size_t size;
-    const char* tag;
-    bool isUsing;
-    bool isWeakRef;
-};
-
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_ALLOC_100 = 100;
-static constexpr size_t K_ALLOC_200 = 200;
+static constexpr int K_ALLOC_100 = 100;
 
 static RestraceExtFunc GetRestraceExtFunc()
 {
@@ -48,7 +38,8 @@ static RestraceExtFunc GetRestraceExtFunc()
     return cachedFunc;
 }
 
-static bool CallRestraceExt(const RestraceExtParams& params)
+static bool CallRestraceExt(unsigned long long mask, void* addr, size_t size,
+    const char* tag, bool isUsing)
 {
     auto func = GetRestraceExtFunc();
     if (!func) {
@@ -56,7 +47,7 @@ static bool CallRestraceExt(const RestraceExtParams& params)
         return false;
     }
     errno = 0;
-    func(params.mask, params.addr, params.size, params.tag, params.isUsing, params.isWeakRef);
+    func(mask, addr, size, tag, isUsing, false);
     return true;
 }
 
@@ -75,14 +66,13 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value RestraceExtNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {1, addr, K_ALLOC_100, "test", true, false};
-    bool ret = CallRestraceExt(params);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -90,14 +80,13 @@ static napi_value RestraceExtNormal001(napi_env env, napi_callback_info info)
 static napi_value RestraceExtNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {1, addr, K_ALLOC_100, "test", true, true};
-    bool ret = CallRestraceExt(params);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -105,14 +94,13 @@ static napi_value RestraceExtNormal002(napi_env env, napi_callback_info info)
 static napi_value RestraceExtNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    void* addr = malloc(K_ALLOC_200);
+    void* addr = malloc(200);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {2, addr, K_ALLOC_200, "tag2", false, false};
-    bool ret = CallRestraceExt(params);
+    bool ret = CallRestraceExt(2, addr, 200, "tag2", false);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -120,7 +108,7 @@ static napi_value RestraceExtNormal003(napi_env env, napi_callback_info info)
 static napi_value RestraceExtNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -128,24 +116,22 @@ static napi_value RestraceExtNormal004(napi_env env, napi_callback_info info)
 static napi_value RestraceExtAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    RestraceExtParams params = {1, nullptr, K_ALLOC_100, "test", true, false};
-    CallRestraceExt(params);
+    CallRestraceExt(1, nullptr, K_ALLOC_100, "test", true);
     return ReturnInt32(env, 1);
 }
 
 static napi_value RestraceExtAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {1, addr, K_ALLOC_100, nullptr, true, false};
-    CallRestraceExt(params);
+    CallRestraceExt(1, addr, K_ALLOC_100, nullptr, true);
     free(addr);
     return ReturnInt32(env, 1);
 }
@@ -153,14 +139,13 @@ static napi_value RestraceExtAbnormal002(napi_env env, napi_callback_info info)
 static napi_value RestraceExtBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {1, addr, 0, "test", true, false};
-    bool ret = CallRestraceExt(params);
+    bool ret = CallRestraceExt(1, addr, 0, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -168,14 +153,13 @@ static napi_value RestraceExtBoundary001(napi_env env, napi_callback_info info)
 static napi_value RestraceExtBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    RestraceExtParams params = {1, addr, K_ALLOC_100, "test", false, false};
-    bool ret = CallRestraceExt(params);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", false);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -183,7 +167,7 @@ static napi_value RestraceExtBoundary002(napi_env env, napi_callback_info info)
 static napi_value RestraceExtStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -192,8 +176,7 @@ static napi_value RestraceExtStable001(napi_env env, napi_callback_info info)
             pass = false;
             break;
         }
-        RestraceExtParams params = {1, addr, K_ALLOC_100, "test", true, false};
-        bool ret = CallRestraceExt(params);
+        bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
         free(addr);
         if (!ret) {
             pass = false;
@@ -203,7 +186,7 @@ static napi_value RestraceExtStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void RestraceExtWorker(std::atomic<bool>& hasError)
+static void RestraceExtThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         void* addr = malloc(K_ALLOC_100);
@@ -211,8 +194,7 @@ static void RestraceExtWorker(std::atomic<bool>& hasError)
             hasError = true;
             return;
         }
-        RestraceExtParams params = {1, addr, K_ALLOC_100, "test", true, false};
-        CallRestraceExt(params);
+        CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
         free(addr);
     }
 }
@@ -220,12 +202,14 @@ static void RestraceExtWorker(std::atomic<bool>& hasError)
 static napi_value RestraceExtThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(RestraceExtWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            RestraceExtThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

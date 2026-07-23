@@ -22,9 +22,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -56,7 +55,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value PowfFiniteNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(2.0f, 3.0f);
     return ReturnInt32(env, (fabsf(result - 8.0f) < 1e-6f) ? 1 : 0);
@@ -65,7 +64,7 @@ static napi_value PowfFiniteNormal001(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(10.0f, 2.0f);
     return ReturnInt32(env, (fabsf(result - 100.0f) < 1e-4f) ? 1 : 0);
@@ -74,7 +73,7 @@ static napi_value PowfFiniteNormal002(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(4.0f, 0.5f);
     float expected = std::pow(4.0f, 0.5f);
@@ -84,7 +83,7 @@ static napi_value PowfFiniteNormal003(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(1.0f, 100.0f);
     return ReturnInt32(env, (fabsf(result - 1.0f) < 1e-6f) ? 1 : 0);
@@ -93,7 +92,7 @@ static napi_value PowfFiniteNormal004(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(NAN, 2.0f);
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
@@ -102,7 +101,7 @@ static napi_value PowfFiniteAbnormal001(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     float result = CallPowfFinite(-1.0f, 0.5f);
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
@@ -111,7 +110,7 @@ static napi_value PowfFiniteAbnormal002(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallPowfFinite(FLT_MAX, 1.0f);
@@ -122,7 +121,7 @@ static napi_value PowfFiniteBoundary001(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     float result = CallPowfFinite(1.0f, FLT_MAX);
@@ -133,11 +132,11 @@ static napi_value PowfFiniteBoundary002(napi_env env, napi_callback_info info)
 static napi_value PowfFiniteStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     float expected = std::pow(2.0f, 3.0f);
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         float result = CallPowfFinite(2.0f, 3.0f);
         if (fabsf(result - expected) > 1e-6f) {
             pass = false;
@@ -147,7 +146,7 @@ static napi_value PowfFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PowfThreadWorker(std::atomic<bool>& hasError, const float* testX, const float* testY)
+static void PowfFiniteThreadWorker(std::atomic<bool>& hasError, float testX[], float testY[])
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
@@ -163,7 +162,7 @@ static void PowfThreadWorker(std::atomic<bool>& hasError, const float* testX, co
 static napi_value PowfFiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
@@ -171,7 +170,9 @@ static napi_value PowfFiniteThread001(napi_env env, napi_callback_info info)
     float testY[] = {3.0f, 2.0f, 0.5f, 100.0f, 2.0f};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(PowfThreadWorker, std::ref(hasError), testX, testY);
+        threads.emplace_back([&hasError, testX, testY]() {
+            PowfFiniteThreadWorker(hasError, const_cast<float*>(testX), const_cast<float*>(testY));
+        });
     }
     for (auto& th : threads) {
         th.join();

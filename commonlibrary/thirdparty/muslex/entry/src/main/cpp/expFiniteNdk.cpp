@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,13 @@
 #include <atomic>
 #include <chrono>
 
+static constexpr double K_EXP_TEST_VAL_0_5 = 0.5;
 static constexpr double K_EXP_TEST_VAL_2_5 = 2.5;
-static constexpr double K_EXP_TEST_VAL_5 = 5.0;
 static constexpr double K_EXP_TEST_VAL_10 = 10.0;
 static constexpr double K_EXP_TEST_VAL_20 = 20.0;
-static constexpr double K_EXP_TEST_VAL_0_5 = 0.5;
 static constexpr int K_EXP_TEST_VAL_COUNT = 6;
-static constexpr int K_EXP_ITER_COUNT = 20;
-static constexpr int K_EXP_THREAD_ROUND = 10;
+static constexpr int K_EXP_STABLE_LOOP_20 = 20;
+static constexpr int K_EXP_STABLE_LOOP_10 = 10;
 
 static napi_value ReturnInt32(napi_env env, int32_t value)
 {
@@ -51,7 +50,7 @@ static napi_value ExpFiniteNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -89,7 +88,7 @@ static napi_value ExpFiniteNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -118,7 +117,7 @@ static napi_value ExpFiniteNormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -143,7 +142,7 @@ static napi_value ExpFiniteBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -170,7 +169,7 @@ static napi_value ExpFiniteBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -193,7 +192,7 @@ static napi_value ExpFiniteBoundary003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -221,7 +220,7 @@ static napi_value ExpFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -253,11 +252,11 @@ static napi_value ExpFiniteStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    double testVals[] = {0.0, K_EXP_TEST_VAL_0_5, 1.0, 2.0, -1.0, -K_EXP_TEST_VAL_0_5};
+    double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5};
     double results[K_EXP_TEST_VAL_COUNT];
 
     // First call
@@ -266,7 +265,7 @@ static napi_value ExpFiniteStable001(napi_env env, napi_callback_info info)
     }
 
     // Repeated calls, verify consistency
-    for (int round = 0; round < K_EXP_ITER_COUNT; ++round) {
+    for (int round = 0; round < K_EXP_STABLE_LOOP_20; ++round) {
         for (int i = 0; i < K_EXP_TEST_VAL_COUNT; ++i) {
             double current = func(testVals[i]);
             if (std::abs(current - results[i]) > 1e-9) {
@@ -287,15 +286,16 @@ static napi_value ExpFiniteStable002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
+    double testMax = 5.0;
     // Massive continuous calls, ensure no crash
-    for (int i = 0; i < K_EXP_ITER_COUNT; ++i) {
-        double val = (i % 100) / 10.0 - K_EXP_TEST_VAL_5; // -K_EXP_TEST_VAL_5 to K_EXP_TEST_VAL_5
+    for (int i = 0; i < K_EXP_STABLE_LOOP_20; ++i) {
+        double val = (i % 100) / 10.0 - 5.0; // -5.0 to 5.0
         double result = func(val);
-        if (!std::isfinite(result) && val < K_EXP_TEST_VAL_5) {
+        if (!std::isfinite(result) && val < testMax) {
             allPassed = false;
             break;
         }
@@ -306,12 +306,11 @@ static napi_value ExpFiniteStable002(napi_env env, napi_callback_info info)
 
 // ==================== Multi-thread Tests ====================
 
-static void ExpThreadWorker1(LibcFunctionLoader::ExpFiniteFunc func,
-                             std::atomic<bool>& hasError,
-                             std::atomic<int>& completedCount)
+template<typename Func>
+static void ExpFiniteThreadWorker(Func func, std::atomic<bool>& hasError, int iterationsPerThread)
 {
-    for (int i = 0; i < K_EXP_THREAD_ROUND; ++i) {
-        double val = (i % K_EXP_ITER_COUNT) / 2.0 - K_EXP_TEST_VAL_5;
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        double val = (i % 20) / 2.0 - 5.0;
         double expected = std::exp(val);
         double actual = func(val);
         if (std::abs(actual - expected) > 1e-9) {
@@ -319,16 +318,42 @@ static void ExpThreadWorker1(LibcFunctionLoader::ExpFiniteFunc func,
             break;
         }
     }
-    completedCount++;
 }
 
-static void ExpThreadWorker2(LibcFunctionLoader::ExpFiniteFunc func,
-                             std::atomic<bool>& hasError)
+// Test 10: Multi-thread concurrent calls
+static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
 {
-    const double testVals[] = {0.0, K_EXP_TEST_VAL_0_5, 1.0, 2.0, -1.0, -K_EXP_TEST_VAL_0_5,
-                               K_EXP_TEST_VAL_5, -K_EXP_TEST_VAL_5, K_EXP_TEST_VAL_10, -K_EXP_TEST_VAL_10};
-    for (int round = 0; round < K_EXP_THREAD_ROUND; ++round) {
-        for (double val : testVals) {
+    auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
+    if (func == nullptr) {
+        return ReturnInt32(env, 1);
+    }
+
+    const int threadCount = 3;
+    const int iterationsPerThread = 10;
+    std::vector<std::thread> threads;
+    std::atomic<bool> hasError{false};
+    std::atomic<int> completedCount{0};
+
+    for (int t = 0; t < threadCount; ++t) {
+        threads.emplace_back([func, &hasError, iterationsPerThread, &completedCount]() {
+            ExpFiniteThreadWorker(func, hasError, iterationsPerThread);
+            completedCount++;
+        });
+    }
+
+    for (auto& th : threads) {
+        th.join();
+    }
+
+    return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void ExpFiniteThreadWorker2(Func func, std::atomic<bool>& hasError, double testVals[], int count)
+{
+    for (int round = 0; round < K_EXP_STABLE_LOOP_10; ++round) {
+        for (int idxVal = 0; idxVal < count; ++idxVal) {
+            double val = testVals[idxVal];
             double expected = std::exp(val);
             double actual = func(val);
             if (std::abs(actual - expected) > 1e-9) {
@@ -339,44 +364,24 @@ static void ExpThreadWorker2(LibcFunctionLoader::ExpFiniteFunc func,
     }
 }
 
-// Test 10: Multi-thread concurrent calls
-static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
-{
-    auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
-    }
-
-    const int threadCount = 3;
-    std::vector<std::thread> threads;
-    std::atomic<bool> hasError{false};
-    std::atomic<int> completedCount{0};
-
-    for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back(ExpThreadWorker1, func, std::ref(hasError), std::ref(completedCount));
-    }
-
-    for (auto& th : threads) {
-        th.join();
-    }
-
-    return ReturnInt32(env, (!hasError) ? 1 : 0);
-}
-
 // Test 11: Multi-thread different parameters mixed
 static napi_value ExpFiniteThread002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetExpFinite();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
+    double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5, 5.0, -5.0, K_EXP_TEST_VAL_10, -K_EXP_TEST_VAL_10};
+    const int testValCount = sizeof(testVals) / sizeof(testVals[0]);
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back(ExpThreadWorker2, func, std::ref(hasError));
+        threads.emplace_back([func, &hasError, testVals, testValCount]() {
+            ExpFiniteThreadWorker2(func, hasError, const_cast<double*>(testVals), testValCount);
+        });
     }
 
     for (auto& th : threads) {

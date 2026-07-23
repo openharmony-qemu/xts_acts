@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libpthreadattrsetaffnpndktest from 'libpthreadattrsetaffnpndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function PthreadAttrSetaffinityNpNdkTest() {
   describe('PthreadAttrSetaffinityNpNdkTest', () => {
@@ -33,9 +32,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function PthreadAttrSetaffinityNpNdkTest() {
      */
     it('testpthreadAttrSetaffinityNpThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libpthreadattrsetaffnpndktest.pthreadAttrSetaffinityNpThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

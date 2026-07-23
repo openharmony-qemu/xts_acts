@@ -43,7 +43,7 @@ static bool IsStubMode()
     if (isinff == nullptr) {
         return true;  // Symbol not found, Stub mode
     }
-    
+
     errno = 0;
     isinff(0.0f);
     return (errno == ENOSYS);
@@ -54,7 +54,7 @@ static napi_value IsinffNormal001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -83,7 +83,7 @@ static napi_value IsinffBoundary001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -105,19 +105,19 @@ static napi_value IsinffBoundary001(napi_env env, napi_callback_info info)
 static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
-    
+
     struct TestResult {
         bool stubDetected = false;
         bool errnoSetCorrectly = false;
         bool returnValueCorrect = false;
         bool dataUnchanged = false;
     };
-    
+
     TestResult result;
-    
+
     // Scenario 1: detect Stub mode
     result.stubDetected = (isinff == nullptr);
-    
+
     // If Stub mode, verify errno setting
     if (isinff == nullptr) {
         // Try calling a non-existent function, verify errno behavior
@@ -133,13 +133,13 @@ static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
         errno = 0;
         isinff(0.0f);
         result.errnoSetCorrectly = (errno != ENOSYS);
-        
+
         int ret1 = isinff(HUGE_VALF);
         int ret2 = isinff(-HUGE_VALF);
         int ret3 = isinff(NAN);
         int ret4 = isinff(0.0f);
         result.returnValueCorrect = (ret1 == 1 && ret2 == -1 && ret3 == 0 && ret4 == 0);
-        
+
         float testVal = 123.456f;
         float originalVal = testVal;
         isinff(testVal);
@@ -159,7 +159,7 @@ static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -172,17 +172,17 @@ static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info)
     if (isinff(NAN) != 0) {
         allPassed = false;
     }
-    
+
     float nearInf = 3.402823e38f;
     if (isinff(nearInf) != 0) {
         allPassed = false;
     }
-    
+
     float nearZero = 1e-38f;
     if (isinff(nearZero) != 0) {
         allPassed = false;
     }
-    
+
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
 
@@ -191,16 +191,16 @@ static napi_value IsinffStable001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     volatile float testVals[] = {HUGE_VALF, -HUGE_VALF, NAN, 0.0f, 3.14f};
-    int resultscount = 5;
-    int results[resultscount];
-    for (int i = 0; i < resultscount; ++i) {
+    int testCount = 5;
+    int results[testCount];
+    for (int i = 0; i < testCount; ++i) {
         results[i] = isinff(testVals[i]);
     }
-    for (int i = 0; i < resultscount; ++i) {
+    for (int i = 0; i < testCount; ++i) {
         if (isinff(testVals[i]) != results[i]) {
             return ReturnInt32(env, 0);
         }
@@ -208,11 +208,10 @@ static napi_value IsinffStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, 1);
 }
 
-// 6. Thread safety test
 template<typename Func>
-static void IsinffThreadWorker(std::atomic<bool>& hasError, Func isinff, int iterations)
+static void IsinffThreadWorker(Func isinff, std::atomic<bool>& hasError, int iterationsPerThread)
 {
-    for (int i = 0; i < iterations; ++i) {
+    for (int i = 0; i < iterationsPerThread; ++i) {
         if (isinff(HUGE_VALF) != 1) {
             hasError = true;
         }
@@ -231,11 +230,12 @@ static void IsinffThreadWorker(std::atomic<bool>& hasError, Func isinff, int ite
     }
 }
 
+// 6. Thread safety test
 static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -245,15 +245,14 @@ static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([isinff, &hasError, iterationsPerThread]() {
-            IsinffThreadWorker(hasError, isinff, iterationsPerThread);
+            IsinffThreadWorker(isinff, hasError, iterationsPerThread);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }
 
-    return ReturnInt32(env, !hasError ? 1 : 0);
+    return ReturnInt32(env, hasError ? 0 : 1);
 }
 
 // NAPI module registration

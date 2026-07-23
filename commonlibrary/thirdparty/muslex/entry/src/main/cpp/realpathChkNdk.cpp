@@ -83,7 +83,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value RealpathChkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk("/", buf, sizeof(buf));
@@ -94,7 +94,7 @@ static napi_value RealpathChkNormal001(napi_env env, napi_callback_info info)
 static napi_value RealpathChkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk("/dev/null", buf, sizeof(buf));
@@ -105,7 +105,7 @@ static napi_value RealpathChkNormal002(napi_env env, napi_callback_info info)
 static napi_value RealpathChkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk(".", buf, sizeof(buf));
@@ -116,7 +116,7 @@ static napi_value RealpathChkNormal003(napi_env env, napi_callback_info info)
 static napi_value RealpathChkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk("..", buf, sizeof(buf));
@@ -127,7 +127,7 @@ static napi_value RealpathChkNormal004(napi_env env, napi_callback_info info)
 static napi_value RealpathChkNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk("/proc/self/exe", buf, sizeof(buf));
@@ -141,11 +141,10 @@ static napi_value RealpathChkNormal005(napi_env env, napi_callback_info info)
 static napi_value RealpathChkAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    size_t bufSz = 10;
-    char buf[bufSz];
-    bool aborted = CheckAbortRealpath("/", buf, bufSz);
+    char buf[10];
+    bool aborted = CheckAbortRealpath("/", buf, sizeof(buf));
     return ReturnInt32(env, aborted ? 1 : 0);
 }
 
@@ -153,7 +152,7 @@ static napi_value RealpathChkAbnormal001(napi_env env, napi_callback_info info)
 static napi_value RealpathChkAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool aborted = CheckAbortRealpath("/", nullptr, 0);
     return ReturnInt32(env, aborted ? 1 : 0);
@@ -163,7 +162,7 @@ static napi_value RealpathChkAbnormal002(napi_env env, napi_callback_info info)
 static napi_value RealpathChkAbnormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     errno = 0;
@@ -177,7 +176,7 @@ static napi_value RealpathChkAbnormal003(napi_env env, napi_callback_info info)
 static napi_value RealpathChkBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     char* result = CallRealpathChk("/", buf, sizeof(buf));
@@ -188,7 +187,7 @@ static napi_value RealpathChkBoundary001(napi_env env, napi_callback_info info)
 static napi_value RealpathChkBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char buf[PATH_MAX];
     // Use current directory to construct long path
@@ -202,11 +201,11 @@ static napi_value RealpathChkBoundary002(napi_env env, napi_callback_info info)
 static napi_value RealpathChkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         char buf[PATH_MAX];
         char* result = CallRealpathChk("/", buf, sizeof(buf));
         if (result == nullptr || strcmp(result, "/") != 0) {
@@ -217,7 +216,9 @@ static napi_value RealpathChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void RealpathChkWorker(std::atomic<bool>& hasError, const char* paths[])
+/* ==================== Multi-thread Tests ==================== */
+
+static void RealpathChkThreadWorker(std::atomic<bool>& hasError, const char* const* paths)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 4;
@@ -230,20 +231,20 @@ static void RealpathChkWorker(std::atomic<bool>& hasError, const char* paths[])
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-012: Multi-thread safety */
 static napi_value RealpathChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* paths[] = {"/", "/dev/null", ".", ".."};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(RealpathChkWorker, std::ref(hasError), paths);
+        threads.emplace_back([&hasError, paths]() {
+            RealpathChkThreadWorker(hasError, paths);
+        });
     }
     for (auto& th : threads) {
         th.join();

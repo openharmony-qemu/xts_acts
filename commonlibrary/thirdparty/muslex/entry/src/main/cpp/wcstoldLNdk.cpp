@@ -25,13 +25,13 @@
 #include <algorithm>
 #include <sstream>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
-static constexpr int K_STABLE_LOOP1000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr int K_STABLE_LOOP_1000 = 20;
 static constexpr int K_THREAD_MODULO = 3;
 static constexpr int K_ENOSYS_CHECK_LOOP = 10;
 static constexpr size_t K_LONG_STR_PREFIX_LEN = 200;
-static constexpr int K_BUF_SIZE32 = 32;
-static constexpr int K_BUF_SIZE64 = 64;
+static constexpr int K_BUF_SIZE_32 = 32;
+static constexpr int K_BUF_SIZE_64 = 64;
 static constexpr int K_THREAD_START_ID = 1;
 static constexpr int K_THREAD_COUNT = 3;
 
@@ -144,7 +144,7 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 static napi_value WcstoldlNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -158,7 +158,7 @@ static napi_value WcstoldlNormal001(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -172,7 +172,7 @@ static napi_value WcstoldlNormal002(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -186,7 +186,7 @@ static napi_value WcstoldlNormal003(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -200,7 +200,7 @@ static napi_value WcstoldlNormal004(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -214,7 +214,7 @@ static napi_value WcstoldlNormal005(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -228,7 +228,7 @@ static napi_value WcstoldlNormal006(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal007(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ok = CheckWcstoldl(L"0X1.8P+2tail", nullptr);
     return ReturnInt32(env, ok ? 1 : 0);
@@ -237,7 +237,7 @@ static napi_value WcstoldlNormal007(napi_env env, napi_callback_info info)
 static napi_value WcstoldlNormal008(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCtypeOnlyCLocale();
     if (!loc) {
@@ -252,7 +252,7 @@ static napi_value WcstoldlNormal008(napi_env env, napi_callback_info info)
 static napi_value WcstoldlAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -267,7 +267,7 @@ static napi_value WcstoldlAbnormal002(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -279,10 +279,7 @@ static napi_value WcstoldlBoundary001(napi_env env, napi_callback_info info)
     int e = errno;
     freelocale(loc);
     if (e == ENOSYS) {
-        if (val == 0.0L && end == nullptr) {
-            return ReturnInt32(env, 0);
-        }
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     } else {
         if (val == 0.0L && end && *end == L'\0') {
             return ReturnInt32(env, 1);
@@ -294,7 +291,7 @@ static napi_value WcstoldlBoundary001(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -308,7 +305,7 @@ static napi_value WcstoldlBoundary002(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -322,7 +319,7 @@ static napi_value WcstoldlBoundary003(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -336,7 +333,7 @@ static napi_value WcstoldlBoundary004(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -350,7 +347,7 @@ static napi_value WcstoldlBoundary005(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -364,7 +361,7 @@ static napi_value WcstoldlBoundary006(napi_env env, napi_callback_info info)
 static napi_value WcstoldlBoundary007(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -379,7 +376,7 @@ static napi_value WcstoldlBoundary007(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -404,7 +401,7 @@ static napi_value WcstoldlFunc001(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t frLoc = OpenFrenchLocale();
     if (!frLoc) {
@@ -423,7 +420,7 @@ static napi_value WcstoldlFunc002(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t frLoc = OpenFrenchLocale();
     if (!frLoc) {
@@ -442,7 +439,7 @@ static napi_value WcstoldlFunc003(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -466,7 +463,7 @@ static napi_value WcstoldlFunc004(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -479,7 +476,7 @@ static napi_value WcstoldlFunc005(napi_env env, napi_callback_info info)
     int e = errno;
     freelocale(loc);
     if (e == ENOSYS) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     if (val > 4.5L && val < 4.6L && end && *end == L't') {
         return ReturnInt32(env, 1);
@@ -490,7 +487,7 @@ static napi_value WcstoldlFunc005(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -500,8 +497,7 @@ static napi_value WcstoldlFunc006(napi_env env, napi_callback_info info)
     wchar_t* end;
     long double nz = CallWcstoldl(L"-0.0", &end, loc);
     if (errno == ENOSYS) {
-        freelocale(loc);
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     if (!std::signbit(nz)) {
         pass = false;
@@ -517,7 +513,7 @@ static napi_value WcstoldlFunc006(napi_env env, napi_callback_info info)
 static napi_value WcstoldlFunc007(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     locale_t loc = OpenCLocale();
@@ -572,18 +568,18 @@ static napi_value WcstoldlFunc007(napi_env env, napi_callback_info info)
 static napi_value WcstoldlStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
-        wchar_t buf[K_BUF_SIZE32];
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
+        wchar_t buf[K_BUF_SIZE_32];
         std::wostringstream oss;
         oss << i << L".123";
         std::wstring str = oss.str();
-        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE32)), buf);
+        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE_32)), buf);
         CallWcstoldl(buf, nullptr, loc);
     }
     freelocale(loc);
@@ -593,18 +589,18 @@ static napi_value WcstoldlStable001(napi_env env, napi_callback_info info)
 static napi_value WcstoldlStable002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return ReturnInt32(env, 0);
     }
     auto worker = [loc](int id) {
-        wchar_t buf[K_BUF_SIZE64];
+        wchar_t buf[K_BUF_SIZE_64];
         std::wostringstream oss;
         oss << id << L".456e" << (id % K_THREAD_MODULO);
         std::wstring str = oss.str();
-        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE64)), buf);
+        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE_64)), buf);
         CallWcstoldl(buf, nullptr, loc);
     };
     std::vector<std::thread> threads;
@@ -621,7 +617,7 @@ static napi_value WcstoldlStable002(napi_env env, napi_callback_info info)
 static napi_value WcstoldlStable003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::wstring longStr(K_LONG_STR_PREFIX_LEN, L'X');
     longStr += L"123.45";
@@ -642,9 +638,9 @@ static napi_value WcstoldlStable003(napi_env env, napi_callback_info info)
 static napi_value WcstoldlStable004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_STABLE_LOOP1000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_1000; ++i) {
         locale_t loc = newlocale(LC_ALL_MASK, "C", nullptr);
         if (!loc) {
             return ReturnInt32(env, 0);
@@ -659,7 +655,7 @@ static napi_value WcstoldlStable004(napi_env env, napi_callback_info info)
 static napi_value WcstoldlStable005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int enosysCount = 0;
     for (int i = 0; i < K_ENOSYS_CHECK_LOOP; ++i) {
@@ -670,7 +666,7 @@ static napi_value WcstoldlStable005(napi_env env, napi_callback_info info)
         }
     }
     if (enosysCount == K_ENOSYS_CHECK_LOOP) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     if (enosysCount == 0) {
         return ReturnInt32(env, 1);

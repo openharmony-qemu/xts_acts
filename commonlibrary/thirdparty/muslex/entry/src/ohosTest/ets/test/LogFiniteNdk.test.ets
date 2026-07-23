@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import ohos_logfinitendktest from 'libohos_logfinitendktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function LogFiniteNdkTest() {
   describe('LogFiniteNdkTest', () => {
@@ -33,7 +32,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteNormal001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -47,7 +46,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteNormal002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -61,7 +60,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteNormal003();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -75,9 +74,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && (resNum == 0 || resNum == 1));
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -91,7 +88,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteAbnormal001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -105,7 +102,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteAbnormal002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -119,7 +116,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteBoundary001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -133,7 +130,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteBoundary002();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -147,7 +144,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteStable001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,7 +158,7 @@ export default function LogFiniteNdkTest() {
      */
     it('testLogFiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = ohos_logfinitendktest.logFiniteThread001();
-      expect(resNum >= 0).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

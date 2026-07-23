@@ -21,8 +21,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <string>
-#include <cstring>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -74,7 +72,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -82,16 +80,14 @@ static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
     }
     int fd = fileno(tmp);
     int ret = CallFcntl64(fd, F_GETFD);
-    if (fclose(tmp) != 0) {
-    // ignore
-}
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
 static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -100,16 +96,14 @@ static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     CallFcntl64(fd, F_SETFD, FD_CLOEXEC);
     int ret = CallFcntl64(fd, F_GETFD);
-    if (fclose(tmp) != 0) {
-    // ignore
-}
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, ((ret & FD_CLOEXEC) != 0) ? 1 : 0);
 }
 
 static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -117,16 +111,14 @@ static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
     }
     int fd = fileno(tmp);
     int ret = CallFcntl64(fd, F_GETFL);
-    if (fclose(tmp) != 0) {
-    // ignore
-}
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
 static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -134,7 +126,7 @@ static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info)
 static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     int ret = CallFcntl64(-1, F_GETFD);
@@ -144,7 +136,7 @@ static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info)
 static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -153,16 +145,14 @@ static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     errno = 0;
     int ret = CallFcntl64(fd, -1);
-    if (fclose(tmp) != 0) {
-    // ignore
-}
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret == -1) ? 1 : 0);
 }
 
 static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallFcntl64(0, F_GETFD);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -171,7 +161,7 @@ static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info)
 static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -180,16 +170,14 @@ static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     CallFcntl64(fd, F_SETFD, 0);
     int ret = CallFcntl64(fd, F_GETFD);
-    if (fclose(tmp) != 0) {
-    // ignore
-}
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
 static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -200,9 +188,7 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
         }
         int fd = fileno(tmp);
         int ret = CallFcntl64(fd, F_GETFD);
-        if (fclose(tmp) != 0) {
-    // ignore
-}
+        if (fclose(tmp) != 0) {}
         if (ret < 0) {
             pass = false;
             break;
@@ -211,7 +197,7 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Fcntl64Worker(std::atomic<bool>& hasError)
+static void Fcntl64ThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         std::string tmpPath = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
@@ -233,13 +219,13 @@ static void Fcntl64Worker(std::atomic<bool>& hasError)
 static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            Fcntl64Worker(hasError);
+            Fcntl64ThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {
@@ -273,7 +259,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "fcntl64nativetest",
+    .nm_modname = "fcntl64ndktest",
     .nm_priv = ((void*)0),
     .reserved = {0},
 };

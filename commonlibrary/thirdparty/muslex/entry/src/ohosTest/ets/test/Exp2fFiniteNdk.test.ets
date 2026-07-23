@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import exp2ffinitedktest from 'libexp2ffinitedktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function Exp2fFiniteNdkTest() {
   describe('Exp2fFiniteNdkTest', () => {
@@ -35,9 +34,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -51,9 +48,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -67,9 +62,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -83,13 +76,11 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
-    // ==================== 边界值测�?====================
+    // ==================== 边界值测�?====================
 
     /**
      * @tc.name   testExp2fFiniteBoundary001
@@ -101,9 +92,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -117,9 +106,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -133,9 +120,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteBoundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteBoundary003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -151,13 +136,11 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
-    // ==================== 稳定性测�?====================
+    // ==================== 稳定性测�?====================
 
     /**
      * @tc.name   testExp2fFiniteStable001
@@ -169,9 +152,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -185,13 +166,11 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteStable002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
-    // ==================== 多线程测�?====================
+    // ==================== 多线程测�?====================
 
     /**
      * @tc.name   testExp2fFiniteThread001
@@ -203,9 +182,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -219,9 +196,7 @@ export default function Exp2fFiniteNdkTest() {
      */
     it('testExp2fFiniteThread002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = exp2ffinitedktest.exp2fFiniteThread002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

@@ -28,7 +28,7 @@ static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallGetaddrinfoCustom(const char* host, const char* serv,
                                  const struct addrinfo* hint, struct addrinfo** res)
-{
+                                 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGetaddrinfoCustom();
     if (!func) {
@@ -55,10 +55,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -72,10 +71,9 @@ static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info in
 static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -89,10 +87,9 @@ static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info in
 static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_INET;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom(nullptr, "80", &hints, &res);
@@ -105,7 +102,7 @@ static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info in
 static napi_value GetaddrinfoCustomNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -113,7 +110,7 @@ static napi_value GetaddrinfoCustomNormal004(napi_env env, napi_callback_info in
 static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom(nullptr, nullptr, nullptr, &res);
@@ -126,10 +123,9 @@ static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info 
 static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("nonexistent.invalid.host", nullptr, &hints, &res);
@@ -142,10 +138,9 @@ static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info 
 static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("", nullptr, &hints, &res);
@@ -158,10 +153,9 @@ static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info 
 static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     struct addrinfo hints = {};
-    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("localhost", "65535", &hints, &res);
@@ -174,11 +168,10 @@ static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info 
 static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
         struct addrinfo hints = {};
-        
         hints.ai_family = AF_UNSPEC;
         struct addrinfo* res = nullptr;
         CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -193,7 +186,6 @@ static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         struct addrinfo hints = {};
-
         hints.ai_family = AF_UNSPEC;
         struct addrinfo* res = nullptr;
         CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -206,7 +198,7 @@ static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
 static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;

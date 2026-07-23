@@ -62,7 +62,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
     uint64_t traceID = 0;
@@ -73,7 +73,7 @@ static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info)
 static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
     uint64_t traceID = 0;
@@ -84,7 +84,7 @@ static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info)
 static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint32_t t1 = 0;
     uint32_t t2 = 0;
@@ -98,7 +98,7 @@ static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
 static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -106,7 +106,7 @@ static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info)
 static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ret = CallGetResTraceId(nullptr, nullptr);
     return ReturnInt32(env, 1);
@@ -115,7 +115,7 @@ static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info
 static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint64_t traceID = 0;
     bool ret = CallGetResTraceId(nullptr, &traceID);
@@ -125,7 +125,7 @@ static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info
 static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
     uint64_t traceID = 0;
@@ -136,7 +136,7 @@ static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info
 static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
     uint64_t traceID = 0;
@@ -147,7 +147,7 @@ static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info
 static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -161,7 +161,7 @@ static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
 static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;

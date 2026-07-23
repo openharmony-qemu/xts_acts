@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import hilogbaseislogglendktest from 'libhilogbaseislogglendktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function HilogBaseIsLoggableNdkTest() {
   describe('HilogBaseIsLoggableNdkTest', () => {
@@ -33,9 +32,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function HilogBaseIsLoggableNdkTest() {
      */
     it('testHilogBaseIsLoggableThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });
