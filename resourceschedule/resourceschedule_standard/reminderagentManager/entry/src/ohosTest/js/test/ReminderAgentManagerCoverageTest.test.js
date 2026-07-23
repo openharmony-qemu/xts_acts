@@ -1834,7 +1834,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 })
             } catch (error) {
                 console.info("publishReminder_callback_emptyWant_001 publishReminder error.code:" + error.code);
-                expect(error.code).assertEqual(401);
+                expect(error.code  == 401).assertTrue();
                 done(); 
             }
         })

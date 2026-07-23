@@ -1162,15 +1162,15 @@ export default function WorkSchedulerMgrNewTest() {
         })
 
         /**
-         * @tc.name   testStartWorkNEW034
+         * @tc.name   testStopWorkNEW034
          * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3400
          * @tc.desc   BatteryStatus and storageRequest is out enum range.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("testStartWorkNEW034", Level.LEVEL0, async function (done) {
-            console.info('----------------------testStartWorkNEW034---------------------------');
+        it("testStopWorkNEW034", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStopWorkNEW034---------------------------');
             workScheduler.stopAndClearWorks();
             let workInfo = {
                 workId: 1,
@@ -1182,7 +1182,7 @@ export default function WorkSchedulerMgrNewTest() {
             try{
                 workScheduler.stopWork(workInfo);
             }catch(error){
-                console.info("testStartWorkNEW034 ----------------error: " + error.code);
+                console.info("testStopWorkNEW034 ----------------error: " + error.code);
                 expect(error.code).assertEqual("401");
                 done();
             }
