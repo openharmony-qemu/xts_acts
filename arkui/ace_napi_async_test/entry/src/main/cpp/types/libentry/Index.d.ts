@@ -153,9 +153,16 @@ export const testJsIsPromiseVariants: (promises?: Object, nonPromises?: Object) 
 
 export const NapiCreateSendableObject: () => lang.ISendable;
 export const NapiCreateSendableArray: () => lang.ISendable;
-export const NapiCreateSendableArrayWithLength: () => lang.ISendable;
-export const NapiCreateSendableArrayBuffer: () => lang.ISendable;
+export const NapiCreateSendableArrayWithLength: (length?: number) => lang.ISendable;
+export const NapiCreateSendableArrayBuffer: (size?: number) => lang.ISendable;
 export const NapiCreateSendableTypedArray: () => lang.ISendable;
 export const NapiDefineSendableClass: () => lang.ISendable;
 
+export const NapiIsSendable: (obj: object) => boolean;
+export const NapiWrapSendable: (obj: object, data: string) => lang.ISendable;
+export const NapiUnwrapSendable: (obj: object) => string;
+export const NapiRemoveWrapSendable: (obj: object) => string;
+export const NapiCreateStrongSendableRef: () => boolean;
+export const createSendableFloat64ArrayTest: () => boolean;
+export const NapiDelStrongSendableRef: () => boolean;
 

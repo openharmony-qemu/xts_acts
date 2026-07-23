@@ -7140,6 +7140,148 @@ static napi_value NapiDefineSendableClass(napi_env env, napi_callback_info)
     return sendableClass;
 }
 
+static napi_value NapiIsSendable(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    bool isSendable = false;
+    napi_is_sendable(env, args[0], &isSendable);
+    napi_value result;
+    napi_get_boolean(env, isSendable, &result);
+    return result;
+}
+
+static napi_value NapiWrapSendable(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    static size_t length = 256;
+    char* data = new char[length];
+    size_t size = 0;
+    napi_get_value_string_utf8(env, args[1], data, length - 1, &size);
+
+    napi_wrap_sendable(
+        env, args[0], (void*)data,
+        [](napi_env env, void* data, void* hint) {
+            char* tmp = reinterpret_cast<char*>(data);
+            delete[] tmp;
+        },
+        nullptr);
+    return args[0];
+}
+
+static napi_value NapiUnwrapSendable(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char* data = nullptr;
+    napi_unwrap_sendable(env, args[0], (void**)&data);
+
+    napi_value result = nullptr;
+    napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NapiRemoveWrapSendable(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char* data = nullptr;
+    napi_remove_wrap_sendable(env, args[0], (void**)&data);
+
+    napi_value result = nullptr;
+    napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value createSendableFloat64ArrayTest(napi_env env, napi_callback_info info)
+{
+    static size_t length = 6;
+    static size_t offset = 0;
+
+    napi_value arraybuffer = nullptr;
+    void* arrayBufferPtr = nullptr;
+    size_t arrayBufferSize = 1024;
+    napi_create_sendable_arraybuffer(env, arrayBufferSize, &arrayBufferPtr, &arraybuffer);
+    if (!CheckNapiAssertion(env, arraybuffer != nullptr, "success create_sendable_arrayBuffer")) { return nullptr; }
+
+    napi_value result = nullptr;
+    napi_status status = napi_create_sendable_typedarray(env, napi_float64_array, length,
+                                                         arraybuffer, offset, &result);
+    bool bRet = (status == napi_invalid_arg);
+    napi_value retValue;
+    napi_create_int32(env, bRet, &retValue);
+    return retValue;
+}
+
+static napi_value NapiCreateStrongSendableRef(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_value sObj = nullptr;
+    napi_sendable_ref ref = nullptr;
+
+    napi_status status = napi_create_array(env, &obj);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_create_array")) { return nullptr; }
+    status = napi_create_sendable_array(env, &sObj);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_create_sendable_array")) { return nullptr; }
+
+    status = napi_create_strong_sendable_reference(nullptr, sObj, &ref);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "call napi_create_sendable_array p1")) { return nullptr; }
+    status = napi_create_strong_sendable_reference(env, nullptr, &ref);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "call napi_create_sendable_array p2")) { return nullptr; }
+
+    status = napi_create_strong_sendable_reference(env, sObj, nullptr);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "call napi_create_sendable_array p3")) { return nullptr; }
+
+    status = napi_create_strong_sendable_reference(env, obj, &ref);
+    if (!CheckNapiAssertion(env, status == napi_object_expected,
+        "call napi_create_sendable_array p4")) { return nullptr; }
+    if (!CheckNapiAssertion(env, ref == nullptr, "call napi_create_sendable_array p5")) { return nullptr; }
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiDelStrongSendableRef(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_value sObj = nullptr;
+    napi_sendable_ref ref = nullptr;
+
+    napi_status status = napi_create_array(env, &obj);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_create_array")) { return nullptr; }
+    status = napi_create_sendable_array(env, &sObj);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_create_sendable_array")) { return nullptr; }
+
+    status = napi_create_strong_sendable_reference(env, sObj, &ref);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_create_strong_sendable_reference")) { return nullptr; }
+    if (!CheckNapiAssertion(env, ref != nullptr, "call napi_create_strong_sendable_reference ref")) { return nullptr; }
+
+    status = napi_delete_strong_sendable_reference(nullptr, ref);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg,
+        "call napi_delete_strong_sendable_reference p1")) { return nullptr; }
+    status = napi_delete_strong_sendable_reference(env, nullptr);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg,
+        "call napi_delete_strong_sendable_reference p2")) { return nullptr; }
+
+    status = napi_delete_strong_sendable_reference(env, ref);
+    if (!CheckNapiAssertion(env, status == napi_ok, "call napi_delete_strong_sendable_reference")) { return nullptr; }
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -7432,6 +7574,13 @@ static napi_value Init(napi_env env, napi_value exports)
         DeclareNapiFunction("NapiCreateSendableArrayBuffer", NapiCreateSendableArrayBuffer),
         DeclareNapiFunction("NapiCreateSendableTypedArray", NapiCreateSendableTypedArray),
         DeclareNapiFunction("NapiDefineSendableClass", NapiDefineSendableClass),
+        DeclareNapiFunction("NapiIsSendable", NapiIsSendable),
+        DeclareNapiFunction("NapiWrapSendable", NapiWrapSendable),
+        DeclareNapiFunction("NapiUnwrapSendable", NapiUnwrapSendable),
+        DeclareNapiFunction("NapiRemoveWrapSendable", NapiRemoveWrapSendable),
+        DeclareNapiFunction("createSendableFloat64ArrayTest", createSendableFloat64ArrayTest),
+        DeclareNapiFunction("NapiCreateStrongSendableRef", NapiCreateStrongSendableRef),
+        DeclareNapiFunction("NapiDelStrongSendableRef", NapiDelStrongSendableRef),
     };
     if (!CheckNapiCall(env, napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc))) {
         return nullptr;
