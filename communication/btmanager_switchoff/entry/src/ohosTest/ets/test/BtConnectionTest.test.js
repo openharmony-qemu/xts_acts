@@ -716,8 +716,9 @@ export default function btConnectionSwitchOffTest() {
                     expect(err.code).assertEqual(801);
                 } else {
                     expect(err.code).assertEqual(2900003);
+                }
             }
-            }
+            done();
         });
     })
 }
