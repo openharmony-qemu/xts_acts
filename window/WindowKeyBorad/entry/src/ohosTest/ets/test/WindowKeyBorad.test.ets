@@ -20,6 +20,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
+import deviceInfo from '@ohos.deviceInfo';
 
 export default function windowKeyBorad() {
   describe('windowKeyBorad', async () => {
@@ -30,6 +31,8 @@ export default function windowKeyBorad() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let driver: Driver;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -323,12 +326,14 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
+      let conunt = 0;
       try {
         if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
             console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
+            conunt++;
             let displayInfo = display.getDefaultDisplaySync();
             console.info(`${caseName} dispalyInfo1: ${JSON.stringify(displayInfo)}`);
             expect(keyboardInfo.beginRect.left).assertEqual(0);
@@ -351,6 +356,12 @@ export default function windowKeyBorad() {
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
           await input.click();
+          if(deviceType === "phone" || deviceType === "tablet"){
+            expect(conunt).assertEqual(1);
+          }else{
+            expect(conunt).assertEqual(0);
+            done();
+          }
           await sleep(500);
          
 
@@ -381,6 +392,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
+      let conunt = 0;
       try {
         if (isFreeWindowMode == true) {
           done();
@@ -394,6 +406,7 @@ export default function windowKeyBorad() {
           }
            const callback  =  (keyboardInfo: window.KeyboardInfo) => {
             console.info(`${caseName} KeyboardInfo2: ${JSON.stringify(keyboardInfo)}`);
+            conunt++;
             let displayInfo = display.getDefaultDisplaySync();
             console.info(`${caseName} dispalyInfo2: ${JSON.stringify(displayInfo)}`);
             expect(keyboardInfo.beginRect.left).assertEqual(0);
@@ -413,6 +426,12 @@ export default function windowKeyBorad() {
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
           await input.click();
+         if(deviceType === "phone" || deviceType === "tablet"){
+            expect(conunt).assertEqual(1);
+          }else{
+            expect(conunt).assertEqual(0);
+            done();
+          }
           await sleep(1000);
           
 
