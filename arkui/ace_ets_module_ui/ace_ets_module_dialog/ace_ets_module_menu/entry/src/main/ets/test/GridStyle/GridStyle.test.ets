@@ -210,6 +210,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -244,6 +245,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -348,6 +350,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -381,6 +384,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -417,6 +421,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -452,6 +457,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('分享'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -486,6 +492,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
@@ -522,6 +529,7 @@ export default function GridStyleTest() {
       await Utils.sleep(1500);
       let copyBtn = await driver.findComponent(ON.text('复制'))
       await copyBtn.click();
+      await Utils.sleep(1500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
       expect(resultText).not().assertUndefined();
@@ -628,6 +636,7 @@ export default function GridStyleTest() {
       // =========
       let copyBtn = await driver.findComponent(ON.text('复制'));
       await copyBtn.click();
+      await Utils.sleep(1500);
       // ===========
 
       let resultText = await driver.findComponent(ON.id('result_text'));
