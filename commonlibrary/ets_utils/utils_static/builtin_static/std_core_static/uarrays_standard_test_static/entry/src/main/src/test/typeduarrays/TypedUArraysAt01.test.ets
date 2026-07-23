@@ -43,7 +43,7 @@ export default function typedUArraysAt01(): void {
     it('testTypedUArraysAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       // WhenParameterOmittedindexDefaultsToundefinedConvertTo0
-      let result = arr[0];
+      let result = arr.at(0);
         expect(result).assertEqual(10);
     });
 

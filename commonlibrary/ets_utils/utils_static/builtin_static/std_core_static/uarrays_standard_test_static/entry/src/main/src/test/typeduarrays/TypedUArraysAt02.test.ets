@@ -33,8 +33,8 @@ export default function typedUArraysAt02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0100
-     * @tc.name testTypedUArraysAt001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_4600
+     * @tc.name testTypedUArraysAt046
      * @tc.desc Verify at index undefined 0
      * @tc.size MediumTest
      * @tc.type Function
@@ -419,22 +419,6 @@ export default function typedUArraysAt02(): void {
       const arr = new BigUint64Array([0n, BigInt('18446744073709551615')]);
       expect(arr[0]).assertEqual(0n);
       expect(arr.at(-3)).assertEqual(undefined)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_7300
-     * @tc.name testTypedUArraysAt073
-     * @tc.desc Verify at index TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('invalid index');
-      } catch (e) {
-        expect(e.message).assertEqual('invalid index');
-      }
     });
 
     /**

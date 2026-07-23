@@ -810,7 +810,7 @@ export default function typedUArraysSliceTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART202_5500
      * @tc.name testTypedUArraysSlicePart202_055
-     * @tc.desc Verify slice(2, 4) byteOffset 0 Uint8Array
+     * @tc.desc Verify slice(2, 4) Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -818,7 +818,9 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice(2, 4);
-      expect(ret.byteOffset).assertEqual(0);
+      expect(ret.length).assertEqual(2);
+      expect(ret[0]).assertEqual(3);
+      expect(ret[1]).assertEqual(4);
     });
 
     /**
