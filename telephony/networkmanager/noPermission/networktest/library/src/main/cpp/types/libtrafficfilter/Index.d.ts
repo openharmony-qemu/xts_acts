@@ -136,7 +136,6 @@ export interface CreateRedirectInfo {
 }
 
 export const CreateRedirector: (groupId: number, priority: number) => CreateRedirectInfo;
-export const CreateRedirectorIsNull: (groupId: number, priority: number) => CreateRedirectInfo;
 export const DestroyRedirector: (redirector: null | number) => number;
 export const AddRedirectRule: (redirector: null | number, rule: RuleConfig | null) => number;
 export const ClearRedirectRule: (redirector: null | number) => number;
