@@ -14,8 +14,9 @@
  */
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
-import {ble, connection} from '@kit.ConnectivityKit';
-import {BusinessError} from '@kit.BasicServicesKit';
+import ble from '@ohos.bluetooth.ble';
+import connection from '@ohos.bluetooth.connection';
+import {BusinessError} from '@ohos.base';
 
 
 // API 26.0.0 双参数版本默认 GattSetting（autoConnect: false, transport: TRANSPORT_LE）
