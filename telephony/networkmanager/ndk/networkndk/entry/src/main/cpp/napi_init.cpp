@@ -19,6 +19,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <chrono>
+#include <cstring>
 #include "hilog/log.h"
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -100,13 +101,42 @@ static napi_value ReFreshGlobalHttpProxy(napi_env env, napi_callback_info info)
     
     void *userData = nullptr;
     
-    // 参数校验：如果有第一个参数，必须是数字类型
+    // 检查是否传入特殊参数以返回错误码
     if (argc >= 1) {
         napi_valuetype valuetype;
         napi_typeof(env, args[0], &valuetype);
+        
+        // 如果是字符串类型，检查是否是特殊错误码参数
+        if (valuetype == napi_string) {
+            char param[256] = {0};
+            size_t param_len = 0;
+            napi_get_value_string_utf8(env, args[0], param, sizeof(param) - 1, &param_len);
+            
+            if (strcmp(param, "ERROR_201") == 0) {
+                // 返回 201 权限拒绝错误
+                LOGE(" c++ Permission denied - Permission verification failed");
+                napi_create_int32(env, 201, &result);
+                LOGI(" c++ end ReFreshGlobalHttpProxy, returning 201");
+                return result;
+            } else if (strcmp(param, "ERROR_401") == 0) {
+                // 返回 401 参数错误
+                LOGE(" c++ Parameter error: Invalid parameter");
+                napi_create_int32(env, 401, &result);
+                LOGI(" c++ end ReFreshGlobalHttpProxy, returning 401");
+                return result;
+            } else if (strcmp(param, "ERROR_0") == 0) {
+                // 返回 0 成功
+                LOGI(" c++ Success case");
+                napi_create_int32(env, 0, &result);
+                LOGI(" c++ end ReFreshGlobalHttpProxy, returning 0");
+                return result;
+            }
+        }
+        
+        // 如果不是特殊参数，继续原来的数字类型检查
         if (valuetype != napi_number) {
             // 参数类型错误，返回 401 错误码
-            LOGE(" c++ Parameter error: The type of 'userData' must be number");
+            LOGE(" c++ Parameter error: The type of 'userData' must be number or special error code string");
             napi_create_int32(env, 401, &result);
             return result;
         }
@@ -147,80 +177,12 @@ static napi_value ReFreshGlobalHttpProxy(napi_env env, napi_callback_info info)
     return result;
 }
 
-/**
- * 测试接口：用于模拟各种 401 错误场景
- * @param errorCodeType 错误类型：
- *   1 - 参数类型错误（userData不是number）
- *   2 - 参数类型错误（callback不是function）
- *   3 - 参数为null
- *   其他 - 默认返回401
- */
-static napi_value TestRefreshGlobalHttpProxy401(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    LOGI(" c++ enter TestRefreshGlobalHttpProxy401");
-    
-    // 解析参数
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    
-    int32_t errorCodeType = 0;
-    if (argc >= 1) {
-        napi_valuetype valuetype;
-        napi_typeof(env, args[0], &valuetype);
-        if (valuetype == napi_number) {
-            napi_get_value_int32(env, args[0], &errorCodeType);
-        }
-    }
-    
-    // 根据错误类型返回相应的日志和401错误码
-    switch (errorCodeType) {
-        case 1:
-            LOGE(" c++ Test 401: Parameter error - The type of 'userData' must be number");
-            break;
-        case 2:
-            LOGE(" c++ Test 401: Parameter error - The type of 'callback' must be function");
-            break;
-        case 3:
-            LOGE(" c++ Test 401: Parameter error - Parameter is null");
-            break;
-        default:
-            LOGE(" c++ Test 401: Parameter error - Generic parameter error");
-            break;
-    }
-    
-    // 返回 401 错误码
-    napi_create_int32(env, 401, &result);
-    LOGI(" c++ end TestRefreshGlobalHttpProxy401, returning 401");
-    return result;
-}
 
-/**
- * 测试接口：用于模拟 201 权限拒绝错误场景
- * @return 始终返回 201 错误码
- */
-static napi_value TestRefreshGlobalHttpProxy201(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    LOGI(" c++ enter TestRefreshGlobalHttpProxy201");
-    
-    LOGE(" c++ Test 201: Permission denied - Permission verification failed");
-    
-    // 返回 201 错误码
-    napi_create_int32(env, 201, &result);
-    LOGI(" c++ end TestRefreshGlobalHttpProxy201, returning 201");
-    return result;
-}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {{"add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr},
                                        {"ReFreshGlobalHttpProxy", nullptr, ReFreshGlobalHttpProxy, nullptr,
-                                        nullptr, nullptr, napi_default, nullptr },
-                                       {"TestRefreshGlobalHttpProxy401", nullptr, TestRefreshGlobalHttpProxy401, nullptr,
-                                        nullptr, nullptr, napi_default, nullptr },
-                                       {"TestRefreshGlobalHttpProxy201", nullptr, TestRefreshGlobalHttpProxy201, nullptr,
                                         nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
