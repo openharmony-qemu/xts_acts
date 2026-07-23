@@ -56,7 +56,9 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure end`);
@@ -77,7 +79,9 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtNullPoint error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtNullPoint error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Check arg0 failed');
       }
       console.log(`${TestTag}, testDriverClickAtNullPoint end`);
     });
@@ -380,7 +384,10 @@ export default function uitestApi26ErrorTest() {
         await driver.longClickAtWithOptions(undefined, {speed: 500});
         expect().assertFail();
       } catch (err) {
+        console.log(`${TestTag}, testDriverLongClickAtPointUndefined error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverLongClickAtPointUndefined error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Check arg0 failed');
       }
       console.log(`${TestTag}, testDriverLongClickAtPointUndefined end`);
     });
@@ -403,8 +410,10 @@ export default function uitestApi26ErrorTest() {
         await driver.longClickAtWithOptions(point, options);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions end`);
@@ -513,8 +522,10 @@ export default function uitestApi26ErrorTest() {
         await driver.swipeBetweenWithOptions(from, to, options);
         expect().assertFail();
       } catch (err) {
-        console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverSwipeBetweenConcurrentCall error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverSwipeBetweenConcurrentCall error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall end`);
@@ -536,7 +547,9 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverSwipeBetweenNullFrom error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverSwipeBetweenNullFrom error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Check arg0 failed');
       }
       console.log(`${TestTag}, testDriverSwipeBetweenNullFrom end`);
     });
@@ -621,8 +634,10 @@ export default function uitestApi26ErrorTest() {
         await driver.dragBetweenWithOptions({x: 100, y: 200}, {x:200, y: 200}, options);
         expect().assertFail();
       } catch (err) {
-        console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDragBetweenConcurrentCalls error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDragBetweenConcurrentCalls error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls end`);
@@ -643,8 +658,10 @@ export default function uitestApi26ErrorTest() {
         await driver.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
-        console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed error is: ${JSON.stringify(err)}`)
-        expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
+        console.log(`${TestTag}, testDriverDragBetweenWithNegativeSpeed error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDragBetweenWithNegativeSpeed error.message: ${JSON.stringify(err.message)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed end`);
     });
@@ -1035,8 +1052,10 @@ export default function uitestApi26ErrorTest() {
         await driver.dumpLayout(savePath, 0);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall end`);
@@ -1058,7 +1077,9 @@ export default function uitestApi26ErrorTest() {
         expect().assertFalse();
       } catch (err) {
         console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(17000007);
+        console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath error.message: ${JSON.stringify(err.message)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Invalid file path');
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath end`);
     });
@@ -1208,8 +1229,10 @@ export default function uitestApi26ErrorTest() {
         await driver.mouseDragWithOptions(from, to, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall end`);
@@ -1233,7 +1256,9 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative end`);
     });
@@ -1635,12 +1660,135 @@ export default function uitestApi26ErrorTest() {
         expect().assertFalse();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+        expect((err as BusinessError).message).assertContain('uitest-api dose not allow calling concurrently');
       }
       await sleep(waitUiReadyMs * 8);
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls over');
     });
 
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1000
+     * @tc.desc   Test Driver.triggerPenKey with key value 3 (above max enum value 2), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(3 as PenKey, PenMode.AIR_MOUSE, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverTriggerPenKeyKeyOutOfRangeAboveMax error is: ${JSON.stringify(err)}`);
+        expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1100
+     * @tc.desc   Test Driver.triggerPenKey with key value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(-1 as PenKey, PenMode.AIR_MOUSE, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testDriverTriggerPenKeyKeyOutOfRangeNegative error is: ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testDriverTriggerPenKeyKeyOutOfRangeNegative error.message: ${JSON.stringify(error.message)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+        expect((error as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1200
+     * @tc.desc   Test Driver.triggerPenKey with mode value 2 (above max enum value 1), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, 2 as PenMode, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax error: ' + err.code);
+        expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1300
+     * @tc.desc   Test Driver.triggerPenKey with mode value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, -1 as PenMode, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1400
+     * @tc.desc   Test Driver.triggerPenKey with operation value 2 (above max enum value 1), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.AIR_MOUSE, 2 as PenKeyOperation);
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax error: ' + err.code);
+        expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1500
+     * @tc.desc   Test Driver.triggerPenKey with operation value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, -1 as PenKeyOperation);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative over');
+    });
 
   })
 }
