@@ -19,6 +19,7 @@ struct ScrollZoomNullExample {
   @State didZoom: string = 'zoom'
   @State zoomStart: string = 'start'
   @State zoomStop: string = 'stop'
+  @State maxZoomScaleNum: number = 6;
 
   build() {
     Column() {
@@ -60,6 +61,66 @@ struct ScrollZoomNullExample {
         this.zoomStop = 'onZoomStop'
         console.info('Scroll onZoomStop');
       })
+
+      Row(){
+        Scroll() {
+          Image($r('app.media.icon'))
+        }
+        .minZoomScale(0)
+        .id('scroll_minZoomScale_0')
+        .maxZoomScale(1)
+        .enableBouncesZoom(true)
+        .backgroundColor(0xDCDCDC)
+        .width('30%')
+        .height('100%')
+
+        Scroll() {
+          Image($r('app.media.icon'))
+        }
+        .minZoomScale(this.maxZoomScaleNum)
+        .id('scroll_minZoomScale_equal')
+        .maxZoomScale(this.maxZoomScaleNum)
+        .enableBouncesZoom(true)
+        .backgroundColor(0xDCDCDC)
+        .width('30%')
+        .height('100%')
+
+        Scroll() {
+          Image($r('app.media.icon'))
+        }
+        .minZoomScale(this.maxZoomScaleNum+1)
+        .id('scroll_minZoomScale_larger')
+        .maxZoomScale(this.maxZoomScaleNum)
+        .enableBouncesZoom(true)
+        .backgroundColor(0xDCDCDC)
+        .width('30%')
+        .height('100%')
+      }
+      .height('15%')
+
+      Row(){
+        Scroll() {
+          Image($r('app.media.icon'))
+        }
+        .maxZoomScale(0)
+        .id('scroll_maxZoomScale_0')
+        .enableBouncesZoom(true)
+        .zoomScale(0)
+        .backgroundColor(0xDCDCDC)
+        .width('40%')
+        .height('100%')
+
+        Scroll() {
+          Image($r('app.media.icon'))
+        }
+        .maxZoomScale(1)
+        .id('scroll_maxZoomScale_1')
+        .enableBouncesZoom(true)
+        .backgroundColor(0xDCDCDC)
+        .width('40%')
+        .height('100%')
+      }
+      .height('15%')
     }.width('100%')
     .height('100%')
   }
