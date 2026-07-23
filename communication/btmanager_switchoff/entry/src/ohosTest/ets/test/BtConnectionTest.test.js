@@ -696,5 +696,28 @@ export default function btConnectionSwitchOffTest() {
             }
             done();
         })
+        /**
+         * @tc.name testGattConnectError004
+         * @tc.number SUB_BLUETOOTH_BLE_CONNECT_ERROR_0400
+         * @tc.desc 测试 GattClientDevice.connect 方法 - 蓝牙禁用触发2900003错误码场景
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         * @co.authored.by.agent
+         */
+        it('testGattConnectError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                let device = bluetoothBle.createGattServer();
+                device.connect('00:22:33:44:55:66');
+                expect().assertFail();
+            } catch (err) {
+                console.info('testGattConnectError004 err: code=' + err.code + ', message=' + err.message);
+                if (err.code === 801) {
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(2900003);
+            }
+            }
+        });
     })
 }
