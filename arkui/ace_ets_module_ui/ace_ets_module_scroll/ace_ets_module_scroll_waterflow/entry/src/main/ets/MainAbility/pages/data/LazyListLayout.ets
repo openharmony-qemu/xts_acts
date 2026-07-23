@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LayoutConstraint, LazyLayoutHelper, LazyCustomLayoutAlgorithm, ExpandMode, ChildrenCountMode,
+import { LazyLayoutAlgorithm, LazyLayoutHelper, LazyCustomLayoutAlgorithm, ExpandMode, ChildrenCountMode,
   LazyLayoutDirection, LazyCustomLayoutAlgorithmOptions} from '@kit.ArkUI'
 
 export class LazyListLayout extends LazyCustomLayoutAlgorithm {
