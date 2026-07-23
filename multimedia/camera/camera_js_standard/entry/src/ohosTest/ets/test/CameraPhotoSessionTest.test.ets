@@ -2621,5 +2621,41 @@ export default function CameraPhotoSessionTest() {
       }
     })
 
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300
+     * @tc.desc      test sub multimedia camera zoomPointInfos properties
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let zoomPointInfos = mCameraSession.getZoomPointInfos()
+        for (let i = 0; i < zoomPointInfos.length; i++) {
+          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio},
+            equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
+        }
+        if (zoomPointInfos.length > 0) {
+          mCameraSession.setZoomRatio(zoomPointInfos[0].zoomRatio);
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done();
+      }
+    })
+
   })
 }
