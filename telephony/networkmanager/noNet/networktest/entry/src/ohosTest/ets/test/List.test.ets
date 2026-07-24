@@ -15,6 +15,7 @@
  */
 
 import networkManagerWithoutCardTest from './NetworkManagerWithoutNet.test';
+import connection from '@ohos.net.connection';
 let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
