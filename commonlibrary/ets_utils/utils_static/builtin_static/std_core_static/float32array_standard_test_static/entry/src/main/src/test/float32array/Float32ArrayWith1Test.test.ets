@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -109,37 +109,31 @@ export default function Float32ArrayWith1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_0050
      * @tc.name testFloat32ArrayWithONE005
-     * @tc.desc Verify index -1 throws RangeError for negative index (two-element array)
+     * @tc.desc Verify with(-1, value) on a two-element array replaces the last element (negative index)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayWithONE005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 77;
-      try {
-        Float32Array.of(10.0, 20.0).with(-1, value);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = Float32Array.of(10.0, 20.0).with(-1, value);
+      expect(result.$_get(0)).assertEqual(10.0);
+      expect(result.$_get(1)).assertEqual(77);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_0060
      * @tc.name testFloat32ArrayWithONE006
-     * @tc.desc Verify index -length throws RangeError for negative index (two-element array)
+     * @tc.desc Verify with(-length, value) on a two-element array replaces the first element (negative index)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayWithONE006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 66;
-      try {
-        Float32Array.of(10.0, 20.0).with(-2, value);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = Float32Array.of(10.0, 20.0).with(-2, value);
+      expect(result.$_get(0)).assertEqual(66);
+      expect(result.$_get(1)).assertEqual(20.0);
     });
 
     /**
@@ -1430,7 +1424,7 @@ export default function Float32ArrayWith1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_0950
      * @tc.name testFloat32ArrayWithONE095
-     * @tc.desc Verify with(-1, value) throws RangeError for negative index
+     * @tc.desc Verify with(-1, value) replaces the last element of a three-element array (negative index)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1438,12 +1432,10 @@ export default function Float32ArrayWith1Test(): void {
     it('testFloat32ArrayWithONE095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const replacementValue: number = 99.0;
       const source = Float32Array.of(1.0, 2.0, 3.0);
-      try {
-        source.with(-1, replacementValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = source.with(-1, replacementValue);
+      expect(result.$_get(0)).assertEqual(1.0);
+      expect(result.$_get(1)).assertEqual(2.0);
+      expect(result.$_get(2)).assertEqual(replacementValue);
     });
 
     /**
@@ -1502,7 +1494,7 @@ export default function Float32ArrayWith1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_0990
      * @tc.name testFloat32ArrayWithONE099
-     * @tc.desc Verify with(-length, value) throws RangeError for negative index
+     * @tc.desc Verify with(-length, value) replaces the first element (negative index)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1511,18 +1503,16 @@ export default function Float32ArrayWith1Test(): void {
       const replacementValue: number = 70.0;
       const source = Float32Array.of(7.0, 8.0, 9.0);
       const targetIndex: int = -source.length;
-      try {
-        source.with(targetIndex, replacementValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = source.with(targetIndex, replacementValue);
+      expect(result.$_get(0)).assertEqual(replacementValue);
+      expect(result.$_get(1)).assertEqual(8.0);
+      expect(result.$_get(2)).assertEqual(9.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_1000
      * @tc.name testFloat32ArrayWithONE100
-     * @tc.desc Verify negative index RangeError leaves all source elements unchanged
+     * @tc.desc Verify out-of-bounds negative index (-length-1) throws RangeError and leaves source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1530,7 +1520,7 @@ export default function Float32ArrayWith1Test(): void {
     it('testFloat32ArrayWithONE100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = Float32Array.of(1.0, 2.0, 3.0);
       try {
-        source.with(-1, 9.0);
+        source.with(-4, 9.0);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
