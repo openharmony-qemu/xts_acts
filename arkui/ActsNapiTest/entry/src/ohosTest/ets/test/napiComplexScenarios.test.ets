@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeEach, TestType, Size, Level } from '@ohos/hypium';
 import nativeModule from "libnapiComplexScenarios.so";
 import fs from '@ohos.file.fs';
 import Utils from './Utils'
