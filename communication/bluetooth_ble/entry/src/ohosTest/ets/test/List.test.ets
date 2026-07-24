@@ -17,6 +17,8 @@ import btBleManagerTest from './BtBleManager.test';
 import btBleServiceTest from './BtBleService.test';
 import bluetoothBleTest from './BluetoothBle.test';
 import bluetoothAdvertisingTest from './BluetoothAdvertising.test';
+import CreateGattClientDeviceTest from './CreateGattClientDevice.test.ets';
+import GattConnectTest from './GattServerConnect.test.ets';
 import parameter from '@ohos.systemparameter';
 
 let info = parameter.getSync("const.SystemCapability.Communication.Bluetooth.Core", "false");
@@ -26,5 +28,7 @@ export default function testsuite() {
         bluetoothBleTest();
         btBleServiceTest();
         bluetoothAdvertisingTest();
+        CreateGattClientDeviceTest();
+        GattConnectTest();
     }
 }
