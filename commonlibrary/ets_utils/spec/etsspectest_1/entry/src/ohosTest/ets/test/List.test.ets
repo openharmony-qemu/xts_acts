@@ -19,6 +19,16 @@ import ClassReadonlyTest from './class/classReadonly/ClassReadonlyTest.test';
 import ClassScopeTest from './class/classScope/ClassScopeTest.test';
 import InterfaceTest from './interface/InterfaceTest.test';
 
+import ArrowFunctionTest from './function/arrowFunction/ArrowFunctionTest.test';
+import ClosureTest from './function/closure/ClosureTest.test';
+import FunctionCallTest from './function/functionCall/FunctionCallTest.test';
+import FunctionDeclarationTest from './function/functionDeclaration/FunctionDeclarationTest.test';
+import FunctionExpressionTest from './function/functionExpression/FunctionExpressionTest.test';
+import FunctionScopeTest from './function/functionScope/FunctionScopeTest.test';
+import FunctionTypeTest from './function/functionType/FunctionTypeTest.test';
+import OptionalParameterTest from './function/optionalParameter/OptionalParameterTest.test';
+import RestParameterTest from './function/restParameter/RestParameterTest.test';
+import ReturnTypeTest from './function/returnType/ReturnTypeTest.test';
 
 export default function testsuite() {
   ClassDeclarationTest();
@@ -41,4 +51,15 @@ export default function testsuite() {
   ClassScopeTest();
 
   InterfaceTest();
+
+  ArrowFunctionTest();
+  ClosureTest();
+  FunctionCallTest();
+  FunctionDeclarationTest();
+  FunctionExpressionTest();
+  FunctionScopeTest();
+  FunctionTypeTest();
+  OptionalParameterTest();
+  RestParameterTest();
+  ReturnTypeTest();
 }
