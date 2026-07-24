@@ -19,7 +19,7 @@ group("spec") {
     deps = [
       "etsspectest:ActsBaseSpecTest",
       "etsspectest_1:ActsBaseSpec1Test",
-      "operator:ActsBaseOperatorSpecTest",
+      "operatorspectest:ActsBaseOperatorSpecTest",
     ]
   }
 }
