@@ -3353,9 +3353,10 @@ export default function adminManagerTest() {
         expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
-        await adminManager.disableSuperAdmin(wantTemp.bundleName);
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(wantTemp.bundleName);
       }
       done();
     })
