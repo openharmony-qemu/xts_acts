@@ -76,7 +76,7 @@ export default function EntryParamsTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id("btn2"));
+      let btn = await driver.findComponent(ON.id("EntryParams_btn2"));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('propA');
@@ -84,12 +84,13 @@ export default function EntryParamsTest() {
       let text_1 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       expect(text_1).assertEqual('49');
       await CommonFunc.sleep(1000);
-      let btn1= await driver.findComponent(ON.id("btn1"));
+      let btn1= await driver.findComponent(ON.id("EntryParams_btn1"));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let btn3= await driver.findComponent(ON.id("btn3"));
+      let btn3= await driver.findComponent(ON.id("EntryParams_btn3"));
       await (btn3?.click() as Promise<void>);
-      let strJson1: string = inspector.getInspectorByKey('clear');
+      await CommonFunc.sleep(1000);
+      let strJson1: string = inspector.getInspectorByKey('EntryParams_clear');
       await CommonFunc.sleep(1000);
       let text_2 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content');
       expect(text_2).assertEqual('true');

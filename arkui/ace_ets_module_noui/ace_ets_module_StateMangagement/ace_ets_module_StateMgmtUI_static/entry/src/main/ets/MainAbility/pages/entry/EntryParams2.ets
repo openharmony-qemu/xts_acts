@@ -57,7 +57,7 @@ struct Child0002 {
         .id('propB')
         .height('5%')
       Button(`Child from LocalStorage ${this.childLinkNumber}`)
-        .id('btn2')
+        .id('EntryParams2_btn2')
         .onClick(() => {
           this.childLinkNumber += 1;
         })
@@ -74,19 +74,19 @@ struct EntryParams2 {
   build() {
     Column() {
       Text(`${this.flag2 ? 'true': 'false'}`)
-        .id('clear')
+        .id('EntryParams2_clear')
         .height('5%')
       Button(`flag`)
         .onClick(() => {
           this.flag = false;
         })
-        .id('btn1')
+        .id('EntryParams2_btn1')
         .height('5%')
       Button(`clear localStorage`)
         .onClick(() => {
           this.flag2 = storage2.clear();
         })
-        .id('btn3')
+        .id('EntryParams2_btn3')
         .height('5%')
       if (this.flag) {
         Child0002()
