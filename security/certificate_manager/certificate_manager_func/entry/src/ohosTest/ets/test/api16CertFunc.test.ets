@@ -89,6 +89,11 @@ let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa
   0x97, 0xb5, 0x9d, 0x9a, 0x99, 0x4d, 0xb0, 0x3c, 0xf8, 0x4a, 0x00, 0x9b, 0x64, 0xdd, 0x9f, 0x39,
   0x4b, 0xd1, 0x27, 0xd7, 0xb8]);
 
+let maxCertData: Uint8Array = new Uint8Array(caCert.length * 8);
+for (let i = 0; i < 8; i++) {
+  maxCertData.set(caCert, i * caCert.length);
+}
+
 let priEccCredData = buffer.from([
   0x30, 0x82, 0x04, 0x6a, 0x02, 0x01, 0x03, 0x30, 0x82, 0x04, 0x30, 0x06, 0x09, 0x2a, 0x86, 0x48,
   0x86, 0xf7, 0x0d, 0x01, 0x07, 0x01, 0xa0, 0x82, 0x04, 0x21, 0x04, 0x82, 0x04, 0x1d, 0x30, 0x82,
@@ -914,6 +919,28 @@ export default function api16CertFuncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetAllUserTrustedCertificates_0014
+     * @tc.number SUB_Security_CertManager_GetAllUserTrustedCertificates_0014
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_GetAllUserTrustedCertificates_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0014 start');
+      try {
+        await certManager.getAllUserTrustedCertificates(3 as certManager.CertScope);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0014 error.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+        expect(error.message).assertEqual('Failed to get scope');
+      }
+      console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0014 end');
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0011
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0011
      * @tc.desc   abnormal test
@@ -1120,6 +1147,114 @@ export default function api16CertFuncTestUnit() {
       } catch (error) {
         console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0022 failed. code:${error.code}`);
         expect(error.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0023
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0023
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0023 start');
+      let certData: Uint8Array = new Uint8Array(8192);
+      for (let i = 0; i < 8192; i++) {
+        certData[i] = Math.floor(Math.random() * 256);
+      }
+      let certBlob: certManager.CertBlob = {
+        certData: certData,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0023 failed. code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual(17500003);
+        expect(error.message).assertEqual("the input cert data is invalid");
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0024
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0024
+     * @tc.desc   certData exceeds 8KB limit for PEM_DER format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0024 start');
+      let certBlob: certManager.CertBlob = {
+        certData: maxCertData,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0024 failed. code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual(401);
+        expect(error.message).assertEqual("the input parameters is invalid");
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0025
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0025
+     * @tc.desc   certFormat is invalid value 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0025 start');
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: 3 as certManager.CertFileFormat,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0025 failed. code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual(401);
+        expect(error.message).assertEqual("get context type error");
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0026
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0026
+     * @tc.desc   certScope is invalid value 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0026 start');
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: 3 as certManager.CertScope
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0026 failed. code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual(401);
+        expect(error.message).assertEqual("get context type error");
       }
       done();
     });
