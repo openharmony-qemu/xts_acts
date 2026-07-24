@@ -16,7 +16,7 @@
 
 import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect,Level,Hypium,Size,TestType} from '../../../../hypium/index';
 import { camera } from '@kit.CameraKit';
-import { getPermission } from '../Common.test';
+import { getPermission, sleep } from '../Common.test';
 import { Context } from '@kit.ArkUI';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
@@ -257,13 +257,14 @@ export default function ApertureTest(): void {
           console.info(TAG, testName + ' set aperture to min: ' + minAperture);
           // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效 
           mPhotoSession!.setZoomRatio(minAperture.zoomRange.min);
+          await sleep(1000)
           // 设置物理光圈值
           mPhotoSession!.setPhysicalAperture(minAperture.apertures[0]);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
           let currentAperture: number = mPhotoSession!.getPhysicalAperture();
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
           // 验证设置的值与获取的值一致
-          expect(currentAperture).assertEqual(minAperture);
+          expect(currentAperture).assertEqual(minAperture.apertures[0]);
         }
         console.info(TAG, testName + ' success.');
       } catch (error) {
@@ -300,13 +301,14 @@ export default function ApertureTest(): void {
           console.info(TAG, testName + ' set aperture to max: ' + maxAperture);
           // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效 
           mPhotoSession!.setZoomRatio(maxAperture.zoomRange.min);
+          await sleep(1000)
           // 设置物理光圈值
           mPhotoSession!.setPhysicalAperture(maxAperture.apertures[0]);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
           let currentAperture: number = mPhotoSession!.getPhysicalAperture();
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
           // 验证设置的值与获取的值一致
-          expect(currentAperture).assertEqual(maxAperture);
+          expect(currentAperture).assertEqual(maxAperture.apertures[0]);
         }
         console.info(TAG, testName + ' success.');
       } catch (error) {
