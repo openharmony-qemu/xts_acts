@@ -3353,10 +3353,9 @@ export default function adminManagerTest() {
         expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
+        await adminManager.disableSuperAdmin(wantTemp);
       } catch (error) {
         expect(false).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })
@@ -3415,10 +3414,9 @@ export default function adminManagerTest() {
         expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
+        await adminManager.disableAdmin(wantTemp);
       } catch (error) {
         expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFHAPNAME);
       }
       done();
     })
