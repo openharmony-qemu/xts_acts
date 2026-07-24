@@ -162,7 +162,7 @@ export default function imagePixelMapForThumbnail() {
   const DECODE_FAILED = 7700301;
   const IMAGE_TO_LARGE = 7700103;
 
-  describe('imagePixelMapForThumbnail', () => {
+  describe('imagePixelMapForThumbnailStatic', () => {
     beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
