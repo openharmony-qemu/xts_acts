@@ -16,10 +16,10 @@
 import connection from '@ohos.net.connection';
 import dataManagerTest from "./DataManagerHasCard.test";
 import dataJsunit from './DataJsunit.test'
-let netHandle = connection.getDefaultNetSync();
+let netHandle : connection.NetHandle = connection.getDefaultNetSync();
 export default function testsuite() {
-    let NetCapabilities:connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
-    if(NetCapabilities.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR){
+    let netCapabilities : connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+    if (netCapabilities.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR){
         dataManagerTest();
     }
     dataJsunit();
