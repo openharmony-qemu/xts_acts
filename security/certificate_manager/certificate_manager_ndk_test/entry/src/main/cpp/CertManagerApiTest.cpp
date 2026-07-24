@@ -20,10 +20,12 @@
 #include <string>
 #include <cstring>
 
+constexpr int MAX_BYTE_VALUE = 255;
+
 int SafeMemset(void* s, size_t sse, int c, size_t n)
 {
     //检查参数有效性
-    if (s == NULL) {
+    if (s == nullptr) {
         return EINVAL;
     }
 
@@ -38,13 +40,13 @@ int SafeMemset(void* s, size_t sse, int c, size_t n)
     }
 
     //检查要设置的值是否在有效范围内
-    if (c < 0 || c > 255) {
+    if (c < 0 || c > MAX_BYTE_VALUE) {
         return EINVAL;
     }
 
     //执行内存设置操作
-    unsigned char *ptr = (unsigned char *)s;
-    unsigned char value = (unsigned char )c;
+    unsigned char *ptr = static_cast<unsigned char *>(s);
+    unsigned char value = static_cast<unsigned char>(c);
 
     for (size_t i = 0; i < n; i++) {
         ptr[i] = value;
