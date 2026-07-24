@@ -80,10 +80,9 @@ export default class Utils {
     })
   }
 
-  static async getStringFromFile(fileName: string): Promise<string> {
+  async static getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext" ) as common.Context
-    let fileData: Uint8Array|undefined;
-    fileData = await abilityContext.resourceManager.getRawFileContent(fileName);
+    const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
         let result = '';

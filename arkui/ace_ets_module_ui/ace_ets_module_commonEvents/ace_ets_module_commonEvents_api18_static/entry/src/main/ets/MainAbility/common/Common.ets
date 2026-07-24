@@ -55,9 +55,9 @@ export default class CommonFunc {
     } as RectValue
   }
 
-  static async getComponentRectOnScreen(key: string): Promise<RectValue> {
+  static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await CommonFunc.sleep(2000);
+    waitForCompletion(async ()=>{await CommonFunc.sleep(2000);})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");

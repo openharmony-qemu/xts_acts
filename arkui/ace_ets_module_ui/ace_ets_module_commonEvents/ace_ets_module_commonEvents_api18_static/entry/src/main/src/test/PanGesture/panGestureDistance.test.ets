@@ -76,7 +76,7 @@ export default function panGestureDistanceTest() {
      */
 it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0010 START');
-      let gridRect = await CommonFunc.getComponentRectOnScreen('getDistance')
+      let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
@@ -105,7 +105,7 @@ it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done
      */
 it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0020 START');
-      let gridRect = await CommonFunc.getComponentRectOnScreen('getDistance')
+      let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
@@ -135,7 +135,7 @@ it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done
      */
 it('panGesture_panRecognizer_getDistance_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0030 START');
-      let gridRect = await CommonFunc.getComponentRectOnScreen('modifierGetDistance')
+      let gridRect = CommonFunc.getComponentRectOnScreen('modifierGetDistance')
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),

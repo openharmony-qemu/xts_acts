@@ -74,8 +74,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
       console.log('assert position')
       expect(GridItem_01.left).assertEqual(GridItem_02.left);
@@ -120,8 +120,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
 
       console.log('assert size')

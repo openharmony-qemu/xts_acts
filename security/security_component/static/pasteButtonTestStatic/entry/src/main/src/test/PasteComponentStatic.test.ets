@@ -125,7 +125,7 @@ export default function pasteComponentStaticTest() {
           priority: events_emitter.EventPriority.LOW
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
-          (async () => {
+          waitForCompletion(async () => {
           if( clickData.data != undefined ){
             const data = clickData.data as Record<string, RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0100] get clickEvent result is: ' + JSON.stringify(clickEvent));
@@ -148,7 +148,7 @@ export default function pasteComponentStaticTest() {
             console.info('====>[Test_Security_Button_StaticPaste_0100] END====');
             done();
           }
-          })().awaitSync()
+          })
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {

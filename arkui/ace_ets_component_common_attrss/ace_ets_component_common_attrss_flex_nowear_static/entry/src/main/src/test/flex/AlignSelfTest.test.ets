@@ -40,7 +40,7 @@ class SetValue {
   alignSelf: ItemAlign = ItemAlign.Auto;
 }
 
-export default async function alignSelfTest() {
+export default function alignSelfTest() {
 
 
   let supportView: Array<string> = new Array<string>(
@@ -166,8 +166,8 @@ export default async function alignSelfTest() {
         await Utils.sleep(1000);
 
         //Get component rect and parent component rect
-        let parentRect = await Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-        let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
+        let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+        let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
         //Get viewObj in order to judge attribute is set success
         // let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey as string);

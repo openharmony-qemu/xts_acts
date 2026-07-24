@@ -93,13 +93,13 @@ export default function dymaticTest() {
 it('dymaticTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[dymaticTest_0100] START');
       await CommonFunc.sleep(2000);
-      let btTop = await CommonFunc.getComponentRect('pressedBt');
+      let btTop = CommonFunc.getComponentRect('pressedBt');
       let top = btTop.top
-      let btBottom = await CommonFunc.getComponentRect('pressedBt');
+      let btBottom = CommonFunc.getComponentRect('pressedBt');
       let bottom = btBottom.bottom
-      let btRight = await CommonFunc.getComponentRect('pressedBt');
+      let btRight = CommonFunc.getComponentRect('pressedBt');
       let right = btRight.right
-      let btLeft = await CommonFunc.getComponentRect('pressedBt');
+      let btLeft = CommonFunc.getComponentRect('pressedBt');
       let left = btLeft.left
       let xmiddle = Math.round(left + (right - left) / 2).toInt()
       let ymiddle = Math.round(top + (bottom - top) / 2).toInt()

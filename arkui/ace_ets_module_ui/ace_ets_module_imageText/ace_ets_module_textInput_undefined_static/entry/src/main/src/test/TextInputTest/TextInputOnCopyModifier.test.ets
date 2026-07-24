@@ -22,13 +22,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-async function doCopy(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let selectionMenu = await driver.findComponent(ON.text('复制')) as Component;
-  await selectionMenu.click();
-  await CommonFunc.sleep(500);
+function doCopy(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let selectionMenu = await driver.findComponent(ON.text('复制')) as Component;
+    await selectionMenu.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 
@@ -72,13 +74,13 @@ export default function TextInputOnCopyModifierTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await doCopy(driver, 'TextInput_OnCopy_Modifier_Undefined0')
+      doCopy(driver, 'TextInput_OnCopy_Modifier_Undefined0')
       let copyValue1 = await driver.findComponent(ON.id('TextInput_OnCopy_Modifier_Value0')) as Component;
       let text = await copyValue1.getText();
       console.info('[TextInputOnCopyModifierTest_static_0010] TextInputOnCopyModifierUndefined: ' + text);
       expect(text).assertEqual('copyValue: ');
 
-      await doCopy(driver, 'TextInput_OnCopy_Modifier_Dynamic0')
+      doCopy(driver, 'TextInput_OnCopy_Modifier_Dynamic0')
       let copyValue2 = await driver.findComponent(ON.id('TextInput_OnCopy_Modifier_Value0')) as Component;
       text = await copyValue2.getText();
       console.info('[TextInputOnCopyModifierTest_static_0010] TextInputOnCopyModifierDynamic: ' + text);
@@ -88,7 +90,7 @@ export default function TextInputOnCopyModifierTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      await doCopy(driver, 'TextInput_OnCopy_Modifier_Dynamic0')
+      doCopy(driver, 'TextInput_OnCopy_Modifier_Dynamic0')
       let copyValue3 = await driver.findComponent(ON.id('TextInput_OnCopy_Modifier_Value0')) as Component;
       text = await copyValue3.getText();
       console.info('[TextInputOnCopyModifierTest_static_0010] TextInputOnCopyModifierDynamic: ' + text);

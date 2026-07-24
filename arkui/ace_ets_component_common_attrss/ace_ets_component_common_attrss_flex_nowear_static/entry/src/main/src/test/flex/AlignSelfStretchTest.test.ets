@@ -58,7 +58,7 @@ let testAbilityContext:common.UIAbilityContext;
 //   wrap: FlexWrap = FlexWrap.NoWrap;
 // }
 
-export default async function alignSelfStretchTest() {
+export default function alignSelfStretchTest() {
 
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
@@ -260,8 +260,8 @@ export default async function alignSelfStretchTest() {
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
       //Get component rect and parent component rect
-      let parentRect = await Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-      let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
+      let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
       console.info('AlignSelfStretchPage',data.testValue.setValue)
       AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
@@ -280,7 +280,7 @@ export default async function alignSelfStretchTest() {
 
       //When set different value, judge the alignment is correct
       if ('Flex' == data.pageConfig.containerView) {
-        let referenceComponentRect = await Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
+        let referenceComponentRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
         if ((data.testValue.describe == 'SetStretchRowWrap')
         || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
           //Determine if alignSelf will override the alignItems setting of the parent container

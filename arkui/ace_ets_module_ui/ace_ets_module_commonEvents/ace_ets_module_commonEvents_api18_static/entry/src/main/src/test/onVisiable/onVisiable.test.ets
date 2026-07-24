@@ -81,7 +81,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
 
       // 获取滑动组件Scroll
-      let swiperTabs = await CommonFunc.getComponentRectOnScreen('onVisibleAreaApproximateChange_scroll_id');
+      let swiperTabs = CommonFunc.getComponentRectOnScreen('onVisibleAreaApproximateChange_scroll_id');
       let top = swiperTabs.top;
       let right = swiperTabs.right;
       let left = swiperTabs.left;

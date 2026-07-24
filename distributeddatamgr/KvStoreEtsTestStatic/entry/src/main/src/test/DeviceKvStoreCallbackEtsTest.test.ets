@@ -1688,26 +1688,30 @@ export default function deviceKvStoreCallbackTest() {
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 0' + data)
             count++;
           });
-          try {
-            await kvStore!.startTransaction();
+          kvStore!.startTransaction((err: BusinessError | null, data: string[] | undefined) => {
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 startTransaction success');
+            expect(err == undefined).assertTrue();
             let entries = putBatchString(10, 'batch_test_string_key');
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 entries: ' + JSON.stringify(entries!));
-            await kvStore!.putBatch(entries);
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 putBatch success');
-            let keys = Object.keys(entries).slice(5);
-            await kvStore!.deleteBatch(keys);
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 deleteBatch success');
-            await kvStore!.commit();
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 commit success');
-            await sleep(500);
-            expect(count == 1).assertTrue();
-            done();
-          } catch (err) {
-            console.error('chain flatten failed: ' + err);
-            expect(null).assertFail();
-            done();
-          }
+            kvStore!.putBatch(entries, (err: BusinessError | null, data: string[] | undefined) => {
+              console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 putBatch success');
+              expect(err == undefined).assertTrue();
+              let keys = Object.keys(entries).slice(5);
+              kvStore!.deleteBatch(keys, (err: BusinessError | null, data: string[] | undefined) => {
+                console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 deleteBatch success');
+                expect(err == undefined).assertTrue();
+                kvStore!.commit((err: BusinessError | null, data: string[] | undefined) => {
+                  waitForCompletion(async () => {
+                    console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 commit success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 1).assertTrue();
+                    done();
+                  })
+                });
+              });
+            });
+          });
         } catch (e) {
           console.error('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
@@ -1734,26 +1738,30 @@ export default function deviceKvStoreCallbackTest() {
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 0' + data)
             count++;
           });
-          try {
-            await kvStore!.startTransaction();
+          kvStore!.startTransaction((err: BusinessError | null, data: string[] | undefined) => {
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 startTransaction success');
+            expect(err == undefined).assertTrue();
             let entries = putBatchString(10, 'batch_test_string_key');
             console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 entries: ' + JSON.stringify(entries!));
-            await kvStore!.putBatch(entries);
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 putBatch success');
-            let keys = Object.keys(entries).slice(5);
-            await kvStore!.deleteBatch(keys);
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 deleteBatch success');
-            await kvStore!.rollback();
-            console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 rollback success');
-            await sleep(500);
-            expect(count == 0).assertTrue();
-            done();
-          } catch (err) {
-            console.error('chain flatten failed: ' + err);
-            expect(null).assertFail();
-            done();
-          }
+            kvStore!.putBatch(entries, (err: BusinessError | null, data: string[] | undefined) => {
+              console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 putBatch success');
+              expect(err == undefined).assertTrue();
+              let keys = Object.keys(entries).slice(5);
+              kvStore!.deleteBatch(keys, (err: BusinessError | null, data: string[] | undefined) => {
+                console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 deleteBatch success');
+                expect(err == undefined).assertTrue();
+                kvStore!.rollback((err: BusinessError | null, data: string[] | undefined) => {
+                  waitForCompletion(async () => {
+                    console.info('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 rollback success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 0).assertTrue();
+                    done();
+                  })
+                });
+              });
+            });
+          });
         } catch (e) {
           console.error('SUB_DDM_DKV_DEVICESTORE_STARTTRANSACTION_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);

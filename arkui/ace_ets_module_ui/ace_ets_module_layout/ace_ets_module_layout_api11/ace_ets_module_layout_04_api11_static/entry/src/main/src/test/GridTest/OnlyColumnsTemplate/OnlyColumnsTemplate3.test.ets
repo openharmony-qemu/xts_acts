@@ -74,7 +74,7 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate3_static_0100', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate3' + '_GridItem_01');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate3_GridItem_01');
 
       console.log('assert size')
 

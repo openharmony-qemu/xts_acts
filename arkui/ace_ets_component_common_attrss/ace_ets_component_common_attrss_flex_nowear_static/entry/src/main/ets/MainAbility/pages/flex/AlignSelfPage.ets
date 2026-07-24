@@ -143,7 +143,7 @@ struct AlignSelfPage {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('test start 0012')
-      Utils.sleep(2000).awaitSync()
+      waitForCompletion(async ()=>{await Utils.sleep(2000)})
       this.containerView = routerParamOptions.view.containerView ?? ''
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''

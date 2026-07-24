@@ -987,10 +987,10 @@ export default function TimerTest1() {
       let taskCompleted = false;
       try {
         setTimeout(() => {
-          (async () => {
+          waitForCompletion(async () => {
             await Utils.msSleep(1000);
             taskCompleted = true;
-          })().awaitSync()
+          })
         }, 50);
         setTimeout(() => {
           try {
@@ -1274,7 +1274,7 @@ export default function TimerTest1() {
       console.info(`${TAG} test start`);
       // Define a task with timer that returns a boolean
       const timerTask = (): boolean => {
-        return (async () => {
+        return waitForCompletion(async () => {
           let timerExecuted: boolean = false;
           let timeoutId: number | null = null;
           timeoutId = setTimeout(() => {
@@ -1288,7 +1288,7 @@ export default function TimerTest1() {
             console.log(`${TAG}: Timer cleared in taskpool`);
           }
           return timerExecuted;
-        })().awaitSync()
+        })
       };
       try {
         const task1 = taskpool.execute(timerTask);

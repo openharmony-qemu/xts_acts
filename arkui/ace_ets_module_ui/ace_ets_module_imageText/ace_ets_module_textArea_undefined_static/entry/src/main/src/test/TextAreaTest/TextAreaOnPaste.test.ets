@@ -22,13 +22,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-async function doPaste(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
-  await selectionMenu.click();
-  await CommonFunc.sleep(500);
+function doPaste(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
+    await selectionMenu.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 
@@ -72,13 +74,13 @@ export default function TextAreaOnPasteTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await doPaste(driver, 'TextArea_OnPaste_Undefined0')
+      doPaste(driver, 'TextArea_OnPaste_Undefined0')
       let pasteValue1 = await driver.findComponent(ON.id('TextArea_OnPaste_Value0')) as Component;
       let text = await pasteValue1.getText();
       console.info('[TextAreaOnPasteTest_static_0010] TextAreaOnPasteUndefined: ' + text);
       expect(text).assertEqual('pasteValue: ');
 
-      await doPaste(driver, 'TextArea_OnPaste_Dynamic0')
+      doPaste(driver, 'TextArea_OnPaste_Dynamic0')
       let pasteValue2 = await driver.findComponent(ON.id('TextArea_OnPaste_Value0')) as Component;
       text = await pasteValue2.getText();
       console.info('[TextAreaOnPasteTest_static_0010] TextAreaOnPasteDynamic: ' + text);
@@ -88,7 +90,7 @@ export default function TextAreaOnPasteTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      await doPaste(driver, 'TextArea_OnPaste_Dynamic0')
+      doPaste(driver, 'TextArea_OnPaste_Dynamic0')
       let pasteValue3 = await driver.findComponent(ON.id('TextArea_OnPaste_Value0')) as Component;
       text = await pasteValue3.getText();
       console.info('[TextAreaOnPasteTest_static_0010] TextAreaOnPasteDynamic: ' + text);

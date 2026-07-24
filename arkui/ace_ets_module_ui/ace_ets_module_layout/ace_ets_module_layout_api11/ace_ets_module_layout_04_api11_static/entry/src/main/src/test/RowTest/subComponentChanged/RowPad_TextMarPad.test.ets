@@ -90,11 +90,11 @@ it('testRowPadTextPad_static_01', Level.LEVEL0, async (done: () => void): Promis
         name: 'firstTextPadding', value: 20
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad1');
-      let secondText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
+      let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');
@@ -145,11 +145,11 @@ it('testRowPadTextMar_static_02', Level.LEVEL0, async (done: () => void): Promis
         name: 'firstTextMargin', value: 10
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad1');
-      let secondText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
+      let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
       let obj = JSON.parseJsonElement(rowContainerStrJson);
       expect(obj.getString('$type')).assertEqual('Row');
@@ -200,11 +200,11 @@ it('testRowPadTextMarPad_static_03', Level.LEVEL0, async (done: () => void): Pro
         name: 'firstTextPadding', value: 20
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad1');
-      let secondText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
+      let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

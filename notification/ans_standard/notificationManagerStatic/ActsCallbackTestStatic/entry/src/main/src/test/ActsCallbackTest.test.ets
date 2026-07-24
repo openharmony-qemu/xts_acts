@@ -83,7 +83,7 @@ export default function ActsCallbackTest() {
           } else {
             console.info(`${TAG} requestEnableNotification succeeded`)
             expect(false).assertTrue()
-            Utils.msSleep(1000).awaitSync()
+            waitForCompletion(async () => {await Utils.msSleep(1000)})
             done()
           }
         })

@@ -102,7 +102,7 @@ export default class CommonTest {
               }
 
               //Check test result
-              data.viewObj = await Utils.getComponentByKey(pageConfig.componentKey ?? '');
+              data.viewObj = Utils.getComponentByKey(pageConfig.componentKey ?? '');
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
             } catch (err) {

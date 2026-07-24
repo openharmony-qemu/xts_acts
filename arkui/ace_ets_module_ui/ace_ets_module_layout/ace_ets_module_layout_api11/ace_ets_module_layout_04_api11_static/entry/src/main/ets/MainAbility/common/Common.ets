@@ -38,10 +38,10 @@ export default class CommonFunc {
     })
   }
 
-  static async getComponentRect(key: string) {
+  static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
     console.log('strJsonstrJsonstrJsonstrJson',strJson)
-    await CommonFunc.sleep(1000)
+    waitForCompletion(async ()=>{ await CommonFunc.sleep(1000) })
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");

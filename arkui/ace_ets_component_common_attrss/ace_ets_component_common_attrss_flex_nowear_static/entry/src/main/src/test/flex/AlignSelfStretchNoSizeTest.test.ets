@@ -41,7 +41,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default async function alignSelfStretchNoSizeTest() {
+export default function alignSelfStretchNoSizeTest() {
 
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
@@ -249,8 +249,8 @@ export default async function alignSelfStretchNoSizeTest() {
       async (data: BasePageConfig): Promise<void> => {
 
         //Get component rect and parent component rect
-        let parentRect = await Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-        let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
+        let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+        let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
 
         console.info('alignSelfStretchNoSizeTest', data.testValue.setValue)
         AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
@@ -271,7 +271,7 @@ export default async function alignSelfStretchNoSizeTest() {
 
         //When set different value, judge the alignment is correct
         if ('Flex' == data.pageConfig.containerView) {
-          let referenceComponentRect = await Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
+          let referenceComponentRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
           if ((data.testValue.describe == 'SetStretchRowWrap')
             || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
             // await Utils.sleep(900000000000)

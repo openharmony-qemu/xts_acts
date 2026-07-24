@@ -144,14 +144,16 @@ export default function DeviceKvStoreReturnValue(){
       await (kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID) as Promise<void>).then(async () => {
         console.info('beforeAll closeKVStore success');
         //await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-          console.info('beforeAll deleteKVStore success');
-          kvStore = null;
-          done();
-        }).catch((err) => {
-          console.info('beforeAll deleteKVStore err ' + err);
-          done();
-        });
+        waitForCompletion(async () => {
+          await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('beforeAll deleteKVStore success');
+            kvStore = null;
+            done();
+          }).catch((err) => {
+            console.info('beforeAll deleteKVStore err ' + err);
+            done();
+          });
+        })
       }).catch((err) => {
         console.info('beforeAll closeKVStore err ' + err);
         done();

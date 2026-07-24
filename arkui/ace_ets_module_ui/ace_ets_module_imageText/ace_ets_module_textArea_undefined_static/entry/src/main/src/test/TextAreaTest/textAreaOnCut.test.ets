@@ -17,13 +17,15 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-async function doCopy(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let textInput = await driver.findComponent(ON.text('剪切')) as Component;
-  await textInput.click();
-  await CommonFunc.sleep(500);
+function doCopy(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let textInput = await driver.findComponent(ON.text('剪切')) as Component;
+    await textInput.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 export default function TextAreaOnCut() {

@@ -32,11 +32,11 @@ let filesDir: string | undefined | null;
 let globalpixelmap: image.PixelMap | undefined = undefined;
 let globalimageSource: image.ImageSource | undefined = undefined;
 
-async function getFd(fileName:string) {
+function getFd(fileName:string) {
   let filePath = filesDir + "/" + fileName;
   console.info("image case filePath is " + filePath);
   let file: fs.File | undefined;
-  file = await fs.open(filePath, 0o0);
+  waitForCompletion(async () => {file = await fs.open(filePath, 0o0);})
   return file!.fd as int
 }
 
@@ -61,7 +61,7 @@ const createPixelmapTestPromise = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = await getFd("colorspace.jpg");
+    let fd = getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
@@ -74,7 +74,7 @@ const createPixelmapTestPromise = async (
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
       let pixelMap: image.PixelMap | undefined;
-      pixelMap = await imageSource!.createPixelMap(decodingOptions);
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
@@ -109,7 +109,7 @@ const createPixelmapTestCb = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = await getFd("colorspace.jpg");
+    let fd = getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
@@ -157,13 +157,13 @@ const applyColorSpacePromiseTest = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = await getFd("colorspace.jpg");
+    let fd = getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
       let pixelMap: image.PixelMap | undefined;
-      pixelMap = await imageSource!.createPixelMap();
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -174,7 +174,7 @@ const applyColorSpacePromiseTest = async (
         }
         logger.log("csmModify " + csmModify);
         try{
-          await pixelMap!.applyColorSpace(csmModify);
+          waitForCompletion(async () => {await pixelMap!.applyColorSpace(csmModify);})
           let csm1 = pixelMap!.getColorSpace();
           logger.log("getColorSpace " + csm1);
           let csmn = csm1.getColorSpaceName();
@@ -214,13 +214,13 @@ const applyColorSpaceCbTest = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = await getFd("colorspace.jpg");
+    let fd = getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
       let pixelMap: image.PixelMap | undefined;
-      pixelMap = await imageSource!.createPixelMap();
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;

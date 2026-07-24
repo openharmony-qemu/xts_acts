@@ -36,7 +36,7 @@ export default function formHostTest() {
 
     beforeAll(async () => {
       hilog.info(DOMAIN, TAG, 'Before all, open the test page');
-      await Utils.startAbility(
+      Utils.startAbility(
         'TestFormAbility',
         'com.example.actsformtest.static',
         'testform/pages/XtsFormHost',

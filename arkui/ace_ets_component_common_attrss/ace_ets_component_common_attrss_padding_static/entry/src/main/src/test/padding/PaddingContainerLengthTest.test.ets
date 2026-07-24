@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-export default async function PaddingContainerLengthTest() {
+export default function PaddingContainerLengthTest() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
     'GridRow',
@@ -165,7 +165,7 @@ export default async function PaddingContainerLengthTest() {
         data.testValue.expectValue.parentWidthAfter = UIContext.resolveUIContext()!.vp2px(400) * 0.1
       }
 
-      let targetRectBefore: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey);
+      let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] targetRectBefore:' + targetRectBefore);
       //Verify the width size of the target component.
       let targetRectBeforeWidth = targetRectBefore.right - targetRectBefore.left;
@@ -187,10 +187,10 @@ export default async function PaddingContainerLengthTest() {
       AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', data.testValue.setValue.padding)
       await Utils.sleep(2000);
       console.info('[wll]get(_padding)'+AppStorage.get<number|string|Padding|Resource>('_padding'))
-      let targetRectAfter: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey);
+      let targetRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
 
       //Confirm that the size attribute values have been successfully set.
-      let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       expect(viewObj.getElement('$attrs').getString('padding')).assertEqual(data.testValue.expectValue.padding);
 
       //Verification method for special reference components.
@@ -203,7 +203,7 @@ export default async function PaddingContainerLengthTest() {
         || data.pageConfig.componentKey == 'WaterFlow' /*||data.pageConfig.componentKey == 'ListItem'*/
       ) {
         //Obtain the size information of the reference component.
-        let referenceRect: RectValue = await Utils.getComponentRect(data.pageConfig.referenceComponentKey);
+        let referenceRect: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
         //Verification method for special components.
         if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetResource'

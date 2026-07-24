@@ -63,12 +63,12 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-          if(user !== undefined){
-              cmd += ' -u ' + user;
-          }
-          await abilityDelegator.executeShellCommand(cmd);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
+          await abilityDelegator.executeShellCommand(cmd); 
           await Utils.msSleep(2000);
 
           expect(isAbilityCreated).assertTrue();
@@ -112,38 +112,42 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor callback`);
-          try {
-            await abilityDelegator.removeAbilityMonitor(monitor);
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
-            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
-            await abilityDelegator.executeShellCommand(cmd);
-            await Utils.msSleep(2000);
-            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-            await context.moveAbilityToBackground()
-              .catch((err): void => {
-                if(err instanceof BusinessError){
-                    hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-                    if(err?.code === 16000061) {
-                      done();
-                    }
-                }
-              });
-            await Utils.msSleep(2000);
-            expect(isOnBackground).assertFalse();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
-          } catch (err) {
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
-          }
+          abilityDelegator.removeAbilityMonitor(monitor, (err: BusinessError<void> | null) => {
+            waitForCompletion(async () => {
+              hilog.info(domain, tag, `${itName} removeAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
+              if (err?.code) {
+                hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+                return;
+              }
+              hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
+              hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+              let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              await abilityDelegator.executeShellCommand(cmd);
+              await Utils.msSleep(2000);
+              hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+              const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+              await context.moveAbilityToBackground()
+                .catch((err): void => {
+                  if(err instanceof BusinessError){
+                      hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+                      if(err?.code == 16000061) {
+                        done();
+                      }
+                  }
+                });
+              await Utils.msSleep(2000);
+              expect(isOnBackground).assertFalse();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+            })
+          })
         } catch (err) {
           if(err instanceof BusinessError){
               hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
@@ -184,32 +188,33 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor promise`);
-          try {
-            await abilityDelegator.removeAbilityMonitor(monitor);
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
+          abilityDelegator.removeAbilityMonitor(monitor).then(() => {
+            waitForCompletion(async () => {
+              hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
 
-                     hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-                     let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-                     let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-                     if(user !== undefined){
-                         cmd += ' -u ' + user;
-                     }
-                     await abilityDelegator.executeShellCommand(cmd);
-                     await Utils.msSleep(2000);
+              hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+              let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              await abilityDelegator.executeShellCommand(cmd);
+              await Utils.msSleep(2000);
 
-                     hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-                     const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-                     await context.moveAbilityToBackground();
-                     await Utils.msSleep(2000);
+              hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+              const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+              await context.moveAbilityToBackground();
+              await Utils.msSleep(2000);
 
-                     expect(isOnBackground).assertFalse();
+              expect(isOnBackground).assertFalse();
 
-                     done();
-                     hilog.info(domain, tag, `${itName} end`);
-          } catch (e) {
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+            })
+          }).catch((e) => {
             if (e instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} removeAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
-                if(e?.code === 16000061) {
+                if(e?.code == 16000061) {
                   done();
                 } else {
                   expect().assertFail();
@@ -217,11 +222,11 @@ export default function AbilityDelegatorStageStaticTest() {
                 }
                 hilog.info(domain, tag, `${itName} end`);
             }
-          }
+          })
         } catch (err) {
           if(err instanceof BusinessError){
               hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-              if(err?.code === 16000061) {
+              if(err?.code == 16000061) {
                 done();
               } else {
                 expect().assertFail();
@@ -266,11 +271,11 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} removeAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-          if(user !== undefined){
-              cmd += ' -u ' + user;
-          }
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
           await abilityDelegator.executeShellCommand(cmd);
           await Utils.msSleep(2000);
 
@@ -283,7 +288,7 @@ export default function AbilityDelegatorStageStaticTest() {
           expect(isOnBackground).assertFalse();
         } catch (err) {
           hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          if(err?.code === 16000061) {
+          if(err?.code == 16000061) {
             done();
           } else {
             expect().assertFail();
@@ -336,11 +341,11 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(1000);
 
@@ -403,11 +408,11 @@ export default function AbilityDelegatorStageStaticTest() {
               expect(data !== undefined).assertTrue();
             })
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
@@ -471,11 +476,11 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
@@ -542,11 +547,11 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(1000);
 
@@ -585,11 +590,11 @@ export default function AbilityDelegatorStageStaticTest() {
         try {
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
-          let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
-          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-          if(user !== undefined){
-              cmd += ' -u ' + user;
-          }
+          let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
           await abilityDelegator.executeShellCommand(cmd);
           await Utils.msSleep(2000);
 
@@ -642,11 +647,11 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
@@ -726,24 +731,23 @@ export default function AbilityDelegatorStageStaticTest() {
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} doAbilityForeground`);
-            try {
-              expect(ability.isDestroyed).assertFalse();
-              await abilityDelegator.doAbilityForeground(ability);
-              hilog.info(domain, tag, `${itName} doAbilityForeground success`);
-
-                         await Utils.msSleep(2000);
-                         const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
-                         expect(isOnBackground).assertTrue();
-                         done();
-                         hilog.info(domain, tag, `${itName} end`);
-            } catch (e) {
+            abilityDelegator.doAbilityForeground(ability).then(() => {
+              waitForCompletion(async () => {
+                hilog.info(domain, tag, `${itName} doAbilityForeground success`);
+                await Utils.msSleep(2000);
+                const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
+                expect(isOnBackground).assertTrue();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+              })
+            }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag,
                     `${itName} doAbilityForeground fail error code: ${e?.code} msg: ${e?.message}`);
                   expect().assertFail();
                   hilog.info(domain, tag, `${itName} end`);
               }
-            }
+            })
           } catch (err) {
             if(err instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
@@ -790,23 +794,24 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
 
             hilog.info(domain, tag, `${itName} doAbilityBackground`);
-            try {
-              await abilityDelegator.doAbilityBackground(ability);
-              hilog.info(domain, tag, `${itName} doAbilityBackground success`);
-                         await Utils.msSleep(2000);
+            abilityDelegator.doAbilityBackground(ability).then(() => {
+              waitForCompletion(async () => {
+                hilog.info(domain, tag, `${itName} doAbilityBackground success`);
+                await Utils.msSleep(2000);
 
-                         const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
-                         expect(isOnBackground).assertTrue();
+                const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
+                expect(isOnBackground).assertTrue();
 
-                         done();
-                         hilog.info(domain, tag, `${itName} end`);
-            } catch (e) {
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+              })
+            }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag, `${itName} doAbilityBackground fail error code: ${e?.code} msg: ${e?.message}`);
                   expect().assertFail();
                   hilog.info(domain, tag, `${itName} end`);
               }
-            }
+            })
           } catch (err) {
             if(err instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
@@ -840,11 +845,11 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
             await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 

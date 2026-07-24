@@ -35,23 +35,23 @@ let context: common.UIAbilityContext;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let mKVMgrConfig: distributedData.KVManagerConfig
 
-async function publicGetKvStore(optionsp: distributedData.Options): Promise<distributedData.SingleKVStore> {
+function publicGetKvStore(optionsp: distributedData.Options) {
   console.log(tag + `Test getKvStore `)
   //context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
 
   hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-  await Utils.msSleep(2000);
-  let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
-  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-  if(user !== undefined){
-      cmd += ' -u ' + user;
-  }
+  waitForCompletion(async ()=>{ await Utils.msSleep(2000)} );
+  let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";	 
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+  if(user !== undefined){ 
+      cmd += ' -u ' + user; 
+  } 
   abilityDelegator.executeShellCommand(cmd)
   // await abilityDelegator.startAbility({
   //   bundleName: 'com.example.kvstoreetstest.static',
   //   abilityName: 'EntryAbility'
   // });
-  await Utils.msSleep(8000);
+  waitForCompletion(async ()=>{ await Utils.msSleep(8000)} );
   context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
   hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
   let mKVMgrConfig: distributedData.KVManagerConfig = {

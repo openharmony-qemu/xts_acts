@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function btnDragStart() {
   describe('btnDragStart', () => {
 
-    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!

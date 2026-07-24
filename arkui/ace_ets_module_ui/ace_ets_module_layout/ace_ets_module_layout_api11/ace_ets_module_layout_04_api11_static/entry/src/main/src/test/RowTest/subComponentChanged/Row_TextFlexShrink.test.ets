@@ -81,11 +81,11 @@ it('testRowTextFlexShrink_static_01', Level.LEVEL0, async (done: () => void): Pr
         name: 'thirdTextFlexShrink', value: 1
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextFlexShrink1');
-      let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextFlexShrink2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextFlexShrink3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextFlexShrink' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextFlexShrink' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink1');
+      let secondText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextFlexShrink_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

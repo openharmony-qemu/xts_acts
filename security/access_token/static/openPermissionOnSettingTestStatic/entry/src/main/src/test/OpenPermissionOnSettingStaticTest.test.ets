@@ -37,10 +37,10 @@ const ERR_PARAM_INVALID = 12100001;
 
 //Do NOT ALLOW/Prohibit/cancel ---- Both mean Prohibit
 function clickRequest(driver: Driver, name: string): boolean {
-  Utils.msSleep(2000).awaitSync()
+  waitForCompletion(async () => {await Utils.msSleep(2000);})
   try {
     hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    return (async (): Promise<boolean> => {
+    return waitForCompletion<boolean>(async (): Promise<boolean> => {
       let button = await driver.findComponent(ON.text(name));
       await Utils.msSleep(1000);
       if (button !== null) {
@@ -49,7 +49,7 @@ function clickRequest(driver: Driver, name: string): boolean {
         return true;
       }
       return false;
-    })().awaitSync()
+    })
   } catch (error) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;

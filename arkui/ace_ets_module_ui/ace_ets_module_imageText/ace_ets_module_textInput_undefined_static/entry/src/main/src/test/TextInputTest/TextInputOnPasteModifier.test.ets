@@ -22,13 +22,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-async function doPaste(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
-  await selectionMenu.click();
-  await CommonFunc.sleep(500);
+function doPaste(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
+    await selectionMenu.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 
@@ -72,13 +74,13 @@ export default function TextInputOnPasteModifierTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await doPaste(driver, 'TextInput_OnPaste_Modifier_Undefined0')
+      doPaste(driver, 'TextInput_OnPaste_Modifier_Undefined0')
       let pasteValue1 = await driver.findComponent(ON.id('TextInput_OnPaste_Modifier_Value0')) as Component;
       let text = await pasteValue1.getText();
       console.info('[TextInputOnPasteModifierTest_static_0010] TextInputOnPasteModifierUndefined: ' + text);
       expect(text).assertEqual('pasteValue: ');
 
-      await doPaste(driver, 'TextInput_OnPaste_Modifier_Dynamic0')
+      doPaste(driver, 'TextInput_OnPaste_Modifier_Dynamic0')
       let pasteValue2 = await driver.findComponent(ON.id('TextInput_OnPaste_Modifier_Value0')) as Component;
       text = await pasteValue2.getText();
       console.info('[TextInputOnPasteModifierTest_static_0010] TextInputOnPasteModifierDynamic: ' + text);
@@ -88,7 +90,7 @@ export default function TextInputOnPasteModifierTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      await doPaste(driver, 'TextInput_OnPaste_Modifier_Dynamic0')
+      doPaste(driver, 'TextInput_OnPaste_Modifier_Dynamic0')
       let pasteValue3 = await driver.findComponent(ON.id('TextInput_OnPaste_Modifier_Value0')) as Component;
       text = await pasteValue3.getText();
       console.info('[TextInputOnPasteModifierTest_static_0010] TextInputOnPasteModifierDynamic: ' + text);

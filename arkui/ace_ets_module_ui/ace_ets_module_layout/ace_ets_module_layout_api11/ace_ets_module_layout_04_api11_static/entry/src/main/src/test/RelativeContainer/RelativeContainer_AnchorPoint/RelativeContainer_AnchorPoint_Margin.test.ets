@@ -83,11 +83,11 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Margin_TEST_static_0100', Level.LEVEL0
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_bt1');
-      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_tx2');
-      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_r1');
-      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_row1');
-      let RelativeContainer_AnchorPoint_Margin_row2: RectValue = await CommonFunc.getComponentRect('row_marginTest');
+      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_bt1');
+      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_tx2');
+      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_r1');
+      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_row1');
+      let RelativeContainer_AnchorPoint_Margin_row2: RectValue = CommonFunc.getComponentRect('row_marginTest');
 
       console.log('assert position')
       expect(Math.abs(RelativeContainer_AnchorPoint_Margin_row1.left - RelativeContainer_AnchorPoint_Margin_row2.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
