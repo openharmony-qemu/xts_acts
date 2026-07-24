@@ -878,7 +878,7 @@ export default function api16CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0012 start');
       try {
         let scope: certManager.CertScope = certManager.CertScope.CURRENT_USER;
-        let result: certManager.CMResult = certManager.getAllUserTrustedCertificates(scope);
+        let result = certManager.getAllUserTrustedCertificates(scope);
         expect(result === undefined).assertTrue();
       } catch (error) {
         console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0012 error.code: ${error.code}, message: ${error.message}`);
@@ -900,7 +900,7 @@ export default function api16CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0013 start');
       try {
         let scope: certManager.CertScope = certManager.CertScope.GLOBAL_USER;
-        let result: certManager.CMResult = await certManager.getAllUserTrustedCertificates(scope);
+        let result = await certManager.getAllUserTrustedCertificates(scope);
         expect(result === undefined).assertTrue();
       } catch (error) {
         let err: BusinessError = error as BusinessError;
