@@ -2003,20 +2003,18 @@ export default function ReminderAgentManagerCoverageTest() {
 
         /**
          * @tc.name   publishReminder_callback_out_enum_range_001
-         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_001
-         * @tc.desc   test publishReminder want is empty.
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0100
+         * @tc.desc   test publishReminder slotType out enum range.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it("publishReminder_callback_out_enum_range_001", Level.LEVEL0, async function (done) {
-            console.info('----------------------publishReminder_callback_out_enum_range_001---------------------------');           
+            console.info('----------------------publishReminder_callback_out_enum_range_001---------------------------');   
             let timer = {
                 reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
                 triggerTimeInSeconds: 10,
                 slotType: 121,
-                snoozeSlotType: 121,
-                fixedTimeZone: 121
             }
             try {
                 reminderAgent.publishReminder(timer, (err, reminderId) => {
@@ -2032,6 +2030,74 @@ export default function ReminderAgentManagerCoverageTest() {
                 })
             } catch (error) {
                 console.info("publishReminder_callback_out_enum_range_001 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
+        /**
+         * @tc.name   publishReminder_callback_out_enum_range_002
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0200
+         * @tc.desc   test publishReminder snoozeSlotType out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_out_enum_range_002", Level.LEVEL0, async function (done) {
+            console.info('----------------------publishReminder_callback_out_enum_range_002---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                snoozeSlotType: 121
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_out_enum_range_002 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_out_enum_range_002 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_out_enum_range_002 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
+        /**
+         * @tc.name   publishReminder_callback_out_enum_range_003
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0300
+         * @tc.desc   test publishReminder fixedTimeZone out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_out_enum_range_003", Level.LEVEL0, async function (done) {
+            console.info('----------------------publishReminder_callback_out_enum_range_003---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: 121
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_out_enum_range_003 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_out_enum_range_003 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_out_enum_range_003 publishReminder error.code:" + error.code);
                 expect(error.code  == 401).assertTrue();
                 done(); 
             }
