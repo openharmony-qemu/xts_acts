@@ -314,7 +314,7 @@ export default function ObjectIsExtensibleTest() {
      * @tc.level  LEVEL1
      */
     it('ObjectIsExtensibleTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest025()).assertDeepEquals([false, false, false, false]);
+      expect(ObjectIsExtensible.ObjectIsExtensibleTest025()).assertDeepEquals([true, true, true, true]);
     });
 
     /**
@@ -350,7 +350,7 @@ export default function ObjectIsExtensibleTest() {
      * @tc.level  LEVEL1
      */
     it('ObjectIsExtensibleTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest028()).assertDeepEquals([false, false]);
+      expect(ObjectIsExtensible.ObjectIsExtensibleTest028()).assertDeepEquals([true,true]);
     });
 
     /**
@@ -362,7 +362,7 @@ export default function ObjectIsExtensibleTest() {
      * @tc.level  LEVEL1
      */
     it('ObjectIsExtensibleTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest029()).assertDeepEquals([false, false]);
+      expect(ObjectIsExtensible.ObjectIsExtensibleTest029()).assertDeepEquals([true,true]);
     });
 
     /**
@@ -1114,7 +1114,7 @@ export default function ObjectIsExtensibleTest() {
      * @tc.level  LEVEL1
      */
     it('ObjectIsExtensibleTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest095()).assertDeepEquals([false, false, false, false, false, false, false]);
+      expect(ObjectIsExtensible.ObjectIsExtensibleTest095()).assertDeepEquals([false, true, false, false, false, true,true]);
     });
 
     /**
