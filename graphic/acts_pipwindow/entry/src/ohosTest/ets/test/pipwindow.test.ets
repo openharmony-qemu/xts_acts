@@ -598,6 +598,79 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
+     * @tc.name   testCreateErrCode401_0100
+     * @tc.number testCreateErrCode401_0100
+     * @tc.desc   test create with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreateErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testCreateErrCode401_0100';
+      try {
+        let promise = pipWindow.create(undefined);
+        promise.then((data) => {
+          console.error(message + 'Succeeded in calling create.');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(message + 'Failed to call create. Cause:' + JSON.stringify(err));
+          if (err.code == 801) {
+            console.info(message + '此设备不支持create能力.');
+            expect(err.message != null).assertTrue();
+          } else {
+            expect(err.code).assertEqual(401);
+          }
+          done();
+        });
+      } catch (error) {
+        console.log(message + 'Failed2 to call create. Cause:' + JSON.stringify(error));
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCreateErrCode401_0200
+     * @tc.number testCreateErrCode401_0200
+     * @tc.desc   test create with templateType undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreateErrCode401_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testCreateErrCode401_0200';
+      let mXComponentController = new XComponentController();
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: "",
+        templateType: undefined,
+        contentWidth: 400,
+        contentHeight: 600,
+      };
+      try {
+        let promise = pipWindow.create(config);
+        promise.then((data) => {
+          console.error(message + 'Succeeded in calling create.');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(message + 'Failed to call create. Cause:' + JSON.stringify(err));
+          if (err.code == 801) {
+            console.info(message + '此设备不支持create能力.');
+            expect(err.message != null).assertTrue();
+          } else {
+            expect(err.code).assertEqual(401);
+          }
+          done();
+        });
+      } catch (error) {
+        console.log(message + 'Failed2 to call create. Cause:' + JSON.stringify(error));
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+    /**
      * @tc.name   create_Function_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
      * @tc.desc   To test the function of create
@@ -778,6 +851,46 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         if (error.code == 801) {
           expect(error.message != null).assertTrue();
 
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.name   setAutoStartEnabled_undefined_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0550
+     * @tc.desc   To test setAutoStartEnabled with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('setAutoStartEnabled_undefined_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config);
+        console.log('www data setAutoStartEnabled_undefined_test begin')
+        pipController.setAutoStartEnabled(undefined);
+        console.log('www data Succeeded in setAutoStartEnabled_undefined_test')
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        console.log('www data Failed to setAutoStartEnabled_undefined_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+        if (error.code == 801) {
+          expect(error.message != null).assertTrue();
           done();
         } else {
           expect().assertFail();
@@ -1075,6 +1188,62 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         if (error.code == 801) {
           expect(error.message != null).assertTrue();
 
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.name   controlPanelActionEvent_Multiple_Callbacks
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1050
+     * @tc.desc   To test the function of controlPanelActionEvent with multiple callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('controlPanelActionEvent_Multiple_Callbacks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let callback1Called = false;
+      let callback2Called = false;
+      let callback3Called = false;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config);
+        console.log('www data controlPanelActionEvent_Multiple_Callbacks begin');
+
+        pipController.on('controlPanelActionEvent', (event) => {
+          callback1Called = true;
+          console.info('callback1, event:' + event);
+        });
+        pipController.on('controlPanelActionEvent', (event) => {
+          callback2Called = true;
+          console.info('callback2, event:' + event);
+        });
+        pipController.on('controlPanelActionEvent', (event) => {
+          callback3Called = true;
+          console.info('callback3, event:' + event);
+        });
+
+        console.log('www data Succeeded in registering multiple callbacks');
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        console.log('www data Failed to controlPanelActionEvent_Multiple_Callbacks' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+        if (error.code == 801) {
+          expect(error.message != null).assertTrue();
           done();
         } else {
           expect().assertFail();
@@ -3323,6 +3492,57 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
+     * @tc.name   testUpdatePiPControlStatusErrCode401_0200
+     * @tc.number testUpdatePiPControlStatusErrCode401_0200
+     * @tc.desc   test updatePiPControlStatus with undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUpdatePiPControlStatusErrCode401_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testUpdatePiPControlStatusErrCode401_0200';
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config)
+        try {
+          pipController.updatePiPControlStatus(undefined, undefined);
+          console.error(message + 'Succeeded in calling updatePiPControlStatus.');
+          expect().assertFail();
+          done()
+        } catch (e) {
+          console.log(message + 'Failed to call updatePiPControlStatus. Cause:' + JSON.stringify(e));
+          if (e.code == 801) {
+            console.info(message + '此设备不支持updatePiPControlStatus能力.');
+          } else {
+            expect(e.code).assertEqual(401);
+          }
+          done()
+        }
+      } catch (error) {
+        console.log(message + 'Failed2 to call updatePiPControlStatus. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+        if (error.code == 801) {
+          console.info(message + '此设备不支持updatePiPControlStatus能力.');
+          expect(error.message != null).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testSetPiPControlEnabledErrCode401_0100
      * @tc.number testSetPiPControlEnabledErrCode401_0100
      * @tc.desc   testSetPiPControlEnabledErrCode401_0100
@@ -3349,6 +3569,108 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         pipController = await pipWindow.create(config)
         try {
           pipController.setPiPControlEnabled(null, null);
+          console.error(message + 'Succeeded in calling setPiPControlEnabled.');
+          expect().assertFail();
+          done()
+        } catch (e) {
+          console.log(message + 'Failed to call setPiPControlEnabled. Cause:' + JSON.stringify(e));
+          if (e.code == 801) {
+            console.info(message + '此设备不支持setPiPControlEnabled能力.');
+          } else {
+            expect(e.code).assertEqual(401);
+          }
+          done()
+        }
+      } catch (error) {
+        console.log(message + 'Failed2 to call setPiPControlEnabled. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+        if (error.code == 801) {
+          console.info(message + '此设备不支持setPiPControlEnabled能力.');
+          expect(error.message != null).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetPiPControlEnabledErrCode401_0200
+     * @tc.number testSetPiPControlEnabledErrCode401_0200
+     * @tc.desc   test setPiPControlEnabled with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPiPControlEnabledErrCode401_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testSetPiPControlEnabledErrCode401_0200';
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config)
+        try {
+          pipController.setPiPControlEnabled(null, true);
+          console.error(message + 'Succeeded in calling setPiPControlEnabled.');
+          expect().assertFail();
+          done()
+        } catch (e) {
+          console.log(message + 'Failed to call setPiPControlEnabled. Cause:' + JSON.stringify(e));
+          if (e.code == 801) {
+            console.info(message + '此设备不支持setPiPControlEnabled能力.');
+          } else {
+            expect(e.code).assertEqual(401);
+          }
+          done()
+        }
+      } catch (error) {
+        console.log(message + 'Failed2 to call setPiPControlEnabled. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+        if (error.code == 801) {
+          console.info(message + '此设备不支持setPiPControlEnabled能力.');
+          expect(error.message != null).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetPiPControlEnabledErrCode401_0300
+     * @tc.number testSetPiPControlEnabledErrCode401_0300
+     * @tc.desc   test setPiPControlEnabled with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPiPControlEnabledErrCode401_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testSetPiPControlEnabledErrCode401_0300';
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config)
+        try {
+          pipController.setPiPControlEnabled(undefined, undefined);
           console.error(message + 'Succeeded in calling setPiPControlEnabled.');
           expect().assertFail();
           done()
