@@ -15,7 +15,11 @@
  */
 
 import imagePackToFileGif from './PackToFileGif.test.ets';
+import packBinaryImageToTiff from './packBinaryImageToTiff.test.ets';
+import packToDataWithOptions from './packToDataWithOptions.test.ets';
 
 export default function testsuite() {
   imagePackToFileGif();
+  packBinaryImageToTiff();
+  packToDataWithOptions();
 }
