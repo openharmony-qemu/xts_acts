@@ -223,8 +223,8 @@ export default class MediaTestBase {
           await avScreenCaptureRecorder?.excludePickerWindows(excludedWindowIds).then(() => {
             console.info('avScreenCaptureRecorder setPickerMode success');
           }).catch((err: BusinessError) => {
-            if (error.code != 5400103) {
-              console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + error.message);
+            if (err.code != 5400103) {
+              console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
               this.testFail();
             }
           });
