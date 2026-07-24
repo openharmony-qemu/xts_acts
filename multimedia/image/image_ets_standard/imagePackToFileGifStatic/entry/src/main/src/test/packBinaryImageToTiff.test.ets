@@ -59,7 +59,7 @@ function isSupportTiffPack(testName: string, mimeType: string): Boolean {
 
 export default function packBinaryImageToTiff() {
   let filesDir: string | undefined | null;
-  describe("packBinaryImageToTiff", () => {
+  describe("packBinaryImageToTiffStatic", () => {
     beforeAll(async () => {
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       console.info(TAG, 'beforeAll case.');

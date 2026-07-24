@@ -45,7 +45,7 @@ async function packToDataWithPixelMap(testName: string, packOpts: image.PackingO
 }
 
 export default function packToDataWithOptions() {
-  describe("packToDataWithOptions", () => {
+  describe("packToDataWithOptionsStatic", () => {
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       isSupportTiff = image.getImageSourceSupportedFormats().includes("image/tiff");
