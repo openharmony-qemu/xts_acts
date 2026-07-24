@@ -16,10 +16,21 @@ import actsWifiFunctionTest from './WifiP2PFunction.test.js'
 import actsWifiManagerFunctionTest from './WifiManagerP2PFunction.test.js'
 import actsWifiEventTest from './WifiP2PEvent.test.js'
 import actsWifiManagerEventTest from './WifiManagerP2PEvent.test.js'
+import wifiManager from '@ohos.wifiManager';
+
+let iswifisupport = true;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + iswifisupport);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
+  if(iswifisupport){
     actsWifiFunctionTest()
     actsWifiManagerFunctionTest()
     actsWifiEventTest()
     actsWifiManagerEventTest()
+  }
 }
 

@@ -16,7 +16,18 @@
 
 import actsWifiManagerFunctionsTest from "./WifiManagerStationFunctionsStatic.test";
 import actsWifiManagerP2PTest from "./WifiManagerP2PStatic.test";
+import wifiManager from '@ohos.wifiManager';
+
+let iswifisupport: boolean = true;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + iswifisupport);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
-  actsWifiManagerFunctionsTest();
-  actsWifiManagerP2PTest();
+  if(iswifisupport){
+    actsWifiManagerFunctionsTest();
+    actsWifiManagerP2PTest();
+  }
 }
