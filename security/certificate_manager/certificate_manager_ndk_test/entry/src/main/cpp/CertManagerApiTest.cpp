@@ -18,24 +18,35 @@
 #include "device_certificate/certmanager/cm_native_type.h"
 #include <cstdint>
 #include <string>
+#include <cstring>
 
-int SafeMemset(void* dst, size_t dstSize, const void* src, size_t len)
+int SafeMemset(void* s, size_t sse, int c, size_t n)
 {
-    if (dst == nullptr || src == nullptr) {
+    //检查参数有效性
+    if (s == NULL) {
         return EINVAL;
     }
-    
-    if (dstSize == 0) {
+
+    //检查目标内存大小是否为0
+    if (sse == 0) {
         return EINVAL;
     }
-    
-    if (len > dstSize) {
+
+    //检查要设置的字节数是否超过目标内存大小
+    if (n > sse) {
         return ERANGE;
     }
-    
-    unsigned char *ptr = static_cast<unsigned char *>(dst);
-    unsigned char value = *(static_cast<const unsigned char *>(src));
-    for (size_t i = 0; i < len; i++) {
+
+    //检查要设置的值是否在有效范围内
+    if (c < 0 || c > 255) {
+        return EINVAL;
+    }
+
+    //执行内存设置操作
+    unsigned char *ptr = (unsigned char *)s;
+    unsigned char value = (unsigned char )c;
+
+    for (size_t i = 0; i < n; i++) {
         ptr[i] = value;
     }
 
