@@ -15,7 +15,9 @@
  */
 
 import imagePixelMapForDMA from './ImagePixelMapForDMA.test';
+import imagePixelmapForThumbnailTest from './ImagePixelmapForThumbnailTest.test';
 
 export default function testsuite() {
   imagePixelMapForDMA();
+  imagePixelmapForThumbnailTest();
 }
