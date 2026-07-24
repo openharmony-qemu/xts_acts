@@ -156,6 +156,7 @@ struct ArcListPage {
               .key('arclistitem02')
           }
           .key('arclistitem02')
+          .autoScale(false)
       }
       .space(LengthMetrics.px(20))
       .scrollBar(BarState.On)
