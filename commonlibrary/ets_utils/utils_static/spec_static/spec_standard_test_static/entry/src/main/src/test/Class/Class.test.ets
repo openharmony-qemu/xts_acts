@@ -110,6 +110,18 @@ interface I{
 class Class_I implements I{
     f!:string
 }
+
+class instantiateA {
+  static $_instantiate(p:int):int{
+    return p
+  }
+}
+class instantiateB extends instantiateA {
+  static $_instantiate(p:string):string{
+    return p
+  }
+}
+
 export default function ClassLateInitizationTest() {
   describe('ClassLateInitizationTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -427,6 +439,19 @@ export default function ClassLateInitizationTest() {
       }
       a.f = "1"
       expect(a.f).assertEqual("1")
+    });
+
+     /**
+     * @tc.number SUB_CLASS_LATE_INITIZATION_1900
+     * @tc.name ClassLateInitizationTest019
+     * @tc.desc test NullPointerError when accessing uninitialized interface implementation field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ClassLateInitizationTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let x = instantiateB.$_instantiate('1')
+      expect(x).assertEqual('1')
     });
 
   });
