@@ -84,17 +84,6 @@ struct ScrollZoomNullExample {
         .backgroundColor(0xDCDCDC)
         .width('30%')
         .height('100%')
-
-        Scroll() {
-          Image($r('app.media.icon'))
-        }
-        .minZoomScale(this.maxZoomScaleNum+1)
-        .id('scroll_minZoomScale_larger')
-        .maxZoomScale(this.maxZoomScaleNum)
-        .enableBouncesZoom(true)
-        .backgroundColor(0xDCDCDC)
-        .width('30%')
-        .height('100%')
       }
       .height('15%')
 
