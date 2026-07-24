@@ -1717,5 +1717,436 @@ export default function biguint64arraySetTest(): void {
       expect(targetArray[1]).assertEqual(42n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8700
+     * @tc.name testBigUint64ArraySet087
+     * @tc.desc Verify short source converted by toInt supplies scalar insert position one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortIndexSource: short = 1;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(shortIndexSource.toInt(), 55n);
+      expect(targetArray.join(',')).assertEqual('10,55,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8800
+     * @tc.name testBigUint64ArraySet088
+     * @tc.desc Verify long source converted by toInt supplies scalar insert position one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longIndexSource: long = 1;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(longIndexSource.toInt(), 55n);
+      expect(targetArray.join(',')).assertEqual('10,55,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8900
+     * @tc.name testBigUint64ArraySet089
+     * @tc.desc Verify float source converted by toInt supplies scalar insert position one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatIndexSource: float = 1.9f;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(floatIndexSource.toInt(), 55n);
+      expect(targetArray.join(',')).assertEqual('10,55,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9000
+     * @tc.name testBigUint64ArraySet090
+     * @tc.desc Verify double source converted by toInt supplies scalar insert position one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleIndexSource: double = 1.9;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(doubleIndexSource.toInt(), 55n);
+      expect(targetArray.join(',')).assertEqual('10,55,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9100
+     * @tc.name testBigUint64ArraySet091
+     * @tc.desc Verify byte source converted by toInt supplies scalar value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteValueSource: byte = 42;
+      let targetArray = new BigUint64Array(2);
+      targetArray.set(1, byteValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9200
+     * @tc.name testBigUint64ArraySet092
+     * @tc.desc Verify short source converted by toInt supplies scalar value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortValueSource: short = 42;
+      let targetArray = new BigUint64Array(2);
+      targetArray.set(1, shortValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9300
+     * @tc.name testBigUint64ArraySet093
+     * @tc.desc Verify long source converted by toInt supplies scalar value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longValueSource: long = 42;
+      let targetArray = new BigUint64Array(2);
+      targetArray.set(1, longValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9400
+     * @tc.name testBigUint64ArraySet094
+     * @tc.desc Verify double source converted by toInt supplies truncated scalar value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleValueSource: double = 42.9;
+      let targetArray = new BigUint64Array(2);
+      targetArray.set(1, doubleValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9500
+     * @tc.name testBigUint64ArraySet095
+     * @tc.desc Verify double source converted by toInt supplies typed array offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleOffsetSource: double = 1.9;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceArray = BigUint64Array.of(70n, 80n);
+      targetArray.set(sourceArray, doubleOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9600
+     * @tc.name testBigUint64ArraySet096
+     * @tc.desc Verify byte source converted by toInt supplies FixedArray offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteOffsetSource: byte = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, byteOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9700
+     * @tc.name testBigUint64ArraySet097
+     * @tc.desc Verify short source converted by toInt supplies FixedArray offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortOffsetSource: short = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, shortOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9800
+     * @tc.name testBigUint64ArraySet098
+     * @tc.desc Verify long source converted by toInt supplies FixedArray offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longOffsetSource: long = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, longOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_9900
+     * @tc.name testBigUint64ArraySet099
+     * @tc.desc Verify float source converted by toInt supplies FixedArray offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatOffsetSource: float = 1.9f;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, floatOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10000
+     * @tc.name testBigUint64ArraySet100
+     * @tc.desc Verify double source converted by toInt supplies FixedArray offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleOffsetSource: double = 1.9;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, doubleOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10100
+     * @tc.name testBigUint64ArraySet101
+     * @tc.desc Verify byte source converted by toInt supplies ArrayLike offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteOffsetSource: byte = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, byteOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10200
+     * @tc.name testBigUint64ArraySet102
+     * @tc.desc Verify short source converted by toInt supplies ArrayLike offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortOffsetSource: short = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, shortOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10300
+     * @tc.name testBigUint64ArraySet103
+     * @tc.desc Verify long source converted by toInt supplies ArrayLike offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longOffsetSource: long = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, longOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10400
+     * @tc.name testBigUint64ArraySet104
+     * @tc.desc Verify float source converted by toInt supplies ArrayLike offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatOffsetSource: float = 1.9f;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, floatOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10500
+     * @tc.name testBigUint64ArraySet105
+     * @tc.desc Verify double source converted by toInt supplies ArrayLike offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleOffsetSource: double = 1.9;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, doubleOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10600
+     * @tc.name testBigUint64ArraySet106
+     * @tc.desc Verify binary offset one copies a typed array source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceArray = BigUint64Array.of(70n, 80n);
+      targetArray.set(sourceArray, 0b1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10700
+     * @tc.name testBigUint64ArraySet107
+     * @tc.desc Verify octal offset one copies a typed array source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceArray = BigUint64Array.of(70n, 80n);
+      targetArray.set(sourceArray, 0o1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10800
+     * @tc.name testBigUint64ArraySet108
+     * @tc.desc Verify hexadecimal offset one copies a typed array source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceArray = BigUint64Array.of(70n, 80n);
+      targetArray.set(sourceArray, 0x1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_10900
+     * @tc.name testBigUint64ArraySet109
+     * @tc.desc Verify binary offset one copies a FixedArray source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0b1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_11000
+     * @tc.name testBigUint64ArraySet110
+     * @tc.desc Verify octal offset one copies a FixedArray source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0o1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_11100
+     * @tc.name testBigUint64ArraySet111
+     * @tc.desc Verify hexadecimal offset one copies a FixedArray source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: FixedArray<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0x1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_11200
+     * @tc.name testBigUint64ArraySet112
+     * @tc.desc Verify binary offset one copies an ArrayLike source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0b1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_11300
+     * @tc.name testBigUint64ArraySet113
+     * @tc.desc Verify octal offset one copies an ArrayLike source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0o1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_11400
+     * @tc.name testBigUint64ArraySet114
+     * @tc.desc Verify hexadecimal offset one copies an ArrayLike source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceValues: Array<BigInt> = [70n, 80n];
+      targetArray.set(sourceValues, 0x1);
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
   });
 }

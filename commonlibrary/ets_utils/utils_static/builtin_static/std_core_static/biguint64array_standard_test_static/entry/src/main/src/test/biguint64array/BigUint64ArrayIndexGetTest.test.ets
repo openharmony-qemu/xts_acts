@@ -1140,5 +1140,19 @@ export default function biguint64arrayIndexGetTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n);
       expect(sourceArray.$_get(numberIndexSource.toInt())).assertEqual(30n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXGET_6700
+     * @tc.name testBigUint64ArrayIndexGet067
+     * @tc.desc Verify float source converted by toInt supplies index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexGet067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatIndexSource: float = 2.9f;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.$_get(floatIndexSource.toInt())).assertEqual(30n);
+    });
   });
 }

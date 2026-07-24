@@ -36,7 +36,7 @@ export default function biguint64arrayCopyWithinTest(): void {
     beforeAll(() => {
     });
     beforeEach(async () => {
-    await Utils.msSleep(30);
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -2723,6 +2723,108 @@ export default function biguint64arrayCopyWithinTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
       let shortEndSource: short = 4;
       sourceArray.copyWithin(0, 1, shortEndSource.toInt());
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1550
+     * @tc.name testBigUint64ArrayCopyWithin155
+     * @tc.desc Verify byte source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let byteStartSource: byte = 2;
+      let startIndex: int = byteStartSource.toInt();
+      sourceArray.copyWithin(0, startIndex, 4);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1560
+     * @tc.name testBigUint64ArrayCopyWithin156
+     * @tc.desc Verify long source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let longStartSource: long = 2;
+      let startIndex: int = longStartSource.toInt();
+      sourceArray.copyWithin(0, startIndex, 4);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1570
+     * @tc.name testBigUint64ArrayCopyWithin157
+     * @tc.desc Verify float source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let floatStartSource: float = 2.9f;
+      let startIndex: int = floatStartSource.toInt();
+      sourceArray.copyWithin(0, startIndex, 4);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1580
+     * @tc.name testBigUint64ArrayCopyWithin158
+     * @tc.desc Verify double source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let doubleStartSource: double = 2.9;
+      let startIndex: int = doubleStartSource.toInt();
+      sourceArray.copyWithin(0, startIndex, 4);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1590
+     * @tc.name testBigUint64ArrayCopyWithin159
+     * @tc.desc Verify float source converted by toInt supplies exclusive end index four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let floatEndSource: float = 4.9f;
+      let endIndex: int = floatEndSource.toInt();
+      sourceArray.copyWithin(0, 1, endIndex);
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1600
+     * @tc.name testBigUint64ArrayCopyWithin160
+     * @tc.desc Verify double source converted by toInt supplies exclusive end index four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let doubleEndSource: double = 4.9;
+      let endIndex: int = doubleEndSource.toInt();
+      sourceArray.copyWithin(0, 1, endIndex);
       expect(sourceArray[0]).assertEqual(20n);
       expect(sourceArray[2]).assertEqual(40n);
     });

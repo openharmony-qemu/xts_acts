@@ -36,7 +36,7 @@ export default function biguint64arrayFillTest(): void {
     beforeAll(() => {
     });
     beforeEach(async () => {
-    await Utils.msSleep(30);
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -3288,6 +3288,185 @@ export default function biguint64arrayFillTest(): void {
       sourceArray.fill(byteValueSource.toInt());
       expect(sourceArray[0]).assertEqual(42n);
       expect(sourceArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1880
+     * @tc.name testBigUint64ArrayFill188
+     * @tc.desc Verify float source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let floatStartSource: float = 2.9f;
+      let startIndex: int = floatStartSource.toInt();
+      sourceArray.fill(8n, startIndex);
+      expect(sourceArray[0]).assertEqual(1n);
+      expect(sourceArray[1]).assertEqual(2n);
+      expect(sourceArray[2]).assertEqual(8n);
+      expect(sourceArray[3]).assertEqual(8n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1890
+     * @tc.name testBigUint64ArrayFill189
+     * @tc.desc Verify byte source converted by toInt supplies exclusive end index three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let byteEndSource: byte = 3;
+      let endIndex: int = byteEndSource.toInt();
+      sourceArray.fill(7n, 0, endIndex);
+      expect(sourceArray[0]).assertEqual(7n);
+      expect(sourceArray[1]).assertEqual(7n);
+      expect(sourceArray[2]).assertEqual(7n);
+      expect(sourceArray[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1900
+     * @tc.name testBigUint64ArrayFill190
+     * @tc.desc Verify long source converted by toInt supplies exclusive end index three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let longEndSource: long = 3;
+      let endIndex: int = longEndSource.toInt();
+      sourceArray.fill(7n, 0, endIndex);
+      expect(sourceArray[0]).assertEqual(7n);
+      expect(sourceArray[1]).assertEqual(7n);
+      expect(sourceArray[2]).assertEqual(7n);
+      expect(sourceArray[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1910
+     * @tc.name testBigUint64ArrayFill191
+     * @tc.desc Verify short source converted by toInt supplies fill value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let shortValueSource: short = 42;
+      let fillValue: int = shortValueSource.toInt();
+      let sourceArray = new BigUint64Array(2);
+      sourceArray.fill(fillValue);
+      expect(sourceArray[0]).assertEqual(42n);
+      expect(sourceArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1920
+     * @tc.name testBigUint64ArrayFill192
+     * @tc.desc Verify long source converted by toInt supplies fill value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let longValueSource: long = 42;
+      let fillValue: int = longValueSource.toInt();
+      let sourceArray = new BigUint64Array(2);
+      sourceArray.fill(fillValue);
+      expect(sourceArray[0]).assertEqual(42n);
+      expect(sourceArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1930
+     * @tc.name testBigUint64ArrayFill193
+     * @tc.desc Verify float source converted by toInt supplies fill value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let floatValueSource: float = 42.9f;
+      let fillValue: int = floatValueSource.toInt();
+      let sourceArray = new BigUint64Array(2);
+      sourceArray.fill(fillValue);
+      expect(sourceArray[0]).assertEqual(42n);
+      expect(sourceArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1940
+     * @tc.name testBigUint64ArrayFill194
+     * @tc.desc Verify double source converted by toInt supplies fill value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let doubleValueSource: double = 42.9;
+      let fillValue: int = doubleValueSource.toInt();
+      let sourceArray = new BigUint64Array(2);
+      sourceArray.fill(fillValue);
+      expect(sourceArray[0]).assertEqual(42n);
+      expect(sourceArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1950
+     * @tc.name testBigUint64ArrayFill195
+     * @tc.desc Verify binary end literal three fills only the first three elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let binaryEndIndex: int = 0b11;
+      sourceArray.fill(6n, 0, binaryEndIndex);
+      expect(sourceArray[0]).assertEqual(6n);
+      expect(sourceArray[1]).assertEqual(6n);
+      expect(sourceArray[2]).assertEqual(6n);
+      expect(sourceArray[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1960
+     * @tc.name testBigUint64ArrayFill196
+     * @tc.desc Verify octal end literal three fills only the first three elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let octalEndIndex: int = 0o3;
+      sourceArray.fill(6n, 0, octalEndIndex);
+      expect(sourceArray[0]).assertEqual(6n);
+      expect(sourceArray[1]).assertEqual(6n);
+      expect(sourceArray[2]).assertEqual(6n);
+      expect(sourceArray[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILL_1970
+     * @tc.name testBigUint64ArrayFill197
+     * @tc.desc Verify hexadecimal end literal three fills only the first three elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFill197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let hexadecimalEndIndex: int = 0x03;
+      sourceArray.fill(6n, 0, hexadecimalEndIndex);
+      expect(sourceArray[0]).assertEqual(6n);
+      expect(sourceArray[1]).assertEqual(6n);
+      expect(sourceArray[2]).assertEqual(6n);
+      expect(sourceArray[3]).assertEqual(4n);
     });
   });
 }

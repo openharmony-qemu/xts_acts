@@ -40,6 +40,7 @@ import biguint64arrayToStringTest from './biguint64array/BigUint64ArrayToStringT
 import biguint64arrayValueOfTest from './biguint64array/BigUint64ArrayValueOfTest.test';
 import biguint64arrayValuesTest from './biguint64array/BigUint64ArrayValuesTest.test';
 import biguint64arrayWithTest from './biguint64array/BigUint64ArrayWithTest.test';
+
 export default function testsuite(): void {
   biguint64arrayAtTest();
   biguint64arrayConstructorTest();

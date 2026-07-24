@@ -36,7 +36,7 @@ export default function biguint64arrayConstructorTest(): void {
     beforeAll(() => {
     });
     beforeEach(async () => {
-    await Utils.msSleep(30);
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -3553,6 +3553,271 @@ export default function biguint64arrayConstructorTest(): void {
       let constructedArray = new BigUint64Array(doubleLengthSource.toInt());
       expect(constructedArray.length).assertEqual(4);
       expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2130
+     * @tc.name testBigUint64ArrayConstructor213
+     * @tc.desc Verify byte source converted by toInt supplies byteOffset eight to the two-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let byteOffsetSource: byte = 8;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffsetSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2140
+     * @tc.name testBigUint64ArrayConstructor214
+     * @tc.desc Verify short source converted by toInt supplies byteOffset eight to the two-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let shortOffsetSource: short = 8;
+      let constructedArray = new BigUint64Array(sourceBuffer, shortOffsetSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2150
+     * @tc.name testBigUint64ArrayConstructor215
+     * @tc.desc Verify long source converted by toInt supplies byteOffset eight to the two-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let longOffsetSource: long = 8;
+      let constructedArray = new BigUint64Array(sourceBuffer, longOffsetSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2160
+     * @tc.name testBigUint64ArrayConstructor216
+     * @tc.desc Verify float source converted by toInt supplies byteOffset eight to the two-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let floatOffsetSource: float = 8.0f;
+      let constructedArray = new BigUint64Array(sourceBuffer, floatOffsetSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2170
+     * @tc.name testBigUint64ArrayConstructor217
+     * @tc.desc Verify double source converted by toInt supplies byteOffset eight to the two-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let doubleOffsetSource: double = 8.0;
+      let constructedArray = new BigUint64Array(sourceBuffer, doubleOffsetSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2180
+     * @tc.name testBigUint64ArrayConstructor218
+     * @tc.desc Verify byte source converted by toInt supplies byteOffset eight to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffsetSource: byte = 8;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffsetSource.toInt(), viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2190
+     * @tc.name testBigUint64ArrayConstructor219
+     * @tc.desc Verify short source converted by toInt supplies byteOffset eight to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let shortOffsetSource: short = 8;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, shortOffsetSource.toInt(), viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2200
+     * @tc.name testBigUint64ArrayConstructor220
+     * @tc.desc Verify long source converted by toInt supplies byteOffset eight to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let longOffsetSource: long = 8;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, longOffsetSource.toInt(), viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2210
+     * @tc.name testBigUint64ArrayConstructor221
+     * @tc.desc Verify float source converted by toInt supplies byteOffset eight to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let floatOffsetSource: float = 8.0f;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, floatOffsetSource.toInt(), viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2220
+     * @tc.name testBigUint64ArrayConstructor222
+     * @tc.desc Verify double source converted by toInt supplies byteOffset eight to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let doubleOffsetSource: double = 8.0;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, doubleOffsetSource.toInt(), viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2230
+     * @tc.name testBigUint64ArrayConstructor223
+     * @tc.desc Verify byte source converted by toInt supplies length two to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let byteViewLengthSource: byte = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, byteViewLengthSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2240
+     * @tc.name testBigUint64ArrayConstructor224
+     * @tc.desc Verify short source converted by toInt supplies length two to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let shortLengthSource: short = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, shortLengthSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2250
+     * @tc.name testBigUint64ArrayConstructor225
+     * @tc.desc Verify long source converted by toInt supplies length two to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let longLengthSource: long = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, longLengthSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2260
+     * @tc.name testBigUint64ArrayConstructor226
+     * @tc.desc Verify float source converted by toInt supplies length two to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let floatLengthSource: float = 2.0f;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, floatLengthSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2270
+     * @tc.name testBigUint64ArrayConstructor227
+     * @tc.desc Verify double source converted by toInt supplies length two to the three-parameter buffer constructor
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let doubleLengthSource: double = 2.0;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, doubleLengthSource.toInt());
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
     });
   });
 }

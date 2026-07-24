@@ -1720,5 +1720,47 @@ export default function biguint64arrayAtTest(): void {
       expect(sourceArray.at(numberIndexSource.toInt())).assertEqual(30n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1100
+     * @tc.name testBigUint64ArrayAt110
+     * @tc.desc Verify short source converted by toInt supplies positive index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let shortIndexSource: short = 2;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(shortIndexSource.toInt())).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1110
+     * @tc.name testBigUint64ArrayAt111
+     * @tc.desc Verify float source converted by toInt supplies positive index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let floatIndexSource: float = 2.9f;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(floatIndexSource.toInt())).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1120
+     * @tc.name testBigUint64ArrayAt112
+     * @tc.desc Verify double source converted by toInt supplies positive index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let doubleIndexSource: double = 2.9;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(doubleIndexSource.toInt())).assertEqual(30n);
+    });
+
   });
 }

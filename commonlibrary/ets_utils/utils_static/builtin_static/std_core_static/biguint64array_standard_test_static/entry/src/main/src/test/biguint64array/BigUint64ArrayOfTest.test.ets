@@ -1096,5 +1096,50 @@ export default function biguint64arrayOfTest(): void {
       let resultArray = BigUint64Array.of(doubleValueSource.toInt());
       expect(resultArray[0]).assertEqual(42n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6800
+     * @tc.name testBigUint64ArrayOf068
+     * @tc.desc Verify short source converted by toInt creates value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortValueSource: short = 42;
+      let resultArray = BigUint64Array.of(shortValueSource.toInt());
+      expect(resultArray.length).assertEqual(1);
+      expect(resultArray[0]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6900
+     * @tc.name testBigUint64ArrayOf069
+     * @tc.desc Verify long source converted by toInt creates value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longValueSource: long = 42;
+      let resultArray = BigUint64Array.of(longValueSource.toInt());
+      expect(resultArray.length).assertEqual(1);
+      expect(resultArray[0]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_7000
+     * @tc.name testBigUint64ArrayOf070
+     * @tc.desc Verify float source converted by toInt creates value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatValueSource: float = 42.0f;
+      let resultArray = BigUint64Array.of(floatValueSource.toInt());
+      expect(resultArray.length).assertEqual(1);
+      expect(resultArray[0]).assertEqual(42n);
+    });
   });
 }
