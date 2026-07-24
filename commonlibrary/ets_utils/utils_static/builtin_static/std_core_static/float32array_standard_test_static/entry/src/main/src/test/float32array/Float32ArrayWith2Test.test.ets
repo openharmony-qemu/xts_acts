@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -104,37 +104,33 @@ export default function Float32ArrayWith2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHTWO_0500
      * @tc.name testFloat32ArrayWithTWO005
-     * @tc.desc Verify index=-1 throws RangeError for negative index
+     * @tc.desc Verify index=-1 replaces the last element (legal negative index, no RangeError)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayWithTWO005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
-      try {
-        arr.with(-1, 99.0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = arr.with(-1, 99.0);
+      expect(result.$_get(0)).assertEqual(16);
+      expect(result.$_get(1)).assertEqual(10);
+      expect(result.$_get(2)).assertEqual(99.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHTWO_0600
      * @tc.name testFloat32ArrayWithTWO006
-     * @tc.desc Verify index=-length throws RangeError for negative index
+     * @tc.desc Verify index=-length replaces the first element (legal negative index, no RangeError)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayWithTWO006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
-      try {
-        arr.with(-3, 77.0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const result = arr.with(-3, 77.0);
+      expect(result.$_get(0)).assertEqual(77.0);
+      expect(result.$_get(1)).assertEqual(10);
+      expect(result.$_get(2)).assertEqual(-1);
     });
 
     /**
