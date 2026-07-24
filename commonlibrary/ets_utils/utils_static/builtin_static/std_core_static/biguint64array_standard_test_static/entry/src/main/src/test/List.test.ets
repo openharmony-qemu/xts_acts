@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import biguint64arrayAtTest from './biguint64array/BigUint64ArrayAtTest.test';
 import biguint64arrayConstructorTest from './biguint64array/BigUint64ArrayConstructorTest.test';
