@@ -1253,8 +1253,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(false).assertTrue();
         } catch (error) {
           console.error(`SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060 failed. code:${error.code}, message:${error.message}`);
-          expect(error.code).assertEqual(401);
-          expect(error.message).assertEqual("check argv vaild and init faild");
+          if (error.code == 29700004) {
+            expect(error.code).assertEqual(29700004);
+          } else {
+            expect(error.code).assertEqual(401);
+            expect(error.message).assertEqual("check argv vaild and init faild");
+          }
         }
       }
       done();

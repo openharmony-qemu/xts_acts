@@ -878,15 +878,11 @@ export default function api16CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0012 start');
       try {
         let scope: certManager.CertScope = certManager.CertScope.CURRENT_USER;
-        certManager.getAllUserTrustedCertificates(scope).then((cmResult) => {
-          expect(cmResult.certList).assertEqual(undefined);
-        }).catch((err: BusinessError) => {
-          console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0012  err.code: ${err.code}, message: ${err.message}`);
-          expect(null).assertFail();
-        })
+        let result = certManager.getAllUserTrustedCertificates(scope);
+        expect(false).assertTrue();
       } catch (error) {
         console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0012 error.code: ${error.code}, message: ${error.message}`);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0012 end');
       done();
@@ -904,15 +900,11 @@ export default function api16CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0013 start');
       try {
         let scope: certManager.CertScope = certManager.CertScope.GLOBAL_USER;
-        certManager.getAllUserTrustedCertificates(scope).then((cmResult) => {
-          expect(cmResult.certList).assertEqual(undefined);
-        }).catch((err: BusinessError) => {
-          console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0013  err.code: ${err.code}, message: ${err.message}`);
-          expect(null).assertFail();
-        })
+        let result = await certManager.getAllUserTrustedCertificates(scope)；
+        expect(result).assertEqual(undefined)
       } catch (error) {
         console.error(`SUB_Security_CertManager_GetAllUserTrustedCertificates_0013 error.code: ${error.code}, message: ${error.message}`);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0013 end');
       done();
