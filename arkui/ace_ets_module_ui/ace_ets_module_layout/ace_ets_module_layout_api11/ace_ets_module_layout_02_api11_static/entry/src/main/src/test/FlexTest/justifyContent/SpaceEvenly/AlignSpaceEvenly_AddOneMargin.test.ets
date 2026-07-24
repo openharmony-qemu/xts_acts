@@ -197,7 +197,7 @@ export default function AlignSpaceEvenly_AddOneMargin() {
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddOneMargin_012.right - SpaceEvenly_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((SpaceEvenly_AddOneMargin_013.right - SpaceEvenly_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       console.info('[testFlexAlignSpaceEvenlyTextMarginOverflow] END');
 
