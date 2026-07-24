@@ -1224,5 +1224,41 @@ export default function biguint64arraySliceTest(): void {
       expect(resultArray.join(',')).assertEqual('30,40');
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_6300
+     * @tc.name testBigUint64ArraySlice063
+     * @tc.desc Verify short source converted by toInt supplies begin index two for an independent copy
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortBeginSource: short = 2;
+      let beginIndex: int = shortBeginSource.toInt();
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(beginIndex);
+      sourceArray[2] = 300n;
+      expect(resultArray[0]).assertEqual(30n);
+      expect(resultArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_6400
+     * @tc.name testBigUint64ArraySlice064
+     * @tc.desc Verify byte source converted by toInt supplies exclusive end index three for an independent copy
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteEndSource: byte = 3;
+      let endIndex: int = byteEndSource.toInt();
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(1, endIndex);
+      resultArray[0] = 200n;
+      expect(sourceArray[1]).assertEqual(20n);
+      expect(resultArray[1]).assertEqual(30n);
+    });
+
   });
 }

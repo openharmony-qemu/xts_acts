@@ -1218,5 +1218,41 @@ export default function biguint64arraySortTest(): void {
       });
       expect(sourceArray.join(',')).assertEqual('1,2,3');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SORT_5700
+     * @tc.name testBigUint64ArraySort057
+     * @tc.desc Verify long sources converted by toInt supply comparator signs
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySort057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let negativeSign: long = -1;
+      let positiveSign: long = 1;
+      let sourceArray = BigUint64Array.of(3n, 1n, 2n);
+      sourceArray.sort((leftValue: bigint, rightValue: bigint): int => {
+        return leftValue < rightValue ? negativeSign.toInt() : leftValue > rightValue ? positiveSign.toInt() : 0;
+      });
+      expect(sourceArray.join(',')).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SORT_5800
+     * @tc.name testBigUint64ArraySort058
+     * @tc.desc Verify float sources converted by toInt supply comparator signs
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySort058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let negativeSign: float = -1.9f;
+      let positiveSign: float = 1.9f;
+      let sourceArray = BigUint64Array.of(3n, 1n, 2n);
+      sourceArray.sort((leftValue: bigint, rightValue: bigint): int => {
+        return leftValue < rightValue ? negativeSign.toInt() : leftValue > rightValue ? positiveSign.toInt() : 0;
+      });
+      expect(sourceArray.join(',')).assertEqual('1,2,3');
+    });
   });
 }

@@ -1414,5 +1414,41 @@ export default function biguint64arraySubarrayTest(): void {
       expect(resultArray.buffer).assertEqual(sourceArray.buffer);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_7200
+     * @tc.name testBigUint64ArraySubarray072
+     * @tc.desc Verify short source converted by toInt supplies begin index two for a shared view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortBeginSource: short = 2;
+      let beginIndex: int = shortBeginSource.toInt();
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(beginIndex);
+      sourceArray[2] = 300n;
+      expect(resultArray[0]).assertEqual(300n);
+      expect(resultArray.buffer).assertEqual(sourceArray.buffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_7300
+     * @tc.name testBigUint64ArraySubarray073
+     * @tc.desc Verify byte source converted by toInt supplies exclusive end index three for a shared view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteEndSource: byte = 3;
+      let endIndex: int = byteEndSource.toInt();
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(1, endIndex);
+      resultArray[1] = 300n;
+      expect(sourceArray[2]).assertEqual(300n);
+      expect(resultArray.buffer).assertEqual(sourceArray.buffer);
+    });
+
   });
 }

@@ -1577,5 +1577,103 @@ export default function biguint64arrayIncludesTest(): void {
       expect(targetArray.includes(doubleSearchSource.toInt())).assertFalse();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10000
+     * @tc.name testBigUint64ArrayIncludes100
+     * @tc.desc Verify byte source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteIndexSource: byte = 2;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, byteIndexSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10100
+     * @tc.name testBigUint64ArrayIncludes101
+     * @tc.desc Verify long source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longIndexSource: long = 2;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, longIndexSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10200
+     * @tc.name testBigUint64ArrayIncludes102
+     * @tc.desc Verify float source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatIndexSource: float = 2.9f;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, floatIndexSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10300
+     * @tc.name testBigUint64ArrayIncludes103
+     * @tc.desc Verify byte source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteSearchSource: byte = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(byteSearchSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10400
+     * @tc.name testBigUint64ArrayIncludes104
+     * @tc.desc Verify short source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortSearchSource: short = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(shortSearchSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10500
+     * @tc.name testBigUint64ArrayIncludes105
+     * @tc.desc Verify long source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longSearchSource: long = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(longSearchSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_10600
+     * @tc.name testBigUint64ArrayIncludes106
+     * @tc.desc Verify double source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleSearchSource: double = 42.9;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(doubleSearchSource.toInt())).assertTrue();
+    });
+
   });
 }

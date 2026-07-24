@@ -1560,5 +1560,103 @@ export default function biguint64arrayIndexOfTest(): void {
       expect(targetArray.indexOf(doubleSearchSource.toInt())).assertEqual(-1);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9900
+     * @tc.name testBigUint64ArrayIndexOf099
+     * @tc.desc Verify byte source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteIndexSource: byte = 2;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, byteIndexSource.toInt())).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10000
+     * @tc.name testBigUint64ArrayIndexOf100
+     * @tc.desc Verify long source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longIndexSource: long = 2;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, longIndexSource.toInt())).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10100
+     * @tc.name testBigUint64ArrayIndexOf101
+     * @tc.desc Verify float source converted by toInt supplies positive fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatIndexSource: float = 2.9f;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, floatIndexSource.toInt())).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10200
+     * @tc.name testBigUint64ArrayIndexOf102
+     * @tc.desc Verify byte source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteSearchSource: byte = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(byteSearchSource.toInt())).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10300
+     * @tc.name testBigUint64ArrayIndexOf103
+     * @tc.desc Verify short source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortSearchSource: short = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(shortSearchSource.toInt())).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10400
+     * @tc.name testBigUint64ArrayIndexOf104
+     * @tc.desc Verify long source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longSearchSource: long = 42;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(longSearchSource.toInt())).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_10500
+     * @tc.name testBigUint64ArrayIndexOf105
+     * @tc.desc Verify double source converted by toInt supplies present search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleSearchSource: double = 42.9;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(doubleSearchSource.toInt())).assertEqual(1);
+    });
+
   });
 }

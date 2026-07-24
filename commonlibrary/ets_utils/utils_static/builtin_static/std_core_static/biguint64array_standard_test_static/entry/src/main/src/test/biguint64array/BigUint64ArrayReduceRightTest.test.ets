@@ -1865,7 +1865,7 @@ export default function biguint64arrayReduceRightTest(): void {
     it('testBigUint64ArrayReduceRight088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(BigInt(0b1), BigInt(0b10), BigInt(0b11));
       let reducedValue = sourceArray.reduceRight<bigint>((result: bigint, value: bigint): bigint =>
-        result * 10n + value, BigInt(0b0));
+      result * 10n + value, BigInt(0b0));
       expect(reducedValue).assertEqual(321n);
     });
 
@@ -1880,7 +1880,7 @@ export default function biguint64arrayReduceRightTest(): void {
     it('testBigUint64ArrayReduceRight089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(BigInt(0o1), BigInt(0o2), BigInt(0o3));
       let reducedValue = sourceArray.reduceRight<bigint>((result: bigint, value: bigint): bigint =>
-        result * 10n + value, BigInt(0o0));
+      result * 10n + value, BigInt(0o0));
       expect(reducedValue).assertEqual(321n);
     });
 
@@ -1895,7 +1895,7 @@ export default function biguint64arrayReduceRightTest(): void {
     it('testBigUint64ArrayReduceRight090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(BigInt(0x1), BigInt(0x2), BigInt(0x3));
       let reducedValue = sourceArray.reduceRight<bigint>((result: bigint, value: bigint): bigint =>
-        result * 10n + value, BigInt(0x0));
+      result * 10n + value, BigInt(0x0));
       expect(reducedValue).assertEqual(321n);
     });
 
