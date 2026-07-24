@@ -1222,7 +1222,7 @@ export default function biguint64arrayIndexSetTest(): void {
     it('testBigUint64ArrayIndexSet070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([0n, 1n, 2n]);
       let targetIndex: int = 1;
-      let replacementValue: BigInt = BigInt(0x2A);
+      let replacementValue: bigint = BigInt(0x2A);
       targetArray.$_set(targetIndex, replacementValue);
       expect(targetArray.$_get(0)).assertEqual(0n);
       expect(targetArray.$_get(1)).assertEqual(42n);
@@ -1241,7 +1241,7 @@ export default function biguint64arrayIndexSetTest(): void {
       let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n]);
       let targetArray = new BigUint64Array(sourceArray.buffer, 8, 2);
       let targetIndex: int = 0b1;
-      let replacementValue: BigInt = BigInt(0o77);
+      let replacementValue: bigint = BigInt(0o77);
       targetArray.$_set(targetIndex, replacementValue);
       expect(targetArray.$_get(0)).assertEqual(20n);
       expect(targetArray.$_get(1)).assertEqual(63n);
@@ -1278,7 +1278,7 @@ export default function biguint64arrayIndexSetTest(): void {
     it('testBigUint64ArrayIndexSet073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([0n, 1n, 2n]);
       let targetIndex: int = 1;
-      let replacementValue: BigInt = BigInt(42);
+      let replacementValue: bigint = BigInt(42);
       targetArray.$_set(targetIndex, replacementValue);
       expect(targetArray.$_get(0)).assertEqual(0n);
       expect(targetArray.$_get(1)).assertEqual(42n);
@@ -1296,7 +1296,7 @@ export default function biguint64arrayIndexSetTest(): void {
     it('testBigUint64ArrayIndexSet074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([0n, 1n, 2n]);
       let targetIndex: int = 1;
-      let replacementValue: BigInt = BigInt(0b101010);
+      let replacementValue: bigint = BigInt(0b101010);
       targetArray.$_set(targetIndex, replacementValue);
       expect(targetArray.$_get(0)).assertEqual(0n);
       expect(targetArray.$_get(1)).assertEqual(42n);
@@ -1314,7 +1314,7 @@ export default function biguint64arrayIndexSetTest(): void {
     it('testBigUint64ArrayIndexSet075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([0n, 1n, 2n]);
       let targetIndex: int = 1;
-      let replacementValue: BigInt = BigInt(0o52);
+      let replacementValue: bigint = BigInt(0o52);
       targetArray.$_set(targetIndex, replacementValue);
       expect(targetArray.$_get(0)).assertEqual(0n);
       expect(targetArray.$_get(1)).assertEqual(42n);
@@ -1387,7 +1387,7 @@ export default function biguint64arrayIndexSetTest(): void {
       let middleWindow = offsetView.subarray(1, 5);
       let nestedWindow = middleWindow.subarray(1, 3);
       let targetIndex: int = 0;
-      let replacementValue: BigInt = 333n;
+      let replacementValue: bigint = 333n;
       nestedWindow.$_set(targetIndex, replacementValue);
       expect(nestedWindow.byteOffset).assertEqual(24);
       expect(nestedWindow.$_get(0)).assertEqual(replacementValue);
@@ -1418,7 +1418,7 @@ export default function biguint64arrayIndexSetTest(): void {
       let sliceEndIndex: int = 3;
       let copiedWindow = offsetView.slice(sliceBeginIndex, sliceEndIndex);
       let targetIndex: int = 0;
-      let replacementValue: BigInt = 777n;
+      let replacementValue: bigint = 777n;
       copiedWindow.$_set(targetIndex, replacementValue);
       expect(copiedWindow.byteOffset).assertEqual(0);
       expect(copiedWindow.$_get(0)).assertEqual(replacementValue);
@@ -1445,7 +1445,7 @@ export default function biguint64arrayIndexSetTest(): void {
       let viewLength: int = 0;
       let zeroLengthView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
       let targetIndex: int = 0;
-      let replacementValue: BigInt = 7n;
+      let replacementValue: bigint = 7n;
       expect(zeroLengthView.byteOffset).assertEqual(byteOffset);
       expect(zeroLengthView.length).assertEqual(0);
       try {

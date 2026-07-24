@@ -513,7 +513,7 @@ export default function biguint64arrayToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToString029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(9n);
       sourceSet.add(18n);
       sourceSet.add(27n);
@@ -532,7 +532,7 @@ export default function biguint64arrayToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [4n, 8n, 16n];
+      let sourceValues: FixedArray<bigint> = [4n, 8n, 16n];
       let sourceArray = new BigUint64Array(sourceValues);
       let stringResult = sourceArray.toString();
       expect(stringResult).assertEqual('4,8,16');
@@ -681,7 +681,7 @@ export default function biguint64arrayToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(7n);
       sourceSet.add(11n);
       sourceSet.add(7n);

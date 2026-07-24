@@ -1917,7 +1917,7 @@ export default function biguint64arrayFindLastIndexTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayFindLastIndex100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(7n);
       sourceSet.add(11n);
       sourceSet.add(7n);

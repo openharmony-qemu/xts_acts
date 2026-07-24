@@ -1093,7 +1093,7 @@ export default function biguint64arrayIndexOfTest(): void {
      */
     it('testBigUint64ArrayIndexOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([7n, 42n, 255n]);
-      let searchElement: BigInt = BigInt(0x2A);
+      let searchElement: bigint = BigInt(0x2A);
       let searchIndex = targetArray.indexOf(searchElement);
       expect(searchIndex).assertEqual(1);
     });
@@ -1125,7 +1125,7 @@ export default function biguint64arrayIndexOfTest(): void {
     it('testBigUint64ArrayIndexOf073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n, 50n]);
       let targetArray = sourceArray.subarray(1, 4);
-      let searchElement: BigInt = BigInt(0b11110);
+      let searchElement: bigint = BigInt(0b11110);
       let hexadecimalFromIndex: int = 0x01;
       let searchIndex = targetArray.indexOf(searchElement, hexadecimalFromIndex);
       expect(searchIndex).assertEqual(1);

@@ -975,7 +975,7 @@ export default function biguint64arraySortTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArraySort045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(15n);
       sourceValues.add(7n);
       sourceValues.add(15n);

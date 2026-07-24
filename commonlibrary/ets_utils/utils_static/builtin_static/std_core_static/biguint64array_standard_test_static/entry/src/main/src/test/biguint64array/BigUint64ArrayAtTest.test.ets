@@ -760,7 +760,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(0);
+      let result: bigint | undefined = arr.at(0);
       expect(result).assertEqual(10n);
     });
 
@@ -774,7 +774,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(-1);
+      let result: bigint | undefined = arr.at(-1);
       expect(result).assertEqual(30n);
     });
 
@@ -788,7 +788,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(arr.length);
+      let result: bigint | undefined = arr.at(arr.length);
       expect(result).assertEqual(undefined);
     });
 
@@ -802,7 +802,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(-arr.length - 1);
+      let result: bigint | undefined = arr.at(-arr.length - 1);
       expect(result).assertEqual(undefined);
     });
 
@@ -816,7 +816,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(1);
+      let result: bigint | undefined = arr.at(1);
       expect(result).assertEqual(20n);
     });
 
@@ -830,7 +830,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let result: BigInt | undefined = arr.at(-2);
+      let result: bigint | undefined = arr.at(-2);
       expect(result).assertEqual(20n);
     });
 
@@ -844,7 +844,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array(5);
-      let result: BigInt | undefined = arr.at(0);
+      let result: bigint | undefined = arr.at(0);
       expect(result).assertEqual(0n);
     });
 
@@ -858,7 +858,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array(5);
-      let result: BigInt | undefined = arr.at(-1);
+      let result: bigint | undefined = arr.at(-1);
       expect(result).assertEqual(0n);
     });
 
@@ -872,7 +872,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 18446744073709551615n, 0n, 1n]);
-      let result: BigInt | undefined = arr.at(0);
+      let result: bigint | undefined = arr.at(0);
       expect(result).assertEqual(10n);
     });
 
@@ -886,7 +886,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 18446744073709551615n, 0n, 1n]);
-      let result: BigInt | undefined = arr.at(-1);
+      let result: bigint | undefined = arr.at(-1);
       expect(result).assertEqual(1n);
     });
 
@@ -900,7 +900,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 18446744073709551615n, 0n, 1n]);
-      let result: BigInt | undefined = arr.at(-4);
+      let result: bigint | undefined = arr.at(-4);
       expect(result).assertEqual(10n);
     });
 
@@ -1119,8 +1119,8 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let firstCall: BigInt | undefined = arr.at(1);
-      let secondCall: BigInt | undefined = arr.at(1);
+      let firstCall: bigint | undefined = arr.at(1);
+      let secondCall: bigint | undefined = arr.at(1);
       expect(firstCall).assertEqual(secondCall);
     });
 
@@ -1134,8 +1134,8 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let negResult: BigInt | undefined = arr.at(-1);
-      let posResult: BigInt | undefined = arr.at(arr.length - 1);
+      let negResult: bigint | undefined = arr.at(-1);
+      let posResult: bigint | undefined = arr.at(arr.length - 1);
       expect(negResult).assertEqual(posResult);
     });
 
@@ -1149,7 +1149,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let atResult: BigInt | undefined = arr.at(0);
+      let atResult: bigint | undefined = arr.at(0);
       let getResult: bigint = arr.$_get(0);
       expect(atResult).assertEqual(getResult);
     });
@@ -1164,7 +1164,7 @@ export default function biguint64arrayAtTest(): void {
      */
     it('testBigUint64ArrayAt078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n]);
-      let atResult: BigInt | undefined = arr.at(-1);
+      let atResult: bigint | undefined = arr.at(-1);
       let getResult: bigint = arr.$_get(arr.length - 1);
       expect(atResult).assertEqual(getResult);
     });
@@ -1184,7 +1184,7 @@ export default function biguint64arrayAtTest(): void {
       fullView[1] = 200n;
       fullView[2] = 300n;
       let offsetView = new BigUint64Array(buf, 8, 2);
-      let result: BigInt | undefined = offsetView.at(0);
+      let result: bigint | undefined = offsetView.at(0);
       expect(result).assertEqual(200n);
     });
 
@@ -1203,7 +1203,7 @@ export default function biguint64arrayAtTest(): void {
       fullView[1] = 200n;
       fullView[2] = 300n;
       let offsetView = new BigUint64Array(buf, 8, 2);
-      let result: BigInt | undefined = offsetView.at(-1);
+      let result: bigint | undefined = offsetView.at(-1);
       expect(result).assertEqual(300n);
     });
 
@@ -1220,7 +1220,7 @@ export default function biguint64arrayAtTest(): void {
       let writerView = new BigUint64Array(buf, 0, 2);
       let readerView = new BigUint64Array(buf, 0, 2);
       writerView[0] = 99n;
-      let result: BigInt | undefined = readerView.at(0);
+      let result: bigint | undefined = readerView.at(0);
       expect(result).assertEqual(99n);
     });
 
@@ -1237,7 +1237,7 @@ export default function biguint64arrayAtTest(): void {
       let writerView = new BigUint64Array(buf, 0, 2);
       let readerView = new BigUint64Array(buf, 0, 2);
       writerView[1] = 77n;
-      let result: BigInt | undefined = readerView.at(-1);
+      let result: bigint | undefined = readerView.at(-1);
       expect(result).assertEqual(77n);
     });
 
@@ -1258,8 +1258,8 @@ export default function biguint64arrayAtTest(): void {
       fullView[3] = 4n;
       let viewA = new BigUint64Array(buf, 0, 2);
       let viewB = new BigUint64Array(buf, 16, 2);
-      let resultA: BigInt | undefined = viewA.at(1);
-      let resultB: BigInt | undefined = viewB.at(0);
+      let resultA: bigint | undefined = viewA.at(1);
+      let resultB: bigint | undefined = viewB.at(0);
       expect(resultA).assertEqual(2n);
       expect(resultB).assertEqual(3n);
     });
@@ -1275,7 +1275,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n, 40n]);
       let sub = arr.subarray(1, 3);
-      let result: BigInt | undefined = sub.at(0);
+      let result: bigint | undefined = sub.at(0);
       expect(result).assertEqual(20n);
     });
 
@@ -1290,7 +1290,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new BigUint64Array([10n, 20n, 30n, 40n]);
       let sub = arr.subarray(1, 3);
-      let result: BigInt | undefined = sub.at(-1);
+      let result: bigint | undefined = sub.at(-1);
       expect(result).assertEqual(30n);
     });
 
@@ -1306,7 +1306,7 @@ export default function biguint64arrayAtTest(): void {
       let arr = new BigUint64Array([10n, 20n, 30n, 40n]);
       let sub = arr.subarray(1, 3);
       arr[1] = 999n;
-      let result: BigInt | undefined = sub.at(0);
+      let result: bigint | undefined = sub.at(0);
       expect(result).assertEqual(999n);
     });
 
@@ -1326,7 +1326,7 @@ export default function biguint64arrayAtTest(): void {
       fullView[2] = 33n;
       fullView[3] = 44n;
       let limitedView = new BigUint64Array(buf, 8, 2);
-      let result: BigInt | undefined = limitedView.at(0);
+      let result: bigint | undefined = limitedView.at(0);
       expect(result).assertEqual(22n);
     });
 
@@ -1346,7 +1346,7 @@ export default function biguint64arrayAtTest(): void {
       fullView[2] = 33n;
       fullView[3] = 44n;
       let limitedView = new BigUint64Array(buf, 8, 2);
-      let result: BigInt | undefined = limitedView.at(-1);
+      let result: bigint | undefined = limitedView.at(-1);
       expect(result).assertEqual(33n);
     });
 
@@ -1366,7 +1366,7 @@ export default function biguint64arrayAtTest(): void {
       fullView[2] = 33n;
       fullView[3] = 44n;
       let limitedView = new BigUint64Array(buf, 8, 2);
-      let result: BigInt | undefined = limitedView.at(2);
+      let result: bigint | undefined = limitedView.at(2);
       expect(result).assertEqual(undefined);
     });
 
@@ -1381,7 +1381,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n);
       let targetIndex: byte = 2;
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(30n);
     });
 
@@ -1396,7 +1396,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n);
       let targetIndex: short = -1;
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(30n);
     });
 
@@ -1411,7 +1411,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let targetIndex: int = 0x02;
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(30n);
     });
 
@@ -1427,7 +1427,7 @@ export default function biguint64arrayAtTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let indexMagnitude: int = 0b10;
       let targetIndex: int = -indexMagnitude;
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(30n);
     });
 
@@ -1451,7 +1451,7 @@ export default function biguint64arrayAtTest(): void {
       let viewLength: int = 0b10;
       let targetIndex: int = 0x01;
       let offsetView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
-      let result: BigInt | undefined = offsetView.at(targetIndex);
+      let result: bigint | undefined = offsetView.at(targetIndex);
       expect(offsetView.byteOffset).assertEqual(16);
       expect(offsetView.length).assertEqual(2);
       expect(result).assertEqual(40n);
@@ -1479,10 +1479,10 @@ export default function biguint64arrayAtTest(): void {
       let offsetView = new BigUint64Array(sourceBuffer, 8, 6);
       let middleWindow = offsetView.subarray(1, 5);
       let nestedWindow = middleWindow.subarray(1, 3);
-      let expectedValue: BigInt = 333n;
+      let expectedValue: bigint = 333n;
       fullView[3] = expectedValue;
       let targetIndex: int = 0;
-      let result: BigInt | undefined = nestedWindow.at(targetIndex);
+      let result: bigint | undefined = nestedWindow.at(targetIndex);
       expect(nestedWindow.byteOffset).assertEqual(24);
       expect(result).assertEqual(expectedValue);
     });
@@ -1508,10 +1508,10 @@ export default function biguint64arrayAtTest(): void {
       let sliceBeginIndex: int = 1;
       let sliceEndIndex: int = 3;
       let copiedWindow = offsetView.slice(sliceBeginIndex, sliceEndIndex);
-      let mutationValue: BigInt = 999n;
+      let mutationValue: bigint = 999n;
       fullView[2] = mutationValue;
       let targetIndex: int = 0;
-      let result: BigInt | undefined = copiedWindow.at(targetIndex);
+      let result: bigint | undefined = copiedWindow.at(targetIndex);
       expect(copiedWindow.byteOffset).assertEqual(0);
       expect(result).assertEqual(30n);
     });
@@ -1530,7 +1530,7 @@ export default function biguint64arrayAtTest(): void {
       let viewLength: int = 0;
       let zeroLengthView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
       let targetIndex: int = 0;
-      let result: BigInt | undefined = zeroLengthView.at(targetIndex);
+      let result: bigint | undefined = zeroLengthView.at(targetIndex);
       expect(zeroLengthView.byteOffset).assertEqual(byteOffset);
       expect(zeroLengthView.length).assertEqual(0);
       expect(result).assertEqual(undefined);
@@ -1545,13 +1545,13 @@ export default function biguint64arrayAtTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayAt098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(7n);
       sourceValues.add(11n);
       let constructedArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 1;
-      let result: BigInt | undefined = constructedArray.at(targetIndex);
+      let result: bigint | undefined = constructedArray.at(targetIndex);
       expect(constructedArray.length).assertEqual(2);
       expect(result).assertEqual(11n);
     });
@@ -1570,7 +1570,7 @@ export default function biguint64arrayAtTest(): void {
       sourceIterator.next();
       let constructedArray = new BigUint64Array(sourceIterator);
       let targetIndex: int = 0;
-      let result: BigInt | undefined = constructedArray.at(targetIndex);
+      let result: bigint | undefined = constructedArray.at(targetIndex);
       expect(constructedArray.length).assertEqual(2);
       expect(result).assertEqual(10n);
       expect(constructedArray.at(-1)).assertEqual(15n);
@@ -1588,7 +1588,7 @@ export default function biguint64arrayAtTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let longIndexSource: long = 4294967298;
       let targetIndex: int = longIndexSource.toInt();
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(30n);
     });
 
@@ -1604,7 +1604,7 @@ export default function biguint64arrayAtTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let floatIndexSource: float = 1.9f;
       let targetIndex: int = floatIndexSource.toInt();
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(20n);
     });
 
@@ -1620,7 +1620,7 @@ export default function biguint64arrayAtTest(): void {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let doubleIndexSource: double = -1.9;
       let targetIndex: int = doubleIndexSource.toInt();
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(40n);
     });
 
@@ -1635,7 +1635,7 @@ export default function biguint64arrayAtTest(): void {
     it('testBigUint64ArrayAt103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
       let targetIndex: int = 0o3;
-      let result: BigInt | undefined = sourceArray.at(targetIndex);
+      let result: bigint | undefined = sourceArray.at(targetIndex);
       expect(result).assertEqual(40n);
     });
 

@@ -722,7 +722,7 @@ export default function biguint64arrayValuesTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(7n);
       sourceSet.add(11n);
       sourceSet.add(7n);

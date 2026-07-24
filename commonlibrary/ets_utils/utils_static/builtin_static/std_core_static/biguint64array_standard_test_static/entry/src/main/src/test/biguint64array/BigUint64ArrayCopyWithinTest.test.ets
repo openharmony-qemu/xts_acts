@@ -1188,7 +1188,7 @@ export default function biguint64arrayCopyWithinTest(): void {
     it('testBigUint64ArrayCopyWithin074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sourceArr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let tripleResult: BigUint64Array = sourceArr.copyWithin(3, 0, 2).copyWithin(0, 3, 5).copyWithin(2, 0);
-      let expectedValues: Array<BigInt> = [1n, 2n, 1n, 2n, 3n];
+      let expectedValues: Array<bigint> = [1n, 2n, 1n, 2n, 3n];
       expect(tripleResult[0]).assertEqual(expectedValues[0]);
       expect(tripleResult[1]).assertEqual(expectedValues[1]);
       expect(tripleResult[2]).assertEqual(expectedValues[2]);
@@ -1607,7 +1607,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let binaryTarget: int = 0b10;
       let startIndex: int = 0;
@@ -1627,7 +1627,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let octalTarget: int = 0o2;
       let startIndex: int = 0;
@@ -1647,7 +1647,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let hexadecimalTarget: int = 0x02;
       let startIndex: int = 0;
@@ -1667,7 +1667,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let binaryStart: int = 0b10;
@@ -1687,7 +1687,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let octalStart: int = 0o2;
@@ -1707,7 +1707,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let hexadecimalStart: int = 0x02;
@@ -1727,7 +1727,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: int = 1;
@@ -1747,7 +1747,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: int = 1;
@@ -1767,7 +1767,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: int = 1;
@@ -1787,7 +1787,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n, 60n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n, 60n];
       let sourceArray = new BigUint64Array(sourceValues);
       let hexadecimalTarget: int = 0x01;
       let binaryStart: int = 0b10;
@@ -1810,7 +1810,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [1n, 2n, 3n, 4n, 5n, 6n];
+      let sourceValues: Array<bigint> = [1n, 2n, 3n, 4n, 5n, 6n];
       let sourceArray = new BigUint64Array(sourceValues);
       let binaryTarget: int = 0b10;
       let negativeStart: int = -8;
@@ -1833,7 +1833,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [11n, 22n, 33n, 44n];
+      let sourceValues: Array<bigint> = [11n, 22n, 33n, 44n];
       let sourceArray = new BigUint64Array(sourceValues);
       let binaryTarget: int = 0b1000;
       let octalStart: int = 0o1;
@@ -1854,7 +1854,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: byte = 2;
       let startIndex: int = 0;
@@ -1874,7 +1874,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: short = 2;
       let startIndex: int = 0;
@@ -1894,7 +1894,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: byte = 2;
@@ -1914,7 +1914,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: short = 2;
@@ -1934,7 +1934,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: int = 1;
@@ -1954,7 +1954,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 0;
       let startIndex: int = 1;
@@ -2081,7 +2081,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n];
       let sourceArray = new BigUint64Array(sourceValues);
       let decimalTarget: int = 2;
       let startIndex: int = 0;
@@ -2103,7 +2103,7 @@ export default function biguint64arrayCopyWithinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayCopyWithin124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n, 60n];
+      let sourceValues: Array<bigint> = [10n, 20n, 30n, 40n, 50n, 60n];
       let sourceArray = new BigUint64Array(sourceValues);
       let targetIndex: int = 1;
       let underflowStart: int = -10;

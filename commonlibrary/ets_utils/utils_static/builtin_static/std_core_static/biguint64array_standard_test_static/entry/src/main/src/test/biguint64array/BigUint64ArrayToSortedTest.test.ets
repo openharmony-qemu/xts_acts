@@ -341,7 +341,7 @@ export default function biguint64arrayToSortedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToSorted016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [40n, 20n, 30n, 10n];
+      let sourceValues: Array<bigint> = [40n, 20n, 30n, 10n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toSorted();
       expect(resultArray[0]).assertEqual(10n);
@@ -361,7 +361,7 @@ export default function biguint64arrayToSortedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToSorted017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [9n, 3n, 6n];
+      let sourceValues: FixedArray<bigint> = [9n, 3n, 6n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toSorted();
       expect(resultArray[0]).assertEqual(3n);
@@ -378,7 +378,7 @@ export default function biguint64arrayToSortedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToSorted018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet: Set<BigInt> = new Set<BigInt>();
+      let sourceSet: Set<bigint> = new Set<bigint>();
       sourceSet.add(30n);
       sourceSet.add(10n);
       sourceSet.add(20n);
@@ -787,7 +787,7 @@ export default function biguint64arrayToSortedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToSorted035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(15n);
       sourceValues.add(7n);
       sourceValues.add(15n);

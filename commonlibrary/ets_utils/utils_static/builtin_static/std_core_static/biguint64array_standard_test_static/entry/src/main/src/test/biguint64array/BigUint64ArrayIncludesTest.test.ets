@@ -990,7 +990,7 @@ export default function biguint64arrayIncludesTest(): void {
      */
     it('testBigUint64ArrayIncludes065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([7n, 42n, 255n]);
-      let searchElement: BigInt = BigInt(0x2A);
+      let searchElement: bigint = BigInt(0x2A);
       let searchResult = targetArray.includes(searchElement);
       expect(searchResult).assertTrue();
     });

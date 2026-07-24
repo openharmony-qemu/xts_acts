@@ -298,7 +298,7 @@ export default function biguint64arrayOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [5n, 10n, 15n];
+      let sourceValues: FixedArray<bigint> = [5n, 10n, 15n];
       let resultArray = BigUint64Array.of(...sourceValues);
       expect(resultArray.length).assertEqual(3);
       expect(resultArray[0]).assertEqual(5n);
@@ -315,7 +315,7 @@ export default function biguint64arrayOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [11n, 22n, 33n];
+      let sourceValues: Array<bigint> = [11n, 22n, 33n];
       let resultArray = BigUint64Array.of(...sourceValues);
       sourceValues[0] = 99n;
       expect(resultArray.length).assertEqual(3);
@@ -734,7 +734,7 @@ export default function biguint64arrayOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [13n, 21n];
+      let sourceValues: FixedArray<bigint> = [13n, 21n];
       let resultArray = BigUint64Array.of(...sourceValues);
       sourceValues[0] = 34n;
       expect(resultArray.length).assertEqual(2);
@@ -785,7 +785,7 @@ export default function biguint64arrayOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [55n, 89n];
+      let sourceValues: Array<bigint> = [55n, 89n];
       let resultArray = BigUint64Array.of(...sourceValues);
       resultArray[0] = 144n;
       expect(sourceValues[0]).assertEqual(55n);
@@ -907,7 +907,7 @@ export default function biguint64arrayOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(7n);
       sourceValues.add(11n);

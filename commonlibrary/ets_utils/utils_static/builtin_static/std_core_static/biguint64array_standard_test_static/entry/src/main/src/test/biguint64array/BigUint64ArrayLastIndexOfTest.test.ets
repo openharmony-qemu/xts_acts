@@ -1093,7 +1093,7 @@ export default function biguint64arrayLastIndexOfTest(): void {
      */
     it('testBigUint64ArrayLastIndexOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let targetArray = new BigUint64Array([42n, 7n, 42n]);
-      let searchElement: BigInt = BigInt(0x2A);
+      let searchElement: bigint = BigInt(0x2A);
       let searchIndex = targetArray.lastIndexOf(searchElement);
       expect(searchIndex).assertEqual(2);
     });
@@ -1109,7 +1109,7 @@ export default function biguint64arrayLastIndexOfTest(): void {
     it('testBigUint64ArrayLastIndexOf072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([10n, 63n, 20n, 63n, 30n]);
       let targetArray = new BigUint64Array(sourceArray.buffer, 8, 3);
-      let searchElement: BigInt = BigInt(0o77);
+      let searchElement: bigint = BigInt(0o77);
       let fromIndex: int = 0b10;
       let searchIndex = targetArray.lastIndexOf(searchElement, fromIndex);
       expect(searchIndex).assertEqual(2);

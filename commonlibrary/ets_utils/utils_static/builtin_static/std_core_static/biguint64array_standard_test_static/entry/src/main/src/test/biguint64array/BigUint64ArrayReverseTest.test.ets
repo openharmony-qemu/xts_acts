@@ -491,7 +491,7 @@ export default function biguint64arrayReverseTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayReverse025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(9n);
       sourceSet.add(18n);
       sourceSet.add(27n);
@@ -512,7 +512,7 @@ export default function biguint64arrayReverseTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayReverse026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [4n, 8n, 16n];
+      let sourceValues: FixedArray<bigint> = [4n, 8n, 16n];
       let sourceArray = new BigUint64Array(sourceValues);
       let returnedArray = sourceArray.reverse();
       expect(returnedArray).assertEqual(sourceArray);
@@ -670,7 +670,7 @@ export default function biguint64arrayReverseTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayReverse032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(11n);
       sourceValues.add(7n);

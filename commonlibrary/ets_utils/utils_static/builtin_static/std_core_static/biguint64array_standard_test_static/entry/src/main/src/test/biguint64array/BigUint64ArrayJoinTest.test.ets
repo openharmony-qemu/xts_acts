@@ -514,7 +514,7 @@ export default function biguint64arrayJoinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayJoin033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet: Set<BigInt> = new Set<BigInt>();
+      let sourceSet: Set<bigint> = new Set<bigint>();
       sourceSet.add(4n);
       sourceSet.add(8n);
       sourceSet.add(12n);
@@ -754,7 +754,7 @@ export default function biguint64arrayJoinTest(): void {
      */
     it('testBigUint64ArrayJoin047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([4n, 5n, 6n]);
-      let separatorText: String | undefined = undefined;
+      let separatorText: string | undefined = undefined;
       let joinResult = sourceArray.join(separatorText);
       expect(joinResult).assertEqual('4,5,6');
     });
@@ -794,7 +794,7 @@ export default function biguint64arrayJoinTest(): void {
       let byteOffset: int = 16;
       let viewLength: int = 0;
       let emptyWindow = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
-      let separatorText: String = '|';
+      let separatorText: string = '|';
       let joinResult = emptyWindow.join(separatorText);
       expect(joinResult).assertEqual('');
     });
@@ -819,7 +819,7 @@ export default function biguint64arrayJoinTest(): void {
       let viewLength: int = 2;
       let offsetView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
       baseView[2] = 30n;
-      let separatorText: String = '|';
+      let separatorText: string = '|';
       let joinResult = offsetView.join(separatorText);
       expect(joinResult).assertEqual('2|30');
     });
@@ -838,7 +838,7 @@ export default function biguint64arrayJoinTest(): void {
       let endIndex: int = 3;
       let subarrayView = sourceArray.subarray(beginIndex, endIndex);
       sourceArray[2] = 99n;
-      let separatorText: String = '|';
+      let separatorText: string = '|';
       let joinResult = subarrayView.join(separatorText);
       expect(joinResult).assertEqual('2|99');
     });
@@ -868,7 +868,7 @@ export default function biguint64arrayJoinTest(): void {
       let endIndex: int = 5;
       let nestedView = byteOffsetView.subarray(beginIndex, endIndex);
       fullView[4] = 555n;
-      let separatorText: String = '|';
+      let separatorText: string = '|';
       let joinResult = nestedView.join(separatorText);
       expect(nestedView.byteOffset).assertEqual(24);
       expect(nestedView.length).assertEqual(3);
@@ -912,7 +912,7 @@ export default function biguint64arrayJoinTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayJoin054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(11n);
       sourceValues.add(7n);
@@ -992,7 +992,7 @@ export default function biguint64arrayJoinTest(): void {
      */
     it('testBigUint64ArrayJoin058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
-      let separatorText: String = '\u0000';
+      let separatorText: string = '\u0000';
       let joinResult = sourceArray.join(separatorText);
       let expectedResult: string = '1\u00002\u00003';
       expect(joinResult).assertEqual(expectedResult);

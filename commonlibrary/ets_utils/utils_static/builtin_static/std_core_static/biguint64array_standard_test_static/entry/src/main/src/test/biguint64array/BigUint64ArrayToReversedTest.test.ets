@@ -298,7 +298,7 @@ export default function biguint64arrayToReversedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToReversed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [1n, 2n, 3n, 4n];
+      let sourceValues: Array<bigint> = [1n, 2n, 3n, 4n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(4n);
@@ -316,7 +316,7 @@ export default function biguint64arrayToReversedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToReversed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [100n, 200n, 300n];
+      let sourceValues: FixedArray<bigint> = [100n, 200n, 300n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(300n);
@@ -333,7 +333,7 @@ export default function biguint64arrayToReversedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToReversed016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet: Set<BigInt> = new Set<BigInt>();
+      let sourceSet: Set<bigint> = new Set<bigint>();
       sourceSet.add(11n);
       sourceSet.add(22n);
       sourceSet.add(33n);
@@ -353,7 +353,7 @@ export default function biguint64arrayToReversedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToReversed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [1n, 2n, 3n];
+      let sourceValues: Array<bigint> = [1n, 2n, 3n];
       let sourceArray = BigUint64Array.from(sourceValues, (element: bigint, _index: number): bigint => {
         return element * 10n;
       });
@@ -762,7 +762,7 @@ export default function biguint64arrayToReversedTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToReversed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(11n);
       sourceValues.add(7n);

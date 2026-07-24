@@ -586,7 +586,7 @@ export default function biguint64arrayMapTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayMap029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [2n, 4n, 6n];
+      let sourceValues: Array<bigint> = [2n, 4n, 6n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.map((element: bigint, _index: int, _array: BigUint64Array): bigint => {
         return element + 100n;
@@ -1305,7 +1305,7 @@ export default function biguint64arrayMapTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayMap067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(2n);
       sourceSet.add(4n);
       sourceSet.add(6n);
@@ -1330,7 +1330,7 @@ export default function biguint64arrayMapTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayMap068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: FixedArray<BigInt> = [5n, 10n, 15n];
+      let sourceValues: FixedArray<bigint> = [5n, 10n, 15n];
       let sourceArray = new BigUint64Array(sourceValues);
       let resultArray = sourceArray.map((element: bigint, _index: int, _array: BigUint64Array): bigint => {
         return element - 1n;
@@ -1599,7 +1599,7 @@ export default function biguint64arrayMapTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayMap077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(7n);
       sourceSet.add(11n);
       sourceSet.add(7n);

@@ -288,7 +288,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [];
+      let numbers: FixedArray<bigint> = [];
       let arr = new BigUint64Array(numbers);
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
@@ -303,7 +303,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [1n];
+      let numbers: FixedArray<bigint> = [1n];
       let arr = new BigUint64Array(numbers);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(1n);
@@ -318,7 +318,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [1n, 2n, 3n];
+      let numbers: FixedArray<bigint> = [1n, 2n, 3n];
       let arr = new BigUint64Array(numbers);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(1n);
@@ -335,7 +335,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [18446744073709551615n];
+      let numbers: FixedArray<bigint> = [18446744073709551615n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(18446744073709551615n);
     });
@@ -349,7 +349,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [18446744073709551616n];
+      let numbers: FixedArray<bigint> = [18446744073709551616n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(0n);
     });
@@ -363,7 +363,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [-1n];
+      let numbers: FixedArray<bigint> = [-1n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(18446744073709551615n);
     });
@@ -377,7 +377,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [0n, 18446744073709551615n];
+      let numbers: FixedArray<bigint> = [0n, 18446744073709551615n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(0n);
       expect(arr[1]).assertEqual(18446744073709551615n);
@@ -392,7 +392,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let src: Array<BigInt> = [];
+      let src: Array<bigint> = [];
       let arr = new BigUint64Array(src);
       expect(arr.length).assertEqual(0);
     });
@@ -476,7 +476,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let src: Array<BigInt> = [1n, 2n];
+      let src: Array<bigint> = [1n, 2n];
       let arr = new BigUint64Array(src);
       src[0] = 99n;
       expect(arr[0]).assertEqual(1n);
@@ -491,7 +491,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let s: Set<BigInt> = new Set<BigInt>();
+      let s: Set<bigint> = new Set<bigint>();
       s.add(10n);
       s.add(20n);
       s.add(30n);
@@ -511,7 +511,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let s: Set<BigInt> = new Set<BigInt>();
+      let s: Set<bigint> = new Set<bigint>();
       let arr = new BigUint64Array(s);
       expect(arr.length).assertEqual(0);
     });
@@ -542,7 +542,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let s: Set<BigInt> = new Set<BigInt>();
+      let s: Set<bigint> = new Set<bigint>();
       s.add(18446744073709551615n);
       let arr = new BigUint64Array(s);
       expect(arr[0]).assertEqual(18446744073709551615n);
@@ -1167,7 +1167,7 @@ export default function biguint64arrayConstructorTest(): void {
     it('testBigUint64ArrayConstructor075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr1 = new BigUint64Array();
       let arr2 = new BigUint64Array(1 as int);
-      let src: FixedArray<BigInt> = [1n];
+      let src: FixedArray<bigint> = [1n];
       let arr3 = new BigUint64Array(src);
       let buf = new ArrayBuffer(8);
       let arr4 = new BigUint64Array(buf);
@@ -1192,9 +1192,9 @@ export default function biguint64arrayConstructorTest(): void {
       let arr3 = new BigUint64Array(lenNum);
       let src = new BigUint64Array(3);
       let arr4 = new BigUint64Array(src);
-      let fa: FixedArray<BigInt> = [1n, 2n];
+      let fa: FixedArray<bigint> = [1n, 2n];
       let arr5 = new BigUint64Array(fa);
-      let aa: Array<BigInt> = [1n, 2n, 3n];
+      let aa: Array<bigint> = [1n, 2n, 3n];
       let arr6 = new BigUint64Array(aa);
       expect(arr1.byteOffset).assertEqual(0);
       expect(arr2.byteOffset).assertEqual(0);
@@ -1230,8 +1230,8 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let fa: FixedArray<BigInt> = [1n, 2n];
-      let aa: Array<BigInt> = [1n, 2n];
+      let fa: FixedArray<bigint> = [1n, 2n];
+      let aa: Array<bigint> = [1n, 2n];
       let arrFA = new BigUint64Array(fa);
       let arrAA = new BigUint64Array(aa);
       expect(arrFA.length).assertEqual(arrAA.length);
@@ -1321,8 +1321,8 @@ export default function biguint64arrayConstructorTest(): void {
      */
     it('testBigUint64ArrayConstructor083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let overflow: bigint = 18446744073709551616n;
-      let aa: Array<BigInt> = [overflow];
-      let fa: FixedArray<BigInt> = [overflow];
+      let aa: Array<bigint> = [overflow];
+      let fa: FixedArray<bigint> = [overflow];
       let arrAA = new BigUint64Array(aa);
       let arrFA = new BigUint64Array(fa);
       expect(arrAA[0]).assertEqual(0n);
@@ -1338,8 +1338,8 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let aa: Array<BigInt> = [-1n];
-      let fa: FixedArray<BigInt> = [-1n];
+      let aa: Array<bigint> = [-1n];
+      let fa: FixedArray<bigint> = [-1n];
       let src = new BigUint64Array(1);
       src[0] = -1n;
       let arrAA = new BigUint64Array(aa);
@@ -1360,7 +1360,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [18446744073709551617n];
+      let numbers: FixedArray<bigint> = [18446744073709551617n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(1n);
     });
@@ -1374,7 +1374,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let numbers: FixedArray<BigInt> = [-42n];
+      let numbers: FixedArray<bigint> = [-42n];
       let arr = new BigUint64Array(numbers);
       expect(arr[0]).assertEqual(18446744073709551574n);
     });
@@ -1404,8 +1404,8 @@ export default function biguint64arrayConstructorTest(): void {
      */
     it('testBigUint64ArrayConstructor088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let maxVal: bigint = 18446744073709551615n;
-      let aa: Array<BigInt> = [maxVal];
-      let fa: FixedArray<BigInt> = [maxVal];
+      let aa: Array<bigint> = [maxVal];
+      let fa: FixedArray<bigint> = [maxVal];
       let src = new BigUint64Array(1);
       src[0] = maxVal;
       let arrAA = new BigUint64Array(aa);
@@ -2504,7 +2504,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: FixedArray<BigInt> = [2n, 4n];
+      let sourceValues: FixedArray<bigint> = [2n, 4n];
       let constructedArray = new BigUint64Array(sourceValues);
       sourceValues[1] = 8n;
       expect(constructedArray.length).assertEqual(2);
@@ -2521,7 +2521,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(9n);
       sourceValues.add(9n);
       sourceValues.add(10n);
@@ -2540,7 +2540,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(3n);
       sourceValues.add(5n);
       let constructedArray = new BigUint64Array(sourceValues);
@@ -2636,7 +2636,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(BigInt(0x10));
       sourceValues.add(BigInt(0b101));
       sourceValues.add(BigInt(0o11));
@@ -3158,7 +3158,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [18446744073709551614n];
+      let sourceValues: Array<bigint> = [18446744073709551614n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(18446744073709551614n);
     });
@@ -3172,7 +3172,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [9223372036854775808n];
+      let sourceValues: Array<bigint> = [9223372036854775808n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(9223372036854775808n);
     });
@@ -3186,7 +3186,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [-2n];
+      let sourceValues: Array<bigint> = [-2n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(18446744073709551614n);
     });
@@ -3200,7 +3200,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [-18446744073709551616n];
+      let sourceValues: Array<bigint> = [-18446744073709551616n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(0n);
     });
@@ -3214,7 +3214,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: Array<BigInt> = [-18446744073709551617n];
+      let sourceValues: Array<bigint> = [-18446744073709551617n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(18446744073709551615n);
     });
@@ -3228,7 +3228,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues: FixedArray<BigInt> = [-18446744073709551617n];
+      let sourceValues: FixedArray<bigint> = [-18446744073709551617n];
       let constructedArray = new BigUint64Array(sourceValues);
       expect(constructedArray[0]).assertEqual(18446744073709551615n);
     });
@@ -3242,7 +3242,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues = new Set<BigInt>();
+      let sourceValues = new Set<bigint>();
       sourceValues.add(-2n);
       sourceValues.add(5n);
       let constructedArray = new BigUint64Array(sourceValues);
@@ -3259,7 +3259,7 @@ export default function biguint64arrayConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayConstructor194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let sourceValues = new Set<BigInt>();
+      let sourceValues = new Set<bigint>();
       sourceValues.add(18446744073709551617n);
       sourceValues.add(7n);
       let constructedArray = new BigUint64Array(sourceValues);

@@ -272,7 +272,7 @@ export default function biguint64arrayIndexGetTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayIndexGet016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [11n, 22n, 33n];
+      let sourceValues: Array<bigint> = [11n, 22n, 33n];
       let sourceArray = new BigUint64Array(sourceValues);
       let actualElement = sourceArray.$_get(2);
       expect(actualElement).assertEqual(33n);
@@ -287,7 +287,7 @@ export default function biguint64arrayIndexGetTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayIndexGet017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [44n, 55n, 66n];
+      let sourceValues: FixedArray<bigint> = [44n, 55n, 66n];
       let sourceArray = new BigUint64Array(sourceValues);
       let actualElement = sourceArray.$_get(1);
       expect(actualElement).assertEqual(55n);
@@ -302,7 +302,7 @@ export default function biguint64arrayIndexGetTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayIndexGet018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Array<BigInt> = [70n, 80n, 90n];
+      let sourceValues: Array<bigint> = [70n, 80n, 90n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let actualElement = sourceArray.$_get(0);
       expect(actualElement).assertEqual(70n);
@@ -854,7 +854,7 @@ export default function biguint64arrayIndexGetTest(): void {
       let offsetView = new BigUint64Array(sourceBuffer, 8, 6);
       let middleWindow = offsetView.subarray(1, 5);
       let nestedWindow = middleWindow.subarray(1, 3);
-      let expectedElement: BigInt = 333n;
+      let expectedElement: bigint = 333n;
       fullView[3] = expectedElement;
       let targetIndex: int = 0;
       let actualElement = nestedWindow.$_get(targetIndex);
@@ -883,7 +883,7 @@ export default function biguint64arrayIndexGetTest(): void {
       let sliceBeginIndex: int = 1;
       let sliceEndIndex: int = 3;
       let copiedWindow = offsetView.slice(sliceBeginIndex, sliceEndIndex);
-      let mutationValue: BigInt = 999n;
+      let mutationValue: bigint = 999n;
       fullView[2] = mutationValue;
       let targetIndex: int = 0;
       let actualElement = copiedWindow.$_get(targetIndex);
@@ -924,7 +924,7 @@ export default function biguint64arrayIndexGetTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayIndexGet054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      let sourceValues: Set<bigint> = new Set<bigint>();
       sourceValues.add(7n);
       sourceValues.add(7n);
       sourceValues.add(11n);

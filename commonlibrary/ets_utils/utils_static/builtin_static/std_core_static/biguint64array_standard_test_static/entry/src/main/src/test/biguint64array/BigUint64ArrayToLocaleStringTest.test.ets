@@ -524,7 +524,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet: Set<BigInt> = new Set<BigInt>();
+      let sourceSet: Set<bigint> = new Set<bigint>();
       sourceSet.add(12n);
       sourceSet.add(34n);
       sourceSet.add(56n);
@@ -543,7 +543,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValues: FixedArray<BigInt> = [8n, 16n, 24n];
+      let sourceValues: FixedArray<bigint> = [8n, 16n, 24n];
       let sourceArray = new BigUint64Array(sourceValues);
       let formatOptions: BigIntToLocaleStringOptions = { useGrouping: false };
       let localeText = sourceArray.toLocaleString('en-US', formatOptions);
@@ -680,7 +680,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceSet = new Set<BigInt>();
+      let sourceSet = new Set<bigint>();
       sourceSet.add(7n);
       sourceSet.add(11n);
       sourceSet.add(7n);
@@ -806,7 +806,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValue: BigInt = 1000n;
+      let sourceValue: bigint = 1000n;
       let sourceArray = BigUint64Array.of(sourceValue);
       let localeList: readonly string[] = ['de-DE', 'en-US'];
       let localeText = sourceArray.toLocaleString(localeList);
@@ -823,7 +823,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValue: BigInt = 42n;
+      let sourceValue: bigint = 42n;
       let sourceArray = BigUint64Array.of(sourceValue);
       let localeName: string = 'en-US';
       let formatOptions: BigIntToLocaleStringOptions = { style: 'currency', currency: 'INVALID' };
@@ -844,7 +844,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValue: BigInt = 42n;
+      let sourceValue: bigint = 42n;
       let sourceArray = BigUint64Array.of(sourceValue);
       let localeName: string = 'en-US';
       let formatOptions: BigIntToLocaleStringOptions = { minimumIntegerDigits: 0 };
@@ -865,7 +865,7 @@ export default function biguint64arrayToLocaleStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBigUint64ArrayToLocaleString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceValue: BigInt = 42n;
+      let sourceValue: bigint = 42n;
       let sourceArray = BigUint64Array.of(sourceValue);
       let localeName: string = 'en-US';
       let formatOptions: BigIntToLocaleStringOptions = {
