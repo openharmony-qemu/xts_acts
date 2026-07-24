@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import getCameraManagerTest from './camera/getCameraManager.test';
 import colorManagementTest from './ColorManagement/colorManagementTest.test';
 import cameraOutPutTest from './CameraOutPut/cameraOutPut.test';
@@ -22,13 +25,21 @@ import AutoExposureTest from './AutoExposure/AutoExposure.test';
 import AutoExposureQueryTest from './AutoExposureQuery/AutoExposureQuery.test';
 import FlashTest from './Flash/Flash.test';
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  CameraManagerTest();
-  getCameraManagerTest();
-  colorManagementTest();
-  cameraOutPutTest();
-  colorManagementQueryTest();
-  AutoExposureTest();
-  AutoExposureQueryTest();
-  FlashTest();
+  if (cameraDeviceArray.length === 0) {
+    getCameraManagerTest();
+  } else {
+    CameraManagerTest();
+    getCameraManagerTest();
+    colorManagementTest();
+    cameraOutPutTest();
+    colorManagementQueryTest();
+    AutoExposureTest();
+    AutoExposureQueryTest();
+    FlashTest();
+  }
 }

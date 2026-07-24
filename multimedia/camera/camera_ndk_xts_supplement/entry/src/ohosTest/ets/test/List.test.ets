@@ -12,12 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import CameraNdkTest from "./camera/CameraNdkTest.test";
 import CameraFunctionErrorTest from "./camera/CameraSessionNdkErrorTest.test";
 import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  CameraFunctionErrorTest();
-  CameraNdkTest();
-  CameraFunctionTest();
+  if (cameraDeviceArray.length != 0) {
+    CameraFunctionErrorTest();
+    CameraNdkTest();
+    CameraFunctionTest();
+  }
 }
