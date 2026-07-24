@@ -1578,6 +1578,50 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1615
+     * @tc.number print_function_1615
+     * @tc.desc   check notifyWatermarkComplete function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_1615', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', 'print_function_1615 start');
+      try {
+        let jobId: string = "print_function_1615";
+        print.notifyWatermarkComplete(jobId, null);
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'print_function_1615 error');
+        let error = err as BusinessError;
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      hilog.info(DOMAIN, TAG, '%{public}s', 'print_function_1615 end');
+    })
+
+    /**
+     * @tc.name   print_function_1616
+     * @tc.number print_function_1616
+     * @tc.desc   check notifyWatermarkComplete function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_1616', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', 'print_function_1616 start');
+      try {
+        let jobId: string = "print_function_1616";
+        print.notifyWatermarkComplete(jobId, 2);
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'print_function_1616 error');
+        let error = err as BusinessError;
+        expect(error.code).assertEqual(201);
+        done();
+      }
+      hilog.info(DOMAIN, TAG, '%{public}s', 'print_function_1616 end');
+    })
+
+    /**
      * @tc.name   SUB_print_print_fwk_updatePrintJobState_0100
      * @tc.number SUB_print_print_fwk_updatePrintJobState_0100
      * @tc.desc   check success of updatePrintJobState function
