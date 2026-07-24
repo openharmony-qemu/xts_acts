@@ -110,7 +110,7 @@ export default function GenericSpecTypeCheckingEnhancement(): void {
      * @tc.desc Generic type parameter inference with different argument types resolving to common supertype
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('GenericSpecTypeCheckingEnhancementTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a = new Object();
@@ -124,7 +124,7 @@ export default function GenericSpecTypeCheckingEnhancement(): void {
     * @tc.desc Two-way generic interface conversion between mutually convertible types
     * @tc.size MediumTest
     * @tc.type Function
-    * @tc.level Level 1
+    * @tc.level LEVEL1
     */
     it('GenericSpecTypeCheckingEnhancementTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ref = new Intf5901();
@@ -140,7 +140,7 @@ export default function GenericSpecTypeCheckingEnhancement(): void {
     * @tc.desc Generic function parameterized with Object type and identity arrow function argument
     * @tc.size MediumTest
     * @tc.type Function
-    * @tc.level Level 1
+    * @tc.level LEVEL1
     */
     it('GenericSpecTypeCheckingEnhancementTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ref = foo_3<Object>(e => e)
@@ -153,7 +153,7 @@ export default function GenericSpecTypeCheckingEnhancement(): void {
     * @tc.desc After a generic type is instantiated with a concrete type, its generic method internally calls another generic method.
     * @tc.size MediumTest
     * @tc.type Function
-    * @tc.level Level 1
+    * @tc.level LEVEL1
     */
     it('GenericSpecTypeCheckingEnhancementTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let h: Holder04<Derived> = new Holder04<Derived>(new Derived());
@@ -167,7 +167,7 @@ export default function GenericSpecTypeCheckingEnhancement(): void {
     * @tc.desc After a generic type is instantiated with a concrete type, its generic method internally calls another generic method.
     * @tc.size MediumTest
     * @tc.type Function
-    * @tc.level Level 1
+    * @tc.level LEVEL1
     */
     it('GenericSpecTypeCheckingEnhancementTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let h: Holder05<Derived> = new Holder05<Derived>();

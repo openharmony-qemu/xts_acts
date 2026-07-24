@@ -66,7 +66,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a class member method and an extension function have the same name, the member method takes precedence.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result1).assertEqual("A.bar");
@@ -78,7 +78,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a generic extension function and a member method have the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result2_1).assertEqual(5);
@@ -91,7 +91,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When an overloaded member method and an extension function have the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result3_1).assertEqual(10);
@@ -104,7 +104,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a member method and an extension function have the same name in an inherited class.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result4).assertEqual("child");
@@ -116,7 +116,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a class has no member method with the same name, the extension function takes effect.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result5).assertEqual("extension.extraMethod");
@@ -128,7 +128,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a static method and an extension function have the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result6).assertEqual("class.staticMethod");
@@ -140,7 +140,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a private member method and an extension function have the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result7).assertEqual("private");
@@ -152,7 +152,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When multiple extension functions with the same name and a member method share the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result8).assertEqual("class.multiMethod");
@@ -164,7 +164,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a member method and an extension function have the same name in an interface implementation class.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result9).assertEqual("class.interfaceMethod");
@@ -176,7 +176,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When an accessor and an extension function have the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result10).assertEqual("new value");
@@ -188,7 +188,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When an inherited class has no member method, and the parent class and an extension function share the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result11).assertEqual("parent");
@@ -200,7 +200,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc Extension functions on enum types with no member method of the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result12).assertEqual("extension.labeled");
@@ -212,7 +212,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc In multi-level inheritance, when an extension function and a member method share the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result13).assertEqual("Parent");
@@ -224,7 +224,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A member method is async, while the extension function with the same name is non-async.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result14 = await symbolAndSyntaxDisambiguation14();
@@ -237,7 +237,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc Different classes share the same extension function with no member method of the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result15_1).assertEqual("extension.Dog");
@@ -250,7 +250,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A basic type calls an extension function with no member method of the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result16).assertTrue();
@@ -262,7 +262,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A member method is private, and an extension function shares the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result17).assertEqual("extension.secret");
@@ -274,7 +274,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A member method is protected, and an extension function shares the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result18).assertEqual("extension.bar");
@@ -286,7 +286,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A member method returns a nullish type, and an extension function shares the same name.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result19).assertEqual("found");
@@ -298,7 +298,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a class has a member method, the member method takes precedence over the extension function; when the parent class has a public method, it shadows the extension function; when the parent class method is private, the extension function is called instead.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result20_1).assertEqual("A.bar");
@@ -312,7 +312,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc When a class has a private member method and an extension function with the same name, the extension function is called externally, while the private member method is called internally via this.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result21_1).assertEqual(2);
@@ -325,7 +325,7 @@ export default function symbolAndSyntaxDisambiguationTest(): void {
      * @tc.desc A generic higher-order function wraps a callback and returns it; invoking the wrapped function executes the original callback, verifying that generic function type inference and function invocation work correctly.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level LEVEL 1
+     * @tc.level LEVEL1
      */
     it('SymbolAndSyntaxDisambiguationTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result22 = symbolAndSyntaxDisambiguation22();
