@@ -255,9 +255,27 @@ export default function ApertureTest(): void {
           // 设置物理光圈值为最小边界值
           let minAperture = supportedApertures[0];
           console.info(TAG, testName + ' set aperture to min: ' + minAperture);
-          // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效 
+          
+          // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效
           mPhotoSession!.setZoomRatio(minAperture.zoomRange.min);
-          await sleep(1000)
+          let zoomRatioRange: number[] = mPhotoSession!.getZoomRatioRange()
+          console.info(`zoomRatioRange: ${zoomRatioRange}`)
+          let expectRatio: number = minAperture.zoomRange.min
+          if (minAperture.zoomRange.min < zoomRatioRange[0]) {
+            expectRatio = zoomRatioRange[0]
+          }
+          console.info(`expectRatio: ${expectRatio}`)
+
+          // 等待焦距设置成功
+          let startTime: number = Date.now()
+          while (Date.now() - startTime < 3000) {
+            let currentRatio: number = mPhotoSession!.getZoomRatio();
+            console.info(`currentRatio: ${currentRatio}`)
+            if (currentRatio == expectRatio) {
+              break
+            }
+            await sleep(100)
+          }
           // 设置物理光圈值
           mPhotoSession!.setPhysicalAperture(minAperture.apertures[0]);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
@@ -299,9 +317,27 @@ export default function ApertureTest(): void {
           // 设置物理光圈值为最大边界值
           let maxAperture = supportedApertures[supportedApertures.length - 1];
           console.info(TAG, testName + ' set aperture to max: ' + maxAperture);
-          // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效 
+
+          // 先设置焦距，焦距在对应的变焦范围内，设置对应的物理光圈值才会生效
           mPhotoSession!.setZoomRatio(maxAperture.zoomRange.min);
-          await sleep(1000)
+          let zoomRatioRange: number[] = mPhotoSession!.getZoomRatioRange()
+          console.info(`zoomRatioRange: ${zoomRatioRange}`)
+          let expectRatio: number = maxAperture.zoomRange.min
+          if (maxAperture.zoomRange.min > zoomRatioRange[0]) {
+            expectRatio = zoomRatioRange[1]
+          }
+          console.info(`expectRatio: ${expectRatio}`)
+
+          // 等待焦距设置成功
+          let startTime: number = Date.now()
+          while (Date.now() - startTime < 3000) {
+            let currentRatio: number = mPhotoSession!.getZoomRatio();
+            console.info(`currentRatio: ${currentRatio}`)
+            if (currentRatio == expectRatio) {
+              break
+            }
+            await sleep(100)
+          }
           // 设置物理光圈值
           mPhotoSession!.setPhysicalAperture(maxAperture.apertures[0]);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
