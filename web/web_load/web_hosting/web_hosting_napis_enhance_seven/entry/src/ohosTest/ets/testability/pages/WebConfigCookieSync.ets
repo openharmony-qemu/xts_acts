@@ -737,6 +737,175 @@ struct WebConfigCookieSync {
                   }
                   break
                 }
+                case 'emitAttrPartitionedEtsSyncTrue001': {
+                  // Cookie with Partitioned attribute; fetchCookieSync(true) should return it.
+                  let resultValue: string = ''
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE,
+                      'name=value; Secure; SameSite=None; Partitioned;', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, true);
+                    console.log('emitAttrPartitionedEtsSyncTrue001 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitAttrPartitionedEtsSyncTrue001 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue.indexOf('name=value') >= 0) {
+                    Utils.emitEvent(true, 147970)
+                  } else {
+                    Utils.emitEvent(false, 147970)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedEtsSyncFalse002': {
+                  // Same Partitioned cookie; fetchCookieSync(false) should not return it.
+                  let resultValue: string = 'sentinel'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE,
+                      'name=value; Secure; SameSite=None; Partitioned;', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, false);
+                    console.log('emitAttrPartitionedEtsSyncFalse002 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitAttrPartitionedEtsSyncFalse002 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue.indexOf('name=value') < 0) {
+                    Utils.emitEvent(true, 147980)
+                  } else {
+                    Utils.emitEvent(false, 147980)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedEtsAsyncTrue003': {
+                  let resultValue: string = ''
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE,
+                      'name=value; Secure; SameSite=None; Partitioned;', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, true)
+                      .then(cookie => {
+                        console.log('emitAttrPartitionedEtsAsyncTrue003 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitAttrPartitionedEtsAsyncTrue003 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitAttrPartitionedEtsAsyncTrue003 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => resultValue.indexOf('name=value') >= 0,
+                    'emitAttrPartitionedEtsAsyncTrue003', true, 200)
+                  if (resultValue.indexOf('name=value') >= 0) {
+                    Utils.emitEvent(true, 147990)
+                  } else {
+                    Utils.emitEvent(false, 147990)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedEtsAsyncFalse004': {
+                  let resultValue: string = 'sentinel'
+                  let doneFlag: boolean = false
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE,
+                      'name=value; Secure; SameSite=None; Partitioned;', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, false)
+                      .then(cookie => {
+                        console.log('emitAttrPartitionedEtsAsyncFalse004 cookie : ' + cookie);
+                        resultValue = cookie
+                        doneFlag = true
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitAttrPartitionedEtsAsyncFalse004 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                        doneFlag = true
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitAttrPartitionedEtsAsyncFalse004 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                    doneFlag = true
+                  }
+                  await waitForExist(() => doneFlag, 'emitAttrPartitionedEtsAsyncFalse004', true, 200)
+                  if (resultValue.indexOf('name=value') < 0) {
+                    Utils.emitEvent(true, 148000)
+                  } else {
+                    Utils.emitEvent(false, 148000)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedNdkSyncTrue005': {
+                  web_webview.WebCookieManager.clearAllCookiesSync();
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE,
+                    'name=value; Secure; SameSite=None; Partitioned;', false, false)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, false, false, true)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitAttrPartitionedNdkSyncTrue005 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue.indexOf('name=value') >= 0) {
+                    Utils.emitEvent(true, 148010)
+                  } else {
+                    Utils.emitEvent(false, 148010)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedNdkSyncFalse006': {
+                  web_webview.WebCookieManager.clearAllCookiesSync();
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE,
+                    'name=value; Secure; SameSite=None; Partitioned;', false, false)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, false, false, false)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitAttrPartitionedNdkSyncFalse006 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultValue.indexOf('name=value') < 0) {
+                    Utils.emitEvent(true, 148020)
+                  } else {
+                    Utils.emitEvent(false, 148020)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedNdkAsyncTrue007': {
+                  web_webview.WebCookieManager.clearAllCookiesSync();
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE,
+                    'name=value; Secure; SameSite=None; Partitioned;', false, false)
+                  testNapi.fetchCookieAsyncPartitioned(URL_EXAMPLE, false, false, true)
+                  await waitForExist(() => testNapi.getFetchCookieAsyncPartitionedCode(),
+                    'emitAttrPartitionedNdkAsyncTrue007', 0, 500)
+                  let resultCode = testNapi.getFetchCookieAsyncPartitionedCode()
+                  let resultValue = testNapi.getFetchCookieAsyncPartitionedValue()
+                  console.log('emitAttrPartitionedNdkAsyncTrue007 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue.indexOf('name=value') >= 0) {
+                    Utils.emitEvent(true, 148030)
+                  } else {
+                    Utils.emitEvent(false, 148030)
+                  }
+                  break
+                }
+                case 'emitAttrPartitionedNdkAsyncFalse008': {
+                  web_webview.WebCookieManager.clearAllCookiesSync();
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE,
+                    'name=value; Secure; SameSite=None; Partitioned;', false, false)
+                  testNapi.fetchCookieAsyncPartitioned(URL_EXAMPLE, false, false, false)
+                  await waitForExist(() => testNapi.getFetchCookieAsyncPartitionedCode(),
+                    'emitAttrPartitionedNdkAsyncFalse008', 0, 500)
+                  let resultCode = testNapi.getFetchCookieAsyncPartitionedCode()
+                  let resultValue = testNapi.getFetchCookieAsyncPartitionedValue()
+                  console.log('emitAttrPartitionedNdkAsyncFalse008 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultValue.indexOf('name=value') < 0) {
+                    Utils.emitEvent(true, 148040)
+                  } else {
+                    Utils.emitEvent(false, 148040)
+                  }
+                  break
+                }
                 default :
                   break
               }
