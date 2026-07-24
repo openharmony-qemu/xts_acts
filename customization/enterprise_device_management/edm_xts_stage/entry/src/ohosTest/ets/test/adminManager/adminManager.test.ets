@@ -1018,7 +1018,7 @@ export default function adminManagerTest() {
         await adminManager.disableAdmin(SELFWANT, userId);
         expect(true).assertTrue();
       } catch (error) {
-        expect(error.code == 9200005).assertTrue();
+        expect(Number(error.code) == 9200005).assertTrue();
       } 
       done();
     })
