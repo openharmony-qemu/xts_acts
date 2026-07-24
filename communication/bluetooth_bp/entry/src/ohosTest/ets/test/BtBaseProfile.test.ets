@@ -1094,5 +1094,29 @@ export default function btBaseProfileTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100
+     * @tc.desc   Test PanRole enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let ROLE_PANNAP = bluetooth.PanRole.ROLE_PANNAP;
+            console.info("[bluetooth_js]PanRole ROLE_PANNAP: " + ROLE_PANNAP);
+            expect(ROLE_PANNAP).assertEqual(0);
+
+            let ROLE_PANU = bluetooth.PanRole.ROLE_PANU;
+            console.info("[bluetooth_js]PanRole ROLE_PANU: " + ROLE_PANU);
+            expect(ROLE_PANU).assertEqual(1);
+        } catch (err) {
+            console.info("bluetooth PanRole  errCode:" + err.code + ",bluetooth PanRole errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
   })
 }
