@@ -18,21 +18,6 @@
     "sourceOption": {
     }
   },
-  "buildOptionSet": [
-    {
-      "name": "release",
-      "arkOptions": {
-        "obfuscation": {
-          "ruleOptions": {
-            "enable": false,
-            "files": [
-              "./obfuscation-rules.txt"
-            ]
-          }
-        },
-      }
-    },
-  ],
   "targets": [
     {
       "name": "default"

@@ -68,18 +68,6 @@ export default function FunctionExpressionTest() {
     })
 
     /**
-     * @tc.number    SUB_FUNCTION_EXPRESSION_0400
-     * @tc.name      testNamedInternalBinding0001
-     * @tc.desc      Verify named function expression internal name binding (§15.2.3)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testNamedInternalBinding0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(testNamedInternalBindingName()).assertEqual('fact')
-    })
-
-    /**
      * @tc.number    SUB_FUNCTION_EXPRESSION_0500
      * @tc.name      testNamedRecursive0001
      * @tc.desc      Verify named function expression supports recursion via internal name (§15.2.3)

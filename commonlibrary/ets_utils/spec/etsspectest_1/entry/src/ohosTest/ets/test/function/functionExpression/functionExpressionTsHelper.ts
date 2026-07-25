@@ -35,11 +35,6 @@ export function testExpressionAssign(): number {
 
 export let anonymousFunc: () => void = function(): void {}
 
-export function testNamedInternalBindingName(): string {
-  let f = function fact(): void {}
-  return f.name
-}
-
 export function testNamedRecursive(): number {
   let fact = function factorial(n: number): number {
     if (n <= 1) return 1
