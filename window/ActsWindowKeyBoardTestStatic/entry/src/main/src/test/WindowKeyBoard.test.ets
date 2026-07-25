@@ -26,6 +26,7 @@ import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import {Driver,ON} from '@ohos.UiTest';
+import { canIUse } from '@internal.full.global'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -39,12 +40,15 @@ export default function WindowKeyBoardTest() {
         let context: common.UIAbilityContext;
         let isFreeWindowMode:boolean = false;
         let driver: Driver;
+        let isSyscapSessionManagerSupported = false;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
+            isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+ 	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
