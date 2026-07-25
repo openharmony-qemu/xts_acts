@@ -403,7 +403,7 @@ napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi_callba
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
-    OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+    OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&nativeBufferConfig); // Alloc会调用一次OH_NativeBuffer_Reference
     int32_t ret = OH_NativeBuffer_FromNativeWindowBuffer(nullptr, &buffer);
     napi_create_int32(env, ret, &result1);
     napi_set_element(env, result, NUMBER_0, result1);
@@ -426,7 +426,6 @@ napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi_callba
     napi_create_int32(env, ret, &result1);
     napi_set_element(env, result, NUMBER_1, result1);
     OH_NativeBuffer_Unreference(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&_image);
     return result;
 }
@@ -454,6 +453,7 @@ napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_callbac
     int fenceFd = NUMBER_MINUS_1;
     int ret0 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
     ret = OH_NativeBuffer_FromNativeWindowBuffer(nativeWindowBuffer, &buffer);
+    OH_NativeBuffer_Reference(buffer);
     napi_create_int32(env, ret, &result1);
     napi_set_element(env, result, NUMBER_0, result1);
 
@@ -2033,7 +2033,7 @@ napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_
     };
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
     if (nativeBuffer == nullptr) {
-        napi_create_int32(env, FAIL, &result);
+        napi_create_int32(env, 1, &result);
         return result;
     }
     OH_NativeBuffer_ColorSpace colorSpace1 = OH_COLORSPACE_BT2020_LOG_FULL;
@@ -2046,12 +2046,12 @@ napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_
     OH_NativeBuffer_ColorSpace colorSpace2;
     ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace2);
     if (ret != NATIVE_ERROR_OK) {
-        napi_create_int32(env, ret, &result);
+        napi_create_int32(env, 3, &result);
         OH_NativeBuffer_Unreference(nativeBuffer);
         return result;
     }
     if (colorSpace2 != OH_COLORSPACE_BT2020_LOG_FULL) {
-        napi_create_int32(env, FAIL, &result);
+        napi_create_int32(env, 4, &result);
         OH_NativeBuffer_Unreference(nativeBuffer);
         return result;
     }

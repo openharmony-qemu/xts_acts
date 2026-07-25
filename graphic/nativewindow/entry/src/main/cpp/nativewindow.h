@@ -363,4 +363,11 @@ napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_i
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowFlushBufferAbnormalRegion(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight(napi_env env, napi_callback_info info);
+
+napi_value testNativeWindowSetGet3DMetadataValueNormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowSet3DMetadataValueNull(napi_env env, napi_callback_info info);
+napi_value testNativeWindowSet3DMetadataValueAbnormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowGet3DMetadataValueNull(napi_env env, napi_callback_info info);
+napi_value testNativeWindowGet3DMetadataValueAbnormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowSetGet3DMetadataValueMultipleCalls(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H

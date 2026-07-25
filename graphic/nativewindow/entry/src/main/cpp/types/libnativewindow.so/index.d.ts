@@ -144,4 +144,10 @@ export const testNativeWindowLockAndUnLockAndRequest: () => number;
 export const OHNativeErrorCodeCover: () => number;
 export const testNativeWindowNativeWindowFlushBufferAbnormalRegion: () => number;
 export const testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight: () => number;
+export const testNativeWindowSetGet3DMetadataValueNormal: () => number;
+export const testNativeWindowSet3DMetadataValueNull: () => number;
+export const testNativeWindowSet3DMetadataValueAbnormal: () => number;
+export const testNativeWindowGet3DMetadataValueNull: () => number;
+export const testNativeWindowGet3DMetadataValueAbnormal: () => number;
+export const testNativeWindowSetGet3DMetadataValueMultipleCalls: () => number;
 
