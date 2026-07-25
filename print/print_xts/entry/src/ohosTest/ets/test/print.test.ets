@@ -1137,6 +1137,10 @@ export default function printTest() {
         print.off('printerChange');
         await UpdatePrinterInDiscovery(printerInformation);
         expect(callBackCount).assertEqual(1);
+
+        print.off('printerChange', onPrinterChange);
+        await UpdatePrinterInDiscovery(printerInformation);
+        expect(callBackCount).assertEqual(1);
         done();
       } catch (error) {
         console.log('print_function_1200 expect failed, err: ' + JSON.stringify(error));
