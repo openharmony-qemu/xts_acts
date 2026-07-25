@@ -805,6 +805,126 @@ static napi_value ActsRealDeviceCheckGamePadEvent(napi_env env, napi_callback_in
     return CreateTestFunction(&OHOS::GameController::ActsRealDeviceCheckGamePadEvent, env, info);
 }
 
+static napi_value ActsGameDeviceGetAllDeviceInfos02(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceGetAllDeviceInfos02, env, info);
+}
+
+static napi_value ActsGameDeviceAllDeviceInfosGetCount03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceAllDeviceInfosGetCount03, env, info);
+}
+
+static napi_value ActsGameDeviceAllDeviceInfosGetDeviceInfo06(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceAllDeviceInfosGetDeviceInfo06, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceEventGetChangedType03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceEventGetChangedType03, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceEventGetDeviceInfo03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceEventGetDeviceInfo03, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceInfoGetProduct03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetProduct03, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceInfoGetVersion03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetVersion03, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceInfoGetDeviceType03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetDeviceType03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadButtonEventGetButtonAction03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadButtonEventGetButtonAction03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadButtonEventGetButtonCode03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadButtonEventGetButtonCode03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadPressedButtonsGetCount03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadPressedButtonsGetCount03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadPressedButtonsGetButtonInfo05(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadPressedButtonsGetButtonInfo05, env, info);
+}
+
+static napi_value ActsGameControllerGamePadPressedButtonGetButtonCode03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadPressedButtonGetButtonCode03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadButtonEventGetActionTime03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadButtonEventGetActionTime03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetAxisSourceType03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetAxisSourceType03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetXAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetXAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetYAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetYAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetZAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetZAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetRZAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetRZAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetHatXAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetHatXAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetHatYAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetHatYAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetBrakeAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetBrakeAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetGasAxisValue03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetGasAxisValue03, env, info);
+}
+
+static napi_value ActsGameControllerGamePadAxisEventGetActionTime03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameControllerGamePadAxisEventGetActionTime03, env, info);
+}
+
 // game_pad_event_test end
 
 napi_property_descriptor desc[] = {
@@ -1116,6 +1236,31 @@ napi_property_descriptor desc[] = {
      nullptr},
     {"ActsRealDeviceCheckGamePadEvent", nullptr, ActsRealDeviceCheckGamePadEvent, nullptr, nullptr, nullptr,
      napi_default, nullptr},
+
+    {"ActsGameDeviceGetAllDeviceInfos02", nullptr, ActsGameDeviceGetAllDeviceInfos02, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceAllDeviceInfosGetCount03", nullptr, ActsGameDeviceAllDeviceInfosGetCount03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceAllDeviceInfosGetDeviceInfo06", nullptr, ActsGameDeviceAllDeviceInfosGetDeviceInfo06, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceEventGetChangedType03", nullptr, ActsGameDeviceDeviceEventGetChangedType03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceEventGetDeviceInfo03", nullptr, ActsGameDeviceDeviceEventGetDeviceInfo03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetProduct03", nullptr, ActsGameDeviceDeviceInfoGetProduct03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetVersion03", nullptr, ActsGameDeviceDeviceInfoGetVersion03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetDeviceType03", nullptr, ActsGameDeviceDeviceInfoGetDeviceType03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadButtonEventGetButtonAction03", nullptr, ActsGameControllerGamePadButtonEventGetButtonAction03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadButtonEventGetButtonCode03", nullptr, ActsGameControllerGamePadButtonEventGetButtonCode03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadPressedButtonsGetCount03", nullptr, ActsGameControllerGamePadPressedButtonsGetCount03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadPressedButtonsGetButtonInfo05", nullptr, ActsGameControllerGamePadPressedButtonsGetButtonInfo05, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadPressedButtonGetButtonCode03", nullptr, ActsGameControllerGamePadPressedButtonGetButtonCode03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadButtonEventGetActionTime03", nullptr, ActsGameControllerGamePadButtonEventGetActionTime03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetAxisSourceType03", nullptr, ActsGameControllerGamePadAxisEventGetAxisSourceType03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetXAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetXAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetYAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetYAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetZAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetZAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetRZAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetRZAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetHatXAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetHatXAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetHatYAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetHatYAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetBrakeAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetBrakeAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetGasAxisValue03", nullptr, ActsGameControllerGamePadAxisEventGetGasAxisValue03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGameControllerGamePadAxisEventGetActionTime03", nullptr, ActsGameControllerGamePadAxisEventGetActionTime03, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

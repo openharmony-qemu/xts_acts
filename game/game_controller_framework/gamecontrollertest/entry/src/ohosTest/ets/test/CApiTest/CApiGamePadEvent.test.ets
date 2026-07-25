@@ -787,5 +787,261 @@ export default function CApiGamePadEventTest() {
       let ret: number = GC.ActsGameControllerGamePadAxisEventGetActionTime02();
       expect(ret).assertEqual(401);
     });
+
+    /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonAction03
+     * @tc.number OH_GamePad_ButtonEvent_GetButtonAction03
+     * @tc.desc   GetButtonAction failed when actionType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_ButtonEvent_GetButtonAction03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadButtonEventGetButtonAction03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCode03
+     * @tc.number OH_GamePad_ButtonEvent_GetButtonCode03
+     * @tc.desc   GetButtonCode failed when code is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_ButtonEvent_GetButtonCode03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadButtonEventGetButtonCode03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_PressedButtons_GetCount03
+     * @tc.number OH_GamePad_PressedButtons_GetCount03
+     * @tc.desc   PressedButtons_GetCount failed when count is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_PressedButtons_GetCount03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetCount03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo05
+     * @tc.number OH_GamePad_PressedButtons_GetButtonInfo05
+     * @tc.desc   GetButtonInfo failed when pressedButton is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_PressedButtons_GetButtonInfo05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadPressedButtonsGetButtonInfo05();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCode03
+     * @tc.number OH_GamePad_PressedButton_GetButtonCode03
+     * @tc.desc   PressedButton_GetButtonCode failed when code is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_PressedButton_GetButtonCode03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadPressedButtonGetButtonCode03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetActionTime03
+     * @tc.number OH_GamePad_ButtonEvent_GetActionTime03
+     * @tc.desc   ButtonEvent_GetActionTime failed when actionTime is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_ButtonEvent_GetActionTime03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadButtonEventGetActionTime03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetAxisSourceType03
+     * @tc.number OH_GamePad_AxisEvent_GetAxisSourceType03
+     * @tc.desc   AxisEvent_GetAxisSourceType failed when axisSourceType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetAxisSourceType03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetAxisSourceType03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetXAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetXAxisValue03
+     * @tc.desc   AxisEvent_GetXAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetXAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetXAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetYAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetYAxisValue03
+     * @tc.desc   AxisEvent_GetYAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetYAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetYAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetZAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetZAxisValue03
+     * @tc.desc   AxisEvent_GetZAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetZAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetZAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetRZAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetRZAxisValue03
+     * @tc.desc   AxisEvent_GetRZAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetRZAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetRZAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatXAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetHatXAxisValue03
+     * @tc.desc   AxisEvent_GetHatXAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetHatXAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetHatXAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatYAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetHatYAxisValue03
+     * @tc.desc   AxisEvent_GetHatYAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetHatYAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetHatYAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetBrakeAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetBrakeAxisValue03
+     * @tc.desc   AxisEvent_GetBrakeAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetBrakeAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetBrakeAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetGasAxisValue03
+     * @tc.number OH_GamePad_AxisEvent_GetGasAxisValue03
+     * @tc.desc   AxisEvent_GetGasAxisValue failed when axisValue is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetGasAxisValue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetGasAxisValue03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GamePad_AxisEvent_GetActionTime03
+     * @tc.number OH_GamePad_AxisEvent_GetActionTime03
+     * @tc.desc   AxisEvent_GetActionTime failed when actionTime is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GamePad_AxisEvent_GetActionTime03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameControllerGamePadAxisEventGetActionTime03();
+      expect(ret).assertEqual(401);
+    });
   })
 }

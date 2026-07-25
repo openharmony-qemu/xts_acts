@@ -653,5 +653,136 @@ int32_t ActsGameControllerGamePadAxisEventGetActionTime02()
 
     return static_cast<int32_t>(code);
 }
+
+int32_t ActsGameControllerGamePadButtonEventGetButtonAction03()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetButtonAction(buttonEvent, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadButtonEventGetButtonCode03()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetButtonCode(buttonEvent, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadPressedButtonsGetCount03()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GameController_ErrorCode code = OH_GamePad_PressedButtons_GetCount(buttonEvent, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo05()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GameController_ErrorCode code = OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadPressedButtonGetButtonCode03()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GamePad_PressedButton *pressedButton;
+    OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, &pressedButton);
+    GameController_ErrorCode code = OH_GamePad_PressedButton_GetButtonCode(pressedButton, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    OH_GamePad_DestroyPressedButton(&pressedButton);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadButtonEventGetActionTime03()
+{
+    GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
+    GameController_ErrorCode code = OH_GamePad_ButtonEvent_GetActionTime(buttonEvent, nullptr);
+    DestroyButtonEvent(buttonEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetAxisSourceType03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::DPAD);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetAxisSourceType(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetXAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::LEFT_THUMBSTICK);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetYAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::LEFT_THUMBSTICK);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetZAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::RIGHT_THUMBSTICK);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetZAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetRZAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::RIGHT_THUMBSTICK);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetRZAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetHatXAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::DPAD);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetHatXAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetHatYAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::DPAD);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetHatYAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetBrakeAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::LEFT_TRIGGER);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetBrakeAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetGasAxisValue03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::RIGHT_TRIGGER);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetGasAxisValue(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameControllerGamePadAxisEventGetActionTime03()
+{
+    GamePad_AxisEvent *axisEvent = CreateAxisEvent(GamePad_AxisSourceType::DPAD);
+    GameController_ErrorCode code = OH_GamePad_AxisEvent_GetActionTime(axisEvent, nullptr);
+    DestroyAxisEvent(axisEvent);
+    return static_cast<int32_t>(code);
+}
 } // namespace GameController
 } // namespace OHOS

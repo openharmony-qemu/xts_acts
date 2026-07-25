@@ -158,5 +158,27 @@ int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo05()
     return static_cast<int32_t>(code);
 }
 
+int32_t ActsGameDeviceGetAllDeviceInfos02()
+{
+    GameController_ErrorCode code = OH_GameDevice_GetAllDeviceInfos(nullptr);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceAllDeviceInfosGetCount03()
+{
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetCount(allDeviceInfos, nullptr);
+    OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo06()
+{
+    GameDevice_AllDeviceInfos *allDeviceInfos = CreateAllDeviceInfos();
+    GameController_ErrorCode code = OH_GameDevice_AllDeviceInfos_GetDeviceInfo(allDeviceInfos, 0, nullptr);
+    OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
+    return static_cast<int32_t>(code);
+}
+
 } // namespace GameController
 } // namespace OHOS
