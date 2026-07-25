@@ -105,7 +105,7 @@ export default function BigIntEquals2Test_2(): void {
      */
     it('testBigIntEqualsAnyTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(42);
-      expect(a.equals(new Array<number>(10) as Any)).assertFalse();
+      expect(a.equals(Array.create<number>(1, 10) as Any)).assertFalse();
       expect(a.equals(new Map<number, number>() as Any)).assertFalse();
       expect(a.equals(new Set<number>() as Any)).assertFalse();
       expect(a.equals(new Int8Array(10) as Any)).assertFalse();

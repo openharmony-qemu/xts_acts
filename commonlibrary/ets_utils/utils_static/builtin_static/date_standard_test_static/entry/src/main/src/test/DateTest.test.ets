@@ -6028,7 +6028,7 @@ export default function dateTest(): void {
       }
     });
 
-    /**  toLocaleDateString 接口有问题已经提单
+    /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26900
      * @tc.name       testDateToLocaleDateString0002
      * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
