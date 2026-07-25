@@ -319,7 +319,6 @@ export default function CameraPhotoOutputSuppTest() {
         console.error(TAG, testName, JSON.stringify(err), err.code);
         expect(Number(err.code)).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG);
       } finally {
-        await releasePhotoSession();
         done();
       }
     })
