@@ -28,4 +28,4 @@ export const OHWebSocketClientDestroy: (a: number) => number;
 export const OHNetStackIsCleartextPermitted: () => number;
 export const OHNetStackIsCleartextPermittedByHostName: (a: string) => number;
 export const OHNetStackCreateAndVerifySortedCertChain: (a: string) => number;
-export const OHNetStackFreeCertChain: () => number;
+export const OHNetStackFreeCertChain: (param?: string) => number;
