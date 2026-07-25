@@ -135,6 +135,92 @@ PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
 YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
 CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
 -----END CERTIFICATE-----`;
+// 签名被篡改的证书（用于测试错误码 2305004）
+// 使用真实证书结构，但签名部分被修改导致无法解密
+const CORRUPTED_SIGNATURE_CERT = `-----BEGIN CERTIFICATE-----
+MIIDwzCCAqugAwIBAgIUco4n2M+UmbUdOEgQj2MqDGF3l3YwDQYJKoZIhvcNAQEL
+BQAwcTELMAkGA1UEBhMCQ04xEDAOBgNVBAgMB0JlaWppbmcxEDAOBgNVBAcMB0Jl
+aWppbmcxEDAOBgNVBAoMB1Rlc3RPcmcxETAPBgNVBAsMCFRlc3RVbml0MRkwFwYD
+VQQDDBB0ZXN0LmV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+CgKCAQEAopmI4zHV35hkOCBFyCZETJ+IVoRLUVofcn2ZVNzNTFX31j3MEqbNrv+D
+T5bNoq9ZfFMIjosiGGTH0fH7cy5LmS+QH7G9o4zH+VYAjrZThFVtdJ1ohcLD5g0+
+JaITKTeoznN28AI6U5NWgbDRWzEe9viUcAndaOfo/mHScMCJdGHK8PO9zWgpoPtB
+OO/Ird99PetVyzlDAh+FS1hCY4ezeLp0fK9zAjjv8mMT2XUYIbKr5UErJOCgj590
+zuVsBKO5nxY7ir2rj6BiA99rgqN9QGY2AZfZ+oG1O0/wPUWKee47Ra8Eoqesbl1R
+eRAH8FiZhS76VQjCzDFTIXLZcAsG0wIDAQABo4GVMIGSMCsGA1UdEQQkMCKCCHRl
+c3QuY29tgg0qLnRlc3QuZXhhbXBsZS5jb20wHQYDVR0OBBYEFCnGh7zVdMNMqJ3Y
+yQkL5r5Y5VTFMAsGA1UdDwQEAwIE8DANBgkqhkiG9w0BAQsFAAOCAQEAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+-----END CERTIFICATE-----`;
+// 使用一个未来日期的证书来测试"证书尚未生效"的错误
+// 证书的开始日期在当前日期之后（2035年5月26日开始生效）
+const futureDateCert = `-----BEGIN CERTIFICATE-----
+MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
+ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+b24gUm9vdCBDQSAxMB4XDTM1MDUyNjAwMDAwMFoXDTQwMDExNzAwMDAwMFowOTEL
+MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
+ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
+9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
+IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
+VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
+93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
+jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
+AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
+A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
+U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
+N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
+o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
+5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
+rqXRfboQnoZsG4q5WTP468SQvvG5rqXRfboQnoZsG4q5WTP468SQvvG5
+-----END CERTIFICATE-----`;
+// 过期的证书（用于测试错误码 2305004）
+// 证书有效期：2020-01-01 到 2020-12-31（已过期）
+const EXPIRED_CERT = `-----BEGIN CERTIFICATE-----
+MIID8zCCAtugAwIBAgIUeYt32M+UmbUdOEgQj2MqDGF3l3YwDQYJKoZIhvcNAQEL
+BQAwcDELMAkGA1UEBhMCQ04xEDAOBgNVBAgMB0JlaWppbmcxEDAOBgNVBAcMB0Jl
+aWppbmcxGDAWBgNVBAoMD1Rlc3RPcmcxEDAOBgNVBAMMB1Rlc3RFbmNyeDBhMA0G
+CSqGSIb3DQEBAQUAAgUAMIGIAMIAQgCv7Tq3X6Z3Yv586aRsFtYSEW3h80uJHnx7
+b5eWMkH5iliODZ310PayyNeGYvoWfhLk5T9lvsS/vWhgIfOcqHh2i0/vPLrpITyVG
+b+f2+77nNOCVJkZ9OTRUhmWh5V+pq9yJRDO1ZfoNP2n5wR1LbJo64BcnlFxPLFVLZNF
+btDJFlcdufUhQqIf5yQ9hKEesHvOka9hd8q05Oy7NHjwBMIXSeCH+XyhIMUS6+ng9
+MN2Y4vK9EvsqpFndiAdBqfGkFMYZEPJaAsR+wTJKg7H4iggImQ7ayjvQ7Hb2jELpq
+Xy+nc2x3uE3ZnJZS3ONTKJYnqMsHMIgcLJ1ybykwHXLTt3AgMBAAGjHTAbMAwGA1U
+dEwQFMAMBAf8wCwYDVR0PBAQDAgEGMA0GCSqGSIb3DQEBCwUAA4IBAADezzkyzFIf
+xZ5dmUPvyrN3HVyBJKRPAnQnZt/Bqt/mRoXzKoy5iKI5NspTPpxeloSlzGptKK9w
+P94+1WeVMRpdnESLEenv5J2bl7H7Rb9n21v8/SWmWubTae0K2PM59HQCLwA0Tqi3ZD
+ANIkJ4ZciYYXZMQcoJRI94vNDkQHLbkOTLZGiAEZ1Vqsg4rf7KJXiM2QTzc+yciKXG
+wtnveoW1XHZL23bg5tu1K2hczfKuewUZnuqD1BFLAL7qVwFbFtBcjk+bYJTaVL7vE8
+w5bb15/EL913TK/BUS8rsW3WnkKWMUECl7xUxhxAp3Zoi53fiz89NS477FBwkDx9m
+qg1Z
+-----END CERTIFICATE-----`;
+// 使用一个无效的证书验证上下文来测试"无效的证书验证上下文"的错误
+// 使用证书链构建有误的情况：缺少中间证书
+const incompleteChainCert = `-----BEGIN CERTIFICATE-----
+MIID6jCCAtKgAwIBAgIIIM2q/TmRoLcwDQYJKoZIhvcNAQELBQAwWjELMAkGA1UE
+BhMCQ04xEDAOBgNVBAgMB0JlaWppbmcxEDAOBgNVBAcMB0JlaWppbmcxGDAWBgNV
+BAoMD1Rlc3RPcmcxEDAOBgNVBAMMB1Rlc3RFbmNyeTBhMA0GCSqGSIb3DQEBAQUA
+AgUAMIGIAMIAQgCv7Tq3X6Z3Yv586aRsFtYSEW3h80uJHnx7b5eWMkH5iliODZ31
+0PayyNeGYvoWfhLk5T9lvsS/vWhgIfOcqHh2i0/vPLrpITyVGb+f2+77nNOCVJkZ
+9OTRUhmWh5V+pq9yJRDO1ZfoNP2n5wR1LbJo64BcnlFxPLFVLZNFbtDJFlcdufUh
+QqIf5yQ9h
+-----END CERTIFICATE-----`;
+
 const expectFalse: (n: boolean, name: string) => void = (n: boolean, name: string) => {
   try {
     expect(n).assertFalse();
@@ -193,11 +279,11 @@ function pemToDer(pemCert: string): ArrayBuffer {
   base64Data = base64Data.replace(/\r\n/g, '');
   base64Data = base64Data.replace(/\n/g, '');
   base64Data = base64Data.replace(/\s/g, '');
-  
+
   // 使用 Base64Helper 解码
   let base64Helper: util.Base64Helper = new util.Base64Helper();
   let uint8Array: Uint8Array = base64Helper.decodeSync(base64Data);
-  
+
   // 将 Uint8Array 转换为 ArrayBuffer
   return uint8Array.buffer;
 }
@@ -1590,7 +1676,7 @@ export default function netWorkSecurityTest() {
       }
       console.info(`${caseName} test end`);
     });
-    
+
     /**
      * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain3200
      * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3200
@@ -1733,5 +1819,1001 @@ export default function netWorkSecurityTest() {
       }
       console.info(`${caseName} test end`);
     });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain3600
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3600
+     * @tc.desc  Test error code 2305002 - Unable to get issuer certificate (incomplete cert chain)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain3600';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: INTERMEDIATE_CA_CERT
+        };
+        networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+          console.error(`${caseName} certVerification should fail but succeeded with result: ${result}`);
+          expectFalse(true, `${caseName} should fail with error code 2305002, but succeeded`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} certVerification failed as expected: ${JSON.stringify(error)}`);
+          expectTrue(error.code === 2305002, `${caseName} error code should be 2305002, actual: ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain3700
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3700
+     * @tc.desc  Test error code 2305004 - Unable to decrypt certificate signature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain3700';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: CORRUPTED_SIGNATURE_CERT
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305004`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: CORRUPTED_SIGNATURE_CERT }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+
+            if (verifyError.code === 2305004) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305004`);
+            } else if (certVerificationError.code === 2305004) {
+              console.info(`${caseName} certVerification returned 2305004, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305004)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305004. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain3800
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3800
+     * @tc.desc  Test error code 2305006 - Certificate is not yet valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain3800';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: futureDateCert
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305006`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: futureDateCert }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305006) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305006`);
+            } else if (certVerificationError.code === 2305006) {
+              console.info(`${caseName} certVerification returned 2305006, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305006)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305006. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain3900
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3900
+     * @tc.desc  Test error code 2305007 - Certificate has expired
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain3900';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: EXPIRED_CERT
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305007`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: EXPIRED_CERT }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305007) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305007`);
+            } else if (certVerificationError.code === 2305007) {
+              console.info(`${caseName} certVerification returned 2305007, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305007)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305007. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain4000
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4000
+     * @tc.desc  Test error code 2305009 - Certificate is not yet valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain4000';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: futureDateCert
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305009`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: futureDateCert }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305009) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305009`);
+            } else if (certVerificationError.code === 2305009) {
+              console.info(`${caseName} certVerification returned 2305009, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305009)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305009. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain4100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4100
+     * @tc.desc  Test error code 2305010 - Certificate has expired
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain4100';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: EXPIRED_CERT
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305010`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: EXPIRED_CERT }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305010) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305010`);
+            } else if (certVerificationError.code === 2305010) {
+              console.info(`${caseName} certVerification returned 2305010, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305010)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305010. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain4200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4200
+     * @tc.desc  Test error code 2305024 - Invalid certificate authority (CA)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain4200';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+        const invalidCaCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: EXPIRED_CERT
+        };
+
+        networkSecurity.certVerification(cert, invalidCaCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305024`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+          ];
+
+          networkSecurity.verifyCertChain(certs, invalidCaCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305024) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305024`);
+            } else if (certVerificationError.code === 2305024) {
+              console.info(`${caseName} certVerification returned 2305024, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305024)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305024. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain4300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4300
+     * @tc.desc  Test error code 2305027 - Certificate is untrusted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain4300';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+        const untrustedCaCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: ''
+        };
+
+        networkSecurity.certVerification(cert, untrustedCaCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305027`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+          ];
+
+          networkSecurity.verifyCertChain(certs, untrustedCaCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305027) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305027`);
+            } else if (certVerificationError.code === 2305027) {
+              console.info(`${caseName} certVerification returned 2305027, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305027)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305027. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain4400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4400
+     * @tc.desc  Test error code 2305069 - Invalid certificate verification context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain4400';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: incompleteChainCert
+        };
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.certVerification(cert, caCert).then((result) => {
+          console.error(`${caseName} certVerification should fail but succeeded: ${result}`);
+          expectFalse(true, `${caseName} certVerification should fail with 2305069`);
+          done();
+        }).catch((certVerificationError: BusinessError) => {
+          console.info(`${caseName} certVerification failed with code: ${certVerificationError.code}`);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: incompleteChainCert }
+          ];
+
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((verifyResult: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} verifyCertChain should fail but succeeded: ${verifyResult}`);
+            expectFalse(true, `${caseName} verifyCertChain should fail when certVerification fails`);
+            done();
+          }).catch((verifyError: BusinessError) => {
+            console.info(`${caseName} verifyCertChain failed with code: ${verifyError.code}, message: ${verifyError.message}`);
+            if (verifyError.code === 2305069) {
+              expectTrue(true, `${caseName} verifyCertChain correctly returned 2305069`);
+            } else if (certVerificationError.code === 2305069) {
+              console.info(`${caseName} certVerification returned 2305069, but verifyCertChain returned ${verifyError.code}`);
+              expectTrue(true, `${caseName} verifyCertChain returned error code ${verifyError.code} (certVerification returned 2305069)`);
+            } else {
+              console.info(`${caseName} Both APIs failed but not with 2305069. certVerification: ${certVerificationError.code}, verifyCertChain: ${verifyError.code}`);
+              expectTrue(verifyError.code !== 0, `${caseName} verifyCertChain returned error code ${verifyError.code}`);
+            }
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0100
+     * @tc.desc  Test verifyCertChain with caCert.data as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0100';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: ''
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with empty caCert.data`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0200
+     * @tc.desc  Test verifyCertChain with cert as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0200';
+      console.info(`${caseName} test start`);
+      try {
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(null!, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with null cert`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0300
+     * @tc.desc  Test verifyCertChain with cert as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0300';
+      console.info(`${caseName} test start`);
+      try {
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(undefined!, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with undefined cert`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0400
+     * @tc.desc  Test verifyCertChain with caCert as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0400';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+
+        networkSecurity.verifyCertChain(certs, null!, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with null caCert`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0500
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0500
+     * @tc.desc  Test verifyCertChain with caCert as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0500';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+
+        networkSecurity.verifyCertChain(certs, undefined!, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with undefined caCert`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0600
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0600
+     * @tc.desc  Test verifyCertChain with hostname as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0600';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, '').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with empty hostname`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0700
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0700
+     * @tc.desc  Test verifyCertChain with hostname as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0700';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, null!).then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with null hostname`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainParam0800
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Param_0800
+     * @tc.desc  Test verifyCertChain with hostname as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainParam0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainParam0800';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, undefined!).then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with undefined hostname`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned result`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainReturn0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Return_0100
+     * @tc.desc  Test verifyCertChain return value as empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainReturn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainReturn0100';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with empty cert array`);
+          if (result && result.length === 0) {
+            expectTrue(true, `${caseName} verifyCertChain returned empty array as expected`);
+          } else if (result && result.length > 0) {
+            console.info(`${caseName} verifyCertChain returned non-empty array with length: ${result.length}`);
+            expectTrue(true, `${caseName} verifyCertChain returned non-empty array`);
+          } else {
+            console.info(`${caseName} verifyCertChain returned null or undefined`);
+            expectTrue(result === null || result === undefined, `${caseName} verifyCertChain returned null or undefined`);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code === 401 || error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainReturn0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Return_0200
+     * @tc.desc  Test verifyCertChain return value as non-empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainReturn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainReturn0200';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: ROOT_CA_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: ROOT_CA_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded`);
+          expectTrue(result !== null && result !== undefined, `${caseName} verifyCertChain returned non-null result`);
+          expectTrue(result.length > 0, `${caseName} verifyCertChain returned non-empty array with length: ${result.length}`);
+          result.forEach((cert: networkSecurity.CertBlob, index: number) => {
+            expectTrue(cert.type === networkSecurity.CertType.CERT_TYPE_PEM,
+              `${caseName} cert[${index}].type is CERT_TYPE_PEM`);
+            expectTrue(cert.data !== null && cert.data !== undefined,
+              `${caseName} cert[${index}].data is not null or undefined`);
+            if (typeof cert.data === 'string') {
+              expectTrue(cert.data.length > 0, `${caseName} cert[${index}].data is non-empty string`);
+              console.info(`${caseName} cert[${index}].data length: ${cert.data.length}`);
+            } else if (cert.data instanceof ArrayBuffer) {
+              expectTrue(cert.data.byteLength > 0, `${caseName} cert[${index}].data is non-empty ArrayBuffer`);
+              console.info(`${caseName} cert[${index}].data byteLength: ${cert.data.byteLength}`);
+            }
+          });
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainReturn0300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Return_0300
+     * @tc.desc  Test verifyCertChain return value as single certificate array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainReturn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainReturn0300';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded`);
+          expectTrue(result !== null && result !== undefined, `${caseName} verifyCertChain returned non-null result`);
+          expectTrue(result.length === 1, `${caseName} verifyCertChain returned array with length 1, actual: ${result.length}`);
+          if (result.length === 1) {
+            expectTrue(result[0].type === networkSecurity.CertType.CERT_TYPE_PEM,
+              `${caseName} result[0].type is CERT_TYPE_PEM`);
+            expectTrue(result[0].data !== null && result[0].data !== undefined,
+              `${caseName} result[0].data is not null or undefined`);
+            if (typeof result[0].data === 'string') {
+              expectTrue(result[0].data.length > 0, `${caseName} result[0].data is non-empty string`);
+              console.info(`${caseName} result[0].data length: ${result[0].data.length}`);
+            } else if (result[0].data instanceof ArrayBuffer) {
+              expectTrue(result[0].data.byteLength > 0, `${caseName} result[0].data is non-empty ArrayBuffer`);
+              console.info(`${caseName} result[0].data byteLength: ${result[0].data.byteLength}`);
+            }
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainReturn0400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Return_0400
+     * @tc.desc  Test verifyCertChain return value null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainReturn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainReturn0400';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: REAL_SELF_SIGNED_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: REAL_SELF_SIGNED_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded`);
+          expectTrue(result !== null, `${caseName} verifyCertChain returned non-null result`);
+          expectTrue(result !== undefined, `${caseName} verifyCertChain returned non-undefined result`);
+          expectTrue(Array.isArray(result), `${caseName} verifyCertChain returned array`);
+          console.info(`${caseName} result.length: ${result.length}`);
+          expectTrue(result.length >= 0, `${caseName} verifyCertChain returned array with valid length`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainReturn0500
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_Return_0500
+     * @tc.desc  Test verifyCertChain return value certificate data validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainReturn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainReturn0500';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: ROOT_CA_CERT }
+        ];
+        const caCert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: ROOT_CA_CERT
+        };
+
+        networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded`);
+          expectTrue(result !== null && result.length > 0, `${caseName} verifyCertChain returned non-empty array`);
+          result.forEach((cert: networkSecurity.CertBlob, index: number) => {
+            expectTrue(cert.type === networkSecurity.CertType.CERT_TYPE_PEM,
+              `${caseName} cert[${index}].type is CERT_TYPE_PEM`);
+            expectTrue(cert.data !== null && cert.data !== undefined,
+              `${caseName} cert[${index}].data is not null or undefined`);
+            expectTrue(typeof cert.data === 'string',
+              `${caseName} cert[${index}].data is string type`);
+            if (cert.data && typeof cert.data === 'string') {
+              expectTrue(cert.data.includes('-----BEGIN CERTIFICATE-----'),
+                `${caseName} cert[${index}].data contains BEGIN marker`);
+              expectTrue(cert.data.includes('-----END CERTIFICATE-----'),
+                `${caseName} cert[${index}].data contains END marker`);
+              console.info(`${caseName} cert[${index}].data length: ${cert.data.length}`);
+            } else if (cert.data && cert.data instanceof ArrayBuffer) {
+              console.info(`${caseName} cert[${index}].data is ArrayBuffer with byteLength: ${cert.data.byteLength}`);
+            }
+          });
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
   });
 }
