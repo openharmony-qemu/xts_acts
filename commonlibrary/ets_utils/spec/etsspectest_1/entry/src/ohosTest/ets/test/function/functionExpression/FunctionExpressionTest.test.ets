@@ -28,7 +28,6 @@ import {
   testExpressionAssign,
   testExpressionCallback,
   anonymousFunc,
-  testNamedInternalBindingName,
   testNamedRecursive,
   calculator,
   testIIFEResult,
