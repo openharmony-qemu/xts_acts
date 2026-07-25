@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType} from '@ohos/hypium'
 import ncAPI from 'libtestNetConnectNdk.so'
+import wsAPI from 'libtestNetStackNdk.so'
 import { unClickRequestPermission } from './ClickRequestPermission.test';
 
 function sleep(delay : number) : Promise<number> {
