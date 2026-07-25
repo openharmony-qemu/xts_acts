@@ -33,6 +33,9 @@ export default function windowKeyBorad() {
     let driver: Driver;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isSyscapSessionManagerSupported = false;
+
+
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -49,6 +52,8 @@ export default function windowKeyBorad() {
       console.info('beforeAll isPCStatus: ' + isPCStatus);
       let mainWindow = windowStage.getMainWindowSync();
       await mainWindow.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
       isFreeWindowMode = mainWindow.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
@@ -132,51 +137,85 @@ export default function windowKeyBorad() {
       let caseName: string = 'testMainWindow_onKeyboradWillShow ';
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
+      let count = 0;
       try {
-        if (isFreeWindowMode == true) {
-          done();
-        } else {
-          const callback  = async (keyboardInfo: window.KeyboardInfo) => {
-            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-            let displayInfo = display.getDefaultDisplaySync();
-            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
-            expect(keyboardInfo.beginRect.left).assertEqual(0);
-            expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.beginRect.height).assertLarger(0);
-            expect(keyboardInfo.endRect.left).assertEqual(0);
-            expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.endRect.height).assertLarger(0);
-            expect(keyboardInfo.animated).assertEqual(true);
-            expect(keyboardInfo.config?.curve).assertEqual(1);
-            expect(keyboardInfo.config?.duration).assertLarger(0);
-            expect(keyboardInfo.config?.param != null).assertTrue();
-            mainWindow.off('keyboardWillShow');
-            await driver.pressBack();
-            await sleep(500);
-            done();
-          }
-          mainWindow.on('keyboardWillShow', callback);
-          await sleep(1000);
-          let input = await driver.findComponent(ON.id('textInput'));
-          console.info(`${caseName}  input: ` + JSON.stringify(input));
-          await sleep(1000);
-          await input.click();
-          console.info(`${caseName}  click success: ` + JSON.stringify(input));
+        const callback  = async (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+          count++;
+          let displayInfo = display.getDefaultDisplaySync();
+          console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+          expect(keyboardInfo.beginRect.left).assertEqual(0);
+          expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+          expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.beginRect.height).assertLarger(0);
+          expect(keyboardInfo.endRect.left).assertEqual(0);
+          expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+          expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.endRect.height).assertLarger(0);
+          expect(keyboardInfo.animated).assertEqual(true);
+          expect(keyboardInfo.config?.curve).assertEqual(1);
+          expect(keyboardInfo.config?.duration).assertLarger(0);
+          expect(keyboardInfo.config?.param != null).assertTrue();
+          mainWindow.off('keyboardWillShow');
+          await driver.pressBack();
           await sleep(500);
-
+          done();
         }
+        mainWindow.on('keyboardWillShow', callback);
+        await sleep(1000);
+        let input = await driver.findComponent(ON.id('textInput'));
+        console.info(`${caseName}  input: ` + JSON.stringify(input));
+        await sleep(1000);
+        await input.click();
+        console.info(`${caseName}  click success: ` + JSON.stringify(input));
+        await sleep(500);
+        if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+          expect(count).assertEqual(1)
+        }
+        done()
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-        mainWindow.off('keyboardWillShow');
-        if (err.code === 801) {
+        if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
+          expect(err.code).assertEqual(801)
           done();
         } else {
+          mainWindow.off('keyboardWillShow');
           expect().assertFail()
           done();
         }
       }
+    });
+
+
+    /**
+     * @tc.name   testOffKeyboardWillShow_DeviceDiff
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDWILLSHOW_DEVICE_DIFF_0100
+     * @tc.desc   验证不同设备上off('keyboardWillShow')的设备行为差异：Phone/Tablet/PC/2in1正常调用并触发回调，其他设备返回801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOffKeyboardWillShow_DeviceDiff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOffKeyboardWillShow_DeviceDiff ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+          mainWindow.off('keyboardWillShow');
+          await sleep(500);
+          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+            console.info(`${caseName}  off keyboardWillShow success: `);
+          }
+          done()
+        } catch (err) {
+          console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+          if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
+        }
     });
 
     
@@ -264,53 +303,88 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
+      let count = 0;
       try {
-        if (isFreeWindowMode == true) {
-          done();
-        } else {
-          const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
-            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-            mainWindow.off('keyboardWillShow');
-            await driver.pressBack();
-            await sleep(500);
-          }
-          mainWindow.on('keyboardWillShow', callback1);
-          const callback  = (keyboardInfo: window.KeyboardInfo) => {
-            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-            let displayInfo = display.getDefaultDisplaySync();
-            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
-            expect(keyboardInfo.beginRect.left).assertEqual(0);
-            expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
-            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.endRect.left).assertEqual(0);
-            expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
-            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.endRect.height).assertLarger(0);
-            expect(keyboardInfo.animated).assertEqual(true);
-            expect(keyboardInfo.config?.curve).assertEqual(1);
-            expect(keyboardInfo.config?.duration).assertLarger(0);
-            expect(keyboardInfo.config?.param != null).assertTrue();
-            mainWindow.off('keyboardWillHide');
-            done();
-          }
-          mainWindow.on('keyboardWillHide', callback);
-          await sleep(1000);
-          let input = await driver.findComponent(ON.id('textInput'));
-          await sleep(1000);
-          await input.click();
+        const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+          mainWindow.off('keyboardWillShow');
+          await driver.pressBack();
           await sleep(500);
-
         }
+        mainWindow.on('keyboardWillShow', callback1);
+        const callback  = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+          count++;
+          let displayInfo = display.getDefaultDisplaySync();
+          console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+          expect(keyboardInfo.beginRect.left).assertEqual(0);
+          expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+          expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.endRect.left).assertEqual(0);
+          expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+          expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.endRect.height).assertLarger(0);
+          expect(keyboardInfo.animated).assertEqual(true);
+          expect(keyboardInfo.config?.curve).assertEqual(1);
+          expect(keyboardInfo.config?.duration).assertLarger(0);
+          expect(keyboardInfo.config?.param != null).assertTrue();
+          mainWindow.off('keyboardWillHide');
+          done();
+        }
+        mainWindow.on('keyboardWillHide', callback);
+        await sleep(1000);
+        let input = await driver.findComponent(ON.id('textInput'));
+        console.info(`${caseName}  input: ` + JSON.stringify(input));
+        await sleep(1000);
+        await input.click();
+        console.info(`${caseName}  click success: ` + JSON.stringify(input));
+        await sleep(500);
+        if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+          expect(count).assertEqual(1)
+        }
+        done()
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-        mainWindow.off('keyboardWillHide');
-        if (err.code === 801) {
+        if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
+          expect(err.code).assertEqual(801)
           done();
         } else {
+          mainWindow.off('keyboardWillHide');
           expect().assertFail()
           done();
         }
       }
+    });
+
+    /**
+     * @tc.name   testOffKeyboardWillHide_DeviceDiff
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDWILLHIDE_DEVICE_DIFF_0100
+     * @tc.desc   验证不同设备上off('keyboardWillShow')的设备行为差异：Phone/Tablet/PC/2in1正常调用并触发回调，其他设备返回801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOffKeyboardWillHide_DeviceDiff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOffKeyboardWillHide_DeviceDiff ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+          mainWindow.off('keyboardWillHide');
+          await sleep(500);
+          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+            console.info(`${caseName}  off keyboardWillHide success: `);
+          }
+          done()
+        } catch (err) {
+          console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+          if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
+        }
     });
 
 /**
@@ -369,7 +443,8 @@ export default function windowKeyBorad() {
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         mainWindow.off('keyboardWillHide');
-        if (err.code === 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
           done();
         } else {
           expect().assertFail()
@@ -439,7 +514,8 @@ export default function windowKeyBorad() {
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         mainWindow.off('keyboardWillHide');
-        if (err.code === 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
           done();
         } else {
           expect().assertFail()
