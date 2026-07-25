@@ -689,7 +689,7 @@ int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo05()
 int32_t ActsGameControllerGamePadPressedButtonGetButtonCode03()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
-    GamePad_PressedButton *pressedButton;
+    GamePad_PressedButton *pressedButton = nullptr;
     OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, &pressedButton);
     GameController_ErrorCode code = OH_GamePad_PressedButton_GetButtonCode(pressedButton, nullptr);
     DestroyButtonEvent(buttonEvent);
