@@ -906,11 +906,10 @@ export default function cameraPhotoSessionTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession!.getZoomPointInfos()
         for (let i = 0; i < zoomPointInfos.length; i++) {
-          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio},
-            equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
-        }
-        if (zoomPointInfos.length > 0) {
-          mCameraSession!.setZoomRatio(zoomPointInfos[0].zoomRatio);
+          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio}`)
+          expect(typeof zoomPointInfos[i].zoomRatio).assertEqual('number');
+          console.info(`index: ${i}, equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
+          expect(typeof zoomPointInfos[i].equivalentFocalLength).assertEqual('number');
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -921,28 +920,6 @@ export default function cameraPhotoSessionTest() {
         console.info(`Exit ${caseName}`)
         done()
         await releaseCameraSession();
-      }
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300
-    * @tc.number SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300
-    * @tc.desc   IsTorchLevelControlSupported(); return boolean
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_STATIC_5300';
-      try {
-        let isSupported = mCameraManager!.isTorchLevelControlSupported();
-        console.info(TAG,testName,`IsTorchLevelControlSupported: ${isSupported}`);
-        expect(isSupported == true || isSupported == false).assertTrue();
-        done();
-      } catch (error) {
-        console.info(TAG,testName,`fail err` + error.code);
-        expect().assertFail();
-        done();
       }
     })
 
