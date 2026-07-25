@@ -27,6 +27,7 @@ import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import {Driver,ON} from '@ohos.UiTest';
 import { canIUse } from '@internal.full.global'
+import deviceInfo from '@ohos.deviceInfo';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -684,7 +685,7 @@ export default function WindowKeyBoardTest() {
             let mainWindow:window.Window = windowStage!.getMainWindowSync();
             let count: int = 0;
              try {
-                const callback = async (keyboardInfo: window.KeyboardInfo): void => {
+                const callback = async (keyboardInfo: window.KeyboardInfo): Promise<void> => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
                     count++;
                     let displayInfo = display.getDefaultDisplaySync();
@@ -785,7 +786,7 @@ export default function WindowKeyBoardTest() {
             let count: int = 0;
             
             try {
-                const callback1 = async (keyboardInfo: window.KeyboardInfo): void => {
+                const callback1 = async (keyboardInfo: window.KeyboardInfo): Promise<void> => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
                     mainWindow.offKeyboardWillShow();
                     await driver.pressBack();
@@ -893,7 +894,7 @@ export default function WindowKeyBoardTest() {
             let count: int = 0;
             
             try {
-                const callback1 = async (keyboardInfo: window.KeyboardInfo): void => {
+                const callback1 = async (keyboardInfo: window.KeyboardInfo): Promise<void> => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
                     count++;
                     let displayInfo = display.getDefaultDisplaySync();
@@ -959,7 +960,7 @@ export default function WindowKeyBoardTest() {
             let count: int = 0;
             
             try {
-                const callback1 = async (keyboardInfo: window.KeyboardInfo): void => {
+                const callback1 = async (keyboardInfo: window.KeyboardInfo): Promise<void> => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
                     mainWindow.offKeyboardDidShow();
                     await Utils.msSleep(1000);
