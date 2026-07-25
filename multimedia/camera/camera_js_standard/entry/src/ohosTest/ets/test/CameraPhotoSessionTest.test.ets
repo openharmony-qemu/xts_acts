@@ -2640,11 +2640,10 @@ export default function CameraPhotoSessionTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession.getZoomPointInfos()
         for (let i = 0; i < zoomPointInfos.length; i++) {
-          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio},
-            equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
-        }
-        if (zoomPointInfos.length > 0) {
-          mCameraSession.setZoomRatio(zoomPointInfos[0].zoomRatio);
+          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio}`)
+          expect(typeof zoomPointInfos[i].zoomRatio).assertEqual('number');
+          console.info(`index: ${i}, equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
+          expect(typeof zoomPointInfos[i].equivalentFocalLength).assertEqual('number');
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {

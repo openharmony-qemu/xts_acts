@@ -235,15 +235,15 @@ export default function CameraPhotoOutputSuppTest() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_enableAutoExtendedGainmapDelivery_0100
-     * @tc.number SUB_MULTIMEDIA_CAMERA_enableAutoExtendedGainmapDelivery_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0100
      * @tc.desc   test camera enableAutoExtendedGainmapDelivery with paranm null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_CAMERA_enableAutoExtendedGainmapDelivery_0100', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_enableAutoExtendedGainmapDelivery_0100'
+    it('SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0100'
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -258,7 +258,99 @@ export default function CameraPhotoOutputSuppTest() {
           }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
-        expect(err.code).assertEqual("401");
+        expect(Number(err.code)).assertEqual(401);
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200
+     * @tc.desc   test camera enableAutoExtendedGainmapDelivery with paranm undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200'
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+          done();
+          return;
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(undefined);
+
+          }
+      } catch (err) {
+        console.error(TAG, testName, JSON.stringify(err), err.code);
+        expect(Number(err.code)).assertEqual(401);
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300
+     * @tc.desc   test camera enableAutoExtendedGainmapDelivery with error code 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300'
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+          done();
+          return;
+        } else {
+          createPhotoOutput();
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(true);
+          }
+      } catch (err) {
+        console.error(TAG, testName, JSON.stringify(err), err.code);
+        expect(Number(err.code)).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG);
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400
+     * @tc.desc   test camera enableAutoExtendedGainmapDelivery with error code 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400'
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+          done();
+          return;
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let isSupport: boolean =mPhotoOutput.isAutoExtendedGainmapDeliverySupported();
+          console.info(TAG, testName + `isAutoExtendedGainmapDeliverySupported = ${isSupport}`);
+          if (!isSupport) {
+            mPhotoOutput.enableAutoExtendedGainmapDelivery(true);
+            }
+          }
+      } catch (err) {
+        console.error(TAG, testName, JSON.stringify(err), err.code);
+        expect(Number(err.code)).assertEqual(camera.CameraErrorCode.OPERATION_NOT_ALLOWED);
       } finally {
         await releasePhotoSession();
         done();
