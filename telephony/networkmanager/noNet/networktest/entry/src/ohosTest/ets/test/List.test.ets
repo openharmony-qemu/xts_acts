@@ -20,6 +20,8 @@ let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
   if(netHandle.netId != 0 && netHandle.netId >100){
-  networkManagerWithoutCardTest();
+    networkManagerWithoutCardTest();
+  } else {
+    EmptyTestCheckNetwork();
   }
 }
