@@ -894,6 +894,7 @@ import customComponentSecondaryLayoutTest from "./customcomponent/CustomComponen
 import requirementRouterPageStateTest from './requirement/RequirementRouterPageStateTest.test'
 import resourceNapiValueTest from './resourcenapivalue/ResourceNapiValueTest.test'
 import customDialogSetSystemMaterialTest from "./customdialog/CustomDialogSetSystemMaterialTest.test"
+import transitionEffectIdentityTest from "./animation/TransitionEffectIdentityTest.test"
 
 export default function testsuite() {
   customComponentShadowTest()
@@ -1774,4 +1775,5 @@ export default function testsuite() {
   textSelectedBackgroundColorTest()
   waterFlowScrollOffsetTest()
   customDialogSetSystemMaterialTest()
+  transitionEffectIdentityTest()
 }
