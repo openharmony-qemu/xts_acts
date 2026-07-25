@@ -869,7 +869,7 @@ export default function NetworkManagerVpnTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
-          expect(err.code === "401").assertTrue();
+          expect(err.code === 401).assertTrue();
           done();
         })
       } catch (error) {
