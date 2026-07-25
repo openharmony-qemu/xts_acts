@@ -2033,7 +2033,7 @@ napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_
     };
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
     if (nativeBuffer == nullptr) {
-        napi_create_int32(env, 1, &result);
+        napi_create_int32(env, FAIL, &result);
         return result;
     }
     OH_NativeBuffer_ColorSpace colorSpace1 = OH_COLORSPACE_BT2020_LOG_FULL;
@@ -2046,12 +2046,12 @@ napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_
     OH_NativeBuffer_ColorSpace colorSpace2;
     ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace2);
     if (ret != NATIVE_ERROR_OK) {
-        napi_create_int32(env, 3, &result);
+        napi_create_int32(env, ret, &result);
         OH_NativeBuffer_Unreference(nativeBuffer);
         return result;
     }
     if (colorSpace2 != OH_COLORSPACE_BT2020_LOG_FULL) {
-        napi_create_int32(env, 4, &result);
+        napi_create_int32(env, FAIL, &result);
         OH_NativeBuffer_Unreference(nativeBuffer);
         return result;
     }
