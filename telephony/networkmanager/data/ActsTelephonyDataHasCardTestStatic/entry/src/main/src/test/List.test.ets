@@ -13,9 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import connection from '@ohos.net.connection';
 import dataManagerTest from "./DataManagerHasCard.test";
 import dataJsunit from './DataJsunit.test'
+let netHandle : connection.NetHandle = connection.getDefaultNetSync();
 export default function testsuite() {
+    let netCapabilities : connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+    if (netCapabilities.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR){
+        dataManagerTest();
+    }
     dataJsunit();
-    dataManagerTest();
 }
