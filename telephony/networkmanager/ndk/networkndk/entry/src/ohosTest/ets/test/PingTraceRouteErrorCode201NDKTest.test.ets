@@ -79,6 +79,7 @@ export default function PingTraceRouteErrorCode201NDKTest() {
         done();
       }
     });
+    
     /**
      * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_errorCode201
      * @tc.number SUB_NetworkManager_OHNetStackCreateAndVerifySortedCertChain_ErrorCode201
