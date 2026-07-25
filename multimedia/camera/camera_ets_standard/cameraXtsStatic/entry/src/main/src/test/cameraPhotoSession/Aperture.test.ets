@@ -247,6 +247,7 @@ export default function ApertureTest(): void {
       console.info(TAG, testName + ' begin.');
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+      await mPhotoSession!.start();
       try {
         // 先查后用：获取支持的物理光圈范围
         let supportedApertures: Array<camera.PhysicalAperture> = mPhotoSession!.getSupportedPhysicalApertures();
@@ -308,6 +309,7 @@ export default function ApertureTest(): void {
       console.info(TAG, testName + ' begin.');
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+      await mPhotoSession!.start();
       // ========== 预制过程 ==========
       try {
         // 先查后用：获取支持的物理光圈范围
