@@ -702,5 +702,45 @@ export default function GraphicTextAPI23() {
       done();
     })
     
+    /**
+     * @tc.name   GetFontPathsByType_0300
+     * @tc.number SUB_GRAPHIC_Text_GetFontPathsByType_0300
+     * @tc.desc   test getFontPathsByType null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontPathsByType_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      try {
+        let fontList = text.getFontPathsByType(null);
+        console.info('www data fontList', fontList);
+        expect().assertFail();
+      } catch (err) {
+        console.info('www data fontList error ', err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   GetFontPathsByType_0400
+     * @tc.number SUB_GRAPHIC_Text_GetFontPathsByType_0400
+     * @tc.desc   test getFontPathsByType undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontPathsByType_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      try {
+        let fontList = text.getFontPathsByType(undefined);
+        console.info('www data fontList', fontList);
+        expect().assertFail();
+      } catch (err) {
+        console.info('www data fontList error ', err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    })
+    
   })
 }
