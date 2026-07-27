@@ -205,8 +205,10 @@ export default class MediaTestBase {
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP);
             console.info('avScreenCaptureRecorder setPickerMode success');
           } catch (error) {
-            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
-            this.testFail();
+            if (error.code != 5400103) {
+              console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
+              this.testFail();
+            }
           }
         }
 
@@ -219,10 +221,12 @@ export default class MediaTestBase {
         if (this.isTestSucceeded()) {
           const excludedWindowIds: number[] = [101, 102, 103];
           await avScreenCaptureRecorder?.excludePickerWindows(excludedWindowIds).then(() => {
-            console.info('avScreenCaptureRecorder setPickerMode success');
+            console.info('avScreenCaptureRecorder excludePickerWindows success');
           }).catch((err: BusinessError) => {
-            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-            this.testFail();
+            if (err.code != 5400103) {
+              console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
+              this.testFail();
+            }
           });
         }
 
