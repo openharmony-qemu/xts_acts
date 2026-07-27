@@ -31,6 +31,21 @@ napi_value Test_RemoveDir(napi_env env, napi_callback_info info);
 napi_value Test_Rename(napi_env env, napi_callback_info info);
 napi_value Test_DirName(napi_env env, napi_callback_info info);
 napi_value Test_BaseName(napi_env env, napi_callback_info info);
+napi_value Test_Create_Api(napi_env env, napi_callback_info info);
+napi_value Test_stat(napi_env env, napi_callback_info info);
+napi_value Test_Fstat(napi_env env, napi_callback_info info);
+napi_value Test_FsSystemStat(napi_env env, napi_callback_info info);
+napi_value Test_Ftw(napi_env env, napi_callback_info info);
+napi_value Test_Truncate(napi_env env, napi_callback_info info);
+napi_value Test_PathConf(napi_env env, napi_callback_info info);
+napi_value Test_OpenReadDir(napi_env env, napi_callback_info info);
+napi_value Test_ReadDir_R(napi_env env, napi_callback_info info);
+napi_value Test_Fallocate(napi_env env, napi_callback_info info);
+napi_value Test_Fcntl(napi_env env, napi_callback_info info);
+napi_value Test_Chdir(napi_env env, napi_callback_info info);
+napi_value Test_Dup_Api(napi_env env, napi_callback_info info);
+napi_value Test_Fsync(napi_env env, napi_callback_info info);
+napi_value Test_scanDir(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

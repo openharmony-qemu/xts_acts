@@ -45,6 +45,21 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("testRename", Test_Rename),
     DESCRIPTOR("testDirName", Test_DirName),
     DESCRIPTOR("testBaseName", Test_BaseName),
+    DESCRIPTOR("testCreate", Test_Create_Api),
+    DESCRIPTOR("testStat", Test_stat),
+    DESCRIPTOR("testFstat", Test_Fstat),
+    DESCRIPTOR("testFsSystemStat", Test_FsSystemStat),
+    DESCRIPTOR("testFtw", Test_Ftw),
+    DESCRIPTOR("testTruncate", Test_Truncate),
+    DESCRIPTOR("testPathConf", Test_PathConf),
+    DESCRIPTOR("Test_OpenReadDir", Test_OpenReadDir),
+    DESCRIPTOR("Test_ReadDir_R", Test_ReadDir_R),
+    DESCRIPTOR("testFallocate", Test_Fallocate),
+    DESCRIPTOR("testFcntl", Test_Fcntl),
+    DESCRIPTOR("testChdir", Test_Chdir),
+    DESCRIPTOR("testDupApi", Test_Dup_Api),
+    DESCRIPTOR("testFsync", Test_Fsync),
+    DESCRIPTOR("Test_scanDir", Test_scanDir),
 };
 
 EXTERN_C_START

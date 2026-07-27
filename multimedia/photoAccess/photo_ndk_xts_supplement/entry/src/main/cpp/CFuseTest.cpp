@@ -521,3 +521,736 @@ napi_value Test_BaseName(napi_env env, napi_callback_info info)
     napi_create_string_utf8(env, dir, strlen(dir), &flag);
     return flag;
 }
+
+napi_value Test_Create_Api(napi_env env, napi_callback_info info)
+{
+    LOGI("Test_Create_Api start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    LOGI("uri: %{public}s", uri.c_str());
+    napi_get_value_int32(env, args[1], &mode);
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    std::string newPath = path.substr(0, path.rfind("Photo")) + "10086.jpg";
+    LOGI("newPath: %{public}s", newPath.c_str());
+    int ret = -1;
+    int fd = -1;
+    LOGI("create api, mode is %{public}d", mode);
+    if (mode == MODE1) {
+        fd = creat(newPath.c_str(), S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+    } else {
+        fd = creat(path.c_str(), O_RDONLY);
+    }
+    LOGI("newPath create ret is %{public}d", fd);
+    if (fd > 0) {
+        ret = 1;
+        LOGI("newPath create success,fd %{public}d", fd);
+        close(fd);
+    } else {
+        char *msg = strerror(errno);
+        LOGE("Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_stat(napi_env env, napi_callback_info info)
+{
+    LOGI("Test_stat: start");
+
+    int err = 0;
+    int mode = 1;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    if (argc >= 2) {
+        napi_get_value_int32(env, args[1], &mode);
+    }
+
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+
+    std::string uri(buffer.begin(), buffer.end());
+    LOGI("uri: %{public}s, mode: %{public}d", uri.c_str(), mode);
+
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    if (err != 0) {
+        LOGE("GetPathFromUri failed");
+        napi_value ret;
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    LOGI("path: %{public}s", path.c_str());
+
+    int ret = -1;
+    struct stat st;
+    if (mode == MODE2) {
+        if (0 == lstat(path.c_str(), &st)) {
+            LOGI("lstat info: mode=%{public}o, uid=%{public}d, gid=%{public}d, size=%{public}ld", st.st_mode,
+                        st.st_uid, st.st_gid, st.st_size);
+            ret = 0;
+        } else {
+            LOGE("Test_stat: lstat failed");
+        }
+    } else {
+        if (0 == stat(path.c_str(), &st)) {
+            LOGI("stat info: mode=%{public}o, uid=%{public}d, gid=%{public}d, size=%{public}ld", st.st_mode,
+                        st.st_uid, st.st_gid, st.st_size);
+            ret = 0;
+        } else {
+            LOGE("Test_stat: stat failed");
+        }
+    }
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value Test_Fstat(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Stat start");
+    int err = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    struct stat myStat;
+    int ret = -1;
+    int fd = open(path.c_str(), O_RDONLY);
+    if (fd <= 0) {
+        OH_LOG_INFO(LOG_APP, "open uri: %{public}s failed !", uri.c_str());
+    } else {
+        ret = fstat(fd, &myStat);
+    }
+    OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
+    long size = myStat.st_size;
+    OH_LOG_INFO(LOG_APP, "get file size, size = %{public}ld", size);
+    if (fd > 0) {
+        close(fd);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_FsSystemStat(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_FsSystemStat start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    int ret = -1;
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    if (mode == MODE1) {
+        struct statfs statFsStruct;
+        memset(&statFsStruct, 0, sizeof(statFsStruct));
+        ret = statfs(path.c_str(), &statFsStruct);
+        OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
+        if (ret >= 0) {
+            OH_LOG_INFO(LOG_APP, "fileSystem blocksNum: %{public}ld, blocksSize: %{public}ld", statFsStruct.f_blocks, statFsStruct.f_bsize);
+        } else {
+            char *msg = strerror(errno);
+            OH_LOG_INFO(LOG_APP, "errno = %{public}d, errMsg is %{public}s", errno, msg);
+        }
+    } else {
+        struct statvfs vfs;
+        ret = statvfs(path.c_str(), &vfs);
+
+        if (ret >= 0) {
+            blkcnt_t block_size = 0;
+            block_size = vfs.f_bsize;
+            OH_LOG_INFO(LOG_APP, "fileSystem totalSize: %{public}ld", vfs.f_blocks + block_size);
+        } else {
+            char *msg = strerror(errno);
+            OH_LOG_INFO(LOG_APP, "errno = %{public}d, errMsg is %{public}s", errno, msg);
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+int fn(const char *fpath, const struct stat *st, int typeflag) {
+    int result = -1;
+    if (typeflag == FTW_F) {
+        result = 1;
+        OH_LOG_INFO(LOG_APP, "stdio file, dev: %{public}lu", st->st_dev);
+    } else if (typeflag == FTW_D) {
+        result = 1;
+        OH_LOG_INFO(LOG_APP, "stdio dir, dev: %{public}lu", st->st_dev);
+    } else {
+        OH_LOG_INFO(LOG_APP, "unknow file type, dev: %{public}lu", st->st_dev);
+    }
+
+    return result;
+}
+
+int fn2(const char *fpath, const struct stat *st, int typeflag, struct FTW *fbuf) {
+    int result = -1;
+    if (typeflag == FTW_F) {
+        result = 1;
+        OH_LOG_INFO(LOG_APP, "stdio file, dev: %{public}s", fpath);
+    } else if (typeflag == FTW_D) {
+        result = 1;
+        OH_LOG_INFO(LOG_APP, "stdio dir, dev: %{public}s", fpath);
+    } else {
+        result = 1;
+        OH_LOG_INFO(LOG_APP, "unknow file type, dev: %{public}lu", st->st_dev);
+    }
+
+    return result;
+}
+
+napi_value Test_Ftw(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_FsSystemStat start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    std::string newPath = path.substr(0, path.rfind("Photo"));
+    OH_LOG_INFO(LOG_APP, "newPath: %{public}s", newPath.c_str());
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    int ret = -1;
+    if (mode == MODE1) {
+        int temp = ftw(newPath.c_str(), fn, 500);
+        if (temp == 0) {
+            ret = 0;
+            OH_LOG_INFO(LOG_APP, "ftw success, temp = %{public}d", temp);
+        } else {
+            char *msg = strerror(errno);
+            OH_LOG_INFO(LOG_APP, "ftw result = %{public}d, errno = %{public}d, errMsg is %{public}s", temp, errno, msg);
+        }
+    } else {
+        int temp = nftw(newPath.c_str(), fn2, 20, 0);
+        if (temp == 0) {
+            ret = 0;
+            OH_LOG_INFO(LOG_APP, "nftw success, temp = %{public}d", temp);
+        } else {
+            char *msg = strerror(errno);
+            OH_LOG_INFO(LOG_APP, "nftw result = %{public}d, errno = %{public}d, errMsg is %{public}s", temp, errno, msg);
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Truncate(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Truncate start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file , mode = %{public}d", mode);
+    int ret = -1;
+    if (mode == MODE1) {
+        ret = truncate(path.c_str(), 1024);
+    } else {
+        int fd = open(path.c_str(), O_RDWR);
+        if (fd < 0) {
+            OH_LOG_INFO(LOG_APP, "open file %{public}s failed !", path.c_str());
+        } else {
+            ret = ftruncate(fd, 1024);
+            close(fd);
+        }
+    }
+    char *msg = strerror(errno);
+    OH_LOG_INFO(LOG_APP, "truncate file , ret = %{public}d, errno = %{public}d , errMsg = %{public}s", ret, errno, msg);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_PathConf(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_PathConf start");
+    int err = 0;
+    int mode;
+    bool with_f;
+    size_t argc = 3;
+    napi_value args[3] = {nullptr, nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    napi_get_value_bool(env, args[2], &with_f);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    int ret = -1;
+    if (mode == MODE1) {
+        int fd = open(path.c_str(), O_RDONLY);
+        OH_LOG_INFO(LOG_APP, "get file fd, fd = %{public}d", fd);
+        if (fd > 0) {
+            ret = with_f == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(path.c_str(), _PC_NAME_MAX);
+            close(fd);
+        }
+    } else {
+        std::string newPath = path.substr(0, path.rfind("Photo"));
+        OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
+        int fd = open(newPath.c_str(), O_RDONLY);
+        OH_LOG_INFO(LOG_APP, "get dir fd, fd = %{public}d", fd);
+        if (fd > 0) {
+            ret = with_f == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(newPath.c_str(), _PC_NAME_MAX);
+            close(fd);
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "pathconf file , ret = %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_OpenReadDir start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    std::string newPath;
+    DIR *pointer = NULL;
+    struct dirent *pEnt = NULL;
+    int ret = -1;
+    if (mode == MODE1) {
+        newPath = path.substr(0, path.rfind("/"));
+    } else {
+        newPath = path.substr(0, path.rfind("Photo"));
+    }
+    OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
+    pointer = opendir(newPath.c_str());
+    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == NULL));
+    if (pointer == NULL) {
+        char *msg = strerror(errno);
+        OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+    }
+    if (pointer != NULL) {
+        ret = 1;
+        pEnt = readdir(pointer);
+        int offset = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "current offset = %{public}d", offset);
+        OH_LOG_INFO(LOG_APP, "PEnt is NULL, ret = %{public}d", pEnt == NULL);
+        if (pEnt != NULL) {
+            OH_LOG_INFO(LOG_APP, "d_name = %{public}s", pEnt->d_name);
+        } else {
+            char *msg = strerror(errno);
+            OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+        }
+        seekdir(pointer, 0);
+        int offsetSeek = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "after seekdir offset = %{public}d", offsetSeek);
+
+        pEnt = readdir(pointer);
+        int offset_2 = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "read again , current offset = %{public}d", offset_2);
+        rewinddir(pointer);
+        int offset_3 = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "after rewinddir, current offset = %{public}d", offset_3);
+
+        int closeFlag = closedir(pointer);
+        OH_LOG_INFO(LOG_APP, "closeFlag = %{public}d", closeFlag);
+    }
+    OH_LOG_INFO(LOG_APP, "openDir , ret = %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_ReadDir_R(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_ReadDir_R start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    std::string newPath;
+    DIR *pointer = NULL;
+    struct dirent *entry = (struct dirent *)malloc(sizeof(struct dirent));
+    struct dirent **result = (struct dirent **)malloc(sizeof(struct dirent));
+    int ret = -1;
+    if (mode == MODE1) {
+        newPath = path.substr(0, path.rfind("/"));
+    } else {
+        newPath = path.substr(0, path.rfind("Photo"));
+    }
+    OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
+    pointer = opendir(newPath.c_str());
+    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == NULL));
+    if (pointer != NULL) {
+        ret = 1;
+        int readFlag = readdir_r(pointer, entry, result);
+        OH_LOG_INFO(LOG_APP, "readdir_r , readFlag = %{public}d", readFlag);
+        OH_LOG_INFO(LOG_APP, "readdir_r , dir_name = %{public}s", entry == NULL ? "nullptr" : entry->d_name);
+        OH_LOG_INFO(LOG_APP, "readdir_r , d_name = %{public}s", result[0] == NULL ? "nullptr" : result[0]->d_name);
+    } else {
+        char *msg = strerror(errno);
+        OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+    }
+    OH_LOG_INFO(LOG_APP, "openDir , ret = %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Fallocate(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Fallocate start");
+    uint64_t file_size = 10 * 1024 * 1024 * 1024ULL;
+    int err = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    int ret = -1;
+    int fd = open(path.c_str(), O_RDWR);
+    if (fd > 0) {
+        ret = fallocate(fd, 0, 0, file_size);
+        if (ret == -1) {
+            char *msg = strerror(errno);
+            OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+        }
+        OH_LOG_INFO(LOG_APP, "fallocate ret: %{public}d", ret);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Fcntl(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Fcntl start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    int ret = -1;
+    int fd = open(path.c_str(), O_RDWR);
+    if (fd > 0) {
+        if (mode == MODE1) {
+            ret = fcntl(fd, F_GETFL, 0);
+            OH_LOG_INFO(LOG_APP, "fcntl --- F_GETFL ret = %{public}d", ret);
+        } else {
+            ret = fcntl(fd, F_SETFL, O_NONBLOCK);
+            OH_LOG_INFO(LOG_APP, "fcntl --- O_NONBLOCK ret = %{public}d", ret);
+        }
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Chdir(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Chdir start");
+    int err = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+
+    std::string newPath = path.substr(0, path.rfind("Photo"));
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", newPath.c_str());
+    int ret = -1;
+    int test_flag_1 = chdir(newPath.c_str());
+    OH_LOG_INFO(LOG_APP, "test_flag_1: %{public}d", test_flag_1);
+    if (test_flag_1 == 0) {
+        ret = 1;
+    } else {
+        char *msg = strerror(errno);
+        OH_LOG_ERROR(LOG_APP, "errno = %{public}d, error Msg: %{public}s", errno, msg);
+    }
+    OH_LOG_INFO(LOG_APP, "chdir ret: %{public}d", ret);
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Dup_Api(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Dup_Api start");
+    int err = 0;
+    int mode;
+    size_t argc = 3;
+    napi_value args[3] = {nullptr, nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen1 = 0;
+    size_t uriLen2 = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen1);
+    napi_get_value_string_utf8(env, args[2], nullptr, 0, &uriLen2);
+    std::vector<char> buffer1;
+    std::vector<char> buffer2;
+    buffer1.resize(uriLen1 + 1);
+    buffer2.resize(uriLen2 + 1);
+    napi_get_value_string_utf8(env, args[0], buffer1.data(), buffer1.size(), &uriLen1);
+    std::string uri1(buffer1.begin(), buffer1.end());
+    napi_get_value_string_utf8(env, args[2], buffer2.data(), buffer2.size(), &uriLen2);
+    std::string uri2(buffer2.begin(), buffer2.end());
+    OH_LOG_INFO(LOG_APP, "uriSource: %{public}s", uri1.c_str());
+    OH_LOG_INFO(LOG_APP, "uriTarget: %{public}s", uri2.c_str());
+    napi_get_value_int32(env, args[1], &mode);
+    std::string sourcePath;
+    std::string targetPath;
+    err = GetPathFromUri(uri1, sourcePath);
+    GetPathFromUri(uri2, targetPath);
+
+    int sourceFd = open(sourcePath.c_str(), O_RDONLY);
+    int targetFd = open(targetPath.c_str(), O_RDWR);
+    char dataBuffer[4096] = {0};
+    int count = 0;
+    int nFd;
+    lseek(sourceFd, 0, SEEK_SET);
+    lseek(targetFd, 0, SEEK_SET);
+    int ret = -1;
+    if (mode == MODE1) {
+        nFd = dup(targetFd);
+    } else {
+        nFd = dup2(targetFd, 10086);
+    }
+    OH_LOG_INFO(LOG_APP, "nFd create success, ret: %{public}d", nFd);
+    while (true) {
+        int sourceLen = read(sourceFd, dataBuffer, sizeof(dataBuffer));
+        if (sourceLen <= 0) {
+            ret = nFd;
+            break;
+        }
+        if (nFd > 0) {
+            int targetLen = write(nFd, dataBuffer, sizeof(dataBuffer));
+        }
+        count++;
+    }
+    if (sourceFd > 0) {
+        close(sourceFd);
+    }
+    if (targetFd) {
+        close(targetFd);
+    }
+    if (nFd) {
+        close(nFd);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_Fsync(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_Fsync start");
+    int err = 0;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen1 = 0;
+    size_t uriLen2 = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen1);
+    napi_get_value_string_utf8(env, args[1], nullptr, 0, &uriLen2);
+    std::vector<char> buffer1;
+    std::vector<char> buffer2;
+    buffer1.resize(uriLen1 + 1);
+    buffer2.resize(uriLen2 + 1);
+    napi_get_value_string_utf8(env, args[0], buffer1.data(), buffer1.size(), &uriLen1);
+    std::string uri1(buffer1.begin(), buffer1.end());
+    napi_get_value_string_utf8(env, args[1], buffer2.data(), buffer2.size(), &uriLen2);
+    std::string uri2(buffer2.begin(), buffer2.end());
+    OH_LOG_INFO(LOG_APP, "uriSource: %{public}s", uri1.c_str());
+    OH_LOG_INFO(LOG_APP, "uriTarget: %{public}s", uri2.c_str());
+    std::string sourcePath;
+    std::string targetPath;
+    err = GetPathFromUri(uri1, sourcePath);
+    GetPathFromUri(uri2, targetPath);
+
+    int sourceFd = open(sourcePath.c_str(), O_RDONLY);
+    int targetFd = open(targetPath.c_str(), O_RDWR | O_TRUNC);
+    OH_LOG_INFO(LOG_APP, "sourceFd create success, ret: %{public}d", sourceFd);
+    OH_LOG_INFO(LOG_APP, "targetFd create success, ret: %{public}d", targetFd);
+    char dataBuffer[4096] = {0};
+    int count = 0;
+    off_t offSet = lseek(sourceFd, 0, SEEK_SET);
+    OH_LOG_INFO(LOG_APP, "offSet, ret: %{public}ld", offSet);
+    lseek(targetFd, 0, SEEK_SET);
+    int ret = -1;
+    while (true) {
+        int sourceLen = read(sourceFd, dataBuffer, sizeof(dataBuffer));
+        if (sourceLen <= 0) {
+            break;
+        }
+        if (targetFd > 0) {
+            int targetLen = write(targetFd, dataBuffer, sizeof(dataBuffer));
+        }
+        count++;
+    }
+    ret = fsync(targetFd);
+    OH_LOG_INFO(LOG_APP, "fsync method , ret: %{public}d", ret);
+    if (sourceFd > 0) {
+        close(sourceFd);
+    }
+    if (targetFd) {
+        close(targetFd);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
+
+napi_value Test_scanDir(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_scanDir start");
+    int err = 0;
+    int mode;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t uriLen = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    napi_get_value_int32(env, args[1], &mode);
+    std::vector<char> buffer;
+    buffer.resize(uriLen + 1);
+    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
+    std::string uri(buffer.begin(), buffer.end());
+    OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
+    std::string path;
+    err = GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    std::string newPath;
+    newPath = path.substr(0, path.rfind("Photo"));
+    OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
+    struct dirent **entry_list;
+    int count;
+    int i;
+    int ret = -1;
+    count = scandir(newPath.c_str(), &entry_list, 0, alphasort);
+    OH_LOG_INFO(LOG_APP, "scandir = %{public}d", count);
+    if (count > 0) {
+        ret = 1;
+        for (i = 0; i < count; i++) {
+            struct dirent *entry;
+            entry = entry_list[i];
+            OH_LOG_INFO(LOG_APP, "scandir, count is %{public}d, d_name = %{public}s", i, entry->d_name);
+            free(entry);
+        }
+    } else {
+        char *msg = strerror(errno);
+        OH_LOG_ERROR(LOG_APP, "scanDir failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+    }
+    napi_value flag;
+    napi_create_int32(env, ret, &flag);
+    return flag;
+}
