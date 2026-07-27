@@ -32,7 +32,6 @@
 #include "iotc_oh_ble.h"
 #include "iotc_oh_device.h"
 #include "iotc_oh_sdk.h"
-#include "los_memory.h"
 
 #define TEST_SVC_UUID "16F1E600A27743FCA484DD39EF8A9100"
 #define TEST_SVC_INDICATE_UUID "16F1E601A27743FCA484DD39EF8A9100"
@@ -42,45 +41,8 @@
 static bool g_iotcInitalizedEvent = false;
 static bool g_iotcBleSvcStartEvent = false;
 
-static UINT32 g_memUsedBeforeCase = 0;
-static UINT32 g_memPeakInCase = 0;
-static UINT32 g_memPeakAll = 0;
-static UINT32 g_caseCount = 0;
-
-static void MemStatPrint(const char *tag)
-{
-    LOS_MEM_POOL_STATUS s = {0};
-    if (LOS_MemInfoGet(m_aucSysMem0, &s) != LOS_OK) {
-        printf("[MEMSTAT] %s get meminfo fail\r\n", tag);
-        return;
-    }
-    printf("[MEMSTAT] %s used=%u free=%u maxFreeBlk=%u usedNode=%u freeNode=%u peak=%u delta=%d\r\n",
-           tag,
-           s.uwTotalUsedSize,
-           s.uwTotalFreeSize,
-           s.uwMaxFreeNodeSize,
-           s.uwUsedNodeNum,
-           s.uwFreeNodeNum,
-           g_memPeakAll,
-           (int)s.uwTotalUsedSize - (int)g_memUsedBeforeCase);
-}
-
-static void MemStatPeakTick(const char *tag)
-{
-    LOS_MEM_POOL_STATUS s = {0};
-    if (LOS_MemInfoGet(m_aucSysMem0, &s) != LOS_OK) {
-        return;
-    }
-    if (s.uwTotalUsedSize > g_memPeakInCase) {
-        g_memPeakInCase = s.uwTotalUsedSize;
-    }
-    if (g_memPeakInCase > g_memPeakAll) {
-        g_memPeakAll = g_memPeakInCase;
-    }
-}
-
 static void TestIotcEventCallback(int32_t event)
-{   
+{
     if (event == IOTC_CORE_COMM_EVENT_MAIN_INITIALIZED) {
         g_iotcInitalizedEvent = true;
     }
@@ -191,13 +153,6 @@ LITE_TEST_SUIT(communication, iot_connect, IotcOhBleActsTest);
 static BOOL IotcOhBleActsTestSetUp(void)
 {
     printf("IotcOhBleActsTestSetUp \r\n");
-    g_caseCount++;
-    LOS_MEM_POOL_STATUS s = {0};
-    if (LOS_MemInfoGet(m_aucSysMem0, &s) == LOS_OK) {
-        g_memUsedBeforeCase = s.uwTotalUsedSize;
-        g_memPeakInCase = s.uwTotalUsedSize;
-    }
-    MemStatPrint("CASE_BEG");
     return TRUE;
 }
 
@@ -207,18 +162,18 @@ static BOOL IotcOhBleActsTestSetUp(void)
  */
 static BOOL IotcOhBleActsTestTearDown(void)
 {
-    MemStatPrint("CASE_END");
+    printf("IotcOhBleActsTestTearDown \r\n");
     return TRUE;
 }
 
 
 /**
- * @tc.name: IotcOhBleActsTest001
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest001
+ * @tc.number IotcOhBleActsTest001
+ * @tc.desc   Test BLE module enable, run main and disable success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest001, Function | MediumTest | Level2)
 {
@@ -252,15 +207,15 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest001, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest002
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest002
+ * @tc.number IotcOhBleActsTest002
+ * @tc.desc   Test enable BLE before main start returns already running error.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest002, Function | MediumTest | Level2)
-{   
+{
     int ret = 0;
     ret = IotcOhDevInit();
     TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
@@ -280,12 +235,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest002, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest003
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest003
+ * @tc.number IotcOhBleActsTest003
+ * @tc.desc   Test disable BLE without main start returns already running error.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest003, Function | MediumTest | Level2)
 {
@@ -304,12 +259,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest003, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest004
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest004
+ * @tc.number IotcOhBleActsTest004
+ * @tc.desc   Test start BLE adv after release returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest004, Function | MediumTest | Level2)
 {
@@ -334,12 +289,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest004, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest005
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest005
+ * @tc.number IotcOhBleActsTest005
+ * @tc.desc   Test release BLE without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest005, Function | MediumTest | Level2)
 {
@@ -349,12 +304,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest005, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest006
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest006
+ * @tc.number IotcOhBleActsTest006
+ * @tc.desc   Test release BLE during main run returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest006, Function | MediumTest | Level2)
 {
@@ -373,12 +328,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest006, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest007
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest007
+ * @tc.number IotcOhBleActsTest007
+ * @tc.desc   Test release BLE with enable but without main returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest007, Function | MediumTest | Level2)
 {
@@ -392,12 +347,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest007, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest008
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest008
+ * @tc.number IotcOhBleActsTest008
+ * @tc.desc   Test release BLE after main stop returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest008, Function | MediumTest | Level2)
 {
@@ -420,12 +375,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest008, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest009
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest009
+ * @tc.number IotcOhBleActsTest009
+ * @tc.desc   Test start BLE adv with 1ms duration success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest009, Function | MediumTest | Level2)
 {
@@ -459,12 +414,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest009, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest010
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest010
+ * @tc.number IotcOhBleActsTest010
+ * @tc.desc   Test start BLE adv with 0ms duration and stop success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest010, Function | MediumTest | Level2)
 {
@@ -500,12 +455,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest010, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest011
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest011
+ * @tc.number IotcOhBleActsTest011
+ * @tc.desc   Test start BLE adv with UINT32_MAX duration and stop success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest011, Function | MediumTest | Level2)
 {
@@ -541,12 +496,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest011, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest012
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest012
+ * @tc.number IotcOhBleActsTest012
+ * @tc.desc   Test start BLE adv consecutively with different durations success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest012, Function | MediumTest | Level2)
 {
@@ -587,12 +542,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest012, Function | MediumTest | 
 
 
 /**
- * @tc.name: IotcOhBleActsTest013
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest013
+ * @tc.number IotcOhBleActsTest013
+ * @tc.desc   Test start BLE adv with 1ms duration and stop success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest013, Function | MediumTest | Level2)
 {
@@ -628,12 +583,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest013, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest014
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest014
+ * @tc.number IotcOhBleActsTest014
+ * @tc.desc   Test set device info with empty IotcDeviceInfo returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest014, Function | MediumTest | Level2)
 {
@@ -652,12 +607,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest014, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest015
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest015
+ * @tc.number IotcOhBleActsTest015
+ * @tc.desc   Test stop BLE adv twice in sequence success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest015, Function | MediumTest | Level2)
 {
@@ -693,12 +648,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest015, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest016
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest016
+ * @tc.number IotcOhBleActsTest016
+ * @tc.desc   Test stop BLE adv without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest016, Function | MediumTest | Level2)
 {
@@ -708,12 +663,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest016, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest017
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest017
+ * @tc.number IotcOhBleActsTest017
+ * @tc.desc   Test stop BLE adv after enable without main returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest017, Function | MediumTest | Level2)
 {
@@ -727,12 +682,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest017, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest018
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest018
+ * @tc.number IotcOhBleActsTest018
+ * @tc.desc   Test stop BLE adv after main start without peer returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest018, Function | MediumTest | Level2)
 {
@@ -751,12 +706,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest018, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest019
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest019
+ * @tc.number IotcOhBleActsTest019
+ * @tc.desc   Test send BLE custom sec data after enable and main success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest019, Function | MediumTest | Level2)
 {
@@ -781,12 +736,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest019, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest020
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest020
+ * @tc.number IotcOhBleActsTest020
+ * @tc.desc   Test send BLE custom sec data without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest020, Function | MediumTest | Level2)
 {
@@ -796,12 +751,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest020, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest021
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest021
+ * @tc.number IotcOhBleActsTest021
+ * @tc.desc   Test send BLE custom sec data after enable without main returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest021, Function | MediumTest | Level2)
 {
@@ -815,12 +770,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest021, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest022
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest022
+ * @tc.number IotcOhBleActsTest022
+ * @tc.desc   Test send BLE custom sec data after main without peer returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest022, Function | MediumTest | Level2)
 {
@@ -839,12 +794,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest022, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest023
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest023
+ * @tc.number IotcOhBleActsTest023
+ * @tc.desc   Test send BLE custom sec data with NULL data returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest023, Function | MediumTest | Level2)
 {
@@ -854,12 +809,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest023, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest024
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest024
+ * @tc.number IotcOhBleActsTest024
+ * @tc.desc   Test send BLE custom sec data with zero length returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest024, Function | MediumTest | Level2)
 {
@@ -869,12 +824,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest024, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest025
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest025
+ * @tc.number IotcOhBleActsTest025
+ * @tc.desc   Test send BLE indicate data twice after main success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest025, Function | MediumTest | Level2)
 {
@@ -899,12 +854,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest025, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest026
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest026
+ * @tc.number IotcOhBleActsTest026
+ * @tc.desc   Test send BLE indicate data without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest026, Function | MediumTest | Level2)
 {
@@ -914,12 +869,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest026, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest027
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest027
+ * @tc.number IotcOhBleActsTest027
+ * @tc.desc   Test send BLE indicate data after enable without main returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest027, Function | MediumTest | Level2)
 {
@@ -933,12 +888,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest027, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest028
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest028
+ * @tc.number IotcOhBleActsTest028
+ * @tc.desc   Test send BLE indicate data twice after main without peer returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest028, Function | MediumTest | Level2)
 {
@@ -959,12 +914,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest028, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest029
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest029
+ * @tc.number IotcOhBleActsTest029
+ * @tc.desc   Test send BLE indicate data with NULL svc uuid returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest029, Function | MediumTest | Level2)
 {
@@ -974,12 +929,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest029, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest030
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest030
+ * @tc.number IotcOhBleActsTest030
+ * @tc.desc   Test send BLE indicate data with NULL char uuid returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest030, Function | MediumTest | Level2)
 {
@@ -989,12 +944,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest030, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest031
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest031
+ * @tc.number IotcOhBleActsTest031
+ * @tc.desc   Test send BLE indicate data with NULL value returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest031, Function | MediumTest | Level2)
 {
@@ -1004,12 +959,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest031, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest032
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest032
+ * @tc.number IotcOhBleActsTest032
+ * @tc.desc   Test send BLE indicate data with zero length returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest032, Function | MediumTest | Level2)
 {
@@ -1019,12 +974,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest032, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest033
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest033
+ * @tc.number IotcOhBleActsTest033
+ * @tc.desc   Test register BLE netcfg receive callback success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest033, Function | MediumTest | Level2)
 {
@@ -1038,12 +993,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest033, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest034
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest034
+ * @tc.number IotcOhBleActsTest034
+ * @tc.desc   Test register BLE netcfg receive callback with NULL returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest034, Function | MediumTest | Level2)
 {
@@ -1057,12 +1012,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest034, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest035
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest035
+ * @tc.number IotcOhBleActsTest035
+ * @tc.desc   Test register BLE netcfg receive callback without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest035, Function | MediumTest | Level2)
 {
@@ -1072,12 +1027,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest035, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest036
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest036
+ * @tc.number IotcOhBleActsTest036
+ * @tc.desc   Test register BLE custom data receive callback success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest036, Function | MediumTest | Level2)
 {
@@ -1091,12 +1046,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest036, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest037
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest037
+ * @tc.number IotcOhBleActsTest037
+ * @tc.desc   Test register BLE custom data receive callback with NULL returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest037, Function | MediumTest | Level2)
 {
@@ -1110,12 +1065,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest037, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest038
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest038
+ * @tc.number IotcOhBleActsTest038
+ * @tc.desc   Test register BLE custom data receive callback without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest038, Function | MediumTest | Level2)
 {
@@ -1125,12 +1080,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest038, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest039
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest039
+ * @tc.number IotcOhBleActsTest039
+ * @tc.desc   Test set BLE startup adv timeout with valid value success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest039, Function | MediumTest | Level2)
 {
@@ -1145,12 +1100,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest039, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest040
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest040
+ * @tc.number IotcOhBleActsTest040
+ * @tc.desc   Test set BLE startup adv timeout with zero success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest040, Function | MediumTest | Level2)
 {
@@ -1165,12 +1120,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest040, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest041
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest041
+ * @tc.number IotcOhBleActsTest041
+ * @tc.desc   Test set BLE startup adv timeout without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest041, Function | MediumTest | Level2)
 {
@@ -1181,12 +1136,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest041, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest042
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest042
+ * @tc.number IotcOhBleActsTest042
+ * @tc.desc   Test set BLE GATT profile service list success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest042, Function | MediumTest | Level2)
 {
@@ -1200,12 +1155,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest042, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest043
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest043
+ * @tc.number IotcOhBleActsTest043
+ * @tc.desc   Test set BLE GATT profile service list with NULL returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest043, Function | MediumTest | Level2)
 {
@@ -1219,12 +1174,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest043, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest044
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest044
+ * @tc.number IotcOhBleActsTest044
+ * @tc.desc   Test set BLE GATT profile service list with NULL svc returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest044, Function | MediumTest | Level2)
 {
@@ -1240,12 +1195,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest044, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest045
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest045
+ * @tc.number IotcOhBleActsTest045
+ * @tc.desc   Test set BLE GATT profile service list with zero svc num returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest045, Function | MediumTest | Level2)
 {
@@ -1261,12 +1216,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest045, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest046
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest046
+ * @tc.number IotcOhBleActsTest046
+ * @tc.desc   Test set BLE GATT profile service list without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest046, Function | MediumTest | Level2)
 {
@@ -1276,12 +1231,12 @@ LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest046, Function | MediumTest | 
 }
 
 /**
- * @tc.name: IotcOhBleActsTest047
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name   IotcOhBleActsTest047
+ * @tc.number IotcOhBleActsTest047
+ * @tc.desc   Test set BLE GATT profile service list without enable returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IotcOhBleActsTest, IotcOhBleActsTest047, Function | MediumTest | Level2)
 {
