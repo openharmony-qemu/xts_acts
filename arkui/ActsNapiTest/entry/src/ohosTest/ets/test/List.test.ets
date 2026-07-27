@@ -24,6 +24,8 @@ import napiSpecDiffBatch1StableTest from './NapiSpecDiff/batch1/NapiSpecDiffBatc
 import napiSpecDiffBatch2LifecycleTest from './NapiSpecDiff/batch2/NapiSpecDiffBatch2Lifecycle.test';
 import napiSpecDiffBatch3RuntimeSendableTest from './NapiSpecDiff/batch3/NapiSpecDiffBatch3RuntimeSendable.test';
 import napiSpecDiffBatch4StressProbeTest from './NapiSpecDiff/batch4/NapiSpecDiffBatch4StressProbe.test';
+import napiCoverageSampleTest from './NapiCoverageSample/NapiCoverageSample.test';
+import mallocCoverageSampleTest from './MallocCoverageSample/MallocCoverageSample.test';
 
 
 export default function testsuite() {
@@ -41,4 +43,7 @@ export default function testsuite() {
   napiSpecDiffBatch2LifecycleTest();
   napiSpecDiffBatch3RuntimeSendableTest();
   napiSpecDiffBatch4StressProbeTest();
+
+  napiCoverageSampleTest();
+  mallocCoverageSampleTest();
 }
