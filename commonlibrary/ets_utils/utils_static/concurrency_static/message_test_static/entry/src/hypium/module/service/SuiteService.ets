@@ -15,7 +15,7 @@
  */
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { ServiceAttrIF, TestcaseSummaryIF, ItItemIF, ConfigIf, DryrunResultIF, ApiIF } from '../../interface';
+import { ServiceAttrIF, TestcaseSummaryIF, ItItemIF, TestResultCode, ConfigIf, DryrunResultIF, ApiIF, ServiceIF } from '../../interface';
 import { StaticSuite } from './StaticSuite';
 import { StaticSpec } from './StaticSpec';
 import { TAG } from '../../Constant';
@@ -28,7 +28,7 @@ import { SpecService } from './SpecService';
 import DataDriver from '../config/DataDriver';
 import { HookFuncType } from '../types/common';
 
-class SuiteService {
+class SuiteService implements ServiceIF {
   public id: string;
   public rootSuite: StaticSuite;
   public currentRunningSuite: StaticSuite;
@@ -305,7 +305,7 @@ class SuiteService {
         const itInfo: ItItemIF = {
           currentThreadName: 'mainThread',
           description: suite.description + '#' + itItem.description,
-          result: -3,
+          result: TestResultCode.IGNORE,
         };
         if (this.msgHandle) {    
           let msgHandle:concurrency.MessageHandler = this.msgHandle as concurrency.MessageHandler
@@ -318,13 +318,13 @@ class SuiteService {
         }
         if (itItem.error) {
           obj.error++;
-          itInfo.result = -1;
+          itInfo.result = TestResultCode.ERROR;
         } else if (itItem.fail) {
           obj.failure++;
-          itInfo.result = -2;
+          itInfo.result = TestResultCode.FAILURE;
         } else if (itItem.pass === true) {
           obj.pass++;
-          itInfo.result = 0;
+          itInfo.result = TestResultCode.PASS;
         }
       }
     }
@@ -541,19 +541,19 @@ class SuiteService {
     await core.fireEvents('task', 'taskDone');
   }
 
-  execute(): void {
+  async execute(): Promise<void> {
     const cc = this.coreContext;
     if (cc) {
-      const core = cc as Core;
+      const core = cc;
       const configS = core.getDefaultService('config');
-      if (configS !== null) {
-        const configService = configS as ConfigService;
+      if (configS instanceof ConfigService) {
+        const configService = configS;
         if (configService.filterValid.length !== 0) {
-          core.fireEvents('task', 'incorrectFormat');
+          await core.fireEvents('task', 'incorrectFormat');
           return;
         }
         if (configService.filterXdescribe.length !== 0) {
-          core.fireEvents('task', 'incorrectTestSuiteFormat');
+          await core.fireEvents('task', 'incorrectTestSuiteFormat');
           return;
         }
         if (configService.isRandom() && this.rootSuite.childSuites.length > 0) {
@@ -563,19 +563,13 @@ class SuiteService {
           this.currentRunningSuite = this.rootSuite.childSuites[0];
         }
         if (configService.isSupportAsync()) {
-          let asyncExecute = async () => {
-            await core.fireEvents('task', 'taskStart');
-            await this.rootSuite.asyncRun(core);
-          };
-          asyncExecute().then(async () => {
-            await core.fireEvents('task', 'taskDone');
-          }).catch((err: Error) => {
-            console.error(`${TAG}asyncExecute rejected, error: ${err.message}`);
-          });
+          await core.fireEvents('task', 'taskStart');
+          await this.rootSuite.asyncRun(core);
+          await core.fireEvents('task', 'taskDone');
         } else {
-          core.fireEvents('task', 'taskStart');
+          await core.fireEvents('task', 'taskStart');
           this.rootSuite.run(core);
-          core.fireEvents('task', 'taskDone');
+          await core.fireEvents('task', 'taskDone');
         }
       }
     }

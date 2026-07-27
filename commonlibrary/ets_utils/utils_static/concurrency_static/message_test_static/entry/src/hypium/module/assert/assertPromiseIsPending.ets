@@ -15,9 +15,9 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
-export function assertPromiseIsPending(actualPromise: Promise<AnyType>): Promise<AssertResult> {
+export function assertPromiseIsPending(actualPromise: Promise<HypiumValue>): Promise<AssertResult> {
   const helper: object = {};
   return Promise.race([actualPromise as object, Promise.resolve(helper)]).then<AssertResult, AssertResult>(
     (got: object): AssertResult => {

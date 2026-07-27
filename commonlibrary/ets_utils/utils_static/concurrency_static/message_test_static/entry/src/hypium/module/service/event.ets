@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Core } from '../../core';
 import { OhReport } from '../report/OhReport';
 import { ReportService } from './ReportService';
 import { EventAttrIF } from '../../interface';
+
+type ReportMonitor = ReportService | OhReport;
+
 class SpecEvent {
   public id: string;
   private eventMonitors: Array<ReportService>;
@@ -27,12 +29,12 @@ class SpecEvent {
     this.eventOhMonitors = new Array<OhReport>();
   }
 
-  subscribeEvent(service: ReportService): void {
-    this.eventMonitors.push(service);
-  }
-
-  subscribeEvent(service: OhReport): void {
-    this.eventOhMonitors.push(service);
+  subscribeEvent(service: ReportMonitor): void {
+    if (service instanceof OhReport) {
+      this.eventOhMonitors.push(service);
+    } else {
+      this.eventMonitors.push(service);
+    }
   }
 
   async specStart(): Promise<void> {
@@ -64,12 +66,12 @@ class SuiteEvent {
     this.eventOhMonitors = new Array<OhReport>();
   }
 
-  subscribeEvent(service: ReportService): void {
-    this.eventMonitors.push(service);
-  }
-
-  subscribeEvent(service: OhReport): void {
-    this.eventOhMonitors.push(service);
+  subscribeEvent(service: ReportMonitor): void {
+    if (service instanceof OhReport) {
+      this.eventOhMonitors.push(service);
+    } else {
+      this.eventMonitors.push(service);
+    }
   }
 
   async suiteStart(): Promise<void> {
@@ -101,12 +103,12 @@ class TaskEvent {
     this.eventOhMonitors = new Array<OhReport>();
   }
 
-  subscribeEvent(service: ReportService): void {
-    this.eventMonitors.push(service);
-  }
-
-  subscribeEvent(service: OhReport): void {
-    this.eventOhMonitors.push(service);
+  subscribeEvent(service: ReportMonitor): void {
+    if (service instanceof OhReport) {
+      this.eventOhMonitors.push(service);
+    } else {
+      this.eventMonitors.push(service);
+    }
   }
 
   async taskStart(): Promise<void> {

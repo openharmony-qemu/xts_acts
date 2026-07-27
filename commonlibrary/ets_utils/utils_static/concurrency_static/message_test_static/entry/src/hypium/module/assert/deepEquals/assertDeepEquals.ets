@@ -15,10 +15,10 @@
  */
 
 import { DeepTypeUtils } from './DeepTypeUtils';
-import { AnyType } from '../../types/common';
+import { HypiumValue } from '../../types/common';
 import { AssertResult } from '../../modal/assertModel';
 
-export function assertDeepEquals(actualValue: AnyType, expected: AnyType[]): AssertResult {
+export function assertDeepEquals(actualValue: HypiumValue, expected: HypiumValue[]): AssertResult {
   let result = eq(actualValue, expected[0]);
   let msg = result ? '' : logMsg(actualValue, expected[0]);
   return {
@@ -32,13 +32,13 @@ export function assertDeepEquals(actualValue: AnyType, expected: AnyType[]): Ass
  * @param actualValue 实际对象
  * @param expected 期待比较对象
  */
-function logMsg(actualValue: AnyType, expected: AnyType): string {
+function logMsg(actualValue: HypiumValue, expected: HypiumValue): string {
   const actualMsg = getObjectDesc(actualValue);
   const expectMsg = getObjectDesc(expected);
   return actualMsg + ' is not deep equal ' + expectMsg;
 }
 
-function getObjectDesc(value: AnyType): string {
+function getObjectDesc(value: HypiumValue): string {
   const aClassName = DeepTypeUtils.getType(value);
   let message = '';
   const numericTypes: string[] = ["Number", "Int", "Short", "Long", "Float", "Byte"];
@@ -47,10 +47,10 @@ function getObjectDesc(value: AnyType): string {
   } else if (aClassName === 'Function' || aClassName === 'Promise') {
     message = 'actualValue ' + aClassName;
   } else if (aClassName === 'Set') {
-    const typeValue = value as Set<AnyType>;
+    const typeValue = value as Set<HypiumValue>;
     message = 'SET(' + typeValue.size + ') ' + JSON.stringify(Array.from(typeValue));
   } else if (aClassName === 'Map') {
-    const typeValue = value as Map<AnyType, AnyType>;
+    const typeValue = value as Map<HypiumValue, HypiumValue>;
     message = 'Map(' + typeValue.size + ') ';
   } else if (aClassName === 'RegExp') {
     message = 'RegExp ' + JSON.stringify((value as RegExp).source.replace('\\', ''));
@@ -65,7 +65,7 @@ function getObjectDesc(value: AnyType): string {
   return message;
 }
 
-export function eq(a: AnyType, b: AnyType): boolean {
+export function eq(a: HypiumValue, b: HypiumValue): boolean {
   const aType = DeepTypeUtils.getType(a);
   const bType = DeepTypeUtils.getType(b);
 
@@ -85,11 +85,11 @@ export function eq(a: AnyType, b: AnyType): boolean {
   } else if (aType === 'Error') {
     return eqOfError(a as Error, b as Error);
   } else if (aType === 'Map') {
-    return eqOfMap(a as Map<AnyType, AnyType>, b as Map<AnyType, AnyType>);
+    return eqOfMap(a as Map<HypiumValue, HypiumValue>, b as Map<HypiumValue, HypiumValue>);
   } else if (aType === 'Set') {
-    return eqOfSet(a as Set<AnyType>, b as Set<AnyType>);
+    return eqOfSet(a as Set<HypiumValue>, b as Set<HypiumValue>);
   } else if (aType === 'Array') {
-    return eqOfArray(a as Array<AnyType>, b as Array<AnyType>);
+    return eqOfArray(a as Array<HypiumValue>, b as Array<HypiumValue>);
   } else if (aType === 'Object') {
     return eqOfObj(a as object, b as object);
   } else {
@@ -128,7 +128,7 @@ function eqOfMap<k, v>(a: Map<k, v>, b: Map<k, v>): boolean {
     return false;
   }
   for (const key of a.keys()) {
-    if (!b.has(key) || !eq(b.get(key) as AnyType, a.get(key) as AnyType)) {
+    if (!b.has(key) || !eq(b.get(key) as HypiumValue, a.get(key) as HypiumValue)) {
       return false;
     }
   }
@@ -155,7 +155,7 @@ function eqOfArray<T>(a: Array<T>, b: Array<T>): boolean {
     return false;
   }
   for (let i = 0; i < aLength; i++) {
-    if (!eq(a[i] as AnyType, b[i] as AnyType)) {
+    if (!eq(a[i] as HypiumValue, b[i] as HypiumValue)) {
       return false;
     }
   }

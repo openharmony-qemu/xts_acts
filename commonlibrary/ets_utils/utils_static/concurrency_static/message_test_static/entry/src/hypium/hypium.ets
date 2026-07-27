@@ -22,112 +22,194 @@ import DataDriver from './module/config/DataDriver';
 import { ExpectExtend } from './module/assert/ExpectExtend';
 import { OhReport } from './module/report/OhReport';
 import { SysTestKit } from './module/kit/SysTestKit';
-import { DataDriverAttr, DataDriverData, DataDriverSuite, TestcaseSummaryIF, SendData, TestcaseRet, ItItemIF } from './interface';
-import { AnyType, CustomAssert } from './module/types/common';
+import { DataDriverAttr, DataDriverData, DataDriverSuite, TestcaseSummaryIF, SendData, TestcaseRet, ItItemIF, TestResultCode } from './interface';
+import { HypiumValue, CustomAssert } from './module/types/common';
 import { ConfigService } from './module/config/configService';
 import hilog from '@ohos.hilog';
 import { ExpectService } from './module/service/ExpectService';
 import { SuiteService } from './module/service/SuiteService';
 import { AssertResult } from './module/modal/assertModel';
 import { EAWorker, jsonx } from 'std/core';
-import { concurrency } from 'std/concurrency';
+import { WorkerLocal, concurrency } from 'std/concurrency';
 
-let domain: int = 0x0000;
-let tag: string = 'testTag';
+const domain: int = 0xD001;
+const tag: string = 'testTag';
 
 export class Hypium {
-  // Suites are shared by worker id; postTask only captures serializable primitives.
-  private static workerSuiteById: Map<int, () => void> = new Map<int, () => void>();
-
   private static parseParametersJson(parametersJson: string): Record<string, string> {
     const result: Record<string, string> = {};
     const root = JSON.parseJsonElement(parametersJson);
+    // AbilityDelegator parameters must be a JSON object of stringifiable values.
+    if (root.tryAsString() !== undefined
+      || root.tryAsInteger() !== undefined
+      || root.tryAsDouble() !== undefined
+      || root.tryAsBoolean() !== undefined
+      || root.tryAsNull() !== undefined
+      || root.tryAsArray() !== undefined) {
+      throw new Error('parametersJson must be a JSON object');
+    }
     for (const entry of root) {
       const key = entry[0];
       const valueElem = entry[1];
       const asString = valueElem.tryAsString();
       if (asString !== undefined) {
         result[key] = asString;
+        continue;
       }
+      const asInteger = valueElem.tryAsInteger();
+      if (asInteger !== undefined) {
+        result[key] = String(asInteger);
+        continue;
+      }
+      const asDouble = valueElem.tryAsDouble();
+      if (asDouble !== undefined) {
+        result[key] = String(asDouble);
+        continue;
+      }
+      const asBoolean = valueElem.tryAsBoolean();
+      if (asBoolean !== undefined) {
+        result[key] = String(asBoolean);
+        continue;
+      }
+      if (valueElem.tryAsNull() !== undefined) {
+        result[key] = 'null';
+        continue;
+      }
+      // Keep object/array parameters as JSON text for the worker.
+      result[key] = JSON.stringifyJsonElement(valueElem);
     }
     return result;
   }
 
-  public static context: Map<string, AnyType> = new Map<string, AnyType>();
+
+  private static asSendData(raw: Object): SendData | undefined {
+    try {
+      const candidate = raw as SendData;
+      if (typeof candidate.currentThreadName !== 'string') {
+        return undefined;
+      }
+      const summary = candidate.summary;
+      if (summary === null || summary === undefined) {
+        return undefined;
+      }
+      if (typeof summary.total !== 'number'
+        || typeof summary.failure !== 'number'
+        || typeof summary.error !== 'number'
+        || typeof summary.pass !== 'number'
+        || typeof summary.ignore !== 'number'
+        || typeof summary.duration !== 'number'
+        || summary.itItemList === null
+        || summary.itItemList === undefined) {
+        return undefined;
+      }
+      return candidate;
+    } catch (e) {
+      const errMsg = e instanceof Error ? e.message : String(e);
+      hilog.error(domain, tag, `asSendData cast/validation failed: ${errMsg}`);
+      return undefined;
+    }
+  }
+
+  // Per-worker context store — avoid sharing a static Map across EAWorkers.
+  private static readonly contextLocal: WorkerLocal<Map<string, HypiumValue>> =
+    new WorkerLocal<Map<string, HypiumValue>>(() => new Map<string, HypiumValue>());
   private static readonly MAX_PARSE_DEPTH: number = 20;
   private static readonly INITIAL_DEPTH: number = 1;
 
-  static parseValue(value: jsonx.JsonElement, currentDepth: number): Array<Object | null | undefined> | Record<string, AnyType> | string | int | double | boolean | null | undefined {
+  static parseValue(value: jsonx.JsonElement, currentDepth: number): Array<HypiumValue | null | undefined> | Record<string, HypiumValue> | string | number | boolean | null | undefined {
     if (currentDepth > Hypium.MAX_PARSE_DEPTH) {
       throw new Error('Maximum parsing depth exceeded. currentParseDepth is ' + currentDepth);
     }
     if (value.tryAsNull() !== undefined) {
-      return null
+      return null;
     }
     // Avoid truthy checks: "", 0, false are valid JSON values.
     const asString = value.tryAsString();
     if (asString !== undefined) {
-      return asString
+      return asString;
     }
     const asInteger = value.tryAsInteger();
     if (asInteger !== undefined) {
-      return asInteger
+      // Keep integer JSON values as integers (not double) for strict ArkTS comparisons.
+      return asInteger;
     }
     const asDouble = value.tryAsDouble();
     if (asDouble !== undefined) {
-      return asDouble
+      return asDouble;
     }
     const asBoolean = value.tryAsBoolean();
     if (asBoolean !== undefined) {
-      return asBoolean
+      return asBoolean;
     }
     const asArray = value.tryAsArray();
     if (asArray !== undefined) {
-      const parsedValue: Array<object | undefined | null> = []
+      const parsedValue: Array<HypiumValue | null | undefined> = [];
       for (const val of asArray) {
-        // 数组元素保持同一层数
-        parsedValue.push(Hypium.parseValue(val, currentDepth))
+        // Increment depth so deeply nested arrays hit MAX_PARSE_DEPTH.
+        parsedValue.push(Hypium.parseValue(val, currentDepth + 1));
       }
       return parsedValue;
     }
-    // 当时对象时，层数递增1位
-    return Hypium.parseParams(value, currentDepth + 1)
+    // 当是对象时，层数递增1位
+    return Hypium.parseParams(value, currentDepth + 1);
   }
 
-  static parseParams(paramsItem: jsonx.JsonElement, currentDepth: number): Record<string, AnyType> {
-    const it = paramsItem.$_iterator()
-    const tempRecord: Record<string, AnyType> = {}
-    while (true) {
-      const v = it.next()
-      if (v.done) {
-        break
-      }
-      const entry = v.value;
+  static parseParams(paramsItem: jsonx.JsonElement, currentDepth: number): Record<string, HypiumValue> {
+    const tempRecord: Record<string, HypiumValue> = {};
+    // Only iterate object-shaped JsonElement; primitives/arrays are rejected by callers.
+    if (paramsItem.tryAsString() !== undefined
+      || paramsItem.tryAsInteger() !== undefined
+      || paramsItem.tryAsDouble() !== undefined
+      || paramsItem.tryAsBoolean() !== undefined
+      || paramsItem.tryAsNull() !== undefined
+      || paramsItem.tryAsArray() !== undefined) {
+      throw new Error('parseParams expects a JSON object');
+    }
+    for (const entry of paramsItem) {
       if (entry === null || entry === undefined) {
         throw new Error('parseParams: iterator value is null or undefined');
       }
-      // ArkTS does not preserve iterator-value narrowing for indexed access.
-      const key = entry![0];
-      const value = entry![1];
-      tempRecord[key] = Hypium.parseValue(value, currentDepth)
+      // JsonElement object iterator yields [key, value] pairs (same as parseParametersJson).
+      const key: string = entry[0];
+      const value: jsonx.JsonElement = entry[1];
+      if (typeof key !== 'string') {
+        throw new Error('parseParams: entry key must be a string');
+      }
+      tempRecord[key] = Hypium.parseValue(value, currentDepth);
     }
     return tempRecord;
   }
 
   static parseSuite(item: jsonx.JsonElement): DataDriverSuite {
+    try {
+      return Hypium.parseSuiteInner(item);
+    } catch (e) {
+      const errMsg = e instanceof Error ? e.message : String(e);
+      throw new Error(`parseSuite failed: ${errMsg}`);
+    }
+  }
+
+  private static parseSuiteInner(item: jsonx.JsonElement): DataDriverSuite {
     let describe: string[] | undefined
     if (item.tryGetElement("describe") !== undefined) {
+      const describeElem = item.getElement("describe");
+      const describeValue = describeElem.tryAsArray();
+      if (describeValue === undefined) {
+        throw new Error('describe must be a JSON array');
+      }
       const parsedDescribe: string[] = []
-      const describeValue = item.getArray("describe")
       for (const describeItem of describeValue) {
-        const describeName = describeItem.asString()
+        const describeName = describeItem.tryAsString()
+        if (describeName === undefined) {
+          throw new Error('describe item must be a string')
+        }
         parsedDescribe.push(describeName)
       }
       describe = parsedDescribe
     }
 
-    let params: Record<string, AnyType> = {};
-    let paramsArray: Record<string, AnyType>[] = []
+    let params: Record<string, HypiumValue> = {};
+    let paramsArray: Record<string, HypiumValue>[] = []
     if (item.tryGetElement("params") !== undefined) {
       const paramsElement = item.getElement("params");
       const paramsValue = paramsElement.tryAsArray();
@@ -137,6 +219,12 @@ export class Hypium {
           const tempRecord = Hypium.parseParams(paramsItem, Hypium.INITIAL_DEPTH)
           paramsArray.push(tempRecord)
         }
+      } else if (paramsElement.tryAsString() !== undefined
+        || paramsElement.tryAsInteger() !== undefined
+        || paramsElement.tryAsDouble() !== undefined
+        || paramsElement.tryAsBoolean() !== undefined
+        || paramsElement.tryAsNull() !== undefined) {
+        throw new Error('params must be a JSON object or array of objects');
       } else {
         params = Hypium.parseParams(paramsElement, Hypium.INITIAL_DEPTH)
       }
@@ -144,25 +232,43 @@ export class Hypium {
       params = {}
     }
 
-    let items: DataDriverSuite[] | undefined = [];
+    let items: DataDriverSuite[] | undefined = undefined;
     if (item.tryGetElement("items") !== undefined) {
-      const itemsValue = item.getArray("items");
+      const itemsElem = item.getElement("items");
+      const itemsValue = itemsElem.tryAsArray();
+      if (itemsValue === undefined) {
+        throw new Error('items must be a JSON array');
+      }
+      const parsedItems: DataDriverSuite[] = [];
       for (const childItem of itemsValue) {
         const parsedChild = Hypium.parseSuite(childItem);
-        items?.push(parsedChild);
+        parsedItems.push(parsedChild);
       }
-    } else {
-      items = undefined;
+      items = parsedItems;
     }
 
     let stress: number | undefined = 1;
     if (item.tryGetElement("stress") !== undefined) {
-      stress = item.getElement("stress").asDouble() as number;
+      const stressElem = item.getElement("stress");
+      const stressDouble = stressElem.tryAsDouble();
+      if (stressDouble !== undefined) {
+        stress = stressDouble;
+      } else {
+        const stressInteger = stressElem.tryAsInteger();
+        if (stressInteger === undefined) {
+          throw new Error('stress must be a number');
+        }
+        stress = stressInteger.toDouble();
+      }
     }
 
     let it: string | undefined = undefined;
     if (item.tryGetElement("it") !== undefined) {
-      it = item.getElement("it").asString();
+      const itName = item.getElement("it").tryAsString();
+      if (itName === undefined) {
+        throw new Error('it must be a string');
+      }
+      it = itName;
     }
 
     return {
@@ -187,11 +293,21 @@ export class Hypium {
       console.error(`${TAG} setData parseJsonElement failed: ${errMsg}`);
       throw new Error(`setData invalid jsonStr: ${errMsg}`);
     }
-    let suitesValue: Array<jsonx.JsonElement> | undefined = [];
-    if (jsonData.tryGetElement("suites") !== undefined) {
-      suitesValue = jsonData.getArray("suites");
-    } else {
-      throw Error('suites is null');
+    if (jsonData.tryAsString() !== undefined
+      || jsonData.tryAsInteger() !== undefined
+      || jsonData.tryAsDouble() !== undefined
+      || jsonData.tryAsBoolean() !== undefined
+      || jsonData.tryAsNull() !== undefined
+      || jsonData.tryAsArray() !== undefined) {
+      throw new Error('setData jsonStr must be a JSON object');
+    }
+    if (jsonData.tryGetElement("suites") === undefined) {
+      throw new Error('suites is null');
+    }
+    const suitesElem = jsonData.getElement("suites");
+    const suitesValue = suitesElem.tryAsArray();
+    if (suitesValue === undefined) {
+      throw new Error('suites must be a JSON array');
     }
     const dataDriverSuite: DataDriverSuite[] = []
     for (const item of suitesValue) {
@@ -231,12 +347,20 @@ export class Hypium {
     SysTestKit.systemTime = systemTime;
   }
 
-  static set(key: string, value: AnyType): void {
-    Hypium.context.set(key, value);
+  static set(key: string, value: HypiumValue): void {
+    const ctx = Hypium.contextLocal.get();
+    if (ctx === null || ctx === undefined) {
+      throw new Error('[hypium] contextLocal is unavailable');
+    }
+    ctx.set(key, value);
   }
 
-  static get(key: string): AnyType | undefined {
-    return Hypium.context.get(key);
+  static get(key: string): HypiumValue | undefined {
+    const ctx = Hypium.contextLocal.get();
+    if (ctx === null || ctx === undefined) {
+      return undefined;
+    }
+    return ctx.get(key);
   }
 
   static async hypiumTest(
@@ -256,44 +380,46 @@ export class Hypium {
     if (abilityDelegator !== null) {
       SysTestKit.delegator = abilityDelegator;
     }
-    if (core) {
-      core.addService('expect', expectExtend);
-      core.addService('report', ohReport);
-      core.init();
-      core.subscribeEvent('spec', ohReport);
-      core.subscribeEvent('suite', ohReport);
-      core.subscribeEvent('task', ohReport);
-      const cService = core.getDefaultService('config');
-      if (cService !== null && abilityDelegatorArguments !== null) {
-        const configService = cService as ConfigService;
-        const testParameters = configService.translateParams(abilityDelegatorArguments.parameters);
-        console.info(`${TAG}parameters:${JSON.stringify(testParameters)}`);
-        configService.setConfig(testParameters);
-      }
-      testsuite();
-      await core.execute(abilityDelegator);
+    if (core === null) {
+      throw new Error('[hypium] core not initialized');
     }
+    core.addService('expect', expectExtend);
+    core.addService('report', ohReport);
+    core.init();
+    core.subscribeEvent('spec', ohReport);
+    core.subscribeEvent('suite', ohReport);
+    core.subscribeEvent('task', ohReport);
+    const cService = core.getDefaultService('config');
+    if (cService instanceof ConfigService && abilityDelegatorArguments !== null) {
+      const configService = cService;
+      const testParameters = configService.translateParams(abilityDelegatorArguments.parameters);
+      console.info(`${TAG}parameters:${JSON.stringify(testParameters)}`);
+      configService.setConfig(testParameters);
+    }
+    testsuite();
+    await core.execute(abilityDelegator);
   }
 
   static async hypiumInitEAWorkers(
     abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs,
-    workerNum: int,
+    workerNum: number,
     testsuite: () => void
   ): Promise<void> {
-    let workerPromiseArray: Promise<TestcaseSummaryIF>[] = [];
-    let startTime = SysTestKit.getRealTime();
+    const workerPromiseArray: Promise<TestcaseSummaryIF>[] = [];
+    const startTime = SysTestKit.getRealTime();
+    // Ensure worker-local Core is initialized before spawning EAWorkers.
     Core.getInstance();
     for (let i = 0; i < workerNum; i++) {
       const workerPromise: Promise<TestcaseSummaryIF> = Hypium.createEAWorkerPromise(i, testsuite,
         abilityDelegatorArguments) as Promise<TestcaseSummaryIF>;
       workerPromiseArray.push(workerPromise);
     }
-    let runTimes: int = 0;
-    let totalDuration: int = 0;
+    let runTimes: number = 0;
+    let totalDuration: number = 0;
     return Promise.allSettled(workerPromiseArray).then(async (settledResults: Array<PromiseSettledResult<TestcaseSummaryIF>>) => {
-      let items: Array<TestcaseSummaryIF> = [];
-      let rejectDetails: Array<string> = [];
+      const items: Array<TestcaseSummaryIF> = [];
+      const rejectDetails: Array<string> = [];
       for (let i = 0; i < settledResults.length; i++) {
         const settled = settledResults[i];
         if (settled.status === 'fulfilled') {
@@ -305,7 +431,7 @@ export class Hypium {
           console.error(`${TAG}, worker[${i}] rejected: ${detail}`);
         }
       }
-      let allItemList = new Array<ItItemIF>();
+      const allItemList = new Array<ItItemIF>();
       for (const item of items) {
         runTimes += item.total;
         totalDuration += item.duration;
@@ -347,34 +473,39 @@ export class Hypium {
     });
   }
 
-  static createEAWorkerPromise(i: int, testsuite: () => void,
+  static createEAWorkerPromise(i: number, testsuite: () => void,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs): Promise<TestcaseSummaryIF> {
-    // Capture only serializable primitives into the worker task; look up suite by id.
-    Hypium.workerSuiteById.set(i, testsuite);
-    const workerId: int = i;
+    // Per-worker local suite reference — avoid a shared static Map across EAWorkers.
+    // AbilityDelegatorArgs stay serialized as primitives for the worker task.
+    const suiteFn: () => void = testsuite;
     const bundleName: string = abilityDelegatorArguments.bundleName;
     const testCaseNames: string = abilityDelegatorArguments.testCaseNames;
     const testRunnerClassName: string = abilityDelegatorArguments.testRunnerClassName;
-    const parametersJson: string = JSON.stringify(abilityDelegatorArguments.parameters);
-    const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>(
-      (resolve: (value: TestcaseSummaryIF | PromiseLike<TestcaseSummaryIF>) => void, reject: (reason: Error) => void): void => {
+    let parametersJson: string = '{}';
+    try {
+      parametersJson = JSON.stringify(abilityDelegatorArguments.parameters);
+    } catch (e) {
+      const errMsg = e instanceof Error ? e.message : String(e);
+      console.error(`${TAG}, failed to stringify AbilityDelegator parameters: ${errMsg}`);
+      throw new Error(`AbilityDelegator parameters are not JSON-serializable: ${errMsg}`);
+    }
+    const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>((resolve, reject) => {
       const worker = new EAWorker(`EAWork_${i}`);
-      worker.start();
       worker.setUncaughtExceptionHandler((e: Error): void => {
         // An uncaught exception terminates the worker; do not access the main-thread worker reference here.
-        Hypium.workerSuiteById.delete(workerId);
         hilog.error(domain, tag, `worker error: ${e.message}`);
         reject(e);
       });
+      worker.start();
       // MessageHandler / quit / getName must use the worker-local EAWorker (EAWorker.current()),
       // not the main-thread worker reference captured across threads.
       // Do not pass AbilityDelegator into the worker; results go back via MessageHandler / summary resolve.
-      worker.postTask((): void => {
+      worker.postTask(() => {
         const current = EAWorker.current();
         if (current === undefined) {
-          Hypium.workerSuiteById.delete(workerId);
-          reject(new Error('EAWorker.current() is undefined inside worker task'));
-          return;
+          // Do not call main-thread worker.quit() here (cross-thread object use).
+          // Throw so setUncaughtExceptionHandler can reject and the worker can terminate.
+          throw new Error('EAWorker.current() is undefined inside worker task');
         }
         const localWorker: EAWorker = current;
         let settled = false;
@@ -382,7 +513,8 @@ export class Hypium {
           try {
             localWorker.quit();
           } catch (quitError) {
-            hilog.error(domain, tag, 'Failed to quit worker: ' + JSON.stringify(quitError));
+            const quitMsg = quitError instanceof Error ? quitError.message : String(quitError);
+            hilog.error(domain, tag, 'Failed to quit worker: ' + quitMsg);
           }
         };
         const safeResolve = (summary: TestcaseSummaryIF): void => {
@@ -390,43 +522,49 @@ export class Hypium {
             return;
           }
           settled = true;
-          Hypium.workerSuiteById.delete(workerId);
-          quitLocal();
+          // Resolve before quit so Promise settlement is not lost if the worker exits first.
           resolve(summary);
+          quitLocal();
         };
         const safeReject = (err: Error): void => {
           if (settled) {
             return;
           }
           settled = true;
-          Hypium.workerSuiteById.delete(workerId);
-          quitLocal();
           reject(err);
+          quitLocal();
         };
         const currentCB = (msg: concurrency.Message): void => {
-          const messageType = msg.getWhat();
-          if (messageType !== 1) {
-            hilog.error(domain, tag, `Unexpected EAWorker message type: ${messageType}`);
-            safeReject(new Error(`Unexpected EAWorker message type: ${messageType}`));
-            return;
+          try {
+            const messageType = msg.getWhat();
+            if (messageType !== 1) {
+              hilog.error(domain, tag, `Unexpected EAWorker message type: ${messageType}`);
+              safeReject(new Error(`Unexpected EAWorker message type: ${messageType}`));
+              return;
+            }
+            const raw = msg.getObject();
+            if (raw === null || raw === undefined) {
+              hilog.error(domain, tag, 'EAWorker message object is null');
+              safeReject(new Error('EAWorker message object is null'));
+              return;
+            }
+            // Message type 1 is emitted only by OhReport with a SendData payload.
+            // msg.getObject() is typed as Any; asSendData requires Object.
+            const data = Hypium.asSendData(raw as Object);
+            if (data === undefined) {
+              hilog.error(domain, tag, 'EAWorker message is not a valid SendData');
+              safeReject(new Error('EAWorker message is not a valid SendData'));
+              return;
+            }
+            const summary = data.summary;
+            const currentThreadName = data.currentThreadName;
+            hilog.info(domain, tag, 'receive data from ' + currentThreadName + ' ' + JSON.stringify(data));
+            safeResolve(summary);
+          } catch (e) {
+            const errMsg = e instanceof Error ? e.message : String(e);
+            hilog.error(domain, tag, `EAWorker message handler failed: ${errMsg}`);
+            safeReject(e instanceof Error ? e : new Error(errMsg));
           }
-          const raw = msg.getObject();
-          if (raw === null || raw === undefined) {
-            hilog.error(domain, tag, 'EAWorker message object is null');
-            safeReject(new Error('EAWorker message object is null'));
-            return;
-          }
-          // Message type 1 is emitted only by OhReport with a SendData payload.
-          const data = raw as SendData;
-          const summary = data.summary;
-          if (summary === null || summary === undefined) {
-            hilog.error(domain, tag, 'EAWorker message missing summary');
-            safeReject(new Error('EAWorker message missing summary'));
-            return;
-          }
-          const currentThreadName = data.currentThreadName;
-          hilog.info(domain, tag, 'receview data from ' + currentThreadName + ' ' + JSON.stringify(data));
-          safeResolve(summary);
         };
         const msgHandler = new concurrency.MessageHandler(currentCB, localWorker);
         const core = new Core();
@@ -434,11 +572,6 @@ export class Hypium {
         Core.setThreadInstance(core);
         const workerName = localWorker.getName();
         hilog.info(domain, tag, 'Run test in Worker ' + workerName);
-        if (!Hypium.workerSuiteById.has(workerId)) {
-          safeReject(new Error(`worker suite missing for id ${workerId}`));
-          return;
-        }
-        const suite = Hypium.workerSuiteById.get(workerId) as () => void;
         // Rebuild AbilityDelegatorArgs from serialized primitives on the worker thread.
         const localArgs: abilityDelegatorRegistry.AbilityDelegatorArgs = {
           bundleName: bundleName,
@@ -447,7 +580,7 @@ export class Hypium {
           testRunnerClassName: testRunnerClassName
         };
         // Pass null AbilityDelegator: finishTest must stay on the main thread.
-        Hypium.hypiumTest(null, localArgs, suite).then(
+        Hypium.hypiumTest(null, localArgs, suiteFn).then(
           (): void => {
             const coreInst = Core.getInstance();
             if (coreInst === null) {
@@ -455,15 +588,16 @@ export class Hypium {
               return;
             }
             const suiteService = coreInst.getDefaultService('suite');
-            if (suiteService !== null && suiteService instanceof SuiteService) {
-              safeResolve((suiteService as SuiteService).getSummary());
+            if (suiteService instanceof SuiteService) {
+              safeResolve(suiteService.getSummary());
               return;
             }
             safeReject(new Error('suite service missing after worker hypiumTest'));
           },
           (e: Error): void => {
-            hilog.error(domain, tag, 'hypiumTest error: ' + JSON.stringify(e));
-            safeReject(e instanceof Error ? e : new Error(String(e)));
+            const errMsg = e instanceof Error ? e.message : String(e);
+            hilog.error(domain, tag, 'hypiumTest error: ' + errMsg);
+            safeReject(e instanceof Error ? e : new Error(errMsg));
           }
         );
       });
@@ -472,15 +606,29 @@ export class Hypium {
   }
 
 
+  private static resultSeverity(code: TestResultCode): int {
+    // Higher value wins when merging multi-worker results.
+    if (code === TestResultCode.ERROR) {
+      return 3;
+    }
+    if (code === TestResultCode.FAILURE) {
+      return 2;
+    }
+    if (code === TestResultCode.IGNORE) {
+      return 1;
+    }
+    return 0; // PASS
+  }
+
   static handleItResult(allItemList: Array<ItItemIF>, itItemList: Array<ItItemIF>): void {
     for (const itItem of itItemList) {
       const description = itItem.description;
       const result = itItem.result;
       const currentThreadName = itItem.currentThreadName;
       const item = allItemList.find((it: ItItemIF) => (it.description === description));
-      if (item) {
-        // Never overwrite a prior failure/error with a later pass from another worker.
-        if (item.result === 0 && result !== 0) {
+      if (item !== undefined) {
+        // Keep the more severe outcome across workers (ERROR > FAILURE > IGNORE > PASS).
+        if (Hypium.resultSeverity(result) > Hypium.resultSeverity(item.result)) {
           item.result = result;
           item.currentThreadName = currentThreadName;
         }
@@ -501,11 +649,11 @@ export class Hypium {
       const result = item.result;
       console.info(`${TAG}, description, ${description}, result,${result}`);
       retResult.total++;
-      if (result === 0) {
+      if (result === TestResultCode.PASS) {
         retResult.pass++;
-      } else if (result === -1) {
+      } else if (result === TestResultCode.ERROR) {
         retResult.error++;
-      } else if (result === -2) {
+      } else if (result === TestResultCode.FAILURE) {
         retResult.failure++;
       } else {
         retResult.ignore++;

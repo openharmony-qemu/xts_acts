@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-import { ServiceAttrIF } from '../../interface';
+import { ServiceAttrIF, ApiIF, ServiceIF } from '../../interface';
 import { TAG } from '../../Constant';
 import { Core } from '../../core';
 import { SpecService } from './SpecService';
 import { SuiteService } from './SuiteService';
 import { SysTestKit } from '../kit/SysTestKit';
 import { ConfigService } from '../config/configService';
-class ReportService {
+class ReportService implements ServiceIF {
   public id: string;
   public coreContext: Core;
   public specService: SpecService;
   public suiteService: SuiteService;
-  public duration: int;
+  public duration: number;
   private index: byte;
   constructor(attr: ServiceAttrIF) {
     this.id = attr.id;
@@ -40,14 +40,18 @@ class ReportService {
   init(coreContext: Core): void {
     this.coreContext = coreContext;
     const suite = coreContext.getDefaultService('suite');
-    if (suite !== null) {
-      this.suiteService = suite as SuiteService;
+    if (suite instanceof SuiteService) {
+      this.suiteService = suite;
     }
     const spec = coreContext.getDefaultService('spec');
-    if (spec !== null) {
-      this.specService = spec as SpecService;
+    if (spec instanceof SpecService) {
+      this.specService = spec;
     }
     this.duration = 0;
+  }
+
+  apis(): ApiIF {
+    return { name: '' };
   }
 
   taskStart(): void {
@@ -104,8 +108,8 @@ class ReportService {
 
   incorrectFormat(): void {
     const config = this.coreContext.getDefaultService('config');
-    if (config !== null) {
-      const configService = config as ConfigService;
+    if (config instanceof ConfigService) {
+      const configService = config;
       if (configService.filterValid.length !== 0) {
         configService.filterValid.forEach((item: string) => {
           console.info(`${TAG}this param ${item} is invalid`);
@@ -116,8 +120,8 @@ class ReportService {
 
   incorrectTestSuiteFormat(): void {
     const config = this.coreContext.getDefaultService('config');
-    if (config !== null) {
-      const configService = config as ConfigService;
+    if (config instanceof ConfigService) {
+      const configService = config;
       if (configService.filterXdescribe.length !== 0) {
         configService.filterXdescribe.forEach((item: string) => {
           console.info(`${TAG}xdescribe: ${item} should not contain it`);
@@ -146,7 +150,7 @@ class ReportService {
     }
   }
 
-  sleep(numberMillis: int): void {
+  sleep(numberMillis: number): void {
     const exitTime = new Date().getTime() + numberMillis;
     while (new Date().getTime() < exitTime) {}
     return;

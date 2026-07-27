@@ -15,7 +15,7 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 import { jsonx } from 'std/core';
 
 const MAX_DEPTH = 10;
@@ -62,7 +62,7 @@ function matchJsonElement(actual: jsonx.JsonElement, expected: jsonx.JsonElement
   }
 }
 
-export function assertMatchObj(actualValue: AnyType, expected: AnyType[]): AssertResult {
+export function assertMatchObj(actualValue: HypiumValue, expected: HypiumValue[]): AssertResult {
   if (typeof actualValue !== 'object' || actualValue === null) {
     return {
       pass: false,
@@ -82,7 +82,7 @@ export function assertMatchObj(actualValue: AnyType, expected: AnyType[]): Asser
     const mismatch = matchJsonElement(actualJson, expectedJson, '$', 0);
     return {
       pass: mismatch === null,
-      message: mismatch === null ? 'object matches expected structure' : `object does not match expected structure: ${mismatch}`,
+      message: mismatch === null ? '' : `object does not match expected structure: ${mismatch}`,
     };
   } catch (e) {
     const detail = e instanceof Error ? e.message : String(e);

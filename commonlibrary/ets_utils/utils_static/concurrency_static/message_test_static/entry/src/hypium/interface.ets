@@ -21,7 +21,7 @@ import { ExpectService, AssertMatcher } from './module/service/ExpectService';
 import { ReportService } from './module/service/ReportService';
 import { OhReport } from './module/report/OhReport';
 import { ExpectExtend } from './module/assert/ExpectExtend';
-import { AnyType, HookFuncType, ItfnType, NumberType } from './module/types/common';
+import { HypiumValue, HookFuncType, ItfnType, NumberType } from './module/types/common';
 
 import { SpecEvent, TaskEvent, SuiteEvent } from './module/service/event';
 import { Core } from './core';
@@ -37,7 +37,7 @@ export interface ConfigIf {
   flag?: boolean;
   suite?: string;
   itName?: string;
-  filter?: number;
+  filter?: int;
   dryRun?: string;
   breakOnError?: string;
   random?: string;
@@ -54,28 +54,35 @@ export interface StaticServiceIF {
 
 export interface StaticSpecIF {
   description: string;
-  fi: number;
+  fi: int;
   fn?: () => void;
-  asyncFn?: (() => Promise<void>) | ((params: AnyType) => Promise<void>);
+  asyncFn?: (() => Promise<void>) | ((params: HypiumValue) => Promise<void>);
 }
 
 export interface ServiceAttrIF {
   id: string;
 }
 
+export enum TestResultCode {
+  PASS = 0,
+  ERROR = -1,
+  FAILURE = -2,
+  IGNORE = -3
+}
+
 export interface ItItemIF {
   currentThreadName: string;
   description: string;
-  result: int;
+  result: TestResultCode;
 }
 
 export interface TestcaseSummaryIF {
-  total: int;
-  failure: int;
-  error: int;
-  pass: int;
-  ignore: int;
-  duration: int;
+  total: number;
+  failure: number;
+  error: number;
+  pass: number;
+  ignore: number;
+  duration: number;
   itItemList: Array<ItItemIF>;
 }
 
@@ -100,9 +107,9 @@ export interface EventAttrIF {
 export interface SuiteReportIF {
   tag: string;
   name?: string;
-  errors?: int;
-  tests?: int;
-  failures?: int;
+  errors?: number;
+  tests?: number;
+  failures?: number;
   time?: string;
   timestamp?: string;
   children?: Array<SuiteReportIF>;
@@ -123,31 +130,31 @@ export interface ReportAttrIF {
 
 export interface AssertMatcherIF {
   assertClose: (actualValue: number, expected: number[]) => AssertResult;
-  assertContain: (actualValue: AnyType, expect: AnyType[]) => AssertResult;
+  assertContain: (actualValue: HypiumValue, expect: HypiumValue[]) => AssertResult;
   assertFail: () => AssertResult;
   assertTrue: (actualValue: boolean) => AssertResult;
   assertFalse: (actualValue: boolean) => AssertResult;
-  assertInstanceOf: (actualValue: AnyType, expected: string[]) => AssertResult;
+  assertInstanceOf: (actualValue: HypiumValue, expected: string[]) => AssertResult;
   assertLarger: (actualValue: number, expected: number[]) => AssertResult;
   assertLess: (actualValue: number, expected: number[]) => AssertResult;
-  assertNull: (actualValue: AnyType) => AssertResult;
+  assertNull: (actualValue: HypiumValue) => AssertResult;
   assertThrow: (actualValue: () => void, args: string[]) => AssertResult;
   assertThrowError: (actualValue: () => void, args: string[]) => AssertResult;
-  assertUndefined: (actualValue: AnyType) => AssertResult;
+  assertUndefined: (actualValue: HypiumValue) => AssertResult;
   assertLargerOrEqual: (actualValue: number, expected: number[]) => AssertResult;
   assertLessOrEqual: (actualValue: number, expected: number[]) => AssertResult;
   assertNaN: (actualValue: number) => AssertResult;
   assertNegUnlimited: (actualValue: number) => AssertResult;
   assertPosUnlimited: (actualValue: number) => AssertResult;
-  assertEqual: (actualValue: AnyType, expect: AnyType[]) => AssertResult;
-  assertDeepEquals: (actualValue: AnyType, expected: AnyType[]) => AssertResult;
-  assertMatchObj: (actualValue: AnyType, expected: AnyType[]) => AssertResult;
-  assertPromiseIsPending: (actualPromise: Promise<AnyType>) => Promise<AssertResult>;
-  assertPromiseIsRejected: (actualPromise: Promise<AnyType>) => Promise<AssertResult>;
-  assertPromiseIsRejectedWith: (actualPromise: Promise<AnyType>, expectedValue: AnyType[]) => Promise<AssertResult>;
-  assertPromiseIsRejectedWithError: (actualPromise: Promise<AnyType>, expectedValue: string[]) => Promise<AssertResult>;
-  assertPromiseIsResolved: (actualPromise: Promise<AnyType>) => Promise<AssertResult>;
-  assertPromiseIsResolvedWith: (actualPromise: Promise<AnyType>, expectedValue: AnyType[]) => Promise<AssertResult>;
+  assertEqual: (actualValue: HypiumValue, expect: HypiumValue[]) => AssertResult;
+  assertDeepEquals: (actualValue: HypiumValue, expected: HypiumValue[]) => AssertResult;
+  assertMatchObj: (actualValue: HypiumValue, expected: HypiumValue[]) => AssertResult;
+  assertPromiseIsPending: (actualPromise: Promise<HypiumValue>) => Promise<AssertResult>;
+  assertPromiseIsRejected: (actualPromise: Promise<HypiumValue>) => Promise<AssertResult>;
+  assertPromiseIsRejectedWith: (actualPromise: Promise<HypiumValue>, expectedValue: HypiumValue[]) => Promise<AssertResult>;
+  assertPromiseIsRejectedWithError: (actualPromise: Promise<HypiumValue>, expectedValue: string[]) => Promise<AssertResult>;
+  assertPromiseIsResolved: (actualPromise: Promise<HypiumValue>) => Promise<AssertResult>;
+  assertPromiseIsResolvedWith: (actualPromise: Promise<HypiumValue>, expectedValue: HypiumValue[]) => Promise<AssertResult>;
 }
 
 export interface WrappedMatchersIF {
@@ -175,9 +182,15 @@ export interface ApiIF {
   afterAll?: (func: HookFuncType) => void;
   afterEach?: (func: HookFuncType) => void;
   afterEachIt?: (func: HookFuncType) => void;
-  it?: (desc: string,  filter: number, func: ItfnType, timeout?: number, tag?: string) => void;
-  xit?: (desc: string, filter: number, func: ItfnType, reason: string) => void;
-  expect?: (actualValue?: AnyType) => AssertMatcher;
+  it?: (desc: string,  filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
+  xit?: (desc: string, filter: int, func: ItfnType, reason: string) => void;
+  expect?: (actualValue?: HypiumValue) => AssertMatcher;
+}
+
+export interface ServiceIF {
+  id: string;
+  init(coreContext: Core): void;
+  apis(): ApiIF;
 }
 
 export interface DryrunResultIF {
@@ -225,17 +238,17 @@ export interface whenResult {
 }
 
 export interface VerificationMode {
-  times(count: int): void;
+  times(count: number): void;
   never(): void;
   once(): void;
-  atLeast(count: int): void;
-  atMost(count: int): void;
+  atLeast(count: number): void;
+  atMost(count: number): void;
 }
 
 export interface ExtendAssert {
   pass: boolean;
   message: string;
-  actualValue: AnyType;
+  actualValue: HypiumValue;
   checkFunc: string;
 }
 
@@ -243,7 +256,7 @@ export interface DataDriverSuite {
   describe?: string[];
   stress?: NumberType;
   it?: string;
-  params: Record<string, AnyType> | Record<string, AnyType>[]
+  params: Record<string, HypiumValue> | Record<string, HypiumValue>[]
   items?: DataDriverSuite[];
 }
 
@@ -261,10 +274,10 @@ export interface SendData {
 }
 
 export interface TestcaseRet {
-  total: int;
-  failure: int;
-  error: int;
-  pass: int;
-  ignore: int;
-  duration: int;
+  total: number;
+  failure: number;
+  error: number;
+  pass: number;
+  ignore: number;
+  duration: number;
 }

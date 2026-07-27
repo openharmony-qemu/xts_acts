@@ -15,10 +15,11 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
-export function assertUndefined(actualValue: AnyType): AssertResult {
+import { HypiumValue } from '../types/common';
+export function assertUndefined(actualValue: HypiumValue): AssertResult {
+  const pass = undefined === actualValue;
   return {
-    pass: undefined === actualValue,
-    message: 'expect Undefined, actualValue is ' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'expect Undefined, actualValue is ' + actualValue,
   };
 }

@@ -16,29 +16,18 @@
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { ConfigService } from './module/config/configService';
-import DataDriver from './module/config/DataDriver';
 import { SuiteService } from './module/service/SuiteService';
 import { SpecService } from './module/service/SpecService';
 import { ExpectService, AssertMatcher } from './module/service/ExpectService';
 import { ReportService } from './module/service/ReportService';
 import { OhReport } from './module/report/OhReport';
-import { ExpectExtend } from './module/assert/ExpectExtend';
 import { SpecEvent, TaskEvent, SuiteEvent } from './module/service/event';
-import { ApiIF } from './interface';
-import { AnyType, HookFuncType, ItfnType } from './module/types/common';
-import { WorkerLocal } from 'std/concurrency';
-import { concurrency } from 'std/concurrency';
+import { ApiIF, ServiceIF } from './interface';
+import { HypiumValue, HookFuncType, ItfnType } from './module/types/common';
+import { WorkerLocal, concurrency } from 'std/concurrency';
 /**
  * core service for execute testcase.
  */
-type ServiceType = SuiteService
-  | SpecService
-  | ConfigService
-  | ExpectService
-  | ReportService
-  | ExpectExtend
-  | OhReport
-  | DataDriver;
 type EventType = SuiteEvent | SpecEvent | TaskEvent;
 class Core {
   // Eager WorkerLocal: per-thread storage via get/set; avoid lazy static init races.
@@ -51,7 +40,7 @@ class Core {
     Core.instance.set(core);
   }
 
-  public services: Map<string, Map<string, ServiceType>>;
+  public services: Map<string, Map<string, ServiceIF>>;
   public events: Map<string, Map<string, EventType>>;
   public describe: (desc: string, func: () => void) => void;
   public xdescribe: (desc: string, func: () => void, reason: string) => void;
@@ -63,16 +52,16 @@ class Core {
   public afterAll: (func: HookFuncType) => void;
   public afterEach: (func: HookFuncType) => void;
   public afterEachIt: (func: HookFuncType) => void;
-  public it: (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => void;
-  public xit: (desc: string, filter: number, func: ItfnType, reason: string) => void;
-  public expect: ((actualValue?: AnyType) => AssertMatcher) | null;
+  public it: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
+  public xit: (desc: string, filter: int, func: ItfnType, reason: string) => void;
+  public expect: ((actualValue?: HypiumValue) => AssertMatcher) | null;
   public specEvent: SpecEvent;
   public suiteEvent: SuiteEvent;
   public taskEvent: TaskEvent;
   public sService: SuiteService | null;
-  public msgHandle: concurrency.MessageHandler |null = null;
+  public msgHandle: concurrency.MessageHandler | null = null;
   constructor() {
-    this.services = new Map<string, Map<string, ServiceType>>();
+    this.services = new Map<string, Map<string, ServiceIF>>();
     this.events = new Map<string, Map<string, EventType>>();
     this.describe = (desc: string, func: () => void): void => {};
     this.xdescribe = (desc: string, func: () => void, reason: string) => {};
@@ -84,8 +73,8 @@ class Core {
     this.afterAll = (func: HookFuncType) => { };
     this.afterEach = (func: HookFuncType) => { };
     this.afterEachIt = (func: HookFuncType) => { };
-    this.it = (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => { };
-    this.xit = (desc: string, filter: number, func: ItfnType, reason: string) => { };
+    this.it = (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => { };
+    this.xit = (desc: string, filter: int, func: ItfnType, reason: string) => { };
     this.expect = null;
     this.specEvent = new SpecEvent({ id: '' });
     this.suiteEvent = new SuiteEvent({ id: '' });
@@ -93,25 +82,25 @@ class Core {
     this.sService = null;
   }
 
-  addService(name: string, service: ServiceType): void {
+  addService(name: string, service: ServiceIF): void {
     let serviceMap = this.services.get(name);
     if (!serviceMap) {
-      serviceMap = new Map<string, ServiceType>();
+      serviceMap = new Map<string, ServiceIF>();
       this.services.set(name, serviceMap);
     }
     serviceMap.set(service.id, service);
   }
 
-  getDefaultService(name: string): ServiceType | null {
+  getDefaultService(name: string): ServiceIF | null {
     const serviceMap = this.services.get(name);
     if (serviceMap) {
-      return (serviceMap as Map<string, ServiceType>).get('default') ?? null;
+      return serviceMap.get('default') ?? null;
     } else {
       return null;
     }
   }
 
-  getServices(name: string): Map<string, ServiceType> | undefined {
+  getServices(name: string): Map<string, ServiceIF> | undefined {
     return this.services.get(name);
   }
 
@@ -131,72 +120,82 @@ class Core {
     }
   }
 
-  subscribeEvent(serviceName: string, serviceObj: ReportService): void {
+  subscribeEvent(serviceName: string, serviceObj: ReportService | OhReport): void {
     const eventMap = this.events.get(serviceName);
     if (eventMap) {
       eventMap.forEach((value: EventType) => {
-        if (value instanceof SuiteEvent) {
-          (value as SuiteEvent).subscribeEvent(serviceObj);
-        } else if (value instanceof SpecEvent) {
-          (value as SpecEvent).subscribeEvent(serviceObj);
-        } else if (value instanceof TaskEvent) {
-          (value as TaskEvent).subscribeEvent(serviceObj);
-        }
-      });
-    }
-  }
-
-  subscribeEvent(serviceName: string, serviceObj: OhReport): void {
-    const eventMap = this.events.get(serviceName);
-    if (eventMap) {
-      eventMap.forEach((value: EventType) => {
-        if (value instanceof SuiteEvent) {
-          (value as SuiteEvent).subscribeEvent(serviceObj);
-        } else if (value instanceof SpecEvent) {
-          (value as SpecEvent).subscribeEvent(serviceObj);
-        } else if (value instanceof TaskEvent) {
-          (value as TaskEvent).subscribeEvent(serviceObj);
-        }
+        value.subscribeEvent(serviceObj);
       });
     }
   }
 
   async fireEvents(serviceName: string, eventName: string): Promise<void> {
     const eventMap = this.events.get(serviceName);
-    if (eventMap) {
-      for (const event of eventMap.values()) {
-        switch (eventName) {
-          case 'specStart':
-            this.specEvent = event as SpecEvent;
+    if (!eventMap || eventMap.size === 0) {
+      return;
+    }
+    // Events are keyed by id (typically 'default'). Dispatch every registered event
+    // so duplicate ids / additional registrations are not silently skipped.
+    // Prefer 'default' first, then remaining entries in map iteration order.
+    const events: EventType[] = [];
+    const defaultEvent = eventMap.get('default');
+    if (defaultEvent !== undefined) {
+      events.push(defaultEvent);
+    }
+    for (const e of eventMap.values()) {
+      if (defaultEvent !== undefined && e === defaultEvent) {
+        continue;
+      }
+      events.push(e);
+    }
+    for (const event of events) {
+      switch (eventName) {
+        case 'specStart':
+          if (event instanceof SpecEvent) {
+            this.specEvent = event;
             await this.specEvent.specStart();
-            break;
-          case 'specDone':
-            this.specEvent = event as SpecEvent;
+          }
+          break;
+        case 'specDone':
+          if (event instanceof SpecEvent) {
+            this.specEvent = event;
             await this.specEvent.specDone();
-            break;
-          case 'suiteStart':
-            this.suiteEvent = event as SuiteEvent;
+          }
+          break;
+        case 'suiteStart':
+          if (event instanceof SuiteEvent) {
+            this.suiteEvent = event;
             await this.suiteEvent.suiteStart();
-            break;
-          case 'suiteDone':
-            this.suiteEvent = event as SuiteEvent;
+          }
+          break;
+        case 'suiteDone':
+          if (event instanceof SuiteEvent) {
+            this.suiteEvent = event;
             await this.suiteEvent.suiteDone();
-            break;
-          case 'taskStart':
-            this.taskEvent = event as TaskEvent;
+          }
+          break;
+        case 'taskStart':
+          if (event instanceof TaskEvent) {
+            this.taskEvent = event;
             await this.taskEvent.taskStart();
-            break;
-          case 'taskDone':
-            this.taskEvent = event as TaskEvent;
+          }
+          break;
+        case 'taskDone':
+          if (event instanceof TaskEvent) {
+            this.taskEvent = event;
             await this.taskEvent.taskDone();
-            break;
-          case 'incorrectFormat':
-            (event as TaskEvent).incorrectFormat();
-            break;
-          case 'incorrectTestSuiteFormat':
-            (event as TaskEvent).incorrectTestSuiteFormat();
-            break;
-        }
+          }
+          break;
+        case 'incorrectFormat':
+          if (event instanceof TaskEvent) {
+            event.incorrectFormat();
+          }
+          break;
+        case 'incorrectTestSuiteFormat':
+          if (event instanceof TaskEvent) {
+            event.incorrectTestSuiteFormat();
+          }
+          break;
       }
     }
   }
@@ -252,12 +251,12 @@ class Core {
     }
     const expect = apis.expect;
     if (expect) {
-      this.expect = expect as (actualValue?: AnyType) => AssertMatcher;
+      this.expect = expect as (actualValue?: HypiumValue) => AssertMatcher;
     }
   }
 
   init(): void {
-    let suiteService = new SuiteService({ id: 'default' })
+    const suiteService = new SuiteService({ id: 'default' });
     suiteService.msgHandle = this.msgHandle;
     this.addService('suite', suiteService);
     this.addService('spec', new SpecService({ id: 'default' }));
@@ -268,45 +267,16 @@ class Core {
     this.registerEvent('suite', new SuiteEvent({ id: 'default' }));
     this.registerEvent('spec', new SpecEvent({ id: 'default' }));
     const report = this.getDefaultService('report');
-    if (report !== null) {
-      this.subscribeEvent('spec', report as ReportService);
-      this.subscribeEvent('suite', report as ReportService);
-      this.subscribeEvent('task', report as ReportService);
+    if (report instanceof ReportService || report instanceof OhReport) {
+      this.subscribeEvent('spec', report);
+      this.subscribeEvent('suite', report);
+      this.subscribeEvent('task', report);
     }
 
     for (const serviceMap of this.services.values()) {
       for (const service of serviceMap.values()) {
-        let apis: ApiIF = { name: '' };
-        if (service instanceof SuiteService) {
-          const typeService = service as SuiteService;
-          typeService.init(this);
-          apis = typeService.apis();
-        } else if (service instanceof SpecService) {
-          const typeService = service as SpecService;
-          typeService.init(this);
-          apis = typeService.apis();
-        } else if (service instanceof ConfigService) {
-          const typeService = service as ConfigService;
-          typeService.init(this);
-        } else if (service instanceof ExpectService) {
-          const typeService = service as ExpectService;
-          typeService.init(this);
-          apis = typeService.apis();
-        } else if (service instanceof ReportService) {
-          const typeService = service as ReportService;
-          typeService.init(this);
-        } else if (service instanceof ExpectExtend) {
-          const typeService = service as ExpectExtend;
-          typeService.init(this);
-          apis = typeService.apis();
-        } else if (service instanceof OhReport) {
-          const typeService = service as OhReport;
-          typeService.init(this);
-        } else if (service instanceof DataDriver) {
-          const typeService = service as DataDriver;
-          typeService.init(this);
-        }
-        this.addToGlobal(apis);
+        service.init(this);
+        this.addToGlobal(service.apis());
       }
     }
   }
@@ -314,31 +284,25 @@ class Core {
   async execute(abilityDelegator: abilityDelegatorRegistry.AbilityDelegator | null): Promise<void> {
     const suiteService = this.getDefaultService('suite');
     const configService = this.getDefaultService('config');
-    if (suiteService !== null && configService !== null) {
-      this.sService = suiteService as SuiteService;
-      const cService = configService as ConfigService;
-      const service = this.sService;
-      if (service !== null) {
-        if (cService.dryRun === 'true') {
-          if (abilityDelegator === null) {
-            throw new Error('dryRun requires AbilityDelegator on main thread');
+    if (suiteService instanceof SuiteService && configService instanceof ConfigService) {
+      this.sService = suiteService;
+      const cService = configService;
+      if (cService.dryRun === 'true') {
+        if (abilityDelegator === null) {
+          throw new Error('dryRun requires AbilityDelegator on main thread');
+        }
+        await suiteService.dryRun(abilityDelegator);
+      } else {
+        try {
+          await suiteService.execute();
+        } catch (e) {
+          const errMsg = e instanceof Error ? e.message : String(e);
+          console.error(`Core execute exception, error: ${errMsg}`);
+          // Worker mode (msgHandle set / null delegator): never call finishTest here.
+          if (abilityDelegator !== null && this.msgHandle === null) {
+            abilityDelegator.finishTest(`Core execute exception: ${errMsg}`, -1, () => {});
           }
-          await service.dryRun(abilityDelegator);
-        } else {
-          try {
-            const result = service.execute() as void | Promise<void>;
-            if (result instanceof Promise) {
-              await result;
-            }
-          } catch (e) {
-            const errMsg = e instanceof Error ? e.message : String(e);
-            console.error(`Core execute exception, error: ${errMsg}`);
-            // Worker mode (msgHandle set / null delegator): never call finishTest here.
-            if (abilityDelegator !== null && this.msgHandle === null) {
-              abilityDelegator.finishTest(`Core execute exception: ${errMsg}`, -1, () => {});
-            }
-            throw (e instanceof Error ? e : new Error(errMsg));
-          }
+          throw (e instanceof Error ? e : new Error(errMsg));
         }
       }
     }

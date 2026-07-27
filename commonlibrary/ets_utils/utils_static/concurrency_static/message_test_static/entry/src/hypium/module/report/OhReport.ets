@@ -22,14 +22,14 @@ import { Core } from '../../core';
 import { SuiteService } from '../service/SuiteService';
 import { SpecService } from '../service/SpecService';
 import { StaticSpec } from '../service/StaticSpec';
-import { ReportAttrIF, TestcaseSummaryIF, SendData } from '../../interface';
+import { ReportAttrIF, TestcaseSummaryIF, SendData, ApiIF, ServiceIF } from '../../interface';
 import { ConfigService } from '../config/configService';
 
-class OhReport {
+class OhReport implements ServiceIF {
   public delegator: abilityDelegatorRegistry.AbilityDelegator | null;
   public abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
   public id: string;
-  public index: int;
+  public index: number;
   public duration: long;
   public currentThreadName: string;
   public coreContext: Core | null;
@@ -66,6 +66,10 @@ class OhReport {
         this.currentThreadName = worker.getName();
       }
     }
+  }
+
+  apis(): ApiIF {
+    return { name: '' };
   }
 
   taskStart(): void {}

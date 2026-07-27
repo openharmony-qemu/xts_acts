@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,11 +15,61 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
+import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
+import { eq } from './deepEquals/assertDeepEquals';
 
-export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertResult {
+function isPlainObject(value: HypiumValue): boolean {
+  return value !== null
+    && typeof value === 'object'
+    && !Array.isArray(value)
+    && DeepTypeUtils.getType(value) === 'Object';
+}
+
+function objectContains(actualObj: object, expectValue: HypiumValue): boolean {
+  if (typeof expectValue === 'string') {
+    // typeof does not narrow HypiumValue to string for DeepTypeUtils.has.
+    const key: string = expectValue as string;
+    return DeepTypeUtils.has(actualObj, key);
+  }
+  if (!isPlainObject(expectValue)) {
+    return false;
+  }
+  const expectObj = expectValue as object;
+  for (const field of reflect.getInstanceFieldsRecursive(Class.of(expectObj))) {
+    const key = field.getName();
+    if (!DeepTypeUtils.has(actualObj, key)) {
+      return false;
+    }
+    const actualField = Class.of(actualObj).getInstanceField(key);
+    if (actualField === null) {
+      return false;
+    }
+    if (actualField === undefined) {
+      return false;
+    }
+    const expectFieldValue = field.getValue(expectObj);
+    const actualFieldValue = actualField.getValue(actualObj);
+    if (actualFieldValue === null || actualFieldValue === undefined
+      || expectFieldValue === null || expectFieldValue === undefined) {
+      if (actualFieldValue !== expectFieldValue) {
+        return false;
+      }
+      continue;
+    }
+    if (!eq(actualFieldValue as Object, expectFieldValue as Object)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function assertContain(actualValue: HypiumValue, expect: HypiumValue[]): AssertResult {
   if (expect.length === 0) {
-    throw new Error('expected array must contain at least one element');
+    return {
+      pass: false,
+      message: 'expected array must contain at least one element',
+    };
   }
   let result = false;
   const expectValue = expect[0];
@@ -28,11 +78,13 @@ export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertRe
     const epValue = expectValue as string;
     result = acValue.indexOf(epValue) >= 0;
   } else if (Array.isArray(actualValue)) {
-    const acValue = actualValue as AnyType[];
+    const acValue = actualValue as HypiumValue[];
     result = acValue.includes(expectValue);
+  } else if (isPlainObject(actualValue)) {
+    result = objectContains(actualValue as object, expectValue);
   }
 
-  const formatValue = (v: AnyType): string => {
+  const formatValue = (v: HypiumValue): string => {
     if (v === null || v === undefined) {
       return String(v);
     }
@@ -41,8 +93,9 @@ export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertRe
     }
     return String(v);
   };
+  const failMsg = `assertContain fail: ${formatValue(actualValue)} does not contain ${formatValue(expectValue)}`;
   return {
     pass: result,
-    message: `assertContain fail: ${formatValue(actualValue)} does not contain ${formatValue(expectValue)}`,
+    message: result ? '' : failMsg,
   };
 }

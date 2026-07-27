@@ -15,49 +15,56 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
+import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
 
-export function assertInstanceOf(actualValue: AnyType, expected: string[]): AssertResult {
+function matchesTypeName(actualType: string, expectType: string): boolean {
+  if (actualType === expectType) {
+    return true;
+  }
+  if (actualType.toLowerCase() === expectType.toLowerCase()) {
+    return true;
+  }
+  // Class.of().getName() may return a qualified name (e.g. pkg.MyClass).
+  const parts = actualType.split('.');
+  const simpleName = parts[parts.length - 1];
+  return simpleName === expectType || simpleName.toLowerCase() === expectType.toLowerCase();
+}
+
+function resolveTypeName(actualValue: HypiumValue): string {
+  const builtinType = DeepTypeUtils.getType(actualValue);
+  if (builtinType !== 'Object') {
+    return builtinType;
+  }
+  if (actualValue === null || typeof actualValue !== 'object') {
+    return builtinType;
+  }
+  try {
+    return Class.of(actualValue as object).getName();
+  } catch (e) {
+    return builtinType;
+  }
+}
+
+export function assertInstanceOf(actualValue: HypiumValue, expected: string[]): AssertResult {
   if (expected.length === 0) {
     return {
       pass: false,
       message: 'expected type array is empty',
     };
   }
-  const type = typeof actualValue;
-  let pass = false;
-  let message = '';
   const expectType = expected[0];
-  if (type !== 'object' && type === expectType.toLowerCase()) {
-    pass = true;
-  } else if (actualValue === null && expectType === 'Null') {
-    pass = true;
-  } else if (Array.isArray(actualValue) && expectType === 'Array') {
-    pass = true;
-  } else if (actualValue instanceof Date && expectType === 'Date') {
-    pass = true;
-  } else if (actualValue instanceof RegExp && expectType === 'RegExp') {
-    pass = true;
-  } else if (actualValue instanceof Promise && expectType === 'Promise') {
-    pass = true;
-  } else if (actualValue instanceof Map && expectType === 'Map') {
-    pass = true;
-  } else if (actualValue instanceof Set && expectType === 'Set') {
-    pass = true;
-  } else if (actualValue instanceof WeakMap && expectType === 'WeakMap') {
-    pass = true;
-  } else if (actualValue instanceof WeakSet && expectType === 'WeakSet') {
-    pass = true;
-  } else if (actualValue instanceof Object && expectType === 'Object') {
-    pass = true;
-  } else {
+  // Any non-null object matches expectType 'Object' (including arrays / custom classes).
+  if (expectType === 'Object' && actualValue !== null && typeof actualValue === 'object') {
     return {
-      pass: false,
-      message: actualValue + ' is not  ' + expectType,
+      pass: true,
+      message: '',
     };
   }
+  const actualType = resolveTypeName(actualValue);
+  const pass = matchesTypeName(actualType, expectType);
   return {
     pass,
-    message,
+    message: pass ? '' : `${String(actualValue)} is not  ${expectType}`,
   };
 }

@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-import { ServiceAttrIF, AssertMatcherIF, ApiIF } from '../../interface';
+import { ServiceAttrIF, AssertMatcherIF, ApiIF, ServiceIF } from '../../interface';
 import { StaticSpec } from './StaticSpec';
 import { StaticSuite } from './StaticSuite';
 import { TAG } from '../../Constant';
 import { Core } from '../../core';
 import { AssertException } from './AssertException';
 import { LogExpectError } from '../report/LogExpectError';
-import { AnyType, CustomAssert, NumberType } from '../types/common';
+import { HypiumValue, CustomAssert, NumberType } from '../types/common';
 import { AssertResult } from '../modal/assertModel';
 import { SpecService } from './SpecService';
 import { SuiteService } from './SuiteService';
 
-class ExpectService {
+class ExpectService implements ServiceIF {
   public id: string;
   public matchers: AssertMatcherIF | null;
   public customMatchers: Map<string, CustomAssert>;
@@ -38,7 +38,7 @@ class ExpectService {
     this.coreContext = null;
   }
 
-  expect(actualValue?: AnyType): AssertMatcher {
+  expect(actualValue?: HypiumValue): AssertMatcher {
     const core = this.coreContext;
     let currentRunningSpec = new StaticSpec({ description: '', fi: 0 });
     let currentRunningSuite = new StaticSuite({ description: '' });
@@ -84,7 +84,7 @@ class ExpectService {
     const _this = this;
     return {
       name: 'ExpectService',
-      expect: (actualValue?: AnyType) => {
+      expect: (actualValue?: HypiumValue) => {
         return _this.expect(actualValue);
       },
     };
@@ -92,12 +92,12 @@ class ExpectService {
 }
 
 export class AssertMatcher {
-  public actualValue: AnyType;
+  public actualValue: HypiumValue;
   public isNot: Boolean;
   public currentRunningSuite: StaticSuite;
   public currentRunningSpec: StaticSpec;
   public assertClose: (expectValue: NumberType, precision: NumberType) => void;
-  public assertContain: (expectValue: AnyType) => void;
+  public assertContain: (expectValue: HypiumValue) => void;
   public assertFail: () => void;
   public assertTrue: () => void;
   public assertFalse: () => void;
@@ -113,19 +113,19 @@ export class AssertMatcher {
   public assertNaN: () => void;
   public assertNegUnlimited: () => void;
   public assertPosUnlimited: () => void;
-  public assertDeepEquals: (expectValue: AnyType) => void;
-  public assertEqual: (expectValue: AnyType) => void;
+  public assertDeepEquals: (expectValue: HypiumValue) => void;
+  public assertEqual: (expectValue: HypiumValue) => void;
   public assertMatchObj: (expectValue: Object) => void;
   public assertPromiseIsPending: () => Promise<void>;
   public assertPromiseIsRejected: () => Promise<void>;
-  public assertPromiseIsRejectedWith: (expectValue: AnyType) => Promise<void>;
+  public assertPromiseIsRejectedWith: (expectValue: HypiumValue) => Promise<void>;
   public assertPromiseIsRejectedWithError: (expectValue: string, expectValue2?: string) => Promise<void>;
   public assertPromiseIsResolved: () => Promise<void>;
   public assertPromiseIsResolvedWith: (expectValue: string) => Promise<void>;
   public customAssert: Record<string, Function> = {};
 
   constructor(
-    actualValue: AnyType,
+    actualValue: HypiumValue,
     currentRunningSpec: StaticSpec,
     currentRunningSuite: StaticSuite,
     matchers: AssertMatcherIF | null,
@@ -136,7 +136,7 @@ export class AssertMatcher {
     this.currentRunningSuite = currentRunningSuite;
     this.actualValue = actualValue;
     this.assertClose = (expectValue: NumberType, precision: NumberType) => {};
-    this.assertContain = (expectValue: AnyType) => {};
+    this.assertContain = (expectValue: HypiumValue) => {};
     this.assertFail = () => {};
     this.assertTrue = () => {};
     this.assertFalse = () => {};
@@ -151,8 +151,8 @@ export class AssertMatcher {
     this.assertNaN = () => {};
     this.assertNegUnlimited = () => {};
     this.assertPosUnlimited = () => {};
-    this.assertDeepEquals = (expectValue: AnyType) => {};
-    this.assertEqual = (expectValue: AnyType) => {};
+    this.assertDeepEquals = (expectValue: HypiumValue) => {};
+    this.assertEqual = (expectValue: HypiumValue) => {};
     this.assertMatchObj = (expectValue: Object) => {};
     this.assertInstanceOf = (expectValue: string) => {};
     this.assertPromiseIsPending = () => {
@@ -164,10 +164,10 @@ export class AssertMatcher {
     this.assertPromiseIsResolved = () => {
       return Promise.resolve();
     };
-    this.assertPromiseIsRejectedWith = (expectValue: AnyType) => {
+    this.assertPromiseIsRejectedWith = (expectValue: HypiumValue) => {
       return Promise.resolve();
     };
-    this.assertPromiseIsResolvedWith = (expectValue: AnyType) => {
+    this.assertPromiseIsResolvedWith = (expectValue: HypiumValue) => {
       return Promise.resolve();
     };
     this.assertPromiseIsRejectedWithError = (expectValue: string, expectValue2?: string) => {
@@ -392,8 +392,8 @@ export class AssertMatcher {
   }
 
   addAnytypeAssert(matchers: AssertMatcherIF): void {
-    const equalFn = (matcherName: string, assertFn: (actualValue: AnyType, expected: AnyType[]) => AssertResult) => {
-      return (arg: AnyType) => {
+    const equalFn = (matcherName: string, assertFn: (actualValue: HypiumValue, expected: HypiumValue[]) => AssertResult) => {
+      return (arg: HypiumValue) => {
         const result = assertFn(this.actualValue, [arg]);
         if (this.isNot) {
           result.pass = !result.pass;
@@ -435,7 +435,7 @@ export class AssertMatcher {
   }
 
   addInstanceOfAssert(matchers: AssertMatcherIF): void {
-    const equalFn = (matcherName: string, assertFn: (actualValue: AnyType, expected: string[]) => AssertResult) => {
+    const equalFn = (matcherName: string, assertFn: (actualValue: HypiumValue, expected: string[]) => AssertResult) => {
       return (arg: string) => {
         const result = assertFn(this.actualValue, [arg]);
         if (this.isNot) {
@@ -463,7 +463,7 @@ export class AssertMatcher {
   }
 
   addUndefinedAssert(matchers: AssertMatcherIF): void {
-    const undefinedFn = (matcherName: string, assertFn: (actualValue: AnyType) => AssertResult) => {
+    const undefinedFn = (matcherName: string, assertFn: (actualValue: HypiumValue) => AssertResult) => {
       return () => {
         const result = assertFn(this.actualValue);
         if (this.isNot) {
@@ -529,9 +529,9 @@ export class AssertMatcher {
   }
 
   addPromiseAssert(matchers: AssertMatcherIF): void {
-    const promiseFn = (matcherName: string, assertFn: (actualPromise: Promise<AnyType>) => Promise<AssertResult>) => {
+    const promiseFn = (matcherName: string, assertFn: (actualPromise: Promise<HypiumValue>) => Promise<AssertResult>) => {
       return async (): Promise<void> => {
-        const result: AssertResult = await assertFn(this.actualValue as Promise<AnyType>);
+        const result: AssertResult = await assertFn(this.actualValue as Promise<HypiumValue>);
         if (this.isNot) {
           result.pass = !result.pass;
           result.message = LogExpectError.getErrorMsg(matcherName, this.actualValue, 'undefined', result.message);
@@ -566,10 +566,10 @@ export class AssertMatcher {
   addPromiseWithAssert(matchers: AssertMatcherIF): void {
     const promiseFn = (
       matcherName: string,
-      assertFn: (actualPromise: Promise<AnyType>, expectedValue: AnyType[]) => Promise<AssertResult>
+      assertFn: (actualPromise: Promise<HypiumValue>, expectedValue: HypiumValue[]) => Promise<AssertResult>
     ) => {
-      return async (arg: AnyType): Promise<void> => {
-        const result: AssertResult = await assertFn(this.actualValue as Promise<AnyType>, [arg]);
+      return async (arg: HypiumValue): Promise<void> => {
+        const result: AssertResult = await assertFn(this.actualValue as Promise<HypiumValue>, [arg]);
         if (this.isNot) {
           result.pass = !result.pass;
           result.message = LogExpectError.getErrorMsg(matcherName, this.actualValue, arg, result.message);
@@ -600,14 +600,14 @@ export class AssertMatcher {
   addPromiseWithError(matchers: AssertMatcherIF): void {
     const promiseFn = (
       matcherName: string,
-      assertFn: (actualPromise: Promise<AnyType>, expectedValue: string[]) => Promise<AssertResult>
+      assertFn: (actualPromise: Promise<HypiumValue>, expectedValue: string[]) => Promise<AssertResult>
     ) => {
       return async (arg: string, arg1?: string): Promise<void> => {
         let arr = [arg];
         if (arg1 !== undefined) {
           arr = [arg, arg1];
         }
-        const result: AssertResult = await assertFn(this.actualValue as Promise<AnyType>, arr);
+        const result: AssertResult = await assertFn(this.actualValue as Promise<HypiumValue>, arr);
         if (this.isNot) {
           result.pass = !result.pass;
           result.message = LogExpectError.getErrorMsg(matcherName, this.actualValue, arg, result.message);

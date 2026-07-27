@@ -15,9 +15,9 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
-export function assertPromiseIsRejected(actualPromise: Promise<AnyType>): Promise<AssertResult> {
+export function assertPromiseIsRejected(actualPromise: Promise<HypiumValue>): Promise<AssertResult> {
   return actualPromise.then<AssertResult, AssertResult>(
     (): AssertResult => {
       return {

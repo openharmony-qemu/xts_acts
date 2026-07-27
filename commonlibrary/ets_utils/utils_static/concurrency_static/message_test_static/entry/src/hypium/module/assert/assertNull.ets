@@ -15,11 +15,12 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
-export function assertNull(actualValue: AnyType): AssertResult {
+export function assertNull(actualValue: HypiumValue): AssertResult {
+  const pass = actualValue === null;
   return {
-    pass: actualValue === null,
-    message: 'expect null, actualValue is ' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'expect null, actualValue is ' + actualValue,
   };
 }

@@ -32,9 +32,10 @@ export function assertClose(actualValue: number | null, expected: number[]): Ass
   let result = false;
   let diff = Math.abs(expected[0] - actualValue);
   let actualAbs = Math.abs(actualValue);
-  const eps = 1e-12;
-  if (Math.abs(actualAbs) < eps) {
-    if (Math.abs(diff) < eps) {
+  const eps = 1.0e-12;
+  // actualAbs / diff are already non-negative from Math.abs.
+  if (actualAbs < eps) {
+    if (diff < eps) {
       result = true;
     } else {
       result = false;

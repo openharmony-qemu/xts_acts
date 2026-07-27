@@ -15,16 +15,17 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
-export function assertPromiseIsResolved(actualPromise: Promise<AnyType>): Promise<AssertResult> {
+import { HypiumValue } from '../types/common';
+export function assertPromiseIsResolved(actualPromise: Promise<HypiumValue>): Promise<AssertResult> {
   return actualPromise.then<AssertResult, AssertResult>(
     (): AssertResult => {
       return { pass: true, message: 'actualValue is isResolved' };
     },
-    (rej: AnyType): AssertResult => {
+    (rej: HypiumValue): AssertResult => {
+      const rejMsg = rej instanceof Error ? rej.message : String(rej);
       return {
         pass: false,
-        message: 'Expected a promise to be resolved but it was ' + 'rejected with ' + JSON.stringify(rej) + '.',
+        message: 'Expected a promise to be resolved but it was ' + 'rejected with ' + rejMsg + '.',
       };
     }
   );

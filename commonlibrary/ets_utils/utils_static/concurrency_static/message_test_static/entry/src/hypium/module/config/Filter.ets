@@ -155,9 +155,9 @@ class SuiteAndItNameFilter {
 class TestTypesFilter {
   public suiteName: string;
   public itName: string;
-  public params: number;
-  public fi: number;
-  constructor(suiteName: string, itName: string, fi: number, params: number) {
+  public params: int;
+  public fi: int;
+  constructor(suiteName: string, itName: string, fi: int, params: int) {
     this.suiteName = suiteName;
     this.itName = itName;
     this.params = params;
@@ -222,7 +222,7 @@ class NestFilter {
     return filterFlag;
   }
 
-  filterLevelOrSizeOrTestType(level: int | null, size: string | null, testType: string | null, filter: number): boolean {
+  filterLevelOrSizeOrTestType(level: int | null, size: string | null, testType: string | null, filter: int): boolean {
     let result = false;
     if (filter === 0) {
       return false;

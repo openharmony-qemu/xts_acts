@@ -111,7 +111,8 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let nullCallbackHolder: (() => void) | null = null;
       let caught = false;
       try {
-        handler.hasCallbacks(nullCallbackHolder!);
+        // Cast keeps a runtime null while satisfying ArkTS ensure-not-nullish rules.
+        handler.hasCallbacks(nullCallbackHolder as (() => void));
       } catch (error) {
         caught = true;
       }
@@ -138,7 +139,8 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let undefinedCallbackHolder: (() => void) | undefined = undefined;
       let caught = false;
       try {
-        handler.hasCallbacks(undefinedCallbackHolder!);
+        // Cast keeps a runtime undefined while satisfying ArkTS ensure-not-nullish rules.
+        handler.hasCallbacks(undefinedCallbackHolder as (() => void));
       } catch (error) {
         caught = true;
       }

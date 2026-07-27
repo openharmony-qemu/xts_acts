@@ -17,8 +17,9 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertNaN(actualValue: number): AssertResult {
+  const pass = actualValue !== actualValue;
   return {
-    pass: actualValue !== actualValue,
-    message: 'expect NaN, actualValue  is ' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'expect NaN, actualValue  is ' + actualValue,
   };
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ServiceAttrIF, ApiIF } from '../../interface';
+import { ServiceAttrIF, ApiIF, ServiceIF } from '../../interface';
 import { NestFilter } from '../config/Filter';
 import { Core } from '../../core';
 import { StaticSpec } from './StaticSpec';
@@ -29,12 +29,12 @@ import {
 import { SuiteService } from './SuiteService';
 import { ConfigService } from '../config/configService';
 import DataDriver from '../config/DataDriver';
-import { ItfnType, AnyType } from '../types/common';
-class SpecService {
+import { ItfnType, HypiumValue } from '../types/common';
+class SpecService implements ServiceIF {
   public id: string;
-  public totalTest: int;
+  public totalTest: number;
   public hasError: boolean;
-  public skipSpecNum: int;
+  public skipSpecNum: number;
   public isSkipSpec: boolean;
   public specSkipReason: string;
   public coreContext: Core | null;
@@ -66,14 +66,14 @@ class SpecService {
     return this.hasError;
   }
 
-  getTestTotal(): int {
+  getTestTotal(): number {
     return this.totalTest;
   }
 
   getCurrentRunningSpec(): StaticSpec | null {
     return this.currentRunningSpec;
   }
-  getSkipSpecNum(): int {
+  getSkipSpecNum(): number {
     return this.skipSpecNum;
   }
 
@@ -82,7 +82,7 @@ class SpecService {
     this.specSkipReason = '';
   }
 
-  it(desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string): void {
+  it(desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string): void {
     const coreContext = this.coreContext;
     if (coreContext !== null) {
       const suiteService = coreContext.getDefaultService('suite');
@@ -111,11 +111,11 @@ class SpecService {
         } else {
           const argsCount = getFunctionArgumentsCount(func);
 
-          let processedFunc: (() => Promise<void>) | ((paramItem: AnyType) => Promise<void>) = (): Promise<void> => {
+          let processedFunc: (() => Promise<void>) | ((paramItem: HypiumValue) => Promise<void>) = (): Promise<void> => {
             return Promise.resolve();
           };
           if (argsCount === 2) {
-            const fn = func as (done: () => void, param: AnyType) => void;
+            const fn = func as (done: () => void, param: HypiumValue) => void;
             processedFunc = processFuncWithArgTwo(coreContext, fn, timeout);
           } else if (argsCount === 1) {
             const fn = func as (done: () => void) => void;
@@ -162,7 +162,7 @@ class SpecService {
     }
   }
 
-  xit(desc: string, filter: number, func: ItfnType, reason: string): void {
+  xit(desc: string, filter: int, func: ItfnType, reason: string): void {
     const coreContext = this.coreContext;
     if (coreContext) {
       const suiteService = coreContext.getDefaultService('suite');
@@ -204,10 +204,10 @@ class SpecService {
     const _this = this;
     return {
       name: 'SpecService',
-      it: (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => {
+      it: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => {
         return _this.it(desc, filter, func, timeout, tag);
       },
-      xit: (desc: string, filter: number, func: ItfnType, reason: string) => {
+      xit: (desc: string, filter: int, func: ItfnType, reason: string) => {
         return _this.xit(desc, filter, func, reason);
       },
     };

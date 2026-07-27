@@ -19,12 +19,12 @@ import { Core } from '../../core';
 import { SpecService } from './SpecService';
 import DataDriver from '../config/DataDriver';
 import { getFunctionArgumentsCount } from '../../util';
-import { AnyType, ItfnType } from '../types/common';
+import { HypiumValue, ItfnType } from '../types/common';
 class StaticSpec {
   public description: string;
-  public fi: number;
+  public fi: int;
   public fn: () => void;
-  public asyncFn: (() => Promise<void>) | ((params: AnyType) => Promise<void>) | null;
+  public asyncFn: (() => Promise<void>) | ((params: HypiumValue) => Promise<void>) | null;
   public isSkip: boolean;
   public skipReason: string;
   public fail: Error | null;
@@ -103,12 +103,12 @@ class StaticSpec {
       }
       if(argsCount === 1) {
         if(specParams.length === 0) {
-          await (this.asyncFn as ((params: AnyType) => Promise<void>))(suiteParams);
+          await (this.asyncFn as ((params: HypiumValue) => Promise<void>))(suiteParams);
         } else {
-          const tempParams: Record<string, AnyType> = suiteParams
+          const tempParams: Record<string, HypiumValue> = suiteParams
           for(const paraItem of specParams) {
             if(!paraItem) {
-              await (this.asyncFn as ((params: AnyType) => Promise<void>))(tempParams);
+              await (this.asyncFn as ((params: HypiumValue) => Promise<void>))(tempParams);
             } else {
               for(const entries of paraItem.entries()) {
                 if(!entries) {
@@ -119,7 +119,7 @@ class StaticSpec {
                   tempParams[key] = value
                 }
               }
-              await (this.asyncFn as ((params: AnyType) => Promise<void>))(tempParams);
+              await (this.asyncFn as ((params: HypiumValue) => Promise<void>))(tempParams);
             }
           }
         }

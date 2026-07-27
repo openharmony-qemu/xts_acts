@@ -15,10 +15,13 @@
  */
 import { Core } from './core';
 import { ConfigService } from './module/config/configService';
-import { ItfnType, AnyType } from './module/types/common';
+import { ItfnType, HypiumValue } from './module/types/common';
 import { TAG } from './Constant';
 
-export function getFuncWithArgsZero(func: () => Any, timeout: int, isStressTest: boolean): Promise<void> {
+// Test callback return: sync void or Promise; not ArkTS Any.
+type FuncResult = void | Promise<void>;
+
+export function getFuncWithArgsZero(func: () => FuncResult, timeout: int, isStressTest: boolean): Promise<void> {
   return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
     let timer = 0;
     if (!isStressTest) {
@@ -26,12 +29,13 @@ export function getFuncWithArgsZero(func: () => Any, timeout: int, isStressTest:
         reject(new Error('execute timeout ' + timeout + 'ms'));
       }, timeout);
     }
-    let res: Any = undefined;
+    let res: FuncResult | undefined = undefined;
     try {
       res = func();
     } catch (err) {
-      console.info(`${TAG} getFuncWithArgsZero Error: ${err.message}`);
-      reject(err as Error);
+      const errMsg = err instanceof Error ? err.message : String(err);
+      console.info(`${TAG} getFuncWithArgsZero Error: ${errMsg}`);
+      reject(err instanceof Error ? err : new Error(errMsg));
     }
     if (res instanceof Promise) {
       res.then(() => {
@@ -52,7 +56,7 @@ export function getFuncWithArgsZero(func: () => Any, timeout: int, isStressTest:
   });
 }
 
-export function getFuncWithArgsOne(func: (params: () => void) => Any, timeout: int, isStressTest: boolean): Promise<void> {
+export function getFuncWithArgsOne(func: (params: () => void) => FuncResult, timeout: int, isStressTest: boolean): Promise<void> {
   return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
     let timer = 0;
     if (!isStressTest) {
@@ -88,9 +92,9 @@ export function getFuncWithArgsOne(func: (params: () => void) => Any, timeout: i
 }
 
 export function getFuncWithArgsTwo(
-  func: (param1: () => void, param2: AnyType) => Any,
+  func: (param1: () => void, param2: HypiumValue) => FuncResult,
   timeout: int,
-  paramItem: AnyType,
+  paramItem: HypiumValue,
   isStressTest: boolean
 ): Promise<void> {
   return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
@@ -129,7 +133,7 @@ export function getFuncWithArgsTwo(
 
 export function processFunc(
   coreContext: Core,
-  func: () => Any,
+  func: () => FuncResult,
   itTimeout?: number
 ): () => Promise<void> {
   const configService = coreContext.getDefaultService('config');
@@ -158,7 +162,7 @@ export function processFunc(
   };
 }
 
-export function processFuncWithArgOne(coreContext: Core, func: (done: () => void) => Any, itTimeout?: number): () => Promise<void> {
+export function processFuncWithArgOne(coreContext: Core, func: (done: () => void) => FuncResult, itTimeout?: number): () => Promise<void> {
   const configService = coreContext.getDefaultService('config');
   if (configService !== null) {
     const config = configService as ConfigService;
@@ -180,8 +184,8 @@ export function processFuncWithArgOne(coreContext: Core, func: (done: () => void
   };
 }
 
-export function processFuncWithArgTwo(coreContext: Core, func: (param1: () => void, param2: AnyType) => Any,
-  itTimeout?: number): (paramItem: AnyType) => Promise<void> {
+export function processFuncWithArgTwo(coreContext: Core, func: (param1: () => void, param2: HypiumValue) => FuncResult,
+  itTimeout?: number): (paramItem: HypiumValue) => Promise<void> {
   const configService = coreContext.getDefaultService('config');
   if (configService !== null) {
     const config = configService as ConfigService;
@@ -194,16 +198,17 @@ export function processFuncWithArgTwo(coreContext: Core, func: (param1: () => vo
       }
     }
     const isStressTest = coreContext.getServices('dataDriver') !== undefined || config.getStress() > 1;
-    return (paramItem: AnyType) => {
+    return (paramItem: HypiumValue) => {
       return getFuncWithArgsTwo(func, timeout.toInt(), paramItem, isStressTest);
     };
   }
-  return (paramItem: AnyType) => {
+  return (paramItem: HypiumValue) => {
     return getFuncWithArgsTwo(func, 0, paramItem, false);
   };
 }
 
 export function getFunctionArgumentsCount(func: ItfnType): int {
+  // Use Any on RHS of instanceof — concrete param types (void/HypiumValue) are ESE38251.
   if (func instanceof (() => never)) {
     return 0;
   } else if (func instanceof ((done: Any) => never)) {

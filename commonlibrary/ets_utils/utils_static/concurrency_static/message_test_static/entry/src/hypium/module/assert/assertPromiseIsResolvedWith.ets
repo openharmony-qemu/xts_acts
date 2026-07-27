@@ -15,17 +15,17 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 export function assertPromiseIsResolvedWith(
-  actualPromise: Promise<AnyType>,
-  expectedValue: AnyType[]
+  actualPromise: Promise<HypiumValue>,
+  expectedValue: HypiumValue[]
 ): Promise<AssertResult> {
   const tips = (passed: boolean) => {
     return 'Expected a promise ' + (passed ? 'not ' : '') + 'to be resolved with ' + JSON.stringify(expectedValue[0]);
   };
 
   return actualPromise.then<AssertResult, AssertResult>(
-    (got: AnyType): AssertResult => {
+    (got: HypiumValue): AssertResult => {
       if (JSON.stringify(got) == JSON.stringify(expectedValue[0])) {
         return {
           pass: true,
@@ -38,9 +38,10 @@ export function assertPromiseIsResolvedWith(
       };
     },
     (rej: Error): AssertResult => {
+      const rejMsg = rej instanceof Error ? rej.message : String(rej);
       return {
         pass: false,
-        message: tips(false) + ' but it was rejected with ' + JSON.stringify(rej) + '.',
+        message: tips(false) + ' but it was rejected with ' + rejMsg + '.',
       };
     }
   );

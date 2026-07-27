@@ -31,7 +31,7 @@ class StaticSuite {
   public childSuites: Array<StaticSuite>;
   public beforeItSpecified: Map<string | string[], (() => void) | (() => Promise<void>)>;
   public afterItSpecified: Map<string | string[], (() => void) | (() => Promise<void>)>;
-  public duration: int;
+  public duration: number;
   public beforeAll: Set<(() => void) | (() => Promise<void>)>;
   public afterAll: Set<(() => void) | (() => Promise<void>)>;
   public beforeEach: Set<(() => void) | (() => Promise<void>)>;
@@ -71,7 +71,7 @@ class StaticSuite {
     });
   }
 
-  getSpecsNum(): int {
+  getSpecsNum(): number {
     return this.specs.length;
   }
 

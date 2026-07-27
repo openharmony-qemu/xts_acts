@@ -369,8 +369,8 @@ export class MockKit {
 }
 
 export class VerificationMode {
-  doTimes:int
-  constructor(invokeTimes: int) {
+  doTimes: number
+  constructor(invokeTimes: number) {
     this.doTimes = invokeTimes
   }
 
@@ -378,7 +378,7 @@ export class VerificationMode {
     expect(1).assertEqual(this.doTimes);
   }
 
-  times(count: int): void {
+  times(count: number): void {
     expect(count).assertEqual(this.doTimes);
   }
 
@@ -386,13 +386,13 @@ export class VerificationMode {
     expect(0).assertEqual(this.doTimes);
   }
 
-  atLeast(count: int): void {
+  atLeast(count: number): void {
     if (count > this.doTimes) {
       throw Error('failed ' + count + ' greater than the actual execution times of method');
     }
   }
 
-  atMost(count: int): void {
+  atMost(count: number): void {
     if (count < this.doTimes) {
       throw Error('failed ' + count + ' less than the actual execution times of method');
     }

@@ -21,10 +21,12 @@ import {
   DataDriverData,
   DataDriverAttr,
   DataDriverSuite,
+  ApiIF,
+  ServiceIF,
 } from '../../interface';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
-class DataDriver {
+class DataDriver implements ServiceIF {
   public id: string;
   public coreContext: Core | null;
   public suiteService: SuiteService | null;
@@ -50,8 +52,12 @@ class DataDriver {
     }
   }
 
-  getSpecParamsValue(specs: DataDriverSuite[]): Record<string, AnyType>[] {
-    let specParams: Record<string, AnyType>[] = [];
+  apis(): ApiIF {
+    return { name: '' };
+  }
+
+  getSpecParamsValue(specs: DataDriverSuite[]): Record<string, HypiumValue>[] {
+    let specParams: Record<string, HypiumValue>[] = [];
     let specDesc = '';
     const specService = this.specService;
     if (specService) {
@@ -68,7 +74,7 @@ class DataDriver {
     for (const specItem of specs) {
       if (specItem.it && specItem.it === specDesc) {
         if (specItem.params && Array.isArray(specItem.params)) {
-          return specItem.params as Record<string, AnyType>[];
+          return specItem.params as Record<string, HypiumValue>[];
         } else {
           return specParams;
         }
@@ -77,8 +83,8 @@ class DataDriver {
     return specParams;
   }
 
-  getSpecParams(): Record<string, AnyType>[] {
-    let specParams: Record<string, AnyType>[] = [];
+  getSpecParams(): Record<string, HypiumValue>[] {
+    let specParams: Record<string, HypiumValue>[] = [];
     const suiteService = this.suiteService;
     let suiteDesc = '';
     if (suiteService) {
@@ -113,8 +119,8 @@ class DataDriver {
     return specParams;
   }
 
-  getSuiteParams(): Record<string, AnyType> {
-    let suiteParams: Record<string, AnyType> = {};
+  getSuiteParams(): Record<string, HypiumValue> {
+    let suiteParams: Record<string, HypiumValue> = {};
     const suiteService = this.suiteService;
     if (suiteService) {
       const sService = suiteService as SuiteService;
@@ -135,7 +141,7 @@ class DataDriver {
           Array.isArray(describeValue) &&
           (describeValue as Array<string>).includes(suiteDesc)
         ) {
-          const params = suiteItem.params as Record<string, AnyType>;
+          const params = suiteItem.params as Record<string, HypiumValue>;
           for (const entries of params.entries()) {
             if (!entries) {
               continue;
@@ -153,7 +159,7 @@ class DataDriver {
     return suiteParams;
   }
 
-  getStressNum(specs: DataDriverSuite[], specDesc: string): int {
+  getStressNum(specs: DataDriverSuite[], specDesc: string): number {
     let stress = 1;
     if (specs === null || specs === undefined) {
       return stress;
@@ -169,7 +175,7 @@ class DataDriver {
     return stress;
   }
 
-  getSpecStress(specDesc: string): int {
+  getSpecStress(specDesc: string): number {
     let stress = 1;
     const suiteService = this.suiteService;
     if (suiteService) {
@@ -205,7 +211,7 @@ class DataDriver {
     return stress;
   }
 
-  getSuiteStress(suiteDesc: string): int {
+  getSuiteStress(suiteDesc: string): number {
     let stress = 1;
     let suites: DataDriverSuite[] = [];
     const tempSuite = this.data.suites;

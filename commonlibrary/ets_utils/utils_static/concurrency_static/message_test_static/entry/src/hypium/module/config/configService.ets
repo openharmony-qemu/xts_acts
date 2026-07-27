@@ -17,16 +17,16 @@
 import { Core } from '../../core';
 import { ClassFilter, NotClassFilter, SuiteAndItNameFilter, TestTypesFilter, NestFilter } from './Filter';
 import { TAG, TESTTYPE, LEVEL, SIZE, KEYSET } from '../../Constant';
-import { ConfigIf, ServiceAttrIF, FilterParamIF } from '../../interface';
+import { ConfigIf, ServiceAttrIF, FilterParamIF, ApiIF, ServiceIF } from '../../interface';
 import { SuiteService } from '../service/SuiteService';
 const STRESS_RULE = new RegExp('^[1-9]\\d*$');
 
-class ConfigService {
+class ConfigService implements ServiceIF {
   public id: string;
   public supportAsync: boolean;
   public random: boolean;
   public filterValid: Array<string>;
-  public filter: number;
+  public filter: int;
   public flag: boolean;
   public suite: string;
   public itName: string;
@@ -77,6 +77,10 @@ class ConfigService {
 
   init(coreContext: Core): void {
     this.coreContext = coreContext;
+  }
+
+  apis(): ApiIF {
+    return { name: '' };
   }
 
   isNormalInteger(str: string): boolean {
@@ -253,100 +257,61 @@ class ConfigService {
     if (this.filter !== 0) {
       return;
     }
-    let testTypeFilter = 0;
-    let sizeFilter = 0;
-    let levelFilter = 0;
+    let testTypeFilterBits: int = 0;
+    let sizeFilterBits: int = 0;
+    let levelFilterBits: int = 0;
     if (this.testType !== null) {
       const testTypeList = this.testType.split(',');
-      const testTypeArr = new Array<string>();
       for (const testTypeV of testTypeList) {
-        if (testTypeV !== undefined) {
-          testTypeArr.push(testTypeV);
+        if (testTypeV === undefined || testTypeV === '') {
+          continue;
         }
-      }
-      const testTypeMapList = testTypeArr.map((item: string) => {
         if (this.filterParam) {
           const p = this.filterParam as FilterParamIF;
           if (p.testType) {
             const type = p.testType as Map<string, int>;
-            const res = type.get(item);
-            if (res) {
-              return res;
-            } else {
-              return 0;
+            const res = type.get(testTypeV);
+            if (res !== undefined) {
+              testTypeFilterBits = testTypeFilterBits | res;
             }
           }
         }
-        return 0;
-      });
-      const testTypeArray = new Array<int>();
-      for (const testTypeV of testTypeMapList) {
-        if (testTypeV !== undefined) {
-          testTypeArray.push(testTypeV);
-        }
       }
-      testTypeFilter = testTypeArray.reduce((pre: int, cur: int) => pre | cur, 0);
     }
     if (this.level !== null) {
       const levelList = this.level.split(',');
-      const levelArr = new Array<string>();
       for (const levelV of levelList) {
-        levelArr.push(levelV);
-      }
-      const levelMapList = levelArr.map((item: string) => {
-        if (item === '') {
-          return 0;
+        if (levelV === '') {
+          continue;
         }
         if (this.filterParam) {
           const p = this.filterParam as FilterParamIF;
           if (p.level) {
             const level = p.level as int[];
-            const res = level[Number(item).toInt()];
-            if (res) {
-              return res;
-            } else {
-              return 0;
+            const res = level[Number(levelV).toInt()];
+            if (res !== undefined) {
+              levelFilterBits = levelFilterBits | res;
             }
           }
         }
-        return 0;
-      });
-      const levelArray = new Array<int>();
-      for (const levelV of levelMapList) {
-        levelArray.push(levelV);
       }
-      levelFilter = levelArray.reduce((pre: int, cur: int) => pre | cur, 0);
     }
     if (this.size !== null) {
       const sizeList = this.size.split(',');
-      const sizeArr = new Array<string>();
       for (const sizeV of sizeList) {
-        sizeArr.push(sizeV);
-      }
-      const sizeMapList = sizeArr.map((item: string): int => {
         if (this.filterParam) {
           const p = this.filterParam as FilterParamIF;
           if (p.size) {
             const size = p.size as Map<string, int>;
-            const res = size.get(item);
-            if (res) {
-              return res;
-            } else {
-              return 0;
+            const res = size.get(sizeV);
+            if (res !== undefined) {
+              sizeFilterBits = sizeFilterBits | res;
             }
           }
         }
-        return 0;
-      });
-      const sizeArray = new Array<int>();
-      for (const sizeV of sizeMapList) {
-        if (sizeV !== undefined) {
-          sizeArray.push(sizeV);
-        }
       }
-      sizeFilter = sizeArray.reduce((pre: int, cur: int) => pre | cur, 0);
     }
-    this.filter = testTypeFilter | sizeFilter | levelFilter;
+    this.filter = testTypeFilterBits | sizeFilterBits | levelFilterBits;
     console.info(`${TAG}filter params:${this.filter}`);
   }
 
@@ -386,7 +351,7 @@ class ConfigService {
     return reduce1 || reduce2 || reduce3;
   }
 
-  filterDesc(currentSuiteName: string, desc: string, fi: number): boolean {
+  filterDesc(currentSuiteName: string, desc: string, fi: int): boolean {
     const suiteAndItNameFilterArray = new Array<SuiteAndItNameFilter>();
     const classFilterArray = new Array<ClassFilter>();
     const notClassFilterArray = new Array<NotClassFilter>();
@@ -418,7 +383,7 @@ class ConfigService {
     return suiteAndItNameFilterResult || classFilterResult || notClassFilterResult || testTypesFilterResult;
   }
 
-  filterWithNest(desc: string, filter: number): boolean {
+  filterWithNest(desc: string, filter: int): boolean {
     let filterArray = new Array<TestTypesFilter>();
     const nestFilter = new NestFilter();
     const core = this.coreContext;

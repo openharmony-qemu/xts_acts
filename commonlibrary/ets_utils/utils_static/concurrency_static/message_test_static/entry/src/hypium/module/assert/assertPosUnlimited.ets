@@ -17,8 +17,9 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertPosUnlimited(actualValue: number): AssertResult {
+  const pass = actualValue === Number.POSITIVE_INFINITY;
   return {
-    pass: actualValue === Number.POSITIVE_INFINITY,
-    message: 'Expected actualValue is POSITIVE_INFINITY.  actualValue is,' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'Expected actualValue is POSITIVE_INFINITY.  actualValue is,' + actualValue,
   };
 }

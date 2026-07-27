@@ -15,14 +15,14 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Core, TestType, Size, Level, AssertResult } from '../../../../hypium';
-import { AnyType, CustomAssert } from '../../../../hypium/module/types/common';
+import { HypiumValue, CustomAssert } from '../../../../hypium/module/types/common';
 import { ExpectService } from '../../../../hypium/module/service/ExpectService';
 
 class HypiumRegressionValue {
   value: int = 1;
 }
 
-const customEquality: CustomAssert = (actualValue: AnyType, expectedValues: AnyType[]): AssertResult => {
+const customEquality: CustomAssert = (actualValue: HypiumValue, expectedValues: HypiumValue[]): AssertResult => {
   const pass = expectedValues.length === 1 && actualValue === expectedValues[0];
   return {
     pass,

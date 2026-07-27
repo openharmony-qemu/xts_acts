@@ -17,8 +17,9 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertNegUnlimited(actualValue: number): AssertResult {
+  const pass = actualValue === Number.NEGATIVE_INFINITY;
   return {
-    pass: actualValue === Number.NEGATIVE_INFINITY,
-    message: 'Expected actualValue not to be -Infinity.  actualValue is,' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'Expected actualValue not to be -Infinity.  actualValue is,' + actualValue,
   };
 }

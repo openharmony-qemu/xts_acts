@@ -15,10 +15,10 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
 export function assertPromiseIsRejectedWithError(
-  actualPromise: Promise<AnyType>,
+  actualPromise: Promise<HypiumValue>,
   expectedValue: string[]
 ): Promise<AssertResult> {
   return actualPromise.then<AssertResult, AssertResult>(
@@ -28,13 +28,13 @@ export function assertPromiseIsRejectedWithError(
         message: 'Expected a promise to be rejected but actualValue is resolve',
       };
     },
-    (actualValue: AnyType): AssertResult => {
+    (actualValue: HypiumValue): AssertResult => {
       return matchError(actualValue, expectedValue);
     }
   );
 }
 
-function matchError(actualValue: AnyType, expectedValue: string[]): AssertResult {
+function matchError(actualValue: HypiumValue, expectedValue: string[]): AssertResult {
   const errorType = Class.of(actualValue as object).getName();
   const errorTypeArr = errorType.split('.');
   const errType = errorTypeArr[errorTypeArr.length - 1];

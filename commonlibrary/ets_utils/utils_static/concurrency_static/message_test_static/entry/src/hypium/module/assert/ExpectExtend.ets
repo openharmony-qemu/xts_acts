@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ServiceAttrIF, AssertMatcherIF, ApiIF } from '../../interface';
+import { ServiceAttrIF, AssertMatcherIF, ApiIF, ServiceIF } from '../../interface';
 import { Core } from '../../core';
 import { assertNull } from './assertNull';
 import { assertClose } from './assertClose';
@@ -40,11 +40,11 @@ import { assertPromiseIsRejectedWithError } from './assertPromiseIsRejectedWithE
 import { assertPromiseIsResolved } from './assertPromiseIsResolved';
 import { assertPromiseIsResolvedWith } from './assertPromiseIsResolvedWith';
 import { assertMatchObj } from './assertMatchObj';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 import { ExpectService, AssertMatcher } from '../service/ExpectService';
 import { assertThrow } from './assertThrow';
 
-class ExpectExtend {
+class ExpectExtend implements ServiceIF {
   public id: string;
   public matchers: AssertMatcherIF | null;
   public coreContext: Core | null;
@@ -101,7 +101,7 @@ class ExpectExtend {
   apis(): ApiIF {
     return {
       name: 'ExpectExtend',
-      expect: (actualValue?: AnyType | undefined): AssertMatcher => {
+      expect: (actualValue?: HypiumValue): AssertMatcher => {
         const core = this.coreContext;
         if (core) {
           const coreContext = core as Core;

@@ -17,8 +17,9 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertFalseFn(actualValue: boolean): AssertResult {
+  const pass = actualValue === false;
   return {
-    pass: actualValue === false,
-    message: 'expect false, actualValue is ' + actualValue,
+    pass: pass,
+    message: pass ? '' : 'expect false, actualValue is ' + actualValue,
   };
 }

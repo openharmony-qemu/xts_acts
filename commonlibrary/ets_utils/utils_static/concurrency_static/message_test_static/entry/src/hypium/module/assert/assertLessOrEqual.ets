@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,16 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertLessOrEqual(actualValue: number, expected: number[]): AssertResult {
+  if (expected.length < 1) {
+    return {
+      pass: false,
+      message: 'expected array must contain a comparison value',
+    };
+  }
+  const expectedValue = expected[0];
+  const pass = actualValue <= expectedValue;
   return {
-    pass: actualValue <= expected[0],
-    message: actualValue + ' is not less than or equal to ' + expected[0],
+    pass: pass,
+    message: pass ? '' : actualValue + ' is not less than or equal to ' + String(expectedValue),
   };
 }

@@ -15,18 +15,29 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
+
+function formatAssertValue(value: HypiumValue): string {
+  if (value instanceof Error) {
+    return value.message;
+  }
+  try {
+    return JSON.stringify(value);
+  } catch (_e) {
+    return String(value);
+  }
+}
 
 function assertPromiseIsRejectedWith(
-  actualPromise: Promise<AnyType>,
-  expectedValue: AnyType[]
+  actualPromise: Promise<HypiumValue>,
+  expectedValue: HypiumValue[]
 ): Promise<AssertResult> {
   const tips = (passed: boolean) => {
     return (
       'Expected a promise ' +
       (passed ? 'not ' : '') +
       'to be rejected with ' +
-      JSON.stringify(expectedValue[0])
+      formatAssertValue(expectedValue[0])
     );
   };
   return actualPromise.then<AssertResult, AssertResult>(
@@ -36,13 +47,13 @@ function assertPromiseIsRejectedWith(
         message: tips(false) + ' but actualValue is resolve',
       };
     },
-    (actualValue: AnyType): AssertResult => {
-      if (JSON.stringify(actualValue) == JSON.stringify(expectedValue[0])) {
+    (actualValue: HypiumValue): AssertResult => {
+      if (formatAssertValue(actualValue) == formatAssertValue(expectedValue[0])) {
         return {
           pass: true,
           message:
             'actualValue was rejected with ' +
-            JSON.stringify(actualValue) +
+            formatAssertValue(actualValue) +
             '.',
         };
       } else if (
@@ -63,7 +74,7 @@ function assertPromiseIsRejectedWith(
           message:
             tips(false) +
             ' but it was rejected with ' +
-            JSON.stringify(actualValue) +
+            formatAssertValue(actualValue) +
             '.',
         };
       }

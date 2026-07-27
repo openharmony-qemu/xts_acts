@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  */
 
 import { Core } from './core';
-import { AnyType, HookFuncType, ItfnType } from './module/types/common';
+import { HypiumValue, HookFuncType, ItfnType } from './module/types/common';
 import { AssertMatcher } from './module/service/ExpectService';
 
 const getCore = (): Core => {
@@ -26,62 +26,88 @@ const getCore = (): Core => {
   return core;
 };
 
-const hypiumDescribe: (desc: string, func: () => void) => void = (desc: string, func: () => void): void => {
-  return getCore().describe(desc, func);
-};
-
-const hypiumIt: (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => void = (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string): void => {
-  return getCore().it(desc, filter, func, timeout, tag);
-};
-const hypiumBeforeItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
-  return getCore().beforeItSpecified(itDescs, func);
-};
-
-const hypiumAfterItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
-  return getCore().afterItSpecified(itDescs, func);
-};
-const hypiumBeforeEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().beforeEach(func);
-};
-const hypiumBeforeEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().beforeEachIt(func);
-};
-const hypiumAfterEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().afterEach(func);
-};
-const hypiumAfterEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().afterEachIt(func);
-};
-const hypiumBeforeAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().beforeAll(func);
-};
-const hypiumAfterAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  return getCore().afterAll(func);
-};
-const hypiumExpect: (actualValue?: AnyType) => AssertMatcher = (actualValue?: AnyType): AssertMatcher => {
-  const expect = getCore().expect;
-  if (expect !== null) {
-    return expect(actualValue);
-  }
-  throw new Error('[hypium] expect() used before initialization');
-};
-
-const hypiumXdescribe: (desc: string, func: () => void) => void = (desc: string, func: () => void): void => {
-  return getCore().xdescribe(desc, func, '');
-};
-const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void) => void = (reason: string): (desc: string, func: () => void) => void => {
-  return (desc: string, func: () => void): void => {
-    return getCore().xdescribe(desc, func, reason);
+const hypiumDescribe: (desc: string, func: () => void) => void =
+  (desc: string, func: () => void): void => {
+    getCore().describe(desc, func);
   };
-};
-const hypiumXit: (desc: string, filter: number, func: ItfnType) => void = (desc: string, filter: number, func: ItfnType): void => {
-  return getCore().xit(desc, filter, func, '');
-};
-const hypiumXitReason: (reason: string) => (desc: string, filter: number, func: (() => void) | (() => Promise<void>)) => void = (reason: string): (desc: string, filter: number, func: (() => void) | (() => Promise<void>)) => void => {
-  return (desc: string, filter: number, func: (() => void) | (() => Promise<void>)): void => {
-    return getCore().xit(desc, filter, func, reason);
+
+const hypiumIt: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void =
+  (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string): void => {
+    getCore().it(desc, filter, func, timeout, tag);
   };
-};
+
+const hypiumBeforeItSpecified: (itDescs: string | string[], func: HookFuncType) => void =
+  (itDescs: string | string[], func: HookFuncType): void => {
+    getCore().beforeItSpecified(itDescs, func);
+  };
+
+const hypiumAfterItSpecified: (itDescs: string | string[], func: HookFuncType) => void =
+  (itDescs: string | string[], func: HookFuncType): void => {
+    getCore().afterItSpecified(itDescs, func);
+  };
+
+const hypiumBeforeEach: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().beforeEach(func);
+  };
+
+const hypiumBeforeEachIt: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().beforeEachIt(func);
+  };
+
+const hypiumAfterEach: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().afterEach(func);
+  };
+
+const hypiumAfterEachIt: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().afterEachIt(func);
+  };
+
+const hypiumBeforeAll: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().beforeAll(func);
+  };
+
+const hypiumAfterAll: (func: HookFuncType) => void =
+  (func: HookFuncType): void => {
+    getCore().afterAll(func);
+  };
+
+const hypiumExpect: (actualValue?: HypiumValue) => AssertMatcher =
+  (actualValue?: HypiumValue): AssertMatcher => {
+    const expect = getCore().expect;
+    if (expect !== null) {
+      return expect(actualValue);
+    }
+    throw new Error('[hypium] expect() used before initialization');
+  };
+
+const hypiumXdescribe: (desc: string, func: () => void) => void =
+  (desc: string, func: () => void): void => {
+    getCore().xdescribe(desc, func, '');
+  };
+
+const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void) => void =
+  (reason: string): (desc: string, func: () => void) => void => {
+    return (desc: string, func: () => void): void => {
+      getCore().xdescribe(desc, func, reason);
+    };
+  };
+
+const hypiumXit: (desc: string, filter: int, func: ItfnType) => void =
+  (desc: string, filter: int, func: ItfnType): void => {
+    getCore().xit(desc, filter, func, '');
+  };
+
+const hypiumXitReason: (reason: string) => (desc: string, filter: int, func: ItfnType) => void =
+  (reason: string): (desc: string, filter: int, func: ItfnType) => void => {
+    return (desc: string, filter: int, func: ItfnType): void => {
+      getCore().xit(desc, filter, func, reason);
+    };
+  };
 
 export {
   hypiumDescribe,

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,20 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 
-export function assertEqual(actualValue: AnyType, args: AnyType[]): AssertResult {
-  const pass = actualValue === args[0];
+export function assertEqual(actualValue: HypiumValue, args: HypiumValue[]): AssertResult {
+  if (args.length < 1) {
+    return {
+      pass: false,
+      message: 'expected array must contain a comparison value',
+    };
+  }
+  const expectedValue = args[0];
+  const pass = actualValue === expectedValue;
   let msg = '';
   if (!pass) {
-    msg = 'expect ' + actualValue + ' equals ' + args[0];
+    msg = 'expect ' + actualValue + ' equals ' + expectedValue;
   }
   return {
     pass: pass,

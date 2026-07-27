@@ -15,9 +15,9 @@
  */
 
 import { DeepTypeUtils } from '../assert/deepEquals/DeepTypeUtils';
-import { AnyType } from '../types/common';
+import { HypiumValue } from '../types/common';
 class LogExpectError {
-  static getErrorMsg(matcherName: string, actualValue: AnyType, expect: AnyType, originMsg: string): string {
+  static getErrorMsg(matcherName: string, actualValue: HypiumValue, expect: HypiumValue, originMsg: string): string {
     if (matcherName === 'assertNull') {
       return 'expect not null, actualValue is ' + String(actualValue);
     }
