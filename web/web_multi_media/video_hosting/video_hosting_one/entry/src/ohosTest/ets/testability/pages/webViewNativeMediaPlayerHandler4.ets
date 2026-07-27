@@ -901,33 +901,6 @@ struct WebComponent {
                         console.log('video is playing:' + isPlaying)
                         break;
                       }
-                      // case 'emitWebViewNativeMediaPlayerSeek20': {
-                      //   this.isPageEnd = -1;
-                      //   this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                      //   await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                      //   this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                      //       console.error(`The buttonPlay() return error is: ${error}`);
-                      //       console.log(`The buttonPlay() return value is: ${result}`);
-                      //   })
-                      //   await this.retryPlayingGen(this.emitKey)()
-                      //   await Utils.sleep(1000)
-                      //   this.controller.runJavaScript('setSeek(20)', (error, result) => {
-                      //       console.error(`The setSeek(20) return error is: ${error}`);
-                      //       console.log(`The setSeek(20) return value is: ${result}`);
-                      //   })
-                      //   await Utils.sleep(3000)
-                      //   console.info('current seekList.indexOf(20) '+ seekList + seekList.indexOf(20));
-                      //   console.log('video is playing:' + isPlaying);
-                      //
-                      //   if (seekList.indexOf(20) > -1){
-                      //       console.info('current seekList.indexOf(20) is' + seekList.indexOf(20));
-                      //       Utils.emitEvent(true, 361040)
-                      //   }else {
-                      //       console.info('current seekList.indexOf(20) =' + seekList.indexOf(20));
-                      //       Utils.emitEvent(false, 361040)
-                      //   }
-                      //   break;
-                      // }
                     }
                 })
             }
