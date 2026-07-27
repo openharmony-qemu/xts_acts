@@ -134,6 +134,19 @@ export default function immersiveMaterialTest() {
 
 
     /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_0801
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_0801
+     * @tc.desc   GetMaterialColor with nullptr handle or out returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_0801', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialGetMaterialColorNull001', done);
+    });
+
+
+    /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_0900
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_0900
      * @tc.desc   Set and get apply shadow flag on material handle
@@ -147,6 +160,32 @@ export default function immersiveMaterialTest() {
 
 
     /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_0901
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_0901
+     * @tc.desc   SetApplyShadow with nullptr material returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_0901', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialSetApplyShadowNull001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_0902
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_0902
+     * @tc.desc   GetApplyShadow with nullptr handle or out returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_0902', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialGetApplyShadowNull001', done);
+    });
+
+
+    /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1000
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1000
      * @tc.desc   Set and get interactive flag on material handle
@@ -156,6 +195,32 @@ export default function immersiveMaterialTest() {
      */
     it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1000', Level.LEVEL1, async (done: Function) => {
       runCase('testImmersiveMaterialSetGetInteractive001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1001
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1001
+     * @tc.desc   SetInteractive with nullptr material returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1001', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialSetInteractiveNull001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1002
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1002
+     * @tc.desc   GetInteractive with nullptr handle or out returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1002', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialGetInteractiveNull001', done);
     });
 
 
@@ -186,6 +251,19 @@ export default function immersiveMaterialTest() {
 
 
     /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1201
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1201
+     * @tc.desc   LightEffectOptions_Destroy with nullptr is safe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1201', Level.LEVEL1, async (done: Function) => {
+      runCase('testLightEffectOptionsDestroyNull001', done);
+    });
+
+
+    /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1300
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1300
      * @tc.desc   Set and get light effect options on material handle
@@ -195,6 +273,32 @@ export default function immersiveMaterialTest() {
      */
     it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1300', Level.LEVEL1, async (done: Function) => {
       runCase('testImmersiveMaterialSetGetLightEffect001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1301
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1301
+     * @tc.desc   SetLightEffect nullptr material invalid; nullptr options disables effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1301', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialSetLightEffectNull001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1302
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1302
+     * @tc.desc   GetLightEffectColor with nullptr handle or out returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1302', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialGetLightEffectColorNull001', done);
     });
 
 
