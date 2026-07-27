@@ -21,12 +21,6 @@ struct SwiperIgnoreHiddenItemAbnormal {
   private swiperController3: SwiperController = new SwiperController()
   @State item1Visible: Visibility = Visibility.None
   @State item2Visible: Visibility = Visibility.Visible
-  @State item3Visible: Visibility = Visibility.None
-  @State item4Visible: Visibility = Visibility.Visible
-  @State item5Visible: Visibility = Visibility.None
-  @State item6Visible: Visibility = Visibility.Visible
-  @State item7Visible: Visibility = Visibility.None
-  @State item8Visible: Visibility = Visibility.Visible
 
   build() {
     Column() {
@@ -61,14 +55,14 @@ struct SwiperIgnoreHiddenItemAbnormal {
           .backgroundColor(0xAFEEEE)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item3Visible)
+          .visibility(this.item1Visible)
         Text('1')
           .width('100%')
           .height('100%')
           .backgroundColor(0xFFD700)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item4Visible)
+          .visibility(this.item2Visible)
       }
       .id('swiper_ignoreHiddenItem_false')
       .width('100%')
@@ -85,14 +79,14 @@ struct SwiperIgnoreHiddenItemAbnormal {
           .backgroundColor(0xAFEEEE)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item5Visible)
+          .visibility(this.item1Visible)
         Text('1')
           .width('100%')
           .height('100%')
           .backgroundColor(0xFFD700)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item6Visible)
+          .visibility(this.item2Visible)
       }
       .id('swiper_ignoreHiddenItem_undefined')
       .width('100%')
@@ -109,14 +103,14 @@ struct SwiperIgnoreHiddenItemAbnormal {
           .backgroundColor(0xAFEEEE)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item7Visible)
+          .visibility(this.item1Visible)
         Text('1')
           .width('100%')
           .height('100%')
           .backgroundColor(0xFFD700)
           .textAlign(TextAlign.Center)
           .fontSize(14)
-          .visibility(this.item8Visible)
+          .visibility(this.item2Visible)
       }
       .id('swiper_ignoreHiddenItem_null')
       .width('100%')

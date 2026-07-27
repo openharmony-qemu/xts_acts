@@ -64,8 +64,8 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = inspector.getInspectorByKey('swiper_ignoreHiddenItem_true');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperIgnoreHiddenItem_static_0100] component is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[swiperIgnoreHiddenItem_static_0100] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')));
-      expect(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')).assertEqual(true);
+      console.info("[swiperIgnoreHiddenItem_static_0100] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getString('ignoreHiddenItem')));
+      expect(obj.getElement('$attrs').getString('ignoreHiddenItem')).assertEqual("true");
       console.info('[swiperIgnoreHiddenItem_static_0100] END');
       done();
     });
@@ -83,8 +83,8 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = inspector.getInspectorByKey('swiper_ignoreHiddenItem_false');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperIgnoreHiddenItem_static_0200] component is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[swiperIgnoreHiddenItem_static_0200] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')));
-      expect(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')).assertEqual(false);
+      console.info("[swiperIgnoreHiddenItem_static_0200] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getString('ignoreHiddenItem')));
+      expect(obj.getElement('$attrs').getString('ignoreHiddenItem')).assertEqual("false");
       console.info('[swiperIgnoreHiddenItem_static_0200] END');
       done();
     });
@@ -102,8 +102,8 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = inspector.getInspectorByKey('swiper_ignoreHiddenItem_undefined');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperIgnoreHiddenItem_static_0300] component is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[swiperIgnoreHiddenItem_static_0300] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')));
-      expect(obj.getElement('$attrs').getBoolen('ignoreHiddenItem')).assertEqual(false);
+      console.info("[swiperIgnoreHiddenItem_static_0300] ignoreHiddenItem: " + JSON.stringify(obj.getElement('$attrs').getString('ignoreHiddenItem')));
+      expect(obj.getElement('$attrs').getString('ignoreHiddenItem')).assertEqual("false");
       console.info('[swiperIgnoreHiddenItem_static_0300] END');
       done();
     });

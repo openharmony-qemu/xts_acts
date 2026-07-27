@@ -57,7 +57,7 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = getInspectorByKey('swiper_ignoreHiddenItem_true');
       let obj: ESObject = JSON.parse(strJson);
       console.log('swiperIgnoreHiddenItem_0100 ignoreHiddenItem: ', obj?.$attrs?.ignoreHiddenItem);
-      expect(obj.$attrs?.ignoreHiddenItem).assertEqual(true);
+      expect(obj.$attrs?.ignoreHiddenItem).assertEqual("true");
       console.info('[swiperIgnoreHiddenItem_0100] END');
       done();
     });
@@ -77,7 +77,7 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = getInspectorByKey('swiper_ignoreHiddenItem_false');
       let obj: ESObject = JSON.parse(strJson);
       console.log('swiperIgnoreHiddenItem_0200 ignoreHiddenItem: ', obj?.$attrs?.ignoreHiddenItem);
-      expect(obj.$attrs?.ignoreHiddenItem).assertEqual(false);
+      expect(obj.$attrs?.ignoreHiddenItem).assertEqual("false");
       console.info('[swiperIgnoreHiddenItem_0200] END');
       done();
     });
@@ -97,7 +97,7 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = getInspectorByKey('swiper_ignoreHiddenItem_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.log('swiperIgnoreHiddenItem_0300 ignoreHiddenItem: ', obj?.$attrs?.ignoreHiddenItem);
-      expect(obj.$attrs?.ignoreHiddenItem).assertEqual(false);
+      expect(obj.$attrs?.ignoreHiddenItem).assertEqual("false");
       console.info('[swiperIgnoreHiddenItem_0300] END');
       done();
     });
@@ -117,7 +117,7 @@ export default function swiperIgnoreHiddenItem() {
       let strJson = getInspectorByKey('swiper_ignoreHiddenItem_null');
       let obj: ESObject = JSON.parse(strJson);
       console.log('swiperIgnoreHiddenItem_0400 ignoreHiddenItem: ', obj?.$attrs?.ignoreHiddenItem);
-      expect(obj.$attrs?.ignoreHiddenItem).assertEqual(false);
+      expect(obj.$attrs?.ignoreHiddenItem).assertEqual("false");
       console.info('[swiperIgnoreHiddenItem_0400] END');
       done();
     });
