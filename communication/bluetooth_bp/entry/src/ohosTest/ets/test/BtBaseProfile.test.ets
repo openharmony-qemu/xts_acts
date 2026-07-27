@@ -1118,5 +1118,31 @@ export default function btBaseProfileTest() {
         }
         done();
     })
+
+    /**
+     * @tc.name SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100
+     * @tc.desc 测试 PanProfile 的 createHfpHfProfile 方法
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     * @co.authored.by.agent
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let hfProfile: hfp.HandsFreeHfProfile = hfp.createHfpHfProfile();
+        console.info('[bt_arkts] createHfpHfProfile result is ' + JSON.stringify(hfProfile));
+        expect(typeof hfProfile).not().assertEqual(undefined);
+      } catch (err) {
+        console.info("[bt_arkts] createHfpHfProfile error: " + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        };
+      }
+      done();
+    });
   })
 }
