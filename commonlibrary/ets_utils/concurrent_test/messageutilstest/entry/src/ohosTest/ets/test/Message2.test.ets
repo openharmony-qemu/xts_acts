@@ -1898,3 +1898,886 @@ export default function MessageTest2(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg = new concurrency.Message(1, [1, 2], handler);
+          handler.sendMessage(msg);
+          const msgObj = msg.getObject()! as Object;
+          expect(msgObj.toString()).assertEqual('1,2');
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0197
+     * @tc.name MessageHandler009
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('MessageHandler009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageHandler003';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handler: concurrency.MessageHandler;
+        let obj = new MessageObject(10)
+        try {
+          worker.start();
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg = new concurrency.Message(1, obj, handler);
+          handler.sendMessage(msg);
+          expect((msg.getObject() as MessageObject)!.id).assertEqual(10);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0198
+     * @tc.name MessageHandler010
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('MessageHandler010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageHandler004';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handler: concurrency.MessageHandler;
+        try {
+          worker.start();
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg1 = new concurrency.Message(1, 1, handler);
+          handler.sendMessage(msg1);
+          expect(msg1.getCallback()).assertEqual(undefined);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0199
+     * @tc.name PostTest001
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let handler: concurrency.MessageHandler;
+        let time: number = 0
+        let flag: boolean = false;
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            let handlerValue = handler.post(() => {
+            })
+            time++;
+            expect(handlerValue).assertTrue();
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0200
+     * @tc.name PostTest002
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handler: concurrency.MessageHandler;
+        let time: number = 0
+        worker.start();
+        let p = () => {
+        }
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            let handlerValue = handler.post(p)
+            time++;
+            expect(handlerValue).assertTrue();
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0201
+     * @tc.name PostTest003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let handler: concurrency.MessageHandler;
+        let time: number = 0;
+        let flag: boolean = false;
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            let handlerValue = handler.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            time++;
+            expect(handlerValue).assertTrue();
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0202
+     * @tc.name PostTest004
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it("PostTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let handler: concurrency.MessageHandler | undefined;
+        let flag: boolean = false;
+        let time: number = 0
+        let handlerValue: boolean = false;
+        let func: () => Promise<number> = () => {
+          return new Promise<number>((resolve) => {
+            handlerValue = handler!.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            resolve(1);
+          });
+        };
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
+          }, worker)
+          worker.start();
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            func();
+            time++;
+            expect(handlerValue).assertTrue();
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0203
+     * @tc.name PostTest005
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it("PostTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let handler: concurrency.MessageHandler;
+        let time: number = 0
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let func: () => Promise<number> = () => {
+          return new Promise<number>((resolve) => {
+            handlerValue = handler.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            resolve(1);
+          });
+        };
+        try {
+          worker.start();
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            await func();
+            time++;
+            expect(handlerValue).assertTrue()
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0204
+     * @tc.name PostTest006
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        let time: number = 0;
+        let p = () => {
+          const end = Date.now() + 1000;
+          while (Date.now() < end) {
+          }
+        }
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let func: () => Promise<number> = () => {
+          return new Promise<number>((resolve) => {
+            handlerValue = handler.post(p)
+            resolve(1);
+          });
+        };
+        try {
+          worker.start();
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            func();
+            time++;
+            expect(handlerValue).assertTrue()
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0205
+     * @tc.name PostTest007
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        let time: number = 0;
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let func: () => Promise<number> = () => {
+          return new Promise<number>((resolve) => {
+            handlerValue = handler.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            resolve(1);
+          });
+        };
+        let p = () => {
+          const end = Date.now() + 1000;
+          while (Date.now() < end) {
+          }
+        }
+        worker.start();
+        try {
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            func();
+            time++;
+            expect(handlerValue).assertTrue()
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0206
+     * @tc.name PostTest008
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it("PostTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        let time: number = 0;
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let func: () => Promise<number> = () => {
+          return new Promise<number>((resolve) => {
+            handlerValue = handler.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            resolve(1);
+          });
+        };
+        let p = () => {
+          const end = Date.now() + 1000;
+          while (Date.now() < end) {
+          }
+        }
+        worker.start();
+        try {
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            await func();
+            time++;
+            expect(handlerValue).assertTrue()
+          }
+          expect(time).assertEqual(10)
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0207
+     * @tc.name RemoveCallbacksTest001
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it("RemoveCallbacksTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let p = () => {
+          let a = 1;
+        }
+        worker.start();
+        try {
+          let timeOut = () => {
+            const end = Date.now() + 1000;
+            while (Date.now() < end) {
+            }
+          }
+          let headMsg = new concurrency.Message(timeOut, handler)
+          handler.sendMessage(headMsg);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0208
+     * @tc.name RemoveCallbacksTest002
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let worker = new EAWorker();
+        const TAG: string = 'MessageTest061';
+        let flag: boolean = false;
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker);
+        let p = () => {
+          let a = 1;
+        }
+        worker.start();
+        try {
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0209
+     * @tc.name RemoveCallbacksTest003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let worker = new EAWorker();
+        const TAG: string = 'MessageTest062';
+        let flag: boolean = false;
+        let handler: concurrency.MessageHandler;
+        let p = () => {
+          let a = 1;
+        }
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            TSleep(1000);
+            flag = true;
+          }, worker);
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          handler.post(p);
+          expect(handler.removeCallbacks(p)).assertEqual(true);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0210
+     * @tc.name RemoveCallbacksTest004
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let worker = new EAWorker();
+        worker.start();
+        const TAG: string = 'MessageTest063';
+        let handler: concurrency.MessageHandler;
+        let p = () => {
+          let a = 1;
+        }
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          }, worker);
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          handler.post(p);
+          await Utils.msSleep(1300);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0211
+     * @tc.name RemoveCallbacksTest005
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest064';
+        let handler: concurrency.MessageHandler;
+        let flag: boolean = false;
+        let worker = new EAWorker();
+        let p = () => {
+          let a = 1;
+        }
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            TSleep(1000);
+            flag = true;
+          }, worker);
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          handler.post(p);
+          handler.post(p);
+          expect(handler.removeCallbacks(p)).assertEqual(true);
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0212
+     * @tc.name RemoveCallbacksTest006
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest065';
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        let p = () => {
+          let a = 1;
+        }
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            Sleep(1000).awaitSync()
+          }, worker);
+          handler.post(p);
+          handler.post(p);
+          await Utils.msSleep(1300);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+          const end = Date.now() + 1000;
+          while (Date.now() < end) {
+          }
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          handler.hasCallbacks(p);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0213
+     * @tc.name RemoveCallbacksTest007
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let flag: boolean = false;
+        let handlerValue: boolean = false;
+        let removeFlag: boolean = false;
+        let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          (async () => {
+            await Sleep(1000);
+            flag = true;
+          })().awaitSync()
+        }, worker)
+        let p = () => {
+        }
+        worker.start();
+        try {
+          let headMsg = new concurrency.Message(p, handler)
+          handler.sendMessage(headMsg);
+          removeFlag = handler.removeCallbacks(p)
+          expect(removeFlag).assertEqual(true);
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0214
+     * @tc.name RemoveCallbacksTest008
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('RemoveCallbacksTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'MessageTest067';
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        let p = () => {
+          let a = 1;
+        }
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            Sleep(1000).awaitSync()
+          }, worker);
+          handler.sendMessage(new concurrency.Message(p, handler));
+          await Utils.msSleep(1300);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+  });
+}
