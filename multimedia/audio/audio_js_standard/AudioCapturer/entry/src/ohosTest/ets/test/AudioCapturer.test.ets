@@ -578,8 +578,9 @@ export default function audioCapturer() {
       console.info('beforeEach called')
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       console.info('afterEach called')
+      await sleep(1000);
     })
     let recPromise =
       async (AudioCapturerOptions: audio.AudioCapturerOptions, AudioRendererOptions: audio.AudioRendererOptions,
