@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1149,30 +1149,12 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7500
      * @tc.name testUint8ClampedArrayConstructorFive075
-     * @tc.desc Verify byteOffset > byteLength RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayConstructorFive075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      try {
-          new Uint8ClampedArray(buf, 5.0);
-          expect().assertFail();
-      } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7600
-     * @tc.name testUint8ClampedArrayConstructorFive076
      * @tc.desc Verify byteOffset=byteLength+1 RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, 9.0);
@@ -1183,32 +1165,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7700
-     * @tc.name testUint8ClampedArrayConstructorFive077
-     * @tc.desc Verify byteOffset=100 byteLength RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayConstructorFive077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      try {
-          new Uint8ClampedArray(buf, 100.0);
-          expect().assertFail();
-      } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7800
-     * @tc.name testUint8ClampedArrayConstructorFive078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7600
+     * @tc.name testUint8ClampedArrayConstructorFive076
      * @tc.desc Verify constructor throws RangeError for buf, -1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, -1.0);
@@ -1219,14 +1183,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7900
-     * @tc.name testUint8ClampedArrayConstructorFive079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7700
+     * @tc.name testUint8ClampedArrayConstructorFive077
      * @tc.desc Verify constructor throws RangeError for buf, -2.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, -2.5);
@@ -1237,14 +1201,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8000
-     * @tc.name testUint8ClampedArrayConstructorFive080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7800
+     * @tc.name testUint8ClampedArrayConstructorFive078
      * @tc.desc Verify constructor throws RangeError for buf, -1e9
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, -1e9);
@@ -1255,14 +1219,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8100
-     * @tc.name testUint8ClampedArrayConstructorFive081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_7900
+     * @tc.name testUint8ClampedArrayConstructorFive079
      * @tc.desc Verify buffer byteOffset=1 RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(0);
       try {
           new Uint8ClampedArray(buf, 1.0);
@@ -1273,14 +1237,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8200
-     * @tc.name testUint8ClampedArrayConstructorFive082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8000
+     * @tc.name testUint8ClampedArrayConstructorFive080
      * @tc.desc Verify constructor throws RangeError for buf, 2147483648.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, 2147483648.0);
@@ -1291,14 +1255,14 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8300
-     * @tc.name testUint8ClampedArrayConstructorFive083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8100
+     * @tc.name testUint8ClampedArrayConstructorFive081
      * @tc.desc Verify constructor throws RangeError for buf, 1e9
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
           new Uint8ClampedArray(buf, 1e9);
@@ -1309,28 +1273,28 @@ export default function uint8ClampedArrayConstructor05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8400
-     * @tc.name testUint8ClampedArrayConstructorFive084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8200
+     * @tc.name testUint8ClampedArrayConstructorFive082
      * @tc.desc Verify constructing ArrayBuffer-backed array yields length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(2);
       const arr = new Uint8ClampedArray(buf, 0.0);
       expect(arr.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8500
-     * @tc.name testUint8ClampedArrayConstructorFive085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_FIVE_8300
+     * @tc.name testUint8ClampedArrayConstructorFive083
      * @tc.desc Verify constructing ArrayBuffer-backed array yields length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayConstructorFive085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayConstructorFive083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(2);
       const arr = new Uint8ClampedArray(buf, 1.0);
       expect(arr.length).assertEqual(1);
