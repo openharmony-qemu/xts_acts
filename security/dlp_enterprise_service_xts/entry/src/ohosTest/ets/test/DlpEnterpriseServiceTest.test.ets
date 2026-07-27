@@ -549,7 +549,7 @@ export default function DlpEnterpriseServiceTest() {
 			expect(err.code).assertEqual(801);
 		  }
           console.info(curTag, "processPluginCommand failed as expected", err.code, err.message);
-          expect(err.code).assertEqual(DLPErrCode.ERR_JS_SYSTEM_SERVICE_EXCEPTION);
+          expect(err.code).assertEqual(19100011);
         }
         done();
       })
