@@ -6393,5 +6393,6 @@ export default function WindowPropertiesTest() {
       });
 
     })
+    
  
 }
