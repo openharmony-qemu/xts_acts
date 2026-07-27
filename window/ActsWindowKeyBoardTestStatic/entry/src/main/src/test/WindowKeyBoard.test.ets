@@ -49,6 +49,7 @@ export default function WindowKeyBoardTest() {
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
+            driver = Driver.create();
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
  	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             try {
