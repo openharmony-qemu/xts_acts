@@ -317,7 +317,7 @@ struct TreeViewDemo {
         currentNodeId: 36,
         isFolder: false,
         primaryTitle: '项目9',
-        container: this.onContainerCallback()
+        container: this.onContainerCallback
       })
       // SymbolGlyphModifier测试节点
       .addNode({
