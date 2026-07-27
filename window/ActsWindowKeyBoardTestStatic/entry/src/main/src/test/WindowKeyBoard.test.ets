@@ -719,6 +719,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(500);
                 if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
                     expect(count).assertEqual(1);
+                }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+                    expect(count).assertEqual(0);
                 }
                 done();
             } catch (err) {
@@ -825,6 +827,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(500);
                 if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
                     expect(count).assertEqual(1);
+                }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+                    expect(count).assertEqual(0);
                 }
                 done();
             } catch (err) {

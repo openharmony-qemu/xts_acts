@@ -171,6 +171,8 @@ export default function windowKeyBorad() {
         await sleep(500);
         if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
           expect(count).assertEqual(1)
+        }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+            expect(count).assertEqual(0);
         }
         done()
       } catch (err) {
@@ -402,44 +404,39 @@ export default function windowKeyBorad() {
       console.info(`${caseName} Succeeded in getting the main window.`);
       let conunt = 0;
       try {
-        if (isFreeWindowMode == true) {
-          done();
-        } else {
-          const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
-            console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
-            conunt++;
-            let displayInfo = display.getDefaultDisplaySync();
-            console.info(`${caseName} dispalyInfo1: ${JSON.stringify(displayInfo)}`);
-            expect(keyboardInfo.beginRect.left).assertEqual(0);
-            expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.beginRect.height).assertLarger(0);
-            expect(keyboardInfo.endRect.left).assertEqual(0);
-            expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-            expect(keyboardInfo.endRect.height).assertLarger(0);
-            mainWindow.off('keyboardDidShow');
-            await driver.pressBack();
-            await sleep(500);
-            done();
-          }
-       
-          mainWindow.on('keyboardDidShow', callback1);
-          
-          await sleep(1000);
-          let input = await driver.findComponent(ON.id('textInput'));
-          await sleep(1000);
-          await input.click();
-          if(deviceType === "phone" || deviceType === "tablet"){
-            expect(conunt).assertEqual(1);
-          }else{
-            expect(conunt).assertEqual(0);
-            done();
-          }
+        const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
+          conunt++;
+          let displayInfo = display.getDefaultDisplaySync();
+          console.info(`${caseName} dispalyInfo1: ${JSON.stringify(displayInfo)}`);
+          expect(keyboardInfo.beginRect.left).assertEqual(0);
+          expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+          expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.beginRect.height).assertLarger(0);
+          expect(keyboardInfo.endRect.left).assertEqual(0);
+          expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+          expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+          expect(keyboardInfo.endRect.height).assertLarger(0);
+          mainWindow.off('keyboardDidShow');
+          await driver.pressBack();
           await sleep(500);
-         
-
+          done();
         }
+      
+        mainWindow.on('keyboardDidShow', callback1);
+        
+        await sleep(1000);
+        let input = await driver.findComponent(ON.id('textInput'));
+        await sleep(1000);
+        await input.click();
+        if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+            expect(count).assertEqual(1);
+        }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+            expect(count).assertEqual(0);
+            done();
+        }
+        await sleep(500);
+         
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         mainWindow.off('keyboardWillHide');
