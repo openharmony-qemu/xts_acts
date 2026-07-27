@@ -32,6 +32,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
 import { canIUse } from '@internal.full.global'
+import { Driver, Point, ON } from '@ohos.UiTest';
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -113,6 +114,465 @@ export default function WindowPropertiesTest() {
             //isPCStatus === '0' PC设备状态栏dock融合
             hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
         })
+        /**
+     * @tc.name   testSetTouchableAreas_singleRect_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0100
+     * @tc.desc   设置单个可触摸区域，验证接口调用成功，并通过触摸透传验证热区生效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTouchableAreas_singleRect_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_singleRect_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow: window.Window | undefined;
+        let driver: Driver = Driver.create();
+
+        try {
+          let mainWindow: window.Window = windowStage!.getMainWindowSync();
+          let mainRect = mainWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'mainWindow rect: ' + JSON.stringify(mainRect));
+
+          let button = await driver.findComponent(ON.id('indexButton'));
+          if (!button) {
+            hilog.error(domain, tag, msgStr + 'Failed to find indexButton');
+            expect(false).assertTrue();
+            done();
+            return;
+          }
+          let buttonBounds = await button.getBounds();
+          let clickX = Double.toInt(Math.floor((buttonBounds.left + buttonBounds.right) / 2));
+          let clickY = Double.toInt(Math.floor((buttonBounds.top + buttonBounds.bottom) / 2));
+          hilog.info(domain, tag, msgStr + 'indexButton bounds: ' + JSON.stringify(buttonBounds) + ', click position: (' + clickX + ', ' + clickY + ')');
+
+          subWindow = await windowStage!.createSubWindow('subWindow_testTouchable');
+          await subWindow.setUIContent('pages/Index2');
+          await Utils.msSleep(500);
+
+          await subWindow.moveWindowTo(mainRect.left, mainRect.top);
+          await subWindow.resize(mainRect.width, mainRect.height);
+          await subWindow.showWindow();
+
+          let subRect = subWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'subWindow moved to match mainWindow, rect: ' + JSON.stringify(subRect));
+
+          let touchableRects: Array<window.Rect> = [
+            { 
+              left: Double.toInt(Math.floor(subRect.width / 2)), 
+              top: subRect.top, 
+              width: Double.toInt(Math.floor(subRect.width / 2)), 
+              height: subRect.height 
+            }
+          ];
+          hilog.info(domain, tag, msgStr + 'touchableRects (right half): ' + JSON.stringify(touchableRects));
+
+          await subWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          await Utils.msSleep(500);
+
+          let initialState = AppStorage.get<string>('index_stateVar') ?? '';
+          hilog.info(domain, tag, msgStr + 'Initial stateVar: ' + initialState);
+
+          hilog.info(domain, tag, msgStr + 'Clicking outside touchable area (left half) at (' + clickX + ', ' + clickY + ')');
+
+          await driver.click(clickX, clickY);
+          await Utils.msSleep(1000);
+
+          let afterClickState = AppStorage.get<string>('index_stateVar') ?? '';
+          hilog.info(domain, tag, msgStr + 'After click stateVar: ' + afterClickState);
+
+          expect(afterClickState.length).assertLarger(initialState.length);
+          hilog.info(domain, tag, msgStr + 'Test passed: touch event was penetrated to main window button');
+
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        } finally {
+          try {
+            if (subWindow) {
+              await subWindow.destroyWindow();
+              hilog.info(domain, tag, msgStr + 'subWindow destroyed');
+            }
+          } catch (e) {
+            hilog.error(domain, tag, msgStr + 'Failed to destroy subWindow: ' + JSON.stringify(e));
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_multipleRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0200
+     * @tc.desc   设置多个可触摸区域（3个），验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_multipleRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_multipleRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
+        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
+        
+        let touchableRects: Array<window.Rect> = [
+          { 
+            left: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            top: Double.toInt(Math.floor(currentWindowRect.height / 3)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          },
+          { 
+            left: 0,
+            top: Double.toInt(Math.floor(currentWindowRect.height / 6)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 4)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          },
+          { 
+            left: Double.toInt(Math.floor(currentWindowRect.width * 2 / 3)),
+            top: Double.toInt(Math.floor(currentWindowRect.height * 2 / 3)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          }
+        ];
+        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+        
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_maxRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0300
+     * @tc.desc   设置最大数量可触摸区域（10个），验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_maxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_maxRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
+        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
+        
+        let rectWidth = Double.toInt(Math.floor(currentWindowRect.width / 10));
+        let rectHeight = Double.toInt(Math.floor(currentWindowRect.height / 10));
+        let touchableRects: Array<window.Rect> = [];
+        
+        for (let i = 0; i < 10; i++) {
+          touchableRects.push({
+            left: Double.toInt(Math.floor(currentWindowRect.width * i / 10)),
+            top: Double.toInt(Math.floor(currentWindowRect.height * i / 10)),
+            width: rectWidth,
+            height: rectHeight
+          });
+        }
+        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+        
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_emptyArray_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0400
+     * @tc.desc   设置空数组，验证恢复为默认状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_emptyArray_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_emptyArray_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_fullWindow_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0500
+     * @tc.desc   设置完整窗口区域，验证等同于默认状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_fullWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_fullWindow_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let windowRect = mainWindow.getWindowProperties().windowRect;
+        let touchableRects: Array<window.Rect> = [
+          { left: 0, top: 0, width: windowRect.width, height: windowRect.height }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_exceedMaxRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0600
+     * @tc.desc   设置超过最大数量（11个）的可触摸区域，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_exceedMaxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_exceedMaxRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [];
+        for (let i = 0; i < 11; i++) {
+          touchableRects.push({ left: i * 30, top: i * 30, width: 50, height: 50 });
+        }
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 1300016) {
+            hilog.info(domain, tag, msgStr + 'Expected error 1300016.');
+            expect(exception.code).assertEqual(1300016);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_outOfWindowRange_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0700
+     * @tc.desc   设置超出窗口范围的可触摸区域，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_outOfWindowRange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_outOfWindowRange_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: -100, top: 0, width: 200, height: 200 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 401) {
+            hilog.info(domain, tag, msgStr + 'Expected error 401.');
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_negativeWidthHeight_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0800
+     * @tc.desc   设置宽/高为负值的可触摸区域，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_negativeWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_negativeWidthHeight_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: 100, top: 100, width: -200, height: 200 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 401) {
+            hilog.info(domain, tag, msgStr + 'Expected error 401.');
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_zeroWidthHeight_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1200
+     * @tc.desc   设置宽/高为0的可触摸区域，验证调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_zeroWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_zeroWidthHeight_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: 0, top: 0, width: 0, height: 0 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_windowDestroyed_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1300
+     * @tc.desc   窗口销毁后调用，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testSetTouchableAreas_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          let testWindowRect = testWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'testWindowRect: ' + JSON.stringify(testWindowRect));
+          
+          let rectWidth = Double.toInt(Math.floor(testWindowRect.width / 3));
+          let rectHeight = Double.toInt(Math.floor(testWindowRect.height / 3));
+          let rectLeft = Double.toInt(Math.floor(testWindowRect.width / 3));
+          let rectTop = Double.toInt(Math.floor(testWindowRect.height / 3));
+          
+          let touchableRects: Array<window.Rect> = [
+            { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
+          ];
+          hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+          
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            await testWindow.setTouchableAreas(touchableRects);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
         /**
          * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
          * @tc.name       test_testSetCustomDensity_1300002_static
@@ -5985,412 +6445,6 @@ export default function WindowPropertiesTest() {
             }
         })
 
-    /**
-     * @tc.name   testSetTouchableAreas_singleRect_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0100
-     * @tc.desc   设置单个可触摸区域，验证接口调用成功
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetTouchableAreas_singleRect_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_singleRect_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
-        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
-        
-        let rectWidth = Double.toInt(Math.floor(currentWindowRect.width / 3));
-        let rectHeight = Double.toInt(Math.floor(currentWindowRect.height / 3));
-        let rectLeft = Double.toInt(Math.floor(currentWindowRect.width / 3));
-        let rectTop = Double.toInt(Math.floor(currentWindowRect.height / 3));
-        
-        let touchableRects: Array<window.Rect> = [
-          { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
-        ];
-        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
-        
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_multipleRects_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0200
-     * @tc.desc   设置多个可触摸区域（3个），验证接口调用成功
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_multipleRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_multipleRects_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
-        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
-        
-        let touchableRects: Array<window.Rect> = [
-          { 
-            left: Double.toInt(Math.floor(currentWindowRect.width / 3)),
-            top: Double.toInt(Math.floor(currentWindowRect.height / 3)),
-            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
-            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
-          },
-          { 
-            left: 0,
-            top: Double.toInt(Math.floor(currentWindowRect.height / 6)),
-            width: Double.toInt(Math.floor(currentWindowRect.width / 4)),
-            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
-          },
-          { 
-            left: Double.toInt(Math.floor(currentWindowRect.width * 2 / 3)),
-            top: Double.toInt(Math.floor(currentWindowRect.height * 2 / 3)),
-            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
-            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
-          }
-        ];
-        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
-        
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_maxRects_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0300
-     * @tc.desc   设置最大数量可触摸区域（10个），验证接口调用成功
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_maxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_maxRects_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
-        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
-        
-        let rectWidth = Double.toInt(Math.floor(currentWindowRect.width / 10));
-        let rectHeight = Double.toInt(Math.floor(currentWindowRect.height / 10));
-        let touchableRects: Array<window.Rect> = [];
-        
-        for (let i = 0; i < 10; i++) {
-          touchableRects.push({
-            left: Double.toInt(Math.floor(currentWindowRect.width * i / 10)),
-            top: Double.toInt(Math.floor(currentWindowRect.height * i / 10)),
-            width: rectWidth,
-            height: rectHeight
-          });
-        }
-        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
-        
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_emptyArray_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0400
-     * @tc.desc   设置空数组，验证恢复为默认状态
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_emptyArray_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_emptyArray_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let touchableRects: Array<window.Rect> = [];
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_fullWindow_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0500
-     * @tc.desc   设置完整窗口区域，验证等同于默认状态
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_fullWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_fullWindow_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let windowRect = mainWindow.getWindowProperties().windowRect;
-        let touchableRects: Array<window.Rect> = [
-          { left: 0, top: 0, width: windowRect.width, height: windowRect.height }
-        ];
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_exceedMaxRects_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0600
-     * @tc.desc   设置超过最大数量（11个）的可触摸区域，验证1300016
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_exceedMaxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_exceedMaxRects_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let touchableRects: Array<window.Rect> = [];
-        for (let i = 0; i < 11; i++) {
-          touchableRects.push({ left: i * 30, top: i * 30, width: 50, height: 50 });
-        }
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.error(domain, tag, msgStr + 'Should not succeed.');
-          expect(false).assertTrue();
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 1300016) {
-            hilog.info(domain, tag, msgStr + 'Expected error 1300016.');
-            expect(exception.code).assertEqual(1300016);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_outOfWindowRange_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0700
-     * @tc.desc   设置超出窗口范围的可触摸区域，验证401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_outOfWindowRange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_outOfWindowRange_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let touchableRects: Array<window.Rect> = [
-          { left: -100, top: 0, width: 200, height: 200 }
-        ];
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.error(domain, tag, msgStr + 'Should not succeed.');
-          expect(false).assertTrue();
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 401) {
-            hilog.info(domain, tag, msgStr + 'Expected error 401.');
-            expect(exception.code).assertEqual(401);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_negativeWidthHeight_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0800
-     * @tc.desc   设置宽/高为负值的可触摸区域，验证401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_negativeWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_negativeWidthHeight_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let touchableRects: Array<window.Rect> = [
-          { left: 100, top: 100, width: -200, height: 200 }
-        ];
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.error(domain, tag, msgStr + 'Should not succeed.');
-          expect(false).assertTrue();
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 401) {
-            hilog.info(domain, tag, msgStr + 'Expected error 401.');
-            expect(exception.code).assertEqual(401);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_zeroWidthHeight_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1200
-     * @tc.desc   设置宽/高为0的可触摸区域，验证调用成功
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_zeroWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_zeroWidthHeight_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let mainWindow: window.Window = windowStage!.getMainWindowSync();
-        let touchableRects: Array<window.Rect> = [
-          { left: 0, top: 0, width: 0, height: 0 }
-        ];
-        try {
-          await mainWindow.setTouchableAreas(touchableRects);
-          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
-          done();
-        } catch (exception) {
-          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   testSetTouchableAreas_windowDestroyed_static
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1300
-     * @tc.desc   窗口销毁后调用，验证1300002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetTouchableAreas_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testSetTouchableAreas_windowDestroyed_static';
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(domain, tag, msgStr + 'begin');
-        let config: window.Configuration = {
-          name: 'testSetTouchableAreas_windowDestroyed_static',
-          windowType: window.WindowType.TYPE_DIALOG,
-          decorEnabled: true,
-          ctx: context!
-        };
-        try {
-          let testWindow = await window.createWindow(config);
-          let testWindowRect = testWindow.getWindowProperties().windowRect;
-          hilog.info(domain, tag, msgStr + 'testWindowRect: ' + JSON.stringify(testWindowRect));
-          
-          let rectWidth = Double.toInt(Math.floor(testWindowRect.width / 3));
-          let rectHeight = Double.toInt(Math.floor(testWindowRect.height / 3));
-          let rectLeft = Double.toInt(Math.floor(testWindowRect.width / 3));
-          let rectTop = Double.toInt(Math.floor(testWindowRect.height / 3));
-          
-          let touchableRects: Array<window.Rect> = [
-            { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
-          ];
-          hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
-          
-          await testWindow.destroyWindow();
-          await Utils.msSleep(500);
-          try {
-            await testWindow.setTouchableAreas(touchableRects);
-            hilog.error(domain, tag, msgStr + 'Should not succeed.');
-            expect(false).assertTrue();
-            done();
-          } catch (exception) {
-            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-            if (exception.code === 1300002) {
-              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
-              expect(exception.code).assertEqual(1300002);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-          }
-        } catch (err) {
-          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
-          done();
-        }
-      });
 
     })
     
