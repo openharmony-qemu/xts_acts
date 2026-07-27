@@ -513,7 +513,7 @@ export default function ArrayIteratorTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const iter = arr.$_iterator();
       iter.next();
       for (let i = 0; i < 5; i++) {

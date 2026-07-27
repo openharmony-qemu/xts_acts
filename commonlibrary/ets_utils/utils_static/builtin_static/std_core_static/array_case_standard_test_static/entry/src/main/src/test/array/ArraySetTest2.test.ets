@@ -253,7 +253,7 @@ export default function ArraySetTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArraySet009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       arr[0] = 100;
       expect(arr[0]).assertEqual(100);
       expect(arr.length).assertEqual(1);
@@ -598,7 +598,7 @@ export default function ArraySetTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArraySet031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(0);
+      const arr = Array.create<int>(1, 0);
       for (let i = 0; i < 10000; i++) {
         arr[0] = i;
       }
