@@ -234,14 +234,14 @@ struct OverlayBackPressSimpleDemo {
           .fontSize(15)
           .height(20)
           .backgroundColor('#F44336')
-          .onClick(() => () => this.stateNumber = 1)
+          .onClick(() => this.stateNumber = 1)
 
         Button('测试undefined')
           .id('testU')
           .fontSize(15)
           .height(20)
           .backgroundColor('#F44336')
-          .onClick(() => () => this.stateNumber = 2)
+          .onClick(() => this.stateNumber = 2)
       }
 
       Divider().margin({ top: 4, bottom: 4 })
