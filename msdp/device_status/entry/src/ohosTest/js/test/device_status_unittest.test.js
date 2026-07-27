@@ -108,10 +108,11 @@ export default function DeviceStatusUnitTest() {
             setTimeout(function () {
                 try {
                     p_done = done;
-                    stationary.off("relativeStill", stationary.ActivityEvent.EXIT, pub_callback);
+                    stationary.off("relativeStill", stationary.ActivityEvent.EXIT);
+                    console.log("SUB_MSDP_DeviceStatus_API_Stationary_0200 off success");
                     p_done();
                 } catch (error) {
-                    console.error('error=' + error);
+                    console.error('SUB_MSDP_DeviceStatus_API_Stationary_0200 off error=' + error);
                     expect().assertFail();
                     done();
                 }
