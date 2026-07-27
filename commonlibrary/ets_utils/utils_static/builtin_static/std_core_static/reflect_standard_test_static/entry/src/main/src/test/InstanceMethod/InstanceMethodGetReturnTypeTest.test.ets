@@ -921,7 +921,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
       let cls = Class.from<MyClass063>();
       let method = cls.getInstanceMethod('returnInt32Array');
       let returnType = method!.getReturnType();
-      expect(returnType.getName()).assertEqual('std.core.Int32Array');
+      expect(returnType.getName()).assertEqual('escompat.Int32Array');
     });
 
     /**

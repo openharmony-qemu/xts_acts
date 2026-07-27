@@ -62,7 +62,7 @@ export default function Uint8ArrayWithTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_0200
      * @tc.name testUint8ArrayWith002
-     * @tc.desc Verify with with index=-5 throws IndexOutOfBoundsError for negative index on length 5 array
+     * @tc.desc Verify with with index=-5 wraps to valid index for negative index on length 5 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -70,12 +70,8 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(1, 2, 3, 4, 5);
       const val: byte = 100;
-      try {
-        arr.with(-5, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-5, val);
+      expect(arr2[0]).assertEqual(100);
     });
 
     /**
@@ -126,7 +122,7 @@ export default function Uint8ArrayWithTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_0600
      * @tc.name testUint8ArrayWith006
-     * @tc.desc Verify with with index=-1 throws IndexOutOfBoundsError for negative index on length 3 array
+     * @tc.desc Verify with with index=-1 wraps to valid index for negative index on length 3 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -134,18 +130,14 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(1, 2, 3);
       const val: short = 150;
-      try {
-        arr.with(-1, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-1, val);
+      expect(arr2[2]).assertEqual(150);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_0700
      * @tc.name testUint8ArrayWith007
-     * @tc.desc Verify with with index=-3 throws IndexOutOfBoundsError for negative index on length 3 array
+     * @tc.desc Verify with with index=-3 wraps to valid index for negative index on length 3 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -153,12 +145,8 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(1, 2, 3);
       const val: byte = 50;
-      try {
-        arr.with(-3, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-3, val);
+      expect(arr2[0]).assertEqual(50);
     });
 
     /**
@@ -195,7 +183,7 @@ export default function Uint8ArrayWithTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_1000
      * @tc.name testUint8ArrayWith010
-     * @tc.desc Verify with with index=-1 negative index replacing last element of length 100 array
+     * @tc.desc Verify with with index=-1 wraps to valid index for negative index on length 100 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -203,18 +191,14 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array(100);
       const val: byte = 127;
-      try {
-        arr.with(-1, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-1, val);
+      expect(arr2[99]).assertEqual(127);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_1100
      * @tc.name testUint8ArrayWith011
-     * @tc.desc Verify with with index=-100 negative index replacing first element of length 100 array
+     * @tc.desc Verify with with index=-100 wraps to valid index for negative index on length 100 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -222,12 +206,8 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array(100);
       const val: short = 128;
-      try {
-        arr.with(-100, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-1, val);
+      expect(arr2[99]).assertEqual(128);
     });
 
     /**
@@ -648,7 +628,7 @@ export default function Uint8ArrayWithTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_3900
      * @tc.name testUint8ArrayWith039
-     * @tc.desc Verify with with index=-1 throws IndexOutOfBoundsError for negative index
+     * @tc.desc Verify with with index=-1 wraps to valid index for negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -656,18 +636,14 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(10, 20, 30);
       const val: byte = 99;
-      try {
-        arr.with(-1, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-1, val);
+      expect(arr2[2]).assertEqual(99);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_WITH01_4000
      * @tc.name testUint8ArrayWith040
-     * @tc.desc Verify with with index=-3 throws IndexOutOfBoundsError for negative index
+     * @tc.desc Verify with with index=-3 wraps to valid index for negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -675,12 +651,8 @@ export default function Uint8ArrayWithTest(): void {
     it('testUint8ArrayWith040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(10, 20, 30);
       const val: byte = 99;
-      try {
-        arr.with(-3, val);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      let arr2 = arr.with(-3, val);
+      expect(arr2[0]).assertEqual(99);
     });
 
     /**
@@ -939,7 +911,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(3, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -958,7 +930,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(4, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -977,7 +949,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(-4, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -996,7 +968,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(-6, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1015,7 +987,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(5, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1034,7 +1006,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(6, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1053,7 +1025,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(1, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1072,7 +1044,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(-2, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1091,7 +1063,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(100, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1110,7 +1082,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(101, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1129,7 +1101,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(-101, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1149,7 +1121,7 @@ export default function Uint8ArrayWithTest(): void {
         view.with(3, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1169,7 +1141,7 @@ export default function Uint8ArrayWithTest(): void {
         view.with(4, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1189,7 +1161,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(3, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1209,7 +1181,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(999, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1228,7 +1200,7 @@ export default function Uint8ArrayWithTest(): void {
         arr.with(-9999, val);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

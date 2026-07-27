@@ -698,8 +698,9 @@ export default function MethodIsAbstractTest(): void {
          * @tc.level Level 2
          */
         it('testMethodIsAbstract031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = findIsAbstractMethod(Type.from<IsAbstractGenericImpl>() as ClassType, "getItem");
-            expect(method.isAbstract()).assertFalse();
+            const cls = Class.from<IsAbstractGenericImpl>();
+            const method = cls.getInstanceMethod("getItem");
+            expect(method!.isAbstract()).assertFalse();
         });
 
         /**

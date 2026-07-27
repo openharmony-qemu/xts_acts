@@ -1323,7 +1323,7 @@ export default function Uint8ArrayTotal03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL03_0870
      * @tc.name testUint8ArrayTotal087
-     * @tc.desc Verify with with index -6 equals -length-1 throws IndexOutOfBoundsError
+     * @tc.desc Verify with with index -6 equals -length-1 throws RangeError
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1334,14 +1334,14 @@ export default function Uint8ArrayTotal03Test(): void {
         arr.with(-6, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL03_0880
      * @tc.name testUint8ArrayTotal088
-     * @tc.desc Verify with with index 5 equals length throws IndexOutOfBoundsError
+     * @tc.desc Verify with with index 5 equals length throws RangeError
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1352,14 +1352,14 @@ export default function Uint8ArrayTotal03Test(): void {
         arr.with(5, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL03_0890
      * @tc.name testUint8ArrayTotal089
-     * @tc.desc Verify with with index 6 equals length+1 throws IndexOutOfBoundsError
+     * @tc.desc Verify with with index 6 equals length+1 throws RangeError
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1370,14 +1370,14 @@ export default function Uint8ArrayTotal03Test(): void {
         arr.with(6, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL03_0900
      * @tc.name testUint8ArrayTotal090
-     * @tc.desc Verify with with large positive index 100000 throws IndexOutOfBoundsError
+     * @tc.desc Verify with with large positive index 100000 throws RangeError
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1388,14 +1388,14 @@ export default function Uint8ArrayTotal03Test(): void {
         arr.with(100000, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL03_0910
      * @tc.name testUint8ArrayTotal091
-     * @tc.desc Verify with with large negative index -100000 throws IndexOutOfBoundsError
+     * @tc.desc Verify with with large negative index -100000 throws RangeError
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1406,7 +1406,7 @@ export default function Uint8ArrayTotal03Test(): void {
         arr.with(-100000, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
