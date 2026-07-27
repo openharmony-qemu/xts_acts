@@ -39,12 +39,14 @@ constexpr int MODE_APPEND = 3;
 constexpr int MODE_CREAT = 4;
 constexpr int MODE_LARGEFILE = 5;
 constexpr int MODE_TRUNC = 6;
-constexpr int mode1 = 1;
-constexpr int mode2 = 2;
-constexpr int mode3 = 3;
-constexpr int mode4 = 4;
-constexpr int mode5 = 5;
-constexpr int mode6 = 6;
+constexpr int MODE1 = 1;
+constexpr int MODE2 = 2;
+constexpr int MODE3 = 3;
+constexpr int MODE4 = 4;
+constexpr int MODE5 = 5;
+constexpr int MODE6 = 6;
+constexpr int DIR_MODE = 0775;
+constexpr int ARG_COUNT_2 = 2;
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CFuseTestCpp"
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -80,9 +82,9 @@ static int32_t GetPathFromUri(const std::string &uri, std::string &path)
 
 static int32_t ParseOpenArgs(napi_env env, napi_callback_info info, std::string &uri, int32_t &mode)
 {
-    napi_value argValue[2] = {0};
-    size_t argCount = 2;
-    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < 2 ||
+    napi_value argValue[ARG_COUNT_2] = {0};
+    size_t argCount = ARG_COUNT_2;
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < ARG_COUNT_2 ||
         argValue[0] == nullptr || argValue[1] == nullptr) {
         LOGE("OpenTest napi_get_cb_info failed");
         return -1;
@@ -98,13 +100,14 @@ static int32_t DoOpenFile(const std::string &path, int32_t mode)
 {
     int flags = O_EXCL;
     switch (mode) {
-        case 0: flags = O_RDONLY; break;
-        case 1: flags = O_RDWR; break;
-        case 2: flags = O_WRONLY; break;
-        case 3: flags = O_APPEND; break;
-        case 4: flags = O_CREAT; break;
-        case mode5: flags = O_LARGEFILE; break;
-        case mode6: flags = O_TRUNC; break;
+        case MODE_RDONLY: flags = O_RDONLY; break;
+        case MODE1: flags = O_RDWR; break;
+        case MODE2: flags = O_WRONLY; break;
+        case MODE3: flags = O_APPEND; break;
+        case MODE4: flags = O_CREAT; break;
+        case MODE5: flags = O_LARGEFILE; break;
+        case MODE6: flags = O_TRUNC; break;
+        default: flags = O_EXCL; break;
     }
     int fd = open(path.c_str(), flags);
     LOGE("OpenTest: open fd = %{public}d", fd);
@@ -172,7 +175,7 @@ napi_value Test_Create_Dir(napi_env env, napi_callback_info info)
     std::string newDirPath = newPath + "newDir";
     int ret = -1;
     if (mode == MODE_RDONLY) {
-        ret = mkdirat(AT_FDCWD, newDirPath.c_str(), 0775);
+        ret = mkdirat(AT_FDCWD, newDirPath.c_str(), DIR_MODE);
     } else {
         ret = mkdir(newDirPath.c_str(), S_IRWXG);
     }
@@ -281,13 +284,13 @@ napi_value Test_Access(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     int ret = -1;
-    if (mode == mode1) {
+    if (mode == MODE1) {
         ret = access(path.c_str(), R_OK);
-    } else if (mode == mode2) {
+    } else if (mode == MODE2) {
         ret = access(path.c_str(), W_OK);
-    } else if (mode == mode3) {
+    } else if (mode == MODE3) {
         ret = access(path.c_str(), X_OK);
-    } else if (mode == mode4) {
+    } else if (mode == MODE4) {
         ret = access(path.c_str(), F_OK);
     }
     napi_value flag;
