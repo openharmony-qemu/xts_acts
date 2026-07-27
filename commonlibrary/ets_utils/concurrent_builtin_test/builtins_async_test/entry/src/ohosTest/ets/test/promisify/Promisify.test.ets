@@ -3113,9 +3113,10 @@ const instance: WrapperDecoratorClass = new WrapperDecoratorClass();
         try {
           const result: string[] = await promisified();
           console.info(`testErrorFirstUndefined19400 result: ${JSON.stringify(result)}`);
-          expect(true).assertTrue();
+          expect(result[0]).assertEqual('success-undefined-error');
         } catch (error) {
           console.info(`testErrorFirstUndefined19400 caught error: ${error}`);
+          expect(false).assertFail();
         }
         console.info('testErrorFirstUndefined19400 end');
         done();
@@ -3136,9 +3137,10 @@ const instance: WrapperDecoratorClass = new WrapperDecoratorClass();
         try {
           const result: (string | undefined)[] = await promisified();
           console.info(`testReturnValueUndefined19500 result: ${JSON.stringify(result)}`);
-          expect(true).assertTrue();
+          expect(result[0]).assertEqual(undefined);
         } catch (error) {
           console.info(`testReturnValueUndefined19500 error: ${error}`);
+          expect(false).assertFail();
         }
         console.info('testReturnValueUndefined19500 end');
         done();
@@ -3158,10 +3160,11 @@ const instance: WrapperDecoratorClass = new WrapperDecoratorClass();
         const promisified = util.promisify(bigIntCallback);
         try {
           const result: bigint[] = await promisified(100n);
-          console.info(`testBigIntParam19600 result: ${JSON.stringify(result)}`);
-          expect(true).assertTrue();
+          console.info(`testBigIntParam19600 result: ${result}`);
+          expect(result[0]).assertEqual(200n);
         } catch (error) {
           console.info(`testBigIntParam19600 error: ${error}`);
+          expect(false).assertFail();
         }
         console.info('testBigIntParam19600 end');
         done();
