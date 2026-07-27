@@ -703,11 +703,6 @@ export default function WindowKeyBoardTest() {
                     expect(keyboardInfo.config?.duration).assertLarger(0);
                     expect(keyboardInfo.config?.param != null).assertTrue();
                     mainWindow.offKeyboardWillShow();
-                    driver.pressBack().then(() => {
-                        Utils.msSleep(500).then(() => {
-                            done();
-                        });
-                    });
                 };
                 
                 mainWindow.onKeyboardWillShow(callback);
@@ -717,6 +712,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(1000);
                 await input?.click();
                 hilog.info(domain, tag, '%{public}s', msgStr + 'click success: ' + JSON.stringify(input));
+                await Utils.msSleep(500);
+                await driver.pressBack();
                 await Utils.msSleep(500);
                 if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
                     expect(count).assertEqual(1);
@@ -791,9 +788,6 @@ export default function WindowKeyBoardTest() {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
                     mainWindow.offKeyboardWillShow();
-                    driver.pressBack().then(() => {
-                        Utils.msSleep(500);
-                    });
                 };
                 mainWindow.onKeyboardWillShow(callback1);
                 
@@ -824,6 +818,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(1000);
                 await input?.click();
                 hilog.info(domain, tag, '%{public}s', msgStr + 'click success: ' + JSON.stringify(input));
+                await Utils.msSleep(500);
+                await driver.pressBack();
                 await Utils.msSleep(500);
                 if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
                     expect(count).assertEqual(1);
@@ -911,11 +907,6 @@ export default function WindowKeyBoardTest() {
                     expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
                     expect(keyboardInfo.endRect.height).assertLarger(0);
                     mainWindow.offKeyboardDidShow();
-                    driver.pressBack().then(() => {
-                        Utils.msSleep(500).then(() => {
-                            done();
-                        });
-                    });
                 };
                 
                 mainWindow.onKeyboardDidShow(callback1);
@@ -924,6 +915,9 @@ export default function WindowKeyBoardTest() {
                 let input = await driver.findComponent(ON.id('textInput'));
                 await Utils.msSleep(1000);
                 await input?.click();
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
                 if (deviceType === 'phone' || deviceType === 'tablet') {
                     expect(count).assertEqual(1);
                 } else {
@@ -968,11 +962,6 @@ export default function WindowKeyBoardTest() {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
                     mainWindow.offKeyboardDidShow();
-                    Utils.msSleep(1000).then(() => {
-                        driver.pressBack().then(() => {
-                            Utils.msSleep(500);
-                        });
-                    });
                 };
                 const callback = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo2: ' + JSON.stringify(keyboardInfo));
@@ -996,6 +985,9 @@ export default function WindowKeyBoardTest() {
                 let input = await driver.findComponent(ON.id('textInput'));
                 await Utils.msSleep(1000);
                 await input?.click();
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
                 if (deviceType === 'phone' || deviceType === 'tablet') {
                     expect(count).assertEqual(1);
                 } else {
