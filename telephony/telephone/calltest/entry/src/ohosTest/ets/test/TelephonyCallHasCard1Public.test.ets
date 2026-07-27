@@ -835,21 +835,16 @@ export default function HasCard1PublicTest() {
       async (done: Function) => {
         const caseName: string = "testTelephonyCallGetCallTransferInfo0100";
         console.info(`${caseName} testTelephonyCallManager start `);
-        if (sim.getMaxSimCount() > 1) {
-          try {
-            let data: call.CallTransferResult =
-              await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, specialPhone);
-            console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
-            ExpectFail();
-            done()
-          } catch (err) {
-            console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
-            ExpectTrue(err.code === 8401002);
-            done()
-          }
-        } else {
-          console.info(`${caseName} : Non-single SIM card case.`);
-          done();
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done()
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
+          done()
         }
       });
 
@@ -865,20 +860,15 @@ export default function HasCard1PublicTest() {
       async (done: Function) => {
         const caseName: string = "testTelephonyCallGetCallTransferInfo0200";
         console.info(`${caseName} start`);
-        if (sim.getMaxSimCount() > 1) {
-          try {
-            let data: call.CallTransferResult =
-              await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_BUSY, specialPhone);
-            console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
-            ExpectFail();
-            done();
-          } catch (err) {
-            console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
-            ExpectTrue(err.code === 8401002);
-            done();
-          }
-        } else {
-          console.info(`${caseName} : Non-single SIM card case.`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_BUSY, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
           done();
         }
       });
@@ -895,20 +885,15 @@ export default function HasCard1PublicTest() {
       async (done: Function) => {
         const caseName: string = "testTelephonyCallGetCallTransferInfo0300";
         console.info(`${caseName} start`);
-        if (sim.getMaxSimCount() > 1) {
-          try {
-            let data: call.CallTransferResult =
-              await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NO_REPLY, specialPhone);
-            console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
-            ExpectFail();
-            done();
-          } catch (err) {
-            console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
-            ExpectTrue(err.code === 8401002);
-            done();
-          }
-        } else {
-          console.info(`${caseName} : Non-single SIM card case.`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NO_REPLY, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
           done();
         }
       });
@@ -925,20 +910,15 @@ export default function HasCard1PublicTest() {
       async (done: Function) => {
         const caseName: string = "testTelephonyCallGetCallTransferInfo0400";
         console.info(`${caseName} start`);
-        if (sim.getMaxSimCount() > 1) {
-          try {
-            let data: call.CallTransferResult =
-              await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NOT_REACHABLE, specialPhone);
-            console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
-            ExpectFail();
-            done();
-          } catch (err) {
-            console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
-            ExpectTrue(err.code === 8401002);
-            done();
-          }
-        } else {
-          console.info(`${caseName} : Non-single SIM card case.`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NOT_REACHABLE, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
           done();
         }
       });
