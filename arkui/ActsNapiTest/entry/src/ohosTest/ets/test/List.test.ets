@@ -15,6 +15,7 @@
 import bufferTest from './NapiBuffer.test';
 import dataTest from './NapiData.test';
 import stringTest from './NapiString.test';
+import complexScenariosTest from './napiComplexScenarios.test';
 import napiCallbackRiskLifecycleTest from './NapiCallbackRisk/NapiCallbackRiskLifecycle.test';
 import napiCallbackRiskFinalizerTest from './NapiCallbackRisk/NapiCallbackRiskFinalizer.test';
 import napiCallbackRiskAsyncTest from './NapiCallbackRisk/NapiCallbackRiskAsync.test';
@@ -32,6 +33,7 @@ export default function testsuite() {
   bufferTest();
   dataTest();
   stringTest();
+  complexScenariosTest();
 
   napiCallbackRiskLifecycleTest();
   napiCallbackRiskFinalizerTest();

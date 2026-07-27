@@ -22,6 +22,9 @@ target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so)
 add_library(napiString SHARED ./napi/napiString.cpp)
 target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so)
 
+add_library(napiComplexScenarios SHARED ./napi/napiComplexScenarios.cpp)
+target_link_libraries(napiComplexScenarios PUBLIC securec libace_napi.z.so libuv.so)
+
 # napi callback risk probe library
 add_library(napicallbackriskndktest SHARED
     napicallbackrisk/callback_risk_init.cpp
