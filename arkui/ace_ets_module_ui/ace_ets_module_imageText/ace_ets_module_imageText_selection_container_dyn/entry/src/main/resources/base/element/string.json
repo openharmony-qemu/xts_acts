@@ -102,7 +102,7 @@
     },
     {
       "name": "fontFamily",
-      "value": "HarmonyOS Sans"
+      "value": "sans-serif"
     },
     {
       "name": "lineHeight",
