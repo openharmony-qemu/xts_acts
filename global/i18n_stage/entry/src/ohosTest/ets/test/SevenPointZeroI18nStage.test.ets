@@ -4031,5 +4031,157 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0400
+     * @tc.desc test SymbolDateTimeFormat parse with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_1900', Level.LEVEL3, () => {
+      try {
+        let locale = new Intl.Locale("zh-CN");
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+        let text: string = symbolFormat.format(date);
+        let result: number = symbolFormat.parse(text, null);
+        console.log('test_SymbolDateTimeFormat_1900 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1900 catch error:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_2000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0400
+     * @tc.desc test SymbolDateTimeFormat parse with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_2000', Level.LEVEL3, () => {
+      try {
+        let locale = new Intl.Locale("zh-CN");
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+        let text: string = symbolFormat.format(date);
+        let result: number = symbolFormat.parse(text, undefined);
+        console.log('test_SymbolDateTimeFormat_2000 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_2000 catch error:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1600
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0100
+     * @tc.desc locale:zh-CN, lenientMode:null, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1600', Level.LEVEL3, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = '135,000 km/h';
+        let result: number = symbolFormat.parse(text, null);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1600 result:' + result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1600 catch error:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1700
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0100
+     * @tc.desc locale:zh-CN, lenientMode:undefined, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1700', Level.LEVEL3, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = '135,000 km/h';
+        let result: number = symbolFormat.parse(text, undefined);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1700 result:' + result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1700 catch error:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_2100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0100
+     * @tc.desc test SymbolDateTimeFormat with empty locale param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_2100', Level.LEVEL3, () => {
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ['AM', 'PM'] };
+      let symbolFormat = new i18n.SymbolDateTimeFormat(undefined, customSymbol);
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolDateTimeFormat_2100 result:', options.amPMSymbol);
+      expect(options.amPMSymbol?.toString() == "AM,PM").assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_2200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0100
+     * @tc.desc test SymbolDateTimeFormat with empty param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_2200', Level.LEVEL3, () => {
+      let symbolFormat = new i18n.SymbolDateTimeFormat();
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolDateTimeFormat_2200 result:', options.amPMSymbol);
+      expect(options.amPMSymbol?.toString() !== null).assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3800
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1100
+     * @tc.desc test SymbolNumberFormat with empty locale param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolNumberFormat_3800', Level.LEVEL3, () => {
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
+      let symbolFormat = new i18n.SymbolNumberFormat(undefined, customSymbol);
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolNumberFormat_3800 result:', options.zero);
+      expect(options.zero === 'B').assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1100
+     * @tc.desc test SymbolNumberFormat with empty param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolNumberFormat_3900', Level.LEVEL3, () => {
+      let symbolFormat = new i18n.SymbolNumberFormat();
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolNumberFormat_3900 result:', options.zero);
+      expect(options.zero === '0').assertTrue();
+    })
+
   })
 }
