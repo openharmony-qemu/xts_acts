@@ -17,6 +17,8 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import * as commonParameter from './common_parameter';
 import certManager from '@ohos.security.certManager';
 import deviceInfo from '@ohos.deviceInfo';
+import { Driver, ON } from '@ohos.UiTest'
+import certManagerDialog from '@ohos.security.certManagerDialog';
 
 async function getClientAppUid(): Promise<string> {
   try {
@@ -56,5 +58,25 @@ function isOpenHarmonyDevice(): Boolean {
   }
 }
 
+function openCertificateManagerDialogTest(context: Context,
+  pageType: certManagerDialog.CertificateDialogPageType): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    try {
+      certManagerDialog.openCertificateManagerDialog(context,pageType).then(()=>{
+        resolve();
+      }).catch((err: BusinessError)=>{
+        reject(err)
+      })
+      setTimeout(async()=>{
+        let driver = Driver.create();
+        let closeButton = await driver.findComponent(ON.type("SymbolGlyph").isAfter(ON.type("Button")));
+        await closeButton.click();
+      }, 2000)
+    } catch (err) {
+      reject(err)
+    }
+  })
+}
 
-export { getClientAppUid, installPrivateCertificates, isOpenHarmonyDevice }
+
+export { getClientAppUid, installPrivateCertificates, isOpenHarmonyDevice, openCertificateManagerDialogTest }
