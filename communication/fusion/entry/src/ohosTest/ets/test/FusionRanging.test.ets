@@ -786,5 +786,89 @@ export default function RangingTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTATE_0100
+     * @tc.number SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTATE_0100
+     * @tc.desc   Test RangingState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        let RANGING_STOPPED: number = ranging.RangingState.RANGING_STOPPED;
+        console.info("[fusion_js]RangingState RANGING_STOPPED: " + RANGING_STOPPED);
+        expect(RANGING_STOPPED).assertEqual(0);
+
+        let RANGING_STARTED: number = ranging.RangingState.RANGING_STARTED;
+        console.info("[fusion_js]RangingState RANGING_STARTED: " + RANGING_STARTED);
+        expect(RANGING_STARTED).assertEqual(1);
+      } catch (err) {
+        console.info("fusion RangingState errCode:" + err.code + ",fusion RangingState errMessage:" + err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTOPPEDCAUSE_0100
+     * @tc.number SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTOPPEDCAUSE_0100
+     * @tc.desc   Test RangingStoppedCause enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_FUSION_RANGING_RANGINGSTOPPEDCAUSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        let NO_ERROR: number = ranging.RangingStoppedCause.NO_ERROR;
+        console.info("[fusion_js]RangingStoppedCause NO_ERROR: " + NO_ERROR);
+        expect(NO_ERROR).assertEqual(0);
+
+        let INTERNAL_ERROR: number = ranging.RangingStoppedCause.INTERNAL_ERROR;
+        console.info("[fusion_js]RangingStoppedCause INTERNAL_ERROR: " + INTERNAL_ERROR);
+        expect(INTERNAL_ERROR).assertEqual(1);
+
+        let BUSINESS_CONFLICT: number = ranging.RangingStoppedCause.BUSINESS_CONFLICT;
+        console.info("[fusion_js]RangingStoppedCause BUSINESS_CONFLICT: " + BUSINESS_CONFLICT);
+        expect(BUSINESS_CONFLICT).assertEqual(2);
+
+        let BACKGROUND_PAUSED: number = ranging.RangingStoppedCause.BACKGROUND_PAUSED;
+        console.info("[fusion_js]RangingStoppedCause BACKGROUND_PAUSED: " + BACKGROUND_PAUSED);
+        expect(BACKGROUND_PAUSED).assertEqual(3);
+      } catch (err) {
+        console.info("fusion RangingStoppedCause errCode:" + err.code + ",fusion RangingStoppedCause errMessage:" + err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_FUSION_RANGING_RANGINGCONFIDENCE_0100
+     * @tc.number SUB_COMMUNICATION_FUSION_RANGING_RANGINGCONFIDENCE_0100
+     * @tc.desc   Test RangingConfidence enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_FUSION_RANGING_RANGINGCONFIDENCE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        let HIGH: number = ranging.RangingConfidence.HIGH;
+        console.info("[fusion_js]RangingConfidence HIGH: " + HIGH);
+        expect(HIGH).assertEqual(0);
+
+        let MEDIUM: number = ranging.RangingConfidence.MEDIUM;
+        console.info("[fusion_js]RangingConfidence MEDIUM: " + MEDIUM);
+        expect(MEDIUM).assertEqual(1);
+
+        let LOW: number = ranging.RangingConfidence.LOW;
+        console.info("[fusion_js]RangingConfidence LOW: " + LOW);
+        expect(LOW).assertEqual(2);
+      } catch (err) {
+        console.info("fusion RangingConfidence errCode:" + err.code + ",fusion RangingConfidence errMessage:" + err.message);
+        expect().assertFail();
+      }
+      done();
+    })
   });
 }
