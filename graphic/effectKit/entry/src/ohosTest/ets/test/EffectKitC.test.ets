@@ -1588,7 +1588,7 @@ export default function effectKitCTest() {
         }
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         try {
-          effectKit.createEffect(pixelMap).getEffectPixelMap(null);
+          effectKit.createEffect(pixelMap).getEffectPixelMap(undefined);
           console.info(msgStr + ' setTextHighContrast success ');
           done();
         } catch (err) {
