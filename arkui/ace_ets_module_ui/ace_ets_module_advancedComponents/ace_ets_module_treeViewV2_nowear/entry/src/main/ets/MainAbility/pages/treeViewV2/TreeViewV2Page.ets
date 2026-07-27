@@ -277,6 +277,7 @@ struct TreeViewV2Demo {
         primaryTitle: 'Container Node',
         container: this.customContainer
       })
+      .addNode(undefined)
       .buildDone();
 
     this.treeControllerV2.refreshNode(-1, '父节点', '子节点');
