@@ -1,0 +1,44 @@
+{
+    "description": "Configuration for hjunit demo Tests",
+    "driver": {
+        "type": "ValidatorTest",
+        "bundle-name": "com.example.iotcvalidator",
+        "package-name": "com.example.iotcvalidator",
+        "xml_path": "/data/app/el2/100/base/com.example.iotcvalidator/haps/entry/files/IOT/IOTConfigTest.xml"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "iotc_validator.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": false
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "hilog -Q pidoff"
+            ]
+        },
+        {
+            "type": "CommandKit",
+            "shell": [
+                {
+                    "name": "shell",
+                    "value": "aa start -a MainAbility -b com.example.iotcvalidator"
+                }
+            ]
+        },
+        {
+            "type": "PushKit",
+            "push": [
+            ],
+            "uninstall": false
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+            ]
+        }
+    ]
+}
