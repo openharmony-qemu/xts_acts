@@ -3262,5 +3262,41 @@ export default function ActsUIExtensionContextMethodTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_1000
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType_1000
+     * @tc.desc   Test Parameters of isContextOf is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType_1000', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType_1000";
+      console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1000] start ');
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let result = testAbilityContext.isContextOf(undefined);
+      console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1000] result ' + result);
+      expect(result).assertFalse()
+      done()
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_1100
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType_1100
+     * @tc.desc   Test Parameters of isContextOf is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType_1100', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType_1100";
+      console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1100] start ');
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let result = testAbilityContext.isContextOf(null);
+      console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1100] result ' + result);
+      expect(result).assertFalse()
+      done()
+    });
+
   })
 }

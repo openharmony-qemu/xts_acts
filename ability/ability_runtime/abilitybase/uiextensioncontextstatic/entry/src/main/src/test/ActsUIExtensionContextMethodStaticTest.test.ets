@@ -778,6 +778,5 @@ export default function ActsUIExtensionContextMethodStaticTest() {
       done();
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
     });
-
   })
 }
