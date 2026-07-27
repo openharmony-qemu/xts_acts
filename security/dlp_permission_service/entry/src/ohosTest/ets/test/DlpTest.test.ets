@@ -3809,14 +3809,14 @@ export default function dlpTest() {
         done();
       })
 
-/**
-      * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_17_0100
-      * @tc.number SUB_Security_DataSecurity_DLP_errorCode_17_0100
-      * @tc.desc   test accounttype ActionType
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_17_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_17_0100
+     * @tc.desc   test accounttype ActionType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Security_DataSecurity_DLP_errorCode_17_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         console.info("SUB_Security_DataSecurity_DLP_errorCode_17_0100: started.");
@@ -3829,13 +3829,13 @@ export default function dlpTest() {
       })
 
     /**
-      * @tc.name   testProcessPluginCommand001
-      * @tc.number Test_processPluginCommand_001
-      * @tc.desc   call processPluginCommand with CMD_EVENT_REPORT_COMMON, return error code 19100011
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
+     * @tc.name   testProcessPluginCommand001
+     * @tc.number Test_processPluginCommand_001
+     * @tc.desc   call processPluginCommand with CMD_EVENT_REPORT_COMMON, return error code 19100011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testProcessPluginCommand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let curTag = TAG + "Test_processPluginCommand_001";
