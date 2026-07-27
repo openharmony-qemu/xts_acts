@@ -8,6 +8,9 @@ import PhotoOutputToStaticTest from "./PhotoOutput/PhotoOutput.test";
 import CameraDeviceStaticTest from "./cameraDevice/CameraDeviceTest.test";
 import CameraEnumStaticTest from "./CameraEnum.test";
 import MetadataOutputStaticTest from "./MetadataOutput/MetadataOutput.test";
+import ApertureTest from "./cameraPhotoSession/Aperture.test";
+import ApertureQueryGetSupportedPhysicalAperturesTest
+  from "./cameraPhotoSession/ApertureQueryGetSupportedPhysicalApertures.test";
 
 export default function testsuite() {
   cameraNoPermissionStaticTest();
@@ -19,4 +22,6 @@ export default function testsuite() {
   CameraDeviceStaticTest();
   CameraEnumStaticTest();
   MetadataOutputStaticTest();
+  ApertureTest();
+  ApertureQueryGetSupportedPhysicalAperturesTest();
 }
