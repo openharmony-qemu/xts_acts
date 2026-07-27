@@ -70,10 +70,10 @@ export default function MessageTest(): void {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler);
           message.sendToTarget();
@@ -115,11 +115,11 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               console.log("worker one message");
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker)
           let msg1 = new concurrency.Message(0, handler);
           let msg2 = new concurrency.Message(1, handler);
@@ -175,11 +175,11 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               console.log("worker one message");
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, handler);
           handler.sendMessage(msg);
@@ -219,11 +219,11 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               console.log("worker one message");
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let msg = new concurrency.Message(1, handler);
           handler.sendMessage(msg);
@@ -263,12 +263,12 @@ export default function MessageTest(): void {
         worker.start();
         try {
           const m = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               const cb = msg.getCallback()!;
               cb();
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           const msg = new concurrency.Message(() => {
             executed = true;
@@ -313,12 +313,12 @@ export default function MessageTest(): void {
         worker.start();
         try {
           const m = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               const cb = msg.getCallback()!;
               cb();
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           const asyncTask = () => {
             setTimeout(() => {
@@ -419,10 +419,10 @@ export default function MessageTest(): void {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(handler);
           message.sendToTarget();
@@ -462,12 +462,12 @@ export default function MessageTest(): void {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               console.info('MessageConstructor009--00')
               await Sleep(1000);
               flag = true;
               console.info('MessageConstructor009--01', flag)
-            })
+            })().awaitSync()
           }, worker);
           console.info('MessageConstructor009--0', handler)
           let message = new concurrency.Message(handler);
@@ -511,10 +511,10 @@ export default function MessageTest(): void {
         try {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(0, handler);
           handler.sendMessage(message);
@@ -555,11 +555,11 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               console.log("worker one message");
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           console.info('MessageConstructor011--0', handler)
           let msg = new concurrency.Message(0, handler);
@@ -677,10 +677,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -728,10 +728,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.post(p);
@@ -778,10 +778,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let msg = new concurrency.Message(handler)
           expect(handler.hasCallbacks(p)).assertEqual(false);
@@ -824,10 +824,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -875,10 +875,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -926,10 +926,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -977,10 +977,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -1028,10 +1028,10 @@ export default function MessageTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
           let message2 = new concurrency.Message(q, handler)
@@ -1068,10 +1068,10 @@ export default function MessageTest(): void {
         let handler: concurrency.MessageHandler;
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           await Sleep(1500);
@@ -1109,10 +1109,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1149,9 +1149,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(2000);
-            })
+            Sleep(2000).awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1185,7 +1183,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted = true;
                 const end = Date.now() + 1000;
@@ -1197,7 +1195,7 @@ export default function MessageTest(): void {
                 await Sleep(1000);
                 flag = true;
               }
-            })
+            })().awaitSync()
           }, worker);
           let blockMsg = new concurrency.Message(0, handler)
           blockMsg.sendToTarget();
@@ -1239,9 +1237,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(2000);
-            })
+            Sleep(2000).awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1280,10 +1276,10 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
@@ -1321,7 +1317,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted = true;
                 const end = Date.now() + 1000;
@@ -1332,7 +1328,7 @@ export default function MessageTest(): void {
               if (msg.getWhat() == 1) {
                 await Sleep(2000);
               }
-            })
+            })().awaitSync()
           }, worker);
           let blockMsg = new concurrency.Message(0, handler)
           blockMsg.sendToTarget();
@@ -1375,10 +1371,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -1421,7 +1417,7 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted = true;
                 const end = Date.now() + 1000;
@@ -1432,7 +1428,7 @@ export default function MessageTest(): void {
               if (msg.getWhat() == 1) {
                 await Sleep(2000);
               }
-            })
+            })().awaitSync()
           }, worker);
           let blockMsg = new concurrency.Message(0, handler)
           blockMsg.sendToTarget();
@@ -1475,10 +1471,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -1521,10 +1517,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
@@ -1562,10 +1558,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1606,10 +1602,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -1651,10 +1647,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1695,10 +1691,10 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -1740,10 +1736,10 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(1, messageObject)).assertEqual(false);
@@ -1782,7 +1778,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted = true;
                 const end = Date.now() + 1000;
@@ -1794,7 +1790,7 @@ export default function MessageTest(): void {
                 await Sleep(1000);
                 flag = true;
               }
-            })
+            })().awaitSync()
           }, worker);
           let blockMsg = new concurrency.Message(0, handler)
           blockMsg.sendToTarget();
@@ -1837,9 +1833,7 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(5000);
-            })
+            Sleep(5000).awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
           handler.sendMessage(message);
@@ -1879,7 +1873,7 @@ export default function MessageTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted = true;
                 const end = Date.now() + 1000;
@@ -1891,7 +1885,7 @@ export default function MessageTest(): void {
                 await Sleep(1000);
                 flag = true;
               }
-            })
+            })().awaitSync()
           }, worker);
           let blockMsg = new concurrency.Message(0, handler);
           blockMsg.sendToTarget();
@@ -1934,9 +1928,7 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(5000);
-            })
+            Sleep(5000).awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
           message.sendToTarget();
@@ -1974,10 +1966,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(handler);
           expect(handler.hasMessages(0)).assertEqual(false);
@@ -2013,10 +2005,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -2056,10 +2048,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler);
           handler.sendMessage(message);
@@ -2099,10 +2091,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           handler.sendMessage(message);
@@ -2142,10 +2134,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -2185,10 +2177,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, handler)
           message.sendToTarget();
@@ -2229,10 +2221,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -2273,10 +2265,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(handler);
           handler.sendMessage(message);
@@ -2317,10 +2309,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -2361,10 +2353,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
@@ -2405,10 +2397,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -2449,10 +2441,10 @@ export default function MessageTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
@@ -2492,10 +2484,10 @@ export default function MessageTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           message.sendToTarget();
@@ -2529,10 +2521,10 @@ export default function MessageTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           message.sendToTarget();
@@ -2566,10 +2558,10 @@ export default function MessageTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           message.sendToTarget();
@@ -2603,10 +2595,10 @@ export default function MessageTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -2641,10 +2633,10 @@ export default function MessageTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
+            (async () => {
               await Sleep(1000);
               flag = true;
-            })
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           handler.sendMessage(message);
