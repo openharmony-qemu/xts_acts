@@ -1,0 +1,483 @@
+'use static';
+
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+export default function typedUArraysSetTest04(): void {
+  describe('TypedUArraysSetTest04', (): void => {
+    beforeAll((): void => {
+    });
+
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach((): void => {
+    });
+
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0100
+     * @tc.name testTypedUArraysSet03001
+     * @tc.desc Verify set(source) Uint8Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array(5);
+      const src = new Uint8Array([1, 2, 3, 4, 5]);
+      arr.set(src);
+      const val0 = arr[0];
+      expect(val0).assertEqual(1);
+      const val1 = arr[4];
+      expect(val1).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0200
+     * @tc.name testTypedUArraysSet03002
+     * @tc.desc Verify set(source) Uint16Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array(5);
+      const src = new Uint16Array([10, 20, 30, 40, 50]);
+      arr.set(src);
+      const val2 = arr[0];
+      expect(val2).assertEqual(10);
+      const val3 = arr[4];
+      expect(val3).assertEqual(50);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0300
+     * @tc.name testTypedUArraysSet03003
+     * @tc.desc Verify set(source) Uint32Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array(5);
+      const src = new Uint32Array([100, 200, 300, 400, 500]);
+      arr.set(src);
+      const val4 = arr[0];
+      expect(val4).assertEqual(100);
+      const val5 = arr[4];
+      expect(val5).assertEqual(500);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0400
+     * @tc.name testTypedUArraysSet03004
+     * @tc.desc Verify set(source) Uint8ClampedArray 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(5);
+      const src = new Uint8ClampedArray([255, 128, 0, 10, 5]);
+      arr.set(src);
+      const val6 = arr[0];
+      expect(val6).assertEqual(255);
+      const val7 = arr[2];
+      expect(val7).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0500
+     * @tc.name testTypedUArraysSet03005
+     * @tc.desc Verify set(source) BigUint64Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array(5);
+      const src = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
+      arr.set(src);
+      const val8 = arr[0];
+      expect(val8).assertEqual(1n);
+      const val9 = arr[4];
+      expect(val9).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0600
+     * @tc.name testTypedUArraysSet03006
+     * @tc.desc Verify set(source, offset) Uint8Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array(5);
+      const src = new Uint8Array([1, 2, 3]);
+      arr.set(src, 2);
+      const val10 = arr[0];
+      expect(val10).assertEqual(0);
+      const val11 = arr[2];
+      expect(val11).assertEqual(1);
+      const val12 = arr[4];
+      expect(val12).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0700
+     * @tc.name testTypedUArraysSet03007
+     * @tc.desc Verify set(source, offset) Uint16Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array(5);
+      const src = new Uint16Array([10, 20]);
+      arr.set(src, 3);
+      const val13 = arr[0];
+      expect(val13).assertEqual(0);
+      const val14 = arr[3];
+      expect(val14).assertEqual(10);
+      const val15 = arr[4];
+      expect(val15).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0800
+     * @tc.name testTypedUArraysSet03008
+     * @tc.desc Verify set(source, offset) Uint32Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array(5);
+      const src = new Uint32Array([100, 200]);
+      arr.set(src, 1);
+      const val16 = arr[0];
+      expect(val16).assertEqual(0);
+      const val17 = arr[1];
+      expect(val17).assertEqual(100);
+      const val18 = arr[2];
+      expect(val18).assertEqual(200);
+      const val19 = arr[3];
+      expect(val19).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0900
+     * @tc.name testTypedUArraysSet03009
+     * @tc.desc Verify set(source, offset) Uint8ClampedArray 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(5);
+      const src = new Uint8ClampedArray([255, 0]);
+      arr.set(src, 0);
+      const val20 = arr[0];
+      expect(val20).assertEqual(255);
+      const val21 = arr[1];
+      expect(val21).assertEqual(0);
+      const val22 = arr[2];
+      expect(val22).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1000
+     * @tc.name testTypedUArraysSet03010
+     * @tc.desc Verify set(source, offset) BigUint64Array 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array(5);
+      const src = new BigUint64Array([99n]);
+      arr.set(src, 4);
+      const val23 = arr[0];
+      expect(val23).assertEqual(0n);
+      const val24 = arr[3];
+      expect(val24).assertEqual(0n);
+      const val25 = arr[4];
+      expect(val25).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1100
+     * @tc.name testTypedUArraysSet03011
+     * @tc.desc Verify set(source) Uint8Array Uint8Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([1, 2, 3]);
+      const src = new Uint8Array([10, 20, 30]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10);
+      expect(arr[1]).assertEqual(20);
+      expect(arr[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1200
+     * @tc.name testTypedUArraysSet03012
+     * @tc.desc Verify set(source) Uint8Array array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([0, 0, 0]);
+      arr.set([10, 20, 30]);
+      expect(arr[0]).assertEqual(10);
+      expect(arr[1]).assertEqual(20);
+      expect(arr[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1300
+     * @tc.name testTypedUArraysSet03013
+     * @tc.desc Verify set(source) Uint16Array array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array([0, 0, 0]);
+      arr.set([100, 200, 300]);
+      expect(arr[0]).assertEqual(100);
+      expect(arr[1]).assertEqual(200);
+      expect(arr[2]).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1400
+     * @tc.name testTypedUArraysSet03014
+     * @tc.desc Verify set(source, offset) Uint8Array offset=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([0, 0, 0]);
+      arr.set([1, 2, 3], 0);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1500
+     * @tc.name testTypedUArraysSet03015
+     * @tc.desc Verify set(source, offset) Uint16Array offset=2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array([0, 0, 0, 0]);
+      arr.set([10, 20], 2);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(10);
+      expect(arr[3]).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1600
+     * @tc.name testTypedUArraysSet03016
+     * @tc.desc Verify set(source, offset) Uint32Array offset=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array([0, 0, 0]);
+      arr.set([100, 200, 300], 0);
+      expect(arr[0]).assertEqual(100);
+      expect(arr[1]).assertEqual(200);
+      expect(arr[2]).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1700
+     * @tc.name testTypedUArraysSet03017
+     * @tc.desc Verify set(source, offset) Uint8ClampedArray offset=1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray([0, 0, 0, 0]);
+      arr.set([255, 128], 1);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(255);
+      expect(arr[2]).assertEqual(128);
+      expect(arr[3]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1800
+     * @tc.name testTypedUArraysSet03018
+     * @tc.desc Verify set empty source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([1, 2, 3]);
+      arr.set([]);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1900
+     * @tc.name testTypedUArraysSet03019
+     * @tc.desc Verify set empty TypedArray source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([1, 2, 3]);
+      const src = new Uint8Array(0);
+      arr.set(src);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2000
+     * @tc.name testTypedUArraysSet03020
+     * @tc.desc Verify set Uint8Array source BigUint64Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array([0n, 0n, 0n]);
+      arr.set([1n, 2n, 3n]);
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2100
+     * @tc.name testTypedUArraysSet03021
+     * @tc.desc Verify Uint8ClampedArray saturation behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray([0, 0, 0]);
+      arr.set([-1, 256, 128]);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(255);
+      expect(arr[2]).assertEqual(128);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2200
+     * @tc.name testTypedUArraysSet03022
+     * @tc.desc Verify set Uint8Array boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([0, 0]);
+      arr.set([0, 255]);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2300
+     * @tc.name testTypedUArraysSet03023
+     * @tc.desc Verify set Uint16Array boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array([0, 0]);
+      arr.set([0, 65535]);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2400
+     * @tc.name testTypedUArraysSet03024
+     * @tc.desc Verify set Uint32Array boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array([0, 0]);
+      arr.set([0, 4294967295]);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(4294967295);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2500
+     * @tc.name testTypedUArraysSet03025
+     * @tc.desc Verify set BigUint64Array boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array([0n, 0n]);
+      arr.set([0n, BigInt('18446744073709551615')]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(BigInt('18446744073709551615'));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2600
+     * @tc.name testTypedUArraysSet03026
+     * @tc.desc Verify set BigUint64Array overflow behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysSet03026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array([0n]);
+      arr.set([BigInt('18446744073709551616')]);
+      expect(arr[0]).assertEqual(0n);
+    });
+
+  });
+}
