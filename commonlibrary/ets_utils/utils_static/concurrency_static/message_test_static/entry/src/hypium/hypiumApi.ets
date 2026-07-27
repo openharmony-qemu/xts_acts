@@ -30,7 +30,7 @@ const hypiumDescribe: (desc: string, func: () => void) => void = (desc: string, 
   return getCore().describe(desc, func);
 };
 
-const hypiumIt: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void = (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string): void => {
+const hypiumIt: (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => void = (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string): void => {
   return getCore().it(desc, filter, func, timeout, tag);
 };
 const hypiumBeforeItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
@@ -74,11 +74,11 @@ const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void
     return getCore().xdescribe(desc, func, reason);
   };
 };
-const hypiumXit: (desc: string, filter: int, func: ItfnType) => void = (desc: string, filter: int, func: ItfnType): void => {
+const hypiumXit: (desc: string, filter: number, func: ItfnType) => void = (desc: string, filter: number, func: ItfnType): void => {
   return getCore().xit(desc, filter, func, '');
 };
-const hypiumXitReason: (reason: string) => (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void = (reason: string): (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void => {
-  return (desc: string, filter: int, func: (() => void) | (() => Promise<void>)): void => {
+const hypiumXitReason: (reason: string) => (desc: string, filter: number, func: (() => void) | (() => Promise<void>)) => void = (reason: string): (desc: string, filter: number, func: (() => void) | (() => Promise<void>)) => void => {
+  return (desc: string, filter: number, func: (() => void) | (() => Promise<void>)): void => {
     return getCore().xit(desc, filter, func, reason);
   };
 };

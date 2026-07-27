@@ -34,6 +34,23 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export class Hypium {
+  // Suites are shared by worker id; postTask only captures serializable primitives.
+  private static workerSuiteById: Map<int, () => void> = new Map<int, () => void>();
+
+  private static parseParametersJson(parametersJson: string): Record<string, string> {
+    const result: Record<string, string> = {};
+    const root = JSON.parseJsonElement(parametersJson);
+    for (const entry of root) {
+      const key = entry[0];
+      const valueElem = entry[1];
+      const asString = valueElem.tryAsString();
+      if (asString !== undefined) {
+        result[key] = asString;
+      }
+    }
+    return result;
+  }
+
   public static context: Map<string, AnyType> = new Map<string, AnyType>();
   private static readonly MAX_PARSE_DEPTH: number = 20;
   private static readonly INITIAL_DEPTH: number = 1;
@@ -330,12 +347,20 @@ export class Hypium {
 
   static createEAWorkerPromise(i: int, testsuite: () => void,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs): Promise<TestcaseSummaryIF> {
+    // Capture only serializable primitives into the worker task; look up suite by id.
+    Hypium.workerSuiteById.set(i, testsuite);
+    const workerId: int = i;
+    const bundleName: string = abilityDelegatorArguments.bundleName;
+    const testCaseNames: string = abilityDelegatorArguments.testCaseNames;
+    const testRunnerClassName: string = abilityDelegatorArguments.testRunnerClassName;
+    const parametersJson: string = JSON.stringify(abilityDelegatorArguments.parameters);
     const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>(
       (resolve: (value: TestcaseSummaryIF | PromiseLike<TestcaseSummaryIF>) => void, reject: (reason: Error) => void): void => {
       const worker = new EAWorker(`EAWork_${i}`);
       worker.start();
       worker.setUncaughtExceptionHandler((e: Error): void => {
         // An uncaught exception terminates the worker; do not access the main-thread worker reference here.
+        Hypium.workerSuiteById.delete(workerId);
         hilog.error(domain, tag, `worker error: ${e.message}`);
         reject(e);
       });
@@ -345,6 +370,7 @@ export class Hypium {
       worker.postTask((): void => {
         const current = EAWorker.current();
         if (current === undefined) {
+          Hypium.workerSuiteById.delete(workerId);
           reject(new Error('EAWorker.current() is undefined inside worker task'));
           return;
         }
@@ -362,6 +388,7 @@ export class Hypium {
             return;
           }
           settled = true;
+          Hypium.workerSuiteById.delete(workerId);
           quitLocal();
           resolve(summary);
         };
@@ -370,6 +397,7 @@ export class Hypium {
             return;
           }
           settled = true;
+          Hypium.workerSuiteById.delete(workerId);
           quitLocal();
           reject(err);
         };
@@ -404,8 +432,20 @@ export class Hypium {
         Core.setThreadInstance(core);
         const workerName = localWorker.getName();
         hilog.info(domain, tag, 'Run test in Worker ' + workerName);
+        if (!Hypium.workerSuiteById.has(workerId)) {
+          safeReject(new Error(`worker suite missing for id ${workerId}`));
+          return;
+        }
+        const suite = Hypium.workerSuiteById.get(workerId) as () => void;
+        // Rebuild AbilityDelegatorArgs from serialized primitives on the worker thread.
+        const localArgs: abilityDelegatorRegistry.AbilityDelegatorArgs = {
+          bundleName: bundleName,
+          parameters: Hypium.parseParametersJson(parametersJson),
+          testCaseNames: testCaseNames,
+          testRunnerClassName: testRunnerClassName
+        };
         // Pass null AbilityDelegator: finishTest must stay on the main thread.
-        Hypium.hypiumTest(null, abilityDelegatorArguments, testsuite).then(
+        Hypium.hypiumTest(null, localArgs, suite).then(
           (): void => {
             const coreInst = Core.getInstance();
             if (coreInst === null) {

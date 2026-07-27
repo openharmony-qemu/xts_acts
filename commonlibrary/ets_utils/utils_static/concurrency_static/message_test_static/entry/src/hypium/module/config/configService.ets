@@ -26,7 +26,7 @@ class ConfigService {
   public supportAsync: boolean;
   public random: boolean;
   public filterValid: Array<string>;
-  public filter: int;
+  public filter: number;
   public flag: boolean;
   public suite: string;
   public itName: string;
@@ -386,7 +386,7 @@ class ConfigService {
     return reduce1 || reduce2 || reduce3;
   }
 
-  filterDesc(currentSuiteName: string, desc: string, fi: int): boolean {
+  filterDesc(currentSuiteName: string, desc: string, fi: number): boolean {
     const suiteAndItNameFilterArray = new Array<SuiteAndItNameFilter>();
     const classFilterArray = new Array<ClassFilter>();
     const notClassFilterArray = new Array<NotClassFilter>();
@@ -418,7 +418,7 @@ class ConfigService {
     return suiteAndItNameFilterResult || classFilterResult || notClassFilterResult || testTypesFilterResult;
   }
 
-  filterWithNest(desc: string, filter: int): boolean {
+  filterWithNest(desc: string, filter: number): boolean {
     let filterArray = new Array<TestTypesFilter>();
     const nestFilter = new NestFilter();
     const core = this.coreContext;

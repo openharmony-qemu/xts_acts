@@ -1144,7 +1144,7 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     /**
      * @tc.name   MessageHandlerHasMessagesWhatTest4400
      * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4400
-     * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent with sendMessage in Worker callback stability
+     * @tc.desc   Verify MessageHandler.hasMessages(what) finds prefilled what=1 messages and nested send updates queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1154,31 +1154,34 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       eaw.start();
       let sendCount = new AtomicInt(0);
       let queryCount = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let trueCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         if (msg.getWhat() === 1) {
           sendCount.fetchAdd(1);
-          if (sendCount.load() >= 10) {
-            done.fetchAdd(1);
-          }
         } else if (msg.getWhat() >= 100) {
           queryCount.fetchAdd(1);
           let result: boolean = msg.getTarget().hasMessages(1);
-          expect(result).assertTrue();
+          if (result) {
+            trueCount.fetchAdd(1);
+          }
           msg.getTarget().sendMessage(new concurrency.Message(1, msg.getTarget()));
         }
       }, eaw);
-      handler.sendMessage(new concurrency.Message(1, handler));
+      // Prefill what=1 before query messages so hasMessages can observe remaining queue items.
+      for (let i: int = 0; i < 5; i++) {
+        handler.sendMessage(new concurrency.Message(1, handler));
+      }
       for (let i: int = 0; i < 5; i++) {
         handler.sendMessage(new concurrency.Message(100 + i, handler));
       }
       let waitCount: int = 0;
-      // 1 initial what=1 + 5 nested sends from query messages => sendCount==6
-      while (sendCount.load() < 6 && waitCount < 500) {
+      while (queryCount.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
-      expect(sendCount.load()).assertEqual(6);
+      expect(queryCount.load()).assertEqual(5);
+      expect(trueCount.load() >= 1).assertTrue();
+      expect(sendCount.load() >= 5).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }

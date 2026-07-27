@@ -63,8 +63,8 @@ class Core {
   public afterAll: (func: HookFuncType) => void;
   public afterEach: (func: HookFuncType) => void;
   public afterEachIt: (func: HookFuncType) => void;
-  public it: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
-  public xit: (desc: string, filter: int, func: ItfnType, reason: string) => void;
+  public it: (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => void;
+  public xit: (desc: string, filter: number, func: ItfnType, reason: string) => void;
   public expect: ((actualValue?: AnyType) => AssertMatcher) | null;
   public specEvent: SpecEvent;
   public suiteEvent: SuiteEvent;
@@ -84,8 +84,8 @@ class Core {
     this.afterAll = (func: HookFuncType) => { };
     this.afterEach = (func: HookFuncType) => { };
     this.afterEachIt = (func: HookFuncType) => { };
-    this.it = (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => { };
-    this.xit = (desc: string, filter: int, func: ItfnType, reason: string) => { };
+    this.it = (desc: string, filter: number, func: ItfnType, timeout?: number, tag?: string) => { };
+    this.xit = (desc: string, filter: number, func: ItfnType, reason: string) => { };
     this.expect = null;
     this.specEvent = new SpecEvent({ id: '' });
     this.suiteEvent = new SuiteEvent({ id: '' });

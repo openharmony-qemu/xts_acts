@@ -16,107 +16,78 @@
 
 import { AssertResult } from '../modal/assertModel';
 import { AnyType } from '../types/common';
-import { ArgumentMatchers } from '../mock/ArgumentMatchers';
-import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
-import { ClassValue, reflect } from 'std/core';
 
 const MAX_DEPTH = 10;
 
-function assertMatchObjInternal(actualValue: AnyType, expected: AnyType[], depth: number): AssertResult {
-  const expectedObj = expected[0];
-  let mismatchedFields: string[] = [];
-  let mismatchedDetails: string[] = [];
-
+function matchJsonElement(actual: jsonx.JsonElement, expected: jsonx.JsonElement,
+  path: string, depth: number): string | null {
   if (depth >= MAX_DEPTH) {
-    return {
-      pass: false,
-      message: `maximum recursion depth ${MAX_DEPTH} exceeded`,
-    };
+    return `maximum recursion depth ${MAX_DEPTH} exceeded at ${path}`;
   }
 
+  const expectedArray = expected.tryAsArray();
+  if (expectedArray !== undefined) {
+    const actualArray = actual.tryAsArray();
+    if (actualArray === undefined || actualArray.length !== expectedArray.length) {
+      return `${path}: array length does not match`;
+    }
+    for (let i = 0; i < expectedArray.length; i++) {
+      const mismatch = matchJsonElement(actualArray[i], expectedArray[i], `${path}[${i}]`, depth + 1);
+      if (mismatch !== null) {
+        return mismatch;
+      }
+    }
+    return null;
+  }
+
+  try {
+    for (const entry of expected) {
+      const key = entry[0];
+      const expectedValue = entry[1];
+      const actualValue = actual.tryGetElement(key);
+      if (actualValue === undefined) {
+        return `${path}.${key}: property not found in actual object`;
+      }
+      const mismatch = matchJsonElement(actualValue, expectedValue, `${path}.${key}`, depth + 1);
+      if (mismatch !== null) {
+        return mismatch;
+      }
+    }
+    return null;
+  } catch (e) {
+    const actualText = JSON.stringifyJsonElement(actual);
+    const expectedText = JSON.stringifyJsonElement(expected);
+    return actualText === expectedText ? null : `${path}: actual=${actualText}, expected=${expectedText}`;
+  }
+}
+
+export function assertMatchObj(actualValue: AnyType, expected: AnyType[]): AssertResult {
   if (typeof actualValue !== 'object' || actualValue === null) {
     return {
       pass: false,
       message: 'expect actual value to be an object',
     };
   }
-
-  if (typeof expectedObj !== 'object' || expectedObj === null) {
+  if (expected.length === 0 || typeof expected[0] !== 'object' || expected[0] === null) {
     return {
       pass: false,
       message: 'expect expected value to be an object',
     };
   }
 
-  const expectedKeys = DeepTypeUtils.getAllKeys(expectedObj as object);
-  const actualKeys = DeepTypeUtils.getAllKeys(actualValue as object);
-
-  for (let i = 0; i < expectedKeys.length; i++) {
-    const key = expectedKeys[i];
-    let expectedValue: AnyType = undefined;
-    let actualValueHasKey = false;
-    let actualValueForProperty: AnyType = null;
-
-    try {
-      expectedValue = (reflect.Value.of(expectedObj as object) as ClassValue).getFieldByName(key).getData() as AnyType;
-    } catch (e) {
-      expectedValue = undefined;
-    }
-
-    if (expectedValue === undefined) {
-      continue;
-    }
-
-    try {
-      if (actualKeys.includes(key)) {
-        actualValueHasKey = true;
-        actualValueForProperty = (reflect.Value.of(actualValue as object) as ClassValue).getFieldByName(key).getData() as AnyType;
-      }
-    } catch (e) {
-      actualValueHasKey = false;
-    }
-    if (!actualValueHasKey) {
-      mismatchedFields.push(key);
-      mismatchedDetails.push(`property '${key}' not found in actual object`);
-      continue;
-    }
-
-    let matchResult = false;
-    let matchDetail = '';
-    const matcherKey = ArgumentMatchers.matcheStubKey(expectedValue as Object);
-
-    if (matcherKey !== null) {
-      matchResult = ArgumentMatchers.matcheReturnKey(actualValueForProperty as Object, matcherKey as Object);
-      matchDetail = `${key}: actual=${JSON.stringify(actualValueForProperty)}, expected=matcher(${JSON.stringify(matcherKey)})`;
-    } else if (typeof expectedValue === 'object' && expectedValue !== null && !Array.isArray(expectedValue)) {
-      const nestedMatch = assertMatchObjInternal(actualValueForProperty, [expectedValue as Object], depth + 1);
-      matchResult = nestedMatch.pass;
-      matchDetail = `${key}: ${nestedMatch.message}`;
-    } else {
-      matchResult = actualValueForProperty === expectedValue;
-      matchDetail = `${key}: actual=${JSON.stringify(actualValueForProperty)}, expected=${JSON.stringify(expectedValue)}`;
-    }
-
-    if (!matchResult) {
-      mismatchedFields.push(key);
-      mismatchedDetails.push(matchDetail);
-    }
-  }
-
-  if (mismatchedFields.length === 0) {
+  try {
+    const actualJson = JSON.parseJsonElement(JSON.stringify(actualValue));
+    const expectedJson = JSON.parseJsonElement(JSON.stringify(expected[0]));
+    const mismatch = matchJsonElement(actualJson, expectedJson, '$', 0);
     return {
-      pass: true,
-      message: 'object matches expected structure',
+      pass: mismatch === null,
+      message: mismatch === null ? 'object matches expected structure' : `object does not match expected structure: ${mismatch}`,
     };
-  } else {
-    const errorMessage = mismatchedDetails.join('; ');
+  } catch (e) {
+    const detail = e instanceof Error ? e.message : String(e);
     return {
       pass: false,
-      message: `object does not match expected structure: ${errorMessage}`,
+      message: `object comparison failed: ${detail}`,
     };
   }
-}
-
-export function assertMatchObj(actualValue: AnyType, expected: AnyType[]): AssertResult {
-  return assertMatchObjInternal(actualValue, expected, 0);
 }

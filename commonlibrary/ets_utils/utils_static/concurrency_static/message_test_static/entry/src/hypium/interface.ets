@@ -37,7 +37,7 @@ export interface ConfigIf {
   flag?: boolean;
   suite?: string;
   itName?: string;
-  filter?: int;
+  filter?: number;
   dryRun?: string;
   breakOnError?: string;
   random?: string;
@@ -54,7 +54,7 @@ export interface StaticServiceIF {
 
 export interface StaticSpecIF {
   description: string;
-  fi: int;
+  fi: number;
   fn?: () => void;
   asyncFn?: (() => Promise<void>) | ((params: AnyType) => Promise<void>);
 }
@@ -175,8 +175,8 @@ export interface ApiIF {
   afterAll?: (func: HookFuncType) => void;
   afterEach?: (func: HookFuncType) => void;
   afterEachIt?: (func: HookFuncType) => void;
-  it?: (desc: string,  filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
-  xit?: (desc: string, filter: int, func: ItfnType, reason: string) => void;
+  it?: (desc: string,  filter: number, func: ItfnType, timeout?: number, tag?: string) => void;
+  xit?: (desc: string, filter: number, func: ItfnType, reason: string) => void;
   expect?: (actualValue?: AnyType) => AssertMatcher;
 }
 

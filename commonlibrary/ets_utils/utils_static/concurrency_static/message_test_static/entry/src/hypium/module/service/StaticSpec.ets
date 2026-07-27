@@ -22,7 +22,7 @@ import { getFunctionArgumentsCount } from '../../util';
 import { AnyType, ItfnType } from '../types/common';
 class StaticSpec {
   public description: string;
-  public fi: int;
+  public fi: number;
   public fn: () => void;
   public asyncFn: (() => Promise<void>) | ((params: AnyType) => Promise<void>) | null;
   public isSkip: boolean;
@@ -123,7 +123,7 @@ class StaticSpec {
             }
           }
         }
-        
+
       } else {
         await (this.asyncFn as (() => Promise<void>))();
       }
@@ -135,7 +135,7 @@ class StaticSpec {
       } else if (fn !== null) {
         fn();
       }
-    } 
+    }
 
     this.isExecuted = true;
   }

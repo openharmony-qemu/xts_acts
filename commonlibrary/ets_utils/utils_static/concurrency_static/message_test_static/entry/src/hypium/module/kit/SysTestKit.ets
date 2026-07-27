@@ -63,7 +63,7 @@ class SysTestKit {
     return '';
   }
 
-  static getItAttribute(): long {
+  static getItAttribute(): number {
     const core = Core.getInstance();
     if (core !== null) {
       const specService = core.getDefaultService('spec');

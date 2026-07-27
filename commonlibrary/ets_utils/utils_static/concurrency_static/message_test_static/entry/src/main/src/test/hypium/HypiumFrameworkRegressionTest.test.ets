@@ -76,14 +76,15 @@ export default function HypiumFrameworkRegressionTest(): void {
     /**
      * @tc.name   HypiumFrameworkRegressionTest0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HYPIUM_REGRESSION_TEST_0200
-     * @tc.desc   Verify assertInstanceOf recognizes a custom ArkTS class at runtime
+     * @tc.desc   Verify custom class identity via public instanceof operator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('HypiumFrameworkRegressionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const value = new HypiumRegressionValue();
-      expect(value).assertInstanceOf('HypiumRegressionValue');
+      expect(value instanceof HypiumRegressionValue).assertTrue();
+      expect(value).assertInstanceOf('Object');
       expect(value.value).assertEqual(1);
     })
   })

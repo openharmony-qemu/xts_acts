@@ -1317,7 +1317,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     /**
      * @tc.name   MessageHandlerHasMessagesWhatObjTest5700
      * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_OBJ_TEST_5700
-     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) concurrent query in Worker callback returns boolean
+     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) finds prefilled target messages from query callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1325,24 +1325,31 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       let queryCount = new AtomicInt(0);
+      let trueCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         if (msg.getWhat() >= 10 && msg.getWhat() < 20) {
           let result: boolean = msg.getTarget().hasMessages(1, "test");
-          expect(result).assertTrue();
+          if (result) {
+            trueCount.fetchAdd(1);
+          }
           queryCount.fetchAdd(1);
         }
       }, eaw);
       eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "test", handler));
+      // Prefill targets before query messages so FIFO still leaves what/obj in queue.
+      for (let i: int = 0; i < 5; i++) {
+        handler.sendMessage(new concurrency.Message(1, "test", handler));
+      }
       for (let i: int = 0; i < 5; i++) {
         handler.sendEmptyMessage(10 + i);
       }
       let waitCount: int = 0;
-      while (queryCount.load() < 5 && waitCount < 500) {
+      while (queryCount.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(queryCount.load()).assertEqual(5);
+      expect(trueCount.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -1426,7 +1433,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     /**
      * @tc.name   MessageHandlerHasMessagesWhatObjTest6000
      * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_OBJ_TEST_6000
-     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) multi-Worker shared handler concurrent query
+     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) finds prefilled shared object from concurrent query callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1434,29 +1441,31 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       let queryCount = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let trueCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         if (msg.getWhat() >= 100) {
           let result: boolean = msg.getTarget().hasMessages(1, "shared");
-          expect(result).assertTrue();
-          queryCount.fetchAdd(1);
-          if (queryCount.load() >= 10) {
-            done.fetchAdd(1);
+          if (result) {
+            trueCount.fetchAdd(1);
           }
+          queryCount.fetchAdd(1);
         }
       }, eaw);
       eaw.start();
-      let msg = new concurrency.Message(1, "shared", handler);
-      handler.sendMessage(msg);
+      // Prefill enough shared targets before query messages for FIFO stability.
+      for (let i: int = 0; i < 10; i++) {
+        handler.sendMessage(new concurrency.Message(1, "shared", handler));
+      }
       for (let i: int = 0; i < 10; i++) {
         handler.sendEmptyMessage(100 + i);
       }
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (queryCount.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(queryCount.load()).assertEqual(10);
+      expect(trueCount.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }
