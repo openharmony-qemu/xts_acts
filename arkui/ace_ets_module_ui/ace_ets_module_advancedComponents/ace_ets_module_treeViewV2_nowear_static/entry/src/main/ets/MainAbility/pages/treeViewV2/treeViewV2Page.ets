@@ -35,9 +35,7 @@ import {
   TreeListenerManagerV2,
   NodeParamV2,
   TreeViewV2,
-  CallbackParamV2,
-  OnChangedCallback,
-  OnContainerCallback
+  CallbackParamV2
 } from '@ohos.arkui.advanced.TreeViewV2';
 
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
@@ -140,25 +138,25 @@ struct TreeViewDemo {
   }
 
   // off*验证用的命名回调
-  private offClickCallback: OnChangedCallback = (callbackParam: CallbackParamV2) => {
+  private offClickCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
     this.offClickResult = 'offClickTriggered';
   }
-  private offAddCallback: OnChangedCallback = (callbackParam: CallbackParamV2) => {
+  private offAddCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
     this.offAddResult = 'offAddTriggered';
   }
-  private offDeleteCallback: OnChangedCallback = (callbackParam: CallbackParamV2) => {
+  private offDeleteCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
     this.offDeleteResult = 'offDeleteTriggered';
   }
-  private offModifyCallback: OnChangedCallback = (callbackParam: CallbackParamV2) => {
+  private offModifyCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
     this.offModifyResult = 'offModifyTriggered';
   }
-  private offMoveCallback: OnChangedCallback = (callbackParam: CallbackParamV2) => {
+  private offMoveCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
     this.offMoveResult = 'offMoveTriggered';
   }
   // onceNodeMove验证用的计数器
   private onceMoveCount: number = 0;
 
-  private onContainerCallback: OnContainerCallback = () => {
+  private onContainerCallback: () => {} = () => {
     this.offMoveResult = 'onContainerCallback';
   }
 
