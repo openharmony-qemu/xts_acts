@@ -18,7 +18,15 @@
         "type": "ShellKit",
         "run-command": [
             "power-shell wakeup",
-            "power-shell setmode 602"
+            "power-shell setmode 602",
+            "echo '{\"test111\": [\".111\", \".222\", \".333\"], \"test222\": 222}' > /data/app/el1/bundle/public/com.ohos.dlp_xts/libs/arm64/config_file.json",
+            "echo '{\"suffix_filter_file\": [\".111\", \".222\", \".333\"]}' > /data/app/el1/bundle/public/com.ohos.dlp_xts/libs/arm64/suffix_filter_file.json",
+            "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then param set const.dlp.functiontypes 1; fi'",
+            "wait 2",
+            "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then pkill dlp_credential; fi'"
+        ],
+        "teardown-command": [
+            "reboot"
         ]
 
     }]
