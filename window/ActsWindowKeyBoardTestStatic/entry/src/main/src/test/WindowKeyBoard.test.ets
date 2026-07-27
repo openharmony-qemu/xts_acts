@@ -812,7 +812,6 @@ export default function WindowKeyBoardTest() {
                     expect(keyboardInfo.config?.duration).assertLarger(0);
                     expect(keyboardInfo.config?.param != null).assertTrue();
                     mainWindow.offKeyboardWillHide();
-                    done();
                 };
                 mainWindow.onKeyboardWillHide(callback);
                 
@@ -982,7 +981,6 @@ export default function WindowKeyBoardTest() {
                     expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
                     expect(keyboardInfo.endRect.height).assertLarger(0);
                     mainWindow.offKeyboardDidHide();
-                    done();
                 };
                 mainWindow.onKeyboardDidShow(callback1);
                 mainWindow.onKeyboardDidHide(callback);
@@ -998,9 +996,9 @@ export default function WindowKeyBoardTest() {
                     expect(count).assertEqual(1);
                 } else {
                     expect(count).assertEqual(0);
-                    done();
                 }
                 await Utils.msSleep(1000);
+                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
