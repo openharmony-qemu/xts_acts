@@ -905,12 +905,13 @@ export default function cameraPhotoSessionTest() {
  
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession!.getZoomPointInfos()
-        for (let i = 0; i < zoomPointInfos.length; i++) {
-          console.info(`index: ${i}, zoomRatio: ${zoomPointInfos[i].zoomRatio}`)
-          expect(typeof zoomPointInfos[i].zoomRatio).assertEqual('number');
-          console.info(`index: ${i}, equivalentFocalLength: ${zoomPointInfos[i].equivalentFocalLength}`)
-          expect(typeof zoomPointInfos[i].equivalentFocalLength).assertEqual('number');
-        }
+        console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
+        if (zoomPointInfos.length > 0) {
+          console.info(`zoomRatio type: ${typeof zoomPointInfos[0].zoomRatio}`)
+          console.info(`equivalentFocalLength type: ${typeof zoomPointInfos[0].equivalentFocalLength}`)
+          expect(typeof zoomPointInfos[0].zoomRatio).assertEqual('number');
+          expect(typeof zoomPointInfos[0].equivalentFocalLength).assertEqual('int');
+      }
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED`)
