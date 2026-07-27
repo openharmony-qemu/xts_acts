@@ -190,13 +190,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         } finally {
           try {
             if (subWindow) {
@@ -254,13 +249,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         }
       });
 
@@ -301,13 +291,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         }
       });
 
@@ -332,13 +317,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         }
       });
 
@@ -366,13 +346,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         }
       });
 
@@ -505,13 +480,8 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          if (exception.code === 801) {
-            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         }
       });
 
