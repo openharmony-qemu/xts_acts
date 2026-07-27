@@ -754,7 +754,7 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWindow.offKeyboardWillShow();
                 await Utils.msSleep(500);
-                if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillShow success: ');
                 }
                 done();
@@ -861,7 +861,7 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWindow.offKeyboardWillHide();
                 await Utils.msSleep(500);
-                if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
                 }
                 done();
@@ -927,9 +927,8 @@ export default function WindowKeyBoardTest() {
                     expect(count).assertEqual(1);
                 } else {
                     expect(count).assertEqual(0);
-                    done();
                 }
-                await Utils.msSleep(500);
+                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
@@ -997,7 +996,6 @@ export default function WindowKeyBoardTest() {
                 } else {
                     expect(count).assertEqual(0);
                 }
-                await Utils.msSleep(1000);
                 done();
             } catch (err) {
                 err = err as BusinessError;

@@ -159,6 +159,11 @@ export default function windowKeyBorad() {
           mainWindow.off('keyboardWillShow');
           await driver.pressBack();
           await sleep(500);
+          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+             expect(count).assertEqual(1)
+          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+             expect(count).assertEqual(0);
+          }
           done();
         }
         mainWindow.on('keyboardWillShow', callback);
@@ -169,12 +174,6 @@ export default function windowKeyBorad() {
         await input.click();
         console.info(`${caseName}  click success: ` + JSON.stringify(input));
         await sleep(500);
-        if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
-          expect(count).assertEqual(1)
-        }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
-            expect(count).assertEqual(0);
-        }
-        done()
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -204,7 +203,7 @@ export default function windowKeyBorad() {
       try {
           mainWindow.off('keyboardWillShow');
           await sleep(500);
-          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+          if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
             console.info(`${caseName}  off keyboardWillShow success: `);
           }
           done()
@@ -331,6 +330,11 @@ export default function windowKeyBorad() {
           expect(keyboardInfo.config?.duration).assertLarger(0);
           expect(keyboardInfo.config?.param != null).assertTrue();
           mainWindow.off('keyboardWillHide');
+          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+            expect(count).assertEqual(1)
+          }else if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== true){
+            expect(count).assertEqual(0)
+          }
           done();
         }
         mainWindow.on('keyboardWillHide', callback);
@@ -341,10 +345,6 @@ export default function windowKeyBorad() {
         await input.click();
         console.info(`${caseName}  click success: ` + JSON.stringify(input));
         await sleep(500);
-        if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
-          expect(count).assertEqual(1)
-        }
-        done()
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -373,7 +373,7 @@ export default function windowKeyBorad() {
       try {
           mainWindow.off('keyboardWillHide');
           await sleep(500);
-          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+          if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
             console.info(`${caseName}  off keyboardWillHide success: `);
           }
           done()
@@ -420,6 +420,11 @@ export default function windowKeyBorad() {
           mainWindow.off('keyboardDidShow');
           await driver.pressBack();
           await sleep(500);
+          if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+              expect(count).assertEqual(1);
+          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+              expect(count).assertEqual(0);
+          }
           done();
         }
       
@@ -429,12 +434,6 @@ export default function windowKeyBorad() {
         let input = await driver.findComponent(ON.id('textInput'));
         await sleep(1000);
         await input.click();
-        if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
-            expect(count).assertEqual(1);
-        }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
-            expect(count).assertEqual(0);
-            done();
-        }
         await sleep(500);
          
       } catch (err) {
@@ -486,6 +485,12 @@ export default function windowKeyBorad() {
           expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
           expect(keyboardInfo.endRect.height).assertLarger(0);
           mainWindow.off('keyboardDidHide');
+          if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+              expect(count).assertEqual(1);
+          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+              expect(count).assertEqual(0);
+              done();
+          }
           done();
         }
         mainWindow.on('keyboardDidShow', callback1);
@@ -495,12 +500,6 @@ export default function windowKeyBorad() {
         let input = await driver.findComponent(ON.id('textInput'));
         await sleep(1000);
         await input.click();
-        if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
-            expect(count).assertEqual(1);
-        }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
-            expect(count).assertEqual(0);
-            done();
-        }
         await sleep(1000);
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
