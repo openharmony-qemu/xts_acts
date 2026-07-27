@@ -2156,7 +2156,7 @@ export default function wifiManagerCoverage() {
       console.info('SUB_Communication_WiFi_SysCaps_Test_0016 end');
       done();
     });
-/**
+    /**
      * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Count_LIMIT_001
      * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Count_LIMIT_001
      * @tc.desc   Test addCandidateConfig API with REAL_DEVICE_ADDRESS
@@ -2167,6 +2167,7 @@ export default function wifiManagerCoverage() {
     it('Sub_Communication_WiFiManager_AddCandidateConfig_Count_LIMIT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Count_LIMIT_001';
       console.info(`${caseName} test start`);
+      let result_array: number[] = [];
       try {
         for (let i = 0; i < 16; i++) {
           let ssid_i = "TestCandRealAddr" + JSON.stringify(i);
@@ -2180,6 +2181,7 @@ export default function wifiManagerCoverage() {
             randomMacAddr: "00:11:22:33:44:55"
           };
           let result = await wifiManager.addCandidateConfig(config);
+          result_array.push(result);
           console.log(`${caseName} get result success i: ` + i + ` result :` + result);
           expect(typeof result === 'number').assertTrue();
         }
@@ -2203,6 +2205,15 @@ export default function wifiManagerCoverage() {
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error.code),JSON.stringify(error.message));
         expect(Number(error.code)).assertEqual(2501000);
+      }
+      try {
+        for (let i = 0; i < 16; i++) {
+          await wifiManager.removeCandidateConfig(result_array[i]);
+          console.log(`${caseName} removeCandidateConfig success i: ` + i );
+        }
+      } catch (error) {
+        console.info(`${caseName} removeCandidateConfig error`, JSON.stringify(error.code),JSON.stringify(error.message));
+        expect().assertFail();
       }
       console.info(`${caseName} test end`);
       done();
