@@ -1347,8 +1347,8 @@ napi_value testNativeWindowSet3DMetadataValueNull(napi_env env, napi_callback_in
 {
     napi_value result = nullptr;
     // 1. invalid nativeWindow
-    OH_NativeImage *nativeImage = OH_ConsumerSurface_Create();                                                                                                                                                                         
-    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);                                                                                                                                                    
+    OH_NativeImage *nativeImage = OH_ConsumerSurface_Create();
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     OH_NativeImage_Destroy(&nativeImage);
     uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_3D_SBS);
     int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
@@ -1492,14 +1492,14 @@ napi_value testNativeWindowGet3DMetadataValueAbnormal(napi_env env, napi_callbac
     uint8_t *getMetadata = nullptr;
     // 1. set接口传非OH_VIDEO_DIM_TYPE
     int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
-        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(2), sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(CONSTANT_2), sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
     if (errorCode != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
     // 2. get接口传非OH_VIDEO_DIM_TYPE
     errorCode = OH_NativeWindow_Get3DMetadataValue(
-        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(2), &bufferSize, &getMetadata);
+        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(CONSTANT_2), &bufferSize, &getMetadata);
     if (errorCode != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
