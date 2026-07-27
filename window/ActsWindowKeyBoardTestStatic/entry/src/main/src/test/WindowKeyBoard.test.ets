@@ -686,28 +686,28 @@ export default function WindowKeyBoardTest() {
             let count: int = 0;
              try {
                 const callback = (keyboardInfo: window.KeyboardInfo): void => {
-                    void (async () => {
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
-                        count++;
-                        let displayInfo = display.getDefaultDisplaySync();
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo: ' + JSON.stringify(displayInfo));
-                        expect(keyboardInfo.beginRect.left).assertEqual(0);
-                        expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.beginRect.height).assertLarger(0);
-                        expect(keyboardInfo.endRect.left).assertEqual(0);
-                        expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.endRect.height).assertLarger(0);
-                        expect(keyboardInfo.animated).assertEqual(true);
-                        expect(keyboardInfo.config?.curve).assertEqual(1);
-                        expect(keyboardInfo.config?.duration).assertLarger(0);
-                        expect(keyboardInfo.config?.param != null).assertTrue();
-                        mainWindow.offKeyboardWillShow();
-                        await driver.pressBack();
-                        await Utils.msSleep(500);
-                        done();
-                    })();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.beginRect.height).assertLarger(0);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    expect(keyboardInfo.animated).assertEqual(true);
+                    expect(keyboardInfo.config?.curve).assertEqual(1);
+                    expect(keyboardInfo.config?.duration).assertLarger(0);
+                    expect(keyboardInfo.config?.param != null).assertTrue();
+                    mainWindow.offKeyboardWillShow();
+                    driver.pressBack().then(() => {
+                        Utils.msSleep(500).then(() => {
+                            done();
+                        });
+                    });
                 };
                 
                 mainWindow.onKeyboardWillShow(callback);
@@ -789,12 +789,11 @@ export default function WindowKeyBoardTest() {
             
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
-                    void (async () => {
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
-                        mainWindow.offKeyboardWillShow();
-                        await driver.pressBack();
-                        await Utils.msSleep(500);
-                    })();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    mainWindow.offKeyboardWillShow();
+                    driver.pressBack().then(() => {
+                        Utils.msSleep(500);
+                    });
                 };
                 mainWindow.onKeyboardWillShow(callback1);
                 
@@ -899,24 +898,24 @@ export default function WindowKeyBoardTest() {
             
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
-                    void (async () => {
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
-                        count++;
-                        let displayInfo = display.getDefaultDisplaySync();
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo1: ' + JSON.stringify(displayInfo));
-                        expect(keyboardInfo.beginRect.left).assertEqual(0);
-                        expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.beginRect.height).assertLarger(0);
-                        expect(keyboardInfo.endRect.left).assertEqual(0);
-                        expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.endRect.height).assertLarger(0);
-                        mainWindow.offKeyboardDidShow();
-                        await driver.pressBack();
-                        await Utils.msSleep(500);
-                        done();
-                    })();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo1: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.beginRect.height).assertLarger(0);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    mainWindow.offKeyboardDidShow();
+                    driver.pressBack().then(() => {
+                        Utils.msSleep(500).then(() => {
+                            done();
+                        });
+                    });
                 };
                 
                 mainWindow.onKeyboardDidShow(callback1);
@@ -967,13 +966,13 @@ export default function WindowKeyBoardTest() {
             
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
-                    void (async () => {
-                        hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
-                        mainWindow.offKeyboardDidShow();
-                        await Utils.msSleep(1000);
-                        await driver.pressBack();
-                        await Utils.msSleep(500);
-                    })();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
+                    mainWindow.offKeyboardDidShow();
+                    Utils.msSleep(1000).then(() => {
+                        driver.pressBack().then(() => {
+                            Utils.msSleep(500);
+                        });
+                    });
                 };
                 const callback = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo2: ' + JSON.stringify(keyboardInfo));
