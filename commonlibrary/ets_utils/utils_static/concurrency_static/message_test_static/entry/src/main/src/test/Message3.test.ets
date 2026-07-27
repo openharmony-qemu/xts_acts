@@ -71,8 +71,7 @@ type CB = () => void;
 
 export default function Message3Test(): void {
   describe('Message3Test', (): void => {
-    afterEach(async () => {
-      await Utils.msSleep(20);
+    afterEach((): void => {
     })
 
     /**
