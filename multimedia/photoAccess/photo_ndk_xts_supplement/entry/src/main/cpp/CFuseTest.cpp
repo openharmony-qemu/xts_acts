@@ -19,7 +19,7 @@
 #include <string>
 #include <unistd.h>
 #include <cstring>
-#include <errno.h>
+#include <cerrno>
 #include <vector>
 #include <sys/stat.h>
 #include <sys/statfs.h>
@@ -32,6 +32,19 @@
 
 constexpr int NUM0 = 0;
 constexpr int NUM1 = 1;
+constexpr int MODE_RDONLY = 0;
+constexpr int MODE_RDWR = 1;
+constexpr int MODE_WRONLY = 2;
+constexpr int MODE_APPEND = 3;
+constexpr int MODE_CREAT = 4;
+constexpr int MODE_LARGEFILE = 5;
+constexpr int MODE_TRUNC = 6;
+constexpr int mode1 = 1;
+constexpr int mode2 = 2;
+constexpr int mode3 = 3;
+constexpr int mode4 = 4;
+constexpr int mode5 = 5;
+constexpr int mode6 = 6;
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CFuseTestCpp"
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -65,28 +78,56 @@ static int32_t GetPathFromUri(const std::string &uri, std::string &path)
     return 0;
 }
 
+static int32_t ParseOpenArgs(napi_env env, napi_callback_info info, std::string &uri, int32_t &mode)
+{
+    napi_value argValue[2] = {0};
+    size_t argCount = 2;
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < 2 ||
+        argValue[0] == nullptr || argValue[1] == nullptr) {
+        LOGE("OpenTest napi_get_cb_info failed");
+        return -1;
+    }
+    GetUtf8String(env, argValue[0], uri);
+    LOGI("OpenTest uri: %{public}s", uri.c_str());
+    napi_get_value_int32(env, argValue[1], &mode);
+    LOGI("OpenTest mode: %{public}d", mode);
+    return 0;
+}
+
+static int32_t DoOpenFile(const std::string &path, int32_t mode)
+{
+    int flags = O_EXCL;
+    switch (mode) {
+        case 0: flags = O_RDONLY; break;
+        case 1: flags = O_RDWR; break;
+        case 2: flags = O_WRONLY; break;
+        case 3: flags = O_APPEND; break;
+        case 4: flags = O_CREAT; break;
+        case mode5: flags = O_LARGEFILE; break;
+        case mode6: flags = O_TRUNC; break;
+    }
+    int fd = open(path.c_str(), flags);
+    LOGE("OpenTest: open fd = %{public}d", fd);
+    if (fd < 0) {
+        char *msg = strerror(errno);
+        LOGE("OpenTest: open failed, path = %{public}s, err = %{public}d", path.c_str(), errno);
+        LOGE("OpenTest: open failed, error Msg: %{public}s", msg);
+    }
+    return fd;
+}
+
 napi_value OpenTest(napi_env env, napi_callback_info info)
 {
     LOGI("OpenTest start");
     napi_value result;
     napi_value udfVar = nullptr;
-    napi_value thisVar = nullptr;
-    napi_value argValue[2] = {0};
-    size_t argCount = 2;
     napi_get_undefined(env, &udfVar);
-    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 2 ||
-        argValue[0] == nullptr || argValue[1] == nullptr) {
-        LOGE("OpenTest napi_get_cb_info failed");
-        return udfVar;
-    }
 
     std::string uri;
-    GetUtf8String(env, argValue[0], uri);
-    LOGI("OpenTest uri: %{public}s", uri.c_str());
-
-    int32_t mode;
-    napi_get_value_int32(env, argValue[1], &mode);
-    LOGI("OpenTest mode: %{public}d", mode);
+    int32_t mode = 0;
+    if (ParseOpenArgs(env, info, uri, mode) != 0) {
+        return udfVar;
+    }
 
     std::string path;
     int32_t err = GetPathFromUri(uri, path);
@@ -97,40 +138,8 @@ napi_value OpenTest(napi_env env, napi_callback_info info)
     }
     LOGI("OpenTest path: %{public}s", path.c_str());
 
-    int fd = -1;
-    if (mode == 0) {
-        fd = open(path.c_str(), O_RDONLY);
-        LOGE("OpenTest: open rd, fd = %{public}d", fd);
-    } else if (mode == 1) {
-        fd = open(path.c_str(), O_RDWR);
-        LOGE("OpenTest: open rdwr, fd = %{public}d", fd);
-    } else if (mode == 2) {
-        fd = open(path.c_str(), O_WRONLY);
-        LOGE("OpenTest: open wr, fd = %{public}d", fd);
-    } else if (mode == 3) {
-        fd = open(path.c_str(), O_APPEND);
-        LOGE("OpenTest: open append, fd = %{public}d", fd);
-    } else if (mode == 4) {
-        fd = open(path.c_str(), O_CREAT);
-        LOGE("OpenTest: open create, fd = %{public}d", fd);
-    } else if (mode == 5) {
-        fd = open(path.c_str(), O_LARGEFILE);
-        LOGE("OpenTest: open largefile, fd = %{public}d", fd);
-    } else if (mode == 6) {
-        fd = open(path.c_str(), O_TRUNC);
-        LOGE("OpenTest: open trunc, fd = %{public}d", fd);
-    } else {
-        fd = open(path.c_str(), O_EXCL);
-        LOGE("OpenTest: open excl, fd = %{public}d", fd);
-    }
-
+    int fd = DoOpenFile(path, mode);
     LOGI("OpenTest open end: path = %{public}s", path.c_str());
-    if (fd < 0) {
-        char *msg = strerror(errno);
-        LOGE("OpenTest: open failed, path = %{public}s, err = %{public}d", path.c_str(), errno);
-        LOGE("OpenTest: open failed, error Msg: %{public}s", msg);
-    }
-
     napi_create_int32(env, fd, &result);
     return result;
 }
@@ -162,7 +171,7 @@ napi_value Test_Create_Dir(napi_env env, napi_callback_info info)
     LOGI("Test_Create_Dir newPath: %{public}s", newPath.c_str());
     std::string newDirPath = newPath + "newDir";
     int ret = -1;
-    if (mode == 0) {
+    if (mode == MODE_RDONLY) {
         ret = mkdirat(AT_FDCWD, newDirPath.c_str(), 0775);
     } else {
         ret = mkdir(newDirPath.c_str(), S_IRWXG);
@@ -272,13 +281,13 @@ napi_value Test_Access(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     int ret = -1;
-    if (mode == 1) {
+    if (mode == mode1) {
         ret = access(path.c_str(), R_OK);
-    } else if (mode == 2) {
+    } else if (mode == mode2) {
         ret = access(path.c_str(), W_OK);
-    } else if (mode == 3) {
+    } else if (mode == mode3) {
         ret = access(path.c_str(), X_OK);
-    } else if (mode == 4) {
+    } else if (mode == mode4) {
         ret = access(path.c_str(), F_OK);
     }
     napi_value flag;
@@ -370,7 +379,7 @@ napi_value Test_RemoveFile(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     int ret = -1;
-    if (mode == 0) {
+    if (mode == MODE_RDONLY) {
         ret = unlink(path.c_str());
     } else {
         ret = remove(path.c_str());
@@ -405,7 +414,7 @@ napi_value Test_RemoveDir(napi_env env, napi_callback_info info)
     err = GetPathFromUri(uri, path);
     std::string newPath = path.substr(0, path.rfind("Photo"));
     int ret = -1;
-    if (mode == 0) {
+    if (mode == MODE_RDONLY) {
         ret = remove(newPath.c_str());
     } else {
         ret = rmdir(newPath.c_str());
@@ -475,7 +484,7 @@ napi_value Test_DirName(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     char *dir = dirname(const_cast<char *>(path.c_str()));
-    if (dir == NULL) {
+    if (dir == nullptr) {
         LOGI("dirname is NULL");
     }
     LOGI("Test_DirName dirName: %{public}s", dir);
@@ -501,7 +510,7 @@ napi_value Test_BaseName(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     char *dir = basename(const_cast<char *>(path.c_str()));
-    if (dir == NULL) {
+    if (dir == nullptr) {
         LOGI("basename is NULL");
     }
     LOGI("Test_BaseName baseName: %{public}s", dir);
