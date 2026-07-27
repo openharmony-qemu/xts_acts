@@ -439,7 +439,8 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scroller.scrollBy(40, 0)
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
                 this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("PC")) {
+                console.log('testNestedScrollOptionsScrollBackwardHorizontal015111' + this.userAgentPC);
+                if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("TV")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
                   await driver.swipe(X - 60, Y, X + 140, Y);
