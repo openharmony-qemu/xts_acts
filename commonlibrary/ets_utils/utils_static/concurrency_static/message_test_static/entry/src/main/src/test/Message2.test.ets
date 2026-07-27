@@ -57,15 +57,15 @@ export default function MessageTest2(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0158
-     * @tc.name GetWhatTest002
+     * @tc.name GetWhatTest001
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('GetWhatTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('GetWhatTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const TAG: string = 'GetWhatTest002';
+        const TAG: string = 'GetWhatTest001';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         let flag: boolean = false;
@@ -101,15 +101,15 @@ export default function MessageTest2(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0159
-     * @tc.name GetWhatTest003
+     * @tc.name GetWhatTest002
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('GetWhatTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('GetWhatTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const TAG: string = 'GetWhatTest003';
+        const TAG: string = 'GetWhatTest002';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         let flag: boolean = false;
@@ -168,15 +168,15 @@ export default function MessageTest2(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0160
-     * @tc.name GetWhatTest004
+     * @tc.name GetWhatTest003
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('GetWhatTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GetWhatTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const TAG: string = 'GetWhatTest004';
+        const TAG: string = 'GetWhatTest003';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         let flag: boolean = false;

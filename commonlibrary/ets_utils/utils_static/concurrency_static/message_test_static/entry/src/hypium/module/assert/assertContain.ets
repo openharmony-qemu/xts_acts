@@ -27,7 +27,7 @@ export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertRe
   } else if (Array.isArray(actualValue)) {
     const acValue = actualValue as AnyType[];
     for (let value of acValue) {
-      if (value == expectValue) {
+      if (value === expectValue) {
         result = true;
       }
     }

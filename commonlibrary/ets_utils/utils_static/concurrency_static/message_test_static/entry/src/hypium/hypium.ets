@@ -40,7 +40,7 @@ export class Hypium {
     if (currentDepth > Hypium.MAX_PARSE_DEPTH) {
       throw new Error('Maximum parsing depth exceeded. currentParseDepth is ' + currentDepth);
     }
-    if (JSON.stringifyJsonElement(value) == 'null') {
+    if (JSON.stringifyJsonElement(value) === 'null') {
       return null
     }
     if (value.tryAsString()) {
@@ -254,7 +254,7 @@ export class Hypium {
       ignore: 0,
       duration: 0
     };
-    Promise.all(workerPromiseArray).then(async (items: Array<TestcaseSummaryIF>) => {
+    return Promise.all(workerPromiseArray).then(async (items: Array<TestcaseSummaryIF>) => {
       let allItemList = new Array<ItItemIF>();
       Hypium.handleWorkerTestResult(ret, allItemList, items);
       const retResult: TestcaseRet = {
@@ -277,8 +277,13 @@ export class Hypium {
       console.info(`${TAG}, [end] you worker test`);
       abilityDelegator.finishTest('you worker test finished!!!', 0, () => { });
     }).catch((e) => {
-      console.info(`${TAG}, [end] error you worker test, ${e}`);
-      abilityDelegator.finishTest('you worker test error finished!!!', 0, () => { });
+      const errMsg = `${TAG}, [end] error you worker test, ${e}`;
+      console.info(errMsg);
+      const failReport =
+        `\n${PrintTag.OHOS_REPORT_ALL_RESULT}: stream=Error: ${e}` +
+        `\n${PrintTag.OHOS_REPORT_ALL_CODE}: -1`;
+      abilityDelegator.printSync(failReport);
+      abilityDelegator.finishTest(`you worker test error finished!!! ${e}`, -1, () => { });
     }).finally(() => {
       console.info(`${TAG}, all promise finally end`);
     });
@@ -287,10 +292,10 @@ export class Hypium {
   static createEAWorkerPromise(i: int, testsuite: () => void, abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs): Promise<TestcaseSummaryIF> {
     const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>((resolve, reject) => {
-      let worker = new EAWorker(`EAWork_${i}`);
+      const worker = new EAWorker(`EAWork_${i}`);
       worker.start();
       const currentCB = (msg: concurrency.Message) => {
-        let data = msg.getObject() as SendData;
+        const data = msg.getObject() as SendData;
         let currentThreadName = data.currentThreadName;
         hilog.info(domain, tag, 'receview data from ' + currentThreadName + " " + JSON.stringify(data))
         worker.quit();

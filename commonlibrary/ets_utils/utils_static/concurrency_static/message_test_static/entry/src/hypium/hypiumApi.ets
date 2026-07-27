@@ -23,6 +23,7 @@ const hypiumDescribe: (desc: string, func: () => void) => void = (desc: string, 
   if (core) {
     return (core as Core).describe(desc, func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 
 const hypiumIt: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void = (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string): void => {
@@ -30,12 +31,14 @@ const hypiumIt: (desc: string, filter: int, func: ItfnType, timeout?: number, ta
   if (core) {
     return (core as Core).it(desc, filter, func, timeout, tag);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumBeforeItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).beforeItSpecified(itDescs, func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 
 const hypiumAfterItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
@@ -43,42 +46,49 @@ const hypiumAfterItSpecified: (itDescs: string | string[], func: HookFuncType) =
   if (core) {
     return (core as Core).afterItSpecified(itDescs, func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumBeforeEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).beforeEach(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumBeforeEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).beforeEachIt(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumAfterEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).afterEach(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumAfterEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).afterEachIt(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumBeforeAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).beforeAll(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumAfterAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
   const core = Core.getInstance();
   if (core) {
     return (core as Core).afterAll(func);
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumExpect: (actualValue?: AnyType) => AssertMatcher = (actualValue?: AnyType): AssertMatcher => {
   const core = Core.getInstance();
@@ -97,6 +107,7 @@ const hypiumXdescribe: (desc: string, func: () => void) => void = (desc: string,
   if (core) {
     return (core as Core).xdescribe(desc, func, '');
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void) => void = (reason: string): (desc: string, func: () => void) => void => {
   const core = Core.getInstance();
@@ -104,6 +115,7 @@ const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void
     if (core) {
       return (core as Core).xdescribe(desc, func, reason);
     }
+    throw new Error('[hypium] core not initialized');
   };
 };
 const hypiumXit: (desc: string, filter: int, func: ItfnType) => void = (desc: string, filter: int, func: ItfnType): void => {
@@ -111,6 +123,7 @@ const hypiumXit: (desc: string, filter: int, func: ItfnType) => void = (desc: st
   if (core) {
     return (core as Core).xit(desc, filter, func, '');
   }
+  throw new Error('[hypium] core not initialized');
 };
 const hypiumXitReason: (reason: string) => (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void = (reason: string): (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void => {
   const core = Core.getInstance();
@@ -118,6 +131,7 @@ const hypiumXitReason: (reason: string) => (desc: string, filter: int, func: (()
     if (core) {
       return (core as Core).xit(desc, filter, func, reason);
     }
+    throw new Error('[hypium] core not initialized');
   };
 };
 

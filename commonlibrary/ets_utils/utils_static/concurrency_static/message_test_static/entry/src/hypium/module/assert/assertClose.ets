@@ -16,9 +16,12 @@
 
 import { AssertResult } from '../modal/assertModel';
 
-export function assertClose(actualValue: number, expected: number[]): AssertResult {
+export function assertClose(actualValue: number | null, expected: number[]): AssertResult {
   if (actualValue === null && expected[0] === null) {
     throw new Error('actualValue and expected can not be both null!!!');
+  }
+  if (actualValue === null) {
+    throw new Error('actualValue can not be null!!!');
   }
   let result = false;
   let diff = Math.abs(expected[0] - actualValue);
