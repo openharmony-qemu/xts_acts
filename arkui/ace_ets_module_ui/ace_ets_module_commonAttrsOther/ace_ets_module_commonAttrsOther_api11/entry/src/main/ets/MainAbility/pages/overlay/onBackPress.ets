@@ -13,8 +13,8 @@ import { ComponentContent, OverlayManagerOptions } from '@kit.ArkUI'
 // ── 浮层参数 ──
 
 class FloatParams {
-  message: string = ''
-  onDismiss: () => void = () => {}
+  public message: string = ''
+  public onDismiss: () => void = () => {}
 
   constructor(message: string, onDismiss: () => void) {
     this.message = message
