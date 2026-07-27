@@ -858,38 +858,7 @@ struct WebComponent {
                         console.log('video is playing:' + isPlaying)
                         break;
                       }
-                      // case 'emitWebViewNativeMediaPlayerSeek500': {
-                      //   this.isPageEnd = -1;
-                      //   this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
-                      //   await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
-                      //   this.controller.runJavaScript('buttonPlay()', (error, result) => {
-                      //       console.error(`The buttonPlay() return error is: ${error}`);
-                      //       console.log(`The buttonPlay() return value is: ${result}`);
-                      //   })
-                      //   await this.retryPlayingGen(this.emitKey)()
-                      //   await Utils.sleep(1000)
-                      //   this.controller.runJavaScript('setSeek(20)', (error, result) => {
-                      //       console.error(`The setSeek(20) return error is: ${error}`);
-                      //       console.log(`The setSeek(20) return value is: ${result}`);
-                      //   })
-                      //   await Utils.sleep(1000)
-                      //   this.isPageEnd = -1;
-                      //   this.controller.runJavaScript('setSeek(500)', (error, result) => {
-                      //       console.error(`The setSeek(500) return error is: ${error}`);
-                      //       console.log(`The setSeek(500) return value is: ${result}`);
-                      //       this.isPageEnd = 3;
-                      //   })
-                      //   await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 3, 1000);
-                      //   console.info('current video time: ' + videoTime)
-                      //   console.log('video is playing:' + isPlaying)
-                      //   console.info('current seekList.indexOf(videoTime) '+ seekList + seekList.indexOf(videoTime))
-                      //   if (seekList.indexOf(videoTime) > -1){
-                      //       Utils.emitEvent(true, 361030)
-                      //   }else {
-                      //       Utils.emitEvent(false, 361030)
-                      //   }
-                      //   break;
-                      // }
+       
                       case 'emitWebViewNativeMediaPlayerSeekNegative1': {
                         this.isPageEnd = -1;
                         this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
