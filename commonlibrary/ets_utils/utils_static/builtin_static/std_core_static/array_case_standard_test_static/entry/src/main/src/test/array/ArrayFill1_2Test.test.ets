@@ -172,7 +172,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       arr.fill(new Map<string, int>(new Array<[string, int]>(['k', 2])), 0, 1);
       expect(arr[0].get('k')).assertEqual(2);
     });
@@ -1649,7 +1649,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       arr.fill(new Map<string, int>(new Array<[string, int]>(['k', 2])));
       expect(arr[0].get('k')).assertEqual(2);
     });
@@ -1681,7 +1681,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new Set<int>(new Array<int>(1, 2));
-      const arr = new Array<Set<int>>(s);
+      const arr = Array.create<Set<int>>(1, s);
       arr.fill(new Set<int>(new Array<int>(9, 9)));
       expect(arr[0].has(9)).assertTrue();
     });

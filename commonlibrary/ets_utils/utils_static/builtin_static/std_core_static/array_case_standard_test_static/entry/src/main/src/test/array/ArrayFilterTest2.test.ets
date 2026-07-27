@@ -356,7 +356,7 @@ export default function ArrayFilterTest2(): void {
     it('testArrayFilter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1 = new Array<number>(1, 2);
       const inner2 = new Array<number>(3, 4, 5);
-      const inner3 = new Array<number>(6);
+      const inner3 = Array.create<number>(1, 6);
       const arr = new Array<Array<number>>(inner1, inner2, inner3);
       const result = arr.filter((inner: Array<number>): boolean => inner.length > 2);
       expect(result.length).assertEqual(1);
@@ -644,7 +644,7 @@ export default function ArrayFilterTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFilter030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10);
+      const arr = Array.create<number>(1, 10);
       for (let i = 0; i < 10; i++) {
         arr.push(1);
       }
