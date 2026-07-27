@@ -685,6 +685,7 @@ export default function WindowKeyBoardTest() {
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             let mainWindow:window.Window = windowStage!.getMainWindowSync();
             let count: int = 0;
+            driver = Driver.create();
              try {
                 const callback = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
@@ -784,7 +785,7 @@ export default function WindowKeyBoardTest() {
             let mainWindow: window.Window = windowStage!.getMainWindowSync();
             hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
             let count: int = 0;
-            
+            driver = Driver.create();
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
@@ -892,7 +893,7 @@ export default function WindowKeyBoardTest() {
             let mainWindow: window.Window = windowStage!.getMainWindowSync();
             hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
             let count: int = 0;
-            
+            driver = Driver.create();
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
@@ -958,7 +959,7 @@ export default function WindowKeyBoardTest() {
             let mainWindow: window.Window = windowStage!.getMainWindowSync();
             hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
             let count: int = 0;
-            
+            driver = Driver.create();
             try {
                 const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
