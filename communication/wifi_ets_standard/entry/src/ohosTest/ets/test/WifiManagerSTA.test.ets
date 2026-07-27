@@ -916,5 +916,87 @@ export default function wifiSta() {
       console.info(`${caseName} test end`);
       done();
     });
+    /**
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001
+     * @tc.name Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001
+     * @tc.desc Test connectToCandidateConfig with ConnectSettings - normal case with basic settings
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001';
+      console.info(`${caseName} test start`);
+      try {
+        let config: wifiMg.WifiDeviceConfig = {
+          ssid: "TestCandRealAddr",
+          bssid: "00:11:22:33:44:55",
+          securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          preSharedKey: "12345678",
+          isHiddenSsid: false,
+          randomMacType: 0,
+          randomMacAddr: "00:11:22:33:44:55",
+          showNoInternetDialog: false
+        };
+        let networkId = await wifiMg.addCandidateConfig(config);
+        console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
+        await wifiMg.connectToCandidateConfig(networkId);
+        console.info(`${caseName} connectToCandidateConfig promise success`);
+        if (networkId >= 0) {
+          await wifiMg.removeCandidateConfig(networkId);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
+        if (err.code === 801) {
+          console.info(`${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002
+     * @tc.name Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002
+     * @tc.desc Test connectToCandidateConfig with ConnectSettings - normal case with basic settings
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002';
+      console.info(`${caseName} test start`);
+      try {
+        let config: wifiMg.WifiDeviceConfig = {
+          ssid: "TestCandRealAddr",
+          bssid: "00:11:22:33:44:55",
+          securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          preSharedKey: "12345678",
+          isHiddenSsid: false,
+          randomMacType: 0,
+          randomMacAddr: "00:11:22:33:44:55",
+          showNoInternetDialog: true
+        };
+        let networkId = await wifiMg.addCandidateConfig(config);
+        console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
+        await wifiMg.connectToCandidateConfig(networkId);
+        console.info(`${caseName} connectToCandidateConfig promise success`);
+        if (networkId >= 0) {
+          await wifiMg.removeCandidateConfig(networkId);
+        }
+      } catch (err) {
+        console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
+        if (err.code === 801) {
+          console.info(`${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
   })
 }
