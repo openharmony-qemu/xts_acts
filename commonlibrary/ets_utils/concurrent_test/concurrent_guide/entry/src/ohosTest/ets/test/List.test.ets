@@ -15,6 +15,7 @@
 
 import AsyncLockTest from './arktsUtils/AsyncLockTest.test'
 import ConditionVariableTest from './arktsUtils/ConditionVariableTest.test'
+import ConditionVariableSupplementTest from './arktsUtils/ConditionVariableSupplementTest.test'
 import CollectionsTest from './arktsUtils/CollectionsTest.test'
 import ASONTest from './arktsUtils/ASONTest.test'
 import SendableLruCacheTest from './arktsUtils/SendableLruCacheTest.test'
@@ -60,6 +61,7 @@ import WorkerTaskpoolTest from './worker/WorkerTaskpoolTest.test'
 export default function testsuite(): void {
   AsyncLockTest()
   ConditionVariableTest()
+  ConditionVariableSupplementTest()
   CollectionsTest()
   ASONTest()
   SendableLruCacheTest()
