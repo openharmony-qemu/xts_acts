@@ -17,6 +17,12 @@ struct TreeViewV2Demo {
   @Local callbackParamDisplay: string = 'No callback yet';
   @Local testMessage: string = '';
 
+  @Local offClickResult: string = 'offClickNotTested';
+  @Local offAddResult: string = 'offAddNotTested';
+  @Local offDeleteResult: string = 'offDeleteNotTested';
+  @Local offModifyResult: string = 'offModifyNotTested';
+  @Local offMoveResult: string = 'offMoveNotTested';
+
   aboutToDisappear(): void {
     this.treeListenerV2.offNodeClick();
     this.treeListenerV2.offNodeAdd();
@@ -63,6 +69,23 @@ struct TreeViewV2Demo {
       Image($r('sys.media.ohos_ic_public_edit')).width(20).height(20)
       Text('Custom Component').fontSize(12).fontColor(Color.Red)
     }.padding(5).backgroundColor(Color.Yellow)
+  }
+
+  // off*验证用的命名回调
+  private offClickCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offClickResult = 'offClickTriggered';
+  }
+  private offAddCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offAddResult = 'offAddTriggered';
+  }
+  private offDeleteCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offDeleteResult = 'offDeleteTriggered';
+  }
+  private offModifyCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offModifyResult = 'offModifyTriggered';
+  }
+  private offMoveCallback: (callbackParam: CallbackParamV2) => void = (callbackParam: CallbackParamV2) => {
+    this.offMoveResult = 'offMoveTriggered';
   }
 
   testBoundaryCase(caseType: string): void {
@@ -325,6 +348,63 @@ struct TreeViewV2Demo {
                 this.testBoundaryCase('invalidParent');
               })
             Text(this.testMessage).fontSize('12fp').fontColor(Color.Red)
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Off Verification:').fontSize(8).fontColor(0x9C27B0)
+            Button('Test offClick', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offClickResult = 'offClickNotTriggered';
+                this.treeListener.offNodeClick(this.offClickCallback);
+              })
+            Text(this.offClickResult).fontSize(8).fontColor(0x9C27B0).id('offClickResult')
+            Button('Test offAdd', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offAddResult = 'offAddNotTriggered';
+                this.treeListener.offNodeAdd(this.offAddCallback);
+              })
+            Text(this.offAddResult).fontSize(8).fontColor(0x9C27B0).id('offAddResult')
+            Button('Test offDelete', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offDeleteResult = 'offDeleteNotTriggered';
+                this.treeListener.offNodeDelete(this.offDeleteCallback);
+              })
+            Text(this.offDeleteResult).fontSize(8).fontColor(0x9C27B0).id('offDeleteResult')
+            Button('Test offModify', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offModifyResult = 'offModifyNotTriggered';
+                this.treeListener.offNodeModify(this.offModifyCallback);
+              })
+            Text(this.offModifyResult).fontSize(8).fontColor(0x9C27B0).id('offModifyResult')
+            Button('Test offMove', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8)
+              .backgroundColor(0x9C27B0)
+              .width(150)
+              .controlSize(ControlSize.SMALL)
+              .fontSize(8)
+              .onClick((event: ClickEvent) => {
+                this.offMoveResult = 'offMoveNotTriggered';
+                this.treeListener.offNodeMove(this.offMoveCallback);
+              })
+            Text(this.offMoveResult).fontSize(8).fontColor(0x9C27B0).id('offMoveResult')
           }.height('100%').width('70%').alignItems(HorizontalAlign.Start).margin(10)
         }
       }

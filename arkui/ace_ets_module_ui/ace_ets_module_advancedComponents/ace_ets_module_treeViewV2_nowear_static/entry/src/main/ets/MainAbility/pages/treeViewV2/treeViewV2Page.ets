@@ -156,7 +156,7 @@ struct TreeViewDemo {
   // onceNodeMove验证用的计数器
   private onceMoveCount: number = 0;
 
-  private onContainerCallback: () => {} = () => {
+  private onContainerCallback: () => void = () => {
     this.offMoveResult = 'onContainerCallback';
   }
 
