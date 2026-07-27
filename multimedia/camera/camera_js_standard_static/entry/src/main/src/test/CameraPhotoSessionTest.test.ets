@@ -887,5 +887,42 @@ export default function cameraPhotoSessionTest() {
       }
     })
     
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.desc      test sub multimedia camera zoomPointInfos properties
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let zoomPointInfos = mCameraSession!.getZoomPointInfos()
+        console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
+        if (zoomPointInfos.length > 0) {
+          console.info(`zoomRatio type: ${typeof zoomPointInfos[0].zoomRatio}`)
+          console.info(`equivalentFocalLength type: ${typeof zoomPointInfos[0].equivalentFocalLength}`)
+          expect(typeof zoomPointInfos[0].zoomRatio).assertEqual('number');
+          expect(typeof zoomPointInfos[0].equivalentFocalLength).assertEqual('int');
+      }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+        await releaseCameraSession();
+      }
+    })
+
   })
 }

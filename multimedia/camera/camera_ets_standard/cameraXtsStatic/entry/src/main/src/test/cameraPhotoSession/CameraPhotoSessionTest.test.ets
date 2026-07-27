@@ -3342,5 +3342,367 @@ export default function PhotoOutputStaticTest(): void {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100
+     * @tc.desc   PhotoQualityPrioritization emu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            console.info(TAG + testName + "Entering start for camera");
+            expect(camera.PhotoQualityPrioritization.HIGH_QUALITY).assertEqual(0);
+            expect(camera.PhotoQualityPrioritization.SPEED).assertEqual(1);
+            console.info(TAG, testName, "Entering start PASSED", 'is');
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0100
+     * @tc.desc   isPhotoQualityPrioritizationSupported SUCCESS -- HIGH_QUALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let res =
+              mPhotoOutput!.isPhotoQualityPrioritizationSupported(camera.PhotoQualityPrioritization.HIGH_QUALITY);
+            expect(isEmptyBoolean(res)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0200
+     * @tc.desc   isPhotoQualityPrioritizationSupported SUCCESS -- SPEED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_IS_PHOTO_QUALITY_PRIORITIZATION_SUPPORTED_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let res = mPhotoOutput!.isPhotoQualityPrioritizationSupported(camera.PhotoQualityPrioritization.SPEED);
+            expect(isEmptyBoolean(res)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100
+     * @tc.desc   setPhotoQualityPrioritization SUCCESS -- success -- HIGH_QUALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            if (mPhotoOutput!.isPhotoQualityPrioritizationSupported(camera.PhotoQualityPrioritization.HIGH_QUALITY)) {
+              mPhotoOutput!.setPhotoQualityPrioritization(camera.PhotoQualityPrioritization.HIGH_QUALITY);
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0200
+     * @tc.desc   setPhotoQualityPrioritization SUCCESS -- success -- SPEED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            if (mPhotoOutput!.isPhotoQualityPrioritizationSupported(camera.PhotoQualityPrioritization.SPEED)) {
+              mPhotoOutput!.setPhotoQualityPrioritization(camera.PhotoQualityPrioritization.SPEED);
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0300
+     * @tc.desc   setPhotoQualityPrioritization  error code 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SET_PHOTO_QUALITY_PRIORITIZATION_STATIC_0300';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            if (!mPhotoOutput!.isPhotoQualityPrioritizationSupported(camera.PhotoQualityPrioritization.SPEED)) {
+              mPhotoOutput!.setPhotoQualityPrioritization(camera.PhotoQualityPrioritization.SPEED);
+              expect().assertFail();
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(err.code == camera.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURE_SETTING_COMPRESSION_QUALITY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_SETTING_COMPRESSION_QUALITY_STATIC_0100
+     * @tc.desc   PhotoCaptureSetting property compressionQuality SUCCESS 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SETTING_COMPRESSION_QUALITY_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_SETTING_COMPRESSION_QUALITY_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            await mPhotoSession!.start();
+            let captureLocation: camera.Location = {
+              latitude: 0,
+              longitude: 0,
+              altitude: 0
+            }
+            let settings: camera.PhotoCaptureSetting = {
+              quality: camera.QualityLevel.QUALITY_LEVEL_MEDIUM,
+              rotation: camera.ImageRotation.ROTATION_90,
+              location: captureLocation,
+              mirror: false,
+			  compressionQuality: 50
+            }
+            await mPhotoOutput!.capture(settings);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_enable_Auto_Extended_Gainmap_Delivery_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_enable_Auto_Extended_Gainmap_Delivery_STATIC_0100
+     * @tc.desc   enableAutoExtendedGainmapDelivery enable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_enable_Auto_Extended_Gainmap_Delivery_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_enable_Auto_Extended_Gainmap_Delivery_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            mPhotoOutput = mPhotoOutput as camera.PhotoOutput;
+            let isSupport = mPhotoOutput!.isAutoExtendedGainmapDeliverySupported();
+            console.info(TAG, testName + ' isAutoExtendedGainmapDeliverySupported = ' + isSupport);
+            if (isSupport) {
+              mPhotoOutput!.enableAutoExtendedGainmapDelivery(false);
+              console.info(TAG, testName + ' enable success');
+            } else {
+              console.info(TAG, testName + ' the device does not support extended gainmap delivery');
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   MetadataObject isLockFocusTracked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
+                  let boundingBox = metadataObject.boundingBox
+                  console.info(TAG + testName + " metadataObject boundingBox topLeftX: " + boundingBox.topLeftX);
+                  console.info(TAG + testName + " metadataObject boundingBox topLeftY: " + boundingBox.topLeftY);
+                  console.info(TAG + testName + " metadataObject boundingBox width: " + boundingBox.width);
+                  console.info(TAG + testName + " metadataObject boundingBox height: " + boundingBox.height);
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_lock_MetadataObject_Tracking_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_lock_MetadataObject_Tracking_STATIC_0100
+     * @tc.desc   isLockFocusTrackingSupported 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_lock_MetadataObject_Tracking_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_lock_MetadataObject_Tracking_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            await mPhotoSession!.start();
+            let isSupport = mPhotoSession!.isLockFocusTrackingSupported();
+            console.info(TAG, testName + ' isLockFocusTrackingSupported = ' + isSupport);
+            expect(isSupport == true || isSupport == false).assertTrue();
+            if (isSupport) {
+              mPhotoSession!.lockFocusTracking({ x: 0.0, y: 0.0 });
+              mPhotoSession!.unlockFocusTracking();
+              console.info(TAG, testName + ' enable success');
+            } else {
+              console.info(TAG, testName + ' the device does not support isLockFocusTrackingSupported');
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+      
   })
 }
