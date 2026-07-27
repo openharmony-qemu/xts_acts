@@ -230,5 +230,54 @@ export default function CApiGameDeviceTest() {
         let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo05();
         expect(ret).assertEqual(401);
       });
+
+    /**
+     * @tc.name   OH_GameDevice_GetAllDeviceInfos02
+     * @tc.number OH_GameDevice_GetAllDeviceInfos02
+     * @tc.desc   get AllDeviceInfos failed when allDeviceInfos is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_GetAllDeviceInfos02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceGetAllDeviceInfos02();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetCount03
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetCount03
+     * @tc.desc   get count failed when count is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_AllDeviceInfos_GetCount03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceAllDeviceInfosGetCount03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo06
+     * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo06
+     * @tc.desc   get deviceInfo failed when deviceInfo is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async () => {
+        if (SyscapChecker.canNotUse()) {
+          return;
+        }
+        let ret: number = GC.ActsGameDeviceAllDeviceInfosGetDeviceInfo06();
+        expect(ret).assertEqual(401);
+      });
   })
 }
