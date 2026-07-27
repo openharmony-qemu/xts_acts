@@ -3809,14 +3809,14 @@ export default function dlpTest() {
         done();
       })
 
-    /**
-     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_17_0100
-     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_17_0100
-     * @tc.desc   test accounttype ActionType
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+/**
+      * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_17_0100
+      * @tc.number SUB_Security_DataSecurity_DLP_errorCode_17_0100
+      * @tc.desc   test accounttype ActionType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
     it('SUB_Security_DataSecurity_DLP_errorCode_17_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         console.info("SUB_Security_DataSecurity_DLP_errorCode_17_0100: started.");
@@ -3825,6 +3825,31 @@ export default function dlpTest() {
         expect(dlpPermission.AccountType.ENTERPRISE_ACCOUNT).assertEqual(4);
         expect(dlpPermission.ActionType.NOT_OPEN).assertEqual(0);
         expect(dlpPermission.ActionType.OPEN).assertEqual(1);
+        done();
+      })
+
+    /**
+      * @tc.name   testProcessPluginCommand001
+      * @tc.number Test_processPluginCommand_001
+      * @tc.desc   call processPluginCommand with CMD_EVENT_REPORT_COMMON, return error code 19100011
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('testProcessPluginCommand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let curTag = TAG + "Test_processPluginCommand_001";
+        console.info(curTag, "start");
+        try {
+          let code = dlpPermission.PluginCmd.CMD_EVENT_REPORT_COMMON;
+          let message = "";
+          let result = await dlpPermission.processPluginCommand(code, message);
+          console.info(curTag, "processPluginCommand should not succeed");
+          expect(null).assertFail();
+        } catch (err) {
+          console.info(curTag, "processPluginCommand failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_SYSTEM_SERVICE_EXCEPTION);
+        }
         done();
       })
 
