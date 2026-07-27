@@ -402,11 +402,11 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
-      let conunt = 0;
+      let count = 0;
       try {
         const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
           console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
-          conunt++;
+          count++;
           let displayInfo = display.getDefaultDisplaySync();
           console.info(`${caseName} dispalyInfo1: ${JSON.stringify(displayInfo)}`);
           expect(keyboardInfo.beginRect.left).assertEqual(0);
@@ -464,7 +464,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
-      let conunt = 0;
+      let count = 0;
       try {
         if (isFreeWindowMode == true) {
           done();
@@ -478,7 +478,7 @@ export default function windowKeyBorad() {
           }
            const callback  =  (keyboardInfo: window.KeyboardInfo) => {
             console.info(`${caseName} KeyboardInfo2: ${JSON.stringify(keyboardInfo)}`);
-            conunt++;
+            count++;
             let displayInfo = display.getDefaultDisplaySync();
             console.info(`${caseName} dispalyInfo2: ${JSON.stringify(displayInfo)}`);
             expect(keyboardInfo.beginRect.left).assertEqual(0);
@@ -499,9 +499,9 @@ export default function windowKeyBorad() {
           await sleep(1000);
           await input.click();
          if(deviceType === "phone" || deviceType === "tablet"){
-            expect(conunt).assertEqual(1);
+            expect(count).assertEqual(1);
           }else{
-            expect(conunt).assertEqual(0);
+            expect(count).assertEqual(0);
             done();
           }
           await sleep(1000);
