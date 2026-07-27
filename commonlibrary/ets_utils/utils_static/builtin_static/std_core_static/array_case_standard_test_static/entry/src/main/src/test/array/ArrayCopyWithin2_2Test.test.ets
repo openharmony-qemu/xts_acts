@@ -313,9 +313,9 @@ export default function ArrayCopyWithin2_2Test(): void {
      */
 
     it('testArrayCopywithinTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const l3a = new Array<Array<int>>(new Array<int>(1));
-      const l3b = new Array<Array<int>>(new Array<int>(2));
-      const l3c = new Array<Array<int>>(new Array<int>(3));
+      const l3a = Array.create<Array<int>>(1, Array.create<int>(1, 1));
+      const l3b = Array.create<Array<int>>(1, Array.create<int>(1, 2));
+      const l3c = Array.create<Array<int>>(1, Array.create<int>(1, 3));
       const arr = new Array<Array<Array<int>>>(l3a, l3b, l3c);
       arr.copyWithin(1, 0, 2);
       arr[0][0][0] = 99;
@@ -369,9 +369,9 @@ export default function ArrayCopyWithin2_2Test(): void {
      */
 
     it('testArrayCopywithinTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = new Array<int>(1);
-      const b = new Array<int>(2);
-      const c = new Array<int>(3);
+      const a = Array.create<int>(1, 1);
+      const b = Array.create<int>(1, 2);
+      const c = Array.create<int>(1, 3);
       const arr = new Array<Array<int>>(a, b, c);
       a[0] = 99;
       arr.copyWithin(0, 1, 3);
@@ -700,9 +700,9 @@ export default function ArrayCopyWithin2_2Test(): void {
      */
 
     it('testArrayCopywithinTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a1 = new Array<Array<int>>(new Array<int>(1), new Array<int>(2));
-      const a2 = new Array<Array<int>>(new Array<int>(3), new Array<int>(4));
-      const a3 = new Array<Array<int>>(new Array<int>(5), new Array<int>(6));
+      const a1 = new Array<Array<int>>(Array.create<int>(1, 1), Array.create<int>(1, 2));
+      const a2 = new Array<Array<int>>(Array.create<int>(1, 3), Array.create<int>(1, 4));
+      const a3 = new Array<Array<int>>(Array.create<int>(1, 5), Array.create<int>(1, 6));
       const arr = new Array<Array<Array<int>>>(a1, a2, a3);
       arr.copyWithin(1, 0, 2);
       arr[0][0][0] = 99;
@@ -759,9 +759,9 @@ export default function ArrayCopyWithin2_2Test(): void {
      */
 
     it('testArrayCopywithinTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a1 = new Array<int>(1);
-      const a2 = new Array<int>(2);
-      const a3 = new Array<int>(3);
+      const a1 = Array.create<int>(1, 1);
+      const a2 = Array.create<int>(1, 2);
+      const a3 = Array.create<int>(1, 3);
       const arr = new Array<Array<int>>(a1, a2, a3);
       const copy = arr.copyWithin(0, 1, 3);
       expect(copy[0]).assertEqual(arr[0]);
@@ -2071,7 +2071,7 @@ export default function ArrayCopyWithin2_2Test(): void {
      */
 
     it('testArrayCopywithinTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       arr.copyWithin(0, 0, 1);
       expect(arr[0]).assertEqual(42);
     });

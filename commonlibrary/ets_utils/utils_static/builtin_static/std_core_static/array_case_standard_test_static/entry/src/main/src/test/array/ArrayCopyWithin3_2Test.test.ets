@@ -984,7 +984,7 @@ export default function ArrayCopyWithin3_2Test(): void {
      */
 
     it('testArrayCopywithinThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       arr.copyWithin(0, 0);
       expect(arr[0]).assertEqual(42);
     });

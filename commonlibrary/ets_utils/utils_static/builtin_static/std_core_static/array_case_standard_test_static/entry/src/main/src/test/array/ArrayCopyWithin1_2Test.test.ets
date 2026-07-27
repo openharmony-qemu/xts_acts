@@ -588,7 +588,7 @@ export default function ArrayCopyWithin1_2Test(): void {
      */
 
     it('testArrayCopywithinOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | undefined>(5);
+      const arr = Array.create<int | undefined>(1, 5);
       arr.copyWithin(0, 1, 4);
       expect(arr[0]).assertEqual(5);
     });
@@ -1279,7 +1279,7 @@ export default function ArrayCopyWithin1_2Test(): void {
 
     it('testArrayCopywithinOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const arr = new Array<int | undefined>(5);
+        const arr = Array.create<int | undefined>(1, 5);
         arr.copyWithin(0, 1, 4);
         arr[4];
         expect().assertFail();
