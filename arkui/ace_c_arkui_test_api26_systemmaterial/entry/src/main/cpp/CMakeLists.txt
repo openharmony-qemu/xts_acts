@@ -13,6 +13,7 @@ include_directories(
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     systemMaterial/ImmersiveMaterialTest.cpp
+    systemMaterial/NullPointerApisTest.cpp
     systemMaterial/CustomDialogMaterialTest.cpp
     systemMaterial/CustomDialogDisplayModeTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
@@ -28,5 +29,5 @@ find_library(libnapi-lib ace_napi.z)
 find_library(libuv-lib uv)
 
 target_link_libraries(nativefunc PUBLIC
-    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so
+    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so libnative_window_manager.so
     ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})

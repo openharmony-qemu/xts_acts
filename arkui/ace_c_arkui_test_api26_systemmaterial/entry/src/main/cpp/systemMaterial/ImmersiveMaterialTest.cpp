@@ -113,6 +113,20 @@ napi_value TestImmersiveMaterialSetGetColor001(napi_env env, napi_callback_info 
     NAPI_END;
 }
 
+napi_value TestImmersiveMaterialGetMaterialColorNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    uint32_t out = 0;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetMaterialColor(nullptr, &out),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+    ASSERT_NOTNULL(handle);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetMaterialColor(handle, nullptr),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    DestroyMaterial(handle);
+    NAPI_END;
+}
+
 napi_value TestImmersiveMaterialSetGetApplyShadow001(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -128,6 +142,28 @@ napi_value TestImmersiveMaterialSetGetApplyShadow001(napi_env env, napi_callback
     NAPI_END;
 }
 
+napi_value TestImmersiveMaterialSetApplyShadowNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetApplyShadow(nullptr, false),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialGetApplyShadowNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    bool out = false;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetApplyShadow(nullptr, &out),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+    ASSERT_NOTNULL(handle);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetApplyShadow(handle, nullptr),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    DestroyMaterial(handle);
+    NAPI_END;
+}
+
 napi_value TestImmersiveMaterialSetGetInteractive001(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -139,6 +175,28 @@ napi_value TestImmersiveMaterialSetGetInteractive001(napi_env env, napi_callback
     ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetInteractive(handle, &out),
               ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(out, true);
+    DestroyMaterial(handle);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialSetInteractiveNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetInteractive(nullptr, true),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialGetInteractiveNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    bool out = false;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetInteractive(nullptr, &out),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+    ASSERT_NOTNULL(handle);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetInteractive(handle, nullptr),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
     DestroyMaterial(handle);
     NAPI_END;
 }
@@ -166,6 +224,13 @@ napi_value TestLightEffectOptionsLifecycle001(napi_env env, napi_callback_info i
     NAPI_END;
 }
 
+napi_value TestLightEffectOptionsDestroyNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    OH_ArkUI_NativeModule_LightEffectOptions_Destroy(nullptr);
+    NAPI_END;
+}
+
 napi_value TestImmersiveMaterialSetGetLightEffect001(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -182,6 +247,39 @@ napi_value TestImmersiveMaterialSetGetLightEffect001(napi_env env, napi_callback
               ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(out, color);
     OH_ArkUI_NativeModule_LightEffectOptions_Destroy(options);
+    DestroyMaterial(handle);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialSetLightEffectNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    auto options = OH_ArkUI_NativeModule_LightEffectOptions_Create();
+    ASSERT_NOTNULL(options);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetLightEffect(nullptr, options),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetLightEffect(nullptr, nullptr),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+    ASSERT_NOTNULL(handle);
+    // NULL options is legal: disables light effect.
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetLightEffect(handle, nullptr),
+              ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_NativeModule_LightEffectOptions_Destroy(options);
+    DestroyMaterial(handle);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialGetLightEffectColorNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    uint32_t out = 0;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetLightEffectColor(nullptr, &out),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+    ASSERT_NOTNULL(handle);
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetLightEffectColor(handle, nullptr),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
     DestroyMaterial(handle);
     NAPI_END;
 }
