@@ -16,6 +16,7 @@
 
 import { AssertResult } from '../modal/assertModel';
 import { AnyType } from '../types/common';
+import { jsonx } from 'std/core';
 
 const MAX_DEPTH = 10;
 

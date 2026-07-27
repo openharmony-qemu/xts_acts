@@ -29,6 +29,8 @@ import hilog from '@ohos.hilog';
 import { ExpectService } from './module/service/ExpectService';
 import { SuiteService } from './module/service/SuiteService';
 import { AssertResult } from './module/modal/assertModel';
+import { EAWorker, jsonx } from 'std/core';
+import { concurrency } from 'std/concurrency';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
