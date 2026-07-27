@@ -358,7 +358,7 @@ struct TreeViewV2Demo {
               .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offClickResult = 'offClickNotTriggered';
-                this.treeListener.offNodeClick(this.offClickCallback);
+                this.treeListenerV2.offNodeClick(this.offClickCallback);
               })
             Text(this.offClickResult).fontSize(8).fontColor(0x9C27B0).id('offClickResult')
             Button('Test offAdd', { type: ButtonType.Normal, stateEffect: true })
@@ -369,7 +369,7 @@ struct TreeViewV2Demo {
               .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offAddResult = 'offAddNotTriggered';
-                this.treeListener.offNodeAdd(this.offAddCallback);
+                this.treeListenerV2.offNodeAdd(this.offAddCallback);
               })
             Text(this.offAddResult).fontSize(8).fontColor(0x9C27B0).id('offAddResult')
             Button('Test offDelete', { type: ButtonType.Normal, stateEffect: true })
@@ -380,7 +380,7 @@ struct TreeViewV2Demo {
               .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offDeleteResult = 'offDeleteNotTriggered';
-                this.treeListener.offNodeDelete(this.offDeleteCallback);
+                this.treeListenerV2.offNodeDelete(this.offDeleteCallback);
               })
             Text(this.offDeleteResult).fontSize(8).fontColor(0x9C27B0).id('offDeleteResult')
             Button('Test offModify', { type: ButtonType.Normal, stateEffect: true })
@@ -391,7 +391,7 @@ struct TreeViewV2Demo {
               .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offModifyResult = 'offModifyNotTriggered';
-                this.treeListener.offNodeModify(this.offModifyCallback);
+                this.treeListenerV2.offNodeModify(this.offModifyCallback);
               })
             Text(this.offModifyResult).fontSize(8).fontColor(0x9C27B0).id('offModifyResult')
             Button('Test offMove', { type: ButtonType.Normal, stateEffect: true })
@@ -402,7 +402,7 @@ struct TreeViewV2Demo {
               .fontSize(8)
               .onClick((event: ClickEvent) => {
                 this.offMoveResult = 'offMoveNotTriggered';
-                this.treeListener.offNodeMove(this.offMoveCallback);
+                this.treeListenerV2.offNodeMove(this.offMoveCallback);
               })
             Text(this.offMoveResult).fontSize(8).fontColor(0x9C27B0).id('offMoveResult')
           }.height('100%').width('70%').alignItems(HorizontalAlign.Start).margin(10)
