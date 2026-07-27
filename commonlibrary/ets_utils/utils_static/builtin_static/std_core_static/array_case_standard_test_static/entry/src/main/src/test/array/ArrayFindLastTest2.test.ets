@@ -240,7 +240,7 @@ export default function ArrayFindLastTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFindLast009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(true);
+      const arr = Array.create<boolean>(1, true);
       expect(arr.findLast((v: boolean): boolean => v)).assertTrue();
       expect(arr.findLast((v: boolean): boolean => !v)).assertUndefined();
     });
@@ -882,7 +882,7 @@ export default function ArrayFindLastTest2(): void {
     it('testArrayFindLast047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1 = new Array<number>(1, 2);
       const inner2 = new Array<number>(3, 4, 5);
-      const inner3 = new Array<number>(6);
+      const inner3 = Array.create<number>(1, 6);
       const arr = new Array<Array<number>>(inner1, inner2, inner3);
       const result = arr.findLast((inner: Array<number>): boolean => inner.length === 1);
       expect(result).assertEqual(inner3);
@@ -1111,7 +1111,7 @@ export default function ArrayFindLastTest2(): void {
     it('testArrayFindLast060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p = new FindLastPerson031();
       p.id = 'ref';
-      const arr = new Array<FindLastPerson031>(p);
+      const arr = Array.create<FindLastPerson031>(1, p);
       const result = arr.findLast((v: FindLastPerson031): boolean => v.id === 'ref');
       expect(result).assertEqual(p);
     });
