@@ -149,7 +149,7 @@ export default function ArrayFlat1Test2(): void {
      */
     it('testArrayFlat1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1 = new Array<string>('x', 'y');
-      const inner2 = new Array<string>('z');
+      const inner2 = Array.create<string>(1, 'z');
       const arr = new Array<Array<string>>(inner1, inner2);
       const result: Array<Array<string>> = arr.flat(0) as Array<Array<string>>;
       expect(result.length).assertEqual(2);
@@ -235,7 +235,7 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      FlatOneStaticField.grid = new Array<Array<number>>(new Array<number>(9, 10));
+      FlatOneStaticField.grid = Array.create<Array<number>>(1, new Array<number>(9, 10));
       const result: Array<number> = FlatOneStaticField.grid.flat<number>(1);
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(9);
@@ -304,8 +304,8 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<Array<number>>(new Array<number>(1, 2));
-      const arr = new Array<Array<Array<number>>>(inner);
+      const inner = Array.create<Array<number>>(1, new Array<number>(1, 2));
+      const arr = Array.create<Array<Array<number>>>(1, inner);
       const result: Array<number> = arr.flat<number>(100);
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(1);
@@ -323,7 +323,7 @@ export default function ArrayFlat1Test2(): void {
      */
     it('testArrayFlat1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1, 2);
-      const arr = new Array<Array<number>>(inner);
+      const arr = Array.create<Array<number>>(1, inner);
       const result: Array<number> = arr.flat<number>(1);
       expect(result === arr).assertFalse();
       expect(result === inner).assertFalse();
@@ -340,7 +340,7 @@ export default function ArrayFlat1Test2(): void {
     it('testArrayFlat1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p = new FlatOnePerson();
       p.id = 'ref';
-      const arr = new Array<Array<FlatOnePerson>>(new Array<FlatOnePerson>(p));
+      const arr = Array.create<Array<FlatOnePerson>>(1, Array.create<FlatOnePerson>(1, p));
       const result: Array<FlatOnePerson> = arr.flat<FlatOnePerson>(1);
       expect(result[0]).assertEqual(p);
     });
@@ -357,7 +357,7 @@ export default function ArrayFlat1Test2(): void {
     it('testArrayFlat1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dog = new FlatOneDog();
       const cat = new FlatOneCat();
-      const arr = new Array<Array<FlatOneAnimal>>(new Array<FlatOneAnimal>(dog), new Array<FlatOneAnimal>(cat));
+      const arr = new Array<Array<FlatOneAnimal>>(Array.create<FlatOneAnimal>(1, dog), Array.create<FlatOneAnimal>(1, cat));
       const result: Array<FlatOneAnimal> = arr.flat<FlatOneAnimal>(1);
       expect(result.length).assertEqual(2);
       expect(result[0].sound).assertEqual('bark');
@@ -375,7 +375,7 @@ export default function ArrayFlat1Test2(): void {
      */
     it('testArrayFlat1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const holder = new FlatOneGenericHolder<number>();
-      holder.data = new Array<Array<number>>(new Array<number>(10, 20), new Array<number>(30));
+      holder.data = new Array<Array<number>>(new Array<number>(10, 20), Array.create<number>(1, 30));
       const result: Array<number> = holder.data.flat<number>(1);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(10);
@@ -473,7 +473,7 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number | null>>(new Array<number | null>(1, null));
+      const arr = Array.create<Array<number | null>>(1, new Array<number | null>(1, null));
       const result = arr.flat<number | null>(1);
       expect(result.length).assertEqual(2);
       expect(result[1]).assertNull();
@@ -488,7 +488,7 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number | undefined>>(new Array<number | undefined>(1, undefined));
+      const arr = Array.create<Array<number | undefined>>(1, new Array<number | undefined>(1, undefined));
       const result = arr.flat<number | undefined>(1);
       expect(result.length).assertEqual(2);
       expect(result[1]).assertUndefined();
@@ -522,7 +522,7 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<bigint>>(new Array<bigint>(10n, 20n));
+      const arr = Array.create<Array<bigint>>(1, new Array<bigint>(10n, 20n));
       const result: Array<bigint> = arr.flat<bigint>(1);
       expect(result.length).assertEqual(2);
       expect(result[1]).assertEqual(20n);
@@ -538,7 +538,7 @@ export default function ArrayFlat1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(Double.NaN, Double.POSITIVE_INFINITY));
+      const arr = Array.create<Array<number>>(1, new Array<number>(Double.NaN, Double.POSITIVE_INFINITY));
       const result: Array<number> = arr.flat<number>(1);
       expect(result.length).assertEqual(2);
       expect(isNaN(result[0])).assertTrue();
@@ -556,7 +556,7 @@ export default function ArrayFlat1Test2(): void {
      */
     it('testArrayFlat1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1, 2, 3);
-      const arr = new Array<Array<number>>(inner);
+      const arr = Array.create<Array<number>>(1, inner);
       const result: Array<number> = arr.flat<number>(1);
       expect(result.length).assertEqual(3);
       expect(result[2]).assertEqual(3);
