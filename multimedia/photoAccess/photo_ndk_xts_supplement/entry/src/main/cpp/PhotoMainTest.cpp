@@ -19,11 +19,13 @@
 #include <string.h>
 #include "OHMediaAssetCreateTest.h"
 #include "MediaAssetManagerCancelRequestTest.h"
+#include "CFuseTest.h"
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
 
 napi_property_descriptor desc1[] = {
+    DESCRIPTOR("open", OpenTest),
     DESCRIPTOR("OHMediaAssetChangeRequestCreateTest", OHMediaAssetChangeRequestCreateTest),
     DESCRIPTOR("OHMediaAssetChangeRequestAddResourceWithUriTest", OHMediaAssetChangeRequestAddResourceWithUriTest),
     DESCRIPTOR("TestOhMediaAsset", TestOhMediaAsset),
@@ -32,6 +34,17 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestRequestImageForPath", TestRequestImageForPath),
     DESCRIPTOR("MediaAssetManagerCancelRequestTest", MediaAssetManagerCancelRequestTest),
     DESCRIPTOR("OHMediaAssetManagerQuickRequestImageTest", OHMediaAssetManagerQuickRequestImageTest),
+    DESCRIPTOR("Test_Create_Dir", Test_Create_Dir),
+    DESCRIPTOR("Test_Create_File", Test_Create_File),
+    DESCRIPTOR("Test_Open_Dir", Test_Open_Dir),
+    DESCRIPTOR("Test_Access", Test_Access),
+    DESCRIPTOR("testChmod", Test_Chmod),
+    DESCRIPTOR("testChown", Test_Chown),
+    DESCRIPTOR("testRemoveFile", Test_RemoveFile),
+    DESCRIPTOR("testRemoveDir", Test_RemoveDir),
+    DESCRIPTOR("testRename", Test_Rename),
+    DESCRIPTOR("testDirName", Test_DirName),
+    DESCRIPTOR("testBaseName", Test_BaseName),
 };
 
 EXTERN_C_START
