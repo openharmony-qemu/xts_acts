@@ -690,10 +690,14 @@ int32_t ActsGameControllerGamePadPressedButtonGetButtonCode03()
 {
     GamePad_ButtonEvent *buttonEvent = CreateButtonEvent(DOWN);
     GamePad_PressedButton *pressedButton = nullptr;
-    OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, &pressedButton);
-    GameController_ErrorCode code = OH_GamePad_PressedButton_GetButtonCode(pressedButton, nullptr);
-    DestroyButtonEvent(buttonEvent);
+    GameController_ErrorCode code = OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, 0, &pressedButton);
+    if (code != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS || pressedButton == nullptr) {
+        DestroyButtonEvent(buttonEvent);
+        return static_cast<int32_t>(code);
+    }
+    code = OH_GamePad_PressedButton_GetButtonCode(pressedButton, nullptr);
     OH_GamePad_DestroyPressedButton(&pressedButton);
+    DestroyButtonEvent(buttonEvent);
     return static_cast<int32_t>(code);
 }
 
