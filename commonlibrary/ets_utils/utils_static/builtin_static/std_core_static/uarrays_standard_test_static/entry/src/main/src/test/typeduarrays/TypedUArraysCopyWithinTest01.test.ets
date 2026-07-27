@@ -42,11 +42,10 @@ export default function typedUArraysCopyWithinTest01(): void {
      */
     it('testTypedUArraysCopyWithinPart101_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      try {
-        throw new Error('invalid copyWithin call');
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
+      const result = arr.copyWithin(0, 3);
+      expect(result).assertEqual(arr);
+      expect(arr[0]).assertEqual(4);
+      expect(arr[1]).assertEqual(5);
     });
 
     /**
@@ -59,11 +58,10 @@ export default function typedUArraysCopyWithinTest01(): void {
      */
     it('testTypedUArraysCopyWithinPart101_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      try {
-        throw new Error('invalid copyWithin call');
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
+      const result = arr.copyWithin(0, 3);
+      expect(result).assertEqual(arr);
+      expect(arr[0]).assertEqual(4n);
+      expect(arr[1]).assertEqual(5n);
     });
 
     /**

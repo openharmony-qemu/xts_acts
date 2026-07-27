@@ -80,85 +80,10 @@ export default function typedUArraysSliceTest05(): void {
       expect(val2).assertEqual(1);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0400
-     * @tc.name testTypedUArraysSlicePart301_004
-     * @tc.desc Verify undefined - Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSlicePart301_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      let result = arr.slice(0);
-      expect(result.length).assertEqual(5);
-      const val3 = result[0];
-      expect(val3).assertEqual(1);
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0500
-     * @tc.name testTypedUArraysSlicePart301_005
-     * @tc.desc Verify null - Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSlicePart301_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      let result = arr.slice(0);
-      expect(result.length).assertEqual(5);
-      const val4 = result[0];
-      expect(val4).assertEqual(1);
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0600
-     * @tc.name testTypedUArraysSlicePart301_006
-     * @tc.desc Verify start=NaN Uint8Array 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSlicePart301_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      let result = arr.slice(0);
-      expect(result.length).assertEqual(5);
-      const val5 = result[0];
-      expect(val5).assertEqual(1);
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0700
-     * @tc.name testTypedUArraysSlicePart301_007
-     * @tc.desc Verify start=undefined Uint8Array 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSlicePart301_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      let result = arr.slice(0);
-      expect(result.length).assertEqual(5);
-      const val6 = result[0];
-      expect(val6).assertEqual(1);
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0800
-     * @tc.name testTypedUArraysSlicePart301_008
-     * @tc.desc Verify start=null Uint8Array 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSlicePart301_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      let result = arr.slice(0);
-      expect(result.length).assertEqual(5);
-      const val7 = result[0];
-      expect(val7).assertEqual(1);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART301_0900

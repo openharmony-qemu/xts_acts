@@ -41,11 +41,10 @@ export default function typedUArraysConstructorTest10(): void {
      * @tc.level Level 2
     */
     it('testTypedUArraysConstructor0402_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('ArkTS limitation');
-      } catch (e) {
-        expect(e.message).assertEqual('ArkTS limitation');
-      }
+      const src = [0, 1, 255];
+      const arr = new Uint8Array(src);
+      expect(arr.length).assertEqual(3);
+      expect(arr[2]).assertEqual(255);
     });
 
     /**
@@ -168,9 +167,8 @@ export default function typedUArraysConstructorTest10(): void {
     it('testTypedUArraysConstructor0402_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1, 2, 3];
       const arr = new Uint8Array(src);
-      // ArkTS limitation: throw used to mark test boundary
-      /* const val13: number = arr[0];
-      expect(val13).assertEqual(1); */
+      const val13: number = arr[0];
+      expect(val13).assertEqual(1);
     });
 
     /**
@@ -184,9 +182,8 @@ export default function typedUArraysConstructorTest10(): void {
     it('testTypedUArraysConstructor0402_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1, 2, 3];
       const arr = new Uint8Array(src);
-      // ArkTS limitation: throw used to mark test boundary
-      /* const val14 = src[0];
-      expect(val14).assertEqual(1); */
+      const val14: number = arr[0];
+      expect(val14).assertEqual(1);
     });
 
     /**
@@ -228,11 +225,10 @@ export default function typedUArraysConstructorTest10(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0402_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = [0x80000000];
-      // ArkTS limitation: throw used to mark test boundary
-      /* const arr = new Uint32Array(src);
+      const src: Array<number> = [2147483648];
+      const arr = new Uint32Array(src);
       const val17: number = arr[0];
-      expect(val17).assertEqual(2147483648); */
+      expect(val17).assertEqual(2147483648);
     });
 
     /**

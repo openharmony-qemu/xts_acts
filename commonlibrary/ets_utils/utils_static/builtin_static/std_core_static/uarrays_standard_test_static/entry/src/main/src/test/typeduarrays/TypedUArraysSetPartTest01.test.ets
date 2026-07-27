@@ -807,18 +807,15 @@ export default function typedUArraysSetPartTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET_PART101_9700
      * @tc.name testTypedUArraysSetPart101_097
-     * @tc.desc Verify offset NaN Uint8Array
+     * @tc.desc Verify offset 0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysSetPart101_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const arr = new Uint8Array([0, 0, 0]);
-        throw new Error('ArkTS limitation')
-      } catch (e) {
-        expect(e.message).assertEqual('ArkTS limitation');
-      }
+      const arr = new Uint8Array([0, 0, 0]);
+      arr.set(new Uint8Array([1]), 0);
+      expect(arr[0]).assertEqual(1);
     });
 
   });

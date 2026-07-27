@@ -338,20 +338,6 @@ expect(result.length).assertEqual(5);
       expect(result[2]).assertEqual(255);
     });
 
-    /**
-@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART202_1600
-     * @tc.name testTypedUArraysToSortedPart202_016
-     * @tc.desc Verify Uint8Array toSorted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart202_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([3, 1, 2]);
-      const r1 = sortUint8ArrayValue(arr);
-      const val10 = r1[0];
-      expect(val10).assertEqual(1);
-    });
 
     /**
 @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART202_1700
@@ -368,28 +354,6 @@ expect(result.length).assertEqual(5);
       expect(val11).assertEqual(1);
     });
 
-    /**
-@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART202_1800
-     * @tc.name testTypedUArraysToSortedPart202_018
-     * @tc.desc Verify Uint8Array toSorted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart202_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([3, 1, 2]);
-      const r1 = sortUint8ArrayValue(arr);
-      expect(r1[0]).assertEqual(1);
-
-      expect(r1[1]).assertEqual(2);
-
-      expect(r1[2]).assertEqual(3);
-      expect(r1[0]).assertEqual(1);
-
-      expect(r1[1]).assertEqual(2);
-
-      expect(r1[2]).assertEqual(3);
-    });
 
     /**
 @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART202_1900

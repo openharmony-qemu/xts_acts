@@ -162,7 +162,6 @@ export default function testsuite(): void {
   typedUArraysSortTest05();
   typedUArraysSubarrayTest01();
   typedUArraysSubarrayTest02();
-  typedUArraysSubarrayTest03();
   typedUArraysSubarrayTest04();
   typedUArraysSubarrayTest05();
   typedUArraysToLocaleString01();
@@ -172,13 +171,11 @@ export default function testsuite(): void {
   typedUArraysToReversedTest03();
   typedUArraysToReversedTest04();
   typedUArraysToReversedTest05();
-  typedUArraysToSortedPartTest01();
   typedUArraysToSortedPartTest02();
   typedUArraysToSortedPartTest03();
   typedUArraysToSortedTest01();
   typedUArraysToSortedTest02();
   typedUArraysToSortedTest03();
-  typedUArraysToSortedTest04();
   typedUArraysToSortedTest05();
   typedUArraysToSortedTest06();
   typedUArraysToSortedTest07();
@@ -198,4 +195,7 @@ export default function testsuite(): void {
   typedUArraysWith01();
   typedUArraysWith02();
   TypedUArraysValueOfTest03();
+  typedUArraysSubarrayTest03();
+  typedUArraysToSortedPartTest01();
+  typedUArraysToSortedTest04();
 }

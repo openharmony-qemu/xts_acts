@@ -43,13 +43,14 @@ export default function typedUArraysConstructorTest12(): void {
     it('testTypedUArraysConstructor050102_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint32Array(100);
       for (let i=  0; i < 100; i++) {
+        src[i.toInt()] = i;
       }
       const copy = new Uint32Array(src);
       expect(copy.length).assertEqual(100);
       const val0 = copy[0];
       expect(val0).assertEqual(0);
       const val1 = copy[99];
-      expect(val1).assertEqual(0);
+      expect(val1).assertEqual(99);
     });
 
     /**

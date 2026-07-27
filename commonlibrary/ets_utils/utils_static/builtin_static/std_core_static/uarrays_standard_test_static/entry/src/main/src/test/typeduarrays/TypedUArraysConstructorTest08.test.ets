@@ -289,23 +289,22 @@ export default function typedUArraysConstructorTest08(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2000
      * @tc.name testTypedUArraysConstructor0302_020
-     * @tc.desc Verify Uint8ClampedArray null fixedArray TypeError
+     * @tc.desc Verify Uint8ClampedArray fixedArray clamp
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testTypedUArraysConstructor0302_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('ArkTS limitation')
-      } catch (e) {
-        expect(e.message).assertEqual('ArkTS limitation')
-      }
+      const arr = new Uint8ClampedArray([0, 128, 300])
+      expect(arr[0]).assertEqual(0)
+      expect(arr[1]).assertEqual(128)
+      expect(arr[2]).assertEqual(255)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2100
      * @tc.name testTypedUArraysConstructor0302_021
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
+     * @tc.desc Verify Uint8ClampedArray fixedArray length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -324,11 +323,9 @@ export default function typedUArraysConstructorTest08(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0302_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('invalid constructor input')
-      } catch (e) {
-        expect(e.message).assertEqual('invalid constructor input')
-      }
+      const arr = new Uint8ClampedArray([1, 2, 3])
+      expect(arr.length).assertEqual(3)
+      expect(arr[2]).assertEqual(3)
     });
 
     /**
@@ -347,17 +344,15 @@ export default function typedUArraysConstructorTest08(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2400
      * @tc.name testTypedUArraysConstructor0302_024
-     * @tc.desc Verify BigUint64Array Double fixedArray TypeError
+     * @tc.desc Verify BigUint64Array BigInt fixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0302_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('invalid BigUint64Array input')
-      } catch (e) {
-        expect(e.message).assertEqual('invalid BigUint64Array input')
-      }
+      const arr = new BigUint64Array([1n, 2n, 3n])
+      expect(arr.length).assertEqual(3)
+      expect(arr[1]).assertEqual(2n)
     });
 
     /**

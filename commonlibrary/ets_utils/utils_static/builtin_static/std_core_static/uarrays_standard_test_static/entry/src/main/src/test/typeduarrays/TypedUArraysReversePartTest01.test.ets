@@ -552,61 +552,9 @@ export default function typedUArraysReversePartTest01(): void {
       expect(result === arr).assertTrue();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_8200
-     * @tc.name testTypedUArraysReversePart101_082
-     * @tc.desc Verify Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysReversePart101_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3]);
-      const result = arr.reverse();
-      expect(result === arr).assertTrue();
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_8300
-     * @tc.name testTypedUArraysReversePart101_083
-     * @tc.desc Verify Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysReversePart101_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([1, 2, 3]);
-      const result = arr.reverse();
-      expect(result === arr).assertTrue();
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_8400
-     * @tc.name testTypedUArraysReversePart101_084
-     * @tc.desc Verify Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysReversePart101_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([1, 2, 3]);
-      const result = arr.reverse();
-      expect(result === arr).assertTrue();
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_8500
-     * @tc.name testTypedUArraysReversePart101_085
-     * @tc.desc Verify BigUint64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysReversePart101_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([1n, 2n, 3n]);
-      const result = arr.reverse();
-      expect(result === arr).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_8600

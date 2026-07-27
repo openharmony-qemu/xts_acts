@@ -121,6 +121,7 @@ export default function typedUArraysDefaultIteratorTest04(): void {
     it('testTypedUArraysDefaultIterator0101_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1000);
       for (let i = 0; i < 1000; i++) {
+        arr[i.toInt()] = i % 256;
       }
       const iterator = arr.values();
       let count = 0;

@@ -176,35 +176,7 @@ export default function typedUArraysToStringTest06(): void {
       expect(result).assertEqual("2,3,4");
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_3400
-     * @tc.name testTypedUArraysToString02_034
-     * @tc.desc Verify Uint8Array subarray toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToString02_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const sub = arr.subarray(1, 4);
-      let result = sub.toString();
-      expect(result).assertEqual("2,3,4");
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_3500
-     * @tc.name testTypedUArraysToString02_035
-     * @tc.desc Verify Uint8Array subarray toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToString02_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const sub = arr.subarray(1, 4);
-      let result = sub.toString();
-      expect(result).assertEqual("2,3,4");
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_3600
@@ -296,35 +268,7 @@ export default function typedUArraysToStringTest06(): void {
       expect(result).assertEqual("2,3,4");
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_4200
-     * @tc.name testTypedUArraysToString02_042
-     * @tc.desc Verify Uint8Array slice toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToString02_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const sliced = arr.slice(1, 4);
-      let result = sliced.toString();
-      expect(result).assertEqual("2,3,4");
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_4300
-     * @tc.name testTypedUArraysToString02_043
-     * @tc.desc Verify BigUint64Array slice toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToString02_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      const sliced = arr.slice(1, 4);
-      let result = sliced.toString();
-      expect(result).assertEqual("2,3,4");
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING02_4400

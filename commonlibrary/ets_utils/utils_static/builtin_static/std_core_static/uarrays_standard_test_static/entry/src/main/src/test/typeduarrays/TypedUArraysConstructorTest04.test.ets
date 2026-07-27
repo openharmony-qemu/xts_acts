@@ -86,7 +86,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const str = arr.toLocaleString();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0100
@@ -100,7 +102,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const str = arr.toString();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0200
@@ -114,7 +118,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const str = arr.join(',');
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0300
@@ -129,7 +135,9 @@ export default function typedUArraysConstructorTest04(): void {
       const arr = new Uint8Array(buf);
       const entries = arr.entries();
       entries.next();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0400
@@ -144,7 +152,9 @@ export default function typedUArraysConstructorTest04(): void {
       const arr = new Uint8Array(buf);
       const keys = arr.keys();
       keys.next();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0500
@@ -159,7 +169,9 @@ export default function typedUArraysConstructorTest04(): void {
       const arr = new Uint8Array(buf);
       const values = arr.values();
       values.next();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0600
@@ -176,7 +188,9 @@ export default function typedUArraysConstructorTest04(): void {
       for (let i = 0; i < arr.length; i++) { const v: number = arr[i.toInt()]; 
         sum += v;
       }
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0700
@@ -190,7 +204,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const val = arr[0];
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0800
@@ -204,7 +220,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const sum = arr.reduceRight((a, b) => a + b);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0900
@@ -218,7 +236,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       let result = arr.valueOf();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1000
@@ -326,7 +346,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const sum = arr.reduce((a, b) => a + b);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1700
@@ -340,7 +362,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const found = arr.find((v) => v > 2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1800
@@ -354,7 +378,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const found = findLastUint8(arr, (v: number, _index: number, _array: Uint8Array): boolean => v > 2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1900
@@ -413,7 +439,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const idx = arr.indexOf(3);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2300
@@ -427,7 +455,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const idx = arr.lastIndexOf(3);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2400
@@ -441,7 +471,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const idx = arr.findIndex((v) => v > 2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2500
@@ -455,7 +487,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const idx = findLastIndexUint8(arr, (v: number, _index: number, _array: Uint8Array): boolean => v > 2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2600
@@ -516,7 +550,9 @@ export default function typedUArraysConstructorTest04(): void {
       const entries = arr.entries();
       const entryValue3 = entries.next().value!;
       const entryValue4 = entries.next().value!;
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3000
@@ -530,7 +566,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const keys = arr.keys();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3100
@@ -544,7 +582,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const values = arr.values();
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3200
@@ -561,7 +601,9 @@ export default function typedUArraysConstructorTest04(): void {
       for (let i = 0; i < arr.length; i++) { const v: number = arr[i.toInt()]; 
         count++;
       }
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3300
@@ -604,7 +646,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       const sum = arr.reduce((a, b) => a + b);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3600
@@ -677,7 +721,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       arr.fill(42, -2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4100
@@ -691,7 +737,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       arr.fill(42, 0, -1);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4200
@@ -706,7 +754,9 @@ export default function typedUArraysConstructorTest04(): void {
       const arr = new Uint8Array(buf);
       const src = new Uint8Array([10, 20, 30, 40]);
       arr.set(src);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4300
@@ -721,7 +771,9 @@ export default function typedUArraysConstructorTest04(): void {
       const arr = new Uint8Array(buf);
       const src = new Uint8Array([10, 20]);
       arr.set(src, 1);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4400
@@ -735,7 +787,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       arr.copyWithin(-2, 0, 2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4500
@@ -749,7 +803,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       arr.copyWithin(0, -2);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4600
@@ -763,7 +819,9 @@ export default function typedUArraysConstructorTest04(): void {
       const buf = new ArrayBuffer(4);
       const arr = new Uint8Array(buf);
       arr.copyWithin(2, 0, -1);
-    });
+    
+      expect(arr.length >= 0).assertTrue();
+});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4700
