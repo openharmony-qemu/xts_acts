@@ -243,6 +243,8 @@ LITE_TEST_CASE(IotcOhConnectActsTest, IotcOhConnectActsTest003, Function | Mediu
     int ret = 0;
     ret = IotcOhDevInit();
     TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
+    ret = IotcOhSetOption(IOTC_OH_OPTION_DEVICE_DEV_INFO, &g_devInfo);
+    TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
     ret = IotcOhSetOption(IOTC_OH_OPTION_SDK_REG_EVENT_LISTENER, TestIotcEventCallback);
     TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
     ret = IotcOhSetOption(IOTC_OH_OPTION_DEVICE_GET_AC_KEY_CALLBACK, GetAcKey);
@@ -680,6 +682,8 @@ LITE_TEST_CASE(IotcOhConnectActsTest, IotcOhConnectActsTest027, Function | Mediu
 {
     int ret = 0;
     ret = IotcOhDevInit();
+    TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
+    ret = IotcOhSetOption(IOTC_OH_OPTION_DEVICE_DEV_INFO, &g_devInfo);
     TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);
     ret = IotcOhSetOption(IOTC_OH_OPTION_SDK_REG_EVENT_LISTENER, TestIotcEventCallback);
     TEST_ASSERT_EQUAL_INT(ret, IOTC_OK);

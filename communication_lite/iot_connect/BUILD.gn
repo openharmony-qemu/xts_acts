@@ -20,11 +20,20 @@ declare_args() {
 
 hctest_suite("ActsIotConnectTest") {
   suite_name = "acts"
-  sources = [
-    "src/iotc_oh_connect_acts_test.c",
-    "src/iotc_oh_device_acts_test.c",
+  include_dirs = [
+    "//commonlibrary/utils_lite/include",
+    "//foundation/communication/iot_connect/interfaces/kits/common",
+    "//foundation/communication/iot_connect/interfaces/kits/oh_connect",
+    "//foundation/communication/iot_connect/core/infrastructure/utils/include",
+    "//foundation/communication/iot_connect/adapter/include",
+    "//third_party/bounds_checking_function/include",
   ]
-
+  deps = [
+    "//foundation/communication/iot_connect:iotc_static",
+    "//third_party/bounds_checking_function:libsec_shared",
+    "//build/lite/config/component/cJSON:cjson_static",
+  ]
+  sources = []
   if (enable_ohos_test_xts_acts_use_iotc_ble) {
     sources += ["src/iotc_oh_ble_acts_test.c"]
   }
@@ -32,20 +41,9 @@ hctest_suite("ActsIotConnectTest") {
   if (enable_ohos_test_xts_acts_use_iotc_wifi) {
     sources += ["src/iotc_oh_wifi_acts_test.c"]
   }
-
-
-  include_dirs = [
-    "//commonlibrary/utils_lite/include",
-    "//foundation/communication/iot_connect/interfaces/kits/common",
-    "//foundation/communication/iot_connect/interfaces/kits/oh_connect",
-    "//foundation/communication/iot_connect/core/infrastructure/utils/include",
-    "//foundation/communication/iot_connect/adapter/include",
-    "//third_party/bounds_checking_function/include"
-  ]
-  deps = [
-    "//foundation/communication/iot_connect:iotc_static",
-    "//third_party/bounds_checking_function:libsec_shared",
-    "//build/lite/config/component/cJSON:cjson_static",
+  sources += [
+    "src/iotc_oh_connect_acts_test.c",
+    "src/iotc_oh_device_acts_test.c",
   ]
   
   cflags = [ "-Wno-error" ]
