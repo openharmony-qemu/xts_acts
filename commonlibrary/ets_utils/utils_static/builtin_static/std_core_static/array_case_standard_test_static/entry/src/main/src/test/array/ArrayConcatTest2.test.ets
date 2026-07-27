@@ -60,7 +60,7 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(3);
+      const arr1 = Array.create<int>(1, 3);
       arr1.fill(5);
       const arr2 = new Array<int>(2, 3);
       const result = arr1.concat(arr2);
@@ -116,8 +116,8 @@ export default function ArrayConcatTest2(): void {
     it('testArrayConcat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<int>(1, 2);
       const arr1 = Array.create<Array<int>>(2, inner);
-      const a1 = new Array<int>(3);
-      const arr2 = new Array<Array<int>>(a1);
+      const a1 = Array.create<int>(1, 3);
+      const arr2 = Array.create<Array<int>>(1, a1);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(inner);
@@ -169,10 +169,10 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner1 = new Array<Array<int>>(new Array<int>(1));
-      const inner2 = new Array<Array<int>>(new Array<int>(2));
-      const arr1 = new Array<Array<Array<int>>>(inner1);
-      const arr2 = new Array<Array<Array<int>>>(inner2);
+      const inner1 = Array.create<Array<int>>(1, Array.create<int>(1, 1));
+      const inner2 = Array.create<Array<int>>(1, Array.create<int>(1, 2));
+      const arr1 = Array.create<Array<Array<int>>>(1, inner1);
+      const arr2 = Array.create<Array<Array<int>>>(1, inner2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       const first = result[0];
@@ -201,7 +201,7 @@ export default function ArrayConcatTest2(): void {
     it('testArrayConcat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b1 = new Array<int>(2, 3);
       const arr1: Array<Array<int> | int> = new Array<Array<int> | int>(1, b1);
-      const b2 = new Array<int>(5);
+      const b2 = Array.create<int>(1, 5);
       const arr2: Array<Array<int> | int> = new Array<Array<int> | int>(4, b2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(4);
@@ -223,7 +223,7 @@ export default function ArrayConcatTest2(): void {
       const a2 = new Array<int>(3, 4);
       const arr1 = new Array<Array<int>>(a1, a2);
       const a3 = new Array<int>(5, 6);
-      const arr2 = new Array<Array<int>>(a3);
+      const arr2 = Array.create<Array<int>>(1, a3);
       const result = arr1.concat(arr2);
       const lastRow = result.at(-1);
       if (lastRow != undefined) {
@@ -244,8 +244,8 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<Array<int>>();
-      const a1 = new Array<int>(1);
-      const arr2 = new Array<Array<int>>(a1);
+      const a1 = Array.create<int>(1, 1);
+      const arr2 = Array.create<Array<int>>(1, a1);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(1);
     });
@@ -267,12 +267,12 @@ export default function ArrayConcatTest2(): void {
       const o2 = new ObjWithX();
       o2.x = 2;
       inner1.pushOne(o2);
-      const arr1 = new Array<Array<ObjWithX>>(inner1);
+      const arr1 = Array.create<Array<ObjWithX>>(1, inner1);
       const inner2 = new Array<ObjWithX>();
       const o3 = new ObjWithX();
       o3.x = 3;
       inner2.pushOne(o3);
-      const arr2 = new Array<Array<ObjWithX>>(inner2);
+      const arr2 = Array.create<Array<ObjWithX>>(1, inner2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0].length).assertEqual(2);
@@ -292,7 +292,7 @@ export default function ArrayConcatTest2(): void {
       const a2 = new Array<int>(-1, -2);
       const arr1 = new Array<Array<int>>(a1, a2);
       const a3 = new Array<int>(3, 4);
-      const arr2 = new Array<Array<int>>(a3);
+      const arr2 = Array.create<Array<int>>(1, a3);
       const filtered = arr1.concat(arr2).filter((a: Array<int>): boolean => a.at(0) > 0);
       expect(filtered.length).assertEqual(2);
     });
@@ -404,7 +404,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<float>(1.5e3f, 2.5e4f);
-      const arr2 = new Array<float>(3.5e-2f);
+      const arr2 = Array.create<float>(1, 3.5e-2f);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(1.5e3f);
@@ -422,7 +422,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<double>(1.2345678901234567, 0.0000000001);
-      const arr2 = new Array<double>(3.141592653589793);
+      const arr2 = Array.create<double>(1, 3.141592653589793);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
     });
@@ -531,7 +531,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<float>(-1.5e3f, -2.5e-2f);
-      const arr2 = new Array<float>(3.0e1f);
+      const arr2 = Array.create<float>(1, 3.0e1f);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(-1.5e3f);
@@ -623,7 +623,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3);
+      const arr2 = Array.create<int>(1, 3);
       const r1 = arr1.concat(arr2);
       const arr3 = new Array<int>(4, 5);
       const r2 = arr1.concat(arr3);
@@ -641,7 +641,7 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       let r = arr.concat(arr);
       r = r.concat(arr);
       expect(r.length).assertEqual(3);
@@ -677,7 +677,7 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const result = arr.concat(arr).concat(arr).concat(arr);
       expect(result.length).assertEqual(4);
       expect(result[0]).assertEqual(1);
@@ -779,7 +779,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10000, 5);
-      const arr2 = new Array<int>(99);
+      const arr2 = Array.create<int>(1, 99);
       const result = arr1.concat(arr2);
       expect(result.at(-1)).assertEqual(99);
     });
@@ -911,8 +911,8 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1);
-      const arr2 = new Array<int>(2);
+      const arr1 = Array.create<int>(1, 1);
+      const arr2 = Array.create<int>(1, 2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       try {
@@ -933,8 +933,8 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1);
-      const arr2 = new Array<int>(2);
+      const arr1 = Array.create<int>(1, 1);
+      const arr2 = Array.create<int>(1, 2);
       const result = arr1.concat(arr2);
       try {
         result.at(-10);
@@ -971,7 +971,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(10, 20);
-      const arr2 = new Array<int>(30);
+      const arr2 = Array.create<int>(1, 30);
       const result = arr1.concat(arr2).at(-3);
       expect(result).assertEqual(10);
     });
@@ -1092,7 +1092,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('\uFF21', '\uFF22');
-      const arr2 = new Array<string>('\uFF23');
+      const arr2 = Array.create<string>(1, '\uFF23');
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual('\uFF21');
@@ -1315,10 +1315,10 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1 = new Array<int>(1, 2);
-      const a2 = new Array<int>(3);
+      const a2 = Array.create<int>(1, 3);
       const arr1 = new Array<Array<int>>(a1, a2);
       const a3 = new Array<int>(4, 5, 6);
-      const arr2 = new Array<Array<int>>(a3);
+      const arr2 = Array.create<Array<int>>(1, a3);
       const concated = arr1.concat(arr2);
       const flattened = concated.reduce((acc: Array<int>, cur: Array<int>): Array<int> => acc.concat(cur), new Array<int>());
       expect(flattened.length).assertEqual(6);
@@ -1430,11 +1430,11 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a1 = new Array<int>(1);
-      const a2 = new Array<int>(2);
+      const a1 = Array.create<int>(1, 1);
+      const a2 = Array.create<int>(1, 2);
       const arr1 = new Array<Array<int>>(a1, a2);
-      const a3 = new Array<int>(3);
-      const a4 = new Array<int>(4);
+      const a3 = Array.create<int>(1, 3);
+      const a4 = Array.create<int>(1, 4);
       const arr2 = new Array<Array<int>>(a3, a4);
       const result = arr1.concat(arr2).flat() as Array<int>;
       expect(result.length).assertEqual(4);
@@ -1473,7 +1473,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('a', 'b');
-      const arr2 = new Array<string>('c');
+      const arr2 = Array.create<string>(1, 'c');
       let k = '';
       for (let i of arr1.concat(arr2).keys()) {
         k += i.toString();
@@ -1492,7 +1492,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('a', 'b');
-      const arr2 = new Array<string>('c');
+      const arr2 = Array.create<string>(1, 'c');
       let v = '';
       for (let val of arr1.concat(arr2).values()) {
         v += val;
@@ -1511,7 +1511,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('x', 'y');
-      const arr2 = new Array<string>('z');
+      const arr2 = Array.create<string>(1, 'z');
       let e = '';
       for (let entry of arr1.concat(arr2).entries()) {
         e += entry[0].toString() + entry[1];
@@ -1564,7 +1564,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1000, 2000);
-      const arr2 = new Array<int>(3000);
+      const arr2 = Array.create<int>(1, 3000);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
     });
@@ -1579,8 +1579,8 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1);
-      const arr2 = new Array<int>(2);
+      const arr1 = Array.create<int>(1, 1);
+      const arr2 = Array.create<int>(1, 2);
       const result = arr1.concat(arr2);
       expect(result instanceof Array).assertTrue();
     });
@@ -1814,7 +1814,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<short>(100, 200);
-      const arr2 = new Array<short>(300);
+      const arr2 = Array.create<short>(1, 300);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(100);
@@ -1832,7 +1832,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<long>(100, 200);
-      const arr2 = new Array<long>(300);
+      const arr2 = Array.create<long>(1, 300);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(100);
@@ -1850,7 +1850,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<float>(1.0f, 2.0f);
-      const arr2 = new Array<float>(3.0f);
+      const arr2 = Array.create<float>(1, 3.0f);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(1.0);
@@ -1868,7 +1868,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<double>(1.0, 2.0);
-      const arr2 = new Array<double>(3.0);
+      const arr2 = Array.create<double>(1, 3.0);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(1.0);
@@ -1886,7 +1886,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('a', 'b');
-      const arr2 = new Array<string>('c');
+      const arr2 = Array.create<string>(1, 'c');
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual('a');
@@ -1903,8 +1903,8 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<boolean>(true);
-      const arr2 = new Array<boolean>(false);
+      const arr1 = Array.create<boolean>(1, true);
+      const arr2 = Array.create<boolean>(1, false);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0]).assertTrue();
@@ -1922,7 +1922,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('test', '测试');
-      const arr2 = new Array<string>('123');
+      const arr2 = Array.create<string>(1, '123');
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual('test');
@@ -2001,7 +2001,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(0x1234, 0o123);
-      const arr2 = new Array<int>(0b1010);
+      const arr2 = Array.create<int>(1, 0b1010);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(4660);
@@ -2020,7 +2020,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(-2147483648, 2147483647);
-      const arr2 = new Array<int>(10000);
+      const arr2 = Array.create<int>(1, 10000);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(-2147483648);
@@ -2038,8 +2038,8 @@ export default function ArrayConcatTest2(): void {
      */
 
     it('testArrayConcat108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<string>('\uFFFD');
-      const arr2 = new Array<string>('\udc04');
+      const arr1 = Array.create<string>(1, '\uFFFD');
+      const arr2 = Array.create<string>(1, '\udc04');
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual('\uFFFD');
@@ -2057,8 +2057,8 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d = new Date(2026, 0, 1);
-      const arr1: Array<Object> = new Array<Object>(1);
-      const arr2: Array<Object> = new Array<Object>(d);
+      const arr1: Array<Object> = Array.create<Object>(1, 1);
+      const arr2: Array<Object> = Array.create<Object>(1, d);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(1);
@@ -2076,8 +2076,8 @@ export default function ArrayConcatTest2(): void {
     it('testArrayConcat110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m1 = new Map<string, int>(new Array<[string, int]>(['k', 1]));
       const m2 = new Map<string, int>(new Array<[string, int]>(['k', 2]));
-      const arr1 = new Array<Map<string, int>>(m1);
-      const arr2 = new Array<Map<string, int>>(m2);
+      const arr1 = Array.create<Map<string, int>>(1, m1);
+      const arr2 = Array.create<Map<string, int>>(1, m2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0].get('k')).assertEqual(1);
@@ -2096,8 +2096,8 @@ export default function ArrayConcatTest2(): void {
     it('testArrayConcat111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s1 = new Set<int>(new Array<int>(1, 2));
       const s2 = new Set<int>(new Array<int>(3, 4));
-      const arr1 = new Array<Set<int>>(s1);
-      const arr2 = new Array<Set<int>>(s2);
+      const arr1 = Array.create<Set<int>>(1, s1);
+      const arr2 = Array.create<Set<int>>(1, s2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0].has(1)).assertTrue();
@@ -2115,7 +2115,7 @@ export default function ArrayConcatTest2(): void {
 
     it('testArrayConcat112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<bigint>(100n, 200n);
-      const arr2 = new Array<bigint>(300n);
+      const arr2 = Array.create<bigint>(1, 300n);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(100n);
@@ -2153,8 +2153,8 @@ export default function ArrayConcatTest2(): void {
     it('testArrayConcat114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d1 = new Date(2026, 0, 1);
       const d2 = new Date(2026, 11, 25);
-      const arr1 = new Array<Date>(d1);
-      const arr2 = new Array<Date>(d2);
+      const arr1 = Array.create<Date>(1, d1);
+      const arr2 = Array.create<Date>(1, d2);
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(2);
       expect(result[0].getFullYear()).assertEqual(2026);
