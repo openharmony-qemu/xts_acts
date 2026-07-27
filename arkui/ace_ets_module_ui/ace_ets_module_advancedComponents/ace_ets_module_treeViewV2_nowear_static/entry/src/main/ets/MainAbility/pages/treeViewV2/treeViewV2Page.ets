@@ -156,6 +156,10 @@ struct TreeViewDemo {
   // onceNodeMove验证用的计数器
   private onceMoveCount: number = 0;
 
+  private onContainerCallback: () => void = () => {
+    this.offMoveResult = 'onContainerCallback';
+  }
+
   aboutToAppear(): void {
     // 注册监听
     this.treeListener.onNodeClick((callbackParam: CallbackParamV2) => {
@@ -312,7 +316,8 @@ struct TreeViewDemo {
         parentNodeId: -1,
         currentNodeId: 36,
         isFolder: false,
-        primaryTitle: '项目9'
+        primaryTitle: '项目9',
+        container: this.onContainerCallback
       })
       // SymbolGlyphModifier测试节点
       .addNode({
@@ -332,7 +337,8 @@ struct TreeViewDemo {
         symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')),
         primaryTitle: 'Symbol File'
       })
-      .buildDone();
+      .addNode(undefined)
+      .buildDone(); 
     this.treeController.refreshNode(-1, '父节点', '子节点');
   }
 
