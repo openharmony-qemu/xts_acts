@@ -313,12 +313,19 @@ export default function CameraPhotoOutputSuppTest() {
           return;
         } else {
           createPhotoOutput();
+          mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
+          mPhotoSession.beginConfig();
+          mPhotoSession.addInput(mCameraInput);
+          await mCameraInput.open();
+          mPhotoSession.addOutput(mPreviewOutput);
+          mPhotoSession.addOutput(mPhotoOutput);
           mPhotoOutput.enableAutoExtendedGainmapDelivery(true);
           }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
         expect(Number(err.code)).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG);
       } finally {
+        await releasePhotoSession();
         done();
       }
     })
@@ -352,6 +359,35 @@ export default function CameraPhotoOutputSuppTest() {
         expect(Number(err.code)).assertEqual(camera.CameraErrorCode.OPERATION_NOT_ALLOWED);
       } finally {
         await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0500
+     * @tc.desc   test camera enableAutoExtendedGainmapDelivery with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0500', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLEAUTOEXTENDEDGAINMAPDELIVERY_0500'
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+          done();
+          return;
+        } else {
+          createPhotoOutput();
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(true);
+          }
+      } catch (err) {
+        console.error(TAG, testName, JSON.stringify(err), err.code);
+        expect(Number(err.code)).assertEqual(camera.CameraErrorCode.SERVICE_FATAL_ERROR);
+      } finally {
+        await mPreviewOutput?.release();
+        await mPhotoOutput?.release();
         done();
       }
     })
