@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -911,30 +911,12 @@ export default function uint8ClampedArrayFull09Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6100
      * @tc.name testUint8ClampedArrayFullNine061
-     * @tc.desc Verify byteOffset + length > byteLength RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayFullNine061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      try {
-        new Uint8ClampedArray(buf, 2, 3);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6200
-     * @tc.name testUint8ClampedArrayFullNine062
      * @tc.desc Verify constructor element [0] equals 77 for ArrayBuffer-backed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const a = new Uint8ClampedArray(buf);
       const b = new Uint8ClampedArray(buf);
@@ -943,14 +925,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6300
-     * @tc.name testUint8ClampedArrayFullNine063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6200
+     * @tc.name testUint8ClampedArrayFullNine062
      * @tc.desc Verify subarray element at s[0] equals 200 for array [1, 2, 3, 4]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3, 4]);
       const s = a.subarray(1, 3);
       a[1] = 200;
@@ -958,14 +940,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6400
-     * @tc.name testUint8ClampedArrayFullNine064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6300
+     * @tc.name testUint8ClampedArrayFullNine063
      * @tc.desc Verify subarray element at a[1] equals 150 for array [1, 2, 3, 4]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3, 4]);
       const s = a.subarray(1, 3);
       s[0] = 150;
@@ -973,23 +955,37 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6500
-     * @tc.name testUint8ClampedArrayFullNine065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6400
+     * @tc.name testUint8ClampedArrayFullNine064
      * @tc.desc Verify subarray.buffer === parent.buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3, 4]);
       const s = a.subarray(0, 2);
       expect(s.buffer).assertEqual(a.buffer);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6500
+     * @tc.name testUint8ClampedArrayFullNine065
+     * @tc.desc Verify slice.buffer !== parent.buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint8ClampedArrayFullNine065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Uint8ClampedArray([1, 2, 3, 4]);
+      const s = a.slice();
+      expect(s.buffer).not().assertEqual(a.buffer);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6600
      * @tc.name testUint8ClampedArrayFullNine066
-     * @tc.desc Verify slice.buffer !== parent.buffer
+     * @tc.desc Verify slice element at a[0] equals 1 for array [1, 2, 3, 4]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -997,28 +993,28 @@ export default function uint8ClampedArrayFull09Test(): void {
     it('testUint8ClampedArrayFullNine066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3, 4]);
       const s = a.slice();
-      expect(s.buffer).not().assertEqual(a.buffer);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6700
-     * @tc.name testUint8ClampedArrayFullNine067
-     * @tc.desc Verify slice element at a[0] equals 1 for array [1, 2, 3, 4]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayFullNine067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = new Uint8ClampedArray([1, 2, 3, 4]);
-      const s = a.slice();
       s[0] = 99;
       expect(a[0]).assertEqual(1);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6700
+     * @tc.name testUint8ClampedArrayFullNine067
+     * @tc.desc Verify from(Uint8ClampedArray) buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint8ClampedArrayFullNine067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Uint8ClampedArray([1, 2, 3]);
+      const a = Uint8ClampedArray.from(src);
+      expect(a.buffer).not().assertEqual(src.buffer);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6800
      * @tc.name testUint8ClampedArrayFullNine068
-     * @tc.desc Verify from(Uint8ClampedArray) buffer
+     * @tc.desc Verify Uint8ClampedArray.from element at src[0] equals 1 for array [1, 2, 3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1026,33 +1022,19 @@ export default function uint8ClampedArrayFull09Test(): void {
     it('testUint8ClampedArrayFullNine068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint8ClampedArray([1, 2, 3]);
       const a = Uint8ClampedArray.from(src);
-      expect(a.buffer).not().assertEqual(src.buffer);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6900
-     * @tc.name testUint8ClampedArrayFullNine069
-     * @tc.desc Verify Uint8ClampedArray.from element at src[0] equals 1 for array [1, 2, 3]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayFullNine069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = new Uint8ClampedArray([1, 2, 3]);
-      const a = Uint8ClampedArray.from(src);
       a[0] = 200;
       expect(src[0]).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7000
-      * @tc.name testUint8ClampedArrayFullNine070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_6900
+      * @tc.name testUint8ClampedArrayFullNine069
       * @tc.desc Verify map returns new array with copied elements and independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3]);
       const b = a.map((v: number, _i: int, _a: Uint8ClampedArray): number => v);
       expect(b.length).assertEqual(3);
@@ -1064,14 +1046,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7100
-      * @tc.name testUint8ClampedArrayFullNine071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7000
+      * @tc.name testUint8ClampedArrayFullNine070
       * @tc.desc Verify filter returns new array with copied elements and independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3]);
       const b = a.filter((_v: number, _i: int, _a: Uint8ClampedArray): boolean => true);
       expect(b.length).assertEqual(3);
@@ -1083,14 +1065,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7200
-      * @tc.name testUint8ClampedArrayFullNine072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7100
+      * @tc.name testUint8ClampedArrayFullNine071
       * @tc.desc Verify toReversed returns new array with reversed elements and independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3]);
       const b = a.toReversed();
       expect(b.length).assertEqual(3);
@@ -1102,14 +1084,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7300
-      * @tc.name testUint8ClampedArrayFullNine073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7200
+      * @tc.name testUint8ClampedArrayFullNine072
       * @tc.desc Verify toSorted returns new array with sorted elements and independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([3, 1, 2]);
       const b = a.toSorted();
       expect(b.length).assertEqual(3);
@@ -1121,14 +1103,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7400
-     * @tc.name testUint8ClampedArrayFullNine074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7300
+     * @tc.name testUint8ClampedArrayFullNine073
      * @tc.desc Verify constructor element [0] equals 255 for array from src
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [0xFF, 0o17, 0b101, 10, 0x80];
       const a = new Uint8ClampedArray(src);
       expect(a[0]).assertEqual(255);
@@ -1137,14 +1119,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7500
-     * @tc.name testUint8ClampedArrayFullNine075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7400
+     * @tc.name testUint8ClampedArrayFullNine074
      * @tc.desc Verify constructor element [0] equals 128 for array from src
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [127.5, 128.5, 129.5];
       const a = new Uint8ClampedArray(src);
       expect(a[0]).assertEqual(128);
@@ -1153,42 +1135,42 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7600
-     * @tc.name testUint8ClampedArrayFullNine076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7500
+     * @tc.name testUint8ClampedArrayFullNine075
      * @tc.desc Verify constructing array from src yields length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [];
       const a = new Uint8ClampedArray(src);
       expect(a.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7700
-     * @tc.name testUint8ClampedArrayFullNine077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7600
+     * @tc.name testUint8ClampedArrayFullNine076
      * @tc.desc Verify constructor element [0] equals 0 for array from src
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [0];
       const a = new Uint8ClampedArray(src);
       expect(a[0]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7800
-     * @tc.name testUint8ClampedArrayFullNine078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7700
+     * @tc.name testUint8ClampedArrayFullNine077
      * @tc.desc Verify fill yields length 256 for length-256 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Uint8ClampedArray(256);
       values.fill(7)
       expect(values.length).assertEqual(256);
@@ -1196,14 +1178,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7900
-     * @tc.name testUint8ClampedArrayFullNine079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7800
+     * @tc.name testUint8ClampedArrayFullNine078
      * @tc.desc Verify constructor element [0] equals 255 for array from src
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [300, 300, 300, 300];
       const a = new Uint8ClampedArray(src);
       expect(a[0]).assertEqual(255);
@@ -1211,28 +1193,28 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8000
-     * @tc.name testUint8ClampedArrayFullNine080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_7900
+     * @tc.name testUint8ClampedArrayFullNine079
      * @tc.desc Verify constructor element [1] equals 0 for array from src
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [0, 0, 0];
       const a = new Uint8ClampedArray(src);
       expect(a[1]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8100
-     * @tc.name testUint8ClampedArrayFullNine081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8000
+     * @tc.name testUint8ClampedArrayFullNine080
      * @tc.desc Verify Array<number> -50 100 -200 200 clamp
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [-50, 100, -200, 200];
       const a = new Uint8ClampedArray(src);
       expect(a[0]).assertEqual(0);
@@ -1241,28 +1223,28 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8200
-     * @tc.name testUint8ClampedArrayFullNine082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8100
+     * @tc.name testUint8ClampedArrayFullNine081
      * @tc.desc Verify constructing array from s yields length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s: Set<number> = new Set<number>();
       const a = new Uint8ClampedArray(s);
       expect(a.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8300
-     * @tc.name testUint8ClampedArrayFullNine083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8200
+     * @tc.name testUint8ClampedArrayFullNine082
      * @tc.desc Verify Uint8ClampedArray.from yields length 2 for from(s)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s: Set<number> = new Set<number>();
       s.add(500);
       s.add(-10);
@@ -1273,14 +1255,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8400
-     * @tc.name testUint8ClampedArrayFullNine084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8300
+     * @tc.name testUint8ClampedArrayFullNine083
      * @tc.desc Verify Uint8ClampedArray.from element at a[0] equals 0 for from(s)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s: Set<number> = new Set<number>();
       s.add(Number.NaN);
       const a = Uint8ClampedArray.from(s);
@@ -1288,14 +1270,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8500
-     * @tc.name testUint8ClampedArrayFullNine085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8400
+     * @tc.name testUint8ClampedArrayFullNine084
      * @tc.desc Verify Uint8ClampedArray.from yields length 100 for from(s)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s: Set<number> = new Set<number>();
       for (let i = 0; i < 100; i++) {
         s.add(i);
@@ -1305,29 +1287,43 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8600
-     * @tc.name testUint8ClampedArrayFullNine086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8500
+     * @tc.name testUint8ClampedArrayFullNine085
      * @tc.desc Verify Uint8ClampedArray.from element at a[0] equals 0 for from(src, (v: number, _i:)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [0];
       const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
       expect(a[0]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8700
-     * @tc.name testUint8ClampedArrayFullNine087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8600
+     * @tc.name testUint8ClampedArrayFullNine086
      * @tc.desc Verify Uint8ClampedArray.from element at a[0] equals 255 for from(src, (v: number, _i:)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [255];
+      const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
+      expect(a[0]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8700
+     * @tc.name testUint8ClampedArrayFullNine087
+     * @tc.desc Verify ArrayLike<number> 256 255 clamp
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint8ClampedArrayFullNine087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Array<number> = [256];
       const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
       expect(a[0]).assertEqual(255);
     });
@@ -1335,54 +1331,40 @@ export default function uint8ClampedArrayFull09Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8800
      * @tc.name testUint8ClampedArrayFullNine088
-     * @tc.desc Verify ArrayLike<number> 256 255 clamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint8ClampedArrayFullNine088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: Array<number> = [256];
-      const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
-      expect(a[0]).assertEqual(255);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8900
-     * @tc.name testUint8ClampedArrayFullNine089
      * @tc.desc Verify ArrayLike<number> -1 0 clamp
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [-1];
       const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
       expect(a[0]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_9000
-     * @tc.name testUint8ClampedArrayFullNine090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_8900
+     * @tc.name testUint8ClampedArrayFullNine089
      * @tc.desc Verify ArrayLike<number> 9223372036854775807 255 clamp
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [9223372036854775807];
       const a = Uint8ClampedArray.from(src, (v: number, _i: number): number => v);
       expect(a[0]).assertEqual(255);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_9100
-     * @tc.name testUint8ClampedArrayFullNine091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_9000
+     * @tc.name testUint8ClampedArrayFullNine090
      * @tc.desc Verify .set element at a[0] equals 255 for length-3 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray(3);
       const src: Array<number> = [300 , -5 , Number(128) ];
       a.set(src);
@@ -1392,14 +1374,14 @@ export default function uint8ClampedArrayFull09Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_9200
-     * @tc.name testUint8ClampedArrayFullNine092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_NINE_9100
+     * @tc.name testUint8ClampedArrayFullNine091
      * @tc.desc Verify join a.join('|') equals '1|2|3' for array [1, 2, 3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint8ClampedArrayFullNine092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint8ClampedArrayFullNine091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint8ClampedArray([1, 2, 3]);
       expect(a.join('|')).assertEqual('1|2|3');
     });
