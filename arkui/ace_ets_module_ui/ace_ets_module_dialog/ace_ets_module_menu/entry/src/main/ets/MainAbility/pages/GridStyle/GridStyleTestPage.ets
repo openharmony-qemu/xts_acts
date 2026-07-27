@@ -74,46 +74,48 @@ struct GridStyleTestPage {
 
   build() {
     Column() {
-      Column({ space: 10 }) {
+      Column() {
         Text('gridStyle Test')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 20 })
           .id('title_text')
 
         Text(this.resultText)
-          .fontSize(16)
+          .fontSize(10)
           .id('result_text')
-          .margin({ bottom: 10 })
 
         Text('MenuGridPosition Enum')
-          .fontSize(18)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_enum')
 
-        Row({ space: 10 }) {
+        Row() {
           Button('MenuGridPosition.TOP=0')
             .id('btn_enum_top')
+            .height('5%')
+            .width('30%')
             .onClick(() => {
               this.resultText = 'MenuGridPosition.TOP = ' + MenuGridPosition.TOP;
             })
 
           Button('MenuGridPosition.BOTTOM=1')
             .id('btn_enum_bottom')
+            .height('5%')
+            .width('30%')
             .onClick(() => {
               this.resultText = 'MenuGridPosition.BOTTOM = ' + MenuGridPosition.BOTTOM;
             })
         }
 
         Text('count Tests')
-          .fontSize(18)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_count')
 
-        Row({ space: 10 }) {
+        Row() {
           Text('count=0 (default)')
             .id('text_count_0')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownCount0, this.MyMenu4, {
               gridStyle: { count: 0 },
               onWillDisappear: () => {
@@ -127,7 +129,7 @@ struct GridStyleTestPage {
 
           Text('count=1')
             .id('text_count_1')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownCount1, this.MyMenu4, {
               gridStyle: { count: 1 },
               onWillDisappear: () => {
@@ -141,7 +143,7 @@ struct GridStyleTestPage {
 
           Text('count=3')
             .id('text_count_3')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownCount3, this.MyMenu4, {
               gridStyle: { count: 3 },
               onWillDisappear: () => {
@@ -155,7 +157,7 @@ struct GridStyleTestPage {
 
           Text('count=6')
             .id('text_count_6')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownCount6, this.MyMenu8, {
               gridStyle: { count: 6 },
               onWillDisappear: () => {
@@ -169,14 +171,14 @@ struct GridStyleTestPage {
         }
 
         Text('horizontalSize Tests')
-          .fontSize(18)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_hsize')
 
-        Row({ space: 10 }) {
+        Row() {
           Text('hSize=1')
             .id('text_hsize_1')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownHSize1, this.MyMenu4, {
               gridStyle: { horizontalSize: 1 },
               onWillDisappear: () => {
@@ -190,7 +192,7 @@ struct GridStyleTestPage {
 
           Text('hSize=2')
             .id('text_hsize_2')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownHSize2, this.MyMenu4, {
               gridStyle: { horizontalSize: 2 },
               onWillDisappear: () => {
@@ -204,7 +206,7 @@ struct GridStyleTestPage {
 
           Text('hSize=3')
             .id('text_hsize_3')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownHSize3, this.MyMenu4, {
               gridStyle: { horizontalSize: 3 },
               onWillDisappear: () => {
@@ -218,7 +220,7 @@ struct GridStyleTestPage {
 
           Text('hSize=4')
             .id('text_hsize_4')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownHSize4, this.MyMenu4, {
               gridStyle: { horizontalSize: 4 },
               onWillDisappear: () => {
@@ -232,14 +234,14 @@ struct GridStyleTestPage {
         }
 
         Text('position Tests')
-          .fontSize(18)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_position')
 
-        Row({ space: 10 }) {
+        Row() {
           Text('position=TOP')
             .id('text_pos_top')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownPosTop, this.MyMenu8, {
               gridStyle: { count: 4, position: MenuGridPosition.TOP },
               onWillDisappear: () => {
@@ -253,7 +255,7 @@ struct GridStyleTestPage {
 
           Text('position=BOTTOM')
             .id('text_pos_bottom')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownPosBottom, this.MyMenu8, {
               gridStyle: { count: 4, position: MenuGridPosition.BOTTOM }
 
@@ -265,14 +267,14 @@ struct GridStyleTestPage {
         }
 
         Text('Combined Params Tests')
-          .fontSize(18)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_combined')
 
         Row({ space: 10 }) {
           Text('count=4, hSize=3, pos=BOTTOM')
             .id('text_all_params')
-            .fontSize(16)
+            .fontSize(10)
             .bindContextMenuByIsShow(this.isShownDefault, this.MyMenu8, {
               gridStyle: { count: 4, horizontalSize: 3, position: MenuGridPosition.BOTTOM },
               onWillDisappear: () => {
@@ -287,7 +289,7 @@ struct GridStyleTestPage {
 
         Text('Default(no gridStyle)')
           .id('text_no_grid')
-          .fontSize(16)
+          .fontSize(10)
           .bindContextMenuByIsShow(this.isShownDefault, this.MyMenu8, {
             onWillDisappear: () => {
               this.isShownDefault = false;
@@ -300,14 +302,14 @@ struct GridStyleTestPage {
       }
 
       Text('bindMenu + MenuElement array')
-        .fontSize(18)
+        .fontSize(10)
         .fontWeight(FontWeight.Bold)
         .id('section_bindmenu')
 
       Row({ space: 10 }) {
         Text('bindMenu gridStyle')
           .id('text_bindmenu_grid')
-          .fontSize(16)
+          .fontSize(10)
           .bindMenu(this.menuItems, {
             gridStyle: { count: 4, horizontalSize: 2 }
           })
@@ -317,13 +319,15 @@ struct GridStyleTestPage {
       }
 
       Text('Return Value Test')
-        .fontSize(18)
+        .fontSize(10)
         .fontWeight(FontWeight.Bold)
         .id('section_return')
 
-      Row({ space: 10 }) {
+      Row() {
         Button('Check Return Type')
           .id('btn_return_check')
+          .height('5%')
+          .width('30%')
           .onClick(() => {
             let result = this.bindContextMenuByIsShow(true, this.MyMenu8, {
               gridStyle: { count: 4, horizontalSize: 3, position: MenuGridPosition.BOTTOM },
@@ -335,11 +339,6 @@ struct GridStyleTestPage {
           })
       }
 
-      Button('Back')
-        .id('btn_back')
-        .onClick(() => {
-          router.back();
-        })
     }
     .width('100%')
     .height('100%')

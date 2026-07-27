@@ -31,13 +31,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchBasicGet_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/anything",
+            url: "https://httpbin.moyufangge.com/anything",
             success: function (data) {
               console.info("NetStack fetch success " + JSON.stringify(data));
               expect(data.code === 200 || data.code > 500).assertTrue();
@@ -70,13 +70,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchUserAgent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/user-agent",
+            url: "https://httpbin.moyufangge.com/user-agent",
             success: function (data) {
               console.info("NetStack fetch success " + JSON.stringify(data));
               expect(data.code === 200 || data.code > 500).assertTrue();
@@ -112,13 +112,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchUserAgent_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/user-agent",
+            url: "https://httpbin.moyufangge.com/user-agent",
             responseType: "json",
             success: function (data) {
               console.info("NetStack fetch success " + JSON.stringify(data));
@@ -155,13 +155,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchHeader_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/headers",
+            url: "https://httpbin.moyufangge.com/headers",
             success: function (data) {
               console.info("NetStack Fetch Success " + JSON.stringify(data));
               expect(data.code === 200 || data.code > 500).assertTrue();
@@ -197,13 +197,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchHeader_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/headers",
+            url: "https://httpbin.moyufangge.com/headers",
             responseType: "json",
             success: function (data) {
               console.info("NetStack Fetch Success " + JSON.stringify(data));
@@ -240,13 +240,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchPost_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/post",
+            url: "https://httpbin.moyufangge.com/post",
             method: "POST",
             data: "MineMine",
             success: function (data) {
@@ -284,13 +284,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchPost_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/post",
+            url: "https://httpbin.moyufangge.com/post",
             method: "POST",
             data: "MineMine",
             responseType: "json",
@@ -329,13 +329,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchPut_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/put",
+            url: "https://httpbin.moyufangge.com/put",
             method: "PUT",
             data: "MineMine",
             success: function (data) {
@@ -373,13 +373,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchPut_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/put",
+            url: "https://httpbin.moyufangge.com/put",
             method: "PUT",
             data: "MineMine",
             responseType: "json",
@@ -418,13 +418,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchUrlEncode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/response-headers?key1=val1&key2=val2",
+            url: "https://httpbin.moyufangge.com/response-headers?key1=val1&key2=val2",
             data: {
               "name1": "mine1",
               "name2": "mine2",
@@ -467,13 +467,13 @@ export default function Telephony_NetStack_HttpFetchTest() {
      */
     it("Telephony_NetStack_HttpTestFetchUrlEncode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       let httpRequest = http.createHttp();
-      httpRequest.request("https://httpbin.org", {
+      httpRequest.request("https://httpbin.moyufangge.com", {
         readTimeout: 10000,
         connectTimeout: 10000
       }, (err, data) => {
         if (!err) {
           fetch.fetch({
-            url: "https://httpbin.org/response-headers?key1=val1&key2=val2",
+            url: "https://httpbin.moyufangge.com/response-headers?key1=val1&key2=val2",
             data: {
               "name1": "mine1",
               "name2": "mine2",

@@ -35,6 +35,16 @@ const ERROR_CODE_69 = 69;
 // 未指定的错误。
 const ERROR_CODE_2305001 = 2305001;
 const ERROR_CODE_2305069 = 2305069;
+// 其他错误码
+const ERROR_CODE_2305002 = 2305002;
+const ERROR_CODE_2305004 = 2305004;
+const ERROR_CODE_2305006 = 2305006;
+const ERROR_CODE_2305007 = 2305007;
+const ERROR_CODE_2305009 = 2305009;
+const ERROR_CODE_2305010 = 2305010;
+const ERROR_CODE_2305024 = 2305024;
+const ERROR_CODE_2305027 = 2305027;
+const ERROR_CODE_2305062 = 2305062;
 
 // websocket客户端为null。
 const ERROR_CODE_1001 = 1001;
@@ -681,11 +691,8 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      console.info('NetStackNDK testOHWebSocketClientClose_0100 start');
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_1);
-      console.info('NetStackNDK testOHWebSocketClientClose_0100 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
-      console.info('NetStackNDK testOHWebSocketClientClose_0100 end');
     });
 
     /**
@@ -697,11 +704,8 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      console.info('NetStackNDK testOHWebSocketClientClose_0200 start');
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_2);
-      console.info('NetStackNDK testOHWebSocketClientClose_0200 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
-      console.info('NetStackNDK testOHWebSocketClientClose_0200 end');
     });
 
     /**
@@ -792,13 +796,10 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 start');
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_4);
-      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
-      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 end');
     });
-    
+
 
     /**
      * @tc.name   testNetStackIsCleartextPermitted_0100
@@ -814,7 +815,7 @@ export default function NetStackNDKTest() {
       expect(re).assertEqual(WEBSOCKET_OK);
       done();
     });
-    
+
     /**
      * @tc.name   testNetStackIsCleartextPermittedByHostName_0100
      * @tc.number SUB_NetStack_IsCleartextPermittedByHostName_0100
@@ -856,6 +857,535 @@ export default function NetStackNDKTest() {
       let result : number = wsAPI.OHNetStackFreeCertChain();
       expect(result).assertEqual(WEBSOCKET_OK);
     });
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0200
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305001");
+      expect(result).assertEqual(ERROR_CODE_2305001);
+    });
 
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0300
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305002");
+      expect(result).assertEqual(ERROR_CODE_2305002);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0400
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305004");
+      expect(result).assertEqual(ERROR_CODE_2305004);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0500
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305006.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305006");
+      expect(result).assertEqual(ERROR_CODE_2305006);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0600
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305007.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305007");
+      expect(result).assertEqual(ERROR_CODE_2305007);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0700
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305009.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305009");
+      expect(result).assertEqual(ERROR_CODE_2305009);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0800
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305010.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305010");
+      expect(result).assertEqual(ERROR_CODE_2305010);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0900
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0900
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305024.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305024");
+      expect(result).assertEqual(ERROR_CODE_2305024);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_1000
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_1000
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305027.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305027");
+      expect(result).assertEqual(ERROR_CODE_2305027);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_1100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_1100
+     * @tc.desc   ：Create and verify sorted cert chain with error code 2305062.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("ERROR_2305062");
+      expect(result).assertEqual(ERROR_CODE_2305062);
+    });
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0200
+     * @tc.desc   ：Free cert chain with error code 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305001");
+      expect(result).assertEqual(ERROR_CODE_2305001);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0300
+     * @tc.desc   ：Free cert chain with error code 2305002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305002");
+      expect(result).assertEqual(ERROR_CODE_2305002);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0400
+     * @tc.desc   ：Free cert chain with error code 2305004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305004");
+      expect(result).assertEqual(ERROR_CODE_2305004);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0500
+     * @tc.desc   ：Free cert chain with error code 2305006.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305006");
+      expect(result).assertEqual(ERROR_CODE_2305006);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0600
+     * @tc.desc   ：Free cert chain with error code 2305007.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305007");
+      expect(result).assertEqual(ERROR_CODE_2305007);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0700
+     * @tc.desc   ：Free cert chain with error code 2305009.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305009");
+      expect(result).assertEqual(ERROR_CODE_2305009);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0800
+     * @tc.desc   ：Free cert chain with error code 2305010.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305010");
+      expect(result).assertEqual(ERROR_CODE_2305010);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0900
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0900
+     * @tc.desc   ：Free cert chain with error code 2305024.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305024");
+      expect(result).assertEqual(ERROR_CODE_2305024);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_1000
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_1000
+     * @tc.desc   ：Free cert chain with error code 2305027.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305027");
+      expect(result).assertEqual(ERROR_CODE_2305027);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_1100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_1100
+     * @tc.desc   ：Free cert chain with error code 2305062.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("ERROR_2305062");
+      expect(result).assertEqual(ERROR_CODE_2305062);
+    });
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_NULL_CERT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with NULL cert parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_NULL_cert");
+      expect(result).assertEqual(ERROR_CODE_2305001);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_ZERO_CERTCOUNT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with zero certCount parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_zero_certCount");
+      expect(result).assertEqual(ERROR_CODE_2305002);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_NULL_CACERT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with NULL caCert parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_NULL_caCert");
+      expect(result).assertEqual(ERROR_CODE_2305004);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_NULL_HOSTNAME
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with NULL hostname parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_NULL_hostname");
+      expect(result).assertEqual(ERROR_CODE_2305062);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_NULL_OUTSORTEDCHAIN
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with NULL outSortedChain parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_NULL_outSortedChain");
+      expect(result).assertEqual(ERROR_CODE_2305006);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_NULL_OUTSORTEDCOUNT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with NULL outSortedCount parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_NULL_outSortedCount");
+      expect(result).assertEqual(ERROR_CODE_2305007);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_INVALID_CERT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with invalid certificate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_invalid_cert");
+      expect(result).assertEqual(ERROR_CODE_2305009);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_EXPIRED_CERT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with expired certificate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_expired_cert");
+      expect(result).assertEqual(ERROR_CODE_2305010);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_0900
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_INVALID_CA
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with invalid CA certificate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_invalid_ca");
+      expect(result).assertEqual(ERROR_CODE_2305024);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_1000
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_UNTRUSTED_CERT
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with untrusted certificate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_untrusted_cert");
+      expect(result).assertEqual(ERROR_CODE_2305027);
+    });
+
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChainParam_1100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_HOSTNAME_MISMATCH
+     * @tc.desc   ：Test CreateAndVerifySortedCertChain with hostname mismatch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChainParam_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain("TEST_hostname_mismatch");
+      expect(result).assertEqual(ERROR_CODE_2305062);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_NULL_CERTCHAIN
+     * @tc.desc   ：Test FreeCertChain with NULL certChain parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_NULL_certChain");
+      expect(result).assertEqual(ERROR_CODE_2305001);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_ZERO_CERTCOUNT
+     * @tc.desc   ：Test FreeCertChain with zero certCount parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_zero_certCount");
+      expect(result).assertEqual(ERROR_CODE_2305002);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_INVALID_CERTCHAIN
+     * @tc.desc   ：Test FreeCertChain with invalid certificate chain.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_certChain");
+      expect(result).assertEqual(ERROR_CODE_2305004);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_NULL_DATA
+     * @tc.desc   ：Test FreeCertChain with NULL certificate data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_NULL_data");
+      expect(result).assertEqual(ERROR_CODE_2305006);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_ZERO_SIZE
+     * @tc.desc   ：Test FreeCertChain with zero certificate size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_zero_size");
+      expect(result).assertEqual(ERROR_CODE_2305007);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_INVALID_TYPE
+     * @tc.desc   ：Test FreeCertChain with invalid certificate type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_type");
+      expect(result).assertEqual(ERROR_CODE_2305009);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_DOUBLE_FREE
+     * @tc.desc   ：Test FreeCertChain with double free scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_double_free");
+      expect(result).assertEqual(ERROR_CODE_2305010);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_LARGE_CERTCOUNT
+     * @tc.desc   ：Test FreeCertChain with large certificate count.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_large_certCount");
+      expect(result).assertEqual(ERROR_CODE_2305024);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_0900
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_INVALID_CERTCHAIN_PTR
+     * @tc.desc   ：Test FreeCertChain with invalid certificate chain pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_certChain_ptr");
+      expect(result).assertEqual(ERROR_CODE_2305027);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChainParam_1000
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_MEMORY_ERROR
+     * @tc.desc   ：Test FreeCertChain with memory error scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChainParam_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_memory_error");
+      expect(result).assertEqual(ERROR_CODE_2305062);
+    });
   });
 }

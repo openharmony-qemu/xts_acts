@@ -618,6 +618,51 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       }
     })
+    
+    /**
+     * @tc.name   testColorManagerCreateNull
+     * @tc.number SUB_GRAPHIC_ColorManager_Create_Null
+     * @tc.desc   colorManager create null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testColorManagerCreateNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msgStr = 'www data testColorManagerCreateNull';
+      try {
+        let colorSpace = colorSpaceManager.create(null);
+        console.info(msgStr + "colorSpaceManager create success ", colorSpace);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(msgStr + 'test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testColorManagerCreateUndefined
+     * @tc.number SUB_GRAPHIC_ColorManager_Create_Undefined
+     * @tc.desc   colorManager create undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testColorManagerCreateUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let msgStr = 'www data testColorManagerCreateUndefined';
+      try {
+        let colorSpace = colorSpaceManager.create(undefined);
+        console.info(msgStr + "colorSpaceManager create success ", colorSpace);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(msgStr + 'test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
 
   })
 }

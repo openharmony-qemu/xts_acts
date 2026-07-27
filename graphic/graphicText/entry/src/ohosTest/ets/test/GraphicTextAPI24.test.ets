@@ -691,5 +691,136 @@ export default function GraphicTextAPI24() {
       }
     })
 
+    /**
+     * @tc.name   graphicTextAPI24Test_1800
+     * @tc.number SUB_GRAPHIC_paragraph_getCharacterRangeForGlyphRange_0100
+     * @tc.desc   Test getCharacterRangeForGlyphRange Method 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1800===="
+        let glyphRange: text.Range = { start: 0, end: 5 };
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        try {
+          let ranges = paragraph.getCharacterRangeForGlyphRange(glyphRange, null);
+          console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'ranges null error ', err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        try {
+          let ranges = paragraph.getCharacterRangeForGlyphRange(glyphRange, undefined);
+          console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'ranges undefined error ', err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_1900
+     * @tc.number SUB_GRAPHIC_paragraph_getGlyphRangeForCharacterRange_0100
+     * @tc.desc   Test getGlyphRangeForCharacterRange Method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_1900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_1900===="
+        let glyphRange: text.Range = { start: 0, end: 5 };
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        try {
+          let ranges = paragraph.getGlyphRangeForCharacterRange(glyphRange, null);
+          console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'ranges null error ', err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        try {
+          let ranges = paragraph.getGlyphRangeForCharacterRange(glyphRange, undefined);
+          console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'ranges undefined error ', err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicTextAPI24Test_2000
+     * @tc.number SUB_GRAPHIC_paragraph_getCharacterPositionAtCoordinate_0100
+     * @tc.desc   Test getCharacterPositionAtCoordinate Method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicTextAPI24Test_2000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "====www data graphicTextAPI24Test_2000===="
+        let glyphRange: text.Range = { start: 0, end: 5 };
+        let fontCollection = text.FontCollection.getLocalInstance();
+        let myTextStyle: text.TextStyle = {
+          fontSize: 20
+        }
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let x = 10;
+        let y = 5;
+        try {
+          let position1 = paragraph.getCharacterPositionAtCoordinate(x, y, null);
+          console.info(msgStr + 'position1 success ', JSON.stringify(position1));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'position1 error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let position2 = paragraph.getCharacterPositionAtCoordinate(x, y, undefined);
+          console.info(msgStr + 'position2 success ', JSON.stringify(position2));
+          expect().assertFail();
+        } catch(err){
+          console.error(msgStr + 'position2 error ', err.code);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
   })
 }
