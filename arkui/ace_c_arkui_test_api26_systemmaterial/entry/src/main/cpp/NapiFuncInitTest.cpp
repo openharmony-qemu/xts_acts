@@ -78,48 +78,56 @@ static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
         MakeMaterialProp("testCustomDialogSetSystemMaterial006", TestCustomDialogSetSystemMaterial006),
         MakeMaterialProp("testCustomDialogSetSystemMaterial007", TestCustomDialogSetSystemMaterial007),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
+            "testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
+            "testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
+            "testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
+            "testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
+            "testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
+            "testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
+            "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
         MakeMaterialProp("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
         MakeMaterialProp("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
         MakeMaterialProp("testDialogDisplayModeEnumValues001", TestDialogDisplayModeEnumValues001),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow001",
-        TestCustomDialogSetDisplayModeInSubWindow001),
+            TestCustomDialogSetDisplayModeInSubWindow001),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow002",
-        TestCustomDialogSetDisplayModeInSubWindow002),
+            TestCustomDialogSetDisplayModeInSubWindow002),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
-        TestCustomDialogSetDisplayModeInSubWindow003),
+            TestCustomDialogSetDisplayModeInSubWindow003),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
+
+static napi_property_descriptor *GetMaterialNullPointerProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
         MakeMaterialProp("testGetNodeSnapshotSizeLimitationNull001", TestGetNodeSnapshotSizeLimitationNull001),
         MakeMaterialProp("testRenderNodeUtilsSetRectShapeOptionValueNull001",
-        TestRenderNodeUtilsSetRectShapeOptionValueNull001),
+            TestRenderNodeUtilsSetRectShapeOptionValueNull001),
         MakeMaterialProp("testRenderNodeUtilsSetRoundRectShapeOptionValueNull001",
-        TestRenderNodeUtilsSetRoundRectShapeOptionValueNull001),
+            TestRenderNodeUtilsSetRoundRectShapeOptionValueNull001),
         MakeMaterialProp("testRenderNodeUtilsDisposeBlurStyleOptionNull001",
-        TestRenderNodeUtilsDisposeBlurStyleOptionNull001),
+            TestRenderNodeUtilsDisposeBlurStyleOptionNull001),
         MakeMaterialProp("testLinearGradientOptionsDestroyNull001", TestLinearGradientOptionsDestroyNull001),
         MakeMaterialProp("testRadialGradientOptionsDestroyNull001", TestRadialGradientOptionsDestroyNull001),
         MakeMaterialProp("testNativeWindowManagerGetKeyEventFilterNull001",
-        TestNativeWindowManagerGetKeyEventFilterNull001),
+            TestNativeWindowManagerGetKeyEventFilterNull001),
         MakeMaterialProp("testNativeWindowManagerGetMouseEventFilterNull001",
-        TestNativeWindowManagerGetMouseEventFilterNull001),
+            TestNativeWindowManagerGetMouseEventFilterNull001),
         MakeMaterialProp("testNativeWindowManagerGetTouchEventFilterNull001",
-        TestNativeWindowManagerGetTouchEventFilterNull001),
+            TestNativeWindowManagerGetTouchEventFilterNull001),
         MakeMaterialProp("testFrameMetricsIsFirstDrawFrameNull001", TestFrameMetricsIsFirstDrawFrameNull001),
         MakeMaterialProp("testFrameMetricsGetInputHandlingDurationNull001",
-        TestFrameMetricsGetInputHandlingDurationNull001),
+            TestFrameMetricsGetInputHandlingDurationNull001),
         MakeMaterialProp("testFrameMetricsGetLayoutMeasureDurationNull001",
-        TestFrameMetricsGetLayoutMeasureDurationNull001),
+            TestFrameMetricsGetLayoutMeasureDurationNull001),
         MakeMaterialProp("testFrameMetricsGetVsyncTimestampNull001", TestFrameMetricsGetVsyncTimestampNull001),
         MakeMaterialProp("testLineSpacingStyleDestroyNull001", TestLineSpacingStyleDestroyNull001),
         MakeMaterialProp("testFontConfigsGetFontWeightConfigsNull001", TestFontConfigsGetFontWeightConfigsNull001),
@@ -133,12 +141,17 @@ static bool DefineMaterialProps(napi_env env, napi_value exports)
 {
     size_t coreCount = 0;
     size_t dialogCount = 0;
+    size_t nullCount = 0;
     napi_property_descriptor *coreDesc = GetMaterialCoreProps(&coreCount);
     napi_property_descriptor *dialogDesc = GetMaterialDialogProps(&dialogCount);
+    napi_property_descriptor *nullDesc = GetMaterialNullPointerProps(&nullCount);
     if (napi_define_properties(env, exports, coreCount, coreDesc) != napi_ok) {
         return false;
     }
     if (napi_define_properties(env, exports, dialogCount, dialogDesc) != napi_ok) {
+        return false;
+    }
+    if (napi_define_properties(env, exports, nullCount, nullDesc) != napi_ok) {
         return false;
     }
     return true;
