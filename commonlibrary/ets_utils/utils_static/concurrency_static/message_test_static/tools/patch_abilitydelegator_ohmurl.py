@@ -157,15 +157,15 @@ def patch_ability_append(abc: bytearray) -> bytearray:
         orphan_pp = item["old_prefix"]
         enc, after = read_uleb128(abc, orphan_pp)
         sl = enc >> 1
-        orphan = bytearray(abc[after : after + sl])
+        orphan = bytearray(abc[after:after + sl])
         for token in (
             b"AbilityDelegator/AbilityDelegator",
             b"abilityDelegatorArgs/AbilityDelegatorArgs",
         ):
             pos = orphan.find(token)
             if pos >= 0:
-                orphan[pos : pos + len(token)] = b"_" * len(token)
-        abc[after : after + sl] = orphan
+                orphan[pos:pos + len(token)] = b"_" * len(token)
+        abc[after:after + sl] = orphan
 
     return abc
 

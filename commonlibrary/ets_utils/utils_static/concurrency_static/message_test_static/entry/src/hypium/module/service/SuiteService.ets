@@ -404,8 +404,8 @@ class SuiteService {
   getDryResultStr(dryrunResult: DryrunResultIF): string {
     let message = '{';
     const cls = Class.of(dryrunResult);
-    let keys = new Array<string>();
-    let values = new Array<Array<Map<string, Array<ConfigIf>>>>();
+    let keys: string[] = [];
+    let values: Array<Map<string, Array<ConfigIf>>>[] = [];
     for (const field of reflect.getInstanceFieldsRecursive(cls)) {
       const fieldValue = field.getValue(dryrunResult);
       if (!fieldValue || !Array.isArray(fieldValue)) {
