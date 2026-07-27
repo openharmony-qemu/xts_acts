@@ -21,7 +21,7 @@ let netHandle = connection.getDefaultNetSync();
  	 
 export default function testsuite() {
 	if(netHandle.netId != 0){
-		NetworkManageVpnTest();	 
+		NetworkManagerVpnTest();	 
 	} else {
 		EmptyTestCheckNetwork();
 	}
