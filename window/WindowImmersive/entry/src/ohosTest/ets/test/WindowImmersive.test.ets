@@ -169,6 +169,7 @@ export default function windowImmersiveTest() {
     let isFreeWindowMode = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -178,6 +179,8 @@ export default function windowImmersiveTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: ${JSON.stringify(isPCStatus)}`);
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
@@ -5222,6 +5225,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
@@ -5261,6 +5268,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
@@ -5292,6 +5303,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
@@ -5383,6 +5398,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
@@ -5413,6 +5432,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
@@ -5441,6 +5464,10 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+           done();
+        }
         expect().assertFail();
         done();
       }
