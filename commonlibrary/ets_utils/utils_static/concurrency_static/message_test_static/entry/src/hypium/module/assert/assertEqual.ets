@@ -15,19 +15,16 @@
  */
 
 import { AssertResult } from '../modal/assertModel';
-import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
 import { AnyType } from '../types/common';
 
 export function assertEqual(actualValue: AnyType, args: AnyType[]): AssertResult {
-  let msg = 'expect ' + actualValue + ' equals ' + args[0];
-  if (actualValue === args[0]) {
-    // 数值相同,提示数据类型
-    const aClassName = DeepTypeUtils.getType(actualValue);
-    const bClassName = DeepTypeUtils.getType(args[0]);
-    msg = 'expect ' + actualValue + aClassName + ' equals ' + args[0] + bClassName + 'strict mode inspect type';
+  const pass = actualValue === args[0];
+  let msg = '';
+  if (!pass) {
+    msg = 'expect ' + actualValue + ' equals ' + args[0];
   }
   return {
-    pass: actualValue === args[0],
+    pass: pass,
     message: msg,
   };
 }

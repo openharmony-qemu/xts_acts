@@ -73,7 +73,7 @@ TESTTYPE.set("user", 1 << 7)
 TESTTYPE.set("standard", 1 << 8)
 TESTTYPE.set("safety", 1 << 9)
 TESTTYPE.set("resilience", 1 << 10)
-export TESTTYPE
+export { TESTTYPE }
 
 
 export const LEVEL: int[] = [1 << 24, 1 << 25, 1 << 26, 1 << 27, 1 << 28]
@@ -82,7 +82,7 @@ const SIZE: Map<string, int> = new Map<string, int>()
 SIZE.set("small", 1 << 16)
 SIZE.set("medium", 1 << 17)
 SIZE.set("large", 1 << 18)
-export SIZE
+export { SIZE }
 
 export const KEYSET: string[] = [
     '-s class', '-s notClass', '-s suite', '-s itName',

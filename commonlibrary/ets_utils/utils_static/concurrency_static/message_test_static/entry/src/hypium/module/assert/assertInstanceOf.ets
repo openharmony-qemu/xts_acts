@@ -18,6 +18,12 @@ import { AssertResult } from '../modal/assertModel';
 import { AnyType } from '../types/common';
 
 export function assertInstanceOf(actualValue: AnyType, expected: string[]): AssertResult {
+  if (expected.length === 0) {
+    return {
+      pass: false,
+      message: 'expected type array is empty',
+    };
+  }
   const type = typeof actualValue;
   let pass = false;
   let message = '';
@@ -44,6 +50,18 @@ export function assertInstanceOf(actualValue: AnyType, expected: string[]): Asse
     pass = true;
   } else if (actualValue instanceof Object && expectType === 'Object') {
     pass = true;
+  } else if (typeof actualValue === 'object' && actualValue !== null) {
+    // Custom class names (e.g. 'MyClass'): compare runtime Class name.
+    const className = Class.of(actualValue as Object).getName();
+    // ArkTS reflection returns a fully qualified class name for application classes.
+    if (className === expectType || className.endsWith(`.${expectType}`)) {
+      pass = true;
+    } else {
+      return {
+        pass: false,
+        message: actualValue + ' is not  ' + expectType,
+      };
+    }
   } else {
     return {
       pass: false,

@@ -26,6 +26,8 @@ import { ExpectExtend } from './module/assert/ExpectExtend';
 import { SpecEvent, TaskEvent, SuiteEvent } from './module/service/event';
 import { ApiIF } from './interface';
 import { AnyType, HookFuncType, ItfnType } from './module/types/common';
+import { WorkerLocal } from 'std/concurrency';
+import { concurrency } from 'std/concurrency';
 /**
  * core service for execute testcase.
  */
@@ -39,13 +41,14 @@ type ServiceType = SuiteService
   | DataDriver;
 type EventType = SuiteEvent | SpecEvent | TaskEvent;
 class Core {
-  public static instance: WorkerLocal<Core> | null = null;
-  public static getInstance(): Core {
-    if (!Core.instance) {
-      let core = new Core();
-      Core.instance = new WorkerLocal<Core>(() => core);
-    }
-    return Core.instance!.get() as Core;
+  // Eager WorkerLocal: per-thread storage via get/set; avoid lazy static init races.
+  public static instance: WorkerLocal<Core> = new WorkerLocal<Core>(() => new Core());
+  public static getInstance(): Core | null {
+    return Core.instance.get();
+  }
+
+  public static setThreadInstance(core: Core): void {
+    Core.instance.set(core);
   }
 
   public services: Map<string, Map<string, ServiceType>>;
@@ -102,7 +105,7 @@ class Core {
   getDefaultService(name: string): ServiceType | null {
     const serviceMap = this.services.get(name);
     if (serviceMap) {
-      return (serviceMap as Map<string, ServiceType>).get('default') as ServiceType;
+      return (serviceMap as Map<string, ServiceType>).get('default') ?? null;
     } else {
       return null;
     }
@@ -271,45 +274,44 @@ class Core {
       this.subscribeEvent('task', report as ReportService);
     }
 
-    const context = this;
     for (const serviceMap of this.services.values()) {
       for (const service of serviceMap.values()) {
         let apis: ApiIF = { name: '' };
         if (service instanceof SuiteService) {
           const typeService = service as SuiteService;
-          typeService.init(context);
+          typeService.init(this);
           apis = typeService.apis();
         } else if (service instanceof SpecService) {
           const typeService = service as SpecService;
-          typeService.init(context);
+          typeService.init(this);
           apis = typeService.apis();
         } else if (service instanceof ConfigService) {
           const typeService = service as ConfigService;
-          typeService.init(context);
+          typeService.init(this);
         } else if (service instanceof ExpectService) {
           const typeService = service as ExpectService;
-          typeService.init(context);
+          typeService.init(this);
           apis = typeService.apis();
         } else if (service instanceof ReportService) {
           const typeService = service as ReportService;
-          typeService.init(context);
+          typeService.init(this);
         } else if (service instanceof ExpectExtend) {
           const typeService = service as ExpectExtend;
-          typeService.init(context);
+          typeService.init(this);
           apis = typeService.apis();
         } else if (service instanceof OhReport) {
           const typeService = service as OhReport;
-          typeService.init(context);
+          typeService.init(this);
         } else if (service instanceof DataDriver) {
           const typeService = service as DataDriver;
-          typeService.init(context);
+          typeService.init(this);
         }
         this.addToGlobal(apis);
       }
     }
   }
 
-  async execute(abilityDelegator: abilityDelegatorRegistry.AbilityDelegator): Promise<void> {
+  async execute(abilityDelegator: abilityDelegatorRegistry.AbilityDelegator | null): Promise<void> {
     const suiteService = this.getDefaultService('suite');
     const configService = this.getDefaultService('config');
     if (suiteService !== null && configService !== null) {
@@ -318,13 +320,25 @@ class Core {
       const service = this.sService;
       if (service !== null) {
         if (cService.dryRun === 'true') {
+          if (abilityDelegator === null) {
+            throw new Error('dryRun requires AbilityDelegator on main thread');
+          }
           await service.dryRun(abilityDelegator);
         } else {
-          setTimeout(() => {
-            if (service !== null) {
-              service.execute();
+          try {
+            const result = service.execute() as void | Promise<void>;
+            if (result instanceof Promise) {
+              await result;
             }
-          }, 0);
+          } catch (e) {
+            const errMsg = e instanceof Error ? e.message : String(e);
+            console.error(`Core execute exception, error: ${errMsg}`);
+            // Worker mode (msgHandle set / null delegator): never call finishTest here.
+            if (abilityDelegator !== null && this.msgHandle === null) {
+              abilityDelegator.finishTest(`Core execute exception: ${errMsg}`, -1, () => {});
+            }
+            throw (e instanceof Error ? e : new Error(errMsg));
+          }
         }
       }
     }

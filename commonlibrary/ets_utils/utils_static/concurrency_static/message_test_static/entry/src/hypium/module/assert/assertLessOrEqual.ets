@@ -19,6 +19,6 @@ import { AssertResult } from '../modal/assertModel';
 export function assertLessOrEqual(actualValue: number, expected: number[]): AssertResult {
   return {
     pass: actualValue <= expected[0],
-    message: actualValue + ' is not less than ' + expected[0],
+    message: actualValue + ' is not less than or equal to ' + expected[0],
   };
 }

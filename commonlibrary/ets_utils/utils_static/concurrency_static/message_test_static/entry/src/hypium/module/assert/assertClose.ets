@@ -17,17 +17,24 @@
 import { AssertResult } from '../modal/assertModel';
 
 export function assertClose(actualValue: number | null, expected: number[]): AssertResult {
-  if (actualValue === null && expected[0] === null) {
-    throw new Error('actualValue and expected can not be both null!!!');
+  if (expected.length < 2) {
+    return {
+      pass: false,
+      message: 'expected array must contain [value, precision]',
+    };
   }
   if (actualValue === null) {
-    throw new Error('actualValue can not be null!!!');
+    return {
+      pass: false,
+      message: 'actualValue can not be null!!!',
+    };
   }
   let result = false;
   let diff = Math.abs(expected[0] - actualValue);
   let actualAbs = Math.abs(actualValue);
-  if (actualAbs - 0 === 0) {
-    if (diff - 0 === 0) {
+  const eps = 1e-12;
+  if (Math.abs(actualAbs) < eps) {
+    if (Math.abs(diff) < eps) {
       result = true;
     } else {
       result = false;
@@ -37,8 +44,10 @@ export function assertClose(actualValue: number | null, expected: number[]): Ass
   } else {
     result = false;
   }
+  const failMsg =
+    '|' + actualValue + ' - ' + expected[0] + '|/' + actualValue + ' is not less than ' + expected[1];
   return {
     pass: result,
-    message: '|' + actualValue + ' - ' + expected[0] + '|/' + actualValue + ' is not less than ' + expected[1],
+    message: result ? '' : failMsg,
   };
 }

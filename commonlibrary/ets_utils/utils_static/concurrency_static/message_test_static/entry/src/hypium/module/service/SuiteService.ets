@@ -569,6 +569,8 @@ class SuiteService {
           };
           asyncExecute().then(async () => {
             await core.fireEvents('task', 'taskDone');
+          }).catch((err: Error) => {
+            console.error(`${TAG}asyncExecute rejected, error: ${err.message}`);
           });
         } else {
           core.fireEvents('task', 'taskStart');

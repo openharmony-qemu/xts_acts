@@ -21,7 +21,7 @@ import { TAG } from '../../Constant';
 import { Core } from '../../core';
 import { AssertException } from './AssertException';
 import { LogExpectError } from '../report/LogExpectError';
-import { AnyType, NumberType } from '../types/common';
+import { AnyType, CustomAssert, NumberType } from '../types/common';
 import { AssertResult } from '../modal/assertModel';
 import { SpecService } from './SpecService';
 import { SuiteService } from './SuiteService';
@@ -29,12 +29,12 @@ import { SuiteService } from './SuiteService';
 class ExpectService {
   public id: string;
   public matchers: AssertMatcherIF | null;
-  public customMatchers: Map<string, Function>;
+  public customMatchers: Map<string, CustomAssert>;
   public coreContext: Core | null;
   constructor(attr: ServiceAttrIF) {
     this.id = attr.id;
     this.matchers = null;
-    this.customMatchers = new Map<string, Function>();
+    this.customMatchers = new Map<string, CustomAssert>();
     this.coreContext = null;
   }
 
@@ -66,13 +66,9 @@ class ExpectService {
     this.matchers = matchers;
   }
 
-  addCustomMatchers(customAssert: Function): void {
-    if (typeof customAssert !== 'function') {
-      throw new Error('Custom assertion must be a function');
-    }
-    const customAssertName = customAssert.name;
-    if (!customAssertName || customAssertName.trim() == '') {
-      throw new Error('Please use a named function');
+  addCustomMatchers(customAssertName: string, customAssert: CustomAssert): void {
+    if (customAssertName.trim() === '') {
+      throw new Error('Custom assertion name must not be empty');
     }
     this.customMatchers.set(customAssertName, customAssert);
   }
@@ -133,7 +129,7 @@ export class AssertMatcher {
     currentRunningSpec: StaticSpec,
     currentRunningSuite: StaticSuite,
     matchers: AssertMatcherIF | null,
-    customAssertion: Map<string, Function>
+    customAssertion: Map<string, CustomAssert>
   ) {
     this.isNot = false;
     this.currentRunningSpec = currentRunningSpec;
@@ -195,7 +191,7 @@ export class AssertMatcher {
     return this;
   }
 
-  addCustomAssert(customMatcher: Map<string, Function>): void {
+  addCustomAssert(customMatcher: Map<string, CustomAssert>): void {
     for (const key of customMatcher.keys()) {
       const customAssertFunc = customMatcher.get(key)
       if (customAssertFunc && typeof customAssertFunc === 'function') {
@@ -459,7 +455,7 @@ export class AssertMatcher {
         }
       };
     };
-   
+
     const assertInstanceOf = matchers.assertInstanceOf;
     if (assertInstanceOf) {
       this.assertInstanceOf = equalFn('assertInstanceOf', assertInstanceOf);

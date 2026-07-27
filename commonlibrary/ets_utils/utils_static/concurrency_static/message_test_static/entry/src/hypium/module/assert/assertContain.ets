@@ -18,6 +18,9 @@ import { AssertResult } from '../modal/assertModel';
 import { AnyType } from '../types/common';
 
 export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertResult {
+  if (expect.length === 0) {
+    throw new Error('expected array must contain at least one element');
+  }
   let result = false;
   const expectValue = expect[0];
   if (typeof actualValue === 'string' && typeof expectValue === 'string') {
@@ -26,15 +29,20 @@ export function assertContain(actualValue: AnyType, expect: AnyType[]): AssertRe
     result = acValue.indexOf(epValue) >= 0;
   } else if (Array.isArray(actualValue)) {
     const acValue = actualValue as AnyType[];
-    for (let value of acValue) {
-      if (value === expectValue) {
-        result = true;
-      }
-    }
+    result = acValue.includes(expectValue);
   }
 
+  const formatValue = (v: AnyType): string => {
+    if (v === null || v === undefined) {
+      return String(v);
+    }
+    if (typeof v === 'object') {
+      return JSON.stringify(v);
+    }
+    return String(v);
+  };
   return {
     pass: result,
-    message: 'expect false, ' + actualValue + ' do not have  ' + expect[0],
+    message: `assertContain fail: ${formatValue(actualValue)} does not contain ${formatValue(expectValue)}`,
   };
 }

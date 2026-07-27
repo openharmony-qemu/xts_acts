@@ -26,7 +26,7 @@ import { ReportAttrIF, TestcaseSummaryIF, SendData } from '../../interface';
 import { ConfigService } from '../config/configService';
 
 class OhReport {
-  public delegator: abilityDelegatorRegistry.AbilityDelegator;
+  public delegator: abilityDelegatorRegistry.AbilityDelegator | null;
   public abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
   public id: string;
   public index: int;
@@ -114,7 +114,10 @@ class OhReport {
       }
       if (!this.msgHandle) {  
         console.info(`${TAG}report print success`);
-        this.delegator.finishTest('your test finished!!!', 0);
+        const delegator = this.delegator;
+        if (delegator !== null) {
+          delegator.finishTest('your test finished!!!', 0);
+        }
       } else {
         let sendData: SendData = {
           currentThreadName: this.currentThreadName,
@@ -135,7 +138,10 @@ class OhReport {
         if (configService.filterValid.length !== 0) {
           const value = configService.filterValid;
           const message = 'this param ' + value.join(',') + ' is invalid' + '\n';
-          this.delegator.finishTest(message, 0);
+          const delegator = this.delegator;
+          if (delegator !== null) {
+            delegator.finishTest(message, 0);
+          }
         }
       }
     }
@@ -150,7 +156,10 @@ class OhReport {
         if (configService.filterXdescribe.length !== 0) {
           let value = configService.filterXdescribe;
           let message = 'xdescribe ' + value.join(',') + ' should not contain it' + '\n';
-          this.delegator.finishTest(message, 0);
+          const delegator = this.delegator;
+          if (delegator !== null) {
+            delegator.finishTest(message, 0);
+          }
         }
       }
     }

@@ -18,120 +18,68 @@ import { Core } from './core';
 import { AnyType, HookFuncType, ItfnType } from './module/types/common';
 import { AssertMatcher } from './module/service/ExpectService';
 
-const hypiumDescribe: (desc: string, func: () => void) => void = (desc: string, func: () => void): void => {
+const getCore = (): Core => {
   const core = Core.getInstance();
-  if (core) {
-    return (core as Core).describe(desc, func);
+  if (core === null) {
+    throw new Error('[hypium] core not initialized');
   }
-  throw new Error('[hypium] core not initialized');
+  return core;
+};
+
+const hypiumDescribe: (desc: string, func: () => void) => void = (desc: string, func: () => void): void => {
+  return getCore().describe(desc, func);
 };
 
 const hypiumIt: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void = (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).it(desc, filter, func, timeout, tag);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().it(desc, filter, func, timeout, tag);
 };
 const hypiumBeforeItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).beforeItSpecified(itDescs, func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().beforeItSpecified(itDescs, func);
 };
 
 const hypiumAfterItSpecified: (itDescs: string | string[], func: HookFuncType) => void = (itDescs: string | string[], func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).afterItSpecified(itDescs, func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().afterItSpecified(itDescs, func);
 };
 const hypiumBeforeEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).beforeEach(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().beforeEach(func);
 };
 const hypiumBeforeEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).beforeEachIt(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().beforeEachIt(func);
 };
 const hypiumAfterEach: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).afterEach(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().afterEach(func);
 };
 const hypiumAfterEachIt: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).afterEachIt(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().afterEachIt(func);
 };
 const hypiumBeforeAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).beforeAll(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().beforeAll(func);
 };
 const hypiumAfterAll: (func: HookFuncType) => void = (func: HookFuncType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).afterAll(func);
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().afterAll(func);
 };
 const hypiumExpect: (actualValue?: AnyType) => AssertMatcher = (actualValue?: AnyType): AssertMatcher => {
-  const core = Core.getInstance();
-  if (core) {
-    const expect = (core as Core).expect;
-    if (expect) {
-      return expect(actualValue);
-    }
-    throw new Error('[hypium] expect() used before initialization');
+  const expect = getCore().expect;
+  if (expect !== null) {
+    return expect(actualValue);
   }
-  throw new Error('[hypium] core not initialized');
+  throw new Error('[hypium] expect() used before initialization');
 };
 
 const hypiumXdescribe: (desc: string, func: () => void) => void = (desc: string, func: () => void): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).xdescribe(desc, func, '');
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().xdescribe(desc, func, '');
 };
 const hypiumXdescribeReason: (reason: string) => (desc: string, func: () => void) => void = (reason: string): (desc: string, func: () => void) => void => {
-  const core = Core.getInstance();
   return (desc: string, func: () => void): void => {
-    if (core) {
-      return (core as Core).xdescribe(desc, func, reason);
-    }
-    throw new Error('[hypium] core not initialized');
+    return getCore().xdescribe(desc, func, reason);
   };
 };
 const hypiumXit: (desc: string, filter: int, func: ItfnType) => void = (desc: string, filter: int, func: ItfnType): void => {
-  const core = Core.getInstance();
-  if (core) {
-    return (core as Core).xit(desc, filter, func, '');
-  }
-  throw new Error('[hypium] core not initialized');
+  return getCore().xit(desc, filter, func, '');
 };
 const hypiumXitReason: (reason: string) => (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void = (reason: string): (desc: string, filter: int, func: (() => void) | (() => Promise<void>)) => void => {
-  const core = Core.getInstance();
   return (desc: string, filter: int, func: (() => void) | (() => Promise<void>)): void => {
-    if (core) {
-      return (core as Core).xit(desc, filter, func, reason);
-    }
-    throw new Error('[hypium] core not initialized');
+    return getCore().xit(desc, filter, func, reason);
   };
 };
 

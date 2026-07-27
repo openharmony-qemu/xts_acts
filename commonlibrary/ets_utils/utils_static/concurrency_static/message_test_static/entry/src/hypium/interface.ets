@@ -66,7 +66,7 @@ export interface ServiceAttrIF {
 export interface ItItemIF {
   currentThreadName: string;
   description: string;
-  result: byte;
+  result: int;
 }
 
 export interface TestcaseSummaryIF {
@@ -117,7 +117,7 @@ export interface CaseReportIF {
 }
 
 export interface ReportAttrIF {
-  delegator: abilityDelegatorRegistry.AbilityDelegator;
+  delegator: abilityDelegatorRegistry.AbilityDelegator | null;
   abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 }
 
@@ -225,11 +225,11 @@ export interface whenResult {
 }
 
 export interface VerificationMode {
-  times(count: Number): void;
+  times(count: int): void;
   never(): void;
   once(): void;
-  atLeast(count: Number): void;
-  atMost(count: Number): void;
+  atLeast(count: int): void;
+  atMost(count: int): void;
 }
 
 export interface ExtendAssert {

@@ -18,6 +18,6 @@ import { AssertResult } from '../modal/assertModel';
 export function assertLargerOrEqual(actualValue: number, expected: number[]): AssertResult {
   return {
     pass: actualValue >= expected[0],
-    message: actualValue + ' is not larger than ' + expected[0],
+    message: actualValue + ' is not larger than or equal to ' + expected[0],
   };
 }

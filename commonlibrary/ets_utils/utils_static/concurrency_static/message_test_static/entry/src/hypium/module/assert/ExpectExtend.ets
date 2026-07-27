@@ -41,7 +41,7 @@ import { assertPromiseIsResolved } from './assertPromiseIsResolved';
 import { assertPromiseIsResolvedWith } from './assertPromiseIsResolvedWith';
 import { assertMatchObj } from './assertMatchObj';
 import { AnyType } from '../types/common';
-import { ExpectService } from '../service/ExpectService';
+import { ExpectService, AssertMatcher } from '../service/ExpectService';
 import { assertThrow } from './assertThrow';
 
 class ExpectExtend {
@@ -100,8 +100,8 @@ class ExpectExtend {
 
   apis(): ApiIF {
     return {
-      name: 'ExpoctExtend',
-      expect: (actualValue?: AnyType) => {
+      name: 'ExpectExtend',
+      expect: (actualValue?: AnyType | undefined): AssertMatcher => {
         const core = this.coreContext;
         if (core) {
           const coreContext = core as Core;

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,11 +18,9 @@ import { AssertResult } from '../modal/assertModel';
 import { AnyType } from '../types/common';
 import { ArgumentMatchers } from '../mock/ArgumentMatchers';
 import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
-import hilog from '@ohos.hilog';
+import { ClassValue, reflect } from 'std/core';
 
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-const MAX_DEPTH = 6;
+const MAX_DEPTH = 10;
 
 function assertMatchObjInternal(actualValue: AnyType, expected: AnyType[], depth: number): AssertResult {
   const expectedObj = expected[0];
@@ -55,14 +53,14 @@ function assertMatchObjInternal(actualValue: AnyType, expected: AnyType[], depth
 
   for (let i = 0; i < expectedKeys.length; i++) {
     const key = expectedKeys[i];
-    let expectedValue: AnyType = null;
+    let expectedValue: AnyType = undefined;
     let actualValueHasKey = false;
     let actualValueForProperty: AnyType = null;
 
     try {
       expectedValue = (reflect.Value.of(expectedObj as object) as ClassValue).getFieldByName(key).getData() as AnyType;
     } catch (e) {
-      expectedValue = null;
+      expectedValue = undefined;
     }
 
     if (expectedValue === undefined) {

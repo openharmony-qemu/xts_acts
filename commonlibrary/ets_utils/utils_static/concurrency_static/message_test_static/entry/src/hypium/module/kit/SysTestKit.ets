@@ -31,8 +31,8 @@ class SysTestKit {
   }
 
   static getDescribeName(): string {
-    if (Core.getInstance()) {
-      const core = Core.getInstance() as Core; //Core.getInstance()可能返回一个uniontype
+    const core = Core.getInstance();
+    if (core !== null) {
       const suiteService = core.getDefaultService('suite');
       if (suiteService !== null) {
         if (suiteService instanceof SuiteService) {
@@ -47,8 +47,8 @@ class SysTestKit {
   }
 
   static getItName(): string {
-    if (Core.getInstance()) {
-      const core = Core.getInstance() as Core; //Core.getInstance()可能返回一个uniontype
+    const core = Core.getInstance();
+    if (core !== null) {
       const specService = core.getDefaultService('spec');
       if (specService !== null) {
         if (specService instanceof SpecService) {
@@ -64,8 +64,8 @@ class SysTestKit {
   }
 
   static getItAttribute(): long {
-    if (Core.getInstance()) {
-      const core = Core.getInstance() as Core; //Core.getInstance()可能返回一个uniontype
+    const core = Core.getInstance();
+    if (core !== null) {
       const specService = core.getDefaultService('spec');
       if (specService !== null) {
         if (specService instanceof SpecService) {

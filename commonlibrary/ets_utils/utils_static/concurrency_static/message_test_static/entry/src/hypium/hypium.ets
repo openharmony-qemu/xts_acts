@@ -23,46 +23,56 @@ import { ExpectExtend } from './module/assert/ExpectExtend';
 import { OhReport } from './module/report/OhReport';
 import { SysTestKit } from './module/kit/SysTestKit';
 import { DataDriverAttr, DataDriverData, DataDriverSuite, TestcaseSummaryIF, SendData, TestcaseRet, ItItemIF } from './interface';
-import { AnyType } from './module/types/common';
+import { AnyType, CustomAssert } from './module/types/common';
 import { ConfigService } from './module/config/configService';
 import hilog from '@ohos.hilog';
 import { ExpectService } from './module/service/ExpectService';
+import { SuiteService } from './module/service/SuiteService';
+import { AssertResult } from './module/modal/assertModel';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export class Hypium {
   public static context: Map<string, AnyType> = new Map<string, AnyType>();
-  private static readonly MAX_PARSE_DEPTH = 20;
-  private static readonly INITIAL_DEPTH = 1;
+  private static readonly MAX_PARSE_DEPTH: number = 20;
+  private static readonly INITIAL_DEPTH: number = 1;
 
-  static parseValue(value: jsonx.JsonElement, currentDepth: number): Array<Object | null | undefined> | Record<string, AnyType> | String | Double | Int | Boolean | null | undefined {
+  static parseValue(value: jsonx.JsonElement, currentDepth: number): Array<Object | null | undefined> | Record<string, AnyType> | string | int | double | boolean | null | undefined {
     if (currentDepth > Hypium.MAX_PARSE_DEPTH) {
       throw new Error('Maximum parsing depth exceeded. currentParseDepth is ' + currentDepth);
     }
-    if (JSON.stringifyJsonElement(value) === 'null') {
+    if (value.tryAsNull() !== undefined) {
       return null
     }
-    if (value.tryAsString()) {
-      return value.tryAsString()
-    } else if (value.tryAsInteger()) {
-      return value.tryAsInteger()
-    } else if (value.tryAsDouble()) {
-      return value.tryAsDouble()
-    } else if (value.tryAsBoolean()) {
-      return value.tryAsBoolean()
-    } else if (value.tryAsArray()) {
-      const valueArray = value.tryAsArray() as Array<jsonx.JsonElement>
+    // Avoid truthy checks: "", 0, false are valid JSON values.
+    const asString = value.tryAsString();
+    if (asString !== undefined) {
+      return asString
+    }
+    const asInteger = value.tryAsInteger();
+    if (asInteger !== undefined) {
+      return asInteger
+    }
+    const asDouble = value.tryAsDouble();
+    if (asDouble !== undefined) {
+      return asDouble
+    }
+    const asBoolean = value.tryAsBoolean();
+    if (asBoolean !== undefined) {
+      return asBoolean
+    }
+    const asArray = value.tryAsArray();
+    if (asArray !== undefined) {
       const parsedValue: Array<object | undefined | null> = []
-      for (const val of valueArray) {
+      for (const val of asArray) {
         // 数组元素保持同一层数
         parsedValue.push(Hypium.parseValue(val, currentDepth))
       }
       return parsedValue;
-    } else {
-      // 当时对象时，层数递增1位
-      return Hypium.parseParams(value, currentDepth + 1)
     }
+    // 当时对象时，层数递增1位
+    return Hypium.parseParams(value, currentDepth + 1)
   }
 
   static parseParams(paramsItem: jsonx.JsonElement, currentDepth: number): Record<string, AnyType> {
@@ -73,24 +83,28 @@ export class Hypium {
       if (v.done) {
         break
       }
-      const key = v.value![0]
-      const value = v.value![1]
+      const entry = v.value;
+      if (entry === null || entry === undefined) {
+        throw new Error('parseParams: iterator value is null or undefined');
+      }
+      // ArkTS does not preserve iterator-value narrowing for indexed access.
+      const key = entry![0];
+      const value = entry![1];
       tempRecord[key] = Hypium.parseValue(value, currentDepth)
     }
     return tempRecord;
   }
 
   static parseSuite(item: jsonx.JsonElement): DataDriverSuite {
-    let describe: string[] | undefined = []
+    let describe: string[] | undefined
     if (item.tryGetElement("describe") !== undefined) {
+      const parsedDescribe: string[] = []
       const describeValue = item.getArray("describe")
       for (const describeItem of describeValue) {
         const describeName = describeItem.asString()
-        console.log("describeName" + describeName)
-        describe?.push(describeName)
+        parsedDescribe.push(describeName)
       }
-    } else {
-      describe = undefined
+      describe = parsedDescribe
     }
 
     let params: Record<string, AnyType> = {};
@@ -122,16 +136,14 @@ export class Hypium {
       items = undefined;
     }
 
-    let stress: Double | undefined = 1;
+    let stress: number | undefined = 1;
     if (item.tryGetElement("stress") !== undefined) {
-      stress = item.getElement("stress").asDouble()
+      stress = item.getElement("stress").asDouble() as number;
     }
 
-    let it: string | undefined = " ";
+    let it: string | undefined = undefined;
     if (item.tryGetElement("it") !== undefined) {
       it = item.getElement("it").asString();
-    } else {
-      it = undefined;
     }
 
     return {
@@ -143,14 +155,23 @@ export class Hypium {
     }
   }
 
-  static setData(JsonData: string): void {
+  static setData(jsonStr: string): void {
     const core = Core.getInstance();
-    let jsonData = JSON.parseJsonElement(JsonData);
+    if (core === null) {
+      throw new Error('[hypium] core not initialized');
+    }
+    let jsonData: jsonx.JsonElement;
+    try {
+      jsonData = JSON.parseJsonElement(jsonStr);
+    } catch (e) {
+      const errMsg = e instanceof Error ? e.message : String(e);
+      console.error(`${TAG} setData parseJsonElement failed: ${errMsg}`);
+      throw new Error(`setData invalid jsonStr: ${errMsg}`);
+    }
     let suitesValue: Array<jsonx.JsonElement> | undefined = [];
     if (jsonData.tryGetElement("suites") !== undefined) {
       suitesValue = jsonData.getArray("suites");
     } else {
-      suitesValue = undefined;
       throw Error('suites is null');
     }
     const dataDriverSuite: DataDriverSuite[] = []
@@ -162,28 +183,28 @@ export class Hypium {
       suites: dataDriverSuite
     }
     const dataDriver = new DataDriver({ data });
-    if (core) {
-      core.addService('dataDriver', dataDriver);
-    } else {
-      throw Error('core is not created');
+    core.addService('dataDriver', dataDriver);
+  }
+
+  static registerAssert(customAssertionName: string, customAssertion: CustomAssert): void {
+    const core = Core.getInstance();
+    if (core === null) {
+      throw new Error('[hypium] core not initialized');
+    }
+    const expectService = core.getDefaultService('expect');
+    if (expectService instanceof ExpectService) {
+      expectService.addCustomMatchers(customAssertionName, customAssertion);
     }
   }
 
-  static registerAssert(customAssertion: Function): void {
-    const core = Core.getInstance() as Core;
-    const expectService = core.getDefaultService('expect');
-    if (expectService) {
-      const eService = expectService as ExpectService
-      eService.addCustomMatchers(customAssertion);
+  static unregisterAssert(customAssertionName: string): void {
+    const core = Core.getInstance();
+    if (core === null) {
+      throw new Error('[hypium] core not initialized');
     }
-  }
-
-  static unregisterAssert(customAssertion: Function): void {
-    const core = Core.getInstance() as Core;
     const expectService = core.getDefaultService('expect');
-    if (expectService && customAssertion.name) {
-      const eService = expectService as ExpectService;
-      eService.removeCustomMatchers(customAssertion.name);
+    if (expectService instanceof ExpectService) {
+      expectService.removeCustomMatchers(customAssertionName);
     }
   }
 
@@ -199,11 +220,11 @@ export class Hypium {
     return Hypium.context.get(key);
   }
 
-  static hypiumTest(
-    abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
+  static async hypiumTest(
+    abilityDelegator: abilityDelegatorRegistry.AbilityDelegator | null,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs,
     testsuite: () => void
-  ): void {
+  ): Promise<void> {
     const core = Core.getInstance();
     const expectExtend = new ExpectExtend({
       id: 'extend',
@@ -212,7 +233,10 @@ export class Hypium {
       delegator: abilityDelegator,
       abilityDelegatorArguments: abilityDelegatorArguments,
     });
-    SysTestKit.delegator = abilityDelegator;
+    // Only bind AbilityDelegator on the main thread; worker path keeps it null.
+    if (abilityDelegator !== null) {
+      SysTestKit.delegator = abilityDelegator;
+    }
     if (core) {
       core.addService('expect', expectExtend);
       core.addService('report', ohReport);
@@ -228,7 +252,7 @@ export class Hypium {
         configService.setConfig(testParameters);
       }
       testsuite();
-      core.execute(abilityDelegator);
+      await core.execute(abilityDelegator);
     }
   }
 
@@ -242,22 +266,33 @@ export class Hypium {
     let startTime = SysTestKit.getRealTime();
     Core.getInstance();
     for (let i = 0; i < workerNum; i++) {
-      const workerPromise: Promise<TestcaseSummaryIF> = Hypium.createEAWorkerPromise(i, testsuite, abilityDelegator,
+      const workerPromise: Promise<TestcaseSummaryIF> = Hypium.createEAWorkerPromise(i, testsuite,
         abilityDelegatorArguments) as Promise<TestcaseSummaryIF>;
       workerPromiseArray.push(workerPromise);
     }
-    const ret: TestcaseRet = {
-      total: 0,
-      failure: 0,
-      error: 0,
-      pass: 0,
-      ignore: 0,
-      duration: 0
-    };
-    return Promise.all(workerPromiseArray).then(async (items: Array<TestcaseSummaryIF>) => {
+    let runTimes: int = 0;
+    let totalDuration: int = 0;
+    return Promise.allSettled(workerPromiseArray).then(async (settledResults: Array<PromiseSettledResult<TestcaseSummaryIF>>) => {
+      let items: Array<TestcaseSummaryIF> = [];
+      let rejectDetails: Array<string> = [];
+      for (let i = 0; i < settledResults.length; i++) {
+        const settled = settledResults[i];
+        if (settled.status === 'fulfilled') {
+          items.push((settled as PromiseFulfilledResult<TestcaseSummaryIF>).value);
+        } else {
+          const reason = (settled as PromiseRejectedResult).reason;
+          const detail = reason instanceof Error ? reason.message : String(reason);
+          rejectDetails.push(detail);
+          console.error(`${TAG}, worker[${i}] rejected: ${detail}`);
+        }
+      }
       let allItemList = new Array<ItItemIF>();
-      Hypium.handleWorkerTestResult(ret, allItemList, items);
-      const retResult: TestcaseRet = {
+      for (const item of items) {
+        runTimes += item.total;
+        totalDuration += item.duration;
+        Hypium.handleItResult(allItemList, item.itItemList);
+      }
+      const mergedResult: TestcaseRet = {
         total: 0,
         failure: 0,
         error: 0,
@@ -265,75 +300,135 @@ export class Hypium {
         ignore: 0,
         duration: 0
       };
-      Hypium.configWorkerItTestResult(retResult, allItemList);
+      Hypium.configWorkerItTestResult(mergedResult, allItemList);
       Hypium.printWorkerTestResult(abilityDelegator, allItemList);
       let endTime = SysTestKit.getRealTime();
       const taskConsuming = endTime - startTime;
+      if (rejectDetails.length > 0) {
+        const detail = rejectDetails.join('; ');
+        const errMsg = `${TAG}, [end] error you worker test, ${detail}`;
+        console.error(errMsg);
+        const failReport =
+          `\n${PrintTag.OHOS_REPORT_ALL_RESULT}: stream=Error: ${detail}` +
+          `\n${PrintTag.OHOS_REPORT_ALL_CODE}: -1` +
+          `\n${PrintTag.OHOS_REPORT_ALL_STATUS}: taskconsuming=${taskConsuming > 0 ? taskConsuming : totalDuration}`;
+        abilityDelegator.printSync(failReport);
+        abilityDelegator.finishTest(`you worker test error finished!!! ${detail}`, -1, () => { });
+        return;
+      }
       const message =
-        `\n${PrintTag.OHOS_REPORT_ALL_RESULT}: stream=Test run: runTimes: ${ret.total},total: ${retResult.total}, Failure: ${retResult.failure}, Error: ${retResult.error}, Pass: ${retResult.pass}, Ignore: ${retResult.ignore}` +
-        `\n${PrintTag.OHOS_REPORT_ALL_CODE}: ${retResult.failure > 0 || retResult.error > 0 ? -1 : 0}` +
-        `\n${PrintTag.OHOS_REPORT_ALL_STATUS}: taskconsuming=${taskConsuming > 0 ? taskConsuming : ret.duration}`;
+        `\n${PrintTag.OHOS_REPORT_ALL_RESULT}: stream=Test run: runTimes: ${runTimes},total: ${mergedResult.total}, Failure: ${mergedResult.failure}, Error: ${mergedResult.error}, Pass: ${mergedResult.pass}, Ignore: ${mergedResult.ignore}` +
+        `\n${PrintTag.OHOS_REPORT_ALL_CODE}: ${mergedResult.failure > 0 || mergedResult.error > 0 ? -1 : 0}` +
+        `\n${PrintTag.OHOS_REPORT_ALL_STATUS}: taskconsuming=${taskConsuming > 0 ? taskConsuming : totalDuration}`;
       abilityDelegator.printSync(message);
       console.info(`${TAG}, [end] you worker test`);
       abilityDelegator.finishTest('you worker test finished!!!', 0, () => { });
-    }).catch((e) => {
-      const errMsg = `${TAG}, [end] error you worker test, ${e}`;
-      console.info(errMsg);
-      const failReport =
-        `\n${PrintTag.OHOS_REPORT_ALL_RESULT}: stream=Error: ${e}` +
-        `\n${PrintTag.OHOS_REPORT_ALL_CODE}: -1`;
-      abilityDelegator.printSync(failReport);
-      abilityDelegator.finishTest(`you worker test error finished!!! ${e}`, -1, () => { });
     }).finally(() => {
       console.info(`${TAG}, all promise finally end`);
     });
   }
 
-  static createEAWorkerPromise(i: int, testsuite: () => void, abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
+  static createEAWorkerPromise(i: int, testsuite: () => void,
     abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs): Promise<TestcaseSummaryIF> {
-    const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>((resolve, reject) => {
+    const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>(
+      (resolve: (value: TestcaseSummaryIF | PromiseLike<TestcaseSummaryIF>) => void, reject: (reason: Error) => void): void => {
       const worker = new EAWorker(`EAWork_${i}`);
       worker.start();
-      const currentCB = (msg: concurrency.Message) => {
-        const data = msg.getObject() as SendData;
-        let currentThreadName = data.currentThreadName;
-        hilog.info(domain, tag, 'receview data from ' + currentThreadName + " " + JSON.stringify(data))
-        worker.quit();
-        let flag: boolean = worker.isAlive();
-        resolve(data.summary);
-      }
-      let msgHandler = new concurrency.MessageHandler(currentCB, worker);
-      worker.postTask(() => {
-        let core = new Core();
-        core.msgHandle = msgHandler;
-        Core.instance!.set(core);
-        hilog.info(domain, tag, 'Run test in Worker ' + worker.getName())
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-      })
-      worker.setUncaughtExceptionHandler((e: Error) => {
-        hilog.error(domain, tag, 'worker error: ' + JSON.stringify(e));
-        try {
-          worker.quit();
-        } catch (quitError) {
-          hilog.error(domain, tag, 'Failed to quit worker: ' + JSON.stringify(quitError));
-        }
+      worker.setUncaughtExceptionHandler((e: Error): void => {
+        // An uncaught exception terminates the worker; do not access the main-thread worker reference here.
+        hilog.error(domain, tag, `worker error: ${e.message}`);
         reject(e);
+      });
+      // MessageHandler / quit / getName must use the worker-local EAWorker (EAWorker.current()),
+      // not the main-thread worker reference captured across threads.
+      // Do not pass AbilityDelegator into the worker; results go back via MessageHandler / summary resolve.
+      worker.postTask((): void => {
+        const current = EAWorker.current();
+        if (current === undefined) {
+          reject(new Error('EAWorker.current() is undefined inside worker task'));
+          return;
+        }
+        const localWorker: EAWorker = current;
+        let settled = false;
+        const quitLocal = (): void => {
+          try {
+            localWorker.quit();
+          } catch (quitError) {
+            hilog.error(domain, tag, 'Failed to quit worker: ' + JSON.stringify(quitError));
+          }
+        };
+        const safeResolve = (summary: TestcaseSummaryIF): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          quitLocal();
+          resolve(summary);
+        };
+        const safeReject = (err: Error): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          quitLocal();
+          reject(err);
+        };
+        const currentCB = (msg: concurrency.Message): void => {
+          const messageType = msg.getWhat();
+          if (messageType !== 1) {
+            hilog.error(domain, tag, `Unexpected EAWorker message type: ${messageType}`);
+            safeReject(new Error(`Unexpected EAWorker message type: ${messageType}`));
+            return;
+          }
+          const raw = msg.getObject();
+          if (raw === null || raw === undefined) {
+            hilog.error(domain, tag, 'EAWorker message object is null');
+            safeReject(new Error('EAWorker message object is null'));
+            return;
+          }
+          // Message type 1 is emitted only by OhReport with a SendData payload.
+          const data = raw as SendData;
+          const summary = data.summary;
+          if (summary === null || summary === undefined) {
+            hilog.error(domain, tag, 'EAWorker message missing summary');
+            safeReject(new Error('EAWorker message missing summary'));
+            return;
+          }
+          const currentThreadName = data.currentThreadName;
+          hilog.info(domain, tag, 'receview data from ' + currentThreadName + ' ' + JSON.stringify(data));
+          safeResolve(summary);
+        };
+        const msgHandler = new concurrency.MessageHandler(currentCB, localWorker);
+        const core = new Core();
+        core.msgHandle = msgHandler;
+        Core.setThreadInstance(core);
+        const workerName = localWorker.getName();
+        hilog.info(domain, tag, 'Run test in Worker ' + workerName);
+        // Pass null AbilityDelegator: finishTest must stay on the main thread.
+        Hypium.hypiumTest(null, abilityDelegatorArguments, testsuite).then(
+          (): void => {
+            const coreInst = Core.getInstance();
+            if (coreInst === null) {
+              safeReject(new Error('Core is null after worker hypiumTest'));
+              return;
+            }
+            const suiteService = coreInst.getDefaultService('suite');
+            if (suiteService !== null && suiteService instanceof SuiteService) {
+              safeResolve((suiteService as SuiteService).getSummary());
+              return;
+            }
+            safeReject(new Error('suite service missing after worker hypiumTest'));
+          },
+          (e: Error): void => {
+            hilog.error(domain, tag, 'hypiumTest error: ' + JSON.stringify(e));
+            safeReject(e instanceof Error ? e : new Error(String(e)));
+          }
+        );
       });
     });
     return workerPromise;
   }
 
-  static handleWorkerTestResult(ret: TestcaseRet, allItemList: Array<ItItemIF>, items: Array<TestcaseSummaryIF>): void {
-    for (const item of items) {
-      ret.total += item.total;
-      ret.failure += item.failure;
-      ret.error += item.error;
-      ret.pass += item.pass;
-      ret.ignore += item.ignore;
-      ret.duration += item.duration;
-      Hypium.handleItResult(allItemList, item.itItemList);
-    }
-  }
 
   static handleItResult(allItemList: Array<ItItemIF>, itItemList: Array<ItItemIF>): void {
     for (const itItem of itItemList) {
@@ -342,7 +437,8 @@ export class Hypium {
       const currentThreadName = itItem.currentThreadName;
       const item = allItemList.find((it: ItItemIF) => (it.description === description));
       if (item) {
-        if (item.result === 0 || (item.result !== 0 && result === 0)) {
+        // Never overwrite a prior failure/error with a later pass from another worker.
+        if (item.result === 0 && result !== 0) {
           item.result = result;
           item.currentThreadName = currentThreadName;
         }
