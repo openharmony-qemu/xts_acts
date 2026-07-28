@@ -25,6 +25,9 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import {Driver,ON} from '@ohos.UiTest';
+import { canIUse } from '@internal.full.global'
+import deviceInfo from '@ohos.deviceInfo';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -37,12 +40,18 @@ export default function WindowKeyBoardTest() {
         let win: window.Window | undefined;
         let context: common.UIAbilityContext;
         let isFreeWindowMode:boolean = false;
+        let driver: Driver;
+        let isSyscapSessionManagerSupported = false;
+        let deviceType: string = deviceInfo.deviceType;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
+            driver = Driver.create();
+            isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+ 	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
@@ -673,49 +682,335 @@ export default function WindowKeyBoardTest() {
         it('testMainWindow_onKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainWindow_onKeyboradWillShow_static ';
             console.log(caseName + 'begin');
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
             let mainWindow:window.Window = windowStage!.getMainWindowSync();
-            try {
-                if (isFreeWindowMode === true) {
-                    done();
-                } else {
-                    const callback = (keyboardInfo: window.KeyboardInfo) => {
-                        console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-                        let displayInfo = display.getDefaultDisplaySync();
-                        console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
-                        expect(keyboardInfo.beginRect.left).assertEqual(0);
-                        expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.beginRect.height).assertLarger(0);
-                        expect(keyboardInfo.endRect.left).assertEqual(0);
-                        expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.endRect.height).assertLarger(0);
-                        expect(keyboardInfo.animated).assertEqual(true);
-                        expect(keyboardInfo.config?.curve).assertEqual(1);
-                        expect(keyboardInfo.config?.duration).assertLarger(0);
-                        expect(keyboardInfo.config?.param !== null).assertTrue();
-                        mainWindow.offKeyboardWillShow();
-                        done();
-                    }
-                    mainWindow.onKeyboardWillShow(callback);
+            let count: int = 0;
+            driver = Driver.create();
+             try {
+                const callback = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.beginRect.height).assertLarger(0);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    expect(keyboardInfo.animated).assertEqual(true);
+                    expect(keyboardInfo.config?.curve).assertEqual(1);
+                    expect(keyboardInfo.config?.duration).assertLarger(0);
+                    expect(keyboardInfo.config?.param != null).assertTrue();
                     mainWindow.offKeyboardWillShow();
-                    done();
+                };
+                
+                mainWindow.onKeyboardWillShow(callback);
+                await Utils.msSleep(1000);
+                let input = await driver.findComponent(ON.id('textInput'));
+                hilog.info(domain, tag, '%{public}s', msgStr + 'input: ' + JSON.stringify(input));
+                await Utils.msSleep(1000);
+                await input?.click();
+                hilog.info(domain, tag, '%{public}s', msgStr + 'click success: ' + JSON.stringify(input));
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
+                if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+                    expect(count).assertEqual(1);
+                }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+                    expect(count).assertEqual(0);
                 }
+                done();
             } catch (err) {
                 err = err as BusinessError;
-                console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-                mainWindow.offKeyboardWillShow();
-                if (err.code === 801) {
-                    expect(err.message !== null).assertTrue();
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
+                    expect(err.code).assertEqual(801);
                     done();
                 } else {
-                    expect(true).assertFail()
+                    mainWindow.offKeyboardWillShow();
+                    expect(true).assertFail();
                     done();
                 }
             }
         });
 
+        /**
+         * @tc.name   testOffKeyboardWillShow_DeviceDiff_static
+         * @tc.number SUB_BASIC_WMS_OFFKEYBOARDWILLSHOW_DEVICE_DIFF_STATIC_0100
+         * @tc.desc   验证不同设备上offKeyboardWillShow的设备行为差异：Phone/Tablet/PC/2in1正常调用，其他设备返回801
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffKeyboardWillShow_DeviceDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOffKeyboardWillShow_DeviceDiff_static ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, '%{public}s', msgStr + 'begin.');
+            
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            try {
+                mainWindow.offKeyboardWillShow();
+                await Utils.msSleep(500);
+                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillShow success: ');
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
+                    expect(err.code).assertEqual(801);
+                    done();
+                } else {
+                    expect(true).assertFail();
+                    done();
+                }
+            }
+        });
 
+/**
+         * @tc.name   testMainWindow_onKeyboardWillHide_DeviceDiff_static
+         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_DEVICE_DIFF_STATIC_0100
+         * @tc.desc   主窗监听onKeyboardWillHide后隐藏固定态输入法键盘触发回调
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testMainWindow_onKeyboardWillHide_DeviceDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboardWillHide_DeviceDiff_static ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, '%{public}s', msgStr + 'begin.');
+            
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
+            let count: int = 0;
+            driver = Driver.create();
+            try {
+                const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    mainWindow.offKeyboardWillShow();
+                };
+                mainWindow.onKeyboardWillShow(callback1);
+                
+                const callback = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    expect(keyboardInfo.animated).assertEqual(true);
+                    expect(keyboardInfo.config?.curve).assertEqual(1);
+                    expect(keyboardInfo.config?.duration).assertLarger(0);
+                    expect(keyboardInfo.config?.param != null).assertTrue();
+                    mainWindow.offKeyboardWillHide();
+                };
+                mainWindow.onKeyboardWillHide(callback);
+                
+                await Utils.msSleep(1000);
+                let input = await driver.findComponent(ON.id('textInput'));
+                hilog.info(domain, tag, '%{public}s', msgStr + 'input: ' + JSON.stringify(input));
+                await Utils.msSleep(1000);
+                await input?.click();
+                hilog.info(domain, tag, '%{public}s', msgStr + 'click success: ' + JSON.stringify(input));
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
+                if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+                    expect(count).assertEqual(1);
+                }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+                    expect(count).assertEqual(0);
+                }
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                mainWindow.offKeyboardWillHide();
+                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
+                    expect(err.code).assertEqual(801);
+                    done();
+                } else {
+                    expect(true).assertFail();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testOffKeyboardWillHide_DeviceDiff_static
+         * @tc.number SUB_BASIC_WMS_OFFKEYBOARDWILLHIDE_DEVICE_DIFF_STATIC_0100
+         * @tc.desc   验证不同设备上offKeyboardWillHide的设备行为差异：Phone/Tablet/PC/2in1正常调用，其他设备返回801
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffKeyboardWillHide_DeviceDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOffKeyboardWillHide_DeviceDiff_static ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, '%{public}s', msgStr + 'begin.');
+            
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            try {
+                mainWindow.offKeyboardWillHide();
+                await Utils.msSleep(500);
+                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
+                    expect(err.code).assertEqual(801);
+                    done();
+                } else {
+                    expect(true).assertFail();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testMainWindow_onKeyboardDidShow_DeviceDiff_static
+         * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDSHOW_DEVICE_DIFF_STATIC_0100
+         * @tc.desc   主窗监听onKeyboardDidShow后拉起固定态输入法键盘触发回调
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         * 
+         * 相似用例：testOnKeyboardDidShowErrCode1300002_static_0100 (WindowKeyBoard.test.ets line 81-112)
+         */
+        it('testMainWindow_onKeyboardDidShow_DeviceDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboardDidShow_DeviceDiff_static ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, '%{public}s', msgStr + 'begin.');
+            
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
+            let count: int = 0;
+            driver = Driver.create();
+            try {
+                const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo1: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.beginRect.height).assertLarger(0);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    mainWindow.offKeyboardDidShow();
+                };
+                
+                mainWindow.onKeyboardDidShow(callback1);
+                
+                await Utils.msSleep(1000);
+                let input = await driver.findComponent(ON.id('textInput'));
+                await Utils.msSleep(1000);
+                await input?.click();
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
+                if (deviceType === 'phone' || deviceType === 'tablet') {
+                    expect(count).assertEqual(1);
+                } else {
+                    expect(count).assertEqual(0);
+                }
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                mainWindow.offKeyboardDidShow();
+                if (!isSyscapSessionManagerSupported) {
+                    expect(err.code).assertEqual(801);
+                    done();
+                } else {
+                    expect(true).assertFail();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testMainWindow_onKeyboardDidHide_DeviceDiff_static
+         * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDHIDE_DEVICE_DIFF_STATIC_0100
+         * @tc.desc   主窗监听onKeyboardDidHide后隐藏固定态输入法键盘触发回调
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         * 
+         * 相似用例：testOnKeyboardDidHideErrCode1300002_static_0100 (WindowKeyBoard.test.ets line 163-193)
+         */
+        it('testMainWindow_onKeyboardDidHide_DeviceDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboardDidHide_DeviceDiff_static ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, '%{public}s', msgStr + 'begin.');
+            
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            hilog.info(domain, tag, '%{public}s', msgStr + 'Succeeded in getting the main window.');
+            let count: int = 0;
+            driver = Driver.create();
+            try {
+                const callback1 = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo1: ' + JSON.stringify(keyboardInfo));
+                    mainWindow.offKeyboardDidShow();
+                };
+                const callback = (keyboardInfo: window.KeyboardInfo): void => {
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'KeyboardInfo2: ' + JSON.stringify(keyboardInfo));
+                    count++;
+                    let displayInfo = display.getDefaultDisplaySync();
+                    hilog.info(domain, tag, '%{public}s', msgStr + 'dispalyInfo2: ' + JSON.stringify(displayInfo));
+                    expect(keyboardInfo.beginRect.left).assertEqual(0);
+                    expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.left).assertEqual(0);
+                    expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+                    expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                    expect(keyboardInfo.endRect.height).assertLarger(0);
+                    mainWindow.offKeyboardDidHide();
+                };
+                mainWindow.onKeyboardDidShow(callback1);
+                mainWindow.onKeyboardDidHide(callback);
+                
+                await Utils.msSleep(1000);
+                let input = await driver.findComponent(ON.id('textInput'));
+                await Utils.msSleep(1000);
+                await input?.click();
+                await Utils.msSleep(500);
+                await driver.pressBack();
+                await Utils.msSleep(500);
+                if (deviceType === 'phone' || deviceType === 'tablet') {
+                    expect(count).assertEqual(1);
+                } else {
+                    expect(count).assertEqual(0);
+                }
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
+                mainWindow.offKeyboardDidShow();
+                mainWindow.offKeyboardDidHide();
+                if (!isSyscapSessionManagerSupported) {
+                    expect(err.code).assertEqual(801);
+                    done();
+                } else {
+                    expect(true).assertFail();
+                    done();
+                }
+            }
+        });
 
     })
 
