@@ -13,16 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TS 生产方模块 — 导出泛型函数 / Promise / 容器 / 异常供 .ets 消费。
- *
- * Used By:
- *   - GTP-IO-004 (genericInteropTsHelper): .ets 调用 TS 导出的泛型函数
- *   - GTP-IO-008: 跨语言 Promise<T> resolve/reject
- *   - GTP-IO-009: 跨语言 Array<T> / Map<K,V> 读写
- *   - GTP-IO-012: 跨语言异常传播
- */
-
 export function tsIdentity<T>(value: T): T {
   return value
 }

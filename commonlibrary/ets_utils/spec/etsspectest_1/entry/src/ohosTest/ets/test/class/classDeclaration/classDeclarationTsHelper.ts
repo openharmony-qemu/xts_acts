@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-// Computed getter/setter with Symbol
 const symIdDecl: unique symbol = Symbol("id")
 const symNameDecl: unique symbol = Symbol("name")
 
@@ -52,7 +51,6 @@ export function testComputedAccessor(): string {
   return idVal + "|" + initialData + "|" + obj.data + "|" + nameVal
 }
 
-// Anonymous class expression
 export function testAnonymousClassExpression(): void {
   let Point = class {
     x: number
@@ -74,7 +72,6 @@ export function testAnonymousClassExpression(): void {
   if (!(p instanceof Point)) { throw new Error("fail-instanceof") }
 }
 
-// Named class expression
 export function testNamedClassExpression(): void {
   let Factory = class MyClass {
     id: number
@@ -93,7 +90,6 @@ export function testNamedClassExpression(): void {
   if (!(obj instanceof Factory)) { throw new Error("fail-instanceof") }
 }
 
-// Class expression with extends
 class BaseForExpr {
   value: number
 

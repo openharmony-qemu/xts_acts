@@ -23,10 +23,6 @@ export function getBigintMethodResult(): string {
   return v.toString()
 }
 
-/*
- * Computed method name test
- * Computed property names and `as any` are not supported in ArkTS
- */
 const methodPrefix: string = "get"
 const methodSuffix: string = "Name"
 
@@ -50,9 +46,6 @@ export function testComputedMethodCall(): string {
   return obj["get" + "Name"]()
 }
 
-/*
- * Generator method test -- generators not supported in ArkTS
- */
 class NumberGen {
   * countUp(limit: number): IterableIterator<number> {
     for (let i: number = 1; i <= limit; i++) {
@@ -73,10 +66,6 @@ export function testGeneratorValues(): string {
   return result
 }
 
-/*
- * Static method with computed property name
- * Computed property names not supported in ArkTS
- */
 class StaticComputedMethod {
   static ["get" + "Status"](): string {
     return "active"
@@ -95,9 +84,6 @@ export function testStaticComputedCalcValue(): number {
   return (StaticComputedMethod as any)["calc" + "Value"](3)
 }
 
-/*
- * Async generator method -- not supported in ArkTS
- */
 class AsyncNumberGen {
   async * countUp(limit: number): AsyncIterableIterator<number> {
     for (let i: number = 1; i <= limit; i++) {

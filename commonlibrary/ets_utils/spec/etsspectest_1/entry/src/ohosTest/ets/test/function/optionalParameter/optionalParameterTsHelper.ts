@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for optional parameter tests
- * ECMA-262 §9.2.12 — default parameter evaluation
- * ArkTS restrictions: no any, no comma operator outside loops, no null for number
- */
-
 export function getOptional(a: number, b?: number): number | undefined {
   return b
 }

@@ -25,6 +25,48 @@ import {
   TestType
 } from '@ohos/hypium';
 
+class OverrideSameBase {
+  public method<T>(v: T): T {
+    return v
+  }
+}
+
+class OverrideSameDerived extends OverrideSameBase {
+  public override method<T>(v: T): T {
+    return v
+  }
+}
+
+class OverrideRenameBase {
+  public method<T>(v: T): T {
+    return v
+  }
+}
+
+class OverrideRenameDerived extends OverrideRenameBase {
+  public override method<U>(v: U): U {
+    return v
+  }
+}
+
+class OverrideChainBase {
+  public getValue<T>(v: T): string {
+    return 'base'
+  }
+}
+
+class OverrideChainMid extends OverrideChainBase {
+  public override getValue<T>(v: T): string {
+    return 'mid'
+  }
+}
+
+class OverrideChainDerived extends OverrideChainMid {
+  public override getValue<T>(v: T): string {
+    return 'derived'
+  }
+}
+
 export default function GenericOverrideTest() {
   describe('GenericOverrideTest', () => {
     beforeAll(() => {
@@ -45,19 +87,7 @@ export default function GenericOverrideTest() {
      * @tc.level     Level 2
      */
     it('testOverrideSameSignature0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      class Base {
-        public method<T>(v: T): T {
-          return v
-        }
-      }
-
-      class Derived extends Base {
-        public override method<T>(v: T): T {
-          return v
-        }
-      }
-
-      const derived = new Derived()
+      const derived = new OverrideSameDerived()
       expect(derived.method<string>('hello')).assertEqual('hello')
       expect(derived.method<number>(42)).assertEqual(42)
     })
@@ -71,19 +101,7 @@ export default function GenericOverrideTest() {
      * @tc.level     Level 2
      */
     it('testOverrideRenameTypeParam0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      class Base {
-        public method<T>(v: T): T {
-          return v
-        }
-      }
-
-      class Derived extends Base {
-        public override method<U>(v: U): U {
-          return v
-        }
-      }
-
-      const derived = new Derived()
+      const derived = new OverrideRenameDerived()
       expect(derived.method<string>('renamed')).assertEqual('renamed')
       expect(derived.method<number>(100)).assertEqual(100)
     })
@@ -97,28 +115,10 @@ export default function GenericOverrideTest() {
      * @tc.level     Level 2
      */
     it('testOverrideSameSignature0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      class Base {
-        public getValue<T>(v: T): string {
-          return 'base'
-        }
-      }
-
-      class Mid extends Base {
-        public override getValue<T>(v: T): string {
-          return 'mid'
-        }
-      }
-
-      class Derived extends Mid {
-        public override getValue<T>(v: T): string {
-          return 'derived'
-        }
-      }
-
-      const derived = new Derived()
+      const derived = new OverrideChainDerived()
       expect(derived.getValue<string>('test')).assertEqual('derived')
 
-      const midRef: Base = new Mid()
+      const midRef: OverrideChainBase = new OverrideChainMid()
       expect(midRef.getValue<string>('test')).assertEqual('mid')
     })
   })

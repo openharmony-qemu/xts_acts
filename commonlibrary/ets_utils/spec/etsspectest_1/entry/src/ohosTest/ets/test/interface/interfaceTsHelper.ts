@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-// === RT-OBJ-01/02: object identity & property value ===
 interface Simple {
   x: number
   label: string
@@ -31,7 +30,6 @@ export function testIdentityAndValue(): IdentityAndValueResult {
   return { identity: annotated === raw, x: annotated.x, label: annotated.label }
 }
 
-// === RT-OBJ-04: optional property omitted ===
 interface WithOptional {
   required: string
   optional?: string
@@ -47,7 +45,6 @@ export function testOptionalOmitted(): OptionalOmittedResult {
   return { hasOptional: "optional" in obj, requiredValue: obj.required }
 }
 
-// === RT-CALL-01: method call with receiver ===
 interface HasMethod {
   value: number
   getValue(): number
@@ -67,7 +64,6 @@ export function testMethodReceiver(): MethodReceiverResult {
   return { result: obj.getValue() }
 }
 
-// === class implements (prototype + instanceof + multi-interface) ===
 interface Drawable {
   draw(): string
 }
@@ -112,7 +108,6 @@ export function testClassImpl(): ClassImplResult {
   }
 }
 
-// === IF-EXT-001/003 + IF-MULTEXT-001: interface extends (single, multi-level & multi-base) ===
 interface IA { getA(): string }
 interface IB extends IA { getB(): string }
 interface IC extends IB { getC(): string }
@@ -197,7 +192,6 @@ export function testObjectModel(): ObjectModelResult {
   }
 }
 
-// === #1: Interface as array type ===
 interface IPoint {
   x: number
   y: number
@@ -221,7 +215,6 @@ export function testInterfaceArray(): ArrayResult {
   }
 }
 
-// === #2: Interface as function param/return ===
 interface IResult {
   value: number
   label: string
@@ -241,7 +234,6 @@ export function testInterfaceFnParamReturn(): FnParamReturnResult {
   return { outputValue: output.value, outputLabel: output.label }
 }
 
-// === #3: Nested interface ===
 interface Inner {
   id: number
 }
@@ -262,7 +254,6 @@ export function testNestedInterface(): NestedResult {
   return { initialId: 42, name: obj.name, afterWrite: obj.inner.id }
 }
 
-// === #5: Interface call signature -- TS-only: ArkTS does not support call signatures ===
 interface Stringifier {
   (x: number): string
 }
@@ -276,7 +267,6 @@ export function testCallSignature(): CallSignatureResult {
   return { result: fn(42) }
 }
 
-// === #6: Interface construct signature -- TS-only: ArkTS does not support construct signatures ===
 interface PointCtor {
   new (x: number, y: number): IPoint
 }
@@ -299,7 +289,6 @@ export function testConstructSignature(): ConstructSignatureResult {
   return { x: p.x, y: p.y }
 }
 
-// === #7: Interface readonly (erasure -- not frozen)
 interface ReadonlyPoint {
   readonly x: number
   readonly y: number
@@ -315,7 +304,6 @@ export function testInterfaceReadonly(): ReadonlyResult {
   return { afterWrite: (obj as any).x }
 }
 
-// === #8: Interface extends class ===
 class BaseClass {
   baseMethod(): string { return "base" }
 }
@@ -336,7 +324,6 @@ export function testInterfaceExtendsClass(): ExtendsClassResult {
   return { baseResult: obj.baseMethod(), extraResult: obj.extra() }
 }
 
-// === #9: Interface union type ===
 interface Cat { kind: "cat"; meow(): string }
 interface Dog { kind: "dog"; bark(): string }
 

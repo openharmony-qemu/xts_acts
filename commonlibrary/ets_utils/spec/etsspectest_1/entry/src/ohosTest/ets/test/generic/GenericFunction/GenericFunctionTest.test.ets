@@ -243,7 +243,6 @@ export default function GenericFunctionTest() {
       expect(r).assertEqual(42)
     })
 
-
     /**
      * @tc.number    SUB_GENERIC_GF_FUNCTION_1200
      * @tc.name      testgeneric0012
@@ -255,6 +254,5 @@ export default function GenericFunctionTest() {
     it('testArrowGenericFn0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(arrowIdentity<number>(42)).assertEqual(42)
     })
-
   })
 }

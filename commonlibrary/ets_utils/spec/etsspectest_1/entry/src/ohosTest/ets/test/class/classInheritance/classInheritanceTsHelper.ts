@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-// design 026: generic class extends non-generic class
 class BaseNonGeneric {
   baseValue: number = 10
 }
@@ -27,7 +26,6 @@ class GenericChild<T> extends BaseNonGeneric {
   }
 }
 
-// design 027: non-generic class extends generic class (concrete type)
 class BaseGeneric<T> {
   value: T
 
@@ -42,7 +40,6 @@ class ConcreteChild extends BaseGeneric<number> {
   }
 }
 
-// design 028: derived class passes generic type to base
 class PassthroughChild<T> extends BaseGeneric<T> {
   constructor(v: T) {
     super(v)

@@ -13,13 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for function call tests
- * ECMA-262 §13.3.6.2 EvaluateCall, §20.2.4 Function.prototype methods
- * ArkTS limitations: no func expressions, no untyped obj literals,
- * no standalone this, no nested funcs, no any/unknown, no call/apply/bind
- */
-
 export function testMethodCallThis(): number {
   let calculator = {
     value: 10,

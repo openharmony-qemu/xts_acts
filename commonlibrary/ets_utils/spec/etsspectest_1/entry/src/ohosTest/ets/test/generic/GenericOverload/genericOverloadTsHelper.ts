@@ -13,13 +13,6 @@
  * limitations under the License.
  */
 
-/**
- * Generic Overload (.ts helper)
- * Overload signatures stay in .ts only.
- * .ets must import non-overload wrappers (arkts review 1.8).
- * Re-verify on TypeScript Playground before device runs.
- */
-
 function processValueImpl(x: number | string): number | string {
   return x
 }
@@ -31,8 +24,6 @@ function handleMixedImpl(x: number | string): number | string {
 function overloadRuntimeEntityImpl(x: number | string): number | string {
   return x
 }
-
-// --- TS-only overload forms (for Playground / known_issues contrast) ---
 
 export function processValue(x: number): number
 
@@ -69,54 +60,42 @@ export function overloadRuntimeEntity(x: number | string): number | string {
   return overloadRuntimeEntityImpl(x)
 }
 
-// --- Non-overload wrappers for .ets import (GTP-OL positive runtime) ---
-
-/** GTP-OL-001 */
 export function callProcessValueNumber(value: number): number {
   return processValue(value)
 }
 
-/** GTP-OL-001 */
 export function callProcessValueString(value: string): string {
   return processValue(value)
 }
 
-/** GTP-OL-002 */
 export function callHandleMixedNumber(value: number): number {
   return handleMixed(value)
 }
 
-/** GTP-OL-002 */
 export function callHandleMixedString(value: string): string {
   return handleMixed(value)
 }
 
-/** GTP-OL-003 */
 export function callProcessArrayOrItemString(value: string): string {
   return processArrayOrItem(value)
 }
 
-/** GTP-OL-004 */
 export function callProcessArrayOrItemNumberArray(values: number[]): number {
   return processArrayOrItem(values)
 }
 
-/** GTP-OL-004 */
 export function callProcessArrayOrItemNumber(value: number): number {
   return processArrayOrItem(value)
 }
 
-/** GTP-OL-008 */
 export function getOverloadRuntimeEntityType(): string {
   return typeof overloadRuntimeEntity
 }
 
-/** GTP-OL-008 */
 export function callOverloadRuntimeNumber(value: number): number {
   return overloadRuntimeEntity(value)
 }
 
-/** GTP-OL-008 */
 export function callOverloadRuntimeString(value: string): string {
   return overloadRuntimeEntity(value)
 }

@@ -13,17 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JS 生产方模块 — 导出无类型标注的动态值/函数，供 .ets 跨语言消费。
- *
- * Used By:
- *   - GTP-IO-006: ETS 泛型函数接收 JS 动态值
- *   - GTP-IO-011: .d.ts 声明契约与实际 JS 导出一致性
- *
- * 注意: lengthBounded 的 .d.ts 声明约束 `<T extends { length: number }>`，
- *       而 JS 实现忽略约束（运行时对任意 v 取 v.length）。这正是契约 vs 实际的差异点。
- */
-
 export function jsIdentity(v) {
     return v
 }

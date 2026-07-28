@@ -44,7 +44,6 @@ export function testMultiInterfaceExtends(): string {
   return obj.getA() + "|" + obj.getB() + "|" + obj.getC()
 }
 
-// Generic interface
 interface Container<T> {
   value: T
 

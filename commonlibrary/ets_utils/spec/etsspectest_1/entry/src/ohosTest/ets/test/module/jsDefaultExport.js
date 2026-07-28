@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-// ECMA-262 §16.2.1.3 — default export
-// Pure JavaScript module
-
 const defaultVal = 100
 
 export default defaultVal
@@ -50,5 +47,4 @@ export function resetMutableVal() {
     mutableVal = 1
 }
 
-// Module scope isolation test: this variable should NOT be visible to importer
 let moduleInternal = 'should-not-leak'

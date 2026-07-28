@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-// ECMA-262 §16.2 Module Semantics
-// Pure JavaScript module exports
-
 export const CONST_VAL = 42
 
 export let moduleInitialized = false

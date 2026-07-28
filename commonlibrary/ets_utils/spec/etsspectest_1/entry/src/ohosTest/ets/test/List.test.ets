@@ -49,6 +49,15 @@ import GenericUtilityTypeTest from "./generic/UtilityType/GenericUtilityTypeTest
 //module
 import ModuleSyntaxTest from './module/ModuleSyntaxTest.test';
 
+//null_safety
+import BasicValueTest from './null_safety/BasicValue/BasicValueTest.test';
+import ClassInterfaceOptionalTest from './null_safety/ClassInterfaceOptional/ClassInterfaceOptionalTest.test';
+import CrossFeatureTest from './null_safety/CrossFeature/CrossFeatureTest.test';
+import FunctionParamReturnTest from './null_safety/FunctionParamReturn/FunctionParamReturnTest.test';
+import GenericBoundaryTest from './null_safety/GenericBoundary/GenericBoundaryTest.test';
+import NullishCoalescingTest from './null_safety/NullishCoalescing/NullishCoalescingTest.test';
+import OptionalChainingTest from './null_safety/OptionalChaining/OptionalChainingTest.test';
+
 export default function testsuite() {
   ClassDeclarationTest();
   ClassTypeTest();
@@ -100,4 +109,13 @@ export default function testsuite() {
 
   //module
   ModuleSyntaxTest();
+
+  //null_safety
+  BasicValueTest();
+  ClassInterfaceOptionalTest();
+  CrossFeatureTest();
+  FunctionParamReturnTest();
+  GenericBoundaryTest();
+  NullishCoalescingTest();
+  OptionalChainingTest();
 }

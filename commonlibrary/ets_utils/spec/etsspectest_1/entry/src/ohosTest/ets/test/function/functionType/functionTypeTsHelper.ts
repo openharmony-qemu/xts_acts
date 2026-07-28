@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for function type tests
- * ECMA-262 §9.2.13, §15.2.3 — function as value, parameters, and callbacks
- */
-
 export function makeMultiplier(factor: number): (x: number) => number {
   return function(x: number): number {
     return x * factor

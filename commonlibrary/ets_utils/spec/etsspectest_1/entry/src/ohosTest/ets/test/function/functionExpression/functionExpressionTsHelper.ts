@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for function expression tests
- * ECMA-262 §15.2.3 FunctionExpression
- * ArkTS does not support function expressions, object literals, or standalone this.
- */
-
 export function testExpressionCallback(): number {
   function apply(value: number, fn: (x: number) => number): number {
     return fn(value)

@@ -13,21 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for M04 Generic Interface tests.
- *
- * 仅持有 .ets 不支持、被迫落 .ts 的语法（质检标准 3.2）。
- *
- * Used By:
- *   - GTP-GI-006: CallbackIface / invokeCallbackIface
- *
- * 被迫落 .ts 的语法:
- *   call signature 接口 `interface CB<T> { (v: T): void }` 在 .ets 报
- *   arkts-no-call-signatures（Use "class" instead of a type with call signature），
- *   故整体移至 .ts。.ets 通过 invokeCallbackIface 调用做运行时断言。
- */
-
-// GTP-GI-006: call signature 接口（.ets 报 arkts-no-call-signatures，被迫落 .ts）
 export interface CallbackIface<T> {
   (value: T): void
 }

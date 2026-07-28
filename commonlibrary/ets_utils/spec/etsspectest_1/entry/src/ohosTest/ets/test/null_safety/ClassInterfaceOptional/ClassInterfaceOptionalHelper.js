@@ -13,5 +13,11 @@
  * limitations under the License.
  */
 
-// createCrossModuleDerived removed — cross-module generic inheritance
-// now uses standard .ets extends in crossModuleBase.ets + test file.
+export function hasOwnProperty(obj, key) {
+  return Object.hasOwn(obj, key)
+}
+
+export function getDescriptor(obj, key) {
+  let desc = Object.getOwnPropertyDescriptor(obj, key)
+  return desc !== undefined
+}

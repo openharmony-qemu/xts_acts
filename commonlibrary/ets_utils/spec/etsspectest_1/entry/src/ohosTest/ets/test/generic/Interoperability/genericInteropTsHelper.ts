@@ -13,14 +13,4 @@
  * limitations under the License.
  */
 
-/*
- * TS helper / 聚合模块 — 作为 .ets 消费 ts_producer 的统一 import 入口。
- *
- * Used By:
- *   - GTP-IO-004: .ets 调用 TS 导出的泛型函数
- *   - GTP-IO-008: 跨语言 Promise<T> resolve/reject
- *   - GTP-IO-009: 跨语言 Array<T> / Map<K,V> 读写
- *   - GTP-IO-012: 跨语言异常传播
- */
-
 export { tsIdentity, tsAsync, tsReject, tsArray, tsReadMap, tsThrower } from './ts_producer'

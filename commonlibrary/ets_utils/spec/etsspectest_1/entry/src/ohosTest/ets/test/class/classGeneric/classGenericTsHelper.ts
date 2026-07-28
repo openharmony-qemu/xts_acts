@@ -31,7 +31,6 @@ export function testGenericMethod(): string {
   return result
 }
 
-// Generic constraint -- TS structural typing: string satisfies HasLength via length property
 interface HasLength {
   length: number
 }

@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 
-// Constructor signature (ArkTS does not support constructor signatures in interfaces)
 export interface Constructor<T> {
   new(...args: any[]): T;
 }
 
-// F-bounded recursive constraint
 export interface Comparable<T> {
   compare(other: T): number;
 }
@@ -35,7 +33,6 @@ export class NumberValue implements Comparable<NumberValue> {
   }
 }
 
-// keyof + indexed access type
 export function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }

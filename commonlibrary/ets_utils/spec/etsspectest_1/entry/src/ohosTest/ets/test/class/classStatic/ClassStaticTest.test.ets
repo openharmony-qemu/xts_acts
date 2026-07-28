@@ -35,12 +35,10 @@ import {
   testStaticInheritance
 } from './classStaticTsHelper'
 
-// design 010: static field external write
 class StaticWriteField {
   public static counter: number = 0
 }
 
-// migrated from classDeclaration: static field, method, mutation
 class Config {
   public static version: string = "1.0.0"
 }
@@ -59,7 +57,6 @@ class Counter {
   }
 }
 
-// design 023 + 024: child shadows/overrides base static field and method
 class StaticShadowBase {
   public static label: string = 'base-label'
 

@@ -56,9 +56,6 @@ export function makeContainer(item: any): any {
   }
 }
 
-/*
- * Prototype chain test -- `prototype` and `Object.getPrototypeOf` restricted in ArkTS
- */
 class ProtoBase {
   baseValue: number = 1
 }
