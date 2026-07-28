@@ -45,3 +45,4 @@ export const AVPlaybackSpeed0101: () => number;
 export const AVPlaybackSpeed0102: () => number;
 export const AVPlaybackSpeed0103: () => number;
 export const AVPlayerBufferingType0100: () => number;
+export const AVPlayerErrorCode0100: () => number;
