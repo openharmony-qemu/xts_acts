@@ -85,21 +85,15 @@ static IotcCharState g_repChar3 = {
     .len = 0,
 };
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test function
- * @param        : subsystem name is communication
- * @param        : module name is lwip
- * @param        : test suit name is LwipFuncTestSuite
- */
-LITE_TEST_SUIT(communication, iot_connect, IotcOhDeviceActsTest);
+LITE_TEST_SUIT(communication, iot_connect, ActsIotcOhDeviceTest);
 
 /**
  * @tc.setup     : setup for every testcase
  * @return       : setup result, TRUE is success, FALSE is fail
  */
-static BOOL IotcOhDeviceActsTestSetUp(void)
+static BOOL ActsIotcOhDeviceTestSetUp(void)
 {
-    printf("IotcOhDeviceActsTestSetUp \r\n");
+    printf("ActsIotcOhDeviceTestSetUp \r\n");
     return TRUE;
 }
 
@@ -107,21 +101,21 @@ static BOOL IotcOhDeviceActsTestSetUp(void)
  * @tc.teardown  : teardown for every testcase
  * @return       : teardown result, TRUE is success, FALSE is fail
  */
-static BOOL IotcOhDeviceActsTestTearDown(void)
+static BOOL ActsIotcOhDeviceTestTearDown(void)
 {
-    printf("IotcOhDeviceActsTestSetUp \r\n");
+    printf("ActsIotcOhDeviceTestSetUp \r\n");
     return TRUE;
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest001
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceInit0100
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_INIT_0100
+ * @tc.desc Test IotcOhDevInit called returns true.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest001, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0100, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevInit();
@@ -140,14 +134,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest001, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest002
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceInit0200
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_INIT_0200
+ * @tc.desc Test IotcOhDevInit called twice returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest002, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0200, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhSetOption(IOTC_OH_OPTION_SDK_REG_EVENT_LISTENER, TestIotcEventCallback);
@@ -164,14 +158,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest002, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest003
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceDeinit0100
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_DEINIT_0100
+ * @tc.desc Test IotcOhDevDeinit before IotcOhStop returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest003, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceDeinit0100, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhSetOption(IOTC_OH_OPTION_SDK_REG_EVENT_LISTENER, TestIotcEventCallback);
@@ -188,14 +182,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest003, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest004
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0100
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0100
+ * @tc.desc Test IotcOhDevReportCharState after init and main success.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL0
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest004, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0100, Function | MediumTest | LEVEL0)
 {
     int ret = 0;
     ret = IotcOhDevInit();
@@ -216,14 +210,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest004, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest005
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0200
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0200
+ * @tc.desc Test IotcOhDevReportCharState without init returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest005, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0200, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(&g_repChar, 1);
@@ -231,14 +225,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest005, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest006
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0300
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0300
+ * @tc.desc Test IotcOhDevReportCharState without main returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest006, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0300, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevInit();
@@ -252,14 +246,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest006, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest007
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0400
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0400
+ * @tc.desc Test IotcOhDevReportCharState after main stop returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest007, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0400, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhSetOption(IOTC_OH_OPTION_SDK_REG_EVENT_LISTENER, TestIotcEventCallback);
@@ -276,14 +270,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest007, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest008
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0500
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0500
+ * @tc.desc Test IotcOhDevReportCharState with NULL pointer returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest008, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0500, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(NULL, 1);
@@ -291,14 +285,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest008, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest009
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0600
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0600
+ * @tc.desc Test IotcOhDevReportCharState with zero length returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest009, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0600, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(&g_repChar, 0);
@@ -306,14 +300,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest009, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest010
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0700
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0700
+ * @tc.desc Test IotcOhDevReportCharState with NULL svcId returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest010, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0700, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(&g_repChar1, 0);
@@ -321,14 +315,14 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest010, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest011
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0800
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0800
+ * @tc.desc Test IotcOhDevReportCharState with NULL data returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest011, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0800, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(&g_repChar2, 0);
@@ -336,18 +330,18 @@ LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest011, Function | MediumT
 }
 
 /**
- * @tc.name: IotcOhDeviceActsTest012
- * @tc.desc: Test iot connect.
- * @tc.in: Test module, Test number, Test levels.
- * @tc.out: Zero
- * @tc.type: FUNC
- * @tc.require: 1
+ * @tc.name testIotcOhDeviceReportChar0900
+ * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0900
+ * @tc.desc Test IotcOhDevReportCharState with zero data length returns failure.
+ * @tc.type FUNCTION
+ * @tc.size MEDIUMTEST
+ * @tc.level LEVEL3
  */
-LITE_TEST_CASE(IotcOhDeviceActsTest, IotcOhDeviceActsTest012, Function | MediumTest | Level2)
+LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0900, Function | MediumTest | LEVEL3)
 {
     int ret = 0;
     ret = IotcOhDevReportCharState(&g_repChar3, 0);
     TEST_ASSERT_NOT_EQUAL(ret, IOTC_OK);
 }
 
-RUN_TEST_SUITE(IotcOhDeviceActsTest);
+RUN_TEST_SUITE(ActsIotcOhDeviceTest);
