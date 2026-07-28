@@ -63,7 +63,7 @@ export default function DlpEnterpriseServiceTest() {
         console.info(curTag, "start");
         try {
           let code = dlpPermission.PluginCmd.CMD_EVENT_REPORT_COMMON;
-          let message = "";
+          let message = "libosaccountndk.so";
           let result = await dlpPermission.processPluginCommand(code, message);
           console.info(curTag, "processPluginCommand should not succeed");
           expect(false).assertTrue();
