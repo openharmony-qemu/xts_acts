@@ -73,7 +73,9 @@ export default function BooleanValueOfInstanceTest(): void {
      */
     it("testBooleanValueOfRequiresInstanceCallCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = new Boolean(true);
-      expect(instance.valueOf()).assertEqual(true);
+      let result = instance.valueOf();
+      expect(typeof result).assertEqual("boolean");
+      expect(result).assertEqual(true);
     })
 
     /**
