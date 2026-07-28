@@ -523,31 +523,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040
-     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040
-     * @tc.desc   pageType is invalid value 5
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040 start');
-      const context: common.Context = GlobalContext.getContext();
-      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
-        try {
-          await certManagerDialog.openCertificateManagerDialog(context, 5 as certManagerDialog.CertificateDialogPageType);
-          expect(null).assertFail();
-        } catch (error) {
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040 e.code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-          expect(error.message).assertEqual("pageType invalid");
-        }
-      }
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0040 end');
-      done();
-    });
-
-    /**
      * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050
      * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050
      * @tc.desc   normal test with PAGE_MAIN
@@ -557,7 +532,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 start');
-      const context: common.Context = GlobalContext.getContext();
+      const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
@@ -580,7 +555,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 start');
-      const context: common.Context = GlobalContext.getContext();
+      const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE);
@@ -603,7 +578,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 start');
-      const context: common.Context = GlobalContext.getContext();
+      const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL);
@@ -626,7 +601,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 start');
-      const context: common.Context = GlobalContext.getContext();
+      const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE);

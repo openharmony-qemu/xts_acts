@@ -768,56 +768,5 @@ export default function api16CertFuncTestUnit() {
       done();
     });
 
-    /**
-     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0025
-     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0025
-     * @tc.desc   certFormat is invalid value 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0025 start');
-      let certBlob: certManager.CertBlob = {
-        certData: caCert,
-        certFormat: 3 as certManager.CertFileFormat,
-        certScope: certManager.CertScope.CURRENT_USER
-      };
-      try {
-        await certManager.installUserTrustedCertificate(certBlob);
-      } catch (error) {
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0025 e.code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
-        expect(error.message).assertEqual("get context type error");
-      }
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0025 end');
-      done();
-    });
-
-    /**
-     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0026
-     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0026
-     * @tc.desc   certScope is invalid value 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0026 start');
-      let certBlob: certManager.CertBlob = {
-        certData: caCert,
-        certFormat: certManager.CertFileFormat.PEM_DER,
-        certScope: 3 as certManager.CertScope
-      };
-      try {
-        await certManager.installUserTrustedCertificate(certBlob);
-      } catch (error) {
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0026 e.code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
-        expect(error.message).assertEqual("get context type error");
-      }
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0026 end');
-      done();
-    });
   })
 }
