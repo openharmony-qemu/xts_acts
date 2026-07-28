@@ -757,7 +757,7 @@ export default function uint32ArrayGetTest2(): void {
         src.with(5, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

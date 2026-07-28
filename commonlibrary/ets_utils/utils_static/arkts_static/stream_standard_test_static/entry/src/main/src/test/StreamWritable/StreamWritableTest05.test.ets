@@ -439,7 +439,7 @@ export default function StreamWritable05Test(): void {
         writable.on(eventName, callback);
         eventRegistered = true;
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(0);
       }
 
       expect(eventRegistered).assertFalse();

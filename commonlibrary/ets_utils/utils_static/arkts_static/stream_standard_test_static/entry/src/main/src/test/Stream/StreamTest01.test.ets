@@ -283,7 +283,7 @@ class BinaryEndWritable extends stream.Writable {
   }
 }
 class CorkWritable extends stream.Writable {
-  doWrite(chunk: string | Uint8Array | null, encoding: string, callback: Function) {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCbErr(callback, null);
   }
   _write(chunk: string | Uint8Array, encoding: string, callback: Function) {
