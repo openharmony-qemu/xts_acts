@@ -3798,3 +3798,36 @@ export default function isPromiseTest(): void {
         console.info(`${caseName} test start`);
 
         const customWrapper: CustomPromiseWrapper<string> = CustomPromiseWrapper.customResolve<string>('custom');
+        const finallyPromise: Promise<string> = customWrapper.finally(() => {
+          console.info('custom finally');
+        });
+        const type: util.types = new util.types();
+        const result: boolean = type.isPromise(finallyPromise);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1460
+     * @tc.name testIsPromiseSubclassStatic
+     * @tc.desc Test isPromise with SubclassStatic - verify Promise detection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsPromiseSubclassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testIsPromiseSubclassStatic';
+        console.info(`${caseName} test start`);
+
+        const customWrapper: CustomPromiseWrapper<string> = CustomPromiseWrapper.customResolve<string>('static');
+        const promise: Promise<string> = customWrapper.getPromise();
+        const type: util.types = new util.types();
+        const result: boolean = type.isPromise(promise);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+  })
+}
