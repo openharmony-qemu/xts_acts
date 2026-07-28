@@ -88,42 +88,41 @@ export default function webViewNativeMediaPlayerHandler4() {
       done();
     })
 
-  /** 
-    * @tc.name   testWebViewNativeMediaPlayerSeek500 
-    * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3000 
-    * @tc.desc   test NativeMediaPlayerVSetPlayRate 
-    * @tc.type   FUNCTION 
-    * @tc.size   MEDIUMTEST 
-    * @tc.level  LEVEL1 
-    */ 
- it('testWebViewNativeMediaPlayerSeek500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => { 
-  emitKey = "emitWebViewNativeMediaPlayerSeek500" 
-  Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY); 
-  let isReturn = false; 
-  Utils.registerEvent("testWebViewNativeMediaPlayerSeek500", true, 361030, () => { isReturn = true }); 
-  await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey); 
-  await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500); 
-  done(); 
-}) 
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSeek500
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3000
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebViewNativeMediaPlayerSeek500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = "emitWebViewNativeMediaPlayerSeek500"
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerSeek500", true, 361030, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
+    })
 
-
- /** 
-   * @tc.name   testWebViewNativeMediaPlayerSeek20 
-   * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3300 
-   * @tc.desc   test NativeMediaPlayerVSetPlayRate 
-   * @tc.type   FUNCTION 
-   * @tc.size   MEDIUMTEST 
-   * @tc.level  LEVEL1 
-   */ 
-it('testWebViewNativeMediaPlayerSeek20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => { 
-  emitKey = "emitWebViewNativeMediaPlayerSeek20"
-  Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY); 
-  let isReturn = false; 
-  Utils.registerEvent("testWebViewNativeMediaPlayerSeek20", true, 361040, () => { isReturn = true }); 
-  await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey); 
-  await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500); 
-  done(); 
-})
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSeek20
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_3300
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebViewNativeMediaPlayerSeek20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = "emitWebViewNativeMediaPlayerSeek20"
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewNativeMediaPlayerSeek20", true, 361040, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
+    })
 
     /**
      * @tc.name   testWebViewNativeMediaPlayerSeekNegative1
