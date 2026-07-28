@@ -305,6 +305,8 @@ class Core {
           throw (e instanceof Error ? e : new Error(errMsg));
         }
       }
+    } else {
+      throw new Error('SuiteService or ConfigService not initialized');
     }
   }
 }

@@ -86,7 +86,7 @@ export function getFuncWithArgsOne(func: (params: () => void) => FuncResult, tim
       if (!!timer) {
         clearTimeout(timer);
       }
-      reject(err as Error);
+      reject(err instanceof Error ? err : new Error(String(err)));
     }
   });
 }
@@ -126,7 +126,7 @@ export function getFuncWithArgsTwo(
       if (!!timer) {
         clearTimeout(timer);
       }
-      reject(err as Error);
+      reject(err instanceof Error ? err : new Error(String(err)));
     }
   });
 }

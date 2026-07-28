@@ -182,7 +182,7 @@ export interface ApiIF {
   afterAll?: (func: HookFuncType) => void;
   afterEach?: (func: HookFuncType) => void;
   afterEachIt?: (func: HookFuncType) => void;
-  it?: (desc: string,  filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
+  it?: (desc: string, filter: int, func: ItfnType, timeout?: number, tag?: string) => void;
   xit?: (desc: string, filter: int, func: ItfnType, reason: string) => void;
   expect?: (actualValue?: HypiumValue) => AssertMatcher;
 }

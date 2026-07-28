@@ -168,15 +168,26 @@ function eqOfObj(a: object, b: object): boolean {
   if (aKeys.length !== bKeys.length) {
     return false;
   }
-  for (const field of reflect.getInstanceFieldsRecursive(Class.of(a))) {
-    const aKey = field.getName();
-    if (!bKeys.includes(aKey)) {
-      return false;
+  try {
+    const aCls = Class.of(a);
+    const bCls = Class.of(b);
+    for (const field of reflect.getInstanceFieldsRecursive(aCls)) {
+      const aKey = field.getName();
+      if (!bKeys.includes(aKey)) {
+        return false;
+      }
+      const aValue = field.getValue(a);
+      const bField = bCls.getInstanceField(aKey);
+      if (bField === undefined) {
+        return false;
+      }
+      const bValue = bField.getValue(b);
+      if (!eq(aValue as HypiumValue, bValue as HypiumValue)) {
+        return false;
+      }
     }
-    const aValue = field.getValue(a);
-    if (!eq(aValue as Object, Class.of(b).getInstanceField(aKey)!.getValue(b) as Object)) {
-      return false;
-    }
+    return true;
+  } catch (e) {
+    return false;
   }
-  return true;
 }

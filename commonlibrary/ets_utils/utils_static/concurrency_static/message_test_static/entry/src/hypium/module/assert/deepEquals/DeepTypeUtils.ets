@@ -116,7 +116,11 @@ export class DeepTypeUtils {
    * @param key 对象属性名称
    */
   static has(obj: object, key: string): boolean {
-    return reflect.getInstanceFieldsRecursive(Class.of(obj)).find((e) => e.getName() == key) != undefined;
+    try {
+      return reflect.getInstanceFieldsRecursive(Class.of(obj)).find((e) => e.getName() == key) != undefined;
+    } catch (e) {
+      return false;
+    }
   }
 
   /**
@@ -156,9 +160,13 @@ export class DeepTypeUtils {
     if (obj === null) {
       return keyList;
     }
-    const fields = reflect.getInstanceFieldsRecursive(Class.of(obj));
-    for (const field of fields) {
-      keyList.push(field.getName());
+    try {
+      const fields = reflect.getInstanceFieldsRecursive(Class.of(obj));
+      for (const field of fields) {
+        keyList.push(field.getName());
+      }
+    } catch (e) {
+      return keyList;
     }
     return keyList;
   }

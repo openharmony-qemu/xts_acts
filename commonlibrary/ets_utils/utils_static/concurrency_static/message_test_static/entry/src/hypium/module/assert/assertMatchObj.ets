@@ -44,6 +44,9 @@ function matchJsonElement(actual: jsonx.JsonElement, expected: jsonx.JsonElement
   try {
     for (const entry of expected) {
       const key = entry[0];
+      if (typeof key !== 'string') {
+        return `${path}: expected object key must be a string`;
+      }
       const expectedValue = entry[1];
       const actualValue = actual.tryGetElement(key);
       if (actualValue === undefined) {

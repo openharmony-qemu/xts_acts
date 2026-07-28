@@ -18,6 +18,8 @@ import { AssertResult } from '../modal/assertModel';
 import { HypiumValue } from '../types/common';
 import { DeepTypeUtils } from './deepEquals/DeepTypeUtils';
 import { eq } from './deepEquals/assertDeepEquals';
+// Class / reflect are ArkTS static stdlib builtins (also used via DeepTypeUtils).
+import { Class, reflect } from 'std/core';
 
 function isPlainObject(value: HypiumValue): boolean {
   return value !== null
@@ -36,32 +38,37 @@ function objectContains(actualObj: object, expectValue: HypiumValue): boolean {
     return false;
   }
   const expectObj = expectValue as object;
-  for (const field of reflect.getInstanceFieldsRecursive(Class.of(expectObj))) {
-    const key = field.getName();
-    if (!DeepTypeUtils.has(actualObj, key)) {
-      return false;
-    }
-    const actualField = Class.of(actualObj).getInstanceField(key);
-    if (actualField === null) {
-      return false;
-    }
-    if (actualField === undefined) {
-      return false;
-    }
-    const expectFieldValue = field.getValue(expectObj);
-    const actualFieldValue = actualField.getValue(actualObj);
-    if (actualFieldValue === null || actualFieldValue === undefined
-      || expectFieldValue === null || expectFieldValue === undefined) {
-      if (actualFieldValue !== expectFieldValue) {
+  // Guard reflection failures (e.g. unsupported plain/dynamic objects) so the
+  // assert framework returns false instead of throwing.
+  try {
+    const expectCls = Class.of(expectObj);
+    const actualCls = Class.of(actualObj);
+    for (const field of reflect.getInstanceFieldsRecursive(expectCls)) {
+      const key = field.getName();
+      if (!DeepTypeUtils.has(actualObj, key)) {
         return false;
       }
-      continue;
+      const actualField = actualCls.getInstanceField(key);
+      if (actualField === undefined) {
+        return false;
+      }
+      const expectFieldValue = field.getValue(expectObj);
+      const actualFieldValue = actualField.getValue(actualObj);
+      if (actualFieldValue === null || actualFieldValue === undefined
+        || expectFieldValue === null || expectFieldValue === undefined) {
+        if (actualFieldValue !== expectFieldValue) {
+          return false;
+        }
+        continue;
+      }
+      if (!eq(actualFieldValue as HypiumValue, expectFieldValue as HypiumValue)) {
+        return false;
+      }
     }
-    if (!eq(actualFieldValue as Object, expectFieldValue as Object)) {
-      return false;
-    }
+    return true;
+  } catch (e) {
+    return false;
   }
-  return true;
 }
 
 export function assertContain(actualValue: HypiumValue, expect: HypiumValue[]): AssertResult {

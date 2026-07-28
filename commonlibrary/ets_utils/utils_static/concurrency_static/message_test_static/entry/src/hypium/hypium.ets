@@ -50,6 +50,9 @@ export class Hypium {
     }
     for (const entry of root) {
       const key = entry[0];
+      if (typeof key !== 'string') {
+        throw new Error('parseParametersJson: entry key must be a string');
+      }
       const valueElem = entry[1];
       const asString = valueElem.tryAsString();
       if (asString !== undefined) {
@@ -99,7 +102,8 @@ export class Hypium {
         || typeof summary.ignore !== 'number'
         || typeof summary.duration !== 'number'
         || summary.itItemList === null
-        || summary.itItemList === undefined) {
+        || summary.itItemList === undefined
+        || !Array.isArray(summary.itItemList)) {
         return undefined;
       }
       return candidate;
@@ -109,6 +113,10 @@ export class Hypium {
       return undefined;
     }
   }
+
+  // Worker -> main settle messages (resolve/reject only on EAWorker.main()).
+  private static readonly EA_WORKER_MSG_OK: int = 1;
+  private static readonly EA_WORKER_MSG_ERR: int = 2;
 
   // Per-worker context store — avoid sharing a static Map across EAWorkers.
   private static readonly contextLocal: WorkerLocal<Map<string, HypiumValue>> =
@@ -258,7 +266,8 @@ export class Hypium {
         if (stressInteger === undefined) {
           throw new Error('stress must be a number');
         }
-        stress = stressInteger.toDouble();
+        // int widens to number; avoid toDouble() for raw integer JSON values.
+        stress = stressInteger;
       }
     }
 
@@ -412,7 +421,7 @@ export class Hypium {
     Core.getInstance();
     for (let i = 0; i < workerNum; i++) {
       const workerPromise: Promise<TestcaseSummaryIF> = Hypium.createEAWorkerPromise(i, testsuite,
-        abilityDelegatorArguments) as Promise<TestcaseSummaryIF>;
+        abilityDelegatorArguments);
       workerPromiseArray.push(workerPromise);
     }
     let runTimes: number = 0;
@@ -447,7 +456,7 @@ export class Hypium {
       };
       Hypium.configWorkerItTestResult(mergedResult, allItemList);
       Hypium.printWorkerTestResult(abilityDelegator, allItemList);
-      let endTime = SysTestKit.getRealTime();
+      const endTime = SysTestKit.getRealTime();
       const taskConsuming = endTime - startTime;
       if (rejectDetails.length > 0) {
         const detail = rejectDetails.join('; ');
@@ -490,17 +499,80 @@ export class Hypium {
       throw new Error(`AbilityDelegator parameters are not JSON-serializable: ${errMsg}`);
     }
     const workerPromise: Promise<TestcaseSummaryIF> = new Promise<TestcaseSummaryIF>((resolve, reject) => {
+      let settled = false;
       const worker = new EAWorker(`EAWork_${i}`);
+
+      const quitWorkerBestEffort = (): void => {
+        try {
+          if (worker.isAlive()) {
+            worker.quit();
+          }
+        } catch (quitError) {
+          const quitMsg = quitError instanceof Error ? quitError.message : String(quitError);
+          hilog.error(domain, tag, 'Failed to quit worker: ' + quitMsg);
+        }
+      };
+
+      // Settle the Promise only on EAWorker.main() — never call resolve/reject from worker tasks.
+      const mainHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        if (settled) {
+          return;
+        }
+        settled = true;
+        quitWorkerBestEffort();
+        try {
+          const messageType = msg.getWhat();
+          if (messageType === Hypium.EA_WORKER_MSG_OK) {
+            const raw = msg.getObject();
+            if (raw === null || raw === undefined) {
+              reject(new Error('EAWorker OK message object is null'));
+              return;
+            }
+            const data = Hypium.asSendData(raw as Object);
+            if (data === undefined) {
+              reject(new Error('EAWorker OK message is not a valid SendData'));
+              return;
+            }
+            hilog.info(domain, tag, 'receive data from ' + data.currentThreadName + ' ' + JSON.stringify(data));
+            resolve(data.summary);
+            return;
+          }
+          if (messageType === Hypium.EA_WORKER_MSG_ERR) {
+            const raw = msg.getObject();
+            let errMsg = 'EAWorker error';
+            if (typeof raw === 'string') {
+              errMsg = raw as string;
+            }
+            reject(new Error(errMsg));
+            return;
+          }
+          reject(new Error(`Unexpected EAWorker settle message type: ${messageType}`));
+        } catch (e) {
+          const errMsg = e instanceof Error ? e.message : String(e);
+          reject(new Error(`EAWorker main settle handler failed: ${errMsg}`));
+        }
+      }, EAWorker.main());
+
+      const postErrToMain = (errMsg: string): void => {
+        try {
+          const errMessage = new concurrency.Message(Hypium.EA_WORKER_MSG_ERR, errMsg, mainHandler);
+          errMessage.sendToTarget();
+        } catch (sendError) {
+          const sendMsg = sendError instanceof Error ? sendError.message : String(sendError);
+          hilog.error(domain, tag, 'Failed to post worker error to main: ' + sendMsg);
+        }
+      };
+
       worker.setUncaughtExceptionHandler((e: Error): void => {
-        // An uncaught exception terminates the worker; do not access the main-thread worker reference here.
         hilog.error(domain, tag, `worker error: ${e.message}`);
-        reject(e);
+        postErrToMain(e.message);
       });
-      worker.start();
-      // MessageHandler / quit / getName must use the worker-local EAWorker (EAWorker.current()),
-      // not the main-thread worker reference captured across threads.
-      // Do not pass AbilityDelegator into the worker; results go back via MessageHandler / summary resolve.
-      worker.postTask(() => {
+      try {
+        worker.start();
+        // MessageHandler / quit / getName must use the worker-local EAWorker (EAWorker.current()),
+        // not the main-thread worker reference captured across threads.
+        // Results are forwarded to mainHandler; resolve/reject run only on the main worker.
+        worker.postTask(() => {
         const current = EAWorker.current();
         if (current === undefined) {
           // Do not call main-thread worker.quit() here (cross-thread object use).
@@ -508,7 +580,7 @@ export class Hypium {
           throw new Error('EAWorker.current() is undefined inside worker task');
         }
         const localWorker: EAWorker = current;
-        let settled = false;
+        let forwarded = false;
         const quitLocal = (): void => {
           try {
             localWorker.quit();
@@ -517,35 +589,42 @@ export class Hypium {
             hilog.error(domain, tag, 'Failed to quit worker: ' + quitMsg);
           }
         };
-        const safeResolve = (summary: TestcaseSummaryIF): void => {
-          if (settled) {
+        const postOkToMain = (payload: SendData): void => {
+          if (forwarded) {
             return;
           }
-          settled = true;
-          // Resolve before quit so Promise settlement is not lost if the worker exits first.
-          resolve(summary);
+          forwarded = true;
+          try {
+            const okMessage = new concurrency.Message(Hypium.EA_WORKER_MSG_OK, payload, mainHandler);
+            okMessage.sendToTarget();
+          } catch (sendError) {
+            forwarded = false;
+            const sendMsg = sendError instanceof Error ? sendError.message : String(sendError);
+            hilog.error(domain, tag, 'Failed to post worker result to main: ' + sendMsg);
+            postErrToMain(sendMsg);
+          }
           quitLocal();
         };
-        const safeReject = (err: Error): void => {
-          if (settled) {
+        const postFailToMain = (err: Error): void => {
+          if (forwarded) {
             return;
           }
-          settled = true;
-          reject(err);
+          forwarded = true;
+          postErrToMain(err.message);
           quitLocal();
         };
         const currentCB = (msg: concurrency.Message): void => {
           try {
             const messageType = msg.getWhat();
-            if (messageType !== 1) {
+            if (messageType !== Hypium.EA_WORKER_MSG_OK) {
               hilog.error(domain, tag, `Unexpected EAWorker message type: ${messageType}`);
-              safeReject(new Error(`Unexpected EAWorker message type: ${messageType}`));
+              postFailToMain(new Error(`Unexpected EAWorker message type: ${messageType}`));
               return;
             }
             const raw = msg.getObject();
             if (raw === null || raw === undefined) {
               hilog.error(domain, tag, 'EAWorker message object is null');
-              safeReject(new Error('EAWorker message object is null'));
+              postFailToMain(new Error('EAWorker message object is null'));
               return;
             }
             // Message type 1 is emitted only by OhReport with a SendData payload.
@@ -553,17 +632,15 @@ export class Hypium {
             const data = Hypium.asSendData(raw as Object);
             if (data === undefined) {
               hilog.error(domain, tag, 'EAWorker message is not a valid SendData');
-              safeReject(new Error('EAWorker message is not a valid SendData'));
+              postFailToMain(new Error('EAWorker message is not a valid SendData'));
               return;
             }
-            const summary = data.summary;
-            const currentThreadName = data.currentThreadName;
-            hilog.info(domain, tag, 'receive data from ' + currentThreadName + ' ' + JSON.stringify(data));
-            safeResolve(summary);
+            // Forward to main MessageHandler; do not resolve/reject here.
+            postOkToMain(data);
           } catch (e) {
             const errMsg = e instanceof Error ? e.message : String(e);
             hilog.error(domain, tag, `EAWorker message handler failed: ${errMsg}`);
-            safeReject(e instanceof Error ? e : new Error(errMsg));
+            postFailToMain(e instanceof Error ? e : new Error(errMsg));
           }
         };
         const msgHandler = new concurrency.MessageHandler(currentCB, localWorker);
@@ -584,23 +661,35 @@ export class Hypium {
           (): void => {
             const coreInst = Core.getInstance();
             if (coreInst === null) {
-              safeReject(new Error('Core is null after worker hypiumTest'));
+              postFailToMain(new Error('Core is null after worker hypiumTest'));
               return;
             }
             const suiteService = coreInst.getDefaultService('suite');
             if (suiteService instanceof SuiteService) {
-              safeResolve(suiteService.getSummary());
+              const summary = suiteService.getSummary();
+              const payload: SendData = {
+                currentThreadName: workerName,
+                summary: summary
+              };
+              postOkToMain(payload);
               return;
             }
-            safeReject(new Error('suite service missing after worker hypiumTest'));
+            postFailToMain(new Error('suite service missing after worker hypiumTest'));
           },
           (e: Error): void => {
-            const errMsg = e instanceof Error ? e.message : String(e);
-            hilog.error(domain, tag, 'hypiumTest error: ' + errMsg);
-            safeReject(e instanceof Error ? e : new Error(errMsg));
+            hilog.error(domain, tag, 'hypiumTest error: ' + e.message);
+            postFailToMain(e);
           }
         );
       });
+      } catch (e) {
+        quitWorkerBestEffort();
+        if (!settled) {
+          settled = true;
+          const errMsg = e instanceof Error ? e.message : String(e);
+          reject(new Error(`Failed to start/postTask EAWorker: ${errMsg}`));
+        }
+      }
     });
     return workerPromise;
   }
