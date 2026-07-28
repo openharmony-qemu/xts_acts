@@ -201,7 +201,7 @@ export default function ArrayConstructor1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1100
      * @tc.name testArrayConstructorOne011
-     * @tc.desc Verify function return value as single-element Array.create argument
+     * @tc.desc Verify negative int -100 as single-element Array.create argument
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1132,7 +1132,7 @@ export default function ArrayConstructor1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_7300
      * @tc.name testArrayConstructorOne073
-     * @tc.desc Verify Date object as Array.create element
+     * @tc.desc Verify Double.POSITIVE_INFINITY as single-element Array.create element
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2

@@ -599,7 +599,7 @@ export default function ArrayFindLastTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_3200
      * @tc.name testArrayFindLast032
-     * @tc.desc Verify setting future element during reverse iteration
+     * @tc.desc Verify findLast setting future element during reverse iteration and returning matched value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -735,7 +735,7 @@ export default function ArrayFindLastTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_3900
      * @tc.name testArrayFindLast039
-     * @tc.desc Verify counter on found mid-array in reverse
+     * @tc.desc Verify findLast counter on found mid-array element in reverse order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -754,7 +754,7 @@ export default function ArrayFindLastTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_4000
      * @tc.name testArrayFindLast040
-     * @tc.desc Verify counter equals length when no match
+     * @tc.desc Verify findLast counter equals length when predicate has no match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

@@ -773,7 +773,7 @@ export default function ArrayFindTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_4000
      * @tc.name testArrayFind040
-     * @tc.desc Verify counter equals length when no match
+     * @tc.desc Verify find counter equals length when predicate has no match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

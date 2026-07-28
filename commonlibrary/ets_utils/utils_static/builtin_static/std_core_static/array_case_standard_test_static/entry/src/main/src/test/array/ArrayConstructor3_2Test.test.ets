@@ -747,7 +747,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4100
      * @tc.name testArrayConstructorThree041
-     * @tc.desc Verify Arithmetic Progression values are equivalent element-wise
+     * @tc.desc Verify sub-arrays lengths with mixed element extraction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1043,7 +1043,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5900
      * @tc.name testArrayConstructorThree059
-     * @tc.desc Verify ascending byte sequence (0..5) is created correctly
+     * @tc.desc Verify new Array with multiple int literal elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1059,7 +1059,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6000
      * @tc.name testArrayConstructorThree060
-     * @tc.desc Verify short boundary values sequence is created correctly
+     * @tc.desc Verify ascending byte sequence (0..5) using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1076,7 +1076,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6100
      * @tc.name testArrayConstructorThree061
-     * @tc.desc Verify digit char sequence is created correctly
+     * @tc.desc Verify short boundary values sequence using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1093,7 +1093,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6200
      * @tc.name testArrayConstructorThree062
-     * @tc.desc Verify business phone number strings are created correctly
+     * @tc.desc Verify digit char sequence (c'0'..c'3') using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1110,7 +1110,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6300
      * @tc.name testArrayConstructorThree063
-     * @tc.desc Verify mixed multi-type Array.create arguments
+     * @tc.desc Verify business phone number strings using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1126,7 +1126,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6400
      * @tc.name testArrayConstructorThree064
-     * @tc.desc Verify Array.create with null elements in int|null variable
+     * @tc.desc Verify mixed multi-type new Array arguments with null element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1144,7 +1144,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6500
      * @tc.name testArrayConstructorThree065
-     * @tc.desc Verify Array.create with undefined elements in int|undefined variable
+     * @tc.desc Verify null elements in int|null array using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,7 +1162,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6600
      * @tc.name testArrayConstructorThree066
-     * @tc.desc Verify Array.create with LinkedNode objects having null next
+     * @tc.desc Verify undefined elements in int|undefined array using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,7 +1179,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6700
      * @tc.name testArrayConstructorThree067
-     * @tc.desc Verify Array.create with LinkedNode|null elements
+     * @tc.desc Verify LinkedNode objects with null next using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1211,7 +1211,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6800
      * @tc.name testArrayConstructorThree068
-     * @tc.desc Verify Array.create with hex, octal, binary literals as elements
+     * @tc.desc Verify LinkedNode|null elements using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1231,7 +1231,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6900
      * @tc.name testArrayConstructorThree069
-     * @tc.desc Verify Array.create with hex, octal, binary literals as elements
+     * @tc.desc Verify hex, octal, binary literals as elements using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -182,7 +182,7 @@ export default function ArrayEntriesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0700
      * @tc.name testArrayEntries007
-     * @tc.desc Verify entries works with boolean arrays
+     * @tc.desc Verify entries works with 2-element boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -321,7 +321,7 @@ export default function ArrayEntriesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1300
      * @tc.name testArrayEntries013
-     * @tc.desc Verify entries works with boolean arrays
+     * @tc.desc Verify entries works with 3-element boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -389,7 +389,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0210
      * @tc.name testArrayFillOne021
-     * @tc.desc Verify literal vs new Array fill consistency
+     * @tc.desc Verify literal vs new Array(0,0,0) fill consistency with range 0-3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -921,7 +921,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0530
      * @tc.name testArrayFillOne053
-     * @tc.desc Verify new Array(5) fill partial
+     * @tc.desc Verify new Array(5, init) fill partial with assert on arr[0] and arr[1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -937,7 +937,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0540
      * @tc.name testArrayFillOne054
-     * @tc.desc Verify sparse extended then fill
+     * @tc.desc Verify sparse extended to 6 then fill all
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

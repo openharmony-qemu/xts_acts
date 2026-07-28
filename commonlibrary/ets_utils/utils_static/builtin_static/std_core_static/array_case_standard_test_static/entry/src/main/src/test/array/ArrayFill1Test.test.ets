@@ -164,7 +164,7 @@ export default function ArrayFill1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0800
      * @tc.name testArrayFill1008
-     * @tc.desc Verify negative indexes are resolved from the end of the array
+     * @tc.desc Verify negative start index is resolved from the end for fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

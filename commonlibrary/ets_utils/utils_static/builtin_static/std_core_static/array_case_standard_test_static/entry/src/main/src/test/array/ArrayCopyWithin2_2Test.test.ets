@@ -1144,7 +1144,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0600
      * @tc.name testArrayCopywithinTwo060
-     * @tc.desc Verify copyWithin correctly copy elements when target index uses hexadecimal literal 0x2, only specify source start index 1 and omit source end index
+     * @tc.desc Verify copyWithin with hex target 0x2 and end param 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1159,7 +1159,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0610
      * @tc.name testArrayCopywithinTwo061
-     * @tc.desc Verify octal literal as start
+     * @tc.desc Verify octal literal as start with explicit end param
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1426,7 +1426,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0760
      * @tc.name testArrayCopywithinTwo076
-     * @tc.desc Verify reduceRight after copyWithin
+     * @tc.desc Verify reduceRight with subtraction after copyWithin returns -21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1999,7 +1999,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_1100
      * @tc.name testArrayCopywithinTwo110
-     * @tc.desc Verify negative start index counts from end
+     * @tc.desc Verify negative start index with end param for copyWithin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2064,7 +2064,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_1140
      * @tc.name testArrayCopywithinTwo114
-     * @tc.desc Verify single element array copyWithin
+     * @tc.desc Verify single element array copyWithin with explicit end param
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2256,7 +2256,7 @@ export default function ArrayCopyWithin2_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_1250
      * @tc.name testArrayCopywithinTwo125
-     * @tc.desc Verify short array elements copyWithin
+     * @tc.desc Verify short boundary array elements copyWithin with end param
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
