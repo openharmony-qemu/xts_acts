@@ -958,6 +958,7 @@ export default function BigInt64ArraySubarray02Test(): void {
       expect(typeof result).assertEqual('string');
       expect(result.indexOf('2') >= 0).assertTrue();
       expect(result.indexOf('3') >= 0).assertTrue();
+      expect(result).assertEqual('2,000,3,000');
     });
 
     /**

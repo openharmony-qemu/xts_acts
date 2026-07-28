@@ -182,6 +182,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       expect(res.indexOf('111') >= 0).assertTrue();
       expect(res.indexOf('222') >= 0).assertTrue();
       expect(res.indexOf('333') >= 0).assertTrue();
+      expect(res).assertEqual('111,222,333');
     });
 
     /**
@@ -318,6 +319,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { minimumIntegerDigits: 2, useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('01') >= 0).assertTrue();
+      expect(res).assertEqual('01');
     });
 
     /**
@@ -333,6 +335,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { minimumIntegerDigits: 5, useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('00007') >= 0).assertTrue();
+      expect(res).assertEqual('00007');
     });
 
     /**
@@ -348,6 +351,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { minimumIntegerDigits: 3, useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('000') >= 0).assertTrue();
+      expect(res).assertEqual('000');
     });
 
     /**
@@ -364,6 +368,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('-')).assertEqual(0);
       expect(res.indexOf('005') >= 0).assertTrue();
+      expect(res).assertEqual('-005');
     });
 
     /**
@@ -735,6 +740,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = modified.toLocaleString('en-US', opts);
       expect(res.indexOf('100') >= 0).assertTrue();
+      expect(res).assertEqual('100,2,3');
       expect(arr[0]).assertEqual(1n);
     });
 
@@ -767,6 +773,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('7') >= 0).assertTrue();
+      expect(res).assertEqual('7,7,7');
     });
 
     /**
@@ -784,6 +791,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('3') >= 0).assertTrue();
       expect(res.indexOf('4') >= 0).assertTrue();
+      expect(res).assertEqual('3,4,3,4');
     });
 
     /**
@@ -800,6 +808,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('3') >= 0).assertTrue();
+      expect(res).assertEqual('3,2,1');
     });
 
     /**
@@ -816,6 +825,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('10') >= 0).assertTrue();
+      expect(res).assertEqual('10,20,30');
     });
 
     /**
@@ -832,6 +842,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = rev.toLocaleString('en-US', opts);
       expect(res.indexOf('3') >= 0).assertTrue();
+      expect(res).assertEqual('3,2,1');
       expect(arr[0]).assertEqual(1n);
     });
 
@@ -849,6 +860,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = sorted.toLocaleString('en-US', opts);
       expect(res.indexOf('10') >= 0).assertTrue();
+      expect(res).assertEqual('10,20,30');
       expect(arr[0]).assertEqual(30n);
     });
 
@@ -866,6 +878,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('9') >= 0).assertTrue();
+      expect(res).assertEqual('0,9,8');
     });
 
     /**
@@ -918,6 +931,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('5') >= 0).assertTrue();
+      expect(res).assertEqual('5,10,15');
     });
 
     /**
@@ -933,6 +947,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('100') >= 0).assertTrue();
+      expect(res).assertEqual('100,200');
     });
 
     /**
@@ -948,6 +963,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('0') >= 0).assertTrue();
+      expect(res).assertEqual('0,0,0');
     });
 
     /**
@@ -1018,6 +1034,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('-10') >= 0).assertTrue();
       expect(res.indexOf('10') >= 0).assertTrue();
+      expect(res).assertEqual('-10,0,10');
     });
 
     /**
@@ -1034,6 +1051,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('9223372036854775807') >= 0).assertTrue();
       expect(res.indexOf('-9223372036854775808') >= 0).assertTrue();
+      expect(res).assertEqual('9223372036854775807,-9223372036854775808');
     });
 
     /**
@@ -1141,6 +1159,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('-999') >= 0).assertTrue();
+      expect(res).assertEqual('-999');
     });
 
     /**
@@ -1171,6 +1190,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: false };
       let res = arr.toLocaleString('en-US', opts);
       expect(res.indexOf('1,10,100') >= 0).assertTrue();
+      expect(res).assertEqual('1,10,100,1000');
     });
 
     /**
@@ -1253,6 +1273,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { useGrouping: true };
       let res = arr.toLocaleString('zh-CN', opts);
       expect(typeof res).assertEqual('string');
+      expect(res).assertEqual('12,345,678');
       expect(res.indexOf(',') >= 0).assertTrue();
     });
 
@@ -1269,6 +1290,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let opts: BigIntToLocaleStringOptions = { style: 'currency', currency: 'EUR' };
       let res = arr.toLocaleString('de-DE', opts);
       expect(res.indexOf('1.234') >= 0 || res.indexOf('1234') >= 0).assertTrue();
+      expect(res).assertEqual('1.234,00 €');
     });
 
     /**
@@ -1290,6 +1312,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = offsetView.toLocaleString('en-US', opts);
       expect(res.indexOf('20') >= 0).assertTrue();
       expect(res.indexOf('30') >= 0).assertTrue();
+      expect(res).assertEqual('20,30');
     });
 
     /**
@@ -1389,6 +1412,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       let res = arr.toLocaleString('fr-FR', opts);
       expect(typeof res).assertEqual('string');
       expect(res.indexOf('100') >= 0).assertTrue();
+      expect(res).assertEqual('100,200,300');
     });
 
     /**
@@ -1407,6 +1431,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       expect(res.indexOf('22') >= 0).assertTrue();
       expect(res.indexOf('33') >= 0).assertTrue();
       expect(res.indexOf('44') >= 0).assertTrue();
+      expect(res).assertEqual('22,33,44');
     });
 
     /**
@@ -1425,6 +1450,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       expect(res.indexOf('50') >= 0).assertTrue();
       expect(res.indexOf('60') >= 0).assertTrue();
       expect(res.indexOf('2') >= 0).assertTrue();
+      expect(res).assertEqual('50,2,60');
     });
 
     /**
@@ -1443,6 +1469,7 @@ export default function BigInt64ArrayToLocaleString02Test(): void {
       expect(res.indexOf('100') >= 0).assertTrue();
       expect(res.indexOf('200') >= 0).assertTrue();
       expect(res.indexOf('300') >= 0).assertTrue();
+      expect(res).assertEqual('100,200,300');
       expect(arr[0]).assertEqual(300n);
     });
 
