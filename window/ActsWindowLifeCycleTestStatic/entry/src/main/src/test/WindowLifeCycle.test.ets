@@ -4921,6 +4921,39 @@ export default function WindowLifeCycleTest() {
       }
     })
     
+    /**
+     * @tc.number : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_static_0100
+     * @tc.name : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_static_0100
+     * @tc.desc : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_static_0100
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
+     */
+    it('SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const caseName = 'SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_static_0100';
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let windowId = mainWindow.getWindowProperties().id;
+        console.info(msgStr + 'windowId :' + windowId);
+        try {
+          let parentWindowEventListener = (windowId: int, event: window.WindowEventType) => {
+            console.info(`${msgStr} parentWindowEventListener, windowId:${windowId}, WindowEventType:${event}`);
+          };
+          let subWindow: window.Window =
+            await window.createSubWindowAndBindParent('WindowEventListener_Normal_0100', windowId, context!,
+              parentWindowEventListener);
+          await subWindow.destroyWindow();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed to createSubWindowAndBindParent, Cause code ${exception.code}, message ${exception.message}`);
+          expect(exception.code === 202).assertTrue();
+          expect(exception.message !== '').assertTrue();
+          done();
+        };
+      })
+
     })
 
 }
