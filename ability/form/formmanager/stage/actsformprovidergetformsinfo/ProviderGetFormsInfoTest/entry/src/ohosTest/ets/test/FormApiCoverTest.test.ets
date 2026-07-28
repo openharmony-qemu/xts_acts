@@ -104,6 +104,8 @@ const ERROR_CODE9 = 202;
 const ERROR_CODE10 = 16501014;
 const ERROR_CODE11 = 16000121;
 const ERROR_CODE12 = 16000130;
+const ERROR_CODE13 = 801;
+const ERROR_CODE14 = 16501011;
 
 export default function formApiCoverTest() {
   describe('FormApiCoverTestTest', () => {
@@ -576,6 +578,56 @@ export default function formApiCoverTest() {
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
     });
 
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0300
+     * @tc.desc   createFormBindingData with string parameter covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0300';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData with string`);
+        let bindingData = formBindingData.createFormBindingData('{"name":"test","value":"21°"}');
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+        expect(!!bindingData).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData fail. error code: ${error?.code}`);
+        expect(error?.code).assertEqual(ERROR_CODE1);
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0400
+     * @tc.desc   createFormBindingData with empty string parameter covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_0400';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData with empty string`);
+        let bindingData = formBindingData.createFormBindingData('');
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+        expect(!!bindingData).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} createFormBindingData fail. error code: ${error?.code}`);
+        expect(error?.code).assertEqual(ERROR_CODE1);
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
     /**startAbilityByLiveForm
      * @tc.name   SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100
      * @tc.number SUB_ABILITY_FORM_FWK_START_ABILITY_BY_LIVE_FORM_COVER_0100
@@ -602,12 +654,18 @@ export default function formApiCoverTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if(error.code === ERROR_CODE4) {
           expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
         } else if(error.code === ERROR_CODE10) {
           expect(error.code).assertEqual(ERROR_CODE10);
         } else if(error.code === ERROR_CODE11) {
           expect(error.code).assertEqual(ERROR_CODE11);
         } else if(error.code === ERROR_CODE12) {
           expect(error.code).assertEqual(ERROR_CODE12);
+        } else if(error.code === ERROR_CODE13) {
+          expect(error.code).assertEqual(ERROR_CODE13);
+        } else if(error.code === ERROR_CODE14) {
+          expect(error.code).assertEqual(ERROR_CODE14);
         }
         done();
       }
@@ -637,12 +695,18 @@ export default function formApiCoverTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if(error.code === ERROR_CODE4) {
           expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
         } else if(error.code === ERROR_CODE10) {
           expect(error.code).assertEqual(ERROR_CODE10);
         } else if(error.code === ERROR_CODE11) {
           expect(error.code).assertEqual(ERROR_CODE11);
         } else if(error.code === ERROR_CODE12) {
           expect(error.code).assertEqual(ERROR_CODE12);
+        } else if(error.code === ERROR_CODE13) {
+          expect(error.code).assertEqual(ERROR_CODE13);
+        } else if(error.code === ERROR_CODE14) {
+          expect(error.code).assertEqual(ERROR_CODE14);
         }
         done();
       }
@@ -672,12 +736,18 @@ export default function formApiCoverTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if(error.code === ERROR_CODE4) {
           expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
         } else if(error.code === ERROR_CODE10) {
           expect(error.code).assertEqual(ERROR_CODE10);
         } else if(error.code === ERROR_CODE11) {
           expect(error.code).assertEqual(ERROR_CODE11);
         } else if(error.code === ERROR_CODE12) {
           expect(error.code).assertEqual(ERROR_CODE12);
+        } else if(error.code === ERROR_CODE13) {
+          expect(error.code).assertEqual(ERROR_CODE13);
+        } else if(error.code === ERROR_CODE14) {
+          expect(error.code).assertEqual(ERROR_CODE14);
         }
         done();
       }
