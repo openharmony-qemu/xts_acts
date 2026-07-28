@@ -1254,7 +1254,7 @@ export default function windowLayoutTest() {
           let rect = subWindowClass.getWindowProperties().windowRect;
           console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
           expect(rect.left).assertEqual(Math.floor(displayWidth*0.3));
-          expect(rect.top).assertEqual(Math.floor(displayWidth*0.3));
+          expect(rect.top).assertEqual(Math.floor(displayHeight*0.3));
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
@@ -3020,11 +3020,6 @@ export default function windowLayoutTest() {
         expect().assertFail();
         done();
       } catch (err) {
-        if(!isSyscapSessionManagerSupported){
-          console.error(`${caseName} device not supported, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(801);
-          done()
-        }
         console.error(`${caseName} failed main window, err: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(1300004);
       }
@@ -7018,10 +7013,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            }else if(err.code == 1300016){
+            if(err.code == 1300016){
               console.info(`${caseName} param range fail.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(1300016)
             }else {
