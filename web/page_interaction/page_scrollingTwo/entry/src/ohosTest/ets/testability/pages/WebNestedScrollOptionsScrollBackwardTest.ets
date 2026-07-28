@@ -154,9 +154,7 @@ struct WebNestedScrollOptionsTest {
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
-                console.log('testNestedScrollOptionsScrollBackward00311122' + this.userAgentPC);
-                if ((this.userAgentPC).includes("PC") || (this.userAgentPC).includes("tv") ) {
-                  console.log('jinrutestNestedScrollOptionsScrollBackward00311122');
+                if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
                   await driver.swipe(X, Y - 100, X, Y + 100);
