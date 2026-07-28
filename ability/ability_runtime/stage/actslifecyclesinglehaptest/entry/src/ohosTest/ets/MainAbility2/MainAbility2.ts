@@ -49,12 +49,15 @@ export default class MainAbility2 extends Ability {
         commonEvent.publish('MainAbility2_onForground', (err, data) => {
             console.log('MainAbility2 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
         });
-        globalThis.ability2.terminateSelf()
-            .then((data) => {
-                console.info('[Demo] MainAbility2 terminateself succeeded: ' + data);
-            }).catch((error) => {
-            console.error('[Demo] MainAbility2 terminateself failed. Cause: ' + error);
-        });
+        setTimeout(()=>{
+            globalThis.ability2.terminateSelf()
+                .then((data) => {
+                    console.info('[Demo] MainAbility2 terminateself succeeded: ' + data);
+                }).catch((error) => {
+                console.error('[Demo] MainAbility2 terminateself failed. Cause: ' + error);
+            });
+        }, 1000)
+
     }
 
     onBackground() {
