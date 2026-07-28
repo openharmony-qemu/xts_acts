@@ -652,7 +652,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then((data) => {
           console.error(message + 'Succeeded in calling create.');
-          expect().assertFail();
+          expect(data !== null).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.log(message + 'Failed to call create. Cause:' + JSON.stringify(err));
@@ -660,13 +660,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             console.info(message + '此设备不支持create能力.');
             expect(err.message != null).assertTrue();
           } else {
-            expect(err.code).assertEqual(401);
+            expect().assertFail();
           }
           done();
         });
       } catch (error) {
         console.log(message + 'Failed2 to call create. Cause:' + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
         done();
       }
     })
@@ -890,6 +890,46 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       } catch (error) {
         console.log('www data Failed to setAutoStartEnabled_undefined_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
         if (error.code == 801) {
+          expect(error.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.name   setAutoStartEnabled_null_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETAUTOSTARTENABLED_NULL_0100
+     * @tc.desc   To test setAutoStartEnabled with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('setAutoStartEnabled_null_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try {
+        pipController = await pipWindow.create(config);
+        console.log('www data setAutoStartEnabled_null_test begin')
+        pipController.setAutoStartEnabled(null);
+        console.log('www data Succeeded in setAutoStartEnabled_null_test')
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        console.log('www data Failed to setAutoStartEnabled_null_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+        if (error.code == 801 && !isPipWindowEnabled) {
           expect(error.message != null).assertTrue();
           done();
         } else {
