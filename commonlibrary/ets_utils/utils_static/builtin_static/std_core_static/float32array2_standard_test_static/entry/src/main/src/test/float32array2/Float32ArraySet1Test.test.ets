@@ -1985,3 +1985,24 @@ export default function Float32ArraySet1Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_ONE_1140
+     * @tc.name testFloat32ArraySetOne114
+     * @tc.desc Verify =5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetOne114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array(5);
+      const source: Float32Array = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      arr.set(source);
+      const element115 = arr.$_get(0);
+      expect(element115).assertEqual(1);
+      const element115Part2 = arr.$_get(4);
+      expect(element115Part2).assertEqual(5);
+    });
+
+  });
+}
