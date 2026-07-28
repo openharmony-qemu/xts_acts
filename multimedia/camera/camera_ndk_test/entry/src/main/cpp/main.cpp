@@ -3980,26 +3980,6 @@ static napi_value DeleteZoomPointInfo(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetEnumProximityStateForFocus(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    if (index == 0) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_IN_RANGE_RAISE_NONE, &result);
-    } else if (index == 1) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_OUT_OF_RANGE_RAISE_REQUIRED, &result);
-    }
-
-    return result;
-}
-
 static napi_value CreatePhotoCaptureSettingExt(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4481,8 +4461,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getEnumProximityStateForFocus", nullptr, GetEnumProximityStateForFocus, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,
