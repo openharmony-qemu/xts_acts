@@ -16,7 +16,7 @@
 import drawingTsMatrixTest from "./Matrix.test";
 import drawingTsMatrixPart2Test from "./MatrixPart2.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   drawingTsMatrixTest();
   drawingTsMatrixPart2Test();
 }

@@ -31,7 +31,7 @@ import common2D from '@ohos.graphics.common2D';
 import { getRandomNumber } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-export default function penTest() {
+export default function penTest(): void {
   describe('DrawingTsPenTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -140,6 +140,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -154,6 +155,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -168,6 +170,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -182,6 +185,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -196,6 +200,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -210,6 +215,7 @@ export default function penTest() {
           blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -224,6 +230,7 @@ export default function penTest() {
           blue: -1
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -238,6 +245,7 @@ export default function penTest() {
           blue: 256
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1046,7 +1054,7 @@ export default function penTest() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setPathEffect(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 

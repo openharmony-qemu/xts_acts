@@ -15,8 +15,10 @@
  */
 import DrawingTsRegionTest from "./Region.test";
 import drawingTsRegionPart2Test from "./Region2.test";
+import drawingTsRegionPart3Test from "./Region3.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   DrawingTsRegionTest();
   drawingTsRegionPart2Test();
+  drawingTsRegionPart3Test();
 }

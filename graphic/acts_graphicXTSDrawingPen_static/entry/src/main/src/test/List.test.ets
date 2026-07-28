@@ -17,7 +17,7 @@ import penTest from "./Pen.test";
 import penPart2Test from "./PenPart2.test";
 import PenPart3 from './PenPart3.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   penTest();
   penPart2Test();
   PenPart3();
