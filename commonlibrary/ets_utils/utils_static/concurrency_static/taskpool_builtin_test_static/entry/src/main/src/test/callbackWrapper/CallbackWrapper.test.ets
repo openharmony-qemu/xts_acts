@@ -1898,3 +1898,284 @@ export default function CallbackWrapperTest(): void {
         const boundMethod = async (): Promise<number> => {
           return instance.asyncMethodAfterGetterSetter();
         };
+        const callback = util.callbackWrapper(boundMethod);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(80);
+          console.info('testCallbackWrapperAbstractDerivedClass test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6500
+     * @tc.name testCallbackWrapperNamespaceFunction
+     * @tc.desc Test namespace exported async function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperNamespaceFunction test start');
+
+        const callback = util.callbackWrapper(TestNamespace.namespaceAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('namespace-async');
+          console.info('testCallbackWrapperNamespaceFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6600
+     * @tc.name testCallbackWrapperNamespaceClass
+     * @tc.desc Test namespace exported class with async methods from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperNamespaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperNamespaceClass test start');
+
+        const instance = new TestNamespace.NamespaceTestClass();
+        instance.value = 100;
+        const boundMethod = async (): Promise<number> => {
+          return instance.asyncMethodAfterGetterSetter();
+        };
+        const callback = util.callbackWrapper(boundMethod);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(400);
+          console.info('testCallbackWrapperNamespaceClass test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6700
+     * @tc.name testCallbackWrapperNestedNamespaceFunction
+     * @tc.desc Test nested namespace async function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperNestedNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperNestedNamespaceFunction test start');
+
+        const callback = util.callbackWrapper(NestedNamespace.InnerNamespace.nestedAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('nested-async');
+          console.info('testCallbackWrapperNestedNamespaceFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6800
+     * @tc.name testCallbackWrapperReexportedFunction
+     * @tc.desc Test reexported async function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperReexportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperReexportedFunction test start');
+
+        const callback = util.callbackWrapper(reexportedAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('reexported-async');
+          console.info('testCallbackWrapperReexportedFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6900
+     * @tc.name testCallbackWrapperRenamedExportedFunction
+     * @tc.desc Test renamed exported async function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperRenamedExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperRenamedExportedFunction test start');
+
+        const callback = util.callbackWrapper(renamedAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('exported-async');
+          console.info('testCallbackWrapperRenamedExportedFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7000
+     * @tc.name testCallbackWrapperJSAsyncFunction
+     * @tc.desc Test JS module async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperJSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperJSAsyncFunction test start');
+
+        const callback = util.callbackWrapper(jsAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('js-async');
+          console.info('testCallbackWrapperJSAsyncFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7100
+     * @tc.name testCallbackWrapperJSAsyncArrowFunction
+     * @tc.desc Test JS module async arrow function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperJSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperJSAsyncArrowFunction test start');
+
+        const callback = util.callbackWrapper(jsAsyncArrowFunc);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(789);
+          console.info('testCallbackWrapperJSAsyncArrowFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7200
+     * @tc.name testCallbackWrapperJSClass
+     * @tc.desc Test JS module class with async methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperJSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperJSClass test start');
+
+        const instance = new JsTestClass();
+        instance.value = 10;
+        const boundMethod = async (): Promise<number> => {
+          return instance.asyncMethodAfterGetterSetter();
+        };
+        const callback = util.callbackWrapper(boundMethod);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(50);
+          console.info('testCallbackWrapperJSClass test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7300
+     * @tc.name testCallbackWrapperTSAsyncFunction
+     * @tc.desc Test TS module async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperTSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperTSAsyncFunction test start');
+
+        const callback = util.callbackWrapper(tsAsyncFunc);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('ts-async');
+          console.info('testCallbackWrapperTSAsyncFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7400
+     * @tc.name testCallbackWrapperTSAsyncArrowFunction
+     * @tc.desc Test TS module async arrow function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperTSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperTSAsyncArrowFunction test start');
+
+        const callback = util.callbackWrapper(tsAsyncArrowFunc);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(456);
+          console.info('testCallbackWrapperTSAsyncArrowFunction test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7500
+     * @tc.name testCallbackWrapperTSClass
+     * @tc.desc Test TS module class with async methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperTSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperTSClass test start');
+
+        const instance = new TsTestClass();
+        instance.value = 20;
+        const boundMethod = async (): Promise<number> => {
+          return instance.asyncMethodAfterGetterSetter();
+        };
+        const callback = util.callbackWrapper(boundMethod);
+        callback.unsafeCall((err: Error | null, value: number) => {
+          expect(err).assertNull();
+          expect(value).assertEqual(200);
+          console.info('testCallbackWrapperTSClass test end');
+          done();
+        });
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7600
+     * @tc.name testCallbackWrapperDualInterfaceClass
+     * @tc.desc Test class implementing dual interfaces with async methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testCallbackWrapperDualInterfaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testCallbackWrapperDualInterfaceClass test start');
+
+        const instance = new DualInterfaceClass();
+        const boundMethod = async (): Promise<string> => {
+          return instance.asyncMethod();
+        };
+        const callback = util.callbackWrapper(boundMethod);
+        callback.unsafeCall((err: Error | null, value: string) => {
+          expect(err).assertNull();
+          expect(value).assertEqual('dual-interface');
+          console.info('testCallbackWrapperDualInterfaceClass test end');
+          done();
+        });
+      });
+  });
+}
