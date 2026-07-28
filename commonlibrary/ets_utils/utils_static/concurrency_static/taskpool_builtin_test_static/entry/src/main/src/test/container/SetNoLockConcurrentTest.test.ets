@@ -41,7 +41,7 @@ export default function SetNoLockConcurrentTest(): void {
         await Utils.msSleep(100);
       }
       expect(count.load()).assertEqual(totalTasks + 1);
-      
+
     });
   });
 }

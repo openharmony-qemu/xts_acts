@@ -54,7 +54,7 @@ export default function MapNoLockConcurrentTest(): void {
         await Utils.msSleep(100);
       }
       expect(count.load()).assertEqual(totalTasks + 1);
-      
+
     });
 
     /**
