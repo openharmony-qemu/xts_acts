@@ -2646,7 +2646,7 @@ static napi_value StartNativeChildProcess_0700(napi_env env, napi_callback_info 
       napi_value result;
       napi_create_int32(env, 0, &result);
       return result;
-    }else{
+    } else {
       napi_value result;
       napi_create_int32(env, 1, &result);
       return result;
@@ -2675,10 +2675,10 @@ static napi_value ContextGetLogPath_0100(napi_env env, napi_callback_info info)
     if(errCode == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST){
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2829,13 +2829,13 @@ static napi_value NotifyPageChanged_0400(napi_env env, napi_callback_info info)
     int32_t testWindowId = 12; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(nullptr, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2851,13 +2851,13 @@ static napi_value NotifyPageChanged_0500(napi_env env, napi_callback_info info)
     int32_t testWindowId = 12; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2873,13 +2873,13 @@ static napi_value NotifyPageChanged_0600(napi_env env, napi_callback_info info)
     int32_t testWindowId = 0; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2895,13 +2895,13 @@ static napi_value NotifyPageChanged_0700(napi_env env, napi_callback_info info)
     int32_t testWindowId = -1; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -2918,19 +2918,20 @@ static napi_value NotifyPageChanged_0800(napi_env env, napi_callback_info info)
     int32_t testWindowId = -1; 
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
-    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
     }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
 }
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
