@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "hsplibrary",
+    "type": "shared",
+    "description": "$string:shared_desc",
+    "deviceTypes": [],
+    "deliveryWithInstall": true,
+    "pages": "$profile:main_pages"
+  }
+}
