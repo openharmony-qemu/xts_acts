@@ -15,6 +15,22 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import observer from '@ohos.telephony.observer';
 
+const ExpectTrue: (n: boolean) => void = (n: boolean) => {
+  try {
+    expect(n).assertTrue();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
 const PERMISSION_DENIED_CODE = 201
 const PARAMETER_ERROR_CODE = 401
 const SERVICE_EXCEPTION_CODE = 14500101
@@ -104,6 +120,66 @@ observerNopTest() {
       }
       console.info('--------observerNop002----after----');
     })
+
+    /**
+     * @tc.name   testObserveronCommunicationStateChangeNop0100
+     * @tc.number SUB_Observer_onCommunicationStateChange_Nop_0100
+     * @tc.desc   Using the observer onCommunicationStateChange method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testObserveronCommunicationStateChangeNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testObserveronCommunicationStateChangeNop0100';
+      console.info(`${caseName} test start`);
+      try {
+        let options: observer.ObserverOptions = {
+          slotId: 0
+        }
+        observer.onCommunicationStateChange((data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+          ExpectFail();
+          done();
+        }, options);
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)} +error`);
+        ExpectTrue(error.code === 201);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    })
+
+    /**
+     * @tc.name   testObserveroffCommunicationStateChangeNop0100
+     * @tc.number SUB_Observer_offCommunicationStateChange_Nop_0100
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testObserveroffCommunicationStateChangeNop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testObserveroffCommunicationStateChangeNop0100';
+      console.info(`${caseName} test start`);
+      try {
+        let options: observer.ObserverOptions = {
+          slotId: 0
+        }
+        let callback: (data: boolean) => void = (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+          ExpectFail();
+          observer.offCommunicationStateChange(callback, options);
+          done();
+        }
+        observer.onCommunicationStateChange(callback, options);
+        console.info(`${caseName} options: ${options}`);
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)} +error`);
+        ExpectTrue(error.code === 201);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
   })
 }
 
