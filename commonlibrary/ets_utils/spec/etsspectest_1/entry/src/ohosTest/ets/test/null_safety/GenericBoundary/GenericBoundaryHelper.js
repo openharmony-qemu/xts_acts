@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JavaScript helper for GenericBoundary tests
- * P0.5: obj[key()] ??= rhs() — 需要 getter/setter/key/RHS 计数
- */
-
 let _getterCount = 0
 let _setterCount = 0
 let _keyCount = 0

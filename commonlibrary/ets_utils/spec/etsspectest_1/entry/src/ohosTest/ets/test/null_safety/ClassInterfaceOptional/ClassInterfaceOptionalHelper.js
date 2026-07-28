@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JavaScript helper for ClassInterfaceOptional tests
- * Object.hasOwn / Object.getOwnPropertyDescriptor 在 ArkTS 编译器中受限
- */
-
 export function hasOwnProperty(obj, key) {
   return Object.hasOwn(obj, key)
 }

@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JavaScript helper for OptionalChaining tests
- * ECMA-262 OptionalChain §13.3.9
- * ArkTS: no null assignment narrowing, no indexed access on nullable, no nested functions, no inline obj types
- */
-
 export function getNullBoxValue() {
   let obj = null
   return obj?.value
@@ -118,7 +112,6 @@ let shortCircuitCallCount = 0
 export function getShortCircuitResult() {
   shortCircuitCallCount = 0
   let obj = null
-  // chain members should NOT be evaluated when base is null
   let result = obj?.nested?.[shortCircuitCallCount++]
   return { result, count: shortCircuitCallCount }
 }
@@ -126,7 +119,6 @@ export function getShortCircuitResult() {
 export function getNonShortCircuitResult() {
   shortCircuitCallCount = 0
   let obj = { nested: [99] }
-  // chain members SHOULD be evaluated when base is non-null
   let result = obj?.nested?.[shortCircuitCallCount++]
   return { result, count: shortCircuitCallCount }
 }

@@ -38,11 +38,6 @@ import {
   nullGreaterEqualZero
 } from './CrossFeatureHelper.js'
 
-// Module: CrossFeature
-// 跨特性组合：null + 运算符、可选链+解构、null 参数+函数调用、class field null+继承。
-// 标注: [ArkTS-COMPILE-LIMIT] 表示因 ArkTS 编译器规则限制无法在 .ets 中直接编写，
-// 将原语句原样移至 CrossFeatureHelper.js 中。运行时行为与 ECMA-262 一致。
-
 interface IUserData {
   user: IName
 }
@@ -75,9 +70,6 @@ export default function CrossFeatureTest() {
     afterAll(() => {
     })
 
-    // [ArkTS-COMPILE-LIMIT] null + 1 / 1 + null 不可直接在 .ets 中编写
-    // 移至 helper: nullPlusOne(), onePlusNull()
-    // ECMA-262 §13.8.1: ToNumber(null) = 0, null + 1 = 0 + 1 = 1
     /**
      * @tc.number    SUB_NULL_SAFETY_CROSS_0100
      * @tc.name      testNullPlusNumeric0001
@@ -91,9 +83,6 @@ export default function CrossFeatureTest() {
       expect(onePlusNull()).assertEqual(1)
     })
 
-    // [ArkTS-COMPILE-LIMIT] "x" + null / null + "x" 不可直接在 .ets 中编写
-    // 移至 helper: stringPlusNull(), nullPlusString()
-    // ECMA-262 §13.8.1: ToString(null) = "null", "x" + null = "xnull"
     /**
      * @tc.number    SUB_NULL_SAFETY_CROSS_0200
      * @tc.name      testNullPlusStringConcat0002
@@ -107,9 +96,6 @@ export default function CrossFeatureTest() {
       expect(nullPlusString()).assertEqual('nullx')
     })
 
-    // [ArkTS-COMPILE-LIMIT] 直接赋值 null 后类型收窄为 never，?. 无法访问属性
-    // 移至 helper: getNullUserData()
-    // ECMA-262 OptionalChain §13.3.9: null?.prop 短路返回 undefined
     /**
      * @tc.number    SUB_NULL_SAFETY_CROSS_0300
      * @tc.name      testOptionalChainingWithPropertyAccess0003
@@ -123,9 +109,6 @@ export default function CrossFeatureTest() {
       expect(empty?.user?.name).assertEqual(undefined)
     })
 
-    // [ArkTS-COMPILE-LIMIT] null as string + 嵌套函数
-    // 移至 helper: combineWithNull()
-    // ECMA-262 FunctionDeclarationInstantiation §10.2.11: null 不触发默认值
     /**
      * @tc.number    SUB_NULL_SAFETY_CROSS_0400
      * @tc.name      testNullInDefaultParameter0004
@@ -138,9 +121,6 @@ export default function CrossFeatureTest() {
       expect(combineWithNull('hello')).assertEqual('hellonull')
     })
 
-    // [ArkTS-COMPILE-LIMIT] 嵌套函数 (arkts-no-nested-funcs)
-    // 移至 helper: lengthOf()
-    // ECMA-262: 函数内允许嵌套定义函数
     /**
      * @tc.number    SUB_NULL_SAFETY_CROSS_0500
      * @tc.name      testNullParameterExplicitCheck0005

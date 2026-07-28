@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-// ECMA-262 §16.2.1.5 — re-export
-// Re-exports everything from jsExporter
-
 export * from './jsExporter'
 
 export { CONST_VAL as reExportedConst } from './jsExporter'

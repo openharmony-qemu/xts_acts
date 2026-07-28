@@ -29,11 +29,6 @@ import {
   testNullishAssignLhsNonNull
 } from './GenericBoundaryHelper.js'
 
-// Module: GenericBoundary
-// 泛型/边界：T|null union、T|undefined union、T extends object、
-// 空值赋值 ??=、非空断言 !。
-// ECMA-262 §4.3.1 Object Type, §4.3.10 Undefined, §4.3.11 Null
-
 interface IName {
   name: string
 }

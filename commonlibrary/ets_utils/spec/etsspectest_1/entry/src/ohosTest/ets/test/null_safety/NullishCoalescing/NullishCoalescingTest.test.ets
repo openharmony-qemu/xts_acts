@@ -25,10 +25,6 @@ import {
   TestType
 } from '@ohos/hypium';
 
-// Module: NullishCoalescing
-// 空值合并 ?? 运算符：仅对 null/undefined 回退，对 falsy 值（0/""/false）保留原值。
-// ECMA-262 NullishCoalescing §13.13.1 Nullish Coalescing Expression
-
 function returnNull(): string | null {
   return null
 }

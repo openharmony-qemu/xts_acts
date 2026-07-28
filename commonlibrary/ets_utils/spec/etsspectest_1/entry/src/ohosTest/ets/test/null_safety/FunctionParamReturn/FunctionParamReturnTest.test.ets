@@ -28,11 +28,6 @@ import {
   defaultParamWithNull
 } from './FunctionParamReturnHelper.js'
 
-// Module: FunctionParamReturn
-// 函数可选参数/默认参数/返回值中的 null/undefined 行为。
-// void→expect() 和 null as string 操作放在 FunctionParamReturnHelper.js 中。
-// ECMA-262 FunctionDeclarationInstantiation §10.2.11, ClassFieldDefinitionEvaluation §15.7.10
-
 let defaultFnCallCount: number = 0
 
 function defaultFnTracker(): number {

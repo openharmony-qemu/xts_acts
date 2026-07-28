@@ -43,11 +43,6 @@ import {
   getGetterNullValue
 } from './OptionalChainingHelper.js'
 
-// Module: OptionalChaining
-// 可选链 ?. 属性/方法/元素访问及短路行为。
-// null 赋值后类型收窄、索引访问、嵌套函数、inline 类型等操作放在 OptionalChainingHelper.js 中。
-// ECMA-262 OptionalChain §13.3.9 OptionalChain
-
 interface Box {
   value: number
 }
@@ -82,7 +77,6 @@ export default function OptionalChainingTest() {
       expect(obj?.value).assertEqual(42)
     })
 
-    // [ArkTS-COMPILE-LIMIT] let obj = null 后 obj?.value → 类型收窄为 never
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_0200
      * @tc.name      testOptionalChainingPropertyNull0002
@@ -110,7 +104,6 @@ export default function OptionalChainingTest() {
       expect(getNullGreeterGreet()).assertEqual(undefined)
     })
 
-    // [ArkTS-COMPILE-LIMIT] let a = null 后 a?.[0] → arkts-no-props-by-index
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_0400
      * @tc.name      testOptionalChainingElementAccess0004
@@ -126,7 +119,6 @@ export default function OptionalChainingTest() {
       expect(getNullArrayFirst()).assertEqual(undefined)
     })
 
-    // [ArkTS-COMPILE-LIMIT] 嵌套函数 + null 赋值收窄 + inline 类型
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_0500
      * @tc.name      testOptionalChainingShortCircuit0005
@@ -191,7 +183,6 @@ export default function OptionalChainingTest() {
       expect(getNullPropWithCoalescing()).assertEqual(42)
     })
 
-    // [ArkTS-COMPILE-LIMIT] computed key 表达式 + null 收窄
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_1000
      * @tc.name      testOptionalComputedKeySideEffect0010
@@ -209,7 +200,6 @@ export default function OptionalChainingTest() {
       expect(r2.count).assertEqual(1)
     })
 
-    // [ArkTS-COMPILE-LIMIT] optional call 参数表达式 + null 收窄
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_1100
      * @tc.name      testOptionalCallArgSideEffect0011
@@ -227,7 +217,6 @@ export default function OptionalChainingTest() {
       expect(r2.count).assertEqual(1)
     })
 
-    // P0.1: obj?.[key()] with function call counting
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_1200
      * @tc.name      testOptionalChainKeyFunction0012
@@ -245,7 +234,6 @@ export default function OptionalChainingTest() {
       expect(r2.count).assertEqual(0)
     })
 
-    // P1.1: 可选链中间节点分别为 null 和 undefined
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_1300
      * @tc.name      testOptionalChainMiddleNullUndefined0013
@@ -258,7 +246,6 @@ export default function OptionalChainingTest() {
       expect(getMidNullValue()).assertEqual(undefined)
     })
 
-    // P1.3: getter 返回 null 后继续可选链
     /**
      * @tc.number    SUB_NULL_SAFETY_OPT_CHAIN_1400
      * @tc.name      testOptionalChainGetterNull0014
@@ -270,6 +257,5 @@ export default function OptionalChainingTest() {
     it('testOptionalChainGetterNull0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(getGetterNullValue()).assertEqual(undefined)
     })
-
   })
 }

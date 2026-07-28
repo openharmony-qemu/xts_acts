@@ -13,13 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JavaScript helper for CrossFeature tests
- * ECMA-262 AdditionOperator §13.8.1, OptionalChain §13.3.9, FunctionDeclarationInstantiation §10.2.11
- * ArkTS: no null in expressions, no inline obj types (arkts-no-obj-literals-as-types),
- *        no nested functions (arkts-no-nested-funcs)
- */
-
 export function nullPlusOne() {
   return null + 1
 }

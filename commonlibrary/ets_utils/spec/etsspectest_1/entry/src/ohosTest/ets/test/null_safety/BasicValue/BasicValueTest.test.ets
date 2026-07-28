@@ -25,11 +25,6 @@ import {
   TestType
 } from '@ohos/hypium';
 
-// Module: BasicValue
-// ES 核心行为：null / undefined 基础值、typeof 类型、== / === 相等性、ToBoolean、ToNumber、ToString。
-// ECMA-262 §4.3.10 undefined value, §4.3.11 null value, §13.5.3 typeof, §7.2.14 IsLooselyEqual,
-// §7.2.15 IsStrictlyEqual, §7.1.2 ToBoolean, §7.1.3 ToNumber, §7.1.12 ToString
-
 export default function BasicValueTest() {
   describe('BasicValueTest', () => {
     beforeAll(() => {

@@ -13,13 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * JavaScript helper for FunctionParamReturn tests
- * ECMA-262 FunctionDeclarationInstantiation §10.2.11, ClassFieldDefinitionEvaluation §15.7.10
- * ArkTS/TS strict: null as string assertion
- * JS: all patterns execute as specified by ECMA-262
- */
-
 export function defaultParamWithNull(a) {
   function combine(a, b = 'default') { return a + b }
   return combine(a, null)

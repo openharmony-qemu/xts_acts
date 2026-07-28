@@ -26,10 +26,6 @@ import {
 } from '@ohos/hypium';
 import { hasOwnProperty, getDescriptor } from './ClassInterfaceOptionalHelper.js'
 
-// Module: ClassInterfaceOptional
-// class 字段未初始化/显式 null、interface 可选属性缺省/显式 undefined。
-// ECMA-262 ClassFieldDefinitionEvaluation §15.7.10
-
 class FieldCheck {
   x: number = 5
 }
