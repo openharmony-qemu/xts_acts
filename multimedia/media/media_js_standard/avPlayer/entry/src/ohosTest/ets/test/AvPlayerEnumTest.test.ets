@@ -102,6 +102,7 @@ export default function AvPlayerEnumTest() {
       expect(media.CodecMimeType.AUDIO_G711MU).assertEqual('audio/g711mu');
       expect(media.CodecMimeType.AUDIO_AMR_NB).assertEqual('audio/3gpp');
       expect(media.CodecMimeType.AUDIO_AMR_WB).assertEqual('audio/amr-wb');
+      expect(media.CodecMimeType.AUDIO_RAW).assertEqual('audio/raw');
       done();
     });
     /**
