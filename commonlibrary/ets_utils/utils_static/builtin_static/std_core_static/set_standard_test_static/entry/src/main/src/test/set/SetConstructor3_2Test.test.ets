@@ -51,7 +51,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0100
      * @tc.desc Verify copy constructing Set<byte> from single-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -66,7 +66,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0200
      * @tc.desc Verify copy constructing Set<byte> from Set with deduplicated values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -80,7 +80,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0300
      * @tc.desc Verify copy constructing Set<short> from Set with duplicate values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -94,7 +94,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0400
      * @tc.desc Verify copy constructing Set<short> from single-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -109,7 +109,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0500
      * @tc.desc Verify copy constructing Set<int> from single-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -124,7 +124,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0600
      * @tc.desc Verify copy constructing Set<int> from Set with duplicate values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -138,7 +138,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0700
      * @tc.desc Verify copy constructing Set<long> from single-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -153,7 +153,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0800
      * @tc.desc Verify copy constructing Set<long> from Set with duplicate values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -167,7 +167,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_0900
      * @tc.desc Verify copy constructing Set<boolean> from Set containing true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -182,7 +182,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1000
      * @tc.desc Verify copy constructing Set<boolean> from Set containing false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -197,7 +197,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1100
      * @tc.desc Verify copy constructing Set<string> from single-char Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -212,7 +212,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1200
      * @tc.desc Verify copy constructing Set<string> from Set with duplicate strings
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -226,7 +226,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1300
      * @tc.desc Verify copy constructing empty Set then adding elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -242,7 +242,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1400
      * @tc.desc Verify copy constructing non-empty Set then clearing
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -259,7 +259,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1500
      * @tc.desc Verify copy constructing single-element Set then adding more
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -277,7 +277,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1600
      * @tc.desc Verify copy constructing multi-element Set then deleting down to one
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -295,7 +295,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1700
      * @tc.desc Verify copy constructing Set<number[]> uses shallow copy for reference-type elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -320,7 +320,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1800
      * @tc.desc Verify copy constructing Set<double> from single-element Set (1.5)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -335,7 +335,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_1900
      * @tc.desc Verify copy constructing Set<double> from Set with duplicate values (2.5)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -349,7 +349,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2000
      * @tc.desc Verify constructor3 with manual iteration copy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -365,7 +365,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2100
      * @tc.desc Verify constructor3 with union type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -381,7 +381,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2200
      * @tc.desc Verify copy constructing Set<int> from multi-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -396,7 +396,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2300
      * @tc.desc Verify constructor3 with large Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -411,7 +411,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2400
      * @tc.desc Verify copy constructor creates independent Set with same elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -430,7 +430,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2500
      * @tc.desc Verify Set<char> copy constructor with Unicode chars
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -445,7 +445,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2600
      * @tc.desc Verify Set<number> copy constructor preserves mixed types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -460,7 +460,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2700
      * @tc.desc Verify Set<Date> copy constructor with Date refs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -476,7 +476,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2800
      * @tc.desc Verify Set<RegExp> copy constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -491,7 +491,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_2900
      * @tc.desc Verify Set<Map> copy constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -507,7 +507,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3000
      * @tc.desc Verify Set<Map> copy constructor (no-arg add)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -525,7 +525,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3100
      * @tc.desc Verify Set<Set<int>> copy constructor nested
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -541,7 +541,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3200
      * @tc.desc Verify Set<Set<int>> copy constructor nested (no-arg add)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -559,7 +559,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3300
      * @tc.desc Verify Set<Record> copy constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -574,7 +574,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3400
      * @tc.desc Verify Set<Record> copy constructor (no-arg add)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -591,7 +591,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3500
      * @tc.desc Verify Set<Error> copy constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -606,7 +606,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3600
      * @tc.desc Verify Set<WeakMap> and Set<WeakSet> copy constructors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -625,7 +625,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3700
      * @tc.desc Verify Set<WeakMap> and Set<WeakSet> copy constructors (no-arg add)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -646,7 +646,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3800
      * @tc.desc Verify Set<Int8Array> copy constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -661,7 +661,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_3900
      * @tc.desc Verify Set<Int8Array> copy constructor (no-arg add)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -678,7 +678,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4000
      * @tc.desc Verify Set<bigint> copy constructor preserves all elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -693,7 +693,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4100
      * @tc.desc Verify Set<ObjTest> copy constructor with class instances
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -708,7 +708,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4200
      * @tc.desc Verify Set<float> copy constructor with Float.NaN and Float.POSITIVE_INFINITY
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -725,7 +725,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4300
      * @tc.desc Verify Set<object> copy constructor with POJO refs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -742,7 +742,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4400
      * @tc.desc Verify Set<Promise<Set<int>>> copy constructor nested Promise generic
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -758,7 +758,7 @@ export default function SetConstructor3_2Test(): void {
 
     /**
      * @tc.name testConstructor3_045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_P1_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR3_P1_4500
      * @tc.desc Verify Set<jsonx.JsonElement> copy constructor with JSON parsed objects
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
