@@ -18,8 +18,30 @@ import BuiltinsGenericsActTest from './BuiltinsGenericsActTest.test';
 import BuiltinsMultilineStringLiteralTest from './BuiltinsMultilineStringLiteralTest.test';
 import BuiltinsNullLiteralTest from './BuiltinsNullLiteralTest.test';
 import builtinsNumberConstructorTest from './BuiltinsNumberConstructorTest.test';
+import asyncFunctionTest from './async/asyncFunctionTest.test';
+import asyncAdvancedTest from './async/AsyncAdvancedTest.test';
+import asyncBoundaryTest from './async/AsyncBoundaryTest.test';
+import asyncGenericsTest from './async/AsyncGenericsTest.test';
+import asyncInteropTest from './async/AsyncInteropTest.test';
+import asyncPerformanceTest from './async/AsyncPerformanceTest.test';
+import asyncRealWorldTest from './async/AsyncRealWorldTest.test';
+import asyncFirTest from './async/AsyncFirTest.test';
+import asyncSecTest from './async/AsyncSecTest.test';
+import IsAsyncFunctionTest from './isAsyncFunction/IsAsyncFunction.test';
+import IsPromiseTest from './isPromise/IsPromise.test';
+import PromiseChainTest from './promise/PromiseChain.test';
+import PromisifyTest from './promisify/Promisify.test';
+import CallbackWrapperTest from './callbackWrapper/CallbackWrapper.test';
+import containerList from './container/List.test';
+import threadSafeContainerList from './threadSafeContainer/List.test';
+import basicTypeList from './basicType/List.test';
+import atomicList from './atomic/List.test';
+import classInstanceList from './classInstance/List.test';
+import nestedContainerList from './nestedContainer/List.test';
+import asyncTaskList from './asyncTask/List.test';
+import industryList from './industry/List.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   BigIntTest();
   BooleanTest();
   DataViewTest();
@@ -39,4 +61,26 @@ export default function testsuite() {
   BuiltinsMultilineStringLiteralTest();
   BuiltinsNullLiteralTest();
   builtinsNumberConstructorTest();
+  asyncFunctionTest();
+  asyncAdvancedTest();
+  asyncBoundaryTest();
+  asyncGenericsTest();
+  asyncInteropTest();
+  asyncPerformanceTest();
+  asyncRealWorldTest();
+  asyncFirTest();
+  asyncSecTest();
+  IsAsyncFunctionTest();
+  IsPromiseTest();
+  PromiseChainTest();
+  PromisifyTest();
+  CallbackWrapperTest();
+  containerList();
+  threadSafeContainerList();
+  basicTypeList();
+  atomicList();
+  classInstanceList();
+  nestedContainerList();
+  asyncTaskList();
+  industryList();
 }
