@@ -1898,3 +1898,1101 @@ export default function promiseChainTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0300
      * @tc.name testPromiseChainNestedErrorHandling
+     * @tc.desc Test Promise chain with nested error handling - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainNestedErrorHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainNestedErrorHandling';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<string>('outer')
+        .then((value: string): Promise<string> => {
+          expect(value).assertEqual('outer');
+          return Promise.reject(new Error('nested error'))
+            .catch((error: Error): string => {
+              expect(error.message).assertEqual('nested error');
+              return 'nested recovered';
+            });
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('nested recovered');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0400
+     * @tc.name testPromiseChainAsyncFunctionThen
+     * @tc.desc Test async function return value passed to then chain - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainAsyncFunctionThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainAsyncFunctionThen';
+      console.info(`${caseName} test start`);
+
+      await asyncFuncNested()
+        .then((value: string): string => {
+          expect(value).assertEqual('async result');
+          return value + ' then';
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('async result then');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0500
+     * @tc.name testPromiseChainAwaitPromiseChain
+     * @tc.desc Test await waiting for Promise chain completion - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainAwaitPromiseChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainAwaitPromiseChain';
+      console.info(`${caseName} test start`);
+
+      const result: string = await testChainNested();
+      expect(result).assertEqual('start12');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0600
+     * @tc.name testPromiseChainNestedThenChain
+     * @tc.desc Test nested Promise with inner then chain - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainNestedThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainNestedThenChain';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return Promise.resolve<string>('inner')
+            .then((v: string): string => {
+              expect(v).assertEqual('inner');
+              return v + '1';
+            })
+            .then((v: string): string => {
+              expect(v).assertEqual('inner1');
+              return v + '2';
+            });
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('inner12');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0700
+     * @tc.name testPromiseChainValuePenetration
+     * @tc.desc Test Promise chain value penetration with undefined callbacks - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainValuePenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainValuePenetration';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<string>('original')
+        .then((value: string): string => value)
+        .then((value: string): string => value)
+        .then((value: string): string => value)
+        .then((value: string): void => {
+          expect(value).assertEqual('original');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0800
+     * @tc.name testPromiseChainErrorPenetration
+     * @tc.desc Test Promise chain error penetration - verify error reaches catch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainErrorPenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainErrorPenetration';
+      console.info(`${caseName} test start`);
+
+      await Promise.reject(new Error('error'))
+        .then((value: string): string => value)
+        .then((value: string): string => value)
+        .catch((error: Error): void => {
+          expect(error.message).assertEqual('error');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0900
+     * @tc.name testPromiseChainCreateNewPromise
+     * @tc.desc Test Promise chain creating new Promise inside then - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainCreateNewPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainCreateNewPromise';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return new Promise<string>((resolve: (value: string) => void) => {
+            resolve('new promise');
+          });
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('new promise');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1000
+     * @tc.name testPromiseChainResolveRejectThen
+     * @tc.desc Test Promise.resolve().then() throwing error caught by catch - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainResolveRejectThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainResolveRejectThen';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          throw new Error('then error');
+        })
+        .catch((error: Error): void => {
+          expect(error.message).assertEqual('then error');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1100
+     * @tc.name testPromiseChainPromiseAllNested
+     * @tc.desc Test Promise.all with nested chains - verify each chain value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainPromiseAllNested';
+      console.info(`${caseName} test start`);
+
+      const chain1: Promise<string> = Promise.resolve<string>('chain1')
+        .then((v: string): string => {
+          expect(v).assertEqual('chain1');
+          return v + 'a';
+        });
+
+      const chain2: Promise<string> = Promise.resolve<string>('chain2')
+        .then((v: string): string => {
+          expect(v).assertEqual('chain2');
+          return v + 'b';
+        });
+
+      await Promise.all([chain1, chain2])
+        .then((results: string[]): void => {
+          expect(results[0]).assertEqual('chain1a');
+          expect(results[1]).assertEqual('chain2b');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1200
+     * @tc.name testPromiseChainAsyncAwaitInThen
+     * @tc.desc Test async/await inside then callback - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainAsyncAwaitInThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainAsyncAwaitInThen';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<string>('start')
+        .then(async (value: string): Promise<string> => {
+          expect(value).assertEqual('start');
+          const delayed: string = await new Promise<string>((resolve: (value: string) => void) => {
+            setTimeout(() => {
+              resolve('delayed');
+            }, 500);
+          });
+          return value + '-' + delayed;
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('start-delayed');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0100
+     * @tc.name testPromiseChainMaxValue
+     * @tc.desc Test Promise chain returning Number.MAX_VALUE - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainMaxValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainMaxValue';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return Number.MAX_VALUE;
+        })
+        .then((value: number): void => {
+          expect(value).assertEqual(Number.MAX_VALUE);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0200
+     * @tc.name testPromiseChainMinValue
+     * @tc.desc Test Promise chain returning Number.MIN_VALUE - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainMinValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainMinValue';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return Number.MIN_VALUE;
+        })
+        .then((value: number): void => {
+          expect(value).assertEqual(Number.MIN_VALUE);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0300
+     * @tc.name testPromiseChainLongString
+     * @tc.desc Test Promise chain returning 10000 character string - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainLongString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainLongString';
+      console.info(`${caseName} test start`);
+
+      const longString: string = 'a'.repeat(10000);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return longString;
+        })
+        .then((value: string): void => {
+          expect(value.length).assertEqual(10000);
+          expect(value).assertEqual(longString);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0400
+     * @tc.name testPromiseChainLargeArray
+     * @tc.desc Test Promise chain returning 1000 element array - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainLargeArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainLargeArray';
+      console.info(`${caseName} test start`);
+
+      const largeArray: number[] = [];
+      for (let i = 0; i < 1000; i++) {
+        largeArray.push(i);
+      }
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return largeArray;
+        })
+        .then((value: number[]): void => {
+          expect(value.length).assertEqual(1000);
+          expect(value[0]).assertEqual(0);
+          expect(value[999]).assertEqual(999);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0500
+     * @tc.name testPromiseChainCircularObject
+     * @tc.desc Test Promise chain returning object with circular reference - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainCircularObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainCircularObject';
+      console.info(`${caseName} test start`);
+
+      const circularObj: CircularObject = { name: 'test' };
+      circularObj.self = circularObj;
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return circularObj;
+        })
+        .then((obj: CircularObject): void => {
+          expect(obj.name).assertEqual('test');
+          expect(obj.self).assertEqual(obj);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0600
+     * @tc.name testPromiseChainDateObject
+     * @tc.desc Test Promise chain returning Date object - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainDateObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainDateObject';
+      console.info(`${caseName} test start`);
+
+      const date: Date = new Date('2025-01-01');
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return date;
+        })
+        .then((value: Date): void => {
+          expect(value.getFullYear()).assertEqual(2025);
+          expect(value.getMonth()).assertEqual(0);
+          expect(value.getDate()).assertEqual(1);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0700
+     * @tc.name testPromiseChainMapObject
+     * @tc.desc Test Promise chain returning Map object - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainMapObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainMapObject';
+      console.info(`${caseName} test start`);
+
+      const map: Map<string, number> = new Map<string, number>();
+      map.set('a', 1);
+      map.set('b', 2);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return map;
+        })
+        .then((value: Map<string, number>): void => {
+          expect(value.size).assertEqual(2);
+          expect(value.get('a')).assertEqual(1);
+          expect(value.get('b')).assertEqual(2);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0800
+     * @tc.name testPromiseChainSetObject
+     * @tc.desc Test Promise chain returning Set object - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainSetObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainSetObject';
+      console.info(`${caseName} test start`);
+
+      const set: Set<number> = new Set<number>();
+      set.add(1);
+      set.add(2);
+      set.add(3);
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return set;
+        })
+        .then((value: Set<number>): void => {
+          expect(value.size).assertEqual(3);
+          expect(value.has(1)).assertTrue();
+          expect(value.has(2)).assertTrue();
+          expect(value.has(3)).assertTrue();
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0900
+     * @tc.name testPromiseChainDataProcessing
+     * @tc.desc Test Promise chain simulating data processing pipeline - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainDataProcessing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainDataProcessing';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<string>('{"value": 100}')
+        .then((json: string): ValueObject => {
+          expect(json).assertEqual('{"value": 100}');
+          const data: ValueObject = { value: 100 };
+          return data;
+        })
+        .then((data: ValueObject): number => {
+          expect(data.value).assertEqual(100);
+          return data.value * 2;
+        })
+        .then((result: number): string => {
+          expect(result).assertEqual(200);
+          return `Result: ${result}`;
+        })
+        .then((output: string): void => {
+          expect(output).assertEqual('Result: 200');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1000
+     * @tc.name testPromiseChainZeroValue
+     * @tc.desc Test Promise chain returning zero value - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainZeroValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainZeroValue';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<number>(0)
+        .then((value: number): number => {
+          expect(value).assertEqual(0);
+          return value;
+        })
+        .then((value: number): string => {
+          expect(value).assertEqual(0);
+          return value.toString();
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('0');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1100
+     * @tc.name testPromiseChainNegativeValue
+     * @tc.desc Test Promise chain returning negative value - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainNegativeValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainNegativeValue';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<number>(-100)
+        .then((value: number): number => {
+          expect(value).assertEqual(-100);
+          return Math.abs(value);
+        })
+        .then((value: number): void => {
+          expect(value).assertEqual(100);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1200
+     * @tc.name testPromiseChainFalseValue
+     * @tc.desc Test Promise chain returning false value - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainFalseValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainFalseValue';
+      console.info(`${caseName} test start`);
+
+      await Promise.resolve<boolean>(false)
+        .then((value: boolean): boolean => {
+          expect(value).assertFalse();
+          return value;
+        })
+        .then((value: boolean): string => {
+          expect(value).assertFalse();
+          return value ? 'true' : 'false';
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('false');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1300
+     * @tc.name testPromiseChainComplexObject
+     * @tc.desc Test Promise chain returning complex nested object - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainComplexObject';
+      console.info(`${caseName} test start`);
+
+      const level3Obj: Level3Object = { value: 'deep value', array: [1, 2, 3] };
+      const level2Obj: Level2Object = { level3: level3Obj };
+      const level1Obj: Level1Object = { level2: level2Obj };
+      const complexObj: ComplexNestedObject = { level1: level1Obj };
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return complexObj;
+        })
+        .then((obj: ComplexNestedObject): void => {
+          expect(obj.level1.level2.level3.value).assertEqual('deep value');
+          expect(obj.level1.level2.level3.array.length).assertEqual(3);
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1400
+     * @tc.name testPromiseChainUnicodeString
+     * @tc.desc Test Promise chain returning Unicode string - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainUnicodeString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainUnicodeString';
+      console.info(`${caseName} test start`);
+
+      const unicodeString: string = '你好世界 Hello World 🌍';
+
+      await Promise.resolve<void>(undefined)
+        .then(() => {
+          return unicodeString;
+        })
+        .then((value: string): void => {
+          expect(value).assertEqual('你好世界 Hello World 🌍');
+        });
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0100
+     * @tc.name testPromiseChainExportedPromiseFunc
+     * @tc.desc Test exported Promise chain function from module - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainExportedPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainExportedPromiseFunc';
+      console.info(`${caseName} test start`);
+
+      const result: string = await exportedPromiseFunc();
+      expect(result).assertEqual('exported-chain');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0200
+     * @tc.name testPromiseChainExportedPromiseArrow
+     * @tc.desc Test exported Promise chain arrow function from module - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainExportedPromiseArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainExportedPromiseArrow';
+      console.info(`${caseName} test start`);
+
+      const result: number = await exportedPromiseArrow();
+      expect(result).assertEqual(84);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0300
+     * @tc.name testPromiseChainDefaultExportedPromise
+     * @tc.desc Test default exported Promise chain function - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainDefaultExportedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainDefaultExportedPromise';
+      console.info(`${caseName} test start`);
+
+      const result: string = await defaultExportedPromise();
+      expect(result).assertEqual('exported-chain');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0400
+     * @tc.name testPromiseChainExportedPromiseClassMethod
+     * @tc.desc Test exported Promise chain class method - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainExportedPromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainExportedPromiseClassMethod';
+      console.info(`${caseName} test start`);
+
+      const instance = new ExportedPromiseClass();
+      instance.value = 10;
+      const result: string = await instance.exportedPromiseMethod();
+      expect(result).assertEqual('class-method');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0500
+     * @tc.name testPromiseChainExportedMultiplePromiseClass
+     * @tc.desc Test exported Promise chain class with multiple methods - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testPromiseChainExportedMultiplePromiseClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainExportedMultiplePromiseClass';
+      console.info(`${caseName} test start`);
+
+      const instance = new ExportedMultiplePromiseClass();
+      instance.x = 5;
+      instance.y = 10;
+
+      const result1: number = await instance.promiseMethod1();
+      expect(result1).assertEqual(10);
+
+      const result2: number = await instance.promiseMethod2();
+      expect(result2).assertEqual(20);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0100
+     * @tc.name testPromiseChainNamespacePromiseFunc
+     * @tc.desc Test namespace Promise chain function - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainNamespacePromiseFunc';
+      console.info(`${caseName} test start`);
+
+      const result: string = await PromiseNamespace.namespacePromiseFunc();
+      expect(result).assertEqual('namespace-chain');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0200
+     * @tc.name testPromiseChainNamespacePromiseClassMethod
+     * @tc.desc Test namespace Promise chain class method - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainNamespacePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainNamespacePromiseClassMethod';
+      console.info(`${caseName} test start`);
+
+      const instance = new PromiseNamespace.NamespacePromiseClass();
+      instance.value = 20;
+      const result: string = await instance.namespacePromiseMethod();
+      expect(result).assertEqual('namespace-class-method');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0300
+     * @tc.name testPromiseChainInnerNamespacePromiseFunc
+     * @tc.desc Test inner namespace Promise chain function - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testPromiseChainInnerNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainInnerNamespacePromiseFunc';
+      console.info(`${caseName} test start`);
+
+      const result: string = await PromiseNamespace.InnerPromiseNamespace.innerNamespacePromiseFunc();
+      expect(result).assertEqual('inner-namespace-inner');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_INTERFACE_0100
+     * @tc.name testPromiseChainInterfacePromiseMethod
+     * @tc.desc Test interface Promise chain method - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainInterfacePromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainInterfacePromiseMethod';
+      console.info(`${caseName} test start`);
+
+      const instance: PromiseInterface = new PromiseInterfaceImpl();
+      const result: string = await instance.promiseMethod();
+      expect(result).assertEqual('interface-impl');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_INTERFACE_0200
+     * @tc.name testPromiseChainAbstractPromiseMethod
+     * @tc.desc Test abstract class Promise chain method - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainAbstractPromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainAbstractPromiseMethod';
+      console.info(`${caseName} test start`);
+
+      const instance = new AbstractPromiseImpl();
+      const result: number = await instance.abstractPromiseMethod();
+      expect(result).assertEqual(200);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0100
+     * @tc.name testPromiseChainSendablePromiseFunc
+     * @tc.desc Test Sendable Promise chain function - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainSendablePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainSendablePromiseFunc';
+      console.info(`${caseName} test start`);
+
+      const result: string = await sendablePromiseFunc();
+      expect(result).assertEqual('sendable-chain');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0200
+     * @tc.name testPromiseChainSendablePromiseClassMethod
+     * @tc.desc Test Sendable Promise chain class method - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainSendablePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainSendablePromiseClassMethod';
+      console.info(`${caseName} test start`);
+
+      const instance = new SendablePromiseClass();
+      instance.value = 10;
+      const result: number = await instance.sendablePromiseMethod();
+      expect(result).assertEqual(30);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0300
+     * @tc.name testPromiseChainSendableMultiplePromiseClass
+     * @tc.desc Test Sendable Promise chain class with multiple methods - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testPromiseChainSendableMultiplePromiseClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainSendableMultiplePromiseClass';
+      console.info(`${caseName} test start`);
+
+      const instance = new SendableMultiplePromiseClass();
+      instance.x = 5;
+      instance.y = 10;
+
+      const result1: number = await instance.sendablePromiseMethod1();
+      expect(result1).assertEqual(15);
+
+      const result2: number = await instance.sendablePromiseMethod2();
+      expect(result2).assertEqual(30);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0100
+     * @tc.name testPromiseChainTaskPoolPromiseFunc
+     * @tc.desc Test TaskPool Promise chain function - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainTaskPoolPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainTaskPoolPromiseFunc';
+      console.info(`${caseName} test start`);
+
+      const task = taskpool.execute(taskPoolPromiseFunc, 10);
+      const result = await task as int;
+      expect(result).assertEqual(20);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0200
+     * @tc.name testPromiseChainTaskPoolAsyncPromise
+     * @tc.desc Test TaskPool async Promise chain - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseChainTaskPoolAsyncPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainTaskPoolAsyncPromise';
+      console.info(`${caseName} test start`);
+
+      const task = taskpool.execute(taskPoolAsyncPromise, 5);
+      const result: int = await task as int;
+      expect(result).assertEqual(15);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0300
+     * @tc.name testPromiseChainTaskPoolPromiseChain
+     * @tc.desc Test TaskPool multi-layer Promise chain - verify each layer input parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testPromiseChainTaskPoolPromiseChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseChainTaskPoolPromiseChain';
+      console.info(`${caseName} test start`);
+
+      const task = taskpool.execute(taskPoolPromiseChain, 10, 5);
+      const result: int = await task as int;
+      expect(result).assertEqual(30);
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0100
+     * @tc.name testPromiseRaceBasic
+     * @tc.desc Test Promise.race with basic values - verify fastest Promise wins
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseRaceBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseRaceBasic';
+      console.info(`${caseName} test start`);
+
+      const result: string = await Promise.race([
+        Promise.resolve<string>('fast'),
+        new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('slow');
+          }, 100);
+        })
+      ]);
+      expect(result).assertEqual('fast');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0200
+     * @tc.name testPromiseRaceReject
+     * @tc.desc Test Promise.race with rejection - verify first rejection wins
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseRaceReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseRaceReject';
+      console.info(`${caseName} test start`);
+
+      try {
+        await Promise.race([
+          Promise.reject(new Error('first error')),
+          Promise.resolve<string>('success')
+        ]);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).message).assertEqual('first error');
+      }
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0300
+     * @tc.name testPromiseAllSettledMixed
+     * @tc.desc Test Promise.allSettled with mixed results - verify all results captured
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testPromiseAllSettledMixed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseAllSettledMixed';
+      console.info(`${caseName} test start`);
+
+      const results: Object[] = await Promise.allSettled([
+        Promise.resolve<string>('success'),
+        Promise.reject(new Error('failed'))
+      ]) as Object[];
+
+      expect(results.length).assertEqual(2);
+      const r0 = results[0] as PromiseSettledResult<string>;
+      const r1 = results[1] as PromiseSettledResult<string>;
+      expect(r0.status).assertEqual('fulfilled');
+      expect(r1.status).assertEqual('rejected');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0400
+     * @tc.name testPromiseAllSettledAllSuccess
+     * @tc.desc Test Promise.allSettled with all success - verify all fulfilled
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testPromiseAllSettledAllSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName = 'testPromiseAllSettledAllSuccess';
+      console.info(`${caseName} test start`);
+
+      const results: Object[] = await Promise.allSettled([
+        Promise.resolve<number>(10)
+          .then((v: number): number => v * 2),
+        Promise.resolve<number>(20)
+          .then((v: number): number => v + 5)
+      ]) as Object[];
+
+      expect(results.length).assertEqual(2);
+      const r0 = results[0] as PromiseSettledResult<number>;
+      const r1 = results[1] as PromiseSettledResult<number>;
+      expect(r0.status).assertEqual('fulfilled');
+      expect(r1.status).assertEqual('fulfilled');
+
+      console.info(`${caseName} test end`);
+      done();
+    });
+  });
+}
