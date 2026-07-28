@@ -547,9 +547,10 @@ export default function DlpEnterpriseServiceTest() {
 		  if (err.code === 801) {
 			console.info(curTag, "processPluginCommand failed," + err.code + err.message);
 			expect(err.code).assertEqual(801);
+		  } else {
+		    console.info(curTag, "processPluginCommand failed as expected", err.code, err.message);
+			expect(err.code).assertEqual(19100011);
 		  }
-          console.info(curTag, "processPluginCommand failed as expected", err.code, err.message);
-          expect(err.code).assertEqual(19100011);
         }
         done();
       })
