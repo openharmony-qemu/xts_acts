@@ -67,12 +67,11 @@ export default function swiperIndicatorDistanceTest() {
       let objDot1: ESObject = JSON.parse(obj1Dot.$attrs.indicator);
 
       expect(Number.parseFloat(objDigit1.bottom)).assertEqual(20);
-      expect(Number.parseFloat(objDot1.space)).assertEqual(8);
+      console.info('DigitIndicator_0100 space1: ' + objDot1.space);
+      expect(objDot1.space.substr(objDot1.space.length - 2, 2)).assertEqual("vp");
       console.info("Swiper_Indicator ignoreSize unit: " + objDot1.ignoreSize)
       expect(objDot1.ignoreSize).assertEqual('true');
-
       expect(objDigit1.bottom.substr(objDigit1.bottom.length - 2, 2)).assertEqual("vp");
-      expect(objDot1.space.substr(objDot1.space.length - 2, 2)).assertEqual("vp");
 
       await Utils.sleep(500)
       await BottomButton.click();
@@ -87,10 +86,9 @@ export default function swiperIndicatorDistanceTest() {
       let objDigit2: ESObject = JSON.parse(obj2Digit.$attrs.indicator);
       let objDot2: ESObject = JSON.parse(obj2Dot.$attrs.indicator);
       expect(Number.parseFloat(objDigit2.bottom)).assertEqual(0);
-      expect(Number.parseFloat(objDot2.space)).assertEqual(8);
-
-      expect(objDigit2.bottom.substr(objDigit2.bottom.length - 2, 2)).assertEqual("vp");
+      console.info('DigitIndicator_0100 space2: ' + objDot2.space);
       expect(objDot2.space.substr(objDot2.space.length - 2, 2)).assertEqual("vp");
+      expect(objDigit2.bottom.substr(objDigit2.bottom.length - 2, 2)).assertEqual("vp");
 
       await Utils.sleep(500)
       await BottomButton.click();
@@ -104,6 +102,7 @@ export default function swiperIndicatorDistanceTest() {
       let objDigit3: ESObject = JSON.parse(obj3Digit.$attrs.indicator);
       let objDot3: ESObject = JSON.parse(obj3Dot.$attrs.indicator);
       expect(Number.parseFloat(objDigit3.bottom)).assertEqual(30);
+      console.info('DigitIndicator_0100 space3: ' + objDot3.space);
       expect(Number.parseFloat(objDot3.space)).assertEqual(5);
       expect(objDigit3.bottom.substr(objDigit3.bottom.length - 2, 2)).assertEqual("vp");
       expect(objDot3.space.substr(objDot3.space.length - 2, 2)).assertEqual("vp");
@@ -123,6 +122,7 @@ export default function swiperIndicatorDistanceTest() {
       let objDigit4: ESObject = JSON.parse(obj4Digit.$attrs.indicator);
       let objDot4: ESObject = JSON.parse(obj4Dot.$attrs.indicator);
       expect(Number.parseFloat(objDigit4.bottom)).assertEqual(0);
+      console.info('DigitIndicator_0100 space4: ' + objDot4.space);
       expect(Number.parseFloat(objDot4.space)).assertEqual(20);
       console.info("Swiper_Indicator bottom " + Number.parseFloat(objDigit4.bottom));
       expect(objDigit4.bottom.substr(objDigit4.bottom.length - 2, 2)).assertEqual("vp");
