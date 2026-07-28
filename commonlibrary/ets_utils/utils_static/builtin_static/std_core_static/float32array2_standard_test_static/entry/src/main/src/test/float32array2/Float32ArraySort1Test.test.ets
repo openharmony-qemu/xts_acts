@@ -1998,3 +1998,63 @@ export default function Float32ArraySort1Test(): void {
       const element117Part3 = arr.$_get(2);
       expect(element117Part3).assertEqual(16.0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1080
+     * @tc.name testFloat32ArraySortOne108
+     * @tc.desc Verify sort() ascending on octal values 0o0, 0o10, 0o17
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySortOne108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0o17, 0o0, 0o10);
+      arr.sort();
+      const element118 = arr.$_get(0);
+      expect(element118).assertEqual(0.0);
+      const element118Part2 = arr.$_get(1);
+      expect(element118Part2).assertEqual(8.0);
+      const element118Part3 = arr.$_get(2);
+      expect(element118Part3).assertEqual(15.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1090
+     * @tc.name testFloat32ArraySortOne109
+     * @tc.desc Verify sort() ascending on binary literals 0b11111111, 0b00000000, 0b10101010
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySortOne109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0b11111111, 0b00000000, 0b10101010);
+      arr.sort();
+      const element119 = arr.$_get(0);
+      expect(element119).assertEqual(0.0);
+      const element119Part2 = arr.$_get(1);
+      expect(element119Part2).assertEqual(170.0);
+      const element119Part3 = arr.$_get(2);
+      expect(element119Part3).assertEqual(255.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1100
+     * @tc.name testFloat32ArraySortOne110
+     * @tc.desc Verify sort() treats hex 0xff and decimal 255.0 as equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySortOne110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0xff, 255.0, 0x0a);
+      arr.sort();
+      const element120 = arr.$_get(0);
+      expect(element120).assertEqual(10.0);
+      const element120Part2 = arr.$_get(1);
+      expect(element120Part2).assertEqual(255.0);
+      const element120Part3 = arr.$_get(2);
+      expect(element120Part3).assertEqual(255.0);
+    });
+
+  });
+}
