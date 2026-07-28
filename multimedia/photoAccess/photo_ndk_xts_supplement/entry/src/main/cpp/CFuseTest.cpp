@@ -710,7 +710,6 @@ napi_value Test_FsSystemStat(napi_env env, napi_callback_info info)
     } else {
         struct statvfs vfs;
         ret = statvfs(path.c_str(), &vfs);
-
         if (ret >= 0) {
             blkcnt_t blockSize = vfs.f_bsize;
             OH_LOG_INFO(LOG_APP, "fileSystem totalSize: %{public}ld", vfs.f_blocks + blockSize);
