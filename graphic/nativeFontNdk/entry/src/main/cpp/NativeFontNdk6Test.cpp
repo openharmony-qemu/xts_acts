@@ -890,7 +890,7 @@ napi_value OHDrawingReleaseArrayBuffer0700(napi_env env, napi_callback_info info
 /**
  * @tc.name   testOHDrawingSetTypographyAttributeBool0100
  * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0100
- * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
@@ -909,12 +909,12 @@ napi_value OHDrawingSetTypographyAttributeBool0100(napi_env env, napi_callback_i
     NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
 
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     bool getValue = BOOL_FALSE_VALUE;
     errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
     NAPI_ASSERT_NO_MES(getValue == BOOL_TRUE_VALUE);
 
@@ -940,7 +940,7 @@ napi_value OHDrawingSetTypographyAttributeBool0200(napi_env env, napi_callback_i
 {
     napi_value result = nullptr;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(nullptr,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -959,7 +959,7 @@ napi_value OHDrawingGetTypographyAttributeBool0100(napi_env env, napi_callback_i
     napi_value result = nullptr;
     bool getValue = BOOL_FALSE_VALUE;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(nullptr,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -987,7 +987,7 @@ napi_value OHDrawingGetTypographyAttributeBool0200(napi_env env, napi_callback_i
     NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
 
     OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, nullptr);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, nullptr);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
 
     OH_Drawing_DestroyTypography(typography);
@@ -1093,12 +1093,12 @@ napi_value OHDrawingSetTypographyAttributeBool0400(napi_env env, napi_callback_i
     NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
 
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     bool getValue = BOOL_TRUE_VALUE;
     errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
     NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
 
@@ -1135,7 +1135,7 @@ napi_value OHDrawingGetTypographyAttributeBool0400(napi_env env, napi_callback_i
 
     bool getValue = BOOL_TRUE_VALUE;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
     NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
 
@@ -1171,22 +1171,22 @@ napi_value OHDrawingSetTypographyAttributeBool0500(napi_env env, napi_callback_i
     NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
 
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     bool getValue = BOOL_FALSE_VALUE;
     errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
     NAPI_ASSERT_NO_MES(getValue == BOOL_TRUE_VALUE);
 
     errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     getValue = BOOL_TRUE_VALUE;
     errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
-        TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
     NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
 
