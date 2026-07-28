@@ -231,9 +231,9 @@ export default function SerialBusManagerSignalTest() {
         gPort1!.open();
         await sleep(500);
         await driveFn();
-        await gPort1!.setDtr(false);
+        await gPort!.setDtr(false);
         await sleep(1000);
-        let dsr: boolean = await gPort!.getDsr();
+        let dsr: boolean = await gPort1!.getDsr();
         console.info(TAG, 'testGetDsr005 getDsr after setDtr(false): ', dsr);
         expect(dsr).assertFalse();
         await gPort!.close();
