@@ -71,11 +71,11 @@ struct ComposeListItemV2IconTypeExample {
 
   build(): void {
     Scroll() {
-      Column({ space: 10 } as  ColumnOptions) {
+      Column({ space: 2 } as  ColumnOptions) {
         Text('IconTypeV2 Test')
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 10, bottom: 10 })
+          .margin({ top: 2, bottom: 2 })
 
         ComposeListItemV2({ contentItemV2: this.badgeIcon });
 
@@ -94,7 +94,6 @@ struct ComposeListItemV2IconTypeExample {
         ComposeListItemV2({ contentItemV2: this.vertical });
       }
       .width('100%')
-      .padding(10)
     }
     .width('100%')
     .height('100%')
