@@ -921,7 +921,7 @@ int OHOSModelBuild0009()
     OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========Model Predict==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
-    OH_AI_TensorHandleArray output;
+    OH_AI_TensorHandleArray output = {0, nullptr};
     FillInputsData(inputs, "ml_face_isface", false);
     OH_AI_Status ret = OH_AI_ModelPredict(model, inputs, &output, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
@@ -1172,7 +1172,7 @@ int OHOSModelPredict0002()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_ModelDestroy(&model);
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========Model Predict return code:%d\n", ret);
@@ -1205,8 +1205,8 @@ int OHOSModelPredict0003()
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray inputs;
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray inputs = {0, nullptr};
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========Model Predict return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
@@ -1278,7 +1278,7 @@ int OHOSModelGetInputByTensorName0001()
     OHPrintf("==========Model Predict==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
@@ -1347,7 +1347,7 @@ int OHOSModelGetOutputByTensorName0001()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========GetOutput==========\n");
@@ -1401,7 +1401,7 @@ int OHOSModelGetOutputByTensorName0002()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========GetOutput==========\n");
@@ -1445,7 +1445,7 @@ int OHOSTensorCreate0001()
     inputs.handle_list[0] = tensor;
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
