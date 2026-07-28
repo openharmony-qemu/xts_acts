@@ -31,7 +31,7 @@ import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
 
-export default function textBlobTest() {
+export default function textBlobTest(): void {
   describe('DrawingTsTextBlobTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -268,22 +268,22 @@ export default function textBlobTest() {
 
       try {
         drawing.TextBlob.makeFromRunBuffer(runBuffer, font, undefined);
-        console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(undefined)}`);
+        console.info(`${msg} makeFromRunBuffer succeeded undefined for bounds ${JSON.stringify(undefined)}`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(undefined)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        console.info(`${msg} makeFromRunBuffer failed undefined for bounds ${JSON.stringify(undefined)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
       }
 
       try {
         // Make a TextBlob from an empty run buffer using the Font object
         drawing.TextBlob.makeFromRunBuffer([], font);
-        console.info(msg + ' makeFromRunBuffer succeeded for empty run buffer');
+        console.info(msg + ' makeFromRunBuffer succeeded [] for empty run buffer');
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
-          ` makeFromRunBuffer failed for empty run buffer, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+          ` makeFromRunBuffer failed [] for empty run buffer, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
       }
     });
     /**

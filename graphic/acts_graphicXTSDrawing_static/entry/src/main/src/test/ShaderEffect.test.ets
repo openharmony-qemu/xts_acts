@@ -21,7 +21,7 @@ import { getEnumCount, getRandomNumber } from './Util.test';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function shadowEffectTest() {
+export default function shadowEffectTest(): void {
   describe('DrawingTsShadowEffectTest', () => {
     let pixel: image.PixelMap | undefined;
     let pixelMap: image.PixelMap;
@@ -363,20 +363,20 @@ export default function shadowEffectTest() {
       const msg = 'testShaderEffectCreateLinearGradientAbNormalStatic';
       try {
         drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ 0xFFFFFFFF.toInt() + 1, 0xFFFF0000.toInt() ], drawing.TileMode.REPEAT);
-        console.info(msg + ' createLinearGradient successed');
+        console.info(msg + ' createLinearGradient 1 successed');
       } catch(e) {
         e = e as BusinessError ;
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` createLinearGradient 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
 
       try {
         drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ - 1, 0xFFFF0000.toInt() ], drawing.TileMode.REPEAT);
-        console.info(msg + ' createLinearGradient successed');
+        console.info(msg + ' createLinearGradient 2 successed');
       } catch(e) {
         e = e as BusinessError ;
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` createLinearGradient 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
     });
 

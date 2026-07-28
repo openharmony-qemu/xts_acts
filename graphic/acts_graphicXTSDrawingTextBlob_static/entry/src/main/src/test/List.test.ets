@@ -15,8 +15,10 @@
  */
 import textBlobTest from './TextBlob.test';
 import textBlob2Test from './TextBlob2.test';
+import DrawingTsTextBlobPart3Test from './TextBlobPart3.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   textBlobTest();
   textBlob2Test();
+  DrawingTsTextBlobPart3Test();
 }
