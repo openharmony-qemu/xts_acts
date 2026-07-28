@@ -87,20 +87,12 @@ static IotcCharState g_repChar3 = {
 
 LITE_TEST_SUIT(communication, iot_connect, ActsIotcOhDeviceTest);
 
-/**
- * @tc.setup     : setup for every testcase
- * @return       : setup result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhDeviceTestSetUp(void)
 {
     printf("ActsIotcOhDeviceTestSetUp \r\n");
     return TRUE;
 }
 
-/**
- * @tc.teardown  : teardown for every testcase
- * @return       : teardown result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhDeviceTestTearDown(void)
 {
     printf("ActsIotcOhDeviceTestSetUp \r\n");
@@ -108,12 +100,12 @@ static BOOL ActsIotcOhDeviceTestTearDown(void)
 }
 
 /**
- * @tc.name testIotcOhDeviceInit0100
+ * @tc.name   testIotcOhDeviceInit0100
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_INIT_0100
- * @tc.desc Test IotcOhDevInit called returns true.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevInit called returns true.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0100, Function | MediumTest | LEVEL3)
 {
@@ -134,12 +126,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0100, Function | Medium
 }
 
 /**
- * @tc.name testIotcOhDeviceInit0200
+ * @tc.name   testIotcOhDeviceInit0200
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_INIT_0200
- * @tc.desc Test IotcOhDevInit called twice returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevInit called twice returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0200, Function | MediumTest | LEVEL3)
 {
@@ -158,12 +150,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceInit0200, Function | Medium
 }
 
 /**
- * @tc.name testIotcOhDeviceDeinit0100
+ * @tc.name   testIotcOhDeviceDeinit0100
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_DEINIT_0100
- * @tc.desc Test IotcOhDevDeinit before IotcOhStop returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevDeinit before IotcOhStop returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceDeinit0100, Function | MediumTest | LEVEL3)
 {
@@ -182,12 +174,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceDeinit0100, Function | Medi
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0100
+ * @tc.name   testIotcOhDeviceReportChar0100
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0100
- * @tc.desc Test IotcOhDevReportCharState after init and main success.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.desc   Test IotcOhDevReportCharState after init and main success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0100, Function | MediumTest | LEVEL0)
 {
@@ -210,12 +202,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0100, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0200
+ * @tc.name   testIotcOhDeviceReportChar0200
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0200
- * @tc.desc Test IotcOhDevReportCharState without init returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState without init returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0200, Function | MediumTest | LEVEL3)
 {
@@ -225,12 +217,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0200, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0300
+ * @tc.name   testIotcOhDeviceReportChar0300
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0300
- * @tc.desc Test IotcOhDevReportCharState without main returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState without main returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0300, Function | MediumTest | LEVEL3)
 {
@@ -246,12 +238,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0300, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0400
+ * @tc.name   testIotcOhDeviceReportChar0400
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0400
- * @tc.desc Test IotcOhDevReportCharState after main stop returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState after main stop returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0400, Function | MediumTest | LEVEL3)
 {
@@ -270,12 +262,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0400, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0500
+ * @tc.name   testIotcOhDeviceReportChar0500
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0500
- * @tc.desc Test IotcOhDevReportCharState with NULL pointer returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState with NULL pointer returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0500, Function | MediumTest | LEVEL3)
 {
@@ -285,12 +277,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0500, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0600
+ * @tc.name   testIotcOhDeviceReportChar0600
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0600
- * @tc.desc Test IotcOhDevReportCharState with zero length returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState with zero length returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0600, Function | MediumTest | LEVEL3)
 {
@@ -300,12 +292,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0600, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0700
+ * @tc.name   testIotcOhDeviceReportChar0700
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0700
- * @tc.desc Test IotcOhDevReportCharState with NULL svcId returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState with NULL svcId returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0700, Function | MediumTest | LEVEL3)
 {
@@ -315,12 +307,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0700, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0800
+ * @tc.name   testIotcOhDeviceReportChar0800
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0800
- * @tc.desc Test IotcOhDevReportCharState with NULL data returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState with NULL data returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0800, Function | MediumTest | LEVEL3)
 {
@@ -330,12 +322,12 @@ LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0800, Function | 
 }
 
 /**
- * @tc.name testIotcOhDeviceReportChar0900
+ * @tc.name   testIotcOhDeviceReportChar0900
  * @tc.number SUB_COMMUNICATION_IOTCONNECT_DEVICE_REPORT_CHAR_0900
- * @tc.desc Test IotcOhDevReportCharState with zero data length returns failure.
- * @tc.type FUNCTION
- * @tc.size MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.desc   Test IotcOhDevReportCharState with zero data length returns failure.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhDeviceTest, testIotcOhDeviceReportChar0900, Function | MediumTest | LEVEL3)
 {
