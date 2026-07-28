@@ -873,7 +873,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0460
      * @tc.name testFloat32ArraySortOne046
-     * @tc.desc Verify sort() on [3,NaN,1] places NaN at end
+     * @tc.desc Verify sort() on [3,NaN,1] sorts NaN to end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1013,7 +1013,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0540
      * @tc.name testFloat32ArraySortOne054
-     * @tc.desc Verify sort() places NaN at end with one NaN
+     * @tc.desc Verify sort() sorts NaN to end with one NaN in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1049,7 +1049,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0560
      * @tc.name testFloat32ArraySortOne056
-     * @tc.desc Verify sort() places Infinity before NaN
+     * @tc.desc Verify sort() sorts Infinity before NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1068,7 +1068,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0570
      * @tc.name testFloat32ArraySortOne057
-     * @tc.desc Verify sort() places -Infinity before finite numbers
+     * @tc.desc Verify sort() sorts -Infinity before finite numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
