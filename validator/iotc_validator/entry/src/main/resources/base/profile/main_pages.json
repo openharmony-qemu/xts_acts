@@ -1,0 +1,17 @@
+{
+  "src": [
+    "pages/index",
+    "pages/IOT/IOT_index",
+    "pages/IOT/IOTDiscovery",
+    "pages/IOT/IOTConnect",
+    "pages/IOT/IOTReConnect",
+    "pages/IOT/IOTPinConnect",
+    "pages/IOT/IOTConnectState",
+    "pages/IOT/IOTControl",
+    "pages/IOT/IOTNetCfg",
+    "pages/IOT/IOTSendCmd",
+    "pages/IOT/IOT_configuration",
+    "pages/IOT/IOT_execution",
+    "pages/IOT/IOT_execution_report"
+  ]
+}
