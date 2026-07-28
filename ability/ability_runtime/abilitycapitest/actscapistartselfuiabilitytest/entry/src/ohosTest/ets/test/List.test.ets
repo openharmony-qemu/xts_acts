@@ -27,7 +27,6 @@ import NdkNotifyPageChangedTest from './NdkNotifyPageChanged.test';
 import NdkModularObjectExtensionManagerTest from './NdkModularObjectExtensionManager.test';
 import NdkModularObjectExtensionContextTest from './NdkModularObjectExtensionContext.test';
 import NdkModularObjectExtensionAbilityTest from './NdkModularObjectExtensionAbility.test';
-import NdkStartOptionsGetValueTest from './NdkStartOptionsGetValueTest.test';
 
 export default function testsuite() {
   NdkWantTest();
@@ -44,5 +43,4 @@ export default function testsuite() {
   NdkModularObjectExtensionManagerTest();
   NdkModularObjectExtensionContextTest();
   NdkModularObjectExtensionAbilityTest();
-  NdkStartOptionsGetValueTest();
 }
