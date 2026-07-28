@@ -193,6 +193,24 @@ class MyregisterDeathRecipient implements rpc.DeathRecipient {
   }
 }
 
+class TestOption1 extends rpc.MessageOption {
+  constructor(syncFlags: number) {
+    super(syncFlags);
+  }
+}
+
+class TestOption2 extends rpc.MessageOption {
+  constructor(syncFlags: number, waitTime: number) {
+    super(syncFlags, waitTime);
+  }
+}
+
+class TestOptionBoolean extends rpc.MessageOption {
+  constructor(isAsync: boolean) {
+    super(isAsync);
+  }
+}
+
 class TestCallerInfo extends rpc.RemoteObject {
   constructor(descriptor: string) {
     super(descriptor);
@@ -15822,6 +15840,542 @@ export default function ActsRpcClientEtsTest() {
       }
       console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0300---------------------------");
     });
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260
+     * @tc.desc   Test MessageSequence.writeBoolean with null parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        data.writeBoolean(null);
+        expect(data.getSize() == 0).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270
+     * @tc.desc   Test MessageSequence.writeBoolean with undefined parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        data.writeBoolean(undefined);
+        expect(data.getSize() == 0).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280
+     * @tc.desc   Test MessageSequence.writeArrayBuffer with TypeCode null parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let arrayBuffer = new ArrayBuffer(8);
+        let int8View = new Int8Array(arrayBuffer);
+        for (let i = 0; i < 8; i++) {
+          int8View[i] = i;
+        }
+        data.writeArrayBuffer(arrayBuffer, null);
+        expect(data.getSize() == 0).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290
+     * @tc.desc   Test MessageSequence.writeArrayBuffer with TypeCode undefined parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let arrayBuffer = new ArrayBuffer(8);
+        let int8View = new Int8Array(arrayBuffer);
+        for (let i = 0; i < 8; i++) {
+          int8View[i] = i;
+        }
+        data.writeArrayBuffer(arrayBuffer, undefined);
+        expect(data.getSize() == 0).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300
+     * @tc.desc   Test MessageSequence.readArrayBuffer with TypeCode null parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let arrayBuffer = new ArrayBuffer(8);
+        let int8View = new Int8Array(arrayBuffer);
+        for (let i = 0; i < 8; i++) {
+          int8View[i] = i;
+        }
+        data.writeArrayBuffer(arrayBuffer, rpc.TypeCode.INT8_ARRAY);
+        data.readArrayBuffer(null);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310
+     * @tc.desc   Test MessageSequence.readArrayBuffer with TypeCode undefined parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let arrayBuffer = new ArrayBuffer(8);
+        let int8View = new Int8Array(arrayBuffer);
+        for (let i = 0; i < 8; i++) {
+          int8View[i] = i;
+        }
+        data.writeArrayBuffer(arrayBuffer, rpc.TypeCode.INT8_ARRAY);
+        data.readArrayBuffer(undefined);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0200
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0200
+     * @tc.desc   Test MessageOption constructor with syncFlags number parameter via subclass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0200---------------------------");
+      try {
+        let option = new TestOption1(0);
+        expect(option.getFlags()).assertEqual(0);
+        expect(option.isAsync()).assertEqual(false);
+        expect(option.getWaitTime()).assertEqual(rpc.MessageOption.TF_WAIT_TIME);
+        option = new TestOption1(1);
+        expect(option.getFlags()).assertEqual(1);
+        expect(option.isAsync()).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0200 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0200---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0210
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0210
+     * @tc.desc   Test MessageOption constructor with syncFlags and waitTime number parameters via subclass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0210---------------------------");
+      try {
+        let option = new TestOption2(0, 16);
+        expect(option.getFlags()).assertEqual(0);
+        expect(option.getWaitTime()).assertEqual(16);
+        expect(option.isAsync()).assertEqual(false);
+        option = new TestOption2(1, 3000);
+        expect(option.getFlags()).assertEqual(1);
+        expect(option.getWaitTime()).assertEqual(3000);
+        expect(option.isAsync()).assertTrue();
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0210 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0210---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0220
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0220
+     * @tc.desc   Test MessageOption constructor with boolean async parameter via subclass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0220---------------------------");
+      try {
+        let option = new TestOptionBoolean(true);
+        expect(option.isAsync()).assertTrue();
+        expect(option.getFlags()).assertEqual(1);
+        option = new TestOptionBoolean(false);
+        expect(option.isAsync()).assertEqual(false);
+        expect(option.getFlags()).assertEqual(0);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0220 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0220---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0230
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0230
+     * @tc.desc   Test MessageOption constructor with direct new rpc.MessageOption(syncFlags) and new rpc.MessageOption(syncFlags, waitTime)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0230---------------------------");
+      try {
+        let option = new rpc.MessageOption(0);
+        expect(option.getFlags()).assertEqual(0);
+        expect(option.isAsync()).assertEqual(false);
+        expect(option.getWaitTime()).assertEqual(rpc.MessageOption.TF_WAIT_TIME);
+        option = new rpc.MessageOption(1);
+        expect(option.getFlags()).assertEqual(1);
+        expect(option.isAsync()).assertTrue();
+        option = new rpc.MessageOption(0, 8);
+        expect(option.getFlags()).assertEqual(0);
+        expect(option.getWaitTime()).assertEqual(8);
+        option = new rpc.MessageOption(1, 16);
+        expect(option.getFlags()).assertEqual(1);
+        expect(option.getWaitTime()).assertEqual(16);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0230 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0230---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0240
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0240
+     * @tc.desc   Test MessageOption constructor with direct new rpc.MessageOption(boolean async)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0240---------------------------");
+      try {
+        let option = new rpc.MessageOption(true);
+        expect(option.isAsync()).assertTrue();
+        expect(option.getFlags()).assertEqual(1);
+        option = new rpc.MessageOption(false);
+        expect(option.isAsync()).assertEqual(false);
+        expect(option.getFlags()).assertEqual(0);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0240 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0240---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0250
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0250
+     * @tc.desc   Test MessageOption static properties TF_SYNC, TF_ASYNC, TF_ACCEPT_FDS, TF_WAIT_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0250---------------------------");
+      try {
+        expect(rpc.MessageOption.TF_SYNC).assertEqual(0);
+        expect(rpc.MessageOption.TF_ASYNC).assertEqual(1);
+        expect(rpc.MessageOption.TF_ACCEPT_FDS).assertEqual(16);
+        expect(rpc.MessageOption.TF_WAIT_TIME).assertEqual(8);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0250 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0250---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0260
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0260
+     * @tc.desc   Test MessageOption.setAsync with null parameter, verify err.message contains type mismatch for parameter 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0260---------------------------");
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        option.setAsync(null);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0260 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.message).assertContain("type mismatch for parameter 1");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0260---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0270
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0270
+     * @tc.desc   Test MessageOption.setAsync with undefined parameter, verify err.message contains type mismatch for parameter 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0270---------------------------");
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        option.setAsync(undefined);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageOption_0270 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.message).assertContain("type mismatch for parameter 1");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0270---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340
+     * @tc.desc   Test RemoteObject.sendMessageRequest with code null parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        await gIRemoteObject.sendMessageRequest(null, data, reply, option);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350
+     * @tc.desc   Test RemoteObject.sendMessageRequest with code undefined parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        await gIRemoteObject.sendMessageRequest(undefined, data, reply, option);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360
+     * @tc.desc   Test RemoteObject.sendMessageRequest with options null parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        await gIRemoteObject.sendMessageRequest(CODE_WRITE_STRING, data, reply, null);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370
+     * @tc.desc   Test RemoteObject.sendMessageRequest with options undefined parameter, expect error code 401 and message check param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        await gIRemoteObject.sendMessageRequest(CODE_WRITE_STRING, data, reply, undefined);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370 error is:" + error);
+        let e: BusinessError = error as BusinessError;
+        expect(e.code == 401).assertTrue();
+        expect(e.message).assertEqual("check param error");
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380
+     * @tc.desc   Test RemoteObject.sendMessageRequest return value RequestResult properties errCode, code, data, reply
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        data.writeString("constant");
+        expect(gIRemoteObject != undefined).assertTrue();
+        await gIRemoteObject.sendMessageRequest(CODE_WRITE_STRING, data, reply, option).then((result) => {
+          expect(result.errCode).assertEqual(0);
+          expect(result.code).assertEqual(CODE_WRITE_STRING);
+          expect(result.data != null).assertTrue();
+          expect(result.reply != null).assertTrue();
+          expect(result.reply.readString()).assertEqual("constant");
+        });
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380 error is:" + error);
+        expect(error == null).assertTrue();
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0380---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300
+     * @tc.desc   Test RemoteProxy.getDescriptor return value type and content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300---------------------------");
+      try {
+        let result = gIRemoteObject.getDescriptor();
+        expect(result != null).assertTrue();
+        expect(typeof result === "string").assertTrue();
+        expect(result).assertEqual("rpcTestAbility");
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300---------------------------");
+    });
+
     console.info("-----------------------SUB_DSoftbus_IPC_API_Stage_MessageSequence_Test is end-----------------------");
   })
 }
