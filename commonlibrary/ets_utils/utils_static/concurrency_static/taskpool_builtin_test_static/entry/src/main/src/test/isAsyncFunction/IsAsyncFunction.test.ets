@@ -1898,3 +1898,976 @@ export default function IsAsyncFunctionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1190
      * @tc.name testIsAsyncFunctionDeclaredAsyncFunc
+     * @tc.desc Test isAsyncFunction with declared async function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAsyncFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(declaredAsyncFunc);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1200
+     * @tc.name testIsAsyncFunctionDeclaredAsyncArrow
+     * @tc.desc Test isAsyncFunction with declared async arrow function from module
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAsyncArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(declaredAsyncArrow);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1210
+     * @tc.name testIsAsyncFunctionDeclaredAsyncClassMethod
+     * @tc.desc Test isAsyncFunction with declared class async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAsyncClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const instance = new DeclaredAsyncClass();
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(instance.declaredAsyncMethod);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1220
+     * @tc.name testIsAsyncFunctionDeclaredAsyncStaticMethod
+     * @tc.desc Test isAsyncFunction with declared class static async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAsyncStaticMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(DeclaredAsyncClass.declaredAsyncStaticMethod);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1230
+     * @tc.name testIsAsyncFunctionDeclaredAsyncInterfaceImplMethod
+     * @tc.desc Test isAsyncFunction with declared interface implementation async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAsyncInterfaceImplMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const instance = new DeclaredAsyncInterfaceImpl();
+        const type = new util.types();
+        const result: boolean = type.isAsyncFunction(instance.asyncInterfaceMethod);
+        expect(result).assertTrue();
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1240
+     * @tc.name testIsAsyncFunctionDeclaredAbstractAsyncImplMethod
+     * @tc.desc Test isAsyncFunction with declared abstract implementation async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredAbstractAsyncImplMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const instance = new DeclaredAbstractAsyncImpl();
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(instance.declaredAbstractAsyncMethod);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1250
+     * @tc.name testIsAsyncFunctionDeclaredConcreteAsyncMethod
+     * @tc.desc Test isAsyncFunction with declared abstract class concrete async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('testIsAsyncFunctionDeclaredConcreteAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const instance = new DeclaredAbstractAsyncImpl();
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(instance.concreteAsyncMethod);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1260
+     * @tc.name testIsAsyncFunctionWrapperFunc
+     * @tc.desc Test isAsyncFunction with TS wrapper function returning async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionWrapperFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const asyncFn = wrapperFunc();
+      const result: boolean = type.isAsyncFunction(asyncFn);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1270
+     * @tc.name testIsAsyncFunctionTSNestedFuncClass
+     * @tc.desc Test isAsyncFunction with TS nested function class method returning async
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionTSNestedFuncClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const instance = new TSNestedFuncClass();
+      const type = new util.types();
+      const asyncFn = instance.createNestedAsync();
+      const result: boolean = type.isAsyncFunction(asyncFn);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1280
+     * @tc.name testIsAsyncFunctionComputedPropertyAsync
+     * @tc.desc Test isAsyncFunction with computed property async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionComputedPropertyAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const dynamicMethod = computedPropertyAsync.dynamicMethod;
+      const result: boolean = type.isAsyncFunction(dynamicMethod);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1290
+     * @tc.name testIsAsyncFunctionSymbolKeyAsync
+     * @tc.desc Test isAsyncFunction with symbol key async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionSymbolKeyAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      expect(type.isAsyncFunction(symbolKeyAsync)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1300
+     * @tc.name testIsAsyncFunctionBindAsyncFunc
+     * @tc.desc Test isAsyncFunction with bind async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionBindAsyncFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const boundAsync = bindAsyncFunc();
+      const result: boolean = type.isAsyncFunction(boundAsync);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1310
+     * @tc.name testIsAsyncFunctionTSPrototypeAsyncMethod
+     * @tc.desc Test isAsyncFunction with TS prototype async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionTSPrototypeAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const instance = new TSPrototypeClass();
+      const type = new util.types();
+      expect(instance.id).assertEqual(0);
+      expect(type.isAsyncFunction(new TSPrototypeClass() as Object)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1320
+     * @tc.name testIsAsyncFunctionForInObject
+     * @tc.desc Test isAsyncFunction with forInObject async methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionForInObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      expect(type.isAsyncFunction(forInObject.method1)).assertTrue();
+      expect(type.isAsyncFunction(forInObject.method2)).assertTrue();
+      expect(type.isAsyncFunction(forInObject.method3)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1330
+     * @tc.name testIsAsyncFunctionJSWrapperFunc
+     * @tc.desc Test isAsyncFunction with JS wrapper function returning async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSWrapperFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const asyncFn = jsWrapperFunc();
+      const result: boolean = type.isAsyncFunction(asyncFn);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1340
+     * @tc.name testIsAsyncFunctionJSNestedFuncClass
+     * @tc.desc Test isAsyncFunction with JS nested function class method returning async
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSNestedFuncClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const instance = new JSNestedFuncClass();
+      const type = new util.types();
+      const asyncFn = instance.createNestedAsync();
+      const result: boolean = type.isAsyncFunction(asyncFn);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1350
+     * @tc.name testIsAsyncFunctionJSDynamicProperty
+     * @tc.desc Test isAsyncFunction with JS dynamic property async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSDynamicProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const dynamicAsync = jsDynamicProperty.dynamicAsync;
+      const result: boolean = type.isAsyncFunction(dynamicAsync);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1360
+     * @tc.name testIsAsyncFunctionJSBindAsyncFunc
+     * @tc.desc Test isAsyncFunction with JS bind async function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSBindAsyncFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(jsBindAsyncFunc);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1370
+     * @tc.name testIsAsyncFunctionJSForInObject
+     * @tc.desc Test isAsyncFunction with JS forInObject async methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSForInObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const type = new util.types();
+      expect(type.isAsyncFunction(jsForInObject.method1)).assertTrue();
+      expect(type.isAsyncFunction(jsForInObject.method2)).assertTrue();
+      expect(type.isAsyncFunction(jsForInObject.method3)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1380
+     * @tc.name testIsAsyncFunctionJSPrivateFieldClassGetter
+     * @tc.desc Test isAsyncFunction with JS private field class getter async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSPrivateFieldClassGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const instance = new JSPrivateFieldClass();
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(instance.getPrivateValue);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1390
+     * @tc.name testIsAsyncFunctionJSPrivateFieldClassSetter
+     * @tc.desc Test isAsyncFunction with JS private field class setter async method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level1
+     */
+    it('testIsAsyncFunctionJSPrivateFieldClassSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const instance = new JSPrivateFieldClass();
+      const type = new util.types();
+      const result: boolean = type.isAsyncFunction(instance.setPrivateValue);
+      expect(result).assertTrue();
+    });
+
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1400
+    //  * @tc.name testIsAsyncFunctionAsyncGeneratorFunc
+    //  * @tc.desc Test isAsyncFunction with TS async generator function
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionAsyncGeneratorFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(asyncGeneratorFunc);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1410
+    //  * @tc.name testIsAsyncFunctionAsyncGeneratorArrow
+    //  * @tc.desc Test isAsyncFunction with TS async generator arrow function
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionAsyncGeneratorArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(asyncGeneratorArrow);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1420
+    //  * @tc.name testIsAsyncFunctionTSGeneratorClassMethod
+    //  * @tc.desc Test isAsyncFunction with TS generator class async generator method after getter
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionTSGeneratorClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const instance = new TSGeneratorClass();
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(instance.methodGenerator);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1430
+    //  * @tc.name testIsAsyncFunctionJSGeneratorClassMethod
+    //  * @tc.desc Test isAsyncFunction with JS generator class async generator method after getter
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionJSGeneratorClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const instance = new JSGeneratorClass();
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(instance.methodGenerator);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1440
+    //  * @tc.name testIsAsyncFunctionAllGeneratorsSummary
+    //  * @tc.desc Test isAsyncFunction with all async generators from modules
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionAllGeneratorsSummary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(asyncGeneratorFunc)).assertTrue();
+    //   expect(type.isAsyncFunction(asyncGeneratorArrow)).assertTrue();
+    //   expect(type.isAsyncFunction(jsAsyncGenerator)).assertTrue();
+    //
+    //   const tsGenInstance = new TSGeneratorClass();
+    //   expect(type.isAsyncFunction(tsGenInstance.methodGenerator)).assertTrue();
+    //
+    //   const jsGenInstance = new JSGeneratorClass();
+    //   expect(type.isAsyncFunction(jsGenInstance.methodGenerator)).assertTrue();
+    // });
+    //
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_0780
+    //  * @tc.name testIsAsyncFunctionJSAsyncGenerator
+    //  * @tc.desc Test isAsyncFunction with JS async generator function
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionJSAsyncGenerator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(jsAsyncGenerator);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_0830
+    //  * @tc.name testIsAsyncFunctionTSAsyncGenerator
+    //  * @tc.desc Test isAsyncFunction with TS async generator function
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionTSAsyncGenerator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(tsAsyncGenerator);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1000
+    //  * @tc.name testIsAsyncFunctionSendableClassMethod
+    //  * @tc.desc Test isAsyncFunction with Sendable class async method
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableTestClass {
+    //     private _value: number = 0;
+    //
+    //     get value(): number {
+    //       return this._value;
+    //     }
+    //
+    //     set value(val: number) {
+    //       this._value = val;
+    //     }
+    //
+    //     async asyncMethod(): Promise<number> {
+    //       return this._value * 2;
+    //     }
+    //   }
+    //   const instance = new SendableTestClass();
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(instance.asyncMethod);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1010
+    //  * @tc.name testIsAsyncFunctionSendableMultipleMethods
+    //  * @tc.desc Test isAsyncFunction with multiple async methods in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableMultipleMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableTestClass {
+    //     private _x: number = 0;
+    //     private _y: number = 0;
+    //
+    //     get x(): number {
+    //       return this._x;
+    //     }
+    //
+    //     set x(val: number) {
+    //       this._x = val;
+    //     }
+    //
+    //     async method1(): Promise<number> {
+    //       return this._x;
+    //     }
+    //
+    //     get y(): number {
+    //       return this._y;
+    //     }
+    //
+    //     set y(val: number) {
+    //       this._y = val;
+    //     }
+    //
+    //     async method2(): Promise<number> {
+    //       return this._y;
+    //     }
+    //   }
+    //   const instance = new SendableTestClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.method1)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.method2)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1020
+    //  * @tc.name testIsAsyncFunctionSendableStaticMethod
+    //  * @tc.desc Test isAsyncFunction with static async method in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableStaticMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableTestClass {
+    //     static async staticAsyncMethod(): Promise<number> {
+    //       return 100;
+    //     }
+    //   }
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(SendableTestClass.staticAsyncMethod);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1030
+    //  * @tc.name testIsAsyncFunctionSendableInherited
+    //  * @tc.desc Test isAsyncFunction with inherited async method in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableInherited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableParentClass {
+    //     async parentMethod(): Promise<string> {
+    //       return 'parent';
+    //     }
+    //   }
+    //   @Sendable
+    //   class SendableChildClass extends SendableParentClass {
+    //     async childMethod(): Promise<string> {
+    //       return 'child';
+    //     }
+    //   }
+    //   const instance = new SendableChildClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.parentMethod)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.childMethod)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1040
+    //  * @tc.name testIsAsyncFunctionSendableOverridden
+    //  * @tc.desc Test isAsyncFunction with overridden async method in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableOverridden', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableParentClass {
+    //     async asyncMethod(): Promise<string> {
+    //       return 'parent';
+    //     }
+    //   }
+    //   @Sendable
+    //   class SendableChildClass extends SendableParentClass {
+    //     async asyncMethod(): Promise<string> {
+    //       return 'child';
+    //     }
+    //   }
+    //   const instance = new SendableChildClass();
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(instance.asyncMethod);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1050
+    //  * @tc.name testIsAsyncFunctionTaskPoolAsync
+    //  * @tc.desc Test isAsyncFunction with async function in TaskPool
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level2
+    //  */
+    // it('testIsAsyncFunctionTaskPoolAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(taskPoolAsyncFunc);
+    //   expect(result).assertFalse();
+    // });
+    //
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1070
+    //  * @tc.name testIsAsyncFunctionSendableComplexScenario
+    //  * @tc.desc Test isAsyncFunction with complex Sendable class scenario
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level2
+    //  */
+    // it('testIsAsyncFunctionSendableComplexScenario', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    //   @Sendable
+    //   class SendableComplexClass {
+    //     private _id: number = 0;
+    //     private _name: string = '';
+    //     private _status: boolean = false;
+    //
+    //     get id(): number {
+    //       return this._id;
+    //     }
+    //
+    //     set id(val: number) {
+    //       this._id = val;
+    //     }
+    //
+    //     async initAsync(): Promise<void> {
+    //       this._id = 100;
+    //     }
+    //
+    //     get name(): string {
+    //       return this._name;
+    //     }
+    //
+    //     set name(val: string) {
+    //       this._name = val;
+    //     }
+    //
+    //     async setNameAsync(val: string): Promise<void> {
+    //       this._name = val;
+    //     }
+    //
+    //     get status(): boolean {
+    //       return this._status;
+    //     }
+    //
+    //     set status(val: boolean) {
+    //       this._status = val;
+    //     }
+    //
+    //     async computeAsync(): Promise<number> {
+    //       return this._id * 2 + this._name.length;
+    //     }
+    //   }
+    //   const instance = new SendableComplexClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.initAsync)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.setNameAsync)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.computeAsync)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1080
+    //  * @tc.name testIsAsyncFunctionSendableGetterSetterSequence
+    //  * @tc.desc Test isAsyncFunction with Sendable class having getter/setter sequence
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableGetterSetterSequence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableSequenceClass {
+    //     private _prop1: number = 1;
+    //     private _prop2: number = 2;
+    //     private _prop3: number = 3;
+    //
+    //     get prop1(): number {
+    //       return this._prop1;
+    //     }
+    //
+    //     set prop1(val: number) {
+    //       this._prop1 = val;
+    //     }
+    //
+    //     async method1(): Promise<number> {
+    //       return this._prop1;
+    //     }
+    //
+    //     get prop2(): number {
+    //       return this._prop2;
+    //     }
+    //
+    //     set prop2(val: number) {
+    //       this._prop2 = val;
+    //     }
+    //
+    //     async method2(): Promise<number> {
+    //       return this._prop2;
+    //     }
+    //
+    //     get prop3(): number {
+    //       return this._prop3;
+    //     }
+    //
+    //     set prop3(val: number) {
+    //       this._prop3 = val;
+    //     }
+    //
+    //     async method3(): Promise<number> {
+    //       return this._prop3;
+    //     }
+    //   }
+    //   const instance = new SendableSequenceClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.method1)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.method2)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.method3)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1090
+    //  * @tc.name testIsAsyncFunctionSendableMixedAccessors
+    //  * @tc.desc Test isAsyncFunction with Sendable class having mixed accessors and methods
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableMixedAccessors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableMixedClass {
+    //     private _value: number = 0;
+    //
+    //     getValue(): number {
+    //       return this._value;
+    //     }
+    //
+    //     async asyncGetValue(): Promise<number> {
+    //       return this._value;
+    //     }
+    //
+    //     get value(): number {
+    //       return this._value;
+    //     }
+    //
+    //     set value(val: number) {
+    //       this._value = val;
+    //     }
+    //
+    //     async asyncSetValue(val: number): Promise<void> {
+    //       this._value = val;
+    //     }
+    //   }
+    //   const instance = new SendableMixedClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.getValue)).assertFalse();
+    //   expect(type.isAsyncFunction(instance.asyncGetValue)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.asyncSetValue)).assertTrue();
+    // });
+    //
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1120
+    //  * @tc.name testIsAsyncFunctionSendableNestedClass
+    //  * @tc.desc Test isAsyncFunction with nested Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level2
+    //  */
+    // it('testIsAsyncFunctionSendableNestedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    //   @Sendable
+    //   class SendableNestedClass {
+    //     private _value: number = 10;
+    //
+    //     get value(): number {
+    //       return this._value;
+    //     }
+    //
+    //     async nestedAsyncMethod(): Promise<number> {
+    //       return this._value * 2;
+    //     }
+    //   }
+    //   const instance = new SendableNestedClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.nestedAsyncMethod)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1130
+    //  * @tc.name testIsAsyncFunctionSendableConcurrentContainer
+    //  * @tc.desc Test isAsyncFunction with async functions in concurrent container
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level2
+    //  */
+    // it('testIsAsyncFunctionSendableConcurrentContainer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    //   const type = new util.types();
+    //   @Sendable
+    //   class SendableTaskClass {
+    //     private _result: number = 0;
+    //
+    //     get result(): number {
+    //       return this._result;
+    //     }
+    //
+    //     async compute(x: number): Promise<number> {
+    //       return x * 2;
+    //     }
+    //   }
+    //   const instance = new SendableTaskClass();
+    //   const result: boolean = type.isAsyncFunction(instance.compute);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1140
+    //  * @tc.name testIsAsyncFunctionSendableMethodWithParams
+    //  * @tc.desc Test isAsyncFunction with Sendable class async method with parameters
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableMethodWithParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableParamClass {
+    //     private _base: number = 5;
+    //
+    //     get base(): number {
+    //       return this._base;
+    //     }
+    //
+    //     async compute(x: number, y: number): Promise<number> {
+    //       return x + y + this._base;
+    //     }
+    //
+    //     async multiply(...args: number[]): Promise<number> {
+    //       return args.reduce((a: number, b: number) => a * b, 1);
+    //     }
+    //   }
+    //   const instance = new SendableParamClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.compute)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.multiply)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1150
+    //  * @tc.name testIsAsyncFunctionSendableAccessorPatterns
+    //  * @tc.desc Test various accessor patterns in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableAccessorPatterns', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableAccessorPatterns {
+    //     private _readOnlyProp: number = 10;
+    //     private _writeOnlyProp: number = 20;
+    //     private _fullProp: number = 30;
+    //
+    //     get readOnlyProp(): number {
+    //       return this._readOnlyProp;
+    //     }
+    //
+    //     set writeOnlyProp(val: number) {
+    //       this._writeOnlyProp = val;
+    //     }
+    //
+    //     get fullProp(): number {
+    //       return this._fullProp;
+    //     }
+    //
+    //     set fullProp(val: number) {
+    //       this._fullProp = val;
+    //     }
+    //
+    //     async methodAfterReadOnly(): Promise<number> {
+    //       return this._readOnlyProp;
+    //     }
+    //
+    //     async methodAfterWriteOnly(): Promise<number> {
+    //       return this._writeOnlyProp;
+    //     }
+    //
+    //     async methodAfterFull(): Promise<number> {
+    //       return this._fullProp;
+    //     }
+    //   }
+    //   const instance = new SendableAccessorPatterns();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.methodAfterReadOnly)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.methodAfterWriteOnly)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.methodAfterFull)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1160
+    //  * @tc.name testIsAsyncFunctionSendablePrivateFields
+    //  * @tc.desc Test isAsyncFunction with Sendable class having private fields
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level2
+    //  */
+    // it('testIsAsyncFunctionSendablePrivateFields', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    //   @Sendable
+    //   class SendablePrivateFieldClass {
+    //     private privateValue: number = 100;
+    //
+    //     get publicValue(): number {
+    //       return this.privateValue;
+    //     }
+    //
+    //     async getPrivateValue(): Promise<number> {
+    //       return this.privateValue;
+    //     }
+    //
+    //     async setPrivateValue(val: number): Promise<void> {
+    //       this.privateValue = val;
+    //     }
+    //   }
+    //   const instance = new SendablePrivateFieldClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.getPrivateValue)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.setPrivateValue)).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1170
+    //  * @tc.name testIsAsyncFunctionSendableDefaultValue
+    //  * @tc.desc Test isAsyncFunction with Sendable class async method with default values
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableDefaultValueClass {
+    //     get id(): number {
+    //       return 0;
+    //     }
+    //
+    //     async compute(x: number = 10, y: number = 20): Promise<number> {
+    //       return x + y;
+    //     }
+    //   }
+    //   const instance = new SendableDefaultValueClass();
+    //   const type = new util.types();
+    //   const result: boolean = type.isAsyncFunction(instance.compute);
+    //   expect(result).assertTrue();
+    // });
+    //
+    // /**
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_1180
+    //  * @tc.name testIsAsyncFunctionSendableReturnTypeVariations
+    //  * @tc.desc Test isAsyncFunction with various return types in Sendable class
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level1
+    //  */
+    // it('testIsAsyncFunctionSendableReturnTypeVariations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   @Sendable
+    //   class SendableReturnClass {
+    //     get value(): number {
+    //       return 0;
+    //     }
+    //
+    //     async returnNumber(): Promise<number> {
+    //       return 42;
+    //     }
+    //
+    //     async returnString(): Promise<string> {
+    //       return 'test';
+    //     }
+    //
+    //     async returnBoolean(): Promise<boolean> {
+    //       return true;
+    //     }
+    //
+    //     async returnArray(): Promise<number[]> {
+    //       return [1, 2, 3];
+    //     }
+    //
+    //     async returnObject(): Promise<object> {
+    //       return new Object();
+    //     }
+    //   }
+    //   const instance = new SendableReturnClass();
+    //   const type = new util.types();
+    //   expect(type.isAsyncFunction(instance.returnNumber)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.returnString)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.returnBoolean)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.returnArray)).assertTrue();
+    //   expect(type.isAsyncFunction(instance.returnObject)).assertTrue();
+    // });
+  });
+}
