@@ -96,16 +96,6 @@ export default function GenericTypeParameterTest() {
     afterAll(() => {
     })
 
-    describe('TypeParameter', () => {
-      beforeAll(() => {
-      })
-      beforeEach(async () => {
-      })
-      afterEach(() => {
-      })
-      afterAll(() => {
-      })
-
       /**
        * @tc.number    SUB_GENERIC_TP_PARAMETER_0100
        * @tc.name      testSingleTypeParamFunctionNumber0001
@@ -250,5 +240,4 @@ export default function GenericTypeParameterTest() {
         expect(outer.pickInner<string>('inner-shadow')).assertEqual('inner-shadow')
       })
     })
-  })
 }

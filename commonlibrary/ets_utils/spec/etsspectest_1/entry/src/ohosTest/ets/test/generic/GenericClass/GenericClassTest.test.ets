@@ -137,16 +137,6 @@ export default function GenericClassTest() {
     afterAll(() => {
     })
 
-    describe('GenericClass', () => {
-      beforeAll(() => {
-      })
-      beforeEach(async () => {
-      })
-      afterEach(() => {
-      })
-      afterAll(() => {
-      })
-
       /**
        * @tc.number    SUB_GENERIC_GC_CLASS_0100
        * @tc.name      testClassBasicDeclarationValue0001
@@ -321,5 +311,4 @@ export default function GenericClassTest() {
         expect(box.getValue().second).assertEqual('nested')
       })
     })
-  })
 }

@@ -191,16 +191,6 @@ export default function GenericInheritanceTest() {
     afterAll(() => {
     })
 
-    describe('GenericInheritance', () => {
-      beforeAll(() => {
-      })
-      beforeEach(async () => {
-      })
-      afterEach(() => {
-      })
-      afterAll(() => {
-      })
-
       /**
        * @tc.number    SUB_GENERIC_IH_INHERITANCE_0100
        * @tc.name      testInterfaceExtendsPassT0001
@@ -449,5 +439,4 @@ export default function GenericInheritanceTest() {
         expect(derived.getValue()).assertEqual('cross')
       })
     })
-  })
 }

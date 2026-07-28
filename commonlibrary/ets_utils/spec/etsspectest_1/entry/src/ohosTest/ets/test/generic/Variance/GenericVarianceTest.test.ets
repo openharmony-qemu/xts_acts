@@ -114,16 +114,6 @@ export default function GenericVarianceTest() {
     afterAll(() => {
     })
 
-    describe('Variance', () => {
-      beforeAll(() => {
-      })
-      beforeEach(async () => {
-      })
-      afterEach(() => {
-      })
-      afterAll(() => {
-      })
-
       /**
        * @tc.number    SUB_GENERIC_VA_VARIANCE_0100
        * @tc.name      testProducerGenericUsage0001
@@ -239,5 +229,4 @@ export default function GenericVarianceTest() {
         expect(consumer.readLastSound()).assertEqual('mew')
       })
     })
-  })
 }
