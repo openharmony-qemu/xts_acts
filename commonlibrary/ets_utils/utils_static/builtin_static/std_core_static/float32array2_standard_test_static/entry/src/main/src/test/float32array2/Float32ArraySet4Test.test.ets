@@ -1997,3 +1997,158 @@ export default function Float32ArraySet4Test(): void {
       const element097 = arr.$_get(0);
       expect(element097).assertNaN();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_0980
+     * @tc.name testFloat32ArraySetFour098
+     * @tc.desc Verify set(0, Infinity) and set(0, val:number) both set element 0 to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      a.set(0, Number.POSITIVE_INFINITY);
+      const v = Number.POSITIVE_INFINITY;
+      b.set(0, v);
+      const element098 = a.$_get(0);
+      expect(element098).assertEqual(Number.POSITIVE_INFINITY);
+      const element098Part2 = b.$_get(0);
+      expect(element098Part2).assertEqual(Number.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_0990
+     * @tc.name testFloat32ArraySetFour099
+     * @tc.desc Verify set(0, -0.0) and set(0, val:number) both preserve negative zero sign
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      a.set(0, -0.0);
+      const v: number = -0.0;
+      b.set(0, v);
+      const element099 = 1 / a.$_get(0);
+      expect(element099).assertEqual(-Number.POSITIVE_INFINITY);
+      const element099Part2 = 1 / b.$_get(0);
+      expect(element099Part2).assertEqual(-Number.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1000
+     * @tc.name testFloat32ArraySetFour100
+     * @tc.desc Verify set(0, -Float32.MAX) sets element 0 to -3.4028234663852886e+38
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array(1);
+      const v = -3.4028234663852886e+38;
+      arr.set(0, v);
+      const element100 = arr.$_get(0);
+      expect(element100).assertEqual(-3.4028234663852886e+38);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1010
+     * @tc.name testFloat32ArraySetFour101
+     * @tc.desc Verify set(0, 0.1) and set(FixedArray) both set element 0 to 0.10000000149011612
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      a.set(0, 0.1);
+      const src: FixedArray<number> = [0.1];
+      b.set(src);
+      const element101 = a.$_get(0);
+      expect(element101).assertEqual(0.10000000149011612);
+      const element101Part2 = b.$_get(0);
+      expect(element101Part2).assertEqual(0.10000000149011612);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1020
+     * @tc.name testFloat32ArraySetFour102
+     * @tc.desc Verify set(0, 1.0000001) and set(FixedArray) both set element 0 to 1.0000001192092896
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      a.set(0, 1.0000001);
+      const src: FixedArray<number> = [1.0000001];
+      b.set(src);
+      const element102 = a.$_get(0);
+      expect(element102).assertEqual(1.0000001192092896);
+      const element102Part2 = b.$_get(0);
+      expect(element102Part2).assertEqual(1.0000001192092896);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1030
+     * @tc.name testFloat32ArraySetFour103
+     * @tc.desc Verify set(0, 16777216) and set(FixedArray) both set element 0 to 16777216
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      a.set(0, 16777216);
+      const src: FixedArray<number> = [16777216.0];
+      b.set(src);
+      const element103 = a.$_get(0);
+      expect(element103).assertEqual(16777216);
+      const element103Part2 = b.$_get(0);
+      expect(element103Part2).assertEqual(16777216);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1040
+     * @tc.name testFloat32ArraySetFour104
+     * @tc.desc Verify set(0, val:E) and set(0, val:number) with 16777217 both round to 16777216
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Float32Array(1);
+      const b = new Float32Array(1);
+      const vf = 16777217;
+      a.set(0, vf);
+      b.set(0, 16777217);
+      const element104 = a.$_get(0);
+      expect(element104).assertEqual(16777216);
+      const element104Part2 = b.$_get(0);
+      expect(element104Part2).assertEqual(16777216);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_1050
+     * @tc.name testFloat32ArraySetFour105
+     * @tc.desc Verify set(ArrayLike) with -2147483648.0 sets element 0 to -2147483648
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArraySetFour105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array(1);
+      const src: Array<number> = Array.of(-2147483648.0);
+      arr.set(src);
+      const element105 = arr.$_get(0);
+      expect(element105).assertEqual(-2147483648);
+    });
+
+  });
+}
