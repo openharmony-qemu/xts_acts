@@ -1,0 +1,16 @@
+export const testAniArrayDouble: (arr: number[]) => number[];
+export const testAniMatrixTranspose: (buf: ArrayBuffer, rows: number, cols: number) => ArrayBuffer;
+export const testAniXorEncrypt: (buf: ArrayBuffer) => boolean;
+export const testAniFileCopy: (srcPath: string, dstPath: string, size: number) => boolean;
+export const testAniSysInfo: () => Object;
+export const testAniCreatePhysics: (gravity: number) => number;
+export const testAniStepPhysics: (handle: number, dt: number) => number;
+export const testAniDestroyPhysics: (handle: number) => void;
+export const testAniFeatureExtract: (data: number[]) => Object;
+export const testAniErrorTrigger: () => boolean;
+export const testAniParallelSum: (taskCount: number) => Object;
+export const testAniAsyncCompute: (callback: Function) => boolean;
+export const testAniCachedLookup: () => boolean;
+export const testAniDynamicRegistration: () => boolean;
+export const dynAdd: (a: number, b: number) => number;
+export const dynSub: (a: number, b: number) => number;

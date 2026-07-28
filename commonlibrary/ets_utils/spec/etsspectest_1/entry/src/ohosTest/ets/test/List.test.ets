@@ -30,6 +30,25 @@ import OptionalParameterTest from './function/optionalParameter/OptionalParamete
 import RestParameterTest from './function/restParameter/RestParameterTest.test';
 import ReturnTypeTest from './function/returnType/ReturnTypeTest.test';
 
+//generic
+import GenericTypeParameterTest from "./generic/TypeParameter/GenericTypeParameterTest.test";
+import GenericFunctionTest from "./generic/GenericFunction/GenericFunctionTest.test";
+import GenericClassTest from "./generic/GenericClass/GenericClassTest.test";
+import GenericInterfaceTest from "./generic/GenericInterface/GenericInterfaceTest.test";
+import GenericInferenceTest from "./generic/TypeInference/GenericInferenceTest.test";
+import GenericConstraintTest from "./generic/GenericConstraint/GenericConstraintTest.test";
+import GenericInheritanceTest from "./generic/GenericInheritance/GenericInheritanceTest.test";
+import GenericVarianceTest from "./generic/Variance/GenericVarianceTest.test";
+import RuntimeABCTest from "./generic/RuntimeABC/RuntimeABCTest.test";
+import GenericInteropTest from "./generic/Interoperability/GenericInteropTest.test";
+import DefaultTypeParameterTest from "./generic/DefaultTypeParameter/DefaultTypeParameterTest.test";
+import GenericOverloadTest from "./generic/GenericOverload/GenericOverloadTest.test";
+import GenericOverrideTest from "./generic/GenericOverride/GenericOverrideTest.test";
+import GenericUtilityTypeTest from "./generic/UtilityType/GenericUtilityTypeTest.test";
+
+//module
+import ModuleSyntaxTest from './module/ModuleSyntaxTest.test';
+
 export default function testsuite() {
   ClassDeclarationTest();
   ClassTypeTest();
@@ -62,4 +81,23 @@ export default function testsuite() {
   OptionalParameterTest();
   RestParameterTest();
   ReturnTypeTest();
+
+  //generic
+  GenericTypeParameterTest();
+  GenericFunctionTest();
+  GenericClassTest();
+  GenericInterfaceTest();
+  GenericInferenceTest();
+  GenericConstraintTest();
+  GenericInheritanceTest();
+  GenericVarianceTest();
+  RuntimeABCTest();
+  GenericInteropTest();
+  DefaultTypeParameterTest();
+  GenericOverloadTest();
+  GenericOverrideTest();
+  GenericUtilityTypeTest();
+
+  //module
+  ModuleSyntaxTest();
 }

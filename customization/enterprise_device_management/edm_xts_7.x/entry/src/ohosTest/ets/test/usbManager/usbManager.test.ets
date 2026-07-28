@@ -316,8 +316,8 @@ function testAddDisallowedPermissiveUsbDevices() {
       usbManager.addDisallowedPermissiveUsbDevices(SELFWANT, usbDevices);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
         expect(error.code === 9200010).assertTrue();
       }
@@ -342,7 +342,7 @@ function testAddDisallowedPermissiveUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, USB_DISALLOWED_DEVICES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200010).assertTrue();
+      expect(Number(error.code) === 9200010).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -364,7 +364,7 @@ function testAddDisallowedPermissiveUsbDevices() {
       usbManager.addAllowedUsbDevices(SELFWANT, USB_ALLOWED_DEVICES);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200010).assertTrue();
+      expect(Number(error.code) === 9200010).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -386,7 +386,7 @@ function testAddDisallowedPermissiveUsbDevices() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200010).assertTrue();
+      expect(Number(error.code) === 9200010).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -413,10 +413,10 @@ function testAddDisallowedPermissiveUsbDevices() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_WRITE, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 9200010).assertTrue();
+        expect(Number(error.code) === 9200010).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

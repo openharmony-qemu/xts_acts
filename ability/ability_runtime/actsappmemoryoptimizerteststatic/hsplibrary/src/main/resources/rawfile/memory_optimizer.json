@@ -1,0 +1,5 @@
+{
+  "evictFilePages": [
+    "hsplibrary.hsp", "libentry.so", "libentry.txt"
+  ]
+}

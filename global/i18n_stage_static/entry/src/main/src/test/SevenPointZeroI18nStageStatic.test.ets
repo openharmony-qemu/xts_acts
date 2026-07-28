@@ -178,7 +178,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_static_0600 catch error:', e.code + e.message);
-        expect(Number(e.code) === 8900001).assertTrue();
+        expect(e.code === 8900001).assertTrue();
       }
     })
 
@@ -2850,6 +2850,68 @@ export default function SevenPointZeroI18nStageStaticTest() {
       }catch(e){
         expect(Number(e.code)).assertEqual(8900001);
       }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_static_1100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_0100
+     * @tc.desc test SymbolDateTimeFormat with empty locale param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_static_1100', Level.LEVEL3, () => {
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ['AM', 'PM'] };
+      let symbolFormat = new i18n.SymbolDateTimeFormat(undefined, customSymbol);
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolDateTimeFormat_static_1100 result:', options.amPMSymbol);
+      expect(options.amPMSymbol?.toString() == "AM,PM").assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_static_1200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_0100
+     * @tc.desc test SymbolDateTimeFormat with empty param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolDateTimeFormat_static_1200', Level.LEVEL3, () => {
+      let symbolFormat = new i18n.SymbolDateTimeFormat();
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolDateTimeFormat_static_1200 result:', options.amPMSymbol);
+      expect(options.amPMSymbol?.toString() !== null).assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_static_3000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1100
+     * @tc.desc test SymbolNumberFormat with empty locale param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolNumberFormat_static_3000', Level.LEVEL3, () => {
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
+      let symbolFormat = new i18n.SymbolNumberFormat(undefined, customSymbol);
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolNumberFormat_static_3000 result:', options.zero);
+      expect(options.zero === 'B').assertTrue();
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_static_3100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1100
+     * @tc.desc test SymbolNumberFormat with empty param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('test_SymbolNumberFormat_static_3100', Level.LEVEL3, () => {
+      let symbolFormat = new i18n.SymbolNumberFormat();
+      let options = symbolFormat.resolvedOptions();
+      console.log('test_SymbolNumberFormat_static_3100 result:', options.zero);
+      expect(options.zero === '0').assertTrue();
     })
 
   })

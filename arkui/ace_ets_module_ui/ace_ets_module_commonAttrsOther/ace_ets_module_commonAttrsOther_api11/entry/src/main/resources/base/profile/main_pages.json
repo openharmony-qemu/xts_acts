@@ -9,6 +9,7 @@
 
 
         "MainAbility/pages/overlay/overlay",
+        "MainAbility/pages/overlay/onBackPress",
         "MainAbility/pages/visibility/visibility",
         "MainAbility/pages/zIndex/zIndex",
         "MainAbility/pages/attributeModifier/AttributeModifierDemoAPI01",

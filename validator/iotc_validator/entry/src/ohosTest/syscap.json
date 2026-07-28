@@ -1,0 +1,33 @@
+{
+  "devices": {
+    "general": [
+      "default",
+      "tablet"
+    ],
+    "custom": [
+    ]
+  },
+  "development": {
+    "addedSysCaps": [
+      "SystemCapability.ArkUi.Graphics3D"
+    ]
+  },
+  "production": {
+    "addedSysCaps": [
+    ],
+    "removedSysCaps": [
+      "SystemCapability.Multimedia.AVSession.ExtendedDisplayCast",
+      "SystemCapability.HiviewDFX.HiDumper",
+      "SystemCapability.Security.DataTransitManager",
+      "SystemCapability.Multimedia.MediaLibrary.Core",
+      "SystemCapability.Multimedia.MediaLibrary.DistributedCore",
+      "SystemCapability.PowerManager.BatteryManager.Extension",
+      "SystemCapability.PowerManager.PowerManager.Extension",
+      "SystemCapability.Security.DeviceSecurityLevel",
+      "SystemCapability.UserIAM.UserAuth.PinAuth",
+      "SystemCapability.Security.DeviceAuth",
+      "SystemCapability.Window.SessionManager",
+      "SystemCapability.ArkUi.Graphics3D"
+    ]
+  }
+}

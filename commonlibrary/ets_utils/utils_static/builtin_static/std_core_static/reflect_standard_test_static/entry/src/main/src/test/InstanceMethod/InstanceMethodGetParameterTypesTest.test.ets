@@ -945,7 +945,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
       let abMethod = cls.getInstanceMethod('arrayBufferParam');
       expect(abMethod!.getParameterTypes()[0].getName()).assertEqual('std.core.ArrayBuffer');
       let arrMethod = cls.getInstanceMethod('int32ArrayParam');
-      expect(arrMethod!.getParameterTypes()[0].getName()).assertEqual('std.core.Int32Array');
+      expect(arrMethod!.getParameterTypes()[0].getName()).assertEqual('escompat.Int32Array');
     });
 
     /**

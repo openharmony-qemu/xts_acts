@@ -119,7 +119,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that fields of different types have consistent access behavior, including direct read/write access and getter/setter calls.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let i: IBalance1 = new BalanceImpl1();
@@ -136,7 +136,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that in inheritance scenarios, when accessing a property through an interface reference, the implicit getter is called to read the parent class field.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let d = new Dog2()
@@ -153,7 +153,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that when an interface property is readonly, the compiler only generates a getter, and writing has no effect.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let i1: IReadOnly3 = new ReadonlyImpl3();
@@ -168,7 +168,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that after writing to a property through an interface reference, the class instance reads the same field value consistently.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let i: ICallback4 = new CallbackImpl4();
@@ -185,7 +185,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that after writing to a property through an interface reference, the implicit setter is called to update the class field value.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let c = new XYImpl5();
@@ -207,7 +207,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc Verify that when writing to a field through a class instance, the value is correctly updated and can be read back for verification.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let d: Dog6 = new Dog6();
@@ -224,7 +224,7 @@ export default function classPropertyMappingNormalizationTest(): void {
      * @tc.desc When reading a field through a class instance, the direct access operation returns the expected value.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassPropertyMappingNormalizationTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       for (let i = 0; i < items.length; i++) {

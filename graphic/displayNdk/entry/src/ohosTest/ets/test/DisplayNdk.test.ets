@@ -95,8 +95,8 @@ export default function DisplayNdkTest() {
         }
       } catch (err) {
         console.log('jsUnittest beforeAll getDisplayCapability failed' + err.code+' ' +err.message);
-        if(err.code == 801){
-          code = 801;
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
         }else {
           console.log('jsUnittest getDisplayCapability failed');
         }
@@ -229,7 +229,7 @@ export default function DisplayNdkTest() {
         console.log(caseName + 'jsOrientation :'+ display1.rotation);
         let rotation = display1.rotation;
         console.log(caseName + 'displayOrientation :'+ displayOrientation);
-        if(code == 801){
+        if(!isSyscapSessionManagerSupported){
             expect(displayOrientation).assertEqual(0);
              done();
           }else {

@@ -11628,10 +11628,10 @@ function testSetDisallowedForAccountPolicy26() {
       applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 9200010).assertTrue();
+        expect(Number(error.code) === 9200010).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11698,10 +11698,10 @@ function testSetDisallowedForAccountPolicy26() {
       deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(error.code === 9200010).assertTrue();
+        expect(Number(error.code) === 9200010).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

@@ -560,6 +560,128 @@ export default function displayTest() {
     });
 
     /**
+    * @tc.name   testOnAdd_createVirtualScreen
+    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5220
+    * @tc.desc   register on('add') listener and create virtual screen to trigger it
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level   LEVEL0
+    */
+    it('testOnAdd_createVirtualScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnAdd_createVirtualScreen';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let addTriggered: number = 0;
+      let screenId: number = -1;
+      const callback = (displayId: number) => {
+        console.info(msgStr + 'on add triggered, displayId: ' + displayId);
+        addTriggered++;
+        expect(displayId).assertEqual(screenId);
+        expect(addTriggered).assertEqual(1);
+
+        display.off('add', callback);
+        console.info(msgStr + 'off add success');
+        display.destroyVirtualScreen(screenId).then(() => {
+          console.info(msgStr + 'Succeeded in destroying the virtual screen.');
+        }).catch((err: BusinessError) => {
+          console.error(msgStr + `Failed to destroy the virtual screen. Code: ${err.code}, message: ${err.message}`);
+        });
+        done();
+      };
+      try {
+        display.on('add', callback);
+        console.info(msgStr + 'on add registered');
+        class VirtualScreenOptions {
+          name: string = '';
+          width: number = 0;
+          height: number = 0;
+          density: number = 0;
+          surfaceId: string = '';
+        }
+        let option: VirtualScreenOptions = {
+          name: 'screenOnAdd',
+          width: 1080,
+          height: 2340,
+          density: 2,
+          surfaceId: ''
+        };
+        screenId = await display.createVirtualScreen(option);
+        console.info(msgStr + 'createVirtualScreen success, screenId: ' + screenId);
+        display.makeUnique(screenId).then(() => {
+          console.info(msgStr + 'succeeded in destroy virtual screen, data : ');
+        }).catch((err: BusinessError) => {
+          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Code: ' + JSON.stringify(exception));
+        display.off('add', callback);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   testOnRemove_destroyVirtualScreen
+    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5230
+    * @tc.desc   register on('remove') listener and destroy virtual screen to trigger it
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level   LEVEL0
+    */
+    it('testOnRemove_destroyVirtualScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnRemove_destroyVirtualScreen';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      await sleep(3000);
+      let removeTriggered: number = 0;
+      let screenId: number = -1;
+      const callback = (displayId: number) => {
+        console.info(msgStr + 'on remove triggered, displayId: ' + displayId);
+        removeTriggered++;
+        expect(displayId).assertEqual(screenId);
+        expect(removeTriggered).assertEqual(1);
+        display.off('remove', callback);
+        console.info(msgStr + 'off remove success');
+        done();
+      };
+      try {
+        display.on('remove', callback);
+        console.info(msgStr + 'on remove registered');
+        class VirtualScreenOptions {
+          name: string = '';
+          width: number = 0;
+          height: number = 0;
+          density: number = 0;
+          surfaceId: string = '';
+        }
+        let option: VirtualScreenOptions = {
+          name: 'screenOnRemove',
+          width: 1080,
+          height: 2340,
+          density: 2,
+          surfaceId: ''
+        };
+        screenId = await display.createVirtualScreen(option);
+        console.info(msgStr + 'createVirtualScreen success, screenId: ' + screenId);
+        await sleep(1000);
+        await display.destroyVirtualScreen(screenId);
+        console.info(msgStr + 'destroyVirtualScreen success');
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Code: ' + JSON.stringify(exception));
+        display.off('remove', callback);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testCaptureStatusChange_On_Off
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
      * @tc.desc   register and unregister capture status
@@ -1294,13 +1416,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(err.code).assertEqual(401);
-          done();
-        }
+        expect(err.code).assertEqual(401);
+        done();
       }
     });
     /**
@@ -1320,13 +1437,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           done();
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
-          if (err.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -1339,13 +1451,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           done();
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
-          if (err.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         });
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -1425,11 +1532,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-        } else {
-          expect(err.code).assertEqual(401);
-        }
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1549,7 +1652,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         })
       } catch (err) {
         console.log(caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue();
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1604,7 +1707,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
          })
         }
         console.log(caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue();
+        expect(err.code).assertEqual(401);
         done();
        }
       });
@@ -1681,6 +1784,78 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       } catch (e) {
         console.log(msgStr + 'Failed to call off_foldAngleChange. Cause:' + JSON.stringify(e));
         expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldAngleChange2
+    * @tc.number testOffFoldAngleChangeErrCode401_0200
+    * @tc.desc   off_foldAngleChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldAngleChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldAngleChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback = (res: Array<number>) => { }
+        display.off('foldAngleChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldAngleChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldAngleChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldDisplayModeChange2
+    * @tc.number testOffFoldDisplayModeChangeErrCode401_0200
+    * @tc.desc   off_foldDisplayModeChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldDisplayModeChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldDisplayModeChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback: Callback<display.FoldDisplayMode> = (data: display.FoldDisplayMode) => { };
+        display.off('foldDisplayModeChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldDisplayModeChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldDisplayModeChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldStatusChange2
+    * @tc.number testOffFoldStatusChangeErrCode401_0200
+    * @tc.desc   off_foldStatusChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldStatusChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldStatusChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback: Callback<display.FoldStatus> = (data: display.FoldStatus) => { };
+        display.off('foldStatusChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldStatusChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldStatusChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
         done()
       }
     });
@@ -3174,11 +3349,6 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
 
         if(deviceType !== 'tv' && !isDeskTop) {
           let driver: Driver = Driver.create();
-          let buttonOne = await driver.findComponent(ON.text('next page'));
-          console.info(caseName + `buttonOne is ${JSON.stringify(buttonOne)}`);
-          if(buttonOne){
-            await buttonOne.click();
-          }
           await sleep(100);
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
@@ -3210,6 +3380,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           display.on('brightnessInfoChange', callback1);
           display.on('brightnessInfoChange', callback2);
           console.info(caseName + ' Brightness change listeners registered successfully');
+          let buttonOne = await driver.findComponent(ON.text('next page'));
+          console.info(caseName + `buttonOne is ${JSON.stringify(buttonOne)}`);
+          if(buttonOne){
+            await buttonOne.click();
+          }
+          await sleep(200);
           await windowClass.setWindowBrightness(0);
           if(buttonOne){
             await buttonOne.click();
@@ -3243,7 +3419,6 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           if(buttonOne){
             await buttonOne.click();
           }
-          await sleep(100);
           await sleep(100);
           display.off('brightnessInfoChange');
         } else {

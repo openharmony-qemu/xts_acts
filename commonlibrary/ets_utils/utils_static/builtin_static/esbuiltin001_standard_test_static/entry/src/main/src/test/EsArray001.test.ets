@@ -2591,7 +2591,7 @@ export default function EsArrayTest001(): void {
             const caseName = 'ESArrayPrototypeTest0102';
             console.info(`${caseName}, test start`);
             let arr: Array<number> = Array.create<number>(1, +0);
-            expect(arr.indexOf(-0)).assertEqual(-1);
+            expect(arr.indexOf(-0)).assertEqual(0);
             console.info(`${caseName}, test end`);
         });
 
@@ -2607,7 +2607,7 @@ export default function EsArrayTest001(): void {
             const caseName = 'ESArrayPrototypeTest0103';
             console.info(`${caseName}, test start`);
             let arr: Array<number> = Array.create<number>(1, -0);
-            expect(arr.indexOf(+0)).assertEqual(-1);
+            expect(arr.indexOf(+0)).assertEqual(0);
             console.info(`${caseName}, test end`);
         });
 
@@ -3486,10 +3486,10 @@ export default function EsArrayTest001(): void {
             const caseName = 'ESArrayPrototypeTest0141';
             console.info(`${caseName}, test start`);
             let arrPos0: Array<number> = Array.create<number>(1, +0);
-            expect(arrPos0.lastIndexOf(-0)).assertEqual(-1);
+            expect(arrPos0.lastIndexOf(-0)).assertEqual(0);
 
             let arrNeg0: Array<number> = Array.create<number>(1, -0);
-            expect(arrNeg0.lastIndexOf(+0)).assertEqual(-1);
+            expect(arrNeg0.lastIndexOf(+0)).assertEqual(0);
 
             let arrNums: Array<number> = new Array<number>(-1, 0, 1);
             expect(arrNums.lastIndexOf(-1)).assertEqual(0);

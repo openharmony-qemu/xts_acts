@@ -2910,5 +2910,135 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0100
+         * @tc.desc   Test setBLEMtu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let device: bluetooth.GattClientDevice = bluetooth.createGattClientDevice('11:22:33:44:55:66');
+                let outMtuSize: number = await device.setBLEMtu(128);
+                console.info('实际设置的mtu：' + outMtuSize);
+                expect().assertFail();
+            } catch (err) {
+                console.error("setBLEMtu error，errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 ) {
+                    console.info('[bluetooth_js]setBLEMtu is not support or setBLEMtu as it is out of hardware');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0200
+         * @tc.desc   Test setBLEMtu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let device: bluetooth.GattClientDevice = bluetooth.createGattClientDevice('11:22:33:44:55:66');
+                let outMtuSize: number = await device.setBLEMtu(23);
+                console.info('实际设置的mtu：' + outMtuSize);
+                expect().assertFail();
+            } catch (err) {
+                console.error("setBLEMtu error，errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 ) {
+                    console.info('[bluetooth_js]setBLEMtu is not support or setBLEMtu as it is out of hardware');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0300
+         * @tc.desc   Test setBLEMtu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let device: bluetooth.GattClientDevice = bluetooth.createGattClientDevice('11:22:33:44:55:66');
+                let outMtuSize: number = await device.setBLEMtu(517);
+                console.info('实际设置的mtu：' + outMtuSize);
+                expect().assertFail();
+            } catch (err) {
+                console.error("setBLEMtu error，errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 ) {
+                    console.info('[bluetooth_js]setBLEMtu is not support or setBLEMtu as it is out of hardware');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0400
+         * @tc.desc   Test setBLEMtu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let device: bluetooth.GattClientDevice = bluetooth.createGattClientDevice('11:22:33:44:55:66');
+                let outMtuSize: number = await device.setBLEMtu(22);
+                console.info('实际设置的mtu：' + outMtuSize);
+                expect().assertFail();
+            } catch (err) {
+                console.error("setBLEMtu error，errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 ) {
+                    console.info('[bluetooth_js]setBLEMtu is not support or setBLEMtu as it is out of hardware');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0500
+         * @tc.desc   Test setBLEMtu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATT_SETBLEMTU_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let device: bluetooth.GattClientDevice = bluetooth.createGattClientDevice('11:22:33:44:55:66');
+                let outMtuSize: number = await device.setBLEMtu(518);
+                console.info('实际设置的mtu：' + outMtuSize);
+                expect().assertFail();
+            } catch (err) {
+                console.error("setBLEMtu error，errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 ) {
+                    console.info('[bluetooth_js]setBLEMtu is not support or setBLEMtu as it is out of hardware');
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
     })
 }
