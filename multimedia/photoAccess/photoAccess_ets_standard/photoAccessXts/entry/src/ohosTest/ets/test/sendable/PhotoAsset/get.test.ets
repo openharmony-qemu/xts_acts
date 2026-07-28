@@ -27,7 +27,8 @@ import {
   getPermission,
   driveFn,
   LOG_TAG,
-  getSendableFileAsset
+  getSendableFileAsset,
+  waitForLcdSizePopulateds
 } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
@@ -141,6 +142,7 @@ export default function sendableGetTest() {
       await getPermission();
       await driveFn();
       await pushCreateAsset(testContext, fileNameList);
+      await waitForLcdSizePopulateds(fileNameList, 15000);
     });
 
     beforeEach(() => {
