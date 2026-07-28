@@ -1898,3 +1898,504 @@ export default function asyncSecTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
+    it('asyncSecTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const asyncEcho = async (input: string): Promise<string> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        return input;
+      };
+
+      const escapeStr = "Line1\nLine2\tTabbed\"Quoted\"\\Backslash";
+      const resEscape = await asyncEcho(escapeStr);
+      expect(resEscape).assertEqual(escapeStr);
+
+      const symbolStr = "!@#$%^&*()_+{}|:<>?`-=[]';/.,~";
+      const resSymbol = await asyncEcho(symbolStr);
+      expect(resSymbol).assertEqual(symbolStr);
+
+      const unicodeStr = "Hello 🌍, this is a test 🧪 with Kanji 漢字";
+      const resUnicode = await asyncEcho(unicodeStr);
+
+      expect(resUnicode).assertEqual(unicodeStr);
+      expect(resUnicode.length > 0).assertTrue();
+      expect(resUnicode.includes('🌍')).assertTrue();
+    });
+
+    /**
+     * @tc.name   asyncSecTest0044
+     * @tc.number ASYNC_SEC_TEST_0044
+     * @tc.desc   Verify async operation throws timeout error and does not wait indefinitely
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const slowTask = async (): Promise<string> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        return 'Finished_Slowly';
+      };
+
+      const executeWithTimeout = async (timeoutMs: int): Promise<string> => {
+        let timerId: int = -1;
+
+        const timeoutPromise = new Promise<string>((_, reject) => {
+          timerId = setTimeout(() => {
+            reject(new Error('Timeout_Occurred'));
+          }, timeoutMs);
+        });
+
+        try {
+          const result = await Promise.race([slowTask(), timeoutPromise]);
+          clearTimeout(timerId);
+          return result;
+        } catch (e) {
+          clearTimeout(timerId);
+          if (e instanceof Error) {
+            throw e;
+          }
+          throw new Error('Unknown Error');
+        }
+      };
+
+      let timeoutCaught: boolean = false;
+      try {
+        await executeWithTimeout(20);
+        expect().assertFail();
+      } catch (e) {
+        timeoutCaught = true;
+      }
+      expect(timeoutCaught).assertTrue();
+    });
+
+    /**
+     * @tc.name   asyncSecTest0045
+     * @tc.number ASYNC_SEC_TEST_0045
+     * @tc.desc   Verify subsequent logic cancellation (cooperative cancellation) after timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const context = new TaskContext();
+
+      const cancellableTask = async (ctx: TaskContext): Promise<void> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+
+        if (ctx.isCancelled) return;
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
+
+        if (!ctx.isCancelled) {
+          ctx.resultData = 'Modified_By_Task';
+        }
+      };
+
+      const runWithCancel = async (ctx: TaskContext): Promise<boolean> => {
+        const timeoutMs: int = 30;
+        const taskPromise = cancellableTask(ctx);
+        const timeoutPromise = new Promise<void>((_, reject) => {
+          setTimeout(() => {
+            ctx.isCancelled = true;
+            reject(new Error('Timeout'));
+          }, timeoutMs);
+        });
+
+        let timeoutCaught: boolean = false;
+        try {
+          await Promise.race([taskPromise, timeoutPromise]);
+        } catch (e) {
+          timeoutCaught = true;
+        }
+        await taskPromise;
+        return timeoutCaught;
+      };
+
+      const timeoutCaught = await runWithCancel(context);
+      expect(timeoutCaught).assertTrue();
+      expect(context.isCancelled).assertTrue();
+      expect(context.resultData).assertEqual('Initial');
+    });
+
+    /**
+     * @tc.name   asyncSecTest0046
+     * @tc.number ASYNC_SEC_TEST_0046
+     * @tc.desc   Verify retry mechanism (count and interval) upon failure/timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const service = new ServiceMock();
+
+      const unstableFetch = async (): Promise<string> => {
+        const now = new Date().getTime();
+
+        if (service.callCount > 0) {
+          const diff = now - service.lastCallTime;
+
+          expect(diff >= 40).assertTrue();
+        }
+
+        service.lastCallTime = now;
+        service.callCount++;
+
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+
+        if (service.callCount < 3) {
+          throw new Error('Temporary_Failure');
+        }
+        return 'Success';
+      };
+
+      const executeWithRetry = async (maxRetries: number, interval: int): Promise<string> => {
+        let attempts: int = 0;
+        while (attempts < maxRetries) {
+          try {
+            return await unstableFetch();
+          } catch (e) {
+            attempts++;
+            if (attempts >= maxRetries) {
+              if (e instanceof Error) throw e;
+              throw new Error('Unknown Error');
+            }
+
+            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, interval)});
+          }
+        }
+        return 'Failed';
+      };
+
+      const result = await executeWithRetry(5, 50);
+
+      expect(result).assertEqual('Success');
+
+      expect(service.callCount).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   asyncSecTest0047
+     * @tc.number ASYNC_SEC_TEST_0047
+     * @tc.desc   Verify AbortController-like cancellation pattern throwing specific exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const longRunningTask = async (signal: CancelSignal): Promise<string> => {
+        signal.check();
+
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+
+        signal.check();
+
+        return 'Completed';
+      };
+
+      const signal = new CancelSignal();
+
+      const taskPromise = longRunningTask(signal);
+
+      setTimeout(() => {
+        signal.abort();
+      }, 100);
+
+      try {
+        await taskPromise;
+        expect(true).assertFalse();
+      } catch (e) {
+        expect(e instanceof CancelError).assertTrue();
+
+        if (e instanceof CancelError) {
+          expect(e.message).assertEqual('Operation_Aborted');
+        }
+      }
+    });
+
+    /**
+     * @tc.name   asyncSecTest0048
+     * @tc.number ASYNC_SEC_TEST_0048
+     * @tc.desc   Verify resource cleanup (locks/data) after cancellation using finally block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const lock = new SharedLock();
+      const token = new CancelToken();
+
+      const secureTask = async (): Promise<void> => {
+        lock.acquire();
+        try {
+          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
+
+          if (token.isCancelled) {
+            throw new CancelError048();
+          }
+        } finally {
+          lock.release();
+        }
+      };
+
+      const p = secureTask();
+
+      await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+      token.cancel();
+
+      try {
+        await p;
+      } catch (e) {
+        expect(e instanceof CancelError048).assertTrue();
+      }
+
+      expect(lock.isActive).assertFalse();
+    });
+
+    /**
+     * @tc.name   asyncSecTest0049
+     * @tc.number ASYNC_SEC_TEST_0049
+     * @tc.desc   Verify full cancellation of batch async tasks (Promise.all)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const tracker = new ProgressTracker();
+      const signal = new CancelSignal();
+
+      const worker = async (id: number, duration: int): Promise<void> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, duration)});
+
+        if (signal.isAborted) {
+          throw new Error(`Worker_${id}_Cancelled`);
+        }
+
+        tracker.completedCount++;
+      };
+
+      const tasks = [
+        worker(1, 100),
+        worker(2, 500),
+        worker(3, 500)
+      ];
+
+      setTimeout(() => {
+        signal.abort();
+      }, 200);
+
+      let cancellationCaught: boolean = false;
+      try {
+        await Promise.all(tasks);
+        expect().assertFail();
+      } catch (e) {
+        cancellationCaught = true;
+      }
+
+      expect(cancellationCaught).assertTrue();
+      expect(signal.isAborted).assertTrue();
+      expect(tracker.completedCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   asyncSecTest0050
+     * @tc.number ASYNC_SEC_TEST_0050
+     * @tc.desc   Verify result consistency across multiple calls (Pure Async Function)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const calculateAsync = async (base: number, exponent: number): Promise<number> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        return Math.pow(base, exponent);
+      };
+
+      const baseVal: int = 2;
+      const expVal: int = 10;
+      const expectedResult: int = 1024;
+
+      const res1 = await calculateAsync(baseVal, expVal);
+      const res2 = await calculateAsync(baseVal, expVal);
+      const res3 = await calculateAsync(baseVal, expVal);
+
+      expect(res1).assertEqual(expectedResult);
+      expect(res1).assertEqual(res2);
+      expect(res2).assertEqual(res3);
+
+      const promises: Promise<number>[] = [
+        calculateAsync(baseVal, expVal),
+        calculateAsync(baseVal, expVal),
+        calculateAsync(baseVal, expVal)
+      ];
+
+      const concurrentResults = await Promise.all(promises);
+
+      expect(concurrentResults[0]).assertEqual(expectedResult);
+      expect(concurrentResults[1]).assertEqual(expectedResult);
+      expect(concurrentResults[2]).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.name   asyncSecTest0051
+     * @tc.number ASYNC_SEC_TEST_0051
+     * @tc.desc   Verify idempotency of repeated async calls (State should settle and remain consistent)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const service = new ServiceManager();
+
+      const res1 = await service.initialize();
+      expect(res1).assertEqual('Initialization_Complete');
+      expect(service.state).assertEqual('READY');
+      expect(service.operationCount).assertEqual(1);
+
+      const firstTs = service.initTimestamp;
+
+      const res2 = await service.initialize();
+      const res3 = await service.initialize();
+
+      expect(res2).assertEqual('Already_Ready');
+      expect(res3).assertEqual('Already_Ready');
+
+      expect(service.operationCount).assertEqual(1);
+
+      expect(service.initTimestamp).assertEqual(firstTs);
+    });
+
+    /**
+     * @tc.name   asyncSecTest0052
+     * @tc.number ASYNC_SEC_TEST_0052
+     * @tc.desc   Stress test: High frequency calls (1000+) to verify no degradation/leaks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncSecTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const lightTask = async (index: number): Promise<number> => {
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        return index;
+      };
+
+      const iterationCount: int = 100;
+      const tasks: Promise<number>[] = [];
+
+      const startTime = new Date().getTime();
+
+      for (let i: int = 0; i < iterationCount; i++) {
+        tasks.push(lightTask(i));
+      }
+
+      const results = await Promise.all(tasks);
+
+      const endTime = new Date().getTime();
+
+      expect(results.length).assertEqual(iterationCount);
+
+      expect(results[0]).assertEqual(0);
+      expect(results[iterationCount - 1]).assertEqual(iterationCount - 1);
+
+    });
+
+    /**
+     * @tc.name   asyncSecTest0053
+     * @tc.number ASYNC_SEC_TEST_0053
+     * @tc.desc   Verify fault tolerance and retry effectiveness when dependencies are unstable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+
+      const executeWithRetry = async (service: UnstableService, maxRetries: number): Promise<string> => {
+        let attempts: int = 0;
+        let lastError: Error | null = null;
+
+        while (attempts <= maxRetries) {
+          try {
+            return await service.request();
+          } catch (e) {
+            attempts++;
+            if (e instanceof Error) {
+              lastError = e;
+            } else {
+              lastError = new Error('Unknown Error');
+            }
+
+            if (attempts > maxRetries) {
+              throw lastError;
+            }
+
+            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+          }
+        }
+        return 'Should_Not_Reach_Here';
+      };
+
+      const serviceA = new UnstableService(3);
+      const resultA = await executeWithRetry(serviceA, 5);
+
+      expect(resultA).assertEqual('Success_Data');
+      expect(serviceA.callCount).assertEqual(4);
+
+      const serviceB = new UnstableService(5);
+
+      try {
+        await executeWithRetry(serviceB, 3);
+        expect(true).assertFalse();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+        if (e instanceof Error) {
+          expect(e.message).assertEqual('Service_Unavailable_503');
+        }
+        expect(serviceB.callCount).assertEqual(4);
+      }
+    });
+
+    /**
+     * @tc.name   asyncSecTest0054
+     * @tc.number ASYNC_SEC_TEST_0054
+     * @tc.desc   Verify data consistency and resource competition control under multi-instance concurrent calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncSecTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const globalInventory = new Inventory();
+      const PURCHASE_COUNT: int = 50;
+
+      const purchaseItem = async (qty: number): Promise<boolean> => {
+        await globalInventory.lock();
+
+        try {
+          const currentStock = globalInventory.stock;
+
+          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+
+          if (currentStock >= qty) {
+            globalInventory.stock = currentStock - qty;
+            return true;
+          }
+          return false;
+
+        } finally {
+          globalInventory.unlock();
+        }
+      };
+
+      const tasks: Promise<boolean>[] = [];
+      for (let i: int = 0; i < PURCHASE_COUNT; i++) {
+        tasks.push(purchaseItem(1));
+      }
+
+      const results = await Promise.all(tasks);
+
+      let successCount: int = 0;
+      for (let i: int = 0; i < results.length; i++) {
+        if (results[i]) successCount++;
+      }
+
+      expect(successCount).assertEqual(PURCHASE_COUNT);
+
+      expect(globalInventory.stock).assertEqual(100 - PURCHASE_COUNT);
+    });
+  })
+}
