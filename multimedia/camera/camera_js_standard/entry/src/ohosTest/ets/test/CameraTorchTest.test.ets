@@ -636,7 +636,6 @@ export default function cameraTorchTest() {
             let level = 0.5;
             mCameraManager.setTorchModeOnWithLevel(level);
             console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 end`);
-            expect(true).assertTrue();
           }
  
         } catch (error) {
