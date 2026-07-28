@@ -205,8 +205,8 @@ export default function windowKeyBorad() {
           await sleep(500);
           if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
             console.info(`${caseName}  off keyboardWillShow success: `);
+            done()
           }
-          done()
         } catch (err) {
           console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
           if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -375,8 +375,8 @@ export default function windowKeyBorad() {
           await sleep(500);
           if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
             console.info(`${caseName}  off keyboardWillHide success: `);
+            done()
           }
-          done()
         } catch (err) {
           console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
           if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -489,7 +489,6 @@ export default function windowKeyBorad() {
               expect(count).assertEqual(1);
           }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
               expect(count).assertEqual(0);
-              done();
           }
           done();
         }

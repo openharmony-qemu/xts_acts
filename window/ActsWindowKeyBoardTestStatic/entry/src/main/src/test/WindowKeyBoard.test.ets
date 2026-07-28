@@ -756,8 +756,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(500);
                 if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillShow success: ');
+                    done();
                 }
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
@@ -863,8 +863,8 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(500);
                 if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
                     hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
+                    done();
                 }
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
