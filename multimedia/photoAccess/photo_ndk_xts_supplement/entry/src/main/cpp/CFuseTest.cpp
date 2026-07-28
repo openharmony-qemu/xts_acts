@@ -787,7 +787,8 @@ napi_value Test_Ftw(napi_env env, napi_callback_info info)
             OH_LOG_INFO(LOG_APP, "ftw success, temp = %{public}d", temp);
         } else {
             char *msg = strerror(errno);
-            OH_LOG_INFO(LOG_APP, "ftw result = %{public}d, errno = %{public}d, errMsg is %{public}s", temp, errno, msg);
+            OH_LOG_INFO(LOG_APP, "ftw result = %{public}d, errno = %{public}d, errMsg is %{public}s",
+                        temp, errno, msg);
         }
     } else {
         int temp = nftw(newPath.c_str(), Fn2, 20, 0);
@@ -889,61 +890,68 @@ napi_value Test_PathConf(napi_env env, napi_callback_info info)
     return flag;
 }
 
-napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
+static int32_t ParseDirArgs(napi_env env, napi_callback_info info, std::string &uri, int &mode)
 {
-    OH_LOG_INFO(LOG_APP, "Test_OpenReadDir start");
-    int err = 0;
-    int mode;
     size_t argc = 2;
     napi_value args[2] = {nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    std::string uri;
     GetUtf8String(env, args[0], uri);
     napi_get_value_int32(env, args[1], &mode);
     OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
-    std::string path;
-    err = GetPathFromUri(uri, path);
-    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    return 0;
+}
+
+static int32_t DoReadDir(const std::string &path, int mode)
+{
     std::string newPath;
-    DIR *pointer = nullptr;
-    struct dirent *pEnt = nullptr;
-    int ret = -1;
     if (mode == MODE1) {
         newPath = path.substr(0, path.rfind("/"));
     } else {
         newPath = path.substr(0, path.rfind("Photo"));
     }
     OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
-    pointer = opendir(newPath.c_str());
+    DIR *pointer = opendir(newPath.c_str());
     OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == nullptr));
     if (pointer == nullptr) {
         char *msg = strerror(errno);
         OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
+        return -1;
     }
-    if (pointer != nullptr) {
-        ret = 1;
-        pEnt = readdir(pointer);
-        int offset = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "current offset = %{public}d", offset);
-        OH_LOG_INFO(LOG_APP, "PEnt is NULL, ret = %{public}d", pEnt == nullptr);
-        if (pEnt != nullptr) {
-            OH_LOG_INFO(LOG_APP, "d_name = %{public}s", pEnt->d_name);
-        } else {
-            char *msg = strerror(errno);
-            OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
-        }
-        seekdir(pointer, 0);
-        int offsetSeek = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "after seekdir offset = %{public}d", offsetSeek);
-        pEnt = readdir(pointer);
-        int offset2 = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "read again , current offset = %{public}d", offset2);
-        rewinddir(pointer);
-        int offset3 = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "after rewinddir, current offset = %{public}d", offset3);
-        int closeFlag = closedir(pointer);
-        OH_LOG_INFO(LOG_APP, "closeFlag = %{public}d", closeFlag);
+    int ret = 1;
+    struct dirent *pEnt = readdir(pointer);
+    int offset = telldir(pointer);
+    OH_LOG_INFO(LOG_APP, "current offset = %{public}d", offset);
+    OH_LOG_INFO(LOG_APP, "PEnt is NULL, ret = %{public}d", pEnt == nullptr);
+    if (pEnt != nullptr) {
+        OH_LOG_INFO(LOG_APP, "d_name = %{public}s", pEnt->d_name);
+    } else {
+        char *msg = strerror(errno);
+        OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
     }
+    seekdir(pointer, 0);
+    int offsetSeek = telldir(pointer);
+    OH_LOG_INFO(LOG_APP, "after seekdir offset = %{public}d", offsetSeek);
+    pEnt = readdir(pointer);
+    int offset2 = telldir(pointer);
+    OH_LOG_INFO(LOG_APP, "read again , current offset = %{public}d", offset2);
+    rewinddir(pointer);
+    int offset3 = telldir(pointer);
+    OH_LOG_INFO(LOG_APP, "after rewinddir, current offset = %{public}d", offset3);
+    int closeFlag = closedir(pointer);
+    OH_LOG_INFO(LOG_APP, "closeFlag = %{public}d", closeFlag);
+    return ret;
+}
+
+napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Test_OpenReadDir start");
+    std::string uri;
+    int mode = 0;
+    ParseDirArgs(env, info, uri, mode);
+    std::string path;
+    GetPathFromUri(uri, path);
+    OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
+    int ret = DoReadDir(path, mode);
     OH_LOG_INFO(LOG_APP, "openDir , ret = %{public}d", ret);
     napi_value flag;
     napi_create_int32(env, ret, &flag);
