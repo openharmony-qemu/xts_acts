@@ -26,16 +26,22 @@ struct MyStateSample {
     this.stateVar+='~'
   }
   build() {
-    Column(undefined) {
-      Text('Hello World').fontSize(20)
-      Button(this.message).backgroundColor('#FFFF00FF')
-        .onClick((e: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'On Click');
-          this.changeValue();
-        })
-      Text(this.stateVar).fontSize(20)
-      Child({stateVar: this.stateVar} as __Options_Child)
-    }
+     Column() {
+        TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
+          .placeholderColor(Color.Grey)
+          .placeholderFont({ size: 14, weight: 400 })
+          .caretColor(Color.Blue)
+          .width('95%')
+          .height(40)
+          .margin(20)
+          .fontSize(14)
+          .fontColor(Color.Black)
+          .onChange((value: string) => {
+            this.text = value
+          })
+          .id('textInput')
+      }
+      .width('100%')
   }
 }
 
