@@ -571,12 +571,22 @@ export default function displayTest() {
       let caseName = 'testOnAdd_createVirtualScreen';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      let addTriggered = false;
+      let addTriggered: number = 0;
       let screenId: number = -1;
       const callback = (displayId: number) => {
         console.info(msgStr + 'on add triggered, displayId: ' + displayId);
-        addTriggered = true;
+        addTriggered++;
         expect(displayId).assertEqual(screenId);
+        expect(addTriggered).assertEqual(1);
+
+        display.off('add', callback);
+        console.info(msgStr + 'off add success');
+        display.destroyVirtualScreen(screenId).then(() => {
+          console.info(msgStr + 'Succeeded in destroying the virtual screen.');
+        }).catch((err: BusinessError) => {
+          console.error(msgStr + `Failed to destroy the virtual screen. Code: ${err.code}, message: ${err.message}`);
+        });
+        done();
       };
       try {
         display.on('add', callback);
@@ -599,7 +609,6 @@ export default function displayTest() {
         console.info(msgStr + 'createVirtualScreen success, screenId: ' + screenId);
         display.makeUnique(screenId).then(() => {
           console.info(msgStr + 'succeeded in destroy virtual screen, data : ');
-          done();
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
           if (!isSyscapSessionManagerSupported) {
@@ -610,14 +619,6 @@ export default function displayTest() {
             done();
           }
         });
-        await sleep(1000);
-        expect(addTriggered).assertTrue();
-        display.off('add', callback);
-        console.info(msgStr + 'off add success');
-        await display.destroyVirtualScreen(screenId);
-        console.info(msgStr + 'destroyVirtualScreen success');
-        await sleep(3000);
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Code: ' + JSON.stringify(exception));
         display.off('add', callback);
@@ -639,12 +640,16 @@ export default function displayTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       await sleep(3000);
-      let removeTriggered = false;
+      let removeTriggered: number = 0;
       let screenId: number = -1;
       const callback = (displayId: number) => {
         console.info(msgStr + 'on remove triggered, displayId: ' + displayId);
-        removeTriggered = true;
+        removeTriggered++;
         expect(displayId).assertEqual(screenId);
+        expect(removeTriggered).assertEqual(1);
+        display.off('remove', callback);
+        console.info(msgStr + 'off remove success');
+        done();
       };
       try {
         display.on('remove', callback);
@@ -668,11 +673,6 @@ export default function displayTest() {
         await sleep(1000);
         await display.destroyVirtualScreen(screenId);
         console.info(msgStr + 'destroyVirtualScreen success');
-        await sleep(1000);
-        expect(removeTriggered).assertTrue();
-        display.off('remove', callback);
-        console.info(msgStr + 'off remove success');
-        done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Code: ' + JSON.stringify(exception));
         display.off('remove', callback);
@@ -1652,7 +1652,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         })
       } catch (err) {
         console.log(caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue();
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1707,7 +1707,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
          })
         }
         console.log(caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue();
+        expect(err.code).assertEqual(401);
         done();
        }
       });
@@ -1784,6 +1784,78 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       } catch (e) {
         console.log(msgStr + 'Failed to call off_foldAngleChange. Cause:' + JSON.stringify(e));
         expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldAngleChange2
+    * @tc.number testOffFoldAngleChangeErrCode401_0200
+    * @tc.desc   off_foldAngleChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldAngleChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldAngleChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback = (res: Array<number>) => { }
+        display.off('foldAngleChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldAngleChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldAngleChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldDisplayModeChange2
+    * @tc.number testOffFoldDisplayModeChangeErrCode401_0200
+    * @tc.desc   off_foldDisplayModeChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldDisplayModeChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldDisplayModeChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback: Callback<display.FoldDisplayMode> = (data: display.FoldDisplayMode) => { };
+        display.off('foldDisplayModeChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldDisplayModeChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldDisplayModeChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+    * @tc.name   off_foldStatusChange2
+    * @tc.number testOffFoldStatusChangeErrCode401_0200
+    * @tc.desc   off_foldStatusChange2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('off_foldStatusChange2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "off_foldStatusChange2";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        const callback: Callback<display.FoldStatus> = (data: display.FoldStatus) => { };
+        display.off('foldStatusChange', callback);
+        console.error(msgStr + 'Succeeded in calling off_foldStatusChange.');
+        done()
+      } catch (e) {
+        console.log(msgStr + 'Failed to call off_foldStatusChange. Cause:' + JSON.stringify(e));
+        expect().assertFail();
         done()
       }
     });
