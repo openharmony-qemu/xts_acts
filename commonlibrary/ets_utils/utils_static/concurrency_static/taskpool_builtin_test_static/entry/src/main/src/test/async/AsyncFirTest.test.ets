@@ -3798,3 +3798,142 @@ export default function asyncFirTest(): void {
     });
 
     /**
+     * @tc.name   asyncFirTest0077
+     * @tc.number ASYNC_FIR_TEST_0077
+     * @tc.desc   Test basic logic execution: computation, assignment, and state changes after await
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let globalState: int = 100;
+
+      const calculateAsync = async (input: int): Promise<int> => {
+        let localVal = input * 2;
+
+        const modifier = await Promise.resolve(5);
+
+        localVal += modifier;
+
+        globalState = globalState + localVal;
+
+        return localVal;
+      };
+
+      const result = await calculateAsync(10);
+
+      expect(result).assertEqual(25);
+      expect(globalState).assertEqual(125);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0078
+     * @tc.number ASYNC_FIR_TEST_0078
+     * @tc.desc   Test conditional branches (if/else/switch) with async operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const processCondition = async (type: string): Promise<string> => {
+        let status = 'pending';
+
+        if (type === 'fast') {
+          status = await Promise.resolve('completed_fast');
+        } else if (type === 'slow') {
+          await Promise.resolve(1);
+          status = 'completed_slow';
+        } else {
+          switch (type) {
+            case 'complex':
+              const part1 = await Promise.resolve('comp');
+              const part2 = await Promise.resolve('lex');
+              status = part1 + part2;
+              break;
+            default:
+              status = 'unknown';
+          }
+        }
+        return status;
+      };
+
+      const resFast = await processCondition('fast');
+      expect(resFast).assertEqual('completed_fast');
+
+      const resSlow = await processCondition('slow');
+      expect(resSlow).assertEqual('completed_slow');
+
+      const resComplex = await processCondition('complex');
+      expect(resComplex).assertEqual('complex');
+
+      const resDefault = await processCondition('none');
+      expect(resDefault).assertEqual('unknown');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0079
+     * @tc.number ASYNC_FIR_TEST_0079
+     * @tc.desc   Test loop integrity (for/for...of) ensuring await pauses iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const numbers: number[] = [10, 20, 30];
+      const accumulator: number[] = [];
+
+      const processArray = async (arr: number[]): Promise<number> => {
+        let sum: number = 0;
+        for (const num of arr) {
+          const val: number = await Promise.resolve(num + 1);
+          sum += val;
+          accumulator.push(val);
+        }
+        return sum;
+      };
+
+      const processLoopIndex = async (): Promise<string> => {
+        let str = '';
+        for (let i: int = 0; i < 3; i++) {
+          const chars = await Promise.resolve(i.toString());
+          str += chars;
+        }
+        return str;
+      };
+
+      const totalSum = await processArray(numbers);
+      expect(totalSum).assertEqual(63);
+
+      expect(accumulator.length).assertEqual(3);
+      expect(accumulator[0]).assertEqual(11);
+      expect(accumulator[2]).assertEqual(31);
+
+      const loopStr = await processLoopIndex();
+      expect(loopStr).assertEqual('012');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0080
+     * @tc.number ASYNC_FIR_TEST_0080
+     * @tc.desc   Test generic async function compatibility and logic consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const numRes = await wrapInAsync0080<number>(12345);
+      expect(numRes).assertEqual(12345);
+
+      const strRes = await wrapInAsync0080<string>('Generic Test');
+      expect(strRes).assertEqual('Generic Test');
+
+      const objInput: TestObj = { id: 1, val: 'obj' };
+      const objRes = await wrapInAsync0080<TestObj>(objInput);
+      expect(objRes.id).assertEqual(1);
+      expect(objRes.val).assertEqual('obj');
+
+      expect(objRes).assertEqual(objInput);
+    });
+
+  })
+}
