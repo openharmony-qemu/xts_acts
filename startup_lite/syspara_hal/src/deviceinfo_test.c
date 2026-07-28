@@ -55,7 +55,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetDeviceType();
+    printf("Device Type=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetDeviceType();
@@ -77,7 +79,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetManufacture();
+    printf("Manufacture=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetManufacture();
@@ -99,7 +103,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBrand();
+    printf("Brand=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBrand();
@@ -121,7 +127,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetMarketName();
+    printf("Market Name=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetMarketName();
@@ -143,7 +151,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetProductSeries();
+    printf("Product Series=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetProductSeries();
@@ -165,7 +175,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetProductModel();
+    printf("Product Model=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetProductModel();
@@ -187,7 +199,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetHardwareModel();
+    printf("Hardware Model=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetHardwareModel();
@@ -209,6 +223,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetHardwareProfile();
+    printf("Hardware Profile=%s\n", value1);
     AssertNotEmpty(value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetHardwareProfile();
@@ -231,9 +246,15 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 {
     const char *value1 = GetSerial();
     if (value1 == NULL) {
+        printf("The serial number needs to be written\n");
         TEST_IGNORE();
     }
-    TEST_ASSERT_TRUE(strlen(value1) <= 64);
+    if (value1 != NULL) {
+        printf("Serial=%s\n", value1);
+        AssertNotEmpty(value1);
+        TEST_ASSERT_NOT_NULL(value1);
+        TEST_ASSERT_TRUE(strlen(value1) <= 64);
+    }
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetSerial();
     }
@@ -254,7 +275,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetOSFullName();
+    printf("Os Name=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 64);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetOSFullName();
@@ -276,7 +299,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetDisplayVersion();
+    printf("Display Version=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 64);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetDisplayVersion();
@@ -298,7 +323,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBootloaderVersion();
+    printf("Bootloader Version=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 64);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBootloaderVersion();
@@ -320,14 +347,22 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetSecurityPatchTag();
+    printf("Secure Patch Level=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 64);
     int year, month, day;
     int ret = sscanf_s(value1, "%04d/%02d/%02d", &year, &month, &day);
     TEST_ASSERT_TRUE(ret >= 0);
+    printf("%04d/%02d/%02d\n", year, month, day);
     TEST_ASSERT_TRUE(year > 1900 && year < 2056);
     TEST_ASSERT_TRUE(month <= 12 && month > 0);
     TEST_ASSERT_TRUE(day <= 31 && day > 0);
+    char str[32] = {0};
+    ret = sprintf_s(str, sizeof(str), "%d/%02d/%02d", year, month, day);
+    TEST_ASSERT_TRUE(ret >= 0);
+    printf("str=%s\n", str);
+    TEST_ASSERT_EQUAL_STRING(str, value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetSecurityPatchTag();
     }
@@ -348,7 +383,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetAbiList();
+    printf("Abi List=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 64);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetAbiList();
@@ -370,7 +407,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     int value1 = GetFirstApiVersion();
+    printf("First Api Level=%d\n", value1);
     TEST_ASSERT_TRUE(value1 > 0);
+    TEST_ASSERT_NOT_NULL(&value1);
+    TEST_ASSERT_TRUE((int)value1 == value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         int value = GetFirstApiVersion();
     }
@@ -391,6 +431,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetIncrementalVersion();
+    printf("Incremental Version=%s\n", value1);
     AssertNotEmpty(value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetIncrementalVersion();
@@ -412,7 +453,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetVersionId();
+    printf("Version Id=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 127);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetVersionId();
@@ -434,7 +477,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBuildType();
+    printf("Build Type=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBuildType();
@@ -456,7 +501,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBuildUser();
+    printf("Build User=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBuildUser();
@@ -478,7 +525,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBuildHost();
+    printf("Build Host=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBuildHost();
@@ -500,7 +549,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBuildTime();
+    printf("Build Time=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBuildTime();
@@ -522,6 +573,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetBuildRootHash();
+    printf("Build Root Hash=%s\n", value1);
     TEST_ASSERT_NOT_NULL(value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetBuildRootHash();
@@ -543,7 +595,9 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *value1 = GetSoftwareModel();
+    printf("Software Model=%s\n", value1);
     AssertNotEmpty(value1);
+    TEST_ASSERT_NOT_NULL(value1);
     TEST_ASSERT_TRUE(strlen(value1) <= 32);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetSoftwareModel();
@@ -565,7 +619,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     int value1 = GetSdkApiVersion();
+    printf("Sdk Api Level=%d\n", value1);
     TEST_ASSERT_TRUE(value1 > 0);
+    TEST_ASSERT_NOT_NULL(&value1);
+    TEST_ASSERT_TRUE((int)value1 == value1);
     for (int i = 0; i < QUERY_TIMES; i++) {
         int value = GetSdkApiVersion();
     }
