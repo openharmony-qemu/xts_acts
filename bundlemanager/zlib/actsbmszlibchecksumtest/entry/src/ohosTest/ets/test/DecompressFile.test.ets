@@ -55,6 +55,8 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0100 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900001);
+          expect(err.message).assertEqual(
+            "BusinessError 900001: source file does not exist or cannot be accessed");
           done();
         })
       } catch (errData) {
@@ -95,6 +97,8 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0200 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900002);
+          expect(err.message).assertEqual(
+            "BusinessError 900002: destination path is empty or contains relative path");
           done();
         })
       } catch (errData) {
@@ -143,6 +147,8 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0300 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900003);
+          expect(err.message).assertEqual(
+            "BusinessError 900003: source file is not in ZIP format or is damaged");
           done();
         })
       } catch (errData) {
@@ -471,7 +477,8 @@ export default function decompressFileTest() {
      */
     it('acts_zlibDecompressFile_0400', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0400 start==================');
-      let inFile = '/data/storage/el2/base/testfile.zip';
+      let inFile = '/data/storage/el2/base/testfile.txt';
+      let zipFile = '/data/storage/el2/base/testfile.zip';
       let outFileDir = '/data/storage/el2/base';
       let options: zlib.Options = {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
@@ -479,27 +486,27 @@ export default function decompressFileTest() {
         pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_REPLACE_BACKSLASH
       };
       let file = fs.openSync(inFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      fs.write(file.fd, infos).then((number: number) => {
+      await fs.write(file.fd, infos).then((number: number) => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 write data to file succeed and size is:' + number);
         expect(number).assertEqual(252);
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 write data to file failed with error:' + err);
         expect(err).assertFail();
       });
-      await zlib.compressFile(inFile, outFileDir + '/testfile.zip', {
+      await zlib.compressFile(inFile, zipFile, {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
         memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
       }).then(() => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 compressFile success.');
         try {
-          let res: boolean = fs.accessSync(inFile);
+          let res: boolean = fs.accessSync(zipFile);
           if (res) {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file exists');
             expect(res).assertEqual(true);
-            done();
           } else {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file not exists');
+            expect().assertFail();
           }
         } catch (error) {
           let code = (error as BusinessError).code;
@@ -507,38 +514,30 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0400 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
-          done();
         }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 compressFile fail ' + JSON.stringify(err));
         expect(err).assertFail();
+      })
+      await zlib.decompressFile(zipFile, outFileDir, options).then((data: void) => {
+        hilog.info(0x0000, 'bmsTag',
+          'acts_zlibDecompressFile_0400 decompressFile success. data: ' + JSON.stringify(data));
+        let res: boolean = fs.accessSync(inFile);
+        if (res) {
+          hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file exists');
+          expect(res).assertEqual(true);
+          done();
+        } else {
+          hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file not exists');
+          expect().assertFail();
+          done();
+        }
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'bmsTag',
+          `acts_zlibDecompressFile_0400 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
+        expect(err).assertFail();
         done();
       })
-      try {
-        zlib.decompressFile(inFile, outFileDir, options).then((data: void) => {
-          hilog.info(0x0000, 'bmsTag',
-            'acts_zlibDecompressFile_0400 decompressFile success. data: ' + JSON.stringify(data));
-          let res: boolean = fs.accessSync(inFile);
-          if (res) {
-            hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file exists');
-            expect(res).assertEqual(true);
-            done();
-          } else {
-            hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0400 file not exists');
-          }
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'bmsTag',
-            `acts_zlibDecompressFile_0400 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
-          expect(err).assertFail();
-        })
-      } catch (errData) {
-        let code = (errData as BusinessError).code;
-        let message = (errData as BusinessError).message;
-        hilog.error(0x0000, 'bmsTag',
-          `acts_zlibDecompressFile_0400 decompressFile failed errData is errCode:${code}  message:${message}`);
-        expect(errData).assertFail();
-      }
-      done();
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0400 end==================');
     })
 
@@ -552,7 +551,8 @@ export default function decompressFileTest() {
      */
     it('acts_zlibDecompressFile_0500', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0500 start==================');
-      let inFile = '/data/storage/el2/base/testfile1.zip';
+      let inFile = '/data/storage/el2/base/testfile1.txt';
+      let zipFile = '/data/storage/el2/base/testfile1.zip';
       let outFileDir = '/data/storage/el2/base';
       let options: zlib.Options = {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
@@ -560,27 +560,27 @@ export default function decompressFileTest() {
         pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_REPLACE_BACKSLASH
       };
       let file = fs.openSync(inFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      fs.write(file.fd, infos).then((number: number) => {
+      await fs.write(file.fd, infos).then((number: number) => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 write data to file succeed and size is:' + number);
         expect(number).assertEqual(252);
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 write data to file failed with error:' + err);
         expect(err).assertFail();
       });
-      await zlib.compressFile(inFile, outFileDir + '/testfile1.zip', {
+      await zlib.compressFile(inFile, zipFile, {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
         memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
       }).then(() => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 compressFile success.');
         try {
-          let res: boolean = fs.accessSync(inFile);
+          let res: boolean = fs.accessSync(zipFile);
           if (res) {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 file exists');
             expect(res).assertEqual(true);
-            done();
           } else {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 file not exists');
+            expect().assertFail();
           }
         } catch (error) {
           let code = (error as BusinessError).code;
@@ -588,23 +588,24 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0500 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
-          done();
         }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0500 compressFile fail ' + JSON.stringify(err));
         expect(err).assertFail();
-        done();
       })
       try {
-        zlib.decompressFile(inFile, outFileDir, options, (errData: BusinessError, data: void) => {
+        zlib.decompressFile(zipFile, outFileDir, options, (errData: BusinessError, data: void) => {
           if (errData !== null) {
             hilog.error(0x0000, 'bmsTag',
               `acts_zlibDecompressFile_0500 decompressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
             expect(errData).assertFail();
+            done();
+            return;
           }
           hilog.info(0x0000, 'bmsTag',
             'acts_zlibDecompressFile_0500 decompressFile success. data: ' + JSON.stringify(data));
           expect(data == undefined).assertTrue();
+          done();
         });
       } catch (errData) {
         let code = (errData as BusinessError).code;
@@ -612,8 +613,8 @@ export default function decompressFileTest() {
         hilog.error(0x0000, 'bmsTag',
           `acts_zlibDecompressFile_0500 decompressFile failed errData is errCode:${code}  message:${message}`);
         expect(errData).assertFail();
+        done();
       }
-      done();
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0500 end==================');
     })
 
@@ -627,7 +628,8 @@ export default function decompressFileTest() {
      */
     it('acts_zlibDecompressFile_0600', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0600 start==================');
-      let inFile = '/data/storage/el2/base/testfile2.zip';
+      let inFile = '/data/storage/el2/base/testfile2.txt';
+      let zipFile = '/data/storage/el2/base/testfile2.zip';
       let outFileDir = '/data/storage/el2/base';
       let options: zlib.Options = {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
@@ -635,27 +637,27 @@ export default function decompressFileTest() {
         pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
       };
       let file = fs.openSync(inFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      fs.write(file.fd, infos).then((number: number) => {
+      await fs.write(file.fd, infos).then((number: number) => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 write data to file succeed and size is:' + number);
         expect(number).assertEqual(252);
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 write data to file failed with error:' + err);
         expect(err).assertFail();
       });
-      await zlib.compressFile(inFile, outFileDir + '/testfile2.zip', {
+      await zlib.compressFile(inFile, zipFile, {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
         memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
       }).then(() => {
         hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 compressFile success.');
         try {
-          let res: boolean = fs.accessSync(inFile);
+          let res: boolean = fs.accessSync(zipFile);
           if (res) {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file exists');
             expect(res).assertEqual(true);
-            done();
           } else {
             hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file not exists');
+            expect().assertFail();
           }
         } catch (error) {
           let code = (error as BusinessError).code;
@@ -663,38 +665,30 @@ export default function decompressFileTest() {
           hilog.error(0x0000, 'bmsTag',
             `acts_zlibDecompressFile_0600 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
-          done();
         }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 compressFile fail ' + JSON.stringify(err));
         expect(err).assertFail();
+      })
+      await zlib.decompressFile(zipFile, outFileDir, options).then((data: void) => {
+        hilog.info(0x0000, 'bmsTag',
+          'acts_zlibDecompressFile_0600 decompressFile success. data: ' + JSON.stringify(data));
+        let res: boolean = fs.accessSync(inFile);
+        if (res) {
+          hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file exists');
+          expect(res).assertEqual(true);
+          done();
+        } else {
+          hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file not exists');
+          expect().assertFail();
+          done();
+        }
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'bmsTag',
+          `acts_zlibDecompressFile_0600 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
+        expect(err).assertFail();
         done();
       })
-      try {
-        zlib.decompressFile(inFile, outFileDir, options).then((data: void) => {
-          hilog.info(0x0000, 'bmsTag',
-            'acts_zlibDecompressFile_0600 decompressFile success. data: ' + JSON.stringify(data));
-          let res: boolean = fs.accessSync(inFile);
-          if (res) {
-            hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file exists');
-            expect(res).assertEqual(true);
-            done();
-          } else {
-            hilog.info(0x0000, 'bmsTag', 'acts_zlibDecompressFile_0600 file not exists');
-          }
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'bmsTag',
-            `acts_zlibDecompressFile_0600 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
-          expect(err).assertFail();
-        })
-      } catch (errData) {
-        let code = (errData as BusinessError).code;
-        let message = (errData as BusinessError).message;
-        hilog.error(0x0000, 'bmsTag',
-          `acts_zlibDecompressFile_0600 decompressFile failed errData is errCode:${code}  message:${message}`);
-        expect(errData).assertFail();
-      }
-      done();
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0600 end==================');
     })
 
