@@ -687,8 +687,6 @@ export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
 
-export const getEnumNotificationName: (index: number) => number;
-
 export const createPhotoCaptureSettingExt: (index: number) => number;
 
 export const destroyPhotoCaptureSettingExt: (index: number) => number;
