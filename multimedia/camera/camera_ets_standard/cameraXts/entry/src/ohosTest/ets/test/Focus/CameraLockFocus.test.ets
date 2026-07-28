@@ -97,8 +97,8 @@ async function createVideoOutput(cameraNum: number) {
   }
   console.log(TAG, 'mVideoProfile: w: ' + mVideoProfile.size.width + 'h: ' + mVideoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
+  CameraVideoProfile.videoFrameWidth = mVideoProfile.size.width;
+  CameraVideoProfile.videoFrameHeight = mVideoProfile.size.height;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   console.log(TAG, 'createVideoOutput' + mVideoProfile, 'surfaceID', mVideoSurfaceId);
   mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
@@ -176,7 +176,7 @@ let CameraVideoProfile: media.AVRecorderProfile = {
 };
 
 let videoConfig: media.AVRecorderConfig = {
-  videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
+  videoSourceType: 0,
   profile: CameraVideoProfile,
   url: 'file://',
   location: { latitude: 30, longitude: 130 } as camera.Location,
