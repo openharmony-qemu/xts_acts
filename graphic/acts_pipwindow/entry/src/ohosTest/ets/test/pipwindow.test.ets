@@ -929,7 +929,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         done();
       } catch (error) {
         console.log('www data Failed to setAutoStartEnabled_null_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
-        if (error.code == 801) {
+        if (error.code == 801 && !isPipWindowEnabled) {
           expect(error.message != null).assertTrue();
           done();
         } else {
