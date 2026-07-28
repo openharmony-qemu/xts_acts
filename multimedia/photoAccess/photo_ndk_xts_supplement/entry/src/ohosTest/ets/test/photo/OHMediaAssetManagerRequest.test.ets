@@ -122,7 +122,7 @@ export default function OHMediaAssetManagerRequest() {
         expect().assertFail();
       }
     });
-
+    
     /**
      * @tc.number  test_fuse_open_file_readOnly_001
      * @tc.name    test_fuse_open_file_readOnly_001
@@ -870,6 +870,817 @@ export default function OHMediaAssetManagerRequest() {
         done();
       }
     });
-    
-  });
+
+    /**
+     * @tc.number  test_fuse_create_001
+     * @tc.name    test_fuse_create_001
+     * @tc.desc    使用creat创建文件，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_create_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_create_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testCreate(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number  test_fuse_create_002
+     * @tc.name    test_fuse_create_002
+     * @tc.desc    使用creat截断原有文件的长度为0,支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_create_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_create_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testCreate(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_stat_001
+     * @tc.name    test_fuse_stat_001
+     * @tc.desc    使用stat获取文件状态，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_stat_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_stat_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.mp4");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testStat(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_stat_002
+     * @tc.name    test_fuse_stat_002
+     * @tc.desc    使用lstat获取文件状态，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_stat_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_stat_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.mp4");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testStat(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fstat_001
+     * @tc.name    test_fuse_fstat_001
+     * @tc.desc    使用fstat获取文件状态，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fstat_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fstat_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.mp4");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFstat(srcUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fsSystemStat_001
+     * @tc.name    test_fuse_fsSystemStat_001
+     * @tc.desc    使用statfs获取文件系统状态，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fsSystemStat_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fsSystemStat_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFsSystemStat(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fsSystemStat_002
+     * @tc.name    test_fuse_fsSystemStat_002
+     * @tc.desc    使用statvfs获取文件系统状态，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fsSystemStat_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fsSystemStat_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFsSystemStat(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_ftw_001
+     * @tc.name    test_fuse_ftw_001
+     * @tc.desc    使用ftw遍历目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_ftw_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_ftw_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFtw(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_ftw_002
+     * @tc.name    test_fuse_ftw_002
+     * @tc.desc    使用nftw遍历目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_ftw_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_ftw_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFtw(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_truncate_001
+     * @tc.name    test_fuse_truncate_001
+     * @tc.desc    使用truncate截断文件到指定长度，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_truncate_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_truncate_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testTruncate(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_truncate_002
+     * @tc.name    test_fuse_truncate_002
+     * @tc.desc    使用ftruncate截断文件到指定长度，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_truncate_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_truncate_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testTruncate(srcUri, 0);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_pathconf_001
+     * @tc.name    test_fuse_pathconf_001
+     * @tc.desc    使用pathconff获取文件名的最大长度，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_pathconf_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_pathconf_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testPathConf(srcUri, 1, false);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret > 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_pathconf_002
+     * @tc.name    test_fuse_pathconf_002
+     * @tc.desc    使用fpathconff获取文件名的最大长度，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_pathconf_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_pathconf_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testPathConf(srcUri, 1, true);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret > 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_pathconf_003
+     * @tc.name    test_fuse_pathconf_003
+     * @tc.desc    使用pathconf获取目录的最大长度，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_pathconf_003', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_pathconf_003'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testPathConf(srcUri, 2, false);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_pathconf_004
+     * @tc.name    test_fuse_pathconf_004
+     * @tc.desc    使用fpathconf获取目录的最大长度，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_pathconf_004', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_pathconf_004'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testPathConf(srcUri, 2, true);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_open_read_dir_001
+     * @tc.name    test_fuse_open_read_dir_001
+     * @tc.desc    使用readdir遍历IMG_XX，非目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_open_read_dir_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_open_read_dir_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.Test_OpenReadDir(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_open_read_dir_002
+     * @tc.name    test_fuse_open_read_dir_002
+     * @tc.desc    使用readdir_r遍历media/xx目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_open_read_dir_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_f_openuse_read_dir_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.Test_OpenReadDir(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_read_dir_r_001
+     * @tc.name    test_fuse_read_dir_r_001
+     * @tc.desc    使用readdir_r遍历IMG_XX，非目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_read_dir_r_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_read_dir_r_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.Test_ReadDir_R(srcUri, 2);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_read_dir_r_002
+     * @tc.name    test_fuse_read_dir_r_002
+     * @tc.desc    使用scandir遍历fuse目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_read_dir_r_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_read_dir_r_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.Test_ReadDir_R(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fallocate_001
+     * @tc.name    test_fuse_fallocate_001
+     * @tc.desc    使用fallocate分配文件空间，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fallocate_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fallocate_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFallocate(srcUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fcntl_001
+     * @tc.name    test_fuse_fcntl_001
+     * @tc.desc    使用fcntl获取文件状态标志，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fcntl_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fcntl_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFcntl(srcUri, 1);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret > 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fcntl_002
+     * @tc.name    test_fuse_fcntl_002
+     * @tc.desc    使用fcntl设置文件状态标志，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fcntl_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fcntl_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFcntl(srcUri, 0);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_chdir_001
+     * @tc.name    test_fuse_chdir_001
+     * @tc.desc    使用chdir改变当前工作目录，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_chdir_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_chdir_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testChdir(srcUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_dup_api_001
+     * @tc.name    test_fuse_dup_api_001
+     * @tc.desc    使用dup创建一个新的文件描述符，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_dup_api_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_dup_api_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        let destUri = createSandboxFileUri(testContext, 'jpg');
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testDupApi(srcUri, 1, destUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_dup_api_002
+     * @tc.name    test_fuse_dup_api_002
+     * @tc.desc    使用dup2将文件描述符重定向到指定fd，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_dup_api_002', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_dup_api_002'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        let destUri = createSandboxFileUri(testContext, 'jpg');
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testDupApi(srcUri, 0, destUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_fsync_001
+     * @tc.name    test_fuse_fsync_001
+     * @tc.desc    使用fsync函数将缓存区的buffer内容完全写入文件，支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_fsync_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_fsync_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        let destUri = createSandboxFileUri(testContext, 'jpg');
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.testFsync(srcUri, destUri);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  test_fuse_scandir_001
+     * @tc.name    test_fuse_scandir_001
+     * @tc.desc    使用scandir遍历目录，不支持
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('test_fuse_scandir_001', Level.LEVEL1, async (done: Function) => {
+      console.info(TAG,'Start',);
+      let testNum = 'test_fuse_scandir_001'
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "01.jpg");
+        let fetchResult = await phAccessHelper.getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let srcUri = photoAsset.uri;
+        console.log(`${testNum} :: srcUri is ${srcUri}`);
+        let ret: number = testNapi.Test_scanDir(srcUri, 0);
+        console.log(`${testNum} :: result is ${ret}`);
+        expect(ret == -1).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} :: test is fail , error is ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+});
 }
