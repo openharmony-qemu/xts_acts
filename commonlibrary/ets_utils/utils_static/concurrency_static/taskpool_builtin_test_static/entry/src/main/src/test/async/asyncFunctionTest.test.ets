@@ -1898,3 +1898,902 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest068
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_068
+     * @tc.desc   Async function with nested async that handles typed readonly data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result = await asyncFunctionTest068Fn();
+      expect(result.id).assertEqual(1);
+      expect(result.name).assertEqual('modified');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest069
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_069
+     * @tc.desc   Async function with nested async that uses typed function overloads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const useOverload = async (): Promise<[string, string]> => {
+        const strResult = await formatData('test');
+        const numResult = await formatData(5);
+        const tuple: [string, string] = [strResult, numResult];
+        return tuple;
+      };
+      const res = await useOverload();
+      expect(res[0]).assertEqual('TEST');
+      expect(res[1]).assertEqual('005');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest070
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_070
+     * @tc.desc   Async function with nested async that processes typed array of objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      const initialVal = 28;
+      const updateVal = 56;
+
+      const asyncAtomicStoreLoad = async (val: number): Promise<number> => {
+        return new Promise<number>((resolve: (value: number) => void) => {
+          setTimeout((): void => {
+            ia[0] = val;
+            const currentVal: number = ia[0];
+            resolve(currentVal);
+          }, 100);
+        });
+      };
+
+      const result1 = await asyncAtomicStoreLoad(initialVal);
+      const result2 = await asyncAtomicStoreLoad(updateVal);
+
+      expect(result1).assertEqual(initialVal);
+      expect(result2).assertEqual(updateVal);
+      expect(ia[0]).assertEqual(updateVal);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest071
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_071
+     * @tc.desc   Async function with nested async that uses typed WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const useWeakMapCache = async (): Promise<type71> => {
+        const cache: WeakMap<CacheKey, Promise<string>> = new WeakMap<CacheKey, Promise<string>>();
+
+        const getFromCache = async (key: CacheKey): Promise<string> => {
+          if (cache.has(key)) {
+            const cached: Promise<string> = cache.get(key)!;
+            return await cached;
+          }
+          const fetchData = async (): Promise<string> => await Promise.resolve(`data_${key.id}`);
+          const data = fetchData();
+          cache.set(key, data);
+          return await data;
+        };
+
+        const key1: CacheKey = { id: 1 };
+        const firstCall = await getFromCache(key1);
+        const secondCall = await getFromCache(key1);
+        const result: type71 = { firstCall: firstCall, secondCall: secondCall };
+        return result;
+      };
+
+      const res = await useWeakMapCache();
+      expect(res.firstCall).assertEqual('data_1');
+      expect(res.secondCall).assertEqual('data_1');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest072
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_072
+     * @tc.desc   Async function with nested async that validates typed date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const isFutureDate = async (date: Date): Promise<boolean> => {
+        const nestedCheck = async (): Promise<boolean> => {
+          const now = await Promise.resolve(new Date());
+          return date.getTime() > now.getTime();
+        };
+        return await nestedCheck();
+      };
+
+      const testDates = async (): Promise<[boolean, boolean]> => {
+        const pastDate = new Date('2020-01-01');
+        const futureDate = new Date(Date.now() + 86400000);
+        const tuple: [boolean, boolean] = [await isFutureDate(pastDate), await isFutureDate(futureDate)];
+        return tuple;
+      };
+
+      const res = await testDates();
+      expect(res[0]).assertEqual(false);
+      expect(res[1]).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest073
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_073
+     * @tc.desc   Async function with nested async that uses typed generator return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 10;
+
+      const asyncAtomicAdd = async (addVal: number): Promise<number> => {
+        return new Promise<number>((resolve: (value: number) => void) => {
+          setTimeout((): void => {
+            ia[0] = ia[0] + addVal;
+            resolve(ia[0]);
+          }, 100);
+        });
+      };
+
+      const result1 = await asyncAtomicAdd(6);
+      const result2 = await asyncAtomicAdd(9);
+
+      expect(result1).assertEqual(16);
+      expect(result2).assertEqual(25);
+      expect(ia[0]).assertEqual(25);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest074
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_074
+     * @tc.desc   Async function with nested async that handles typed error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const throwCustomError = async (): Promise<never> => {
+        const nestedThrow = async (): Promise<never> => {
+          throw await Promise.resolve(new CustomError('custom issue', 400));
+        };
+        return await nestedThrow();
+      };
+
+      const catchCustomError = async (): Promise<number> => {
+        try {
+          await throwCustomError();
+          return 0;
+        } catch (err) {
+          if (err instanceof CustomError) {
+            return err.errorCode;
+          }
+          return 500;
+        }
+      };
+
+      const errorCode = await catchCustomError();
+      expect(errorCode).assertEqual(400);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest075
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_075
+     * @tc.desc   Async function with nested async that uses typed Promise.withResolvers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 0b1010;
+
+      const asyncAtomicXor = async (xorVal: number): Promise<number> => {
+        return new Promise<number>((resolve: (value: number) => void) => {
+          setTimeout((): void => {
+            ia[0] = ia[0] ^ xorVal;
+            resolve(ia[0]);
+          }, 100);
+        });
+      };
+
+      const result = await asyncAtomicXor(7);
+
+      expect(result).assertEqual(13);
+      expect(ia[0]).assertEqual(13);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest076
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_076
+     * @tc.desc   Async function with nested async that processes typed tuple array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const calculateDistance = async (points: PointTuple[]): Promise<number[]> => {
+        const nestedCalculate = async (point: PointTuple): Promise<number> => {
+          const distance = Math.sqrt(point[0] ** 2 + point[1] ** 2);
+          return await Promise.resolve(distance);
+        };
+
+        return Promise.all(points.map((point: PointTuple): Promise<number> => nestedCalculate(point)));
+      };
+
+      const p1: PointTuple = [3, 4];
+      const p2: PointTuple = [5, 12];
+      const p3: PointTuple = [0, 0];
+      const inputPoints: PointTuple[] = [p1, p2, p3];
+      const distances = await calculateDistance(inputPoints);
+      expect(distances[0]).assertEqual(5);
+      expect(distances[1]).assertEqual(13);
+      expect(distances[2]).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest077
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_077
+     * @tc.desc   Async function with nested async that uses typed ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sumReadonlyArray = async (arr: number[]): Promise<number> => {
+        const nestedSum = async (): Promise<number> => {
+          return await Promise.resolve(arr.reduce((a: number, b: number): number => a + b, 0));
+        };
+        return await nestedSum();
+      };
+
+      const readonlyArr: number[] = [1, 2, 3, 4];
+      const result = await sumReadonlyArray(readonlyArr);
+      expect(result).assertEqual(10);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest078
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_078
+     * @tc.desc   Async function with nested async that handles typed nullable properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const getEmail = async (user: User): Promise<string> => {
+        const nestedGet = async (): Promise<string> => {
+          const email: string | null | undefined = user.email;
+          if (email === null || email === undefined) {
+            return await Promise.resolve('no-email@example.com');
+          }
+          return await Promise.resolve(email as string);
+        };
+        return await nestedGet();
+      };
+
+      const user1: User = { id: 1, name: 'User 1' };
+      const user2: User = { id: 2, name: 'User 2', email: null };
+      const user3: User = { id: 3, name: 'User 3', email: 'user3@example.com' };
+
+      const email1 = await getEmail(user1);
+      const email2 = await getEmail(user2);
+      const email3 = await getEmail(user3);
+
+      expect(email1).assertEqual('no-email@example.com');
+      expect(email2).assertEqual('no-email@example.com');
+      expect(email3).assertEqual('user3@example.com');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest079
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_079
+     * @tc.desc   Async function with nested async that uses typed Record
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 42;
+
+      const asyncAtomicExchange = async (newVal: number): Promise<number> => {
+        return new Promise<number>((resolve: (value: number) => void) => {
+          setTimeout((): void => {
+            ia[0] = newVal;
+            resolve(ia[0]);
+          }, 100);
+        });
+      };
+
+      const result = await asyncAtomicExchange(99);
+
+      expect(result).assertEqual(99);
+      expect(ia[0]).assertEqual(99);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest080
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_080
+     * @tc.desc   Async function with nested async that chains typed async validations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const validateUsername = async (username: string): Promise<boolean> => {
+        return await Promise.resolve(username.length >= 3);
+      };
+
+      const validatePassword = async (password: string): Promise<boolean> => {
+        return await Promise.resolve(password.length >= 6);
+      };
+
+      const validateForm = async (form: FormData): Promise<boolean> => {
+        const isUsernameValid = await validateUsername(form.username);
+        if (!isUsernameValid) {
+          return false;
+        }
+
+        const isPasswordValid = await validatePassword(form.password);
+        return isPasswordValid;
+      };
+
+      const validForm: FormData = { username: 'user', password: 'password123' };
+      const invalidUserForm: FormData = { username: 'us', password: 'password123' };
+      const invalidPwdForm: FormData = { username: 'user', password: 'pwd' };
+
+      const result1 = await validateForm(validForm);
+      const result2 = await validateForm(invalidUserForm);
+      const result3 = await validateForm(invalidPwdForm);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+      expect(result3).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest081
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_081
+     * @tc.desc   Async function with nested async that uses typed Promise.allSettled with filtering
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const fetchData = async (id: number): Promise<ApiResponse> => {
+        if (id === 2) {
+          throw new Error(`Fetch failed for id ${id}`);
+        }
+        const apiResponse: ApiResponse = { data: id * 10 };
+        return await Promise.resolve(apiResponse);
+      };
+
+      const batchFetch = async (ids: number[]): Promise<number[]> => {
+        const promises: Promise<ApiResponse>[] = ids.map((id: number): Promise<ApiResponse> => fetchData(id));
+        const results: PromiseSettledResult<ApiResponse>[] = await Promise.allSettled(promises);
+
+        const dataResults: number[] = [];
+        results.forEach((res: PromiseSettledResult<ApiResponse>) => {
+          if (res.status === 'fulfilled') {
+            const fulfilled: PromiseFulfilledResult<ApiResponse> = res as PromiseFulfilledResult<ApiResponse>;
+            dataResults.push(fulfilled.value.data);
+          }
+        });
+        return dataResults;
+      };
+
+      const result = await batchFetch([1, 2, 3]);
+      expect(result).assertDeepEquals([10.0, 30.0]);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest082
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_082
+     * @tc.desc   Async function with nested async that handles typed bigint values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const processBigInt = async (num: bigint): Promise<bigint> => {
+        const nestedProcess = async (): Promise<bigint> => {
+          const doubled = await Promise.resolve(num * 2n);
+          return await Promise.resolve(doubled + 5n);
+        };
+        return await nestedProcess();
+      };
+
+      const input = 100n;
+      const result = await processBigInt(input);
+      expect(result).assertEqual(205n);
+      expect(typeof result).assertEqual('bigint');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest083
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_083
+     * @tc.desc   Async function with nested async that uses typed Set operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const processSet = async (nums: number[]): Promise<type83> => {
+        const nestedProcess = async (): Promise<UniqueNumbers> => {
+          const uniqueSet: UniqueNumbers = new Set<number>(nums);
+          return await Promise.resolve(uniqueSet);
+        };
+
+        const uniqueSet = await nestedProcess();
+        const result: type83 = {
+          size: uniqueSet.size,
+          hasFive: uniqueSet.has(5)
+        };
+        return result;
+      };
+
+      const input: number[] = [1, 2, 2, 3, 5, 5];
+      const result = await processSet(input);
+      expect(result.size).assertEqual(4);
+      expect(result.hasFive).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest084
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_084
+     * @tc.desc   Async function with nested async that uses typed Map transformations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const transformMap = async (map: StringMap): Promise<Map<string, string>> => {
+        const nestedTransform = async (): Promise<Map<string, string>> => {
+          const newMap: Map<string, string> = new Map<string, string>();
+          map.forEach((val: number, key: string) => {
+            newMap.set(key, val.toString());
+          });
+          return await Promise.resolve(newMap);
+        };
+        return await nestedTransform();
+      };
+
+      const inputMap: StringMap = new Map<string, number>();
+      inputMap.set('a', 1);
+      inputMap.set('b', 2);
+      const resultMap = await transformMap(inputMap);
+
+      expect(resultMap.get('a')).assertEqual('1');
+      expect(resultMap.get('b')).assertEqual('2');
+      expect(resultMap.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest085
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_085
+     * @tc.desc   Async function with nested async that validates typed enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const isValidMethod = async (method: string): Promise<boolean> => {
+        const nestedCheck = async (): Promise<boolean> => {
+          return await Promise.resolve(
+            method === 'GET' || method === 'POST' || method === 'PUT'
+          );
+        };
+        return await nestedCheck();
+      };
+
+      const result1 = await isValidMethod('GET');
+      const result2 = await isValidMethod('DELETE');
+      const result3 = await isValidMethod(HttpMethod.POST);
+
+      expect(result1).assertEqual(true);
+      expect(result2).assertEqual(false);
+      expect(result3).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest086
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_086
+     * @tc.desc   Async function with nested async that uses typed Promise.race with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const asyncTask = async (taskId: number, delayMs: int): Promise<type86> => {
+        return new Promise<type86>((resolve) => {
+          setTimeout(() => {
+            const result = taskId * 10;
+            const taskResult: type86 = { taskId: taskId, result: result };
+            resolve(taskResult);
+          }, delayMs);
+        });
+      };
+
+      const parallelTasks: Promise<type86>[] = [
+        asyncTask(1, 100),
+        asyncTask(2, 100),
+        asyncTask(3, 100)
+      ];
+
+      const results = await Promise.all(parallelTasks);
+      const aggregatedSum = results.reduce((sum: number, item: type86): number => sum + item.result, 0);
+
+      expect(results.length).assertEqual(3);
+
+      const found1: type86 | undefined = results.find((r: type86): boolean => r.taskId === 1);
+      expect(found1!.result).assertEqual(10);
+      const found2: type86 | undefined = results.find((r: type86): boolean => r.taskId === 2);
+      expect(found2!.result).assertEqual(20);
+      const found3: type86 | undefined = results.find((r: type86): boolean => r.taskId === 3);
+      expect(found3!.result).assertEqual(30);
+
+      expect(aggregatedSum).assertEqual(60);
+
+      const taskIds: number[] = results.map((r: type86): number => r.taskId);
+      taskIds.sort((a: number, b: number): int => {
+        if (a < b) { return -1; }
+        if (a > b) { return 1; }
+        return 0;
+      });
+      expect(taskIds).assertDeepEquals([1.0, 2.0, 3.0]);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest087
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_087
+     * @tc.desc   Async function with nested async that processes typed optional chaining
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const res = await asyncFunctionTest087Fn();
+      expect(res).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest088
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_088
+     * @tc.desc   Async function with nested async that uses typed nullish coalescing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const getDefaultValue = async (value: string | null | undefined): Promise<string> => {
+        const nestedGet = async (): Promise<string> => {
+          let result: string;
+          if (value !== null && value !== undefined) {
+            result = value;
+          } else {
+            result = 'default';
+          }
+          return await Promise.resolve(result);
+        };
+        return await nestedGet();
+      };
+
+      const result1 = await getDefaultValue('test');
+      const result2 = await getDefaultValue(null);
+      const result3 = await getDefaultValue(undefined);
+      const result4 = await getDefaultValue('');
+
+      expect(result1).assertEqual('test');
+      expect(result2).assertEqual('default');
+      expect(result3).assertEqual('default');
+      expect(result4).assertEqual('');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest089
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_089
+     * @tc.desc   Async function with nested async that uses typed class with async methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result = await asyncFunctionTest089Fn();
+      expect(result.length).assertEqual(1);
+      expect(result.item).assertEqual('item1');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest090
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_090
+     * @tc.desc   Async function with nested async that uses typed function composition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result = await asyncFunctionTest090Fn();
+      expect(result).assertEqual(16);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest091
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_091
+     * @tc.desc   Async function with nested async that uses typed generator composition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result: number[] = await asyncFunctionTest091Fn();
+      expect(result).assertDeepEquals([1.0, 2.0, 3.0, 4.0]);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest092
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_092
+     * @tc.desc   Async function with nested async arrow function and BigInt return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const calculateBigInt = async (a: bigint, b: bigint): Promise<bigint> => {
+        const nestedAdd = async (x: bigint, y: bigint): Promise<bigint> => x + y;
+        const nestedXor = async (x: bigint, y: bigint): Promise<bigint> => x ^ y;
+        const sum = await nestedAdd(a, b);
+        return nestedXor(sum, 15n);
+      };
+      const result = await calculateBigInt(23n, 47n);
+      expect(result).assertEqual((23n + 47n) ^ 15n);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest093
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_093
+     * @tc.desc   Async function handling Promise.allSettled with mixed results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const processTasks = async (): Promise<type93> => {
+        const tasks: Promise<number>[] = [
+          Promise.resolve(10 as number),
+          Promise.reject(new Error('test err')),
+          Promise.resolve(20 as number),
+          Promise.reject(new Error('another err'))
+        ];
+        const results: PromiseSettledResult<number>[] = await Promise.allSettled(tasks);
+        let success: number = 0;
+        let failed: number = 0;
+        results.forEach((res: PromiseSettledResult<number>) => {
+          if (res.status === 'fulfilled') {
+            success++;
+          } else {
+            failed++;
+          }
+        });
+        const result: type93 = { success: success, failed: failed };
+        return result;
+      };
+      const result = await processTasks();
+      expect(result.success).assertEqual(2);
+      expect(result.failed).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest094
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_094
+     * @tc.desc   Async function with closure state tracking async calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const createCounter = (): type94 => {
+        let callCount = 0;
+        const asyncIncrement = async (step: number): Promise<number> => {
+          callCount++;
+          return new Promise<number>((resolve) => {
+            setTimeout(() => {
+              resolve(callCount * step);
+            }, 100);
+          });
+        };
+        const getCount = (): number => callCount;
+        const result: type94 = { asyncIncrement: asyncIncrement, getCount: getCount };
+        return result;
+      };
+      const res = createCounter();
+      const res1 = await res.asyncIncrement(2);
+      const res2 = await res.asyncIncrement(3);
+      expect(res1).assertEqual(2);
+      expect(res2).assertEqual(6);
+      expect(res.getCount()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest095
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_095
+     * @tc.desc   Async function returning Promise.race between value and timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result1 = await raceTasks<string>('success', 100);
+      const result2 = await raceTasks<string>('late', 100);
+      expect(result1).assertEqual('timeout');
+      expect(result2).assertEqual('timeout');
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest096
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_096
+     * @tc.desc   Async function with generic type and object transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const fetchData = async (delayMs: int, data: number): Promise<number> => {
+        return new Promise<number>((resolve) => {
+          setTimeout(() => {
+            resolve(data);
+          }, delayMs);
+        });
+      };
+
+      const processData = async (input: number): Promise<number> => {
+        return new Promise<number>((resolve) => {
+          setTimeout(() => {
+            const processed = input * 2 + 3;
+            resolve(processed);
+          }, 100);
+        });
+      };
+
+      const rawData1 = await fetchData(100, 7);
+      const processedData1 = await processData(rawData1);
+
+      const rawData2 = await fetchData(100, 12);
+      const processedData2 = await processData(rawData2);
+
+      expect(rawData1).assertEqual(7);
+      expect(processedData1).assertEqual(17);
+
+      expect(rawData2).assertEqual(12);
+      expect(processedData2).assertEqual(27);
+
+      expect(rawData1 !== rawData2).assertEqual(true);
+      expect(processedData1 !== processedData2).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest097
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_097
+     * @tc.desc   Async function handling error recovery with retry logic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 10;
+
+      const asyncAtomicAdd = async (): Promise<number> => {
+        return new Promise<number>((resolve) => {
+          setTimeout(() => {
+            Atomics.add(ia, 0, 5);
+            resolve(Atomics.load(ia, 0));
+          }, 100);
+        });
+      };
+
+      const result = await asyncAtomicAdd();
+
+      expect(result).assertEqual(15);
+      expect(ia[0]).assertEqual(15);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest098
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_098
+     * @tc.desc   Async function with nested Promise chain and type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const processValue = async (initial: string): Promise<number> => {
+        return Promise.resolve<string>(initial)
+          .then((val: string): number => val.length)
+          .then((len: number): number => len * 3)
+          .then((num: number): Promise<number> => new Promise<number>((resolve: (value: number) => void) => {
+            setTimeout((): void => {
+              resolve(num + 7);
+            }, 100);
+          }))
+          .then((finalNum: number): number => finalNum >>> 0);
+      };
+      const result = await processValue('typescript');
+      expect(result).assertEqual((10 * 3) + 7);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest099
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_099
+     * @tc.desc   Async function returning async generator and consuming with for await...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const result = await asyncFunctionTest099Fn();
+      expect(result).assertDeepEquals([0.0, 3.0, 6.0, 9.0]);
+    });
+
+    /**
+     * @tc.name   asyncFunctionTest100
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_100
+     * @tc.desc   Complex async function workflow: validate → process → finalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFunctionTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      const workflow = async (dataList: Data[]): Promise<type100> => {
+        const validate = async (data: Data): Promise<boolean> => {
+          return new Promise<boolean>((resolve: (value: boolean) => void) => {
+            setTimeout((): void => {
+              resolve(data.id > 0 && data.value.length > 0);
+            }, 100);
+          });
+        };
+        const validations = await Promise.all(dataList.map((d: Data): Promise<boolean> => validate(d)));
+        const validData = dataList.filter((d: Data, idx: int): boolean => validations[idx]);
+
+        const processFn = async (data: Data): Promise<string> => {
+          return new Promise<string>((resolve: (value: string) => void) => {
+            setTimeout((): void => {
+              resolve(`${data.id}-${data.value.toUpperCase()}`);
+            }, 100);
+          });
+        };
+        const processed = await Promise.all(validData.map((d: Data): Promise<string> => processFn(d)));
+
+        const resultObj: type100 = { valid: validData, processed: processed, count: processed.length };
+        return resultObj;
+      };
+
+      const input: Data[] = [
+        { id: 1 as number, value: 'test' },
+        { id: -2 as number, value: 'invalid' },
+        { id: 3 as number, value: 'demo' },
+        { id: 4 as number, value: '' }
+      ];
+      const result = await workflow(input);
+      const expectedValid: Data[] = [{ id: 1 as number, value: 'test' }, { id: 3 as number, value: 'demo' }];
+      expect(result.valid).assertDeepEquals(expectedValid);
+      expect(result.processed).assertDeepEquals(['1-TEST', '3-DEMO']);
+      expect(result.count).assertEqual(2);
+    });
+  });
+}
