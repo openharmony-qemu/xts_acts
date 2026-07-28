@@ -297,7 +297,7 @@ export default function ImagePictureAuxiliaryPicture() {
       };
       try {
         if (!isSupportDecodeResult) {
-          expect(isSupportDecodeResult).assertFalse();
+          console.info(`${testName} device unsupported heic decode`);
           done();
           return;
         }
@@ -334,7 +334,7 @@ export default function ImagePictureAuxiliaryPicture() {
       }
       try {
         if (!isSupportDecodeResult) {
-          expect(isSupportDecodeResult).assertFalse();
+          console.info(`${testName} device unsupported heic decode`);
           done();
           return;
         }
@@ -365,7 +365,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let isSupportDecodeResult = await isSupportDecode(testName, 'image/jpeg');
       try {
         if (!isSupportDecodeResult || !isSupportHdrbyVPE || !isSupportHdrbyScreen) {
-          expect(isSupportDecodeResult && isSupportHdrbyVPE && isSupportHdrbyScreen).assertFalse();
+          console.info(`${testName} device unsupported heic decode or hdr`);
           done();
           return;
         }
@@ -400,7 +400,7 @@ export default function ImagePictureAuxiliaryPicture() {
       }
       try {
         if (!isSupportDecodeResult || !isSupportHdrbyVPE || !isSupportHdrbyScreen) {
-          expect(isSupportDecodeResult && isSupportHdrbyVPE && isSupportHdrbyScreen).assertFalse();
+          console.info(`${testName} device unsupported heic decode or hdr`);
           done();
           return;
         }
@@ -433,7 +433,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
       try {
         if (!isSupportDecodeResult || !isSupportHdrbyVPE || !isSupportHdrbyScreen) {
-          expect(isSupportDecodeResult && isSupportHdrbyVPE && isSupportHdrbyScreen).assertFalse();
+          console.info(`${testName} device unsupported heic decode or hdr`);
           done();
           return;
         }
@@ -465,7 +465,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let AuxiliaryPictureType = image.AuxiliaryPictureType.UNREFOCUS_MAP;
       try {
         if (!isSupportDecodeResult || !isSupportHdrbyVPE || !isSupportHdrbyScreen) {
-          expect(isSupportDecodeResult && isSupportHdrbyVPE && isSupportHdrbyScreen).assertFalse();
+          console.info(`${testName} device unsupported heic decode or hdr`);
           done();
           return;
         }
@@ -575,7 +575,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LHDR_GAINMAP;
       try {
         if (!isSupportDecodeResult) {
-          expect(isSupportDecodeResult).assertFalse();
+          console.info(`${testName} device unsupported heic decode`);
           done();
           return;
         }
@@ -605,7 +605,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let AuxiliaryPictureType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LHDR_GAINMAP;
       try {
         if (!isSupportDecodeResult) {
-          expect(isSupportDecodeResult).assertFalse();
+          console.info(`${testName} device unsupported heic decode`);
           done();
           return;
         }
@@ -635,7 +635,7 @@ export default function ImagePictureAuxiliaryPicture() {
       let AuxiliaryPictureType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
       try {
         if (!isSupportDecodeResult) {
-          expect(isSupportDecodeResult).assertFalse();
+          console.info(`${testName} device unsupported heic decode`);
           done();
           return;
         }
