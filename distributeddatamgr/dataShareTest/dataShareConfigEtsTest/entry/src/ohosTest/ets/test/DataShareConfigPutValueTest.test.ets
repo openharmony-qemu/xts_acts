@@ -22,10 +22,12 @@ let g_config: dataShare.DataProxyConfig = {
   type: 0 as dataShare.DataProxyType.SHARED_CONFIG
 }
 
+
 let g_config_4K: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
   maxValueLength: dataShare.DataProxyMaxValueLength.MAX_LENGTH_4K
 }
+
 
 let g_config_100K: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
@@ -75,8 +77,8 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest001 failed,code =" + err.code + ",message=" + err.message);
-        let result = err.code;
-        expect(result).assertEqual(401);
+        // let result = err.code;
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -94,8 +96,8 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest002 failed,code =" + err.code + ",message=" + err.message);
-        let result = err.code;
-        expect(result).assertEqual(401);
+        // let result = err.code;
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -522,8 +524,8 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest017 failed,code =" + err.code + ",message=" + err.message);
-        let result = err.code;
-        expect(result).assertEqual(15700014);
+        // let result = err.code;
+        expect(err.code).assertEqual(15700014);
       }
     });
 
@@ -572,6 +574,139 @@ export default function dataShareConfigPutValueTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest019 failed,code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700011);
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest020
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0220
+     * @tc.desc   call putValue with bool type value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "datashareproxy://com.acts.dataShare.config/test"
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri,
+          isMultiValues: true,
+          values: { 1: "test1", 2: "test2"},
+          trustProviders: []
+        }
+        let u_config: dataShare.DataProxyConfig = {
+          type: dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: undefined
+        };
+        proxyData.push(g_proxyDataAllowTest1);
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest020", u_config);
+        expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("PutValueTest020");
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest020 failed,code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest021
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0221
+     * @tc.desc   call putValue with bool type value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "datashareproxy://com.acts.dataShare.config/test"
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri,
+          isMultiValues: true,
+          values: { 1: "test1", 2: "test2"},
+          trustProviders: []
+        };
+        let u_config: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 4097 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_4K
+        };
+        proxyData.push(g_proxyDataAllowTest1);
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest021", u_config);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest021 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700014);
+      }
+    });
+
+
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest022
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0222
+     * @tc.desc   call putValue with bool type value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "datashareproxy://com.acts.dataShare.config/test"
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri,
+          isMultiValues: true,
+          values: { 1: "test1", 2: "test2"},
+          trustProviders: []
+        };
+        let u_config: dataShare.DataProxyConfig = {
+          type: -1 as dataShare.DataProxyType.SHARED_CONFIG,
+        };
+        proxyData.push(g_proxyDataAllowTest1);
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest022", u_config);
+        let values = await g_handle!.getValues(testUri, u_config);
+        expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("PutValueTest022");
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest022 failed,code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest023
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0223
+     * @tc.desc   call putValue with bool type value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "datashareproxy://com.acts.dataShare.config/test"
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri,
+          isMultiValues: true,
+          values: { 1: "test1", 2: "test2"},
+          trustProviders: []
+        };
+        let u_config: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 102401 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_100K
+        };
+        proxyData.push(g_proxyDataAllowTest1);
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest021", u_config);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest023 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700014);
       }
     });
   })
