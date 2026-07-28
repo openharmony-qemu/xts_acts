@@ -1088,6 +1088,58 @@ export default function formProviderTest() {
     }); 
 
     /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0903
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0903
+     * @tc.desc   Close the card EditAbility page with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0903', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0903';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.closeFormEditAbility(null);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
+        done();
+      } catch (error) {
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider closeFormEditAbility, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+        expect(businessError.code).assertEqual(ERROR_CODE1);     
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0904
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0904
+     * @tc.desc   Close the card EditAbility page with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0904', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0904';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.closeFormEditAbility(undefined);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
+        done();
+      } catch (error) {
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider closeFormEditAbility, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+        expect(businessError.code).assertEqual(ERROR_CODE1);     
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
      * @tc.name   SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901
      * @tc.number SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0901
      * @tc.desc   Open the card EditAbility page
