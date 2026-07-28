@@ -1990,3 +1990,21 @@ export default function Float32ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<int>((acc: int, v: number): int => (acc + v).toInt(), -10);
       expect(result).assertEqual(-16);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_1200
+     * @tc.name testFloat32ArrayReduceRightTwo120
+     * @tc.desc Verify reduceRight on subarray only iterates within subarray range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayReduceRightTwo120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(10.0, 20.0, 30.0, 40.0, 50.0);
+      const view = parent.subarray(1, 4);
+      const result = view.reduceRight<number>((acc: number, v: number): number => acc + v, 0);
+      expect(result).assertEqual(90.0);
+    });
+
+  });
+}
