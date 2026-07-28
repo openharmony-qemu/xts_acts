@@ -16,7 +16,6 @@
 
 import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
-import { BusinessError } from '@ohos.base';
 import serial from "@ohos.busManager.serial";
 import bundleManager from '@ohos.bundle.bundleManager';
 import buffer from '@ohos.buffer';
@@ -31,19 +30,19 @@ function sleep(count: int): Promise<int> {
   })
 }
 
-async function driveFn(): Promise<void> {
-  console.info(TAG, '**************driveFn**************');
+async function clickAllowButton(): Promise<void> {
+  console.info(`${TAG} clickAllowButton`);
   try {
     const driver: Driver = Driver.create();
     await driver.delayMs(1000);
-    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
     const buttons = await driver.findComponents(ON.text('允许', MatchPattern.EQUALS));
-    console.info(TAG, `buttons is ${JSON.stringify(buttons)}`);
     if (buttons && buttons.length > 0) {
-      await buttons[0].click();
+      for (let i: int = 0; i < buttons.length; i++) {
+        await buttons[i].click();
+      }
     }
   } catch (error) {
-    console.info(TAG, 'driveFn error: ' + error);
+    console.info(`${TAG} clickAllowButton error: ${error}`);
   }
 }
 
@@ -51,27 +50,27 @@ async function checkDevice(): Promise<boolean> {
   try {
     const portList: serial.SerialPort[] = await serial.getSerialPortList();
     if (portList && portList.length > 0) {
-      console.info(TAG, 'Test serial device detected');
+      console.info(`${TAG} Test serial device detected`);
       return true;
     } else {
-      console.info(TAG, 'Test no serial device detected');
+      console.info(`${TAG} Test no serial device detected`);
       return false;
     }
   } catch (err) {
-    console.error(TAG, 'checkDevice error: ', JSON.stringify(err));
+    console.error(`${TAG} checkDevice error: ${JSON.stringify(err)}`);
     return false;
   }
 }
 
 export default function SerialBusManagerSupplementTest(): void {
   describe('SerialBusManagerSupplementTest', (): void => {
-    console.info(TAG, 'describe start');
+    console.info(`${TAG} describe start`);
     let gPort: serial.SerialPort | null = null;
     let gPortInfo: serial.SerialPortInfo | null = null;
     let gPort1: serial.SerialPort | null = null;
 
     beforeAll(async (done: () => void): Promise<void> => {
-      console.info(TAG, 'beforeAll start');
+      console.info(`${TAG} beforeAll start`);
       try {
         const portList: serial.SerialPort[] = await serial.getSerialPortList();
         if (portList && portList.length > 0) {
@@ -80,33 +79,29 @@ export default function SerialBusManagerSupplementTest(): void {
           if (portList.length > 1) {
             gPort1 = portList[1];
           }
-          console.info(TAG, 'beforeAll portInfo: ', JSON.stringify(gPortInfo));
+          console.info(`${TAG} beforeAll portInfo: ${JSON.stringify(gPortInfo)}`);
         }
         done()
       } catch (error) {
-        console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
+        console.info(`${TAG} beforeAll error: ${error}`);
         done()
       }
     })
 
-    afterAll(async (done: () => void): Promise<void> => {
-      console.info(TAG, 'afterAll');
+    afterAll(async (): Promise<void> => {
+      console.info(`${TAG} afterAll`);
       if (gPort != null) {
         try {
-          gPort?.close();
-          done()
+          await gPort!.close();
         } catch (err) {
-          console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-          done()
+          console.error(`${TAG} afterAll close error: ${JSON.stringify(err)}`);
         }
-      } 
+      }
       if (gPort1 != null) {
         try {
-          await gPort1?.close();
-          done()
+          await gPort1!.close();
         } catch (err) {
-          console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-          done()
+          console.error(`${TAG} afterAll close error: ${JSON.stringify(err)}`);
         }
       }
     })
@@ -121,7 +116,7 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoVendorId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testSerialPortInfoVendorId001 start');
+        console.info(`${TAG} testSerialPortInfoVendorId001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
@@ -131,17 +126,17 @@ export default function SerialBusManagerSupplementTest(): void {
           if (portList.length > 0) {
             const portInfo: serial.SerialPortInfo = portList[0].portInfo;
             const vendorId: int | undefined = portInfo.vendorId;
-            console.info(TAG, 'testSerialPortInfoVendorId001 vendorId: ', vendorId);
+            console.info(`${TAG} testSerialPortInfoVendorId001 vendorId: ${vendorId}`);
             if (vendorId !== undefined) {
               expect(typeof vendorId === 'int').assertTrue();
             } else {
-              console.info(TAG, 'testSerialPortInfoVendorId001 vendorId is undefined (optional attribute)');
+              console.info(`${TAG} testSerialPortInfoVendorId001 vendorId is undefined (optional attribute)`);
             }
             expect(vendorId === undefined || typeof vendorId === 'int').assertTrue();
           }
           done();
         } catch (error) {
-          console.error(TAG, 'testSerialPortInfoVendorId001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testSerialPortInfoVendorId001 catch err: ${error}`);
           expect().assertFail();
           done();
         }
@@ -157,7 +152,7 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoProductId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testSerialPortInfoProductId001 start');
+        console.info(`${TAG} testSerialPortInfoProductId001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
@@ -167,17 +162,17 @@ export default function SerialBusManagerSupplementTest(): void {
           if (portList.length > 0) {
             const portInfo: serial.SerialPortInfo = portList[0].portInfo;
             const productId: int | undefined = portInfo.productId;
-            console.info(TAG, 'testSerialPortInfoProductId001 productId: ', productId);
+            console.info(`${TAG} testSerialPortInfoProductId001 productId: ${productId}`);
             if (productId !== undefined) {
               expect(typeof productId === 'int').assertTrue();
             } else {
-              console.info(TAG, 'testSerialPortInfoProductId001 productId is undefined (optional attribute)');
+              console.info(`${TAG} testSerialPortInfoProductId001 productId is undefined (optional attribute)`);
             }
             expect(productId === undefined || typeof productId === 'int').assertTrue();
           }
           done();
         } catch (error) {
-          console.error(TAG, 'testSerialPortInfoProductId001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testSerialPortInfoProductId001 catch err: ${error}`);
           expect().assertFail();
           done();
         }
@@ -193,7 +188,7 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoManufacturer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testSerialPortInfoManufacturer001 start');
+        console.info(`${TAG} testSerialPortInfoManufacturer001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
@@ -203,17 +198,17 @@ export default function SerialBusManagerSupplementTest(): void {
           if (portList.length > 0) {
             const portInfo: serial.SerialPortInfo = portList[0].portInfo;
             const manufacturer: string | undefined = portInfo.manufacturer;
-            console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer: ', manufacturer);
+            console.info(`${TAG} testSerialPortInfoManufacturer001 manufacturer: ${manufacturer}`);
             if (manufacturer !== undefined) {
               expect(manufacturer.length >= 0).assertTrue();
             } else {
-              console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer is undefined (optional attribute)');
+              console.info(`${TAG} testSerialPortInfoManufacturer001 manufacturer is undefined (optional attribute)`);
             }
             expect(manufacturer === undefined || typeof manufacturer === 'string').assertTrue();
           }
           done();
         } catch (error) {
-          console.error(TAG, 'testSerialPortInfoManufacturer001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testSerialPortInfoManufacturer001 catch err: ${error}`);
           expect().assertFail();
           done();
         }
@@ -229,26 +224,28 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOffDisconnect003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOffDisconnect003 start');
+        console.info(`${TAG} testOffDisconnect003 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        const openPromise = gPort!.open();
+        await clickAllowButton();
         try {
-          gPort!.open();
-          await driveFn();
+          await openPromise;
           let disconnectCallback = (): void => {
-            console.info(TAG, 'testOffDisconnect003 disconnect callback');
+            console.info(`${TAG} testOffDisconnect003 disconnect callback`);
           };
           gPort!.onDisconnect(disconnectCallback);
           gPort!.offDisconnect(disconnectCallback);
-          console.info(TAG, 'testOffDisconnect003 unregister specific callback success');
-          await gPort!.close();
+          console.info(`${TAG} testOffDisconnect003 unregister specific callback success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOffDisconnect003 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOffDisconnect003 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -262,23 +259,25 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetDsr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetDsr003 start');
+        console.info(`${TAG} testGetDsr003 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        const openPromise = gPort!.open();
+        await clickAllowButton();
         try {
-          gPort!.open();
-          await driveFn();
+          await openPromise;
           let dsr: boolean = await gPort!.getDsr();
-          console.info(TAG, 'testGetDsr003 getDsr: ', dsr);
+          console.info(`${TAG} testGetDsr003 getDsr: ${dsr}`);
           expect(typeof dsr === 'boolean').assertTrue();
-          await gPort!.close();
           done();
         } catch (error) {
-          console.error(TAG, 'testGetDsr003 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testGetDsr003 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -292,35 +291,32 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetDsr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetDsr004 start');
+        console.info(`${TAG} testGetDsr004 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         if (gPort1 === null) {
-          console.info(TAG, 'testGetDsr004 gPort1 is null, skip');
+          console.info(`${TAG} testGetDsr004 gPort1 is null, skip`);
           done();
           return Promise.resolve();
         }
-        try {
-          gPort!.open();
-          await driveFn();
-          gPort1!.open();
+        Promise.all([gPort!.open(), gPort1!.open(), clickAllowButton()]).then(async () => {
           await sleep(500);
-          await driveFn();
           await gPort1!.setDtr(true);
           await sleep(100);
           let dsr: boolean = await gPort!.getDsr();
-          console.info(TAG, 'testGetDsr004 getDsr after setDtr(true): ', dsr);
+          console.info(`${TAG} testGetDsr004 getDsr after setDtr(true): ${dsr}`);
           expect(dsr === true).assertTrue();
-          await gPort!.close();
-          await gPort1!.close();
           done();
-        } catch (error) {
-          console.error(TAG, 'testGetDsr004 catch err: ', JSON.stringify(error));
+        }).catch((error) => {
+          console.error(`${TAG} testGetDsr004 catch err: ${error}`);
           expect().assertFail();
           done();
-        }
+        }).finally(() => {
+          gPort!.close();
+          gPort1!.close();
+        })
       })
 
     /**
@@ -333,35 +329,32 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetDsr005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetDsr005 start');
+        console.info(`${TAG} testGetDsr005 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         if (gPort1 === null) {
-          console.info(TAG, 'testGetDsr005 gPort1 is null, skip');
+          console.info(`${TAG} testGetDsr005 gPort1 is null, skip`);
           done();
           return Promise.resolve();
         }
-        try {
-          gPort!.open();
-          await driveFn();
-          gPort1!.open();
+        Promise.all([gPort!.open(), gPort1!.open(), clickAllowButton()]).then(async () => {
           await sleep(500);
-          await driveFn();
-          await gPort1!.setDtr(false);
+          await gPort!.setDtr(false);
           await sleep(100);
-          let dsr: boolean = await gPort!.getDsr();
-          console.info(TAG, 'testGetDsr005 getDsr after setDtr(false): ', dsr);
+          let dsr: boolean = await gPort1!.getDsr();
+          console.info(`${TAG} testGetDsr005 getDsr after setDtr(false): ${dsr}`);
           expect(dsr === false).assertTrue();
-          await gPort!.close();
-          await gPort1!.close();
           done();
-        } catch (error) {
-          console.error(TAG, 'testGetDsr005 catch err: ', JSON.stringify(error));
+        }).catch((error) => {
+          console.error(`${TAG} testGetDsr005 catch err: ${error}`);
           expect().assertFail();
           done();
-        }
+        }).finally(() => {
+          gPort!.close();
+          gPort1!.close();
+        })
       })
 
     /**
@@ -374,23 +367,25 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetCts003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetCts003 start');
+        console.info(`${TAG} testGetCts003 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        const openPromise = gPort!.open();
+        await clickAllowButton();
         try {
-          gPort!.open();
-          await driveFn();
+          await openPromise;
           let cts: boolean = await gPort!.getCts();
-          console.info(TAG, 'testGetCts003 getCts: ', cts);
+          console.info(`${TAG} testGetCts003 getCts: ${cts}`);
           expect(typeof cts === 'boolean').assertTrue();
-          await gPort!.close();
           done();
         } catch (error) {
-          console.error(TAG, 'testGetCts003 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testGetCts003 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -404,35 +399,32 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetCts004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetCts004 start');
+        console.info(`${TAG} testGetCts004 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         if (gPort1 === null) {
-          console.info(TAG, 'testGetCts004 gPort1 is null, skip');
+          console.info(`${TAG} testGetCts004 gPort1 is null, skip`);
           done();
           return Promise.resolve();
         }
-        try {
-          gPort!.open();
-          await driveFn();
-          gPort1!.open();
+        Promise.all([gPort!.open(), gPort1!.open(), clickAllowButton()]).then(async () => {
           await sleep(500);
-          await driveFn();
           await gPort1!.setRts(true);
           await sleep(100);
           let cts: boolean = await gPort!.getCts();
-          console.info(TAG, 'testGetCts004 getCts after setRts(true): ', cts);
+          console.info(`${TAG} testGetCts004 getCts after setRts(true): ${cts}`);
           expect(cts === true).assertTrue();
-          await gPort!.close();
-          await gPort1!.close();
           done();
-        } catch (error) {
-          console.error(TAG, 'testGetCts004 catch err: ', JSON.stringify(error));
+        }).catch((error) => {
+          console.error(`${TAG} testGetCts004 catch err: ${error}`);
           expect().assertFail();
           done();
-        }
+        }).finally(() => {
+          gPort!.close();
+          gPort1!.close();
+        })
       })
 
     /**
@@ -445,35 +437,32 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetCts005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetCts005 start');
+        console.info(`${TAG} testGetCts005 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         if (gPort1 === null) {
-          console.info(TAG, 'testGetCts005 gPort1 is null, skip');
+          console.info(`${TAG} testGetCts005 gPort1 is null, skip`);
           done();
           return Promise.resolve();
         }
-        try {
-          gPort!.open();
-          await driveFn();
-          gPort1!.open();
+        Promise.all([gPort!.open(), gPort1!.open(), clickAllowButton()]).then(async () => {
           await sleep(500);
-          await driveFn();
           await gPort1!.setRts(false);
           await sleep(100);
           let cts: boolean = await gPort!.getCts();
-          console.info(TAG, 'testGetCts005 getCts after setRts(false): ', cts);
+          console.info(`${TAG} testGetCts005 getCts after setRts(false): ${cts}`);
           expect(cts === false).assertTrue();
-          await gPort!.close();
-          await gPort1!.close();
           done();
-        } catch (error) {
-          console.error(TAG, 'testGetCts005 catch err: ', JSON.stringify(error));
+        }).catch((error) => {
+          console.error(`${TAG} testGetCts005 catch err: ${error}`);
           expect().assertFail();
           done();
-        }
+        }).finally(() => {
+          gPort!.close();
+          gPort1!.close();
+        })
       })
 
     /**
@@ -486,25 +475,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testWrite014 start');
+        console.info(`${TAG} testWrite014 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        const openPromise = gPort!.open();
+        await clickAllowButton();
         try {
-          gPort!.open();
-          await driveFn();
+          await openPromise;
           let writeData: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
           let writeLen: int = await gPort!.write(writeData, 2000);
-          console.info(TAG, 'testWrite014 writeLen: ', writeLen);
+          console.info(`${TAG} testWrite014 writeLen: ${writeLen}`);
           expect(typeof writeLen === 'int').assertTrue();
           expect(writeLen > 0).assertTrue();
-          await gPort!.close();
           done();
         } catch (error) {
-          console.error(TAG, 'testWrite014 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testWrite014 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -518,36 +509,41 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOnDataRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOnDataRead003 start');
+        console.info(`${TAG} testOnDataRead003 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         if (gPort1 === null) {
-          console.info(TAG, 'testOnDataRead003 gPort1 is null, skip');
+          console.info(`${TAG} testOnDataRead003 gPort1 is null, skip`);
           done();
           return Promise.resolve();
         }
+        const openPromise = gPort1!.open();
+        await clickAllowButton();
         try {
-          gPort1!.open();
-          await driveFn();
+          await openPromise;
           await sleep(500);
+          let callbackReceived = false;
           gPort1!.onDataRead((data: Uint8Array): void => {
-            console.info(TAG, 'testOnDataRead003 received data length: ', data.length);
+            console.info(`${TAG} testOnDataRead003 received data length: ${data.length}`);
             expect(data instanceof Uint8Array).assertTrue();
             expect(data.length >= 0).assertTrue();
+            callbackReceived = true;
           });
-          console.info(TAG, 'testOnDataRead003 onDataRead register success');
+          console.info(`${TAG} testOnDataRead003 onDataRead register success`);
           let writeData: Uint8Array = new Uint8Array(buffer.from('TestData', 'utf-8').buffer);
           await gPort1!.write(writeData, 1000);
           await sleep(500);
-          gPort1!.offDataRead();
-          await gPort1!.close();
+          expect(callbackReceived).assertTrue();
           done();
         } catch (error) {
-          console.error(TAG, 'testOnDataRead003 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOnDataRead003 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort1!.offDataRead();
+          gPort1!.close();
         }
       })
 
@@ -561,25 +557,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenDatabitsEight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenDatabitsEight001 start');
+        console.info(`${TAG} testOpenDatabitsEight001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.EIGHT
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            dataBits: serial.DataBits.EIGHT
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenDatabitsEight001 open with DataBits.EIGHT success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenDatabitsEight001 open with DataBits.EIGHT success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenDatabitsEight001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenDatabitsEight001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -593,25 +591,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenDatabitsSeven001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenDatabitsSeven001 start');
+        console.info(`${TAG} testOpenDatabitsSeven001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.SEVEN
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            dataBits: serial.DataBits.SEVEN
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenDatabitsSeven001 open with DataBits.SEVEN success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenDatabitsSeven001 open with DataBits.SEVEN success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenDatabitsSeven001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenDatabitsSeven001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -625,25 +625,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenDatabitsSix001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenDatabitsSix001 start');
+        console.info(`${TAG} testOpenDatabitsSix001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.SIX
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            dataBits: serial.DataBits.SIX
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenDatabitsSix001 open with DataBits.SIX success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenDatabitsSix001 open with DataBits.SIX success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenDatabitsSix001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenDatabitsSix001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -657,25 +659,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenDatabitsFive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenDatabitsFive001 start');
+        console.info(`${TAG} testOpenDatabitsFive001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.FIVE
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            dataBits: serial.DataBits.FIVE
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenDatabitsFive001 open with DataBits.FIVE success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenDatabitsFive001 open with DataBits.FIVE success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenDatabitsFive001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenDatabitsFive001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -689,25 +693,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenStopbitsOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenStopbitsOne001 start');
+        console.info(`${TAG} testOpenStopbitsOne001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          stopBits: serial.StopBits.ONE
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            stopBits: serial.StopBits.ONE
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenStopbitsOne001 open with StopBits.ONE success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenStopbitsOne001 open with StopBits.ONE success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenStopbitsOne001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenStopbitsOne001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -721,25 +727,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenStopbitsTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenStopbitsTwo001 start');
+        console.info(`${TAG} testOpenStopbitsTwo001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          stopBits: serial.StopBits.TWO
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            stopBits: serial.StopBits.TWO
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenStopbitsTwo001 open with StopBits.TWO success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenStopbitsTwo001 open with StopBits.TWO success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenStopbitsTwo001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenStopbitsTwo001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -753,25 +761,27 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testOpenParityNone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testOpenParityNone001 start');
+        console.info(`${TAG} testOpenParityNone001 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          parity: serial.Parity.NONE
+        };
+        const openPromise = gPort!.open(config);
+        await clickAllowButton();
         try {
-          let config: serial.SerialConfigs = {
-            baudRate: 115200,
-            parity: serial.Parity.NONE
-          };
-          gPort!.open(config);
-          await driveFn();
-          console.info(TAG, 'testOpenParityNone001 open with Parity.NONE success');
-          await gPort!.close();
+          await openPromise;
+          console.info(`${TAG} testOpenParityNone001 open with Parity.NONE success`);
           done();
         } catch (error) {
-          console.error(TAG, 'testOpenParityNone001 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testOpenParityNone001 catch err: ${error}`);
           expect().assertFail();
           done();
+        } finally {
+          gPort!.close();
         }
       })
 
@@ -785,22 +795,21 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetSerialPortList003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetSerialPortList003 start');
+        console.info(`${TAG} testGetSerialPortList003 start`);
         try {
           const portList: serial.SerialPort[] = await serial.getSerialPortList();
-          console.info(TAG, 'testGetSerialPortList003 portList length: ', portList.length);
+          console.info(`${TAG} testGetSerialPortList003 portList length: ${portList.length}`);
           expect(portList instanceof Array).assertTrue();
-          expect(typeof portList.length === 'int').assertTrue();
-          expect(portList.length >= 0).assertTrue();
           if (portList.length === 0) {
             expect(portList.length).assertEqual(0);
-            console.info(TAG, 'testGetSerialPortList003 empty array coverage success');
+            console.info(`${TAG} testGetSerialPortList003 empty array coverage success`);
           } else {
-            console.info(TAG, 'testGetSerialPortList003 device detected, cannot test empty case');
+            expect(portList.length > 0).assertTrue();
+            console.info(`${TAG} testGetSerialPortList003 device detected, non-empty array`);
           }
           done();
         } catch (error) {
-          console.error(TAG, 'testGetSerialPortList003 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testGetSerialPortList003 catch err: ${error}`);
           expect().assertFail();
           done();
         }
@@ -816,14 +825,14 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testGetSerialPortList004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info(TAG, 'testGetSerialPortList004 start');
+        console.info(`${TAG} testGetSerialPortList004 start`);
         if (await checkDevice() === false) {
           done();
           return Promise.resolve();
         }
         try {
           const portList: serial.SerialPort[] = await serial.getSerialPortList();
-          console.info(TAG, 'testGetSerialPortList004 portList length: ', portList.length);
+          console.info(`${TAG} testGetSerialPortList004 portList length: ${portList.length}`);
           expect(portList instanceof Array).assertTrue();
           expect(portList.length > 0).assertTrue();
           for (let i: int = 0; i < portList.length; i++) {
@@ -833,14 +842,15 @@ export default function SerialBusManagerSupplementTest(): void {
             let portInfo: serial.SerialPortInfo = port.portInfo;
             expect(typeof portInfo.portName === 'string').assertTrue();
             expect(portInfo.portName.length > 0).assertTrue();
-            console.info(TAG, 'testGetSerialPortList004 port[', i, '] portName: ', portInfo.portName);
+            console.info(`${TAG} testGetSerialPortList004 port[${i}] portName: ${portInfo.portName}`);
           }
           done();
         } catch (error) {
-          console.error(TAG, 'testGetSerialPortList004 catch err: ', JSON.stringify(error));
+          console.error(`${TAG} testGetSerialPortList004 catch err: ${error}`);
           expect().assertFail();
           done();
         }
       })
+
   })
 }
