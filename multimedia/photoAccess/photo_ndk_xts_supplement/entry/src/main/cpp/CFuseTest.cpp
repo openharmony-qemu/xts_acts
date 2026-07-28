@@ -46,7 +46,13 @@ constexpr int MODE4 = 4;
 constexpr int MODE5 = 5;
 constexpr int MODE6 = 6;
 constexpr int DIR_MODE = 0775;
+constexpr size_t TRUNCATE_SIZE = 1024;
 constexpr int ARG_COUNT_2 = 2;
+constexpr int ARG_COUNT_3 = 3;
+constexpr int IDX_2 = 2;
+constexpr int IDX_1 = 1;
+constexpr int IDX_0 = 0;
+constexpr int DUP2_FD = 10086;
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CFuseTestCpp"
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -78,6 +84,18 @@ static int32_t GetPathFromUri(const std::string &uri, std::string &path)
     LOGI("GetPathFromUri succ, path = %{public}s", path.c_str());
     free(result);
     return 0;
+}
+
+static int CopyFdData(int sourceFd, int targetFd)
+{
+    char dataBuffer[4096] = {0};
+    int sourceLen = 0;
+    while ((sourceLen = read(sourceFd, dataBuffer, sizeof(dataBuffer))) > 0) {
+        if (targetFd > 0) {
+            write(targetFd, dataBuffer, sizeof(dataBuffer));
+        }
+    }
+    return sourceLen;
 }
 
 static int32_t ParseOpenArgs(napi_env env, napi_callback_info info, std::string &uri, int32_t &mode)
@@ -577,7 +595,7 @@ napi_value Test_stat(napi_env env, napi_callback_info info)
 
     size_t uriLen = 0;
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
-    if (argc >= 2) {
+    if (argc >= ARG_COUNT_2) {
         napi_get_value_int32(env, args[1], &mode);
     }
 
@@ -601,7 +619,7 @@ napi_value Test_stat(napi_env env, napi_callback_info info)
     int ret = -1;
     struct stat st;
     if (mode == MODE2) {
-        if (0 == lstat(path.c_str(), &st)) {
+        if (lstat(path.c_str(), &st) == 0) {
             LOGI("lstat info: mode=%{public}o, uid=%{public}d, gid=%{public}d, size=%{public}ld", st.st_mode,
                         st.st_uid, st.st_gid, st.st_size);
             ret = 0;
@@ -609,7 +627,7 @@ napi_value Test_stat(napi_env env, napi_callback_info info)
             LOGE("Test_stat: lstat failed");
         }
     } else {
-        if (0 == stat(path.c_str(), &st)) {
+        if (stat(path.c_str(), &st) == 0) {
             LOGI("stat info: mode=%{public}o, uid=%{public}d, gid=%{public}d, size=%{public}ld", st.st_mode,
                         st.st_uid, st.st_gid, st.st_size);
             ret = 0;
@@ -679,12 +697,12 @@ napi_value Test_FsSystemStat(napi_env env, napi_callback_info info)
     int ret = -1;
     OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
     if (mode == MODE1) {
-        struct statfs statFsStruct;
-        memset(&statFsStruct, 0, sizeof(statFsStruct));
+        struct statfs statFsStruct = {0};
         ret = statfs(path.c_str(), &statFsStruct);
         OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
         if (ret >= 0) {
-            OH_LOG_INFO(LOG_APP, "fileSystem blocksNum: %{public}ld, blocksSize: %{public}ld", statFsStruct.f_blocks, statFsStruct.f_bsize);
+            OH_LOG_INFO(LOG_APP, "fileSystem blocksNum: %{public}ld, blocksSize: %{public}ld",
+                        statFsStruct.f_blocks, statFsStruct.f_bsize);
         } else {
             char *msg = strerror(errno);
             OH_LOG_INFO(LOG_APP, "errno = %{public}d, errMsg is %{public}s", errno, msg);
@@ -694,9 +712,8 @@ napi_value Test_FsSystemStat(napi_env env, napi_callback_info info)
         ret = statvfs(path.c_str(), &vfs);
 
         if (ret >= 0) {
-            blkcnt_t block_size = 0;
-            block_size = vfs.f_bsize;
-            OH_LOG_INFO(LOG_APP, "fileSystem totalSize: %{public}ld", vfs.f_blocks + block_size);
+            blkcnt_t blockSize = vfs.f_bsize;
+            OH_LOG_INFO(LOG_APP, "fileSystem totalSize: %{public}ld", vfs.f_blocks + blockSize);
         } else {
             char *msg = strerror(errno);
             OH_LOG_INFO(LOG_APP, "errno = %{public}d, errMsg is %{public}s", errno, msg);
@@ -708,7 +725,8 @@ napi_value Test_FsSystemStat(napi_env env, napi_callback_info info)
     return flag;
 }
 
-int fn(const char *fpath, const struct stat *st, int typeflag) {
+int Fn(const char *fpath, const struct stat *st, int typeflag)
+{
     int result = -1;
     if (typeflag == FTW_F) {
         result = 1;
@@ -723,7 +741,8 @@ int fn(const char *fpath, const struct stat *st, int typeflag) {
     return result;
 }
 
-int fn2(const char *fpath, const struct stat *st, int typeflag, struct FTW *fbuf) {
+int Fn2(const char *fpath, const struct stat *st, int typeflag, struct FTW *fbuf)
+{
     int result = -1;
     if (typeflag == FTW_F) {
         result = 1;
@@ -762,7 +781,7 @@ napi_value Test_Ftw(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
     int ret = -1;
     if (mode == MODE1) {
-        int temp = ftw(newPath.c_str(), fn, 500);
+        int temp = ftw(newPath.c_str(), Fn, 500);
         if (temp == 0) {
             ret = 0;
             OH_LOG_INFO(LOG_APP, "ftw success, temp = %{public}d", temp);
@@ -771,13 +790,14 @@ napi_value Test_Ftw(napi_env env, napi_callback_info info)
             OH_LOG_INFO(LOG_APP, "ftw result = %{public}d, errno = %{public}d, errMsg is %{public}s", temp, errno, msg);
         }
     } else {
-        int temp = nftw(newPath.c_str(), fn2, 20, 0);
+        int temp = nftw(newPath.c_str(), Fn2, 20, 0);
         if (temp == 0) {
             ret = 0;
             OH_LOG_INFO(LOG_APP, "nftw success, temp = %{public}d", temp);
         } else {
             char *msg = strerror(errno);
-            OH_LOG_INFO(LOG_APP, "nftw result = %{public}d, errno = %{public}d, errMsg is %{public}s", temp, errno, msg);
+            OH_LOG_INFO(LOG_APP, "nftw result = %{public}d, errno = %{public}d, errMsg is %{public}s",
+                        temp, errno, msg);
         }
     }
     OH_LOG_INFO(LOG_APP, "get file stat, ret = %{public}d", ret);
@@ -807,13 +827,13 @@ napi_value Test_Truncate(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "get file , mode = %{public}d", mode);
     int ret = -1;
     if (mode == MODE1) {
-        ret = truncate(path.c_str(), 1024);
+        ret = truncate(path.c_str(), TRUNCATE_SIZE);
     } else {
         int fd = open(path.c_str(), O_RDWR);
         if (fd < 0) {
             OH_LOG_INFO(LOG_APP, "open file %{public}s failed !", path.c_str());
         } else {
-            ret = ftruncate(fd, 1024);
+            ret = ftruncate(fd, TRUNCATE_SIZE);
             close(fd);
         }
     }
@@ -829,14 +849,14 @@ napi_value Test_PathConf(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "Test_PathConf start");
     int err = 0;
     int mode;
-    bool with_f;
-    size_t argc = 3;
-    napi_value args[3] = {nullptr, nullptr, nullptr};
+    bool withF;
+    size_t argc = ARG_COUNT_3;
+    napi_value args[ARG_COUNT_3] = {nullptr, nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     size_t uriLen = 0;
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
     napi_get_value_int32(env, args[1], &mode);
-    napi_get_value_bool(env, args[2], &with_f);
+    napi_get_value_bool(env, args[IDX_2], &withF);
     std::vector<char> buffer;
     buffer.resize(uriLen + 1);
     napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
@@ -850,7 +870,7 @@ napi_value Test_PathConf(napi_env env, napi_callback_info info)
         int fd = open(path.c_str(), O_RDONLY);
         OH_LOG_INFO(LOG_APP, "get file fd, fd = %{public}d", fd);
         if (fd > 0) {
-            ret = with_f == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(path.c_str(), _PC_NAME_MAX);
+            ret = withF == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(path.c_str(), _PC_NAME_MAX);
             close(fd);
         }
     } else {
@@ -859,7 +879,7 @@ napi_value Test_PathConf(napi_env env, napi_callback_info info)
         int fd = open(newPath.c_str(), O_RDONLY);
         OH_LOG_INFO(LOG_APP, "get dir fd, fd = %{public}d", fd);
         if (fd > 0) {
-            ret = with_f == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(newPath.c_str(), _PC_NAME_MAX);
+            ret = withF == true ? fpathconf(fd, _PC_NAME_MAX) : pathconf(newPath.c_str(), _PC_NAME_MAX);
             close(fd);
         }
     }
@@ -877,20 +897,16 @@ napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
     size_t argc = 2;
     napi_value args[2] = {nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    size_t uriLen = 0;
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen);
+    std::string uri;
+    GetUtf8String(env, args[0], uri);
     napi_get_value_int32(env, args[1], &mode);
-    std::vector<char> buffer;
-    buffer.resize(uriLen + 1);
-    napi_get_value_string_utf8(env, args[0], buffer.data(), buffer.size(), &uriLen);
-    std::string uri(buffer.begin(), buffer.end());
     OH_LOG_INFO(LOG_APP, "uri: %{public}s", uri.c_str());
     std::string path;
     err = GetPathFromUri(uri, path);
     OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
     std::string newPath;
-    DIR *pointer = NULL;
-    struct dirent *pEnt = NULL;
+    DIR *pointer = nullptr;
+    struct dirent *pEnt = nullptr;
     int ret = -1;
     if (mode == MODE1) {
         newPath = path.substr(0, path.rfind("/"));
@@ -899,18 +915,18 @@ napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
     }
     OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
     pointer = opendir(newPath.c_str());
-    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == NULL));
-    if (pointer == NULL) {
+    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == nullptr));
+    if (pointer == nullptr) {
         char *msg = strerror(errno);
         OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
     }
-    if (pointer != NULL) {
+    if (pointer != nullptr) {
         ret = 1;
         pEnt = readdir(pointer);
         int offset = telldir(pointer);
         OH_LOG_INFO(LOG_APP, "current offset = %{public}d", offset);
-        OH_LOG_INFO(LOG_APP, "PEnt is NULL, ret = %{public}d", pEnt == NULL);
-        if (pEnt != NULL) {
+        OH_LOG_INFO(LOG_APP, "PEnt is NULL, ret = %{public}d", pEnt == nullptr);
+        if (pEnt != nullptr) {
             OH_LOG_INFO(LOG_APP, "d_name = %{public}s", pEnt->d_name);
         } else {
             char *msg = strerror(errno);
@@ -919,14 +935,12 @@ napi_value Test_OpenReadDir(napi_env env, napi_callback_info info)
         seekdir(pointer, 0);
         int offsetSeek = telldir(pointer);
         OH_LOG_INFO(LOG_APP, "after seekdir offset = %{public}d", offsetSeek);
-
         pEnt = readdir(pointer);
-        int offset_2 = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "read again , current offset = %{public}d", offset_2);
+        int offset2 = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "read again , current offset = %{public}d", offset2);
         rewinddir(pointer);
-        int offset_3 = telldir(pointer);
-        OH_LOG_INFO(LOG_APP, "after rewinddir, current offset = %{public}d", offset_3);
-
+        int offset3 = telldir(pointer);
+        OH_LOG_INFO(LOG_APP, "after rewinddir, current offset = %{public}d", offset3);
         int closeFlag = closedir(pointer);
         OH_LOG_INFO(LOG_APP, "closeFlag = %{public}d", closeFlag);
     }
@@ -956,7 +970,7 @@ napi_value Test_ReadDir_R(napi_env env, napi_callback_info info)
     err = GetPathFromUri(uri, path);
     OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
     std::string newPath;
-    DIR *pointer = NULL;
+    DIR *pointer = nullptr;
     struct dirent *entry = (struct dirent *)malloc(sizeof(struct dirent));
     struct dirent **result = (struct dirent **)malloc(sizeof(struct dirent));
     int ret = -1;
@@ -967,13 +981,13 @@ napi_value Test_ReadDir_R(napi_env env, napi_callback_info info)
     }
     OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
     pointer = opendir(newPath.c_str());
-    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == NULL));
-    if (pointer != NULL) {
+    OH_LOG_INFO(LOG_APP, "pointer = %{public}d", (pointer == nullptr));
+    if (pointer != nullptr) {
         ret = 1;
         int readFlag = readdir_r(pointer, entry, result);
         OH_LOG_INFO(LOG_APP, "readdir_r , readFlag = %{public}d", readFlag);
-        OH_LOG_INFO(LOG_APP, "readdir_r , dir_name = %{public}s", entry == NULL ? "nullptr" : entry->d_name);
-        OH_LOG_INFO(LOG_APP, "readdir_r , d_name = %{public}s", result[0] == NULL ? "nullptr" : result[0]->d_name);
+        OH_LOG_INFO(LOG_APP, "readdir_r , dir_name = %{public}s", entry == nullptr ? "nullptr" : entry->d_name);
+        OH_LOG_INFO(LOG_APP, "readdir_r , d_name = %{public}s", result[0] == nullptr ? "nullptr" : result[0]->d_name);
     } else {
         char *msg = strerror(errno);
         OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
@@ -987,7 +1001,7 @@ napi_value Test_ReadDir_R(napi_env env, napi_callback_info info)
 napi_value Test_Fallocate(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "Test_Fallocate start");
-    uint64_t file_size = 10 * 1024 * 1024 * 1024ULL;
+    uint64_t fileSize = 10 * 1024 * 1024 * 1024ULL;
     int err = 0;
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -1004,7 +1018,7 @@ napi_value Test_Fallocate(napi_env env, napi_callback_info info)
     int ret = -1;
     int fd = open(path.c_str(), O_RDWR);
     if (fd > 0) {
-        ret = fallocate(fd, 0, 0, file_size);
+        ret = fallocate(fd, 0, 0, fileSize);
         if (ret == -1) {
             char *msg = strerror(errno);
             OH_LOG_ERROR(LOG_APP, "Create failed, errno = %{public}d, errMsg: %{public}s", errno, msg);
@@ -1070,9 +1084,9 @@ napi_value Test_Chdir(napi_env env, napi_callback_info info)
     std::string newPath = path.substr(0, path.rfind("Photo"));
     OH_LOG_INFO(LOG_APP, "uri: %{public}s", newPath.c_str());
     int ret = -1;
-    int test_flag_1 = chdir(newPath.c_str());
-    OH_LOG_INFO(LOG_APP, "test_flag_1: %{public}d", test_flag_1);
-    if (test_flag_1 == 0) {
+    int testFlag1 = chdir(newPath.c_str());
+    OH_LOG_INFO(LOG_APP, "testFlag1: %{public}d", testFlag1);
+    if (testFlag1 == 0) {
         ret = 1;
     } else {
         char *msg = strerror(errno);
@@ -1089,21 +1103,13 @@ napi_value Test_Dup_Api(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "Test_Dup_Api start");
     int err = 0;
     int mode;
-    size_t argc = 3;
-    napi_value args[3] = {nullptr, nullptr, nullptr};
+    size_t argc = ARG_COUNT_3;
+    napi_value args[ARG_COUNT_3] = {nullptr, nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    size_t uriLen1 = 0;
-    size_t uriLen2 = 0;
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen1);
-    napi_get_value_string_utf8(env, args[2], nullptr, 0, &uriLen2);
-    std::vector<char> buffer1;
-    std::vector<char> buffer2;
-    buffer1.resize(uriLen1 + 1);
-    buffer2.resize(uriLen2 + 1);
-    napi_get_value_string_utf8(env, args[0], buffer1.data(), buffer1.size(), &uriLen1);
-    std::string uri1(buffer1.begin(), buffer1.end());
-    napi_get_value_string_utf8(env, args[2], buffer2.data(), buffer2.size(), &uriLen2);
-    std::string uri2(buffer2.begin(), buffer2.end());
+    std::string uri1;
+    std::string uri2;
+    GetUtf8String(env, args[0], uri1);
+    GetUtf8String(env, args[IDX_2], uri2);
     OH_LOG_INFO(LOG_APP, "uriSource: %{public}s", uri1.c_str());
     OH_LOG_INFO(LOG_APP, "uriTarget: %{public}s", uri2.c_str());
     napi_get_value_int32(env, args[1], &mode);
@@ -1114,8 +1120,6 @@ napi_value Test_Dup_Api(napi_env env, napi_callback_info info)
 
     int sourceFd = open(sourcePath.c_str(), O_RDONLY);
     int targetFd = open(targetPath.c_str(), O_RDWR);
-    char dataBuffer[4096] = {0};
-    int count = 0;
     int nFd;
     lseek(sourceFd, 0, SEEK_SET);
     lseek(targetFd, 0, SEEK_SET);
@@ -1123,20 +1127,11 @@ napi_value Test_Dup_Api(napi_env env, napi_callback_info info)
     if (mode == MODE1) {
         nFd = dup(targetFd);
     } else {
-        nFd = dup2(targetFd, 10086);
+        nFd = dup2(targetFd, DUP2_FD);
     }
     OH_LOG_INFO(LOG_APP, "nFd create success, ret: %{public}d", nFd);
-    while (true) {
-        int sourceLen = read(sourceFd, dataBuffer, sizeof(dataBuffer));
-        if (sourceLen <= 0) {
-            ret = nFd;
-            break;
-        }
-        if (nFd > 0) {
-            int targetLen = write(nFd, dataBuffer, sizeof(dataBuffer));
-        }
-        count++;
-    }
+    CopyFdData(sourceFd, nFd);
+    ret = nFd;
     if (sourceFd > 0) {
         close(sourceFd);
     }
@@ -1158,18 +1153,10 @@ napi_value Test_Fsync(napi_env env, napi_callback_info info)
     size_t argc = 2;
     napi_value args[2] = {nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    size_t uriLen1 = 0;
-    size_t uriLen2 = 0;
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &uriLen1);
-    napi_get_value_string_utf8(env, args[1], nullptr, 0, &uriLen2);
-    std::vector<char> buffer1;
-    std::vector<char> buffer2;
-    buffer1.resize(uriLen1 + 1);
-    buffer2.resize(uriLen2 + 1);
-    napi_get_value_string_utf8(env, args[0], buffer1.data(), buffer1.size(), &uriLen1);
-    std::string uri1(buffer1.begin(), buffer1.end());
-    napi_get_value_string_utf8(env, args[1], buffer2.data(), buffer2.size(), &uriLen2);
-    std::string uri2(buffer2.begin(), buffer2.end());
+    std::string uri1;
+    std::string uri2;
+    GetUtf8String(env, args[0], uri1);
+    GetUtf8String(env, args[1], uri2);
     OH_LOG_INFO(LOG_APP, "uriSource: %{public}s", uri1.c_str());
     OH_LOG_INFO(LOG_APP, "uriTarget: %{public}s", uri2.c_str());
     std::string sourcePath;
@@ -1181,22 +1168,11 @@ napi_value Test_Fsync(napi_env env, napi_callback_info info)
     int targetFd = open(targetPath.c_str(), O_RDWR | O_TRUNC);
     OH_LOG_INFO(LOG_APP, "sourceFd create success, ret: %{public}d", sourceFd);
     OH_LOG_INFO(LOG_APP, "targetFd create success, ret: %{public}d", targetFd);
-    char dataBuffer[4096] = {0};
-    int count = 0;
     off_t offSet = lseek(sourceFd, 0, SEEK_SET);
     OH_LOG_INFO(LOG_APP, "offSet, ret: %{public}ld", offSet);
     lseek(targetFd, 0, SEEK_SET);
     int ret = -1;
-    while (true) {
-        int sourceLen = read(sourceFd, dataBuffer, sizeof(dataBuffer));
-        if (sourceLen <= 0) {
-            break;
-        }
-        if (targetFd > 0) {
-            int targetLen = write(targetFd, dataBuffer, sizeof(dataBuffer));
-        }
-        count++;
-    }
+    CopyFdData(sourceFd, targetFd);
     ret = fsync(targetFd);
     OH_LOG_INFO(LOG_APP, "fsync method , ret: %{public}d", ret);
     if (sourceFd > 0) {
@@ -1229,20 +1205,18 @@ napi_value Test_scanDir(napi_env env, napi_callback_info info)
     std::string path;
     err = GetPathFromUri(uri, path);
     OH_LOG_INFO(LOG_APP, "get file stat, mode = %{public}d", mode);
-    std::string newPath;
-    newPath = path.substr(0, path.rfind("Photo"));
+    std::string newPath = path.substr(0, path.rfind("Photo"));
     OH_LOG_INFO(LOG_APP, "newPath = %{public}s", newPath.c_str());
-    struct dirent **entry_list;
+    struct dirent **entryList;
     int count;
     int i;
     int ret = -1;
-    count = scandir(newPath.c_str(), &entry_list, 0, alphasort);
+    count = scandir(newPath.c_str(), &entryList, 0, alphasort);
     OH_LOG_INFO(LOG_APP, "scandir = %{public}d", count);
     if (count > 0) {
         ret = 1;
         for (i = 0; i < count; i++) {
-            struct dirent *entry;
-            entry = entry_list[i];
+            struct dirent *entry = entryList[i];
             OH_LOG_INFO(LOG_APP, "scandir, count is %{public}d, d_name = %{public}s", i, entry->d_name);
             free(entry);
         }
