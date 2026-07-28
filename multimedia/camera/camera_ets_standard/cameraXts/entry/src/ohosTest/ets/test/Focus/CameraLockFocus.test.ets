@@ -80,28 +80,28 @@ async function createVideoOutput(cameraNum: number) {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[cameraNum];
   let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
   let previewProfile = cameraOutputCap.previewProfiles[0];
-  let videoProfile = cameraOutputCap.videoProfiles[0];
+  let mVideoProfile = cameraOutputCap.videoProfiles[0];
   for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
     let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
-      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
+      console.log(TAG, 'find mVideoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
       console.log(TAG,
         'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
       return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
         (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
     })
     if (foundProfile) {
-      videoProfile = foundProfile;
+      mVideoProfile = foundProfile;
       previewProfile = indexPreviewProfiles;
       break;
     }
   }
-  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
+  console.log(TAG, 'mVideoProfile: w: ' + mVideoProfile.size.width + 'h: ' + mVideoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
   CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
   CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile, 'surfaceID', mVideoSurfaceId);
-  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
+  console.log(TAG, 'createVideoOutput' + mVideoProfile, 'surfaceID', mVideoSurfaceId);
+  mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
   console.log(TAG, 'create preview output' + mPreviewOutput, 'createVideoOutput', mVideoOutput);
 }
 
