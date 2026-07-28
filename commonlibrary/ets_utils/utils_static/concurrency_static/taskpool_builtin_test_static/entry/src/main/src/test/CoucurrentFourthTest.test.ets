@@ -29,18 +29,17 @@ import { testRegExpToString1,
 
 import {sleep} from '../testability/pages/utils'
 
-let concurrentNum: int = 100
+let concurrentNum: int = 10
 
 
-export default function supplyTest() {
+export default function supplyTest(): void {
   describe('supplyTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

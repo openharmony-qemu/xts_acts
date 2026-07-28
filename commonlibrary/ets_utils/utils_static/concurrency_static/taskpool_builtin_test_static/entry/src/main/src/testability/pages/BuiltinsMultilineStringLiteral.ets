@@ -1,7 +1,7 @@
 'use static';
 
 
-export function BuiltinsMultilineStringLiteralTest0100() {
+export function BuiltinsMultilineStringLiteralTest0100(): void {
   let TAG='BuiltinsMultilineStringLiteralTest'
   try {
     const repeatStr = `La`;
@@ -16,7 +16,7 @@ export function BuiltinsMultilineStringLiteralTest0100() {
 }
 
 
-export function BuiltinsMultilineStringLiteralTest1600() {
+export function BuiltinsMultilineStringLiteralTest1600(): void {
   let TAG='BuiltinsMultilineStringLiteralTest1600'
   try {
     const isMember = true;

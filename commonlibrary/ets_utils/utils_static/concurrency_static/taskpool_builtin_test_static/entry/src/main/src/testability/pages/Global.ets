@@ -1,7 +1,7 @@
 'use static';
 /* 1. encodeURI */
 
-export function testGlobalEncodeURI() {
+export function testGlobalEncodeURI(): void {
   const TAG = 'testGlobalEncodeURI';
   try {
     const input = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEF" +
@@ -19,7 +19,7 @@ export function testGlobalEncodeURI() {
 
 /* 2. decodeURI */
 
-export function testGlobalDecodeURI() {
+export function testGlobalDecodeURI(): void {
   const TAG = 'testGlobalDecodeURI';
   try {
     const input =
@@ -35,7 +35,7 @@ export function testGlobalDecodeURI() {
 
 /* 3. encodeURIComponent */
 
-export function testGlobalEncodeURIComponent() {
+export function testGlobalEncodeURIComponent(): void {
   const TAG = 'testGlobalEncodeURIComponent';
   try {
     const input = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEF" +
@@ -55,7 +55,7 @@ export function testGlobalEncodeURIComponent() {
 
 /* 4. decodeURIComponent */
 
-export function testGlobalDecodeURIComponent() {
+export function testGlobalDecodeURIComponent(): void {
   const TAG = 'testGlobalDecodeURIComponent';
   try {
     const input =
@@ -71,7 +71,7 @@ export function testGlobalDecodeURIComponent() {
 
 /* 5. escape */
 
-export function testGlobalEscape() {
+export function testGlobalEscape(): void {
   const TAG = 'testGlobalEscape';
   try {
     const input = '!\\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEF' +
@@ -90,7 +90,7 @@ export function testGlobalEscape() {
 
 /* 6. unescape */
 
-export function testGlobalUnescape() {
+export function testGlobalUnescape(): void {
   const TAG = 'testGlobalUnescape';
   try {
     let result = unescape('%20%21%22%23%24%25%26%27%28%29*+%2C-./0123456789%3A' +
@@ -107,7 +107,7 @@ export function testGlobalUnescape() {
 
 /* 7. isFinite */
 
-export function testGlobalIsFinite() {
+export function testGlobalIsFinite(): void {
   const TAG = 'testGlobalIsFinite';
   try {
     if (isFinite(123) !== true) {
@@ -123,7 +123,7 @@ export function testGlobalIsFinite() {
 
 /* 8. isNaN */
 
-export function testGlobalIsNaN() {
+export function testGlobalIsNaN(): void {
   const TAG = 'testGlobalIsNaN';
   try {
     if (isNaN(123) !== false) {

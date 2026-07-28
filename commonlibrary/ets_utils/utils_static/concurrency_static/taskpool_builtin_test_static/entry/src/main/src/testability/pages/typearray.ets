@@ -2,7 +2,7 @@
 
 // -------------------- TypedArray.from -----------------------
 
-export function testTypedArrayFrom() {
+export function testTypedArrayFrom(): void {
   const TAG = 'testTypedArrayFrom';
   try {
     const s = new Set<int>([1, 2, 3]);
@@ -19,7 +19,7 @@ export function testTypedArrayFrom() {
 
 // -------------------- TypedArray.of -------------------------
 
-export function testTypedArrayOf() {
+export function testTypedArrayOf(): void {
   const TAG = 'testTypedArrayOf';
   try {
     const value = Uint8Array.of(1, 2, 3);
@@ -35,7 +35,7 @@ export function testTypedArrayOf() {
 
 // -------------------- copyWithin ----------------------------
 
-export function testCopyWithin() {
+export function testCopyWithin(): void {
   const TAG = 'testCopyWithin';
   try {
     const buffer = new ArrayBuffer(8);
@@ -55,7 +55,7 @@ export function testCopyWithin() {
 
 // -------------------- entries -------------------------------
 
-export function testEntries() {
+export function testEntries(): void {
   const TAG = 'testEntries';
   try {
     const arr = new Uint8Array([10, 20, 30]);
@@ -77,7 +77,7 @@ export function testEntries() {
 
 // -------------------- fill ---------------------------------
 
-export function testFill() {
+export function testFill(): void {
   const TAG = 'testFill';
   try {
     const array: number[] = [1, 2, 3];
@@ -94,7 +94,7 @@ export function testFill() {
 
 // -------------------- filter -------------------------------
 
-export function testFilter() {
+export function testFilter(): void {
   const TAG = 'testFilter';
   try {
     const array: number[] = [12, 5, 8, 130, 44];
@@ -111,7 +111,7 @@ export function testFilter() {
 
 // -------------------- find ---------------------------------
 
-export function testFind() {
+export function testFind(): void {
   const TAG = 'testFind';
   try {
     const isNegative = (element: number): boolean => element < 0;
@@ -128,7 +128,7 @@ export function testFind() {
 
 // -------------------- findIndex -----------------------------
 
-export function testFindIndex() {
+export function testFindIndex(): void {
   const TAG = 'testFindIndex';
   try {
     const isNegative = (element: number): boolean => element < 0;
@@ -145,7 +145,7 @@ export function testFindIndex() {
 
 // -------------------- forEach ------------------------------
 
-export function testForEach() {
+export function testForEach(): void {
   const TAG = 'testForEach';
   try {
     const uint8 = new Uint8Array([1, 2, 3, 4]);
@@ -162,7 +162,7 @@ export function testForEach() {
 
 // -------------------- includes -----------------------------
 
-export function testIncludes() {
+export function testIncludes(): void {
   const TAG = 'testIncludes';
   try {
     const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
@@ -177,7 +177,7 @@ export function testIncludes() {
 
 // -------------------- indexOf ------------------------------
 
-export function testIndexOf() {
+export function testIndexOf(): void {
   const TAG = 'testIndexOf';
   try {
     const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
@@ -192,7 +192,7 @@ export function testIndexOf() {
 
 // -------------------- join ---------------------------------
 
-export function testJoin() {
+export function testJoin(): void {
   const TAG = 'testJoin';
   try {
     const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
@@ -208,7 +208,7 @@ export function testJoin() {
 
 // -------------------- keys ---------------------------------
 
-export function testKeys() {
+export function testKeys(): void {
   const TAG = 'testKeys';
   try {
     const uint8 = new Uint8Array([10, 20, 30]);
@@ -230,7 +230,7 @@ export function testKeys() {
 
 // -------------------- lastIndexOf --------------------------
 
-export function testLastIndexOf() {
+export function testLastIndexOf(): void {
   const TAG = 'testLastIndexOf';
   try {
     const uint8 = new Uint8Array([10, 20, 50, 50, 50, 60]);
@@ -246,7 +246,7 @@ export function testLastIndexOf() {
 
 // -------------------- map ----------------------------------
 
-export function testMap() {
+export function testMap(): void {
   const TAG = 'testMap';
   try {
     const uint8 = new Uint8Array([25, 36, 49]);
@@ -262,7 +262,7 @@ export function testMap() {
 
 // -------------------- reduce -------------------------------
 
-export function testReduce() {
+export function testReduce(): void {
   const TAG = 'testReduce';
   try {
     const uint8 = new Uint8Array([0, 1, 2, 3]);
@@ -278,7 +278,7 @@ export function testReduce() {
 
 // -------------------- reduceRight --------------------------
 
-export function testReduceRight() {
+export function testReduceRight(): void {
   const TAG = 'testReduceRight';
   try {
     const uint8 = new Uint8Array([10, 20, 30]);
@@ -294,7 +294,7 @@ export function testReduceRight() {
 
 // -------------------- reverse ------------------------------
 
-export function testReverse() {
+export function testReverse(): void {
   const TAG = 'testReverse';
   try {
     const uint8 = new Uint8Array([1, 2, 3]);
@@ -310,7 +310,7 @@ export function testReverse() {
 
 // -------------------- set ----------------------------------
 
-export function testSet() {
+export function testSet(): void {
   const TAG = 'testSet';
   try {
     const buffer = new ArrayBuffer(8);
@@ -328,7 +328,7 @@ export function testSet() {
 
 // -------------------- slice --------------------------------
 
-export function testSlice() {
+export function testSlice(): void {
   const TAG = 'testSlice';
   try {
     const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
@@ -344,7 +344,7 @@ export function testSlice() {
 
 // -------------------- some ---------------------------------
 
-export function testSome() {
+export function testSome(): void {
   const TAG = 'testSome';
   try {
     const isNegative = (e: number) => e < 0;
@@ -360,7 +360,7 @@ export function testSome() {
 
 // -------------------- sort ---------------------------------
 
-export function testSort() {
+export function testSort(): void {
   const TAG = 'testSort';
   try {
     const uint8 = new Uint8Array([40, 10, 50, 20, 30]);
@@ -377,7 +377,7 @@ export function testSort() {
 
 // -------------------- subarray -----------------------------
 
-export function testSubarray() {
+export function testSubarray(): void {
   const TAG = 'testSubarray';
   try {
     const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
@@ -393,7 +393,7 @@ export function testSubarray() {
 
 // -------------------- .$_iterator --------------------
 
-export function testSymbolIterator() {
+export function testSymbolIterator(): void {
   const TAG = 'testSymbolIterator';
   try {
     const uint8 = new Uint8Array([10, 20, 30]);
@@ -415,7 +415,7 @@ export function testSymbolIterator() {
 
 // -------------------- toLocaleString ------------------------
 
-export function testToLocaleString() {
+export function testToLocaleString(): void {
   const TAG = 'testToLocaleString';
   try {
     const uint32 = new Uint32Array([500, 8123, 12]);
@@ -431,7 +431,7 @@ export function testToLocaleString() {
 
 // -------------------- toString -----------------------------
 
-export function testToString() {
+export function testToString(): void {
   const TAG = 'testToString';
   try {
     const uint8 = new Uint8Array([10, 20, 30]);
@@ -447,7 +447,7 @@ export function testToString() {
 
 // -------------------- values -------------------------------
 
-export function testValues() {
+export function testValues(): void {
   const TAG = 'testValues';
   try {
     const uint8 = new Uint8Array([10, 20, 30]);

@@ -21,15 +21,14 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BigIntTest() {
+export default function BigIntTest(): void {
   describe('BigIntTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(20);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

@@ -1,7 +1,7 @@
 'use static';
 
 
-export function testBigIntAsIntN() {
+export function testBigIntAsIntN(): void {
   let TAG='testBigIntAsIntN'
   try {
     const I64_CEIL = 2n**63n;
@@ -23,7 +23,7 @@ export function testBigIntAsIntN() {
 }
 
 
-export function testBigIntPrototypeToString() {
+export function testBigIntPrototypeToString(): void {
   let TAG='testBigIntPrototypeToString'
   try {
     const bigint1 = 3500n;
