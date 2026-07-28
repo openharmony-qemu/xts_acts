@@ -17,7 +17,7 @@
 // Original .js helper converted to .ets.
 // ArkTS-Sta does not support async generators (async function*); the async
 // generator jsAsyncGenerator is converted to an async function returning the
-// first yielded value, preserving the "is async/Promise" intent.
+// first yielded value, preserving the "is async/Promise" behavior.
 
 export async function jsAsyncFunction(): Promise<string> {
   return 'JS async function result';

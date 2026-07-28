@@ -145,7 +145,7 @@ export default function EAWorkerConcurrentTest(): void {
     it('testEAWorkerStressConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let workers: EAWorker[] = [];
-      // 50 个 EAWorker 易在全量/多轮压测下触发 LMK App died；10 实例仍覆盖多线程压力语义
+      // 50 个 EAWorker 易在全量/多轮压测下导致系统资源不足和应用退出；10 实例仍覆盖多线程压力语义
       let totalWorkers: int = 10;
       for (let i: int = 0; i < totalWorkers; i++) {
         let w: EAWorker = new EAWorker('eaWorker_stress_' + i);
