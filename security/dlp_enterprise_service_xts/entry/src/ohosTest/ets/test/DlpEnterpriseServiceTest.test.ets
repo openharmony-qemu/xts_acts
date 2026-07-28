@@ -524,35 +524,5 @@ export default function DlpEnterpriseServiceTest() {
       }
       done();
     })
-	
-	  /**
-      * @tc.name   SUB_SECURITY_DLP_processPluginCommand_1400
-      * @tc.number Test_processPluginCommand_014
-      * @tc.desc   call processPluginCommand with CMD_EVENT_REPORT_COMMON, return error code 19100011 or 801
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-    it('SUB_SECURITY_DLP_processPluginCommand_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        let curTag = TAG + "Test_processPluginCommand_014";
-        console.info(curTag, "start");
-        try {
-          let code = dlpPermission.PluginCmd.CMD_EVENT_REPORT_COMMON;
-          let message = "";
-          let result = await dlpPermission.processPluginCommand(code, message);
-          console.info(curTag, "processPluginCommand should not succeed");
-          expect(false).assertTrue();
-        } catch (err) {
-		  if (err.code === 801) {
-			console.info(curTag, "processPluginCommand failed," + err.code + err.message);
-			expect(err.code).assertEqual(801);
-		  } else {
-		    console.info(curTag, "processPluginCommand failed as expected", err.code, err.message);
-			expect(err.code).assertEqual(19100011);
-		  }
-        }
-        done();
-      })
   })
 }
