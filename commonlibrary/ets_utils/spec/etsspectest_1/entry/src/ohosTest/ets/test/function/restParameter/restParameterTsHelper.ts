@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for rest parameter tests
- * ECMA-262 §15.2.4.2, §15.3.4.3 — function.length and apply
- * ArkTS: no nested functions, no Function.apply/Function.call
- */
-
 export function restLength(): number {
   function f(a: number, b: number, ...rest: number[]): void {}
   return f.length

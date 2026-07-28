@@ -32,9 +32,6 @@ export function testGenericSuperCtor(): number {
   return obj.value
 }
 
-/*
- * super(...args) spread passing -- rest params in derived constructor may be restricted in ArkTS
- */
 class SpreadBase {
   value1: number
   value2: string
@@ -56,10 +53,6 @@ export function testSuperSpreadArgs(): string {
   return String(obj.value1) + "|" + obj.value2
 }
 
-/*
- * super[name]() computed property access — works in .ts helper (ArkTS dynamic mode).
- * arkts-no-props-by-index applies to .ets only, .ts helper allows indexed access on super.
- */
 class SuperComputedBase {
   greet(): string {
     return 'hello'
@@ -81,9 +74,6 @@ export function testSuperComputed(name: string): string {
   return obj.callMethod(name)
 }
 
-/*
- * super[sym]() with Symbol key
- */
 const superSym: unique symbol = Symbol('superSym')
 
 class SuperSymBase {
@@ -103,9 +93,6 @@ export function testSuperComputedSymbol(): string {
   return obj.callSymbolMethod()
 }
 
-/*
- * super[name] with getter
- */
 class SuperGetterBase {
   get computed(): string {
     return 'getter-value'
@@ -123,9 +110,6 @@ export function testSuperComputedGetter(): string {
   return obj.callGetter('computed')
 }
 
-/*
- * super[expr]() side-effect evaluation order
- */
 let sideEffectCounter: number = 0
 
 function keyWithSideEffect(): string {
@@ -146,10 +130,6 @@ export function testSuperComputedSideEffect(): string {
   return result + "|" + String(sideEffectCounter)
 }
 
-/*
- * super in static method -- moved from .ets to avoid compile rejection in ArkTS static mode.
- * TS/ArkTS-Dyn: static method uses super.staticMethod() to call parent static method.
- */
 class StaticSuperBase {
   static getBaseLabel(): string {
     return 'static-base'

@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for return type tests
- * ECMA-262 §14.2 — return and throw semantics
- */
-
 export function testNoReturnIsUndefined(): boolean {
   function f(): void {}
   return f() === undefined

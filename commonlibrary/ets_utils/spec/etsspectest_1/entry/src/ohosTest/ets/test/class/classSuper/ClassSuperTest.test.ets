@@ -26,7 +26,6 @@ import {
 } from '@ohos/hypium';
 import { testGenericSuperCtor, testSuperSpreadArgs, testSuperComputed, testSuperStaticMethod, testSuperComputedSymbol, testSuperComputedGetter, testSuperComputedSideEffect } from './classSuperTsHelper'
 
-// design 017: subclass calls super.protectedMethod()
 class SuperProtectedBase {
   protected getBaseValue(): string {
     return 'protected-base'
@@ -39,7 +38,6 @@ class SuperProtectedChild extends SuperProtectedBase {
   }
 }
 
-// design 019: class implements interface via inherited base method
 interface Named {
   getName(): string
 }

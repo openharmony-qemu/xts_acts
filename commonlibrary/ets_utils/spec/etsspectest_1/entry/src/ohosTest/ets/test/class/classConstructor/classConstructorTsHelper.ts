@@ -29,11 +29,6 @@ export function testDefaultDerivedCtorPassthrough(): number {
   return obj.value
 }
 
-/*
- * ECMA-262 §10.2.2 [[Construct]] + SuperCall: new.target propagates through inheritance chain
- * new.target always points to the constructor directly invoked by new, even inside super()
- */
-
 class NewTargetBase {
   captured: any
 

@@ -18,10 +18,6 @@ export function getBigintAsString(): string {
   return v.toString()
 }
 
-/*
-* Field init calling this.method() -- uses
- * to invoke a prototype method, may be restricted in ArkTS
- */
 class WithMethodCall {
   getBase(): number {
     return 10
@@ -34,9 +30,6 @@ export function getWithMethodCallValue(): number {
   return new WithMethodCall().value
 }
 
-/*
- * Symbol field test -- Symbol() is supported in .ts helper (arkts-no-symbol only applies to .ets)
- */
 const symId: any = Symbol("symId")
 const symName: any = Symbol("symName")
 

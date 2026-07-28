@@ -25,14 +25,6 @@ import {
   TestType
 } from '@ohos/hypium';
 
-/*
- * NOTE: private/protected are compile-time access modifiers in ArkTS.
- * The compiler rejects external/illegal access before runtime, so XTS can only
- * verify the positive path (allowed access works). Negative tests (confirming
- * that external access is rejected) require compile-fail testing, outside XTS scope.
- */
-
-// design 009 + 010: private field within class method + constructor
 class PrivateFieldAccess {
   private secret: number = 42
   private label: string
@@ -47,7 +39,6 @@ class PrivateFieldAccess {
   }
 }
 
-// design 011 + 012 + 013: private method, accesses private field, called by public
 class PrivateMethodAccess {
   private multiplier: number = 2
   private compute(input: number): number {
@@ -58,7 +49,6 @@ class PrivateMethodAccess {
   }
 }
 
-// design 014: private static method
 class PrivateStaticMethod {
   private static factor: number = 3
   private static scale(v: number): number {
@@ -69,7 +59,6 @@ class PrivateStaticMethod {
   }
 }
 
-// design 015: protected field within class
 class ProtectedFieldBase {
   protected baseValue: string = 'protected-base'
   public getBaseValue(): string {
@@ -77,14 +66,12 @@ class ProtectedFieldBase {
   }
 }
 
-// design 016: protected field in child class
 class ProtectedFieldChild extends ProtectedFieldBase {
   public getParentValue(): string {
     return this.baseValue
   }
 }
 
-// design 018: protected method in multi-level inheritance
 class MultiLevelBase {
   protected getLevel(): string {
     return 'level-one'
@@ -103,7 +90,6 @@ class MultiLevelLeaf extends MultiLevelMid {
   }
 }
 
-// design 006: public method override remains public
 class PublicOverrideBase {
   public greet(): string {
     return 'base'

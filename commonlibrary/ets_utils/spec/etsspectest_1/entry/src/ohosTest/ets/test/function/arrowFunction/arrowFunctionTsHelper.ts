@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for arrow function tests
- * ECMA-262 §14.2 Arrow Function Definitions
- * ArkTS: no indexed access on arguments (arkts-no-props-by-index)
- */
-
 export function captureArgs(a: number, b: number): number {
   let fn = () => {
     return arguments[0] + arguments[1]

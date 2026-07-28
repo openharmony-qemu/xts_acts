@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for function scope tests
- * ECMA-262 §15.2.6 — nested function declarations and scope chains
- */
-
 export function getNestedValue(): number {
   let a: number = 5
   function inner(): number {

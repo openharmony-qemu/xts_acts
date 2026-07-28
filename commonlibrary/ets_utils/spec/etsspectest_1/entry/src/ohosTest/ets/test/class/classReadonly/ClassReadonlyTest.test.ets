@@ -14,13 +14,6 @@
  */
 import { describe, expect, it, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 
-/*
- * NOTE: readonly is a compile-time constraint in ArkTS.
- * The compiler rejects reassignment to readonly fields outside declaration/constructor,
- * so XTS can only verify the positive path (values are readable).
- * Negative tests (confirming that reassignment is rejected) require compile-fail
- * testing, which is outside XTS scope.
- */
 class ReadonlyDecl {
   public readonly id: number = 100
   public readonly label: string = 'fixed'

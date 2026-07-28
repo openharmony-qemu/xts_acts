@@ -13,30 +13,18 @@
  * limitations under the License.
  */
 
-/**
- * Default Type Parameter (.ts helper)
- * Only keep syntax here that ArkTS static compiler cannot accept.
- * Re-verify each export on TypeScript Playground before device runs.
- */
-
 export interface Box<T = string> {
   value: T
 }
 
-/** GTP-DE-001 / DE-004: function default type parameter */
 export function wrapWithDefault<T = string>(value: T): Box<T> {
   return { value: value }
 }
 
-/** GTP-DE-001 / DE-009 helper: empty array with default T=string */
 export function makeEmpty<T = string>(): T[] {
   return []
 }
 
-/**
- * GTP-DE-009: inference vs default.
- * With value -> infer; without value -> default string fallback.
- */
 export function echoOrDefault<T = string>(value?: T): T {
   if (value !== undefined) {
     return value
@@ -44,7 +32,6 @@ export function echoOrDefault<T = string>(value?: T): T {
   return 'fallback' as T
 }
 
-/** GTP-DE-005: trailing optional type parameter U = string */
 export function pairOmitTail<T, U = string>(first: T, second?: U): string {
   let tail: U
   if (second !== undefined) {
@@ -55,9 +42,6 @@ export function pairOmitTail<T, U = string>(first: T, second?: U): string {
   return `${first}:${tail}`
 }
 
-/**
- * GTP-DE-003 / DE-004: class default type parameter.
- */
 export class MyBox<T = number> {
   public value: T
 
@@ -74,7 +58,6 @@ export function buildBoxExplicit(): MyBox<string> {
   return new MyBox<string>('explicit')
 }
 
-/** GTP-DE-007: default type satisfies class constraint */
 export class IdHolderImpl {
   public id: number
 

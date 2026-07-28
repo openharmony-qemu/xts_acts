@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * TypeScript helper for function declaration tests
- * ECMA-262 §15.2.6 — hoisting semantics
- * Nested function declaration inside helper to test call-before-declaration
- */
-
 export function testHoistedCall(): number {
   return add(1, 2)
   function add(a: number, b: number): number {
