@@ -140,26 +140,17 @@ static int32_t RecvCustomSecDataCallback(const uint8_t *data, uint32_t len)
 
 LITE_TEST_SUIT(communication, iot_connect, ActsIotcOhBleTest);
 
-/**
- * @tc.setup     : setup for every testcase
- * @return       : setup result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhBleTestSetUp(void)
 {
     printf("ActsIotcOhBleTestSetUp \r\n");
     return TRUE;
 }
 
-/**
- * @tc.teardown  : teardown for every testcase
- * @return       : teardown result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhBleTestTearDown(void)
 {
     printf("ActsIotcOhBleTestTearDown \r\n");
     return TRUE;
 }
-
 
 /**
  * @tc.name   testIotcOhBleEnMain0100
@@ -167,7 +158,7 @@ static BOOL ActsIotcOhBleTestTearDown(void)
  * @tc.desc   Test BLE module enable, run main and disable success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleEnMain0100, Function | MediumTest | LEVEL0)
 {
@@ -206,7 +197,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleEnMain0100, Function | MediumTest
  * @tc.desc   Test enable BLE before main start returns already running error.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleEnable0100, Function | MediumTest | LEVEL3)
 {
@@ -234,7 +225,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleEnable0100, Function | MediumTest
  * @tc.desc   Test disable BLE without main start returns already running error.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleDisable0100, Function | MediumTest | LEVEL3)
 {
@@ -258,7 +249,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleDisable0100, Function | MediumTes
  * @tc.desc   Test start BLE adv after release returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0100, Function | MediumTest | LEVEL3)
 {
@@ -288,7 +279,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0100, Function | MediumTes
  * @tc.desc   Test release BLE without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0200, Function | MediumTest | LEVEL3)
 {
@@ -303,7 +294,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0200, Function | MediumTes
  * @tc.desc   Test release BLE during main run returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0300, Function | MediumTest | LEVEL3)
 {
@@ -327,7 +318,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0300, Function | MediumTes
  * @tc.desc   Test release BLE with enable but without main returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0400, Function | MediumTest | LEVEL3)
 {
@@ -346,7 +337,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0400, Function | MediumTes
  * @tc.desc   Test release BLE after main stop returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0500, Function | MediumTest | LEVEL3)
 {
@@ -374,7 +365,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleRelease0500, Function | MediumTes
  * @tc.desc   Test start BLE adv with 1ms duration success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0100, Function | MediumTest | LEVEL0)
 {
@@ -413,7 +404,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0100, Function | MediumTe
  * @tc.desc   Test start BLE adv with 0ms duration and stop success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0200, Function | MediumTest | LEVEL3)
 {
@@ -454,7 +445,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0200, Function | MediumTe
  * @tc.desc   Test start BLE adv with UINT32_MAX duration and stop success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0300, Function | MediumTest | LEVEL3)
 {
@@ -495,7 +486,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0300, Function | MediumTe
  * @tc.desc   Test start BLE adv consecutively with different durations success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0400, Function | MediumTest | LEVEL3)
 {
@@ -541,7 +532,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0400, Function | MediumTe
  * @tc.desc   Test start BLE adv with 1ms duration and stop success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0500, Function | MediumTest | LEVEL3)
 {
@@ -582,7 +573,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStart0500, Function | MediumTe
  * @tc.desc   Test set device info with empty IotcDeviceInfo returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleDeviceInfo0100, Function | MediumTest | LEVEL3)
 {
@@ -606,7 +597,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleDeviceInfo0100, Function | Medium
  * @tc.desc   Test stop BLE adv twice in sequence success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0100, Function | MediumTest | LEVEL0)
 {
@@ -647,7 +638,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0100, Function | MediumTes
  * @tc.desc   Test stop BLE adv without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0200, Function | MediumTest | LEVEL3)
 {
@@ -662,7 +653,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0200, Function | MediumTes
  * @tc.desc   Test stop BLE adv after enable without main returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0300, Function | MediumTest | LEVEL3)
 {
@@ -681,7 +672,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0300, Function | MediumTes
  * @tc.desc   Test stop BLE adv after main start without peer returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0400, Function | MediumTest | LEVEL3)
 {
@@ -705,7 +696,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvStop0400, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data after enable and main success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0100, Function | MediumTest | LEVEL3)
 {
@@ -735,7 +726,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0100, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0200, Function | MediumTest | LEVEL3)
 {
@@ -750,7 +741,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0200, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data after enable without main returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0300, Function | MediumTest | LEVEL3)
 {
@@ -769,7 +760,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0300, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data after main without peer returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0400, Function | MediumTest | LEVEL3)
 {
@@ -793,7 +784,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0400, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data with NULL data returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0500, Function | MediumTest | LEVEL3)
 {
@@ -808,7 +799,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0500, Function | MediumTes
  * @tc.desc   Test send BLE custom sec data with zero length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0600, Function | MediumTest | LEVEL3)
 {
@@ -823,7 +814,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleSecSend0600, Function | MediumTes
  * @tc.desc   Test send BLE indicate data twice after main success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0100, Function | MediumTest | LEVEL3)
 {
@@ -853,7 +844,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0100, Function | MediumTes
  * @tc.desc   Test send BLE indicate data without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0200, Function | MediumTest | LEVEL3)
 {
@@ -868,7 +859,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0200, Function | MediumTes
  * @tc.desc   Test send BLE indicate data after enable without main returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0300, Function | MediumTest | LEVEL3)
 {
@@ -887,7 +878,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0300, Function | MediumTes
  * @tc.desc   Test send BLE indicate data twice after main without peer returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0400, Function | MediumTest | LEVEL3)
 {
@@ -913,7 +904,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0400, Function | MediumTes
  * @tc.desc   Test send BLE indicate data with NULL svc uuid returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0500, Function | MediumTest | LEVEL3)
 {
@@ -928,7 +919,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0500, Function | MediumTes
  * @tc.desc   Test send BLE indicate data with NULL char uuid returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0600, Function | MediumTest | LEVEL3)
 {
@@ -943,7 +934,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0600, Function | MediumTes
  * @tc.desc   Test send BLE indicate data with NULL value returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0700, Function | MediumTest | LEVEL3)
 {
@@ -958,7 +949,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0700, Function | MediumTes
  * @tc.desc   Test send BLE indicate data with zero length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0800, Function | MediumTest | LEVEL3)
 {
@@ -973,7 +964,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleIndSend0800, Function | MediumTes
  * @tc.desc   Test register BLE netcfg receive callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0100, Function | MediumTest | LEVEL3)
 {
@@ -992,7 +983,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0100, Function | MediumTe
  * @tc.desc   Test register BLE netcfg receive callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0200, Function | MediumTest | LEVEL3)
 {
@@ -1011,7 +1002,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0200, Function | MediumTe
  * @tc.desc   Test register BLE netcfg receive callback without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0300, Function | MediumTest | LEVEL3)
 {
@@ -1026,7 +1017,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleNetcfgCb0300, Function | MediumTe
  * @tc.desc   Test register BLE custom data receive callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0100, Function | MediumTest | LEVEL3)
 {
@@ -1045,7 +1036,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0100, Function | Medium
  * @tc.desc   Test register BLE custom data receive callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0200, Function | MediumTest | LEVEL3)
 {
@@ -1064,7 +1055,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0200, Function | Medium
  * @tc.desc   Test register BLE custom data receive callback without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0300, Function | MediumTest | LEVEL3)
 {
@@ -1079,7 +1070,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleCustDataCb0300, Function | Medium
  * @tc.desc   Test set BLE startup adv timeout with valid value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0100, Function | MediumTest | LEVEL3)
 {
@@ -1099,7 +1090,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0100, Function | Medium
  * @tc.desc   Test set BLE startup adv timeout with zero success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0200, Function | MediumTest | LEVEL3)
 {
@@ -1119,7 +1110,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0200, Function | Medium
  * @tc.desc   Test set BLE startup adv timeout without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0300, Function | MediumTest | LEVEL3)
 {
@@ -1135,7 +1126,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleAdvTimeout0300, Function | Medium
  * @tc.desc   Test set BLE GATT profile service list success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0100, Function | MediumTest | LEVEL3)
 {
@@ -1154,7 +1145,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0100, Function | MediumTest |
  * @tc.desc   Test set BLE GATT profile service list with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0200, Function | MediumTest | LEVEL3)
 {
@@ -1173,7 +1164,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0200, Function | MediumTest |
  * @tc.desc   Test set BLE GATT profile service list with NULL svc returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0300, Function | MediumTest | LEVEL3)
 {
@@ -1194,7 +1185,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0300, Function | MediumTest |
  * @tc.desc   Test set BLE GATT profile service list with zero svc num returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0400, Function | MediumTest | LEVEL3)
 {
@@ -1215,7 +1206,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0400, Function | MediumTest |
  * @tc.desc   Test set BLE GATT profile service list without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0500, Function | MediumTest | LEVEL3)
 {
@@ -1230,7 +1221,7 @@ LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0500, Function | MediumTest |
  * @tc.desc   Test set BLE GATT profile service list without enable returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhBleTest, testIotcOhBleGatt0600, Function | MediumTest | LEVEL3)
 {

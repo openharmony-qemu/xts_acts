@@ -145,20 +145,12 @@ static IotcServiceInfo g_svcInfo[] = {
 
 LITE_TEST_SUIT(communication, iot_connect, ActsIotcOhConnectTest);
 
-/**
- * @tc.setup     : setup for every testcase
- * @return       : setup result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhConnectTestSetUp(void)
 {
     printf("ActsIotcOhConnectTestSetUp \r\n");
     return TRUE;
 }
 
-/**
- * @tc.teardown  : teardown for every testcase
- * @return       : teardown result, TRUE is success, FALSE is fail
- */
 static BOOL ActsIotcOhConnectTestTearDown(void)
 {
     printf("ActsIotcOhConnectTestTearDown \r\n");
@@ -171,7 +163,7 @@ static BOOL ActsIotcOhConnectTestTearDown(void)
  * @tc.desc   Test SDK reset after main start success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0100, Function | MediumTest | LEVEL0)
 {
@@ -198,7 +190,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0100, Function | Med
  * @tc.desc   Test SDK reset after main start twice success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0200, Function | MediumTest | LEVEL3)
 {
@@ -229,7 +221,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0200, Function | Med
  * @tc.desc   Test SDK restore and reset cycle success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0100, Function | MediumTest | LEVEL3)
 {
@@ -274,7 +266,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0100, Function | M
  * @tc.desc   Test SDK reset before main returns main task not exists error.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0300, Function | MediumTest | LEVEL3)
 {
@@ -289,7 +281,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0300, Function | Med
  * @tc.desc   Test SDK stop before main start returns success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectStop0100, Function | MediumTest | LEVEL3)
 {
@@ -304,7 +296,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectStop0100, Function | Medi
  * @tc.desc   Test SDK reset after stop returns main task not exists error.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0400, Function | MediumTest | LEVEL3)
 {
@@ -333,7 +325,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReset0400, Function | Med
  * @tc.desc   Test SDK stop twice after reset returns success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectStop0200, Function | MediumTest | LEVEL3)
 {
@@ -362,7 +354,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectStop0200, Function | Medi
  * @tc.desc   Test SDK main called twice returns already running error.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMain0100, Function | MediumTest | LEVEL3)
 {
@@ -385,7 +377,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMain0100, Function | Medi
  * @tc.desc   Test SDK restore before main returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0200, Function | MediumTest | LEVEL3)
 {
@@ -400,7 +392,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0200, Function | M
  * @tc.desc   Test SDK restore after stop returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0300, Function | MediumTest | LEVEL3)
 {
@@ -423,7 +415,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRestore0300, Function | M
  * @tc.desc   Test set SDK log level to MIN success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0100, Function | MediumTest | LEVEL0)
 {
@@ -438,7 +430,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0100, Function | Me
  * @tc.desc   Test set SDK log level to MAX success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0200, Function | MediumTest | LEVEL3)
 {
@@ -453,7 +445,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0200, Function | Me
  * @tc.desc   Test set SDK log level to MAX success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0300, Function | MediumTest | LEVEL3)
 {
@@ -468,7 +460,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0300, Function | Me
  * @tc.desc   Test set SDK log level to NOTICE success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0400, Function | MediumTest | LEVEL3)
 {
@@ -483,7 +475,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0400, Function | Me
  * @tc.desc   Test set SDK log level to custom value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0500, Function | MediumTest | LEVEL3)
 {
@@ -498,7 +490,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0500, Function | Me
  * @tc.desc   Test set SDK log level with invalid value returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0600, Function | MediumTest | LEVEL3)
 {
@@ -513,7 +505,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectLogLvl0600, Function | Me
  * @tc.desc   Test set SDK main task size to zero returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMainTaskSize0100, Function | MediumTest | LEVEL3)
 {
@@ -528,7 +520,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMainTaskSize0100, Functio
  * @tc.desc   Test set SDK main task size with valid value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMainTaskSize0200, Function | MediumTest | LEVEL3)
 {
@@ -543,7 +535,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMainTaskSize0200, Functio
  * @tc.desc   Test set SDK monitor task size to zero returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMonTaskSize0100, Function | MediumTest | LEVEL3)
 {
@@ -558,7 +550,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMonTaskSize0100, Function
  * @tc.desc   Test set SDK monitor task size with valid value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMonTaskSize0200, Function | MediumTest | LEVEL3)
 {
@@ -573,7 +565,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectMonTaskSize0200, Function
  * @tc.desc   Test set SDK config path with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0100, Function | MediumTest | LEVEL3)
 {
@@ -588,7 +580,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0100, Function 
  * @tc.desc   Test set SDK config path with empty string success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0200, Function | MediumTest | LEVEL3)
 {
@@ -603,7 +595,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0200, Function 
  * @tc.desc   Test set SDK config path exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0300, Function | MediumTest | LEVEL3)
 {
@@ -620,7 +612,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0300, Function 
  * @tc.desc   Test set SDK config path with max length success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0400, Function | MediumTest | LEVEL3)
 {
@@ -639,7 +631,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectConfigPath0400, Function 
  * @tc.desc   Test register SDK event listener with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0100, Function | MediumTest | LEVEL3)
 {
@@ -654,7 +646,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0100, Fun
  * @tc.desc   Test unregister SDK event listener before register returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0200, Function | MediumTest | LEVEL3)
 {
@@ -669,7 +661,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0200, Fun
  * @tc.desc   Test register two SDK event listeners and unregister success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0300, Function | MediumTest | LEVEL3)
 {
@@ -719,7 +711,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRegEventListener0300, Fun
  * @tc.desc   Test register device put char state callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0100, Function | MediumTest | LEVEL3)
 {
@@ -738,7 +730,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0100, Function |
  * @tc.desc   Test register device put char state callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0200, Function | MediumTest | LEVEL3)
 {
@@ -757,7 +749,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0200, Function |
  * @tc.desc   Test register device put char state callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0300, Function | MediumTest | LEVEL3)
 {
@@ -772,7 +764,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPutCharCb0300, Function |
  * @tc.desc   Test register device get char state callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0100, Function | MediumTest | LEVEL3)
 {
@@ -791,7 +783,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0100, Function |
  * @tc.desc   Test register device get char state callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0200, Function | MediumTest | LEVEL3)
 {
@@ -810,7 +802,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0200, Function |
  * @tc.desc   Test register device get char state callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0300, Function | MediumTest | LEVEL3)
 {
@@ -825,7 +817,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectGetCharCb0300, Function |
  * @tc.desc   Test register device report all callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0100, Function | MediumTest | LEVEL3)
 {
@@ -844,7 +836,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0100, Function
  * @tc.desc   Test register device report all callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0200, Function | MediumTest | LEVEL3)
 {
@@ -863,7 +855,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0200, Function
  * @tc.desc   Test register device report all callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0300, Function | MediumTest | LEVEL3)
 {
@@ -878,7 +870,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectReportAllCb0300, Function
  * @tc.desc   Test register device get pincode callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0100, Function | MediumTest | LEVEL3)
 {
@@ -897,7 +889,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0100, Function |
  * @tc.desc   Test register device get pincode callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0200, Function | MediumTest | LEVEL3)
 {
@@ -916,7 +908,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0200, Function |
  * @tc.desc   Test register device get pincode callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0300, Function | MediumTest | LEVEL3)
 {
@@ -931,7 +923,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectPincodeCb0300, Function |
  * @tc.desc   Test register device get ac key callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0100, Function | MediumTest | LEVEL3)
 {
@@ -950,7 +942,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0100, Function | M
  * @tc.desc   Test register device get ac key callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0200, Function | MediumTest | LEVEL3)
 {
@@ -969,7 +961,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0200, Function | M
  * @tc.desc   Test register device get ac key callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0300, Function | MediumTest | LEVEL3)
 {
@@ -984,7 +976,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectAcKeyCb0300, Function | M
  * @tc.desc   Test register device data free callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0100, Function | MediumTest | LEVEL3)
 {
@@ -1003,7 +995,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0100, Function 
  * @tc.desc   Test register device data free callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0200, Function | MediumTest | LEVEL3)
 {
@@ -1022,7 +1014,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0200, Function 
  * @tc.desc   Test register device data free callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0300, Function | MediumTest | LEVEL3)
 {
@@ -1037,7 +1029,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDataFreeCb0300, Function 
  * @tc.desc   Test register device reboot callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0100, Function | MediumTest | LEVEL3)
 {
@@ -1056,7 +1048,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0100, Function | 
  * @tc.desc   Test register device reboot callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0200, Function | MediumTest | LEVEL3)
 {
@@ -1075,7 +1067,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0200, Function | 
  * @tc.desc   Test register device reboot callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0300, Function | MediumTest | LEVEL3)
 {
@@ -1090,7 +1082,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectRebootCb0300, Function | 
  * @tc.desc   Test register device trng callback success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0100, Function | MediumTest | LEVEL3)
 {
@@ -1109,7 +1101,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0100, Function | Me
  * @tc.desc   Test register device trng callback with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0200, Function | MediumTest | LEVEL3)
 {
@@ -1128,7 +1120,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0200, Function | Me
  * @tc.desc   Test register device trng callback without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0300, Function | MediumTest | LEVEL3)
 {
@@ -1143,7 +1135,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectTrngCb0300, Function | Me
  * @tc.desc   Test set device info with valid value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL0
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0100, Function | MediumTest | LEVEL0)
 {
@@ -1162,7 +1154,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0100, Function 
  * @tc.desc   Test set device info with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0200, Function | MediumTest | LEVEL3)
 {
@@ -1181,7 +1173,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0200, Function 
  * @tc.desc   Test set device info with NULL sn returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0300, Function | MediumTest | LEVEL3)
 {
@@ -1202,7 +1194,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0300, Function 
  * @tc.desc   Test set device info with NULL prod id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0400, Function | MediumTest | LEVEL3)
 {
@@ -1223,7 +1215,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0400, Function 
  * @tc.desc   Test set device info with NULL sub prod id success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0500, Function | MediumTest | LEVEL3)
 {
@@ -1244,7 +1236,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0500, Function 
  * @tc.desc   Test set device info with NULL model returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0600, Function | MediumTest | LEVEL3)
 {
@@ -1265,7 +1257,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0600, Function 
  * @tc.desc   Test set device info with NULL dev type id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0700, Function | MediumTest | LEVEL3)
 {
@@ -1286,7 +1278,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0700, Function 
  * @tc.desc   Test set device info with NULL dev type name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0800, Function | MediumTest | LEVEL3)
 {
@@ -1307,7 +1299,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0800, Function 
  * @tc.desc   Test set device info with NULL manu id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0900, Function | MediumTest | LEVEL3)
 {
@@ -1328,7 +1320,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo0900, Function 
  * @tc.desc   Test set device info with NULL manu name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1000, Function | MediumTest | LEVEL3)
 {
@@ -1349,7 +1341,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1000, Function 
  * @tc.desc   Test set device info with NULL firmware version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1100, Function | MediumTest | LEVEL3)
 {
@@ -1370,7 +1362,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1100, Function 
  * @tc.desc   Test set device info with NULL hardware version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1200, Function | MediumTest | LEVEL3)
 {
@@ -1391,7 +1383,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1200, Function 
  * @tc.desc   Test set device info with NULL software version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1300, Function | MediumTest | LEVEL3)
 {
@@ -1412,7 +1404,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1300, Function 
  * @tc.desc   Test set device info with min length sn returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1400, Function | MediumTest | LEVEL3)
 {
@@ -1436,7 +1428,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1400, Function 
  * @tc.desc   Test set device info with min length prod id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1500, Function | MediumTest | LEVEL3)
 {
@@ -1460,7 +1452,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1500, Function 
  * @tc.desc   Test set device info with min length model returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1600, Function | MediumTest | LEVEL3)
 {
@@ -1484,7 +1476,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1600, Function 
  * @tc.desc   Test set device info with min length dev type id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1700, Function | MediumTest | LEVEL3)
 {
@@ -1508,7 +1500,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1700, Function 
  * @tc.desc   Test set device info with min length dev type name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1800, Function | MediumTest | LEVEL3)
 {
@@ -1532,7 +1524,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1800, Function 
  * @tc.desc   Test set device info with min length manu id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1900, Function | MediumTest | LEVEL3)
 {
@@ -1556,7 +1548,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo1900, Function 
  * @tc.desc   Test set device info with min length manu name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2000, Function | MediumTest | LEVEL3)
 {
@@ -1580,7 +1572,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2000, Function 
  * @tc.desc   Test set device info with min length firmware version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2100, Function | MediumTest | LEVEL3)
 {
@@ -1604,7 +1596,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2100, Function 
  * @tc.desc   Test set device info with min length hardware version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2200, Function | MediumTest | LEVEL3)
 {
@@ -1628,7 +1620,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2200, Function 
  * @tc.desc   Test set device info with min length software version returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2300, Function | MediumTest | LEVEL3)
 {
@@ -1652,7 +1644,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2300, Function 
  * @tc.desc   Test set device info with sn exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2400, Function | MediumTest | LEVEL3)
 {
@@ -1676,7 +1668,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2400, Function 
  * @tc.desc   Test set device info with prod id exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2500, Function | MediumTest | LEVEL3)
 {
@@ -1700,7 +1692,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2500, Function 
  * @tc.desc   Test set device info with model exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2600, Function | MediumTest | LEVEL3)
 {
@@ -1724,7 +1716,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2600, Function 
  * @tc.desc   Test set device info with dev type id exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2700, Function | MediumTest | LEVEL3)
 {
@@ -1748,7 +1740,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2700, Function 
  * @tc.desc   Test set device info with dev type name exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2800, Function | MediumTest | LEVEL3)
 {
@@ -1772,7 +1764,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2800, Function 
  * @tc.desc   Test set device info with manu id exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2900, Function | MediumTest | LEVEL3)
 {
@@ -1796,7 +1788,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo2900, Function 
  * @tc.desc   Test set device info with manu name exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3000, Function | MediumTest | LEVEL3)
 {
@@ -1820,7 +1812,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3000, Function 
  * @tc.desc   Test set device info with firmware version exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3100, Function | MediumTest | LEVEL3)
 {
@@ -1844,7 +1836,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3100, Function 
  * @tc.desc   Test set device info with hardware version exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3200, Function | MediumTest | LEVEL3)
 {
@@ -1868,7 +1860,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3200, Function 
  * @tc.desc   Test set device info with software version exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3300, Function | MediumTest | LEVEL3)
 {
@@ -1892,7 +1884,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3300, Function 
  * @tc.desc   Test set device info with invalid prot type returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3400, Function | MediumTest | LEVEL3)
 {
@@ -1913,7 +1905,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3400, Function 
  * @tc.desc   Test set device info without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3500, Function | MediumTest | LEVEL3)
 {
@@ -1928,7 +1920,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3500, Function 
  * @tc.desc   Test set device service info with valid value success.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0100, Function | MediumTest | LEVEL3)
 {
@@ -1947,7 +1939,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0100, Function | M
  * @tc.desc   Test set device service info with zero num returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0200, Function | MediumTest | LEVEL3)
 {
@@ -1966,7 +1958,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0200, Function | M
  * @tc.desc   Test set device service info with NULL returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0300, Function | MediumTest | LEVEL3)
 {
@@ -1985,7 +1977,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0300, Function | M
  * @tc.desc   Test set device service info with NULL svc id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0400, Function | MediumTest | LEVEL3)
 {
@@ -2006,7 +1998,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0400, Function | M
  * @tc.desc   Test set device service info with NULL svc type returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0500, Function | MediumTest | LEVEL3)
 {
@@ -2027,7 +2019,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0500, Function | M
  * @tc.desc   Test set device service info with min length svc id returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0600, Function | MediumTest | LEVEL3)
 {
@@ -2051,7 +2043,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0600, Function | M
  * @tc.desc   Test set device service info with min length svc type returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0700, Function | MediumTest | LEVEL3)
 {
@@ -2075,7 +2067,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0700, Function | M
  * @tc.desc   Test set device service info with svc id exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0800, Function | MediumTest | LEVEL3)
 {
@@ -2099,7 +2091,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0800, Function | M
  * @tc.desc   Test set device service info with svc type exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0900, Function | MediumTest | LEVEL3)
 {
@@ -2123,7 +2115,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo0900, Function | M
  * @tc.desc   Test set device service info without init returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo1000, Function | MediumTest | LEVEL3)
 {
@@ -2138,7 +2130,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectSvcInfo1000, Function | M
  * @tc.desc   Test set device info with NULL dev name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3600, Function | MediumTest | LEVEL3)
 {
@@ -2159,7 +2151,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3600, Function 
  * @tc.desc   Test set device info with min length dev name returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3700, Function | MediumTest | LEVEL3)
 {
@@ -2183,7 +2175,7 @@ LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3700, Function 
  * @tc.desc   Test set device info with dev name exceeding max length returns failure.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level LEVEL3
+ * @tc.level  LEVEL3
  */
 LITE_TEST_CASE(ActsIotcOhConnectTest, testIotcOhConnectDeviceInfo3800, Function | MediumTest | LEVEL3)
 {
