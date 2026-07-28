@@ -545,5 +545,58 @@ export async function getSendableFileAsset(context: common.UIAbilityContext, tes
   });
 }
 
+export async function waitForLcdSizePopulated(displayName: string, timeoutMs: number = 10000): Promise<boolean> {
+  let waitedMs = 0;
+  const checkIntervalMs = 500;
+
+  while (waitedMs < timeoutMs) {
+    try {
+      let appContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
+
+      const predicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+
+      const fetchOps: photoAccessHelper.FetchOptions = {
+        fetchColumns: [photoAccessHelper.PhotoKeys.LCD_SIZE],
+        predicates: predicates
+      };
+
+      let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
+      let asset = await fetchResult.getFirstObject();
+      fetchResult.close();
+
+      let lcdSize = asset.get(photoAccessHelper.PhotoKeys.LCD_SIZE) as string;
+
+      console.info(`waitForLcdSizePopulated: ${displayName} lcd_size = ${lcdSize}`);
+
+      if (lcdSize !== undefined && lcdSize !== null && lcdSize !== '') {
+        console.info(`waitForLcdSizePopulated: ${displayName} lcd_size populated successfully`);
+        return true;
+      }
+    } catch (error) {
+      console.info(`waitForLcdSizePopulated: ${displayName} error = ${error}`);
+    }
+
+    await sleep(checkIntervalMs);
+    waitedMs += checkIntervalMs;
+  }
+
+  console.error(`waitForLcdSizePopulated: ${displayName} timeout after ${timeoutMs}ms`);
+  return false;
+}
+
+export async function waitForLcdSizePopulateds(fileNameList: Array<string>, timeoutMs: number = 10000) {
+  for (let i = 0; i < fileNameList.length; i++) {
+    let fileName = fileNameList[i];
+    if (fileName.endsWith('.jpg')) {
+      let success = await waitForLcdSizePopulated(fileName, timeoutMs);
+      if (!success) {
+        console.error(`beforeAll: ${fileName} lcd_size not populated`);
+      }
+    }
+  }
+}
+
 export {
   photoType, photoKeys, albumKeys, albumType, albumSubtype, notifyType };
