@@ -24,6 +24,11 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
+    "requestPermissions": [
+      {
+        "name":"ohos.permission.DLP_POLICY_MANAGER"
+      }
+    ],
     "abilities": [
       {
         "name": "TestAbility",
