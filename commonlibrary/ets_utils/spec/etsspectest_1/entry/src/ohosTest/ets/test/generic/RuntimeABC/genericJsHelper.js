@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 export function comparePrototype(obj1, obj2) {
     try {
         return Object.getPrototypeOf(obj1) === Object.getPrototypeOf(obj2)

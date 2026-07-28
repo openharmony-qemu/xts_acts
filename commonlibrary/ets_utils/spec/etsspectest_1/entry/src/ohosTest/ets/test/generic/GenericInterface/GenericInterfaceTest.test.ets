@@ -241,6 +241,5 @@ export default function GenericInterfaceTest() {
     it('testIfaceDefaultTypeParam0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(makeDefaultContainer().value).assertEqual('default-string')
     })
-
   })
 }

@@ -13,14 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * js_producer.js 的类型声明文件 — 为 .ets / .ts 消费方提供泛型契约。
- *
- * Used By:
- *   - GTP-IO-006: jsIdentity / jsDynamicValue 的类型契约
- *   - GTP-IO-011: lengthBounded 的泛型约束契约（与 JS 实际导出对照）
- */
-
 export declare function jsIdentity<T>(v: T): T
 
 export declare const jsDynamicValue: number
