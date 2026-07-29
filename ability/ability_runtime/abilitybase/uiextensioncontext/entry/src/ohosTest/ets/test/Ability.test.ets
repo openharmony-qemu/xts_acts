@@ -2599,7 +2599,8 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5000";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5000] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility2 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2616,7 +2617,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
+            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2652,7 +2653,8 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5100";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5100] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility2 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2669,7 +2671,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
+            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2705,7 +2707,8 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5400";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5400] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility2 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2722,7 +2725,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
+            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2758,7 +2761,8 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5500";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5500] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility2 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2775,7 +2779,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
+            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({

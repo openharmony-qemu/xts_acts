@@ -90,6 +90,7 @@ export default class EntryAbility1 extends UIAbility {
     commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
       sub2 = subscriber;
       commonEventManager.subscribe(sub2, (err, commonEventData) => {
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility1 start terminateSelf');
         this.context.terminateSelf(() => {});
         commonEventManager.unsubscribe(subscriber, (err, data) => {});
       });
