@@ -91,7 +91,6 @@ export default function dataShareConfigRemoveValuesTest() {
         await g_handle!.removeValue(null, null, null);
       } catch (err) {
         console.error(TAG + "[DataShareProvider] publishProxyDataTest002 failed,code =" + err.code + ",message=" + err.message);
-        // let result = err.code;
         expect(err.code).assertEqual(401);
       }
     });
@@ -184,7 +183,6 @@ export default function dataShareConfigRemoveValuesTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest006 failed,code =" + err.code + ",message=" + err.message);
-        // let result = err.code;
         expect(err.code).assertEqual(15700014);
       }
     });
