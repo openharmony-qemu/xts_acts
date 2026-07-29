@@ -811,7 +811,7 @@ export default function Float32ArrayProperty3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_THREE_5100
      * @tc.name testFloat32ArrayPropertyThree051
-     * @tc.desc Verify $_set(4, 9.0) length no-op length 4
+     * @tc.desc Verify out-of-range $_set(4, 9.0) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
