@@ -24,8 +24,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 struct EnableMediaNetworkProxy {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = 'enableMediaNetworkProxyTrue';
-  /** Docs: default off when unset; cases toggle true/false. */
-  @State proxy: boolean = false;
+  /** Docs: default off when unset; cases cover true/false/null/undefined. */
+  @State proxy: boolean | null | undefined = false;
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State statusResult: string = '';
@@ -49,10 +49,16 @@ struct EnableMediaNetworkProxy {
     }
   };
 
-  private setProxy(enabled: boolean): string {
+  private setProxy(enabled: boolean | null | undefined): string {
     try {
       this.proxy = enabled;
-      console.info(`enableMediaNetworkProxy proxy=${this.proxy}`);
+      console.info(`enableMediaNetworkProxy proxy=${String(this.proxy)}`);
+      if (enabled === null) {
+        return 'null';
+      }
+      if (enabled === undefined) {
+        return 'undefined';
+      }
       return enabled ? 'true' : 'false';
     } catch (error) {
       let err: BusinessError = error as BusinessError;
@@ -81,6 +87,14 @@ struct EnableMediaNetworkProxy {
         this.replyOk(this.setProxy(false));
         break;
       }
+      case 'enableMediaNetworkProxyNull': {
+        this.replyOk(this.setProxy(null));
+        break;
+      }
+      case 'enableMediaNetworkProxyUndefined': {
+        this.replyOk(this.setProxy(undefined));
+        break;
+      }
       default: {
         this.replyOk('unknown');
         break;
@@ -91,7 +105,7 @@ struct EnableMediaNetworkProxy {
   build() {
     Column() {
       Row() {
-        Button('web test').key('enableMediaNetworkProxyButton').onClick(async () => {
+        Button('web test').key('EnableMediaNetworkProxy_Button').onClick(async () => {
           console.info('key==>' + this.str);
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
@@ -107,7 +121,7 @@ struct EnableMediaNetworkProxy {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .mediaPlayGestureAccess(true)
-        .enableMediaNetworkProxy(this.proxy)
+        .enableMediaNetworkProxy(this.proxy as boolean)
         .onPageEnd(() => {
           this.isPageEnd = 0;
         })
