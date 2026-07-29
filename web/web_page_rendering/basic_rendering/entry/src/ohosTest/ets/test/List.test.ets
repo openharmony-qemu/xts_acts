@@ -28,7 +28,7 @@ import webViewOnFullScreenEnter from './webViewOnFullScreenEnter.test';
 import webViewOnFullScreenExit from './webViewOnFullScreenExit.test';
 import getSurfaceId from './getSurfaceId.test';
 import webViewControllerJsunit from './webViewControllerJsunit.test';
-import WebViewOnFirstScreenPaint from './WebViewOnFirstScreenPaint.test'
+import WebViewOnFirstScreenPaint from './WebViewOnFirstScreenPaint.test';
 import webPageSnapshotTest from './WebPageSnapshot.test';
 
 

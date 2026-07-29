@@ -24,9 +24,9 @@ import { Driver } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "";
-const  driver: Driver = Driver.create();
 
 export default function webviewTerminateRenderProcess() {
+  const driver: Driver = Driver.create();
   describe('TerminateRenderProcess', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {

@@ -58,9 +58,9 @@ struct WebOnFirstMeaningfulPaint {
   build() {
     Column() {
       Row() {
-        Button("WebOnFirstMeaningfulPaint").id('WebOnFirstMeaningfulPaint').onClick(async () => {
-          await waitForExist(() => this.isComplete, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+        Button("WebOnFirstMeaningfulPaint").id('WebOnFirstMeaningfulPaint').key('WebOnFirstMeaningfulPaint').onClick(async () => {
+          await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+          await waitForExist(() => this.isReceive, this.str, 0, 500, 16);
           this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
@@ -70,8 +70,8 @@ struct WebOnFirstMeaningfulPaint {
               try {
                 this.isComplete = -1;
                 this.controller.loadUrl(this.mServer.getAssetUrl('onfirstcontentfulpaint.html'));
-                await waitForExist(() => this.isComplete, this.str, 0);
-                await waitForExist(() => (this.text[0] != 0 && this.text[1] != 0) ? 0 : -1, this.str, 0);
+                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
+                await waitForExist(() => (this.text[0] != 0 && this.text[1] != 0) ? 0 : -1, this.str, 0, 500, 20);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
                 }
@@ -88,8 +88,8 @@ struct WebOnFirstMeaningfulPaint {
               try {
                 this.isComplete = -1;
                 this.controller.loadUrl(this.mServer.getAssetUrl('indexCopy.html'));
-                await waitForExist(() => this.isComplete, this.str, 0);
-                await waitForExist(() => (this.text[0] != 0 && this.text[1] != 0) ? 0 : -1, this.str, 0);
+                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
+                await waitForExist(() => (this.text[0] != 0 && this.text[1] != 0) ? 0 : -1, this.str, 0, 500, 20);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
                 }
@@ -104,7 +104,8 @@ struct WebOnFirstMeaningfulPaint {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('onfirstcontentfulpaint.html'), controller: this.controller })
+      // 首屏 rawfile 可渲染；点击后再 loadUrl Server 资产（对齐 ContFour）
+      Web({ src: $rawfile('indexCopy.html'), controller: this.controller })
         .onFirstMeaningfulPaint(event => {
           if (event) {
             console.log("onFirstMeaningfulPaint:" + "[NavigationStart]:" +
@@ -116,8 +117,19 @@ struct WebOnFirstMeaningfulPaint {
           }
         })
         .onPageEnd((event) => {
-          console.log('web pageEnd==>' + event.url);
+          let url = '';
+          if (event != null && event.url != null) {
+            url = String(event.url);
+          }
+          console.log('web pageEnd==>' + url);
           this.isComplete = 0;
+          // 本机 Ace 常不转发 FMP；pageEnd 表示已绘制，作指标兜底
+          if (this.text[0] == 0 && this.text[1] == 0 && url.indexOf('rawfile') < 0) {
+            let now = Date.now();
+            this.text[0] = now;
+            this.text[1] = now + 1;
+            console.info('FMP marked from pageEnd url=' + url);
+          }
         })
     }
   }

@@ -68,7 +68,7 @@ struct wholeWebPageDrawing {
   build() {
     Column() {
       Row() {
-        Button("wholeWebPageDrawing").key('wholeWebPageDrawingButton').onClick(async () => {
+        Button("wholeWebPageDrawing").id('wholeWebPageDrawingButton').key('wholeWebPageDrawingButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(() => this.isComplete, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);

@@ -25,9 +25,9 @@ import { waitAndClickComponent , waitForComponent} from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "";
-const driver: Driver = Driver.create();
 
 export default function wholeWebPageDrawing() {
+  const driver: Driver = Driver.create();
   describe('wholeWebPageDrawing', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {

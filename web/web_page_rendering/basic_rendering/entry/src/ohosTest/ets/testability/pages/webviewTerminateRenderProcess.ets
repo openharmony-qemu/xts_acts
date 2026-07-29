@@ -60,7 +60,7 @@ struct webviewTerminateRenderProcess {
   build() {
     Column() {
       Row() {
-        Button("web click").key('TerminateRenderProcess').onClick(async () => {
+        Button("web click").id('TerminateRenderProcess').key('TerminateRenderProcess').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(() => this.isComplete, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);

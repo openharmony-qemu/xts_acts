@@ -57,7 +57,7 @@ struct webOnFirstCont {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webOnFirstCont').onClick(() => {
+        Button("web click").id('webOnFirstCont').key('webOnFirstCont').onClick(() => {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitOnfirstcontentfulpaintWebc": {

@@ -61,7 +61,7 @@ struct getSurfaceId {
   build() {
     Column() {
       Row() {
-        Button("getSurfaceId").key('getSurfaceIdButton').onClick(async () => {
+        Button("getSurfaceId").id('getSurfaceIdButton').key('getSurfaceIdButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(() => this.isComplete, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);

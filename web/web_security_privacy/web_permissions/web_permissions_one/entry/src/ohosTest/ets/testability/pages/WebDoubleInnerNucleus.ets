@@ -35,14 +35,14 @@ struct Webdoubleinnernucleus {
   build() {
     Column() {
       Row() {
-        Button("web click").key('WebviewDoubleInnerNucleus').onClick(async () => {
-          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+        Button("web click").id('WebviewDoubleInnerNucleus').key('WebviewDoubleInnerNucleus').onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.emitKey, 0, 500, 16);
           console.info('key==>' + this.emitKey);
           this.isReceive = -1;
           console.info("key==>" + this.emitKey)
           switch (this.emitKey) {
             case "emitWebDoubleInnerNucleus001": {
-              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 500, 16);
               Utils.emitEvent(webview.WebviewController.getActiveWebEngineVersion(),162010)
               break;
             }

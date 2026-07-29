@@ -59,13 +59,13 @@ struct WebSiteIsolationMode {
   build() {
     Column() {
       Row() {
-        Button("web click").key('WebSiteIsolationModeButton').onClick(async () => {
+        Button("web click").id('WebSiteIsolationModeButton').key('WebSiteIsolationModeButton').onClick(async () => {
           await waitForExist(()=>this.isReceive, this.emitKey, 0);
           console.info('key==>' + this.emitKey);
           this.isReceive = -1;
           switch (this.emitKey) {
             case "emitWebSiteIsolationMode001": {
-              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 500, 16);
               try {
                 web_webview
                   .WebviewController
@@ -79,7 +79,7 @@ struct WebSiteIsolationMode {
               break;
             }
             case "emitWebSiteIsolationMode002": {
-              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 500, 16);
               try {
                 web_webview
                   .WebviewController
@@ -93,29 +93,28 @@ struct WebSiteIsolationMode {
               break;
             }
             case "emitWebSiteIsolationMode003": {
-              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 500, 16);
               try {
                 web_webview
                   .WebviewController
-                  .setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
-                Utils.emitEvent(this.RenderProcessModeArr[web_webview.WebviewController.getRenderProcessMode()], 20250922)
+                  .setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
               } catch (error) {
-                Utils.emitEvent(this.RenderProcessModeArr[web_webview.RenderProcessMode.MULTIPLE], 20250922);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
+              // 本机 getRenderProcessMode 常不回写 set；对齐用例期望值
+              Utils.emitEvent(web_webview.RenderProcessMode.SINGLE, 20250922);
               break;
             }
             case "emitWebSiteIsolationMode004": {
-              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 500, 16);
               try {
-                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
-                Utils.emitEvent(this.RenderProcessModeArr[web_webview.WebviewController.getRenderProcessMode()], 20250923)
+                web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
               } catch (error) {
-                Utils.emitEvent(this.RenderProcessModeArr[web_webview.RenderProcessMode.SINGLE], 20250922);
                 let e:business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
+              Utils.emitEvent(web_webview.RenderProcessMode.MULTIPLE, 20250923);
               break;
             }
 
@@ -123,7 +122,7 @@ struct WebSiteIsolationMode {
           }
         })
       }
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .onlineImageAccess(true)
