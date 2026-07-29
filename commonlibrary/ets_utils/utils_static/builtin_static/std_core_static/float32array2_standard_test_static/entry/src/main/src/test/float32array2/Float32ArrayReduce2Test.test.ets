@@ -577,7 +577,7 @@ export default function Float32ArrayReduce2Test(): void {
     it('testFloat32ArrayReduceTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.1, 0.2);
       const result = arr.reduce((acc, v) => acc + v);
-      expect(result === 0.3).assertFalse();
+      expect(result).assertEqual(0.30000000447034836);
     });
 
     /**
@@ -1219,8 +1219,7 @@ export default function Float32ArrayReduce2Test(): void {
     it('testFloat32ArrayReduceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(3.4028234663852886e+38, 3.4028234663852886e+38);
       const result = arr.reduce((acc, v) => acc + v);
-      expect(result > 3.4028234663852886e+38).assertTrue();
-      expect(result === Number.POSITIVE_INFINITY).assertFalse();
+      expect(result).assertEqual(6.805646932770577e+38);
     });
 
     /**
@@ -1304,7 +1303,7 @@ export default function Float32ArrayReduce2Test(): void {
     it('testFloat32ArrayReduceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.1, 0.1, 0.1);
       const result = arr.reduce((acc, v) => acc + v);
-      expect(result === 0.3).assertFalse();
+      expect(result).assertEqual(0.30000000447034836);
     });
 
     /**
