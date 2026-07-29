@@ -37,10 +37,10 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listSwipeAction12EndJsunit() {
   describe('listSwipeAction12EndTest', () => {
 
-    (async ()=>{ 
+    waitForCompletion(async ()=>{ 
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
-    })().awaitSync()
+    })
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
     beforeAll(async (): Promise<void> => {
@@ -107,17 +107,18 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120', Level.LEVEL0,
 
 
         await driver.swipe(
-          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(150)) as number)).toInt(),
-          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + top + height / 2) as number)).toInt(),
-          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(50)) as number)).toInt(),
-          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + top + height / 2) as number)).toInt()
+          (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
+          (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
+          (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
         );
 
         await CommonFunc.sleep(4000);
 
         let textSwipeState = inspector.getInspectorByKey('swipeState12End');
 
-      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
+      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 json is ' +
+       JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(textSwipeState).getElement('$attrs').getString('content')).assertEqual('1');
       done();
     });
