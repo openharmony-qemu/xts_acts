@@ -489,6 +489,266 @@ export default function HidebugrawTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testHidebugrawprocess_0800
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0800
+     * @tc.desc   Test dumpJsRawHeapData(undefined, false, false) - undefined GC parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHidebugrawprocess_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=undefined, needClean=false, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(undefined, false, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0800 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0800 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_0900
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0900
+     * @tc.desc   Test dumpJsRawHeapData(false, undefined, false) - undefined Clean parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=undefined, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, undefined, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0900 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0900 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1000
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1000
+     * @tc.desc   Test dumpJsRawHeapData(false, false, undefined) - undefined Process parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=undefined
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, undefined);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1000 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1000 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1100
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1100
+     * @tc.desc   Test dumpJsRawHeapData(null, false, false) - null GC parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=null, needClean=false, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(null, false, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1100 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1100 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1200
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1200
+     * @tc.desc   Test dumpJsRawHeapData(false, null, false) - null Clean parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=null, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, null, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1200 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1200 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1300
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1300
+     * @tc.desc   Test dumpJsRawHeapData(false, false, null) - null Process parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=null
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, null);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1300 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1300 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1400
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1400
+     * @tc.desc   Test dumpJsRawHeapData(undefined, undefined, false) - Both undefined GC and Clean parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=undefined, needClean=undefined, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(undefined, undefined, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1400 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1400 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1500
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1500
+     * @tc.desc   Test dumpJsRawHeapData(false, false, undefined) - Undefined Process parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=undefined
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, undefined);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1500 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1500 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1600
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1600
+     * @tc.desc   Test dumpJsRawHeapData(null, null, false) - Both null GC and Clean parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=null, needClean=null, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(null, null, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1600 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1600 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1700
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1700
+     * @tc.desc   Test dumpJsRawHeapData(false, false, null) - Null Process parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testHidebugrawprocess_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=null
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, null);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1700 success and generated file path is ${filenameArray}`);
+          expect(filenameArray.length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1700 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect((error as BusinessError).code == 401).assertTrue(); // Expect INVALID_PARAM error code
+        done();
+      }
+    })
     
   })
 }
