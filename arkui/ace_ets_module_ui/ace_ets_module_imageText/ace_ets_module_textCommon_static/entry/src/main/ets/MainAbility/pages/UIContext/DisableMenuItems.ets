@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { TextMenuController } from '@kit.ArkUI';
+import { TextMenuController } from '@ohos.arkui.UIContext';
 import {
   Entry,
   Component,
