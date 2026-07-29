@@ -58,6 +58,12 @@ import GenericBoundaryTest from './null_safety/GenericBoundary/GenericBoundaryTe
 import NullishCoalescingTest from './null_safety/NullishCoalescing/NullishCoalescingTest.test';
 import OptionalChainingTest from './null_safety/OptionalChaining/OptionalChainingTest.test';
 
+//this_keyword
+import ThisKeywordTest from "./this_keyword/ThisKeywordTest.test";
+
+//the_basics
+import TypesTest from "./the_basics/TypesTest.test";
+
 export default function testsuite() {
   ClassDeclarationTest();
   ClassTypeTest();
@@ -118,4 +124,10 @@ export default function testsuite() {
   GenericBoundaryTest();
   NullishCoalescingTest();
   OptionalChainingTest();
+
+  //this_keyword
+  ThisKeywordTest();
+
+  //the_basics
+  TypesTest();
 }
