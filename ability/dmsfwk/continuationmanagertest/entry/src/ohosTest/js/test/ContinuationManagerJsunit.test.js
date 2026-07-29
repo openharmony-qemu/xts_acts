@@ -4877,5 +4877,109 @@ export default function continuationManagerTest() {
             console.info("----------------------testOnDeviceDisconnectMultiCallback001 end----------------------");
             done();
         })
+
+        /**
+         * @tc.name   testOffDeviceConnectWithoutCallback001
+         * @tc.number testOffDeviceConnectWithoutCallback001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffDeviceConnectWithoutCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffDeviceConnectWithoutCallback001 start----------------------");
+            try {
+                continuationManager.off("deviceConnect");
+                console.info('testOffDeviceConnectWithoutCallback001 off deviceConnect without callback success');
+            } catch (error) {
+                console.info("testOffDeviceConnectWithoutCallback001 catch error is" + error.code);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+            console.info("----------------------testOffDeviceConnectWithoutCallback001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffDeviceDisconnectWithoutCallback002
+         * @tc.number testOffDeviceDisconnectWithoutCallback002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffDeviceDisconnectWithoutCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffDeviceDisconnectWithoutCallback002 start----------------------");
+            try {
+                continuationManager.off("deviceDisconnect");
+                console.info('testOffDeviceDisconnectWithoutCallback002 off deviceDisconnect without callback success');
+            } catch (error) {
+                console.info("testOffDeviceDisconnectWithoutCallback002 catch error is" + error.code);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+            console.info("----------------------testOffDeviceDisconnectWithoutCallback002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testUpdateContinuationState00001
+         * @tc.number testUpdateContinuationState00001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testUpdateContinuationState00001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testUpdateContinuationState00001 start----------------------");
+            try {
+                continuationManager.updateContinuationState(token, TEST_DEVICE_ID, -2).then((data) => {
+                    console.log('testUpdateContinuationState00001 data is' + data);
+                    expect().assertFail();
+                    done();
+                }).catch((err) => {
+                    console.log('testUpdateContinuationState00001 err code is' + err.code);
+                    expect().assertFail();
+                    done();
+                });
+            } catch (error) {
+                console.info("testUpdateContinuationState00001 catch error is" + error.code);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+            console.info("----------------------testUpdateContinuationState00001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOnDeviceDisconnectMultiCallback002
+         * @tc.number continuationManagerTest_testOnDeviceDisconnectMultiCallback002
+         * @tc.desc   Test on_deviceDisconnect with callback coverage.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOnDeviceDisconnectMultiCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOnDeviceDisconnectMultiCallback001 start----------------------");
+            try {
+                continuationManager.on("deviceDisconnect", (data) => {
+                    console.info('testOnDeviceDisconnectMultiCallback001 callback1 called');
+                    expect().assertFail()
+                });
+
+                continuationManager.on("deviceDisconnect", (data) => {
+                    console.info('testOnDeviceDisconnectMultiCallback001 callback2 called');
+                    expect().assertFail()
+                });
+
+                continuationManager.on("deviceDisconnect", (data) => {
+                    console.info('testOnDeviceDisconnectMultiCallback001 callback3 called');
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOnDeviceDisconnectMultiCallback001 catch error is" + error.code);
+                expect(error.code).assertEqual(401);
+            }
+            console.info("----------------------testOnDeviceDisconnectMultiCallback001 end----------------------");
+            done();
+        })
+
     })
 }
