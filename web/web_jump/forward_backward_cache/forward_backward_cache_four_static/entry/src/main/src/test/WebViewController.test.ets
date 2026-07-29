@@ -579,6 +579,329 @@ export default function webViewControllerJsunit() {
       })
 
     /**
+     * @tc.name   testFetchCookieSyncPartitionedTrueStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0100
+     * @tc.desc   test fetchCookieSync includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedTrueStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedTrueStatic', 'part=true', 2026072401, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedFalseStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0200
+     * @tc.desc   test fetchCookieSync includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedFalseStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedFalseStatic', 'part=false', 2026072402, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedDefaultStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0300
+     * @tc.desc   test fetchCookieSync omit includePartitionedCookies default false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedDefaultStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedDefaultStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedDefaultStatic', 'part=default', 2026072403, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedIncognitoStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0400
+     * @tc.desc   test fetchCookieSync incognito and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedIncognitoStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedIncognitoStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedIncognitoStatic', 'part=incognito', 2026072404, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedTrueStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0500
+     * @tc.desc   test fetchCookie includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedTrueStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedTrueStatic', 'async=true', 2026072405, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedFalseStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0600
+     * @tc.desc   test fetchCookie includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedFalseStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedFalseStatic', 'async=false', 2026072406, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedIncognitoStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_0700
+     * @tc.desc   test fetchCookie incognito and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedIncognitoStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedIncognitoStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedIncognitoStatic', 'async=incognito', 2026072407, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedErrorUrlStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_0800
+     * @tc.desc   test fetchCookieSync invalid url error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedErrorUrlStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedErrorUrlStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedErrorUrlStatic', '17100002URL error. No valid cookie found for the specified URL.', 2026072408, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedErrorUrlStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_0900
+     * @tc.desc   test fetchCookie invalid url error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedErrorUrlStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedErrorUrlStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedErrorUrlStatic', '17100002URL error. No valid cookie found for the specified URL.', 2026072409, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedNullStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_1000
+     * @tc.desc   test fetchCookieSync includePartitionedCookies null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedNullStatic', 'part=null', 2026072410, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedUndefinedStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_1100
+     * @tc.desc   test fetchCookieSync includePartitionedCookies undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncPartitionedUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncPartitionedUndefinedStatic', 'part=undefined', 2026072411, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedNullStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_1200
+     * @tc.desc   test fetchCookie includePartitionedCookies null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedNullStatic', 'async=null', 2026072412, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookiePartitionedUndefinedStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_STATIC_ERROR_1300
+     * @tc.desc   test fetchCookie includePartitionedCookies undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookiePartitionedUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookiePartitionedUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookiePartitionedUndefinedStatic', 'async=undefined', 2026072413, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testAttrPartitionedSyncTrueStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ATTR_STATIC_0100
+     * @tc.desc   Partitioned attr cookie fetchCookieSync includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAttrPartitionedSyncTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitAttrPartitionedSyncTrueStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testAttrPartitionedSyncTrueStatic', 'pass', 2026072414, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testAttrPartitionedSyncFalseStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ATTR_STATIC_0200
+     * @tc.desc   Partitioned attr cookie fetchCookieSync includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAttrPartitionedSyncFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitAttrPartitionedSyncFalseStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testAttrPartitionedSyncFalseStatic', 'pass', 2026072415, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testAttrPartitionedAsyncTrueStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ATTR_STATIC_0300
+     * @tc.desc   Partitioned attr cookie fetchCookie includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAttrPartitionedAsyncTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitAttrPartitionedAsyncTrueStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testAttrPartitionedAsyncTrueStatic', 'pass', 2026072416, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testAttrPartitionedAsyncFalseStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ATTR_STATIC_0400
+     * @tc.desc   Partitioned attr cookie fetchCookie includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAttrPartitionedAsyncFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitAttrPartitionedAsyncFalseStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testAttrPartitionedAsyncFalseStatic', 'pass', 2026072417, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      testWebViewWindowFeatures00900
      * @tc.desc        onWindowNewExt
