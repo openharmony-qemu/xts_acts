@@ -30,6 +30,18 @@ export default function pickerPropsJsTest() {
             })
         }
 
+        async function waitUntilReady(timeout = 35000) {
+            let start = Date.now();
+            while (Date.now() - start < timeout) {
+                if (globalThis.value !== undefined && globalThis.value !== null) {
+                    console.info(`waitUntilReady: page ready after ${Date.now() - start}ms`);
+                    return;
+                }
+                await sleep(100);
+            }
+            console.info(`waitUntilReady: timed out after ${timeout}ms`);
+        }
+
         async function backToIndex() {
             let backToIndexPromise = new Promise((resolve, reject) => {
                 setTimeout(() => {
@@ -38,16 +50,8 @@ export default function pickerPropsJsTest() {
                     });
                     resolve();
                 }, 500);
-            })
-            let clearPromise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    router.clear();
-                    resolve();
-                }, 500);
-            })
-            await backToIndexPromise.then(() => {
-                return clearPromise;
-            })
+            })           
+            await backToIndexPromise;
         }
 
         /**
@@ -55,7 +59,7 @@ export default function pickerPropsJsTest() {
          */
         beforeAll(async function(done) {
             console.info('[pickerPropsJsTest] before each called')
-
+            globalThis.value = undefined;
             let result;
             let options = {
                 url: 'pages/picker/prop/index'
@@ -66,8 +70,8 @@ export default function pickerPropsJsTest() {
             } catch (err) {
                 console.error("push pickerProps page error " + JSON.stringify(result));
             }
-            await sleep(37000)
-            done()
+            await waitUntilReady();
+            done();
         })
 
         /**
