@@ -573,7 +573,7 @@ export default function dataShareConfigPutValueTest() {
         expect(err.code).assertEqual(15700011);
       }
     });
-
+    
     /**
      * @tc.name   dataShareConfigPutValueTest020
      * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0220
@@ -598,7 +598,8 @@ export default function dataShareConfigPutValueTest() {
         };
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config);
-        let values = await g_handle!.putValue(testUri, 1, "PutValueTest020", u_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest020", u_config);
+        let values = await g_handle!.getValues(testUri, u_config);
         expect(values.length).assertEqual(2);
         expect(values[0]).assertEqual("PutValueTest020");
       } catch (err) {
@@ -606,7 +607,6 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       }
     });
-
 
     /**
      * @tc.name   dataShareConfigPutValueTest021
