@@ -6,6 +6,7 @@ import ConditionalTernaryOperatorTest from "./ConditionalTernaryOperatorTest.tes
 import LogicalOperatorTest from "./LogicalOperatorTest.test";
 import OperatorPrecedenceTest from "./OperatorPrecedenceTest.test";
 import StringOperatorTest from "./StringOperatorTest.test";
+import SuperTest from "./super/SuperTest.test";
 import UnaryOperatorTest from "./UnaryOperatorTest.test";
 
 
@@ -19,4 +20,5 @@ export default function testsuite(): void {
   LogicalOperatorTest()
   UnaryOperatorTest();
   StringOperatorTest()
+  SuperTest()
 }
