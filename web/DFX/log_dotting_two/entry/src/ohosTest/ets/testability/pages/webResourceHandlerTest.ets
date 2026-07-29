@@ -66,7 +66,11 @@ struct webResourceHandlerTest {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -135,7 +139,8 @@ struct webResourceHandlerTest {
                 }
                 case 'testWebNavigationType003': {
                   try {
-                    this.controller.loadUrl(this.mServer.getAssetUrl('iframe1.html'));
+                    // 须走 rawfile 保留 iframe1→iframe2；server+schemeHandler 会换成无 iframe 占位页
+                    this.controller.loadUrl($rawfile('iframe1.html'));
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
                     console.error(`testWebNavigationType003 ErrorCode: ${e.code},  Message: ${e.message}`);

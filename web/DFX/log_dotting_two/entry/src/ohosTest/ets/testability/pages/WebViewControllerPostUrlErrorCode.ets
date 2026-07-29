@@ -64,7 +64,11 @@ struct WebViewControllerPostUrlErrorCode {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

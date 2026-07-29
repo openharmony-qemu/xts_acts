@@ -47,7 +47,11 @@ struct WebComponent {
   }
 
   aboutToDisappear() {
-    this.webController.loadUrl(this.mServer.getShutdownUrl())
+    try {
+      this.webController.loadUrl(this.mServer.getShutdownUrl())
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   onPageShow() {

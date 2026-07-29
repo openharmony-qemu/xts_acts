@@ -29,7 +29,11 @@ struct WebOnLargestContentfulPaint {
   mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   onPageShow() {

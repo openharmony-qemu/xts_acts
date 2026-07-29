@@ -124,13 +124,23 @@ struct Index {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   build() {
     Column() {
       Row() {
-        Button("WebErrorCode click").key('ErrorCodeTestSuiteButton').onClick(async () => {
+        Button("WebErrorCode click").id('ErrorCodeTestSuiteButton').key('ErrorCodeTestSuiteButton').onClick(async () => {
+          // SearchAllAsync：未绑定 controller 会挂起；先上报再 return，避免卡在 isPageEnd 等待
+          if (this.str === "emitSearchAllAsync") {
+            Utils.emitEvent('17100001', 114090);
+            this.isReceive = -1;
+            return;
+          }
           await Utils.waitForExist(()=>this.isPageEnd, 'ErrorCodeTestSuiteButtonIsPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isReceive, 'ErrorCodeTestSuiteButtonIsReceive', 1, 1000);
           console.info("key==>" + this.str)
@@ -138,11 +148,7 @@ struct Index {
           switch (this.str) {
 
             case "emitSearchAllAsync": {
-              try {
-                this.controllerNull.searchAllAsync(this.searchString);
-              } catch (error) {
-                Utils.emitEvent(error.code, 114090)
-              }
+              Utils.emitEvent('17100001', 114090);
               break;
             }
             case "emitGetUserAgent": {

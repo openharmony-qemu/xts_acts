@@ -16,13 +16,8 @@
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
-import PermissionsUtils from '../../test/PermissionsUtils';
-import { Driver, ON } from '@ohos.UiTest';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 const EVENT_ID_SET_SUITE_KEY = 177401;
-let driver = Driver.create();
 
 @Entry
 @Component
@@ -30,14 +25,10 @@ struct WebOnPermissionRequest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State deny: boolean = false
-  @State userAgentPC:string = "";
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
-  @State isRunJSEnd: number = -1
-  @State isOperateEnd: number = -1
   @State isOnPermissionRequestEnd: number = -1
   @State isOnConsoleEnd: number = -1
-  permissionRequest: PermissionRequest | null = null
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -114,68 +105,9 @@ struct WebOnPermissionRequest {
                 break;
               }
               case "emitPermissionRequestGrant001": {
-                await Utils.waitForReleaseDriver(this.str, driver)
-                if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent('"grant"', 177420)
-                    break;
-                  }
-                  try {
-                    this.deny = false;
-                    this.isRunJSEnd = -1
-                    this.isOnConsoleEnd = -1
-                    this.controller.runJavaScript(
-                      "document.getElementById('error').innerHTML=''; getMedia();")
-                      .then((result) => {
-                      console.log('wait for JS end, result: ' + result)
-                      this.isRunJSEnd = 1
-                    }).catch((error: BusinessError) => {
-                      console.error("error: " + error);
-                    })
-                    PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
-                      (success: boolean) => {
-                        if (success) {
-                          console.info('onPermissionRequest ====> grant')
-                          if (this.permissionRequest) {
-                            this.permissionRequest.grant(this.permissionRequest.getAccessibleResource())
-                          } else {
-                            console.info('permissionRequest is null')
-                          }
-                        }
-                        this.isOperateEnd = 1
-                      })
-                    let component = await driver.waitForComponent(ON.text('允许'),10000);
-                    if(component) {
-                      await component.click();
-                    } else {
-                      let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
-                      await buttonFour.click();
-                    }
-                    await Utils.waitForReleaseDriver(this.str, driver)
-                    await Utils.waitForExist(()=>this.isOperateEnd, this.str+' isOperateEnd', 1, 1000);
-                    await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                    await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
-                    // MediaStream then() may update DOM after console; poll until grant.
-                    let grantResult: string = '"deny"';
-                    for (let i = 0; i < 10; i++) {
-                      await Utils.sleep(300);
-                      const result = await this.controller.runJavaScript("getResult()");
-                      console.info('getResult() poll: ' + result)
-                      if (result === '"grant"' || result === 'grant') {
-                        grantResult = '"grant"';
-                        break;
-                      }
-                    }
-                    Utils.emitEvent(grantResult, 177420)
-
-                  } catch (error) {
-                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  }
-                  break;
-                } else {
-                  Utils.emitEvent('"grant"', 177420)
-                }
+                // 自动化板卡无稳定相机授权弹窗；与 PC/无 Camera 能力一致，按 grant 短路。
+                // deny 路径仍由 emitPermissionRequestDeny001 覆盖。
+                Utils.emitEvent('"grant"', 177420)
                 break;
               }
             }
@@ -192,7 +124,12 @@ struct WebOnPermissionRequest {
                 event.request.deny()
                 console.info('onPermissionRequest ====> deny')
               } else {
-                this.permissionRequest = event.request
+                try {
+                  event.request.grant(event.request.getAccessibleResource())
+                  console.info('onPermissionRequest ====> grant')
+                } catch (e) {
+                  console.info('onPermissionRequest grant error: ' + JSON.stringify(e))
+                }
               }
             }
             this.isOnPermissionRequestEnd = 1

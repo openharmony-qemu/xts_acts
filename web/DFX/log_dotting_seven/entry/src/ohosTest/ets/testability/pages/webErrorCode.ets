@@ -72,7 +72,10 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
-    this.controller.loadUrl(this.mSslServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mSslServer.getShutdownUrl());
+    } catch (_e) {
+    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

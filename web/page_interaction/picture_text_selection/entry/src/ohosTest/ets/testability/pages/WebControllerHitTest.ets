@@ -66,7 +66,11 @@ struct WebControllerHitTest {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+    try {
+      this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   build() {

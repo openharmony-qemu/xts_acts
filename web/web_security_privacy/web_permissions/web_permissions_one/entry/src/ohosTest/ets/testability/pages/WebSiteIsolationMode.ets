@@ -36,7 +36,11 @@ struct WebSiteIsolationMode {
   @State RenderProcessModeArr: web_webview.RenderProcessMode[] = [web_webview.RenderProcessMode.MULTIPLE,web_webview.RenderProcessMode.SINGLE]
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
   }
 
   onPageShow() {
