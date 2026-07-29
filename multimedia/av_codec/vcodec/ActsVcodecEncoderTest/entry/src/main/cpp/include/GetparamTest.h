@@ -16,14 +16,14 @@
 #ifndef GETPARAM_TEST_H
 #define GETPARAM_TEST_H
 
-extern int VideoEncodeMseQp0100Test();
-extern int VideoEncodeMseQp0200Test();
-extern int VideoEncodeMseQp0300Test();
-extern int VideoEncodeMseQp0400Test();
-extern int VideoEncodeRepeat0100Test();
-extern int VideoEncodePreProcess0100Test();
-extern int VideoEncodePreProcess0200Test();
-extern int VideoEncodePreProcess0300Test();
+napi_value VideoEncodeMseQp0100Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeMseQp0200Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeMseQp0300Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeMseQp0400Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeRepeat0100Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodePreProcess0100Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodePreProcess0200Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodePreProcess0300Test(napi_env env, napi_callback_info info);
 
 extern void InitGetparamTest();
 extern void TestTearDownGetparam();

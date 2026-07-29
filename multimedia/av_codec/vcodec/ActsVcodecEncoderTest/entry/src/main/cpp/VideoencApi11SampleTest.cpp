@@ -72,7 +72,8 @@ void OHOS::Media::ResetLtrStaticState()
 }
 
 VEncAPI11Sample::~VEncAPI11Sample()
-{
+{ 
+    
     isRunning_.store(false);
     if (venc_ != nullptr) {
         OH_VideoEncoder_Stop(venc_);

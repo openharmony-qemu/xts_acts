@@ -24,6 +24,7 @@
 #include "avcodec_codec_name.h"
 #include "include/OhosCommonTest.h"
 #include "hilog/log.h"
+#include <napi/native_api.h>
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -120,17 +121,24 @@ static void TearDown()
     }
 }
 
-int VideoTemporalEncodeApi0020Test()
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
 {
-    return 0;
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
 }
 
-int VideoTemporalEncodeApi0030Test()
+napi_value VideoTemporalEncodeApi0020Test(napi_env env, napi_callback_info info)
 {
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0010Test()
+napi_value VideoTemporalEncodeApi0030Test(napi_env env, napi_callback_info info)
+{
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoTemporalEncodeFunction0010Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     format = OH_AVCapability_GetFeatureProperties(cap, VIDEO_ENCODER_TEMPORAL_SCALABILITY);
@@ -140,22 +148,29 @@ int VideoTemporalEncodeFunction0010Test()
         if (!access("/system/lib64/media/", 0)) {
             auto vEncSample = make_unique<VEncAPI11Sample>();
             cout << "running on phone=========="<< endl;
-            ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+            if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             vEncSample->TEMPORAL_ENABLE = true;
-            ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
+            if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1);
+            }
+            vEncSample->Release();
         } else {
             auto vEncSample = make_unique<VEncAPI11Sample>();
             cout << "running on rk=========="<< endl;
-            ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+            if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             vEncSample->TEMPORAL_ENABLE = true;
-            ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
+            if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1);
+            }
+            vEncSample->Release();
         }
-        return 0;
+
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0020Test()
+napi_value VideoTemporalEncodeFunction0020Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -167,18 +182,19 @@ int VideoTemporalEncodeFunction0020Test()
         vEncSample->TEMPORAL_ENABLE = false;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0030Test()
+napi_value VideoTemporalEncodeFunction0030Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -191,18 +207,19 @@ int VideoTemporalEncodeFunction0030Test()
         vEncSample->TEMPORAL_ENABLE = false;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0040Test()
+napi_value VideoTemporalEncodeFunction0040Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -216,18 +233,19 @@ int VideoTemporalEncodeFunction0040Test()
         vEncSample->TEMPORAL_DEFAULT = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0440Test()
+napi_value VideoTemporalEncodeFunction0440Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -240,18 +258,19 @@ int VideoTemporalEncodeFunction0440Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_DEFAULT = true;
         int32_t temporalGopSize = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0050Test()
+napi_value VideoTemporalEncodeFunction0050Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -264,18 +283,19 @@ int VideoTemporalEncodeFunction0050Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0060Test()
+napi_value VideoTemporalEncodeFunction0060Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -289,18 +309,19 @@ int VideoTemporalEncodeFunction0060Test()
         vEncSample->TEMPORAL_CONFIG = true;
 
         int32_t temporalGopSize = vEncSample->DEFAULT_FRAME_RATE-1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0070Test()
+napi_value VideoTemporalEncodeFunction0070Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -314,18 +335,19 @@ int VideoTemporalEncodeFunction0070Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0080Test()
+napi_value VideoTemporalEncodeFunction0080Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -339,18 +361,19 @@ int VideoTemporalEncodeFunction0080Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = vEncSample->DEFAULT_FRAME_RATE-1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0090Test()
+napi_value VideoTemporalEncodeFunction0090Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -362,18 +385,19 @@ int VideoTemporalEncodeFunction0090Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0100Test()
+napi_value VideoTemporalEncodeFunction0100Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -386,18 +410,19 @@ int VideoTemporalEncodeFunction0100Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0110Test()
+napi_value VideoTemporalEncodeFunction0110Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -410,18 +435,19 @@ int VideoTemporalEncodeFunction0110Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0120Test()
+napi_value VideoTemporalEncodeFunction0120Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -435,18 +461,19 @@ int VideoTemporalEncodeFunction0120Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0130Test()
+napi_value VideoTemporalEncodeFunction0130Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -458,18 +485,19 @@ int VideoTemporalEncodeFunction0130Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_6;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0140Test()
+napi_value VideoTemporalEncodeFunction0140Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -482,18 +510,19 @@ int VideoTemporalEncodeFunction0140Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_8;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0150Test()
+napi_value VideoTemporalEncodeFunction0150Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -506,18 +535,19 @@ int VideoTemporalEncodeFunction0150Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_9;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0160Test()
+napi_value VideoTemporalEncodeFunction0160Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -531,18 +561,19 @@ int VideoTemporalEncodeFunction0160Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = 12;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0170Test()
+napi_value VideoTemporalEncodeFunction0170Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -556,18 +587,19 @@ int VideoTemporalEncodeFunction0170Test()
         vEncSample->TEMPORAL_CONFIG = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
         vEncSample->enableForceIDR = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoTemporalEncodeFunction0180Test()
+napi_value VideoTemporalEncodeFunction0180Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -582,18 +614,19 @@ int VideoTemporalEncodeFunction0180Test()
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_4;
         vEncSample->enableForceIDR = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_001Test()
+napi_value LTR_FUNC_001Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -606,30 +639,35 @@ int LTR_FUNC_001Test()
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->enableLTR = true;
         vEncSample->ltrParam.ltrCount = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Reset());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Reset() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->ltrParam.ltrCount = LTR_COUNT_INVALID_11;
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder());
-        return 0;
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_002Test()
+napi_value LTR_FUNC_002Test(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capa = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char* codecName = OH_AVCapability_GetName(capa);
     if (!strcmp(codecName, "OMX.hisi.video.encoder.hevc")) {
-        ASSERT_EQ(true, OH_AVCapability_IsFeatureSupported(capa, VIDEO_ENCODER_LONG_TERM_REFERENCE));
+        if (OH_AVCapability_IsFeatureSupported(capa, VIDEO_ENCODER_LONG_TERM_REFERENCE) != true) {
+            return CreateIntInt32Result(env, -1);
+        }
     } else {
-        ASSERT_EQ(false, OH_AVCapability_IsFeatureSupported(capa, VIDEO_ENCODER_LONG_TERM_REFERENCE));
+        if (OH_AVCapability_IsFeatureSupported(capa, VIDEO_ENCODER_LONG_TERM_REFERENCE) != false) {
+            return CreateIntInt32Result(env, -1);
+        }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_004Test()
+napi_value LTR_FUNC_004Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -642,18 +680,19 @@ int LTR_FUNC_004Test()
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->enableLTR = true;
         vEncSample->ltrParam.ltrCount = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_005Test()
+napi_value LTR_FUNC_005Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -667,18 +706,19 @@ int LTR_FUNC_005Test()
         vEncSample->enableLTR = true;
         vEncSample->ltrParam.useBadLtr = true;
         vEncSample->ltrParam.ltrCount = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_006Test()
+napi_value LTR_FUNC_006Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -693,18 +733,19 @@ int LTR_FUNC_006Test()
         vEncSample->ltrParam.ltrCount = LTR_COUNT_10;
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_007Test()
+napi_value LTR_FUNC_007Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -718,18 +759,19 @@ int LTR_FUNC_007Test()
         vEncSample->enableLTR = true;
         vEncSample->ltrParam.ltrCount = LTR_COUNT_10;
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_008Test()
+napi_value LTR_FUNC_008Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -744,18 +786,19 @@ int LTR_FUNC_008Test()
         vEncSample->ltrParam.ltrCount = LTR_COUNT_2;
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.useLtrIndex = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_009Test()
+napi_value LTR_FUNC_009Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -768,18 +811,19 @@ int LTR_FUNC_009Test()
         vEncSample->SURF_INPUT = true;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->enableLTR = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_010Test()
+napi_value LTR_FUNC_010Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -793,18 +837,19 @@ int LTR_FUNC_010Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_DEFAULT = true;
         int32_t temporalGopSize = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_011Test()
+napi_value LTR_FUNC_011Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncApi11Sample = make_unique<VEncAPI11Sample>();
@@ -821,18 +866,19 @@ int LTR_FUNC_011Test()
         vEncApi11Sample->ltrParam.ltrCount = LTR_COUNT_5;
         vEncApi11Sample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncApi11Sample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->StartVideoEncoder());
+        if (vEncApi11Sample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncApi11Sample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->errCount);
-        return 0;
+        if (vEncApi11Sample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncApi11Sample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_012Test()
+napi_value LTR_FUNC_012Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -847,18 +893,19 @@ int LTR_FUNC_012Test()
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_013Test()
+napi_value LTR_FUNC_013Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncApi11Sample = make_unique<VEncAPI11Sample>();
@@ -875,18 +922,19 @@ int LTR_FUNC_013Test()
         vEncApi11Sample->ltrParam.ltrCount = LTR_COUNT_5;
         vEncApi11Sample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncApi11Sample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->StartVideoEncoder());
+        if (vEncApi11Sample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncApi11Sample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->errCount);
-        return 0;
+        if (vEncApi11Sample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncApi11Sample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_014Test()
+napi_value LTR_FUNC_014Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -901,18 +949,19 @@ int LTR_FUNC_014Test()
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_015Test()
+napi_value LTR_FUNC_015Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncApi11Sample = make_unique<VEncAPI11Sample>();
@@ -928,18 +977,19 @@ int LTR_FUNC_015Test()
         vEncApi11Sample->ltrParam.markAndUseSelf = true;
         vEncApi11Sample->ltrParam.ltrCount = LTR_COUNT_5;
         vEncApi11Sample->ltrParam.ltrInterval = LTR_INTERVAL_5;
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->StartVideoEncoder());
+        if (vEncApi11Sample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncApi11Sample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->errCount);
-        return 0;
+        if (vEncApi11Sample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncApi11Sample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int LTR_FUNC_016Test()
+napi_value LTR_FUNC_016Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncApi11Sample = make_unique<VEncAPI11Sample>();
@@ -955,18 +1005,19 @@ int LTR_FUNC_016Test()
         vEncApi11Sample->ltrParam.markAndUseSelf = true;
         vEncApi11Sample->ltrParam.ltrCount = LTR_COUNT_5;
         vEncApi11Sample->ltrParam.ltrInterval = LTR_INTERVAL_5;
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->StartVideoEncoder());
+        if (vEncApi11Sample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncApi11Sample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncApi11Sample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncApi11Sample->errCount);
-        return 0;
+        if (vEncApi11Sample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncApi11Sample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0100Test()
+napi_value VideoUniformlyEncodeFunction0100Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
@@ -980,18 +1031,19 @@ int VideoUniformlyEncodeFunction0100Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0200Test()
+napi_value VideoUniformlyEncodeFunction0200Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1004,15 +1056,18 @@ int VideoUniformlyEncodeFunction0200Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        return 0;
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_INVALID_VAL) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0300Test()
+napi_value VideoUniformlyEncodeFunction0300Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1025,18 +1080,19 @@ int VideoUniformlyEncodeFunction0300Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0400Test()
+napi_value VideoUniformlyEncodeFunction0400Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1049,18 +1105,19 @@ int VideoUniformlyEncodeFunction0400Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_4;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0500Test()
+napi_value VideoUniformlyEncodeFunction0500Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1073,15 +1130,18 @@ int VideoUniformlyEncodeFunction0500Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        return 0;
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_INVALID_VAL) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0600Test()
+napi_value VideoUniformlyEncodeFunction0600Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1094,18 +1154,19 @@ int VideoUniformlyEncodeFunction0600Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0700Test()
+napi_value VideoUniformlyEncodeFunction0700Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1118,15 +1179,18 @@ int VideoUniformlyEncodeFunction0700Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        return 0;
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_INVALID_VAL) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0800Test()
+napi_value VideoUniformlyEncodeFunction0800Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1139,18 +1203,19 @@ int VideoUniformlyEncodeFunction0800Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction0900Test()
+napi_value VideoUniformlyEncodeFunction0900Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1163,18 +1228,19 @@ int VideoUniformlyEncodeFunction0900Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_4;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoUniformlyEncodeFunction1000Test()
+napi_value VideoUniformlyEncodeFunction1000Test(napi_env env, napi_callback_info info)
 {
     if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1187,13 +1253,16 @@ int VideoUniformlyEncodeFunction1000Test()
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_UNIFORMLY = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        return 0;
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_INVALID_VAL) {
+            return CreateIntInt32Result(env, -1);
         }
-        return 0;
+        vEncSample->Release();
+        return CreateIntInt32Result(env, 0);
     }
+    return CreateIntInt32Result(env, 0);
+}
 void InitTemporalTest()
 {
     SetUpTestCase();

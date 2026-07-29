@@ -103,7 +103,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(0);
+      let result: number = await testNapi.VideoEncodeIllegalPara0100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -115,7 +115,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(1);
+      let result: number = await testNapi.VideoEncodeIllegalPara0200Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -127,7 +127,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(2);
+      let result: number = await testNapi.VideoEncodeIllegalPara0300Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -139,7 +139,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(3);
+      let result: number = await testNapi.VideoEncodeIllegalPara0400Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -151,7 +151,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(4);
+      let result: number = await testNapi.VideoEncodeIllegalPara0500Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -163,7 +163,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(5);
+      let result: number = await testNapi.VideoEncodeIllegalPara0600Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -175,7 +175,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(6);
+      let result: number = await testNapi.VideoEncodeIllegalPara0700Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -187,7 +187,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(7);
+      let result: number = await testNapi.VideoEncodeIllegalPara0800Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -199,7 +199,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_0900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(8);
+      let result: number = await testNapi.VideoEncodeIllegalPara0900Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -211,7 +211,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(9);
+      let result: number = await testNapi.VideoEncodeIllegalPara1100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -223,7 +223,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(10);
+      let result: number = await testNapi.VideoEncodeIllegalPara1400Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -235,7 +235,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(11);
+      let result: number = await testNapi.VideoEncodeIllegalPara1500Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -247,7 +247,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(12);
+      let result: number = await testNapi.VideoEncodeIllegalPara1600Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -259,7 +259,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(13);
+      let result: number = await testNapi.VideoEncodeIllegalPara1700Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -271,7 +271,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(14);
+      let result: number = await testNapi.VideoEncodeIllegalPara1800Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -283,7 +283,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_1900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(15);
+      let result: number = await testNapi.VideoEncodeIllegalPara1900Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -295,7 +295,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2000', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(16);
+      let result: number = await testNapi.VideoEncodeIllegalPara2000Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -307,7 +307,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(17);
+      let result: number = await testNapi.VideoEncodeIllegalPara2100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -319,7 +319,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(18);
+      let result: number = await testNapi.VideoEncodeIllegalPara2200Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -331,7 +331,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(19);
+      let result: number = await testNapi.VideoEncodeIllegalPara2300Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -343,7 +343,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(20);
+      let result: number = await testNapi.VideoEncodeIllegalPara2400Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -355,7 +355,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(21);
+      let result: number = await testNapi.VideoEncodeIllegalPara2500Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -367,7 +367,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(22);
+      let result: number = await testNapi.VideoEncodeIllegalPara2600Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -379,7 +379,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(23);
+      let result: number = await testNapi.VideoEncodeIllegalPara2700Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -391,7 +391,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(24);
+      let result: number = await testNapi.VideoEncodeIllegalPara2800Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -403,7 +403,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ILLEGAL_PARA_2900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(25);
+      let result: number = await testNapi.VideoEncodeIllegalPara2900Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -415,7 +415,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(26);
+      let result: number = await testNapi.VideoEncodeApi0100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -427,7 +427,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_3100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(27);
+      let result: number = await testNapi.VideoEncodeApi3100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -439,7 +439,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(28);
+      let result: number = await testNapi.VideoEncodeApi0200Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -451,7 +451,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(29);
+      let result: number = await testNapi.VideoEncodeApi0300Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -463,7 +463,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(30);
+      let result: number = await testNapi.VideoEncodeApi0400Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -475,7 +475,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(31);
+      let result: number = await testNapi.VideoEncodeApi0500Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -487,7 +487,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(32);
+      let result: number = await testNapi.VideoEncodeApi0600Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -499,7 +499,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(33);
+      let result: number = await testNapi.VideoEncodeApi0700Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -511,7 +511,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(34);
+      let result: number = await testNapi.VideoEncodeApi0800Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -523,7 +523,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_0900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(35);
+      let result: number = await testNapi.VideoEncodeApi0900Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -535,7 +535,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_1000', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(36);
+      let result: number = await testNapi.VideoEncodeApi1000Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -547,7 +547,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_1100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(37);
+      let result: number = await testNapi.VideoEncodeApi1100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -559,7 +559,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_1200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(38);
+      let result: number = await testNapi.VideoEncodeApi1200Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -571,7 +571,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_1300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(39);
+      let result: number = await testNapi.VideoEncodeApi1300Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -583,7 +583,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_1400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(40);
+      let result: number = await testNapi.VideoEncodeApi1400Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -595,7 +595,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_API_PART_TWO_1400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(41);
+      let result: number = await testNapi.VideoEncodeApi1410Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -607,7 +607,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(42);
+      let result: number = await testNapi.VideoEncodeSyncApi0010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -619,7 +619,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(43);
+      let result: number = await testNapi.VideoEncodeSyncApi0020Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -631,7 +631,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(44);
+      let result: number = await testNapi.VideoEncodeSyncApi0030Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -643,7 +643,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(45);
+      let result: number = await testNapi.VideoEncodeSyncApi0040Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -655,7 +655,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(46);
+      let result: number = await testNapi.VideoEncodeSyncApi0050Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -667,7 +667,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(47);
+      let result: number = await testNapi.VideoEncodeSyncApi0060Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -679,7 +679,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(48);
+      let result: number = await testNapi.VideoEncodeSyncApi0070Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -691,7 +691,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(49);
+      let result: number = await testNapi.VideoEncodeSyncApi0080Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -703,7 +703,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(50);
+      let result: number = await testNapi.VideoEncodeApiAdd0010();
       expect(result).assertEqual(0);
     });
     /**
@@ -715,7 +715,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1000', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(51);
+      let result: number = await testNapi.VideoEncodeApiAdd0020();
       expect(result).assertEqual(0);
     });
     /**
@@ -727,7 +727,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(52);
+      let result: number = await testNapi.VideoEncodeApiAdd0030();
       expect(result).assertEqual(0);
     });
     /**
@@ -739,7 +739,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(53);
+      let result: number = await testNapi.VideoEncodeApiAdd0040();
       expect(result).assertEqual(0);
     });
     /**
@@ -751,7 +751,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(54);
+      let result: number = await testNapi.VideoEncodeApiAdd0050();
       expect(result).assertEqual(0);
     });
     /**
@@ -763,7 +763,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0100', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(55);
+      let result: number = await testNapi.VideoEncodeApiDual0100();
       expect(result).assertEqual(0);
     });
     /**
@@ -775,7 +775,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0200', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(56);
+      let result: number = await testNapi.VideoEncodeApiDual0200();
       expect(result).assertEqual(0);
     });
     /**
@@ -787,7 +787,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0300', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(57);
+      let result: number = await testNapi.VideoEncodeApiDual0300();
       expect(result).assertEqual(0);
     });
     /**
@@ -799,7 +799,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(58);
+      let result: number = await testNapi.VideoEncodeApiDual0400();
       expect(result).assertEqual(0);
     });
     /**
@@ -811,7 +811,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(59);
+      let result: number = await testNapi.VideoEncodeApiDual0500();
       expect(result).assertEqual(0);
     });
     /**
@@ -823,7 +823,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(60);
+      let result: number = await testNapi.VideoEncodeApiDual0600();
       expect(result).assertEqual(0);
     });
     /**
@@ -835,7 +835,7 @@ export default function VideoEncoderApiTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runApiTest(61);
+      let result: number = await testNapi.VideoEncodeApiDual0700();
       expect(result).assertEqual(0);
     });
   });
