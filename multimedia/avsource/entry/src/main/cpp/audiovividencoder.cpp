@@ -1710,6 +1710,40 @@ static napi_value GetMetaBufferNullCheck(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetMetaWithoutStaticMeta(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        int32_t len;
+        OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, false, &len);
+        if (ret == AV_ERR_OK && len > 0) {
+            std::vector<uint8_t> metaData;
+            metaData.resize(len);
+            ret = OH_AudioVividMetaBuilder_GetMeta(builder, false, metaData.data(), len);
+            if (ret == AV_ERR_OK) {
+                backParam = SUCCESS;
+            }
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 static napi_value DestroyBuilderNullCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
@@ -2097,6 +2131,7 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("GetMetaLenLenNullCheck", GetMetaLenLenNullCheck),
         DECLARE_NAPI_FUNCTION("GetMetaBuilderNullCheck", GetMetaBuilderNullCheck),
         DECLARE_NAPI_FUNCTION("GetMetaBufferNullCheck", GetMetaBufferNullCheck),
+        DECLARE_NAPI_FUNCTION("GetMetaWithoutStaticMeta", GetMetaWithoutStaticMeta),
         DECLARE_NAPI_FUNCTION("DestroyBuilderNullCheck", DestroyBuilderNullCheck),
         DECLARE_NAPI_FUNCTION("CreateEmptyBuilderNullCheck", CreateEmptyBuilderNullCheck),
         DECLARE_NAPI_FUNCTION("AddObjectBuilderNullCheck", AddObjectBuilderNullCheck),
