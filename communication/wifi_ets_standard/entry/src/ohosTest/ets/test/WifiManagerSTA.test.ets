@@ -108,14 +108,16 @@ export default function wifiSta() {
     })
 
     afterEach(async (done:Function)=>{
+      console.info('afterEach start');
       try{
         if (networkId >= 0) {
           await wifiMg.removeCandidateConfig(networkId);
-          console.info(`${caseName} removeCandidateConfig promise success`);
+          console.info(`afterEach removeCandidateConfig promise success`);
         }
       }catch{
-        console.info(`${caseName} not need removeCandidateConfig `);
+        console.info(`afterEach not need removeCandidateConfig `);
       }
+      console.info('afterEach end');
       done();
     })
 
