@@ -1006,7 +1006,7 @@ int VideoEncodeHevcCapability3000Test()
 
 int VideoEncodeSetMaxFrameDelayCount0100Test()
 {
-    if (cap) {
+    if (cap && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -1021,7 +1021,7 @@ int VideoEncodeSetMaxFrameDelayCount0100Test()
 
 int VideoEncodeSetMaxFrameDelayCount0200Test()
 {
-    if (cap_hevc) {
+    if (cap_hevc && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -1036,7 +1036,7 @@ int VideoEncodeSetMaxFrameDelayCount0200Test()
 
 int VideoEncodeSetMaxFrameDelayCount0300Test()
 {
-    if (cap) {
+    if (cap && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -1054,7 +1054,7 @@ int VideoEncodeSetMaxFrameDelayCount0300Test()
 
 int VideoEncodeSetMaxFrameDelayCount0400Test()
 {
-    if (cap_hevc) {
+    if (cap_hevc && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
