@@ -20,6 +20,8 @@ group("context") {
       "actscontexttest:ActsContextTest",
       "actscreatemodulecontextassist:ActsCreateModuleContextAssist",
       "actscreatemodulecontextassistone:ActsCreateModuleContextAssistOne",
+      "actscreatemodulecontextsynctest:ActsCreateModuleContextSyncTest",
+      "actscreatemodulecontextsyncteststatic:ActsCreateModuleContextSyncStaticTest",
       "actscreatemodulecontexttest:ActsCreateModuleContextTest",
       "actseventhubinterthreadtest:ActsEventHubInterThreadTest",
       "actsfa8contexttest:ActsFa8ContextTest",
