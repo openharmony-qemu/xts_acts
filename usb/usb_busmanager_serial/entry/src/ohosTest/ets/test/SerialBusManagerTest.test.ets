@@ -1178,7 +1178,6 @@ export default function SerialBusManagerTest() {
         await sleep(500);
         gPort1!.onDataRead((data: Uint8Array) => {
           console.info(TAG, 'testOnDataRead001 received data length: ', data.length);
-          console.info(TAG, `testOnDataRead001 received data: ${data}`);
         });
         console.info(TAG, 'testOnDataRead001 register success');
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
