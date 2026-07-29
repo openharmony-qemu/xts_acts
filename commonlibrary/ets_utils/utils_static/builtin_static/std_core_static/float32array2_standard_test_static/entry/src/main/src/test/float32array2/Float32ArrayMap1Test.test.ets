@@ -1660,7 +1660,7 @@ export default function Float32ArrayMap1Test(): void {
     it('testFloat32ArrayMapOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
       const result = arr.map((element: number): number => element * 2.0);
-      expect(result === arr).assertFalse();
+      expect(result).not().assertEqual(arr);
     });
 
   });
