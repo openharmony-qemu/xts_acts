@@ -6041,5 +6041,842 @@ export default function UDMFApiTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_default_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_default_0100
+     * @tc.desc   Test insertData without visibility parameter to verify default value behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_default_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_default_0100 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test default';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let key = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG, `insertData success without visibility param, key=${key}`);
+        expect(key !== null).assertTrue();
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `insertData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_invalid_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_invalid_0200
+     * @tc.desc   Test insertData with visibility parameter set to invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_invalid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_invalid_0200 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test invalid';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      try {
+        await unifiedDataChannel.insertData(options, unifiedData);
+        console.error(TAG, 'insertData should fail with invalid visibility');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(TAG, `insertData failed as expected, code=${error.code}, message=${error.message}`);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_undefined_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_undefined_0300
+     * @tc.desc   Test insertData with visibility parameter set to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_undefined_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_undefined_0300 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test undefined';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      try {
+        await unifiedDataChannel.insertData(options, unifiedData);
+        console.error(TAG, 'insertData should fail with visibility=undefined');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(TAG, `insertData failed as expected, code=${error.code}, message=${error.message}`);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_updateData_visibility_default_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_updateData_visibility_default_0100
+     * @tc.desc   Test updateData without visibility parameter to verify default value behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_updateData_visibility_default_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_updateData_visibility_default_0100 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test update';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let updateOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        updateOptions.key = key;
+        let plainTextUpdate = new unifiedDataChannel.PlainText();
+        plainTextUpdate.textContent = 'visibility test update new';
+        let unifiedDataUpdate = new unifiedDataChannel.UnifiedData(plainTextUpdate);
+        await unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate);
+        console.info(TAG, 'updateData success without visibility param');
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `updateData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_updateData_visibility_invalid_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_updateData_visibility_invalid_0200
+     * @tc.desc   Test updateData with invalid visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_updateData_visibility_invalid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_updateData_visibility_invalid_0200 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test update';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let updateOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      try {
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        updateOptions.key = key;
+        let plainTextUpdate = new unifiedDataChannel.PlainText();
+        plainTextUpdate.textContent = 'visibility test update new';
+        let unifiedDataUpdate = new unifiedDataChannel.UnifiedData(plainTextUpdate);
+        await unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate);
+        console.info(TAG, 'updateData success with invalid visibility, parameter ignored');
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `updateData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_updateData_visibility_undefined_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_updateData_visibility_undefined_0300
+     * @tc.desc   Test updateData with undefined visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_updateData_visibility_undefined_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_updateData_visibility_undefined_0300 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test update';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let updateOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      try {
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        updateOptions.key = key;
+        let plainTextUpdate = new unifiedDataChannel.PlainText();
+        plainTextUpdate.textContent = 'visibility test update new';
+        let unifiedDataUpdate = new unifiedDataChannel.UnifiedData(plainTextUpdate);
+        await unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate);
+        console.info(TAG, 'updateData success with undefined visibility, parameter ignored');
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `updateData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_negative_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_negative_0400
+     * @tc.desc   Test insertData with visibility parameter set to negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_negative_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_negative_0400 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test negative';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: -1 as unifiedDataChannel.Visibility
+      };
+      try {
+        await unifiedDataChannel.insertData(options, unifiedData);
+        console.error(TAG, 'insertData should fail with negative visibility');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(TAG, `insertData failed as expected, code=${error.code}, message=${error.message}`);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_queryData_visibility_invalid_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_queryData_visibility_invalid_0100
+     * @tc.desc   Test queryData with invalid visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_queryData_visibility_invalid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_queryData_visibility_invalid_0100 start');
+      let testContent = 'visibility test query invalid';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let queryOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      try {
+        let dataBefore = await unifiedDataChannel.queryData(queryOptions);
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `queryData before insert, length=${lengthBefore}`);
+        
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        
+        let dataAfter = await unifiedDataChannel.queryData(queryOptions);
+        console.info(TAG, `queryData success with invalid visibility, length=${dataAfter.length}`);
+        expect(dataAfter.length - lengthBefore).assertEqual(1);
+        
+        let records = dataAfter[dataAfter.length - 1].getRecords();
+        let record = records[0] as unifiedDataChannel.PlainText;
+        expect(record.textContent).assertEqual(testContent);
+        console.info(TAG, `textContent verified: ${record.textContent}`);
+        
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `queryData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_queryData_visibility_undefined_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_queryData_visibility_undefined_0200
+     * @tc.desc   Test queryData with undefined visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_queryData_visibility_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_queryData_visibility_undefined_0200 start');
+      let testContent = 'visibility test query undefined';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let queryOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      try {
+        let dataBefore = await unifiedDataChannel.queryData(queryOptions);
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `queryData before insert, length=${lengthBefore}`);
+        
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        
+        let dataAfter = await unifiedDataChannel.queryData(queryOptions);
+        console.info(TAG, `queryData success with undefined visibility, length=${dataAfter.length}`);
+        expect(dataAfter.length - lengthBefore).assertEqual(1);
+        
+        let records = dataAfter[dataAfter.length - 1].getRecords();
+        let record = records[0] as unifiedDataChannel.PlainText;
+        expect(record.textContent).assertEqual(testContent);
+        console.info(TAG, `textContent verified: ${record.textContent}`);
+        
+        await unifiedDataChannel.deleteData({ key: key });
+        done();
+      } catch (error) {
+        console.error(TAG, `queryData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_deleteData_visibility_invalid_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_deleteData_visibility_invalid_0100
+     * @tc.desc   Test deleteData with invalid visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_deleteData_visibility_invalid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_deleteData_visibility_invalid_0100 start');
+      let testContent = 'visibility test delete invalid';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let deleteOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      try {
+        let dataBefore = await unifiedDataChannel.deleteData(deleteOptions);
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `deleteData before insert, length=${lengthBefore}`);
+        
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        
+        deleteOptions.key = key;
+        let dataAfter = await unifiedDataChannel.deleteData(deleteOptions);
+        console.info(TAG, `deleteData success with invalid visibility, length=${dataAfter.length}`);
+        expect(dataAfter.length - lengthBefore).assertEqual(1);
+        
+        let records = dataAfter[dataAfter.length - 1].getRecords();
+        let record = records[0] as unifiedDataChannel.PlainText;
+        expect(record.textContent).assertEqual(testContent);
+        console.info(TAG, `textContent verified: ${record.textContent}`);
+        
+        done();
+      } catch (error) {
+        console.error(TAG, `deleteData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_deleteData_visibility_undefined_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_deleteData_visibility_undefined_0200
+     * @tc.desc   Test deleteData with undefined visibility parameter, should execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_deleteData_visibility_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_deleteData_visibility_undefined_0200 start');
+      let testContent = 'visibility test delete undefined';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let deleteOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      try {
+        let dataBefore = await unifiedDataChannel.deleteData(deleteOptions);
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `deleteData before insert, length=${lengthBefore}`);
+        
+        let key = await unifiedDataChannel.insertData(insertOptions, unifiedData);
+        console.info(TAG, `insertData success, key=${key}`);
+        
+        deleteOptions.key = key;
+        let dataAfter = await unifiedDataChannel.deleteData(deleteOptions);
+        console.info(TAG, `deleteData success with undefined visibility, length=${dataAfter.length}`);
+        expect(dataAfter.length - lengthBefore).assertEqual(1);
+        
+        let records = dataAfter[dataAfter.length - 1].getRecords();
+        let record = records[0] as unifiedDataChannel.PlainText;
+        expect(record.textContent).assertEqual(testContent);
+        console.info(TAG, `textContent verified: ${record.textContent}`);
+        
+        done();
+      } catch (error) {
+        console.error(TAG, `deleteData failed, code=${error.code}, message=${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_invalid_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_invalid_0100
+     * @tc.desc   Test insertData callback with invalid visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_invalid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_invalid_0100 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test callback invalid';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      try {
+        unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
+          console.error(TAG, 'insertData callback should not be executed with invalid visibility');
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(TAG, `insertData failed as expected, code=${error.code}, message=${error.message}`);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_undefined_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_undefined_0200
+     * @tc.desc   Test insertData callback with undefined visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_insertData_visibility_callback_undefined_0200 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test callback undefined';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      try {
+        unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
+          console.error(TAG, 'insertData callback should not be executed with undefined visibility');
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(TAG, `insertData failed as expected, code=${error.code}, message=${error.message}`);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_invalid_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_invalid_0300
+     * @tc.desc   Test queryData callback with invalid visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_invalid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_invalid_0300 start');
+      let testContent = 'visibility test query callback invalid';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let queryOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      unifiedDataChannel.queryData(queryOptions, (err, dataBefore) => {
+        if (err) {
+          console.error(TAG, `queryData before insert failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `queryData before insert, length=${lengthBefore}`);
+        
+        unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+          if (err) {
+            console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+            return;
+          }
+          console.info(TAG, `insertData success, key=${key}`);
+          
+          unifiedDataChannel.queryData(queryOptions, (err, dataAfter) => {
+            if (err) {
+              console.error(TAG, `queryData after insert failed, code=${err.code}, message=${err.message}`);
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(TAG, `queryData success with invalid visibility, length=${dataAfter.length}`);
+            expect(dataAfter.length - lengthBefore).assertEqual(1);
+            
+            let records = dataAfter[dataAfter.length - 1].getRecords();
+            let record = records[0] as unifiedDataChannel.PlainText;
+            expect(record.textContent).assertEqual(testContent);
+            console.info(TAG, `textContent verified: ${record.textContent}`);
+            
+            unifiedDataChannel.deleteData({ key: key }, (err) => {
+              if (err) {
+                console.error(TAG, `deleteData failed, code=${err.code}, message=${err.message}`);
+              }
+              done();
+            });
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_undefined_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_undefined_0400
+     * @tc.desc   Test queryData callback with undefined visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_undefined_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_queryData_visibility_callback_undefined_0400 start');
+      let testContent = 'visibility test query callback undefined';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let queryOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      unifiedDataChannel.queryData(queryOptions, (err, dataBefore) => {
+        if (err) {
+          console.error(TAG, `queryData before insert failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `queryData before insert, length=${lengthBefore}`);
+        
+        unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+          if (err) {
+            console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+            return;
+          }
+          console.info(TAG, `insertData success, key=${key}`);
+          
+          unifiedDataChannel.queryData(queryOptions, (err, dataAfter) => {
+            if (err) {
+              console.error(TAG, `queryData after insert failed, code=${err.code}, message=${err.message}`);
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(TAG, `queryData success with undefined visibility, length=${dataAfter.length}`);
+            expect(dataAfter.length - lengthBefore).assertEqual(1);
+            
+            let records = dataAfter[dataAfter.length - 1].getRecords();
+            let record = records[0] as unifiedDataChannel.PlainText;
+            expect(record.textContent).assertEqual(testContent);
+            console.info(TAG, `textContent verified: ${record.textContent}`);
+            
+            unifiedDataChannel.deleteData({ key: key }, (err) => {
+              if (err) {
+                console.error(TAG, `deleteData failed, code=${err.code}, message=${err.message}`);
+              }
+              done();
+            });
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_invalid_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_invalid_0500
+     * @tc.desc   Test updateData callback with invalid visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_invalid_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_invalid_0500 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test update callback invalid';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let updateOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+        if (err) {
+          console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        console.info(TAG, `insertData success, key=${key}`);
+        updateOptions.key = key;
+        
+        let plainTextUpdate = new unifiedDataChannel.PlainText();
+        plainTextUpdate.textContent = 'visibility test update callback new';
+        let unifiedDataUpdate = new unifiedDataChannel.UnifiedData(plainTextUpdate);
+        
+        unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate, (err) => {
+          if (err) {
+            console.error(TAG, `updateData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(TAG, 'updateData success with invalid visibility, parameter ignored');
+            unifiedDataChannel.deleteData({ key: key }, (err) => {
+              if (err) {
+                console.error(TAG, `deleteData failed, code=${err.code}, message=${err.message}`);
+              }
+              done();
+            });
+          }
+        });
+      });
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_undefined_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_undefined_0600
+     * @tc.desc   Test updateData callback with undefined visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_undefined_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_updateData_visibility_callback_undefined_0600 start');
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'visibility test update callback undefined';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let updateOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+        if (err) {
+          console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        console.info(TAG, `insertData success, key=${key}`);
+        updateOptions.key = key;
+        
+        let plainTextUpdate = new unifiedDataChannel.PlainText();
+        plainTextUpdate.textContent = 'visibility test update callback new';
+        let unifiedDataUpdate = new unifiedDataChannel.UnifiedData(plainTextUpdate);
+        
+        unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate, (err) => {
+          if (err) {
+            console.error(TAG, `updateData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(TAG, 'updateData success with undefined visibility, parameter ignored');
+            unifiedDataChannel.deleteData({ key: key }, (err) => {
+              if (err) {
+                console.error(TAG, `deleteData failed, code=${err.code}, message=${err.message}`);
+              }
+              done();
+            });
+          }
+        });
+      });
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_invalid_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_invalid_0700
+     * @tc.desc   Test deleteData callback with invalid visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_invalid_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_invalid_0700 start');
+      let testContent = 'visibility test delete callback invalid';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let deleteOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: 999 as unifiedDataChannel.Visibility
+      };
+      unifiedDataChannel.deleteData(deleteOptions, (err, dataBefore) => {
+        if (err) {
+          console.error(TAG, `deleteData before insert failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `deleteData before insert, length=${lengthBefore}`);
+        
+        unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+          if (err) {
+            console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+            return;
+          }
+          console.info(TAG, `insertData success, key=${key}`);
+          deleteOptions.key = key;
+          
+          unifiedDataChannel.deleteData(deleteOptions, (err, dataAfter) => {
+            if (err) {
+              console.error(TAG, `deleteData after insert failed, code=${err.code}, message=${err.message}`);
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(TAG, `deleteData success with invalid visibility, length=${dataAfter.length}`);
+            expect(dataAfter.length - lengthBefore).assertEqual(1);
+            
+            let records = dataAfter[dataAfter.length - 1].getRecords();
+            let record = records[0] as unifiedDataChannel.PlainText;
+            expect(record.textContent).assertEqual(testContent);
+            console.info(TAG, `textContent verified: ${record.textContent}`);
+            
+            done();
+          });
+        });
+      });
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_undefined_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_undefined_0800
+     * @tc.desc   Test deleteData callback with undefined visibility parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_undefined_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'SUB_DistributedData_UDMF_SDK_deleteData_visibility_callback_undefined_0800 start');
+      let testContent = 'visibility test delete callback undefined';
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = testContent;
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let insertOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      let deleteOptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        visibility: undefined
+      };
+      unifiedDataChannel.deleteData(deleteOptions, (err, dataBefore) => {
+        if (err) {
+          console.error(TAG, `deleteData before insert failed, code=${err.code}, message=${err.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        let lengthBefore = dataBefore.length;
+        console.info(TAG, `deleteData before insert, length=${lengthBefore}`);
+        
+        unifiedDataChannel.insertData(insertOptions, unifiedData, (err, key) => {
+          if (err) {
+            console.error(TAG, `insertData failed, code=${err.code}, message=${err.message}`);
+            expect().assertFail();
+            done();
+            return;
+          }
+          console.info(TAG, `insertData success, key=${key}`);
+          deleteOptions.key = key;
+          
+          unifiedDataChannel.deleteData(deleteOptions, (err, dataAfter) => {
+            if (err) {
+              console.error(TAG, `deleteData after insert failed, code=${err.code}, message=${err.message}`);
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(TAG, `deleteData success with undefined visibility, length=${dataAfter.length}`);
+            expect(dataAfter.length - lengthBefore).assertEqual(1);
+            
+            let records = dataAfter[dataAfter.length - 1].getRecords();
+            let record = records[0] as unifiedDataChannel.PlainText;
+            expect(record.textContent).assertEqual(testContent);
+            console.info(TAG, `textContent verified: ${record.textContent}`);
+            
+            done();
+          });
+        });
+      });
+    })
+
   })
 }
