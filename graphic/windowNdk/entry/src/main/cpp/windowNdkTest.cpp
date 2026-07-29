@@ -900,6 +900,33 @@ static napi_value TestFrameMetricsGetVsyncTimestampNullptr(napi_env env, napi_ca
     return retCode;
 }
 
+static napi_value TestFrameMetricsGetInputHandlingDurationWithNullDuration(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetInputHandlingDuration(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetInputHandlingDurationWithNullDuration return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetLayoutMeasureDurationWithNullDuration(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetLayoutMeasureDurationWithNullDuration return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetVsyncTimestampWithNullTimestamp(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetVsyncTimestamp(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetVsyncTimestampWithNullTimestamp return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
 static napi_value TestFrameMetricsIsFirstDrawFrameOK(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -1852,6 +1879,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testFrameMetricsGetLayoutMeasureDurationNullptr", nullptr, TestFrameMetricsGetLayoutMeasureDurationNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsGetVsyncTimestampNullptr", nullptr, TestFrameMetricsGetVsyncTimestampNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetInputHandlingDurationWithNullDuration", nullptr, TestFrameMetricsGetInputHandlingDurationWithNullDuration,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetLayoutMeasureDurationWithNullDuration", nullptr, TestFrameMetricsGetLayoutMeasureDurationWithNullDuration,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetVsyncTimestampWithNullTimestamp", nullptr, TestFrameMetricsGetVsyncTimestampWithNullTimestamp,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsIsFirstDrawFrameOK", nullptr, TestFrameMetricsIsFirstDrawFrameOK,
             nullptr, nullptr, nullptr, napi_default, nullptr },

@@ -1348,6 +1348,50 @@ export default function windowPropertiesTest3() {
       }
     });
 
+    /**
+     * @tc.name   testGetAllWindowLayoutInfo_optionUndefined
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_1100
+     * @tc.desc   传入option为undefined，获取所有可见窗口布局信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAllWindowLayoutInfo_optionUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testGetAllWindowLayoutInfo_optionUndefined';
+      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      try {
+        let data = await window.getAllWindowLayoutInfo(displayId, undefined);
+        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+        expect(data.length > 0).assertTrue();
+        if (data.length > 0) {
+          let rect = data[0].windowRect;
+          expect(rect.left >= 0).assertTrue();
+          expect(rect.top >= 0).assertTrue();
+          expect(rect.width > 0).assertTrue();
+          expect(rect.height > 0).assertTrue();
+          let alpha = data[0].windowAlpha;
+          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+        }
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
     // ==================== @Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY) 测试用例 ====================
 
     /**
@@ -1437,6 +1481,709 @@ export default function windowPropertiesTest3() {
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
         expect().assertFail();
         done();
+      }
+    });
+
+    // ==================== isInWindowPostureMode / onWindowPostureModeChange / offWindowPostureModeChange 测试用例 ====================
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_normal
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0100
+     * @tc.desc   查询当前窗口是否处于桌面姿态模式，结合FoldStatus、getLiveCreaseRegion、getWindowStatus等条件验证返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_normal';
+      try {
+        let isSupport = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} isSupport: ${isSupport}`);
+        if (!isSupport) {
+          console.info(`${message} SystemCapability.Window.SessionManager not supported.`);
+          done();
+          return;
+        }
+
+        let isHalfFolded = false;
+        let isCreaseWidthGreater = false;
+        let isFullScreenOrMaximize = false;
+        let isCreaseInWindow = false;
+        let creaseTop = 0;
+        let creaseHeight = 0;
+
+        try {
+          let foldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(`${message} foldStatus: ${foldStatus}`);
+          isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+        } catch (e) {
+          console.info(`${message} getFoldStatus not supported.`);
+        }
+
+        try {
+          let defaultDisplay = display.getDefaultDisplaySync();
+          let creaseRegion = defaultDisplay.getLiveCreaseRegion();
+          console.info(`${message} creaseRegion: ${JSON.stringify(creaseRegion)}`);
+          if (creaseRegion.creaseRects.length > 0) {
+            let creaseRect = creaseRegion.creaseRects[0];
+            console.info(`${message} creaseRect: ${JSON.stringify(creaseRect)}`);
+            isCreaseWidthGreater = creaseRect.width > creaseRect.height;
+            creaseTop = creaseRect.top;
+            creaseHeight = creaseRect.height;
+          }
+        } catch (e) {
+          console.info(`${message} getLiveCreaseRegion not supported.`);
+        }
+
+        try {
+          let windowStatus = mainWindowClass.getWindowStatus();
+          console.info(`${message} windowStatus: ${windowStatus}`);
+          isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+            windowStatus === window.WindowStatusType.MAXIMIZE;
+        } catch (e) {
+          console.info(`${message} getWindowStatus not supported.`);
+        }
+
+        let windowRect = mainWindowClass.getWindowProperties().windowRect;
+        console.info(`${message} windowRect: ${JSON.stringify(windowRect)}`);
+        isCreaseInWindow = (windowRect.top + windowRect.height) > (creaseTop + creaseHeight);
+
+        let expectedResult = isHalfFolded && isCreaseWidthGreater && isFullScreenOrMaximize && isCreaseInWindow;
+        console.info(`${message} isHalfFolded: ${isHalfFolded}, isCreaseWidthGreater: ${isCreaseWidthGreater}, isFullScreenOrMaximize: ${isFullScreenOrMaximize}, isCreaseInWindow: ${isCreaseInWindow}`);
+        console.info(`${message} expectedResult: ${expectedResult}`);
+
+        let result = mainWindowClass.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+        console.info(`${message} result: ${result}`);
+        expect(result).assertEqual(expectedResult);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_windowDestroyed
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0200
+     * @tc.desc   窗口销毁后调用isInWindowPostureMode，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_windowDestroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_windowDestroyed';
+      let config: window.Configuration = {
+        name: 'testIsInWindowPostureMode_windowDestroyed',
+        windowType: window.WindowType.TYPE_DIALOG,
+        decorEnabled: true,
+        ctx: context
+      };
+      try {
+        let testWindow = await window.createWindow(config);
+        await testWindow.destroyWindow();
+        await sleep(500);
+        try {
+          testWindow.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+          console.error(`${message} Should not succeed.`);
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 1300002) {
+            console.info(`${message} Expected error 1300002.`);
+            expect(exception.code).assertEqual(1300002);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${message} Failed to create window. Cause: ${err.code}, ${err.message}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_1300016
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0300
+     * @tc.desc   传入无效的WindowPostureMode值999，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_1300016';
+      try {
+        mainWindowClass.isInWindowPostureMode(999 as window.WindowPostureMode);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offTwice
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0200
+     * @tc.desc   调用2次on监听，调用2次off分别取消每个监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offTwice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnOffWindowPostureModeChange_offTwice';
+      try {
+        let callback1 = (isInPostureMode: boolean) => {
+          console.info(`${message} callback1 triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        let callback2 = (isInPostureMode: boolean) => {
+          console.info(`${message} callback2 triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+        console.info(`${message} Succeeded in enabling listener 1.`);
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+        console.info(`${message} Succeeded in enabling listener 2.`);
+        mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+        console.info(`${message} Succeeded in disabling listener 1.`);
+        mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+        console.info(`${message} Succeeded in disabling listener 2.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offAll
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0300
+     * @tc.desc   调用2次on监听，调用off接口（不传callback）取消全部监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnOffWindowPostureModeChange_offAll';
+      try {
+        let callback1 = (isInPostureMode: boolean) => {
+          console.info(`${message} callback1 triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        let callback2 = (isInPostureMode: boolean) => {
+          console.info(`${message} callback2 triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+        console.info(`${message} Succeeded in enabling listener 1.`);
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+        console.info(`${message} Succeeded in enabling listener 2.`);
+        mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+        console.info(`${message} Succeeded in disabling all listeners.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_windowDestroyed
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0400
+     * @tc.desc   窗口销毁后调用onWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_windowDestroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_windowDestroyed';
+      let config: window.Configuration = {
+        name: 'testOnWindowPostureModeChange_windowDestroyed',
+        windowType: window.WindowType.TYPE_DIALOG,
+        decorEnabled: true,
+        ctx: context
+      };
+      try {
+        let testWindow = await window.createWindow(config);
+        await testWindow.destroyWindow();
+        await sleep(500);
+        try {
+          let callback = (isInPostureMode: boolean) => {
+            console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+          };
+          testWindow.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+          console.error(`${message} Should not succeed.`);
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 1300002) {
+            console.info(`${message} Expected error 1300002.`);
+            expect(exception.code).assertEqual(1300002);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${message} Failed to create window. Cause: ${err.code}, ${err.message}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_windowDestroyed
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0500
+     * @tc.desc   窗口销毁后调用offWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_windowDestroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_windowDestroyed';
+      let config: window.Configuration = {
+        name: 'testOffWindowPostureModeChange_windowDestroyed',
+        windowType: window.WindowType.TYPE_DIALOG,
+        decorEnabled: true,
+        ctx: context
+      };
+      try {
+        let testWindow = await window.createWindow(config);
+        await testWindow.destroyWindow();
+        await sleep(500);
+        try {
+          testWindow.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+          console.error(`${message} Should not succeed.`);
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 1300002) {
+            console.info(`${message} Expected error 1300002.`);
+            expect(exception.code).assertEqual(1300002);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${message} Failed to create window. Cause: ${err.code}, ${err.message}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_1300016
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0600
+     * @tc.desc   传入无效的WindowPostureMode值999，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_1300016';
+      try {
+        let callback = (isInPostureMode: boolean) => {
+          console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.onWindowPostureModeChange(999 as window.WindowPostureMode, callback);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_1300016
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0700
+     * @tc.desc   传入无效的WindowPostureMode值999，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_1300016';
+      try {
+        mainWindowClass.offWindowPostureModeChange(999 as window.WindowPostureMode);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_null
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0400
+     * @tc.desc   传入null作为mode参数，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_null';
+      try {
+        mainWindowClass.isInWindowPostureMode(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_undefined
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0500
+     * @tc.desc   传入undefined作为mode参数，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_undefined';
+      try {
+        mainWindowClass.isInWindowPostureMode(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_returnValue
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_FUNCTION_0600
+     * @tc.desc   调用isInWindowPostureMode，断言返回值为true或false，满足返回值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_returnValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testIsInWindowPostureMode_returnValue';
+      try {
+        let isSupport = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} isSupport: ${isSupport}`);
+        if (!isSupport) {
+          console.info(`${message} SystemCapability.Window.SessionManager not supported.`);
+          done();
+          return;
+        }
+        let result = mainWindowClass.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+        console.info(`${message} result: ${result}`);
+        expect(result === true || result === false).assertTrue();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_modeNull
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0800
+     * @tc.desc   onWindowPostureModeChange第一个入参传入null，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_modeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_modeNull';
+      try {
+        let callback = (isInPostureMode: boolean) => {
+          console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.onWindowPostureModeChange(null, callback);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_modeUndefined
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_0900
+     * @tc.desc   onWindowPostureModeChange第一个入参传入undefined，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_modeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_modeUndefined';
+      try {
+        let callback = (isInPostureMode: boolean) => {
+          console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.onWindowPostureModeChange(undefined, callback);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_callbackNull
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1000
+     * @tc.desc   onWindowPostureModeChange第二个入参传入null，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_callbackNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_callbackNull';
+      try {
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_callbackUndefined
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1100
+     * @tc.desc   onWindowPostureModeChange第二个入参传入undefined，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_callbackUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_callbackUndefined';
+      try {
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_modeNull
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1200
+     * @tc.desc   offWindowPostureModeChange第一个入参传入null，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_modeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_modeNull';
+      try {
+        let callback = (isInPostureMode: boolean) => {
+          console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.offWindowPostureModeChange(null, callback);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_modeUndefined
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1300
+     * @tc.desc   offWindowPostureModeChange第一个入参传入undefined，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_modeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_modeUndefined';
+      try {
+        let callback = (isInPostureMode: boolean) => {
+          console.info(`${message} callback triggered. isInPostureMode: ${isInPostureMode}`);
+        };
+        mainWindowClass.offWindowPostureModeChange(undefined, callback);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_callbackNull
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1400
+     * @tc.desc   offWindowPostureModeChange第二个入参传入null，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_callbackNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_callbackNull';
+      try {
+        mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_callbackUndefined
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1500
+     * @tc.desc   offWindowPostureModeChange第二个入参传入undefined，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_callbackUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffWindowPostureModeChange_callbackUndefined';
+      try {
+        mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 1300016.`);
+          expect(exception.code).assertEqual(1300016);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
   });
