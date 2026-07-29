@@ -20,15 +20,6 @@ struct MyStateSample {
           this.changeValue();
         })
       Text(this.stateVar).fontSize(20)
-      Child({ stateVar: this.stateVar })
     }
-  }
-}
-
-@Component
-struct Child {
-  @State stateVar: string = 'Child';
-  build() {
-    Text(this.stateVar).fontSize(50)
   }
 }

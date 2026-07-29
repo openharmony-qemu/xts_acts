@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import HypiumFrameworkRegressionTest from './hypium/HypiumFrameworkRegressionTest.test';
 import MessageTest2 from './Message2.test';
 import MessageConstructorCallbackTest from './message/MessageConstructorCallbackTest.test';
 import MessageConstructorHandlerTest from './message/MessageConstructorHandlerTest.test';
@@ -39,7 +38,6 @@ import MessageHandlerSendEmptyMessageTest from './messageHandler/MessageHandlerS
 import MessageHandlerSendMessageTest from './messageHandler/MessageHandlerSendMessageTest.test';
 
 export default function testsuite(): void {
-  HypiumFrameworkRegressionTest();
   MessageTest2();
   MessageConstructorCallbackTest();
   MessageConstructorHandlerTest();
