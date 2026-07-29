@@ -21,6 +21,7 @@ import type { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+import certManagerDialog from '@ohos.security.certManagerDialog';
 
 async function installPrivateCertificates(): Promise<void> {
   let keystore1: Uint8Array = priRsaCredData;
@@ -47,4 +48,24 @@ function isOpenHarmonyDevice(): Boolean {
   }
 }
 
-export { installPrivateCertificates, isOpenHarmonyDevice }
+function openCertificateManagerDialogTest(context: Context,
+  pageType: certManagerDialog.CertificateDialogPageType): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    try {
+      certManagerDialog.openCertificateManagerDialog(context,pageType).then(()=>{
+        resolve();
+      }).catch((err: BusinessError)=>{
+        reject(err)
+      })
+      setTimeout(async()=>{
+        let driver = Driver.create();
+        let closeButton = await driver.findComponent(ON.type("SymbolGlyph").isAfter(ON.type("Button")));
+        await closeButton.click();
+      }, 2000)
+    } catch (err) {
+      reject(err)
+    }
+  })
+}
+
+export { installPrivateCertificates, isOpenHarmonyDevice, openCertificateManagerDialogTest }

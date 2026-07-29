@@ -25,6 +25,7 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { canIUse } from '@internal.full.global';
+import { openCertificateManagerDialogTest } from './utils/common/common_function';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -535,7 +536,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 success');
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 e.code: ${error.code}, message: ${error.message}`);
@@ -558,7 +559,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE);
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE);
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 success');
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 e.code: ${error.code}, message: ${error.message}`);
@@ -581,7 +582,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL);
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL);
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 success');
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 e.code: ${error.code}, message: ${error.message}`);
@@ -604,7 +605,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = await GlobalContext.getContext();
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          await certManagerDialog.openCertificateManagerDialog(context, certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE);
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE);
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 success');
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 e.code: ${error.code}, message: ${error.message}`);
