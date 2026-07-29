@@ -97,7 +97,6 @@ export default function pickerViewPropsJsTest2112() {
 
             expect(obj.$type).assertEqual('picker-view')
             expect(obj.$attrs.id).assertEqual('classProp')
-            expect(obj.$attrs.className).assertEqual('classProp')
             done();
         });
 

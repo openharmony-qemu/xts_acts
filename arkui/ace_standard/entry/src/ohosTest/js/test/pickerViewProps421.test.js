@@ -71,7 +71,7 @@ export default function pickerViewPropsJsTest421() {
                 console.error("push pickerViewProps page error " + JSON.stringify(result));
             }
             await waitUntilReady();
-            done()
+            done();
         })
 
         /**
