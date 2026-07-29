@@ -27,6 +27,7 @@ import DotIndicatorNullUndefined from './SwiperAttributeNullUndefined/DotIndicat
 import SwiperNullUndefined from './SwiperAttributeNullUndefined/SwiperNullUndefined.test';
 import swiperCachedOptions from './swiper/swiperCachedOptions.test';
 import swiperIndicatorIcon from './swiper/swiperIndicatorIcon.test';
+import swiperIgnoreHiddenItem from './swiper/swiperIgnoreHiddenItem.test';
 
 export default function testsuite() {
   swiperFillPolicy()
@@ -44,4 +45,5 @@ export default function testsuite() {
   SwiperNullUndefined()
   swiperCachedOptions()
   swiperIndicatorIcon()
+  swiperIgnoreHiddenItem()
 }

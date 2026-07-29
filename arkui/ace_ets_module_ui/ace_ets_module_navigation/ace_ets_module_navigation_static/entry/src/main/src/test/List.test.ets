@@ -24,6 +24,7 @@ import NavigationModeRatio from './NavigationTest/NavigationModeRatio.test';
 import configurationNav from './NavigationNavDestinationTest/configurationNav.test';
 import colorLengthMetrics from './Graphics/colorLengthMetrics.test';
 import swiperIndicatorIcon from './SwiperControllerTest/swiperIndicatorIcon.test';
+import swiperIgnoreHiddenItem from './SwiperControllerTest/swiperIgnoreHiddenItem.test';
 
 export default function testsuite() {
   NavDestinationTest();
@@ -36,4 +37,5 @@ export default function testsuite() {
   configurationNav();
   colorLengthMetrics();
   swiperIndicatorIcon();
+  swiperIgnoreHiddenItem();
 }
