@@ -77,7 +77,6 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest001 failed,code =" + err.code + ",message=" + err.message);
-        // let result = err.code;
         expect(err.code).assertEqual(401);
       }
     });
@@ -96,7 +95,6 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest002 failed,code =" + err.code + ",message=" + err.message);
-        // let result = err.code;
         expect(err.code).assertEqual(401);
       }
     });
