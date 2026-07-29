@@ -123,7 +123,7 @@ export default function Float32ArraySlice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0060
      * @tc.name testFloat32ArraySliceTwo006
-     * @tc.desc Verify slice(0,1) on [1.0,2.0] returns view with length 1
+     * @tc.desc Verify slice(0,1) on [1.0,2.0] returns an independent copy with length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1355,7 +1355,7 @@ export default function Float32ArraySlice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0880
      * @tc.name testFloat32ArraySliceTwo088
-     * @tc.desc Verify slice(0, 2) returns view with length 2 and elements 1.0, 2.0
+     * @tc.desc Verify slice(0, 2) returns an independent copy with length 2 and elements 1.0, 2.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
