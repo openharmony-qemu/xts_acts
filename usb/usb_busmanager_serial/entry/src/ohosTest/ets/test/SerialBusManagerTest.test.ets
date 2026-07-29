@@ -2748,34 +2748,37 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOnDataRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOnDataRead003 start');
+      console.info(`${TAG} testOnDataRead003 start`);
       if (await checkDevice() === false) {
         done();
         return;
       }
       if (gPort1 === null) {
-        console.info(TAG, 'testOnDataRead003 gPort1 is null, skip');
+        console.info(`${TAG} testOnDataRead003 gPort1 is null, skip`);
         done();
         return;
       }
+      const openPromise = gPort1!.open();
+      await driveFn();
       try {
-        gPort1!.open();
-        await driveFn();
+        await openPromise;
         await sleep(500);
-        gPort1!.onDataRead((data: Uint8Array): void => {
-          console.info(TAG, 'testOnDataRead003 received data length: ', data.length);
-          expect(data instanceof Uint8Array).assertTrue();
-          expect(typeof data === 'object').assertTrue();
-        });
-        console.info(TAG, 'testOnDataRead003 onDataRead register success');
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
+        gPort1!.onDataRead((data: Uint8Array): void => {
+          let dataStr = buffer.from(data.buffer).toString('utf-8');
+          console.info(`${TAG} testOnDataRead003 received dataStr: ${dataStr}`);
+          console.info(`${TAG} testOnDataRead003 received data length: ${data.length}`);
+          expect(writeData.length).assertEqual(data.length);
+          expect(dataStr).assertEqual('Hello');
+        });
+        console.info(`${TAG} testOnDataRead003 onDataRead register success`);
         await gPort1!.write(writeData);
         await sleep(500);
         gPort1!.offDataRead();
         await gPort1!.close();
         done();
-      } catch (err) {
-        console.error(TAG, 'testOnDataRead003 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOnDataRead003 catch err: ${error}`);
         expect().assertFail();
         done();
       }
