@@ -519,6 +519,7 @@ export default function Float32ArrayIntegration5Test(): void {
     it('testFloat32ArrayIntegrationFive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const ret = arr.reverse();
+      expect(ret).assertEqual(arr);
       ret.$_set(0, 99);
       const element030 = arr.$_get(0);
       expect(element030).assertEqual(99);
@@ -535,6 +536,7 @@ export default function Float32ArrayIntegration5Test(): void {
     it('testFloat32ArrayIntegrationFive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3, 1, 2]);
       const ret = arr.sort();
+      expect(ret).assertEqual(arr);
       ret.$_set(0, 99);
       const element031 = arr.$_get(0);
       expect(element031).assertEqual(99);
@@ -551,6 +553,7 @@ export default function Float32ArrayIntegration5Test(): void {
     it('testFloat32ArrayIntegrationFive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       const ret = arr.fill(5);
+      expect(ret).assertEqual(arr);
       ret.$_set(1, 99);
       const element032 = arr.$_get(1);
       expect(element032).assertEqual(99);
@@ -567,6 +570,7 @@ export default function Float32ArrayIntegration5Test(): void {
     it('testFloat32ArrayIntegrationFive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3, 4]);
       const ret = arr.copyWithin(0, 2, 4);
+      expect(ret).assertEqual(arr);
       ret.$_set(0, 99);
       const element033 = arr.$_get(0);
       expect(element033).assertEqual(99);
