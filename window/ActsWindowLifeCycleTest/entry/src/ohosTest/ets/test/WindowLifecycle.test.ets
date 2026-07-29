@@ -3566,7 +3566,7 @@ export default function WindowLifecycle() {
             done();
           } else {
             await subWindowClass?.destroyWindow();
-            if (!canIUseRes || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+            if (!canIUseRes) {
               expect(err.code).assertEqual(801);
               done();
             } else {
