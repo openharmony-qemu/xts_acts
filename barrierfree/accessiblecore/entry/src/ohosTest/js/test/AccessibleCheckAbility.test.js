@@ -16,6 +16,10 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestTy
 import accessibility from '@ohos.accessibility'
 import { Driver } from '@ohos.UiTest';
 
+function sleep(ms){
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 export default function AccessibleCheckAbility() {
 describe('AccessibleCheckAbilityAdapt001', function () {
     const TIMEOUT = 1000;
@@ -538,22 +542,33 @@ describe('AccessibleCheckAbilityAdapt001', function () {
      */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600');
-        let callback = (data) => {
-            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 callback data: ${data}`);
-        };
         let result = false;
+        console.info(`AccessibilityApi: xiugai`);
+        const callback_1 = (data) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 callback data: ${data}`);
+            result = data;
+        };
         try {
-            accessibility.onSeniorModeStateChangeForSelf(callback);
-            accessibility.offSeniorModeStateChangeForSelf(callback);
+            accessibility.onSeniorModeStateChangeForSelf(callback_1);
+            await sleep(1000);
+            accessibility.setSeniorModeStateForSelf(true).then(() => {
+                console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 setSeniorModeStateForSelf success`);
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 has error: ${err.code}`);
+                }
+            });
+            await sleep(1000);
+            expect(result).assertEqual(true);
             accessibility.offSeniorModeStateChangeForSelf();
+            accessibility.offSeniorModeStateChangeForSelf(callback_1);
             console.info('AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 onSeniorModeStateChangeForSelf success');
-            result = true;
+            done();
         } catch (exception) {
             console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 failed to onSeniorModeStateChangeForSelf because ' + JSON.stringify(exception));
-            result = false;
+            expect(null).assertFail();
+            done();
         }
-        expect(result).assertEqual(true);
-        done();
     })
 
 })
