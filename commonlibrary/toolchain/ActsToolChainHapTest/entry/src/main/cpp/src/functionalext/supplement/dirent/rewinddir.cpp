@@ -18,7 +18,9 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "filepath_util.h"
+#include "test.h"
+
+static const char *PATH = "/data/storage/el2/base/cache/";
 
 static void Handler(int sig)
 {
@@ -32,11 +34,9 @@ static void Handler(int sig)
  */
 void Rewinddir0100(void)
 {
-    char name[PATH_MAX] = {0};
-    FILE_ABSOLUTE_DIR(name);
-    DIR *dir = opendir(name);
+    DIR *dir = opendir(PATH);
     if (dir == nullptr) {
-        t_error("%s failed: opendir. name = %s\n", __func__, name);
+        t_error("%s failed: opendir. PATH = %s\n", __func__, PATH);
         return;
     }
 
