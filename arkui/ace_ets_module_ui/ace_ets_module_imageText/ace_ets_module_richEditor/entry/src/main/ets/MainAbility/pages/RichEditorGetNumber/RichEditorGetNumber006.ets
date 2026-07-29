@@ -32,17 +32,16 @@ struct RichEditorGetNumber006 {
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(300)
-        .width(200)
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady(() => {
           for (let index = 0; index < 50; index++) {
-            this.controller.addTextSpan('abcdefg01234',
+            this.controller.addTextSpan('abcdefg01234\n',
               {
                 style:
                 {
                   fontColor: Color.Orange,
-                  fontSize: 30
+                  fontSize: '10vp'
                 }
               })
           }
