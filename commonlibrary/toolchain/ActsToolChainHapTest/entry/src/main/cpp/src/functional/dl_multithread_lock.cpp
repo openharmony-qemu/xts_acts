@@ -22,16 +22,15 @@
 #include <sys/wait.h>
 
 #include "test.h"
+#include "lib_path.h"
 
 #define MAX_BUF 256
 #define TEST_NUM 1000
 #define TEST_SIZE 4096
 #define CALLBACK_TEST_VAL 2
 
-// const char* LIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_dso.so";
-// const char* INIT_LIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
-const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_dso.so";
-const char* INIT_LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
+const char* LIB_PATH = LIB_PATH_PREFIX "libdlopen_dso.so";
+const char* INIT_LIB_PATH = LIB_PATH_PREFIX "libdlopen_init.so";
 void* g_initHandler = nullptr;
 static int g_testValue = 0;
 

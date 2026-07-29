@@ -86,6 +86,9 @@ void Getrusage0500(void)
  */
 void GetrusageTime640100(void)
 {
+    if (sizeof(time_t) >= 8) {
+        return;
+    }
     GetrusageTime64Func getrusageTime64 =
         reinterpret_cast<GetrusageTime64Func>(dlsym(RTLD_DEFAULT, GETRUSAGE_TIME64_SYMBOL));
     if (getrusageTime64 == nullptr) {

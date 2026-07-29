@@ -102,6 +102,9 @@ void Utimes0200(void)
  */
 void UtimesTime640100(void)
 {
+    if (sizeof(time_t) >= 8) {
+        return;
+    }
     const char* path = "/data/storage/el2/base/cache/utimes_time64.txt";
     int fd = open(path, O_RDWR | O_RSYNC | O_CREAT, 0664);
     if (fd == -1) {

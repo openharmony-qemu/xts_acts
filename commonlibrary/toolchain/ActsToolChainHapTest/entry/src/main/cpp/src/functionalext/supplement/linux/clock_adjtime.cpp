@@ -109,6 +109,9 @@ void ClockAdjtime0500(void)
  */
 void ClockAdjtime640100(void)
 {
+    if (sizeof(time_t) >= 8) {
+        return;
+    }
     ClockAdjtime64Func clockAdjtime64 =
         reinterpret_cast<ClockAdjtime64Func>(dlsym(RTLD_DEFAULT, CLOCK_ADJTIME64_SYMBOL));
     if (clockAdjtime64 == nullptr) {

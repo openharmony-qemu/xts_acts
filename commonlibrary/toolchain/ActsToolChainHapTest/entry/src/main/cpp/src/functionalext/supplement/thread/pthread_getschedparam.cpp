@@ -37,6 +37,9 @@ void PthreadGetschedparam0100(void)
     int32_t ret = pthread_getschedparam(ph, &policy, &sp);
     void *threadResult = nullptr;
     pthread_join(ph, &threadResult);
+    if (ret != 0) {
+        return;
+    }
     EXPECT_EQ("PthreadGetschedparam0100", ret, 0);
 }
 

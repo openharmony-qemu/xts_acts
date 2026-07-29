@@ -22,14 +22,15 @@
 #include <sys/wait.h>
 
 #include "functionalext.h"
+#include "lib_path.h"
 
 #define PIPE_FD 2
 #define LEN_OF_POINTER 8
 #define BASE_NUM 11
 #define TEST_COUNTS 32
 
-static const char *LIB_NAME = "/data/storage/el1/bundle/libs/arm/libldso_randomization_dep.so";
-static const char *LIB_NAME_A = "/data/storage/el1/bundle/libs/arm/libldso_randomization_dep_a.so";
+static const char *LIB_NAME = LIB_PATH_PREFIX "libldso_randomization_dep.so";
+static const char *LIB_NAME_A = LIB_PATH_PREFIX "libldso_randomization_dep_a.so";
 
 typedef void (*TEST_FUNC)(void);
 

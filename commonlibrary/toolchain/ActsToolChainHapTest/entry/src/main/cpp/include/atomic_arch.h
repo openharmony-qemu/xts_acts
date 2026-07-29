@@ -25,10 +25,10 @@
 #define ATOMIC_ARCH_H
 
 #if defined(__aarch64__) || defined(__arm64__) || defined(_M_ARM64)
-// aarch64 target
 #include "atomic_arch_aarch64.h"
+#elif defined(__arm__) || defined(_M_ARM)
+#include "atomic_arch_arm.h"
 #elif defined(__x86_64__) || defined(_M_X64)
-// x86_64 target
 #include "atomic_arch_x86_64.h"
 #else
 #error "Unsupported target architecture for musl internal atomic."

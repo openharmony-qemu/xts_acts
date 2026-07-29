@@ -20,7 +20,12 @@
 #include "dso_no_symver.h"
 #include "dso_symver.h"
 
-extern "C" void  *__dlsym_time64(void *__restrict, const char *__restrict);
+#ifdef __arm__
+extern "C" void *dlsym_time64(void *__restrict, const char *__restrict) __asm__("__dlsym_time64");
+#define DLSYM_TIME64 dlsym_time64
+#else
+#define DLSYM_TIME64 dlsym
+#endif
 /**
  * @tc.name      : dlsym_no_symver_0100
  * @tc.desc      : invoke a symbol programmatically
@@ -265,7 +270,7 @@ void DlsymTime64NoSymver0100(void)
     // Clear any existing error
     dlerror();
 
-    functype func = (functype)__dlsym_time64(handle, DSO_NO_SYMVER_SYMBOL);
+    functype func = (functype)DLSYM_TIME64(handle, DSO_NO_SYMVER_SYMBOL);
     const char *error = dlerror();
     if (error != nullptr) {
         symver_error("%s", error);

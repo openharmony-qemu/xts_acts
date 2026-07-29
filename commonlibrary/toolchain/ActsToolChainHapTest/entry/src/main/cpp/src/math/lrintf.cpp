@@ -31,6 +31,7 @@ static int LrintfTestImpl(void)
     int i;
     int err = 0;
     struct FI* p;
+    static long (*volatile fn)(float) = lrintf;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -39,7 +40,7 @@ static int LrintfTestImpl(void)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
-        yi = lrintf(p->x);
+        yi = fn(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lrintf(%a)=%lld, want %s",

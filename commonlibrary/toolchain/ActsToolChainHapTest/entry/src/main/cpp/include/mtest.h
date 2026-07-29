@@ -84,7 +84,7 @@
 #define T(...) { __FILE__, __LINE__, __VA_ARGS__ },
 
 #define POS     \
-    char* file; \
+    const char* file; \
     int line
 struct DD {
     POS;
