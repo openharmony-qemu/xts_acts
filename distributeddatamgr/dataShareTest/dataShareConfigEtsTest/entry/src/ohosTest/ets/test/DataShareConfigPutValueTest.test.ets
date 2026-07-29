@@ -522,7 +522,6 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest017 failed,code =" + err.code + ",message=" + err.message);
-        // let result = err.code;
         expect(err.code).assertEqual(15700014);
       }
     });
