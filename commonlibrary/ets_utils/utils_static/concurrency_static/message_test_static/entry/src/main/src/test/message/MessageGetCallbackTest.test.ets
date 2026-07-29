@@ -289,6 +289,7 @@ export default function MessageGetCallbackTest(): void {
       let cb: CB | undefined = msg.getCallback();
       try {
         cb!();
+        expect().assertFail();
       } catch (error) {
         expect(error.message === "test error").assertTrue();
       }

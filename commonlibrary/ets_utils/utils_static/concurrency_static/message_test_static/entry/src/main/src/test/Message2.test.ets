@@ -2023,6 +2023,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2071,6 +2072,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2121,6 +2123,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2178,6 +2181,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2235,6 +2239,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2292,6 +2297,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2353,6 +2359,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2414,6 +2421,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2465,6 +2473,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2508,6 +2517,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2550,6 +2560,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2587,6 +2598,7 @@ export default function MessageTest2(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2630,6 +2642,7 @@ export default function MessageTest2(): void {
           }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2676,6 +2689,7 @@ export default function MessageTest2(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2724,6 +2738,7 @@ export default function MessageTest2(): void {
           expect(removed.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2762,6 +2777,7 @@ export default function MessageTest2(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();

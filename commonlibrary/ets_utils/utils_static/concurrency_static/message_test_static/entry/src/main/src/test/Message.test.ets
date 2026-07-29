@@ -2501,6 +2501,7 @@ export default function MessageTest(): void {
           while (!flag) {
             await Utils.msSleep(100)
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2538,6 +2539,7 @@ export default function MessageTest(): void {
           while (!flag) {
             await Utils.msSleep(100)
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2575,6 +2577,7 @@ export default function MessageTest(): void {
           while (!flag) {
             await Utils.msSleep(100)
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2613,6 +2616,7 @@ export default function MessageTest(): void {
           while (!flag) {
             await Utils.msSleep(100)
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
