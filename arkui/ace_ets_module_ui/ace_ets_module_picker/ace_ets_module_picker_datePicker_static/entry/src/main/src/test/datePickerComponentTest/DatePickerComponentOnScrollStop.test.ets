@@ -71,6 +71,7 @@ export default function DatePickerComponentOnScrollStopTest() {
       console.info('DatePickerComponentOnScrollStop_trigger_0100 START')
       try {
         let driver = await Driver.create();
+        await CommonFunc.sleep(SLEEP_TIME);
         let strJson = inspector.getInspectorByKey('text_onScrollStop_triggered');
         let obj = JSON.parseJsonElement(strJson);
         let content: string = obj.getElement('$attrs').getString('content');
@@ -78,9 +79,10 @@ export default function DatePickerComponentOnScrollStopTest() {
 
         let datePickerComp = await driver.findComponent(ON.id('datePickerComponent_onScrollStop'))
         let bounds = await (datePickerComp?.getBounds() as Promise<Rect>);
+        await CommonFunc.sleep(SLEEP_TIME);
         let centerX = Math.round(bounds.left + (bounds.right - bounds.left) / 2).toInt();
         let centerY = Math.round(bounds.top + (bounds.bottom - bounds.top) / 2).toInt();
-        await driver.swipe(centerX, centerY, centerX, centerY + 100, 600);
+        await driver.swipe(centerX, centerY, centerX, centerY + 50, 600);
         await CommonFunc.sleep(SLEEP_TIME);
 
         let strJson1 = inspector.getInspectorByKey('text_onScrollStop_triggered');

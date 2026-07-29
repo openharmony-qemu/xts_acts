@@ -72,6 +72,13 @@ struct DatePickerComponentDateMode {
           })
           .id('button_dateMode_yearAndMonth')
           .margin({ right: 10 })
+
+        Button('MONTH_AND_DAY')
+          .onClick(() => {
+            this.currentDateMode = DateMode.MONTH_AND_DAY;
+          })
+          .id('button_dateMode_monthAndDay')
+          .margin({ right: 10 })
       }
       .width('100%')
       .margin({ top: 10 })
