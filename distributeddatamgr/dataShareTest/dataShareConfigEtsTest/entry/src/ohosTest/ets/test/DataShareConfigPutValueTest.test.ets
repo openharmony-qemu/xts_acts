@@ -598,7 +598,7 @@ export default function dataShareConfigPutValueTest() {
         };
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config);
-        await g_handle!.putValue(testUri, 1, "PutValueTest020", u_config);
+        let values = await g_handle!.putValue(testUri, 1, "PutValueTest020", u_config);
         expect(values.length).assertEqual(2);
         expect(values[0]).assertEqual("PutValueTest020");
       } catch (err) {
