@@ -25,6 +25,8 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { canIUse } from '@internal.full.global';
+import { Driver, ON, Component } from '@ohos.UiTest';
+
 import { openCertificateManagerDialogTest } from './utils/common/common_function';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -101,6 +103,17 @@ let caCert: Uint8Array = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x0
 export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', (): void => {
     beforeAll(() => {
+      let driver = Driver.create();
+      //去除充电框影响
+      let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
+		  if (button1 !== undefined) {
+		    await button1.click();
+		  }
+      //去除添加到桌面影响
+      let button2 = await driver.findComponent(ON.text("不添加")) ?? undefined;
+		  if (button2 !== undefined) {
+		    await button2.click();
+		  }
     });
     beforeEach(() => {
     });
