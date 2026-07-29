@@ -3900,63 +3900,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   test_restoreMainWindow_ability
-     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
-     * @tc.desc   test_restoreMainWindow_ability
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_restoreMainWindow_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let CaseName:string = 'test_restoreMainWindow_ability';
-      let driver:Driver = Driver.create();
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      let want: Want = {
-        bundleName: 'com.example.myapplication',
-        abilityName: 'StartAbility'
-      };
-      let startParams: floatingBall.FloatingBallParams = {
-        template: floatingBall.FloatingBallTemplate.SIMPLE,
-        title: 'title',
-      };
-      try {
-        let floatingBallController = await floatingBall.create(config);
-        await floatingBallController.startFloatingBall(startParams);
-        await sleep(500);
-        //点击闪控球
-        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
-        console.info(CaseName+ ' button: ' + button);
-        let Bounds = await  button.getBounds();
-        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
-        await driver.click(Bounds.left,Bounds.top);
-        await sleep(500);
-
-        floatingBallController.restoreMainWindow(want).then(async () => {
-          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
-          await floatingBallController.stopFloatingBall();
-           done();
-        }).catch((err: BusinessError) => {
-          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
-          expect(err.message!=null).assertTrue();
-          expect(false).assertTrue();
-          done();
-        });
-      } catch(e) {
-        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
-        expect(e.message!=null).assertTrue();
-        if(e.code === 801 && !isFloatingBallEnabled){
-          done();
-        }
-        else{
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
      * @tc.name   test_setFloatingBallVisibilityInApp_0100
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_VISIBILITY_0100
      * @tc.desc   test setFloatingBallVisibilityInApp with null and undefined parameters
@@ -4012,6 +3955,63 @@ export default function abilityTest() {
         }
       } else {
         done();
+      }
+    })
+
+    /**
+     * @tc.name   test_restoreMainWindow_ability
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
+     * @tc.desc   test_restoreMainWindow_ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_restoreMainWindow_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_ability';
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.myapplication',
+        abilityName: 'StartAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(500);
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(500);
+
+        floatingBallController.restoreMainWindow(want).then(async () => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          await floatingBallController.stopFloatingBall();
+           done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.message!=null).assertTrue();
+          expect(false).assertTrue();
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(e.message!=null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
