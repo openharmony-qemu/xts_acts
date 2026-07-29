@@ -1505,96 +1505,82 @@ export default function Float32ArrayIntegration3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0890
      * @tc.name testFloat32ArrayIntegrationThree089
-     * @tc.desc Verify at(0)
+     * @tc.desc Verify at(0) and at(-1) on [7.0] both return 7.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIntegrationThree089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([7.0]);
-      const atValue105 = a.at(0);
-      expect(atValue105).assertEqual(7.0);
+      expect(a.at(0)).assertEqual(7.0);
+      expect(a.at(-1)).assertEqual(7.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0900
      * @tc.name testFloat32ArrayIntegrationThree090
-     * @tc.desc Verify at(-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIntegrationThree090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = new Float32Array([7.0]);
-      const atValue106 = a.at(-1);
-      expect(atValue106).assertEqual(7.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0910
-     * @tc.name testFloat32ArrayIntegrationThree091
      * @tc.desc Verify indexOf 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([5.0, 5.0, 5.0]);
       const indexValue107 = a.indexOf(5.0);
       expect(indexValue107).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0920
-     * @tc.name testFloat32ArrayIntegrationThree092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0910
+     * @tc.name testFloat32ArrayIntegrationThree091
      * @tc.desc Verify lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([5.0, 5.0, 5.0]);
       const lastIndexValue108 = a.lastIndexOf(5.0);
       expect(lastIndexValue108).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0930
-     * @tc.name testFloat32ArrayIntegrationThree093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0920
+     * @tc.name testFloat32ArrayIntegrationThree092
      * @tc.desc Verify find(v===5.0) on [5,5,5] returns 5.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([5.0, 5.0, 5.0]);
       const r = a.find((v: number, index: int, array: Float32Array): boolean => v === 5.0);
       expect(r).assertEqual(5.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0940
-     * @tc.name testFloat32ArrayIntegrationThree094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0930
+     * @tc.name testFloat32ArrayIntegrationThree093
      * @tc.desc Verify some true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([5.0, 5.0, 5.0]);
       const r = a.some((v: number, index: int, array: Float32Array): boolean => v === 5.0);
       expect(r).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0950
-     * @tc.name testFloat32ArrayIntegrationThree095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0940
+     * @tc.name testFloat32ArrayIntegrationThree094
      * @tc.desc Verify sort returns array with correct length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([5.0, 5.0, 5.0]);
       a.sort();
       expect(a.length).assertEqual(3);
@@ -1605,14 +1591,14 @@ export default function Float32ArrayIntegration3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0960
-     * @tc.name testFloat32ArrayIntegrationThree096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0950
+     * @tc.name testFloat32ArrayIntegrationThree095
      * @tc.desc Verify $_set NaN $_get NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([1.0]);
       a.$_set(0, Number.NaN);
       const element112 = a.$_get(0);
@@ -1620,42 +1606,42 @@ export default function Float32ArrayIntegration3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0970
-     * @tc.name testFloat32ArrayIntegrationThree097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0960
+     * @tc.name testFloat32ArrayIntegrationThree096
      * @tc.desc Verify indexOf NaN -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([Number.NaN, 2.0, 3.0]);
       const indexValue113 = a.indexOf(Number.NaN);
       expect(indexValue113).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0980
-     * @tc.name testFloat32ArrayIntegrationThree098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0970
+     * @tc.name testFloat32ArrayIntegrationThree097
      * @tc.desc Verify includes NaN true indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([Number.NaN, 2.0, 3.0]);
       const predicateResult114 = a.includes(Number.NaN);
       expect(predicateResult114).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0990
-     * @tc.name testFloat32ArrayIntegrationThree099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0980
+     * @tc.name testFloat32ArrayIntegrationThree098
      * @tc.desc Verify fill(value, undefined) start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([1.0, 2.0, 3.0]);
       a.fill(9.0, undefined);
       const element115 = a.$_get(0);
@@ -1665,14 +1651,14 @@ export default function Float32ArrayIntegration3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_1000
-     * @tc.name testFloat32ArrayIntegrationThree100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_THREE_0990
+     * @tc.name testFloat32ArrayIntegrationThree099
      * @tc.desc Verify slice(0, undefined) end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationThree100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationThree099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([1.0, 2.0, 3.0]);
       const r = a.slice(0, undefined);
       expect(r.length).assertEqual(3);
