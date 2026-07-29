@@ -1561,7 +1561,7 @@ export default function Float32ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1030
      * @tc.name testFloat32ArrayConstructorTwo103
-     * @tc.desc Verify overload 6 multi-element at(-1) returns last element
+     * @tc.desc Verify FixedArray [1,2,3] at(-1) returns last and at(0) returns first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1569,34 +1569,19 @@ export default function Float32ArrayConstructor2Test(): void {
     it('testFloat32ArrayConstructorTwo103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: FixedArray<number> = [1.0, 2.0, 3.0];
       const arr = new Float32Array(src);
-      const atValue133 = arr.at(-1);
-      expect(atValue133).assertEqual(3.0);
+      expect(arr.at(-1)).assertEqual(3.0);
+      expect(arr.at(0)).assertEqual(1.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1040
      * @tc.name testFloat32ArrayConstructorTwo104
-     * @tc.desc Verify overload 6 multi-element at(0) returns first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorTwo104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: FixedArray<number> = [1.0, 2.0, 3.0];
-      const arr = new Float32Array(src);
-      const atValue134 = arr.at(0);
-      expect(atValue134).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1050
-     * @tc.name testFloat32ArrayConstructorTwo105
      * @tc.desc Verify overload 7 multi-element indexOf element returns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0, 2.0, 3.0];
       const arr = new Float32Array(src);
       const indexValue135 = arr.indexOf(2.0);
@@ -1604,14 +1589,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1060
-     * @tc.name testFloat32ArrayConstructorTwo106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1050
+     * @tc.name testFloat32ArrayConstructorTwo105
      * @tc.desc Verify overload 7 multi-element lastIndexOf element returns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0, 2.0, 2.0, 3.0];
       const arr = new Float32Array(src);
       const lastIndexValue136 = arr.lastIndexOf(2.0);
@@ -1619,14 +1604,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1070
-     * @tc.name testFloat32ArrayConstructorTwo107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1060
+     * @tc.name testFloat32ArrayConstructorTwo106
      * @tc.desc Verify overload 7 source contains NaN includes(NaN) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0, Number.NaN, 3.0];
       const arr = new Float32Array(src);
       const predicateResult137 = arr.includes(Number.NaN);
@@ -1634,14 +1619,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1080
-     * @tc.name testFloat32ArrayConstructorTwo108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1070
+     * @tc.name testFloat32ArrayConstructorTwo107
      * @tc.desc Verify overload 7 source contains NaN indexOf(NaN) returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0, Number.NaN, 3.0];
       const arr = new Float32Array(src);
       const indexValue138 = arr.indexOf(Number.NaN);
@@ -1649,14 +1634,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1090
-     * @tc.name testFloat32ArrayConstructorTwo109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1080
+     * @tc.name testFloat32ArrayConstructorTwo108
      * @tc.desc Verify overload 6 values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: FixedArray<number> = [1.0, 2.0, 3.0];
       const arr = new Float32Array(src);
       const it = arr.values();
@@ -1669,14 +1654,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1100
-     * @tc.name testFloat32ArrayConstructorTwo110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1090
+     * @tc.name testFloat32ArrayConstructorTwo109
      * @tc.desc Verify overload 6 entries() [index,value]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: FixedArray<number> = [7.0, 8.0];
       const arr = new Float32Array(src);
       const it = arr.entries();
@@ -1686,28 +1671,28 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1110
-     * @tc.name testFloat32ArrayConstructorTwo111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1100
+     * @tc.name testFloat32ArrayConstructorTwo110
      * @tc.desc Verify overload 2 int length 3 and overload number length 3.0 length are consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array(3);
       const b = new Float32Array(3.0);
       expect(a.length).assertEqual(b.length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1120
-     * @tc.name testFloat32ArrayConstructorTwo112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1110
+     * @tc.name testFloat32ArrayConstructorTwo111
      * @tc.desc Verify overload 2 int length 4 and overload number length 4.0 byteLength are both 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array(4);
       const b = new Float32Array(4.0);
       expect(a.byteLength).assertEqual(16);
@@ -1715,14 +1700,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1130
-     * @tc.name testFloat32ArrayConstructorTwo113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1120
+     * @tc.name testFloat32ArrayConstructorTwo112
      * @tc.desc Verify overload 2 int length 0 and overload number length 0.0 byteLength are both 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array(0);
       const b = new Float32Array(0.0);
       expect(a.byteLength).assertEqual(0);
@@ -1730,42 +1715,42 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1140
-     * @tc.name testFloat32ArrayConstructorTwo114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1130
+     * @tc.name testFloat32ArrayConstructorTwo113
      * @tc.desc Verify overload 2 int length 2 default byteOffset 0 buffer capacity equals byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(2);
       expect(arr.byteOffset).assertEqual(0);
       expect(arr.buffer.byteLength).assertEqual(arr.byteLength);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1150
-     * @tc.name testFloat32ArrayConstructorTwo115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1140
+     * @tc.name testFloat32ArrayConstructorTwo114
      * @tc.desc Verify overload 3 number length 2.0 default byteOffset 0 byteLength 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(2.0);
       expect(arr.byteOffset).assertEqual(0);
       expect(arr.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1160
-     * @tc.name testFloat32ArrayConstructorTwo116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1150
+     * @tc.name testFloat32ArrayConstructorTwo115
      * @tc.desc Verify overload 2 int length constructs overload 6 FixedArray constructs length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fromLen = new Float32Array(4);
       const fromArr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       expect(fromLen.length).assertEqual(4);
@@ -1777,14 +1762,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1170
-     * @tc.name testFloat32ArrayConstructorTwo117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1160
+     * @tc.name testFloat32ArrayConstructorTwo116
      * @tc.desc Verify overload 6 and overload byteLength are consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: FixedArray<number> = [1.0, 2.0, 3.0];
       const a: Array<number> = [1.0, 2.0, 3.0];
       const af = new Float32Array(f);
@@ -1793,14 +1778,14 @@ export default function Float32ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1180
-     * @tc.name testFloat32ArrayConstructorTwo118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_1170
+     * @tc.name testFloat32ArrayConstructorTwo117
      * @tc.desc Verify overload 2 length constructs an independent buffer and overload constructs buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorTwo118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorTwo117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array(2);
       const b = new Float32Array([1.0, 2.0]);
       const observedValue148 = a.buffer === b.buffer;
