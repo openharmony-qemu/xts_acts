@@ -115,7 +115,9 @@ void ThrdCreate0300(void)
         waitpid(pid, &status, 0);
         if (WIFSIGNALED(status)) {
             int sig = WTERMSIG(status);
-            EXPECT_EQ("ThrdCreate0300", SIGSEGV, sig);
+            if (sig != SIGSEGV) {
+                t_error("%s ThrdCreate0300 failed: expected SIGSEGV got %d\n", __func__, sig);
+            }
         }
     }
 }
