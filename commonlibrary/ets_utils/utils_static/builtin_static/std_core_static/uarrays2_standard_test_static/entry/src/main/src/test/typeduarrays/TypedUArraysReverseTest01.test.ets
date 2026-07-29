@@ -105,7 +105,7 @@ export default function typedUArraysReverseTest01(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_0700
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_0001
      * @tc.name testTypedUArraysReversePart101_006
      * @tc.desc Verify Uint8Array reverse with empty array
      * @tc.size MediumTest
@@ -119,7 +119,7 @@ export default function typedUArraysReverseTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART101_0002
      * @tc.name testTypedUArraysReversePart101_007
      * @tc.desc Verify Uint8ClampedArray reverse with empty array
      * @tc.size MediumTest

@@ -517,7 +517,7 @@ export default function typedUArraysReverseTest05(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0001
      * @tc.name testTypedUArraysReversePart301_034
      * @tc.desc Verify Uint16Array reverse preserves BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -531,7 +531,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0002
      * @tc.name testTypedUArraysReversePart301_035
      * @tc.desc Verify Uint8Array reverse returns same reference
      * @tc.size MediumTest

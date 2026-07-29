@@ -55,7 +55,7 @@ export default function typedUArraysReduceTest01(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0200
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0002
      * @tc.name testTypedUArraysReducePart101_002
      * @tc.desc Verify reduce 2
      * @tc.size MediumTest
@@ -218,7 +218,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0014
      * @tc.name testTypedUArraysReducePart101_013
      * @tc.desc Verify initialValue 4294967295 Uint32
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0018
      * @tc.name testTypedUArraysReducePart101_016
      * @tc.desc Verify initialValue 4294967296 Uint32
      * @tc.size MediumTest
@@ -288,7 +288,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0021
      * @tc.name testTypedUArraysReducePart101_018
      * @tc.desc Verify initialValue Infinity
      * @tc.size MediumTest
@@ -621,7 +621,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0043
      * @tc.name testTypedUArraysReducePart101_039
      * @tc.desc Verify join with custom separator
      * @tc.size MediumTest
@@ -635,7 +635,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0045
      * @tc.name testTypedUArraysReducePart101_040
      * @tc.desc Verify join with empty array
      * @tc.size MediumTest
@@ -677,7 +677,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0049
      * @tc.name testTypedUArraysReducePart101_043
      * @tc.desc Verify toString on empty array
      * @tc.size MediumTest
@@ -712,7 +712,7 @@ export default function typedUArraysReduceTest01(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_7100
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0052
      * @tc.name testTypedUArraysReducePart101_045
      * @tc.desc Verify toString with Uint32Array
      * @tc.size MediumTest
@@ -726,7 +726,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0054
      * @tc.name testTypedUArraysReducePart101_046
      * @tc.desc Verify join with Uint8ClampedArray
      * @tc.size MediumTest
@@ -754,7 +754,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0057
      * @tc.name testTypedUArraysReducePart101_048
      * @tc.desc Verify toLocaleString with Uint16Array
      * @tc.size MediumTest

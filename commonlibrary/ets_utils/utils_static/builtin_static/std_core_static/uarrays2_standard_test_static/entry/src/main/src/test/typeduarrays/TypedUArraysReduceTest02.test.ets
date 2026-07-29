@@ -97,7 +97,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -115,7 +115,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -133,7 +133,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -151,7 +151,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -169,7 +169,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -187,7 +187,7 @@ export default function typedUArraysReduceTest02(): void {
         (arr).reduce((sum, val) => sum + val);
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -195,7 +195,7 @@ export default function typedUArraysReduceTest02(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART102_1000
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART102_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART102_0001
      * @tc.name testTypedUArraysReducePart102_010
      * @tc.desc Verify BigUint64Array reduce with 1n initialValue
      * @tc.size MediumTest

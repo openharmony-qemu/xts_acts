@@ -73,7 +73,7 @@ export default function typedUArraysReduceRightTest02(): void {
     it('testTypedUArraysReduceRightPart201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       try { arr.reduceRight((sum, val) => sum + val); expect(typeof arr).assertEqual('object'); }
-      catch (e) { expect(typeof e).assertEqual('object'); }
+      catch (e) { expect(e.name).assertEqual('TypeError'); }
     });
     it('testTypedUArraysReduceRightPart201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);

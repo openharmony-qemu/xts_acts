@@ -34,7 +34,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0001
      * @tc.name testTypedUArraysSet02001
      * @tc.desc Verify set(source) 8 Uint8Array
      * @tc.size MediumTest
@@ -53,7 +53,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0002
      * @tc.name testTypedUArraysSet02045
      * @tc.desc Verify set Uint8Array
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0003
      * @tc.name testTypedUArraysSet02046
      * @tc.desc Verify set Uint16Array
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0004
      * @tc.name testTypedUArraysSet02047
      * @tc.desc Verify set Uint32Array
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0005
      * @tc.name testTypedUArraysSet02048
      * @tc.desc Verify set Uint8ClampedArray
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0006
      * @tc.name testTypedUArraysSet02049
      * @tc.desc Verify set BigUint64Array
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function typedUArraysSetTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET02_0007
      * @tc.name testTypedUArraysSet02050
      * @tc.desc Verify set length
      * @tc.size MediumTest

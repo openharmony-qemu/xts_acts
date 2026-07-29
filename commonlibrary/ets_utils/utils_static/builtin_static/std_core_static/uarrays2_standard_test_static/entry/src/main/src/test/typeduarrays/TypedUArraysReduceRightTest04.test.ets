@@ -74,7 +74,7 @@ export default function typedUArraysReduceRightTest04(): void {
     it('testTypedUArraysReduceRightPart201_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       try { arr.reduceRight((sum, val) => sum + val); expect(typeof arr).assertEqual('object'); }
-      catch (e) { expect(typeof e).assertEqual('object'); }
+      catch (e) { expect(e.name).assertEqual('TypeError'); }
     });
     it('testTypedUArraysReduceRightPart201_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
@@ -284,7 +284,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + 42;
         expect(result).assertEqual(42);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -293,7 +293,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + 0;
         expect(result).assertEqual(0);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -302,7 +302,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + 100;
         expect(result).assertEqual(100);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -311,7 +311,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + 200;
         expect(result).assertEqual(200);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -320,7 +320,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + 300;
         expect(result).assertEqual(300);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -334,7 +334,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + NaN;
         expect(Number.isNaN(result)).assertTrue();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -343,7 +343,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + Number.POSITIVE_INFINITY;
         expect(result).assertEqual(Number.POSITIVE_INFINITY);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
     it('testTypedUArraysReduceRightPart201_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -352,7 +352,7 @@ export default function typedUArraysReduceRightTest04(): void {
         let result = arr.reduceRight((sum, val) => sum + val) + Number.NEGATIVE_INFINITY;
         expect(result).assertEqual(Number.NEGATIVE_INFINITY);
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
   });

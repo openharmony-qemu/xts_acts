@@ -107,7 +107,7 @@ export default function typedUArraysReduceTest03(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0600
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0001
      * @tc.name testTypedUArraysReducePart2_006
      * @tc.desc Verify reduce typeof Double - Uint16Array initialValue
      * @tc.size MediumTest
@@ -158,7 +158,7 @@ export default function typedUArraysReduceTest03(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1200
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0002
      * @tc.name testTypedUArraysReducePart2_009
      * @tc.desc Verify reduceRight typeof Double - Uint8Array initialValue
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0003
      * @tc.name testTypedUArraysReducePart2_011
      * @tc.desc Verify reduceRight typeof Double - Uint32Array initialValue
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0004
      * @tc.name testTypedUArraysReducePart2_012
      * @tc.desc Verify reduceRight typeof BigInt - BigUint64Array initialValue
      * @tc.size MediumTest

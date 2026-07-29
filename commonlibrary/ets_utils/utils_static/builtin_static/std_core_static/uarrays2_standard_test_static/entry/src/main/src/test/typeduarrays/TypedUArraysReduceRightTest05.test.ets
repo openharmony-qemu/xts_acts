@@ -47,7 +47,7 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr, idx, array) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -79,7 +79,7 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -97,7 +97,7 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -115,7 +115,7 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -133,7 +133,7 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -151,26 +151,27 @@ export default function typedUArraysReduceRightTest05(): void {
         arr.reduceRight((prev, curr) => prev + curr);
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4900
      * @tc.name testTypedUArraysReduceRight01049
-     * @tc.desc Verify reduceRight on empty Uint8Array with initialValue returns initialValue
+     * @tc.desc Verify reduceRight on single-element Uint8Array returns the element without calling callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysReduceRight01049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([]);
-      try {
-        let result = arr.reduceRight((prev, curr) => prev + curr) + 42;
-        expect(result).assertEqual(42);
-      } catch (e) {
-        expect(true).assertTrue();
-      }
+      const arr = new Uint8Array([42]);
+      let called = false;
+      const result = arr.reduceRight((prev, curr) => {
+        called = true;
+        return prev + curr;
+      });
+      expect(result).assertEqual(42);
+      expect(called).assertFalse();
     });
 
     /**
