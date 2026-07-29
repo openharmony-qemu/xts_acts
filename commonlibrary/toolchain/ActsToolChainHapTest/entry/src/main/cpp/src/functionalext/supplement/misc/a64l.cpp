@@ -22,13 +22,14 @@
 static const char DIGITS[] =
     "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
+static constexpr int SHIFT_BITS_PER_CHAR = 6;
 static constexpr int MAX_SHIFT_BITS = 36;
 
 extern "C" long A64l(const char* s)
 {
     int e;
     uint32_t x = 0;
-    for (e = 0; e < MAX_SHIFT_BITS && *s; e += 6, s++) {
+    for (e = 0; e < MAX_SHIFT_BITS && *s; e += SHIFT_BITS_PER_CHAR, s++) {
         const char *d = strchr(DIGITS, *s);
         if (!d) {
             break;
