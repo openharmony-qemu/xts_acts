@@ -1088,6 +1088,16 @@ set_target_properties(TlsGetNewDtvDso PROPERTIES OUTPUT_NAME "tls_get_new-dtv_ds
 target_compile_definitions(entry PRIVATE _GNU_SOURCE=1)
 
 set_source_files_properties(
+    src/functionalext/fortify/invalid_param.cpp
+    src/functionalext/fortify/invalid_param_b.cpp
+    src/functionalext/fortify/fcntl_ext.cpp
+    src/functionalext/fortify/pthread_fortify_test.cpp
+    src/functionalext/fortify/select_test.cpp
+    src/functionalext/fortify/poll.cpp
+    PROPERTIES COMPILE_DEFINITIONS "_FORTIFY_SOURCE=2"
+)
+
+set_source_files_properties(
     src/functional/search_hsearch.cpp
     src/functional/search_insque.cpp
     src/functional/search_lsearch.cpp

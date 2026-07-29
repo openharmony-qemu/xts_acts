@@ -106,7 +106,7 @@ static void* Callback003(void* arg)
         }
     } else if (pid == 0) {
         sleep(1);
-        exit(0);
+        _exit(0);
     } else {
         t_error("%s waitpid fork error\n");
     }

@@ -375,7 +375,7 @@ static void DlopenExtRandomization0900(void)
         childSym = dlsym(childHandle, "test");
         write(fd[1], &childSym, sizeof(void *));
         dlclose(childHandle);
-        exit(0);
+        _exit(0);
     }
     parentHandle = g_dlopenExt(LIB_NAME_A, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, parentHandle, 0);

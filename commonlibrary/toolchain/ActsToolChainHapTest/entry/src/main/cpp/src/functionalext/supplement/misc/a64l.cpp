@@ -14,34 +14,24 @@
  */
 
 #include <cstdlib>
+#include <cstring>
+#include <cstdint>
 #include "functionalext.h"
 #include "include/src/functionalext/supplement/misc.h"
 
-constexpr int CHAR_GROUP_BASE = 6;
-constexpr int UPPERCASE_OFFSET = 12;
-constexpr int LOWERCASE_OFFSET = 38;
+static const char digits[] =
+	"./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 extern "C" long A64l(const char* s)
 {
-    if (s == nullptr) {
-        return 0;
-    }
-    long result = 0;
-    for (int i = 0; i < CHAR_GROUP_BASE && s[i] != '\0'; ++i) {
-        unsigned char ch = static_cast<unsigned char>(s[i]);
-        int value = -1;
-        if (ch >= '.' && ch <= '9') {
-            value = ch - '.';
-        } else if (ch >= 'A' && ch <= 'Z') {
-            value = ch - 'A' + UPPERCASE_OFFSET;
-        } else if (ch >= 'a' && ch <= 'z') {
-            value = ch - 'a' + LOWERCASE_OFFSET;
-        } else {
-            break;
-        }
-        result |= (static_cast<long>(value) << (CHAR_GROUP_BASE * i));
-    }
-    return result;
+    int e;
+	uint32_t x = 0;
+	for (e=0; e<36 && *s; e+=6, s++) {
+		const char *d = strchr(digits, *s);
+		if (!d) break;
+		x |= (uint32_t)(d-digits)<<e;
+	}
+	return (int32_t)x;
 }
 
 #define VALUE_0 2

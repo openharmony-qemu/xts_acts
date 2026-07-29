@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <signal.h>
 #include <string>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -1146,6 +1147,15 @@ static int RunByNameForked(const std::string& name)
         return -K_RUN_TEST_FORK_FAILED;
     }
     if (pid == 0) {
+        sigset_t fullset;
+        sigfillset(&fullset);
+        sigprocmask(SIG_UNBLOCK, &fullset, nullptr);
+        for (int sig = 1; sig < NSIG; ++sig) {
+            if (sig != SIGKILL && sig != SIGSTOP) {
+                signal(sig, SIG_DFL);
+            }
+        }
+        g_tStatus = 0;
         int childRc = K_CHILD_EXIT_CAP;
         try {
             childRc = testFunc();

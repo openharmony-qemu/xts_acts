@@ -73,7 +73,7 @@ static void Open0020(void)
             break;
         case 0:
             open(SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -107,7 +107,7 @@ static void Open0030(void)
             break;
         case 0:
             open(SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -169,7 +169,7 @@ static void Openat0020(void)
             break;
         case 0:
             openat(AT_FDCWD, SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -203,7 +203,7 @@ static void Openat0030(void)
             break;
         case 0:
             openat(AT_FDCWD, SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -266,7 +266,7 @@ static void Open640020(void)
             break;
         case 0:
             open(SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -300,7 +300,7 @@ static void Open640030(void)
             break;
         case 0:
             open(SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -362,7 +362,7 @@ static void Openat640020(void)
             break;
         case 0:
             openat(AT_FDCWD, SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -396,7 +396,7 @@ static void Openat640030(void)
             break;
         case 0:
             openat(AT_FDCWD, SANDBOX_PATH, flags);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);

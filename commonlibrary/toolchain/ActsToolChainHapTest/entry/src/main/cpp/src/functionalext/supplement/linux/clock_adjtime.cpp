@@ -23,7 +23,7 @@
 
 void ExceptionHandler(int sig)
 {
-    exit(T_STATUS);
+    _exit(T_STATUS);
 }
 
 using ClockAdjtime64Func = int (*)(clockid_t, struct timex*);

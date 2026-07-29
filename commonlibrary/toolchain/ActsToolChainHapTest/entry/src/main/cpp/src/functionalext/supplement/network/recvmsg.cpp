@@ -147,7 +147,7 @@ int RecvMessage(int flag, const char* msg)
         EXPECT_STREQ(msg, static_cast<char*>(iovRecv.iov_base), TEXT);
     }
     close(sockfd);
-    exit(0);
+    _exit(0);
 }
 
 /**

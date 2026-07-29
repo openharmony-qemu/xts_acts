@@ -31,11 +31,15 @@ static void Killfunc(int signu)
         case SIGILL:
             g_flag++;
             EXPECT_EQ("AStackChkFail0100 exception", g_flag, INCREASE_LEN);
-            exit(0);
+            _exit(0);
         case SIGSEGV:
             g_flag++;
             EXPECT_EQ("AStackChkFail0100 exception", g_flag, INCREASE_LEN);
-            exit(0);
+            _exit(0);
+        case SIGABRT:
+            g_flag++;
+            EXPECT_EQ("AStackChkFail0100 exception", g_flag, INCREASE_LEN);
+            _exit(0);
         default:
             break;
     }
@@ -60,6 +64,7 @@ void AStackChkFail0100(void)
     act.sa_flags = 0;
     sigaction(SIGILL, &act, &oldact);
     sigaction(SIGSEGV, &act, &oldact);
+    sigaction(SIGABRT, &act, &oldact);
     stackChkFail();
     EXPECT_EQ("AStackChkFail0100", g_flag, INCREASE_LEN);
 }

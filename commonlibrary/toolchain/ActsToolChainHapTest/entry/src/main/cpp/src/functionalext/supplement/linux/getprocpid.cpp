@@ -74,7 +74,7 @@ void Getprocpid0200(void)
         if (pid2 != getpid()) {
             exit(1);
         }
-        exit(0);
+        _exit(0);
     }
     EXPECT_EQ("getprocpid_0200", child > 0, true);
 
@@ -199,7 +199,7 @@ void Getproctid0200(void)
         if (pid2 != gettid()) {
             exit(1);
         }
-        exit(0);
+        _exit(0);
     }
 
     EXPECT_EQ("getproctid_0200", child > 0, true);

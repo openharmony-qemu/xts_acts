@@ -62,7 +62,7 @@ static void FdSet0020(void)
         case 0:
             FD_ZERO(&readfds);
             FD_SET(sockfd, &readfds);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -98,7 +98,7 @@ static void FdSet0030(void)
         case 0:
             FD_ZERO(&readfds);
             FD_SET(sockfd, &readfds);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -151,7 +151,7 @@ static void FdClr0020(void)
         case 0:
             FD_ZERO(&readfds);
             FD_CLR(sockfd, &readfds);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
@@ -187,7 +187,7 @@ static void FdClr0030(void)
         case 0:
             FD_ZERO(&readfds);
             FD_CLR(sockfd, &readfds);
-            exit(0);
+            _exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
             TEST(WIFEXITED(status) == 0);
