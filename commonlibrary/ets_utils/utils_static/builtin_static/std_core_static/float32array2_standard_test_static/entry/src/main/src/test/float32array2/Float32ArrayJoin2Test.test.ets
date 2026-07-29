@@ -749,7 +749,7 @@ export default function Float32ArrayJoin2Test(): void {
     it('testFloat32ArrayJoinTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
       const joinedValue054 = arr.join().includes('2');
-      expect(joinedValue054).assertEqual(true);
+      expect(joinedValue054).assertTrue();
     });
 
     /**
@@ -889,7 +889,7 @@ export default function Float32ArrayJoin2Test(): void {
     it('testFloat32ArrayJoinTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
       const joinedValue064 = arr.join('|').includes('|');
-      expect(joinedValue064).assertEqual(true);
+      expect(joinedValue064).assertTrue();
     });
 
     /**
