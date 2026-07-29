@@ -662,11 +662,11 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint8Array([1, 2, 3]);
+      const result = Uint8Array.from(src, (value: number): number => value + 1);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(4);
     });
 
     /**
@@ -678,11 +678,11 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint16Array([1, 2, 3]);
+      const result = Uint16Array.from(src, (value: number): number => value + 1);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(4);
     });
 
     /**
@@ -694,11 +694,11 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint32Array([1, 2, 3]);
+      const result = Uint32Array.from(src, (value: number): number => value + 1);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(4);
     });
 
     /**
@@ -710,11 +710,11 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint8ClampedArray([1, 2, 3]);
+      const result = Uint8ClampedArray.from(src, (value: number): number => value + 1);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(4);
     });
 
     /**
@@ -726,11 +726,11 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new BigUint64Array([1n, 2n, 3n]);
+      const result = BigUint64Array.from(src, (value: bigint): bigint => value + 1n);
+      expect(result[0]).assertEqual(2n);
+      expect(result[1]).assertEqual(3n);
+      expect(result[2]).assertEqual(4n);
     });
 
     /**
@@ -846,10 +846,14 @@ export default function typedUArraysFromTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Array<number> = [1, 2, 3];
       try {
-        throw new Error('TypeError');
+        Uint8Array.from(src, (): number => {
+          throw new TypeError('mapfn failed');
+        });
+        expect(true).assertFail();
       } catch (e) {
-        expect(e.message).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -1048,7 +1052,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0002
      * @tc.name testTypedUArraysFromPart102_055
      * @tc.desc Verify from 300 Uint16Array 300
      * @tc.size MediumTest
