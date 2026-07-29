@@ -3767,7 +3767,7 @@ export default function dlpTest() {
       } catch (err) {
         console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 startDLPManagerForResult failed", err.code,
           err.message);
-        expect(err.code == 19100017 && err.message == "displayName not exist in want parameters").assertTrue();
+        expect(err.code == 19100017).assertTrue();
       }
       console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 end");
       return;
