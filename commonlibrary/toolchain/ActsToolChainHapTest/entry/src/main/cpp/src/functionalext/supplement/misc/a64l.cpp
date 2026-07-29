@@ -19,19 +19,23 @@
 #include "functionalext.h"
 #include "include/src/functionalext/supplement/misc.h"
 
-static const char digits[] =
-	"./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+static const char DIGITS[] =
+    "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+static constexpr int MAX_SHIFT_BITS = 36;
 
 extern "C" long A64l(const char* s)
 {
     int e;
-	uint32_t x = 0;
-	for (e=0; e<36 && *s; e+=6, s++) {
-		const char *d = strchr(digits, *s);
-		if (!d) break;
-		x |= (uint32_t)(d-digits)<<e;
-	}
-	return (int32_t)x;
+    uint32_t x = 0;
+    for (e = 0; e < MAX_SHIFT_BITS && *s; e += 6, s++) {
+        const char *d = strchr(DIGITS, *s);
+        if (!d) {
+            break;
+        }
+        x |= static_cast<uint32_t>(d - DIGITS) << e;
+    }
+    return static_cast<int32_t>(x);
 }
 
 #define VALUE_0 2

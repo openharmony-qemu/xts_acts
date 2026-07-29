@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <signal.h>
+#include <csignal>
 #include <string>
 #include <sys/wait.h>
 #include <unistd.h>
