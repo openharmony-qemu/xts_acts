@@ -57,7 +57,7 @@ static void Mktime0100(void)
  */
 void Mktime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     Mktime64Func mktime64 = reinterpret_cast<Mktime64Func>(dlsym(RTLD_DEFAULT, MKTIME64_SYMBOL));

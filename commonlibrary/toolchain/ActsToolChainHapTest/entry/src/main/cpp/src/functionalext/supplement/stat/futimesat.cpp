@@ -139,7 +139,7 @@ void Futimesat0400(void)
  */
 void FutimesatTime640200(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     FutimesatTime64Func futimesatTime64 =

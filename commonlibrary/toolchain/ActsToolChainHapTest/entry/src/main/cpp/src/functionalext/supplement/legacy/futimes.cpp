@@ -83,7 +83,7 @@ void Futimes0300(void)
  */
 void FutimesTime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     FutimesTime64Func futimesTime64 = reinterpret_cast<FutimesTime64Func>(dlsym(RTLD_DEFAULT, FUTIMES_TIME64_SYMBOL));

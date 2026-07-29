@@ -57,7 +57,7 @@ void Timegm0100(void)
  */
 void TimegmTime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     Timegm64Func timegm64 = reinterpret_cast<Timegm64Func>(dlsym(RTLD_DEFAULT, TIMEGM64_SYMBOL));

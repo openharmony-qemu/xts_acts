@@ -69,7 +69,7 @@ void SchedRrGetInterval0200(void)
  */
 void SchedRrGetIntervalTime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     SchedRrGetInterval64Func schedRrGetInterval64 =

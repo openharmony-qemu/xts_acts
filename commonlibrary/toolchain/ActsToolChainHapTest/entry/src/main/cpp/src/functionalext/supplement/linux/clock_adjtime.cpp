@@ -109,7 +109,7 @@ void ClockAdjtime0500(void)
  */
 void ClockAdjtime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     ClockAdjtime64Func clockAdjtime64 =

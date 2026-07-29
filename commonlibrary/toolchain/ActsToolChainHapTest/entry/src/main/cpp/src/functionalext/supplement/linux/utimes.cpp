@@ -102,7 +102,7 @@ void Utimes0200(void)
  */
 void UtimesTime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     const char* path = "/data/storage/el2/base/cache/utimes_time64.txt";

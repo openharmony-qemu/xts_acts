@@ -86,7 +86,7 @@ void Utimensat0200(void)
  */
 void UtimensatTime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     UtimensatTime64Func utimensatTime64 =

@@ -54,7 +54,7 @@ static void Difftime0100(void)
  */
 void Difftime640100(void)
 {
-    if (sizeof(time_t) >= 8) {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
         return;
     }
     Difftime64Func difftime64 = reinterpret_cast<Difftime64Func>(dlsym(RTLD_DEFAULT, DIFFTIME64_SYMBOL));
