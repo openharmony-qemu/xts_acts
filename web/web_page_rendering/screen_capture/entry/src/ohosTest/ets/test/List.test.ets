@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import screenCapture from './ScreenCapture.test';
+import screenCaptureNew from './ScreenCaptureNew.test';
 
 export default function testsuite() {
        screenCapture();
+       screenCaptureNew();
 }
