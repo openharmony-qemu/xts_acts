@@ -1165,6 +1165,7 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.valueOf();
+      expect(r).assertEqual(arr);
       r.$_set(0, 99.0);
       const element095 = arr.$_get(0);
       expect(element095).assertEqual(99.0);
@@ -1181,6 +1182,7 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.reverse();
+      expect(r).assertEqual(arr);
       r.$_set(0, 99.0);
       const element096 = arr.$_get(0);
       expect(element096).assertEqual(99.0);
@@ -1197,6 +1199,7 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       const r = arr.sort();
+      expect(r).assertEqual(arr);
       r.$_set(0, 99.0);
       const element097 = arr.$_get(0);
       expect(element097).assertEqual(99.0);
@@ -1213,6 +1216,7 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.fill(7.0);
+      expect(r).assertEqual(arr);
       r.$_set(0, 99.0);
       const element098 = arr.$_get(0);
       expect(element098).assertEqual(99.0);
@@ -1229,6 +1233,7 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.copyWithin(0, 2);
+      expect(r).assertEqual(arr);
       r.$_set(0, 99.0);
       const element099 = arr.$_get(0);
       expect(element099).assertEqual(99.0);
