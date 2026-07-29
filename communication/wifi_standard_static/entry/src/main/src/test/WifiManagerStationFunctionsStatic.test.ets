@@ -63,7 +63,7 @@ export default function actsWifiManagerFunctionsTest() {
       let networkId: int = 500;
       try {
         //DTS2026071712031因是首条用例，原应用此时未打开页面，导致原用例报错401。现用例有概率打开应用，偶现报错2501000.故等待5s稳定让应用打开页面后再执行用例
-        await sleep(5000);
+        await Utils.msSleep(5000);
         await wifiManager.removeCandidateConfig(networkId);
         hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
         expect().assertFail();
