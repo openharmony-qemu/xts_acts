@@ -33,7 +33,7 @@ export default function typedUArraysFillTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART101_0001
      * @tc.name testTypedUArraysFillPart101_001
      * @tc.desc Verify fill 0 - Uint8Array
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function typedUArraysFillTest01(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART101_0600
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART101_0002
      * @tc.name testTypedUArraysFillPart101_006
      * @tc.desc Verify fill 1 - value=0 Uint16Array
      * @tc.size MediumTest
@@ -900,3 +900,4 @@ export default function typedUArraysFillTest01(): void {
 
   });
 }
+

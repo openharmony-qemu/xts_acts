@@ -134,7 +134,7 @@ export default function typedUArraysFillTest04(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART202_0800
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART202_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILL_PART202_0008
      * @tc.name testTypedUArraysFillPart202_008
      * @tc.desc Verify fill(value, start= )
      * @tc.size MediumTest
@@ -595,3 +595,4 @@ export default function typedUArraysFillTest04(): void {
 
   });
 }
+

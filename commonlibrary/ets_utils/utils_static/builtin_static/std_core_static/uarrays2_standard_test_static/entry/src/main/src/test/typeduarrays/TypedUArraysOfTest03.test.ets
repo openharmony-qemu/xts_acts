@@ -902,7 +902,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0001
      * @tc.name testTypedUArraysEvery001
      * @tc.desc Verify Uint8Array every all elements greater than 0
      * @tc.size MediumTest
@@ -916,7 +916,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0002
      * @tc.name testTypedUArraysEvery002
      * @tc.desc Verify Uint8Array every returns false on failure
      * @tc.size MediumTest
@@ -986,7 +986,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0002
      * @tc.name testTypedUArraysIndexOf001
      * @tc.desc Verify Uint8Array indexOf finds element
      * @tc.size MediumTest
@@ -1000,7 +1000,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0004
      * @tc.name testTypedUArraysIndexOf002
      * @tc.desc Verify Uint8Array indexOf returns -1 for not found
      * @tc.size MediumTest
@@ -1014,7 +1014,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_0001
      * @tc.name testTypedUArraysIncludes001
      * @tc.desc Verify Uint8Array includes returns true for found
      * @tc.size MediumTest
@@ -1028,7 +1028,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_0002
      * @tc.name testTypedUArraysIncludes002
      * @tc.desc Verify Uint8Array includes returns false for not found
      * @tc.size MediumTest
@@ -1155,7 +1155,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FOREACH_0001
      * @tc.name testTypedUArraysForEach001
      * @tc.desc Verify Uint8Array forEach
      * @tc.size MediumTest
@@ -1172,7 +1172,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0002
      * @tc.name testTypedUArraysFindIndex001
      * @tc.desc Verify Uint8Array findIndex
      * @tc.size MediumTest
@@ -1186,7 +1186,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0002
      * @tc.name testTypedUArraysFindLast001
      * @tc.desc Verify Uint8Array findLast
      * @tc.size MediumTest
@@ -1200,7 +1200,7 @@ export default function typedUArraysOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0002
      * @tc.name testTypedUArraysLastIndexOf001
      * @tc.desc Verify Uint8Array lastIndexOf
      * @tc.size MediumTest
@@ -1232,3 +1232,4 @@ export default function typedUArraysOfTest03(): void {
 
   });
 }
+

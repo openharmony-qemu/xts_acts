@@ -50,7 +50,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART101_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART101_0001
      * @tc.name testTypedUArraysKeysPart101_051
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615') keys
      * @tc.size MediumTest

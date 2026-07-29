@@ -34,7 +34,7 @@ export default function typedUArraysIncludes0102(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INCLUDES_0003
      * @tc.name testTypedUArraysIncludes051
      * @tc.desc Verify Uint8ClampedArray includes 0
      * @tc.size MediumTest

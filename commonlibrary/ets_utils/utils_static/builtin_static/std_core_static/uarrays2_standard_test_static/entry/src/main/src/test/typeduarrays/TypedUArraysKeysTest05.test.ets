@@ -34,7 +34,7 @@ export default function typedUArraysKeysTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART102_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART102_0001
      * @tc.name testTypedUArraysKeysPart102_035
      * @tc.desc Verify Uint32Array keys independent iterators
      * @tc.size MediumTest

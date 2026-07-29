@@ -48,7 +48,7 @@ export default function typedUArraysFromTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM01_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM01_0001
      * @tc.name testTypedUArraysFrom01_051
      * @tc.desc Verify Uint32Array.from byteLength length 4
      * @tc.size MediumTest

@@ -130,7 +130,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0007
      * @tc.name testTypedUArraysJoin0101_007
      * @tc.desc Verify separator " :: "
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0009
      * @tc.name testTypedUArraysJoin0101_008
      * @tc.desc Verify separator "|"
      * @tc.size MediumTest
@@ -158,7 +158,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0011
      * @tc.name testTypedUArraysJoin0101_009
      * @tc.desc Verify separator "\n"
      * @tc.size MediumTest
@@ -192,7 +192,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0014
      * @tc.name testTypedUArraysJoin0101_011
      * @tc.desc Verify separator " "
      * @tc.size MediumTest
@@ -276,7 +276,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0021
      * @tc.name testTypedUArraysJoin0101_017
      * @tc.desc Verify separator false "false"
      * @tc.size MediumTest
@@ -290,7 +290,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0023
      * @tc.name testTypedUArraysJoin0101_018
      * @tc.desc Verify separator "[object Object]"
      * @tc.size MediumTest

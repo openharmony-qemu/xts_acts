@@ -34,7 +34,7 @@ export default function typedUArraysForEach02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FOREACH_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FOREACH_0002
      * @tc.name testTypedUArraysForEach042
      * @tc.desc Verify 4294967295 forEach Uint32Array
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function typedUArraysForEach02(): void {
         });
         expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -316,7 +316,7 @@ export default function typedUArraysForEach02(): void {
         });
         expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -336,7 +336,7 @@ export default function typedUArraysForEach02(): void {
         });
         expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -356,7 +356,7 @@ export default function typedUArraysForEach02(): void {
         });
         expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('SyntaxError');
       }
     });
 
@@ -397,7 +397,7 @@ export default function typedUArraysForEach02(): void {
         });
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -738,3 +738,4 @@ export default function typedUArraysForEach02(): void {
 
   });
 }
+

@@ -116,7 +116,7 @@ export default function int8ArrayBaselineTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0600
      * @tc.name testInt8ArrayBaseline006
-     * @tc.desc Verify undefined
+     * @tc.desc Verify out-of-range access throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -125,15 +125,15 @@ export default function int8ArrayBaselineTest(): void {
       const arr = new Int8Array([1, 2, 3]);
       try {
         const val7 = arr[5];
-        expect(val7).assertUndefined();
+        expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
       try {
         const val8 = arr[-1];
-        expect(val8).assertUndefined();
+        expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

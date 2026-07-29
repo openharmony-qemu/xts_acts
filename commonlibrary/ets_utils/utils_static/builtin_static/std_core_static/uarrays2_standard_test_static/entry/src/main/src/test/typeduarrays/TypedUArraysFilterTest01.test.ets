@@ -34,7 +34,7 @@ export default function typedUArraysFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART101_000100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART101_0001
      * @tc.name testTypedUArraysFilterPart101_001
      * @tc.desc Verify filter 0 - Uint8Array
      * @tc.size MediumTest
@@ -48,7 +48,8 @@ export default function typedUArraysFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART101_000200
+
+00
      * @tc.name testTypedUArraysFilterPart101_002
      * @tc.desc Verify filter 0 - BigUint64Array
      * @tc.size MediumTest
@@ -526,7 +527,7 @@ export default function typedUArraysFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART101_005000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART101_0002
      * @tc.name testTypedUArraysFilterPart101_050
      * @tc.desc Verify thisArg Uint8Array
      * @tc.size MediumTest
@@ -541,3 +542,4 @@ export default function typedUArraysFilterTest01(): void {
 
   });
 }
+

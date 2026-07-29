@@ -1198,7 +1198,7 @@ export default function typedUArraysOfTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSTRING_0001
      * @tc.name testTypedUArraysToString01
      * @tc.desc Verify BigUint64Array toString
      * @tc.size MediumTest
@@ -1212,7 +1212,7 @@ export default function typedUArraysOfTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_0001
      * @tc.name testTypedUArraysJoin01
      * @tc.desc Verify BigUint64Array join
      * @tc.size MediumTest
@@ -1226,7 +1226,7 @@ export default function typedUArraysOfTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0002
      * @tc.name testTypedUArraysFindLastIndex001
      * @tc.desc Verify Uint8Array findLastIndex
      * @tc.size MediumTest
@@ -1241,3 +1241,4 @@ export default function typedUArraysOfTest04(): void {
 
   });
 }
+

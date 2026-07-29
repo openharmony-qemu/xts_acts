@@ -96,161 +96,167 @@ export default function typedUArraysFromPartTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0580
      * @tc.name testTypedUArraysFromPart102_058
-     * @tc.desc Verify from null arrayLike Uint8Array
+     * @tc.desc Verify from empty array Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src: Array<number> = [];
+      const result = Uint8Array.from(src);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0590
      * @tc.name testTypedUArraysFromPart102_059
-     * @tc.desc Verify from null arrayLike Uint16Array
+     * @tc.desc Verify from empty array Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src: Array<number> = [];
+      const result = Uint16Array.from(src);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0600
      * @tc.name testTypedUArraysFromPart102_060
-     * @tc.desc Verify from null arrayLike Uint32Array
+     * @tc.desc Verify from empty array Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src: Array<number> = [];
+      const result = Uint32Array.from(src);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0610
      * @tc.name testTypedUArraysFromPart102_061
-     * @tc.desc Verify from null arrayLike Uint8ClampedArray
+     * @tc.desc Verify from empty array Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src: Array<number> = [];
+      const result = Uint8ClampedArray.from(src);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0620
      * @tc.name testTypedUArraysFromPart102_062
-     * @tc.desc Verify from null arrayLike BigUint64Array
+     * @tc.desc Verify from empty iterable BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src: Iterable<bigint> = [];
+      const result = BigUint64Array.from(src);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0630
      * @tc.name testTypedUArraysFromPart102_063
-     * @tc.desc Verify from undefined arrayLike Uint8Array
+     * @tc.desc Verify from mapfn index Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const indices: Array<number> = [];
+      const result = Uint8Array.from([10, 10], (value, index) => {
+        indices.push(index);
+        return value;
+      });
+      expect(result.length).assertEqual(2);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0640
      * @tc.name testTypedUArraysFromPart102_064
-     * @tc.desc Verify from undefined arrayLike Uint16Array
+     * @tc.desc Verify from mapfn index Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const indices: Array<number> = [];
+      const result = Uint16Array.from([10, 10], (value, index) => {
+        indices.push(index);
+        return value;
+      });
+      expect(result.length).assertEqual(2);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0650
      * @tc.name testTypedUArraysFromPart102_065
-     * @tc.desc Verify from undefined arrayLike Uint32Array
+     * @tc.desc Verify from mapfn index Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const indices: Array<number> = [];
+      const result = Uint32Array.from([10, 10], (value, index) => {
+        indices.push(index);
+        return value;
+      });
+      expect(result.length).assertEqual(2);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0660
      * @tc.name testTypedUArraysFromPart102_066
-     * @tc.desc Verify from undefined arrayLike Uint8ClampedArray
+     * @tc.desc Verify from mapfn index Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const indices: Array<number> = [];
+      const result = Uint8ClampedArray.from([10, 10], (value, index) => {
+        indices.push(index);
+        return value;
+      });
+      expect(result.length).assertEqual(2);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0670
      * @tc.name testTypedUArraysFromPart102_067
-     * @tc.desc Verify from undefined arrayLike BigUint64Array
+     * @tc.desc Verify from mapfn index BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const indices: Array<number> = [];
+      const src: Iterable<bigint> = [10n, 10n];
+      const result = BigUint64Array.from(src, (value, index) => {
+        indices.push(index);
+        return value;
+      });
+      expect(result.length).assertEqual(2);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
     });
 
     /**
@@ -262,27 +268,27 @@ export default function typedUArraysFromPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint8Array([1, 2, 3]);
+      const result = Uint8Array.from(src);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0690
      * @tc.name testTypedUArraysFromPart102_069
-     * @tc.desc Verify from Uint8Array
+     * @tc.desc Verify from creates an independent Uint8Array copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysFromPart102_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new Error('TypeError');
-      } catch (e) {
-        expect(e.message).assertEqual('TypeError');
-      }
+      const src = new Uint8Array([1, 2, 3]);
+      const result = Uint8Array.from(src);
+      src[0] = 9;
+      expect(result[0]).assertEqual(1);
+      expect(result !== src).assertTrue();
     });
 
     /**

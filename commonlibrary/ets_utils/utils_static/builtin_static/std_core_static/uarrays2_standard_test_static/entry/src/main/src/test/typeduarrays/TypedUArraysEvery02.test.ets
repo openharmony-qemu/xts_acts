@@ -81,7 +81,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0003
      * @tc.name testTypedUArraysEvery044
      * @tc.desc Verify 0 every Uint8Array
      * @tc.size MediumTest
@@ -290,6 +290,7 @@ export default function TypedUArraysEvery02Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -312,6 +313,7 @@ export default function TypedUArraysEvery02Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -334,6 +336,7 @@ export default function TypedUArraysEvery02Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -356,6 +359,7 @@ export default function TypedUArraysEvery02Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('SyntaxError');
       }
     });
 
@@ -376,6 +380,7 @@ export default function TypedUArraysEvery02Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -662,3 +667,4 @@ export default function TypedUArraysEvery02Test(): void {
 
   });
 }
+

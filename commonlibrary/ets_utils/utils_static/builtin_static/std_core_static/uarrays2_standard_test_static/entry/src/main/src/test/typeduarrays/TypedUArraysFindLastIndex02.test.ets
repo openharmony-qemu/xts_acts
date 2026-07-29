@@ -91,7 +91,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0001
      * @tc.name testTypedUArraysFindLastIndex001
      * @tc.desc Verify 0 findLastIndex Uint8ClampedArray TypeError
      * @tc.size MediumTest
@@ -793,3 +793,4 @@ export default function typedUArraysFindLastIndex02(): void {
 
   });
 }
+

@@ -158,7 +158,7 @@ export default function typedUArraysOverallTest01(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1000
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0010
      * @tc.name testTypedUArraysOverall0101_010
      * @tc.desc Verify length 100
      * @tc.size MediumTest

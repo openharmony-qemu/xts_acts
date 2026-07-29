@@ -35,14 +35,14 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0001
      * @tc.name testTypedUArraysProperty0201_001
      * @tc.desc Verify Uint8ClampedArray.BYTES_PER_ELEMENT typeof Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0002
      * @tc.name testTypedUArraysProperty0201_001
      * @tc.desc Verify Uint8Array(4) byteLength 4
      * @tc.size MediumTest
@@ -55,7 +55,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0003
      * @tc.name testTypedUArraysProperty0201_002
      * @tc.desc Verify Uint16Array(4) byteLength 8
      * @tc.size MediumTest
@@ -69,7 +69,7 @@ export default function typedUArraysPropertyTest11(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0004
      * @tc.name testTypedUArraysProperty0201_003
      * @tc.desc Verify Uint32Array(1) byteLength 4
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0005
      * @tc.name testTypedUArraysProperty0201_004
      * @tc.desc Verify BigUint64Array(1) byteLength 8
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function typedUArraysPropertyTest11(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0006
      * @tc.name testTypedUArraysProperty0201_005
      * @tc.desc Verify Uint8Array byteLength buffer byteLength
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0007
      * @tc.name testTypedUArraysProperty0201_006
      * @tc.desc Verify Uint16Array byteLength buffer byteLength
      * @tc.size MediumTest

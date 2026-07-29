@@ -34,7 +34,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0001
      * @tc.name testTypedUArraysFindPart101_001
      * @tc.desc Verify find 0 - Uint8Array
      * @tc.size MediumTest
@@ -599,3 +599,4 @@ export default function typedUArraysFindTest01(): void {
 
   });
 }
+

@@ -121,7 +121,7 @@ export default function float32ArrayBaselineTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_Baseline_0600
      * @tc.name testFloat32ArrayBaseline006
-     * @tc.desc Verify undefined
+     * @tc.desc Verify out-of-range access throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -130,15 +130,15 @@ export default function float32ArrayBaselineTest(): void {
       const arr = new Float32Array([1.0, 2.0]);
       try {
         const val10 = arr[5];
-        expect(val10).assertUndefined();
+        expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
       try {
         const val11 = arr[-1];
-        expect(val11).assertUndefined();
+        expect(true).assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

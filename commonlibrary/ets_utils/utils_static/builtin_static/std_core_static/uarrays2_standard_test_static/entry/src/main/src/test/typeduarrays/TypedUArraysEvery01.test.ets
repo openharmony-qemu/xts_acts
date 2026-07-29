@@ -61,6 +61,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -115,6 +116,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -135,6 +137,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -155,6 +158,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -175,6 +179,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -195,6 +200,7 @@ export default function TypedUArraysEvery01Test(): void {
         });
         expect(true).assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 

@@ -34,7 +34,7 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0001
      * @tc.name testTypedUArraysFindIndex001
      * @tc.desc Verify 0 findIndex Uint8ClampedArray TypeError
      * @tc.size MediumTest
@@ -744,3 +744,4 @@ export default function typedUArraysFindIndex02(): void {
 
   });
 }
+

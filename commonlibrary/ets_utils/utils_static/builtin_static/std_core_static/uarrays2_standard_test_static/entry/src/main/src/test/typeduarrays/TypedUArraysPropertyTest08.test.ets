@@ -48,7 +48,7 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0001
      * @tc.name testTypedUArraysProperty030201_001
      * @tc.desc Verify length Infinity
      * @tc.size MediumTest
@@ -65,7 +65,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0002
      * @tc.name testTypedUArraysProperty030201_002
      * @tc.desc Verify length
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0003
      * @tc.name testTypedUArraysProperty030201_003
      * @tc.desc Verify ArrayBuffer
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0004
      * @tc.name testTypedUArraysProperty030201_004
      * @tc.desc Verify offset
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0005
      * @tc.name testTypedUArraysProperty030201_005
      * @tc.desc Verify offset buffer
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0006
      * @tc.name testTypedUArraysProperty030201_006
      * @tc.desc Verify length buffer
      * @tc.size MediumTest
@@ -150,7 +150,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0007
      * @tc.name testTypedUArraysProperty030201_007
      * @tc.desc Verify offset length buffer
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0008
      * @tc.name testTypedUArraysProperty030201_008
      * @tc.desc Verify NaN
      * @tc.size MediumTest
@@ -183,7 +183,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0009
      * @tc.name testTypedUArraysProperty030201_009
      * @tc.desc Verify Infinity
      * @tc.size MediumTest
@@ -197,7 +197,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0010
      * @tc.name testTypedUArraysProperty030201_010
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -211,7 +211,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0011
      * @tc.name testTypedUArraysProperty030201_011
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -225,7 +225,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0012
      * @tc.name testTypedUArraysProperty030201_012
      * @tc.desc Verify length 0
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0013
      * @tc.name testTypedUArraysProperty030201_013
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0014
      * @tc.name testTypedUArraysProperty030201_014
      * @tc.desc Verify subarray buffer
      * @tc.size MediumTest
@@ -269,7 +269,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0015
      * @tc.name testTypedUArraysProperty030201_015
      * @tc.desc Verify subarray
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0016
      * @tc.name testTypedUArraysProperty030201_016
      * @tc.desc Verify subarray byteOffset
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0017
      * @tc.name testTypedUArraysProperty030201_017
      * @tc.desc Verify buffer
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0018
      * @tc.name testTypedUArraysProperty030201_018
      * @tc.desc Verify offset Uint16Array Uint8Array buffer
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0019
      * @tc.name testTypedUArraysProperty030201_019
      * @tc.desc Verify offset Uint32Array Uint8Array buffer
      * @tc.size MediumTest
@@ -346,7 +346,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0020
      * @tc.name testTypedUArraysProperty030201_020
      * @tc.desc Verify BigUint64Array Uint8Array buffer
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0021
      * @tc.name testTypedUArraysProperty030201_021
      * @tc.desc Verify buffer
      * @tc.size MediumTest
@@ -379,7 +379,7 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0022
      * @tc.name testTypedUArraysProperty030201_022
      * @tc.desc Verify buffer ArrayBuffer
      * @tc.size MediumTest

@@ -530,7 +530,7 @@ export default function typedUArraysJoinTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART201_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART201_0036
      * @tc.name testTypedUArraysJoinPart201_036
      * @tc.desc Verify Uint8Array 10 20 30
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function typedUArraysJoinTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART201_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART201_0038
      * @tc.name testTypedUArraysJoinPart201_037
      * @tc.desc Verify Uint8Array 10 20 30
      * @tc.size MediumTest

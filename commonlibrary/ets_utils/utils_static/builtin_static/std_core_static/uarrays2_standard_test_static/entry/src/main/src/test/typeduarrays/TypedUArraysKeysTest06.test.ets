@@ -50,7 +50,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART2_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART2_0001
      * @tc.name testTypedUArraysKeysPart2_037
      * @tc.desc Verify keys()
      * @tc.size MediumTest

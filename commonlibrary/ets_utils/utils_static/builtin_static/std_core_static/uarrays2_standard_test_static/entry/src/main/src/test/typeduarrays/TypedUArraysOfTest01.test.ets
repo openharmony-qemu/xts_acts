@@ -877,7 +877,7 @@ export default function typedUArraysOfTest01(): void {
      * @tc.level Level 2
      */
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTY_0001
      * @tc.name testTypedUArraysProperty006
      * @tc.desc Verify Uint8Array buffer property
      * @tc.size MediumTest

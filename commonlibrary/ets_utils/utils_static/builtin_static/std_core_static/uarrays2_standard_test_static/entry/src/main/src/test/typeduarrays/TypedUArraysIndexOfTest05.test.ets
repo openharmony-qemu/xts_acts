@@ -34,7 +34,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0001
      * @tc.name testTypedUArraysIndexOf001
      * @tc.desc Verify searchElement indexOf Uint8ClampedArray -1 undefined
      * @tc.size MediumTest
@@ -47,7 +47,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0003
      * @tc.name testTypedUArraysIndexOf002
      * @tc.desc Verify fromIndex=2 BigUint64Array 0 10n -1
      * @tc.size MediumTest
@@ -60,7 +60,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0005
      * @tc.name testTypedUArraysIndexOf003
      * @tc.desc Verify fromIndex -2 Uint8ClampedArray len-2=2 1 20 -1
      * @tc.size MediumTest
@@ -73,7 +73,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0006
      * @tc.name testTypedUArraysIndexOf004
      * @tc.desc Verify fromIndex -2 Uint8Array len-2=2 30
      * @tc.size MediumTest
@@ -86,7 +86,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0007
      * @tc.name testTypedUArraysIndexOf005
      * @tc.desc Verify fromIndex -1 Uint16Array len-1=3 40
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0008
      * @tc.name testTypedUArraysIndexOf006
      * @tc.desc Verify fromIndex -3 Uint32Array len-3=1 20
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0009
      * @tc.name testTypedUArraysIndexOf007
      * @tc.desc Verify fromIndex -4 BigUint64Array len-4=0 10n
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0010
      * @tc.name testTypedUArraysIndexOf008
      * @tc.desc Verify fromIndex Uint8ClampedArray 0
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0011
      * @tc.name testTypedUArraysIndexOf009
      * @tc.desc Verify fromIndex BigUint64Array 0
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0012
      * @tc.name testTypedUArraysIndexOf010
      * @tc.desc Verify fromIndex Uint8Array -1
      * @tc.size MediumTest
@@ -166,7 +166,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0013
      * @tc.name testTypedUArraysIndexOf011
      * @tc.desc Verify fromIndex BigUint64Array -1
      * @tc.size MediumTest
@@ -179,7 +179,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0014
      * @tc.name testTypedUArraysIndexOf012
      * @tc.desc Verify fromIndex NaN Uint8ClampedArray 0
      * @tc.size MediumTest
@@ -194,7 +194,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0015
      * @tc.name testTypedUArraysIndexOf013
      * @tc.desc Verify fromIndex NaN BigUint64Array 0
      * @tc.size MediumTest
@@ -207,7 +207,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0016
      * @tc.name testTypedUArraysIndexOf014
      * @tc.desc Verify fromIndex 1.9 Uint8Array 1 1 20
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0017
      * @tc.name testTypedUArraysIndexOf015
      * @tc.desc Verify fromIndex "1" Uint16Array 1
      * @tc.size MediumTest
@@ -233,7 +233,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0018
      * @tc.name testTypedUArraysIndexOf016
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -252,7 +252,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0019
      * @tc.name testTypedUArraysIndexOf017
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0020
      * @tc.name testTypedUArraysIndexOf018
      * @tc.desc Verify -1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0021
      * @tc.name testTypedUArraysIndexOf019
      * @tc.desc Verify -1 BigUint64Array
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0022
      * @tc.name testTypedUArraysIndexOf020
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0023
      * @tc.name testTypedUArraysIndexOf021
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -329,7 +329,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0024
      * @tc.name testTypedUArraysIndexOf022
      * @tc.desc Verify indexOf -1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function typedUArraysIndexOfTest05(): void {
     /**
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0025
      * @tc.name testTypedUArraysIndexOf023
      * @tc.desc Verify indexOf -1 BigUint64Array
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0026
      * @tc.name testTypedUArraysIndexOf024
      * @tc.desc Verify Uint8Array 3
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0027
      * @tc.name testTypedUArraysIndexOf025
      * @tc.desc Verify fromIndex undefined Uint8ClampedArray 0
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function typedUArraysIndexOfTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF_0028
      * @tc.name testTypedUArraysIndexOf026
      * @tc.desc Verify fromIndex undefined BigUint64Array 0
      * @tc.size MediumTest

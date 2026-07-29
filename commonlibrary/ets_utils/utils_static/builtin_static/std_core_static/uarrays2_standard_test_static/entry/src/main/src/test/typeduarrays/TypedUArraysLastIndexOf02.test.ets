@@ -34,7 +34,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0001
      * @tc.name testTypedUArraysLastIndexOf001
      * @tc.desc Verify searchElement lastIndexOf Uint8ClampedArray -1
      * @tc.size MediumTest
