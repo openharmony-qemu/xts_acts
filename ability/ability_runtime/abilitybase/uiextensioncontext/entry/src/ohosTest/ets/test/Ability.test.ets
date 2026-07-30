@@ -2617,7 +2617,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
+            await Promise.all([entryAbility1, uiExtension, entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2671,7 +2671,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
+            await Promise.all([entryAbility1, uiExtension, entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2725,7 +2725,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
+            await Promise.all([entryAbility1, uiExtension, entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
@@ -2779,7 +2779,7 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish("teminate",() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1, uiExtension，entryAbility2]);
+            await Promise.all([entryAbility1, uiExtension, entryAbility2]);
             done();
           });
           testAbilityContext.startAbility({
