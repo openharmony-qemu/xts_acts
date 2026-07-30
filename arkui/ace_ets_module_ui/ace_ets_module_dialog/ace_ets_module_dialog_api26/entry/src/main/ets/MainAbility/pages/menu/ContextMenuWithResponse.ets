@@ -19,7 +19,7 @@ struct ContextMenuWithResponse {
   @State lastAction: string = 'none';
   @State lastResponse: string = 'none';
 
-  private menuItems(): Array<MenuElement> {
+  private menuItems(): MenuElement[] {
     return [
       {
         value: 'WithCopy',

@@ -21,7 +21,7 @@ struct ContextMenuByIsShow {
   @State isShowGridTop: boolean = false;
   @State lastAction: string = 'none';
 
-  private menuItems(): Array<MenuElement> {
+  private menuItems(): MenuElement[] {
     return [
       {
         value: 'IsShowA',

@@ -24,9 +24,9 @@ struct ContextMenuGridStyle {
   @State showCombined: boolean = false;
   @State lastAction: string = 'none';
 
-  private gridItems(prefix: string): Array<MenuElement> {
+  private gridItems(prefix: string): MenuElement[] {
     let names: string[] = ['Copy', 'Paste', 'Cut', 'Delete', 'Share', 'Select', 'Translate', 'Favorite'];
-    let items: Array<MenuElement> = [];
+    let items: MenuElement[] = [];
     for (let i = 0; i < names.length; i++) {
       let name = prefix + names[i];
       items.push({
