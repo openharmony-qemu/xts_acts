@@ -5985,6 +5985,340 @@ export default function WindowPropertiesTest() {
             }
         })
 
+
+    // ==================== isInWindowPostureMode / onWindowPostureModeChange / offWindowPostureModeChange 静态测试用例 ====================
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_normal_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0100
+     * @tc.desc   查询当前窗口是否处于桌面姿态模式，结合FoldStatus、getLiveCreaseRegion、getWindowStatus等条件验证返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_normal_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_normal_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let isSupport: boolean = canIUse('SystemCapability.Window.SessionManager');
+          hilog.info(domain, tag, msgStr + 'isSupport: ' + isSupport);
+          if (!isSupport) {
+            hilog.info(domain, tag, msgStr + 'SystemCapability.Window.SessionManager not supported.');
+            done();
+            return;
+          }
+
+          let isHalfFolded: boolean = false;
+          let isCreaseWidthGreater: boolean = false;
+          let isFullScreenOrMaximize: boolean = false;
+          let isCreaseInWindow: boolean = false;
+          let creaseTop: number = 0;
+          let creaseHeight: number = 0;
+
+          try {
+            let foldStatus: display.FoldStatus = display.getFoldStatus();
+            hilog.info(domain, tag, msgStr + 'foldStatus: ' + foldStatus);
+            isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getFoldStatus not supported.');
+          }
+
+          try {
+            let defaultDisplay: display.Display = display.getDefaultDisplaySync();
+            let creaseRegion: display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
+            hilog.info(domain, tag, msgStr + 'creaseRegion: ' + JSON.stringify(creaseRegion));
+            if (creaseRegion.creaseRects.length > 0) {
+              let creaseRect = creaseRegion.creaseRects[0];
+              hilog.info(domain, tag, msgStr + 'creaseRect: ' + JSON.stringify(creaseRect));
+              isCreaseWidthGreater = creaseRect.width > creaseRect.height;
+              creaseTop = creaseRect.top;
+              creaseHeight = creaseRect.height;
+            }
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getLiveCreaseRegion not supported.');
+          }
+
+          try {
+            let windowStatus: window.WindowStatusType = win!.getWindowStatus();
+            hilog.info(domain, tag, msgStr + 'windowStatus: ' + windowStatus);
+            isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+              windowStatus === window.WindowStatusType.MAXIMIZE;
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getWindowStatus not supported.');
+          }
+
+          let windowRect: window.Rect = win!.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'windowRect: ' + JSON.stringify(windowRect));
+          isCreaseInWindow = (windowRect.top + windowRect.height) > (creaseTop + creaseHeight);
+
+          let expectedResult: boolean = isHalfFolded && isCreaseWidthGreater && isFullScreenOrMaximize && isCreaseInWindow;
+          hilog.info(domain, tag, msgStr + 'isHalfFolded: ' + isHalfFolded + ', isCreaseWidthGreater: ' + isCreaseWidthGreater + ', isFullScreenOrMaximize: ' + isFullScreenOrMaximize + ', isCreaseInWindow: ' + isCreaseInWindow);
+          hilog.info(domain, tag, msgStr + 'expectedResult: ' + expectedResult);
+
+          let result: boolean = win!.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'result: ' + result);
+          expect(result).assertEqual(expectedResult);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0200
+     * @tc.desc   窗口销毁后调用isInWindowPostureMode，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testIsInWindowPostureMode_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            testWindow.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_returnValue_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0600
+     * @tc.desc   调用isInWindowPostureMode，断言返回值为true或false，满足返回值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_returnValue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_returnValue_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let isSupport: boolean = canIUse('SystemCapability.Window.SessionManager');
+          hilog.info(domain, tag, msgStr + 'isSupport: ' + isSupport);
+          if (!isSupport) {
+            hilog.info(domain, tag, msgStr + 'SystemCapability.Window.SessionManager not supported.');
+            done();
+            return;
+          }
+          let result: boolean = win!.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'result: ' + result);
+          expect(result === true || result === false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offTwice_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0200
+     * @tc.desc   调用2次on监听，调用2次off分别取消每个监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offTwice_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnOffWindowPostureModeChange_offTwice_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          const callback1: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback1 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          const callback2: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback2 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 1.');
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 2.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling listener 1.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling listener 2.');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offAll_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0300
+     * @tc.desc   调用2次on监听，调用off接口（不传callback）取消全部监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offAll_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnOffWindowPostureModeChange_offAll_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          const callback1: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback1 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          const callback2: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback2 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 1.');
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 2.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling all listeners.');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0400
+     * @tc.desc   窗口销毁后调用onWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnWindowPostureModeChange_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testOnWindowPostureModeChange_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            const callback: Callback<boolean> = (isInPostureMode: boolean): void => {
+              hilog.info(domain, tag, msgStr + 'callback triggered. isInPostureMode: ' + isInPostureMode);
+            };
+            testWindow.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0500
+     * @tc.desc   窗口销毁后调用offWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOffWindowPostureModeChange_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testOffWindowPostureModeChange_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            testWindow.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+
     })
 
 }
