@@ -4,6 +4,11 @@
     "MainAbility/pages/popup/PopupOptionsColorMode",
     "MainAbility/pages/popup/PopupCommonOptionsColorMode",
     "MainAbility/pages/popup/PopupOptionsLevelMode",
-    "MainAbility/pages/popup/CustomPopupOptionsLevelMode"
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode",
+    "MainAbility/pages/menu/ContextMenuByResponseType",
+    "MainAbility/pages/menu/ContextMenuWithResponse",
+    "MainAbility/pages/menu/ContextMenuByIsShow",
+    "MainAbility/pages/menu/ContextMenuGridStyle",
+    "MainAbility/pages/menu/MenuItemSubMenuBuilder"
   ]
 }

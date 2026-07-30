@@ -17,10 +17,20 @@ import PopupOptionsColorMode from './popup/PopupOptionsColorMode.test';
 import PopupCommonOptionsColorMode from './popup/PopupCommonOptionsColorMode.test';
 import PopupOptionsLevelMode from './popup/PopupOptionsLevelMode.test';
 import CustomPopupOptionsLevelMode from './popup/CustomPopupOptionsLevelMode.test';
+import ContextMenuByResponseType from './menu/ContextMenuByResponseType.test';
+import ContextMenuWithResponse from './menu/ContextMenuWithResponse.test';
+import ContextMenuByIsShow from './menu/ContextMenuByIsShow.test';
+import ContextMenuGridStyle from './menu/ContextMenuGridStyle.test';
+import MenuItemSubMenuBuilder from './menu/MenuItemSubMenuBuilder.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
   PopupCommonOptionsColorMode();
   PopupOptionsLevelMode();
   CustomPopupOptionsLevelMode();
+  ContextMenuByResponseType();
+  ContextMenuWithResponse();
+  ContextMenuByIsShow();
+  ContextMenuGridStyle();
+  MenuItemSubMenuBuilder();
 }
