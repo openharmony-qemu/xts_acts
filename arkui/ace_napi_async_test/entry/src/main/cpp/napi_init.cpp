@@ -7165,52 +7165,92 @@ static napi_value NapiIsSendable(napi_env env, napi_callback_info info)
     return result;
 }
 
+static constexpr size_t MIN_SENDABLE_ARGC = 2;
+
 static napi_value NapiWrapSendable(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
-    napi_value args[2];
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value args[2] = {nullptr, nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= MIN_SENDABLE_ARGC && args[0] != nullptr && args[1] != nullptr,
+        "sendable object and string data are required")) {
+        return nullptr;
+    }
+    napi_valuetype valueType = napi_undefined;
+    if (!CheckNapiCall(env, napi_typeof(env, args[1], &valueType)) ||
+        !CheckNapiAssertion(env, valueType == napi_string, "wrap data should be a string")) {
+        return nullptr;
+    }
 
-    static size_t length = 256;
-    char* data = new char[length];
+    static constexpr size_t length = 256;
+    char* data = new char[length]();
     size_t size = 0;
-    napi_get_value_string_utf8(env, args[1], data, length - 1, &size);
+    if (!CheckNapiCall(env, napi_get_value_string_utf8(env, args[1], data, length - 1, &size))) {
+        delete[] data;
+        return nullptr;
+    }
 
-    napi_wrap_sendable(
+    napi_status status = napi_wrap_sendable(
         env, args[0], (void*)data,
         [](napi_env env, void* data, void* hint) {
             char* tmp = reinterpret_cast<char*>(data);
             delete[] tmp;
         },
         nullptr);
+    if (!CheckNapiCall(env, status)) {
+        delete[] data;
+        return nullptr;
+    }
     return args[0];
 }
 
 static napi_value NapiUnwrapSendable(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
-    napi_value args[1];
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "sendable object is required")) {
+        return nullptr;
+    }
 
     char* data = nullptr;
-    napi_unwrap_sendable(env, args[0], (void**)&data);
+    if (!CheckNapiCall(env, napi_unwrap_sendable(env, args[0], (void**)&data)) ||
+        !CheckNapiAssertion(env, data != nullptr, "wrapped data should not be null")) {
+        return nullptr;
+    }
 
     napi_value result = nullptr;
-    napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result);
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result))) {
+        return nullptr;
+    }
     return result;
 }
 
 static napi_value NapiRemoveWrapSendable(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
-    napi_value args[1];
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "sendable object is required")) {
+        return nullptr;
+    }
 
     char* data = nullptr;
-    napi_remove_wrap_sendable(env, args[0], (void**)&data);
+    if (!CheckNapiCall(env, napi_remove_wrap_sendable(env, args[0], (void**)&data)) ||
+        !CheckNapiAssertion(env, data != nullptr, "removed wrapped data should not be null")) {
+        return nullptr;
+    }
 
     napi_value result = nullptr;
-    napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result);
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, data, NAPI_AUTO_LENGTH, &result))) {
+        return nullptr;
+    }
     return result;
 }
 
@@ -7230,7 +7270,9 @@ static napi_value createSendableFloat64ArrayTest(napi_env env, napi_callback_inf
                                                          arraybuffer, offset, &result);
     bool bRet = (status == napi_invalid_arg);
     napi_value retValue;
-    napi_create_int32(env, bRet, &retValue);
+    if (!CheckNapiCall(env, napi_get_boolean(env, bRet, &retValue))) {
+        return nullptr;
+    }
     return retValue;
 }
 
