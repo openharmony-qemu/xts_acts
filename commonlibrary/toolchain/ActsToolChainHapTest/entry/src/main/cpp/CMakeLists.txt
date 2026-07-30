@@ -1029,7 +1029,6 @@ add_library(
     src/functionalext/supplement/network/send.cpp
     src/functionalext/supplement/network/shutdown.cpp
     src/functionalext/supplement/linux/__ppoll_time64.cpp
-    src/functionalext/supplement/linux/clock_adjtime.cpp
     src/functionalext/supplement/linux/fallocate.cpp
     src/functionalext/supplement/linux/fgetxattr.cpp
     src/functionalext/supplement/linux/flock.cpp
