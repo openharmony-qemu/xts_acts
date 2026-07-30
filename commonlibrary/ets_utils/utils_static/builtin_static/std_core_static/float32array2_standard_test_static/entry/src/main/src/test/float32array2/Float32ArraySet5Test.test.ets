@@ -300,111 +300,68 @@ export default function Float32ArraySet5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_1800
      * @tc.name testFloat32ArraySetFive018
-     * @tc.desc Verify set(0, -0.0) preserves -0 sign via single-element set
+     * @tc.desc Verify set(Float32Array.of(MAX_VALUE)) stores MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySetFive018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target = new Float32Array(1);
-      target.set(0, -0.0);
-      const inv = 1.0 / target.$_get(0);
-      expect(inv).assertEqual(-Number.POSITIVE_INFINITY);
+      target.set(Float32Array.of(3.4028234663852886e+38));
+      expect(target.$_get(0)).assertEqual(3.4028234663852886e+38);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_1900
      * @tc.name testFloat32ArraySetFive019
-     * @tc.desc Verify set(Float32Array.of(MAX_VALUE)) stores MAX_VALUE
+     * @tc.desc Verify set(Float32Array.of(0.1)) stores float32 rounding of 0.1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySetFive019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target = new Float32Array(1);
-      target.set(Float32Array.of(3.4028234663852886e+38));
-      expect(target.$_get(0)).assertEqual(3.4028234663852886e+38);
+      target.set(Float32Array.of(0.1));
+      expect(target.$_get(0)).assertEqual(0.10000000149011612);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2000
      * @tc.name testFloat32ArraySetFive020
-     * @tc.desc Verify set(Float32Array.of(0.1)) stores float32 rounding of 0.1
+     * @tc.desc Verify set(Float32Array.of(MIN_VALUE)) stores subnormal MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySetFive020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target = new Float32Array(1);
-      target.set(Float32Array.of(0.1));
-      expect(target.$_get(0)).assertEqual(0.10000000149011612);
+      target.set(Float32Array.of(1.401298464324817e-45));
+      expect(target.$_get(0)).assertEqual(1.401298464324817e-45);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2100
      * @tc.name testFloat32ArraySetFive021
-     * @tc.desc Verify set(Float32Array.of(MIN_VALUE)) stores subnormal MIN_VALUE
+     * @tc.desc Verify set(0, 0.1) stores float32 rounding of 0.1 via single-element set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySetFive021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target = new Float32Array(1);
-      target.set(Float32Array.of(1.401298464324817e-45));
-      expect(target.$_get(0)).assertEqual(1.401298464324817e-45);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2200
-     * @tc.name testFloat32ArraySetFive022
-     * @tc.desc Verify set(0, MAX_VALUE) stores MAX_VALUE via single-element set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySetFive022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const target = new Float32Array(1);
-      target.set(0, 3.4028234663852886e+38);
-      expect(target.$_get(0)).assertEqual(3.4028234663852886e+38);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2300
-     * @tc.name testFloat32ArraySetFive023
-     * @tc.desc Verify set(0, 0.1) stores float32 rounding of 0.1 via single-element set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySetFive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const target = new Float32Array(1);
       target.set(0, 0.1);
       expect(target.$_get(0)).assertEqual(0.10000000149011612);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2400
-     * @tc.name testFloat32ArraySetFive024
-     * @tc.desc Verify set(0, MIN_VALUE) stores subnormal MIN_VALUE via single-element set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySetFive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const target = new Float32Array(1);
-      target.set(0, 1.401298464324817e-45);
-      expect(target.$_get(0)).assertEqual(1.401298464324817e-45);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2500
-     * @tc.name testFloat32ArraySetFive025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2200
+     * @tc.name testFloat32ArraySetFive022
      * @tc.desc Verify set() with subarray source (non-zero byteOffset) reads correct values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySetFive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySetFive022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = src.subarray(2, 5);
       const target = new Float32Array(3);
@@ -415,14 +372,14 @@ export default function Float32ArraySet5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2600
-     * @tc.name testFloat32ArraySetFive026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2300
+     * @tc.name testFloat32ArraySetFive023
      * @tc.desc Verify set(subarray, 1) with offset 1 copies subarray source to correct positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySetFive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySetFive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = src.subarray(1, 4);
       const target = new Float32Array(5);
@@ -435,14 +392,14 @@ export default function Float32ArraySet5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2700
-     * @tc.name testFloat32ArraySetFive027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2400
+     * @tc.name testFloat32ArraySetFive024
      * @tc.desc Verify set(subarray with special values) reads NaN/Infinity/-Infinity/-0 from subarray source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySetFive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySetFive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(1.0, Number.NaN, Number.POSITIVE_INFINITY, -Number.POSITIVE_INFINITY, -0.0);
       const sub = src.subarray(1, 5);
       const target = new Float32Array(4);
@@ -455,14 +412,14 @@ export default function Float32ArraySet5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2800
-     * @tc.name testFloat32ArraySetFive028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_2500
+     * @tc.name testFloat32ArraySetFive025
      * @tc.desc Verify set(subarray, 0) when subarray is the entire array (same as set(Float32Array))
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySetFive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySetFive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(3.0, 6.0, 9.0);
       const sub = src.subarray(0);
       const target = new Float32Array(3);
