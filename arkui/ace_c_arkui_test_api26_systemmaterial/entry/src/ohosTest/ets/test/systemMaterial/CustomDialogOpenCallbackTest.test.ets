@@ -32,7 +32,7 @@ export default function customDialogOpenCallbackTest() {
     /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_3500
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_3500
-     * @tc.desc   Verify dialog open callback error enum values 103306 and 103308
+     * @tc.desc   Verify dialog open callback error enum named constants
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -45,7 +45,7 @@ export default function customDialogOpenCallbackTest() {
     /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_3600
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_3600
-     * @tc.desc   OpenDialogWithCallback null options invokes callback with 401 and dialogId -1
+     * @tc.desc   OpenDialogWithCallback null options invokes callback with INVALID_PARAM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

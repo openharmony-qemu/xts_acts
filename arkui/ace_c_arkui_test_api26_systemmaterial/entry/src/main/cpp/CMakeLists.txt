@@ -5,8 +5,8 @@ project(SystemMaterialCapiXts)
 set(NATIVE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DOHOS_PLATFORM)
 
-# OpenDialogWithCallback / 103306/103308: declare via CustomDialogApi26Compat.h.
-# Do NOT prepend static SDK usr/include — it breaks normal libc++ (nullptr_t).
+# OpenDialogWithCallback error codes: declare via CustomDialogApi26Compat.h.
+# Do NOT prepend static SDK usr/include — it breaks C++ standard headers (nullptr_t).
 
 include_directories(
     ${NATIVE_ROOT}

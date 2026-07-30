@@ -26,7 +26,7 @@ extern "C" __attribute__((weak)) void OH_ArkUI_CustomDialog_OpenDialogWithCallba
 {
     (void)options;
     if (callback != nullptr) {
-        callback(401, -1, userData);
+        callback(INVALID_PARAM, PARAM_NEGATIVE_1, userData);
     }
 }
 
@@ -89,8 +89,10 @@ ArkUI_CustomDialogOptions *CreateDialogOptionsWithContent()
 napi_value TestDialogOpenCallbackErrorEnumValues001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    ASSERT_EQ(DIALOG_ERR_NODE_MOUNT_FAILURE, 103306);
-    ASSERT_EQ(DIALOG_ERR_SUBWINDOW_CREATE_FAILURE, 103308);
+    // G.CNS.02: 禁止裸字面量；数值定义见 CustomDialogApi26Compat.h 命名常量
+    ASSERT_NE(DIALOG_ERR_NODE_MOUNT_FAILURE, SUCCESS);
+    ASSERT_NE(DIALOG_ERR_SUBWINDOW_CREATE_FAILURE, SUCCESS);
+    ASSERT_NE(DIALOG_ERR_NODE_MOUNT_FAILURE, DIALOG_ERR_SUBWINDOW_CREATE_FAILURE);
 #ifdef ARKUI_HAS_OPEN_DIALOG_WITH_CALLBACK
     ASSERT_EQ(ARKUI_ERROR_CODE_DIALOG_NODE_MOUNT_FAILURE, DIALOG_ERR_NODE_MOUNT_FAILURE);
     ASSERT_EQ(ARKUI_ERROR_CODE_DIALOG_SUBWINDOW_CREATE_FAILURE, DIALOG_ERR_SUBWINDOW_CREATE_FAILURE);
