@@ -52,9 +52,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -82,9 +82,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -112,9 +112,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -142,9 +142,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -187,9 +187,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -218,9 +218,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -249,9 +249,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -280,9 +280,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -311,9 +311,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -342,9 +342,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -373,9 +373,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -404,9 +404,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -451,9 +451,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -530,9 +530,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
     })
@@ -566,9 +566,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
       }, eaw);
       handler.sendMessage(new concurrency.Message(1, "test", handler));
       let waitCount: int = 0;
-      while (executed.load() < 1 && waitCount < 500) {
+      while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       let result: boolean = handler.removeMessages(1, "test");
@@ -602,9 +602,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(2);
     })
@@ -669,9 +669,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!noObj1) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 500) {
+      while (verified.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(4);
     })
@@ -716,9 +716,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -749,9 +749,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
     })
@@ -792,9 +792,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (result) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -824,9 +824,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         handler.sendMessage(new concurrency.Message(2, "nested", handler));
       });
       let waitCount: int = 0;
-      while (nestedDone.load() < 1 && waitCount < 500) {
+      while (nestedDone.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(nestedDone.load() >= 1).assertTrue();
     })
@@ -864,9 +864,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (r2) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 2 && waitCount < 500) {
+      while (removed.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(2);
       if (eaw1.isAlive()) { eaw1.quit(); }
@@ -902,9 +902,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!hasNone) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 500) {
+      while (verified.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(4);
     })
@@ -933,9 +933,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!hasResult2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 3 && waitCount < 500) {
+      while (verified.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
     })
@@ -965,9 +965,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         handler.sendMessage(new concurrency.Message(2, "obj2", handler));
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load() >= 1).assertTrue();
     })
@@ -993,9 +993,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (result) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -1026,9 +1026,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (r3) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 3 && waitCount < 500) {
+      while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(3);
     })
@@ -1060,9 +1060,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         handler.sendMessage(new concurrency.Message(2, "obj2", handler));
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load() >= 2).assertTrue();
     })
@@ -1100,9 +1100,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (r2) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 2 && waitCount < 500) {
+      while (removed.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(2);
       if (eaw1.isAlive()) { eaw1.quit(); }
@@ -1133,9 +1133,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!hasAfter) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 3 && waitCount < 500) {
+      while (verified.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
     })
@@ -1164,9 +1164,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!hasResult) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
     })
@@ -1196,9 +1196,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!noObj1) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 3 && waitCount < 500) {
+      while (verified.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
     })
@@ -1226,9 +1226,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (hasObj2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
     })
@@ -1256,9 +1256,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (hasWhat2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
     })
@@ -1292,9 +1292,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (hasOther) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 3 && waitCount < 500) {
+      while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(3);
       if (localEaw.isAlive()) { localEaw.quit(); }
@@ -1337,9 +1337,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!has2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 500) {
+      while (verified.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(4);
       if (eaw1.isAlive()) { eaw1.quit(); }
@@ -1376,9 +1376,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (has3) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 500) {
+      while (verified.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(4);
       if (localEaw.isAlive()) { localEaw.quit(); }
@@ -1406,9 +1406,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         executed.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (executed.load() < 1 && waitCount < 500) {
+      while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       if (localEaw.isAlive()) { localEaw.quit(); }
@@ -1440,9 +1440,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         }
       });
       let waitCount: int = 0;
-      while (verified.load() < 10 && waitCount < 500) {
+      while (verified.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(10);
       if (localEaw.isAlive()) { localEaw.quit(); }
@@ -1475,9 +1475,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(1);
     })
@@ -1507,16 +1507,16 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       localEaw.quit();
       let quitWait = 0;
       while (localEaw.isAlive() && quitWait < 500) {
         quitWait++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       let result2: boolean = handler.removeMessages(1, "test");
       expect(result2).assertFalse();
@@ -1549,9 +1549,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         if (!noNum) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 3 && waitCount < 500) {
+      while (verified.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
     })
@@ -1581,9 +1581,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })
@@ -1614,9 +1614,9 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
     })

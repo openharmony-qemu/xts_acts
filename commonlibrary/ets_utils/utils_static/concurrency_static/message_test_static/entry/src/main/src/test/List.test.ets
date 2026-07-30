@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import MessageTest2 from './Message2.test';
+import MessageOtherTest from './message/MessageOtherTest.test';
 import MessageConstructorCallbackTest from './message/MessageConstructorCallbackTest.test';
 import MessageConstructorHandlerTest from './message/MessageConstructorHandlerTest.test';
 import MessageConstructorWhatObjTest from './message/MessageConstructorWhatObjTest.test';
@@ -38,7 +38,7 @@ import MessageHandlerSendEmptyMessageTest from './messageHandler/MessageHandlerS
 import MessageHandlerSendMessageTest from './messageHandler/MessageHandlerSendMessageTest.test';
 
 export default function testsuite(): void {
-  MessageTest2();
+  MessageOtherTest();
   MessageConstructorCallbackTest();
   MessageConstructorHandlerTest();
   MessageConstructorWhatObjTest();

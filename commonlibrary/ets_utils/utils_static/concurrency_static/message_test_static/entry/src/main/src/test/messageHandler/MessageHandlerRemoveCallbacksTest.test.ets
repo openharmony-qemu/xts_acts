@@ -51,9 +51,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -85,9 +85,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -120,9 +120,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (!result2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -174,9 +174,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -208,9 +208,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       expect(counter.load()).assertEqual(0);
@@ -290,9 +290,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -343,9 +343,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -398,9 +398,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -431,7 +431,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let waitCount: int = 0;
       while (removed.load() < 1 && waitCount < 600) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -458,7 +458,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       let result: boolean = handler.removeCallbacks(callback);
@@ -492,9 +492,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -532,9 +532,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result3) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 3 && waitCount < 500) {
+      while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -567,9 +567,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (!result2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -602,9 +602,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -674,9 +674,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -711,9 +711,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (!result2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -748,9 +748,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -784,9 +784,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -819,9 +819,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removeCount.load() >= 1).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
@@ -856,9 +856,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         }
       });
       let waitCount: int = 0;
-      while (removeCount.load() < 10 && waitCount < 500) {
+      while (removeCount.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removeCount.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -888,9 +888,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result) { removed.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -921,9 +921,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -953,9 +953,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result) { removed.store(1); }
       });
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 500) {
+      while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load() >= 1).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1006,9 +1006,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1042,9 +1042,9 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (!result2) { verified.fetchAdd(1); }
       });
       let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 500) {
+      while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }

@@ -751,9 +751,9 @@ export default function MessageGetObjectTest(): void {
       let msg = new concurrency.Message(1, "worker data", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (receivedCounter.load() < 1 && waitCount < 500) {
+      while (receivedCounter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(receivedCounter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -802,9 +802,9 @@ export default function MessageGetObjectTest(): void {
       let msg = new concurrency.Message(1, "test object", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (callbackCounter.load() < 1 && waitCount < 500) {
+      while (callbackCounter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(callbackCounter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }

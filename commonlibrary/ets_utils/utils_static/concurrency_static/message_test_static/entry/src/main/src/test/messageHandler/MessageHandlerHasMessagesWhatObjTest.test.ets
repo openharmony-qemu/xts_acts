@@ -1161,9 +1161,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       handler.post(removeAndSendCallback);
       handler.post(verifyCallback);
       let waitCount: int = 0;
-      while (verified.load() < 1 && waitCount < 500) {
+      while (verified.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
@@ -1204,9 +1204,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       let callbackMsg = new concurrency.Message(testCallback, handler);
       handler.sendMessage(callbackMsg);
       let waitCount: int = 0;
-      while (verified.load() < 1 && waitCount < 500) {
+      while (verified.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
@@ -1304,9 +1304,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       eaw.start();
       handler.sendEmptyMessage(100);
       let waitCount: int = 0;
-      while (msgSent.load() < 1 && waitCount < 500) {
+      while (msgSent.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(handler.hasMessages(1, "async_obj")).assertTrue();
       if (eaw.isAlive()) {
@@ -1364,7 +1364,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasMessagesWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // Enqueue 1/2/3/4 atomically via post so nested hasMessages sees pending siblings
       let eaw = new EAWorker();
+      eaw.start();
       let checkResult = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -1381,15 +1383,16 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           done.fetchAdd(1);
         }
       }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-      handler.sendMessage(new concurrency.Message(2, "obj2", handler));
-      handler.sendMessage(new concurrency.Message(3, "obj3", handler));
-      handler.sendMessage(new concurrency.Message(4, "obj4", handler));
+      handler.post((): void => {
+        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
+        handler.sendMessage(new concurrency.Message(2, "obj2", handler));
+        handler.sendMessage(new concurrency.Message(3, "obj3", handler));
+        handler.sendMessage(new concurrency.Message(4, "obj4", handler));
+      });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(checkResult.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
@@ -1418,9 +1421,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       eaw.start();
       handler.sendMessage(new concurrency.Message(1, "self", handler));
       let waitCount: int = 0;
-      while (selfCheckDone.load() < 1 && waitCount < 500) {
+      while (selfCheckDone.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(selfCheckResult).assertTrue();
       if (eaw.isAlive()) {
@@ -1502,14 +1505,14 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         mainResults.push(handler.hasMessages(1, "target"));
       }
       let waitCount: int = 0;
-      while (workerDone.load() < 5 && waitCount < 500) {
+      while (workerDone.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       for (let i: int = 0; i < mainResults.length; i++) {
         expect(mainResults[i]).assertTrue();
       }
-      expect(workerTrueCount.load() >= 0).assertTrue();
+      expect(workerDone.load()).assertEqual(5);
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -1543,9 +1546,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
       }
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(sendCount.load()).assertEqual(6);
       if (eaw.isAlive()) {
@@ -1583,9 +1586,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       handler1.sendMessage(new concurrency.Message(100, "trigger", handler1));
       handler2.sendMessage(new concurrency.Message(100, "trigger", handler2));
       let waitCount: int = 0;
-      while ((done1.load() < 1 || done2.load() < 1) && waitCount < 500) {
+      while ((done1.load() < 1 || done2.load() < 1) && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(handler1.hasMessages(1, "handler1")).assertTrue();
       expect(handler2.hasMessages(1, "handler2")).assertTrue();
@@ -1653,9 +1656,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       handler.sendMessage(new concurrency.Message(2, "priority", handler));
       msg2Sent.store(1);
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(actionTaken).assertEqual("handle_priority_first");
       expect(handler.hasMessages(2, "priority")).assertFalse();
@@ -1696,9 +1699,9 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       handler.sendMessage(new concurrency.Message(1, "high", handler));
       handler.sendMessage(new concurrency.Message(2, "medium", handler));
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(processedOrder.length >= 1).assertTrue();
       if (eaw.isAlive()) {

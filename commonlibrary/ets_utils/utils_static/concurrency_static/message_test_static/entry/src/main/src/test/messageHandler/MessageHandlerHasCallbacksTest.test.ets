@@ -209,7 +209,7 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         console.info("message type: ", msg.getWhat());
       }, eaw);
-      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(10); };
+      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(100); };
       let result: boolean = handler.hasCallbacks(asyncCallback as () => void);
       expect(result).assertFalse();
       if (eaw.isAlive()) {
@@ -319,22 +319,13 @@ export default function MessageHandlerHasCallbacksTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageHandlerHasCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      // Enqueue before start so removeCallbacks observes the pending callback message
       let eaw = new EAWorker();
-      eaw.start();
-      // Blocker keeps worker busy so callback message stays NOT_EXECUTED for removeCallbacks
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        for (let t = Date.now(); Date.now() - t < 300;) {}
-      }, eaw);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let callback = (): void => { console.info("callback") };
       handler.sendEmptyMessage(0);
       handler.sendMessage(new concurrency.Message(callback, handler));
       expect(handler.removeCallbacks(callback)).assertTrue();
-      // hasCallbacks may still match CANCELLED until worker drains the cancelled entry
-      let waitCount: int = 0;
-      while (handler.hasCallbacks(callback) && waitCount < 500) {
-        waitCount++;
-        await Utils.msSleep(10);
-      }
       expect(handler.hasCallbacks(callback)).assertFalse();
       if (eaw.isAlive()) {
         eaw.quit();
@@ -557,20 +548,13 @@ export default function MessageHandlerHasCallbacksTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // Enqueue before start so removeCallbacks observes the pending callback
       let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        for (let t = Date.now(); Date.now() - t < 300;) {}
-      }, eaw);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let targetCallback = (): void => { console.info("callback"); };
       handler.sendEmptyMessage(0);
       handler.post(targetCallback);
       expect(handler.removeCallbacks(targetCallback)).assertTrue();
-      let waitCount: int = 0;
-      while (handler.hasCallbacks(targetCallback) && waitCount < 500) {
-        waitCount++;
-        await Utils.msSleep(10);
-      }
       expect(handler.hasCallbacks(targetCallback)).assertFalse();
       if (eaw.isAlive()) {
         eaw.quit();
@@ -642,15 +626,15 @@ export default function MessageHandlerHasCallbacksTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       // hasCallbacks may briefly still see CANCELLED after remove
       waitCount = 0;
-      while (handler.hasCallbacks(callback1) && waitCount < 500) {
+      while (handler.hasCallbacks(callback1) && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removedOk.load()).assertEqual(1);
       expect(handler.hasCallbacks(callback1)).assertFalse();
@@ -744,9 +728,9 @@ export default function MessageHandlerHasCallbacksTest(): void {
       };
       handler.post(outerCallback);
       let waitCount: int = 0;
-      while (found.load() < 1 && waitCount < 500) {
+      while (found.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(found.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -782,9 +766,9 @@ export default function MessageHandlerHasCallbacksTest(): void {
       handler.post(queryCallback);
       handler.post(targetCallback);
       let waitCount: int = 0;
-      while (found.load() < 1 && waitCount < 500) {
+      while (found.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(found.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -821,9 +805,9 @@ export default function MessageHandlerHasCallbacksTest(): void {
         });
       }
       let waitCount: int = 0;
-      while (tasksDone.load() < 10 && waitCount < 500) {
+      while (tasksDone.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(tasksDone.load()).assertEqual(10);
       if (eaw.isAlive()) {
@@ -860,9 +844,9 @@ export default function MessageHandlerHasCallbacksTest(): void {
       handler.sendMessage(msg);
       handler.post(queryCallback);
       let waitCount: int = 0;
-      while (queryDone.load() < 1 && waitCount < 500) {
+      while (queryDone.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(queryDone.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -901,9 +885,9 @@ export default function MessageHandlerHasCallbacksTest(): void {
         });
       }
       let waitCount: int = 0;
-      while (tasksDone.load() < 5 && waitCount < 500) {
+      while (tasksDone.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(tasksDone.load()).assertEqual(5);
       if (eaw.isAlive()) {

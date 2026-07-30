@@ -25,8 +25,8 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium/index";
-import Utils from './Util.test';
+} from '../../../../hypium';
+import Utils from '../Util.test';
 
 class MessageObject {
   id: number
@@ -36,9 +36,6 @@ class MessageObject {
   }
 }
 
-function TSleep(delay:int):void {
-  for(let t = Date.now(); Date.now() - t <= delay;);
-}
 
 export function Sleep(ms: int): Promise<number> {
   return new Promise<number>((resolve) => {
@@ -50,8 +47,8 @@ export function Sleep(ms: int): Promise<number> {
 
 type CB = () => void;
 
-export default function MessageTest2(): void {
-  describe('MessageTest2', (): void => {
+export default function MessageOtherTest(): void {
+  describe('MessageOtherTest', (): void => {
     afterEach((): void => {
     })
 
@@ -59,9 +56,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0158
      * @tc.name GetWhatTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('GetWhatTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -81,9 +78,12 @@ export default function MessageTest2(): void {
           let message: concurrency.Message = new concurrency.Message(callback, handler);
           handler.sendMessage(message);
           expect(message.getWhat()).assertEqual(-1000000);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -103,9 +103,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0159
      * @tc.name GetWhatTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('GetWhatTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -149,9 +149,12 @@ export default function MessageTest2(): void {
           let messageMin: concurrency.Message = new concurrency.Message(Int.MIN_VALUE, handler);
           handler.sendMessage(messageMin);
           expect(messageMin.getWhat()).assertEqual(Int.MIN_VALUE);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -170,9 +173,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0160
      * @tc.name GetWhatTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetWhatTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -216,9 +219,12 @@ export default function MessageTest2(): void {
           let messageMin: concurrency.Message = new concurrency.Message(Int.MIN_VALUE, 'obj', handler);
           handler.sendMessage(messageMin);
           expect(messageMin.getWhat()).assertEqual(Int.MIN_VALUE);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -237,9 +243,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0161
      * @tc.name GetCallbackTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetCallbackTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -259,9 +265,12 @@ export default function MessageTest2(): void {
           let callback: CB | undefined = message.getCallback();
           handler.sendMessage(message);
           expect(callback === undefined).assertTrue();
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -280,9 +289,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0162
      * @tc.name GetCallbackTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetCallbackTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -302,9 +311,12 @@ export default function MessageTest2(): void {
           let callback: CB | undefined = message.getCallback();
           handler.sendMessage(message);
           expect(callback === undefined).assertTrue();
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -323,9 +335,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0163
      * @tc.name GetCallbackTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetCallbackTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -345,9 +357,12 @@ export default function MessageTest2(): void {
           let callback: CB | undefined = message.getCallback();
           handler.sendMessage(message);
           expect(callback === undefined).assertTrue();
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -366,9 +381,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0164
      * @tc.name GetCallbackTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('GetCallbackTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -391,9 +406,12 @@ export default function MessageTest2(): void {
           let callback1: CB | undefined = message.getCallback();
           handler.sendMessage(message);
           expect(callback1).assertEqual(callback);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -413,9 +431,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0165
      * @tc.name GetTargetTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('GetTargetTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -435,9 +453,12 @@ export default function MessageTest2(): void {
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
           expect(handler1).assertEqual(handler);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -456,9 +477,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0166
      * @tc.name GetTargetTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -478,9 +499,12 @@ export default function MessageTest2(): void {
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
           expect(handler1).assertEqual(handler);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -499,9 +523,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0167
      * @tc.name GetTargetTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -521,9 +545,12 @@ export default function MessageTest2(): void {
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
           expect(handler1).assertEqual(handler);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -542,9 +569,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0168
      * @tc.name GetTargetTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -565,9 +592,12 @@ export default function MessageTest2(): void {
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
           expect(handler1).assertEqual(handler);
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -586,9 +616,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0169
      * @tc.name MessageScenarioTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('MessageScenarioTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -622,7 +652,7 @@ export default function MessageTest2(): void {
             let waitCount: int = 0;
             while (received.load() < before + 1 && waitCount < 5000) {
               waitCount++;
-              await Utils.msSleep(10);
+              await Utils.msSleep(100);
             }
             expect(received.load()).assertEqual(before + 1);
             expect(lastWhat.load()).assertEqual(expectWhat);
@@ -646,9 +676,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0170
      * @tc.name MessageScenarioTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('MessageScenarioTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -674,12 +704,12 @@ export default function MessageTest2(): void {
             handlers[i].sendMessage(messages[i]);
             i++;
           }
-          while (true) {
-            await Sleep(10);
-            if (result.length == 5) {
-              break;
-            }
+          let waitCount: int = 0;
+          while (result.length < 5 && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(result.length).assertEqual(5);
           if (result.length == messages.length) {
             result.forEach((msg, index) => {
               expect(msg.equals(messages[index.toInt()])).assertTrue();
@@ -687,9 +717,12 @@ export default function MessageTest2(): void {
           } else {
             expect().assertFail();
           }
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -708,9 +741,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0171
      * @tc.name MessageScenarioTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL2
      */
     it('MessageScenarioTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -749,17 +782,19 @@ export default function MessageTest2(): void {
             handlerNum = 0;
             workNum++;
           }
-          while (true) {
-            await Sleep(10);
+          let waitCount: int = 0;
+          while (result.length < 30 && waitCount < 100) {
+            waitCount++;
+            await Utils.msSleep(100);
             console.info(`result.length ${result.length}`);
-            if (result.length == 30) {
-              break;
-            }
           }
-          expect(result.length == 30).assertTrue();
-          while (!flag) {
+          expect(result.length).assertEqual(30);
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -780,9 +815,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0172
      * @tc.name MessageScenarioTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL2
      */
     it('MessageScenarioTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -794,34 +829,24 @@ export default function MessageTest2(): void {
           eaw.start();
           let result: concurrency.Message[] = [];
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            TSleep(1000);
             result.push(msg);
             console.info(`push msg`);
             flag = true;
           }, eaw);
 
-          setTimeout(() => {
-            console.info(`quit!`);
-            eaw.quit();
-          }, 2000);
+          // Deterministic: deliver exactly two messages and wait for both callbacks
+          handler.sendMessage(new concurrency.Message(handler));
+          handler.sendMessage(new concurrency.Message(handler));
 
-          let message = new concurrency.Message(handler);
-          let i: int = 5;
-          while (i > 0) {
-            handler.sendMessage(message);
-            i--;
-          }
-
-          while (true) {
-            await Sleep(200);
-            console.info(`sleep 200 ${result.length}  ${eaw.isAlive()}`);
-            if (result.length == 2 && !eaw.isAlive()) {
-              break;
-            }
-          }
-          expect(result.length == 2).assertTrue();
-          while (!flag) {
+          let waitCount: int = 0;
+          while (result.length < 2 && waitCount < 50) {
+            waitCount++;
             await Utils.msSleep(100);
+          }
+          expect(result.length).assertEqual(2);
+          expect(flag).assertTrue();
+          if (eaw.isAlive()) {
+            eaw.quit();
           }
         } catch (error) {
           console.error(`error.message => ${error.message}`);
@@ -836,9 +861,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0173
      * @tc.name MessageScenarioTest005
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageScenarioTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -859,9 +884,12 @@ export default function MessageTest2(): void {
           let messageObj = new concurrency.Message(1, "messageObj", handler);
           let message1 = new concurrency.Message(1, handler);
           handler.sendMessage(messageObj);
-          while (!firstStarted) {
-            await Utils.msSleep(10);
+          let waitCountStart: int = 0;
+          while (!firstStarted && waitCountStart < 50) {
+            waitCountStart++;
+            await Utils.msSleep(100);
           }
+          expect(firstStarted).assertTrue();
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
@@ -871,9 +899,12 @@ export default function MessageTest2(): void {
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
@@ -892,9 +923,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0174
      * @tc.name GetWorkerTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('GetWorkerTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -924,9 +955,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0175
      * @tc.name GetWorkerTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('GetWorkerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -959,9 +990,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0176
      * @tc.name SendEmptyMessageTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendEmptyMessageTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1006,9 +1037,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0177
      * @tc.name SendEmptyMessageTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('SendEmptyMessageTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1055,9 +1086,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0178
      * @tc.name SendMessageTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('SendMessageTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -1101,9 +1132,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0179
      * @tc.name SendMessageTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1141,9 +1172,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0180
      * @tc.name SendMessageTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1189,9 +1220,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0181
      * @tc.name SendMessageTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1235,9 +1266,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0182
      * @tc.name SendMessageTest005
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1282,9 +1313,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0183
      * @tc.name SendMessageTest006
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1328,9 +1359,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0184
      * @tc.name SendMessageTest007
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1349,9 +1380,12 @@ export default function MessageTest2(): void {
             expect(h.sendMessage(msg)).assertTrue();
             expect(msg.getWhat()).assertEqual(val);
           }
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
@@ -1370,9 +1404,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0185
      * @tc.name SendMessageTest008
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1418,9 +1452,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0186
      * @tc.name SendMessageTest009
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1441,9 +1475,12 @@ export default function MessageTest2(): void {
             expect(h.sendMessage(msg)).assertTrue();
             expect(msg.getWhat()).assertEqual(val);
           }
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
@@ -1462,9 +1499,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0187
      * @tc.name SendMessageTest010
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('SendMessageTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void) => {
@@ -1491,9 +1528,12 @@ export default function MessageTest2(): void {
             expect(h.sendMessage(msg)).assertTrue();
             expect(msg.getObject() as Object).assertEqual(obj);
           }
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
@@ -1514,9 +1554,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0188
      * @tc.name SendMessageTest011
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('SendMessageTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -1561,9 +1601,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0189
      * @tc.name MessageHandler001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1583,9 +1623,12 @@ export default function MessageTest2(): void {
           message1.sendToTarget();
           expect(message1.getWhat()).assertEqual(1)
           expect(message1.getObject() as int).assertEqual(1)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
@@ -1603,9 +1646,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0190
      * @tc.name MessageHandler002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1635,9 +1678,12 @@ export default function MessageTest2(): void {
           expect(msg4.getWhat()).assertEqual(-65535);
           expect(msg5.getWhat()).assertEqual(Int.MAX_VALUE);
           expect(msg6.getWhat()).assertEqual(Int.MIN_VALUE);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1655,9 +1701,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0191
      * @tc.name MessageHandler003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1677,9 +1723,12 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(1, 1 as int, handler);
           handler.sendMessage(msg);
           expect(msg.getObject() as int).assertEqual(1);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1697,9 +1746,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0192
      * @tc.name MessageHandler004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1719,9 +1768,12 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg);
           expect(msg.getObject() as int).assertEqual(1);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1739,9 +1791,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0193
      * @tc.name MessageHandler005
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1758,9 +1810,9 @@ export default function MessageTest2(): void {
           // short object must be asserted as short (not int)
           expect(msg.getObject() as short).assertEqual(1 as short);
           let waitCount: int = 0;
-          while (received.load() < 1 && waitCount < 500) {
+          while (received.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(10);
+            await Utils.msSleep(100);
           }
           expect(received.load()).assertEqual(1);
         } catch (error) {
@@ -1780,9 +1832,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0194
      * @tc.name MessageHandler006
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1802,9 +1854,12 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(1, true, handler);
           handler.sendMessage(msg);
           expect(msg.getObject() as Boolean).assertEqual(true);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1822,9 +1877,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0195
      * @tc.name MessageHandler007
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1844,9 +1899,12 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(1, '1', handler);
           handler.sendMessage(msg);
           expect(msg.getObject() as string).assertEqual('1');
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1864,9 +1922,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0196
      * @tc.name MessageHandler008
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1887,9 +1945,12 @@ export default function MessageTest2(): void {
           handler.sendMessage(msg);
           const msgObj = msg.getObject()! as Object;
           expect(msgObj.toString()).assertEqual('1,2');
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1907,9 +1968,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0197
      * @tc.name MessageHandler009
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1929,9 +1990,12 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(1, obj, handler);
           handler.sendMessage(msg);
           expect((msg.getObject() as MessageObject)!.id).assertEqual(10);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1949,9 +2013,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0198
      * @tc.name MessageHandler010
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('MessageHandler010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1970,9 +2034,12 @@ export default function MessageTest2(): void {
           let msg1 = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg1);
           expect(msg1.getCallback()).assertEqual(undefined);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1990,9 +2057,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0199
      * @tc.name PostTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2012,15 +2079,19 @@ export default function MessageTest2(): void {
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
-            let handlerValue = handler.post(() => {
+            let handlerValue = handler.post((): void => {
+              console.info("posted callback");
             })
             time++;
             expect(handlerValue).assertTrue();
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2038,9 +2109,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0200
      * @tc.name PostTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2050,7 +2121,8 @@ export default function MessageTest2(): void {
         let handler: concurrency.MessageHandler;
         let time: number = 0
         worker.start();
-        let p = () => {
+        let p = (): void => {
+          console.info("posted callback");
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
@@ -2067,9 +2139,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue();
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2087,9 +2162,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0201
      * @tc.name PostTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2110,17 +2185,18 @@ export default function MessageTest2(): void {
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             let handlerValue = handler.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
+              console.info("posted callback");
             })
             time++;
             expect(handlerValue).assertTrue();
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2138,9 +2214,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0202
      * @tc.name PostTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL2
      */
     it("PostTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -2153,9 +2229,7 @@ export default function MessageTest2(): void {
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
             handlerValue = handler!.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
+              console.info("posted callback");
             })
             resolve(1);
           });
@@ -2176,9 +2250,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue();
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2196,9 +2273,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0203
      * @tc.name PostTest005
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL2
      */
     it("PostTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -2217,9 +2294,7 @@ export default function MessageTest2(): void {
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
             handlerValue = handler.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
+              console.info("posted callback");
             })
             resolve(1);
           });
@@ -2234,9 +2309,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue()
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2254,9 +2332,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0204
      * @tc.name PostTest006
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2266,9 +2344,7 @@ export default function MessageTest2(): void {
         let handlerValue: boolean = false;
         let time: number = 0;
         let p = () => {
-          const end = Date.now() + 1000;
-          while (Date.now() < end) {
-          }
+          console.info("posted callback");
         }
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           (async () => {
@@ -2292,9 +2368,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue()
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2312,9 +2391,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0205
      * @tc.name PostTest007
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2332,17 +2411,13 @@ export default function MessageTest2(): void {
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
             handlerValue = handler.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
+              console.info("posted callback");
             })
             resolve(1);
           });
         };
         let p = () => {
-          const end = Date.now() + 1000;
-          while (Date.now() < end) {
-          }
+          console.info("posted callback");
         }
         worker.start();
         try {
@@ -2354,9 +2429,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue()
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2374,9 +2452,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0206
      * @tc.name PostTest008
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it("PostTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2394,17 +2472,13 @@ export default function MessageTest2(): void {
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
             handlerValue = handler.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
+              console.info("posted callback");
             })
             resolve(1);
           });
         };
         let p = () => {
-          const end = Date.now() + 1000;
-          while (Date.now() < end) {
-          }
+          console.info("posted callback");
         }
         worker.start();
         try {
@@ -2416,9 +2490,12 @@ export default function MessageTest2(): void {
             expect(handlerValue).assertTrue()
           }
           expect(time).assertEqual(10)
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2436,9 +2513,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0207
      * @tc.name RemoveCallbacksTest001
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL2
      */
     it("RemoveCallbacksTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -2457,20 +2534,19 @@ export default function MessageTest2(): void {
         }
         worker.start();
         try {
-          let timeOut = () => {
-            const end = Date.now() + 1000;
-            while (Date.now() < end) {
-            }
-          }
-          let headMsg = new concurrency.Message(timeOut, handler)
+          let headMsg = new concurrency.Message((): void => {
+            (async (): Promise<void> => {
+              await Sleep(100);
+            })();
+          }, handler);
           handler.sendMessage(headMsg);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
-          while (!flag) {
-            await Utils.msSleep(100);
-          }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2488,9 +2564,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0208
      * @tc.name RemoveCallbacksTest002
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2512,9 +2588,12 @@ export default function MessageTest2(): void {
           handler.sendMessage(msg);
           expect(handler.removeCallbacks(p)).assertEqual(false);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-          while (!flag) {
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2532,9 +2611,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0209
      * @tc.name RemoveCallbacksTest003
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2545,19 +2624,24 @@ export default function MessageTest2(): void {
         let p = () => {
           let a = 1;
         }
-        worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            TSleep(1000);
-            flag = true;
+            (async (): Promise<void> => {
+              await Sleep(100);
+              flag = true;
+            })();
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           handler.post(p);
           expect(handler.removeCallbacks(p)).assertEqual(true);
-          while (!flag) {
+          worker.start();
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2575,9 +2659,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0210
      * @tc.name RemoveCallbacksTest004
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2613,9 +2697,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0211
      * @tc.name RemoveCallbacksTest005
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2626,20 +2710,25 @@ export default function MessageTest2(): void {
         let p = () => {
           let a = 1;
         }
-        worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            TSleep(1000);
-            flag = true;
+            (async (): Promise<void> => {
+              await Sleep(100);
+              flag = true;
+            })();
           }, worker);
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           handler.post(p);
           handler.post(p);
           expect(handler.removeCallbacks(p)).assertEqual(true);
-          while (!flag) {
+          worker.start();
+          let waitCountFlag: int = 0;
+          while (!flag && waitCountFlag < 50) {
+            waitCountFlag++;
             await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2657,9 +2746,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0212
      * @tc.name RemoveCallbacksTest006
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2680,9 +2769,7 @@ export default function MessageTest2(): void {
           handler.post(p);
           await Utils.msSleep(1300);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-          const end = Date.now() + 1000;
-          while (Date.now() < end) {
-          }
+          await Utils.msSleep(100);
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           handler.hasCallbacks(p);
@@ -2704,9 +2791,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0213
      * @tc.name RemoveCallbacksTest007
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2714,7 +2801,8 @@ export default function MessageTest2(): void {
         let worker = new EAWorker();
         let removed = new AtomicInt(0);
         let doneFlag = new AtomicInt(0);
-        let p = () => {
+        let p = (): void => {
+          console.info("posted callback");
         }
         worker.start();
         try {
@@ -2731,9 +2819,9 @@ export default function MessageTest2(): void {
             doneFlag.fetchAdd(1);
           });
           let waitCount: int = 0;
-          while (doneFlag.load() < 1 && waitCount < 500) {
+          while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(10);
+            await Utils.msSleep(100);
           }
           expect(removed.load()).assertEqual(1);
         } catch (error) {
@@ -2753,9 +2841,9 @@ export default function MessageTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0214
      * @tc.name RemoveCallbacksTest008
      * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
      */
     it('RemoveCallbacksTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

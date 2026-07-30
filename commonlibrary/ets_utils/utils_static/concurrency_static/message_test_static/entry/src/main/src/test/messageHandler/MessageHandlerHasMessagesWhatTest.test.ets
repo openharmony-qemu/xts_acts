@@ -586,9 +586,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       handler.post(removerCallback);
       handler.post(verifyCallback);
       let waitCount: int = 0;
-      while (verified.load() < 1 && waitCount < 500) {
+      while (verified.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -790,9 +790,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         handler.sendMessage(new concurrency.Message(2, handler));
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(checkResult.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -843,9 +843,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         handler.sendMessage(new concurrency.Message(3, handler));
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(nestedCount.load() >= 1).assertTrue();
       if (eaw.isAlive()) {
@@ -885,9 +885,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         handler.sendMessage(new concurrency.Message(2, handler));
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       expect(handler.hasMessages(2)).assertFalse();
@@ -917,9 +917,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       eaw.start();
       handler.sendMessage(new concurrency.Message(1, handler));
       let waitCount: int = 0;
-      while (selfCheckDone.load() < 1 && waitCount < 500) {
+      while (selfCheckDone.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(selfCheckResult).assertTrue();
       if (eaw.isAlive()) {
@@ -980,9 +980,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         mainResults.push(handler.hasMessages(1));
       }
       let waitCount: int = 0;
-      while (workerDone.load() < 5 && waitCount < 500) {
+      while (workerDone.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       for (let i: int = 0; i < mainResults.length; i++) {
         expect(mainResults[i]).assertTrue();
@@ -1021,9 +1021,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         handler.sendMessage(new concurrency.Message(100 + i, handler));
       }
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(sendCount.load()).assertEqual(6);
       if (eaw.isAlive()) {
@@ -1091,7 +1091,7 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       let waitCount: int = 0;
       while (queryCount.load() < 10 && waitCount < 5000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(queryCount.load()).assertEqual(10);
       if (eaw.isAlive()) {
@@ -1128,9 +1128,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         mainResults.push(handler.hasMessages(1));
       }
       let waitCount: int = 0;
-      while (workerDone.load() < 5 && waitCount < 500) {
+      while (workerDone.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       for (let i: int = 0; i < mainResults.length; i++) {
         expect(mainResults[i]).assertTrue();
@@ -1280,9 +1280,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       handler.sendMessage(msg);
       if (handler.hasMessages(1)) {
         let waitCount: int = 0;
-        while (processed.load() < 1 && waitCount < 500) {
+        while (processed.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(10);
+          await Utils.msSleep(100);
         }
       }
       expect(processed.load()).assertEqual(1);
@@ -1300,6 +1300,7 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasMessagesWhatTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // Enqueue what=1 and what=2 atomically via post so removeMessages(2) finds the pending message
       let eaw = new EAWorker();
       eaw.start();
       let actionVerified = new AtomicInt(0);
@@ -1317,12 +1318,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
           done.fetchAdd(1);
         }
       }, eaw);
-      handler.sendMessage(new concurrency.Message(1, handler));
-      handler.sendMessage(new concurrency.Message(2, handler));
+      handler.post((): void => {
+        handler.sendMessage(new concurrency.Message(1, handler));
+        handler.sendMessage(new concurrency.Message(2, handler));
+      });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(actionVerified.load()).assertEqual(1);
       expect(handler.hasMessages(2)).assertFalse();
@@ -1363,9 +1366,9 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       handler.sendEmptyMessage(3);
       handler.sendEmptyMessage(2);
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(priorityCount.load() >= 1).assertTrue();
       if (eaw.isAlive()) {

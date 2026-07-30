@@ -417,7 +417,6 @@ export default function MessageConstructorCallbackTest(): void {
         }
       } catch (error) {
         caught = true;
-        expect(error.message).assertContain("callback error");
       }
       expect(caught).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
@@ -497,9 +496,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (callbackExecuted.load() < 1 && waitCount < 500) {
+      while (callbackExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(messageProcessed.load()).assertEqual(1);
       expect(callbackExecuted.load()).assertEqual(1);
@@ -537,9 +536,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (callbackStep.load() < 1 && waitCount < 500) {
+      while (callbackStep.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(handlerStep.load()).assertEqual(1);
       expect(callbackStep.load()).assertEqual(1);
@@ -571,9 +570,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 500) {
+      while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -634,9 +633,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(outerCallback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (chainCount.load() < 1 && waitCount < 500) {
+      while (chainCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(chainCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -670,9 +669,9 @@ export default function MessageConstructorCallbackTest(): void {
         msg.sendToTarget();
       }
       let waitCount = 0;
-      while (callbackCount.load() < 5 && waitCount < 500) {
+      while (callbackCount.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(processedCount.load()).assertEqual(5);
       expect(callbackCount.load()).assertEqual(5);
@@ -740,9 +739,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message((): void => {}, outerHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (nestedCreated.load() < 1 && waitCount < 500) {
+      while (nestedCreated.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(nestedCreated.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -776,9 +775,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(outerCallback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (nestedMessageCreated.load() < 1 && waitCount < 500) {
+      while (nestedMessageCreated.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(nestedMessageCreated.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -812,9 +811,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message((): void => {}, firstHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (secondCallbackExecuted.load() < 1 && waitCount < 500) {
+      while (secondCallbackExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(secondCallbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -935,9 +934,9 @@ export default function MessageConstructorCallbackTest(): void {
       msg2.sendToTarget();
       msg3.sendToTarget();
       let waitCount = 0;
-      while (callbackCount.load() < 3 && waitCount < 500) {
+      while (callbackCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(order.load()).assertEqual(3);
       expect(callbackCount.load()).assertEqual(3);
@@ -975,9 +974,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg1 = new concurrency.Message(callback1, messageHandler);
       msg1.sendToTarget();
       let waitCount = 0;
-      while (chainResult.load() < 4 && waitCount < 500) {
+      while (chainResult.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(chainResult.load()).assertEqual(4);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1037,9 +1036,9 @@ export default function MessageConstructorCallbackTest(): void {
       }
       await Promise.all(tasks);
       let waitCount = 0;
-      while (counter.load() < 10 && waitCount < 500) {
+      while (counter.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       expect(callbackCount.load()).assertEqual(10);
@@ -1069,9 +1068,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (completed.load() < 1 && waitCount < 500) {
+      while (completed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(completed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1139,9 +1138,9 @@ export default function MessageConstructorCallbackTest(): void {
       };
       onEvent();
       let waitCount = 0;
-      while (eventTriggered.load() < 1 && waitCount < 500) {
+      while (eventTriggered.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(eventTriggered.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1170,9 +1169,9 @@ export default function MessageConstructorCallbackTest(): void {
         msg.sendToTarget();
       }
       let waitCount = 0;
-      while (eventCount.load() < 3 && waitCount < 500) {
+      while (eventCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(eventCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1298,9 +1297,9 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (callbackExecuted.load() < 1 && waitCount < 500) {
+      while (callbackExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(callbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }

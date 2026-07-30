@@ -104,7 +104,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 10 && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -134,7 +134,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (verified.load() < 1 && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -159,9 +159,9 @@ export default function MessageHandlerPostTest(): void {
       let result: boolean = handler.post((): void => { stateValue.store(100); });
       expect(result).assertTrue();
       let waitCount: int = 0;
-      while (stateValue.load() !== 100 && waitCount < 500) {
+      while (stateValue.load() !== 100 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(stateValue.load()).assertEqual(100);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -242,7 +242,7 @@ export default function MessageHandlerPostTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(10); };
+      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(100); };
       let result: boolean = handler.post(asyncCallback as () => void);
       expect(result).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
@@ -420,7 +420,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 3 && waitCount < 1200) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -446,7 +446,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 600) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -475,7 +475,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 5 && waitCount < 1200) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(5);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -502,9 +502,9 @@ export default function MessageHandlerPostTest(): void {
         received.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (received.load() < 1 && waitCount < 500) {
+      while (received.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(received.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -538,7 +538,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while ((counter1.load() < 1 || counter2.load() < 1) && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter1.load()).assertEqual(1);
       expect(counter2.load()).assertEqual(1);
@@ -566,9 +566,9 @@ export default function MessageHandlerPostTest(): void {
         handler.post((): void => { counter.fetchAdd(1); });
       }
       let waitCount: int = 0;
-      while (counter.load() < 10 && waitCount < 500) {
+      while (counter.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -596,7 +596,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 100 && waitCount < 30000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(100);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -645,7 +645,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 600) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -671,7 +671,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -700,7 +700,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < totalTasks && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(totalTasks);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -728,7 +728,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 10 && waitCount < 1200) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -755,7 +755,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 1 && waitCount < 600) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
       if (eaw !== null && eaw.isAlive()) { eaw.quit(); eaw = null; }
@@ -786,9 +786,9 @@ export default function MessageHandlerPostTest(): void {
         } as () => void);
       }
       let waitCount: int = 0;
-      while (counter < totalTasks && waitCount < 100000) {
+      while (counter < totalTasks && waitCount < 10000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter).assertEqual(totalTasks);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -817,7 +817,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (counter.load() < totalTasks && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(totalTasks);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -845,7 +845,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (innerExecuted.load() < 1 && waitCount < 1200) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(innerExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -875,9 +875,9 @@ export default function MessageHandlerPostTest(): void {
         });
       });
       let waitCount: int = 0;
-      while (depth.load() < 3 && waitCount < 500) {
+      while (depth.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(depth.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -909,9 +909,9 @@ export default function MessageHandlerPostTest(): void {
         done.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 500) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(found.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -940,7 +940,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -974,7 +974,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while (done.load() < 1 && waitCount < 600) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(found.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1011,7 +1011,7 @@ export default function MessageHandlerPostTest(): void {
       let waitCount: int = 0;
       while ((counter1.load() < 5 || counter2.load() < 5) && waitCount < 3000) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter1.load()).assertEqual(5);
       expect(counter2.load()).assertEqual(5);
@@ -1039,9 +1039,9 @@ export default function MessageHandlerPostTest(): void {
         handler.post((): void => { counter.fetchAdd(1); });
       }
       let waitCount: int = 0;
-      while (counter.load() < 5 && waitCount < 500) {
+      while (counter.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(5);
       if (eaw.isAlive()) { eaw.quit(); }

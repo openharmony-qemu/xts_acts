@@ -607,9 +607,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "test", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 500) {
+      while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -885,9 +885,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "test", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 500) {
+      while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -915,9 +915,9 @@ export default function MessageConstructorWhatObjTest(): void {
       msg2.sendToTarget();
       msg3.sendToTarget();
       let waitCount = 0;
-      while (counter.load() < 3 && waitCount < 500) {
+      while (counter.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -945,9 +945,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "outer", outerHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (nestedCounter.load() < 1 && waitCount < 500) {
+      while (nestedCounter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(nestedCounter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -976,9 +976,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "payload", firstHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (secondReceived.load() < 1 && waitCount < 500) {
+      while (secondReceived.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(secondReceived.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1002,9 +1002,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "test", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (sharedCount.load() < 1 && waitCount < 500) {
+      while (sharedCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(sharedCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1102,9 +1102,9 @@ export default function MessageConstructorWhatObjTest(): void {
       }
       await Promise.all(tasks);
       let waitCount = 0;
-      while (counter.load() < 10 && waitCount < 500) {
+      while (counter.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1136,9 +1136,9 @@ export default function MessageConstructorWhatObjTest(): void {
       msgA.sendToTarget();
       msgB.sendToTarget();
       let waitCount = 0;
-      while ((typeACount.load() < 1 || typeBCount.load() < 1) && waitCount < 500) {
+      while ((typeACount.load() < 1 || typeBCount.load() < 1) && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(typeACount.load()).assertEqual(1);
       expect(typeBCount.load()).assertEqual(1);
@@ -1188,9 +1188,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(1, "step1", handler1);
       msg.sendToTarget();
       let waitCount = 0;
-      while (step.load() < 1 && waitCount < 500) {
+      while (step.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(step.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1239,9 +1239,9 @@ export default function MessageConstructorWhatObjTest(): void {
       expect(processed.load()).assertEqual(0);
       msg.sendToTarget();
       let waitCount = 0;
-      while (processed.load() < 1 && waitCount < 500) {
+      while (processed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(processed.load()).assertEqual(1);
       expect(receivedWhat.load()).assertEqual(100);
@@ -1269,9 +1269,9 @@ export default function MessageConstructorWhatObjTest(): void {
         msg.sendToTarget();
       }
       let waitCount = 0;
-      while (completedCount.load() < totalCount && waitCount < 500) {
+      while (completedCount.load() < totalCount && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(completedCount.load()).assertEqual(totalCount);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1336,9 +1336,9 @@ export default function MessageConstructorWhatObjTest(): void {
       let msg = new concurrency.Message(42, "testData", messageHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (receivedWhat.load() === -1 && waitCount < 500) {
+      while (receivedWhat.load() === -1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(receivedWhat.load()).assertEqual(42);
       if (eaw.isAlive()) { eaw.quit(); }

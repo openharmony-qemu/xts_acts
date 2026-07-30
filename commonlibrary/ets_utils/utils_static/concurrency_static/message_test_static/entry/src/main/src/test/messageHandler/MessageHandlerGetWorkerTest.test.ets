@@ -269,9 +269,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       handler.sendMessage(msg);
 
       let waitCount: int = 0;
-      while (completedCount.load() < 1 && waitCount < 500) {
+      while (completedCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(matchCount.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -303,9 +303,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       handler.sendEmptyMessage(100);
 
       let waitCount: int = 0;
-      while (completedCount.load() < 1 && waitCount < 500) {
+      while (completedCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(matchCount.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -339,9 +339,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       outerHandler.sendEmptyMessage(1);
 
       let waitCount: int = 0;
-      while (completedCount.load() < 1 && waitCount < 500) {
+      while (completedCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(innerMatchCount.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -385,9 +385,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       callHandler.sendEmptyMessage(1);
 
       let waitCount: int = 0;
-      while (callCount.load() < 1 && waitCount < 500) {
+      while (callCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(matchCount.load()).assertEqual(2);
@@ -427,9 +427,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       }
 
       let waitCount: int = 0;
-      while (completedCount.load() < totalCount && waitCount < 500) {
+      while (completedCount.load() < totalCount && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(matchCount.load()).assertEqual(totalCount);
@@ -464,9 +464,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       handler2.sendEmptyMessage(1);
 
       let waitCount: int = 0;
-      while (received.load() < 1 && waitCount < 500) {
+      while (received.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(received.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -500,9 +500,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       }
 
       let waitCount: int = 0;
-      while (completedCount.load() < 3 && waitCount < 500) {
+      while (completedCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(matchCount.load()).assertEqual(3);
@@ -582,9 +582,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       }
 
       let waitCount: int = 0;
-      while (outerCount.load() < 3 && waitCount < 500) {
+      while (outerCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(outerCount.load()).assertEqual(3);
@@ -592,9 +592,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       expect(handler1.getWorker() === eaw).assertTrue();
 
       waitCount = 0;
-      while (innerCount.load() < 3 && waitCount < 500) {
+      while (innerCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(innerCount.load()).assertEqual(3);
@@ -652,9 +652,9 @@ export default function MessageHandlerGetWorkerTest(): void {
       handler1.sendEmptyMessage(100);
 
       let waitCount: int = 0;
-      while (level1Count.load() < 1 && waitCount < 500) {
+      while (level1Count.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
 
       expect(handler1.getWorker() === eaw).assertTrue();
@@ -662,17 +662,17 @@ export default function MessageHandlerGetWorkerTest(): void {
       expect(level1Match.load()).assertEqual(1);
 
       waitCount = 0;
-      while (level2Count.load() < 1 && waitCount < 500) {
+      while (level2Count.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(level2Count.load()).assertEqual(1);
       expect(level2Match.load()).assertEqual(1);
 
       waitCount = 0;
-      while (level3Count.load() < 1 && waitCount < 500) {
+      while (level3Count.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(level3Count.load()).assertEqual(1);
       expect(level3Match.load()).assertEqual(1);

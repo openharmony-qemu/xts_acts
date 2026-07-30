@@ -278,9 +278,9 @@ export default function MessageConstructorWhatTest(): void {
       let msg = new concurrency.Message(1, messageHandler);
       messageHandler.sendMessage(msg);
       let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 500) {
+      while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -528,9 +528,9 @@ export default function MessageConstructorWhatTest(): void {
       msg2.sendToTarget();
       msg3.sendToTarget();
       let waitCount = 0;
-      while (counter.load() < 3 && waitCount < 500) {
+      while (counter.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) {
@@ -560,9 +560,9 @@ export default function MessageConstructorWhatTest(): void {
       let msg = new concurrency.Message(1, firstHandler);
       msg.sendToTarget();
       let waitCount = 0;
-      while (secondReceived.load() < 1 && waitCount < 500) {
+      while (secondReceived.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(secondReceived.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -697,9 +697,9 @@ export default function MessageConstructorWhatTest(): void {
       }
       await Promise.all(tasks);
       let waitCount = 0;
-      while (counter.load() < 10 && waitCount < 500) {
+      while (counter.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) {
@@ -733,9 +733,9 @@ export default function MessageConstructorWhatTest(): void {
       handler.sendMessage(msgA);
       handler.sendMessage(msgB);
       let waitCount = 0;
-      while ((typeACount.load() < 1 || typeBCount.load() < 1) && waitCount < 500) {
+      while ((typeACount.load() < 1 || typeBCount.load() < 1) && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(typeACount.load()).assertEqual(1);
       expect(typeBCount.load()).assertEqual(1);
@@ -830,9 +830,9 @@ export default function MessageConstructorWhatTest(): void {
       expect(processed.load()).assertEqual(0);
       msg.sendToTarget();
       let waitCount = 0;
-      while (processed.load() < 1 && waitCount < 500) {
+      while (processed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(processed.load()).assertEqual(1);
       expect(receivedWhat.load()).assertEqual(100);
@@ -862,9 +862,9 @@ export default function MessageConstructorWhatTest(): void {
         msg.sendToTarget();
       }
       let waitCount = 0;
-      while (completedCount.load() < totalCount && waitCount < 500) {
+      while (completedCount.load() < totalCount && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(completedCount.load()).assertEqual(totalCount);
       if (eaw.isAlive()) {
@@ -892,9 +892,9 @@ export default function MessageConstructorWhatTest(): void {
         msg.sendToTarget();
       }
       let waitCount = 0;
-      while (resultCount.load() < 5 && waitCount < 500) {
+      while (resultCount.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       expect(resultCount.load()).assertEqual(5);
       if (eaw.isAlive()) {
