@@ -1074,55 +1074,40 @@ export default function Float32ArraySubarray3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6500
      * @tc.name testFloat32ArraySubarrayThree065
-     * @tc.desc Verify subarray buffer
+     * @tc.desc Verify byteOffset begin=1 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySubarrayThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      const observedValue065: Float32Array = src.subarray(1, 4);
-      const observedValue065Part2: Float32Array = observedValue065.subarray(1);
-      expect(observedValue065Part2.buffer).assertEqual(src.buffer);
+      const view: Float32Array = src.subarray(1);
+      expect(view.byteOffset).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6600
      * @tc.name testFloat32ArraySubarrayThree066
-     * @tc.desc Verify byteOffset begin=1 4
+     * @tc.desc Verify byteOffset begin=-1 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySubarrayThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      const view: Float32Array = src.subarray(1);
-      expect(view.byteOffset).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6700
-     * @tc.name testFloat32ArraySubarrayThree067
-     * @tc.desc Verify byteOffset begin=-1 16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySubarrayThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(-1);
       expect(view.byteOffset).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6800
-     * @tc.name testFloat32ArraySubarrayThree068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6700
+     * @tc.name testFloat32ArraySubarrayThree067
      * @tc.desc Verify subarray(5) byteOffset equals 20 for empty view at end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(5);
       expect(view.length).assertEqual(0);
@@ -1130,14 +1115,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6900
-     * @tc.name testFloat32ArraySubarrayThree069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6800
+     * @tc.name testFloat32ArraySubarrayThree068
      * @tc.desc Verify subarray(2,5) $_set at index2 writes through to source index4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(2, 5);
       view.$_set(2, 33);
@@ -1146,14 +1131,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7000
-     * @tc.name testFloat32ArraySubarrayThree070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_6900
+     * @tc.name testFloat32ArraySubarrayThree069
      * @tc.desc Verify subarray(0,3) fill(0) modifies only the subarray range in source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(0, 3);
       view.fill(0);
@@ -1166,14 +1151,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7100
-     * @tc.name testFloat32ArraySubarrayThree071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7000
+     * @tc.name testFloat32ArraySubarrayThree070
      * @tc.desc Verify subarray(0,4) copyWithin(0,2) copies elements within shared buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(0, 4);
       view.copyWithin(0, 2);
@@ -1184,14 +1169,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7200
-     * @tc.name testFloat32ArraySubarrayThree072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7100
+     * @tc.name testFloat32ArraySubarrayThree071
      * @tc.desc Verify subarray(0,2) set() writes Float32Array data into shared buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(0, 2);
       const data: Float32Array = new Float32Array([10.0, 20.0]);
@@ -1203,14 +1188,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7300
-     * @tc.name testFloat32ArraySubarrayThree073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7200
+     * @tc.name testFloat32ArraySubarrayThree072
      * @tc.desc Verify subarray(0,3) sort() reorders elements in the original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
       const view: Float32Array = src.subarray(0, 3);
       view.sort();
@@ -1221,14 +1206,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7400
-     * @tc.name testFloat32ArraySubarrayThree074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7300
+     * @tc.name testFloat32ArraySubarrayThree073
      * @tc.desc Verify non-overlapping subarray views operate independently on same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const head: Float32Array = src.subarray(0, 1);
       const tail: Float32Array = src.subarray(4, 5);
@@ -1243,14 +1228,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7500
-     * @tc.name testFloat32ArraySubarrayThree075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7400
+     * @tc.name testFloat32ArraySubarrayThree074
      * @tc.desc Verify source $_set at index3 reflects in subarray(2,5) view at index1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(2, 5);
       src.$_set(3, 999);
@@ -1259,14 +1244,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7600
-     * @tc.name testFloat32ArraySubarrayThree076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7500
+     * @tc.name testFloat32ArraySubarrayThree075
      * @tc.desc Verify subarray length differs from original array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const view: Float32Array = src.subarray(1, 3);
       expect(view.length).assertEqual(2);
@@ -1274,14 +1259,14 @@ export default function Float32ArraySubarray3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7700
-     * @tc.name testFloat32ArraySubarrayThree077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SUBARRAY_THREE_7600
+     * @tc.name testFloat32ArraySubarrayThree076
      * @tc.desc Verify overlapping subarray(0,3) and subarray(2,5) share elements through same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySubarrayThree077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySubarrayThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const first: Float32Array = src.subarray(0, 3);
       const second: Float32Array = src.subarray(2, 5);
