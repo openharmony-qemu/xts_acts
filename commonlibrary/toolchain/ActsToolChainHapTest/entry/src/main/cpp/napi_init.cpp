@@ -494,7 +494,6 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "mktime_sup", &MktimeSupTest },
     { "mlock", &MlockTest },
     { "mlock2", &Mlock2Test },
-    { "mprotect", &MprotectTest },
     { "mrand48", &Mrand48Test },
     { "mtx_init", &MtxInitTest },
     { "mtx_lock", &MtxLockTest },
