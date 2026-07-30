@@ -5665,7 +5665,7 @@ export default function windowImmersiveTest() {
      * @tc.name   testSetFloatNavigationAvoidAreaEnabledUndefined
      * @tc.number SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
      * @tc.desc   SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
-     * @tc.type   传入null后报错401
+     * @tc.type   传入undefined后报错401
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
