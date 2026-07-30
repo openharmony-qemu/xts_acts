@@ -5513,7 +5513,7 @@ export default function windowImmersiveTest() {
       }
     })
 
-   /**  
+  /**
  	  * @tc.name   SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_0100
  	  * @tc.number SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_0100
  	  * @tc.desc   SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_0100
