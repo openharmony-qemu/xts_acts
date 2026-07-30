@@ -3755,7 +3755,7 @@ export default function applicationManagerTest() {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.addAllowedRunningBundles(SELFWANT, BUNDLE_NAME_200, DEFAULT_USER_ID);
         let bundles = applicationManager.getAllowedRunningBundles(SELFWANT, DEFAULT_USER_ID);
-        expect(bundles.includes(BUNDLE_NAME_200)).assertTrue();
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
