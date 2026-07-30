@@ -155,31 +155,12 @@ export default function Float32ArrayMap2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_0800
      * @tc.name testFloat32ArrayMapTwo008
-     * @tc.desc map(v=>v*2) on [1,2,3] returns [2,4,6]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayMapTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0, 3.0]);
-      const res = arr.map((v: number, index: int, array: Float32Array): number => v * 2);
-      const element009 = res.$_get(0);
-      expect(element009).assertEqual(2.0);
-      const element009Part2 = res.$_get(1);
-      expect(element009Part2).assertEqual(4.0);
-      const element009Part3 = res.$_get(2);
-      expect(element009Part3).assertEqual(6.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_0900
-     * @tc.name testFloat32ArrayMapTwo009
      * @tc.desc map(v=>v+1) on [10,20] returns [11,21]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v + 1);
       const element010 = res.$_get(0);
@@ -189,14 +170,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1000
-     * @tc.name testFloat32ArrayMapTwo010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_0900
+     * @tc.name testFloat32ArrayMapTwo009
      * @tc.desc map(v=>-v) on [1,-2,3] returns [-1,2,-3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, -2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => -v);
       const element011 = res.$_get(0);
@@ -208,14 +189,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1100
-     * @tc.name testFloat32ArrayMapTwo011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1000
+     * @tc.name testFloat32ArrayMapTwo010
      * @tc.desc map(v=>v*v) on [2,3,4] returns [4,9,16]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * v);
       const element012 = res.$_get(0);
@@ -227,31 +208,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1200
-     * @tc.name testFloat32ArrayMapTwo012
-     * @tc.desc map(v=>7.0) on [1,2,3,4] returns [7.0,7.0,7.0,7.0]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayMapTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
-      const res = arr.map((v: number, index: int, array: Float32Array): number => 7.0);
-      const element013 = res.$_get(0);
-      expect(element013).assertEqual(7.0);
-      const element013Part2 = res.$_get(3);
-      expect(element013Part2).assertEqual(7.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1300
-     * @tc.name testFloat32ArrayMapTwo013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1100
+     * @tc.name testFloat32ArrayMapTwo011
      * @tc.desc map(v=>-7.0) on [1,2,3] returns [-7.0,-7.0,-7.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => -7.0);
       const element014 = res.$_get(0);
@@ -261,14 +225,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1400
-     * @tc.name testFloat32ArrayMapTwo014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1200
+     * @tc.name testFloat32ArrayMapTwo012
      * @tc.desc map(v=>0) on [1,2,3] returns [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => 0);
       const element015 = res.$_get(0);
@@ -278,14 +242,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1500
-     * @tc.name testFloat32ArrayMapTwo015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1300
+     * @tc.name testFloat32ArrayMapTwo013
      * @tc.desc map(v=>v/2) on [2,4,8] returns [1,2,4]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2.0, 4.0, 8.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v / 2);
       const element016 = res.$_get(0);
@@ -297,14 +261,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1600
-     * @tc.name testFloat32ArrayMapTwo016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1400
+     * @tc.name testFloat32ArrayMapTwo014
      * @tc.desc map(v=>v-1) on [5,10,15] returns [4,9,14]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 10.0, 15.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v - 1);
       const element017 = res.$_get(0);
@@ -316,14 +280,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1700
-     * @tc.name testFloat32ArrayMapTwo017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1500
+     * @tc.name testFloat32ArrayMapTwo015
      * @tc.desc Verify v*v+v
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * v + v);
       const element018 = res.$_get(0);
@@ -333,14 +297,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1800
-     * @tc.name testFloat32ArrayMapTwo018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1600
+     * @tc.name testFloat32ArrayMapTwo016
      * @tc.desc Verify 9.0 9.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => 9.0);
       const element032 = res.$_get(0);
@@ -348,14 +312,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1900
-     * @tc.name testFloat32ArrayMapTwo019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1700
+     * @tc.name testFloat32ArrayMapTwo017
      * @tc.desc Verify 65536.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => 65536.0);
       const element036 = res.$_get(0);
@@ -363,14 +327,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2000
-     * @tc.name testFloat32ArrayMapTwo020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1800
+     * @tc.name testFloat32ArrayMapTwo018
      * @tc.desc map(v=>16777217) on [1,2,3] returns [16777216,16777216,16777216]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => 16777217);
       const element037 = res.$_get(0);
@@ -382,182 +346,182 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2100
-     * @tc.name testFloat32ArrayMapTwo021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_1900
+     * @tc.name testFloat32ArrayMapTwo019
      * @tc.desc Verify length 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2200
-     * @tc.name testFloat32ArrayMapTwo022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2000
+     * @tc.name testFloat32ArrayMapTwo020
      * @tc.desc Verify length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2300
-     * @tc.name testFloat32ArrayMapTwo023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2100
+     * @tc.name testFloat32ArrayMapTwo021
      * @tc.desc Verify length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2400
-     * @tc.name testFloat32ArrayMapTwo024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2200
+     * @tc.name testFloat32ArrayMapTwo022
      * @tc.desc Verify byteLength 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2500
-     * @tc.name testFloat32ArrayMapTwo025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2300
+     * @tc.name testFloat32ArrayMapTwo023
      * @tc.desc Verify byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2600
-     * @tc.name testFloat32ArrayMapTwo026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2400
+     * @tc.name testFloat32ArrayMapTwo024
      * @tc.desc Verify byteLength 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.byteLength).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2700
-     * @tc.name testFloat32ArrayMapTwo027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2500
+     * @tc.name testFloat32ArrayMapTwo025
      * @tc.desc Verify buffer.byteLength 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.buffer.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2800
-     * @tc.name testFloat32ArrayMapTwo028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2600
+     * @tc.name testFloat32ArrayMapTwo026
      * @tc.desc Verify buffer.byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.buffer.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2900
-     * @tc.name testFloat32ArrayMapTwo029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2700
+     * @tc.name testFloat32ArrayMapTwo027
      * @tc.desc Verify byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3000
-     * @tc.name testFloat32ArrayMapTwo030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2800
+     * @tc.name testFloat32ArrayMapTwo028
      * @tc.desc Verify length 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3100
-     * @tc.name testFloat32ArrayMapTwo031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_2900
+     * @tc.name testFloat32ArrayMapTwo029
      * @tc.desc Verify byteLength 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.byteLength).assertEqual(20);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3200
-     * @tc.name testFloat32ArrayMapTwo032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3000
+     * @tc.name testFloat32ArrayMapTwo030
      * @tc.desc Verify length 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3300
-     * @tc.name testFloat32ArrayMapTwo033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3100
+     * @tc.name testFloat32ArrayMapTwo031
      * @tc.desc map(v=>v*100) does not mutate original array [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v * 100);
       const element050 = arr.$_get(0);
@@ -565,42 +529,42 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3400
-     * @tc.name testFloat32ArrayMapTwo034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3200
+     * @tc.name testFloat32ArrayMapTwo032
      * @tc.desc Verify length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(arr.length).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3500
-     * @tc.name testFloat32ArrayMapTwo035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3300
+     * @tc.name testFloat32ArrayMapTwo033
      * @tc.desc Verify byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v * 2);
       expect(arr.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3600
-     * @tc.name testFloat32ArrayMapTwo036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3400
+     * @tc.name testFloat32ArrayMapTwo034
      * @tc.desc Verify at(-1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v * 2);
       const atValue053 = arr.at(-1);
@@ -608,14 +572,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3700
-     * @tc.name testFloat32ArrayMapTwo037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3500
+     * @tc.name testFloat32ArrayMapTwo035
      * @tc.desc chained map(v=>v*2).map(v=>v*3) does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v * 2).map((v: number, index: int, array: Float32Array): number => v * 3);
       const element054 = arr.$_get(0);
@@ -627,28 +591,28 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3800
-     * @tc.name testFloat32ArrayMapTwo038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3600
+     * @tc.name testFloat32ArrayMapTwo036
      * @tc.desc Verify buffer.byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       arr.map((v: number, index: int, array: Float32Array): number => v * 50);
       expect(arr.buffer.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3900
-     * @tc.name testFloat32ArrayMapTwo039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3700
+     * @tc.name testFloat32ArrayMapTwo037
      * @tc.desc map(v=>1.0e40) does not mutate original array [1,2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       arr.map((v: number, index: int, array: Float32Array): number => 1.0e40);
       const element056 = arr.$_get(0);
@@ -658,14 +622,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4000
-     * @tc.name testFloat32ArrayMapTwo040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3800
+     * @tc.name testFloat32ArrayMapTwo038
      * @tc.desc Verify map(v=>NaN) does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       arr.map((v: number, index: int, array: Float32Array): number => Number.NaN);
       const element057 = arr.$_get(0);
@@ -675,14 +639,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4100
-     * @tc.name testFloat32ArrayMapTwo041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_3900
+     * @tc.name testFloat32ArrayMapTwo039
      * @tc.desc Verify map map Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * 2).map((v: number, index: int, array: Float32Array): number => v + 1);
       const element058 = res.$_get(0);
@@ -690,28 +654,28 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4200
-     * @tc.name testFloat32ArrayMapTwo042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4000
+     * @tc.name testFloat32ArrayMapTwo040
      * @tc.desc Verify map length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v).map((v: number, index: int, array: Float32Array): number => v).map((v: number, index: int, array: Float32Array): number => v);
       expect(res.length).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4300
-     * @tc.name testFloat32ArrayMapTwo043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4100
+     * @tc.name testFloat32ArrayMapTwo041
      * @tc.desc Verify $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v + 5);
       const element060 = res.$_get(0);
@@ -721,14 +685,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4400
-     * @tc.name testFloat32ArrayMapTwo044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4200
+     * @tc.name testFloat32ArrayMapTwo042
      * @tc.desc Verify $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.$_get(0)).assertEqual(1.0);
@@ -740,14 +704,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4500
-     * @tc.name testFloat32ArrayMapTwo045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4300
+     * @tc.name testFloat32ArrayMapTwo043
      * @tc.desc Verify at(0) returns first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * 10);
       const atValue062 = res.at(-1);
@@ -757,14 +721,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4600
-     * @tc.name testFloat32ArrayMapTwo046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4400
+     * @tc.name testFloat32ArrayMapTwo044
      * @tc.desc Verify slice Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const sl = res.slice(1);
@@ -772,14 +736,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4700
-     * @tc.name testFloat32ArrayMapTwo047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4500
+     * @tc.name testFloat32ArrayMapTwo045
      * @tc.desc Verify filter Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const f = res.filter((v: number, index: int, array: Float32Array): boolean => v > 2);
@@ -787,14 +751,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4800
-     * @tc.name testFloat32ArrayMapTwo048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4600
+     * @tc.name testFloat32ArrayMapTwo046
      * @tc.desc Verify reduce number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const sum = res.reduce((acc: number, v: number, index: int, array: Float32Array): number => acc + v, 0.0);
@@ -802,14 +766,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4900
-     * @tc.name testFloat32ArrayMapTwo049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4700
+     * @tc.name testFloat32ArrayMapTwo047
      * @tc.desc Verify join string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const s = res.join(',');
@@ -817,14 +781,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5000
-     * @tc.name testFloat32ArrayMapTwo050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4800
+     * @tc.name testFloat32ArrayMapTwo048
      * @tc.desc Verify toString string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const s = res.toString();
@@ -832,14 +796,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5100
-     * @tc.name testFloat32ArrayMapTwo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_4900
+     * @tc.name testFloat32ArrayMapTwo049
      * @tc.desc Verify indexOf(20.0) returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const indexValue068 = res.indexOf(20.0);
@@ -847,14 +811,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5200
-     * @tc.name testFloat32ArrayMapTwo052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5000
+     * @tc.name testFloat32ArrayMapTwo050
      * @tc.desc Verify includes true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const predicateResult069 = res.includes(30.0);
@@ -862,14 +826,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5300
-     * @tc.name testFloat32ArrayMapTwo053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5100
+     * @tc.name testFloat32ArrayMapTwo051
      * @tc.desc Verify find(v>3) on mapped values returns 4.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * 2);
       const found = res.find((v: number, index: int, array: Float32Array): boolean => v > 3);
@@ -877,14 +841,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5400
-     * @tc.name testFloat32ArrayMapTwo054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5200
+     * @tc.name testFloat32ArrayMapTwo052
      * @tc.desc Verify findIndex(v===6.0) on mapped values returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * 2);
       const foundIndex071 = res.findIndex((v: number, index: int, array: Float32Array): boolean => v === 6.0);
@@ -892,14 +856,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5500
-     * @tc.name testFloat32ArrayMapTwo055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5300
+     * @tc.name testFloat32ArrayMapTwo053
      * @tc.desc Verify fill(9.0) sets all elements to 9.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.$_get(0)).assertEqual(1.0);
@@ -913,14 +877,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5600
-     * @tc.name testFloat32ArrayMapTwo056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5400
+     * @tc.name testFloat32ArrayMapTwo054
      * @tc.desc Verify reverse() reverses element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       res.reverse();
@@ -931,14 +895,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5700
-     * @tc.name testFloat32ArrayMapTwo057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5500
+     * @tc.name testFloat32ArrayMapTwo055
      * @tc.desc Verify sort() orders elements ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       res.sort();
@@ -949,14 +913,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5800
-     * @tc.name testFloat32ArrayMapTwo058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5600
+     * @tc.name testFloat32ArrayMapTwo056
      * @tc.desc Verify copyWithin(0,2) copies the third mapped element to index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       res.copyWithin(0, 2);
@@ -965,14 +929,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5900
-     * @tc.name testFloat32ArrayMapTwo059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5700
+     * @tc.name testFloat32ArrayMapTwo057
      * @tc.desc Verify subarray buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.$_get(0)).assertEqual(1.0);
@@ -987,14 +951,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6000
-     * @tc.name testFloat32ArrayMapTwo060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5800
+     * @tc.name testFloat32ArrayMapTwo058
      * @tc.desc Verify values() iteration yields original elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v * 2);
       const it = res.values();
@@ -1003,14 +967,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6100
-     * @tc.name testFloat32ArrayMapTwo061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_5900
+     * @tc.name testFloat32ArrayMapTwo059
      * @tc.desc Verify keys() yields index 0,1,2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const it = res.keys();
@@ -1019,14 +983,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6200
-     * @tc.name testFloat32ArrayMapTwo062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6000
+     * @tc.name testFloat32ArrayMapTwo060
      * @tc.desc Verify forEach callback captures element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       let total: number = 0;
@@ -1037,14 +1001,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6300
-     * @tc.name testFloat32ArrayMapTwo063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6100
+     * @tc.name testFloat32ArrayMapTwo061
      * @tc.desc Verify ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const observedValue080 = ArrayBuffer.isView(res);
@@ -1052,14 +1016,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6400
-     * @tc.name testFloat32ArrayMapTwo064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6200
+     * @tc.name testFloat32ArrayMapTwo062
      * @tc.desc Verify map buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r1 = arr.map((v: number, index: int, array: Float32Array): number => v);
       const r2 = arr.map((v: number, index: int, array: Float32Array): number => v);
@@ -1071,14 +1035,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6500
-     * @tc.name testFloat32ArrayMapTwo065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6300
+     * @tc.name testFloat32ArrayMapTwo063
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       const view = new Float32Array(res.buffer);
@@ -1090,28 +1054,28 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6600
-     * @tc.name testFloat32ArrayMapTwo066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6400
+     * @tc.name testFloat32ArrayMapTwo064
      * @tc.desc Verify mapping four Float32 elements creates a 16-byte buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.buffer.byteLength).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6700
-     * @tc.name testFloat32ArrayMapTwo067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6500
+     * @tc.name testFloat32ArrayMapTwo065
      * @tc.desc map result is a copy: modifying result[0] does not affect original[0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       res.$_set(0, 999.0);
@@ -1120,14 +1084,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6800
-     * @tc.name testFloat32ArrayMapTwo068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6600
+     * @tc.name testFloat32ArrayMapTwo066
      * @tc.desc map result is a copy: modifying original[0] does not affect result[0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       arr.$_set(0, 888.0);
@@ -1136,14 +1100,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6900
-     * @tc.name testFloat32ArrayMapTwo069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6700
+     * @tc.name testFloat32ArrayMapTwo067
      * @tc.desc map result is a copy: modifying result[1] does not affect original[1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 6.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       res.$_set(1, 777.0);
@@ -1154,14 +1118,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7000
-     * @tc.name testFloat32ArrayMapTwo070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6800
+     * @tc.name testFloat32ArrayMapTwo068
      * @tc.desc map result is a copy: modifying all original elements leaves result unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       arr.$_set(0, 100.0);
@@ -1176,14 +1140,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7100
-     * @tc.name testFloat32ArrayMapTwo071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_6900
+     * @tc.name testFloat32ArrayMapTwo069
      * @tc.desc Verify buffer ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
       expect(res.buffer.byteLength).assertEqual(8);
@@ -1191,14 +1155,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7200
-     * @tc.name testFloat32ArrayMapTwo072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7000
+     * @tc.name testFloat32ArrayMapTwo070
      * @tc.desc Verify buffer buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const arr = new Float32Array(buf, 0, 3);
       arr.$_set(0, 1.0);
@@ -1211,14 +1175,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7300
-     * @tc.name testFloat32ArrayMapTwo073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7100
+     * @tc.name testFloat32ArrayMapTwo071
      * @tc.desc Verify byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(0, 1.0);
@@ -1229,14 +1193,14 @@ export default function Float32ArrayMap2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7400
-     * @tc.name testFloat32ArrayMapTwo074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MAP_TWO_7200
+     * @tc.name testFloat32ArrayMapTwo072
      * @tc.desc Verify identity map preserves NaN, Infinity, -Infinity, -0.0, MAX_VALUE, MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMapTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMapTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, Number.POSITIVE_INFINITY, -Number.POSITIVE_INFINITY, -0.0, 3.4028234663852886e+38, 1.401298464324817e-45);
       const res = arr.map((v: number): number => v);
       expect(res.$_get(0)).assertNaN();
