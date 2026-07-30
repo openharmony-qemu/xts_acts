@@ -16,6 +16,8 @@
 #ifndef ROI_FUNC_TEST_H
 #define ROI_FUNC_TEST_H
 
+#include "napi/native_api.h"
+
 namespace OHOS {
 namespace Media {
 
@@ -24,38 +26,41 @@ void SetUpTestCase();
 void TearDown();
 }
 
-int VIDEO_HW_ENCODE_ROI_FUNC_001();
-int VIDEO_HW_ENCODE_ROI_FUNC_002();
-int VIDEO_HW_ENCODE_ROI_FUNC_003();
-int VIDEO_HW_ENCODE_ROI_FUNC_004();
-int VIDEO_HW_ENCODE_ROI_FUNC_005();
-int VIDEO_HW_ENCODE_ROI_FUNC_006();
-int VIDEO_HW_ENCODE_ROI_FUNC_007();
-int VIDEO_HW_ENCODE_ROI_FUNC_008();
-int VIDEO_HW_ENCODE_ROI_FUNC_009();
-int VIDEO_HW_ENCODE_ROI_FUNC_010();
-int VIDEO_HW_ENCODE_ROI_FUNC_011();
-int VIDEO_HW_ENCODE_ROI_FUNC_012();
-int VIDEO_HW_ENCODE_ROI_FUNC_013();
-int VIDEO_HW_ENCODE_ROI_FUNC_014();
-int VIDEO_HW_ENCODE_ROI_FUNC_015();
-int VIDEO_HW_ENCODE_ROI_FUNC_016();
-int VIDEO_HW_ENCODE_ROI_FUNC_017();
-int VIDEO_HW_ENCODE_ROI_FUNC_018();
-int VIDEO_HW_ENCODE_ROI_API_019();
-int VIDEO_HW_ENCODE_ROI_API_020();
-int VIDEO_HW_ENCODE_ROI_API_021();
-int VIDEO_HW_ENCODE_ROI_API_022();
-int VIDEO_HW_ENCODE_ROI_API_023();
-int VIDEO_HW_ENCODE_ROI_API_024();
-int VIDEO_HW_ENCODE_ROI_API_025();
-int VIDEO_HW_ENCODE_ROI_API_026();
-int VIDEO_HW_ENCODE_ROI_API_027();
-int VIDEO_HW_ENCODE_ROI_API_028();
-int VIDEO_HW_ENCODE_ROI_API_029();
-int VIDEO_HW_ENCODE_ROI_API_030();
-int VIDEO_HW_ENCODE_ROI_API_031();
-int VIDEO_HW_ENCODE_ROI_API_032();
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_001(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_002(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_003(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_004(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_005(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_006(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_007(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_008(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_009(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_010(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_011(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_012(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_013(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_014(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_015(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_016(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_017(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_FUNC_018(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_019(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_020(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_021(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_022(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_023(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_024(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_025(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_026(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_027(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_028(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_029(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_030(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_031(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_032(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_033(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_034(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_ROI_API_035(napi_env env, napi_callback_info info);
 
 } // namespace Media
 } // namespace OHOS

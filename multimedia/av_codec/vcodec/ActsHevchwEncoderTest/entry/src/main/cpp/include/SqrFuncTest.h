@@ -16,6 +16,8 @@
 #ifndef SQR_FUNC_TEST_H
 #define SQR_FUNC_TEST_H
 
+#include "napi/native_api.h"
+
 namespace OHOS {
 namespace Media {
 
@@ -24,20 +26,20 @@ void SetUpTestCase();
 void TearDown();
 }
 
-int VIDEO_HW_ENCODE_SQR_FUNC_001();
-int VIDEO_HW_ENCODE_SQR_FUNC_002();
-int VIDEO_HW_ENCODE_SQR_FUNC_003();
-int VIDEO_HW_ENCODE_SQR_FUNC_004();
-int VIDEO_HW_ENCODE_SQR_FUNC_005();
-int VIDEO_HW_ENCODE_SQR_FUNC_006();
-int VIDEO_HW_ENCODE_SQR_FUNC_007();
-int VIDEO_HW_ENCODE_SQR_FUNC_008();
-int VIDEO_HW_ENCODE_SQR_FUNC_009();
-int VIDEO_HW_ENCODE_SQR_FUNC_010();
-int VIDEO_HW_ENCODE_SQR_FUNC_011();
-int VIDEO_HW_ENCODE_SQR_FUNC_012();
-int VIDEO_HW_ENCODE_SQR_FUNC_013();
-int VIDEO_HW_ENCODE_SQR_FUNC_014();
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_001(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_002(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_003(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_004(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_005(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_006(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_007(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_008(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_009(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_010(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_011(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_012(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_013(napi_env env, napi_callback_info info);
+napi_value VIDEO_HW_ENCODE_SQR_FUNC_014(napi_env env, napi_callback_info info);
 
 } // namespace Media
 } // namespace OHOS
