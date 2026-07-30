@@ -11,6 +11,13 @@
     "MainAbility/pages/menu/ContextMenuGridStyle",
     "MainAbility/pages/menu/MenuItemSubMenuBuilder",
     "MainAbility/pages/select/SelectMenuBackground",
-    "MainAbility/pages/dialog/DisplayModeInSubWindow"
+    "MainAbility/pages/dialog/DisplayModeInSubWindow",
+    "MainAbility/pages/dialog/DialogStyleAlert",
+    "MainAbility/pages/dialog/DialogStyleSheets",
+    "MainAbility/pages/dialog/DialogBaseOptionsLayout",
+    "MainAbility/pages/dialog/DialogBaseOptionsVisual",
+    "MainAbility/pages/dialog/DialogBaseControllerLife",
+    "MainAbility/pages/dialog/DialogCustomPresent",
+    "MainAbility/pages/dialog/DialogEnumsAssert"
   ]
 }

@@ -24,6 +24,13 @@ import ContextMenuGridStyle from './menu/ContextMenuGridStyle.test';
 import MenuItemSubMenuBuilder from './menu/MenuItemSubMenuBuilder.test';
 import SelectMenuBackground from './select/SelectMenuBackground.test';
 import DisplayModeInSubWindow from './dialog/DisplayModeInSubWindow.test';
+import DialogStyleAlert from './dialog/DialogStyleAlert.test';
+import DialogStyleSheets from './dialog/DialogStyleSheets.test';
+import DialogBaseOptionsLayout from './dialog/DialogBaseOptionsLayout.test';
+import DialogBaseOptionsVisual from './dialog/DialogBaseOptionsVisual.test';
+import DialogBaseControllerLife from './dialog/DialogBaseControllerLife.test';
+import DialogCustomPresent from './dialog/DialogCustomPresent.test';
+import DialogEnumsAssert from './dialog/DialogEnumsAssert.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
@@ -37,4 +44,11 @@ export default function testsuite() {
   MenuItemSubMenuBuilder();
   SelectMenuBackground();
   DisplayModeInSubWindow();
+  DialogStyleAlert();
+  DialogStyleSheets();
+  DialogBaseOptionsLayout();
+  DialogBaseOptionsVisual();
+  DialogBaseControllerLife();
+  DialogCustomPresent();
+  DialogEnumsAssert();
 }
