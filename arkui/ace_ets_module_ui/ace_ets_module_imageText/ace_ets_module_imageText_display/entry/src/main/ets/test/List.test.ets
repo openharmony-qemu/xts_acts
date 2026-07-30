@@ -16,6 +16,7 @@ import InputPresetTest from './PresetTest/InputPresetTest.test';
 
 import PreventDefault from './HyperlinkTest/PreventDefault.test';
 import HyperlinkPropertiesNullUndefinedTest from './HyperlinkTest/HyperlinkPropertiesNullUndefinedTest.test';
+import HyperlinkModifierTest from './HyperlinkTest/HyperlinkModifier.test';
 
 import MarqueeApi from './MarqueeTest/MarqueeApi.test';
 import MarqueeDynamicSyncSceneTest from './MarqueeTest/MarqueeDynamicSyncSceneType.test';
@@ -55,6 +56,7 @@ export default function testsuite() {
   //HyperlinkTest
   PreventDefault()
   HyperlinkPropertiesNullUndefinedTest()
+  HyperlinkModifierTest()
   //MarqueeTest
   MarqueeApi()
   MarqueeDynamicSyncSceneTest()
