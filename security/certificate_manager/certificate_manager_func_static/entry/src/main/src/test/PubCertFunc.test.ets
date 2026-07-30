@@ -102,7 +102,7 @@ let caCert: Uint8Array = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x0
 
 export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', (): void => {
-    beforeAll(() => {
+    beforeAll(async() => {
       let driver = Driver.create();
       //去除充电框影响
       let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
