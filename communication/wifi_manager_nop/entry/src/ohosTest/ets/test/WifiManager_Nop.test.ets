@@ -2055,6 +2055,38 @@ export default function wifiManagerTest() {
         console.info(`${caseName} test end`);
         done();
       });
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Setting_Nop
+     * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Setting_Nop
+     * @tc.desc   Test connectToCandidateConfig API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Setting_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Setting_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let settings:wifiManager.ConnectSettings = {
+            networkId: 0,
+            withUserAction: false
+          };
+          await wifiManager.connectToCandidateConfig(settings);
+          console.log(`${caseName} connectToCandidateConfig(settings) get result success`);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
   })
 }
 function wifiManagerExtAvailable(): boolean {
