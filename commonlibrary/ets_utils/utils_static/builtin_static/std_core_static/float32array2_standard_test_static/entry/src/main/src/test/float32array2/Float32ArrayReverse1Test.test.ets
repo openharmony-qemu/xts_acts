@@ -724,16 +724,17 @@ export default function Float32ArrayReverse1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4000
      * @tc.name testFloat32ArrayReverseOne040
-     * @tc.desc Verify reverse() on [NaN, NaN, NaN]
+     * @tc.desc Verify reverse() moves NaN from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([Number.NaN, Number.NaN, Number.NaN]);
+      const arr = new Float32Array([Number.NaN, 1.0, 2.0]);
       arr.reverse();
       const element040 = arr.$_get(0);
-      expect(element040).assertNaN();
+      expect(element040).assertEqual(2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
       const element040Part2 = arr.$_get(2);
       expect(element040Part2).assertNaN();
     });
@@ -741,16 +742,17 @@ export default function Float32ArrayReverse1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4100
      * @tc.name testFloat32ArrayReverseOne041
-     * @tc.desc Verify reverse() on [Infinity, Infinity, Infinity]
+     * @tc.desc Verify reverse() moves positive infinity from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY]);
+      const arr = new Float32Array([Number.POSITIVE_INFINITY, 1.0, -2.0]);
       arr.reverse();
       const element041 = arr.$_get(0);
-      expect(element041).assertEqual(Number.POSITIVE_INFINITY);
+      expect(element041).assertEqual(-2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
       const element041Part2 = arr.$_get(2);
       expect(element041Part2).assertEqual(Number.POSITIVE_INFINITY);
     });
@@ -758,33 +760,35 @@ export default function Float32ArrayReverse1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4200
      * @tc.name testFloat32ArrayReverseOne042
-     * @tc.desc Verify reverse() on [0.0, 0.0, 0.0]
+     * @tc.desc Verify reverse() moves positive zero from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([0.0, 0.0, 0.0]);
+      const arr = new Float32Array([0.0, 1.0, 2.0]);
       arr.reverse();
       const element042 = arr.$_get(0);
-      expect(element042).assertEqual(0.0);
-      const element042Part2 = arr.$_get(2);
-      expect(element042Part2).assertEqual(0.0);
+      expect(element042).assertEqual(2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
+      const element042Part2 = 1.0 / arr.$_get(2);
+      expect(element042Part2).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4300
      * @tc.name testFloat32ArrayReverseOne043
-     * @tc.desc Verify reverse() on [-0.0, -0.0, -0.0]
+     * @tc.desc Verify reverse() moves negative zero from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([-0.0, -0.0, -0.0]);
+      const arr = new Float32Array([-0.0, 1.0, 2.0]);
       arr.reverse();
-      const element043 = 1.0 / arr.$_get(0);
-      expect(element043).assertEqual(-Number.POSITIVE_INFINITY);
+      const element043 = arr.$_get(0);
+      expect(element043).assertEqual(2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
       const element043Part2 = 1.0 / arr.$_get(2);
       expect(element043Part2).assertEqual(-Number.POSITIVE_INFINITY);
     });
@@ -792,33 +796,35 @@ export default function Float32ArrayReverse1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4400
      * @tc.name testFloat32ArrayReverseOne044
-     * @tc.desc Verify reverse() on [3.4028234663852886e+38, 3.4028234663852886e+38]
+     * @tc.desc Verify reverse() moves the maximum finite Float32 value from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([3.4028234663852886e+38, 3.4028234663852886e+38]);
+      const arr = new Float32Array([3.4028234663852886e+38, 1.0, -2.0]);
       arr.reverse();
       const element044 = arr.$_get(0);
-      expect(element044).assertEqual(3.4028234663852886e+38);
-      const element044Part2 = arr.$_get(1);
+      expect(element044).assertEqual(-2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
+      const element044Part2 = arr.$_get(2);
       expect(element044Part2).assertEqual(3.4028234663852886e+38);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4500
      * @tc.name testFloat32ArrayReverseOne045
-     * @tc.desc Verify reverse() on [16777217, 16777217, 16777217]
+     * @tc.desc Verify reverse() moves the rounded 16777217 value from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReverseOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([16777217, 16777217, 16777217]);
+      const arr = new Float32Array([16777217, 1.0, -2.0]);
       arr.reverse();
       const element045 = arr.$_get(0);
-      expect(element045).assertEqual(16777216);
+      expect(element045).assertEqual(-2.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
       const element045Part2 = arr.$_get(2);
       expect(element045Part2).assertEqual(16777216);
     });

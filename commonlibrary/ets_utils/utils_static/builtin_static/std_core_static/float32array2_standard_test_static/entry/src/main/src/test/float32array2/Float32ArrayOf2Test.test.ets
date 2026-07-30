@@ -1071,7 +1071,7 @@ export default function Float32ArrayOf2Test(): void {
       const arr = Float32Array.of(0.1, 0.2, 0.3);
       const sum = arr.$_get(0) + arr.$_get(1);
       const element066 = Math.abs(sum - arr.$_get(2));
-      expect(element066).assertLarger(0);
+      expect(element066).assertEqual(7.450580596923828e-9);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_OF_TWO_0660
@@ -1379,8 +1379,8 @@ export default function Float32ArrayOf2Test(): void {
 
     it('testFloat32ArrayOfTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.1);
-      const element090 = Math.abs(arr.$_get(0) - 0.1);
-      expect(element090).assertLarger(0);
+      const element090 = arr.$_get(0);
+      expect(element090).assertEqual(0.10000000149011612);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_OF_TWO_0860

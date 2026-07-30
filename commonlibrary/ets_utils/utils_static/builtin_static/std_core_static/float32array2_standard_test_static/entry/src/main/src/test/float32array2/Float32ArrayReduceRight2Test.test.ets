@@ -652,7 +652,7 @@ export default function Float32ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_0380
      * @tc.name testFloat32ArrayReduceRightTwo038
-     * @tc.desc Verify reduceRight with Float32 MIN_VALUE and 1.0 returns expected sum
+     * @tc.desc Verify reduceRight with Float32 MIN_NORMAL and 1.0 returns expected sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -667,7 +667,7 @@ export default function Float32ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_0390
      * @tc.name testFloat32ArrayReduceRightTwo039
-     * @tc.desc Verify reduceRight with Float32 MIN_NORMAL and 1.0 returns expected sum
+     * @tc.desc Verify reduceRight with Float32 MIN_VALUE and 1.0 returns expected sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,8 +791,7 @@ export default function Float32ArrayReduceRight2Test(): void {
     it('testFloat32ArrayReduceRightTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.1, 0.2, 0.3);
       const result = arr.reduceRight((p, c, i, a) => p + c);
-      const observedValue047 = result === 0.6;
-      expect(observedValue047).assertFalse();
+      expect(result).assertEqual(0.6000000163912773);
     });
 
     /**
@@ -1765,15 +1764,15 @@ export default function Float32ArrayReduceRight2Test(): void {
     it('testFloat32ArrayReduceRightTwo105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(5.0, 1.0, 9.0, 2.0);
       let maxDiff = 0;
-      const result = arr.reduceRight((p, c, i, a) => {
-        const diff = p - c > 0 ? p - c : c - p;
+      const result = arr.reduceRight((right: number, current: number): number => {
+        const diff = right - current > 0 ? right - current : current - right;
         if (diff > maxDiff) {
           maxDiff = diff.toInt();
         }
-        return p + c;
+        return current;
       });
-      expect(maxDiff).assertEqual(10);
-      expect(result).assertEqual(17);
+      expect(maxDiff).assertEqual(8);
+      expect(result).assertEqual(5.0);
     });
 
     /**

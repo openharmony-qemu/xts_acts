@@ -1173,18 +1173,19 @@ export default function Float32ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_TWO_0730
      * @tc.name testFloat32ArrayReduceTwo073
-     * @tc.desc Verify reduce throws ClassCastError when callback is undefined
+     * @tc.desc Verify reduce throws NullPointerError when callback is undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayReduceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
+      const callback: ((a: number, b: number) => number) | undefined = undefined;
       try {
-        arr.reduce(undefined as object as (a: number, b: number) => number);
+        arr.reduce(callback!);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 

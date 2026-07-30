@@ -177,10 +177,19 @@ export default function Float32ArraySet4Test(): void {
       d.set(s4);
       const element006 = a.$_get(0);
       expect(element006).assertEqual(1);
+      expect(a.$_get(1)).assertEqual(2);
+      expect(a.$_get(2)).assertEqual(3);
+      expect(b.$_get(0)).assertEqual(1);
       const element006Part2 = b.$_get(1);
       expect(element006Part2).assertEqual(2);
+      expect(b.$_get(2)).assertEqual(3);
+      expect(c.$_get(0)).assertEqual(1);
+      expect(c.$_get(1)).assertEqual(2);
       const element006Part3 = c.$_get(2);
       expect(element006Part3).assertEqual(3);
+      expect(d.$_get(0)).assertEqual(1);
+      expect(d.$_get(1)).assertEqual(2);
+      expect(d.$_get(2)).assertEqual(3);
     });
 
     /**
@@ -1305,6 +1314,8 @@ export default function Float32ArraySet4Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
       expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
+      expect(arr.$_get(2)).assertEqual(0);
     });
 
     /**
@@ -1821,7 +1832,7 @@ export default function Float32ArraySet4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FOUR_0880
      * @tc.name testFloat32ArraySetFour088
-     * @tc.desc Verify set(self, 1) throws RangeError due to overlapping copy
+     * @tc.desc Verify set(self, 1) throws RangeError because source exceeds remaining target length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

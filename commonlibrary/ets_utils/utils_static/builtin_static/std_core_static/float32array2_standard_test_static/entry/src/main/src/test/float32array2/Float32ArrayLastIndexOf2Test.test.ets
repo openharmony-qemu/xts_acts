@@ -1054,7 +1054,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result071 = arr.lastIndexOf(5);
+      expect(result071).assertEqual(3);
       expect(arr.byteLength).assertEqual(16);
     });
 
@@ -1068,7 +1069,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
-      arr.lastIndexOf(9);
+      const result072 = arr.lastIndexOf(9);
+      expect(result072).assertEqual(-1);
       expect(arr.byteLength).assertEqual(12);
     });
 
@@ -1082,7 +1084,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of();
-      arr.lastIndexOf(1);
+      const result073 = arr.lastIndexOf(1);
+      expect(result073).assertEqual(-1);
       expect(arr.byteLength).assertEqual(0);
     });
 
@@ -1096,7 +1099,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(7.0);
-      arr.lastIndexOf(7);
+      const result074 = arr.lastIndexOf(7);
+      expect(result074).assertEqual(0);
       expect(arr.byteLength).assertEqual(4);
     });
 
@@ -1110,7 +1114,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, 1.0, 2.0);
-      arr.lastIndexOf(Number.NaN);
+      const result075 = arr.lastIndexOf(Number.NaN);
+      expect(result075).assertEqual(-1);
       expect(arr.byteLength).assertEqual(12);
     });
 
@@ -1124,7 +1129,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(5.0, 1.0, 5.0, 2.0, 5.0);
-      arr.lastIndexOf(5);
+      const result076 = arr.lastIndexOf(5);
+      expect(result076).assertEqual(4);
       expect(arr.byteLength).assertEqual(20);
     });
 
@@ -1168,7 +1174,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result079 = arr.lastIndexOf(5);
+      expect(result079).assertEqual(3);
       expect(arr.byteOffset).assertEqual(0);
     });
 
@@ -1182,7 +1189,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
-      arr.lastIndexOf(9);
+      const result080 = arr.lastIndexOf(9);
+      expect(result080).assertEqual(-1);
       expect(arr.byteOffset).assertEqual(0);
     });
 
@@ -1196,7 +1204,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, 1.0, 2.0);
-      arr.lastIndexOf(Number.NaN);
+      const result081 = arr.lastIndexOf(Number.NaN);
+      expect(result081).assertEqual(-1);
       expect(arr.byteOffset).assertEqual(0);
     });
 
@@ -1213,7 +1222,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 5);
       view.$_set(3, 5);
-      view.lastIndexOf(5);
+      const result082 = view.lastIndexOf(5);
+      expect(result082).assertEqual(3);
       expect(view.byteOffset).assertEqual(8);
     });
 
@@ -1229,7 +1239,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const buf = new ArrayBuffer(32);
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 1);
-      view.lastIndexOf(9);
+      const result083 = view.lastIndexOf(9);
+      expect(result083).assertEqual(-1);
       expect(view.byteOffset).assertEqual(8);
     });
 
@@ -1244,7 +1255,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
       const buf = arr.buffer;
-      arr.lastIndexOf(5);
+      const result084 = arr.lastIndexOf(5);
+      expect(result084).assertEqual(3);
       expect(arr.buffer).assertEqual(buf);
     });
 
@@ -1259,7 +1271,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
       const buf = arr.buffer;
-      arr.lastIndexOf(9);
+      const result085 = arr.lastIndexOf(9);
+      expect(result085).assertEqual(-1);
       expect(arr.buffer).assertEqual(buf);
     });
 
@@ -1274,7 +1287,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, 1.0, 2.0);
       const buf = arr.buffer;
-      arr.lastIndexOf(Number.NaN);
+      const result086 = arr.lastIndexOf(Number.NaN);
+      expect(result086).assertEqual(-1);
       expect(arr.buffer).assertEqual(buf);
     });
 
@@ -1290,7 +1304,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const buf = new ArrayBuffer(16);
       const view = new Float32Array(buf, 0, 4);
       view.$_set(1, 5);
-      view.lastIndexOf(5);
+      const result087 = view.lastIndexOf(5);
+      expect(result087).assertEqual(1);
       expect(view.buffer).assertEqual(buf);
     });
 
@@ -1305,7 +1320,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
       const buf = arr.buffer;
-      arr.lastIndexOf(5, 2);
+      const result088 = arr.lastIndexOf(5, 2);
+      expect(result088).assertEqual(1);
       expect(arr.buffer).assertEqual(buf);
     });
 
@@ -1319,7 +1335,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result089 = arr.lastIndexOf(5);
+      expect(result089).assertEqual(3);
       const element089 = arr.$_get(0);
       expect(element089).assertEqual(4);
     });
@@ -1334,7 +1351,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result090 = arr.lastIndexOf(5);
+      expect(result090).assertEqual(3);
       const element090 = arr.$_get(1);
       expect(element090).assertEqual(5);
     });
@@ -1349,7 +1367,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result091 = arr.lastIndexOf(5);
+      expect(result091).assertEqual(3);
       const element091 = arr.$_get(2);
       expect(element091).assertEqual(6);
     });
@@ -1364,7 +1383,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result092 = arr.lastIndexOf(5);
+      expect(result092).assertEqual(3);
       const element092 = arr.$_get(3);
       expect(element092).assertEqual(5);
     });
@@ -1379,7 +1399,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
-      arr.lastIndexOf(9);
+      const result093 = arr.lastIndexOf(9);
+      expect(result093).assertEqual(-1);
       const element093 = arr.$_get(0);
       expect(element093).assertEqual(4);
     });
@@ -1394,7 +1415,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
-      arr.lastIndexOf(9);
+      const result094 = arr.lastIndexOf(9);
+      expect(result094).assertEqual(-1);
       const element094 = arr.$_get(2);
       expect(element094).assertEqual(6);
     });
@@ -1409,7 +1431,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, 1.0, 2.0);
-      arr.lastIndexOf(Number.NaN);
+      const result095 = arr.lastIndexOf(Number.NaN);
+      expect(result095).assertEqual(-1);
       const element095 = arr.$_get(1);
       expect(element095).assertEqual(1);
     });
@@ -1424,7 +1447,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5, 1);
+      const result096 = arr.lastIndexOf(5, 1);
+      expect(result096).assertEqual(1);
       const element096 = arr.$_get(1);
       expect(element096).assertEqual(5);
     });
@@ -1439,7 +1463,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result097 = arr.lastIndexOf(5);
+      expect(result097).assertEqual(3);
       const atValue097 = arr.at(-1);
       expect(atValue097).assertEqual(5);
     });
@@ -1454,7 +1479,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result098 = arr.lastIndexOf(5);
+      expect(result098).assertEqual(3);
       const atValue098 = arr.at(0);
       expect(atValue098).assertEqual(4);
     });
@@ -1469,7 +1495,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result099 = arr.lastIndexOf(5);
+      expect(result099).assertEqual(3);
       let sum: number = 0;
       for (let __f32i = 0; __f32i < arr.length; __f32i++) {
         const v = arr.$_get(__f32i);
@@ -1488,7 +1515,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
      */
     it('testFloat32ArrayLastIndexOfTwo100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0, 5.0);
-      arr.lastIndexOf(5);
+      const result100 = arr.lastIndexOf(5);
+      expect(result100).assertEqual(3);
       expect(arr.name).assertEqual('Float32Array');
     });
 
@@ -1586,7 +1614,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const buf = new ArrayBuffer(32);
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 5);
-      view.lastIndexOf(5);
+      const result106 = view.lastIndexOf(5);
+      expect(result106).assertEqual(0);
       expect(view.length).assertEqual(4);
     });
 
@@ -1602,7 +1631,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const buf = new ArrayBuffer(32);
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 5);
-      view.lastIndexOf(5);
+      const result107 = view.lastIndexOf(5);
+      expect(result107).assertEqual(0);
       expect(view.byteLength).assertEqual(16);
     });
 
@@ -1618,7 +1648,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const buf = new ArrayBuffer(32);
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 5);
-      view.lastIndexOf(5);
+      const result108 = view.lastIndexOf(5);
+      expect(result108).assertEqual(0);
       expect(buf.byteLength).assertEqual(32);
     });
 
@@ -1635,7 +1666,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
       const view = new Float32Array(buf, 8, 4);
       view.$_set(0, 4);
       view.$_set(3, 5);
-      view.lastIndexOf(5);
+      const result109 = view.lastIndexOf(5);
+      expect(result109).assertEqual(3);
       const element110 = view.$_get(0);
       expect(element110).assertEqual(4);
     });
@@ -1681,7 +1713,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(1.0, 2.0, 5.0, 6.0, 5.0, 7.0);
       const view = base.subarray(2, 6);
-      view.lastIndexOf(5);
+      const result112 = view.lastIndexOf(5);
+      expect(result112).assertEqual(2);
       expect(view.byteOffset).assertEqual(8);
     });
 
@@ -1696,7 +1729,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(1.0, 2.0, 5.0, 6.0, 5.0, 7.0);
       const view = base.subarray(2, 6);
-      view.lastIndexOf(5);
+      const result113 = view.lastIndexOf(5);
+      expect(result113).assertEqual(2);
       expect(view.length).assertEqual(4);
     });
 
@@ -1711,7 +1745,8 @@ export default function Float32ArrayLastIndexOf2Test(): void {
     it('testFloat32ArrayLastIndexOfTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(1.0, 2.0, 5.0, 6.0, 5.0, 7.0);
       const view = base.subarray(2, 6);
-      view.lastIndexOf(5);
+      const result114 = view.lastIndexOf(5);
+      expect(result114).assertEqual(2);
       expect(view.buffer).assertEqual(base.buffer);
     });
 

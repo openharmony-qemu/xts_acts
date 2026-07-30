@@ -731,9 +731,12 @@ export default function Float32ArrayMap2Test(): void {
     it('testFloat32ArrayMapTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
+      expect(res.$_get(0)).assertEqual(1.0);
+      expect(res.$_get(1)).assertEqual(2.0);
       res.$_set(0, 99.0);
       const element061 = res.$_get(0);
       expect(element061).assertEqual(99.0);
+      expect(arr.$_get(0)).assertEqual(1.0);
     });
 
     /**
@@ -899,6 +902,9 @@ export default function Float32ArrayMap2Test(): void {
     it('testFloat32ArrayMapTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
+      expect(res.$_get(0)).assertEqual(1.0);
+      expect(res.$_get(1)).assertEqual(2.0);
+      expect(res.$_get(2)).assertEqual(3.0);
       res.fill(9.0);
       const element072 = res.$_get(0);
       expect(element072).assertEqual(9.0);
@@ -969,10 +975,15 @@ export default function Float32ArrayMap2Test(): void {
     it('testFloat32ArrayMapTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const res = arr.map((v: number, index: int, array: Float32Array): number => v);
+      expect(res.$_get(0)).assertEqual(1.0);
+      expect(res.$_get(1)).assertEqual(2.0);
+      expect(res.$_get(2)).assertEqual(3.0);
+      expect(res.$_get(3)).assertEqual(4.0);
       const sub = res.subarray(1, 3);
       sub.$_set(0, 99.0);
       const element076 = res.$_get(1);
       expect(element076).assertEqual(99.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
     });
 
     /**

@@ -34,7 +34,7 @@ export default function Float32ArraySubarray4Test(): void {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(45);
+      await Utils.msSleep(50);
     });
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();

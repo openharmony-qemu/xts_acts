@@ -1379,10 +1379,14 @@ export default function Float32ArraySubarray1Test(): void {
         const base = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
         const view = base.subarray(0, 4);
         let count = 0;
-        for (let __f32i = 0; __f32i < view.length; __f32i++) { const v = view.$_get(__f32i);
+        let sum = 0.0;
+        for (let __f32i = 0; __f32i < view.length; __f32i++) {
+          const v = view.$_get(__f32i);
+          sum = sum + v;
           count++;
         }
         expect(count).assertEqual(4);
+        expect(sum).assertEqual(10.0);
       }
     });
 

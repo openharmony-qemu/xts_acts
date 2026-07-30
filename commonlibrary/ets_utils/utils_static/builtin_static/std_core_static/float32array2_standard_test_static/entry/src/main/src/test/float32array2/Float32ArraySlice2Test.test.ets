@@ -133,6 +133,8 @@ export default function Float32ArraySlice2Test(): void {
       const r = arr.slice(0, 1);
       expect(r.length).assertEqual(1);
       expect(r.at(0)).assertEqual(1.0);
+      r.$_set(0, 9.0);
+      expect(arr.$_get(0)).assertEqual(1.0);
     });
 
     /**
@@ -901,8 +903,11 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      arr.slice(0, 2);
+      const result = arr.slice(0, 2);
       expect(arr.length).assertEqual(5);
+      expect(result.length).assertEqual(2);
+      expect(result.$_get(0)).assertEqual(1.0);
+      expect(result.$_get(1)).assertEqual(2.0);
     });
 
     /**
@@ -915,8 +920,11 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
-      arr.slice(1, 3);
+      const result = arr.slice(1, 3);
       expect(arr.byteLength).assertEqual(16);
+      expect(result.byteLength).assertEqual(8);
+      expect(result.$_get(0)).assertEqual(2.0);
+      expect(result.$_get(1)).assertEqual(3.0);
     });
 
     /**
@@ -930,8 +938,14 @@ export default function Float32ArraySlice2Test(): void {
     it('testFloat32ArraySliceTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(24);
       const arr = new Float32Array(buf, 4, 5);
-      arr.slice(0, 2);
+      arr.$_set(0, 11.0);
+      arr.$_set(1, 22.0);
+      const result = arr.slice(0, 2);
       expect(arr.byteOffset).assertEqual(4);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.length).assertEqual(2);
+      expect(result.$_get(0)).assertEqual(11.0);
+      expect(result.$_get(1)).assertEqual(22.0);
     });
 
     /**
@@ -944,9 +958,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
-      arr.slice(0, 2);
-      const atValue061 = arr.at(0);
+      const result = arr.slice(0, 2);
+      const atValue061 = result.at(0);
       expect(atValue061).assertEqual(1.0);
+      expect(result.at(1)).assertEqual(2.0);
     });
 
     /**
@@ -959,9 +974,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      arr.slice(-2);
-      const atValue062 = arr.at(4);
-      expect(atValue062).assertEqual(5.0);
+      const result = arr.slice(-2);
+      const atValue062 = result.at(0);
+      expect(atValue062).assertEqual(4.0);
+      expect(result.at(1)).assertEqual(5.0);
     });
 
     /**
@@ -974,9 +990,11 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0]);
-      arr.slice(1, -1);
-      const atValue063 = arr.at(2);
+      const result = arr.slice(1, -1);
+      const atValue063 = result.at(1);
       expect(atValue063).assertEqual(30.0);
+      expect(result.$_get(0)).assertEqual(20.0);
+      expect(result.$_get(2)).assertEqual(40.0);
     });
 
     /**
@@ -989,9 +1007,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.NaN, 2.0, 3.0]);
-      arr.slice(0, 1);
-      const atValue064 = arr.at(0);
+      const result = arr.slice(0, 1);
+      const atValue064 = result.at(0);
       expect(atValue064).assertNaN();
+      expect(result.length).assertEqual(1);
     });
 
     /**
@@ -1149,9 +1168,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
-      arr.slice(1, 3);
-      const atValue074 = arr.at(-1);
-      expect(atValue074).assertEqual(40.0);
+      const result = arr.slice(1, 3);
+      const atValue074 = result.at(-1);
+      expect(atValue074).assertEqual(30.0);
+      expect(result.at(0)).assertEqual(20.0);
     });
 
     /**
@@ -1210,9 +1230,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, 2.0]);
-      arr.slice(0, 1);
-      const atValue078 = arr.at(0);
+      const result = arr.slice(0, 1);
+      const atValue078 = result.at(0);
       expect(atValue078).assertEqual(Number.POSITIVE_INFINITY);
+      expect(result.length).assertEqual(1);
     });
 
     /**
@@ -1225,9 +1246,10 @@ export default function Float32ArraySlice2Test(): void {
      */
     it('testFloat32ArraySliceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 2.0]);
-      arr.slice(0, 1);
-      const element079 = 1 / arr.$_get(0);
+      const result = arr.slice(0, 1);
+      const element079 = 1 / result.$_get(0);
       expect(element079).assertEqual(-Number.POSITIVE_INFINITY);
+      expect(result.length).assertEqual(1);
     });
 
     /**
@@ -1288,6 +1310,8 @@ export default function Float32ArraySlice2Test(): void {
       expect(r.length).assertEqual(2);
       expect(r.at(0)).assertEqual(1.0);
       expect(r.at(1)).assertEqual(2.0);
+      arr.$_set(0, 9.0);
+      expect(r.$_get(0)).assertEqual(1.0);
     });
 
     /**

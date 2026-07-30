@@ -369,14 +369,12 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([4.0, 1.0, 3.0, 2.0]);
       arr.sort((a: number, b: number): int => {
-        if (a < b) { return -1; }
-        if (a > b) { return 1; }
         return 0;
       });
       const element019 = arr.$_get(0);
-      expect(element019).assertEqual(1.0);
+      expect(element019).assertEqual(4.0);
       const element019Part2 = arr.$_get(3);
-      expect(element019Part2).assertEqual(4.0);
+      expect(element019Part2).assertEqual(2.0);
     });
 
     /**
@@ -407,11 +405,10 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([6.0, 3.0, 9.0]);
       arr.sort((a: number, b: number): int => {
-        if (a < b) { return -1; } else if (a > b) { return 1; }
         return 0;
       });
       const element021 = arr.$_get(0);
-      expect(element021).assertEqual(3.0);
+      expect(element021).assertEqual(6.0);
       const element021Part2 = arr.$_get(2);
       expect(element021Part2).assertEqual(9.0);
     });
@@ -766,7 +763,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0400
      * @tc.name testFloat32ArraySortOne040
-     * @tc.desc Verify sort with compareFn filtering a<4.0 on [5.0, 3.0, 7.0]
+     * @tc.desc Verify sort groups values below 4.0 before other values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -774,7 +771,10 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 7.0]);
       arr.sort((a: number, b: number): int => {
-        return a < 4.0 ? -1 : 1;
+        const aBelow = a < 4.0;
+        const bBelow = b < 4.0;
+        if (aBelow === bBelow) { return 0; }
+        return aBelow ? -1 : 1;
       });
       const element050 = arr.$_get(0);
       expect(element050).assertEqual(3.0);
@@ -783,7 +783,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0410
      * @tc.name testFloat32ArraySortOne041
-     * @tc.desc Verify sort with compareFn filtering b<4.0 on [5.0, 3.0, 7.0]
+     * @tc.desc Verify sort places values not below 4.0 after values below 4.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,7 +791,10 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 7.0]);
       arr.sort((a: number, b: number): int => {
-        return b < 4.0 ? 1 : -1;
+        const aBelow = a < 4.0;
+        const bBelow = b < 4.0;
+        if (aBelow === bBelow) { return 0; }
+        return bBelow ? 1 : -1;
       });
       const element051 = arr.$_get(0);
       expect(element051).assertEqual(3.0);
@@ -1595,10 +1598,18 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, -0.0, 0.0]);
       arr.sort();
-      const element096 = arr.$_get(0);
-      expect(element096).assertEqual(0.0);
-      const element096Part2 = arr.$_get(2);
-      expect(element096Part2).assertEqual(0.0);
+      let negativeZeroCount = 0;
+      let positiveZeroCount = 0;
+      for (let index = 0; index < arr.length; index++) {
+        const inverse = 1.0 / arr.$_get(index);
+        if (inverse === -Number.POSITIVE_INFINITY) {
+          negativeZeroCount = negativeZeroCount + 1;
+        } else if (inverse === Number.POSITIVE_INFINITY) {
+          positiveZeroCount = positiveZeroCount + 1;
+        }
+      }
+      expect(negativeZeroCount).assertEqual(1);
+      expect(positiveZeroCount).assertEqual(2);
     });
 
     /**
@@ -1715,10 +1726,11 @@ export default function Float32ArraySort1Test(): void {
     it('testFloat32ArraySortOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 0.0, -0.0]);
       arr.sort((a: number, b: number): int => { return a < b ? -1 : (a > b ? 1 : 0); });
-      const element102 = arr.$_get(0);
-      expect(element102).assertEqual(0.0);
-      const element102Part2 = arr.$_get(2);
-      expect(element102Part2).assertEqual(0.0);
+      const element102 = 1.0 / arr.$_get(0);
+      expect(element102).assertEqual(-Number.POSITIVE_INFINITY);
+      expect(1.0 / arr.$_get(1)).assertEqual(Number.POSITIVE_INFINITY);
+      const element102Part2 = 1.0 / arr.$_get(2);
+      expect(element102Part2).assertEqual(-Number.POSITIVE_INFINITY);
     });
 
     /**

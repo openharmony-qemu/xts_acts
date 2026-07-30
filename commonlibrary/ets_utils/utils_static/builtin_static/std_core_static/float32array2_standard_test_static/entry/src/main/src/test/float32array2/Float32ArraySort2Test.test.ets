@@ -1375,10 +1375,18 @@ export default function Float32ArraySort2Test(): void {
     it('testFloat32ArraySortTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.0, -0.0, 5.0);
       const r = arr.sort();
-      const element089 = r.$_get(0);
-      expect(element089).assertEqual(0);
-      const element089Part2 = r.$_get(1);
-      expect(element089Part2).assertEqual(0);
+      let negativeZeroCount = 0;
+      let positiveZeroCount = 0;
+      for (let index = 0; index < 2; index++) {
+        const inverse = 1.0 / r.$_get(index);
+        if (inverse === -Number.POSITIVE_INFINITY) {
+          negativeZeroCount = negativeZeroCount + 1;
+        } else if (inverse === Number.POSITIVE_INFINITY) {
+          positiveZeroCount = positiveZeroCount + 1;
+        }
+      }
+      expect(negativeZeroCount).assertEqual(1);
+      expect(positiveZeroCount).assertEqual(1);
       const element089Part3 = r.$_get(2);
       expect(element089Part3).assertEqual(5);
     });
@@ -1396,10 +1404,10 @@ export default function Float32ArraySort2Test(): void {
       const r = arr.sort();
       const element090 = r.$_get(0);
       expect(element090).assertEqual(-5);
-      const element090Part2 = r.$_get(1);
-      expect(element090Part2).assertEqual(0);
-      const element090Part3 = r.$_get(2);
-      expect(element090Part3).assertEqual(0);
+      const element090Part2 = 1.0 / r.$_get(1);
+      expect(element090Part2).assertEqual(-Number.POSITIVE_INFINITY);
+      const element090Part3 = 1.0 / r.$_get(2);
+      expect(element090Part3).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
@@ -1693,10 +1701,18 @@ export default function Float32ArraySort2Test(): void {
     it('testFloat32ArraySortTwo102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0.0, -0.0, 1.0);
       const r = arr.sort();
-      const element107 = r.$_get(0);
-      expect(element107).assertEqual(0);
-      const element107Part2 = r.$_get(1);
-      expect(element107Part2).assertEqual(0);
+      let negativeZeroCount = 0;
+      let positiveZeroCount = 0;
+      for (let index = 0; index < 2; index++) {
+        const inverse = 1.0 / r.$_get(index);
+        if (inverse === -Number.POSITIVE_INFINITY) {
+          negativeZeroCount = negativeZeroCount + 1;
+        } else if (inverse === Number.POSITIVE_INFINITY) {
+          positiveZeroCount = positiveZeroCount + 1;
+        }
+      }
+      expect(negativeZeroCount).assertEqual(1);
+      expect(positiveZeroCount).assertEqual(1);
       const element107Part3 = r.$_get(2);
       expect(element107Part3).assertEqual(1);
     });

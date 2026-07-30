@@ -1912,6 +1912,7 @@ export default function Float32ArraySet1Test(): void {
       const arr: Float32Array = new Float32Array([10.0, 20.0, 30.0]);
       const source: Float32Array = Float32Array.of(99.0);
       arr.set(source);
+      expect(arr.$_get(0)).assertEqual(99.0);
       const element112 = arr.$_get(1);
       expect(element112).assertEqual(20.0);
       const element112Part2 = arr.$_get(2);

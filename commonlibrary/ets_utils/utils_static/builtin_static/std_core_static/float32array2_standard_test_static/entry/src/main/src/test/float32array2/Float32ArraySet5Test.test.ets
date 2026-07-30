@@ -426,12 +426,12 @@ export default function Float32ArraySet5Test(): void {
       const src = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = src.subarray(1, 4);
       const target = new Float32Array(5);
-      target.set(sub, 2);
+      target.set(sub, 1);
       expect(target.$_get(0)).assertEqual(0.0);
-      expect(target.$_get(1)).assertEqual(0.0);
-      expect(target.$_get(2)).assertEqual(2.0);
-      expect(target.$_get(3)).assertEqual(3.0);
-      expect(target.$_get(4)).assertEqual(4.0);
+      expect(target.$_get(1)).assertEqual(2.0);
+      expect(target.$_get(2)).assertEqual(3.0);
+      expect(target.$_get(3)).assertEqual(4.0);
+      expect(target.$_get(4)).assertEqual(0.0);
     });
 
     /**

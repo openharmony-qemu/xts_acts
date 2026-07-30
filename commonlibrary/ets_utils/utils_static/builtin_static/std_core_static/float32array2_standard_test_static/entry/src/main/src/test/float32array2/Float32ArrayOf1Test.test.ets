@@ -714,7 +714,7 @@ export default function Float32ArrayOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_OF_ONE_0470
      * @tc.name testFloat32ArrayOfOne047
-     * @tc.desc Verify of(9.0) 16
+     * @tc.desc Verify of(9.0) returns 9.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -728,7 +728,7 @@ export default function Float32ArrayOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_OF_ONE_0480
      * @tc.name testFloat32ArrayOfOne048
-     * @tc.desc Verify of(0.25) 16
+     * @tc.desc Verify of(0.25) returns 0.25
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1151,20 +1151,20 @@ export default function Float32ArrayOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_OF_ONE_0780
      * @tc.name testFloat32ArrayOfOne078
-     * @tc.desc Verify of(1, 2, 3) for of
+     * @tc.desc Verify of(1, 2, 3) values iterator yields all elements in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayOfOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(1.0, 2.0, 3.0);
-      let first: number = 0;
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        first = v;
-        break;
+      const iterator = arr.values();
+      let sum: number = 0;
+      for (let result = iterator.next(); !result.done; result = iterator.next()) {
+        const value = result.value!;
+        sum = sum + value;
       }
-      expect(first).assertEqual(1);
+      expect(sum).assertEqual(6.0);
     });
 
     /**
@@ -1327,6 +1327,7 @@ export default function Float32ArrayOf1Test(): void {
       const arr: Float32Array = Float32Array.of(1.0e40, -1.0e40);
       const element094 = arr.$_get(0);
       expect(element094).assertEqual(Number.POSITIVE_INFINITY);
+      expect(arr.$_get(1)).assertEqual(-Number.POSITIVE_INFINITY);
     });
 
     /**
@@ -1368,8 +1369,7 @@ export default function Float32ArrayOf1Test(): void {
     it('testFloat32ArrayOfOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0.1, 0.2, 0.3);
       const sum: number = arr.$_get(0) + arr.$_get(1) + arr.$_get(2);
-      const observedValue098 = sum === 0.6;
-      expect(observedValue098).assertFalse();
+      expect(sum).assertEqual(0.6000000163912773);
     });
 
     /**

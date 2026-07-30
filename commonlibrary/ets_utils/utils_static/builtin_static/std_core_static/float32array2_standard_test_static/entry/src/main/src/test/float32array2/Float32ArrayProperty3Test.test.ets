@@ -1259,6 +1259,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(4);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1278,6 +1282,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(16);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1297,6 +1305,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteOffset).assertEqual(0);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1317,6 +1329,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.buffer).assertEqual(before);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1336,6 +1352,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(4);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1355,6 +1375,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(16);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1374,6 +1398,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteOffset).assertEqual(0);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1394,6 +1422,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.buffer).assertEqual(before);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1413,6 +1445,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(4);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1432,6 +1468,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(16);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
@@ -1506,6 +1546,10 @@ export default function Float32ArrayProperty3Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
       expect(b.length).assertEqual(2);
+      expect(a.$_get(0)).assertEqual(1.0);
+      expect(a.$_get(1)).assertEqual(2.0);
+      expect(b.$_get(0)).assertEqual(3.0);
+      expect(b.$_get(1)).assertEqual(4.0);
     });
 
     /**
