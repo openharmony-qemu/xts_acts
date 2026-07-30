@@ -181,6 +181,60 @@ struct DialogStyleAlert {
               ]
             });
           })
+        Button('wordBreak BREAK_ALL')
+          .id('btn_style_alert_wb_all')
+          .onClick(async () => {
+            await this.presenter().present({
+              title: 'WBAllTitle',
+              message: {
+                content: 'WBAllLongMessageContentForBreak',
+                wordBreak: WordBreak.BREAK_ALL
+              },
+              buttons: [
+                {
+                  value: 'WBAllOK',
+                  action: () => {
+                    this.lastAction = 'WBAllOK';
+                  }
+                }
+              ]
+            });
+          })
+        Button('subtitle field')
+          .id('btn_style_alert_subtitle')
+          .onClick(async () => {
+            await this.presenter().present({
+              title: 'SubTitleMain',
+              subtitle: 'SubTitleValue',
+              message: { content: 'SubTitleMsg' },
+              buttons: [
+                {
+                  value: 'SubTitleOK',
+                  action: () => {
+                    this.lastAction = 'SubTitleOK';
+                  }
+                }
+              ]
+            });
+          })
+        Button('dialogId result')
+          .id('btn_style_alert_dialogid')
+          .onClick(async () => {
+            let result: DialogResult = await this.presenter().present({
+              title: 'DialogIdTitle',
+              message: { content: 'DialogIdMsg' },
+              buttons: [
+                {
+                  value: 'DialogIdOK',
+                  action: () => {
+                    this.lastAction = 'DialogIdOK';
+                  }
+                }
+              ]
+            });
+            this.lastDialogId = result.dialogId;
+            this.lastAction = 'dialogId=' + result.dialogId;
+          })
       }
       .width('100%')
       .padding(16)

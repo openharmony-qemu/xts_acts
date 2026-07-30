@@ -31,6 +31,10 @@ import DialogBaseOptionsVisual from './dialog/DialogBaseOptionsVisual.test';
 import DialogBaseControllerLife from './dialog/DialogBaseControllerLife.test';
 import DialogCustomPresent from './dialog/DialogCustomPresent.test';
 import DialogEnumsAssert from './dialog/DialogEnumsAssert.test';
+import DialogButtonMatrix from './dialog/DialogButtonMatrix.test';
+import DialogLifeCallbacks from './dialog/DialogLifeCallbacks.test';
+import DialogBaseSizeBorder from './dialog/DialogBaseSizeBorder.test';
+import DialogEnumsAssertExtra from './dialog/DialogEnumsAssertExtra.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
@@ -51,4 +55,8 @@ export default function testsuite() {
   DialogBaseControllerLife();
   DialogCustomPresent();
   DialogEnumsAssert();
+  DialogButtonMatrix();
+  DialogLifeCallbacks();
+  DialogBaseSizeBorder();
+  DialogEnumsAssertExtra();
 }

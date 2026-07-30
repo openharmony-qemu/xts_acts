@@ -139,6 +139,103 @@ struct DialogCustomPresent {
             this.lastError = String(err);
           }
         })
+      Button('present then update')
+        .id('btn_custom_present_update')
+        .onClick(async () => {
+          this.lastError = 'none';
+          try {
+            let param: CustomParam = { text: 'PresentUpdateContent' };
+            this.contentNode = new ComponentContent(this.getUIContext(),
+              wrapBuilder<[CustomParam]>(buildCustomDialog), param);
+            let opts: dialog.DialogCustomOptions = {
+              customStyle: false,
+              width: 260,
+              height: 150,
+              backgroundColor: Color.White,
+              isModal: false
+            };
+            let result: DialogResult = await this.presenter().present(this.contentNode, opts);
+            this.dialogId = result.dialogId;
+            let upd: dialog.DialogBaseOptions = {
+              backgroundColor: '#E3F2FD',
+              borderWidth: 2,
+              borderColor: Color.Blue
+            };
+            await this.presenter().update(this.contentNode, upd);
+            this.lastAction = 'updated';
+          } catch (err) {
+            this.lastError = String(err);
+            this.lastAction = 'error';
+          }
+        })
+      Button('custom width height')
+        .id('btn_custom_size')
+        .onClick(async () => {
+          this.lastError = 'none';
+          try {
+            let param: CustomParam = { text: 'CustomSizeContent' };
+            this.contentNode = new ComponentContent(this.getUIContext(),
+              wrapBuilder<[CustomParam]>(buildCustomDialog), param);
+            let opts: dialog.DialogCustomOptions = {
+              customStyle: false,
+              width: 280,
+              height: 160,
+              backgroundColor: '#FFF8E1',
+              borderRadius: 16,
+              isModal: false
+            };
+            let result: DialogResult = await this.presenter().present(this.contentNode, opts);
+            this.dialogId = result.dialogId;
+            this.lastAction = 'sizeOpened';
+          } catch (err) {
+            this.lastError = String(err);
+          }
+        })
+      Button('custom border radius color')
+        .id('btn_custom_border')
+        .onClick(async () => {
+          this.lastError = 'none';
+          try {
+            let param: CustomParam = { text: 'CustomBorderContent' };
+            this.contentNode = new ComponentContent(this.getUIContext(),
+              wrapBuilder<[CustomParam]>(buildCustomDialog), param);
+            let opts: dialog.DialogCustomOptions = {
+              customStyle: false,
+              borderWidth: 2,
+              borderColor: Color.Blue,
+              borderRadius: 24,
+              backgroundColor: Color.White,
+              isModal: false
+            };
+            let result: DialogResult = await this.presenter().present(this.contentNode, opts);
+            this.dialogId = result.dialogId;
+            this.lastAction = 'borderOpened';
+          } catch (err) {
+            this.lastError = String(err);
+          }
+        })
+      Button('custom autoCancel focusable')
+        .id('btn_custom_flags')
+        .onClick(async () => {
+          this.lastError = 'none';
+          try {
+            let param: CustomParam = { text: 'CustomFlagsContent' };
+            this.contentNode = new ComponentContent(this.getUIContext(),
+              wrapBuilder<[CustomParam]>(buildCustomDialog), param);
+            let opts: dialog.DialogCustomOptions = {
+              customStyle: false,
+              autoCancel: false,
+              focusable: true,
+              isModal: false,
+              backgroundColor: Color.White
+            };
+            let result: DialogResult = await this.presenter().present(this.contentNode, opts);
+            this.dialogId = result.dialogId;
+            this.lastAction = 'flagsOpened';
+          } catch (err) {
+            this.lastError = String(err);
+          }
+        })
     }
     .width('100%')
     .height('100%')

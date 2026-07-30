@@ -18,6 +18,10 @@
     "MainAbility/pages/dialog/DialogBaseOptionsVisual",
     "MainAbility/pages/dialog/DialogBaseControllerLife",
     "MainAbility/pages/dialog/DialogCustomPresent",
-    "MainAbility/pages/dialog/DialogEnumsAssert"
+    "MainAbility/pages/dialog/DialogEnumsAssert",
+    "MainAbility/pages/dialog/DialogButtonMatrix",
+    "MainAbility/pages/dialog/DialogLifeCallbacks",
+    "MainAbility/pages/dialog/DialogBaseSizeBorder",
+    "MainAbility/pages/dialog/DialogEnumsAssertExtra"
   ]
 }

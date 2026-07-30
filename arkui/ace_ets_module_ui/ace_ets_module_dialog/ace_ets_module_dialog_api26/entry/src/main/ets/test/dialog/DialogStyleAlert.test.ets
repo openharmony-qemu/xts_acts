@@ -230,5 +230,90 @@ export default function DialogStyleAlert() {
       done();
     });
 
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogStyleAlert_0700
+     * @tc.name SUB_ArkUI_DialogApi26_DialogStyleAlert_0700
+     * @tc.desc DialogMessage wordBreak BREAK_ALL
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogStyleAlert_0700', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0700 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.waitForComponent(ON.id('btn_style_alert_wb_all'), 5000);
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.waitForComponent(ON.text('WBAllTitle'), 3000);
+      expect(node !== null).assertTrue();
+      let act = await driver.waitForComponent(ON.text('WBAllOK'), 3000);
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('style_alert_action'));
+      let txt = await label.getText();
+      expect(txt.indexOf('WBAllOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0700 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogStyleAlert_0800
+     * @tc.name SUB_ArkUI_DialogApi26_DialogStyleAlert_0800
+     * @tc.desc DialogStyleOptions.subtitle
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogStyleAlert_0800', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0800 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.waitForComponent(ON.id('btn_style_alert_subtitle'), 5000);
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let sub = await driver.waitForComponent(ON.text('SubTitleValue'), 3000);
+      expect(sub !== null).assertTrue();
+      let act = await driver.waitForComponent(ON.text('SubTitleOK'), 3000);
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('style_alert_action'));
+      let txt = await label.getText();
+      expect(txt.indexOf('SubTitleOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0800 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogStyleAlert_0900
+     * @tc.name SUB_ArkUI_DialogApi26_DialogStyleAlert_0900
+     * @tc.desc DialogResult.dialogId via dedicated button
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogStyleAlert_0900', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0900 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.waitForComponent(ON.id('btn_style_alert_dialogid'), 5000);
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let act = await driver.waitForComponent(ON.text('DialogIdOK'), 3000);
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('style_alert_action'));
+      let txt = await label.getText();
+      expect(txt.indexOf('dialogId=') >= 0 || txt.indexOf('DialogIdOK') >= 0).assertTrue();
+      let idLabel = await driver.findComponent(ON.id('style_alert_dialog_id'));
+      let idTxt = await idLabel.getText();
+      expect(idTxt !== 'dialogId=-1').assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleAlert_0900 END');
+      done();
+    });
+
   });
 }
