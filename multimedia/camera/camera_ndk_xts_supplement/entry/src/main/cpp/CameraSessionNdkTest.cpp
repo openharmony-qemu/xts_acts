@@ -1001,8 +1001,7 @@ napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info)
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double setAperture;
-    setAperture = apertures[0].apertures[0];
+    double setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
     float zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
@@ -1431,9 +1430,7 @@ void OnMetadataObjectExtAvailable(void* context, OH_Camera_MetadataObjectExt** m
         OH_Camera_MetadataObjectExt* MetadataObjectExt = metadataObjectExt[i];
         Camera_MetadataObjectType type;
         Camera_ErrorCode ret = OH_MetadataObjectExt_GetMetadataObjectType(MetadataObjectExt, &type);
-        if (ret != CAMERA_OK) {
-            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetMetadataObjectType failed. %{public}d", ret);
-        }
+        OH_LOG_INFO(LOG_APP, "OH_MetadataObjectExt_GetMetadataObjectType ret. %{public}d", ret);
         int64_t timestamp;
         ret = OH_MetadataObjectExt_GetTimestamp(MetadataObjectExt, &timestamp);
         if (ret != CAMERA_OK) {
