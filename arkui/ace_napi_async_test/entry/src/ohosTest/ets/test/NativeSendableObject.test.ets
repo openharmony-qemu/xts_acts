@@ -212,7 +212,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('Error');
+        expect().assertFail();
       }
     });
 
@@ -238,7 +238,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -265,7 +265,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -288,7 +288,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -312,7 +312,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -344,7 +344,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('Error');
+        expect().assertFail();
       }
     });
 
@@ -379,7 +379,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -416,7 +416,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -453,7 +453,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -488,7 +488,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -524,7 +524,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -554,7 +554,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -582,7 +582,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -618,7 +618,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -657,7 +657,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -694,7 +694,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -730,7 +730,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -766,7 +766,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -797,7 +797,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -830,7 +830,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -860,7 +860,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -892,7 +892,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -933,7 +933,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -970,7 +970,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1009,7 +1009,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1049,7 +1049,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1087,7 +1087,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1126,7 +1126,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1156,7 +1156,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('AssertException');
+        expect().assertFail();
       }
     });
 
@@ -1190,7 +1190,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1228,7 +1228,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('AssertException');
+        expect().assertFail();
       }
     });
 
@@ -1257,7 +1257,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('AssertException');
+        expect().assertFail();
       }
     });
 
@@ -1292,7 +1292,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
+        expect().assertFail();
       }
     });
 
@@ -1323,7 +1323,7 @@ export default function NativeSendableObjectTest() {
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('AssertException');
+        expect().assertFail();
       }
     });
   });
