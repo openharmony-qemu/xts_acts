@@ -400,7 +400,7 @@ export default function wifiManagerOffTest() {
           expect().assertFail();
         } catch (error) {
           console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
-          expect(Number(error.code) === 2501001).assertTrue();
+          expect(error.code).assertEqual(2501001);
         }
         console.info(`${caseName} test end`);
         done();
