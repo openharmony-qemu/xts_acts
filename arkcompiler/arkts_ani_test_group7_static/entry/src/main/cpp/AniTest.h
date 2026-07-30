@@ -558,11 +558,13 @@ ani_boolean testAniDynamicRegistration([[maybe_unused]] ani_env *env)
         return ANI_FALSE;
     }
     ani_int addResult = 0;
-    if (env->Function_Call_Int(addFn, &addResult, 3, 5) != ANI_OK || addResult != 8) {
+    ani_int addA = 3;
+    if (env->Function_Call_Int(addFn, &addResult, addA, 5) != ANI_OK || addResult != 8) {
         return ANI_FALSE;
     }
     ani_int subResult = 0;
-    if (env->Function_Call_Int(subFn, &subResult, 10, 4) != ANI_OK || subResult != 6) {
+    ani_int subA = 10;
+    if (env->Function_Call_Int(subFn, &subResult, subA, 4) != ANI_OK || subResult != 6) {
         return ANI_FALSE;
     }
     return ANI_TRUE;
