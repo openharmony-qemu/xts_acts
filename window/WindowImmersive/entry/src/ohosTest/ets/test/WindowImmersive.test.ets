@@ -5637,6 +5637,54 @@ export default function windowImmersiveTest() {
  	   }
  	 })
 
+   /**
+ 	      * @tc.name   testSetFloatNavigationAvoidAreaEnabledNull
+ 	      * @tc.number SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+ 	      * @tc.desc   SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+ 	      * @tc.type   传入null后报错401
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL0
+ 	      */
+ 	     it('testSetFloatNavigationAvoidAreaEnabledNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+ 	       let caseName = 'testSetFloatNavigationAvoidAreaEnabledNull';
+ 	       try {
+ 	         let windowClass = windowStage.getMainWindowSync();
+ 	         await windowClass.setFloatNavigationAvoidAreaEnabled(null);
+ 	         console.info(`${caseName} setFloatNavigationAvoidAreaEnabled null.`);
+ 	         await sleep(500);
+ 	         expect().assertFail();
+ 	         done();
+ 	       } catch (exception) {
+ 	         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+ 	         expect(exception.code).assertEqual(401);
+ 	         done();
+ 	       }
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   testSetFloatNavigationAvoidAreaEnabledUndefined
+ 	      * @tc.number SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+ 	      * @tc.desc   SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+ 	      * @tc.type   传入undefined后报错401
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL0
+ 	      */
+ 	     it('testSetFloatNavigationAvoidAreaEnabledUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+ 	       let caseName = 'testSetFloatNavigationAvoidAreaEnabledUndefined';
+ 	       try {
+ 	         let windowClass = windowStage.getMainWindowSync();
+ 	         await windowClass.setFloatNavigationAvoidAreaEnabled(undefined);
+ 	         console.info(`${caseName} setFloatNavigationAvoidAreaEnabled undefined.`);
+ 	         await sleep(500);
+ 	         expect().assertFail();
+ 	         done();
+ 	       } catch (exception) {
+ 	         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+ 	         expect(exception.code).assertEqual(401);
+ 	         done();
+ 	       }
+ 	     })
+
   })
 }
 
