@@ -783,32 +783,12 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0410
      * @tc.name testFloat32ArraySortOne041
-     * @tc.desc Verify sort comparator orders values less than 4.0 before values >= 4.0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySortOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([5.0, 3.0, 7.0]);
-      arr.sort((a: number, b: number): int => {
-        const aBelow = a < 4.0;
-        const bBelow = b < 4.0;
-        if (aBelow === bBelow) { return 0; }
-        return bBelow ? 1 : -1;
-      });
-      const element051 = arr.$_get(0);
-      expect(element051).assertEqual(3.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0420
-     * @tc.name testFloat32ArraySortOne042
      * @tc.desc Verify sort with parenthesized compareFn on [3.0, 1.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       arr.sort((a: number, b: number): int => { return (a < b) ? -1 : ((a > b) ? 1 : 0); });
       const element052 = arr.$_get(0);
@@ -818,14 +798,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0430
-     * @tc.name testFloat32ArraySortOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0420
+     * @tc.name testFloat32ArraySortOne042
      * @tc.desc Verify sort with compareFn delegating to helper function on [3.0, 1.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const helper = (x: number, y: number): int => { return x < y ? -1 : (x > y ? 1 : 0); };
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       arr.sort((a: number, b: number): int => { return helper(a, b); });
@@ -836,14 +816,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0440
-     * @tc.name testFloat32ArraySortOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0430
+     * @tc.name testFloat32ArraySortOne043
      * @tc.desc Verify sort with compareFn on [5.0, 3.0, 1.0, 4.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
       arr1.sort();
       const arr2 = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
@@ -855,14 +835,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0450
-     * @tc.name testFloat32ArraySortOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0440
+     * @tc.name testFloat32ArraySortOne044
      * @tc.desc Verify sort() and sort(undefined) produce same result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
       arr1.sort();
       const arr2 = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
@@ -874,14 +854,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0460
-     * @tc.name testFloat32ArraySortOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0450
+     * @tc.name testFloat32ArraySortOne045
      * @tc.desc Verify sort() on [3,NaN,1] sorts NaN to end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, Number.NaN, 1.0]);
       arr.sort();
       const element056 = arr.$_get(0);
@@ -891,14 +871,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0470
-     * @tc.name testFloat32ArraySortOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0460
+     * @tc.name testFloat32ArraySortOne046
      * @tc.desc Verify sort with compareFn on [3.0, NaN, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, Number.NaN, 1.0]);
       arr.sort((a: number, b: number): int => {
         if (a !== a) { return 1; }
@@ -912,14 +892,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0480
-     * @tc.name testFloat32ArraySortOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0470
+     * @tc.name testFloat32ArraySortOne047
      * @tc.desc Verify sort() on negatives sorts ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, -1.0, 2.0, -5.0]);
       arr.sort();
       const element058 = arr.$_get(0);
@@ -929,14 +909,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0490
-     * @tc.name testFloat32ArraySortOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0480
+     * @tc.name testFloat32ArraySortOne048
      * @tc.desc Verify sort() and sort(compareFn) on empty arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Float32Array(0);
       arr1.sort();
       const arr2 = new Float32Array(0);
@@ -946,14 +926,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0500
-     * @tc.name testFloat32ArraySortOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0490
+     * @tc.name testFloat32ArraySortOne049
      * @tc.desc Verify sort() handles Float32 max value 3.4028234663852886e+38
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 3.4028234663852886e+38, 2.0]);
       arr.sort();
       const element060 = arr.$_get(0);
@@ -963,14 +943,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0510
-     * @tc.name testFloat32ArraySortOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0500
+     * @tc.name testFloat32ArraySortOne050
      * @tc.desc Verify sort() handles Float32 min positive value 1.1754943508222875e-38
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2.0, 1.1754943508222875e-38, 1.0]);
       arr.sort();
       const element061 = arr.$_get(0);
@@ -980,14 +960,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0520
-     * @tc.name testFloat32ArraySortOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0510
+     * @tc.name testFloat32ArraySortOne051
      * @tc.desc Verify sort() handles subnormal value 1.401298464324817e-45
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 1.401298464324817e-45, 0.5]);
       arr.sort();
       const element062 = arr.$_get(0);
@@ -997,14 +977,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0530
-     * @tc.name testFloat32ArraySortOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0520
+     * @tc.name testFloat32ArraySortOne052
      * @tc.desc Verify sort() handles negative max value -3.4028234663852886e+38
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, -3.4028234663852886e+38, 0.0]);
       arr.sort();
       const element063 = arr.$_get(0);
@@ -1014,14 +994,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0540
-     * @tc.name testFloat32ArraySortOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0530
+     * @tc.name testFloat32ArraySortOne053
      * @tc.desc Verify sort() sorts NaN to end with one NaN in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, Number.NaN, 1.0, 2.0]);
       arr.sort();
       const element064 = arr.$_get(0);
@@ -1031,14 +1011,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0550
-     * @tc.name testFloat32ArraySortOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0540
+     * @tc.name testFloat32ArraySortOne054
      * @tc.desc Verify sort() handles multiple NaN values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, Number.NaN, 1.0, Number.NaN, 2.0]);
       arr.sort();
       const element065 = arr.$_get(0);
@@ -1050,14 +1030,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0560
-     * @tc.name testFloat32ArraySortOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0550
+     * @tc.name testFloat32ArraySortOne055
      * @tc.desc Verify sort() sorts Infinity before NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, Number.POSITIVE_INFINITY, 3.0, Number.NaN]);
       arr.sort();
       const element066 = arr.$_get(0);
@@ -1069,14 +1049,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0570
-     * @tc.name testFloat32ArraySortOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0560
+     * @tc.name testFloat32ArraySortOne056
      * @tc.desc Verify sort() sorts -Infinity before finite numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, -Number.POSITIVE_INFINITY, 1.0, 2.0]);
       arr.sort();
       const element067 = arr.$_get(0);
@@ -1086,14 +1066,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0580
-     * @tc.name testFloat32ArraySortOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0570
+     * @tc.name testFloat32ArraySortOne057
      * @tc.desc Verify sort() ascending on [0.0, -0.0, 1.0, -1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, -0.0, 1.0, -1.0]);
       arr.sort();
       const element068 = arr.$_get(0);
@@ -1103,14 +1083,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0590
-     * @tc.name testFloat32ArraySortOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0580
+     * @tc.name testFloat32ArraySortOne058
      * @tc.desc Verify sort() orders -Infinity, finite, Infinity, NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, -Number.POSITIVE_INFINITY, Number.NaN, 0.0, -2.0, Number.POSITIVE_INFINITY]);
       arr.sort();
       const element069 = arr.$_get(0);
@@ -1120,14 +1100,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0600
-     * @tc.name testFloat32ArraySortOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0590
+     * @tc.name testFloat32ArraySortOne059
      * @tc.desc Verify sort() treats 1.0e40 as Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 1.0e40, 2.0]);
       arr.sort();
       const element070 = arr.$_get(0);
@@ -1137,14 +1117,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0610
-     * @tc.name testFloat32ArraySortOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0600
+     * @tc.name testFloat32ArraySortOne060
      * @tc.desc Verify sort() treats -1.0e40 as -Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, -1.0e40, 2.0]);
       arr.sort();
       const element071 = arr.$_get(0);
@@ -1154,14 +1134,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0620
-     * @tc.name testFloat32ArraySortOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0610
+     * @tc.name testFloat32ArraySortOne061
      * @tc.desc Verify sort() underflows 1.0e-46 to 0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 1.0e-46, 2.0]);
       arr.sort();
       const element072 = arr.$_get(0);
@@ -1171,14 +1151,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0630
-     * @tc.name testFloat32ArraySortOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0620
+     * @tc.name testFloat32ArraySortOne062
      * @tc.desc Verify sort() handles max safe integer 16777216.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 16777216.0, 2.0]);
       arr.sort();
       const element073 = arr.$_get(0);
@@ -1188,14 +1168,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0640
-     * @tc.name testFloat32ArraySortOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0630
+     * @tc.name testFloat32ArraySortOne063
      * @tc.desc Verify sort() treats 16777217 equal to 16777216
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777217.0, 16777216.0, 1.0]);
       arr.sort();
       const element074 = arr.$_get(0);
@@ -1207,14 +1187,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0650
-     * @tc.name testFloat32ArraySortOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0640
+     * @tc.name testFloat32ArraySortOne064
      * @tc.desc Verify sort() ascending on [0.3, 0.1, 0.2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.3, 0.1, 0.2]);
       arr.sort();
       expect(arr.$_get(0)).assertEqual(0.10000000149011612);
@@ -1223,14 +1203,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0660
-     * @tc.name testFloat32ArraySortOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0650
+     * @tc.name testFloat32ArraySortOne065
      * @tc.desc Verify sort() ascending on [1.0000001, 1.1, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0000001, 1.1, 1.0]);
       arr.sort();
       expect(arr.$_get(0)).assertEqual(1.0);
@@ -1239,14 +1219,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0670
-     * @tc.name testFloat32ArraySortOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0660
+     * @tc.name testFloat32ArraySortOne066
      * @tc.desc Verify sort() ascending on [500.0, 1000.0, 250.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([500.0, 1.0e3, 250.0]);
       arr.sort();
       const element077 = arr.$_get(0);
@@ -1256,14 +1236,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0680
-     * @tc.name testFloat32ArraySortOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0670
+     * @tc.name testFloat32ArraySortOne067
      * @tc.desc Verify sort() ascending on [10.0, 8.5, 5.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 8.5, 5.0]);
       arr.sort();
       const element078 = arr.$_get(0);
@@ -1273,14 +1253,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0690
-     * @tc.name testFloat32ArraySortOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0680
+     * @tc.name testFloat32ArraySortOne068
      * @tc.desc Verify sort() treats -0.0 and 0.0 as equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 0.0, -1.0, 1.0]);
       arr.sort();
       const element079 = arr.$_get(0);
@@ -1294,14 +1274,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0700
-     * @tc.name testFloat32ArraySortOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0690
+     * @tc.name testFloat32ArraySortOne069
      * @tc.desc Verify sort() ascending on subnormal values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.401298464324817e-45, 0.0, 2.802596928649634e-45]);
       arr.sort();
       expect(arr.$_get(0)).assertEqual(0.0);
@@ -1310,14 +1290,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0710
-     * @tc.name testFloat32ArraySortOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0700
+     * @tc.name testFloat32ArraySortOne070
      * @tc.desc Verify sort() handles Infinity as largest value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, Number.POSITIVE_INFINITY, 1.0]);
       arr.sort();
       const element081 = arr.$_get(0);
@@ -1329,14 +1309,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0720
-     * @tc.name testFloat32ArraySortOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0710
+     * @tc.name testFloat32ArraySortOne071
      * @tc.desc Verify sort with compareFn using MAX_VALUE on [9.0, 3.0, 7.0, 1.0, 5.0, 8.0, 2.0, 6.0, 4.0, 0.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([9.0, 3.0, 7.0, 1.0, 5.0, 8.0, 2.0, 6.0, 4.0, 0.0]);
       arr.sort((a: number, b: number): int => { return a > b ? 2147483647 : (a < b ? -1 : 0); });
       const element082 = arr.$_get(0);
@@ -1346,14 +1326,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0730
-     * @tc.name testFloat32ArraySortOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0720
+     * @tc.name testFloat32ArraySortOne072
      * @tc.desc Verify sort with compareFn using MIN_VALUE on [9.0, 3.0, 7.0, 1.0, 5.0, 8.0, 2.0, 6.0, 4.0, 0.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([9.0, 3.0, 7.0, 1.0, 5.0, 8.0, 2.0, 6.0, 4.0, 0.0]);
       arr.sort((a: number, b: number): int => { return a > b ? 1 : (a < b ? -2147483648 : 0); });
       const element083 = arr.$_get(0);
@@ -1363,14 +1343,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0740
-     * @tc.name testFloat32ArraySortOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0730
+     * @tc.name testFloat32ArraySortOne073
      * @tc.desc Verify sort() handles 2147483647.0 (max int32)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2147483647.0, 2.0]);
       arr.sort();
       const element084 = arr.$_get(0);
@@ -1380,14 +1360,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0750
-     * @tc.name testFloat32ArraySortOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0740
+     * @tc.name testFloat32ArraySortOne074
      * @tc.desc Verify sort() handles -2147483648.0 (min int32)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, -2147483648.0, 2.0]);
       arr.sort();
       const element085 = arr.$_get(0);
@@ -1397,14 +1377,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0760
-     * @tc.name testFloat32ArraySortOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0750
+     * @tc.name testFloat32ArraySortOne075
      * @tc.desc Verify sort() ascending on [-1.0, 0.0, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, -1.0, 0.0]);
       arr.sort();
       const element086 = arr.$_get(0);
@@ -1416,14 +1396,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0770
-     * @tc.name testFloat32ArraySortOne077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0760
+     * @tc.name testFloat32ArraySortOne076
      * @tc.desc Verify sort() ascending on 100 descending values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(100);
       let val: number = 100.0;
       for (let i = 0; i < 100; i++) {
@@ -1438,14 +1418,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0780
-     * @tc.name testFloat32ArraySortOne078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0770
+     * @tc.name testFloat32ArraySortOne077
      * @tc.desc Verify sort() ascending on 100 ascending values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(100);
       let val: number = 1.0;
       for (let i = 0; i < 100; i++) {
@@ -1460,14 +1440,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0790
-     * @tc.name testFloat32ArraySortOne079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0780
+     * @tc.name testFloat32ArraySortOne078
      * @tc.desc Verify sort() on array of 100 identical values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(100);
       for (let i = 0; i < 100; i++) {
         arr.$_set(i, 7.0);
@@ -1480,14 +1460,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0800
-     * @tc.name testFloat32ArraySortOne080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0790
+     * @tc.name testFloat32ArraySortOne079
      * @tc.desc Verify sort() ascending on [5.0, 3.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0]);
       arr.sort();
       const element090 = arr.$_get(0);
@@ -1497,14 +1477,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0810
-     * @tc.name testFloat32ArraySortOne081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0800
+     * @tc.name testFloat32ArraySortOne080
      * @tc.desc Verify sort() ascending on [3.0, 5.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 5.0]);
       arr.sort();
       const element091 = arr.$_get(0);
@@ -1514,14 +1494,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0820
-     * @tc.name testFloat32ArraySortOne082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0810
+     * @tc.name testFloat32ArraySortOne081
      * @tc.desc Verify sort() ascending on [7.0, 3.0, 9.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.0, 3.0, 9.0]);
       arr.sort();
       const element092 = arr.$_get(0);
@@ -1533,14 +1513,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0830
-     * @tc.name testFloat32ArraySortOne083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0820
+     * @tc.name testFloat32ArraySortOne082
      * @tc.desc Verify sort() ascending on [5.0, 3.0, 5.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 5.0]);
       arr.sort();
       const element093 = arr.$_get(0);
@@ -1552,14 +1532,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0840
-     * @tc.name testFloat32ArraySortOne084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0830
+     * @tc.name testFloat32ArraySortOne083
      * @tc.desc Verify sort() ascending on [-3.0, 5.0, 0.0, -1.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-3.0, 5.0, 0.0, -1.0, 2.0]);
       arr.sort();
       const element094 = arr.$_get(0);
@@ -1571,14 +1551,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0850
-     * @tc.name testFloat32ArraySortOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0840
+     * @tc.name testFloat32ArraySortOne084
      * @tc.desc Verify sort() ascending on all negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-5.0, -1.0, -3.0, -2.0]);
       arr.sort();
       const element095 = arr.$_get(0);
@@ -1588,14 +1568,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0860
-     * @tc.name testFloat32ArraySortOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0850
+     * @tc.name testFloat32ArraySortOne085
      * @tc.desc Verify sort() handles -0.0 and 0.0 equivalence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, -0.0, 0.0]);
       arr.sort();
       let negativeZeroCount = 0;
@@ -1613,14 +1593,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0870
-     * @tc.name testFloat32ArraySortOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0860
+     * @tc.name testFloat32ArraySortOne086
      * @tc.desc Verify sort with compareFn ascending on [2.0, 1.0, 2.0, 1.0, 2.0, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2.0, 1.0, 2.0, 1.0, 2.0, 1.0]);
       arr.sort((a: number, b: number): int => { return a < b ? -1 : (a > b ? 1 : 0); });
       const element097 = arr.$_get(0);
@@ -1634,14 +1614,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0880
-     * @tc.name testFloat32ArraySortOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0870
+     * @tc.name testFloat32ArraySortOne087
      * @tc.desc Verify sort with compareFn returning 0 on [4.0, 4.0, 4.0, 4.0] preserves order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([4.0, 4.0, 4.0, 4.0]);
       arr.sort((a: number, b: number): int => { return 0; });
       const element098 = arr.$_get(0);
@@ -1651,14 +1631,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0890
-     * @tc.name testFloat32ArraySortOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0880
+     * @tc.name testFloat32ArraySortOne088
      * @tc.desc Verify sort with compareFn returning 0 on [8.0, 3.0, 6.0] preserves order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([8.0, 3.0, 6.0]);
       arr.sort((a: number, b: number): int => { return 0; });
       const element099 = arr.$_get(0);
@@ -1670,14 +1650,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0900
-     * @tc.name testFloat32ArraySortOne090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0890
+     * @tc.name testFloat32ArraySortOne089
      * @tc.desc Verify sort with compareFn ascending on [1.0, 2.0, 1.0, 2.0, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 1.0, 2.0, 1.0]);
       arr.sort((a: number, b: number): int => { return a < b ? -1 : (a > b ? 1 : 0); });
       const element100 = arr.$_get(0);
@@ -1693,14 +1673,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0910
-     * @tc.name testFloat32ArraySortOne091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0900
+     * @tc.name testFloat32ArraySortOne090
      * @tc.desc Verify sort with compareFn on large array with one smaller element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(50);
       for (let i = 0; i < 50; i++) {
         arr.$_set(i, 3.0);
@@ -1716,14 +1696,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0920
-     * @tc.name testFloat32ArraySortOne092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0910
+     * @tc.name testFloat32ArraySortOne091
      * @tc.desc Verify sort with compareFn treating -0.0 and 0.0 as equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 0.0, -0.0]);
       arr.sort((a: number, b: number): int => { return a < b ? -1 : (a > b ? 1 : 0); });
       const element102 = 1.0 / arr.$_get(0);
@@ -1734,14 +1714,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0930
-     * @tc.name testFloat32ArraySortOne093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0920
+     * @tc.name testFloat32ArraySortOne092
      * @tc.desc Verify sort with compareFn returning 0 on [6.0, 6.0] preserves order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([6.0, 6.0]);
       arr.sort((a: number, b: number): int => { return 0; });
       const element103 = arr.$_get(0);
@@ -1751,14 +1731,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0940
-     * @tc.name testFloat32ArraySortOne094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0930
+     * @tc.name testFloat32ArraySortOne093
      * @tc.desc Verify sort with compareFn ascending on [5.0, 3.0, 5.0, 1.0, 3.0, 1.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 5.0, 1.0, 3.0, 1.0]);
       arr.sort((a: number, b: number): int => { return a < b ? -1 : (a > b ? 1 : 0); });
       const element104 = arr.$_get(0);
@@ -1776,14 +1756,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0950
-     * @tc.name testFloat32ArraySortOne095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0940
+     * @tc.name testFloat32ArraySortOne094
      * @tc.desc Verify sort with compareFn returning 0 on [5.0] preserves order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called = false;
       const arr = new Float32Array([5.0]);
       arr.sort((a: number, b: number): int => { called = true; return 0; });
@@ -1791,14 +1771,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0960
-     * @tc.name testFloat32ArraySortOne096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0950
+     * @tc.name testFloat32ArraySortOne095
      * @tc.desc Verify compareFn is not called on empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called = false;
       const arr = new Float32Array(0);
       arr.sort((a: number, b: number): int => { called = true; return 0; });
@@ -1806,14 +1786,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0970
-     * @tc.name testFloat32ArraySortOne097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0960
+     * @tc.name testFloat32ArraySortOne096
      * @tc.desc Verify sort() called twice is idempotent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       arr.sort();
       const first = arr.$_get(0);
@@ -1825,14 +1805,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0980
-     * @tc.name testFloat32ArraySortOne098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0970
+     * @tc.name testFloat32ArraySortOne097
      * @tc.desc Verify sort() ascending then sort(descending) changes order on [3.0, 1.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       arr.sort();
       const element108 = arr.$_get(0);
@@ -1845,14 +1825,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0990
-     * @tc.name testFloat32ArraySortOne099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0980
+     * @tc.name testFloat32ArraySortOne098
      * @tc.desc Verify sort() handles overflow to Infinity and underflow to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e40, 1.0e-46, 1.0, -1.0e40]);
       arr.sort();
       const element109 = arr.$_get(0);
@@ -1862,14 +1842,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1000
-     * @tc.name testFloat32ArraySortOne100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0990
+     * @tc.name testFloat32ArraySortOne099
      * @tc.desc Verify sort() preserves array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 8.0, 1.0, 9.0, 2.0, 7.0]);
       const lenBefore = arr.length;
       arr.sort();
@@ -1881,14 +1861,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1010
-     * @tc.name testFloat32ArraySortOne101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1000
+     * @tc.name testFloat32ArraySortOne100
      * @tc.desc Verify sort() ascending on hex values 0x10, 0xFF, 0xA
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0xFF, 0xA);
       arr.sort();
       const element111 = arr.$_get(0);
@@ -1900,14 +1880,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1020
-     * @tc.name testFloat32ArraySortOne102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1010
+     * @tc.name testFloat32ArraySortOne101
      * @tc.desc Verify sort() ascending on octal values 0o17, 0o10, 0o7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0o17, 0o10, 0o7);
       arr.sort();
       const element112 = arr.$_get(0);
@@ -1919,14 +1899,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1030
-     * @tc.name testFloat32ArraySortOne103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1020
+     * @tc.name testFloat32ArraySortOne102
      * @tc.desc Verify sort() ascending on binary values 0b1010, 0b0011, 0b1111
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0b1010, 0b0011, 0b1111);
       arr.sort();
       const element113 = arr.$_get(0);
@@ -1938,14 +1918,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1040
-     * @tc.name testFloat32ArraySortOne104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1030
+     * @tc.name testFloat32ArraySortOne103
      * @tc.desc Verify sort() ascending on scientific notation numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1e3, 2e2, 3e1);
       arr.sort();
       const element114 = arr.$_get(0);
@@ -1957,14 +1937,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1050
-     * @tc.name testFloat32ArraySortOne105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1040
+     * @tc.name testFloat32ArraySortOne104
      * @tc.desc Verify sort() ascending on [16.0, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(16.0, 3.0, 4.0);
       arr.sort();
       const element115 = arr.$_get(0);
@@ -1974,14 +1954,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1060
-     * @tc.name testFloat32ArraySortOne106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1050
+     * @tc.name testFloat32ArraySortOne105
      * @tc.desc Verify sort() ascending on negative hex values -0x10, -0xFF, -0x1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(-0x10, -0xFF, -0x1);
       arr.sort();
       const element116 = arr.$_get(0);
@@ -1993,14 +1973,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1070
-     * @tc.name testFloat32ArraySortOne107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1060
+     * @tc.name testFloat32ArraySortOne106
      * @tc.desc Verify sort() ascending on mixed radix values (hex, octal, binary)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0o17, 0b1010);
       arr.sort();
       const element117 = arr.$_get(0);
@@ -2012,14 +1992,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1080
-     * @tc.name testFloat32ArraySortOne108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1070
+     * @tc.name testFloat32ArraySortOne107
      * @tc.desc Verify sort() ascending on octal values 0o0, 0o10, 0o17
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0o17, 0o0, 0o10);
       arr.sort();
       const element118 = arr.$_get(0);
@@ -2031,14 +2011,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1090
-     * @tc.name testFloat32ArraySortOne109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1080
+     * @tc.name testFloat32ArraySortOne108
      * @tc.desc Verify sort() ascending on binary literals 0b11111111, 0b00000000, 0b10101010
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0b11111111, 0b00000000, 0b10101010);
       arr.sort();
       const element119 = arr.$_get(0);
@@ -2050,14 +2030,14 @@ export default function Float32ArraySort1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1100
-     * @tc.name testFloat32ArraySortOne110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_1090
+     * @tc.name testFloat32ArraySortOne109
      * @tc.desc Verify sort() treats hex 0xff and decimal 255.0 as equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySortOne110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySortOne109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0xff, 255.0, 0x0a);
       arr.sort();
       const element120 = arr.$_get(0);
