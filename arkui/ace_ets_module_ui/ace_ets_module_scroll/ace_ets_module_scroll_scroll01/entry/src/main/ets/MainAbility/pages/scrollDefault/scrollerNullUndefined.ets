@@ -138,6 +138,36 @@ struct ScrollerCallBackNullUndefined {
           })
       }.height('5%')
 
+      Row() {
+        // Test scrollToIndex smooth with null
+        Button('2null')
+          .id('scrollToIndex_smooth_null')
+          .onClick(() => {
+            this.scroller.scrollToIndex(3, null)
+          })
+
+        // Test scrollToIndex smooth with undefined
+        Button('2undefined')
+          .id('scrollToIndex_smooth_undefined')
+          .onClick(() => {
+            this.scroller.scrollToIndex(3, undefined)
+          })
+
+        // Test scrollToIndex align with null
+        Button('3null')
+          .id('scrollToIndex_align_null')
+          .onClick(() => {
+            this.scroller.scrollToIndex(6, true, null)
+          })
+
+        // Test scrollToIndex align with undefined
+        Button('3undefined')
+          .id('scrollToIndex_align_undefined')
+          .onClick(() => {
+            this.scroller.scrollToIndex(6, true, undefined)
+          })
+      }.height('5%')
+
       // ========== scrollBy tests ==========
       Text('scrollBy')
       Row() {

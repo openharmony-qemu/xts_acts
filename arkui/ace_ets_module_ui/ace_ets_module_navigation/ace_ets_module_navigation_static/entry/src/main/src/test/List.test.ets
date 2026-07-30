@@ -23,6 +23,7 @@ import NavScrollEffectOptions from './NavigationTest/NavScrollEffectOptions.test
 import NavigationModeRatio from './NavigationTest/NavigationModeRatio.test';
 import navigationMaterial from './NavigationTest/navigationMaterial.test';
 import configurationNav from './NavigationNavDestinationTest/configurationNav.test';
+import colorLengthMetrics from './Graphics/colorLengthMetrics.test';
 import swiperIndicatorIcon from './SwiperControllerTest/swiperIndicatorIcon.test';
 import swiperSystemMaterial from './SwiperControllerTest/swiperSystemMaterial.test';
 
@@ -36,6 +37,7 @@ export default function testsuite() {
   NavigationModeRatio();
   navigationMaterial();
   configurationNav();
+  colorLengthMetrics();
   swiperIndicatorIcon();
   swiperSystemMaterial();
 }
