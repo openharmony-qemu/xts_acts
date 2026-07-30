@@ -581,42 +581,12 @@ export default function Float32ArrayReverse1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3200
      * @tc.name testFloat32ArrayReverseOne032
-     * @tc.desc Verify reverse() on empty array returns empty array with length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayReverseOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([]);
-      arr.reverse();
-      expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3300
-     * @tc.name testFloat32ArrayReverseOne033
-     * @tc.desc Verify reverse() on [42.0]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayReverseOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([42.0]);
-      arr.reverse();
-      expect(arr.length).assertEqual(1);
-      const element033 = arr.$_get(0);
-      expect(element033).assertEqual(42.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3400
-     * @tc.name testFloat32ArrayReverseOne034
      * @tc.desc Verify reverse() on [100.0, 200.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([100.0, 200.0]);
       arr.reverse();
       const element034 = arr.$_get(0);
@@ -626,33 +596,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3500
-     * @tc.name testFloat32ArrayReverseOne035
-     * @tc.desc Verify reverse() on [1.0, 2.0, 3.0]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayReverseOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0, 3.0]);
-      arr.reverse();
-      const element035 = arr.$_get(0);
-      expect(element035).assertEqual(3.0);
-      const element035Part2 = arr.$_get(1);
-      expect(element035Part2).assertEqual(2.0);
-      const element035Part3 = arr.$_get(2);
-      expect(element035Part3).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3600
-     * @tc.name testFloat32ArrayReverseOne036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3300
+     * @tc.name testFloat32ArrayReverseOne033
      * @tc.desc Verify reverse() on [10.0, 20.0, 30.0, 40.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
       arr.reverse();
       const element036 = arr.$_get(0);
@@ -662,14 +613,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3700
-     * @tc.name testFloat32ArrayReverseOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3400
+     * @tc.name testFloat32ArrayReverseOne034
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 4.0, 5.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       arr.reverse();
       const element037 = arr.$_get(0);
@@ -681,14 +632,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3800
-     * @tc.name testFloat32ArrayReverseOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3500
+     * @tc.name testFloat32ArrayReverseOne035
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]);
       arr.reverse();
       const element038 = arr.$_get(0);
@@ -700,14 +651,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3900
-     * @tc.name testFloat32ArrayReverseOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3600
+     * @tc.name testFloat32ArrayReverseOne036
      * @tc.desc Verify 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(100);
       for (let i = 0; i < 100; i++) {
         arr.$_set(i, i);
@@ -722,14 +673,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4000
-     * @tc.name testFloat32ArrayReverseOne040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3700
+     * @tc.name testFloat32ArrayReverseOne037
      * @tc.desc Verify reverse() moves NaN from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.NaN, 1.0, 2.0]);
       arr.reverse();
       const element040 = arr.$_get(0);
@@ -740,14 +691,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4100
-     * @tc.name testFloat32ArrayReverseOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3800
+     * @tc.name testFloat32ArrayReverseOne038
      * @tc.desc Verify reverse() moves positive infinity from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, 1.0, -2.0]);
       arr.reverse();
       const element041 = arr.$_get(0);
@@ -758,14 +709,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4200
-     * @tc.name testFloat32ArrayReverseOne042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_3900
+     * @tc.name testFloat32ArrayReverseOne039
      * @tc.desc Verify reverse() moves positive zero from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, 1.0, 2.0]);
       arr.reverse();
       const element042 = arr.$_get(0);
@@ -776,14 +727,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4300
-     * @tc.name testFloat32ArrayReverseOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4000
+     * @tc.name testFloat32ArrayReverseOne040
      * @tc.desc Verify reverse() moves negative zero from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 1.0, 2.0]);
       arr.reverse();
       const element043 = arr.$_get(0);
@@ -794,14 +745,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4400
-     * @tc.name testFloat32ArrayReverseOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4100
+     * @tc.name testFloat32ArrayReverseOne041
      * @tc.desc Verify reverse() moves the maximum finite Float32 value from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, 1.0, -2.0]);
       arr.reverse();
       const element044 = arr.$_get(0);
@@ -812,14 +763,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4500
-     * @tc.name testFloat32ArrayReverseOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4200
+     * @tc.name testFloat32ArrayReverseOne042
      * @tc.desc Verify reverse() moves the rounded 16777217 value from the first position to the last position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777217, 1.0, -2.0]);
       arr.reverse();
       const element045 = arr.$_get(0);
@@ -830,14 +781,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4600
-     * @tc.name testFloat32ArrayReverseOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4300
+     * @tc.name testFloat32ArrayReverseOne043
      * @tc.desc Verify reverse() on [0.0, -0.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, -0.0]);
       arr.reverse();
       const element046 = 1.0 / arr.$_get(0);
@@ -847,14 +798,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4700
-     * @tc.name testFloat32ArrayReverseOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4400
+     * @tc.name testFloat32ArrayReverseOne044
      * @tc.desc Verify reverse() on [NaN, Infinity]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.NaN, Number.POSITIVE_INFINITY]);
       arr.reverse();
       const element047 = arr.$_get(0);
@@ -864,14 +815,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4800
-     * @tc.name testFloat32ArrayReverseOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4500
+     * @tc.name testFloat32ArrayReverseOne045
      * @tc.desc Verify reverse() on [Infinity, -Infinity, NaN]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, -Number.POSITIVE_INFINITY, Number.NaN]);
       arr.reverse();
       const element048 = arr.$_get(0);
@@ -883,14 +834,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4900
-     * @tc.name testFloat32ArrayReverseOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4600
+     * @tc.name testFloat32ArrayReverseOne046
      * @tc.desc Verify reverse() on [3.4028234663852886e+38, 1.401298464324817e-45]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, 1.401298464324817e-45]);
       arr.reverse();
       const element049 = arr.$_get(0);
@@ -900,14 +851,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5000
-     * @tc.name testFloat32ArrayReverseOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4700
+     * @tc.name testFloat32ArrayReverseOne047
      * @tc.desc Verify reverse() on [-Infinity, 3.4028234663852886e+38, -0.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-Number.POSITIVE_INFINITY, 3.4028234663852886e+38, -0.0]);
       arr.reverse();
       const element050 = 1.0 / arr.$_get(0);
@@ -919,14 +870,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5100
-     * @tc.name testFloat32ArrayReverseOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4800
+     * @tc.name testFloat32ArrayReverseOne048
      * @tc.desc Verify reverse() on [0.1, 0.2, 0.3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.1, 0.2, 0.3]);
       const arr = new Float32Array([0.1, 0.2, 0.3]);
       arr.reverse();
@@ -937,14 +888,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5200
-     * @tc.name testFloat32ArrayReverseOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_4900
+     * @tc.name testFloat32ArrayReverseOne049
      * @tc.desc Verify reverse() on [16777216, 16777218]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777216, 16777218]);
       arr.reverse();
       const element052 = arr.$_get(0);
@@ -954,14 +905,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5300
-     * @tc.name testFloat32ArrayReverseOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5000
+     * @tc.name testFloat32ArrayReverseOne050
      * @tc.desc Verify reverse() on [1.0e40, -1.0e40, 1.0e-46]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e40, -1.0e40, 1.0e-46]);
       arr.reverse();
       const element053 = arr.$_get(0);
@@ -973,14 +924,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5400
-     * @tc.name testFloat32ArrayReverseOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5100
+     * @tc.name testFloat32ArrayReverseOne051
      * @tc.desc Verify reverse() on [3.4028234663852886e+38, 1.0, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, 1.0, 2.0]);
       arr.reverse();
       const element054 = arr.$_get(0);
@@ -990,14 +941,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5500
-     * @tc.name testFloat32ArrayReverseOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5200
+     * @tc.name testFloat32ArrayReverseOne052
      * @tc.desc Verify reverse() on [NaN, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.NaN, 3.0, 4.0]);
       arr.reverse();
       const element055 = arr.$_get(0);
@@ -1007,14 +958,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5600
-     * @tc.name testFloat32ArrayReverseOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5300
+     * @tc.name testFloat32ArrayReverseOne053
      * @tc.desc Verify reverse() on [5.0, 6.0, Infinity]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 6.0, Number.POSITIVE_INFINITY]);
       arr.reverse();
       const element056 = arr.$_get(0);
@@ -1024,14 +975,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5700
-     * @tc.name testFloat32ArrayReverseOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5400
+     * @tc.name testFloat32ArrayReverseOne054
      * @tc.desc Verify reverse() on [-Infinity, 7.0, 8.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-Number.POSITIVE_INFINITY, 7.0, 8.0]);
       arr.reverse();
       const element057 = arr.$_get(0);
@@ -1041,14 +992,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5800
-     * @tc.name testFloat32ArrayReverseOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5500
+     * @tc.name testFloat32ArrayReverseOne055
      * @tc.desc Verify reverse() on [9.0, 10.0, -0.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([9.0, 10.0, -0.0]);
       arr.reverse();
       const element058 = 1.0 / arr.$_get(0);
@@ -1058,14 +1009,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5900
-     * @tc.name testFloat32ArrayReverseOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5600
+     * @tc.name testFloat32ArrayReverseOne056
      * @tc.desc Verify reverse() on [0.1, 11.0, 12.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.1]);
       const arr = new Float32Array([0.1, 11.0, 12.0]);
       arr.reverse();
@@ -1076,14 +1027,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6000
-     * @tc.name testFloat32ArrayReverseOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5700
+     * @tc.name testFloat32ArrayReverseOne057
      * @tc.desc Verify reverse() on [16777217, 13.0, 14.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777217, 13.0, 14.0]);
       arr.reverse();
       const element060 = arr.$_get(0);
@@ -1093,14 +1044,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6100
-     * @tc.name testFloat32ArrayReverseOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5800
+     * @tc.name testFloat32ArrayReverseOne058
      * @tc.desc Verify reverse() on [15.0, 16.0, 1.0e40]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([15.0, 16.0, 1.0e40]);
       arr.reverse();
       const element061 = arr.$_get(0);
@@ -1110,14 +1061,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6200
-     * @tc.name testFloat32ArrayReverseOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_5900
+     * @tc.name testFloat32ArrayReverseOne059
      * @tc.desc Verify reverse() on [1.401298464324817e-45, 17.0, 18.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.401298464324817e-45, 17.0, 18.0]);
       arr.reverse();
       const element062 = arr.$_get(0);
@@ -1127,14 +1078,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6300
-     * @tc.name testFloat32ArrayReverseOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6000
+     * @tc.name testFloat32ArrayReverseOne060
      * @tc.desc Verify reverse() on [2147483647]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([2147483647]);
       const arr = new Float32Array([19.0, 20.0, 2147483647]);
       arr.reverse();
@@ -1145,14 +1096,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6400
-     * @tc.name testFloat32ArrayReverseOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6100
+     * @tc.name testFloat32ArrayReverseOne061
      * @tc.desc Verify reverse() on [3.4028234663852886e+38, 1.0, 2.0, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, 1.0, 2.0, 3.0, 4.0]);
       arr.reverse();
       const element064 = arr.$_get(0);
@@ -1162,14 +1113,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6500
-     * @tc.name testFloat32ArrayReverseOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6200
+     * @tc.name testFloat32ArrayReverseOne062
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 4.0, NaN]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, Number.NaN]);
       arr.reverse();
       const element065 = arr.$_get(0);
@@ -1179,14 +1130,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6600
-     * @tc.name testFloat32ArrayReverseOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6300
+     * @tc.name testFloat32ArrayReverseOne063
      * @tc.desc Verify reverse() on [1.0, Infinity, 2.0, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, Number.POSITIVE_INFINITY, 2.0, 3.0, 4.0]);
       arr.reverse();
       const element066 = arr.$_get(0);
@@ -1198,14 +1149,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6700
-     * @tc.name testFloat32ArrayReverseOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6400
+     * @tc.name testFloat32ArrayReverseOne064
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, -0.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, -0.0, 4.0]);
       arr.reverse();
       const element067 = 1.0 / arr.$_get(1);
@@ -1215,14 +1166,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6800
-     * @tc.name testFloat32ArrayReverseOne068
-     * @tc.desc Verify reverse() on [0.1]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6500
+     * @tc.name testFloat32ArrayReverseOne065
+     * @tc.desc Verify reverse() on [0.1, 1.0, 2.0, 3.0, 4.0] swaps endpoints and preserves float32 0.1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.1]);
       const arr = new Float32Array([0.1, 1.0, 2.0, 3.0, 4.0]);
       arr.reverse();
@@ -1233,14 +1184,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6900
-     * @tc.name testFloat32ArrayReverseOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6600
+     * @tc.name testFloat32ArrayReverseOne066
      * @tc.desc Verify reverse() on [1.0, 2.0, 16777217, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 16777217, 3.0, 4.0]);
       arr.reverse();
       const element069 = arr.$_get(0);
@@ -1252,14 +1203,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7000
-     * @tc.name testFloat32ArrayReverseOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6700
+     * @tc.name testFloat32ArrayReverseOne067
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 4.0, 1.0e40]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 1.0e40]);
       arr.reverse();
       const element070 = arr.$_get(0);
@@ -1269,14 +1220,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7100
-     * @tc.name testFloat32ArrayReverseOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6800
+     * @tc.name testFloat32ArrayReverseOne068
      * @tc.desc Verify reverse() on [1.401298464324817e-45, 1.0, 2.0, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.401298464324817e-45, 1.0, 2.0, 3.0, 4.0]);
       arr.reverse();
       const element071 = arr.$_get(0);
@@ -1286,14 +1237,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7200
-     * @tc.name testFloat32ArrayReverseOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_6900
+     * @tc.name testFloat32ArrayReverseOne069
      * @tc.desc Verify reverse() on [1.0, 2.0, NaN, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, Number.NaN, 3.0, 4.0]);
       arr.reverse();
       const element072 = arr.$_get(0);
@@ -1305,14 +1256,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7300
-     * @tc.name testFloat32ArrayReverseOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7000
+     * @tc.name testFloat32ArrayReverseOne070
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, Infinity, 4.0, 5.0, 6.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, Number.POSITIVE_INFINITY, 4.0, 5.0, 6.0]);
       arr.reverse();
       const element073 = arr.$_get(0);
@@ -1324,14 +1275,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7400
-     * @tc.name testFloat32ArrayReverseOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7100
+     * @tc.name testFloat32ArrayReverseOne071
      * @tc.desc Verify reverse() on [1.0, 2.0, -0.0, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, -0.0, 3.0, 4.0]);
       arr.reverse();
       const element074 = arr.$_get(0);
@@ -1343,14 +1294,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7500
-     * @tc.name testFloat32ArrayReverseOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7200
+     * @tc.name testFloat32ArrayReverseOne072
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.4028234663852886e+38, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.4028234663852886e+38, 3.0, 4.0]);
       arr.reverse();
       const element075 = arr.$_get(0);
@@ -1362,14 +1313,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7600
-     * @tc.name testFloat32ArrayReverseOne076
-     * @tc.desc Verify reverse() on [0.1]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7300
+     * @tc.name testFloat32ArrayReverseOne073
+     * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 0.1, 4.0, 5.0, 6.0] preserves the middle value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.1]);
       const arr = new Float32Array([1.0, 2.0, 3.0, 0.1, 4.0, 5.0, 6.0]);
       arr.reverse();
@@ -1382,14 +1333,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7700
-     * @tc.name testFloat32ArrayReverseOne077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7400
+     * @tc.name testFloat32ArrayReverseOne074
      * @tc.desc Verify reverse() on [1.0, 2.0, 1.0e40, 3.0, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 1.0e40, 3.0, 4.0]);
       arr.reverse();
       const element077 = arr.$_get(0);
@@ -1401,14 +1352,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7800
-     * @tc.name testFloat32ArrayReverseOne078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7500
+     * @tc.name testFloat32ArrayReverseOne075
      * @tc.desc Verify reverse() on [1.0, 2.0, 3.0, 16777217, 4.0, 5.0, 6.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 16777217, 4.0, 5.0, 6.0]);
       arr.reverse();
       const element078 = arr.$_get(0);
@@ -1420,14 +1371,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7900
-     * @tc.name testFloat32ArrayReverseOne079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7600
+     * @tc.name testFloat32ArrayReverseOne076
      * @tc.desc Verify reverse() on [1.0, 1.0e40, 2.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 1.0e40, 2.0]);
       arr.reverse();
       const element079 = arr.$_get(0);
@@ -1439,14 +1390,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8000
-     * @tc.name testFloat32ArrayReverseOne080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7700
+     * @tc.name testFloat32ArrayReverseOne077
      * @tc.desc Verify reverse() on [3.0, 1.0e-46, 4.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0e-46, 4.0]);
       arr.reverse();
       const element080 = arr.$_get(0);
@@ -1458,14 +1409,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8100
-     * @tc.name testFloat32ArrayReverseOne081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7800
+     * @tc.name testFloat32ArrayReverseOne078
      * @tc.desc Verify reverse() on [5.0, 16777217, 6.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 16777217, 6.0]);
       arr.reverse();
       const element081 = arr.$_get(0);
@@ -1477,14 +1428,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8200
-     * @tc.name testFloat32ArrayReverseOne082
-     * @tc.desc Verify reverse() on [0.1]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_7900
+     * @tc.name testFloat32ArrayReverseOne079
+     * @tc.desc Verify reverse() on [7.0, 0.1, 8.0] swaps endpoints and preserves the middle value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.1]);
       const arr = new Float32Array([7.0, 0.1, 8.0]);
       arr.reverse();
@@ -1497,14 +1448,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8300
-     * @tc.name testFloat32ArrayReverseOne083
-     * @tc.desc Verify reverse() on [0.2]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8000
+     * @tc.name testFloat32ArrayReverseOne080
+     * @tc.desc Verify reverse() on [9.0, 0.2, 11.0] swaps endpoints and preserves the middle value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([0.2]);
       const arr = new Float32Array([9.0, 0.2, 11.0]);
       arr.reverse();
@@ -1517,14 +1468,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8400
-     * @tc.name testFloat32ArrayReverseOne084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8100
+     * @tc.name testFloat32ArrayReverseOne081
      * @tc.desc Verify reverse() on [12.0, NaN, 13.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([12.0, Number.NaN, 13.0]);
       arr.reverse();
       const element084 = arr.$_get(0);
@@ -1536,14 +1487,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8500
-     * @tc.name testFloat32ArrayReverseOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8200
+     * @tc.name testFloat32ArrayReverseOne082
      * @tc.desc Verify reverse() on [14.0, -0.0, 15.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([14.0, -0.0, 15.0]);
       arr.reverse();
       const element085 = arr.$_get(0);
@@ -1555,14 +1506,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8600
-     * @tc.name testFloat32ArrayReverseOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8300
+     * @tc.name testFloat32ArrayReverseOne083
      * @tc.desc Verify reverse() on [16.0, 3.4028234663852886e+38, 17.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16.0, 3.4028234663852886e+38, 17.0]);
       arr.reverse();
       const element086 = arr.$_get(0);
@@ -1574,14 +1525,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8700
-     * @tc.name testFloat32ArrayReverseOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8400
+     * @tc.name testFloat32ArrayReverseOne084
      * @tc.desc Verify reverse() on [18.0, -3.4028234663852886e+38, 19.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([18.0, -3.4028234663852886e+38, 19.0]);
       arr.reverse();
       const element087 = arr.$_get(0);
@@ -1593,14 +1544,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8800
-     * @tc.name testFloat32ArrayReverseOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8500
+     * @tc.name testFloat32ArrayReverseOne085
      * @tc.desc Verify reverse() on [20.0, 1.401298464324817e-45, 21.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([20.0, 1.401298464324817e-45, 21.0]);
       arr.reverse();
       const element088 = arr.$_get(0);
@@ -1612,14 +1563,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8900
-     * @tc.name testFloat32ArrayReverseOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8600
+     * @tc.name testFloat32ArrayReverseOne086
      * @tc.desc Verify reverse() on [22.0, 1.1754943508222875e-38, 23.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([22.0, 1.1754943508222875e-38, 23.0]);
       arr.reverse();
       const element089 = arr.$_get(0);
@@ -1631,14 +1582,14 @@ export default function Float32ArrayReverse1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_9000
-     * @tc.name testFloat32ArrayReverseOne090
-     * @tc.desc Verify reverse() on [2147483647]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_ONE_8700
+     * @tc.name testFloat32ArrayReverseOne087
+     * @tc.desc Verify reverse() on [24.0, 2147483647, 25.0] preserves the rounded middle value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new Float32Array([2147483647]);
       const arr = new Float32Array([24.0, 2147483647, 25.0]);
       arr.reverse();

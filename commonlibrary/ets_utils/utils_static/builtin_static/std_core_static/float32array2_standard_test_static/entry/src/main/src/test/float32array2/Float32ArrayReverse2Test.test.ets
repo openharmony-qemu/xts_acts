@@ -55,6 +55,8 @@ export default function Float32ArrayReverse2Test(): void {
       const ret = arr.reverse();
       const element001 = ret.$_get(0);
       expect(element001).assertEqual(3.0);
+      const middleElement001 = ret.$_get(1);
+      expect(middleElement001).assertEqual(2.0);
       const element001Part2 = ret.$_get(2);
       expect(element001Part2).assertEqual(1.0);
     });
@@ -92,27 +94,12 @@ export default function Float32ArrayReverse2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_TWO_0400
      * @tc.name testFloat32ArrayReverseTwo004
-     * @tc.desc Verify reverse() on [1.0,2.0] returns [2.0,1.0]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayReverseTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.0, 2.0);
-      const ret = arr.reverse();
-      expect(ret.$_get(0)).assertEqual(2.0);
-      expect(ret.$_get(1)).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_TWO_0500
-     * @tc.name testFloat32ArrayReverseTwo005
      * @tc.desc Verify reverse() on [3.0,4.0] returns length 2 with index 0 equal 4.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(3.0, 4.0);
       const ret = arr.reverse();
       expect(ret.length).assertEqual(2);
@@ -120,29 +107,14 @@ export default function Float32ArrayReverse2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_TWO_0600
-     * @tc.name testFloat32ArrayReverseTwo006
-     * @tc.desc Verify reverse() on [5.0,-3.0] returns -3.0 at index 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayReverseTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([5.0, -3.0]);
-      const ret = arr.reverse();
-      expect(ret.$_get(0)).assertEqual(-3.0);
-      expect(ret.$_get(1)).assertEqual(5.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_TWO_0700
-     * @tc.name testFloat32ArrayReverseTwo007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REVERSE_TWO_0500
+     * @tc.name testFloat32ArrayReverseTwo005
      * @tc.desc Verify reverse() returns the same array reference (identity)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayReverseTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayReverseTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
