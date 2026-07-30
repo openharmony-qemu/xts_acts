@@ -110,7 +110,6 @@ napi_value TestUnlockThenLock(napi_env env, napi_callback_info info);
 napi_value TestUnlockWhenNotLocked(napi_env env, napi_callback_info info);
 napi_value TestUnlockWithoutSessionConfig(napi_env env, napi_callback_info info);
 napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback_info info);
-napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info);
 napi_value TestIsLockFocusTracked(napi_env env, napi_callback_info info);
 napi_value TestGetYawAngle(napi_env env, napi_callback_info info);
 napi_value TestGetTimestamp(napi_env env, napi_callback_info info);
@@ -122,7 +121,6 @@ napi_value TestGetLeftEyeBoundingBox(napi_env env, napi_callback_info info);
 napi_value TestGetEmotion(napi_env env, napi_callback_info info);
 napi_value TestGetBoundingBox(napi_env env, napi_callback_info info);
 napi_value TestDestroy(napi_env env, napi_callback_info info);
-napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

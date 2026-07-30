@@ -77,6 +77,8 @@ napi_value TestOHMetadataObjectExtGetTimestamp(napi_env env, napi_callback_info 
 napi_value TestOHMetadataObjectExtGetYawAngle(napi_env env, napi_callback_info info);
 napi_value TestOHMetadataObjectExtDestroy(napi_env env, napi_callback_info info);
 napi_value TestOHMetadataObjectExtIsLockFocusTracked(napi_env env, napi_callback_info info);
+napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info);
+napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

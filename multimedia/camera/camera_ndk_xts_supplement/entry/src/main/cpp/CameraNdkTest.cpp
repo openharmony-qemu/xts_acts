@@ -1776,3 +1776,45 @@ napi_value TestOHMetadataObjectExtIsLockFocusTracked(napi_env env, napi_callback
     }
     return ret;
 }
+
+napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    
+    bool enabled = true;
+    bool supportResult = false;
+    Camera_ErrorCode error = CAMERA_OK;
+    switch (index) {
+    case CASE_INDEX_1:
+        supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
+        LOGI("supportResult is :,%{public}d", supportResult);
+        if (supportResult == true) {
+        error = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput, enabled);
+        }
+        break;
+    default:
+        break;
+    }
+
+    napi_value ret;
+    napi_create_int32(env, error, &ret);
+    return ret;
+}
+
+napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info)
+{
+    int32_t errorVal = 7400103;
+    if (CAMERA_ERROR_OPTIONAL_PROPERTY_NOT_EXIST != errorVal) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
