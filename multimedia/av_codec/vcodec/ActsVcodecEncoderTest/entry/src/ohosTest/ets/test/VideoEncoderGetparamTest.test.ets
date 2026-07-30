@@ -104,7 +104,7 @@ export default function VideoEncoderGetparamTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0100', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0100Test start');
-      let result: number = await testNapi.runGetparamTest(0);
+      let result: number = await testNapi.VideoEncodeMseQp0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -118,7 +118,7 @@ export default function VideoEncoderGetparamTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0200', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0200Test start');
-      let result: number = await testNapi.runGetparamTest(1);
+      let result: number = await testNapi.VideoEncodeMseQp0200Test();
       expect(result).assertEqual(0);
     });
 
@@ -132,7 +132,7 @@ export default function VideoEncoderGetparamTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0300', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0300Test start');
-      let result: number = await testNapi.runGetparamTest(2);
+      let result: number = await testNapi.VideoEncodeMseQp0300Test();
       expect(result).assertEqual(0);
     });
 
@@ -146,7 +146,7 @@ export default function VideoEncoderGetparamTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_MSE_QP_0400', Level.LEVEL0, async () => {
       console.info('VideoEncodeMseQp0400Test start');
-      let result: number = await testNapi.runGetparamTest(3);
+      let result: number = await testNapi.VideoEncodeMseQp0400Test();
       expect(result).assertEqual(0);
     });
 
@@ -160,7 +160,7 @@ export default function VideoEncoderGetparamTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_REPEAT_0100', Level.LEVEL0, async () => {
       console.info('VideoEncodeRepeat0100Test start');
-      let result: number = await testNapi.runGetparamTest(4);
+      let result: number = await testNapi.VideoEncodeRepeat0100Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -172,8 +172,8 @@ export default function VideoEncoderGetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_PREPROCESS_0100', Level.LEVEL0, async () => {
-      console.info('VideoEncodePreProcess0100Test start');
-      let result: number = await testNapi.runGetparamTest(5);
+      console.info('PreProcess0100 start');
+      let result: number = await testNapi.PreProcess0100();
       expect(result).assertEqual(0);
     });
     /**
@@ -185,8 +185,8 @@ export default function VideoEncoderGetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_PREPROCESS_0200', Level.LEVEL0, async () => {
-      console.info('VideoEncodePreProcess0200Test start');
-      let result: number = await testNapi.runGetparamTest(6);
+      console.info('PreProcess0200 start');
+      let result: number = await testNapi.PreProcess0200();
       expect(result).assertEqual(0);
     });
     /**
@@ -198,8 +198,8 @@ export default function VideoEncoderGetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_PREPROCESS_0300', Level.LEVEL0, async () => {
-      console.info('VideoEncodePreProcess0300Test start');
-      let result: number = await testNapi.runGetparamTest(7);
+      console.info('PreProcess0300Test start');
+      let result: number = await testNapi.PreProcess0300Test();
       expect(result).assertEqual(0);
     });
 

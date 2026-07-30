@@ -19,6 +19,10 @@
 #define SUCCESS_CODE 0
 #endif
 
+#ifndef RESULT_ERROR
+#define RESULT_ERROR (-1)
+#endif
+
 #ifndef COMMON_TOOL_H
 #define COMMON_TOOL_H
 
@@ -84,6 +88,13 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
     return GetInt32ArgImpl(env, info, index, defaultValue);
+}
+
+inline napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
 }
 
 template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
