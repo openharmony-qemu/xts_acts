@@ -1364,15 +1364,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasMessagesWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      // Enqueue 1/2/3/4 atomically via post so nested hasMessages sees pending siblings
+      // Shared obj refs + atomic enqueue so nested hasMessages(what, obj) sees siblings
       let eaw = new EAWorker();
       eaw.start();
       let checkResult = new AtomicInt(0);
       let done = new AtomicInt(0);
+      let obj1: Object = "obj1" as Object;
+      let obj2: Object = "obj2" as Object;
+      let obj3: Object = "obj3" as Object;
+      let obj4: Object = "obj4" as Object;
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) {
+          cb();
+        }
         if (msg.getWhat() === 1) {
-          let has2: boolean = msg.getTarget().hasMessages(2, "obj2");
-          let has3: boolean = msg.getTarget().hasMessages(3, "obj3");
+          let has2: boolean = msg.getTarget().hasMessages(2, obj2);
+          let has3: boolean = msg.getTarget().hasMessages(3, obj3);
           if (has2) {
             checkResult.fetchAdd(1);
           }
@@ -1384,10 +1392,10 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         }
       }, eaw);
       handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-        handler.sendMessage(new concurrency.Message(2, "obj2", handler));
-        handler.sendMessage(new concurrency.Message(3, "obj3", handler));
-        handler.sendMessage(new concurrency.Message(4, "obj4", handler));
+        handler.sendMessage(new concurrency.Message(1, obj1, handler));
+        handler.sendMessage(new concurrency.Message(2, obj2, handler));
+        handler.sendMessage(new concurrency.Message(3, obj3, handler));
+        handler.sendMessage(new concurrency.Message(4, obj4, handler));
       });
       let waitCount: int = 0;
       while (done.load() < 1 && waitCount < 50) {

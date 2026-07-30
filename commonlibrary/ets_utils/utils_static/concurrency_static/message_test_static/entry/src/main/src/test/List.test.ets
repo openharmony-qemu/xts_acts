@@ -14,12 +14,19 @@
  * limitations under the License.
  */
 
-import MessageOtherTest from './message/MessageOtherTest.test';
+import MessageTest from "./Message.test";
+import MessageTest2 from "./Message2.test";
+import MessageTest3 from "./Message3.test";
+import MessageEqualsTest from "./MessageEquals.test";
+import MessageEqualsBasicTest from './MessageEqualsBasicTest.test';
+import MessageScenarioTest from './MessageScenarioTest.test';
+import MessageScenarioSecondTest from './MessageScenarioSecondTest.test';
+import MessageScenarioThirdTest from './MessageScenarioThirdTest.test';
 import MessageConstructorCallbackTest from './message/MessageConstructorCallbackTest.test';
 import MessageConstructorHandlerTest from './message/MessageConstructorHandlerTest.test';
 import MessageConstructorWhatObjTest from './message/MessageConstructorWhatObjTest.test';
 import MessageConstructorWhatTest from './message/MessageConstructorWhatTest.test';
-import MessageEqualsTest from './message/MessageEqualsTest.test';
+import MessageEqualsApiTest from './message/MessageEqualsTest.test';
 import MessageGetCallbackTest from './message/MessageGetCallbackTest.test';
 import MessageGetObjectTest from './message/MessageGetObjectTest.test';
 import MessageGetTargetTest from './message/MessageGetTargetTest.test';
@@ -38,12 +45,19 @@ import MessageHandlerSendEmptyMessageTest from './messageHandler/MessageHandlerS
 import MessageHandlerSendMessageTest from './messageHandler/MessageHandlerSendMessageTest.test';
 
 export default function testsuite(): void {
-  MessageOtherTest();
+  MessageTest();
+  MessageTest2();
+  MessageTest3();
+  MessageEqualsTest();
+  MessageEqualsBasicTest();
+  MessageScenarioTest();
+  MessageScenarioSecondTest();
+  MessageScenarioThirdTest();
   MessageConstructorCallbackTest();
   MessageConstructorHandlerTest();
   MessageConstructorWhatObjTest();
   MessageConstructorWhatTest();
-  MessageEqualsTest();
+  MessageEqualsApiTest();
   MessageGetCallbackTest();
   MessageGetObjectTest();
   MessageGetTargetTest();

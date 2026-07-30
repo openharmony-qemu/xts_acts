@@ -898,13 +898,28 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageHandlerSendMessageTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // Enqueue before start so hasMessages observes the pending message
+      // start + atomic send/hasMessages on handler thread (handler must invoke post callbacks)
       let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, handler);
-      handler.sendMessage(msg);
-      let result: boolean = handler.hasMessages(1);
-      expect(result).assertTrue();
+      eaw.start();
+      let hasPending = new AtomicInt(0);
+      let done = new AtomicInt(0);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) { cb(); }
+      }, eaw);
+      handler.post((): void => {
+        handler.sendMessage(new concurrency.Message(1, handler));
+        if (handler.hasMessages(1)) {
+          hasPending.fetchAdd(1);
+        }
+        done.fetchAdd(1);
+      });
+      let waitCount: int = 0;
+      while (done.load() < 1 && waitCount < 50) {
+        waitCount++;
+        await Utils.msSleep(100);
+      }
+      expect(hasPending.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
@@ -917,15 +932,33 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageHandlerSendMessageTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // Enqueue before start so removeMessages observes the pending message
+      // start + atomic send/removeMessages; handler must invoke post callbacks
       let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, handler);
-      handler.sendMessage(msg);
-      let removeResult: boolean = handler.removeMessages(1);
-      expect(removeResult).assertTrue();
-      let hasAfterRemove: boolean = handler.hasMessages(1);
-      expect(hasAfterRemove).assertFalse();
+      eaw.start();
+      let removed = new AtomicInt(0);
+      let cleared = new AtomicInt(0);
+      let done = new AtomicInt(0);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) { cb(); }
+      }, eaw);
+      handler.post((): void => {
+        handler.sendMessage(new concurrency.Message(1, handler));
+        if (handler.removeMessages(1)) {
+          removed.fetchAdd(1);
+        }
+        if (!handler.hasMessages(1)) {
+          cleared.fetchAdd(1);
+        }
+        done.fetchAdd(1);
+      });
+      let waitCount: int = 0;
+      while (done.load() < 1 && waitCount < 50) {
+        waitCount++;
+        await Utils.msSleep(100);
+      }
+      expect(removed.load()).assertEqual(1);
+      expect(cleared.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
     })
 

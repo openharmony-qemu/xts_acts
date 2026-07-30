@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2023-2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,16 +32,13 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
   public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  public onRun: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
-
+   public onRun: () => void = () => {
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }

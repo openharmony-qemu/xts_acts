@@ -319,13 +319,29 @@ export default function MessageHandlerHasCallbacksTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageHandlerHasCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // Enqueue before start so removeCallbacks observes the pending callback message
+      // start + atomic send/removeCallbacks; assert hasCallbacks false after post returns
       let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+      eaw.start();
+      let removed = new AtomicInt(0);
+      let done = new AtomicInt(0);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) { cb(); }
+      }, eaw);
       let callback = (): void => { console.info("callback") };
-      handler.sendEmptyMessage(0);
-      handler.sendMessage(new concurrency.Message(callback, handler));
-      expect(handler.removeCallbacks(callback)).assertTrue();
+      handler.post((): void => {
+        handler.sendMessage(new concurrency.Message(callback, handler));
+        if (handler.removeCallbacks(callback)) {
+          removed.fetchAdd(1);
+        }
+        done.fetchAdd(1);
+      });
+      let waitCount: int = 0;
+      while (done.load() < 1 && waitCount < 50) {
+        waitCount++;
+        await Utils.msSleep(100);
+      }
+      expect(removed.load()).assertEqual(1);
       expect(handler.hasCallbacks(callback)).assertFalse();
       if (eaw.isAlive()) {
         eaw.quit();
@@ -548,13 +564,29 @@ export default function MessageHandlerHasCallbacksTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      // Enqueue before start so removeCallbacks observes the pending callback
+      // start + atomic post/removeCallbacks; assert hasCallbacks false after post returns
       let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+      eaw.start();
+      let removed = new AtomicInt(0);
+      let done = new AtomicInt(0);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) { cb(); }
+      }, eaw);
       let targetCallback = (): void => { console.info("callback"); };
-      handler.sendEmptyMessage(0);
-      handler.post(targetCallback);
-      expect(handler.removeCallbacks(targetCallback)).assertTrue();
+      handler.post((): void => {
+        handler.post(targetCallback);
+        if (handler.removeCallbacks(targetCallback)) {
+          removed.fetchAdd(1);
+        }
+        done.fetchAdd(1);
+      });
+      let waitCount: int = 0;
+      while (done.load() < 1 && waitCount < 50) {
+        waitCount++;
+        await Utils.msSleep(100);
+      }
+      expect(removed.load()).assertEqual(1);
       expect(handler.hasCallbacks(targetCallback)).assertFalse();
       if (eaw.isAlive()) {
         eaw.quit();

@@ -1300,20 +1300,20 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageHandlerHasMessagesWhatTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      // Enqueue what=1 and what=2 atomically via post so removeMessages(2) finds the pending message
+      // Align with Test3600: atomic enqueue + nested has/remove of sibling what=2
       let eaw = new EAWorker();
       eaw.start();
       let actionVerified = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let cb: (() => void) | undefined = msg.getCallback();
+        if (cb !== undefined) {
+          cb();
+        }
         if (msg.getWhat() === 1) {
           if (msg.getTarget().hasMessages(2)) {
             msg.getTarget().removeMessages(2);
             actionVerified.fetchAdd(1);
-          } else if (msg.getTarget().hasMessages(3)) {
-            actionVerified.fetchAdd(2);
-          } else {
-            actionVerified.fetchAdd(3);
           }
           done.fetchAdd(1);
         }

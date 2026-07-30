@@ -418,25 +418,28 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
+      let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
+      // send + removeCallbacks atomically on handler thread (avoid post/remove vs send race)
       handler.post((): void => {
-        let result: boolean = handler.removeCallbacks(callback);
-        if (result) { removed.fetchAdd(1); }
+        handler.sendMessage(new concurrency.Message(callback, handler));
+        if (handler.removeCallbacks(callback)) {
+          removed.fetchAdd(1);
+        }
+        done.fetchAdd(1);
       });
-      handler.sendMessage(new concurrency.Message(callback, handler));
       let waitCount: int = 0;
-      while (removed.load() < 1 && waitCount < 600) {
+      while (done.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
     })
-
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1500
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1500
