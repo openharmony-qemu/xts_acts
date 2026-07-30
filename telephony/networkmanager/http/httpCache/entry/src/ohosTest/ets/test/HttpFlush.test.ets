@@ -37,7 +37,7 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpFlushTest() {
   describe('HttpFlushTest', () => {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
-    let XTS_TEST_SECOND_HTTP_URL: string = 'http://httpbin.org/anything';
+    let XTS_TEST_SECOND_HTTP_URL: string = 'http://httpbin.moyufangge.com';
 
     /**
      * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0100
