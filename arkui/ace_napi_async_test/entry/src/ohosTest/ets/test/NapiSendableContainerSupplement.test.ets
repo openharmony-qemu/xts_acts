@@ -16,13 +16,19 @@
 import { beforeAll, beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import napitest from 'libentry.so';
 import { taskpool, collections, ArkTSUtils, lang } from '@kit.ArkTS';
+import { sleep } from './Utils';
 
-function asyncSleep(time: number): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve()
-    }, time)
-  })
+declare class ArkTools {
+  static forceFullGC(): void;
+}
+function triggerGC(): void {
+  if (typeof ArkTools !== 'undefined') {
+    console.info('[GC] ArkTools.forceFullGC() 被调用');
+    ArkTools.forceFullGC();
+    console.info('[GC] forceFullGC 执行完成');
+  } else {
+    console.warn('[GC] ArkTools 不可用，无法触发 GC');
+  }
 }
 
 // ========== Native Sendable对象定义（全局变量）==========
@@ -60,7 +66,8 @@ function createSendableObjects(): SendableObjects {
 }
 
 @Concurrent
-function testConcurrentArrayListRW(arrayList: object[], objs: SendableObjects): void {
+function testConcurrentArrayListRW(arrayList: object[], objs: SendableObjects): number {
+  let errorCount: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       arrayList.push(objs.obj);
@@ -90,13 +97,16 @@ function testConcurrentArrayListRW(arrayList: object[], objs: SendableObjects): 
         let v = item;
       });
     } catch (e) {
+      errorCount++;
       console.info('testConcurrentArrayListRW error: ' + e);
     }
   }
+  return errorCount;
 }
 
 @Concurrent
-function testConcurrentLinkedListRW(linkedList: object[], objs: SendableObjects): void {
+function testConcurrentLinkedListRW(linkedList: object[], objs: SendableObjects): number {
+  let errorCount: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       linkedList.push(objs.obj);
@@ -121,13 +131,16 @@ function testConcurrentLinkedListRW(linkedList: object[], objs: SendableObjects)
       linkedList.pop();
       linkedList.length = 0;
     } catch (e) {
+      errorCount++;
       console.info('testConcurrentLinkedListRW error: ' + e);
     }
   }
+  return errorCount;
 }
 
 @Concurrent
-function testConcurrentQueueRW(queue: object[], objs: SendableObjects): void {
+function testConcurrentQueueRW(queue: object[], objs: SendableObjects): number {
+  let errorCount: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       queue.push(objs.obj);
@@ -147,13 +160,16 @@ function testConcurrentQueueRW(queue: object[], objs: SendableObjects): void {
       queue.length = 0;
       queue.push(objs.obj);
     } catch (e) {
+      errorCount++;
       console.info('testConcurrentQueueRW error: ' + e);
     }
   }
+  return errorCount;
 }
 
 @Concurrent
-function testConcurrentStackRW(stack: object[], objs: SendableObjects): void {
+function testConcurrentStackRW(stack: object[], objs: SendableObjects): number {
+  let errorCount: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       stack.push(objs.obj);
@@ -173,13 +189,16 @@ function testConcurrentStackRW(stack: object[], objs: SendableObjects): void {
       stack.length = 0;
       stack.push(objs.obj);
     } catch (e) {
+      errorCount++;
       console.info('testConcurrentStackRW error: ' + e);
     }
   }
+  return errorCount;
 }
 
 @Concurrent
-function testConcurrentTreeMapRW(treeMap: Map<object, string>, objs: SendableObjects): void {
+function testConcurrentTreeMapRW(treeMap: Map<object, string>, objs: SendableObjects): number {
+  let errorCount: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       treeMap.set(objs.obj, 'obj_value');
@@ -210,9 +229,11 @@ function testConcurrentTreeMapRW(treeMap: Map<object, string>, objs: SendableObj
       treeMap.clear();
       treeMap.set(objs.obj, 'new_value');
     } catch (e) {
+      errorCount++;
       console.info('testConcurrentTreeMapRW error: ' + e);
     }
   }
+  return errorCount;
 }
 
 
@@ -246,17 +267,25 @@ function testGCCreateMultipleSendableInThread(count: number): number {
 }
 
 // ========== 场景5: 多线程并发无锁操作 @Concurrent函数 ==========
+// 测试意图：验证无锁并发场景下 ArkTS 运行时的健壮性
+// - 预期：并发修改可能抛出 ConcurrentModificationException（预期异常）
+// - 意外：其他类型异常（如空指针、类型错误）表示运行时缺陷
+// 返回值说明：[0]=意外错误计数, [1]=预期并发修改异常计数
 
 /**
  * 并发读写Array（无锁）- 多个读写操作组合
+ * 验证目的：观测多线程并发 push/pop/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentArrayRWNoLock(sharedArray: lang.ISendable[]): void {
+function testConcurrentArrayRWNoLock(sharedArray: lang.ISendable[]): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sharedArray.push(localObj);
@@ -285,21 +314,33 @@ function testConcurrentArrayRWNoLock(sharedArray: lang.ISendable[]): void {
         const item: lang.ISendable = sharedArray[j];
       }
     } catch (e) {
-      console.info('testConcurrentArrayRWNoLock error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentArrayRWNoLock unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 /**
  * 并发读写Map（无锁）- 读写+迭代组合
+ * 验证目的：观测多线程并发 set/get/delete/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentMapRWNoLock(sharedMap: Map<lang.ISendable, lang.ISendable>): void {
+function testConcurrentMapRWNoLock(sharedMap: Map<lang.ISendable, lang.ISendable>): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sharedMap.set(localObj, localArr);
@@ -337,21 +378,33 @@ function testConcurrentMapRWNoLock(sharedMap: Map<lang.ISendable, lang.ISendable
       }
       const mapSize: number = sharedMap.size;
     } catch (e) {
-      console.info('testConcurrentMapRWNoLock error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentMapRWNoLock unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 /**
  * 并发读写collections.Array（无锁）- 多个读写操作组合
+ * 验证目的：观测多线程并发 push/pop/indexOf/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentArrayListRWNoLock(sendableArr: collections.Array<lang.ISendable>): void {
+function testConcurrentArrayListRWNoLock(sendableArr: collections.Array<lang.ISendable>): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sendableArr.push(localObj);
@@ -379,21 +432,33 @@ function testConcurrentArrayListRWNoLock(sendableArr: collections.Array<lang.ISe
         const item: lang.ISendable = sendableArr[j];
       }
     } catch (e) {
-      console.info('testConcurrentArrayListRWNoLock error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentArrayListRWNoLock unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 /**
  * 并发混合操作（无锁）- Array读写+迭代组合
+ * 验证目的：观测多线程混合操作（push/pop/indexOf/迭代器）时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentMixedOpsNoLock(sharedArray: lang.ISendable[]): void {
+function testConcurrentMixedOpsNoLock(sharedArray: lang.ISendable[]): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sharedArray.push(localObj);
@@ -433,9 +498,17 @@ function testConcurrentMixedOpsNoLock(sharedArray: lang.ISendable[]): void {
         const _v: lang.ISendable = value;
       }
     } catch (e) {
-      console.info('testConcurrentMixedOpsNoLock error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentMixedOpsNoLock unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 
@@ -443,14 +516,18 @@ function testConcurrentMixedOpsNoLock(sharedArray: lang.ISendable[]): void {
 
 /**
  * 并发操作Sendable Array (collections.Array) - 多个读写操作
+ * 验证目的：观测多线程并发 push/pop/indexOf/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentSendableArrayRW(sendableArray: collections.Array<lang.ISendable>): void {
+function testConcurrentSendableArrayRW(sendableArray: collections.Array<lang.ISendable>): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sendableArray.push(localObj);
@@ -477,21 +554,33 @@ function testConcurrentSendableArrayRW(sendableArray: collections.Array<lang.ISe
         const item: lang.ISendable = sendableArray[j];
       }
     } catch (e) {
-      console.info('testConcurrentSendableArrayRW error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentSendableArrayRW unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 /**
  * 并发操作Sendable Map (collections.Map) - 多个读写操作
+ * 验证目的：观测多线程并发 set/get/delete/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentSendableMapRW(sendableMap: collections.Map<lang.ISendable, lang.ISendable>): void {
+function testConcurrentSendableMapRW(sendableMap: collections.Map<lang.ISendable, lang.ISendable>): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sendableMap.set(localObj, localArr);
@@ -523,21 +612,33 @@ function testConcurrentSendableMapRW(sendableMap: collections.Map<lang.ISendable
       }
       sendableMap.set(localObj, localArr);
     } catch (e) {
-      console.info('testConcurrentSendableMapRW error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 ||
+        errMsg.indexOf('modification') >= 0) {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentSendableMapRW unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 /**
  * 并发操作Sendable Set (collections.Set) - 多个读写操作
+ * 验证目的：观测多线程并发 add/delete/has/迭代 时的运行时行为
+ * 返回：[unexpectedErrorCount, concurrentModificationErrorCount]
  */
 @Concurrent
-function testConcurrentSendableSetRW(sendableSet: collections.Set<lang.ISendable>): void {
+function testConcurrentSendableSetRW(sendableSet: collections.Set<lang.ISendable>): number[] {
   const localObj: lang.ISendable = napitest.NapiCreateSendableObject();
   const localArr: lang.ISendable = napitest.NapiCreateSendableArray();
   const localClass: lang.ISendable = napitest.NapiDefineSendableClass();
   const localArrBuf: lang.ISendable = napitest.NapiCreateSendableArrayBuffer();
   const localTyped: lang.ISendable = napitest.NapiCreateSendableTypedArray();
+  let unexpectedErrors: number = 0;
+  let concurrentModErrors: number = 0;
   for (let i = 0; i < 10; i++) {
     try {
       sendableSet.add(localObj);
@@ -561,15 +662,31 @@ function testConcurrentSendableSetRW(sendableSet: collections.Set<lang.ISendable
       }
       sendableSet.add(localObj);
     } catch (e) {
-      console.info('testConcurrentSendableSetRW error: ' + e);
+      const errMsg: string = String(e);
+      if (errMsg.indexOf('Concurrent') >= 0 || errMsg.indexOf('concurrent') >= 0 || errMsg.indexOf('modification') >= 0)
+      {
+        concurrentModErrors++;
+      } else {
+        unexpectedErrors++;
+        console.info('testConcurrentSendableSetRW unexpected error: ' + e);
+      }
     }
   }
+  return [unexpectedErrors, concurrentModErrors];
 }
 
 
+async function yieldIfNeeded(index: number): Promise<void> {
+  if ((index + 1) % 10 === 0) {
+    await Promise.resolve();
+  }
+}
+
 export default function NapiSendableContainerSupplementTest() {
   describe('NapiSendableContainerSupplementTest', () => {
-    afterEach(async () => { await asyncSleep(500) })
+    afterEach(async () => {
+      await sleep(500)
+    })
 
 
     /**
@@ -624,15 +741,20 @@ export default function NapiSendableContainerSupplementTest() {
         arrayList.push(objs.arr);
         arrayList.push(objs.class1);
         
-        const tasks: Array<Promise<object>> = [];
+        const tasks: Array<Promise<Object>> = [];
         for (let i = 0; i < 10; i++) {
           tasks.push(taskpool.execute(testConcurrentArrayListRW, arrayList, objs));
         }
         
-        await Promise.all(tasks);
+        const results: number[] = await Promise.all(tasks) as number[];
         
-        console.info(`${caseName} concurrent operations completed`);
-        expect(arrayList.length >= 0).assertTrue();
+        let totalErrors: number = 0;
+        for (const errCount of results) {
+          totalErrors += errCount;
+        }
+        
+        console.info(`${caseName} concurrent operations completed, totalErrors: ${totalErrors}`);
+        expect(totalErrors).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -658,15 +780,20 @@ export default function NapiSendableContainerSupplementTest() {
         linkedList.push(objs.arr);
         linkedList.push(objs.class1);
         
-        const tasks: Array<Promise<object>> = [];
+        const tasks: Array<Promise<Object>> = [];
         for (let i = 0; i < 10; i++) {
           tasks.push(taskpool.execute(testConcurrentLinkedListRW, linkedList, objs));
         }
         
-        await Promise.all(tasks);
+        const results: number[] = await Promise.all(tasks) as number[];
         
-        console.info(`${caseName} concurrent operations completed`);
-        expect(linkedList.length >= 0).assertTrue();
+        let totalErrors: number = 0;
+        for (const errCount of results) {
+          totalErrors += errCount;
+        }
+        
+        console.info(`${caseName} concurrent operations completed, totalErrors: ${totalErrors}`);
+        expect(totalErrors).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -692,15 +819,20 @@ export default function NapiSendableContainerSupplementTest() {
         queue.push(objs.arr);
         queue.push(objs.class1);
         
-        const tasks: Array<Promise<object>> = [];
+        const tasks: Array<Promise<Object>> = [];
         for (let i = 0; i < 10; i++) {
           tasks.push(taskpool.execute(testConcurrentQueueRW, queue, objs));
         }
         
-        await Promise.all(tasks);
+        const results: number[] = await Promise.all(tasks) as number[];
         
-        console.info(`${caseName} concurrent operations completed`);
-        expect(queue.length >= 0).assertTrue();
+        let totalErrors: number = 0;
+        for (const errCount of results) {
+          totalErrors += errCount;
+        }
+        
+        console.info(`${caseName} concurrent operations completed, totalErrors: ${totalErrors}`);
+        expect(totalErrors).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -726,15 +858,20 @@ export default function NapiSendableContainerSupplementTest() {
         stack.push(objs.arr);
         stack.push(objs.class1);
         
-        const tasks: Array<Promise<object>> = [];
+        const tasks: Array<Promise<Object>> = [];
         for (let i = 0; i < 10; i++) {
           tasks.push(taskpool.execute(testConcurrentStackRW, stack, objs));
         }
         
-        await Promise.all(tasks);
+        const results: number[] = await Promise.all(tasks) as number[];
         
-        console.info(`${caseName} concurrent operations completed`);
-        expect(stack.length >= 0).assertTrue();
+        let totalErrors: number = 0;
+        for (const errCount of results) {
+          totalErrors += errCount;
+        }
+        
+        console.info(`${caseName} concurrent operations completed, totalErrors: ${totalErrors}`);
+        expect(totalErrors).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -760,15 +897,20 @@ export default function NapiSendableContainerSupplementTest() {
         treeMap.set(objs.arr, 'arr_value');
         treeMap.set(objs.class1, 'class1_value');
         
-        const tasks: Array<Promise<object>> = [];
+        const tasks: Array<Promise<Object>> = [];
         for (let i = 0; i < 10; i++) {
           tasks.push(taskpool.execute(testConcurrentTreeMapRW, treeMap, objs));
         }
         
-        await Promise.all(tasks);
+        const results: number[] = await Promise.all(tasks) as number[];
         
-        console.info(`${caseName} concurrent operations completed`);
-        expect(treeMap.size >= 0).assertTrue();
+        let totalErrors: number = 0;
+        for (const errCount of results) {
+          totalErrors += errCount;
+        }
+        
+        console.info(`${caseName} concurrent operations completed, totalErrors: ${totalErrors}`);
+        expect(totalErrors).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -1013,15 +1155,15 @@ export default function NapiSendableContainerSupplementTest() {
 
 
     /**
-     * @tc.name   testGCBasic0001
+     * @tc.name   testSendableContainerGCBasic0001
      * @tc.number SUB_COMMONLIBRARY_NAPI_SENDABLECONTAINERSUPPS4_0100
      * @tc.desc   Basic GC test with Native sendable objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGCBasic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testGCBasic0001';
+    it('testSendableContainerGCBasic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testSendableContainerGCBasic0001';
       console.info(`${caseName} test start`);
       let loopCount = 0;
 
@@ -1032,12 +1174,13 @@ export default function NapiSendableContainerSupplementTest() {
             let newObj: lang.ISendable = napitest.NapiCreateSendableObject()
             objects.push(newObj)
           }
-
           expect(objects.length).assertEqual(1000)
 
           objects = []
 
-          await asyncSleep(1000)
+          triggerGC()
+          await Promise.resolve()
+          await sleep(100)
 
           loopCount++;
         } catch (error) {
@@ -1051,25 +1194,30 @@ export default function NapiSendableContainerSupplementTest() {
     })
 
     /**
-     * @tc.name   testGCCrossThread0002
+     * @tc.name   testSendableContainerGCCrossThread0002
      * @tc.number SUB_COMMONLIBRARY_NAPI_SENDABLECONTAINERSUPPS4_0200
      * @tc.desc   GC test with Native sendable objects across threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGCCrossThread0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testGCCrossThread0002';
+    it('testSendableContainerGCCrossThread0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testSendableContainerGCCrossThread0002';
       console.info(`${caseName} test start`);
       let loopCount = 0;
 
       for (let i = 0; i < 10; i++) {
         try {
-          const objFromThread = await taskpool.execute(testGCCreateSendableInThread) as lang.ISendable
+          {
+            const objFromThread = await taskpool.execute(testGCCreateSendableInThread) as lang.ISendable
 
-          expect(objFromThread !== undefined).assertTrue()
+            expect(objFromThread !== undefined).assertTrue()
+          }
 
-          await asyncSleep(500)
+          triggerGC();
+
+          // Allow runtime scheduling
+          await Promise.resolve();
 
           loopCount++;
         } catch (error) {
@@ -1083,22 +1231,22 @@ export default function NapiSendableContainerSupplementTest() {
     })
 
     /**
-     * @tc.name   testGCCreateMultipleSendable0003
+     * @tc.name   testSendableContainerGCCreateMultiple0003
      * @tc.number SUB_COMMONLIBRARY_NAPI_SENDABLECONTAINERSUPPS4_0300
      * @tc.desc   GC test creating multiple Native sendable objects in thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGCCreateMultipleSendable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testGCCreateMultipleSendable0003';
+    it('testSendableContainerGCCreateMultiple0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testSendableContainerGCCreateMultiple0003';
       console.info(`${caseName} test start`);
       try {
         const count = await taskpool.execute(testGCCreateMultipleSendableInThread, 100) as number
 
         expect(count).assertEqual(100)
 
-        await asyncSleep(500)
+        await sleep(100)
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
@@ -1126,10 +1274,18 @@ export default function NapiSendableContainerSupplementTest() {
           tasks.push(taskpool.execute(testConcurrentArrayRWNoLock, sharedArray))
         }
 
-        await Promise.all(tasks)
-
-        console.info(`${caseName} concurrent operations completed`)
-        expect(sharedArray.length >= 0).assertTrue()
+        const results: number[][] = await Promise.all(tasks) as number[][]
+        
+        let totalUnexpectedErrors: number = 0;
+        let totalConcurrentModErrors: number = 0;
+        for (const result of results) {
+          totalUnexpectedErrors += result[0];
+          totalConcurrentModErrors += result[1];
+        }
+        
+        console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+        concurrentModErrors: ${totalConcurrentModErrors}`)
+        expect(totalUnexpectedErrors).assertEqual(0)
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`)
         expect().assertFail()
@@ -1161,10 +1317,18 @@ export default function NapiSendableContainerSupplementTest() {
           tasks.push(taskpool.execute(testConcurrentMapRWNoLock, sharedMap))
         }
 
-        await Promise.all(tasks)
-
-        console.info(`${caseName} concurrent operations completed`)
-        expect(sharedMap.size >= 0).assertTrue()
+        const results: number[][] = await Promise.all(tasks) as number[][]
+        
+        let totalUnexpectedErrors: number = 0;
+        let totalConcurrentModErrors: number = 0;
+        for (const result of results) {
+          totalUnexpectedErrors += result[0];
+          totalConcurrentModErrors += result[1];
+        }
+        
+        console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+         concurrentModErrors: ${totalConcurrentModErrors}`)
+        expect(totalUnexpectedErrors).assertEqual(0)
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`)
         expect().assertFail()
@@ -1196,10 +1360,18 @@ export default function NapiSendableContainerSupplementTest() {
           tasks.push(taskpool.execute(testConcurrentArrayListRWNoLock, sendableArr))
         }
 
-        await Promise.all(tasks)
-
-        console.info(`${caseName} concurrent operations completed`)
-        expect(sendableArr.length >= 0).assertTrue()
+        const results: number[][] = await Promise.all(tasks) as number[][]
+        
+        let totalUnexpectedErrors: number = 0;
+        let totalConcurrentModErrors: number = 0;
+        for (const result of results) {
+          totalUnexpectedErrors += result[0];
+          totalConcurrentModErrors += result[1];
+        }
+        
+        console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+        concurrentModErrors: ${totalConcurrentModErrors}`)
+        expect(totalUnexpectedErrors).assertEqual(0)
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`)
         expect().assertFail()
@@ -1228,10 +1400,18 @@ export default function NapiSendableContainerSupplementTest() {
           tasks.push(taskpool.execute(testConcurrentMixedOpsNoLock, sharedArray))
         }
 
-        await Promise.all(tasks)
-
-        console.info(`${caseName} concurrent operations completed`)
-        expect(sharedArray.length >= 0).assertTrue()
+        const results: number[][] = await Promise.all(tasks) as number[][]
+        
+        let totalUnexpectedErrors: number = 0;
+        let totalConcurrentModErrors: number = 0;
+        for (const result of results) {
+          totalUnexpectedErrors += result[0];
+          totalConcurrentModErrors += result[1];
+        }
+        
+        console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+        concurrentModErrors: ${totalConcurrentModErrors}`)
+        expect(totalUnexpectedErrors).assertEqual(0)
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`)
         expect().assertFail()
@@ -1265,10 +1445,18 @@ export default function NapiSendableContainerSupplementTest() {
             tasks.push(taskpool.execute(testConcurrentSendableArrayRW, sendableArray));
           }
 
-          await Promise.all(tasks);
-
-          console.info(`${caseName} concurrent operations completed`);
-          expect(sendableArray.length >= 0).assertTrue();
+          const results: number[][] = await Promise.all(tasks) as number[][]
+          
+          let totalUnexpectedErrors: number = 0;
+          let totalConcurrentModErrors: number = 0;
+          for (const result of results) {
+            totalUnexpectedErrors += result[0];
+            totalConcurrentModErrors += result[1];
+          }
+          
+          console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+          concurrentModErrors: ${totalConcurrentModErrors}`);
+          expect(totalUnexpectedErrors).assertEqual(0);
           loopCount++;
         } catch (error) {
           console.error(`${caseName} catch error: ${error}`);
@@ -1303,10 +1491,18 @@ export default function NapiSendableContainerSupplementTest() {
             tasks.push(taskpool.execute(testConcurrentSendableMapRW, sendableMap));
           }
 
-          await Promise.all(tasks);
-
-          console.info(`${caseName} concurrent operations completed`);
-          expect(sendableMap.size >= 0).assertTrue();
+          const results: number[][] = await Promise.all(tasks) as number[][]
+          
+          let totalUnexpectedErrors: number = 0;
+          let totalConcurrentModErrors: number = 0;
+          for (const result of results) {
+            totalUnexpectedErrors += result[0];
+            totalConcurrentModErrors += result[1];
+          }
+          
+          console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+          concurrentModErrors: ${totalConcurrentModErrors}`);
+          expect(totalUnexpectedErrors).assertEqual(0);
           loopCount++;
         } catch (error) {
           console.error(`${caseName} catch error: ${error}`);
@@ -1341,10 +1537,18 @@ export default function NapiSendableContainerSupplementTest() {
             tasks.push(taskpool.execute(testConcurrentSendableSetRW, sendableSet));
           }
 
-          await Promise.all(tasks);
-
-          console.info(`${caseName} concurrent operations completed`);
-          expect(sendableSet.size >= 0).assertTrue();
+          const results: number[][] = await Promise.all(tasks) as number[][]
+          
+          let totalUnexpectedErrors: number = 0;
+          let totalConcurrentModErrors: number = 0;
+          for (const result of results) {
+            totalUnexpectedErrors += result[0];
+            totalConcurrentModErrors += result[1];
+          }
+          
+          console.info(`${caseName} concurrent operations completed, unexpectedErrors: ${totalUnexpectedErrors},
+          concurrentModErrors: ${totalConcurrentModErrors}`);
+          expect(totalUnexpectedErrors).assertEqual(0);
           loopCount++;
         } catch (error) {
           console.error(`${caseName} catch error: ${error}`);
@@ -1633,6 +1837,7 @@ export default function NapiSendableContainerSupplementTest() {
     it('testEmptySendableSetHas0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName: string = 'testEmptySendableSetHas0012';
       console.info(`${caseName} test start`);
+
       let loopCount = 0;
       for (let i = 0; i < 100; i++) {
         try {
@@ -1643,6 +1848,7 @@ export default function NapiSendableContainerSupplementTest() {
             expect(emptySet.has(sendableObj)).assertFalse();
           }
           loopCount++;
+          await yieldIfNeeded(i);
         } catch (error) {
           console.error(`${caseName} catch error: ${error}`);
           expect().assertFail();

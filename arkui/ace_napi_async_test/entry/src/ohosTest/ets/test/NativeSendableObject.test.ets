@@ -17,8 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import taskpool from '@ohos.taskpool';
 import { collections, ArkTSUtils, lang } from '@kit.ArkTS';
 import napitest from 'libentry.so';
+import { sleep } from './Utils';
 
-const SLEEP_INTERVAL_MS: number = 100;
 const GC_WAIT_MS: number = 500;
 const LARGE_CAPACITY: number = 1025;
 const CONCURRENT_THREAD_COUNT: number = 10;
@@ -26,12 +26,6 @@ const CONCURRENT_THREAD_COUNT: number = 10;
 class NonSendableObj {
   key: string = '';
   index: number = 0;
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>((resolve: Function): void => {
-    setTimeout(resolve, ms);
-  });
 }
 
 @Concurrent
@@ -47,6 +41,11 @@ function taskVerifyIsSendable(obj: lang.ISendable): boolean {
 @Concurrent
 function taskPassSendableObject(obj: lang.ISendable): boolean {
   return napitest.NapiIsSendable(obj);
+}
+
+@Concurrent
+function taskReturnSendableObject(obj: lang.ISendable): lang.ISendable {
+  return obj;
 }
 
 @Concurrent
@@ -82,7 +81,7 @@ function taskCreateStrongRef(): boolean {
 @Concurrent
 async function concurrentCreateObjectWithLock(lock: ArkTSUtils.locks.AsyncLock,
   arr: collections.Array<lang.ISendable>): Promise<number> {
-  return lock.lockAsync((): number => {
+  return await lock.lockAsync((): number => {
     const obj: lang.ISendable = napitest.NapiCreateSendableObject();
     arr.push(obj);
     return arr.length;
@@ -90,28 +89,41 @@ async function concurrentCreateObjectWithLock(lock: ArkTSUtils.locks.AsyncLock,
 }
 
 @Concurrent
-function concurrentVerifyIsSendableWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): boolean {
-  return napitest.NapiIsSendable(obj);
+async function concurrentVerifyIsSendableWithLock(lock: ArkTSUtils.locks.AsyncLock,
+  obj: lang.ISendable): Promise<boolean> {
+  return await lock.lockAsync((): boolean => {
+    return napitest.NapiIsSendable(obj);
+  });
 }
 
 @Concurrent
-function concurrentPassObjectWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): boolean {
-  return napitest.NapiIsSendable(obj);
+async function concurrentPassObjectWithLock(lock: ArkTSUtils.locks.AsyncLock,
+  obj: lang.ISendable): Promise<lang.ISendable> {
+  return await lock.lockAsync((): lang.ISendable => {
+    return obj;
+  });
 }
 
 @Concurrent
-function concurrentWrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable, data: string): void {
-  napitest.NapiWrapSendable(obj, data.toString());
+async function concurrentWrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable,
+  data: string): Promise<void> {
+  return await lock.lockAsync((): void => {
+    napitest.NapiWrapSendable(obj, data.toString());
+  });
 }
 
 @Concurrent
-function concurrentUnwrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): string {
-  return napitest.NapiUnwrapSendable(obj);
+async function concurrentUnwrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): Promise<string> {
+  return await lock.lockAsync((): string => {
+    return napitest.NapiUnwrapSendable(obj);
+  });
 }
 
 @Concurrent
-function concurrentRemoveWrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): string {
-  return napitest.NapiRemoveWrapSendable(obj);
+async function concurrentRemoveWrapWithLock(lock: ArkTSUtils.locks.AsyncLock, obj: lang.ISendable): Promise<string> {
+  return await lock.lockAsync((): string => {
+    return napitest.NapiRemoveWrapSendable(obj);
+  });
 }
 
 @Concurrent
@@ -120,23 +132,34 @@ function concurrentIsSendableCheck(obj: lang.ISendable): boolean {
 }
 
 @Concurrent
-function concurrentCreateFloat64ArrayTryCatch(): boolean | undefined {
+function concurrentCreateFloat64ArrayTryCatch(): boolean {
   try {
     return napitest.createSendableFloat64ArrayTest();
   } catch (e) {
-    return undefined;
+    return false;
   }
 }
 
 @Concurrent
-function concurrentAccessTypedArrayWithLock(lock: ArkTSUtils.locks.AsyncLock, arr: Float64Array, index: number):
-  number {
-  return arr[index];
+async function concurrentCreateFloat64ArrayWithLock(lock: ArkTSUtils.locks.AsyncLock): Promise<boolean> {
+  return await lock.lockAsync((): boolean => {
+    return napitest.createSendableFloat64ArrayTest();
+  });
 }
 
 @Concurrent
-function concurrentCreateStrongRefWithLock(lock: ArkTSUtils.locks.AsyncLock): boolean {
-  return napitest.NapiCreateStrongSendableRef();
+async function concurrentAccessTypedArrayWithLock(lock: ArkTSUtils.locks.AsyncLock, arr: Float64Array, index: number):
+  Promise<number> {
+  return await lock.lockAsync((): number => {
+    return arr[index];
+  });
+}
+
+@Concurrent
+async function concurrentCreateStrongRefWithLock(lock: ArkTSUtils.locks.AsyncLock): Promise<boolean> {
+  return await lock.lockAsync((): boolean => {
+    return napitest.NapiCreateStrongSendableRef();
+  });
 }
 
 @Concurrent
@@ -155,8 +178,8 @@ export default function NativeSendableObjectTest() {
       console.info('NativeSendableObjectStressTest beforeAll called');
     });
 
-    beforeEach(async (): Promise<void> => {
-      await sleep(SLEEP_INTERVAL_MS);
+    beforeEach((): void => {
+      console.info('NativeSendableObjectStressTest beforeEach called');
     });
 
     afterEach((): void => {
@@ -259,8 +282,9 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testNapiCreateSendableArrayWithLength0001';
       console.info(`${caseName} test start`);
       try {
-        const nativeArr: Object = napitest.NapiCreateSendableArrayWithLength(LARGE_CAPACITY);
+        const nativeArr: lang.ISendable = napitest.NapiCreateSendableArrayWithLength(LARGE_CAPACITY);
         expect(nativeArr !== null).assertTrue();
+        expect((nativeArr as Array<lang.ISendable>).length).assertEqual(LARGE_CAPACITY);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -282,8 +306,9 @@ export default function NativeSendableObjectTest() {
       console.info(`${caseName} test start`);
       try {
         const bufferSize: number = LARGE_CAPACITY * 8;
-        const buffer: Object = napitest.NapiCreateSendableArrayBuffer(bufferSize);
+        const buffer: ArrayBuffer = napitest.NapiCreateSendableArrayBuffer(bufferSize) as ArrayBuffer;
         expect(buffer !== null).assertTrue();
+        expect(buffer.byteLength).assertEqual(bufferSize);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -337,7 +362,7 @@ export default function NativeSendableObjectTest() {
       console.info(`${caseName} test start`);
       try {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        const objs: Object[] = [];
+        const objs: lang.ISendable[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           objs.push(napitest.NapiCreateSendableObject());
         }
@@ -372,19 +397,21 @@ export default function NativeSendableObjectTest() {
       console.info(`${caseName} test start`);
       try {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        const objs: Object[] = [];
+        const objs: lang.ISendable[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           objs.push(napitest.NapiCreateSendableObject());
         }
-        const tasks: Promise<boolean>[] = [];
+        const tasks: Promise<lang.ISendable>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(concurrentPassObjectWithLock, lock, objs[i]) as Promise<boolean>);
+          tasks.push(taskpool.execute(concurrentPassObjectWithLock, lock, objs[i]) as Promise<lang.ISendable>);
         }
 
-        const results: boolean[] = await Promise.all(tasks);
+        const results: lang.ISendable[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          expect(results[i]).assertTrue();
+          expect(results[i] === objs[i]).assertTrue();
+          expect(napitest.NapiIsSendable(results[i])).assertTrue();
         }
         console.info(`${caseName} test end`);
       } catch (error) {
@@ -409,19 +436,18 @@ export default function NativeSendableObjectTest() {
       console.info(`${caseName} test start`);
       try {
         const arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-        const tasks: Promise<boolean>[] = [];
+        const tasks: Promise<lang.ISendable>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(taskCreateSendableObject) as Promise<boolean>);
+          tasks.push(taskpool.execute(taskCreateSendableObject) as Promise<lang.ISendable>);
         }
 
-        const results: boolean[] = await Promise.all(tasks);
+        const results: lang.ISendable[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            arr.push(results[i]);
-          } catch (e) {
-            console.info(`${caseName} push error caught: ${e}`);
-          }
+          expect(results[i] !== null).assertTrue();
+          expect(napitest.NapiIsSendable(results[i])).assertTrue();
+          arr.push(results[i]);
         }
         expect(arr.length).assertEqual(CONCURRENT_THREAD_COUNT);
         console.info(`${caseName} test end`);
@@ -444,32 +470,24 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testConcurrentIsSendableCheck0001';
       console.info(`${caseName} test start`);
       try {
-        const objs: Object[] = [];
+        const objs: lang.ISendable[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           objs.push(napitest.NapiCreateSendableObject());
         }
         const tasks: Promise<boolean>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            tasks.push(taskpool.execute(concurrentIsSendableCheck, objs[i]) as Promise<boolean>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          tasks.push(taskpool.execute(concurrentIsSendableCheck, objs[i]) as Promise<boolean>);
         }
 
         const results: boolean[] = await Promise.all(tasks);
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            expect(results[i]).assertTrue();
-          } catch (e) {
-            console.info(`${caseName} assertion error caught: ${e}`);
-          }
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i]).assertTrue();
         }
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
-        expect(error.name).assertEqual('BusinessError');
         expect(error.name).assertEqual('BusinessError');
       }
     });
@@ -487,27 +505,21 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testNapiPassSendableObjectConcurrent0001';
       console.info(`${caseName} test start`);
       try {
-        const objs: Object[] = [];
+        const objs: lang.ISendable[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           objs.push(napitest.NapiCreateSendableObject());
         }
-        const tasks: Promise<boolean>[] = [];
+        const tasks: Promise<lang.ISendable>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            tasks.push(taskpool.execute(taskPassSendableObject, objs[i]) as Promise<boolean>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          tasks.push(taskpool.execute(taskReturnSendableObject, objs[i]) as Promise<lang.ISendable>);
         }
 
-        const results: boolean[] = await Promise.all(tasks);
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            expect(results[i]).assertTrue();
-          } catch (e) {
-            console.info(`${caseName} assertion error caught: ${e}`);
-          }
+        const results: lang.ISendable[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i] === objs[i]).assertTrue();
+          expect(napitest.NapiIsSendable(results[i])).assertTrue();
         }
         console.info(`${caseName} test end`);
       } catch (error) {
@@ -652,7 +664,7 @@ export default function NativeSendableObjectTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_NAPI_NATIVESENDABLEOBJECT_1600
      * @tc.name   testNapiIsSendableConcurrentWithoutLock0001
-     * @tc.desc   Test NapiIsSendable concurrently without AsyncLock, with try-catch for errors.
+     * @tc.desc   Test NapiIsSendable concurrently without AsyncLock.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -670,21 +682,14 @@ export default function NativeSendableObjectTest() {
         const tasks: Promise<boolean>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            const obj: lang.ISendable = arr[i * 100];
-            tasks.push(taskpool.execute(concurrentIsSendableCheck, obj) as Promise<boolean>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          const obj: lang.ISendable = arr[i * 100];
+          tasks.push(taskpool.execute(concurrentIsSendableCheck, obj) as Promise<boolean>);
         }
 
         const results: boolean[] = await Promise.all(tasks);
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            expect(results[i]).assertTrue();
-          } catch (e) {
-            console.info(`${caseName} assertion error caught: ${e}`);
-          }
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i]).assertTrue();
         }
         console.info(`${caseName} test end`);
       } catch (error) {
@@ -783,25 +788,12 @@ export default function NativeSendableObjectTest() {
           const obj: lang.ISendable = napitest.NapiCreateSendableObject();
           arr.push(obj);
         }
+        expect(napitest.NapiIsSendable(arr[0])).assertTrue();
         for (let j: number = arr.length - 1; j >= 0; j--) {
           arr.pop();
         }
         await sleep(GC_WAIT_MS);
-        const newArr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          const obj: lang.ISendable = napitest.NapiCreateSendableObject();
-          newArr.push(obj);
-        }
-        const tasks: Promise<boolean>[] = [];
-
-        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(taskVerifyIsSendable, newArr[i]) as Promise<boolean>);
-        }
-
-        const results: boolean[] = await Promise.all(tasks);
-        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          expect(results[i]).assertTrue();
-        }
+        expect(arr.length).assertEqual(0);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -831,6 +823,10 @@ export default function NativeSendableObjectTest() {
           arr.push(obj);
         }
         expect(arr.length).assertEqual(LARGE_CAPACITY);
+        for (let i: number = 0; i < LARGE_CAPACITY; i++) {
+          const data: string = napitest.NapiUnwrapSendable(arr[i]);
+          expect(data).assertEqual(i.toString());
+        }
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -921,16 +917,19 @@ export default function NativeSendableObjectTest() {
           const obj: lang.ISendable = napitest.NapiCreateSendableObject();
           arr.push(obj);
         }
-        const tasks: Promise<boolean>[] = [];
+        const tasks: Promise<Object>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           const obj: lang.ISendable = arr[i * 100];
-          tasks.push(taskpool.execute(concurrentWrapWithLock, lock, obj, i.toString()) as Promise<boolean>);
+          tasks.push(taskpool.execute(concurrentWrapWithLock, lock, obj, i.toString()) as Promise<Object>);
         }
 
         await Promise.all(tasks);
-        const unwrappedData: string = napitest.NapiUnwrapSendable(arr[0]);
-        expect(unwrappedData).assertEqual('0');
+        expect(tasks.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          const unwrappedData: string = napitest.NapiUnwrapSendable(arr[i * 100]);
+          expect(unwrappedData).assertEqual(i.toString());
+        }
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -958,13 +957,13 @@ export default function NativeSendableObjectTest() {
           napitest.NapiWrapSendable(obj, (i * 1000).toString());
           arr.push(obj);
         }
-        const tasks: Promise<number>[] = [];
+        const tasks: Promise<string>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(concurrentUnwrapWithLock, lock, arr[i]) as Promise<number>);
+          tasks.push(taskpool.execute(concurrentUnwrapWithLock, lock, arr[i]) as Promise<string>);
         }
 
-        const results: number[] = await Promise.all(tasks);
+        const results: string[] = await Promise.all(tasks);
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           expect(results[i]).assertEqual((i * 1000).toString());
         }
@@ -997,13 +996,13 @@ export default function NativeSendableObjectTest() {
           arr.push(obj);
           dataArr.push((i * 5000).toString());
         }
-        const tasks: Promise<number>[] = [];
+        const tasks: Promise<string>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(concurrentRemoveWrapWithLock, lock, arr[i]) as Promise<number>);
+          tasks.push(taskpool.execute(concurrentRemoveWrapWithLock, lock, arr[i]) as Promise<string>);
         }
 
-        const results: number[] = await Promise.all(tasks);
+        const results: string[] = await Promise.all(tasks);
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           expect(results[i]).assertEqual(dataArr[i].toString());
         }
@@ -1019,7 +1018,7 @@ export default function NativeSendableObjectTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_NAPI_NATIVESENDABLEOBJECT_2600
      * @tc.name   testNapiWrapSendableConcurrentWithoutLock0001
-     * @tc.desc   Test NapiWrapSendable concurrently without AsyncLock, with try-catch for errors.
+     * @tc.desc   Test NapiWrapSendable concurrently without AsyncLock.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1034,20 +1033,19 @@ export default function NativeSendableObjectTest() {
           const obj: lang.ISendable = napitest.NapiCreateSendableObject();
           arr.push(obj);
         }
-        const tasks: Promise<boolean>[] = [];
+        const tasks: Promise<Object>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            const task: taskpool.Task = new taskpool.Task(taskWrapSendable, arr[i], i.toString());
-            tasks.push(taskpool.execute(task) as Promise<boolean>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          const task: taskpool.Task = new taskpool.Task(taskWrapSendable, arr[i], i.toString());
+          tasks.push(taskpool.execute(task) as Promise<Object>);
         }
 
         await Promise.all(tasks);
-        const unwrappedData: string = napitest.NapiUnwrapSendable(arr[0]);
-        expect(unwrappedData).assertEqual('0');
+        expect(tasks.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          const unwrappedData: string = napitest.NapiUnwrapSendable(arr[i]);
+          expect(unwrappedData).assertEqual(i.toString());
+        }
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -1058,7 +1056,7 @@ export default function NativeSendableObjectTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_NAPI_NATIVESENDABLEOBJECT_2700
      * @tc.name   testNapiUnwrapSendableConcurrentWithoutLock0001
-     * @tc.desc   Test NapiUnwrapSendable concurrently without AsyncLock, with try-catch for errors.
+     * @tc.desc   Test NapiUnwrapSendable concurrently without AsyncLock.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1074,24 +1072,17 @@ export default function NativeSendableObjectTest() {
           napitest.NapiWrapSendable(obj, (i * 100).toString());
           arr.push(obj);
         }
-        const tasks: Promise<number>[] = [];
+        const tasks: Promise<string>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            const task: taskpool.Task = new taskpool.Task(taskUnwrapSendable, arr[i]);
-            tasks.push(taskpool.execute(task) as Promise<number>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          const task: taskpool.Task = new taskpool.Task(taskUnwrapSendable, arr[i]);
+          tasks.push(taskpool.execute(task) as Promise<string>);
         }
 
-        const results: number[] = await Promise.all(tasks);
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            expect(results[i]).assertEqual((i * 100).toString());
-          } catch (e) {
-            console.info(`${caseName} assertion error caught: ${e}`);
-          }
+        const results: string[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i]).assertEqual((i * 100).toString());
         }
         console.info(`${caseName} test end`);
       } catch (error) {
@@ -1103,7 +1094,7 @@ export default function NativeSendableObjectTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_NAPI_NATIVESENDABLEOBJECT_2800
      * @tc.name   testNapiRemoveWrapSendableConcurrentWithoutLock0001
-     * @tc.desc   Test NapiRemoveWrapSendable concurrently without AsyncLock, with try-catch for errors.
+     * @tc.desc   Test NapiRemoveWrapSendable concurrently without AsyncLock.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1120,24 +1111,17 @@ export default function NativeSendableObjectTest() {
           napitest.NapiWrapSendable(obj, (i * 200).toString());
           arr.push(obj);
         }
-        const tasks: Promise<number>[] = [];
+        const tasks: Promise<string>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            const task: taskpool.Task = new taskpool.Task(taskRemoveWrapSendable, arr[i]);
-            tasks.push(taskpool.execute(task) as Promise<number>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          const task: taskpool.Task = new taskpool.Task(taskRemoveWrapSendable, arr[i]);
+          tasks.push(taskpool.execute(task) as Promise<string>);
         }
 
-        const results: number[] = await Promise.all(tasks);
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            expect(results[i]).assertEqual((i * 200).toString());
-          } catch (e) {
-            console.info(`${caseName} assertion error caught: ${e}`);
-          }
+        const results: string[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i]).assertEqual((i * 200).toString());
         }
         console.info(`${caseName} test end`);
       } catch (error) {
@@ -1162,10 +1146,13 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testCreateSendableFloat64Array0001';
       console.info(`${caseName} test start`);
       try {
+        const arr: collections.Array<boolean> = new collections.Array<boolean>();
         for (let i: number = 0; i < 10; i++) {
           const result: boolean = napitest.createSendableFloat64ArrayTest();
           expect(result).assertEqual(1);
+          arr.push(result);
         }
+        expect(arr.length).assertEqual(10);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -1186,28 +1173,20 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testConcurrentCreateSendableFloat64Array0001';
       console.info(`${caseName} test start`);
       try {
-        const tasks: Promise<boolean | undefined>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+        const arr: collections.Array<boolean> = new collections.Array<boolean>();
+        const tasks: Promise<boolean>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          try {
-            tasks.push(taskpool.execute(concurrentCreateFloat64ArrayTryCatch) as Promise<boolean | undefined>);
-          } catch (e) {
-            console.info(`${caseName} task creation error caught: ${e}`);
-          }
+          tasks.push(taskpool.execute(concurrentCreateFloat64ArrayWithLock, lock) as Promise<boolean>);
         }
 
-        const results: (boolean | undefined)[] = await Promise.all(tasks);
-        let successCount: number = 0;
-        for (let i: number = 0; i < results.length; i++) {
-          try {
-            if (results[i] !== undefined) {
-              successCount++;
-            }
-          } catch (e) {
-            console.info(`${caseName} result check error caught: ${e}`);
-          }
+        const results: boolean[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          arr.push(results[i]);
         }
-        expect(successCount).assertEqual(CONCURRENT_THREAD_COUNT);
+        expect(arr.length).assertEqual(CONCURRENT_THREAD_COUNT);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -1231,15 +1210,21 @@ export default function NativeSendableObjectTest() {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const result: boolean = napitest.createSendableFloat64ArrayTest();
         expect(result).assertEqual(1);
-        const typedArr: Float64Array = new Float64Array(1);
+        const typedArr: Float64Array = new Float64Array(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          typedArr[i] = i * 100;
+        }
         const tasks: Promise<number>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
-          tasks.push(taskpool.execute(concurrentAccessTypedArrayWithLock, lock, typedArr, i * 100) as Promise<number>);
+          tasks.push(taskpool.execute(concurrentAccessTypedArrayWithLock, lock, typedArr, i) as Promise<number>);
         }
 
         const results: number[] = await Promise.all(tasks);
         expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
+          expect(results[i]).assertEqual(i * 100);
+        }
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -1262,12 +1247,13 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testNapiCreateStrongSendableRef0001';
       console.info(`${caseName} test start`);
       try {
-        const refs: Object[] = [];
-        for (let i: number = 0; i < LARGE_CAPACITY; i++) {
+        const refs: boolean[] = [];
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           const ref: boolean = napitest.NapiCreateStrongSendableRef();
+          expect(ref).assertTrue();
           refs.push(ref);
         }
-        expect(refs.length).assertEqual(LARGE_CAPACITY);
+        expect(refs.length).assertEqual(CONCURRENT_THREAD_COUNT);
         console.info(`${caseName} test end`);
       } catch (error) {
         console.error(`${caseName} failed, error: ${error}`);
@@ -1289,7 +1275,7 @@ export default function NativeSendableObjectTest() {
       console.info(`${caseName} test start`);
       try {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        const refs: Object[] = [];
+        const refs: boolean[] = [];
         const tasks: Promise<boolean>[] = [];
 
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
@@ -1297,7 +1283,9 @@ export default function NativeSendableObjectTest() {
         }
 
         const results: boolean[] = await Promise.all(tasks);
+        expect(results.length).assertEqual(CONCURRENT_THREAD_COUNT);
         for (let i: number = 0; i < results.length; i++) {
+          expect(results[i]).assertTrue();
           refs.push(results[i]);
         }
         expect(refs.length).assertEqual(CONCURRENT_THREAD_COUNT);
@@ -1321,12 +1309,14 @@ export default function NativeSendableObjectTest() {
       const caseName: string = 'testNapiDelStrongSendableRef0001';
       console.info(`${caseName} test start`);
       try {
-        const refs: Object[] = [];
-        for (let i: number = 0; i < LARGE_CAPACITY; i++) {
+        const refs: boolean[] = [];
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           const ref: boolean = napitest.NapiCreateStrongSendableRef();
+          expect(ref).assertTrue();
           refs.push(ref);
         }
-        for (let i: number = 0; i < LARGE_CAPACITY; i++) {
+        expect(refs.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           const result: boolean = napitest.NapiDelStrongSendableRef();
           expect(result).assertTrue();
         }

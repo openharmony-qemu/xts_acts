@@ -19,15 +19,10 @@ import { collections, lang, ArkTSUtils } from '@kit.ArkTS';
 import napitest from 'libentry.so';
 import { SharedSingleton } from './SharedSingleton';
 import { createSharedLock, withLock } from './SharedLock';
+import { sleep } from './Utils';
 const LARGE_CAPACITY: number = 1025;
 const CONCURRENT_THREAD_COUNT: number = 10;
 const SLEEP_INTERVAL_MS: number = 100;
-
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>((resolve: Function): void => {
-    setTimeout(resolve, ms);
-  });
-}
 
 
 @Concurrent
@@ -684,6 +679,10 @@ export default function NativeSendableContainerStressTest() {
         }
 
         await Promise.all(tasks);
+        //验证任务数量
+        expect(tasks.length).assertEqual(CONCURRENT_THREAD_COUNT);
+        //验证数组未被破坏
+        expect(arr.length).assertEqual(LARGE_CAPACITY);
       }
     );
 
@@ -705,15 +704,20 @@ export default function NativeSendableContainerStressTest() {
           const obj: lang.ISendable = napitest.NapiCreateSendableObject();
           tasks.push(taskpool.execute(stressArrayPushNoLock, arr, obj));
         }
-        let hasException: boolean = false;
-        let successCount: number = 0;
-        try {
-          const results: number[] = await Promise.all(tasks) as number[];
-          successCount = results.length;
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || successCount === CONCURRENT_THREAD_COUNT).assertTrue();
+
+        const results: number[] = await Promise.all(tasks) as number[];
+        // 过滤出成功的结果（返回 >= 1）
+        const successCount = results.filter(r => r >= 1).length;
+        // 过滤出失败的结果（返回 < 0）
+        const failCount = results.filter(r => r < 0).length;
+
+        // 验证：至少有一个成功
+        expect(successCount > 0).assertTrue();
+        // 验证：所有任务都执行完成（成功+失败=总任务数）
+        expect(successCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
+
+        // 验证最终数组长度等于成功次数（每次 push 成功增加 1）
+        expect(arr.length).assertEqual(successCount);
       }
     );
 
@@ -733,23 +737,24 @@ export default function NativeSendableContainerStressTest() {
         for (let i: number = 0; i < LARGE_CAPACITY; i++) {
           arr.push(napitest.NapiCreateSendableObject());
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressArrayPopNoLock, arr));
         }
-        let hasException: boolean = false;
-        let popCount: number = 0;
-        try {
-          const results: (lang.ISendable | undefined)[] = await Promise.all(tasks) as (lang.ISendable | undefined)[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i] !== undefined) {
-              popCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || popCount > 0).assertTrue();
+
+        const results: (lang.ISendable | undefined)[] =
+          await Promise.all(tasks) as (lang.ISendable | undefined)[];
+
+        const popCount = results.filter(r => r !== undefined).length;
+        const failCount = results.filter(r => r === undefined).length;
+
+        // 验证：至少有一个成功 pop
+        expect(popCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(popCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
+        // 验证：最终数组长度 = 原始长度 - 成功 pop 次数
+        expect(arr.length).assertEqual(LARGE_CAPACITY - popCount);
       }
     );
 
@@ -769,24 +774,23 @@ export default function NativeSendableContainerStressTest() {
         for (let i: number = 0; i < LARGE_CAPACITY; i++) {
           arr.push(napitest.NapiCreateSendableObject());
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           const index: number = i * 100;
           tasks.push(taskpool.execute(stressArrayReadNoLock, arr, index));
         }
-        let hasException: boolean = false;
-        let readCount: number = 0;
-        try {
-          const results: (lang.ISendable | undefined)[] = await Promise.all(tasks) as (lang.ISendable | undefined)[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i] !== undefined) {
-              readCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || readCount > 0).assertTrue();
+
+        const results: (lang.ISendable | undefined)[] =
+          await Promise.all(tasks) as (lang.ISendable | undefined)[];
+
+        const readCount = results.filter(r => r !== undefined).length;
+        const failCount = results.filter(r => r === undefined).length;
+
+        // 验证：至少有一个成功读取
+        expect(readCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(readCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -808,23 +812,21 @@ export default function NativeSendableContainerStressTest() {
           arr.push(napitest.NapiCreateSendableObject());
         }
         arr[500] = targetObj;
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressArrayIndexOfNoLock, arr, targetObj));
         }
-        let hasException: boolean = false;
-        let foundCount: number = 0;
-        try {
-          const results: number[] = await Promise.all(tasks) as number[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i] >= 0) {
-              foundCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || foundCount > 0).assertTrue();
+
+        const results: number[] = await Promise.all(tasks) as number[];
+
+        const foundCount = results.filter(r => r >= 0).length;
+        const failCount = results.filter(r => r < 0).length;
+
+        // 验证：至少有一个成功找到
+        expect(foundCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(foundCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -846,23 +848,21 @@ export default function NativeSendableContainerStressTest() {
           arr.push(napitest.NapiCreateSendableObject());
         }
         arr[0] = targetObj;
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressArrayIncludesNoLock, arr, targetObj));
         }
-        let hasException: boolean = false;
-        let foundCount: number = 0;
-        try {
-          const results: boolean[] = await Promise.all(tasks) as boolean[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i]) {
-              foundCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || foundCount > 0).assertTrue();
+
+        const results: boolean[] = await Promise.all(tasks) as boolean[];
+
+        const foundCount = results.filter(r => r === true).length;
+        const failCount = results.filter(r => r === false).length;
+
+        // 验证：至少有一个成功找到
+        expect(foundCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(foundCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -1070,15 +1070,17 @@ export default function NativeSendableContainerStressTest() {
           const obj: lang.ISendable = napitest.NapiCreateSendableObject();
           tasks.push(taskpool.execute(stressSetAddNoLock, set, obj));
         }
-        let hasException: boolean = false;
-        let successCount: number = 0;
-        try {
-          const results: number[] = await Promise.all(tasks) as number[];
-          successCount = results.length;
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || successCount === CONCURRENT_THREAD_COUNT).assertTrue();
+
+        const results: number[] = await Promise.all(tasks) as number[];
+        const successCount = results.filter(r => r >= 0).length;
+        const failCount = results.filter(r => r < 0).length;
+
+        // 验证：至少有一个成功添加
+        expect(successCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(successCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
+        // 验证：Set 大小等于成功添加的次数（去重后可能小于成功次数）
+        expect(set.size > 0).assertTrue();
       }
     );
 
@@ -1101,23 +1103,20 @@ export default function NativeSendableContainerStressTest() {
           set.add(obj);
           objs.push(obj);
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressSetHasNoLock, set, objs[i * 100]));
         }
-        let hasException: boolean = false;
-        let foundCount: number = 0;
-        try {
-          const results: boolean[] = await Promise.all(tasks) as boolean[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i]) {
-              foundCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || foundCount > 0).assertTrue();
+
+        const results: boolean[] = await Promise.all(tasks) as boolean[];
+        const foundCount = results.filter(r => r === true).length;
+        const failCount = results.filter(r => r === false).length;
+
+        // 验证：至少有一个成功找到
+        expect(foundCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(foundCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -1140,23 +1139,20 @@ export default function NativeSendableContainerStressTest() {
           set.add(obj);
           objs.push(obj);
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressSetDeleteNoLock, set, objs[i]));
         }
-        let hasException: boolean = false;
-        let deleteCount: number = 0;
-        try {
-          const results: boolean[] = await Promise.all(tasks) as boolean[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i]) {
-              deleteCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || deleteCount > 0).assertTrue();
+
+        const results: boolean[] = await Promise.all(tasks) as boolean[];
+        const deleteCount = results.filter(r => r === true).length;
+        const failCount = results.filter(r => r === false).length;
+
+        // 验证：至少有一个成功删除
+        expect(deleteCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(deleteCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -1380,17 +1376,19 @@ export default function NativeSendableContainerStressTest() {
           const value: lang.ISendable = napitest.NapiCreateSendableObject();
           tasks.push(taskpool.execute(stressMapSetNoLock, map, key, value));
         }
-        let hasException: boolean = false;
-        let successCount: number = 0;
-        try {
-          const results: number[] = await Promise.all(tasks) as number[];
-          successCount = results.length;
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || successCount === CONCURRENT_THREAD_COUNT).assertTrue();
+
+        const results: number[] = await Promise.all(tasks) as number[];
+        const successCount = results.filter(r => r >= 0).length;
+        const failCount = results.filter(r => r < 0).length;
+
+        // 验证：至少有一个成功设置
+        expect(successCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(successCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
+        expect(map.size > 0).assertTrue();
       }
     );
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_NAPI_SENDABLE_CONTAINER_3200
@@ -1413,23 +1411,22 @@ export default function NativeSendableContainerStressTest() {
           map.set(key, value);
           entries.push([key, value]);
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressMapGetNoLock, map, entries[i * 100][0]));
         }
-        let hasException: boolean = false;
-        let getCount: number = 0;
-        try {
-          const results: (lang.ISendable | undefined)[] = await Promise.all(tasks) as (lang.ISendable | undefined)[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i] !== undefined) {
-              getCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || getCount > 0).assertTrue();
+
+        const results: (lang.ISendable | undefined)[] =
+          await Promise.all(tasks) as (lang.ISendable | undefined)[];
+
+        const getCount = results.filter(r => r !== undefined).length;
+        const failCount = results.filter(r => r === undefined).length;
+
+        // 验证：至少有一个成功获取
+        expect(getCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(getCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 
@@ -1454,23 +1451,20 @@ export default function NativeSendableContainerStressTest() {
           map.set(key, value);
           keys.push(key);
         }
+
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < CONCURRENT_THREAD_COUNT; i++) {
           tasks.push(taskpool.execute(stressMapDeleteNoLock, map, keys[i]));
         }
-        let hasException: boolean = false;
-        let deleteCount: number = 0;
-        try {
-          const results: boolean[] = await Promise.all(tasks) as boolean[];
-          for (let i: number = 0; i < results.length; i++) {
-            if (results[i]) {
-              deleteCount++;
-            }
-          }
-        } catch (e) {
-          hasException = true;
-        }
-        expect(hasException || deleteCount > 0).assertTrue();
+
+        const results: boolean[] = await Promise.all(tasks) as boolean[];
+        const deleteCount = results.filter(r => r === true).length;
+        const failCount = results.filter(r => r === false).length;
+
+        // 验证：至少有一个成功删除
+        expect(deleteCount > 0).assertTrue();
+        // 验证：所有任务都执行完成
+        expect(deleteCount + failCount).assertEqual(CONCURRENT_THREAD_COUNT);
       }
     );
 

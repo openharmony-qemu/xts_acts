@@ -7050,16 +7050,29 @@ static napi_value NapiCreateSendableArray(napi_env env, napi_callback_info)
     return result;
 }
 
-static napi_value NapiCreateSendableArrayWithLength(napi_env env, napi_callback_info)
+static napi_value NapiCreateSendableArrayWithLength(napi_env env, napi_callback_info info)
 {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    uint32_t length = 1;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc > 0 && args[0] != nullptr) {
+        napi_get_value_uint32(env, args[0], &length);
+    }
     napi_value result = nullptr;
-    napi_create_sendable_array_with_length(env, 1, &result);
+    napi_create_sendable_array_with_length(env, length, &result);
     return result;
 }
 
-static napi_value NapiCreateSendableArrayBuffer(napi_env env, napi_callback_info)
+static napi_value NapiCreateSendableArrayBuffer(napi_env env, napi_callback_info info)
 {
-    static constexpr size_t sendableBufferLength = BYTES_PER_KB;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    uint32_t sendableBufferLength = BYTES_PER_KB;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc > 0 && args[0] != nullptr) {
+        napi_get_value_uint32(env, args[0], &sendableBufferLength);
+    }
     void *data = nullptr;
     napi_value result = nullptr;
     napi_create_sendable_arraybuffer(env, sendableBufferLength, &data, &result);
