@@ -22,6 +22,8 @@ import ContextMenuWithResponse from './menu/ContextMenuWithResponse.test';
 import ContextMenuByIsShow from './menu/ContextMenuByIsShow.test';
 import ContextMenuGridStyle from './menu/ContextMenuGridStyle.test';
 import MenuItemSubMenuBuilder from './menu/MenuItemSubMenuBuilder.test';
+import SelectMenuBackground from './select/SelectMenuBackground.test';
+import DisplayModeInSubWindow from './dialog/DisplayModeInSubWindow.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
@@ -33,4 +35,6 @@ export default function testsuite() {
   ContextMenuByIsShow();
   ContextMenuGridStyle();
   MenuItemSubMenuBuilder();
+  SelectMenuBackground();
+  DisplayModeInSubWindow();
 }

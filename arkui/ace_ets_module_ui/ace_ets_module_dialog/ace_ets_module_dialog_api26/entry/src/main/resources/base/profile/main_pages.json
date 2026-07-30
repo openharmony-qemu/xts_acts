@@ -9,6 +9,8 @@
     "MainAbility/pages/menu/ContextMenuWithResponse",
     "MainAbility/pages/menu/ContextMenuByIsShow",
     "MainAbility/pages/menu/ContextMenuGridStyle",
-    "MainAbility/pages/menu/MenuItemSubMenuBuilder"
+    "MainAbility/pages/menu/MenuItemSubMenuBuilder",
+    "MainAbility/pages/select/SelectMenuBackground",
+    "MainAbility/pages/dialog/DisplayModeInSubWindow"
   ]
 }
