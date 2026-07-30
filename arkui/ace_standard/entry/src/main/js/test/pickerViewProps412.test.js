@@ -30,6 +30,18 @@ export default function pickerViewPropsJsTest412() {
             })
         }
 
+        async function waitUntilReady(timeout = 35000) {
+            let start = Date.now();
+            while (Date.now() - start < timeout) {
+                if (globalThis.value !== undefined && globalThis.value !== null) {
+                    console.info(`waitUntilReady: page ready after ${Date.now() - start}ms`);
+                    return;
+                }
+                await sleep(100);
+            }
+            console.info(`waitUntilReady: timed out after ${timeout}ms`);
+        }
+
         async function backToIndex() {
             let backToIndexPromise = new Promise((resolve, reject) => {
                 setTimeout(() => {
@@ -39,15 +51,7 @@ export default function pickerViewPropsJsTest412() {
                     resolve();
                 }, 500);
             })
-            let clearPromise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    router.clear();
-                    resolve();
-                }, 500);
-            })
-            await backToIndexPromise.then(() => {
-                return clearPromise;
-            })
+            await backToIndexPromise;
         }
 
         /**
@@ -55,7 +59,7 @@ export default function pickerViewPropsJsTest412() {
          */
         beforeAll(async function(done) {
             console.info('[pickerViewPropsJsTest] before each called')
-
+            globalThis.value = undefined;
             let result;
             let options = {
                 url: 'pages/pickerView/prop412/index'
@@ -66,8 +70,8 @@ export default function pickerViewPropsJsTest412() {
             } catch (err) {
                 console.error("push pickerViewProps page error " + JSON.stringify(result));
             }
-            await sleep(35000)
-            done()
+            await waitUntilReady();
+            done();
         })
 
         /**
@@ -101,8 +105,5 @@ export default function pickerViewPropsJsTest412() {
             console.info("[pickerViewProps] get type value is: " + JSON.stringify(obj.$attrs.type));
             done();
         });
-
-
-
     });
 }

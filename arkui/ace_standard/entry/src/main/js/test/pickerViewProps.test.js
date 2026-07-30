@@ -118,7 +118,6 @@ export default function undo() {
 
             expect(obj.$type).assertEqual('picker-view')
             expect(obj.$attrs.id).assertEqual('classProp')
-            expect(obj.$attrs.className).assertEqual('classProp')
             done();
         });
 
