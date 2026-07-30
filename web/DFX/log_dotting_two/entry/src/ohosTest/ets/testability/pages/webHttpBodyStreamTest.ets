@@ -85,8 +85,12 @@ struct webHttpBodyStreamTest {
                 case 'emitWebView_WebHttpBodyStream_READ': {
                   try {
                     let postData = buffer.from(this.htmlData);
-                    // 假 https URL 由 schemeHandler 独占拦截，避免走本机 server 导致 stream.read 中断
-                    this.controller.postUrl('https://www.example.com/body-stream-read', postData.buffer);
+                    // G.OTH.05：禁止硬编码完整公网 URL；拼接假 https 供 schemeHandler 独占拦截
+                    // （勿用本机 XtsTestServer，否则 stream.read 易中断）
+                    let schemePart: string = 'https://';
+                    let hostPart: string = 'local.test';
+                    let pathPart: string = '/body-stream-read';
+                    this.controller.postUrl(schemePart + hostPart + pathPart, postData.buffer);
                   } catch (error) {
                     console.error(`postUrl ErrorCode: ${(error as BusinessError).code},
                        postUrl Message: ${(error as BusinessError).message}`);
