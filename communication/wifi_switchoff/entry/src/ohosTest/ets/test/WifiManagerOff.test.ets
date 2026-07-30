@@ -378,5 +378,32 @@ export default function wifiManagerOffTest() {
         console.info(`${caseName} test end`);
         done();
       });
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200
+     * @tc.number SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200
+     * @tc.desc   Test connectToCandidateConfig API - verify 2501001 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200';
+        console.info(`${caseName} test start`);
+        try {
+          let settings:wifiManager.ConnectSettings = {
+            networkId: 0,
+            withUserAction: true
+          };
+          await wifiManager.connectToCandidateConfig(settings);
+          console.log(`${caseName} get result success`);
+          expect().assertFail();
+        } catch (error) {
+          console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
+          expect(Number(error.code) === 2501001).assertTrue();
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
   })
 }
