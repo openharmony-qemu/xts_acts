@@ -1776,12 +1776,16 @@ export default function ActsZlibTest() {
             }).catch(err => {
                 console.info("decompress fail: " + JSON.stringify(err));
                 expect(err.code).assertEqual(SRC_FILE_INVALID);
+                expect(err.message).assertEqual(
+                    "BusinessError 900001: source file does not exist or cannot be accessed");
                 done();
             })
             zlib.decompressFile(zipDest, unzipdir, {
                 strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED
             }, (err, data) => {
                 expect(err.code).assertEqual(SRC_FILE_INVALID);
+                expect(err.message).assertEqual(
+                    "BusinessError 900001: source file does not exist or cannot be accessed");
                 expect(data).assertEqual(undefined);
                 done();
             })
@@ -1877,11 +1881,15 @@ export default function ActsZlibTest() {
             }).catch(err => {
                 console.info("decompress fail: " + JSON.stringify(err));
                 expect(err.code).assertEqual(OUTPUT_FILE_INVALID);
+                expect(err.message).assertEqual(
+                    "BusinessError 900002: destination path is not an existing directory");
             })
             zlib.decompressFile(zipDest1, outFile, {
                 strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED
             }, (err, data) => {
                 expect(err.code).assertEqual(OUTPUT_FILE_INVALID);
+                expect(err.message).assertEqual(
+                    "BusinessError 900002: destination path is not an existing directory");
                 done();
             })
             console.info("==================decompressFileOutFileNotExist end==================");
@@ -2051,6 +2059,8 @@ export default function ActsZlibTest() {
                 }).catch(err => {
                     console.info("decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
                     expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
+                    expect(err.message).assertEqual(
+                        "BusinessError 900003: source file is not in ZIP format or is damaged");
                 })
             } catch (err) {
                 console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
@@ -2064,6 +2074,8 @@ export default function ActsZlibTest() {
                 }).catch(err => {
                     console.info("decompressFileInputNotZipPro fail2: " + JSON.stringify(err));
                     expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
+                    expect(err.message).assertEqual(
+                        "BusinessError 900003: source file is not in ZIP format or is damaged");
                     done();
                 })
             } catch (err) {
@@ -2105,6 +2117,8 @@ export default function ActsZlibTest() {
                     parallel:zlib.ParallelStrategy.PARALLEL_STRATEGY_PARALLEL_DECOMPRESSION
                 }, (err, data) => {
                     expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
+                    expect(err.message).assertEqual(
+                        "BusinessError 900003: source file is not in ZIP format or is damaged");
                 })
             } catch (err) {
                 console.info("decompressFileInputNotZipCal fail: " + JSON.stringify(err));
@@ -2113,6 +2127,8 @@ export default function ActsZlibTest() {
             try {
                 zlib.decompressFile(path, unzipdir, (err, data) => {
                     expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
+                    expect(err.message).assertEqual(
+                        "BusinessError 900003: source file is not in ZIP format or is damaged");
                     done();
                 })
             } catch (err) {
