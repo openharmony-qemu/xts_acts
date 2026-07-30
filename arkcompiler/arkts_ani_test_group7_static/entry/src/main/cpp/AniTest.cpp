@@ -39,6 +39,8 @@
 #include "TcErrorTest.h"
 #include "TcDisasmTest.h"
 #include <utility>
+#include "AniTest.h"
+
 namespace {
 constexpr const char *MODULE_NAME = "entry.src.main.src.ets.Index";
 constexpr const char *NAMESPACE_NAME = "entry.src.main.src.ets.Index.Convert";
@@ -751,6 +753,44 @@ std::array optNamespaceMethods = {
     ani_native_function{"test_OptNamespaceQuickAdd", "ii:i",
         reinterpret_cast<void *>(test_OptNamespaceQuickAdd)},
 };
+
+std::array methods = {
+    ani_native_function{"testAniArrayDouble", "C{std.core.Array}:C{std.core.Array}",
+        reinterpret_cast<void *>(testAniArrayDouble)},
+    ani_native_function{"testAniMatrixTranspose", "C{std.core.ArrayBuffer}ii:C{std.core.ArrayBuffer}",
+        reinterpret_cast<void *>(testAniMatrixTranspose)},
+    ani_native_function{"testAniXorEncrypt", "C{std.core.ArrayBuffer}:z",
+        reinterpret_cast<void *>(testAniXorEncrypt)},
+    ani_native_function{"testAniFileCopy", "C{std.core.String}C{std.core.String}l:z",
+        reinterpret_cast<void *>(testAniFileCopy)},
+    ani_native_function{"testAniSysInfo", ":C{std.core.Object}",
+        reinterpret_cast<void *>(testAniSysInfo)},
+    ani_native_function{"testAniCreatePhysics", "d:l",
+        reinterpret_cast<void *>(testAniCreatePhysics)},
+    ani_native_function{"testAniStepPhysics", "ld:d",
+        reinterpret_cast<void *>(testAniStepPhysics)},
+    ani_native_function{"testAniDestroyPhysics", "l:",
+        reinterpret_cast<void *>(testAniDestroyPhysics)},
+    ani_native_function{"testAniFeatureExtract", "C{std.core.Array}:C{std.core.Object}",
+        reinterpret_cast<void *>(testAniFeatureExtract)},
+    ani_native_function{"testAniErrorTrigger", ":z",
+        reinterpret_cast<void *>(testAniErrorTrigger)},
+    ani_native_function{"testAniParallelSum", "i:C{std.core.Object}",
+        reinterpret_cast<void *>(testAniParallelSum)},
+    ani_native_function{"testAniAsyncCompute", "C{std.core.Function}:z",
+        reinterpret_cast<void *>(testAniAsyncCompute)},
+    ani_native_function{"testAniCachedLookup", ":z",
+        reinterpret_cast<void *>(testAniCachedLookup)},
+    };
+
+std::array moduleFns = {
+    ani_native_function{"testAniDynamicRegistration", ":z",
+        reinterpret_cast<void *>(testAniDynamicRegistration)},
+    ani_native_function{"dynAdd", "ii:i",
+        reinterpret_cast<void *>(DynAdd)},
+    ani_native_function{"dynSub", "ii:i",
+        reinterpret_cast<void *>(DynSub)},
+    };
 }
 static ani_status BindInstanceMethods(ani_env *env, ani_class cls,
     const ani_native_function *methods, size_t size)
@@ -1063,10 +1103,34 @@ static ani_status bindCase(ani_vm *vm, const char *clsName)
     }
     return ANI_OK;
 }
+
+static ani_status bindModuleFunctions(ani_vm *vm)
+{
+    ani_env *env;
+    if (ANI_OK != vm->GetEnv(ANI_VERSION_1, &env)) {
+        std::cerr << "Unsupported ANI_VERSION_1" << std::endl;
+        return (ani_status)ANI_RES_OUT_OF_REF;
+    }
+
+    ani_module module = nullptr;
+    if (ANI_OK != env->FindModule(NATIVE_BINDINGS_MODULE, &module)) {
+        std::cerr << "Not found module '" << NATIVE_BINDINGS_MODULE << "'" << std::endl;
+        return (ani_status)ANI_RES_INVALID_ARGS;
+    }
+
+    if (ANI_OK != env->Module_BindNativeFunctions(module, moduleFns.data(), moduleFns.size())) {
+        std::cerr << "Cannot bind module functions" << std::endl;
+        return (ani_status)ANI_RES_INVALID_TYPE;
+    }
+    return ANI_OK;
+}
+
 ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
 {
     std::cout << "testTag : entering libentry.so's ANI_Constructor" << std::endl;
+	g_vm = vm;
     ani_status status = bindCase(vm, "entry.src.main.src.ets.Index.Foo");
+	bindModuleFunctions(vm);
     if (!AssertEqMsg(status, ANI_OK, "bindCase failed")) {
         return status;
     }

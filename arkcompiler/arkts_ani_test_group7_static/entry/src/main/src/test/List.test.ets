@@ -39,6 +39,7 @@ import TcLoadLibTest from "./TcLoadLibTest.test";
 import TcErrorNoLoadLibTest from "./TcErrorNoLoadLibTest.test";
 import TcErrorTest from "./TcErrorTest.test";
 import TcDisasmTest from "./TcDisasmTest.test";
+import aniNativeTest from "./ActsAniNativeTest.test";
 export default function testsuite() :void{
   TcBindTest();
   TcManglingTest();
@@ -66,4 +67,5 @@ export default function testsuite() :void{
   TcErrorNoLoadLibTest();
   TcErrorTest();
   TcDisasmTest();
+  aniNativeTest();
 }

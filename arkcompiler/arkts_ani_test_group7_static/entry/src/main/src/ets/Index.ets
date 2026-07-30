@@ -635,4 +635,17 @@ export class Foo {
   native test_OptDefaultAdd(a: int, b: int): int;
   @ani.unsafe.Quick
   native test_OptQuickCreateTempString(str: string): int;
+  native testAniArrayDouble(arr: number[]): number[];
+  native testAniMatrixTranspose(buf: ArrayBuffer, rows: int, cols: int): ArrayBuffer;
+  native testAniXorEncrypt(buf: ArrayBuffer): boolean;
+  native testAniFileCopy(srcPath: string, dstPath: string, size: long): boolean;
+  native testAniSysInfo(): Object;
+  native testAniCreatePhysics(gravity: number): long;
+  native testAniStepPhysics(handle: long, dt: number): number;
+  native testAniDestroyPhysics(handle: long): void;
+  native testAniFeatureExtract(data: number[]): Object;
+  native testAniErrorTrigger(): boolean;
+  native testAniParallelSum(taskCount: int): Object;
+  native testAniAsyncCompute(callback: Function): boolean;
+  native testAniCachedLookup(): boolean;
 }
