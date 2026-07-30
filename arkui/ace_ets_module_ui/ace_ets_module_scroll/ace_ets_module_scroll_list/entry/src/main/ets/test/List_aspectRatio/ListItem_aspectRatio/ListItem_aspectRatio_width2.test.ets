@@ -77,8 +77,8 @@ export default function ListItem_aspectRatio_width2() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_01');
-      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_list');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_01');
+      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_list');
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 
@@ -103,8 +103,8 @@ export default function ListItem_aspectRatio_width2() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_01');
-      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_list');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_01');
+      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_list');
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
       let itemWidth: number = ListItem01.right - ListItem01.left;
@@ -130,8 +130,8 @@ export default function ListItem_aspectRatio_width2() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_01');
-      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_list');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_01');
+      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_list');
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 
@@ -156,8 +156,8 @@ export default function ListItem_aspectRatio_width2() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_01');
-      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2_list');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_01');
+      let list01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width2' + '_list');
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 

@@ -34,7 +34,8 @@ const STRING_VALID_CERTIFICATEALIAS = 'test_cert_0.cer';
 const PASSWORD_POLICY: securityManager.PasswordPolicy = {
   complexityRegex: 'g',
   validityPeriod: 60 * 60 * 24 * 1000,
-  additionalDescription: '123'
+  additionalDescription: '123',
+  passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_AES
 };
 
 const MAX_PASSWORD_POLICY: securityManager.PasswordPolicy = {
@@ -328,6 +329,13 @@ export default function securityManagerTest() {
 
     testInstallEnterpriseReSignatureCertificate();
     testUninstallEnterpriseReSignatureCertificate();
+
+    testSetDisallowedPermission();
+    testGetDisallowedPermissions();
+    testAddAllowedPermissionBundle();
+    testRemoveAllowedPermissionBundle();
+    testGetAllowedPermissionBundles();
+    testGetWatermarkImageApps();
   })
 }
 
@@ -633,6 +641,31 @@ function testSetWatermarkImage() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_watermark_image_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0200
+   * @tc.desc   test securityManager setWatermarkImage with string source and permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_watermark_image_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let properties: securityManager.WatermarkProperties = {
+        intervalsRow: 1,
+        intervalsCol: 2
+      }
+      securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, properties);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -957,6 +990,159 @@ function testCancelScreenWatermarkImage() {
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetDisallowedPermission() {
+  beforeAll((done: Function) => {
+    getCurrentUserId();
+    done();
+  })
+
+  /**
+   * @tc.name   test_setDisallowedPermission_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_PERMISSION_NO_PERMISSION_JS_0100
+   * @tc.desc   test setDisallowedPermission with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDisallowedPermission_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setDisallowedPermission(SELFWANT, TEST_PERMISSION_1, true, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetDisallowedPermissions() {
+  beforeAll((done: Function) => {
+    getCurrentUserId();
+    done();
+  })
+
+  /**
+   * @tc.name   test_getDisallowedPermissions_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_PERMISSIONS_NO_PERMISSION_JS_0100
+   * @tc.desc   test getDisallowedPermissions with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDisallowedPermissions_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getDisallowedPermissions(SELFWANT, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testAddAllowedPermissionBundle() {
+  /**
+   * @tc.name   test_addAllowedPermissionBundle_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PERMISSION_BUNDLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test addAllowedPermissionBundle with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedPermissionBundle_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.addAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testRemoveAllowedPermissionBundle() {
+  /**
+   * @tc.name   test_removeAllowedPermissionBundle_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PERMISSION_BUNDLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test removeAllowedPermissionBundle with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedPermissionBundle_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.removeAllowedPermissionBundle(SELFWANT, TEST_PERMISSION_1, TEST_APP_INSTANCE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetAllowedPermissionBundles() {
+  beforeAll((done: Function) => {
+    getCurrentUserId();
+    done();
+  })
+
+  /**
+   * @tc.name   test_getAllowedPermissionBundles_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PERMISSION_BUNDLES_NO_PERMISSION_JS_0100
+   * @tc.desc   test getAllowedPermissionBundles with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedPermissionBundles_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetWatermarkImageApps() {
+  /**
+   * @tc.name   test_get_watermark_image_apps_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getWatermarkImageApps with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

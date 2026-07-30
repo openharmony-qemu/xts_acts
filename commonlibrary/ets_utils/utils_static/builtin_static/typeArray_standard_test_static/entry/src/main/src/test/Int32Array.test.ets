@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-export default function Int32ArrayTest() {
+export default function Int32ArrayTest(): void {
   describe('Int32ArrayTest', ():void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

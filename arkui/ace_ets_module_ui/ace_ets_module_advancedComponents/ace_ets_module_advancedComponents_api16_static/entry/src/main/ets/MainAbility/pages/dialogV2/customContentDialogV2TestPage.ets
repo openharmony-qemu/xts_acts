@@ -15,35 +15,9 @@
  */
 import { CustomContentDialogV2, AdvancedDialogV2Button } from '@ohos.arkui.advanced.DialogV2';
 import { ColorMetrics, LengthMetrics } from '@ohos.arkui.node';
-import {
-  Entry,
-  Column,
-  ComponentV2,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Scroll,
-  HorizontalAlign,
-  Margin,
-  Divider,
-  SizeOptions,
-  LocalizedPadding,
-  FlexAlign,
-  Builder,
-  ClickEvent,
-  LocalizedPadding,
-  ButtonRole,
-  ButtonStyleMode
-} from '@ohos.arkui.component';
+import { Entry, Column, ComponentV2, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Scroll, HorizontalAlign, Margin, Divider, SizeOptions, LocalizedPadding, FlexAlign, Builder, ButtonRole, ButtonStyleMode } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
-import  promptAction from '@ohos.promptAction';
-
+import promptAction from '@ohos.promptAction';
 @Entry
 @ComponentV2
 struct Index {

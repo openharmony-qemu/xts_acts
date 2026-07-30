@@ -31,6 +31,8 @@
         "MainAbility/pages/Video/VideoContentTransitionEffect",
         "MainAbility/pages/Video/VideoSupportMoreSpeed",
         "MainAbility/pages/Video/VideoOneBoundary",
-        "MainAbility/pages/Video/videoApiNullUndefined"
+        "MainAbility/pages/Video/videoApiNullUndefined",
+        "MainAbility/pages/Video/VideoSupportMoreNumberSpeed",
+        "MainAbility/pages/Video/videoControllerAsync"
     ]
 }

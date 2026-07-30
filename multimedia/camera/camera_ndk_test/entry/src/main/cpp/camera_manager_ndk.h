@@ -159,9 +159,12 @@ public:
     Camera_ImageRotation previewRotation_;
     uint32_t effectTypeSize_;
     Camera_ControlCenterEffectType* controlCenterEffectType_;
+    uint32_t zoomPointInfoSize_;
+    OH_Camera_ZoomPointInfo* zoomPointInfo_;
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;
+    OH_Camera_PhotoCaptureSettingExt* PhotoCaptureSettingExt_;
 
     //callback
     static CameraCallbackCode cameraCallbackCode_;
@@ -181,6 +184,10 @@ public:
     Camera_ErrorCode GetCameraHostNameInspection(void);
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
+    Camera_ErrorCode GetAutomotiveCameraPosition(void);
+    Camera_ErrorCode GetAutomotiveCameraPositionErrorParameter(void);
+    Camera_ErrorCode TestOHGetSensorPixelArraySizeWithoutCamera(void);
+    Camera_ErrorCode TestOHGetSensorColorFilterArrangementWithoutCamera(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
     Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
@@ -276,6 +283,8 @@ public:
     Camera_ErrorCode SessionGetZoomRatioRange(void);
     Camera_ErrorCode SessionGetZoomRatio(void);
     Camera_ErrorCode SessionSetZoomRatio(float zoom);
+    Camera_ErrorCode SessionGetZoomPointInfos(int useCaseCode);
+    Camera_ErrorCode SessionDeleteZoomPointInfos(int useCaseCode);
 
     Camera_ErrorCode SessionIsVideoStabilizationModeSupported(uint32_t mode);
     Camera_ErrorCode SessionGetVideoStabilizationMode(void);
@@ -481,8 +490,16 @@ public:
     Camera_ErrorCode GetColorTintRange();
     Camera_ErrorCode SetColorTint(int useCaseCode);
     Camera_ErrorCode GetColorTint(int useCaseCode);
-    Camera_ErrorCode GetZoomPointInfos(int useCaseCode);
+    int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
+
+    Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
+    Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);
+    Camera_ErrorCode SetCompressionQuality(int useCaseCode, int compressionQuality);
+    Camera_ErrorCode SetImageRotation(int useCaseCode, Camera_ImageRotation ImageRotation);
+    Camera_ErrorCode SetMirror(int useCaseCode, bool isMirror);
+    Camera_ErrorCode SetLocation(int useCaseCode, Camera_Location location);
+    Camera_ErrorCode CaptureWithCaptureSettingExt(int useCaseCode);
 
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);

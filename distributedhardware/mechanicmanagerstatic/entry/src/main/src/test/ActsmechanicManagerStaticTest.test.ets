@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -550,7 +551,7 @@ export default function ActsmechanicManagerStaticTest() {
           expect(isControlSupported == true || isControlSupported == false).assertTrue();
         } catch (error) {
           console.info(`SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100 failed, code is ${error.code}, message is ${error.message}`);
-          expect().assertFail()  
+          expect(error.code === 33300001).assertTrue()  
         }
         console.info(`======>${LOG_NAME} end======`);
         done();

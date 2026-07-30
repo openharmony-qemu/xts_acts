@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -44,7 +45,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let ret: boolean = compareUint8Array(pubKeyData, convertedPubKeyData);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Convert_Async_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Convert_Async_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -73,7 +74,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let converted2: cryptoFramework.KeyPair = await gen2.convertKey({data: pubKeyData}, {data: seedData});
         expect(converted2.priKey !== null).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Convert_Async_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Convert_Async_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -103,7 +104,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let converted2: cryptoFramework.KeyPair = await gen2.convertKey({data: pubKeyData}, {data: seedData});
         expect(converted2.priKey !== null).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_DSA_Convert_Async_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_Convert_Async_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -132,7 +133,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let ret: boolean = compareUint8Array(pubKeyData, convertedPubKeyData);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Convert_Sync_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Convert_Sync_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -161,7 +162,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let converted2: cryptoFramework.KeyPair = gen2.convertKeySync({data: pubKeyData}, {data: seedData});
         expect(converted2.priKey !== null).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Convert_Sync_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Convert_Sync_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -191,7 +192,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
         let converted2: cryptoFramework.KeyPair = gen2.convertKeySync({data: pubKeyData}, {data: seedData});
         expect(converted2.priKey !== null).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_DSA_Convert_Sync_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_Convert_Sync_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -216,7 +217,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] ML_DSA_Convert_Async_Func_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_Convert_Async_Func_0200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
@@ -241,7 +242,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] ML_KEM_Convert_Async_Func_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_Convert_Async_Func_0300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
@@ -289,7 +290,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let priOnlyRaw: Uint8Array = await convertedPriOnly.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_RAW);
           expect(compareUint8Array(rawPriKey, priOnlyRaw)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_KEM_ConvertPem_Async_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_ConvertPem_Async_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -335,7 +336,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let priOnlyRaw: Uint8Array = await convertedPriOnly.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_RAW);
           expect(compareUint8Array(rawPriKey, priOnlyRaw)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_DSA_ConvertPem_Async_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_ConvertPem_Async_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -383,7 +384,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let priOnlyRaw: Uint8Array = convertedPriOnly.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_RAW);
           expect(compareUint8Array(rawPriKey, priOnlyRaw)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_KEM_ConvertPem_Sync_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_ConvertPem_Sync_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -429,7 +430,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let priOnlyRaw: Uint8Array = convertedPriOnly.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_RAW);
           expect(compareUint8Array(rawPriKey, priOnlyRaw)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_DSA_ConvertPem_Sync_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_ConvertPem_Sync_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -466,7 +467,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let convertedPubKeyData: Uint8Array = await convertedKeyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PUBLIC_RAW);
           expect(compareUint8Array(pubKeyData, convertedPubKeyData)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_KEM_Convert_Callback_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_Convert_Callback_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -511,7 +512,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           });
           expect(converted2.priKey !== null).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_KEM_Convert_Callback_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_Convert_Callback_0200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -566,7 +567,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           });
           expect(converted2.priKey !== null).assertTrue();
         } catch (error) {
-          console.error(`[XTS] ML_DSA_Convert_Callback_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_Convert_Callback_0100 ${error}`);
           expect(null).assertFail();
         }
         done();

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -18,6 +19,8 @@ import SecurityCryptoFwMLKeyGenTestUnit from "./SecurityCryptoFwMLKeyGen.test";
 import SecurityCryptoFwMLKeyConvertTestUnit from "./SecurityCryptoFwMLKeyConvert.test";
 import SecurityCryptoFwMLConvertErrorTestUnit from "./SecurityCryptoFwMLConvertError.test";
 import SecurityCryptoFwMLKeyEncodeTestUnit from "./SecurityCryptoFwMLKeyEncode.test";
+import SecurityCryptoMLEncapAndDecapTestUnit from "./SecurityCryptoMLEncapAndDecap.test";
+import SecurityCryptoMLSignVerifyTestUnit from "./SecurityCryptoMLSignVerify.test";
 
 
 export default function testsuite() {
@@ -27,4 +30,6 @@ export default function testsuite() {
   SecurityCryptoFwMLKeyConvertTestUnit();
   SecurityCryptoFwMLConvertErrorTestUnit();
   SecurityCryptoFwMLKeyEncodeTestUnit();
+  SecurityCryptoMLEncapAndDecapTestUnit();
+  SecurityCryptoMLSignVerifyTestUnit();
 }

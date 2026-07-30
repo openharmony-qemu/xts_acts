@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 import printTest from './Print.test'
 import printExtensionTest from './PrintExtension.test'
 import scanTest from './Scan.test'
-export default function testsuite() {
+export default function testsuite(): void {
   printTest();
   printExtensionTest();
   scanTest();

@@ -56,7 +56,7 @@ export default function panelBackgroundMaskJsunit() {
     it('testpanelBackgroundMask0001', Level.LEVEL0, async () => {
       console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('panel');
+      let strJson = getInspectorByKey('Panel3_panel');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(JSON.parse(strJson)));
       console.log(JSON.stringify(JSON.parse(strJson).$type))
@@ -91,7 +91,7 @@ export default function panelBackgroundMaskJsunit() {
         }
       }
       try {
-        console.info("testpanelOnHeightChange0002 click result is: " + JSON.stringify(sendEventByKey('onHeightChangeText', 10, "")));
+        console.info("testpanelOnHeightChange0002 click result is: " + JSON.stringify(sendEventByKey('Panel3_onHeightChangeText', 10, "")));
         events_emitter.on(panelOnHeightChangeEvent, callback1);
       } catch (err) {
         console.info("testpanelOnHeightChange0002 on events_emitter err : " + JSON.stringify(err));

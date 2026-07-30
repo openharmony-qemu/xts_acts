@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,12 @@ export default function relationalStoreCloudCursor() {
             console.info(TAG + 'beforeAll')
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-              abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+              let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              abilityDelegator.executeShellCommand(cmd);
               await Utils.msSleep(5000);
               context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
               rdbStore = await relationalStore.getRdbStore(context!, config);

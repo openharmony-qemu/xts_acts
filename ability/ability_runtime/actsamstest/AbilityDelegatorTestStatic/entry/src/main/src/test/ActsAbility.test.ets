@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,12 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      abilityDelegator?.executeShellCommand("aa start -a EntryAbility -b com.acts.abilitydelegatortest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
@@ -300,7 +306,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12703', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
-      abilityDelegator?.executeShellCommand("aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static")
+      let cmd = "aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         try {
@@ -309,7 +320,12 @@ export default function abilityDelegatorStage() {
           done();
         } catch (err) {
           expect(err?.code).assertEqual(16000019);
-          abilityDelegator?.executeShellCommand("aa start -a EntryAbility -b com.acts.abilitydelegatortest.static")
+          let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator?.executeShellCommand(cmd)
           await Utils.msSleep(2000)
           done();
         }

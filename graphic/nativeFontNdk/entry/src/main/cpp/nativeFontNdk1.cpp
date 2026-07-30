@@ -45,6 +45,7 @@
 #define DOUBLE_NUM_10 10.0
 #define DOUBLE_NUM_15 15.0
 #define DOUBLE_NUM_001 0.01
+#define REPEAT_COUNT 5
 
 static OH_Drawing_TypographyStyle *typoStyle_ = nullptr;
 static OH_Drawing_TextStyle *txtStyle_ = nullptr;
@@ -59,8 +60,10 @@ static OH_Drawing_TextStyle *txtStyle2_ = nullptr;
 static OH_Drawing_TypographyStyle *typoStyle2_ = nullptr;
 std::string g_text;
 
+static void TearDown();
 static void PrepareCreateTextLine(const std::string &text)
 {
+    TearDown();
     double maxWidth = NUM_500;
     uint32_t height = HEIGHT40;
     typoStyle_ = OH_Drawing_CreateTypographyStyle();
@@ -1342,6 +1345,74 @@ napi_value OHDrawingTypographyGetTextLines002(napi_env env, napi_callback_info i
     return result;
 }
 
+napi_value OHDrawingTypographyGetTextLines0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *testText = "Hello World\nTest Line\n";
+    PrepareCreateTextLine(testText);
+    OH_Drawing_Array *textLines1 = OH_Drawing_TypographyGetTextLines(typography_);
+    NAPI_ASSERT_NO_MES(textLines1 != nullptr);
+    size_t size1 = OH_Drawing_GetDrawingArraySize(textLines1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTypographyGetTextLines0300",
+        "first call size: %{public}zu", size1);
+    NAPI_ASSERT_NO_MES(size1 > 0);
+    OH_Drawing_DestroyTextLines(textLines1);
+    textLines1 = nullptr;
+    OH_Drawing_Array *textLines2 = OH_Drawing_TypographyGetTextLines(typography_);
+    NAPI_ASSERT_NO_MES(textLines2 != nullptr);
+    size_t size2 = OH_Drawing_GetDrawingArraySize(textLines2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTypographyGetTextLines0300",
+        "second call size: %{public}zu", size2);
+    NAPI_ASSERT_NO_MES(size1 == size2);
+    OH_Drawing_DestroyTextLines(textLines2);
+    textLines2 = nullptr;
+    TearDown();
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingTypographyGetTextLines0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *testText = "Hello World\nTest Line\nThird Line\n";
+    PrepareCreateTextLine(testText);
+    size_t firstSize = 0;
+    double firstGlyphCount = 0.0;
+    size_t firstStart = 0;
+    size_t firstEnd = 0;
+    for (int32_t i = 0; i < REPEAT_COUNT; i++) {
+        OH_Drawing_Array *textLines = OH_Drawing_TypographyGetTextLines(typography_);
+        NAPI_ASSERT_NO_MES(textLines != nullptr);
+        size_t size = OH_Drawing_GetDrawingArraySize(textLines);
+        OH_Drawing_TextLine *textLine = OH_Drawing_GetTextLineByIndex(textLines, 0);
+        NAPI_ASSERT_NO_MES(textLine != nullptr);
+        double glyphCount = OH_Drawing_TextLineGetGlyphCount(textLine);
+        size_t start = 0;
+        size_t end = 0;
+        OH_Drawing_TextLineGetTextRange(textLine, &start, &end);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTypographyGetTextLines0400",
+            "iter: %{public}d, size: %{public}zu, glyph: %{public}f, range: [%{public}zu, %{public}zu]",
+            i, size, glyphCount, start, end);
+        if (i == 0) {
+            firstSize = size;
+            firstGlyphCount = glyphCount;
+            firstStart = start;
+            firstEnd = end;
+            NAPI_ASSERT_NO_MES(firstSize > 0);
+        } else {
+            NAPI_ASSERT_NO_MES(size == firstSize);
+            NAPI_ASSERT_NO_MES(glyphCount == firstGlyphCount);
+            NAPI_ASSERT_NO_MES(start == firstStart);
+            NAPI_ASSERT_NO_MES(end == firstEnd);
+        }
+        OH_Drawing_DestroyTextLines(textLines);
+        textLines = nullptr;
+    }
+    TearDown();
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 napi_value OHDrawingDestroyTextLine001(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1410,6 +1481,129 @@ napi_value OHDrawingTextLineGetGlyphRuns001(napi_env env, napi_callback_info inf
     }
     OH_Drawing_DestroyTextLines(textLines);
     TearDown();
+    return result;
+}
+
+napi_value OHDrawingTextLineGetGlyphRuns0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *testText = "Hello World\nTest Text\n";
+    PrepareCreateTextLine(testText);
+    OH_Drawing_Array *textLines = OH_Drawing_TypographyGetTextLines(typography_);
+    NAPI_ASSERT_NO_MES(textLines != nullptr);
+    size_t lineCount = OH_Drawing_GetDrawingArraySize(textLines);
+    NAPI_ASSERT_NO_MES(lineCount > 0);
+    OH_Drawing_TextLine *textLine = OH_Drawing_GetTextLineByIndex(textLines, 0);
+    NAPI_ASSERT_NO_MES(textLine != nullptr);
+    OH_Drawing_Array *runs1 = OH_Drawing_TextLineGetGlyphRuns(textLine);
+    NAPI_ASSERT_NO_MES(runs1 != nullptr);
+    size_t runsSize1 = OH_Drawing_GetDrawingArraySize(runs1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTextLineGetGlyphRuns0200",
+        "first call runsSize: %{public}zu", runsSize1);
+    OH_Drawing_DestroyRuns(runs1);
+    runs1 = nullptr;
+    OH_Drawing_Array *runs2 = OH_Drawing_TextLineGetGlyphRuns(textLine);
+    NAPI_ASSERT_NO_MES(runs2 != nullptr);
+    size_t runsSize2 = OH_Drawing_GetDrawingArraySize(runs2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTextLineGetGlyphRuns0200",
+        "second call runsSize: %{public}zu", runsSize2);
+    NAPI_ASSERT_NO_MES(runsSize1 == runsSize2);
+    OH_Drawing_DestroyRuns(runs2);
+    runs2 = nullptr;
+    OH_Drawing_DestroyTextLines(textLines);
+    textLines = nullptr;
+    TearDown();
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingTextLineGetGlyphRuns0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *testText = "Hello World\nTest Text\n";
+    PrepareCreateTextLine(testText);
+    OH_Drawing_Array *textLines = OH_Drawing_TypographyGetTextLines(typography_);
+    NAPI_ASSERT_NO_MES(textLines != nullptr);
+    OH_Drawing_TextLine *textLine = OH_Drawing_GetTextLineByIndex(textLines, 0);
+    NAPI_ASSERT_NO_MES(textLine != nullptr);
+    double firstGlyphCount = 0.0;
+    size_t firstRunsSize = 0;
+    for (int32_t i = 0; i < REPEAT_COUNT; i++) {
+        double glyphCount = OH_Drawing_TextLineGetGlyphCount(textLine);
+        OH_Drawing_Array *runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
+        NAPI_ASSERT_NO_MES(runs != nullptr);
+        size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
+        NAPI_ASSERT_NO_MES(runsSize > 0);
+        OH_Drawing_Run *run = OH_Drawing_GetRunByIndex(runs, 0);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OHDrawingTextLineGetGlyphRuns0300",
+            "iter: %{public}d, runsSize: %{public}zu, glyph: %{public}f", i, runsSize, glyphCount);
+        if (i == 0) {
+            firstRunsSize = runsSize;
+            firstGlyphCount = glyphCount;
+            NAPI_ASSERT_NO_MES(firstRunsSize > 0);
+            NAPI_ASSERT_NO_MES(run != nullptr);
+        } else {
+            NAPI_ASSERT_NO_MES(runsSize == firstRunsSize);
+            NAPI_ASSERT_NO_MES(glyphCount == firstGlyphCount);
+            NAPI_ASSERT_NO_MES(run != nullptr);
+        }
+        OH_Drawing_DestroyRuns(runs);
+        runs = nullptr;
+    }
+    OH_Drawing_DestroyTextLines(textLines);
+    textLines = nullptr;
+    TearDown();
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingTextLineGetGlyphRuns0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const char *testText = "Hello 你好 World\n";
+    PrepareCreateTextLine(testText);
+    size_t firstRunsSize = 0;
+    uint32_t firstGlyphCount = 0;
+    uint16_t firstGlyphId = 0;
+    for (int32_t i = 0; i < REPEAT_COUNT; i++) {
+        OH_Drawing_Array *textLines = OH_Drawing_TypographyGetTextLines(typography_);
+        NAPI_ASSERT_NO_MES(textLines != nullptr);
+        OH_Drawing_TextLine *textLine = OH_Drawing_GetTextLineByIndex(textLines, 0);
+        NAPI_ASSERT_NO_MES(textLine != nullptr);
+        OH_Drawing_Array *runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
+        NAPI_ASSERT_NO_MES(runs != nullptr);
+        size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
+        NAPI_ASSERT_NO_MES(runsSize > 0);
+        OH_Drawing_Run *run = OH_Drawing_GetRunByIndex(runs, 0);
+        NAPI_ASSERT_NO_MES(run != nullptr);
+        uint32_t glyphCount = OH_Drawing_GetRunGlyphCount(run);
+        OH_Drawing_Array *glyphs = OH_Drawing_GetRunGlyphs(run, 0, glyphCount);
+        NAPI_ASSERT_NO_MES(glyphs != nullptr);
+        size_t glyphSize = OH_Drawing_GetDrawingArraySize(glyphs);
+        NAPI_ASSERT_NO_MES(glyphSize > 0);
+        uint16_t glyphId = OH_Drawing_GetRunGlyphsByIndex(glyphs, 0);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GlyphRuns0400",
+            "iter:%{public}d runs:%{public}zu glyph:%{public}u/%{public}zu id:%{public}u",
+            i, runsSize, glyphCount, glyphSize, (uint32_t)glyphId);
+        if (i == 0) {
+            firstRunsSize = runsSize;
+            firstGlyphCount = glyphCount;
+            firstGlyphId = glyphId;
+            NAPI_ASSERT_NO_MES(firstRunsSize > 0 && firstGlyphCount > 0);
+            NAPI_ASSERT_NO_MES(firstGlyphId > 0 && glyphSize == firstGlyphCount);
+        } else {
+            NAPI_ASSERT_NO_MES(runsSize == firstRunsSize && glyphCount == firstGlyphCount);
+            NAPI_ASSERT_NO_MES(glyphId == firstGlyphId && glyphSize == firstGlyphCount);
+        }
+        OH_Drawing_DestroyRunGlyphs(glyphs);
+        glyphs = nullptr;
+        OH_Drawing_DestroyRuns(runs);
+        runs = nullptr;
+        OH_Drawing_DestroyTextLines(textLines);
+        textLines = nullptr;
+    }
+    TearDown();
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 

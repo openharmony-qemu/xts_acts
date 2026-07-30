@@ -56,6 +56,9 @@ struct saveButtonCustomize {
   @State iconRadiusTr: number | undefined = undefined
   @State iconRadiusBl: number | undefined = undefined
   @State iconRadiusBr: number | undefined = undefined
+  @State symbolIconColor: Array<ResourceColor> | undefined = undefined
+  @State symbolRenderingStrategy: SymbolRenderingStrategy | undefined = undefined
+  @State symbolFontWeight: number | FontWeight | string | Resource | undefined = undefined
 
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
@@ -86,6 +89,15 @@ struct saveButtonCustomize {
           bottomLeft: eventData.data.icRadsBl, 
           bottomRight: eventData.data.icRadsBr
         };
+      }
+      if (eventData.data.symbolIconColor != null) {
+        this.symbolIconColor = eventData.data.symbolIconColor;
+      }
+      if (eventData.data.symbolRenderingStrategy != null) {
+        this.symbolRenderingStrategy = eventData.data.symbolRenderingStrategy;
+      }
+      if (eventData.data.symbolFontWeight != null) {
+        this.symbolFontWeight = eventData.data.symbolFontWeight;
       }
     }
   }
@@ -148,6 +160,9 @@ struct saveButtonCustomize {
             .setText(this.customText)
             .iconBorderRadius(this.iconRadius)
             .stateEffect(this.stateEft)
+            .symbolIconColor(this.symbolIconColor)
+            .symbolRenderingStrategy(this.symbolRenderingStrategy)
+            .symbolFontWeight(this.symbolFontWeight)
             .id('keySave')
         }.width(100)
       }.width('100%').alignItems(HorizontalAlign.Center)

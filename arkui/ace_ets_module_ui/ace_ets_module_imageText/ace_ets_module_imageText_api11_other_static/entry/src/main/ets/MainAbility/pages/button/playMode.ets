@@ -57,7 +57,7 @@ struct PlayModeExample {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 } as Margin)
-        .key('button')
+        .key('playMode_button')
         .onClick((e: ClickEvent) => {
           this.playMode = PlayMode.AlternateReverse
           try {

@@ -27,6 +27,7 @@ struct LineSpacingExample_1 {
           .lineSpacing(this.lineSpacingValue)
         Text(this.lengthMetricsValue)
           .id('LengthMetricsValue')
+          .key('LengthMetricsValue')
         Button('show strategyStatus')
           .id('btnTextlineSpacing')
           .onClick(() => {

@@ -74,7 +74,7 @@ struct DragEventSetDataLoadParams {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('testNull')
+        .key('setDataLoadParamsNullAndUndefined_testNull')
         .onClick(() => {
           this.resetStates();
         })
@@ -92,7 +92,7 @@ struct DragEventSetDataLoadParams {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('testUndefined')
+        .key('setDataLoadParamsNullAndUndefined_testUndefined')
         .onClick(() => {
           this.resetStates();
         })
@@ -110,7 +110,7 @@ struct DragEventSetDataLoadParams {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('resetStates')
+        .key('setDataLoadParamsNullAndUndefined_resetStates')
         .onClick(() => {
           this.resetStates();
         })

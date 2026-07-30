@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +15,14 @@
  */
 
 import avSession from '@ohos.multimedia.avsession';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
 import image from '@ohos.multimedia.image';
-import { WantAgent } from '@ohos.app.ability.wantAgent';
+import wantAgent, { WantAgent } from '@ohos.app.ability.wantAgent';
 import Utils from './Util.test';
-import image from '@ohos.multimedia.image';
 import { WantAgentInfo } from 'wantAgent.wantAgentInfo';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-import wantAgent from '@ohos.app.ability.wantAgent';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe('AVSessionCallback', () => {

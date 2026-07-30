@@ -1,3 +1,4 @@
+'use static';
 import SetOverlayEnabled from './SetOverlayEnabled.test';
 import GetOverlayModuleInfo from './GetOverlayModuleInfo.test';
 import GetTargetOverlayModuleInfos from './GetTargetOverlayModuleInfos.test';

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ class DataTest {
   public abc?: number
 }
 
-export default function builtinsArrayEveryTest() {
+export default function builtinsArrayEveryTest(): void {
   describe('BuiltinsArrayEveryTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

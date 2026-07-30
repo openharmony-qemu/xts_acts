@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +79,12 @@ export default function openPermissionOnSettingStaticTest() {
         hilog.info(domain, tag, 'BusinessError end');
       });
       await Utils.msSleep(1000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openPermissionOnSettingTest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.openPermissionOnSettingTest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         await Utils.msSleep(2000)

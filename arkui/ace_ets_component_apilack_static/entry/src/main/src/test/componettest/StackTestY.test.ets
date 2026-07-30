@@ -54,7 +54,7 @@ export default function stackAlignContentJsunits() {
     beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'pages/stack',
+        url: 'MainAbility/pages/conponentadd/stack_y',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -88,7 +88,7 @@ export default function stackAlignContentJsunits() {
 it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('Stack');
+      let strJson = inspector.getInspectorByKey('stack_y_Stack');
       console.info("[teststackAlignContent0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Stack');
@@ -109,7 +109,7 @@ it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
 it('teststackAlignContent_static_00021', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('Stack');
+      let strJson = inspector.getInspectorByKey('stack_y_Stack');
       console.info("[teststackAlignContent0002] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Stack');

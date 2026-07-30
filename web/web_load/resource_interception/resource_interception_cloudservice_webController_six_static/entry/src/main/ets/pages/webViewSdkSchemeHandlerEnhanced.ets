@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -112,6 +113,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                         console.log('[schemeHandler] onRequestStart postDataStream isChunked:' + stream.isChunked());
                         console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
                         console.log('[schemeHandler] onRequestStart postDataStream isInMemory:' + stream.isInMemory());
+                        return true;
                    if(stream.isEof() == false) {
                      this.test = true;
                    }

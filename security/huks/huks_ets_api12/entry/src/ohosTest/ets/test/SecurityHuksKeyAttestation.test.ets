@@ -146,18 +146,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0100
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0100
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0100
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0100
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0100";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0100";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(256);
@@ -175,18 +175,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0200
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0200
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0200
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0200
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0200";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0200";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(256);
@@ -204,18 +204,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0300
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0300
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0300
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0300
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         return;
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0300";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0300";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(224);
@@ -233,18 +233,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0400
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0400
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0400
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0400
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0400";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0400";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(256);
@@ -262,18 +262,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0500
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0500
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0500
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0500
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0500";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0500";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(384);
@@ -291,18 +291,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0600
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0600
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0600
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0600
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0600";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0600";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(521);
@@ -320,18 +320,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0700
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0700
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0700
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0700
      * @tc.desc   import key, anonAttest key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0700";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0700";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(1024);
@@ -350,18 +350,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0800
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0800
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0800
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0800
      * @tc.desc   generate RSA1032 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0800";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0800";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(1032);
@@ -380,18 +380,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0900
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0900
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0900
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0900
      * @tc.desc   generate RSA2040 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_0900";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_0900";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(2040);
@@ -410,18 +410,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1000
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1000
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1000
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1000
      * @tc.desc   generate RSA2048 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1000";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1000";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(2048);
@@ -440,18 +440,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1100
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1100
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1100
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1100
      * @tc.desc   generate RSA3072 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1100";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1100";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(3072);
@@ -470,18 +470,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1200
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1200
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1200
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1200
      * @tc.desc   generate RSA4096 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1200";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1200";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(4096);
@@ -500,18 +500,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1300
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1300
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1300
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1300
      * @tc.desc   generate RSA512 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         return;
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1300";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1300";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(512);
@@ -530,18 +530,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1400
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1400
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1400
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1400
      * @tc.desc   generate RSA768 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         return;
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1400";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1400";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(768);
@@ -560,18 +560,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1500
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1500
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1500
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1500
      * @tc.desc   generate ED25519 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1500";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1500";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEd25519GenerateOptions(256);
@@ -589,18 +589,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1600
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1600
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1600
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1600
      * @tc.desc   generate X25519 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1600";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1600";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetX25519GenerateOptions(256);
@@ -618,18 +618,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1700
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1700
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1700
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1700
      * @tc.desc   generate AES128 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1700";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1700";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetAesGenerateOptions(128);
@@ -647,18 +647,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1800
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1800
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1800
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1800
      * @tc.desc   generate AES256 key, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1800";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1800";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetAesGenerateOptions(256);
@@ -676,18 +676,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1900
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1900
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1900
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1900
      * @tc.desc   generate RSA2048 key with OAEP, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_1900";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_1900";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(2048);
@@ -706,18 +706,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2000
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2000
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2000
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2000
      * @tc.desc   generate RSA2048 key without padding, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2000";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2000";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(2048);
@@ -735,18 +735,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2100
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2100
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2100
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2100
      * @tc.desc   generate RSA2048 key with PSS, anonAttest key offline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2100";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2100";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetRsaGenerateOptions(2048);
@@ -766,18 +766,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2200
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2200
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2200
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2200
      * @tc.desc   attestKeyOptions missing challenge parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2200";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2200";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(256);
@@ -795,18 +795,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2300
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2300
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2300
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2300
      * @tc.desc   attestKeyOptions missing id alias parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2300";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2300";
       let keyAlias: string = testNumber;
 
       let genKeyOptions: huks.HuksOptions = GetEccGenerateOptions(256);
@@ -824,18 +824,18 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2500
-     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2500
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2500
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2500
      * @tc.desc   attest key without generating key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       if (!useSoftware) {
         await CheckWifiInfo();
       }
-      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyOffline_API26_Func_2500";
+      let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKeyItemOffline_API26_Func_2500";
       let keyAlias: string = testNumber;
 
       let attestKeyOptions: huks.HuksOptions = GetAttestKeyBaseOptions();

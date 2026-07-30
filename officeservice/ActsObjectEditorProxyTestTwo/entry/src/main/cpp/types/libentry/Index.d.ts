@@ -18,6 +18,8 @@ import {Context} from '@kit.AbilityKit';
 export const TestProxyGetFormatFromInfo_Normal: () => number;
 export const TestProxyGetContentEmbedFormatByOEidAndLocale_Normal: () => number;
 export const TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal: () => number;
+export const TestProxyGetOEidFromFormat_Normal: () => number;
+export const TestProxyGetNameAndDescriptionFromFormat_Normal: () => number;
 export const TestProxyGetIconFromFormat_Normal: () => number;
 export const TestProxyGetContentEmbedInfo_Normal: () => number;
 export const TestProxyGetFileNameExtensionsFromFormat_Normal: () => number;

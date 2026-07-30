@@ -22,7 +22,7 @@ export default function OhosRouterJsunit() {
   describe('ohosRouterTest', () => {
     beforeEach(async () => {
       let options: router.RouterOptions  = {
-        url: 'pages/ohosRouterA',
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y',
       }
       try {
         router.clear();
@@ -55,7 +55,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest001', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest001] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA',
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y',
       }
       try {
         let result = await router.push(options);
@@ -83,7 +83,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest002', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest002] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await router.push(options);
@@ -106,7 +106,7 @@ export default function OhosRouterJsunit() {
         console.info("[ohosRouterTest002] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest002] click push button result is: "
-        + JSON.stringify(sendEventByKey('pushButtonA', 10, "")));
+        + JSON.stringify(sendEventByKey('ohosRouterA_y_pushButtonA_01', 10, "")));
       await Utils.sleep(1000);
       router.back();
       await Utils.sleep(1000);
@@ -146,7 +146,7 @@ export default function OhosRouterJsunit() {
       router.clear();
       await Utils.sleep(1000);
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await router.push(options);
@@ -156,7 +156,7 @@ export default function OhosRouterJsunit() {
       }
       await Utils.sleep(1000);
       let optionsB = {
-        uri: 'pages/ohosRouterB'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterBg'
       }
       try {
         let result = await router.replace(optionsB);
@@ -182,7 +182,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest005', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest005] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await router.push(options);
@@ -223,7 +223,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest006', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest006] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await orouter.pushurl(options);
@@ -263,7 +263,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest008', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest008] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await orouter.pushurl(options);
@@ -303,7 +303,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest007', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest007] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await orouter.replaceUrl(options);
@@ -342,7 +342,7 @@ export default function OhosRouterJsunit() {
     it('ohosRouterTest009', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest009] START');
       let options: router.RouterOptions  = {
-        uri: 'pages/ohosRouterA'
+        uri: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         let result = await orouter.replaceUrl(options);

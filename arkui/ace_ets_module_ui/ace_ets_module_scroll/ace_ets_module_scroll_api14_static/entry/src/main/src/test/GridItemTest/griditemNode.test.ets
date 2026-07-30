@@ -52,7 +52,7 @@ export default function GridItemNodeTest() {
         console.info('get griditemNode state pages: ' + JSON.stringify(pages));
         if (!('griditemNode' == pages.name)) {
           console.info('get griditemNode pages.name: ' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          router.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

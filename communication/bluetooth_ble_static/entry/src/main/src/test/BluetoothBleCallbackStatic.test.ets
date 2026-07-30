@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -600,5 +601,686 @@ export default function bluetoothBleCallbackTest() {
             done();
         })
 
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0100
+         * @tc.name    readCharacteristicValueTest_callback_descriptorsEmpty
+         * @tc.desc    readCharacteristicValue descriptors empty array test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readCharacteristicValueTest_callback_descriptorsEmpty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0200
+        * @tc.name    readCharacteristicValueTest_callback_descriptorsNotEmpty
+        * @tc.desc    readCharacteristicValue descriptors not empty array test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("readCharacteristicValueTest_callback_descriptorsNotEmpty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0300
+         * @tc.name    readCharacteristicValueTest_callback_descriptorUuidEmpty
+         * @tc.desc    readCharacteristicValue descriptorUuid empty string test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readCharacteristicValueTest_callback_descriptorUuidEmpty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0400
+        * @tc.name    readCharacteristicValueTest_callback_permissionsReadTrue
+        * @tc.desc    readCharacteristicValue descriptor permissions read true test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("readCharacteristicValueTest_callback_permissionsReadTrue", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: true,
+                readEncryptedMitm: true,
+                write: true,
+                writeEncrypted: true,
+                writeEncryptedMitm: true,
+                writeSigned: true,
+                writeSignedMitm: true
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+    
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTORVALUE_CALLBACK_PARAMETER_0100
+         * @tc.name    readDescriptorValueTest_callback_permissionsAllTrue
+         * @tc.desc    readDescriptorValue descriptor permissions all true test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readDescriptorValueTest_callback_permissionsAllTrue", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: true,
+                readEncryptedMitm: true,
+                write: true,
+                writeEncrypted: true,
+                writeEncryptedMitm: true,
+                writeSigned: true,
+                writeSignedMitm: true
+            };
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                permissions: gattPermissions
+            };
+            let readDescriptorValueCallback = () => {
+                return new Promise<ble.BLEDescriptor>((resolve, reject) => {
+                    gattClientDevice!.readDescriptorValue(descriptor, (err: BusinessError | null, data: ble.BLEDescriptor | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readDescriptorValueCallback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readDescriptorValueCallback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readDescriptorValueCallback()
+                hilog.info(domain, tag, "readDescriptorValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readDescriptorValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else if (err.code === 401) {
+                    expect(Number(err.code)).assertEqual(401);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+    
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0100
+         * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorsNotEmpty
+         * @tc.desc    setCharacteristicChangeIndication descriptors not empty array test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("setCharacteristicChangeIndicationTest_callback_descriptorsNotEmpty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            };
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let gattProperties: ble.GattProperties = {
+                write: false,
+                writeNoResponse: false,
+                read: false,
+                notify: false,
+                indicate: false,
+                broadcast: false,
+                authenticatedSignedWrite: false,
+                extendedProperties: false
+            };
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors,
+                properties: gattProperties,
+                characteristicValueHandle: 0,
+                permissions: gattPermissions
+            };
+            let setCharacteristicChangeIndicationCallback = () => {
+                return new Promise<void>((resolve, reject) => {
+                    gattClientDevice!.setCharacteristicChangeIndication(characteristic, false, (err: BusinessError | null, data) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, 'api is not support');
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0200
+        * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorUuidEmpty
+        * @tc.desc    setCharacteristicChangeIndication descriptorUuid empty string test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("setCharacteristicChangeIndicationTest_callback_descriptorUuidEmpty", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            };
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '',
+                descriptorValue: bufferDesc,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let gattProperties: ble.GattProperties = {
+                write: false,
+                writeNoResponse: false,
+                read: false,
+                notify: false,
+                indicate: false,
+                broadcast: false,
+                authenticatedSignedWrite: false,
+                extendedProperties: false
+            };
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors,
+                properties: gattProperties,
+                characteristicValueHandle: 0,
+                permissions: gattPermissions
+            };
+            let setCharacteristicChangeIndicationCallback = () => {
+                return new Promise<void>((resolve, reject) => {
+                    gattClientDevice!.setCharacteristicChangeIndication(characteristic, false, (err: BusinessError | null, data) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, 'api is not support');
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0300
+         * @tc.name    setCharacteristicChangeIndicationTest_callback_propertiesAllTrue
+         * @tc.desc    setCharacteristicChangeIndication characteristic properties all true test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("setCharacteristicChangeIndicationTest_callback_propertiesAllTrue", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            };
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '',
+                descriptorValue: bufferDesc,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let gattProperties: ble.GattProperties = {
+                write: true,
+                writeNoResponse: true,
+                read: true,
+                notify: true,
+                indicate: true,
+                broadcast: true,
+                authenticatedSignedWrite: true,
+                extendedProperties: true
+            };
+            
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                properties: gattProperties,
+                descriptors: descriptors,
+                characteristicValueHandle: 0
+            };
+            let setCharacteristicChangeIndicationCallback = () => {
+                return new Promise<void>((resolve, reject) => {
+                    gattClientDevice!.setCharacteristicChangeIndication(characteristic, false, (err: BusinessError | null, data) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, 'api is not support');
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0400
+        * @tc.name    setCharacteristicChangeIndicationTest_callback_permissionsAllTrue
+        * @tc.desc    setCharacteristicChangeIndication characteristic permissions all true test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("setCharacteristicChangeIndicationTest_callback_permissionsAllTrue", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '',
+                descriptorValue: bufferDesc,
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: true,
+                readEncryptedMitm: true,
+                write: true,
+                writeEncrypted: true,
+                writeEncryptedMitm: true,
+                writeSigned: true,
+                writeSignedMitm: true
+            };
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                characteristicValueHandle: 0,
+                descriptors: descriptors,
+                permissions: gattPermissions
+            };
+            let setCharacteristicChangeIndicationCallback = () => {
+                return new Promise<void>((resolve, reject) => {
+                    gattClientDevice!.setCharacteristicChangeIndication(characteristic, false, (err: BusinessError | null, data) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'setCharacteristicChangeIndication value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, 'api is not support');
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
     })
 }

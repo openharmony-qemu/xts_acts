@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +41,7 @@ function test_sqrt_002(expected: string, n: number, sd: number, rm: int) {
   expect(expected).assertEqual(new Decimal(n).sqrt().valueOf());
 }
 
-export default function DecimalTest003() {
+export default function DecimalTest003(): void {
   describe("DecimalTest003", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

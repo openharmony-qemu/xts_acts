@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -735,6 +736,36 @@ export default function WindowOrientationTest(): void {
         
         
         });
+
+
+    /**
+    * @tc.name   test_ExecutionResult_enum_static
+    * @tc.number SUB_BASIC_WMS_testExecutionResult_enum_0200
+    * @tc.desc   静态枚举调用覆盖
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_ExecutionResult_enum_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'test_ExecutionResult_enum_static';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let mainWin: window.Window = windowStage!.getMainWindowSync();
+      console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+      expect(!!mainWin).assertTrue();
+      try {
+        expect(!!mainWin).assertTrue();
+        expect(window.OrientationExecutionResult.ORIENTATION_APPLIED).assertEqual(0);
+        expect(window.OrientationExecutionResult.ORIENTATION_IGNORED).assertEqual(1);
+        expect(window.OrientationExecutionResult.ORIENTATION_PENDING).assertEqual(2);
+        done();
+      } catch(exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+        expect().assertFail()
+        done()
+      }
+    });
+
 
     })
 

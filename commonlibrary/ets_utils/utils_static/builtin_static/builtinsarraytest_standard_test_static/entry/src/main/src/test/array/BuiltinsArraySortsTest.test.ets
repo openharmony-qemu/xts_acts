@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ function customStringify(arr: NumberObj[]): string {
   return '[' + arr.map(item => `{a:${item.a}}`).join(',') + ']';
 }
 
-export default function builtinsArraySortTest() {
+export default function builtinsArraySortTest(): void {
   describe('builtinsArraySortTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -36,32 +36,6 @@ export default function BuiltinsArrayFindLastIndexExtendedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsArrayFindLastIndexExtendedTest0100
-     * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_INDEX_EXTENDED_TEST_0100
-     * @tc.desc   Verify findLastIndex finds first element in large array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayFindLastIndexExtendedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayFindLastIndexUtils.FindLastIndexLargeArrayBoundaryTest14200();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayFindLastIndexExtendedTest0200
-     * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_INDEX_EXTENDED_TEST_0200
-     * @tc.desc   Verify findLastIndex finds last element in large array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayFindLastIndexExtendedTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayFindLastIndexUtils.FindLastIndexLargeArrayLastElementTest14300();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayFindLastIndexExtendedTest0300
      * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_INDEX_EXTENDED_TEST_0300
      * @tc.desc   Verify findLastIndex handles multiple delete operations

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +28,7 @@ interface GeneratedObjectLiteralInterface_2 {
   values: Uint16Array;
 }
 
-export default function typeArrayUint16ArrayTest() {
+export default function typeArrayUint16ArrayTest(): void {
   describe('TypeArrayUint16ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1041,7 +1041,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
           let algName: string = "PKIX";
           let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_3_3_PEM);
           let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_3_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCert],
             userId: new Uint8Array([ // 01234567890123456789
               0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
@@ -1050,7 +1050,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
             allowDownloadIntermediateCa: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(entryCert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(entryCert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1074,13 +1074,13 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
           let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_8_PEM);
           let inter1Cert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_7_PEM);
           let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCert],
             untrustedCerts: [inter1Cert],
             allowDownloadIntermediateCa: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(entryCert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(entryCert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(8);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1103,12 +1103,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
           let algName: string = "PKIX";
           let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_8_PEM);
           let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCert],
             allowDownloadIntermediateCa: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(entryCert, validatorParams);
+          await validator.validateCert(entryCert, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1132,7 +1132,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
           let rootDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_3_PEM);
           let interDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_2_PEM);
           let leafDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -1142,7 +1142,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);

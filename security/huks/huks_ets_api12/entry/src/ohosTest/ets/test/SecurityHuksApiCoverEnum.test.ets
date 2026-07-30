@@ -18,6 +18,9 @@ import huksExternalCrypto from '@ohos.security.huksExternalCrypto';
 
 export default function SecurityHuksApiTest() {
 
+  // replace expect\((.*)\)\.assertEqual\((.*)\)
+  // to Logger.info(`expect($1).assertEqual(\${$2});`)
+
   describe('SecurityHuksApiTest', () => {
 
     /**
@@ -58,6 +61,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_NO_AUTH).assertEqual(12000023);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_BUSY).assertEqual(12000024);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXCEED_LIMIT).assertEqual(12000025);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_SE_FAULT).assertEqual(12000026);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NETWORK_UNAVAILABLE).assertEqual(12000027);
     })
 
@@ -247,6 +251,11 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksKeySize.HUKS_DES_KEY_SIZE_64).assertEqual(64);
       expect(huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128).assertEqual(128);
       expect(huks.HuksKeySize.HUKS_3DES_KEY_SIZE_192).assertEqual(192);
+      expect(huks.HuksKeySize.HUKS_ML_DSA_KEY_PARAM_SET_44).assertEqual(44);
+      expect(huks.HuksKeySize.HUKS_ML_DSA_KEY_PARAM_SET_65).assertEqual(65);
+      expect(huks.HuksKeySize.HUKS_ML_DSA_KEY_PARAM_SET_87).assertEqual(87);
+      expect(huks.HuksKeySize.HUKS_ML_KEM_KEY_PARAM_SET_768).assertEqual(768);
+      expect(huks.HuksKeySize.HUKS_ML_KEM_KEY_PARAM_SET_1024).assertEqual(1024);
     })
 
     /**
@@ -275,6 +284,8 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksKeyAlg.HUKS_ALG_DES).assertEqual(160);
       expect(huks.HuksKeyAlg.HUKS_ALG_3DES).assertEqual(161);
       expect(huks.HuksKeyAlg.HUKS_ALG_CMAC).assertEqual(162);
+      expect(huks.HuksKeyAlg.HUKS_ALG_ML_KEM).assertEqual(200);
+      expect(huks.HuksKeyAlg.HUKS_ALG_ML_DSA).assertEqual(201);
     })
 
     /**
@@ -371,10 +382,10 @@ export default function SecurityHuksApiTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1500', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
-      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_FINGERPRINT).assertEqual(1 << 0);
-      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_FACE).assertEqual(1 << 1);
-      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_PIN).assertEqual(1 << 2);
-      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_TUI_PIN).assertEqual(1 << 5);
+      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_FINGERPRINT).assertEqual(1);
+      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_FACE).assertEqual(2);
+      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_PIN).assertEqual(4);
+      expect(huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_TUI_PIN).assertEqual(32);
     })
 
     /**
@@ -386,9 +397,9 @@ export default function SecurityHuksApiTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_1600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
-      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD).assertEqual(1 << 0);
-      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL).assertEqual(1 << 1);
-      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_ALWAYS_VALID).assertEqual(1 << 2);
+      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD).assertEqual(1);
+      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL).assertEqual(2);
+      expect(huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_ALWAYS_VALID).assertEqual(4);
     })
 
     /**
@@ -494,12 +505,12 @@ export default function SecurityHuksApiTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2400', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_INVALID).assertEqual(0 << 28);
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_INT).assertEqual(1 << 28);
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_UINT).assertEqual(2 << 28);
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_ULONG).assertEqual(3 << 28);
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_BOOL).assertEqual(4 << 28);
-      expect(huks.HuksTagType.HUKS_TAG_TYPE_BYTES).assertEqual(5 << 28);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_INVALID).assertEqual(0);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_INT).assertEqual(268435456);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_UINT).assertEqual(536870912);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_ULONG).assertEqual(805306368);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_BOOL).assertEqual(1073741824);
+      expect(huks.HuksTagType.HUKS_TAG_TYPE_BYTES).assertEqual(1342177280);
     })
 
     /**
@@ -511,98 +522,101 @@ export default function SecurityHuksApiTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_Api_API20_Interface_2500', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
-      expect(huks.HuksTag.HUKS_TAG_INVALID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_INVALID | 0);
-      expect(huks.HuksTag.HUKS_TAG_ALGORITHM).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1);
-      expect(huks.HuksTag.HUKS_TAG_PURPOSE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 2);
-      expect(huks.HuksTag.HUKS_TAG_KEY_SIZE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 3);
-      expect(huks.HuksTag.HUKS_TAG_DIGEST).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 4);
-      expect(huks.HuksTag.HUKS_TAG_PADDING).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 5);
-      expect(huks.HuksTag.HUKS_TAG_BLOCK_MODE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 6);
-      expect(huks.HuksTag.HUKS_TAG_KEY_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 7);
-      expect(huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 8);
-      expect(huks.HuksTag.HUKS_TAG_NONCE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 9);
-      expect(huks.HuksTag.HUKS_TAG_IV).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 10);
-      expect(huks.HuksTag.HUKS_TAG_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 11);
-      expect(huks.HuksTag.HUKS_TAG_SALT).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 12);
-      expect(huks.HuksTag.HUKS_TAG_PWD).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 13);
-      expect(huks.HuksTag.HUKS_TAG_ITERATION).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 14);
-      expect(huks.HuksTag.HUKS_TAG_KEY_GENERATE_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 15);
-      expect(huks.HuksTag.HUKS_TAG_DERIVE_MAIN_KEY).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 16);
-      expect(huks.HuksTag.HUKS_TAG_DERIVE_FACTOR).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 17);
-      expect(huks.HuksTag.HUKS_TAG_DERIVE_ALG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 18);
-      expect(huks.HuksTag.HUKS_TAG_AGREE_ALG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 19);
-      expect(huks.HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 20);
-      expect(huks.HuksTag.HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 21);
-      expect(huks.HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 22);
-      expect(huks.HuksTag.HUKS_TAG_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 23);
-      expect(huks.HuksTag.HUKS_TAG_DERIVE_KEY_SIZE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 24);
-      expect(huks.HuksTag.HUKS_TAG_IMPORT_KEY_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 25);
-      expect(huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 26);
-      expect(huks.HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 29);
-      expect(huks.HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 30);
-      expect(huks.HuksTag.HUKS_TAG_ACTIVE_DATETIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 201);
-      expect(huks.HuksTag.HUKS_TAG_ORIGINATION_EXPIRE_DATETIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 202);
-      expect(huks.HuksTag.HUKS_TAG_USAGE_EXPIRE_DATETIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 203);
-      expect(huks.HuksTag.HUKS_TAG_CREATION_DATETIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 204);
-      expect(huks.HuksTag.HUKS_TAG_ALL_USERS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 301);
-      expect(huks.HuksTag.HUKS_TAG_USER_ID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 302);
-      expect(huks.HuksTag.HUKS_TAG_NO_AUTH_REQUIRED).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 303);
-      expect(huks.HuksTag.HUKS_TAG_USER_AUTH_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 304);
-      expect(huks.HuksTag.HUKS_TAG_AUTH_TIMEOUT).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 305);
-      expect(huks.HuksTag.HUKS_TAG_AUTH_TOKEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 306);
-      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 307);
-      expect(huks.HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 308);
-      expect(huks.HuksTag.HUKS_TAG_CHALLENGE_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 309);
-      expect(huks.HuksTag.HUKS_TAG_CHALLENGE_POS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 310);
-      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 311);
-      expect(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 316);
-      expect(huks.HuksTag.HUKS_TAG_USER_AUTH_MODE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 319);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 501);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_APPLICATION_ID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 502);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_BRAND).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 503);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_DEVICE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 504);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_PRODUCT).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 505);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SERIAL).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 506);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_IMEI).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 507);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MEID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 508);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MANUFACTURER).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 509);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MODEL).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 510);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 511);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SOCID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 512);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_UDID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 513);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 514);
-      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_VERSION_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 515);
-      expect(huks.HuksTag.HUKS_TAG_KEY_OVERRIDE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 520);
-      expect(huks.HuksTag.HUKS_TAG_AE_TAG_LEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 521);
-      expect(huks.HuksTag.HUKS_TAG_KEY_CLASS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 522);
-      expect(huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 523);
-      expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1001);
-      expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1002);
-      expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1003);
-      expect(huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1004);
-      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_ID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 1005);
-      expect(huks.HuksTag.HUKS_TAG_KEY_ROLE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1006);
-      expect(huks.HuksTag.HUKS_TAG_KEY_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1007);
-      expect(huks.HuksTag.HUKS_TAG_IS_ASYNCHRONIZED).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1008);
-      expect(huks.HuksTag.HUKS_TAG_SECURE_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1009);
-      expect(huks.HuksTag.HUKS_TAG_SECURE_KEY_UUID).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 1010);
-      expect(huks.HuksTag.HUKS_TAG_KEY_DOMAIN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1011);
-      expect(huks.HuksTag.HUKS_TAG_IS_DEVICE_PASSWORD_SET).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1012);
-      expect(huks.HuksTag.HUKS_TAG_PROCESS_NAME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 10001);
-      expect(huks.HuksTag.HUKS_TAG_PACKAGE_NAME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 10002);
-      expect(huks.HuksTag.HUKS_TAG_ACCESS_TIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10003);
-      expect(huks.HuksTag.HUKS_TAG_USES_TIME).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10004);
-      expect(huks.HuksTag.HUKS_TAG_CRYPTO_CTX).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 10005);
-      expect(huks.HuksTag.HUKS_TAG_KEY).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 10006);
-      expect(huks.HuksTag.HUKS_TAG_KEY_VERSION).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10007);
-      expect(huks.HuksTag.HUKS_TAG_PAYLOAD_LEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10008);
-      expect(huks.HuksTag.HUKS_TAG_AE_TAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 10009);
-      expect(huks.HuksTag.HUKS_TAG_IS_KEY_HANDLE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_ULONG | 10010);
-      expect(huks.HuksTag.HUKS_TAG_OS_VERSION).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10101);
-      expect(huks.HuksTag.HUKS_TAG_OS_PATCHLEVEL).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 10102);
-      expect(huks.HuksTag.HUKS_TAG_SYMMETRIC_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20001);
-      expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20002);
-      expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20003);
+      expect(huks.HuksTag.HUKS_TAG_INVALID).assertEqual(0);
+      expect(huks.HuksTag.HUKS_TAG_ALGORITHM).assertEqual(536870913);
+      expect(huks.HuksTag.HUKS_TAG_PURPOSE).assertEqual(536870914);
+      expect(huks.HuksTag.HUKS_TAG_KEY_SIZE).assertEqual(536870915);
+      expect(huks.HuksTag.HUKS_TAG_DIGEST).assertEqual(536870916);
+      expect(huks.HuksTag.HUKS_TAG_PADDING).assertEqual(536870917);
+      expect(huks.HuksTag.HUKS_TAG_BLOCK_MODE).assertEqual(536870918);
+      expect(huks.HuksTag.HUKS_TAG_KEY_TYPE).assertEqual(536870919);
+      expect(huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA).assertEqual(1342177288);
+      expect(huks.HuksTag.HUKS_TAG_NONCE).assertEqual(1342177289);
+      expect(huks.HuksTag.HUKS_TAG_IV).assertEqual(1342177290);
+      expect(huks.HuksTag.HUKS_TAG_INFO).assertEqual(1342177291);
+      expect(huks.HuksTag.HUKS_TAG_SALT).assertEqual(1342177292);
+      expect(huks.HuksTag.HUKS_TAG_PWD).assertEqual(1342177293);
+      expect(huks.HuksTag.HUKS_TAG_ITERATION).assertEqual(536870926);
+      expect(huks.HuksTag.HUKS_TAG_KEY_GENERATE_TYPE).assertEqual(536870927);
+      expect(huks.HuksTag.HUKS_TAG_DERIVE_MAIN_KEY).assertEqual(1342177296);
+      expect(huks.HuksTag.HUKS_TAG_DERIVE_FACTOR).assertEqual(1342177297);
+      expect(huks.HuksTag.HUKS_TAG_DERIVE_ALG).assertEqual(536870930);
+      expect(huks.HuksTag.HUKS_TAG_AGREE_ALG).assertEqual(536870931);
+      expect(huks.HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS).assertEqual(1073741844);
+      expect(huks.HuksTag.HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS).assertEqual(1342177301);
+      expect(huks.HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY).assertEqual(1342177302);
+      expect(huks.HuksTag.HUKS_TAG_KEY_ALIAS).assertEqual(1342177303);
+      expect(huks.HuksTag.HUKS_TAG_DERIVE_KEY_SIZE).assertEqual(536870936);
+      expect(huks.HuksTag.HUKS_TAG_IMPORT_KEY_TYPE).assertEqual(536870937);
+      expect(huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE).assertEqual(536870938);
+      expect(huks.HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG).assertEqual(536870941);
+      expect(huks.HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE).assertEqual(536870942);
+      expect(huks.HuksTag.HUKS_TAG_ACTIVE_DATETIME).assertEqual(805306569);
+      expect(huks.HuksTag.HUKS_TAG_ORIGINATION_EXPIRE_DATETIME).assertEqual(805306570);
+      expect(huks.HuksTag.HUKS_TAG_USAGE_EXPIRE_DATETIME).assertEqual(805306571);
+      expect(huks.HuksTag.HUKS_TAG_CREATION_DATETIME).assertEqual(805306572);
+      expect(huks.HuksTag.HUKS_TAG_ALL_USERS).assertEqual(1073742125);
+      expect(huks.HuksTag.HUKS_TAG_USER_ID).assertEqual(536871214);
+      expect(huks.HuksTag.HUKS_TAG_NO_AUTH_REQUIRED).assertEqual(1073742127);
+      expect(huks.HuksTag.HUKS_TAG_USER_AUTH_TYPE).assertEqual(536871216);
+      expect(huks.HuksTag.HUKS_TAG_AUTH_TIMEOUT).assertEqual(536871217);
+      expect(huks.HuksTag.HUKS_TAG_AUTH_TOKEN).assertEqual(1342177586);
+      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE).assertEqual(536871219);
+      expect(huks.HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE).assertEqual(536871220);
+      expect(huks.HuksTag.HUKS_TAG_CHALLENGE_TYPE).assertEqual(536871221);
+      expect(huks.HuksTag.HUKS_TAG_CHALLENGE_POS).assertEqual(536871222);
+      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE).assertEqual(536871223);
+      expect(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL).assertEqual(536871228);
+      expect(huks.HuksTag.HUKS_TAG_USER_AUTH_MODE).assertEqual(536871231);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE).assertEqual(1342177781);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_APPLICATION_ID).assertEqual(1342177782);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_BRAND).assertEqual(1342177783);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_DEVICE).assertEqual(1342177784);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_PRODUCT).assertEqual(1342177785);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SERIAL).assertEqual(1342177786);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_IMEI).assertEqual(1342177787);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MEID).assertEqual(1342177788);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MANUFACTURER).assertEqual(1342177789);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_MODEL).assertEqual(1342177790);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_ALIAS).assertEqual(1342177791);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SOCID).assertEqual(1342177792);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_UDID).assertEqual(1342177793);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO).assertEqual(1342177794);
+      expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_VERSION_INFO).assertEqual(1342177795);
+      expect(huks.HuksTag.HUKS_TAG_KEY_OVERRIDE).assertEqual(1073742344);
+      expect(huks.HuksTag.HUKS_TAG_AE_TAG_LEN).assertEqual(536871433);
+      expect(huks.HuksTag.HUKS_TAG_KEY_CLASS).assertEqual(536871434);
+      expect(huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP).assertEqual(1342177803);
+      expect(huks.HuksTag.HUKS_TAG_KEY_SECURITY_LEVEL).assertEqual(536871438);
+      expect(huks.HuksTag.HUKS_TAG_AAD).assertEqual(1342177807);
+      expect(huks.HuksTag.HUKS_TAG_CONTEXT).assertEqual(1342177808);
+      expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(1073742825);
+      expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(536871914);
+      expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(1073742827);
+      expect(huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE).assertEqual(536871916);
+      expect(huks.HuksTag.HUKS_TAG_KEY_AUTH_ID).assertEqual(1342178285);
+      expect(huks.HuksTag.HUKS_TAG_KEY_ROLE).assertEqual(536871918);
+      expect(huks.HuksTag.HUKS_TAG_KEY_FLAG).assertEqual(536871919);
+      expect(huks.HuksTag.HUKS_TAG_IS_ASYNCHRONIZED).assertEqual(536871920);
+      expect(huks.HuksTag.HUKS_TAG_SECURE_KEY_ALIAS).assertEqual(1073742833);
+      expect(huks.HuksTag.HUKS_TAG_SECURE_KEY_UUID).assertEqual(1342178290);
+      expect(huks.HuksTag.HUKS_TAG_KEY_DOMAIN).assertEqual(536871923);
+      expect(huks.HuksTag.HUKS_TAG_IS_DEVICE_PASSWORD_SET).assertEqual(1073742836);
+      expect(huks.HuksTag.HUKS_TAG_PROCESS_NAME).assertEqual(1342187281);
+      expect(huks.HuksTag.HUKS_TAG_PACKAGE_NAME).assertEqual(1342187282);
+      expect(huks.HuksTag.HUKS_TAG_ACCESS_TIME).assertEqual(536880915);
+      expect(huks.HuksTag.HUKS_TAG_USES_TIME).assertEqual(536880916);
+      expect(huks.HuksTag.HUKS_TAG_CRYPTO_CTX).assertEqual(805316373);
+      expect(huks.HuksTag.HUKS_TAG_KEY).assertEqual(1342187286);
+      expect(huks.HuksTag.HUKS_TAG_KEY_VERSION).assertEqual(536880919);
+      expect(huks.HuksTag.HUKS_TAG_PAYLOAD_LEN).assertEqual(536880920);
+      expect(huks.HuksTag.HUKS_TAG_AE_TAG).assertEqual(1342187289);
+      expect(huks.HuksTag.HUKS_TAG_IS_KEY_HANDLE).assertEqual(805316378);
+      expect(huks.HuksTag.HUKS_TAG_OS_VERSION).assertEqual(536881013);
+      expect(huks.HuksTag.HUKS_TAG_OS_PATCHLEVEL).assertEqual(536881014);
+      expect(huks.HuksTag.HUKS_TAG_SYMMETRIC_KEY_DATA).assertEqual(1342197281);
+      expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA).assertEqual(1342197282);
+      expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA).assertEqual(1342197283);
     })
 
     /**
@@ -628,8 +642,8 @@ export default function SecurityHuksApiTest() {
      */
     it('SUB_Security_HUKS_Api_API22_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT).assertEqual(1 << 28);
-        expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES).assertEqual(5 << 28);
+        expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT).assertEqual(268435456);
+        expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES).assertEqual(1342177280);
       }
     })
 
@@ -643,11 +657,14 @@ export default function SecurityHuksApiTest() {
      */
     it('SUB_Security_HUKS_Api_API22_Interface_0200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UKEY_PIN).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001);
-        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200002);
-        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_EXTRA_DATA).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200003);
-        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UID).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200004);
-        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_PURPOSE).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200005);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UKEY_PIN).assertEqual(1342377281);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME).assertEqual(1342377282);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_EXTRA_DATA).assertEqual(1342377283);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UID).assertEqual(268635460);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_PURPOSE).assertEqual(268635461);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_RESOURCE_INFO).assertEqual(1342377287);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_INFO).assertEqual(1342377288);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_BUNDLE_NAME).assertEqual(1342377289);
       }
     })
 
@@ -665,6 +682,19 @@ export default function SecurityHuksApiTest() {
         expect(huksExternalCrypto.HuksExternalPinAuthState.HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED).assertEqual(1);
         expect(huksExternalCrypto.HuksExternalPinAuthState.HUKS_EXT_CRYPTO_PIN_LOCKED).assertEqual(2);
       }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Api_API26_Interface_0100
+     * @tc.number SUB_Security_HUKS_Api_API26_Interface_0100
+     * @tc.desc   test huks.HuksKeySecurityLevel api
+     * @tc.type   COMPATIBILITY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Api_API26_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
+      expect(huks.HuksKeySecurityLevel.HUKS_KEY_SECURITY_LEVEL_TEE).assertEqual(0);
+      expect(huks.HuksKeySecurityLevel.HUKS_KEY_SECURITY_LEVEL_SE).assertEqual(1);
     })
 
   }

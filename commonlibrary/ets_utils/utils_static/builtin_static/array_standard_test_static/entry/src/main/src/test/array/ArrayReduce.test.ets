@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -124,7 +125,7 @@ type numOrArr042 = (number | numOrArr042)[];
 type numOrArr051 = (number | numOrArr051)[];
 
 
-export default function ArrayReduceTest() {
+export default function ArrayReduceTest(): void {
   describe('ArrayReduceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

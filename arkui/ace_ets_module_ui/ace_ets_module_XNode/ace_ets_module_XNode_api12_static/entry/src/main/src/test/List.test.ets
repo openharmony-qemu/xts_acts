@@ -125,9 +125,9 @@ export default function testsuite() {
   typeNodeGridColTest();
   typeNodeDividerTest();
   typeNodeBlankTest();
+  ComponentContentAPIReuseTest();
   BuilderNodeApiRecycleTest();
   BuilderNodeApiReuseTest();
-  ComponentContentAPIReuseTest();
   APImarkNodeGroupTest();
   borderRadiuses();
   borderStyles();

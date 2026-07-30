@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,7 @@ function init(size: number): string {
   ans += '{"a":1}]';
   return ans;
 }
-export default function builtinsJsonElementGetArrayTest() {
+export default function builtinsJsonElementGetArrayTest(): void {
   describe("builtinsJsonElementGetArrayTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

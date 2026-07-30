@@ -92,7 +92,7 @@ export default function columnJsunit() {
 
       console.info('columnTest_0003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('column' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

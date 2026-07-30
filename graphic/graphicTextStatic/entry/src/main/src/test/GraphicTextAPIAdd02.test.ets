@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,13 +29,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0100
-     * @tc.number GraphicTextAPIAdd02Static_0100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0100
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0100====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -49,13 +50,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0200
-     * @tc.number GraphicTextAPIAdd02Static_0200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0200
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0200====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -70,13 +71,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0300
-     * @tc.number GraphicTextAPIAdd02Static_0300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0300
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0300====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -91,13 +92,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0400
-     * @tc.number GraphicTextAPIAdd02Static_0400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0400
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0400====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -112,13 +113,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0500
-     * @tc.number GraphicTextAPIAdd02Static_0500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0500
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0500====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -133,13 +134,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0600
-     * @tc.number GraphicTextAPIAdd02Static_0600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0600
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0600====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -154,13 +155,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0700
-     * @tc.number GraphicTextAPIAdd02Static_0700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0700
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0700====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -175,13 +176,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0800
-     * @tc.number GraphicTextAPIAdd02Static_0800
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0800
      * @tc.desc   test matchFontDescriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd02Static_0800====";
         let fontDescriptor = await text.matchFontDescriptors({
@@ -196,11 +197,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_0900
-     * @tc.number GraphicTextAPIAdd02Static_0900
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_0900
      * @tc.desc   test addPlaceholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -245,11 +246,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1000
-     * @tc.number GraphicTextAPIAdd02Static_1000
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1000
      * @tc.desc   test addPlaceholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -294,11 +295,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1100
-     * @tc.number GraphicTextAPIAdd02Static_1100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1100
      * @tc.desc   test addPlaceholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -343,11 +344,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1200
-     * @tc.number GraphicTextAPIAdd02Static_1200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1200
      * @tc.desc   test addPlaceholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,11 +393,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1300
-     * @tc.number GraphicTextAPIAdd02Static_1300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1300
      * @tc.desc   test addPlaceholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -441,11 +442,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1400
-     * @tc.number GraphicTextAPIAdd02Static_1400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1400
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -488,11 +489,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1500
-     * @tc.number GraphicTextAPIAdd02Static_1500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1500
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -535,11 +536,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1600
-     * @tc.number GraphicTextAPIAdd02Static_1600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1600
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,11 +583,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1700
-     * @tc.number GraphicTextAPIAdd02Static_1700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1700
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -629,11 +630,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1800
-     * @tc.number GraphicTextAPIAdd02Static_1800
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1800
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -673,11 +674,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_1900
-     * @tc.number GraphicTextAPIAdd02Static_1900
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_1900
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -717,11 +718,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2000
-     * @tc.number GraphicTextAPIAdd02Static_2000
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2000
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -761,11 +762,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2100
-     * @tc.number GraphicTextAPIAdd02Static_2100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2100
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -804,11 +805,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2200
-     * @tc.number GraphicTextAPIAdd02Static_2200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2200
      * @tc.desc   test pushStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -847,7 +848,7 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2300
-     * @tc.number GraphicTextAPIAdd02Static_2300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2300
      * @tc.desc   To test interface loadFontAsync of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +891,7 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2400
-     * @tc.number GraphicTextAPIAdd02Static_2400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2400
      * @tc.desc   FontCollection loadFontSyncWithCheck path parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -924,11 +925,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2500
-     * @tc.number GraphicTextAPIAdd02Static_2500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2500
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -958,11 +959,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2600
-     * @tc.number GraphicTextAPIAdd02Static_2600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2600
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -992,13 +993,13 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2700
-     * @tc.number GraphicTextAPIAdd02Static_2700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2700
      * @tc.desc   test createTruncatedLine
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd02Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd02Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -1034,7 +1035,7 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2800
-     * @tc.number GraphicTextAPIAdd02Static_2800
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2800
      * @tc.desc   test getFontDescriptorByFullName
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1067,11 +1068,11 @@ export default function GraphicTextAPIAdd02() {
 
     /**
      * @tc.name   GraphicTextAPIAdd02Static_2900
-     * @tc.number GraphicTextAPIAdd02Static_2900
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Add_Static_2900
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('GraphicTextAPIAdd02Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

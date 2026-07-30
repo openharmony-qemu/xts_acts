@@ -100,6 +100,40 @@ export default function documentThreeTest() {
     })
 
     /**
+     * @tc.name   SUB_Object_Editor_TestStorageSetOEid_0200
+     * @tc.number SUB_Object_Editor_TestStorageSetOEid_0200
+     * @tc.desc   Test OH_ContentEmbed_Storage_SetOEid with invalid OEID format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStorageSetOEid_0200', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestStorageSetOEid_0200';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStorageSetOEid_OEIDFormatInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestStorageSetOEid_0300
+     * @tc.number SUB_Object_Editor_TestStorageSetOEid_0300
+     * @tc.desc   Test OH_ContentEmbed_Storage_SetOEid with invalid OEID format (part 2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStorageSetOEid_0300', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestStorageSetOEid_0300';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStorageSetOEid_OEIDFormatInvalid2();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
      * @tc.name   SUB_Object_Editor_TestProxyGetOEidFromFormat_0100
      * @tc.number SUB_Object_Editor_TestProxyGetOEidFromFormat_0100
      * @tc.desc   Test OH_ContentEmbed_GetOEidFromFormat with null format
@@ -130,6 +164,23 @@ export default function documentThreeTest() {
       let result = testNapi.TestCreateDocumentByOEid_OEIDIsValid();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestCreateDocumentByOEid_0200
+     * @tc.number SUB_Object_Editor_TestCreateDocumentByOEid_0200
+     * @tc.desc   Test OH_ContentEmbed_CreateDocumentByOEid with invalid OEID format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestCreateDocumentByOEid_0200', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestCreateDocumentByOEid_0200';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestCreateDocumentByOEid_OEIDFormatInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
       expect(expectResult).assertTrue();
     })
 

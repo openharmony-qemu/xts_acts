@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,31 +15,19 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
-
 export default function RectUndefinedTest() {
   describe('RectUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -143,18 +131,35 @@ export default function RectUndefinedTest() {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Rect2');
+      let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
 
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('radius')))
-        .assertEqual('true');
+      console.info('[RectUndefinedTest_static_0300] radius 1 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('radius')));
+      expect(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()).assertEqual(40);
+      expect(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()).assertEqual(40);
 
       let changeBtn = await driver.findComponent(ON.id('Rect_radius'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Rect2');
+      obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('radius')))
-        .assertEqual('true');
+      
+      console.info('[RectUndefinedTest_static_0300] radius 2 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('radius')));
+      expect(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()).assertEqual(0);
+      expect(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()).assertEqual(0);
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       console.info('[RectUndefinedTest_static_0300] END');

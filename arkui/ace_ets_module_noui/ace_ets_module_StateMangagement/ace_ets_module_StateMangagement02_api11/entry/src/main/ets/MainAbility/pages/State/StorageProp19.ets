@@ -32,25 +32,25 @@ struct StorageProp19 {
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')
-        .key("button1")
+        .key("StorageProp19_button1")
         .onClick(() => {
           this.stringCode = 'arkUI';
         })
 
       Button(`button2: ${this.numberCode}`).width("100%").height('5%')
-        .key("button2")
+        .key("StorageProp19_button2")
         .onClick(() => {
           this.numberCode = 3
         })
 
       Button(`button3: ${this.booleanCode}`).width("100%").height('5%')
-        .key("button3")
+        .key("StorageProp19_button3")
         .onClick(() => {
           this.booleanCode = false
         })
 
       Button(`button4: ${this.enumCode}`).width("100%").height('5%')
-        .key("button4")
+        .key("StorageProp19_button4")
         .onClick(() => {
           this.enumCode = KFC19.F
         })

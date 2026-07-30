@@ -83,7 +83,7 @@ it('navigationApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise
   console.info('[navigationApi1_static_0100] btn2');
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('navigationApi1_text1');
+      let text1 = inspector.getInspectorByKey('navigationApi1' + '_text1');
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('POP');
 
       console.info('[testRichEditor_0100] END');

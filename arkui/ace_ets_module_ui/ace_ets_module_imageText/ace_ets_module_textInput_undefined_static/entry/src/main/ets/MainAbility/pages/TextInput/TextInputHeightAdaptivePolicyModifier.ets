@@ -1,13 +1,9 @@
-'use static'
+'use static';
 
 
-import { Entry, Text, Column, Component,TextInput, Search, ColumnOptions, Row, ClickEvent, Button,AttributeModifier,
-  TextInputAttribute, TextInputAttribute, SearchAttribute,
-  TextInputStyle, TextDecorationType, TextDecorationStyle,
-  TextHeightAdaptivePolicy, TextOverflow, $r,Color } from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+import { Entry, Text, Column, Component, TextInput, Search, ColumnOptions, Row, ClickEvent, Button, AttributeModifier, TextInputAttribute, SearchAttribute, TextInputStyle, TextDecorationType, TextDecorationStyle, TextHeightAdaptivePolicy, TextOverflow, $r, Color } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   public state: boolean = false;

@@ -22,10 +22,6 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-// import EmbeddedUIExtensionAbility from '@ohos.app.ability.EmbeddedUIExtensionAbility'
-// import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession'
-import Want from '@ohos.app.ability.Want';
-
 const TAG: string = '[ExampleEmbeddedAbility]'
 // export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
   

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -17,7 +18,7 @@ import router from '@ohos.router';
 import Utils from '../../src/test/Utils.test';
 import { URL, URL2 } from '../../src/test/Config.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
@@ -26,16 +27,12 @@ import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
 import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement';
 import { canIUse } from '@internal.full.global';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
-import { Want } from '@kit.AbilityKit';
-import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState,
-  GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog,
-  CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { Want, StartOptions } from '@kit.AbilityKit';
+import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState, GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog, CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController
@@ -64,6 +61,8 @@ struct NewWebViewComp {
   }
 }
 
+let startAbilityForResultTestMode: string = '';
+
 export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
   onConnectNative(info: ConnectionInfo): void {
     const abilityWant : Want = {
@@ -71,9 +70,54 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
       abilityName: 'EntryAbility'
     };
     try {
-      const context = this.context; // Obtain the WebNativeMessagingExtensionContext instance.
-      context.startAbility(abilityWant);
-      console.info('Ability started successfully');
+      const context = this.context;
+      if (startAbilityForResultTestMode != '') {
+        let mode = startAbilityForResultTestMode;
+        startAbilityForResultTestMode = '';
+
+        if (mode == 'test001') {
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant);
+              console.info('startAbilityForResult test001 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260401);
+            } catch (err) {
+              console.error(`startAbilityForResult test001 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260401);
+            }
+          })();
+        } else if (mode == 'test002') {
+          let options: StartOptions = { displayId: 0 };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant, options);
+              console.info('startAbilityForResult test002 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260402);
+            } catch (err) {
+              console.error(`startAbilityForResult test002 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260402);
+            }
+          })();
+        } else if (mode == 'test003') {
+          let invalidWant: Want = {
+            bundleName: 'com.invalid.nonexistent.bundle',
+            abilityName: 'NonExistentAbility'
+          };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(invalidWant);
+              console.info('startAbilityForResult test003 unexpected success');
+              Utils.emitEvent(-1, 20260403);
+            } catch (err) {
+              console.error(`startAbilityForResult test003 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260403);
+            }
+          })();
+        }
+      } else {
+        context.startAbility(abilityWant);
+        console.info('Ability started successfully');
+      }
     } catch (err) {
       console.error(`Failed to start ability. Code: ${err.code}, Message: ${err.message}`);
     }
@@ -172,6 +216,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy002': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_WINDOW;
                 this.controller.pageUp(false);
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
@@ -190,6 +235,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy003': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_BACKGROUND_TAB;
                 this.controller.pageDown(false);
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
@@ -206,6 +252,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy004': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_FOREGROUND_TAB;
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
                   Utils.emitEvent(this.navigationPolicy, 20260116)
@@ -231,8 +278,9 @@ struct Index {
                   Utils.emitEvent(this.no_error, 115380)
                 });
               } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 115380)
+                const err = error as BusinessError;
+                console.error(`ErrorCode: ${err.code}, Message: ${err.message}`);
+                Utils.emitEvent(err.code ? String(err.code) : '17100001', 115380)
               }
               break;
             }
@@ -526,6 +574,33 @@ struct Index {
               } catch (error) {
                 console.error('ErrorCode: ${error.code}, Message: ${error.message}');
               }
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic001': {
+              startAbilityForResultTestMode = 'test001';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test001');
+              }, 1000);
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic002': {
+              startAbilityForResultTestMode = 'test002';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test002');
+              }, 1000);
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic003': {
+              startAbilityForResultTestMode = 'test003';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test003');
+              }, 1000);
               break;
             }
 

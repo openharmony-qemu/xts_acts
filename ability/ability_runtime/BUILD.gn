@@ -27,6 +27,7 @@ group("ability_runtime") {
       "abilitymanager:actsabilitymanagertest",
       "abilitymonitorstatic:ActsAbilityMonitorStaticTest",
       "abilitymontior:ActsAbilityMonitorTest",
+      "interopabilitymonitorstatic:ActsInteropAbilityMonitorStaticTest",
       "abilitymultiinstance:abilitymultiinstance",
       "abilitystagecontextpermissionteststatic:AbilityStageContextPermissionStaticTest",
       "abilitystagecontextteststatic:AbilityStageContextStaticTest",
@@ -161,7 +162,11 @@ group("ability_runtime") {
       "abilityactsabilityruntime:abilityactsabilityruntime",
       "actsGetAllWindowStagesTestStatic:ActsGetAllWindowStagesStaticTest",
       "actgetispreload:ActsGetIsPreloadTest",
-      "actgetispreloadstatic:ActsGetIsPreloadStaticTest"
+      "actgetispreloadstatic:ActsGetIsPreloadStaticTest",
+      "actsAbilityGetInstanceIdTest:ActsGetInstanceIdTest",
+      "actsAbilityGetInstanceIdTeststatic:ActsGetInstanceIdStaticTest",
+      "actsAbilityStartSelfTest:ActsAbilityStartSelfTest",
+      "actsAbilityStartSelfTeststatic:ActsStartSelfStaticTest"
     ]
   }
 }

@@ -54,7 +54,7 @@ export default function tabsBarPositionJsunits() {
     beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'pages/tabs',
+        url: 'MainAbility/pages/conponentadd/tabs_y',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -88,7 +88,7 @@ export default function tabsBarPositionJsunits() {
 it('testtabsBarPosition_static_00011', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -109,7 +109,7 @@ it('testtabsBarPosition_static_00011', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00021', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -130,7 +130,7 @@ it('testtabsBarPosition_static_00021', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00031', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0003 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -151,7 +151,7 @@ it('testtabsBarPosition_static_00031', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00041', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0004 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -172,7 +172,7 @@ it('testtabsBarPosition_static_00041', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00051', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0005 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -193,7 +193,7 @@ it('testtabsBarPosition_static_00051', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00061', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0006 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -214,7 +214,7 @@ it('testtabsBarPosition_static_00061', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00071', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0007 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -235,7 +235,7 @@ it('testtabsBarPosition_static_00071', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00091', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition009 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -256,7 +256,7 @@ it('testtabsBarPosition_static_00091', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00101', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0010 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionText');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionText');
       console.info("[testtabsBarPosition0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -277,7 +277,7 @@ it('testtabsBarPosition_static_00101', Level.LEVEL0, async () => {
 it('testtabsBarPosition_static_00111', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0011 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('barPositionTabs');
+      let strJson = inspector.getInspectorByKey('tabs_y_barPositionTabs');
       console.info("[testtabsBarPosition0011] component barPosition strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Tabs');

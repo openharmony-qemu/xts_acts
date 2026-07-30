@@ -84,8 +84,8 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0100', Level.LEVEL0, async (d
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
-      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');
+      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_bt1');
+      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_tx2');
 
 
       console.log('assert position')
@@ -114,8 +114,8 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0200', Level.LEVEL0, async (d
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
-      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');
+      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_bt1');
+      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_tx2');
 
 
       console.log('assert position')
@@ -147,8 +147,8 @@ it('SUB_ACE_RelativeContainer_Vertical_TEST_static_0300', Level.LEVEL0, async (d
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_bt1');
-      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical_tx2');
+      let RelativeContainer_Vertical_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_bt1');
+      let RelativeContainer_Vertical_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Vertical' + '_tx2');
 
 
       console.log('assert position')

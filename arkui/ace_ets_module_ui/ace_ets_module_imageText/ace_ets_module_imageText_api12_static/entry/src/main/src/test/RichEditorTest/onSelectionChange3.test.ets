@@ -13,34 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {UtilsTest,startAbility} from '../Util.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { UtilsTest, startAbility } from '../Util.test';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import {MessageManager,Callback,Message} from '../../../ets/MainAbility/common/MessageManager';
-import { Router } from '@ohos.arkui.UIContext';
+import { MessageManager, Callback, Message } from '../../../ets/MainAbility/common/MessageManager';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UIContext } from '@ohos.arkui.UIContext'
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import text from "@ohos.graphics.text";
-import {KeyCode} from '@ohos.multimodalInput.keyCode';
+import text from '@ohos.graphics.text';
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -92,7 +81,7 @@ export default function onSelectionChange3() {
       let richEditor = await (driver.findComponent(ON.id('onSelectionChange3_RichEditor')) as Promise<Component>);
       await richEditor.longClick();
       await CommonFunc.sleep(1000);
-      let text1_1 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_1 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
       expect(Obj1_1.getElement('$attrs').getString('content')).assertEqual('1');
 
@@ -104,7 +93,7 @@ export default function onSelectionChange3() {
       }
       await copy.click()
       await CommonFunc.sleep(1000);
-      let text1_2 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_2 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_2 = JSON.parseJsonElement(text1_2);
       expect(Obj1_2.getElement('$attrs').getString('content')).assertEqual('1');
       await CommonFunc.sleep(2500);
@@ -119,7 +108,7 @@ export default function onSelectionChange3() {
       }
       await paste.click()
       await CommonFunc.sleep(1000);
-      let text1_3 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_3 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_3 = JSON.parseJsonElement(text1_3);
       expect(Obj1_3.getElement('$attrs').getString('content')).assertEqual('2');
 

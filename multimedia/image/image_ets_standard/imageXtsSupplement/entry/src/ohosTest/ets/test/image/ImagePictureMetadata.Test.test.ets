@@ -67,7 +67,7 @@ export default function ImagePictureMetadataTest() {
     it('PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_001', Level.LEVEL0, async (done: Function,Picture:image.Picture) => {
       const testName = 'PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_001';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let array = new ArrayBuffer(300000000);
+      let array = new ArrayBuffer(25000000);
       let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg';
       let path = `file://${testContext.filesDir}/${pathUri}`;
       console.info(TAG, testName, `path: ${path}`);
@@ -107,7 +107,7 @@ export default function ImagePictureMetadataTest() {
     it('PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002', Level.LEVEL0, async (done: Function,Picture:image.Picture) => {
       const testName = 'PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let array = new ArrayBuffer(300000000);
+      let array = new ArrayBuffer(25000000);
       let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg';
       let path = `file://${testContext.filesDir}/${pathUri}`;
       console.info(TAG, testName, `path: ${path}`);

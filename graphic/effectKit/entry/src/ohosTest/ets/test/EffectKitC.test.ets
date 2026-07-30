@@ -1538,6 +1538,65 @@ export default function effectKitCTest() {
           done();
         }
       })
+    /**
+     * @tc.name   getEffectPixelMapEnumNull
+     * @tc.number SUB_GRAPHIC_Effect_getEffectPixelMap_Null_0100
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnumNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr  = "==== www data getEffectPixelMapEnumNull===="
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        try {
+          effectKit.createEffect(pixelMap).getEffectPixelMap(null);
+          console.info(msgStr + ' setTextHighContrast success ');
+          done();
+        } catch (err) {
+          console.info(msgStr + ' setTextHighContrast error ', err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnumUndefined
+     * @tc.number SUB_GRAPHIC_Effect_getEffectPixelMap_Undefined_0100
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnumUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr  = "==== www data getEffectPixelMapEnumUndefined===="
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        try {
+          effectKit.createEffect(pixelMap).getEffectPixelMap(undefined);
+          console.info(msgStr + ' setTextHighContrast success ');
+          done();
+        } catch (err) {
+          console.info(msgStr + ' setTextHighContrast error ', err.code);
+          expect().assertFail();
+          done();
+        }
+      })
 
   })
 }

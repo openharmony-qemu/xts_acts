@@ -14,18 +14,31 @@
  * limitations under the License.
  */
 
-import popupTest from './PopupTest/popupTest.test';
-import PopupNodeTest from './PopupTest/PopupNodeTest.test';
-import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
-import PopupCommonTest from './PopupTest/PopupCommon.test';
-import PopupOptionsTest from './PopupTest/PopupOptions.test';
-import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
+import PopupOptionsSystemMaterialTest from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
+import CustomPopupOptionsSystemMaterialTest from './popupSystemMaterial/CustomPopupOptionsSystemMaterial.test';
+import PopupCommonOptionsSystemMaterialTest from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
+import SheetOptionsSystemMaterialTest from './popupSystemMaterial/SheetOptionsSystemMaterial.test';
+import TipsOptionsSystemMaterialTest from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+import PopupOptionsColorModeTest from './popupColorMode/PopupOptionsColorModeTest.test';
+import PopupCommonOptionsColorModeTest from './popupColorMode/PopupCommonOptionsColorModeTest.test';
+import CustomPopupOptionsColorModeTest from './popupColorMode/CustomPopupOptionsColorModeTest.test';
+import PopupOptionsLevelModeTest from './popupLevelMode/PopupOptionsLevelModeTest.test';
+import PopupCommonOptionsLevelModeTest from './popupLevelMode/PopupCommonOptionsLevelModeTest.test';
+import CustomPopupOptionsLevelModeTest from './popupLevelMode/CustomPopupOptionsLevelModeTest.test';
+import BaseDialogOptionsDisplayModeInSubWindowTest from
+  './dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow.test';
 
-export default function testsuite() {
-  popupTest();
-  PopupNodeTest();
-  CustomPopupOptionsTest();
-  PopupCommonTest();
-  PopupOptionsTest();
-  TipsOptionsTest();
+export default function testsuite(): void {
+  PopupOptionsSystemMaterialTest();
+  CustomPopupOptionsSystemMaterialTest();
+  PopupCommonOptionsSystemMaterialTest();
+  SheetOptionsSystemMaterialTest();
+  TipsOptionsSystemMaterialTest();
+  PopupOptionsColorModeTest();
+  PopupCommonOptionsColorModeTest();
+  CustomPopupOptionsColorModeTest();
+  PopupOptionsLevelModeTest();
+  PopupCommonOptionsLevelModeTest();
+  CustomPopupOptionsLevelModeTest();
+  BaseDialogOptionsDisplayModeInSubWindowTest();
 }

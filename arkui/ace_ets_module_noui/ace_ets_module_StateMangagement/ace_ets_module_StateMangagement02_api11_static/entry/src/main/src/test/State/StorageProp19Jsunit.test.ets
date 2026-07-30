@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -92,11 +75,11 @@ export default function StorageProp19Jsunit() {
 it('StorageProp19Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0200] START');
       let driver = Driver.create()
-      let button_son1 = await driver.findComponent(ON.id('button1'));
+      let button_son1 = await driver.findComponent(ON.id('StorageProp19_button1'));
       await (button_son1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('button1');
+      let strJson1 = inspector.getInspectorByKey('StorageProp19_button1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp19Jsunit_static_0200] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
@@ -114,11 +97,11 @@ it('StorageProp19Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
 it('StorageProp19Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0300] START');
       let driver = Driver.create()
-      let button_son1 = await driver.findComponent(ON.id('button2'));
+      let button_son1 = await driver.findComponent(ON.id('StorageProp19_button2'));
       await (button_son1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson2 = inspector.getInspectorByKey('button2');
+      let strJson2 = inspector.getInspectorByKey('StorageProp19_button2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[StorageProp19Jsunit_static_0300] obj2 is: " + JSON.stringify(obj2));
       await CommonFunc.sleep(1000);
@@ -136,11 +119,11 @@ it('StorageProp19Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
 it('StorageProp19Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0400] START');
       let driver = Driver.create()
-      let button_son1 = await driver.findComponent(ON.id('button3'));
+      let button_son1 = await driver.findComponent(ON.id('StorageProp19_button3'));
       await (button_son1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson13 = inspector.getInspectorByKey('button3');
+      let strJson13 = inspector.getInspectorByKey('StorageProp19_button3');
       let obj13 = JSON.parseJsonElement(strJson13);
       console.info("[StorageProp19Jsunit_static_0400] obj13 is: " + JSON.stringify(obj13));
       await CommonFunc.sleep(1000);
@@ -158,11 +141,11 @@ it('StorageProp19Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
 it('StorageProp19Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp19Jsunit_static_0500] START');
       let driver = Driver.create()
-      let button_son1 = await driver.findComponent(ON.id('button4'));
+      let button_son1 = await driver.findComponent(ON.id('StorageProp19_button4'));
       await (button_son1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson24 = inspector.getInspectorByKey('button4');
+      let strJson24 = inspector.getInspectorByKey('StorageProp19_button4');
       let obj24 = JSON.parseJsonElement(strJson24);
       console.info("[StorageProp19Jsunit_static_0500] obj24 is: " + JSON.stringify(obj24));
       await CommonFunc.sleep(1000);

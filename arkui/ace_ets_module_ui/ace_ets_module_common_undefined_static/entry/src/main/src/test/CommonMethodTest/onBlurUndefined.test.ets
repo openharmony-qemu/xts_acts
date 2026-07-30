@@ -1,3 +1,4 @@
+'use static';
 /***
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -84,8 +85,9 @@ export default function onBlurUndefinedTest() {
       await CommonFunc.sleep(2000);
 
       btn1?.click();
+      await CommonFunc.sleep(1000);
       btn2?.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey('commonmethod_onBlur4');
       let onBlurValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('backgroundColor');

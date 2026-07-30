@@ -14,34 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import {
-  Component,
-  Driver,
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { UtilsTest, startAbility } from '../../Util.test';
-
 export default function appendChildTest() {
   describe('appendChildTest', () => {
     beforeAll(async () => {
@@ -87,10 +72,10 @@ it('appendChildTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
       console.info('appendChildTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('appendChild_1'));
+      let button = await driver.findComponent(ON.id('appendChild' + '_1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('appendChild_width1');
+      let strJson = inspector.getInspectorByKey('appendChild' + '_width1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[appendChildTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width1: 50');
@@ -113,7 +98,7 @@ it('appendChildTest_static_0200', Level.LEVEL2, async (done: () => void): Promis
       let button = await driver.findComponent(ON.id('insertChildAfter_1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('appendChild_width1');
+      let strJson = inspector.getInspectorByKey('appendChild' + '_width1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[appendChildTest_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width1: 0');
@@ -138,7 +123,7 @@ it('appendChildTest_static_0300', Level.LEVEL2, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('appendChild_width1');
+      let strJson = inspector.getInspectorByKey('appendChild' + '_width1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[appendChildTest_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width1: 0');
@@ -161,7 +146,7 @@ it('appendChildTest_static_0400', Level.LEVEL2, async (done: () => void): Promis
       let button = await driver.findComponent(ON.id('clearChild_1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('appendChild_width1');
+      let strJson = inspector.getInspectorByKey('appendChild' + '_width1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[appendChildTest_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width1: 130');

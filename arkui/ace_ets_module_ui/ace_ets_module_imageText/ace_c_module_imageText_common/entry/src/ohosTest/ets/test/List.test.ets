@@ -14,10 +14,32 @@
  */
 import TextEnumTest from "./TextCommonTest/TextCommonEnum.test"
 import TextAreaEnumTest from "./TextAreaTest/TextAreaEnum.test"
+import TextAreaGradientTest from "./TextAreaTest/TextAreaGradient.test"
 import TextInputEnumTest from "./TextInputTest/TextInputEnum.test"
+import TextInputGradientTest from "./TextInputTest/TextInputGradient.test"
+import RichEditorPunctuationOverflowTest from "./RichEditorTest/RichEditorPunctuationOverflow.test"
+import RichEditorScrollToVisibleTest from "./RichEditorTest/RichEditorScrollToVisible.test"
+import TextPunctuationOverflowTest from "./TextCommonTest/TextPunctuationOverflow.test"
+import TextInputPunctuationOverflowTest from "./TextInputTest/TextInputPunctuationOverflow.test"
+import TextAreaPunctuationOverflowTest from "./TextAreaTest/TextAreaPunctuationOverflow.test"
+import TextTailIndentsTest from "./TextCommonTest/TextTailIndents.test"
+import ParagraphStyleTailIndentsTest from "./TextCommonTest/ParagraphStyleTailIndents.test"
+import LinearGradientTest from "./StyledStringTest/LinearGradient.test"
+import RadialGradientTest from "./StyledStringTest/RadialGradient.test"
 
 export default function testsuite() {
   TextEnumTest();
   TextAreaEnumTest();
+  TextAreaGradientTest();
   TextInputEnumTest();
+  TextInputGradientTest();
+  RichEditorPunctuationOverflowTest();
+  RichEditorScrollToVisibleTest();
+  TextPunctuationOverflowTest();
+  TextInputPunctuationOverflowTest();
+  TextAreaPunctuationOverflowTest();
+  TextTailIndentsTest();
+  ParagraphStyleTailIndentsTest();
+  LinearGradientTest();
+  RadialGradientTest();
 }

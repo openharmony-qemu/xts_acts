@@ -37,7 +37,7 @@ const ExpectTrue = (n: boolean) => {
 
 const HTTP_URL_BAIDU: string = "http://www.baidu.com";
 const HTTP_URL: string = "http://localhost:9999";
-const HTTP_URL_ERROR: string = "https://aaaa.com";
+const HTTP_URL_ERROR: string = "https://smtest.moyufangge.com";
 
 // 通用request的head
 const HEADER = { "aaaaa": "" } as Record<string, string>;

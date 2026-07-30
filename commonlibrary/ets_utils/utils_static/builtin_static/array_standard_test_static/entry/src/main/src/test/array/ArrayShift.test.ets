@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,7 @@ class Person087 {
   }
 }
 
-export default function ArrayShiftTest() {
+export default function ArrayShiftTest(): void {
   describe('ArrayShiftTest', () => {
     beforeAll(() => {
     });

@@ -16,6 +16,7 @@
 import usbMgr from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import CheckEmptyUtils from './CheckEmptyUtils.js';
+import { isFilteredDevice } from './FilterUtils';
 import parameter from '@ohos.systemparameter';
 import { BusinessError } from '@ohos.base'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
@@ -209,7 +210,8 @@ async function callControlTransferEx(pip: usbMgr.USBDevicePipe, controlParam: us
 }
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
-  gDeviceList = usbMgr.getDevices();
+  let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+  gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usbMgr.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -224,7 +226,8 @@ export default function UsbDevicePipeTest() {
       console.log(TAG, '*************Usb Unit UsbDevicePipeTest Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -242,7 +245,8 @@ export default function UsbDevicePipeTest() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test Case*************');
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(TAG, 'beforeEach return getDevices : ' + JSON.stringify(gDeviceList));
       console.info(TAG, 'beforeEach return connectDevice gPipe : ' + JSON.stringify(gPipe));
     })

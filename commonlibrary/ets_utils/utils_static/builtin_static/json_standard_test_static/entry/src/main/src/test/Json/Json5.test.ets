@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1103,7 +1104,7 @@ class UserProfile {
     }
 }
 
-export default function Json5Test() {
+export default function Json5Test(): void {
   describe('Json5Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -1210,7 +1211,7 @@ export default function Json5Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ZeroWidthCharObj = JSON.parse<ZeroWidthCharObj>(jsonStr,Type.from<ZeroWidthCharObj>()) as ZeroWidthCharObj;
+      const parsedObj: ZeroWidthCharObj = JSON.parse<ZeroWidthCharObj>(jsonStr,Class.from<ZeroWidthCharObj>()) as ZeroWidthCharObj;
 
       expect(parsedObj.text.withJoiner).assertEqual("a\u200Db");
       expect(parsedObj.text.withSpace).assertEqual("x\u200By");
@@ -1233,7 +1234,7 @@ export default function Json5Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: SpecialCharConfigObj = JSON.parse<SpecialCharConfigObj>(jsonStr, Type.from<SpecialCharConfigObj>()) as SpecialCharConfigObj;
+      const parsedObj: SpecialCharConfigObj = JSON.parse<SpecialCharConfigObj>(jsonStr, Class.from<SpecialCharConfigObj>()) as SpecialCharConfigObj;
 
       expect(parsedObj.settings.api_endpoint).assertEqual("https://api.example.com/v1");
       expect(parsedObj.settings.nested.timeout_ms).assertEqual(5000);
@@ -1338,7 +1339,7 @@ export default function Json5Test() {
           return Math.max(0, Math.min(100, value as number));
         }
         return value;
-      },Type.from<ValueRangeCheckObj>()) as ValueRangeCheckObj;
+      },Class.from<ValueRangeCheckObj>()) as ValueRangeCheckObj;
       expect(parsedObj.settings.volume).assertEqual(100);
       expect(parsedObj.settings.brightness).assertEqual(0);
     });
@@ -1428,7 +1429,7 @@ export default function Json5Test() {
       const jsonStr: string = JSON.stringify(originalObj);
       const parsedObj: MultiLangPunctObj = JSON.parse<MultiLangPunctObj>(jsonStr, (key: string, value: Any) => {
         return value;
-      },Type.from<MultiLangPunctObj>()) as MultiLangPunctObj;
+      },Class.from<MultiLangPunctObj>()) as MultiLangPunctObj;
 
       expect(parsedObj.messages.fr).assertEqual("Bonjour ! Comment allez-vous ?");
       expect(parsedObj.messages.zh).assertEqual("你好！你怎么样？");
@@ -1458,7 +1459,7 @@ export default function Json5Test() {
           return { text: (v as CharCount).text, count: c } as CharCount;
         }
         return v;
-      },Type.from<CharCount>()) as CharCount;
+      },Class.from<CharCount>()) as CharCount;
       expect(parsed.count).assertEqual(2);
     });
 
@@ -1481,7 +1482,7 @@ export default function Json5Test() {
           return { text: (v as StringReplace).text, replaced: r } as StringReplace;
         }
         return v;
-      },Type.from<StringReplace>()) as StringReplace;
+      },Class.from<StringReplace>()) as StringReplace;
       expect(parsed.replaced).assertEqual("xbc");
     });
 

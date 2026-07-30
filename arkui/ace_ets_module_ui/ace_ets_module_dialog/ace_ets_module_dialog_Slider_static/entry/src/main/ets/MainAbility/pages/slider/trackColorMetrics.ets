@@ -1,3 +1,4 @@
+'use static';
 
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -15,7 +16,7 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, TextPicker, Color,
-  ColorMetrics, Scroll, SliderChangeMode, Slider, SliderOptions, $r, SliderStyle } from '@ohos.arkui.component'
+  Scroll, SliderChangeMode, Slider, SliderOptions, $r, SliderStyle } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { ColorMetrics, ColorSpace, ColorMetricsLinearGradient, ResourceColor, LinearGradient,  } from '@kit.ArkUI'
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';

@@ -522,7 +522,6 @@ int VideoEncodeApi0500Test()
     if (cap) {
         venc_ = OH_VideoEncoder_CreateByName(g_codecName);
         ASSERT_NE(nullptr, venc_);
-
         format = OH_AVFormat_Create();
         ASSERT_NE(nullptr, format);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
@@ -535,8 +534,6 @@ int VideoEncodeApi0500Test()
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Reset(venc_));
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Reset(venc_));
         return 0;
-    } else {
-        return -1;
     }
     return 0;
 }
@@ -1028,6 +1025,64 @@ int VideoEncodeApiDual0400()
         ASSERT_NE(nullptr, vencCodec);
         OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0500()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        const char *mime = nullptr;
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_CreatePrimaryWithPreproc(nullptr, &vencCodec));
+        ASSERT_EQ(nullptr, vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0600()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVCodec *primaryVencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreatePrimaryWithPreproc(
+                OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec));
+        ASSERT_NE(nullptr, primaryVencCodec);
+        OH_AVCodec *secondaryVencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreateSecondaryFromPrimary(
+                primaryVencCodec, &secondaryVencCodec));
+        ASSERT_NE(nullptr, secondaryVencCodec);
+        ASSERT_EQ(AV_ERR_INVALID_VAL,
+            OH_VideoEncoder_CreateSecondaryFromPrimary(
+                primaryVencCodec, &secondaryVencCodec));
+        ASSERT_NE(nullptr, secondaryVencCodec);
+        OH_AVCodec *thirdVencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT,
+            OH_VideoEncoder_CreateSecondaryFromPrimary(
+                primaryVencCodec, &thirdVencCodec));
+        OH_VideoEncoder_Destroy(primaryVencCodec);
+        OH_VideoEncoder_Destroy(secondaryVencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0700()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        const char *mime = "";
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_CreatePrimaryWithPreproc(mime, &vencCodec));
+        ASSERT_EQ(nullptr, vencCodec);
         return 0;
     } else {
         return 0;

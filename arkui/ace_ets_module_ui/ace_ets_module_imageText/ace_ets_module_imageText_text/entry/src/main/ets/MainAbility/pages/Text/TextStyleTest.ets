@@ -29,6 +29,7 @@ struct Text_ellipsisMode {
     Column({space:5}) {
       Text('TextDataDetectorType.EMAIL')
         .id('TextKeyAllNUMBER8898888888')
+        .key('TextKeyAllNUMBER8898888888')
         .textAlign(TextAlign.End)
         .fontSize(12)
         .border({width:1})

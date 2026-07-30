@@ -22,6 +22,7 @@ struct imageRenderModeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageRenderModeUndefined')
+            .key('imageRenderModeUndefined')
             .renderMode(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageRenderModeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageRenderModeNull')
+            .key('imageRenderModeNull')
             .renderMode(null)
             .border({ width:2, color: Color.Black })
             .width(150)

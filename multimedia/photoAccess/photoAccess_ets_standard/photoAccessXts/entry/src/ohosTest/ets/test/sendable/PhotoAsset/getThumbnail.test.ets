@@ -22,7 +22,8 @@ import {
   driveFn,
   pushCreateAsset,
   LOG_TAG,
-  getSendableFileAsset
+  getSendableFileAsset,
+  waitForLcdSizePopulateds
 } from '../../common';
 import common from '@ohos.app.ability.common';
 import { photoAccessHelper, sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
@@ -104,6 +105,7 @@ export default function sendableGetThumbnailTest() {
       await getPermission();
       await driveFn();
       await pushCreateAsset(testContext, fileNameList);
+      await waitForLcdSizePopulateds(fileNameList, 15000);
     });
 
     beforeEach(() => {

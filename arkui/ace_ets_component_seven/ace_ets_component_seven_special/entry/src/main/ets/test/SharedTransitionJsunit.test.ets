@@ -92,7 +92,7 @@ export default function sharedTransitionJsunit() {
       } catch (err) {
         console.info("sharedTransitionTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("sharedTransitionTest_0100 click result is: " + JSON.stringify(sendEventByKey('Navigator', 10, "")));
+      console.info("sharedTransitionTest_0100 click result is: " + JSON.stringify(sendEventByKey('sharedTransition_Navigator', 10, "")));
       await Utils.sleep(2000);
       console.info('sharedTransitionTest_0100 END');
       done();

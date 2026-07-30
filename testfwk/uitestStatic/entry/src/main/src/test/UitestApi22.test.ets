@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -447,7 +448,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.text,${elementInfo.text}`);
@@ -503,7 +504,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.text,${elementInfo.text}`);
@@ -560,7 +561,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
@@ -615,7 +616,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
         isCallBack = true;
       }
@@ -655,7 +656,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.text,${elementInfo.text}`);
@@ -712,7 +713,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
@@ -769,7 +770,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
@@ -824,7 +825,7 @@ export default function uitestDriverTestApi22(): void {
       expect(scrollBar != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
         isCallBack = true;
       }
@@ -867,7 +868,7 @@ export default function uitestDriverTestApi22(): void {
       expect(nextPageBtn != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.text,${elementInfo.text}`);
@@ -928,7 +929,7 @@ export default function uitestDriverTestApi22(): void {
       expect(nextPageBtn != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
@@ -990,7 +991,7 @@ export default function uitestDriverTestApi22(): void {
       expect(nextPageBtn != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
@@ -1050,7 +1051,7 @@ export default function uitestDriverTestApi22(): void {
       expect(nextPageBtn != null).assertTrue();
       let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = async (elementInfo : UIElementInfo): void => {
+      let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
         isCallBack = true;
       }

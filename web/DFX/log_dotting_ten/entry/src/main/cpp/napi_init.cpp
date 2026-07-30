@@ -91,6 +91,12 @@ napi_value test_ndk_setActiveWebEngineVersionEvergreen132(napi_env env, napi_cal
     return nullptr;
 } 
 
+napi_value test_ndk_setActiveWebEngineVersionEvergreen144(napi_env env, napi_callback_info info)
+{
+OH_NativeArkWeb_SetActiveWebEngineVersion(ArkWebEngineVersion::ARKWEB_M144);
+return nullptr;
+}
+
 static napi_value IsActiveWebEngineEvergreen_c(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -116,6 +122,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "test_ndk_getActiveWebEngineVersion", nullptr, test_ndk_getActiveWebEngineVersion, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen", nullptr, test_ndk_setActiveWebEngineVersionEvergreen, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen114", nullptr, test_ndk_setActiveWebEngineVersionEvergreen114, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "test_ndk_setActiveWebEngineVersionEvergreen144", nullptr, test_ndk_setActiveWebEngineVersionEvergreen144, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen132", nullptr, test_ndk_setActiveWebEngineVersionEvergreen132, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "IsActiveWebEngineEvergreen_c", nullptr, IsActiveWebEngineEvergreen_c, nullptr, nullptr, nullptr, napi_default, nullptr },
     };

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,7 @@ import hilog from '@ohos.hilog';
 import { NativeEmbedParamStatus } from '@ohos.arkui.component'
 
 export default function WebOnNativeEmbedObjectParamChange() {
-  describe('ActsAceWebOnNativeEmbedObjectParamChange', ():void => {
+  describe('ActsAceWebOnNativeEmbedObjectParamChangeAdapt001', ():void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
       await Utils.msSleep(2000)

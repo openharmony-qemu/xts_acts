@@ -30,7 +30,6 @@ import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 import { BusinessError } from '@ohos.base';
 
-let componentUtils = new ComponentUtils()
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -152,7 +151,7 @@ it('comSizeAbilityTestJsunit_static_06', Level.LEVEL0, async (done: () => void):
       let Scale = modePosition.scale
       let Rotate = modePosition.rotate
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Checkbox_Size'));
+      let button = await driver.findComponent(ON.id('comSizeAbilityTest_02_Checkbox_Size'));
       let rect = await (button!.getBounds() as Promise<Rect>)
       console.info("[comSizeAbilityTestJsunit_static_06] component rect is: " + JSON.stringify(rect))
       console.info("[comSizeAbilityTestJsunit_static_06] component Size is: " + JSON.stringify(Size))

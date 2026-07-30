@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +18,7 @@ import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } fr
 import Utils from './Util.test';
 import { ArrayList } from '@kit.ArkTS';
 
-export default function DateTestCase004() {
+export default function DateTestCase004(): void {
   describe('DateTestCase004', () => {
     beforeEach(async () => {
       await Utils.msSleep(30);
@@ -592,7 +593,7 @@ export default function DateTestCase004() {
 }
 
 
-export function testDSTInTimezone(timeZone: string, dates: string[]) {
+export function testDSTInTimezone(timeZone: string, dates: string[]): void {
   let res: Array<number | string> = new Array<number | string>();
   console.log(`=== 测试时区: ${timeZone} ===`);
 

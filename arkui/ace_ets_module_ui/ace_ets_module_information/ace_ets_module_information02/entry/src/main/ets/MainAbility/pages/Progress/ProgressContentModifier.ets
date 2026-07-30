@@ -29,6 +29,7 @@ function myProgress(config: ProgressConfiguration) {
 
   Column({ space: 30 }) {
     Text('Current progress is：' + config.value + '/' + config.total).fontSize(20).id('ProgressContentModifier_total')
+    .key('ProgressContentModifier_total')
     Row() {
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         Path()

@@ -22,6 +22,7 @@ struct TextContentAlignTest {
         Column(){
           Text('这是一个长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长')
           .id('textTop')
+          .key('textTop')
           .backgroundColor(Color.Green)
           .fontColor(Color.Yellow)
           .width(160)
@@ -32,6 +33,7 @@ struct TextContentAlignTest {
           
           Text('这是一个长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长')
           .id('textCenter')
+          .key('textCenter')
           .backgroundColor(Color.Green)
           .fontColor(Color.Yellow)
           .width(160)
@@ -42,6 +44,7 @@ struct TextContentAlignTest {
 
           Text('这是一个长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长')
           .id('textBottom')
+          .key('textBottom')
           .backgroundColor(Color.Green)
           .fontColor(Color.Yellow)
           .width(160)

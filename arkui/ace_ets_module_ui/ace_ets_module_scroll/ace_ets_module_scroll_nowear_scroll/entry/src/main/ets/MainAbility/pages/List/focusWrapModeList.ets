@@ -41,27 +41,27 @@ struct focusWrapModeList {
       List() {
         ListItem() {
           Text('text1')
-            .key('text1')
+            .key('focusWrapModeList_text1')
             .focusable(true)
             .tabIndex(1)
         }
         ListItem() {
           Text('text2')
-            .key('text2')
+            .key('focusWrapModeList_text2')
             .focusable(false)
         }
         ListItem() {
           Text('text3')
-            .key('text3')
+            .key('focusWrapModeList_text3')
             .focusable(true)
         }
         ListItem() {
           Text('text4')
-            .key('text4')
+            .key('focusWrapModeList_text4')
             .focusable(true)
         }
       }
-      .key('list5')
+      .key('focusWrapModeList_list5')
       .focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW)
       .lanes(2)
       .scrollBar(BarState.Off)

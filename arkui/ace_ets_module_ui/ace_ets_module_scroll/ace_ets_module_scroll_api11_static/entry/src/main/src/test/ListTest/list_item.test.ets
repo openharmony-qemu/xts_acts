@@ -90,7 +90,7 @@ export default function list_itemOnSelectJsunit() {
 it('testlist_itemOnSelect_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('ListItem');
+      let strJson = inspector.getInspectorByKey('list_item' + '_ListItem');
       console.info("[testlist_itemOnSelect_static_0001] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('ListItem');
@@ -112,7 +112,7 @@ it('testlist_itemOnSelect_static_0001', Level.LEVEL1, async (done: () => void): 
 it('testlist_itemOnSelect_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0002 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('ListItem');
+      let strJson = inspector.getInspectorByKey('list_item' + '_ListItem');
       console.info("[testlist_itemOnSelect_static_0002] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('ListItem');
@@ -133,7 +133,7 @@ it('testlist_itemOnSelect_static_0002', Level.LEVEL1, async (done: () => void): 
 it('testlist_itemOnSelect_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0003 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('ListItem');
+      let strJson = inspector.getInspectorByKey('list_item' + '_ListItem');
       console.info("[testlist_itemOnSelect_static_0003] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('ListItem');

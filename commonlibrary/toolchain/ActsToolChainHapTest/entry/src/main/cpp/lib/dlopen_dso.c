@@ -13,9 +13,9 @@
  * limitations under the License.
  */
  
-int g_i = 1;
+int gI = 1;
 
-void F(void)
+void Func(void)
 {
-    g_i++;
+    gI++;
 }

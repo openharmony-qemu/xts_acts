@@ -13,40 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  DataChangeListener,
-  DataOperation,
-  LazyForEach,
-  IDataSource,
-  DataOperationType,
-  Scroller,
-  Color,
-  BarState,
-  Alignment,
-  Margin,
-  Reusable,
-  ReuseObject
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  StorageLink,
-  PropRef,
-  PropRef
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, DataChangeListener, DataOperation, LazyForEach, IDataSource, DataOperationType, Scroller, Color, BarState, Alignment, Margin, Reusable, ReuseObject } from '@ohos.arkui.component';
+import { State, Watch, Link, StorageLink, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 export class MyDataSource0427 implements IDataSource<string> {
   private dataArray: string[] = new Array<string>()

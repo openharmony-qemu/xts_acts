@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2022-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index"
-export default function etsIntlFunTest() {
+export default function etsIntlFunTest(): void {
     describe('etsIntlFunTest', (): void => {
         console.log('*************start IntlTest*************');
         let newDate = new Date((24. * 60 * 60 * 1000).toLong() * (52 * 365 + 9 * 30 + 23));

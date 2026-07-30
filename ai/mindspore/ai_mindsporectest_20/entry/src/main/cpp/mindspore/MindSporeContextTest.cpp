@@ -124,7 +124,7 @@ napi_value CallBackParamTest_001(napi_env env, napi_callback_info info)
     printf("==========FillModelInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     printf("==========Model Predict Callback==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_KernelCallBack before_call_back = PrintBeforeCallback;
     OH_AI_KernelCallBack after_call_back = PrintAfterCallback;
     OH_AI_Status predict_ret = OH_AI_ModelPredict(model, inputs, &outputs, before_call_back, after_call_back);
@@ -157,7 +157,7 @@ napi_value CallBackParamTest_002(napi_env env, napi_callback_info info)
     printf("==========FillModelInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     printf("==========Model Predict Callback==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_KernelCallBack before_call_back = PrintBeforeCallback;
     OH_AI_KernelCallBack after_call_back = PrintAfterCallback;
     OH_AI_Status predict_ret = OH_AI_ModelPredict(model, inputs, &outputs, before_call_back, after_call_back);
@@ -190,7 +190,7 @@ napi_value CallBackParamTest_003(napi_env env, napi_callback_info info)
     printf("==========FillModelInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     printf("==========Model Predict Callback==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_KernelCallBack before_call_back = PrintBeforeCallback;
     OH_AI_KernelCallBack after_call_back = PrintAfterCallback;
     OH_AI_Status predict_ret = OH_AI_ModelPredict(model, inputs, &outputs, before_call_back, after_call_back);
@@ -255,8 +255,8 @@ napi_value TensorGetAllocatorTest_001(napi_env env, napi_callback_info info)
         const size_t MAX_DIMS = PARAM_10;
         int64_t shape[MAX_DIMS];
         size_t shape_num;
-        OH_AI_TensorHandleArray in_tensor_array;
-        OH_AI_TensorHandleArray out_tensor_array;
+        OH_AI_TensorHandleArray in_tensor_array = {0, nullptr};
+        OH_AI_TensorHandleArray out_tensor_array = {0, nullptr};
         in_tensor_array.handle_num = inputs_handle.handle_num;
         in_tensor_array.handle_list = (OH_AI_TensorHandle *)malloc(sizeof(OH_AI_TensorHandle)
                                                                    * in_tensor_array.handle_num);
@@ -300,8 +300,8 @@ napi_value TensorSetAllocatorTest_001(napi_env env, napi_callback_info info)
         const size_t MAX_DIMS = PARAM_10;
         int64_t shape[MAX_DIMS];
         size_t shape_num;
-        OH_AI_TensorHandleArray in_tensor_array;
-        OH_AI_TensorHandleArray out_tensor_array;
+        OH_AI_TensorHandleArray in_tensor_array = {0, nullptr};
+        OH_AI_TensorHandleArray out_tensor_array = {0, nullptr};
         in_tensor_array.handle_num = inputs_handle.handle_num;
         in_tensor_array.handle_list = (OH_AI_TensorHandle *)malloc(sizeof(OH_AI_TensorHandle)
                                                                    * in_tensor_array.handle_num);

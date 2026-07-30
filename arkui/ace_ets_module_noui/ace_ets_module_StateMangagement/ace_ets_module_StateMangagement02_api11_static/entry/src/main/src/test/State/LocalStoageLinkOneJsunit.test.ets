@@ -13,39 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
-import events_emitter from '@ohos.events.emitter'
-// import config from '@ohos.accessibility.config';
+import events_emitter from '@ohos.events.emitter';
 import accessibility from '@ohos.accessibility';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -172,7 +154,7 @@ it('LocalStoageLinkOneJsunit_static_0400', Level.LEVEL0, async (done: () => void
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('localstorage:2,storLink2:2');
 
       let driver = Driver.create()
-      let button_changeInitialValue = await driver.findComponent(ON.id('button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(ON.id('LocalStoageLinkOne_button_changeInitialValue'));
       await (button_changeInitialValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -181,7 +163,7 @@ it('LocalStoageLinkOneJsunit_static_0400', Level.LEVEL0, async (done: () => void
       console.info("[LocalStoageLinkOneJsunit_static_0400] obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('localstorage:12,storLink2:12');
 
-      let button_changeLocalStorageValue = await driver.findComponent(ON.id('button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(ON.id('LocalStoageLinkOne_button_changeLocalStorageValue'));
       await (button_changeLocalStorageValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

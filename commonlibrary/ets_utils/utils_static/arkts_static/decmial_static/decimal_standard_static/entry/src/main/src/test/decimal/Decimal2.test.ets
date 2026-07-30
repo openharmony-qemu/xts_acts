@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,7 @@ import {
 } from '../../../../hypium/index';
 import { Decimal } from '@kit.ArkTS';
 
-export default function DecimalTest() {
+export default function DecimalTest(): void {
   describe('DecimalTest', (): void => {
 
     /**

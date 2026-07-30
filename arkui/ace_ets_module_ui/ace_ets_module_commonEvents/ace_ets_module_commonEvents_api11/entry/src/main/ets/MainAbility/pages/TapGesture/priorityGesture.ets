@@ -41,7 +41,7 @@ struct GestureSettingsExample {
           }
         })
       )
-        .key('tapGesture')
+        .key('priorityGesture_tapGesture')
     }
     .height(200)
     .width(300)

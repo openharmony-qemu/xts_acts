@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import inputMethod from '@ohos.inputMethod'
-import InputMethodSubtype from '@ohos.InputMethodSubtype'
-import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel'
+import inputMethod from '@ohos.inputMethod';
+import InputMethodSubtype from '@ohos.InputMethodSubtype';
+import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function inputMethodTest() {
@@ -47,7 +47,12 @@ export default function inputMethodTest() {
                 console.info('%{public}s', 'BusinessError  end');
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.inputmethodtest.static")
+            let cmd = "aa start -a EntryAbility -b com.acts.inputmethodtest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000)
             console.info('%{public}s', 'beforeAll end');
         })

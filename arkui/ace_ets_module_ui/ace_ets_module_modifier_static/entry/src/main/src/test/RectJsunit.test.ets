@@ -136,7 +136,7 @@ it('testrect_static_radiusWidth', Level.LEVEL0, async (done: () => void): Promis
 it('testrect_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testrect_static_001 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('rect' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

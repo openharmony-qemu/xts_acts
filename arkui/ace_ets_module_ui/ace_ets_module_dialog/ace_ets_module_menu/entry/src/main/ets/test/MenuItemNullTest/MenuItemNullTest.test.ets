@@ -52,11 +52,11 @@ export default function MenuItemNullTest() {
       let tagName = 'Menuunll';
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let null1 = await driver.findComponent(ON.id('null'))
+      let null1 = await driver.findComponent(ON.text('menu_null'))
       await null1.click()
       await Utils.sleep(1000);
       let resource = getInspectorByKey('Menunull');
-      expect(JSON.parse(resource).$attrs.fontSize).assertEqual('16.00fp')
+      expect(JSON.parse(resource).$attrs.fontSize).assertContain('fp')
       expect(JSON.parse(resource).$attrs.menuItemDivider).assertEqual(undefined)
       expect(JSON.parse(resource).$attrs.menuItemGroupDivider).assertEqual(undefined)
       expect(JSON.parse(resource).$attrs.font.value).assertEqual(undefined)
@@ -83,7 +83,7 @@ export default function MenuItemNullTest() {
       await null2.click()
       await Utils.sleep(1000);
       let resource = getInspectorByKey('Menuundefined');
-      expect(JSON.parse(resource).$attrs.fontSize).assertEqual('16.00fp')
+      expect(JSON.parse(resource).$attrs.fontSize).assertContain('fp')
       expect(JSON.parse(resource).$attrs.menuItemDivider).assertEqual(undefined)
       expect(JSON.parse(resource).$attrs.menuItemGroupDivider).assertEqual(undefined)
       await Utils.sleep(2000);

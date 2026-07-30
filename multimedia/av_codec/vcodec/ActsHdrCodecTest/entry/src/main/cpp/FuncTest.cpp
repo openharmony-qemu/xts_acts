@@ -53,7 +53,8 @@ namespace HdrCodec {
 int HdrFunc0010()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_PQ_VIVID_INPUT_FILE_PATH;
@@ -85,7 +86,8 @@ int HdrFunc0010()
 int HdrFunc0020()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
@@ -117,7 +119,8 @@ int HdrFunc0020()
 int HdrFunc0030()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = HDR_PQ_VIVID_INPUT_FILE_PATH;
@@ -147,7 +150,8 @@ int HdrFunc0030()
 int HdrFunc0040()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
@@ -177,7 +181,8 @@ int HdrFunc0040()
 int HdrFunc0050()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
@@ -210,7 +215,8 @@ int HdrFunc0050()
 int HdrFunc0060()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
@@ -243,7 +249,8 @@ int HdrFunc0060()
 int HdrFunc0070()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
@@ -276,7 +283,8 @@ int HdrFunc0070()
 int HdrFunc0080()
 {
     cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;

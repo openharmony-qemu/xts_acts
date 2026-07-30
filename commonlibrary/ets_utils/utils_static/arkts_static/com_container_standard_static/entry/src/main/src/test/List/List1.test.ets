@@ -1,3 +1,4 @@
+'use static';
 import {
   describe,
   beforeAll,
@@ -34,7 +35,7 @@ class Temp {
   name: string = ""
 }
 
-export default function ArkListTest() {
+export default function ArkListTest(): void {
   describe('arkListTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

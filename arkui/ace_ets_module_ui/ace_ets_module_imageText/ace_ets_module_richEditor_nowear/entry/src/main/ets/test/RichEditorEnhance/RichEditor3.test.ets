@@ -176,6 +176,9 @@ export default function RichEditor3() {
       await driver.delayMs(500)
       let quanxuan = await driver.findComponent(ON.text("全选"));
       await quanxuan.click()
+      await driver.delayMs(500)
+      await driver.triggerKey(2070);
+      await driver.delayMs(500)
       let getSelection = await driver.findComponent(ON.id("getSelection"));
       await getSelection.click()
       await driver.delayMs(500)

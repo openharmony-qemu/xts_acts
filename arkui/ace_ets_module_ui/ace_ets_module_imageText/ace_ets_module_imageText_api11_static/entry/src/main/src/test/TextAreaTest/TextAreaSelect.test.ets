@@ -81,7 +81,7 @@ export default function TextAreaSelectTest() {
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('TextAreaSelect_Button_1', 10, "")
       await CommonFunc.sleep(5000)
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
 
       console.info(`${SUITE} ${CASE} END`);
@@ -116,7 +116,7 @@ export default function TextAreaSelectTest() {
       })
 
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
       await driver.delayMs(waitUiReadyMs)
 
@@ -145,7 +145,7 @@ export default function TextAreaSelectTest() {
       })
 
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("3");
       await driver.delayMs(waitUiReadyMs)
 
@@ -173,7 +173,7 @@ export default function TextAreaSelectTest() {
       })
 
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("3");
       await driver.delayMs(waitUiReadyMs)
 
@@ -200,7 +200,7 @@ export default function TextAreaSelectTest() {
       })
 
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("6");
       await driver.delayMs(waitUiReadyMs)
 
@@ -229,7 +229,7 @@ export default function TextAreaSelectTest() {
 
       await CommonFunc.sleep(1000);
 
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("6");
       await driver.delayMs(waitUiReadyMs)
@@ -257,7 +257,7 @@ export default function TextAreaSelectTest() {
       })
 
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("6");
       await driver.delayMs(waitUiReadyMs)
@@ -287,7 +287,7 @@ export default function TextAreaSelectTest() {
 
       await CommonFunc.sleep(1000);
 
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("6");
       await driver.delayMs(waitUiReadyMs)
@@ -316,7 +316,7 @@ export default function TextAreaSelectTest() {
     //   })
     //   await CommonFunc.sleep(1000);
     //
-    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
     //
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //   await driver.delayMs(waitUiReadyMs)
@@ -345,7 +345,7 @@ export default function TextAreaSelectTest() {
     //
     //   await CommonFunc.sleep(1000);
     //
-    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
     //
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //   await driver.delayMs(waitUiReadyMs)
@@ -375,7 +375,7 @@ export default function TextAreaSelectTest() {
     //   })
     //   await CommonFunc.sleep(1000);
     //
-    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
     //
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //   await driver.delayMs(waitUiReadyMs)
@@ -405,7 +405,7 @@ export default function TextAreaSelectTest() {
     //
     //   await CommonFunc.sleep(1000);
     //
-    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_1');
+    //   let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_1');
     //
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //   await driver.delayMs(waitUiReadyMs)
@@ -429,7 +429,7 @@ export default function TextAreaSelectTest() {
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('TextAreaSelect_Button_13', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_2');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_2');
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("0");
       await driver.delayMs(waitUiReadyMs)
@@ -457,7 +457,7 @@ export default function TextAreaSelectTest() {
       inspector.sendEventByKey('TextAreaSelect_Button_14', 10, "")
       await driver.delayMs(waitUiReadyMs)
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_3');
+      let strJson: string = inspector.getInspectorByKey('TextAreaSelect' + '_TextArea_3');
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("10");
       await driver.delayMs(waitUiReadyMs)

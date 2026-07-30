@@ -107,7 +107,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button1')
+        .key('animate_button1')
         .onClick((e: ClickEvent) => {
           try {
             let dataP: Record<String,RecordData> = {
@@ -137,7 +137,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button11')
+        .key('animate_button11')
         .onClick((e: ClickEvent) => {
           let dataP1: Record<String,RecordData> = {
             "duration": this.duration,
@@ -167,7 +167,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button12')
+        .key('animate_button12')
         .onClick((e: ClickEvent) => {
           try {
             let dataP2: Record<String,RecordData> = {
@@ -196,7 +196,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button2')
+        .key('animate_button2')
         .onClick((e: ClickEvent) => {
           try {
             let dataP3: Record<String,RecordData> = {
@@ -225,7 +225,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button3')
+        .key('animate_button3')
         .onClick((e: ClickEvent) => {
           try {
             let dataP4: Record<String,RecordData> = {
@@ -254,7 +254,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button13')
+        .key('animate_button13')
         .onClick((e: ClickEvent) => {
           try {
             let dataP5: Record<String,RecordData> = {
@@ -283,7 +283,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button4')
+        .key('animate_button4')
         .onClick((e: ClickEvent) => {
           try {
             let dataP6: Record<String,RecordData> = {
@@ -312,7 +312,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button14')
+        .key('animate_button14')
         .onClick((e: ClickEvent) => {
           try {
             let dataP7: Record<String,RecordData> = {
@@ -341,7 +341,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button5')
+        .key('animate_button5')
         .onClick((e: ClickEvent) => {
           try {
             let dataP8: Record<String,RecordData> = {
@@ -370,7 +370,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button15')
+        .key('animate_button15')
         .onClick((e: ClickEvent) => {
           try {
             let dataP9: Record<String,RecordData> = {
@@ -399,7 +399,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button6')
+        .key('animate_button6')
         .onClick((e: ClickEvent) => {
           try {
             let dataP10: Record<String,RecordData> = {
@@ -428,7 +428,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button7')
+        .key('animate_button7')
         .onClick((e: ClickEvent) => {
           try {
             let dataP11: Record<String,RecordData> = {
@@ -457,7 +457,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button8')
+        .key('animate_button8')
         .onClick((e: ClickEvent) => {
           try {
             let dataP12: Record<String,RecordData> = {
@@ -486,7 +486,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button9')
+        .key('animate_button9')
         .onClick((e: ClickEvent) => {
           try {
             let dataP13: Record<String,RecordData> = {
@@ -515,7 +515,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button10')
+        .key('animate_button10')
         .onClick((e: ClickEvent) => {
           try {
             let dataP14: Record<String,RecordData> = {
@@ -544,7 +544,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button111')
+        .key('animate_button111')
         .onClick((e: ClickEvent) => {
           try {
             let dataP15: Record<String,RecordData> = {
@@ -573,7 +573,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button121')
+        .key('animate_button121')
         .onClick((e: ClickEvent) => {
           try {
             let dataP16: Record<String,RecordData> = {
@@ -602,7 +602,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button131')
+        .key('animate_button131')
         .onClick((e: ClickEvent) => {
           try {
             let dataP17: Record<String,RecordData> = {
@@ -631,7 +631,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button141')
+        .key('animate_button141')
         .onClick((e: ClickEvent) => {
           try {
             let dataP18: Record<String,RecordData> = {
@@ -660,7 +660,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor('0x317aff')
         .margin({ bottom: 20 } as Margin)
-        .key('button151')
+        .key('animate_button151')
         .onClick((e: ClickEvent) => {
           try {
             let dataP19: Record<String,RecordData> = {

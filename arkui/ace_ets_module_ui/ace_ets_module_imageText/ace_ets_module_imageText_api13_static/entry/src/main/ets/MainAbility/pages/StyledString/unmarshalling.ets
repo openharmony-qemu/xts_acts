@@ -53,7 +53,7 @@ struct UnmarshallingErrorCode401 {
       Button(this.serializeStr)
         .id('Unmarshalling_button')
         .width('90%').height('5%').margin(1)
-        // .onClick(async (e: ClickEvent): void =>{
+        // .onClick(async (e: ClickEvent): Promise<void> =>{
         .onClick((e: ClickEvent): void =>{
           this.flag = !this.flag
           if (!this.flag) {

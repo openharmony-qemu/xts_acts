@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,9 +31,6 @@ const domain: int = 0x0000;
 const tag = 'testTag'
 let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 
-type AbilityCallbackFn = (ability: Any) => void;
-type WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => void;
-
 class CustomApplicationStateChangeCallback implements ApplicationStateChangeCallback {
   public isForeground: boolean = false;
   public isBackground: boolean = false;
@@ -50,38 +48,81 @@ class CustomApplicationStateChangeCallback implements ApplicationStateChangeCall
   }
 }
 
-class MyInteropAbilityLifecycleCallback implements InteropAbilityLifecycleCallback {
-  public isForeground: boolean = false;
-  public isBackground: boolean = false;
+let isForeground: boolean = false;
+let isBackground: boolean = false;
 
-  onAbilityCreate: AbilityCallbackFn = (ability: Any) => {
+let interopAbilityLifecycleCallback: InteropAbilityLifecycleCallback = {
+  onAbilityCreate: (ability: Any) => {
     hilog.info(domain, tag, 'onAbilityCreate');
-  };
-
-  onWindowStageCreate: WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => {
+  },
+  onWindowStageCreate: (ability: Any, windowStage: window.WindowStage) => {
     hilog.info(domain, tag, 'onWindowStageCreate');
-  };
-
-  onWindowStageDestroy: WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => {
+  },
+  onWindowStageDestroy: (ability: Any, windowStage: window.WindowStage) => {
     hilog.info(domain, tag, 'onWindowStageDestroy');
-  };
-
-  onAbilityDestroy: AbilityCallbackFn = (ability: Any) => {
+  },
+  onAbilityDestroy: (ability: Any) => {
     hilog.info(domain, tag, 'onAbilityDestroy');
-  };
-
-  onAbilityForeground: AbilityCallbackFn = (ability: Any) => {
+  },
+  onAbilityForeground: (ability: Any) => {
     hilog.info(domain, tag, 'onAbilityForeground');
-    this.isForeground = true;
-    this.isBackground = false;
-  };
-
-  onAbilityBackground: AbilityCallbackFn = (ability: Any) => {
+    isForeground = true;
+    isBackground = false;
+  },
+  onAbilityBackground: (ability: Any) => {
     hilog.info(domain, tag, 'onAbilityBackground');
-    this.isForeground = false;
-    this.isBackground = true;
-  };
-}
+    isForeground = false;
+    isBackground = true;
+  },
+  onAbilityContinue: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityContinue');
+  },
+  onWindowStageInactive: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageInactive');
+  },
+  onWindowStageActive: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageActive');
+  },
+  onNewWant: (ability: Any) => {
+    hilog.info(domain, tag, 'onNewWant');
+  },
+  onAbilityWillBackground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillBackground');
+  },
+  onAbilityWillForeground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillForeground');
+  },
+  onAbilityWillCreate: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillCreate');
+  },
+  onWindowStageWillDestroy: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillDestroy');
+  },
+  onAbilityWillDestroy: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillDestroy');
+  },
+  onWindowStageRestore: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageRestore');
+  },
+  onAbilitySaveState: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilitySaveState');
+  },
+  onAbilityWillContinue: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillContinue');
+  },
+  onAbilityWillSaveState: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillSaveState');
+  },
+  onWillNewWant: (ability: Any) => {
+    hilog.info(domain, tag, 'onWillNewWant');
+  },
+  onWindowStageWillCreate: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillCreate');
+  },
+  onWindowStageWillRestore: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillRestore');
+  },
+};
 
 export default function LifeCycleLinstenerStaticTest() {
 
@@ -104,7 +145,12 @@ export default function LifeCycleLinstenerStaticTest() {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator!.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       uiAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       applicationContext = uiAbilityContext?.getApplicationContext();
@@ -160,7 +206,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertTrue();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertTrue();
@@ -219,7 +270,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();
@@ -277,7 +333,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();
@@ -304,11 +365,10 @@ export default function LifeCycleLinstenerStaticTest() {
         const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100`;
         hilog.info(domain, tag, `${itName} start`);
         try {
-          let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
           hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
-          applicationContext?.onInteropAbilityLifecycle(cb)
+          applicationContext?.onInteropAbilityLifecycle(interopAbilityLifecycleCallback)
           hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
-          applicationContext?.offInteropAbilityLifecycle(cb);
+          applicationContext?.offInteropAbilityLifecycle(interopAbilityLifecycleCallback);
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
@@ -331,8 +391,7 @@ export default function LifeCycleLinstenerStaticTest() {
         const itName = `SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200`;
         hilog.info(domain, tag, `${itName} start`);
         try {
-          let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
-          applicationContext?.offInteropAbilityLifecycle(cb);
+          applicationContext?.offInteropAbilityLifecycle(interopAbilityLifecycleCallback);
           expect().assertFail()
           done()
         } catch (err) {
@@ -357,9 +416,8 @@ export default function LifeCycleLinstenerStaticTest() {
         const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300`;
         hilog.info(domain, tag, `${itName} start`);
         try {
-          let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
           hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
-          applicationContext?.onInteropAbilityLifecycle(cb)
+          applicationContext?.onInteropAbilityLifecycle(interopAbilityLifecycleCallback)
           hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
           applicationContext?.offInteropAbilityLifecycle();
         } catch (err) {

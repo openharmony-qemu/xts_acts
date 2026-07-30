@@ -55,7 +55,12 @@ async function startAbility(want: Want) {
 export default function StartSpecifiedProcessTest() {
   describe('ActsAbilityTest', () => {
     afterEach(async (done:Function) => {
-      await abilityDelegator.executeShellCommand('aa start -b com.example.actsspecifiedprocess -a TestAbility');
+      let cmd = 'aa start -b com.example.actsspecifiedprocess -a TestAbility';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await sleep(500);
       done();
     });

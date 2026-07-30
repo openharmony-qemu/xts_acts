@@ -15,21 +15,19 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
-import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
-import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext'
-import hilog from '@ohos.hilog'
+import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
 let domain: Int = 0x0000;
@@ -84,15 +82,15 @@ it('testAlignContentEndFlexFixedMarginSatisfy_static', Level.LEVEL0, async () =>
         name: 'margin', value: 10
       })
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
-      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_flex001');
-      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_1');
-      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_2');
-      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_3');
-      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_4');
+      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
+      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_1');
+      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_2');
+      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_3');
+      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_4');
 
       console.log('AlignContent_End_FlexP_Fixed_Margin_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_flex001));
@@ -142,13 +140,13 @@ it('testAlignContentEndFlexFixedMarginNoSatisfy_static', Level.LEVEL0, async () 
         name: 'margin', value: 100
       })
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
-      let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_flex001');
-      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_1');
-      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_2');
-      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_3');
-      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_4');
+      let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
+      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_1');
+      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_2');
+      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_3');
+      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_4');
 
       console.log('AlignContent_End_FlexP_Fixed_Margin_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_flex002))

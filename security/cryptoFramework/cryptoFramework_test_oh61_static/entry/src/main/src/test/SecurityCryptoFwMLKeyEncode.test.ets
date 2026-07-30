@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -43,7 +44,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let priKeyPem: string = keyPair.priKey.getEncodedPem("PKCS8");
         expect(priKeyPem.indexOf("BEGIN PRIVATE KEY") >= 0).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Encoding_Func_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Encoding_Func_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -71,7 +72,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let priKeyPem: string = keyPair.priKey.getEncodedPem("PKCS8");
         expect(priKeyPem.indexOf("BEGIN PRIVATE KEY") >= 0).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_DSA_Encoding_Func_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_Encoding_Func_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -106,7 +107,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.clearMem();
         keyPair.priKey.getEncoded();
       } catch (error) {
-        console.error(`[XTS] Key_Interface_Func_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Key_Interface_Func_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -138,7 +139,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(keyPair.priKey.format).assertEqual("PKCS#8");
         expect(keyPair.priKey.algName).assertEqual("ML-DSA");
       } catch (error) {
-        console.error(`[XTS] Key_Interface_Func_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] Key_Interface_Func_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -162,7 +163,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.clearMem();
         keyPair.priKey.getEncoded();
       } catch (error) {
-        console.error(`[XTS] PriKey_Interface_Func_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] PriKey_Interface_Func_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -189,7 +190,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let ret: boolean = compareUint8Array(originalPubKeyData, derivedPubKeyData);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] PriKey_Interface_Func_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] PriKey_Interface_Func_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -216,7 +217,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let ret: boolean = compareUint8Array(originalPubKeyData, derivedPubKeyData);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] PriKey_Interface_Func_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] PriKey_Interface_Func_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -238,7 +239,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.RSA_N_BN);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetAsyKeySpec_Error_0100_pub ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetAsyKeySpec_Error_0100_pub ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
@@ -247,7 +248,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.RSA_SK_BN);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetAsyKeySpec_Error_0100_pri ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetAsyKeySpec_Error_0100_pri ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -269,7 +270,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_X_BN);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetAsyKeySpec_Error_0200_pub ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetAsyKeySpec_Error_0200_pub ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
@@ -278,7 +279,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_SK_BN);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetAsyKeySpec_Error_0200_pri ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetAsyKeySpec_Error_0200_pri ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -304,7 +305,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.getEncodedPem("PKCS8", config);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] PriKey_EncryptPem_Error_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] PriKey_EncryptPem_Error_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -330,7 +331,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.getEncodedPem("PKCS8", config);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] PriKey_EncryptPem_Error_0200_256 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] PriKey_EncryptPem_Error_0200_256 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
@@ -343,7 +344,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         keyPair.priKey.getEncodedPem("PKCS1", config2);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] PriKey_EncryptPem_Error_0200_128 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] PriKey_EncryptPem_Error_0200_128 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -374,7 +375,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         await mlkemGen.convertPemKey(mlkemPubPem, encryptedRsaPem, "test123");
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0100_async ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0100_async ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -404,7 +405,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         await mldsaGen.convertPemKey(mldsaPubPem, encryptedRsaPem, "test123");
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0200 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0200 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -428,7 +429,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         await mlkemGen.convertPemKey(pubPem, priPem, "test123");
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mlkem ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mlkem ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
@@ -439,7 +440,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         await mldsaGen.convertPemKey(pubPem, priPem, "test123");
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mldsa ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mldsa ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
@@ -470,7 +471,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let pemPubKey: string = keyPair.pubKey.getEncodedPem("X509");
         expect(pemPubKey.indexOf("BEGIN PUBLIC KEY") >= 0).assertTrue();
       } catch (error) {
-        console.error(`[XTS] Encoding_Roundtrip_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] Encoding_Roundtrip_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -499,7 +500,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         let ret: boolean = compareUint8Array(rawPubKey1, rawPubKey2);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] Encoding_Roundtrip_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] Encoding_Roundtrip_0200 ${error}`);
         expect(null).assertFail();
       }
       done();

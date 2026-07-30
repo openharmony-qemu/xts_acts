@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import fs from '@ohos.file.fs';
 
 const TAG = 'ImageExifMetadataStaticTest:'
 
-export default function ImageExifMetadataStaticTest() {
+export default function ImageExifMetadataStaticTest() : void {
   let filesDir: string | undefined | null;
   let filePath: string = '';
   let fdNumber: int;

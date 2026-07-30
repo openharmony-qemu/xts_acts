@@ -226,7 +226,7 @@ export default function ActsOANoPermissionTest() {
         try {
           let osAccountManager = osAccount.getAccountManager();
           console.info(tag + "start checkOsAccountActivated");
-          let data = await osAccountManager.checkOsAccountActivated(101);
+          let data = await osAccountManager.checkOsAccountActivated(999);
           console.info(tag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
@@ -286,7 +286,7 @@ export default function ActsOANoPermissionTest() {
         try {
           let osAccountManager = osAccount.getAccountManager();
           console.info(tag + "start checkOsAccountConstraintEnabled");
-          let data = await osAccountManager.checkOsAccountConstraintEnabled(101, "constraint.wifi");
+          let data = await osAccountManager.checkOsAccountConstraintEnabled(999, "constraint.wifi");
           console.info(tag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
@@ -346,7 +346,7 @@ export default function ActsOANoPermissionTest() {
         try {
           let osAccountManager = osAccount.getAccountManager();
           console.info(tag + "start checkOsAccountVerified");
-          let data = await osAccountManager.checkOsAccountVerified(101);
+          let data = await osAccountManager.checkOsAccountVerified(999);
           console.info(tag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();

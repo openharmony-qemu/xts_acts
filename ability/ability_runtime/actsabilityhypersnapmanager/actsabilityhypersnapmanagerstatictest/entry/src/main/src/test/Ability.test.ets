@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,6 +40,10 @@ export default function abilityTest() {
         }
       })
       let cmd = 'aa start -a EntryAbility -b com.acts.actsabilityhypersnapmanagertest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       await abilityDelegator.executeShellCommand(cmd).then((result:ShellCmdResult|undefined): void => {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.stdResult ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.exitCode ?? '');

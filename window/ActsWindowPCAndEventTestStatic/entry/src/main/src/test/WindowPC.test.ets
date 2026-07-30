@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -115,6 +116,93 @@ export default function WindowPCTest() {
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
         })
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_static_0100
+         * @tc.name       test_GET_VISIBLEWINDOWINFO_static_0100
+         * @tc.desc       test_GET_VISIBLEWINDOWINFO_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_GET_VISIBLEWINDOWINFO_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_GET_VISIBLEWINDOWINFO_static_0100 ';
+            hilog.info(domain, tag,caseName + 'begin');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
+            try {
+                let windowClass2:window.Window = windowStageStart.getMainWindowSync();
+                let res:window.WindowProperties = windowClass2.getWindowProperties()
+                hilog.info(domain, tag,caseName + 'res: ' + JSON.stringify(res));
+                await window.getVisibleWindowInfo().then(async (infos: Array<window.WindowInfo>) => {
+                    hilog.info(domain, tag,caseName + 'Succeeded in calling getVisibleWindowInfo.');
+                    hilog.info(domain, tag,caseName + `infos.length: ${infos.length}`);
+                    expect(infos.length).assertLargerOrEqual(1);
+                    let isExit:boolean = false;
+                    for (let i = 0; i < infos.length; i++) {
+                        if (infos[i].windowId === res.id) {
+                            isExit = true;
+                            let info = infos[i];
+                            hilog.info(domain, tag,caseName + 'info: ' + JSON.stringify(info));
+                            hilog.info(domain, tag,caseName + `info.windowStatusType: ${info.windowStatusType}`);
+                            hilog.info(domain, tag,caseName + `info.bundleName: ${info.bundleName}`);
+                            hilog.info(domain, tag,caseName + `info.abilityName: ${info.abilityName}`);
+                            hilog.info(domain, tag,caseName + `info.globalDisplayRect: ${info.globalDisplayRect}`);
+                            hilog.info(domain, tag,caseName + `info.isFocused: ${info.isFocused}`);
+
+                            hilog.info(domain, tag,caseName + `res.windowRect.left: ${res.windowRect.left}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.top: ${res.windowRect.top}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.width: ${res.windowRect.width}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.height: ${res.windowRect.height}`);
+                            expect(info.rect.left).assertEqual(res.windowRect.left);
+                            expect(info.rect.top).assertEqual(res.windowRect.top);
+                            expect(info.rect.width).assertEqual(res.windowRect.width);
+                            expect(info.rect.height).assertEqual(res.windowRect.height);
+                            expect(info!.globalDisplayRect!.left).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.top).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.width).assertLarger(0);
+                            expect(info!.globalDisplayRect!.height).assertLarger(0);
+                            expect(info!.globalRect!.left).assertEqual(res.windowRect.left);
+                            expect(info!.globalRect!.top).assertEqual(res.windowRect.top);
+                            expect(info!.globalRect!.width).assertEqual(res.windowRect.width);
+                            expect(info!.globalRect!.height).assertEqual(res.windowRect.height);
+                            expect(info!.displayId).assertEqual(0);
+                            expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
+                            expect(info!.abilityName !== null).assertTrue();
+                            expect(info!.windowId).assertLargerOrEqual(0);
+                            expect(info!.windowStatusType !== null).assertTrue();
+                            expect(info!.isFocused === true || info!.isFocused === false).assertTrue();
+                            break;
+                        }
+                    }
+                    if (!isExit) {
+                        hilog.error(domain, tag,`${caseName} failed, there is no match windowId.`);
+                        await terminateAbility(caseName);
+                        expect(false).assertTrue();
+                        done()
+                    }
+                    await terminateAbility(caseName);
+                    done();
+                }).catch(async (err: Error) => {
+                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
+                    await terminateAbility(caseName);
+                    expect(err.message!=null).assertTrue();
+                    if (err.code === 801) {
+                        hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
+                        done()
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    
+                });
+            } catch (err) {
+                err = err as BusinessError;
+                await terminateAbility(caseName);
+                hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
 
         /**
          * @tc.number     SUB_WMS_START_MOVING_REPEAT_0100
@@ -276,7 +364,7 @@ export default function WindowPCTest() {
                         (subWin! as window.Window).recover().then(async () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
                             expect(false).assertTrue();
-                        }).catch((err: Error):Promise<void>  => {
+                        }).catch((err: Error): void  => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
                         });
@@ -288,7 +376,7 @@ export default function WindowPCTest() {
                     }
                     })().awaitSync()
                 })
-                .catch((err: Error):Promise<void> => {
+                .catch((err: Error): void => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -313,7 +401,7 @@ export default function WindowPCTest() {
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
                     done();
-                }).catch((err: Error):Promise<void> => {
+                }).catch((err: Error): void => {
                     if (err!.code === 801 || err!.code === 1300001) {
                         hilog.info(0x0000, '[ANI]',msgStr + ' The current device type does not support calling recover or recover not support ')
                         done();
@@ -2630,7 +2718,7 @@ export default function WindowPCTest() {
                     console.info(caseName + ' Succeeded in setting window support modes');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
                     await terminateAbility(caseName);
                     if (err.code === 801) {
@@ -3004,14 +3092,15 @@ export default function WindowPCTest() {
         });
 
         /**
-         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_001
+         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_0001
          * @tc.name      testOnWindowTitleButtonRectChange001
          * @tc.desc      Test onWindowTitleButtonRectChange function.
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level3
          */
-        it('testOnWindowTitleButtonRectChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): void => {
+        it('testOnWindowTitleButtonRectChange001',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnWindowTitleButtonRectChange001';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');

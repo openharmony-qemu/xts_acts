@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ function createLargeSparseArray(): SparseArray<int> {
   return sa;
 }
 
-export default function SparseArrayTest() {
+export default function SparseArrayTest(): void {
   describe('SparseArrayTest', () => {
     beforeAll(() => {
     });

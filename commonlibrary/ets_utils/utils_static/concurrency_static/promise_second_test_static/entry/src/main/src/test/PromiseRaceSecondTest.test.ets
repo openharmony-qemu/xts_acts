@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2025 HiHope Open Source Organization.
+ * Copyright (C) 2025-2026 HiHope Open Source Organization.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import { sleep } from '../testability/pages/TestUtils';
 
-export default function PromiseRaceSecondTest() {
+export default function PromiseRaceSecondTest(): void {
   describe('PromiseRaceSecondTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

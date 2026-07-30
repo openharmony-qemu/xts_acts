@@ -27,6 +27,7 @@ let uiContext: common.UIAbilityContext;
 let isSupportHdr: Boolean;
 let isSupportHEIFDecode: boolean;
 let isSupportHEICEncode: boolean;
+let isSupportedTiff: boolean = true;
 const READ_FAILED = 7700202;
 const UNSUPPORTED_IMAGE_FORMATS = 7700102;
 const PROPERTY_NOT_EXIST = 7700204;
@@ -117,6 +118,9 @@ export default function ImageExifGetModifyByTypeNDK() {
       isSupportHdr = !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
         display.getDefaultDisplaySync().hdrFormats.length != 0;
       isSupportHEICEncode = image.createImagePacker().supportedFormats.includes("image/heic");
+      let formats = await image.getImageSourceSupportedFormats();
+      isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
       console.info('beforeAll case');
     });
     beforeEach(() => {
@@ -6337,6 +6341,11 @@ export default function ImageExifGetModifyByTypeNDK() {
       */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
@@ -6374,6 +6383,11 @@ export default function ImageExifGetModifyByTypeNDK() {
       */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;

@@ -19,4 +19,9 @@
 // 字体路径常量
 constexpr const char* TEST_FONT_PATH = "/system/fonts/HarmonyOS_Sans.ttf";
 
+// 字体属性测试常量
+constexpr bool BOOL_TRUE_VALUE = true;
+constexpr bool BOOL_FALSE_VALUE = false;
+constexpr int INVALID_ATTR_ID = 9999;
+
 #endif

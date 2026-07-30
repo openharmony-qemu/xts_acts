@@ -55,7 +55,7 @@ export default function commonBackgroundBlurStyleJsunits() {
     beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'pages/common',
+        url: 'MainAbility/pages/common',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -88,7 +88,7 @@ export default function commonBackgroundBlurStyleJsunits() {
 it('testcommonBackgroundBlurStyle_static_001', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('borderImageText');
+      let strJson = inspector.getInspectorByKey('common_borderImageText');
       console.info("[testcommonBackgroundBlurStyle001] component borderImage strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -124,7 +124,7 @@ it('testcommonBackgroundBlurStyle_static_001', Level.LEVEL0, async () => {
 it('testcommonBackgroundBlurStyle_static_002', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('tabIndexText');
+      let strJson = inspector.getInspectorByKey('common_tabIndexText');
       console.info("[testcommonBackgroundBlurStyle002] component tabIndex strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -144,7 +144,7 @@ it('testcommonBackgroundBlurStyle_static_002', Level.LEVEL0, async () => {
 it('testcommonBackgroundBlurStyle_static_003', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('sepiaText');
+      let strJson = inspector.getInspectorByKey('common_sepiaText');
       console.info("[testcommonBackgroundBlurStyle003] component sepia strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -163,7 +163,7 @@ it('testcommonBackgroundBlurStyle_static_003', Level.LEVEL0, async () => {
 it('testcommonBackgroundBlurStyle_static_004', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('alignRulesText');
+      let strJson = inspector.getInspectorByKey('common_alignRulesText');
       console.info("[testcommonBackgroundBlurStyle004] component alignRules strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -191,7 +191,7 @@ it('testcommonBackgroundBlurStyle_static_004', Level.LEVEL0, async () => {
 it('testcommonBackgroundBlurStyle_static_005', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('backgroundBlurStyleText');
+      let strJson = inspector.getInspectorByKey('common_backgroundBlurStyleText');
       console.info("[testcommonBackgroundBlurStyle005] component backgroundBlurStyle strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').tryGetElement('backgroundBlurStyle')).assertEqual(undefined);
@@ -211,7 +211,7 @@ it('testcommonBackgroundBlurStyle_static_006', Level.LEVEL0, async () => {
       try {
         console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
         console.info("common onKeyEvent click result is: " +
-        JSON.stringify(inspector.sendEventByKey('onKeyEventButton', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('common_onKeyEventButton', 10, "")));
       } catch (error) {
         expect().assertFail();
       }
@@ -228,7 +228,7 @@ it('testcommonBackgroundBlurStyle_static_006', Level.LEVEL0, async () => {
 it('testcommonHoverEffectHighlight_static_0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('hoverEffectText');
+      let strJson = inspector.getInspectorByKey('common_hoverEffectText');
       console.info("[testcommonHoverEffectHighlight0001] component hoverEffect strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').tryGetString('hoverEffect')).assertEqual(undefined);
@@ -247,7 +247,7 @@ it('testcommonHoverEffectHighlight_static_0001', Level.LEVEL0, async () => {
 it('testcommonHoverEffectScale_static_0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('hoverEffectScaleText');
+      let strJson = inspector.getInspectorByKey('common_hoverEffectScaleText');
       console.info("[testcommonHoverEffectScale0001] component hoverEffect strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').tryGetString('hoverEffect')).assertEqual(undefined);
@@ -266,7 +266,7 @@ it('testcommonHoverEffectScale_static_0001', Level.LEVEL0, async () => {
 it('testcommonhitTestBehavior_static_0001', Level.LEVEL0, async () => {
       console.info('commonhitTestBehavior testcommonhitTestBehavior0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('hoverEffectScaleText');
+      let strJson = inspector.getInspectorByKey('common_hoverEffectScaleText');
       console.info("[testcommonhitTestBehavior0001] component hoverEffect strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').tryGetString('hoverEffect')).assertEqual(undefined);

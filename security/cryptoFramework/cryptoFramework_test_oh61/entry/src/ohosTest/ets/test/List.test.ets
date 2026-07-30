@@ -18,6 +18,8 @@ import SecurityCryptoFwMLKeyGenTestUnit from "./SecurityCryptoFwMLKeyGen.test";
 import SecurityCryptoFwMLKeyConvertTestUnit from "./SecurityCryptoFwMLKeyConvert.test";
 import SecurityCryptoFwMLConvertErrorTestUnit from "./SecurityCryptoFwMLConvertError.test";
 import SecurityCryptoFwMLKeyEncodeTestUnit from "./SecurityCryptoFwMLKeyEncode.test";
+import SecurityCryptoMLEncapAndDecapTestUnit from "./SecurityCryptoMLEncapAndDecap.test";
+import SecurityCryptoMLSignVerifyTestUnit from "./SecurityCryptoMLSignVerify.test";
 
 
 export default function testsuite() {
@@ -27,4 +29,6 @@ export default function testsuite() {
   SecurityCryptoFwMLKeyConvertTestUnit();
   SecurityCryptoFwMLConvertErrorTestUnit();
   SecurityCryptoFwMLKeyEncodeTestUnit();
+  SecurityCryptoMLEncapAndDecapTestUnit();
+  SecurityCryptoMLSignVerifyTestUnit();
 }

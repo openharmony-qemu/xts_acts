@@ -77,7 +77,7 @@ struct Summarizer {
           result(AISessionResultType.RUNNING, char);
         },
         () => {
-          result(AISessionResultType.SUCCESS, "");
+          result(AISessionResultType.FAILURE, "");
         });
     },
     onDestroyAISession: (id: string): void => {
@@ -112,7 +112,7 @@ struct Summarizer {
       Utils.emitEvent('onCreateAISession', 20250425);
       console.info(`lichenwei: PROOFREADER onCreateAISession, id = ${id}, params = ${params}`)
       setTimeout(() => {
-        result(AISessionResultType.SUCCESS, 'lichenwei: PROOFREADER onCreateAISession, success')
+        result(AISessionResultType.FAILURE, 'lichenwei: PROOFREADER onCreateAISession, success')
       }, 1000)
       return true
     },

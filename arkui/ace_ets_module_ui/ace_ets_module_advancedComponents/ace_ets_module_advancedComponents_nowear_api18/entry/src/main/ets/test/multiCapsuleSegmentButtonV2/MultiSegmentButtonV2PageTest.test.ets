@@ -314,7 +314,7 @@ export default function MultiSegmentButtonV2PageTest() {
       let jsonOption: string = JSON.stringify(common1.$attrs.backgroundBlurStyle);
 
       expect(jsonOption)
-        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
+        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1,"blurOption":"[0,0]"}}');
       console.log("[MultiSegmentButtonV2PageTest_011] END");
       done();
     })
@@ -342,7 +342,7 @@ export default function MultiSegmentButtonV2PageTest() {
       let jsonOption: string = JSON.stringify(common1.$attrs.backgroundBlurStyle);
 
       expect(jsonOption)
-        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
+        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1,"blurOption":"[0,0]"}}');
       console.log("[MultiSegmentButtonV2PageTest_012] END");
       done();
     })

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -14,14 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index'
 import { HashMap } from '@kit.ArkTS';
-
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
+import Utils from '../Util.test';
 
 export default function HashMapTest02Test(): void {
   describe('hashMapTest02Test', () => {
@@ -34,7 +28,7 @@ export default function HashMapTest02Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

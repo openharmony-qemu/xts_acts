@@ -71,6 +71,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest001 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'game',
@@ -112,6 +116,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest002 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({
@@ -156,6 +164,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest003 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'normal',
@@ -197,6 +209,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest004 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({
@@ -255,6 +271,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest005 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'xxx',
@@ -295,6 +315,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest006 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'normal',
@@ -330,6 +354,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest007 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({
@@ -371,6 +399,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest008 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'game',
@@ -409,6 +441,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest009 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({
@@ -450,6 +486,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest010 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'normal',
@@ -489,6 +529,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest011 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({
@@ -542,6 +586,10 @@ describe("SensorJsTest_sensor_31", function () {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest012 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeLight({
                         interval: 'xxx',
@@ -580,6 +628,10 @@ describe("SensorJsTest_sensor_31", function () {
            sensor.getSingleSensor(LightId ,(error, data) => {
                 if (error) {
                     console.info('subscribeLight_SensorJsTest013 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeLight({

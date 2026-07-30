@@ -17,12 +17,13 @@
 #include "functionalext.h"
 
 extern "C" int __cxa_atexit(void (*func)(void *), void *arg, void *dso);
-const int32_t INVALID_LEN = -1;
-const int32_t INIT_LEN = 0;
-const int32_t INCREASE_LEN = 1;
-const int32_t COUNT = 32;
-const int32_t SLOT_LEN = 10;
-void ExitFunc(void *arg){};
+static const int32_t ATEXIT_INVALID_LEN = -1;
+static const int32_t ATEXIT_INIT_LEN = 0;
+static const int32_t ATEXIT_INCREASE_LEN = 1;
+static const int32_t ATEXIT_COUNT = 32;
+static const int32_t ATEXIT_SLOT_LEN = 10;
+static void ExitFunc(void *arg)
+{};
 
 /**
  * @tc.name:      cxa_atexit_0100
@@ -32,7 +33,7 @@ void ExitFunc(void *arg){};
 void CxaAtexit0100(void)
 {
     int32_t ret = __cxa_atexit(ExitFunc, nullptr, nullptr);
-    EXPECT_EQ("cxa_atexit_0100", ret, INIT_LEN);
+    EXPECT_EQ("cxa_atexit_0100", ret, ATEXIT_INIT_LEN);
 }
 
 /**
@@ -42,10 +43,10 @@ void CxaAtexit0100(void)
  */
 void CxaAtexit0200(void)
 {
-    int32_t slot = SLOT_LEN;
-    int32_t var = INIT_LEN;
+    int32_t slot = ATEXIT_SLOT_LEN;
+    int32_t var = ATEXIT_INIT_LEN;
     int32_t ret = __cxa_atexit(ExitFunc, &var, nullptr);
-    EXPECT_LT("cxa_atexit_0200", slot + INCREASE_LEN, COUNT);
+    EXPECT_LT("cxa_atexit_0200", slot + ATEXIT_INCREASE_LEN, ATEXIT_COUNT);
     EXPECT_EQ("cxa_atexit_0200", ret, 0);
 }
 
@@ -56,10 +57,10 @@ void CxaAtexit0200(void)
  */
 void CxaAtexit0300(void)
 {
-    int32_t slot = COUNT;
+    int32_t slot = ATEXIT_COUNT;
     int32_t var = 0;
     int32_t ret = __cxa_atexit(ExitFunc, &var, nullptr);
-    EXPECT_EQ("cxa_atexit_0300", slot, COUNT);
+    EXPECT_EQ("cxa_atexit_0300", slot, ATEXIT_COUNT);
     EXPECT_EQ("cxa_atexit_0300", ret, 0);
 }
 

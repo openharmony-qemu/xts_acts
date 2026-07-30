@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,11 +38,11 @@ export default function SystemDateTimeJsunitStaticTest() {
      */
     it('SUB_systemDateTime_getTimezone_JS_API_Static_0100', Level.LEVEL2, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, "====>SUB_systemDateTime_getTimezone_JS_API_Static_0100 start");
-      await systemDateTime.getTimezone().then( (data: string) : Promise<string> => {
+      await systemDateTime.getTimezone().then( (data: string) : void => {
         hilog.info(domain, tag, "SUB_systemDateTime_getTimezone_JS_API_Static_0100 data = " + data);
         expect(data != null).assertTrue();
         done();
-      }).catch((error: Error): Promise<string> => {
+      }).catch((error: Error): void => {
         expect().assertFail();
         done();
       });

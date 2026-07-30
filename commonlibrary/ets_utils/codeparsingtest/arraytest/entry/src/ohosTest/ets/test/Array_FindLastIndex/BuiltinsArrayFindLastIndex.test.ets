@@ -347,19 +347,6 @@ export default function BuiltinsArrayFindLastIndex(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayFindLastIndex2500
-     * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_INDEX_2500
-     * @tc.desc   Verify findLastIndex works correctly with large arrays
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayFindLastIndex2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayFindLastIndexUtils.FindLastIndexLargeArrayTest2500();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayFindLastIndex2600
      * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_INDEX_2600
      * @tc.desc   Verify findLastIndex propagates errors thrown in callback

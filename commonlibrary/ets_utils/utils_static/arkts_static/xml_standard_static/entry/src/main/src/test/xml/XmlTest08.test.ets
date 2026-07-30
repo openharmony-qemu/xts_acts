@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -15,7 +16,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../hypium/index';
 import { util, xml } from '@kit.ArkTS';
-
+import Utils from '../Util.test';
 
 let  str = "";
 let  isXml = false
@@ -44,14 +45,6 @@ function funcB(name: string, value: string) {
   return true;
 }
 
-async function sleep(count: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, count)
-  })
-}
-
 export default function XmlTest_08(): void {
   describe('XmlTest_08', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -63,7 +56,7 @@ export default function XmlTest_08(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

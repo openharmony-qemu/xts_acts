@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function webJsunitTwo() {
 
-  describe('componentLifeCycleTestOne', (): void => {
+  describe('componentLifeCycleTestOneAdapt001', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
     });

@@ -1,4 +1,5 @@
 import abilityTest from './Ability.test';
+import startAbilityForResultTest from './StartAbilityForResult.test';
 import onConnectParameterTest from './OnConnectParameter.test';
 import onFailedParameterTest from './OnFailedParameter.test';
 import connectNativeParameterTest from './ConnectNativeParameter.test';
@@ -11,12 +12,11 @@ import webExtensionConnectionCallbackOnDisconnectParameterTest from './WebExtens
 import webExtensionConnectionCallbackOnFailedParameterTest from './WebExtensionConnectionCallbackOnFailedParameter.test'
 import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefinedParameter.test'
 import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
-import startAbilityForResultParameterTest from './StartAbilityForResultParameter.test'
-import startAbilityForResultPromiseParameterTest from './StartAbilityForResultPromiseParameter.test'
-import startAbilityForResultReturnTest from './StartAbilityForResultReturn.test'
+import connectionInfoFdParameterTest from './ConnectionInfoFdParameter.test'
 
 export default function testsuite() {
   abilityTest();
+  startAbilityForResultTest();
   onConnectParameterTest();
   onFailedParameterTest();
   connectNativeParameterTest();
@@ -29,7 +29,5 @@ export default function testsuite() {
   webExtensionConnectionCallbackOnFailedParameterTest()
   connectNativeNullUndefinedParameterTest()
   disconnectNativeNullUndefinedParameterTest()
-  startAbilityForResultParameterTest()
-  startAbilityForResultPromiseParameterTest()
-  startAbilityForResultReturnTest()
+  connectionInfoFdParameterTest()
 }

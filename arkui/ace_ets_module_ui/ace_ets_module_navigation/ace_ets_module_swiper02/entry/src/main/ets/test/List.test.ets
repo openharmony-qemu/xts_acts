@@ -24,7 +24,10 @@ import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
 import SwiperAttributeNullUndefined from './SwiperAttributeNullUndefined/SwiperAttributeNullUndefined.test';
 import DigitIndicatorNullUndefined from './SwiperAttributeNullUndefined/DigitIndicatorNullUndefined.test';
 import DotIndicatorNullUndefined from './SwiperAttributeNullUndefined/DotIndicatorNullUndefined.test';
+import SwiperNullUndefined from './SwiperAttributeNullUndefined/SwiperNullUndefined.test';
 import swiperCachedOptions from './swiper/swiperCachedOptions.test';
+import swiperIndicatorIcon from './swiper/swiperIndicatorIcon.test';
+import swiperSystemMaterial from './swiper/swiperSystemMaterial.test';
 
 export default function testsuite() {
   swiperFillPolicy()
@@ -39,5 +42,8 @@ export default function testsuite() {
   SwiperAttributeNullUndefined()
   DigitIndicatorNullUndefined()
   DotIndicatorNullUndefined()
+  SwiperNullUndefined()
   swiperCachedOptions()
+  swiperIndicatorIcon()
+  swiperSystemMaterial()
 }

@@ -1,3 +1,4 @@
+'use static';
 
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
@@ -31,7 +32,7 @@ class TestClass {
   }
 }
 
-export default function SetSymbolIteratorTest() {
+export default function SetSymbolIteratorTest(): void {
   describe('SetSymbolIteratorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

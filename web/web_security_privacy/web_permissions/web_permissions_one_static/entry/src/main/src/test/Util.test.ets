@@ -1,3 +1,4 @@
+'use static';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import webview from '@ohos.web.webview';
@@ -65,7 +66,12 @@ class Utils{
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, start abilityFinished`);
     return true;
   } catch(error) {

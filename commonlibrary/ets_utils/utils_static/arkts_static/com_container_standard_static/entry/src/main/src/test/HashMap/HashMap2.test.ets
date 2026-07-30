@@ -1,3 +1,4 @@
+'use static';
 import {
   describe,
   beforeAll,
@@ -32,7 +33,7 @@ class Temp1 {
 }
 
 
-export default function HashMapTest2() {
+export default function HashMapTest2(): void {
   describe('hashMapTest2', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

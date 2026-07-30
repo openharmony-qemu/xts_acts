@@ -21,3 +21,9 @@ export const GestureInterceptTest: (a: string) => void;
 export const PassThroughTest: (a: string) => void;
 
 export const GetSizeLimitationTest: (a: string) => void;
+
+export const shouldRecognizerParallelWith: (a: string) => void;
+
+export const GetTouchEventData: () => object;
+
+export const ArcListEventCallbackTest: (a: string) => void;

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -151,7 +152,7 @@ export default function TypeValue03Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_long_value_of_0113 start');
-        const testValue = LongValue.of(Number.MAX_SAFE_INTEGER);
+        const testValue = reflect.Value.of(Number.MAX_SAFE_INTEGER);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -170,7 +171,7 @@ export default function TypeValue03Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_long_value_of_0114 start');
-        const testValue = LongValue.of(Number.MIN_SAFE_INTEGER);
+        const testValue = reflect.Value.of(Number.MIN_SAFE_INTEGER);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -190,7 +191,7 @@ export default function TypeValue03Test(): void {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0115 start');
         const testArray: string[] = ['a', 'b', 'c'];
-        const testValue = ArrayValue.of(testArray);
+        const testValue = reflect.Value.of(testArray);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -210,7 +211,7 @@ export default function TypeValue03Test(): void {
         
         console.log(domain, tag, '%{public}s', 'test_ARRAY_VALUE_OF_116 start');
         const testArray: string[] = [];
-        const testValue = ArrayValue.of(testArray);
+        const testValue = reflect.Value.of(testArray);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -230,7 +231,7 @@ export default function TypeValue03Test(): void {
         
         console.log(domain, tag, '%{public}s', 'test_ARRAY_VALUE_OF_117 start');
         const testArray: string[] = ['z'];
-        const testValue = ArrayValue.of(testArray);
+        const testValue = reflect.Value.of(testArray);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -250,7 +251,7 @@ export default function TypeValue03Test(): void {
         
         console.log(domain, tag, '%{public}s', 'test_ARRAY_VALUE_OF_118 start');
         const testArray: string[] = ['A', '1', 'B', '2'];
-        const testValue = ArrayValue.of(testArray);
+        const testValue = reflect.Value.of(testArray);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -273,7 +274,7 @@ export default function TypeValue03Test(): void {
         for (let i = 0; i < 100; i++) {
           testArray.push('x');
         }
-        const testValue = ArrayValue.of(testArray);
+        const testValue = reflect.Value.of(testArray);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();

@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +53,7 @@ import TestTest003 from './regexp2/TestTest003.test';
 import ToStringTest001 from './regexp2/ToStringTest001.test';
 import ToStringTest002 from './regexp2/ToStringTest002.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   RegExpTest001();
   RegExpTest002();
   RegExpTest003();

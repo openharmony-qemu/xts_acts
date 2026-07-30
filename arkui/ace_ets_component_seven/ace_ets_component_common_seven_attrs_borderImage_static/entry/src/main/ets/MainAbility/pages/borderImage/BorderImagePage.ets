@@ -39,7 +39,6 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, GradientDirection, RepeatMode } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
-import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {

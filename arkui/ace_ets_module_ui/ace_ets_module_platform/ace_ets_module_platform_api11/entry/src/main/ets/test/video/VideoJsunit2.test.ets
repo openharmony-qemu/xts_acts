@@ -59,7 +59,7 @@ export default function videoJsunit2() {
     it('testVideo01', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo01] START');
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
       expect(JSON.parse(strJsonNew).$type).assertEqual('Video');
       console.info('[testVideo01] END');
       done();
@@ -91,7 +91,7 @@ export default function videoJsunit2() {
         console.log("[testVideo02] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
       console.info("[testVideo02] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo02] END');
       done();
@@ -123,7 +123,7 @@ export default function videoJsunit2() {
         console.log("[testVideo03] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
       console.info("[testVideo03] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo03] END');
       done();
@@ -155,7 +155,7 @@ export default function videoJsunit2() {
         console.log("[testVideo04] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
       console.info("[testVideo04] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo04] END');
       done();
@@ -187,7 +187,7 @@ export default function videoJsunit2() {
         console.log("[testVideo05] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo05] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo05] END');
@@ -220,7 +220,7 @@ export default function videoJsunit2() {
         console.log("[testVideo06] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo06] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo06] END');
@@ -253,7 +253,7 @@ export default function videoJsunit2() {
         console.log("[testVideo07] change component data error: " + JSON.stringify((err as BusinessError)?.message));
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('video');
+      let strJsonNew = getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo07] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info('[testVideo07] END');

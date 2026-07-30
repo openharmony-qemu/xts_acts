@@ -587,7 +587,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let rootDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_3_PEM);
           let interDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_2_PEM);
           let leafDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -599,7 +599,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -623,7 +623,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let rootDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_3_PEM);
           let interDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_2_PEM);
           let leafDefault2X509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT2_3_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -638,7 +638,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefault2X509CertGm, validatorParams);
+          await validator.validateCert(leafDefault2X509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -665,7 +665,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
 
           let interDefaultX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_DEFAULT_3_2_CRL_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -682,7 +682,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -711,7 +711,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
 
           let interDefaultX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_DEFAULT_3_2_CRL_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -725,7 +725,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -755,7 +755,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let leafX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_1_CRL_PEM);
           let inter1X509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_2_CRL_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [inter3X509CertGm],
             untrustedCerts: [inter1X509CertGm, inter2X509CertGm],
             revokedParams: {
@@ -769,7 +769,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -798,7 +798,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let leafX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_1_CRL_PEM);
           let inter1X509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_2_CRL_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [inter2X509CertGm],
             untrustedCerts: [inter1X509CertGm],
             revokedParams: {
@@ -812,7 +812,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -840,7 +840,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
 
           let leafExpiredX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_1_CRL_EXPIRED_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [inter2X509CertGm],
             untrustedCerts: [inter1X509CertGm],
             revokedParams: {
@@ -852,7 +852,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -880,7 +880,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
 
           let leafYetX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_1_CRL_YET_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [inter2X509CertGm],
             untrustedCerts: [inter1X509CertGm],
             revokedParams: {
@@ -892,7 +892,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -917,7 +917,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let leafX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_1_PEM);
           let leafX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_8_1_CRL_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [leafX509CertGm],
             revokedParams: {
               revocationFlags: [
@@ -928,7 +928,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -952,7 +952,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let rootDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_3_PEM);
           let interDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_2_PEM);
           let leafDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_1_PEM);
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
             revokedParams: {
@@ -966,7 +966,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -998,7 +998,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let leafDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT3_3_1_PEM); // ocsp在线吊销
           for (let index = 0; index < ocspDigests.length; index++) {
             try {
-              let validatorParams: cert.X509CertValidatorParams = {
+              let validatorParams: cert.CertValidationParams = {
                 trustedCerts: [rootDefaultX509CertGm],
                 untrustedCerts: [interDefaultX509CertGm],
                 revokedParams: {
@@ -1011,7 +1011,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
                 }
               };
               let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-              await validator.validate(leafDefaultX509CertGm, validatorParams);
+              await validator.validateCert(leafDefaultX509CertGm, validatorParams);
               expect(null).assertFail();
             } catch (error) {
               console.error(`"${error}", error code: ${error.code}`);
@@ -1043,7 +1043,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let interX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_NO_USERID_3_2_PEM);
           let leafX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_NO_USERID_3_1_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm],
             untrustedCerts: [interX509CertGm],
             revokedParams: {
@@ -1058,7 +1058,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1086,7 +1086,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let rootX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_NO_USERID_REVOKED_CRL_3_3_PEM);
           let interX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_NO_USERID_REMOVE_CRL_3_2_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm],
             untrustedCerts: [interX509CertGm],
             revokedParams: {
@@ -1104,7 +1104,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1132,7 +1132,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           let rootX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_NO_USERID_REVOKED_CRL_3_3_PEM);
           let interX509CrlGm: cert.X509CRL = await createX509CrlPem(CHAIN_SM2_NO_USERID_REMOVE_CRL_3_2_PEM);
 
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm],
             untrustedCerts: [interX509CertGm],
             revokedParams: {
@@ -1150,7 +1150,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);

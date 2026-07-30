@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function ChipOptionsLabelTest() {
+export default function ChipOptionsLabelTest(): void {
   describe('ChipOptionsLabelTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipOptionsLabelTest beforeEach start");

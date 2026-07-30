@@ -1,3 +1,4 @@
+'use static';
 import { Level, Size, TestType, beforeAll, describe, it, beforeEach } from '../../../hypium/index'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -28,7 +29,12 @@ export default function webViewControllerPart2() {
         console.log("BusinessError  end")
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.actsaceopenwebpageenhancedtestthree.static")
+      let cmd = "aa start -a EntryAbility -b com.open.harmony.actsaceopenwebpageenhancedtestthree.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
 

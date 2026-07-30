@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function BuiltinsNullLiteralTest0900() {
   let TAG='BuiltinsNullLiteralTest'

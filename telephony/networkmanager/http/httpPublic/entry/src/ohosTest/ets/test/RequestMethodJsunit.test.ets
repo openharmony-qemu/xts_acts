@@ -429,7 +429,7 @@ export default function requestMethodJsunit() {
           connectTimeout: 60000
         };
         let httpRequest = http.createHttp();
-        httpRequest.request('https://httpbin.org/anything', httpRequestOptions, (err, data) => {
+        httpRequest.request('https://httpbin.moyufangge.com/anything', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
             expectTrue(data.responseCode == 200);
@@ -465,7 +465,7 @@ export default function requestMethodJsunit() {
           connectTimeout: 60000
         };
         let httpRequest = http.createHttp();
-        httpRequest.request('https://httpbin.org/anything', httpRequestOptions).then(data => {
+        httpRequest.request('https://httpbin.moyufangge.com/anything', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
             expectTrue(data.responseCode == 200);
@@ -889,7 +889,7 @@ export default function requestMethodJsunit() {
           connectTimeout: 60000
         };
         let httpRequest = http.createHttp();
-        httpRequest.requestInStream('https://httpbin.org/anything', httpRequestOptions, (err, data) => {
+        httpRequest.requestInStream('https://httpbin.moyufangge.com/anything', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
             expectTrue(data == 200);
@@ -924,7 +924,7 @@ export default function requestMethodJsunit() {
           connectTimeout: 60000
         };
         let httpRequest = http.createHttp();
-        httpRequest.requestInStream('https://httpbin.org/anything', httpRequestOptions).then(data => {
+        httpRequest.requestInStream('https://httpbin.moyufangge.com/anything', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
             expectTrue(data == 200);

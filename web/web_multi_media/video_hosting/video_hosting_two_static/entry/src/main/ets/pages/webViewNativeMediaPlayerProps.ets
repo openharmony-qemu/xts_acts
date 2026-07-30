@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -126,7 +127,7 @@ export class AVPlayerDemo {
       listener?.onVolume && listener?.onVolume(vol);
     })
     // 状态机变化回调函数
-    avPlayer.onStateChange(async (state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
+    avPlayer.onStateChange((state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
       switch (state) {
         case 'idle': // 成功调用reset接口后触发该状态机上报
           console.info('AVPlayer state idle called.');

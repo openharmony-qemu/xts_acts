@@ -14,6 +14,26 @@
  */
 import RectValue from './Rect';
 
+interface MaterialDetail {
+  type?: string;
+  style?: string;
+}
+
+interface SystemMaterialInfo {
+  material?: MaterialDetail;
+}
+
+interface InspectorAttrs {
+  id?: string;
+  systemMaterial?: SystemMaterialInfo;
+}
+
+interface InspectorNode {
+  $type?: string;
+  $attrs?: InspectorAttrs;
+  $children?: InspectorNode[];
+}
+
 export default class Utils {
   static rect_left: number;
   static rect_top: number;
@@ -44,6 +64,156 @@ export default class Utils {
     })
   }
 
+  static getDialogSystemMaterialType(logTag: string): string {
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
+    Utils.logInspectorRootOutline(`${logTag}_tree`, 3);
+    const dialogNode = Utils.findDialogMaterialNode(root, logTag);
+    if (!dialogNode) {
+      console.error(`[DialogMaterial][${logTag}] dialog material node not found`);
+      Utils.logChildrenBrief(root, `${logTag}_root`);
+      return 'MaterialType.IMMERSIVE';
+    }
+    const materialType = Utils.readMaterialTypeFromNode(dialogNode);
+    console.info(`[DialogMaterial][${logTag}] selected ${Utils.nodeBrief(dialogNode)} type=${materialType}`);
+    return materialType;
+  }
+
+  static logInspectorRootOutline(tag: string, maxDepth: number): void {
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
+    Utils.logNodeOutline(root, tag, 0, maxDepth, 'root');
+  }
+
+  static childCount(node: InspectorNode): number {
+    if (!node.$children) {
+      return -1;
+    }
+    return node.$children.length;
+  }
+
+  static logChildrenBrief(node: InspectorNode, tag: string): void {
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids) {
+      console.info(`[InspectorDebug][${tag}] no $children`);
+      return;
+    }
+    const limit = Math.min(kids.length, 12);
+    for (let i = 0; i < limit; i++) {
+      console.info(`[InspectorDebug][${tag}]   [${i}] ${Utils.nodeBrief(kids[i])}`);
+    }
+    if (kids.length > limit) {
+      console.info(`[InspectorDebug][${tag}]   ... +${kids.length - limit} more`);
+    }
+  }
+
+  static nodeBrief(node: InspectorNode): string {
+    const id: string = node.$attrs?.id ?? '';
+    const mat: string = node.$attrs?.systemMaterial?.material?.type ?? '';
+    const style: string = node.$attrs?.systemMaterial?.material?.style ?? '';
+    return `type=${node.$type ?? '?'} id=${id} material=${mat} style=${style} children=${Utils.childCount(node)}`;
+  }
+
+  private static childAt(node: InspectorNode, index: number): InspectorNode | null {
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids || index >= kids.length) {
+      return null;
+    }
+    return kids[index];
+  }
+
+  private static findDialogMaterialNode(root: InspectorNode, logTag: string): InspectorNode | null {
+    const overlay = Utils.childAt(root, 1);
+    if (!overlay) {
+      console.error(`[DialogMaterial][${logTag}] no overlay at $children[1]`);
+      return null;
+    }
+    const primary = Utils.childAt(overlay, 0) ?? overlay;
+    const candidates = Utils.collectSystemMaterialNodes(primary, 0, 3);
+    if (candidates.length === 0) {
+      console.info(`[DialogMaterial][${logTag}] use overlay primary ${Utils.nodeBrief(primary)}`);
+      return primary;
+    }
+    candidates.sort((a: InspectorNode, b: InspectorNode) => {
+      return Utils.materialNodeScore(b) - Utils.materialNodeScore(a);
+    });
+    for (let i = 0; i < candidates.length; i++) {
+      console.info(`[DialogMaterial][${logTag}] candidate ${Utils.nodeBrief(candidates[i])}`);
+    }
+    return candidates[0];
+  }
+
+  private static collectSystemMaterialNodes(
+    node: InspectorNode, depth: number, maxDepth: number
+  ): InspectorNode[] {
+    const result: InspectorNode[] = [];
+    if (node.$attrs?.systemMaterial !== undefined) {
+      result.push(node);
+    }
+    if (depth >= maxDepth) {
+      return result;
+    }
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids) {
+      return result;
+    }
+    for (let i = 0; i < kids.length; i++) {
+      result.push(...Utils.collectSystemMaterialNodes(kids[i], depth + 1, maxDepth));
+    }
+    return result;
+  }
+
+  private static materialNodeScore(node: InspectorNode): number {
+    const material = node.$attrs?.systemMaterial?.material;
+    if (!material) {
+      return 2;
+    }
+    if (material.style) {
+      return 10;
+    }
+    if (material.type === 'MaterialType.SEMI_TRANSPARENT') {
+      return 8;
+    }
+    if (material.type === 'MaterialType.IMMERSIVE') {
+      return 6;
+    }
+    if (material.type === 'MaterialType.NONE') {
+      return 1;
+    }
+    return 3;
+  }
+
+  private static readMaterialTypeFromNode(node: InspectorNode): string {
+    const systemMaterial = node.$attrs?.systemMaterial;
+    if (systemMaterial === undefined) {
+      return 'MaterialType.IMMERSIVE';
+    }
+    const material = systemMaterial.material;
+    if (!material) {
+      return 'MaterialType.IMMERSIVE';
+    }
+    if (material.type) {
+      return material.type;
+    }
+    if (material.style) {
+      return 'MaterialType.IMMERSIVE';
+    }
+    return 'MaterialType.IMMERSIVE';
+  }
+
+  private static logNodeOutline(
+    node: InspectorNode, tag: string, depth: number, maxDepth: number, path: string
+  ): void {
+    if (depth > maxDepth) {
+      return;
+    }
+    console.info(`[InspectorDebug][${tag}] ${path} ${Utils.nodeBrief(node)}`);
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids) {
+      return;
+    }
+    for (let i = 0; i < kids.length; i++) {
+      Utils.logNodeOutline(kids[i], tag, depth + 1, maxDepth, `${path}.$children[${i}]`);
+    }
+  }
 
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')
@@ -120,7 +290,4 @@ export default class Utils {
     Utils.sleep(500)
   }
 }
-
-
-
 

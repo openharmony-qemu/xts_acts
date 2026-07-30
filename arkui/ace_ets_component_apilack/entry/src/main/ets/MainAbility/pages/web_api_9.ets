@@ -161,7 +161,7 @@ struct Index {
 
 
       Row() {
-        Button("webTest").key('web2').onClick(async () => {
+        Button("webTest").key('web_api_9_web2').onClick(async () => {
           console.info("key==>" + this.str);
           switch (this.str) {
           // add

@@ -69,7 +69,7 @@ struct Common_ts_ets_apiStaticClear {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("staticClearText")
+        .key("common_ts_ets_api_staticClearText_01")
         .onClick(() => {
           AppStorage.Clear()
         })
@@ -150,7 +150,7 @@ struct Common_ts_ets_apiStaticClear {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("staticClearText")
+        .key("common_ts_ets_api_staticClearText_02")
         .onClick(() => {
           AppStorage.Clear()
         })

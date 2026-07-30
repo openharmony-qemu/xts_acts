@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2024 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,12 @@ export default function ActsGzipDecompressionTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.gzipdecompressiontest.static");
+      let cmd = "aa start -a EntryAbility -b com.acts.gzipdecompressiontest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
       let dirAll = AppStorage.get<string>("dir");
       if (dirAll) {
@@ -74,7 +80,7 @@ export default function ActsGzipDecompressionTest() {
           level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
         };
         try {
-          zlib.compressFile(inFile, outFile, options).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile, options).then((): void => {
             hilog.info(domain, tag, 'GzipDecompressionAbilityTest_static_4000 compressFile level success.');
             try {
               let data: boolean = fileIo.accessSync(outFile);
@@ -119,7 +125,7 @@ export default function ActsGzipDecompressionTest() {
           level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
         };
         try {
-          zlib.compressFile(inFile, outFile1, options1).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile1, options1).then((): void => {
             hilog.info(domain, tag, 'compressFile1 level success.');
             try {
               let data: boolean = fileIo.accessSync(outFile1);
@@ -164,7 +170,7 @@ export default function ActsGzipDecompressionTest() {
           level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
         };
         try {
-          zlib.compressFile(inFile, outFile2, options2).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile2, options2).then((): void => {
             hilog.info(domain, tag, 'compressFile2 level success.');
             try {
               let data: boolean = fileIo.accessSync(outFile2);
@@ -210,7 +216,7 @@ export default function ActsGzipDecompressionTest() {
           level: zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION,
         };
         try {
-          zlib.compressFile(inFile, outFile3, options3).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile3, options3).then((): void => {
             hilog.info(domain, tag, 'compressFile3 level success.');
             try {
               let data: boolean = fileIo.accessSync(outFile3);
@@ -256,7 +262,7 @@ export default function ActsGzipDecompressionTest() {
           memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
         };
         try {
-          zlib.compressFile(inFile, outFile4, options4).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile4, options4).then((): void => {
             hilog.info(domain, tag, 'compressFile4 memLevel success.');
             try {
               let data: boolean = fileIo.accessSync(outFile4);
@@ -303,7 +309,7 @@ export default function ActsGzipDecompressionTest() {
           parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_SEQUENTIAL
         };
         try {
-          zlib.compressFile(inFile, outFile5, options5).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile5, options5).then((): void => {
             hilog.info(domain, tag, 'compressFile5 memLevel success.');
             try {
               let data: boolean = fileIo.accessSync(outFile5);
@@ -350,7 +356,7 @@ export default function ActsGzipDecompressionTest() {
           parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_PARALLEL_DECOMPRESSION
         };
         try {
-          zlib.compressFile(inFile, outFile6, options6).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile6, options6).then((): void => {
             hilog.info(domain, tag, 'compressFile6 memLevel success.');
             try {
               let data: boolean = fileIo.accessSync(outFile6);
@@ -396,7 +402,7 @@ export default function ActsGzipDecompressionTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
         };
         try {
-          zlib.compressFile(inFile, outFile7, options7).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile7, options7).then((): void => {
             hilog.info(domain, tag, 'compressFile7 strategy success.');
             try {
               let data: boolean = fileIo.accessSync(outFile7);
@@ -442,7 +448,7 @@ export default function ActsGzipDecompressionTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED
         };
         try {
-          zlib.compressFile(inFile, outFile8, options8).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile8, options8).then((): void => {
             hilog.info(domain, tag, 'compressFile8 strategy success.');
             try {
               let data: boolean = fileIo.accessSync(outFile8);
@@ -488,7 +494,7 @@ export default function ActsGzipDecompressionTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_RLE
         };
         try {
-          zlib.compressFile(inFile, outFile9, options9).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile9, options9).then((): void => {
             hilog.info(domain, tag, 'compressFile9 strategy success.');
             try {
               let data: boolean = fileIo.accessSync(outFile9);
@@ -534,7 +540,7 @@ export default function ActsGzipDecompressionTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED
         };
         try {
-          zlib.compressFile(inFile, outFile10, options10).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile10, options10).then((): void => {
             hilog.info(domain, tag, 'compressFile10 strategy success.');
             try {
               let data: boolean = fileIo.accessSync(outFile10);
@@ -582,7 +588,7 @@ export default function ActsGzipDecompressionTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
         };
         try {
-          zlib.compressFile(inFile, outFile11, options11).then((): Promise<void> => {
+          zlib.compressFile(inFile, outFile11, options11).then((): void => {
             hilog.info(domain, tag, 'GzipDecompressionAbilityTest_static_4110 compressFile options success.');
             try {
               let data: boolean = fileIo.accessSync(outFile11);

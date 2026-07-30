@@ -78,7 +78,7 @@ it('transitionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.info("transitionTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("transitionTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("transitionTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('transition_button', 10, "")));
       await Utils.sleep(1000);
       console.info('transitionTest_static_0200 END');
       done();

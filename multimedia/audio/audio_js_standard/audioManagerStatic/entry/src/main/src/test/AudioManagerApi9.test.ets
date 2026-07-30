@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1037,6 +1038,7 @@ export default function audioManagerApi9() {
         expect(VolumeEvent.volumeType).assertEqual(audio.AudioVolumeType.MEDIA);
         expect(VolumeEvent.volume).assertEqual(minVolume);
         expect(VolumeEvent.updateUi).assertEqual(false);
+        expect(VolumeEvent.volumeMode).not().assertNull();
         done();
       });
       await audioVolumeManager.setAppVolumePercentage(minVolume);

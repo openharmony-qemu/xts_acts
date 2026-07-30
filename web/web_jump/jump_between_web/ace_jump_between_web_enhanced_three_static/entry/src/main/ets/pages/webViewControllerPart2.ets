@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,30 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnTitleReceiveEvent,
-  OnDataResubmittedEvent,
-  OnRenderExitedEvent,
-  OnPageBeginEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
-import webView from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { OnTitleReceiveEvent, OnDataResubmittedEvent, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import webView from '@ohos.web.webview';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
-import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
+import Utils from '../../src/test/Util.test';
 import { JsProxyObject } from '../../src/test/Interfaces';
-import { Callback } from '@ohos.base'
-import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
 export class StringFields {

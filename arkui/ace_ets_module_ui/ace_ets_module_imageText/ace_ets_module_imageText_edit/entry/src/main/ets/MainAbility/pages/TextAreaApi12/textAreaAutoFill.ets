@@ -30,7 +30,7 @@ struct textAreaAutoFill {
           .margin({ left: 50 })
         TextArea({ placeholder: '请填写收货人街道地址', text: this.areaTxt })
           .contentType(ContentType.FULL_STREET_ADDRESS)
-          .key('textArea3')
+          .key('textAreaAutoFill_textArea3')
           .id('textArea3')
           .width('60%')
           .fontWeight(FontWeight.Bold)

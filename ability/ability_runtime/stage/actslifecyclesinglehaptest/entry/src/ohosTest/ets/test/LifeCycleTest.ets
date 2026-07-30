@@ -223,6 +223,7 @@ export default function lifecycleTest() {
         ab2DestPromise,
         ab2AbDestPromise
       ]);
+      await sleep(1000);
       console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
       console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
       let listTemp = JSON.stringify(globalThis.list1);
@@ -294,6 +295,7 @@ export default function lifecycleTest() {
         ab2DestPromise,
         ab2AbDestPromise
       ]);
+      await sleep(1000);
       console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
       console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
       count++;
@@ -376,6 +378,8 @@ export default function lifecycleTest() {
         }
       }
       console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
+      await sleep(2000);
+      console.log(TAG + " terminateSelfwithresult sleep end");
       globalThis.ability3.terminateSelfWithResult(para)
         .then((data: ESObject) => {
           console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
@@ -819,7 +823,7 @@ export default function lifecycleTest() {
       console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
       let listTemp = JSON.stringify(globalThis.list1);
       console.log(TAG + " listTemp is :" + listTemp);
-
+      await sleep(1000);
       expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
       expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(3);
       expect(listTemp.split("MainAbility1 onAbilityBackground").length - 1).assertEqual(2);

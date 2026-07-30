@@ -73,7 +73,7 @@ struct Child_AS {
         .onClick((e: ClickEvent) => {
           this.Array1 = [10.0] as Array<Length>;
         })
-        .key('state5')
+        .key('PropArray1_state5')
         .height('5%')
 
       Text("切换变量Date类型[1]-->new Date('2021-08-08')").height('5%')
@@ -81,7 +81,7 @@ struct Child_AS {
         .onClick((e: ClickEvent) => {
           this.Array1 = new Date('2021-08-08');
         })
-        .key('state6')
+        .key('PropArray1_state6')
         .height('5%')
 
       Text("切换变量Array<String>类型[1]-->['20']").height('5%')
@@ -89,7 +89,7 @@ struct Child_AS {
         .onClick((e: ClickEvent) => {
           this.Array1 = ['20'] as Array<String>;
         })
-        .key('state7')
+        .key('PropArray1_state7')
         .height('5%')
 
       Text("切换变量Array<Object>类型[1]-->[{number: 30}]").height('5%')
@@ -97,7 +97,7 @@ struct Child_AS {
         .onClick((e: ClickEvent) => {
           this.Array1 = [{number: 30.0} as Num];
         })
-        .key('state8')
+        .key('PropArray1_state8')
         .height('5%')
 
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
@@ -105,7 +105,7 @@ struct Child_AS {
         .onClick((e: ClickEvent) => {
           this.Array1 = [$r('app.string.number')] as Array<Resource>;
         })
-        .key('state9')
+        .key('PropArray1_state9')
         .height('5%')
 
 

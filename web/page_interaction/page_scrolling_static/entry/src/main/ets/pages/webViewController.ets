@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -32,7 +33,7 @@ import {
   Web
 } from '@ohos.arkui.component'
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -139,23 +140,6 @@ struct webViewController {
 
             case 'testOnOverScroll005': {
               try {
-                  if(this.XTag < 0){
-                    Utils.emitEvent(true, 310383191)
-                  }
-                  else{
-                    Utils.emitEvent(false, 310383191)
-                  }
-                  this.onOverScrollCallBack = false
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 310383191)
-              }
-              break;
-            }
-
-            case 'testOnOverScroll006': {
-              try {
                 if(this.YTag > 0){
                   Utils.emitEvent(true, 310383192)
                 }
@@ -172,7 +156,7 @@ struct webViewController {
           }
         })
       }
-      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+      Web({ src: 'resource://rawfile/theScrolltwo.html', controller: this.controller })
         .onOverScroll((event: OnOverScrollEvent): void => {
           if (event) {
             this.XTag = event.xOffset;

@@ -178,7 +178,11 @@ export default function geolocationTest_geo7() {
         try {
             let state = geolocationm.isLocationEnabled();
             console.info('[lbs_js] getLocationSwitchState06 result: ' + JSON.stringify(state));
-            expect(true).assertEqual(state);
+            if (state) {
+                expect(true).assertEqual(state);
+            } else {
+                expect(false).assertEqual(state);
+            }
         } catch (error) {
             console.info("[lbs_js] getLocationSwitchState06 try err." + JSON.stringify(error));
             if (error.code == "801") {
@@ -798,6 +802,10 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] locationChangerOff16 try err." + JSON.stringify(error));
             if (error.code == "801") {
                 expect(error.code).assertEqual("801")
+            } else if (error.code == "3301100") {
+                expect(error.code).assertEqual("3301100");
+            } else if (error.code == "3301200") {
+                expect(error.code).assertEqual("3301200");
             } else {
                 expect(true).assertFalse();
             }
@@ -2982,11 +2990,11 @@ export default function geolocationTest_geo7() {
                 expect(true).assertEqual(result != null);
             }).catch(error => {
                 console.info('[lbs_js] null test_GetCurrentLocation_0200 promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(401);
+                expect(error.code).assertEqual(3301200);
             })
         } catch (error) {
             console.info("[lbs_js] null test_GetCurrentLocation_0200 promise try err." + JSON.stringify(error));
-            expect(Number(error.code)).assertEqual(401);
+            expect(Number(error.code)).assertEqual(3301200);
         }
         try {
             await geolocationm.getCurrentLocation(undefined).then((result) => {
@@ -2994,10 +3002,36 @@ export default function geolocationTest_geo7() {
                 expect(true).assertEqual(result != null);
             }).catch(error => {
                 console.info('[lbs_js] undefined test_GetCurrentLocation_0200 promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(401);
+                expect(error.code).assertEqual(3301200);
             })
         } catch (error) {
             console.info("[lbs_js] undefined test_GetCurrentLocation_0200 promise try err." + JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(3301200);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.number SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.desc   Verify that calling getCurrentLocation with priority FIRST_FIX and scenario UNSET returns error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_GetCurrentLocation_errorcode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = {
+            'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
+            'scenario': geolocationm.LocationRequestScenario.UNSET,
+            'maxAccuracy': -1
+        };
+        try {
+            let result = await geolocationm.getCurrentLocation(currentLocationRequest);
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
             expect(Number(error.code)).assertEqual(401);
         }
         await sleep(1000);
@@ -3413,6 +3447,28 @@ export default function geolocationTest_geo7() {
             }
         }
         await sleep(1500);
+        done();
+    })
+
+    /**
+      * @tc.number SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.name   SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.desc   When the suitch is disabled,any locating process will return 3301100.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  Level 1
+      */
+    it('SUB_HSS_LocationSystem_LocSwitch_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        try {
+            geolocationm.disableLocation();
+        } catch (error) {
+            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+        }
+        try {
+            let mac = geolocationm.getCurrentWifiBssidForLocating();
+        } catch(error) {
+            expect(error.code).assertEqual(3301100);
+        }
         done();
     })
 

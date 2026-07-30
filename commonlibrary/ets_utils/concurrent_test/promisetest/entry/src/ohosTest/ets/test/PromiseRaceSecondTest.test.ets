@@ -870,7 +870,7 @@ export default function TaskpoolPromiseRaceSecondTest() {
           executionOrder.push(`racePromise.catch error: ${error.message}`);
           raceCatchCalled = true;
           return Promise.resolve();
-        }).finally((): Promise<void> => {
+        }).finally((): void => {
           executionOrder.push('racePromise.finally executing');
           raceFinallyCalled = true;
           executionOrder.push('racePromise.finally throwing error');
@@ -962,7 +962,7 @@ export default function TaskpoolPromiseRaceSecondTest() {
 
         executionOrder.push('p1.finally attaching');
 
-        p1.finally((): Promise<void> => {
+        p1.finally((): void => {
           executionOrder.push('p1.finally executing');
           p1FinallyCalled = true;
           executionOrder.push('p1.finally throwing error');

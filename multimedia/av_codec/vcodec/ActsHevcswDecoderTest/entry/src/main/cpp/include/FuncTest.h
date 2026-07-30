@@ -16,6 +16,7 @@
 #define FUNCTEST_H
 #include <string>
 #include <multimedia/player_framework/native_avcapability.h>
+#include <napi/native_api.h>
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
@@ -44,17 +45,19 @@ typedef struct OH_AVCapability OH_AVCapability;
 extern OH_AVCapability *g_capHevc;
 extern std::string g_codecNameHevc;
 
-int VideoDecodeSyncSs265Func0010Test();
-int VideoDecodeSyncSs265Func0020Test();
-int VideoSwdecH265BlankFrame0010Test();
-int VideoSwdecH265Speed0010Test();
-int VideoSwdecH265Speed0020Test();
-int VideoSwdecH265Speed0030Test();
-int VideoSwdecH265Speed0040Test();
-int VideoSwdecH265Speed0050Test();
-int VideoSwdecH265Speed0060Test();
-int VideoSwdecH265Speed0070Test();
-int VideoSwdecH265Speed0080Test();
-int VideoSwdecH265Speed0090Test();
-
+napi_value VideoDecodeSyncSs265Func0010Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSs265Func0020Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265BlankFrame0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0020Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0030Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0040Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0050Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0060Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0070Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0080Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265Speed0090Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265SurfExpired0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265SetMaxInputSize0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265GetCropSize0010Test(napi_env env, napi_callback_info info);
 #endif //FUNCTEST_H

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +31,7 @@ function certificateEnumTypeTest(): void {
   expect(cert.CertResult.ERR_KEYUSAGE_NO_CERTSIGN).assertEqual(19030006);
   expect(cert.CertResult.ERR_KEYUSAGE_NO_DIGITAL_SIGNATURE).assertEqual(19030007);
   expect(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD).assertEqual(19030008);
+  expect(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE).assertEqual(19030018);
   expect(cert.EncodingFormat.FORMAT_DER).assertEqual(0);
   expect(cert.EncodingFormat.FORMAT_PEM).assertEqual(1);
   expect(cert.EncodingFormat.FORMAT_PKCS7).assertEqual(2);

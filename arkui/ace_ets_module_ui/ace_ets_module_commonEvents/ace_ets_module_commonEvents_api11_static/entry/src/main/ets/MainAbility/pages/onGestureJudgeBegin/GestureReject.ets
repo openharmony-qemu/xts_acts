@@ -13,49 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Row,
-  Flex,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  TextArea,
-  CopyOptions,
-  Visibility,
-
-  TextAlign,
-  FlexAlign,
-  ItemAlign,
-  FlexDirection,
-  Padding,
-  Margin,
-  $rawfile,
-  RowOptions,
-  ClickEvent,
-  Button,
-  ClickEvent,
-  DragEvent,
-  GestureInfo,
-  BaseGestureEvent,
-  LongPressGestureEvent,
-  SwipeGestureEvent,
-  PanGestureEvent,
-  TapGesture,
-  LongPressGesture,
-  SwipeGesture,
-  PanGesture,
-  PinchGesture,
-  RotationGesture,
-  GestureControl,
-  GestureJudgeResult
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Row, Flex, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, TextArea, CopyOptions, Visibility, TextAlign, FlexAlign, ItemAlign, FlexDirection, Padding, Margin, $rawfile, RowOptions, ClickEvent, Button, DragEvent, GestureInfo, BaseGestureEvent, LongPressGestureEvent, SwipeGestureEvent, PanGestureEvent, TapGesture, LongPressGesture, SwipeGesture, PanGesture, PinchGesture, RotationGesture, GestureControl, GestureJudgeResult } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component

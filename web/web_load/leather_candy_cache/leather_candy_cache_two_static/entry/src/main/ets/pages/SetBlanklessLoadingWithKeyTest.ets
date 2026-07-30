@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 import { Entry, Component, Column, Row, Button, ClickEvent, Web,  OnPageVisibleEvent, OnPermissionRequestEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
@@ -305,6 +307,17 @@ struct setBlanklessLoadingWithKeyTest {
                 }
                 break;
               }
+              case 'testClearBlanklessLoadingCacheNoArgs001': {
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache();
+                  Utils.emitEvent(true, 148560);
+                } catch (error) {
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(true, 148560);
+                  } else { Utils.emitEvent(false, 148560); }
+                }
+                break;
+              }
               case 'testSetBlanklessLoadingWithKey005': {
                 let msg = 'testSetBlanklessLoadingWithKey005'
                 let key = 'setBlanklessLoadingWithKey005';
@@ -361,6 +374,38 @@ struct setBlanklessLoadingWithKeyTest {
                     console.log(msg, ' 801 Capability not supported');
                   } else {
                     Utils.emitEvent(401, 148550)
+                  }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCache002': {
+                let msg = 'testClearBlanklessLoadingCache002';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache(undefined);
+                  Utils.emitEvent(0, 148570);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) === 801) {
+                    Utils.emitEvent(0, 148570);
+                    console.log(msg, ' 801 Capability not supported');
+                  } else {
+                    Utils.emitEvent(401, 148570);
+                  }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCache003': {
+                let msg = 'testClearBlanklessLoadingCache003';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache([]);
+                  Utils.emitEvent(0, 148580);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) === 801) {
+                    Utils.emitEvent(0, 148580);
+                    console.log(msg, ' 801 Capability not supported');
+                  } else {
+                    Utils.emitEvent(401, 148580);
                   }
                 }
                 break;

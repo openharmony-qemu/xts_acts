@@ -67,11 +67,11 @@ export default function StorageProp21Jsunit() {
     it('StorageProp21Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0200] START');
       let driver = await UiDriver.create()
-      let button_son1 = await driver.findComponent(BY.key('button1'));
+      let button_son1 = await driver.findComponent(BY.key('StorageProp21_button1'));
       await button_son1.click();
       await CommonFunc.sleep(1000);
 
-      let strJson1 = getInspectorByKey('button1');
+      let strJson1 = getInspectorByKey('StorageProp21_button1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[StorageProp21Jsunit_0200] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
@@ -91,11 +91,11 @@ export default function StorageProp21Jsunit() {
     it('StorageProp21Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0300] START');
       let driver = await UiDriver.create()
-      let button_son1 = await driver.findComponent(BY.key('button2'));
+      let button_son1 = await driver.findComponent(BY.key('StorageProp21_button2'));
       await button_son1.click();
       await CommonFunc.sleep(1000);
 
-      let strJson2 = getInspectorByKey('button2');
+      let strJson2 = getInspectorByKey('StorageProp21_button2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[StorageProp21Jsunit_0300] obj2 is: " + JSON.stringify(obj2));
       await CommonFunc.sleep(1000);
@@ -115,11 +115,11 @@ export default function StorageProp21Jsunit() {
     it('StorageProp21Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0400] START');
       let driver = await UiDriver.create()
-      let button_son1 = await driver.findComponent(BY.key('button3'));
+      let button_son1 = await driver.findComponent(BY.key('StorageProp21_button3'));
       await button_son1.click();
       await CommonFunc.sleep(1000);
 
-      let strJson13 = getInspectorByKey('button3');
+      let strJson13 = getInspectorByKey('StorageProp21_button3');
       let obj13: ESObject = JSON.parse(strJson13);
       console.info("[StorageProp21Jsunit_0400] obj13 is: " + JSON.stringify(obj13));
       await CommonFunc.sleep(1000);
@@ -139,11 +139,11 @@ export default function StorageProp21Jsunit() {
     it('StorageProp21Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0500] START');
       let driver = await UiDriver.create()
-      let button_son1 = await driver.findComponent(BY.key('button4'));
+      let button_son1 = await driver.findComponent(BY.key('StorageProp21_button4'));
       await button_son1.click();
       await CommonFunc.sleep(1000);
 
-      let strJson24 = getInspectorByKey('button4');
+      let strJson24 = getInspectorByKey('StorageProp21_button4');
       let obj24: ESObject = JSON.parse(strJson24);
       console.info("[StorageProp21Jsunit_0500] obj24 is: " + JSON.stringify(obj24));
       await CommonFunc.sleep(1000);

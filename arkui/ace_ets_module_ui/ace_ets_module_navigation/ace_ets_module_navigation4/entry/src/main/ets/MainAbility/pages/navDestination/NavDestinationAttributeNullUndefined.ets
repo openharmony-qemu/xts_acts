@@ -17,6 +17,14 @@
 @Component
 struct NavDestinationAttributeNullUndefinedTest {
   @State message: string = 'NavDestinationAttributeNullUndefinedTest';
+  @Builder
+  NavigationMenus() {
+    Row() {
+      Image('resources/base/media/icon.png')
+        .width(24)
+        .height(24)
+    }
+  }
 
   build() {
 
@@ -135,7 +143,7 @@ struct NavDestinationAttributeNullUndefinedTest {
               Text('menus default')
                 .fontSize(14)
             }
-            .width('30%')
+            .width('20%')
             .height('10%')
             .id('NavDestination_menus_default')
 
@@ -144,7 +152,7 @@ struct NavDestinationAttributeNullUndefinedTest {
               Text('menus null')
                 .fontSize(14)
             }
-            .width('30%')
+            .width('20%')
             .height('10%')
             .id('NavDestination_menus_null')
             .menus(null)
@@ -154,10 +162,30 @@ struct NavDestinationAttributeNullUndefinedTest {
               Text('menus undefined')
                 .fontSize(14)
             }
-            .width('30%')
+            .width('20%')
             .height('10%')
             .id('NavDestination_menus_undefined')
             .menus(undefined)
+
+            // Null2
+            NavDestination() {
+              Text('menus null')
+                .fontSize(14)
+            }
+            .width('20%')
+            .height('10%')
+            .id('navDes_menus_null2')
+            .menus(this.NavigationMenus, null)
+
+            // Undefined2
+            NavDestination() {
+              Text('menus undefined')
+                .fontSize(14)
+            }
+            .width('20%')
+            .height('10%')
+            .id('navDes_menus_undefined2')
+            .menus(this.NavigationMenus, undefined)
           }
           .width('100%')
 

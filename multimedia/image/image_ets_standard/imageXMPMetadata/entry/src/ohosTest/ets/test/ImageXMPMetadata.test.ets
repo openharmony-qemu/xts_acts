@@ -33,6 +33,7 @@ interface metadataConfig {
 const READ_FAILED = 7700202;
 const UNSUPPORTED_IMAGE_FORMATS = 7700102;
 const INVALID_PARAMETER = 7600206;
+let isSupportedTiff: boolean = true;
 
 function handleError(testTag: string, err: GenericError | Array<GenericError>, expectedErrorCode: number): boolean {
   if (Array.isArray(err)) {
@@ -52,6 +53,9 @@ export default function imageXMPMetadata() {
   describe("imageXMPMetadata", () => {
 
     beforeAll(async () => {
+      let formats = await image.getImageSourceSupportedFormats();
+      isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
       console.info("beforeAll case");
     })
 
@@ -1173,6 +1177,11 @@ export default function imageXMPMetadata() {
      */
     it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATA_GETTAG_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATA_GETTAG_PROMISE_0400";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       const fileName = "tiff_xmp.tiff";
       const path = "xmpMM:History[2]/stEvt:instanceID";
@@ -1301,6 +1310,11 @@ export default function imageXMPMetadata() {
      */
     it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATABYTYPE_GETTAG_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATABYTYPE_GETTAG_PROMISE_0400";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       const fileName = "tiff_xmp.tiff";
       const path = "xmpMM:History[2]/stEvt:instanceID";
@@ -1609,6 +1623,11 @@ export default function imageXMPMetadata() {
      */
     it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_WRITEIMAGEMETADATA_PROMISE_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_WRITEIMAGEMETADATA_PROMISE_ERROR_0200";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       const fileName = "tiff_xmp.tiff";
       let configs: Array<metadataConfig> = [
@@ -2153,6 +2172,11 @@ export default function imageXMPMetadata() {
      */
     it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATA_ENUMERATETAGS_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_READIMAGEMETADATA_ENUMERATETAGS_0400";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       const fileName: string = "tiff_xmp.tiff";
       let result: boolean = true;
       const isRecursive: image.XMPEnumerateOptions = { isRecursive: true, onlyQualifier : false };
@@ -2610,6 +2634,11 @@ export default function imageXMPMetadata() {
      */
     it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_GETTAGS_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_GETTAGS_PROMISE_0400";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       const fileName: string = "tiff_xmp.tiff";
       let result: boolean = true;
       const isRecursive: image.XMPEnumerateOptions = { isRecursive: true, onlyQualifier : false };

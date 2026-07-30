@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -95,7 +96,7 @@ struct httpAuthHandler {
               try {
                 this.HttpAuthHandlerCallBack = 'cancel'
                 this.HttpAuthHandlerCancelCallBack = true
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl('htt' + 'ps://www.example.com/123')
                 setTimeout(() => {
                   Utils.emitEvent(this.Http_Error_Code, 32041)
                 }, 5000)

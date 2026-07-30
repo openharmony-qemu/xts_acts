@@ -70,7 +70,7 @@ struct ScrollExample {
       .scrollBarWidth(10) // 滚动条宽度
       .edgeEffect(EdgeEffect.None)
       .enableScrollInteraction(true)
-      .key('scrollAdd')
+      .key('scroll_add_scrollAdd')
       .scrollSnap({ snapAlign: ScrollSnapAlign.START })
       .nestedScroll({
         scrollForward: NestedScrollMode.PARENT_FIRST,
@@ -133,7 +133,7 @@ struct ScrollExample {
         .margin({ top: 160, left: 20 } as Margin)
       Button('isScrollEnd')
         .height('5%')
-        .key('isScrollEnd')
+        .key('scroll_add_isScrollEnd')
         .onClick((e: ClickEvent) => { // 点击后滑到下一页
           this.scroller.isAtEnd();
         })

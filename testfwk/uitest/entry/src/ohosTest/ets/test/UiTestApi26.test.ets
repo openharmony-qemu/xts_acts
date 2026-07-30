@@ -22,7 +22,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
-const ErrorCode17000005 = 17000005;
+const DeviceErrorCode = 17000005;
 
 export default function uitestApi26Test() {
   describe('uitestApi26Test', () => {
@@ -59,7 +59,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.clickAt(center)
+      await driver.clickAtWithOptions(center)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -84,7 +84,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = {};
-      await driver.clickAt(center, options)
+      await driver.clickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -109,7 +109,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 0 };
-      await driver.clickAt(center, options)
+      await driver.clickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -135,7 +135,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 1.0 };
-      await driver.clickAt(center, options)
+      await driver.clickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -160,7 +160,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 0.5 };
-      await driver.clickAt(center, options)
+      await driver.clickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -185,7 +185,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 0.0 };
-      await driver.clickAt(center, options)
+      await driver.clickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -209,7 +209,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.clickAt(center, null)
+      await driver.clickAtWithOptions(center, null)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -233,7 +233,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.clickAt(center, undefined)
+      await driver.clickAtWithOptions(center, undefined)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
@@ -256,7 +256,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.longClickAt(center)
+      await driver.longClickAtWithOptions(center)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -281,7 +281,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = {};
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -306,7 +306,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { duration: 1500 };
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -331,7 +331,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 0.5 };
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -356,7 +356,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { duration: 3000, pressure: 0.5 };
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -381,7 +381,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 0 };
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -406,7 +406,7 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = { pressure: 1 };
-      await driver.longClickAt(center, options)
+      await driver.longClickAtWithOptions(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -430,7 +430,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.longClickAt(center, null)
+      await driver.longClickAtWithOptions(center, null)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -454,7 +454,7 @@ export default function uitestApi26Test() {
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
-      await driver.longClickAt(center, undefined)
+      await driver.longClickAtWithOptions(center, undefined)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
@@ -481,7 +481,7 @@ export default function uitestApi26Test() {
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -511,7 +511,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { speed: 2000 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -542,7 +542,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { pressure: 0.5 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -572,7 +572,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { speed: 2000, pressure: 0.5 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -601,7 +601,7 @@ export default function uitestApi26Test() {
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -630,7 +630,7 @@ export default function uitestApi26Test() {
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -660,7 +660,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = {} as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -690,7 +690,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { speed: 200 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -720,7 +720,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { speed: 40000 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -750,7 +750,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { pressure: 0 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -780,7 +780,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { pressure: 1 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -811,7 +811,7 @@ export default function uitestApi26Test() {
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
       let options = { speed: 200, pressure: 1 } as TouchOptions
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -841,7 +841,7 @@ export default function uitestApi26Test() {
       let rect = await scroll.getBounds()
       let center = await scroll.getBoundsCenter()
       const options: TouchOptions = { speed: 199 };
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -871,7 +871,7 @@ export default function uitestApi26Test() {
       let rect = await scroll.getBounds()
       let center = await scroll.getBoundsCenter()
       const options: TouchOptions = { speed: 40001 };
-      await driver.swipeBetween({
+      await driver.swipeBetweenWithOptions({
         x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
       , displayId: disPlay.id
       },
@@ -1004,29 +1004,48 @@ export default function uitestApi26Test() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
-      await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick over');
     });
 
     /**
-     * @tc.name   testDriverTriggerPenKeyHandwritingWithPointClick
+     * @tc.name   testDriverTriggerPenKeySmartClick
      * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0200
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTriggerPenKeyHandwritingWithPointClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick start');
+    it('testDriverTriggerPenKeySmartClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick start');
+      try {
+        await driver.triggerPenKey(PenKey.SMART, PenMode.HANDWRITING, PenKeyOperation.CLICK);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick error: ' + error.code);
+        expect(error.code).assertEqual(DeviceErrorCode)
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeySmartPointClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeySmartPointClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       try {
         let nextPageButton = await driver.findComponent(ON.text('next page'));
         expect(nextPageButton != null).assertTrue();
         let clickPoint = await nextPageButton.getBoundsCenter();
-        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK,
+        await driver.triggerPenKey(PenKey.SMART, PenMode.HANDWRITING, PenKeyOperation.CLICK,
           { point: clickPoint});
         await driver.delayMs(500);
         let backToIndexComponent = await driver.findComponent(ON.text('back to index'));
@@ -1034,16 +1053,16 @@ export default function uitestApi26Test() {
         let componentText: string = await backToIndexComponent.getText();
         expect(componentText).assertEqual('back to index');
       } catch (error) {
-        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick error: ' + error.code);
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
       await stopApplication('com.uitestScene.acts');
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick over');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1056,14 +1075,14 @@ export default function uitestApi26Test() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingWithPointDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1087,14 +1106,14 @@ export default function uitestApi26Test() {
         expect(text).assertEqual('doubleClick')
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1116,7 +1135,7 @@ export default function uitestApi26Test() {
         expect(componentText).assertEqual('back to index');
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick over');
@@ -1124,7 +1143,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0700
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, DOUBLE_CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1148,12 +1167,10 @@ export default function uitestApi26Test() {
         expect(text).assertEqual('doubleClick')
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick over');
     });
-
-
   })
 }

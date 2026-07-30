@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +37,12 @@ export default function ActsCommonEventSupportTest() {
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
+      let cmd = `aa start -a EntryAbility -b ${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd )
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
@@ -371,6 +377,24 @@ export default function ActsCommonEventSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_AIRPLANE_MODE_CHANGED.valueOf()).assertEqual('usual.event.AIRPLANE_MODE')
       expect(commonEventManager.Support.COMMON_EVENT_SPLIT_SCREEN.valueOf()).assertEqual('common.event.SPLIT_SCREEN')
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3900 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_4000
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_4000
+     * @tc.desc   sandbox bundle added/removed common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ces_Publish_Support_Static_4000',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
+      hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_4000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_ADDED.valueOf())
+        .assertEqual('usual.event.SANDBOX_BUNDLE_ADDED')
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_REMOVED.valueOf())
+        .assertEqual('usual.event.SANDBOX_BUNDLE_REMOVED')
+      hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_4000 END`)
       done()
     })
 

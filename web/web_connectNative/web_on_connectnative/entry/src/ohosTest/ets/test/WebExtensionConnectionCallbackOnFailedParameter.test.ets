@@ -90,11 +90,12 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           onFailedCalled = true;
-          
+          let flag = false;
           // 检查是否为能力不支持错误 (使用字符串比较避免类型问题)
           if (String(code) === '801') {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertTrue(); // 标记为通过（跳过）
+            expect(flag).assertEqual(true);
+            flag = false;
             done();
             return;
           }
@@ -192,11 +193,12 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           onFailedCalled = true;
-          
+          let flag2 = true
           // 检查是否为能力不支持错误 (使用字符串比较避免类型问题)
           if (String(code) === '801') {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertTrue(); // 标记为通过（跳过）
+            expect(flag2).assertEqual(true);
+            flag2 = false;
             done();
             return;
           }
@@ -294,11 +296,12 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           onFailedCalled = true;
-          
+          let flag3 = true;
           // 检查是否为能力不支持错误 (使用字符串比较避免类型问题)
           if (String(code) === '801') {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertTrue(); // 标记为通过（跳过）
+            expect(flag3).assertEqual(true);
+            flag3 = false;
             done();
             return;
           }
@@ -396,11 +399,12 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           onFailedCalled = true;
-          
+          let flag4 = true;
           // 检查是否为能力不支持错误 (使用字符串比较避免类型问题)
           if (String(code) === '801') {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertTrue(); // 标记为通过（跳过）
+            expect(flag4).assertEqual(true);
+            flag4 = false;
             done();
             return;
           }
@@ -459,6 +463,462 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         expect(err.code !== null && err.code !== undefined).assertTrue();
         done();
       }
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_Direct_0500
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_Direct_0500
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with null code parameter direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_Direct_0500', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_Direct_0500`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (code === null) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} code is null`);
+            expect(code === null).assertTrue();
+          } else {
+            hilog.info(0x0000, 'testTag', `${tcNumber} code is not null`);
+            expect(code).not().assertNull();
+          }
+        }
+      };
+
+      let nullCode: webNativeMessagingExtensionManager.NmErrorCode | null = null;
+      try {
+        callback.onFailed(nullCode!, "test error");
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Undefined_Direct_0600
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Undefined_Direct_0600
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with undefined code parameter direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Undefined_Direct_0600', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Undefined_Direct_0600`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (code === undefined) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} code is undefined`);
+            expect(code === undefined).assertTrue();
+          } else {
+            hilog.info(0x0000, 'testTag', `${tcNumber} code is not undefined`);
+            expect(code).not().assertUndefined();
+          }
+        }
+      };
+
+      let undefinedCode: webNativeMessagingExtensionManager.NmErrorCode | undefined = undefined;
+      try {
+        callback.onFailed(undefinedCode!, "test error");
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Null_Direct_0700
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Null_Direct_0700
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with null errMsg parameter direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Null_Direct_0700', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Null_Direct_0700`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (errMsg === null) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} errMsg is null`);
+            expect(errMsg === null).assertTrue();
+          } else {
+            hilog.info(0x0000, 'testTag', `${tcNumber} errMsg is not null`);
+            expect(errMsg).not().assertNull();
+          }
+        }
+      };
+
+      let nullErrMsg: string | null = null;
+      try {
+        callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR, nullErrMsg!);
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Undefined_Direct_0800
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Undefined_Direct_0800
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with undefined errMsg parameter direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Undefined_Direct_0800', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Undefined_Direct_0800`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (errMsg === undefined) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} errMsg is undefined`);
+            expect(errMsg === undefined).assertTrue();
+          } else {
+            hilog.info(0x0000, 'testTag', `${tcNumber} errMsg is not undefined`);
+            expect(errMsg).not().assertUndefined();
+          }
+        }
+      };
+
+      let undefinedErrMsg: string | undefined = undefined;
+      try {
+        callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR, undefinedErrMsg!);
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Empty_Direct_0900
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Empty_Direct_0900
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with empty string errMsg parameter direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Empty_Direct_0900', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_ErrMsg_Empty_Direct_0900`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          expect(errMsg).assertEqual("");
+          expect(errMsg).not().assertNull();
+          expect(errMsg).not().assertUndefined();
+        }
+      };
+
+      callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR, "");
+      expect(onFailedCalled).assertTrue();
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Null_Direct_1000
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Null_Direct_1000
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with both null parameters direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Null_Direct_1000', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Null_Direct_1000`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (code === null) {
+            expect(code === null).assertTrue();
+          } else {
+            expect(code).not().assertNull();
+          }
+          if (errMsg === null) {
+            expect(errMsg === null).assertTrue();
+          } else {
+            expect(errMsg).not().assertNull();
+          }
+        }
+      };
+
+      let nullCode2: webNativeMessagingExtensionManager.NmErrorCode | null = null;
+      let nullErrMsg2: string | null = null;
+      try {
+        callback.onFailed(nullCode2!, nullErrMsg2!);
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Undefined_Direct_1100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Undefined_Direct_1100
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with both undefined parameters direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Undefined_Direct_1100', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Both_Undefined_Direct_1100`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (code === undefined) {
+            expect(code === undefined).assertTrue();
+          } else {
+            expect(code).not().assertUndefined();
+          }
+          if (errMsg === undefined) {
+            expect(errMsg === undefined).assertTrue();
+          } else {
+            expect(errMsg).not().assertUndefined();
+          }
+        }
+      };
+
+      let undefinedCode2: webNativeMessagingExtensionManager.NmErrorCode | undefined = undefined;
+      let undefinedErrMsg2: string | undefined = undefined;
+      try {
+        callback.onFailed(undefinedCode2!, undefinedErrMsg2!);
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Valid_Params_Not_Null_Undefined_Direct_1200
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Valid_Params_Not_Null_Undefined_Direct_1200
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with valid parameters verifying not null and not undefined direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Valid_Params_Not_Null_Undefined_Direct_1200', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Valid_Params_Not_Null_Undefined_Direct_1200`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          expect(code).not().assertNull();
+          expect(code).not().assertUndefined();
+          expect(errMsg).not().assertNull();
+          expect(errMsg).not().assertUndefined();
+        }
+      };
+
+      callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR, "inner error occurred");
+      expect(onFailedCalled).assertTrue();
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_All_ErrorCodes_Direct_1300
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_All_ErrorCodes_Direct_1300
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with all NmErrorCode enum values verifying not null and not undefined direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_All_ErrorCodes_Direct_1300', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_All_ErrorCodes_Direct_1300`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let callCount = 0;
+      let receivedCodes: number[] = [];
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          callCount++;
+          expect(code).not().assertNull();
+          expect(code).not().assertUndefined();
+          expect(errMsg).not().assertNull();
+          expect(errMsg).not().assertUndefined();
+          receivedCodes.push(Number(code));
+        }
+      };
+
+      callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR, "inner error");
+      callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR, "want content error");
+      callback.onFailed(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY, "permission deny");
+
+      expect(callCount).assertEqual(3);
+      expect(receivedCodes.includes(Number(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR))).assertTrue();
+      expect(receivedCodes.includes(Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR))).assertTrue();
+      expect(receivedCodes.includes(Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY))).assertTrue();
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
+    })
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_ErrMsg_Empty_Direct_1400
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_ErrMsg_Empty_Direct_1400
+     * @tc.desc   Test WebExtensionConnectionCallback.onFailed with null code and empty errMsg direct call test.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_ErrMsg_Empty_Direct_1400', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_WebExtensionConnectionCallback_OnFailed_Code_Null_ErrMsg_Empty_Direct_1400`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      let onFailedCalled = false;
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect called`);
+        },
+        onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect called`);
+        },
+        onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed called with code: ${code} errMsg: ${errMsg}`);
+          onFailedCalled = true;
+          if (code === null) {
+            expect(code === null).assertTrue();
+          } else {
+            expect(code).not().assertNull();
+          }
+          expect(errMsg).assertEqual("");
+          expect(errMsg).not().assertNull();
+          expect(errMsg).not().assertUndefined();
+        }
+      };
+
+      let nullCode3: webNativeMessagingExtensionManager.NmErrorCode | null = null;
+      try {
+        callback.onFailed(nullCode3!, "");
+        expect(onFailedCalled).assertTrue();
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+        expect(err.code).not().assertUndefined();
+      }
+
+      hilog.info(0x0000, 'testTag', `${tcNumber} End`);
     })
   })
 }

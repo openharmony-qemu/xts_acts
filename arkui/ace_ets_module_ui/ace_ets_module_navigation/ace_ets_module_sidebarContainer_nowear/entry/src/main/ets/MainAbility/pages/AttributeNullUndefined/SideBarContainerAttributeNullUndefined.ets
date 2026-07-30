@@ -37,7 +37,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
+        }.width('100%').key('SideBarContainerAttributeNullUndefined_SideBarContainer_Attribute_SideBar_01_01')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 
@@ -71,7 +71,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
+        }.width('100%').key('SideBarContainerAttributeNullUndefined_SideBarContainer_Attribute_SideBar_01_02')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 
@@ -105,7 +105,7 @@ struct SideBarContainerAttributeNullUndefined {
               this.current = item
             })
           }, (item: string) => item)
-        }.width('100%').key('SideBarContainer_Attribute_SideBar_01')
+        }.width('100%').key('SideBarContainerAttributeNullUndefined_SideBarContainer_Attribute_SideBar_01_03')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
 

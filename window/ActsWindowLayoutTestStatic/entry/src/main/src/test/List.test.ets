@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,10 @@
  */
 import WindowLayoutTest from "./WindowLayout.test";
 import WindowLayoutStaticTest from "./WindowLayoutStatic.test";
+import WindowLayoutTest2 from "./WindowLayout2.test";
+
 export default function testsuite() {
   WindowLayoutStaticTest();
   WindowLayoutTest();
+  WindowLayoutTest2();
 }

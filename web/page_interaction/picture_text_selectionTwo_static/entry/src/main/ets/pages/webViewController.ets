@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -20,8 +21,7 @@ import {
   Row,
   Button,
   ClickEvent,
-  Web,
-  UIContext
+  Web
 } from '@ohos.arkui.component'
 import webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';

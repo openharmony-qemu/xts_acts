@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -741,5 +742,103 @@ export default function hiTraceChainJsTest() {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic028 end');
       done();
     })
+
+    /**
+     * @tc.name   testHitraceApiStatic029
+     * @tc.number SUB_DFX_DFT_Hitrace_JS_Static_2900
+     * @tc.desc   接口测试-hiTraceChain接口参数枚举值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHitraceApiStatic029', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic029 start');
+      try{
+        let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        hiTraceChain.enableFlag(traceId, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        expect(enabledDoNotCreateSpanFlag === true).assertTrue();
+        hiTraceChain.end(traceId);
+
+        let traceId1 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.DEFAULT);
+        let enabledDoNotCreateSpanFlag1 = hiTraceChain.isFlagEnabled(traceId1, hiTraceChain.HiTraceFlag.DEFAULT);
+        hiTraceChain.enableFlag(traceId1, hiTraceChain.HiTraceFlag.DEFAULT);
+        enabledDoNotCreateSpanFlag1 = hiTraceChain.isFlagEnabled(traceId1, hiTraceChain.HiTraceFlag.DEFAULT);
+        expect(enabledDoNotCreateSpanFlag1 === false).assertTrue();
+        hiTraceChain.end(traceId1);
+
+        let traceId2 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag2 = hiTraceChain.isFlagEnabled(traceId2, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        hiTraceChain.enableFlag(traceId2, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        enabledDoNotCreateSpanFlag2 = hiTraceChain.isFlagEnabled(traceId2, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        expect(enabledDoNotCreateSpanFlag2 === true).assertTrue();
+        hiTraceChain.end(traceId2);
+
+        let traceId3 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag3 = hiTraceChain.isFlagEnabled(traceId3, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        hiTraceChain.enableFlag(traceId3, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        enabledDoNotCreateSpanFlag3 = hiTraceChain.isFlagEnabled(traceId3, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        expect(enabledDoNotCreateSpanFlag3 === true).assertTrue();
+        hiTraceChain.end(traceId3);
+
+        let traceId4 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag4 = hiTraceChain.isFlagEnabled(traceId4, hiTraceChain.HiTraceFlag.TP_INFO);
+        hiTraceChain.enableFlag(traceId4, hiTraceChain.HiTraceFlag.TP_INFO);
+        enabledDoNotCreateSpanFlag4 = hiTraceChain.isFlagEnabled(traceId4, hiTraceChain.HiTraceFlag.TP_INFO);
+        expect(enabledDoNotCreateSpanFlag4 === true).assertTrue();
+        hiTraceChain.end(traceId4);
+
+        let traceId5 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag5 = hiTraceChain.isFlagEnabled(traceId5, hiTraceChain.HiTraceFlag.NO_BE_INFO);
+        hiTraceChain.enableFlag(traceId5, hiTraceChain.HiTraceFlag.NO_BE_INFO);
+        enabledDoNotCreateSpanFlag5 = hiTraceChain.isFlagEnabled(traceId5, hiTraceChain.HiTraceFlag.NO_BE_INFO);
+        expect(enabledDoNotCreateSpanFlag5 === true).assertTrue();
+        hiTraceChain.end(traceId5);
+
+        let traceId6 = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag6 = hiTraceChain.isFlagEnabled(traceId6, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        hiTraceChain.enableFlag(traceId6, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        enabledDoNotCreateSpanFlag6 = hiTraceChain.isFlagEnabled(traceId6, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        expect(enabledDoNotCreateSpanFlag6 === true).assertTrue();
+        hiTraceChain.end(traceId6);
+
+      } catch (err){
+        hilog.info(0x0000, 'testTag', 'testHitraceApiStatic029 got an error:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+      console.info('testHitraceApiStatic029 end');
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic029 end');
+      done();
+    })
+
+    /**
+     * @tc.name   testHitraceApiStatic030
+     * @tc.number SUB_DFX_DFT_Hitrace_JS_Static_3000
+     * @tc.desc   接口测试-hiTraceChain接口参数枚举值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHitraceApiStatic030', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 start');
+      try{
+        let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        hiTraceChain.enableFlag(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        expect(enabledDoNotCreateSpanFlag === true).assertTrue();
+        hiTraceChain.end(traceId);
+      } catch (err){
+        hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 got an error:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+      console.info('testHitraceApiStatic030 end');
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 end');
+      done();
+    })
+
   })
 }

@@ -44,9 +44,9 @@ async function createUnpremultipliedPixelMapPromiseTest(done: Function, testName
       size: { height: 2, width: 2 },
       alphaType: image.AlphaType.UNPREMUL
     };
-    let srcPixelmap = await image.createPixelMapSync(color, optsForPre);
+    let srcPixelmap = image.createPixelMapSync(color, optsForPre);
     console.info(TAG, testName, JSON.stringify(srcPixelmap));
-    let dstPixelMap = await image.createPixelMapSync(optsForUnpre);
+    let dstPixelMap = image.createPixelMapSync(optsForUnpre);
     console.info(TAG, testName, JSON.stringify(dstPixelMap));
     await image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap)
     console.info(TAG, testName, ' Succeeded in converting pixelmap.');
@@ -84,9 +84,9 @@ async function createUnpremultipliedPixelMapPromiseTest1(done: Function, testNam
       size: { height: 2, width: 2 },
       alphaType: image.AlphaType.UNPREMUL
     };
-    let srcPixelmap = await image.createPixelMapSync(color, optsForPre);
+    let srcPixelmap = image.createPixelMapSync(color, optsForPre);
     console.info(TAG, testName, JSON.stringify(srcPixelmap));
-    let dstPixelMap = await image.createPixelMapSync(optsForUnpre);
+    let dstPixelMap = image.createPixelMapSync(optsForUnpre);
     console.info(TAG, testName, JSON.stringify(dstPixelMap));
     await image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap)
     console.info(TAG, testName, ' Succeeded in converting pixelmap.');
@@ -124,9 +124,9 @@ async function createUnpremultipliedPixelMapCallbackTest(done: Function, testNam
       size: { height: 2, width: 2 },
       alphaType: image.AlphaType.UNPREMUL
     };
-    let srcPixelmap = await image.createPixelMapSync(color, optsForPre);
+    let srcPixelmap = image.createPixelMapSync(color, optsForPre);
     console.info(TAG, testName, JSON.stringify(srcPixelmap));
-    let dstPixelMap = await image.createPixelMapSync(optsForUnpre);
+    let dstPixelMap = image.createPixelMapSync(optsForUnpre);
     console.info(TAG, testName, JSON.stringify(dstPixelMap));
     image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError) => {
       if (error) {
@@ -171,9 +171,9 @@ async function createUnpremultipliedPixelMapCallbackTest1(done: Function, testNa
       size: { height: 2, width: 2 },
       alphaType: image.AlphaType.UNPREMUL
     };
-    let srcPixelmap = await image.createPixelMapSync(color, optsForPre);
+    let srcPixelmap = image.createPixelMapSync(color, optsForPre);
     console.info(TAG, testName, JSON.stringify(srcPixelmap));
-    let dstPixelMap = await image.createPixelMapSync(optsForUnpre);
+    let dstPixelMap = image.createPixelMapSync(optsForUnpre);
     console.info(TAG, testName, JSON.stringify(dstPixelMap));
     image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap, (error: BusinessError) => {
       if (error) {

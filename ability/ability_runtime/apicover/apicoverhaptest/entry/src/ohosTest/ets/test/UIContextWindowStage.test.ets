@@ -307,7 +307,13 @@ export default function UIContextWindowStageTest() {
           done();
         }
       }
-      delegator.executeShellCommand('aa start -ca WindowStageThreeAbility -b com.example.apicoverhaptest', (err, data)=>{
+      let cmd = 'aa start -ca WindowStageThreeAbility -b com.example.apicoverhaptest';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd, (err, data)=>{
+
         console.info(TAG + ' executeShellCommand , err = ' + JSON.stringify(err));
         console.info(TAG + ' executeShellCommand , data = ' + JSON.stringify(data));
       })

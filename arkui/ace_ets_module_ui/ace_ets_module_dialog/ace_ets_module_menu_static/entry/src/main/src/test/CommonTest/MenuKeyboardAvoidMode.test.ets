@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,11 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { describe, it, expect, Level } from '../../../../hypium/index';
 import { MenuKeyboardAvoidMode } from '@ohos.arkui.component';
 
-export default function MenuKeyboardAvoidModeTest() {
+export default function MenuKeyboardAvoidModeTest(): void {
   describe('MenuKeyboardAvoidModeTest', () => {
     /**
      * @tc.number MenuKeyboardAvoidModeTest_001

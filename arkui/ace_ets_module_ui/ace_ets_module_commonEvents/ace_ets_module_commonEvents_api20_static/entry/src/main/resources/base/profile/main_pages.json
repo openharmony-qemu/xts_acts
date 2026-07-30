@@ -2,6 +2,9 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Drag/getDisplayId",
-    "MainAbility/pages/TapGesture/tapLocation"
+    "MainAbility/pages/TapGesture/tapLocation",
+    "MainAbility/pages/measureFromViewport/measureFromViewport",
+    "MainAbility/pages/measureFromViewport/measureFromViewportOnVisible",
+    "MainAbility/pages/onVisibleAreaNullUndefined/onVisibleAreaApproximateChangeNullAndUndefined"
   ]
 }

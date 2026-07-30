@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -73,7 +74,7 @@ export async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function EsArrayTest002(){
+export default function EsArrayTest002(): void {
   describe('EsArrayTest002', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

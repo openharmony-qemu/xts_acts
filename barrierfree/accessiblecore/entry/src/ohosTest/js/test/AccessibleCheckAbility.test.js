@@ -461,6 +461,163 @@ describe('AccessibleCheckAbilityAdapt001', function () {
         done();
     })
 
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400
+     * @tc.desc   Test setSeniorModeStateForSelf() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400');
+        accessibility.setSeniorModeStateForSelf(false).then(() => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400 setSeniorModeStateForSelf success`);
+            accessibility.getSeniorModeStateForSelf().then((result) => {
+                console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400 result: ${result}`);
+                expect(typeof (result)).assertEqual('boolean');
+                expect(result).assertEqual(false);
+                done();
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400 has error: ${err.code}`);
+                    expect(null).assertFail();
+                    done();
+                }
+            });
+        }).catch((err) => {
+            if (err && err.code != 0){
+                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1400 has error: ${err.code}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500
+     * @tc.desc   Test setSeniorModeStateForSelf() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500');
+        accessibility.setSeniorModeStateForSelf(true).then(() => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500 setSeniorModeStateForSelf success`);
+            accessibility.getSeniorModeStateForSelf().then((result) => {
+                console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500 result: ${result}`);
+                expect(typeof (result)).assertEqual('boolean');
+                expect(result).assertEqual(true);
+                accessibility.setSeniorModeStateForSelf(false);
+                done();
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500 has error: ${err.code}`);
+                    expect(null).assertFail();
+                    done();
+                }
+            });
+        }).catch((err) => {
+            if (err && err.code != 0){
+                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1500 has error: ${err.code}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600
+     * @tc.desc   Test onSeniorModeStateChangeForSelf() function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600');
+        let callback = (data) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 callback data: ${data}`);
+        };
+        let result = false;
+        try {
+            accessibility.onSeniorModeStateChangeForSelf(callback);
+            accessibility.offSeniorModeStateChangeForSelf(callback);
+            accessibility.offSeniorModeStateChangeForSelf();
+            console.info('AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 onSeniorModeStateChangeForSelf success');
+            result = true;
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1600 failed to onSeniorModeStateChangeForSelf because ' + JSON.stringify(exception));
+            result = false;
+        }
+        expect(result).assertEqual(true);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700
+     * @tc.desc   Test setSeniorModeStateForSelf() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700');
+        try {
+            accessibility.setSeniorModeStateForSelf(null).then(() => {
+                console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700 setSeniorModeStateForSelf success`);
+                expect(null).assertFail();
+                done();
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700 has error: ${err.code}`);
+                    expect(err.code).assertEqual(401);
+                    done();
+                }
+            });
+        } catch (err) {
+            if (err && err.code != 0){
+                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1700 try has error: ${err.code}`);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+        }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800
+     * @tc.desc   Test setSeniorModeStateForSelf() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800');
+        try {
+            accessibility.setSeniorModeStateForSelf(undefined).then(() => {
+                console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800 setSeniorModeStateForSelf success`);
+                expect(null).assertFail();
+                done();
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800 has error: ${err.code}`);
+                    expect(err.code).assertEqual(401);
+                    done();
+                }
+            });
+        } catch (err) {
+            if (err && err.code != 0){
+                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_1800 try has error: ${err.code}`);
+                expect(err.code).assertEqual(401);
+                done();
+            }
+        }
+    })
+
 })
 
 }

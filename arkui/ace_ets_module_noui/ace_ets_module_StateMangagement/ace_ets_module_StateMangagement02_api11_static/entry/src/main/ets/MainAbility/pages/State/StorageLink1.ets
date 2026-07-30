@@ -13,48 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Builder,
-  NavPathStack,
-  FontWeight,
-  Navigation,
-  NavDestination,
-  NavigationMode,
-  ButtonType,
-  Color,
-  DatePicker
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  Observed,
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, NavPathStack, FontWeight, Navigation, NavDestination, NavigationMode, ButtonType, Color, DatePicker } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, LocalStorageLink, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from "@ohos.hilog";
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
@@ -149,35 +111,35 @@ struct StorageLink1 {
         })
 
       Button(`string: ${this.string1}`).width("100%").height('5%')
-        .key("button_son2")
+        .key("StorageLink1_button_son2")
         .onClick((e: ClickEvent) => {
           this.son2 = 'sss'
           this.string1 = AppStorage.get<string>('Prop2');
         })
 
       Button(`boolean: ${this.boolean1}`).width("100%").height('5%')
-        .key("button_son3")
+        .key("StorageLink1_button_son3")
         .onClick((e: ClickEvent) => {
           this.son3 = true
           this.boolean1 = AppStorage.get<boolean>('Prop3');
         })
 
       Button(`enu: ${this.enu}`).width("100%").height('5%')
-        .key("button_son4")
+        .key("StorageLink1_button_son4")
         .onClick((e: ClickEvent) => {
           this.son4 = ABC.C
           this.enu = AppStorage.get<ABC>('Prop4');
         })
 
       Button(`class: ${this.class1?.value}`).width("100%").height('5%')
-        .key("button_son5")
+        .key("StorageLink1_button_son5")
         .onClick((e: ClickEvent) => {
           this.son5 = new Model('Title:Hello C')
           this.class1 = AppStorage.get<Model>('Prop5');
         })
 
       Button(`obj: ${JSON.stringify(this.obj)}`).width("100%").height('5%')
-        .key("button_son6")
+        .key("StorageLink1_button_son6")
         .onClick((e: ClickEvent) => {
           this.son6 = new ModelLink1Person('ls',13)
           this.obj = AppStorage.get<ModelLink1Person>('Prop6')

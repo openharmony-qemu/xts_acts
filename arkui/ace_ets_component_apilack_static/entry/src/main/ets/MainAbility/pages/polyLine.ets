@@ -68,7 +68,7 @@ struct PolyLineNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("polyLine_neText")
 
       Polyline(this.polyline).width("100px").height("100px").points([[0, 0], [0, 100], [100, 100]])
         .key("Polyline")

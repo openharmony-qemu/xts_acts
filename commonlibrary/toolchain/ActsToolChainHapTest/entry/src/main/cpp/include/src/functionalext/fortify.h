@@ -16,6 +16,7 @@
 #ifndef SRC_FUNCTIONALEXT_FORTIFY_H_H
 #define SRC_FUNCTIONALEXT_FORTIFY_H_H
 
+int FcntlExtTest();
 int PollTest();
 
 #endif // SRC_FUNCTIONALEXT_FORTIFY_H_H

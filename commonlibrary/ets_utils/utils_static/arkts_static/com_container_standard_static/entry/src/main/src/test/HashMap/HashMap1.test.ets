@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -28,7 +29,7 @@ import {
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';
 
-export default function HashMapTest1() {
+export default function HashMapTest1(): void {
   describe("HashMapTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

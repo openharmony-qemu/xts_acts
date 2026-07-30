@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,14 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Row, Column, Component,Button, ClickEvent,
-  Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions,
-  CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute,
-  IconOptions, Color, CopyOptions, EnterKeyType, Scroll
-} from '@ohos.arkui.component'
+import { Entry, Row, Column, Component, Button, ClickEvent, Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions, CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute, Color, CopyOptions, EnterKeyType, Scroll } from '@ohos.arkui.component';
 import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
 @Observed
 export class SearchModifier implements AttributeModifier<SearchAttribute> {
   public index: Int = 0;

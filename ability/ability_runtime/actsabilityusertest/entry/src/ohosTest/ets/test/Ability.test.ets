@@ -27,7 +27,12 @@ const START_ABILITY_TIMEOUT = 4000;
 export default function abilityTest() {
   describe('ACTS_StartAbility_Test', () => {
     afterEach(async (done:Function) => {
-        await abilityDelegator.executeShellCommand('aa start -b com.example.actsabilityusertest -a MainAbility');
+        let cmd = 'aa start -b com.example.actsabilityusertest -a MainAbility';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         done();
     });
     /**

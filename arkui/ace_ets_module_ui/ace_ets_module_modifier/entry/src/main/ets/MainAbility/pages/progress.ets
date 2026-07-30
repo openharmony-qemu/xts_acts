@@ -36,7 +36,7 @@ struct ProgressExample {
     Column({ space: 5 }) {
     Button("change value").onClick(() => {
       (this.customModifier as CustomModifier).onChange1();
-    }).key("changeButton")
+    }).key("progress_changeButton")
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Button('Log Json Data')
         .onClick(() => {

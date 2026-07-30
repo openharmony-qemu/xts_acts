@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -24,7 +25,7 @@ export async function doKeyAgreement(algName: string, priKey: cryptoFramework.Pr
 
     return secret;
   } catch (error) {
-    console.error(`[XTS] doKeyAgreement ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doKeyAgreement ${error}`);
     throw error as Error;
   }
 }

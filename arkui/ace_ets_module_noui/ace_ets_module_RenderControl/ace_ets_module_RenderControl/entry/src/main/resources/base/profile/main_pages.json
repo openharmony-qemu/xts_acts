@@ -64,18 +64,16 @@
     "MainAbility/pages/Foreach/ForEach003",
     "MainAbility/pages/Foreach/ForEach0330",
     "MainAbility/pages/Foreach/ForEach001",
-
     "MainAbility/pages/Repeat/RepeatCloseReuse0110",
     "MainAbility/pages/Repeat/RepeatLazy0150",
-
     "MainAbility/pages/Repeat/repeatReusableFalse",
     "MainAbility/pages/Repeat/repeatReusableTrue",
     "MainAbility/pages/LazyForEach/RELOAD",
-
     "MainAbility/pages/Repeat/repeatVirtualScrollNullUndefined",
     "MainAbility/pages/LazyForEach/lazyForEachOnDatasetChangeNullUndefined",
     "MainAbility/pages/LazyForEach/LazyForEachCustomComponentFreezeMode",
     "MainAbility/pages/Repeat/RepeatReusableMemOptStrategy",
-    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy"
+    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy",
+    "MainAbility/pages/LazyForEach/LazyForEachDataReload"
   ]
 }

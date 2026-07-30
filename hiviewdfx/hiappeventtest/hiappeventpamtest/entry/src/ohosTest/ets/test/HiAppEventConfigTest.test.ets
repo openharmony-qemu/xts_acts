@@ -299,6 +299,8 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {logFileCutoffSzBytes: 0}},
       {appCrashPolicy: {logFileCutoffSzBytes: 1024}},
       {appCrashPolicy: {logFileCutoffSzBytes: 5242880}},
+      {appCrashPolicy: {collectMinidump: true}},
+      {appCrashPolicy: {collectMinidump: false}},
 
       // appCrashPolicy 成功场景 - 两参数组合
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: false}},
@@ -307,30 +309,48 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {pageSwitchLogEnable: false, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: true, logFileCutoffSzBytes: 0}},
       {appCrashPolicy: {pageSwitchLogEnable: false, logFileCutoffSzBytes: 5242880}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, collectMinidump: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, collectMinidump: true}},
       {appCrashPolicy: {extendPcLrPrinting: true, logFileCutoffSzBytes: 5242880}},
       {appCrashPolicy: {extendPcLrPrinting: false, logFileCutoffSzBytes: 0}},
       {appCrashPolicy: {extendPcLrPrinting: true, simplifyVmaPrinting: false}},
       {appCrashPolicy: {extendPcLrPrinting: false, simplifyVmaPrinting: true}},
+      {appCrashPolicy: {extendPcLrPrinting: true, collectMinidump: false}},
+      {appCrashPolicy: {extendPcLrPrinting: false, collectMinidump: true}},
       {appCrashPolicy: {simplifyVmaPrinting: true, logFileCutoffSzBytes: 5242880}},
       {appCrashPolicy: {simplifyVmaPrinting: false, logFileCutoffSzBytes: 0}},
+      {appCrashPolicy: {simplifyVmaPrinting: true, collectMinidump: false}},
+      {appCrashPolicy: {simplifyVmaPrinting: false, collectMinidump: true}},
+      {appCrashPolicy: {collectMinidump: true, logFileCutoffSzBytes: 5242880}},
+      {appCrashPolicy: {collectMinidump: false, logFileCutoffSzBytes: 0}},
 
       // appCrashPolicy 成功场景 - 三参数组合
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, simplifyVmaPrinting: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, collectMinidump: true, simplifyVmaPrinting: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, collectMinidump: true}},
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, collectMinidump: true, logFileCutoffSzBytes: 1024}},
+      {appCrashPolicy: {collectMinidump: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024}},
       {appCrashPolicy: {pageSwitchLogEnable: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024}},
       {appCrashPolicy: {extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024}},
 
       // appCrashPolicy 成功场景 - 四参数组合
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, collectMinidump: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, collectMinidump: false}},
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: false, logFileCutoffSzBytes: 0, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: 5242880, simplifyVmaPrinting: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: false, logFileCutoffSzBytes: 0, collectMinidump: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: 5242880, collectMinidump: false}},
 
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: false, logFileCutoffSzBytes: -1}},
       {appCrashPolicy: {simplifyVmaPrinting: true, extendPcLrPrinting: false, logFileCutoffSzBytes: -1}},
       {appCrashPolicy: {pageSwitchLogEnable: true, simplifyVmaPrinting: false, logFileCutoffSzBytes: -1}},
 
       {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: -1, simplifyVmaPrinting: true}},
+
+      {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: -1, simplifyVmaPrinting: true, collectMinidump: true}},
 
       // appFreezePolicy 成功场景 - 空对象
       {appFreezePolicy: {}},
@@ -351,6 +371,13 @@ export default function HiAppEventConfigTest() {
       {resourceOverlimitPolicy: {pageSwitchLogEnable: false}},
       {resourceOverlimitPolicy: {jsHeapLogtype: "event"}},
       {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap"}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event", useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap", useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event", useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: false, jsHeapLogtype: "event", useRefinedLogFileName: true}},
 
       // resourceOverlimitPolicy 成功场景 - 两参数组合
       {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event"}},
@@ -385,7 +412,7 @@ export default function HiAppEventConfigTest() {
         appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true}},
       {mainThreadJankPolicy: {logType: 1, sampleInterval: 100, ignoreStartupTime: 11, sampleCount: 21, reportTimesPerApp: 3, autoStopSampling: false},
         cpuUsageHighPolicy: {foregroundLoadThreshold: 11, backgroundLoadThreshold: 22, threadLoadThreshold:33, perfLogCaptureCount: 44, threadLoadInterval:55},
-        appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024},
+        appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024, collectMinidump: true},
         appFreezePolicy: {pageSwitchLogEnable: true},
         resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event"},
         addressSanitizerPolicy: {pageSwitchLogEnable: true} }
@@ -502,6 +529,7 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {extendPcLrPrinting: undefined}},
       {appCrashPolicy: {simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {logFileCutoffSzBytes: undefined}},
+      {appCrashPolicy: {collectMinidump: undefined}},
       {resourceOverlimitPolicy: {jsHeapLogtype: undefined}},
 
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: false}},
@@ -510,18 +538,22 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {pageSwitchLogEnable: false, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, logFileCutoffSzBytes: 0}},
       {appCrashPolicy: {pageSwitchLogEnable: false, logFileCutoffSzBytes: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, collectMinidump: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: 5242880}},
       {appCrashPolicy: {extendPcLrPrinting: false, logFileCutoffSzBytes: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, simplifyVmaPrinting: false}},
       {appCrashPolicy: {extendPcLrPrinting: false, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {extendPcLrPrinting: false, collectMinidump: undefined}},
       {appCrashPolicy: {simplifyVmaPrinting: undefined, logFileCutoffSzBytes: 5242880}},
       {appCrashPolicy: {simplifyVmaPrinting: false, logFileCutoffSzBytes: undefined}},
+      {appCrashPolicy: {simplifyVmaPrinting: false, collectMinidump: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, logFileCutoffSzBytes: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {simplifyVmaPrinting: undefined, logFileCutoffSzBytes: undefined}},
+      {appCrashPolicy: {collectMinidump: undefined, logFileCutoffSzBytes: undefined}},
 
 
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024}},
@@ -533,9 +565,11 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {pageSwitchLogEnable: undefined,  logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: true,  logFileCutoffSzBytes: undefined, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: true,  logFileCutoffSzBytes: 1024, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: true,  logFileCutoffSzBytes: 1024, collectMinidump: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false}},
       {appCrashPolicy: {extendPcLrPrinting: false, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: false}},
       {appCrashPolicy: {extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, collectMinidump: undefined}},
 
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 1024}},
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined}},
@@ -545,6 +579,7 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {pageSwitchLogEnable: undefined,  logFileCutoffSzBytes: 1024, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: false}},
       {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: -1, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {extendPcLrPrinting: undefined, logFileCutoffSzBytes: -1, collectMinidump: undefined}},
 
 
       // 存在一个参数错误
@@ -552,23 +587,27 @@ export default function HiAppEventConfigTest() {
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false}},
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: false}},
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, collectMinidump: undefined}},
 
       //  同时存在两个参数错误-只有参数类型错误
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: true, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: false}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, collectMinidump: undefined}},
 
       //  同时存在两个参数错误-参数类型错误和取值错误
       {appCrashPolicy: {logFileCutoffSzBytes: -1, pageSwitchLogEnable: undefined, extendPcLrPrinting: true, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: false, logFileCutoffSzBytes: 5242881, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: -1, simplifyVmaPrinting: true}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 5242881, simplifyVmaPrinting: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 5242881, collectMinidump: false}},
 
       //  同时存在三个参数错误-只有参数类型错误
       {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: true, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: 0, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, collectMinidump: false}},
 
       //  同时存在三个参数错误-参数类型错误和取值错误
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: -1, simplifyVmaPrinting: undefined}},
@@ -577,6 +616,9 @@ export default function HiAppEventConfigTest() {
       //  同时存在四个参数错误
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined}},
       {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: -1}},
+
+      //  同时存在五个参数错误
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined, collectMinidump: undefined}},
 
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event"}},
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event_rawheap"}},
@@ -592,6 +634,18 @@ export default function HiAppEventConfigTest() {
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined}},
       {resourceOverlimitPolicy: {jsHeapLogtype: undefined}},
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: undefined, useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined, useRefinedLogFileName: undefined}},
 
       // addressSanitizerPolicy 401场景
       {addressSanitizerPolicy: {pageSwitchLogEnable: undefined}},

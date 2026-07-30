@@ -342,7 +342,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_0600 catch error:', e.code + e.message);
-        expect(Number(e.code) === 890001).assertTrue();
+        expect(e.code === 8900001).assertTrue();
       }
     })
 
@@ -896,6 +896,28 @@ export default function SevenPointZeroI18nStageTest() {
     })
 
     /**
+     * @tc.name test_SymbolNumberFormat_2500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3300
+     * @tc.desc test SymbolNumberFormat with groupingSeparator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'groupingSeparator': '' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2500 result:' + options.groupingSeparator);
+        expect(options.groupingSeparator === '').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2500 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
      * @tc.name test_SymbolNumberFormat_2600
      * @tc.number SUB_GLOBAL_I18N_customSymbol_3200
      * @tc.desc test SymbolNumberFormat with empty groupingSeparator param
@@ -1367,6 +1389,85 @@ export default function SevenPointZeroI18nStageTest() {
       let numberFormat = symbolFormat.format(undefined);
       console.log('test_SymbolNumberFormat_3700 result:' + numberFormat);
       expect(numberFormat).assertEqual('NaN');
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_Format_0100
+     * @tc.number test_SymbolDateTimeFormat_Format_0100
+     * @tc.desc test SymbolDateTimeFormat with custom PM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_Format_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let dateFormat = symbolFormat.format(1773763200000);
+      console.log('test_SymbolDateTimeFormat_Format_0100 result:', dateFormat);
+      expect(dateFormat).assertEqual("3/18/2026");
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatRange_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatRange_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatRange_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol)
+      let dateFormat = symbolFormat.formatRange(1773799680000, 1805335680000)
+      console.log('test_SymbolDateTimeFormat_FormatRange_0100 result:', dateFormat);
+      expect(dateFormat).assertEqual("3/18/2026, 10:08:00 AM Central Standard Time – 3/18/2027, 10:08:00 AM Central Standard Time");
+    })
+
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatRangeToParts_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatRangeToParts_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatRangeToParts_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(1773799680000, 1773799680000);
+      console.log('test_SymbolDateTimeFormat_FormatRangeToParts_0100 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatToParts_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatToParts_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatToParts_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "test1", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatToParts(1773799680000);
+      console.log('test_SymbolDateTimeFormat_FormatToParts_0100 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
     })
 
     /**
@@ -3267,6 +3368,666 @@ export default function SevenPointZeroI18nStageTest() {
       } catch (e) {
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 code&message:', e.code + e.message);
         expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0100
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0100
+     * @tc.desc locale:zh-CN, lenientMode:true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0100 result:', result);
+      expect(result).assertEqual(date.getTime());
+
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0200
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0200
+     * @tc.desc locale:zh-CN, lenientMode:true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0200', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, true);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0200 result:', result);
+        expect(result > 0).assertTrue();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0200 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0300
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0300
+     * @tc.desc locale:zh-CN, lenientMode:false, 正常场景: 使用format转换后的字符串
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL0
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0300', Level.LEVEL0, () => {
+      let locale = new Intl.Locale('zh-CN', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0300 result:', result);
+      expect(result).assertEqual(date.getTime());
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0400
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0400
+     * @tc.desc locale:zh-CN, lenientMode:false, 异常场景: 混合分隔符"2026/03-18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0400', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0400 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0400 error', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0500
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0500
+     * @tc.desc locale:en-US, lenientMode:true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL0
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0500', Level.LEVEL0, () => {
+      let locale = new Intl.Locale('en-US', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0500 result:', result);
+      expect(result).assertEqual(date.getTime());
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0600
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0600
+     * @tc.desc locale:en-US, lenientMode:true, "2026/03-18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0600', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('en-US');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, true);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0600 result:', result);
+        expect(result > 0).assertTrue();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0600 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0700
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0700
+     * @tc.desc locale:en-US, lenientMode:false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0700 result:', result);
+      expect(result).assertEqual(date.getTime());
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0800
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0800
+     * @tc.desc locale:en-US, lenientMode:false, "2026/03-18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0800', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('en-US');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0800 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0800 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_0900
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_0900
+     * @tc.desc locale:ar-AE, lenientMode:true, 正常场景: 使用format转换后的字符串
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_0900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0900 result:', result);
+      expect(result).assertEqual(date.getTime());
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1000
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1000
+     * @tc.desc locale:ar-AE, lenientMode:true, 异常场景: 混合分隔符"2026/03-18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1000', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('ar-AE');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, true);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1000 result:', result);
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1000 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1100
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1100
+     * @tc.desc locale:ar-AE, lenientMode:false, 正常场景: 使用format转换后的字符串
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE', { 'hourCycle': 'h12' });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let date: Date = new Date(2026, 2, 18, 0, 0, 0);
+      let text: string = symbolFormat.format(date);
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1100 result:', result);
+      expect(result).assertEqual(date.getTime());
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1200
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1200
+     * @tc.desc locale:ar-AE, lenientMode:false, 异常场景: 混合分隔符"2026/03-18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1200', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('ar-AE');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03-18';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1200 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1200 error: ', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    // ==================== 特殊场景（只覆盖一次） ====================
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1300
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1300
+     * @tc.desc 特殊场景: null参数测试
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1300', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let result: number = symbolFormat.parse(null, true);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1300 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1300 error: ', e.code, e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1400
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1400
+     * @tc.desc 特殊场景: undefined参数测试
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1400', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let result: number = symbolFormat.parse(undefined, true);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1400 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1400 error: ', e.code, e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1500
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1500
+     * @tc.desc 特殊场景: 异常参数-连接符用特殊字符"2026@03#18"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1500', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026@03#18';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1500 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1500 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1600
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1600
+     * @tc.desc 特殊场景: 异常参数-日大于31 "2026/03/35", true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN');
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let text: string = '2026/03/35';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1600 result:', result);
+      expect(result).assertEqual(1775232000000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1700
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1700
+     * @tc.desc 特殊场景: 异常参数-日大于31 "2026/03/35", false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1700', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let text: string = '2026/03/35';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1700 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1700 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolDateTimeFormat_parse_1800
+     * @tc.number SUB_GLOBAL_SymbolDateTimeFormat_parse_1800
+     * @tc.desc 特殊场景: 异常参数- nullString, false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolDateTimeFormat_parse_1800', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+        let result: number = symbolFormat.parse('', false);
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1800 result:', result);
+        expect().assertFail();
+      } catch (e) {
+        console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1800 error:', e.code, e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0100
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0100
+     * @tc.desc locale:zh-CN, lenientMode:true, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0100 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0200
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0200
+     * @tc.desc locale:zh-CN, lenientMode:true, 异常场景: text="abc123"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0200', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = 'abc123';
+        let result: number = symbolFormat.parse(text, true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0200 result:' + result);
+        expect(Number.isNaN(result)).assertTrue();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0200 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0300
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0300
+     * @tc.desc locale:zh-CN, lenientMode:false, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0300 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0400
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0400
+     * @tc.desc locale:zh-CN, lenientMode:false, 异常场景: text="13,5,000" (错误千分位)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0400', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = '13,5,000';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0400 result:' + result);
+        expect(Number.isNaN(result)).assertTrue();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0400 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0500
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0500
+     * @tc.desc locale:en-US, lenientMode:true, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0500 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0600
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0600
+     * @tc.desc locale:en-US, lenientMode:true, 异常场景: text="135.000 km/h" (欧式小数点)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135.000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0600 result:' + result);
+      expect(result).assertEqual(135);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0700
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0700
+     * @tc.desc locale:en-US, lenientMode:false, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0700 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0800
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0800
+     * @tc.desc locale:en-US, lenientMode:false, 异常场景: text="135 000" (无分隔符)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135 000';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0800 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_0900
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_0900
+     * @tc.desc locale:ar-AE, lenientMode:true, 正常场景: text=东阿拉伯数字格式
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_0900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let formattedText: string = symbolFormat.format(135000);
+      let result: number = symbolFormat.parse(formattedText, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0900 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1000
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1000
+     * @tc.desc locale:ar-AE, lenientMode:true, 异常场景: text="135,000" (西阿拉伯数字)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1000 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1100
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1100
+     * @tc.desc locale:ar-AE, lenientMode:false, 正常场景: text=东阿拉伯数字格式
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let formattedText: string = symbolFormat.format(135000);
+      let result: number = symbolFormat.parse(formattedText, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1100 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1200
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1200
+     * @tc.desc locale:ar-AE, lenientMode:false, 异常场景: text="135.000" (西式小数点)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135.000';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1200 result:' + result);
+      expect(result).assertEqual(135);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1300
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1300
+     * @tc.desc null参数场景: text=null, 预期抛出错误码 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1300', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let result: number = symbolFormat.parse(null, true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1300 result:' + result);
+        expect().assertFail();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1300 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1400
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1400
+     * @tc.desc undefined参数场景: text=undefined, 预期抛出错误码 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1400', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let result: number = symbolFormat.parse(undefined, true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1400 result:' + result);
+        expect().assertFail();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1400 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_1500
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_1500
+     * @tc.desc undefined参数场景: text='', 预期抛出错误码 8900001
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_1500', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let result: number = symbolFormat.parse('', true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1500 result:' + result);
+        expect().assertFail();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1500 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_1300
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_1300
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 2200, 20, 3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_1300', Level.LEVEL3, () => {
+      try{
+        let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
+        console.log('SUB_GLOBAL_GetChineseCalendar_Test_1300 value:', value);
+      }catch(e){
+        expect(e.code).assertEqual('8900001');
       }
     })
 

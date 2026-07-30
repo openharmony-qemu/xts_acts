@@ -1,33 +1,6 @@
-'use static'
-import {
-  Button,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Path,
-  Progress,
-  Row,
-  Text,
-  ClickEvent,
-  ProgressConfiguration,
-  WrappedBuilder,
-  Builder,
-  ProgressStyleOptions,
-  ContentModifier,
-  wrapBuilder,
-  ColumnOptions,
-  Flex,
-  FlexOptions,
-  FlexAlign,
-  Margin,
-  ProgressType,
-  ProgressAttribute,
-  AttributeModifier
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-
+'use static';
+import { Button, Color, Column, ColumnOptions, Component, Entry, Path, Progress, Row, Text, ClickEvent, ProgressConfiguration, WrappedBuilder, Builder, ProgressStyleOptions, ContentModifier, wrapBuilder, Flex, FlexOptions, FlexAlign, Margin, ProgressType, ProgressAttribute, AttributeModifier } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
 type ProgressBuilder = @Builder(config:ProgressConfiguration) => void;
 
 export class MyProgressModifier implements ContentModifier<ProgressConfiguration> {

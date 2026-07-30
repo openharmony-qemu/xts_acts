@@ -26,7 +26,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 const TEST_URL_FOR_FETCH: string = 'https://www.baidu.com';
-const TEST_URL: string = 'https://httpbin.org/anything';
+const TEST_URL: string = 'https://httpbin.moyufangge.com/anything';
 
 interface FetchOptions {
   url: string,

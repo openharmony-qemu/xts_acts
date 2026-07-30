@@ -169,7 +169,7 @@ export default function V1ToV2() {
      */
     it('v1Tov2_007', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_007] START');
-      let obj: ESObject = JSON.parse(getInspectorByKey('func_value2'));
+      let obj: ESObject = JSON.parse(getInspectorByKey('V1ToV2_func_value2'));
       await CommonFunc.sleep(1000);
       console.info("[v1Tov2_007] component obj is: " + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('hello v1,1,1,null,hello v1,undefined');

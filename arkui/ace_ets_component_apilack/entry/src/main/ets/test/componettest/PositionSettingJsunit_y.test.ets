@@ -22,7 +22,7 @@ export default function positionSettingJsunit() {
     beforeEach(async () => {
       console.info("positionSetting beforeEach start");
       let options: router.RouterOptions  = {
-        url: 'pages/positionSetting',
+        url: 'MainAbility/pages/conponentadd/positionSetting_y',
       }
       try {
         router.clear();

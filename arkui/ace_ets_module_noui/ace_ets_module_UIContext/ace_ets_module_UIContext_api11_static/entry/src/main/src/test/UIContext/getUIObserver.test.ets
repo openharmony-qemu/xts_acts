@@ -77,7 +77,7 @@ it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await button!.click();
       console.info('+++++++++++++++++++3');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('showFlag_id'); //master22 执行后appDied
+      let strJson: string = inspector.getInspectorByKey('getUIObserver_showFlag_id');
       console.log('++++++++++4')
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getUIObserver_0100] component obj is: " + JSON.stringify(obj));

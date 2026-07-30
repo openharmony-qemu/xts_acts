@@ -16,6 +16,8 @@
 #include "napi/native_api.h"
 #include "hitrace/trace.h"
 #include "hilog/log.h"
+#include <string.h>
+#include <stdio.h>
 #undef LOG_TAG
 #define LOG_TAG "traceTest"
 
@@ -28,6 +30,7 @@
 #define PARAM_5 5
 #define PARAM_10 10
 #define PARAM_9 9
+#define PARAM_13 13
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0x3200
 static const int32_t TASK_ID = 111;
@@ -279,6 +282,67 @@ static napi_value OHHiTraceIsTraceEnabl2(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHHiTraceCountTraceNull(napi_env env, napi_callback_info info) {
+    int64_t count = PARAM_0;
+    OH_HiTrace_StartTraceEx(HITRACE_LEVEL_COMMERCIAL, nullptr, "key=value");
+    count++;
+    OH_HiTrace_StartTraceEx(HITRACE_LEVEL_COMMERCIAL, NULL, "key=value");
+    count++;
+    OH_HiTrace_StartTraceEx(HITRACE_LEVEL_COMMERCIAL, "", "key=value");
+    count++;
+    OH_HiTrace_FinishTraceEx(HITRACE_LEVEL_COMMERCIAL);
+    count++;
+    OH_HiTrace_StartAsyncTraceEx(HITRACE_LEVEL_DEBUG, nullptr, TASK_ID_TWO, "categoryTest", "key=value");
+    count++;
+    OH_HiTrace_StartAsyncTraceEx(HITRACE_LEVEL_DEBUG, NULL, TASK_ID_THREE, "categoryTest", "key=value");
+    count++;
+    OH_HiTrace_StartAsyncTraceEx(HITRACE_LEVEL_DEBUG, "", TASK_ID_FOUR, "categoryTest", "key=value");
+    count++;
+    OH_HiTrace_CountTraceEx(HITRACE_LEVEL_CRITICAL, nullptr, count);
+    count++;
+    OH_HiTrace_CountTraceEx(HITRACE_LEVEL_CRITICAL, NULL, count);
+    count++;
+    OH_HiTrace_CountTraceEx(HITRACE_LEVEL_CRITICAL, "", count);
+    count++;
+    OH_HiTrace_FinishAsyncTraceEx(HITRACE_LEVEL_MAX, nullptr, TASK_ID_TWO);
+    count++;
+    OH_HiTrace_FinishAsyncTraceEx(HITRACE_LEVEL_MAX, NULL, TASK_ID_THREE);
+    count++;
+    OH_HiTrace_FinishAsyncTraceEx(HITRACE_LEVEL_MAX, "", TASK_ID_FOUR);
+    count++;
+    int returnValue = FAIL;
+    if (count == PARAM_13) {
+        returnValue = SUCCESS;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+napi_value OH_HiTrace_StartTraceEx_FullName(napi_env env, napi_callback_info info){
+   int64_t count = PARAM_0;
+   char traceName[1000]; // 512字符 + 1个终止符
+   memset(traceName, 'A', 999);
+   traceName[999] = '\0';
+   OH_HiTrace_StartTraceEx(HITRACE_LEVEL_COMMERCIAL, traceName, "key=value");
+   count++;
+   OH_HiTrace_CountTraceEx(HITRACE_LEVEL_CRITICAL, traceName, count);
+   count++;
+   OH_HiTrace_FinishTraceEx(HITRACE_LEVEL_COMMERCIAL);
+   count++;
+   OH_HiTrace_StartAsyncTraceEx(HITRACE_LEVEL_CRITICAL, traceName, TASK_ID_FOUR, "categoryTest", "key=value");
+   count++;
+   OH_HiTrace_FinishAsyncTraceEx(HITRACE_LEVEL_MAX, traceName, TASK_ID_THREE);
+   count++;
+   int returnValue = FAIL;
+   if (count == PARAM_5) {
+     returnValue = SUCCESS;
+   }
+   napi_value result = nullptr;
+   napi_create_int32(env, returnValue, &result);
+   return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -295,6 +359,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHHiTraceIsFlagEnabled", nullptr, OHHiTraceIsFlagEnabled, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHiTraceIsTraceEnabled", nullptr, OHHiTraceIsTraceEnabled, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHiTraceIsTraceEnabl2", nullptr, OHHiTraceIsTraceEnabl2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiTraceCountTraceNull", nullptr, OHHiTraceCountTraceNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_HiTrace_StartTraceEx_FullName", nullptr, OH_HiTrace_StartTraceEx_FullName, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

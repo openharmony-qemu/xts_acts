@@ -16,15 +16,17 @@
 import AVSessionCore from './AVSessionCore.test'
 import AVSessionMetadata from './AVSessionMetadata.test'
 import AVSessionController from './AVSessionController.test'
+import AVSessionController2 from './AVSessionController2.test'
 import AVSessionEnum from './AVSessionEnum.test'
 import AVSessionERRCode from './AVSessionERRCode.test'
-import AVSessionMetadata2 from './AVSessionMetadata.test'
+import AVSessionMetadata2 from './AVSessionMetadata2.test'
 
 
 export default function testsuite() {
   AVSessionCore()
   AVSessionMetadata()
   AVSessionController()
+  AVSessionController2()
   AVSessionEnum()
   AVSessionERRCode()
   AVSessionMetadata2()

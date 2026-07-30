@@ -15,44 +15,12 @@
  */
 
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,
-  FlexWrap,$r,Resource,Length
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,Provide,Consume,UIUtils
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, FlexWrap, $r, Resource, Length } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, Consume, UIUtils, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
-import common from '@ohos.app.ability.common';
-
-
-
-
 @Component
 struct Child_CA {
   // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
@@ -66,7 +34,7 @@ struct Child_CA {
         .onClick(():void => {
           this.Array = [10] as Array<Int>;
         })
-        .key('state1')
+        .key('ConsumeArray_state1')
         .height('5%')
 
       Text("切换变量Array<boolean>类型[1]-->[true]").height('5%')
@@ -74,7 +42,7 @@ struct Child_CA {
         .onClick(():void => {
           this.Array = [true];
         })
-        .key('state2')
+        .key('ConsumeArray_state2')
         .height('5%')
 
       Text("切换变量boolean类型[1]-->true").height('5%')
@@ -82,7 +50,7 @@ struct Child_CA {
         .onClick(():void => {
           this.Array = true;
         })
-        .key('state3')
+        .key('ConsumeArray_state3')
         .height('5%')
 
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
@@ -90,7 +58,7 @@ struct Child_CA {
         .onClick(():void => {
           this.Array = [$r('app.string.number')] as Array<Resource>;
         })
-        .key('state4')
+        .key('ConsumeArray_state4')
         .height('5%')
     }
   }

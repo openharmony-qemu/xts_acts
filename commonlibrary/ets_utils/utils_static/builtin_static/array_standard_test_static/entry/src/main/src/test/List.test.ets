@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,7 @@ import ArrayConcatTest from './array/ArrayConcat.test';
 import ArrayReverseTest from './array/ArrayReverse.test';
 import ArrayShiftTest from './array/ArrayShift.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     ArrayEveryTest();
     ArrayOfTest();
     ArrayPopTest();

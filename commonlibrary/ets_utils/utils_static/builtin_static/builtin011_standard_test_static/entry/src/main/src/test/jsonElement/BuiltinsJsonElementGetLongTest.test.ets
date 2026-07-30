@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 RKH Corp.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +30,7 @@ function init(size: number): string {
   return ans;
 }
 
-export default function BuiltinsJsonElementGetLongTest() {
+export default function BuiltinsJsonElementGetLongTest(): void {
   describe("BuiltinsJsonElementGetLongTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -25,6 +25,8 @@ const IMAGE_PIXELMAP_RELEASED = 7600105;
 const IMAGE_UNSUPPORTED_OPERATION = 7600201;
 const IMAGE_UNSUPPORTED_DATA_FORMAT = 7600207;
 const IMAGE_INVALID_REGION = 7600204;
+const IMAGE_ALLOC_FAILED = 7600301;
+const IMAGE_DATA_CONVERSION_FAILED = 7600306;
 
 export default function imageNdkTest() {
   describe('ImageNdkTest', () => {
@@ -923,287 +925,32 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   testNativeApplyScaleNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0200
-     * @tc.desc   test apply scale with normal value
+     * @tc.name   testNativeSetPixelFormatAlphaU8
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetPixelFormatAlphaU8_0100
+     * @tc.desc   test set pixel format with ALPHA_U8
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeApplyScaleNormal',
+    it('testNativeSetPixelFormatAlphaU8',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyScaleNormal();
+      let result: number = ndkTest.testNativeSetPixelFormatAlphaU8();
       expect(result).assertEqual(IMAGE_SUCCESS);
       done();
     })
 
     /**
-     * @tc.name   testNativeApplyScaleAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0400
-     * @tc.desc   test apply scale after pixelmap released
+     * @tc.name   testNativeSetPixelFormatAlphaF16
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetPixelFormatAlphaF16_0100
+     * @tc.desc   test set pixel format with ALPHA_F16
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeApplyScaleAfterRelease',
+    it('testNativeSetPixelFormatAlphaF16',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyScaleAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyScaleLocked
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0500
-     * @tc.desc   test apply scale with locked pixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyScaleLocked',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyScaleLocked();
-      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyScaleWithAntiAliasingNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0200
-     * @tc.desc   test apply scale with anti-aliasing normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyScaleWithAntiAliasingNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingNormal();
+      let result: number = ndkTest.testNativeSetPixelFormatAlphaF16();
       expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyScaleWithAntiAliasingAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0300
-     * @tc.desc   test apply scale with anti-aliasing after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyScaleWithAntiAliasingAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyTranslateNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0200
-     * @tc.desc   test apply translate normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyTranslateNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyTranslateNormal();
-      expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyTranslateAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0300
-     * @tc.desc   test apply translate after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyTranslateAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyTranslateAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyTranslateLocked
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0400
-     * @tc.desc   test apply translate with locked pixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyTranslateLocked',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyTranslateLocked();
-      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyRotateNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0300
-     * @tc.desc   test apply rotate normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyRotateNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyRotateNormal();
-      expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyRotateAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0400
-     * @tc.desc   test apply rotate after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyRotateAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyRotateAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyRotateLocked
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0500
-     * @tc.desc   test apply rotate with locked pixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyRotateLocked',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyRotateLocked();
-      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyFlipNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0200
-     * @tc.desc   test apply flip normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyFlipNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyFlipNormal();
-      expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyFlipAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0300
-     * @tc.desc   test apply flip after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyFlipAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyFlipAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyFlipLocked
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0400
-     * @tc.desc   test apply flip with locked pixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyFlipLocked',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyFlipLocked();
-      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyCropNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0500
-     * @tc.desc   test apply crop normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyCropNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyCropNormal();
-      expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyCropAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0600
-     * @tc.desc   test apply crop after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyCropAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyCropAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeApplyCropLocked
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0700
-     * @tc.desc   test apply crop with locked pixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeApplyCropLocked',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeApplyCropLocked();
-      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeConvertAlphaTypeNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0400
-     * @tc.desc   test convert alpha type normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeConvertAlphaTypeNormal',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeConvertAlphaTypeNormal();
-      expect(result).assertEqual(IMAGE_SUCCESS);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeConvertAlphaTypeAfterRelease
-     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0500
-     * @tc.desc   test convert alpha type after release
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeConvertAlphaTypeAfterRelease',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeConvertAlphaTypeAfterRelease();
-      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
       done();
     })
 
@@ -1258,6 +1005,711 @@ export default function imageNdkTest() {
     it('testNativeSetOpacityAlphaF16',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testNativeSetOpacityAlphaF16();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityNullPointer
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0100
+     * @tc.desc   test set opacity with null pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityNullPointer',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeSetOpacityNullPointer();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityZeroValue
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0300
+     * @tc.desc   test set opacity with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityZeroValue',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeSetOpacityZeroValue(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityMaxValuePlusOne
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0400
+     * @tc.desc   test set opacity with value greater than 1.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityMaxValuePlusOne',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeSetOpacityMaxValuePlusOne(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityMinValueMinusOne
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0500
+     * @tc.desc   test set opacity with value less than 0.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityMinValueMinusOne',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeSetOpacityMinValueMinusOne(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0600
+     * @tc.desc   test set opacity after pixelmap released
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeSetOpacityAfterRelease(pixelMap);
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityUnsupportedDataFormat
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_0800
+     * @tc.desc   test set opacity with unsupported data format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityUnsupportedDataFormat',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeSetOpacityUnsupportedDataFormat();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_DATA_FORMAT);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeSetOpacityLockedPixelmap
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeSetOpacity_1000
+     * @tc.desc   test set opacity with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeSetOpacityLockedPixelmap',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeSetOpacityLockedPixelmap(pixelMap);
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0100
+     * @tc.desc   test apply scale with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0200
+     * @tc.desc   test apply scale normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0300
+     * @tc.desc   test apply scale after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0400
+     * @tc.desc   test apply scale with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleAllocFailed
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScale_0500
+     * @tc.desc   test apply scale with large image causing alloc failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleAllocFailed',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleAllocFailed();
+      expect(result).assertEqual(IMAGE_ALLOC_FAILED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleWithAntiAliasingAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0100
+     * @tc.desc   test apply scale with anti-aliasing with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleWithAntiAliasingAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleWithAntiAliasingNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0200
+     * @tc.desc   test apply scale with anti-aliasing normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleWithAntiAliasingNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleWithAntiAliasingAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0300
+     * @tc.desc   test apply scale with anti-aliasing after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleWithAntiAliasingAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleWithAntiAliasingLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0400
+     * @tc.desc   test apply scale with anti-aliasing with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleWithAntiAliasingLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyScaleWithAntiAliasingAllocFailed
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyScaleWithAntiAliasing_0500
+     * @tc.desc   test apply scale with anti-aliasing with large image causing alloc failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyScaleWithAntiAliasingAllocFailed',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyScaleWithAntiAliasingAllocFailed();
+      expect(result).assertEqual(IMAGE_ALLOC_FAILED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyTranslateAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0100
+     * @tc.desc   test apply translate with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyTranslateAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyTranslateAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyTranslateNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0200
+     * @tc.desc   test apply translate normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyTranslateNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyTranslateNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyTranslateLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0300
+     * @tc.desc   test apply translate with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyTranslateLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyTranslateLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyTranslateAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyTranslate_0400
+     * @tc.desc   test apply translate after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyTranslateAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyTranslateAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyRotateAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0100
+     * @tc.desc   test apply rotate with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyRotateAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyRotateAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyRotateNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0200
+     * @tc.desc   test apply rotate normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyRotateNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyRotateNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyRotateLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0300
+     * @tc.desc   test apply rotate with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyRotateLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyRotateLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyRotateAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0400
+     * @tc.desc   test apply rotate after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyRotateAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyRotateAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyRotateInvalidAngle
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyRotate_0500
+     * @tc.desc   test apply rotate with invalid angle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyRotateInvalidAngle',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeApplyRotateInvalidAngle(pixelMap, 45.0);
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyFlipAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0100
+     * @tc.desc   test apply flip with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyFlipAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyFlipAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyFlipNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0200
+     * @tc.desc   test apply flip normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyFlipNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyFlipNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyFlipLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0300
+     * @tc.desc   test apply flip with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyFlipLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyFlipLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyFlipAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyFlip_0400
+     * @tc.desc   test apply flip after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyFlipAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyFlipAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0100
+     * @tc.desc   test apply crop with null pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0200
+     * @tc.desc   test apply crop normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropLocked
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0300
+     * @tc.desc   test apply crop with locked pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropLocked',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropLocked();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0400
+     * @tc.desc   test apply crop after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropInvalidRegion
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0500
+     * @tc.desc   test apply crop with invalid region
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropInvalidRegion',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropInvalidRegion();
+      expect(result).assertEqual(IMAGE_INVALID_REGION);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropNullRegion
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0600
+     * @tc.desc   test apply crop with null region
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropNullRegion',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeApplyCropNullRegion(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeApplyCropBothNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeApplyCrop_0700
+     * @tc.desc   test apply crop with both null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeApplyCropBothNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeApplyCropBothNull();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0100
+     * @tc.desc   test convert alpha type with null src/dst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeConvertAlphaTypeAbnormal();
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0200
+     * @tc.desc   test convert alpha type normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeNormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeConvertAlphaTypeNormal();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeAfterRelease
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0300
+     * @tc.desc   test convert alpha type after release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeConvertAlphaTypeAfterRelease();
+      expect(result).assertEqual(IMAGE_PIXELMAP_RELEASED);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeNullSrc
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0400
+     * @tc.desc   test convert alpha type with null src
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeNullSrc',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeConvertAlphaTypeNullSrc(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeNullDst
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0500
+     * @tc.desc   test convert alpha type with null dst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeNullDst',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeConvertAlphaTypeNullDst(pixelMap);
+      expect(result).assertEqual(IMAGE_INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeConvertAlphaTypeUnsupportedDataFormat
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeConvertAlphaType_0600
+     * @tc.desc   test convert alpha type with unsupported data format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeConvertAlphaTypeUnsupportedDataFormat',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeConvertAlphaTypeUnsupportedDataFormat();
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_DATA_FORMAT);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeImageDataConversionFailedErrorCode
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeImageDataConversionFailed_0100
+     * @tc.desc   test IMAGE_DATA_CONVERSION_FAILED error code value is 7600306
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeImageDataConversionFailedErrorCode',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeImageDataConversionFailedErrorCode();
       expect(result).assertEqual(IMAGE_SUCCESS);
       done();
     })

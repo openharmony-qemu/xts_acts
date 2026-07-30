@@ -55,7 +55,7 @@ export default function alphabetIndexerJsunit() {
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {
-        url: 'pages/AlphabetIndexer',
+        url: 'MainAbility/pages/conponentadd/AlphabetIndexer_y',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -88,7 +88,7 @@ export default function alphabetIndexerJsunit() {
 it('alphabetIndexerTest_static_001', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001 START');
       await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('alphabetIndexer');
+      let strJson = inspector.getInspectorByKey('AlphabetIndexer_y_alphabetIndexer');
       let obj = JSON.parseJsonElement(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.getString('$type')).assertEqual('AlphabetIndexer');

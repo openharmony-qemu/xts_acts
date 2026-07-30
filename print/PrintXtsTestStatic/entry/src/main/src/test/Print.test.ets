@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -115,7 +116,7 @@ class MyPrinterInformation implements print.PrinterInformation {
   options?: string;
 }
 
-export default function printTest() {
+export default function printTest(): void {
 
   describe("printTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -2037,6 +2038,9 @@ export default function printTest() {
         hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_INVALID_PRINT_JOB = ' + print.PrintErrorCode.E_PRINT_INVALID_PRINT_JOB);
         hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_FILE_IO = ' + print.PrintErrorCode.E_PRINT_FILE_IO);
         hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_TOO_MANY_FILES = ' + print.PrintErrorCode.E_PRINT_TOO_MANY_FILES);
+        hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_SMB_LOGIN_LOCKOUT = ' + print.PrintErrorCode.E_PRINT_SMB_LOGIN_LOCKOUT);
+        hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_SMB_CONNECTION_FAILURE = ' + print.PrintErrorCode.E_PRINT_SMB_CONNECTION_FAILURE);
+        hilog.info(domain, tag, 'PrintErrorCode.E_PRINT_SMB_INVALID_CREDENTIALS = ' + print.PrintErrorCode.E_PRINT_SMB_INVALID_CREDENTIALS);
 
         // ApplicationEvent
         hilog.info(domain, tag, 'ApplicationEvent.APPLICATION_CREATED = ' + print.ApplicationEvent.APPLICATION_CREATED);
@@ -4490,5 +4494,130 @@ export default function printTest() {
     })
 
     hilog.info(domain, tag, '%{public}s', 'printTest end');
+  });
+
+  /**
+   * @tc.name   SUB_print_print_fwk_addPrinter_0100
+   * @tc.number SUB_print_print_fwk_addPrinter_0100
+   * @tc.desc   check the addprinter api
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_print_print_fwk_addPrinter_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0100 start');
+    try {
+      let printName: string = '123';
+      let printerUri: string = '123';
+      let printerPpdName: string = '123';
+      let printerOption: string = '123';
+      print.addPrinter(printName, printerUri, printerPpdName, printerOption).then(() => {
+        hilog.info(domain, tag, 'SUB_print_print_fwk_addPrinter_0100 success');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0100 error, %{public}d', error.code);
+        expect(error.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0100 error, %{public}d', error.code);
+      expect().assertFail();
+    }
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0100 end');
+  });
+
+  /**
+   * @tc.name   SUB_print_print_fwk_addPrinter_0200
+   * @tc.number SUB_print_print_fwk_addPrinter_0200
+   * @tc.desc   check the addprinter api
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_print_print_fwk_addPrinter_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0200 start');
+    try {
+      let printName: string = '123';
+      let printerUri: string = '123';
+      print.addPrinter(printName, printerUri).then(() => {
+        hilog.info(domain, tag, 'SUB_print_print_fwk_addPrinter_0200 success');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0200 error, %{public}d', error.code);
+        expect(error.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0200 error, %{public}d', error.code);
+      expect().assertFail();
+    }
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0200 end');
+  });
+
+  /**
+   * @tc.name   SUB_print_print_fwk_addPrinter_0300
+   * @tc.number SUB_print_print_fwk_addPrinter_0300
+   * @tc.desc   check the addprinter api
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_print_print_fwk_addPrinter_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0300 start');
+    try {
+      let printName: string = '123';
+      let printerUri: string = '123';
+      let printerPpdName: string = '123';
+      print.addPrinter(printName, printerUri, printerPpdName).then(() => {
+        hilog.info(domain, tag, 'SUB_print_print_fwk_addPrinter_0300 success');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0300 error, %{public}d', error.code);
+        expect(error.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0300 error, %{public}d', error.code);
+      expect().assertFail();
+    }
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0300 end');
+  });
+
+  /**
+   * @tc.name   SUB_print_print_fwk_addPrinter_0400
+   * @tc.number SUB_print_print_fwk_addPrinter_0400
+   * @tc.desc   check the addprinter api
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_print_print_fwk_addPrinter_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0400 start');
+    try {
+      let printName: string = '';
+      let printerUri: string = '';
+      let printerPpdName: string = '';
+      let printerOption: string = '';
+      print.addPrinter(printName, printerUri, printerPpdName, printerOption).then(() => {
+        hilog.info(domain, tag, 'SUB_print_print_fwk_addPrinter_0400 success');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0400 error, %{public}d', error.code);
+        expect(error.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      let error = err as BusinessError;
+      hilog.error(domain, tag, 'SUB_print_print_fwk_addPrinter_0400 error, %{public}d', error.code);
+      expect().assertFail();
+    }
+    hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_addPrinter_0400 end');
   });
 }

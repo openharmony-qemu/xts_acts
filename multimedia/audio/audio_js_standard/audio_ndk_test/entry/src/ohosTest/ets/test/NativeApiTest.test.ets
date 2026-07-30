@@ -5361,6 +5361,66 @@ export default function audioNDK() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
     * @tc.name   AudioRenderer_SetIndependentAudioSessionStrategy_001
     * @tc.number AudioRenderer_SetIndependentAudioSessionStrategy_001
     * @tc.desc   SetIndependentAudioSessionStrategy
@@ -5526,6 +5586,66 @@ export default function audioNDK() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
     * @tc.name   AudioSessionManager_SetBehavior_001
     * @tc.number AudioSessionManager_SetBehavior_001
     * @tc.desc   SetIndependentAudioSessionStrategy
@@ -5584,6 +5704,22 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
     /**
     * @tc.name   AudioStreamManagerIsMultichannelPlaybackSupported_001
     * @tc.number AudioStreamManagerIsMultichannelPlaybackSupported_001
@@ -5738,111 +5874,6 @@ export default function audioNDK() {
  	     expect(result).assertEqual(TEST_PASS);
  	     done();
  	   })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200: ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500: ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
 
     /**
     * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100
@@ -6217,6 +6248,823 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with supported nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with renderer nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with capturer nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDebuggingManager with valid parameter.
+     *            测试点：正常获取音频调试管理器
+     *            测试输入：有效的输出参数指针
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS，manager 不为 nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDebuggingManager with nullptr parameter.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 输出参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintAppInfo with valid parameters and fd=-1.
+     *            测试点：正常打印应用快照到日志
+     *            测试输入：有效的 manager，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintAppInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，fd=-1
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with valid parameters and fd=-1.
+     *            测试点：正常打印音频播放快照到日志
+     *            测试输入：有效的 manager，有效的 renderer，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 renderer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with nullptr renderer.
+     *            测试点：renderer 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 renderer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with valid parameters and fd=-1.
+     *            测试点：正常打印录音快照到日志
+     *            测试输入：有效的 manager，有效的 capturer，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 capturer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with nullptr capturer.
+     *            测试点：capturer 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 capturer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with valid parameters and fd=-1.
+     *            测试点：正常打印音频会话快照到日志
+     *            测试输入：有效的 manager，有效的 session，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 session 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with nullptr session.
+     *            测试点：session 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 session 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100
+     * @tc.desc   Test OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback with nullptr builder.
+     *            测试点：builder 参数为 nullptr 时返回错误码 AUDIOSTREAM_ERROR_INVALID_PARAM
+     *            测试输入：nullptr 作为 builder 参数，有效的 callback
+     *            测试输出：返回 AUDIOSTREAM_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200
+     * @tc.desc   Test OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback with nullptr callback.
+     *            测试点：callback 参数为 nullptr 时返回错误码 AUDIOSTREAM_ERROR_INVALID_PARAM
+     *            测试输入：有效的 builder，nullptr 作为 callback 参数
+     *            测试输出：返回 AUDIOSTREAM_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300
+     * @tc.desc   Test OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback with nullptr userData.
+     *            测试点：userData 为 nullptr 时仍可正常设置回调，返回 AUDIOSTREAM_SUCCESS
+     *            测试输入：有效的 builder 和 callback，nullptr 作为 userData 参数
+     *            测试输出：返回 AUDIOSTREAM_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100
+     * @tc.desc   Test OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback with valid parameters.
+     *            测试点：所有参数正常时返回 AUDIOSTREAM_SUCCESS
+     *            测试输入：有效的 builder、callback 和 userData
+     *            测试输出：返回 AUDIOSTREAM_SUCCESS (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100
+     * @tc.desc   Test SetSensitiveRecordPermitCallback with AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK scene.
+     *            测试点：验证在VOICE_DOWNLINK场景下设置回调的完整流程
+     *            测试输入：创建builder→设置VOICE_DOWNLINK源类型→设置敏感录音许可回调
+     *            测试输出：所有步骤返回 AUDIOSTREAM_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100
+     * @tc.desc   Test complete flow: CreateBuilder→SetVoiceDownlink→SetCallback→GenerateCapturer.
+     *            测试点：验证设置回调后能够成功创建录音器
+     *            测试输入：创建builder→设置VOICE_DOWNLINK→设置回调→创建录音器
+     *            测试输出：成功创建录音器，返回 TEST_PASS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200
+     * @tc.desc   Test full flow with security params: Builder→VoiceDownlink→SecurityParams→Callback→Capturer.
+     *            测试点：验证完整流程：设置安全参数+回调后创建录音器
+     *            测试输入：创建builder→设置VOICE_DOWNLINK→设置安全参数→设置回调→创建录音器
+     *            测试输出：成功创建录音器，验证回调可被触发
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100
+     * @tc.desc   Test callback function pointer validation in VOICE_DOWNLINK scene.
+     *            测试点：验证回调函数指针被正确设置并可被使用
+     *            测试输入：创建builder→设置VOICE_DOWNLINK→设置回调→验证回调指针
+     *            测试输出：回调函数指针有效，返回 TEST_PASS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100
+     * @tc.desc   Test OH_AudioStreamBuilder_SetCellularRecordSecurityParams with nullptr builder.
+     *            测试点：builder 参数为 nullptr 时返回错误码 AUDIOSTREAM_ERROR_INVALID_PARAM
+     *            测试输入：nullptr 作为 builder 参数，有效的 phoneNum 和 token
+     *            测试输出：返回 AUDIOSTREAM_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200
+     * @tc.desc   Test OH_AudioStreamBuilder_SetCellularRecordSecurityParams with nullptr phoneNum.
+     *            测试点：phoneNum 参数为 nullptr 时返回错误码 AUDIOSTREAM_ERROR_INVALID_PARAM
+     *            测试输入：有效的 builder，nullptr 作为 phoneNum 参数，有效的 token
+     *            测试输出：返回 AUDIOSTREAM_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300
+     * @tc.desc   Test OH_AudioStreamBuilder_SetCellularRecordSecurityParams with nullptr token.
+     *            测试点：token 参数为 nullptr 时返回错误码 AUDIOSTREAM_ERROR_INVALID_PARAM
+     *            测试输入：有效的 builder 和 phoneNum，nullptr 作为 token 参数
+     *            测试输出：返回 AUDIOSTREAM_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100
+     * @tc.desc   Test OH_AudioStreamBuilder_SetCellularRecordSecurityParams with valid parameters.
+     *            测试点：所有参数正常时返回 AUDIOSTREAM_SUCCESS
+     *            测试输入：有效的 builder、phoneNum 和 token
+     *            测试输出：返回 AUDIOSTREAM_SUCCESS (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100
+     * @tc.desc   Test SetCellularRecordSecurityParams with AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK scene.
+     *            测试点：验证在VOICE_DOWNLINK场景下设置安全参数的完整流程
+     *            测试输入：创建builder -> 设置VOICE_DOWNLINK源类型 -> 设置安全参数
+     *            测试输出：返回 AUDIOSTREAM_SUCCESS，所有步骤成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100
+     * @tc.desc   Test AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK enum value.
+     *            测试点：验证语音通话下行源类型枚举值为 22
+     *            测试输入：使用 AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK
+     *            测试输出：枚举值正确定义为 22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })

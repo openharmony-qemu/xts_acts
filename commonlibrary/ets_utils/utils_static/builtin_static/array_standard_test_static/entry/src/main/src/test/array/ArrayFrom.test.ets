@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +48,7 @@ interface NestedObject069 {
 
 type MixedType067 = number | string | null;
 
-export default function ArrayFromTest() {
+export default function ArrayFromTest(): void {
   describe('ArrayFromTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

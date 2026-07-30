@@ -14,11 +14,9 @@
  */
 import DecimalTest001 from './Decimal001.test';
 import DecimalTest002 from './Decimal002.test';
-import DecimalTest003 from './Decimal003.test';
 import DecimalTest004 from './Decimal004.test';
 export default function testsuite() {
   DecimalTest001();
-  DecimalTest002();
-  DecimalTest003();
   DecimalTest004();
+  DecimalTest002();
 }

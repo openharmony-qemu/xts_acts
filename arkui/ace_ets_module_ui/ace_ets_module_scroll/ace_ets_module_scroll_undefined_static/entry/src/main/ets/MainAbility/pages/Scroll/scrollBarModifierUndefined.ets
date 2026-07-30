@@ -1,46 +1,6 @@
-'use static'
-import {
-  Builder,
-  Stack,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Alignment,
-  Tabs,
-  BarPosition,
-  TabContent,
-  NestedScrollMode,
-  Refresh,
-  Button,
-  List,
-  RefreshStatus,
-  ForEach,
-  LazyForEach,
-  ListItemAlign,
-  ListItem,
-  NestedScrollMode,
-  ScrollState,
-  Text,
-  Scroller,
-  TextAlign,
-  BarState,
-  Scroll,
-  Edge,
-  ContentClipMode,
-  CrownSensitivity,
-  EdgeEffect,
-  Color,
-  ClickEvent,
-  Margin,
-  ScrollDirection,
-  ScrollSource,
-  LengthMetrics,
-  FadingEdgeOptions
-} from '@ohos.arkui.component'
-import { AttributeModifier, CommonAttribute , ListAttribute} from '@ohos.arkui.component'
-import { State, Observed, Track } from '@ohos.arkui.stateManagement'
-
+'use static';
+import { Builder, Stack, Entry, Component, Column, Row, Alignment, Tabs, BarPosition, TabContent, NestedScrollMode, Refresh, Button, List, RefreshStatus, ForEach, LazyForEach, ListItemAlign, ListItem, ScrollState, Text, Scroller, TextAlign, BarState, Scroll, Edge, ContentClipMode, CrownSensitivity, EdgeEffect, Color, ClickEvent, Margin, ScrollDirection, ScrollSource, LengthMetrics, FadingEdgeOptions, AttributeModifier, CommonAttribute, ListAttribute } from '@ohos.arkui.component';
+import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 // ===================== Modifier 定义 =====================
 @Observed
 export class ListModifier implements AttributeModifier<ListAttribute> {

@@ -229,6 +229,83 @@ static napi_value Doblankless_CONTROLLER_NOT_INITED(napi_env env, napi_callback_
     return Capacity;
 }
 
+static napi_value Doblankless_SET_CONTROLLER_NOT_INITED(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessErrorCode err = OH_NativeArkWeb_SetBlanklessLoadingWithKey("",
+        g_doblanklessGetInfoValueWithKey, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+        "Doblankless_SET_CONTROLLER_NOT_INITED errCode:%{public}d", err);
+    napi_create_double(env, err, &Capacity);
+    return Capacity;
+}
+
+static napi_value Doblankless_SET_INVALID_ARGS(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessErrorCode err = OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue,
+        g_doblanklessINVALID_ARGS, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "Doblankless_SET_INVALID_ARGS errCode:%{public}d", err);
+    napi_create_double(env, err, &Capacity);
+    return Capacity;
+}
+
+static napi_value Doblankless_SET_SIGNIFICANT_CHANGE(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessGetInfoValueWithKey);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_SET_SIGNIFICANT_CHANGE similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d",
+                 blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
+    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
+        ArkWeb_BlanklessErrorCode err =
+            OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                     "Doblankless_SET_SIGNIFICANT_CHANGE setErrCode:%{public}d", err);
+        napi_create_double(env, err, &Capacity);
+    } else {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    }
+    return Capacity;
+}
+
 static napi_value Doblankless_INVALID_ARGS(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -619,6 +696,12 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"doblankless_CONTROLLER_NOT_INITED", nullptr, Doblankless_CONTROLLER_NOT_INITED, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"doblankless_SET_CONTROLLER_NOT_INITED", nullptr, Doblankless_SET_CONTROLLER_NOT_INITED, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"doblankless_SET_INVALID_ARGS", nullptr, Doblankless_SET_INVALID_ARGS, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"doblankless_SET_SIGNIFICANT_CHANGE", nullptr, Doblankless_SET_SIGNIFICANT_CHANGE, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"doblankless_INVALID_ARGS", nullptr, Doblankless_INVALID_ARGS, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"doblankless_INVALID_ARGS_SET_ZERO", nullptr, Doblankless_INVALID_ARGS_SET_ZERO, nullptr, nullptr, nullptr, napi_default,

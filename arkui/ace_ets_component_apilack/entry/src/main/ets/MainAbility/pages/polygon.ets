@@ -48,7 +48,7 @@ struct PolygonNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("polygon_neText")
 
       Polygon({ width: "100px", height: "100px" }).points([[0, 0], [50, 100], [100, 0]])
         .key("Polygon")

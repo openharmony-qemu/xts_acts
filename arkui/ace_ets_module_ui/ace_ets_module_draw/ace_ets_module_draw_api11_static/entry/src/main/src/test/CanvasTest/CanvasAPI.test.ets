@@ -81,7 +81,7 @@ export default function CanvasAPITest() {
 it('ArkUI_Canvas_API_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_API_static_0100'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson: string = inspector.getInspectorByKey('CanvasAPI_Canvas1')
+      let strJson: string = inspector.getInspectorByKey('CanvasAPI' + '_Canvas1')
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas')
       console.info(`${SUITE} ${CASE} END`)
       done()

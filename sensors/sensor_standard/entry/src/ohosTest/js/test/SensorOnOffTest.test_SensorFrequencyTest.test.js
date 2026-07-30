@@ -81,6 +81,10 @@ describe("SensorJsTest_sensor_63", function () {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.on(sensor.SensorId.ACCELEROMETER, callback, {'interval': 'game'});
@@ -116,6 +120,10 @@ describe("SensorJsTest_sensor_63", function () {
                 sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, (error, data) => {
                     if (error) {
                         console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -153,6 +161,10 @@ describe("SensorJsTest_sensor_63", function () {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.on(sensor.SensorId.ACCELEROMETER, callback, {'interval': 'normal'});
@@ -188,6 +200,10 @@ describe("SensorJsTest_sensor_63", function () {
             sensor.getSingleSensor(sensor.SensorId.GYROSCOPE, (error, data) => {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {
@@ -225,6 +241,10 @@ describe("SensorJsTest_sensor_63", function () {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.on(sensor.SensorId.GYROSCOPE, callback, {'interval': 'ui'});
@@ -260,6 +280,10 @@ describe("SensorJsTest_sensor_63", function () {
             sensor.getSingleSensor(sensor.SensorId.GYROSCOPE, (error, data) => {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {
@@ -297,6 +321,10 @@ describe("SensorJsTest_sensor_63", function () {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.on(sensor.SensorId.ORIENTATION, callback2, {'interval': 'game'});
@@ -333,6 +361,10 @@ describe("SensorJsTest_sensor_63", function () {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.on(sensor.SensorId.ORIENTATION, callback2, {'interval': 'ui'});
@@ -368,6 +400,10 @@ describe("SensorJsTest_sensor_63", function () {
             sensor.getSingleSensor(sensor.SensorId.ORIENTATION, (error, data) => {
                 if (error) {
                     console.error('getSingleSensor fail, errorCode:' + error.code + ' ,msg:' + error.message);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {

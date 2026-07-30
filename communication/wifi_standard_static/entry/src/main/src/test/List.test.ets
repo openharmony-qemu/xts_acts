@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,8 @@
  */
 
 import actsWifiManagerFunctionsTest from "./WifiManagerStationFunctionsStatic.test";
+import actsWifiManagerP2PTest from "./WifiManagerP2PStatic.test";
 export default function testsuite() {
   actsWifiManagerFunctionsTest();
+  actsWifiManagerP2PTest();
 }

@@ -49,7 +49,7 @@ struct NavigatorTarget {
         Text('Go to target page')
           .width('100%').textAlign(TextAlign.Center)
       }.params({ text: 'target' }).target('pages/index')
-      .key("Navigator")
+      .key("navigator2_Navigator")
 
     }.width("100%").height("100%")
   }

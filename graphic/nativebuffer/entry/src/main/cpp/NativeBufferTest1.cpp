@@ -157,6 +157,10 @@ napi_property_descriptor desc[] = {
     {"oHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeBufferAllocFormatDiff", nullptr, OHNativeBufferAllocFormatDiff, nullptr, nullptr, nullptr,
      napi_default, nullptr},
+    {"oHNativeBufferSetColorSpaceBt2020LogFull", nullptr, OHNativeBufferSetColorSpaceBt2020LogFull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetColorSpaceBt2020LogLimit", nullptr, OHNativeBufferSetColorSpaceBt2020LogLimit, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

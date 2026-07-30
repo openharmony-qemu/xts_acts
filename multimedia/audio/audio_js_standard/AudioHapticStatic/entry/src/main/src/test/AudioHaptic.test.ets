@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +27,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import fs from '@ohos.file.fs';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import systemSoundManager from '@ohos.multimedia.systemSoundManager';
 
 let sleep = (ms: int): Promise<string> => {
   return new Promise<string>((resolve) => {
@@ -38,6 +40,17 @@ let sleep = (ms: int): Promise<string> => {
 interface AudioHapticPlayerOptions {
   muteAudio: boolean,
   muteHaptics: boolean
+}
+
+enum SystemSoundManagerErrorCode {
+  PARAMETER_INCORRECT = 5400108,
+  CRASH_OR_BLOCKING_ERR = 5400105
+}
+
+enum SystemSoundTypeTest {
+  PHOTO_SHUTTER_TEST = 0,
+  VIDEO_RECORDING_BEGIN_TEST = 1,
+  VIDEO_RECORDING_END_TEST = 2
 }
 
 export default function AudioHapticTest() {
@@ -1774,5 +1787,234 @@ export default function AudioHapticTest() {
         done()
       }
     })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100
+ 	   * @tc.desc   SystemSoundType Enum
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	    expect(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).assertEqual(SystemSoundTypeTest.PHOTO_SHUTTER_TEST);
+ 	    console.info(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100 PHOTO_SHUTTER is:${systemSoundManager.SystemSoundType.PHOTO_SHUTTER}`);
+ 	    expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN).assertEqual(SystemSoundTypeTest.VIDEO_RECORDING_BEGIN_TEST);
+ 	    console.info(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100 VIDEO_RECORDING_BEGIN is:${systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN}`);
+ 	    expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_END).assertEqual(SystemSoundTypeTest.VIDEO_RECORDING_END_TEST);
+ 	    console.info(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_STATIC_0100 VIDEO_RECORDING_END is:${systemSoundManager.SystemSoundType.VIDEO_RECORDING_END}`);
+ 	    done();
+ 	  })
+ 
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0100
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0100
+ 	   * @tc.desc   SUCCESS
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	      let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+ 	      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+ 	      let flag: boolean = false;
+ 	      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+ 	        flag = true;
+ 	      }
+ 	      if (flag){
+ 	        done();
+ 	        return;
+ 	      }
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
+ 	      await systemSoundPlayer!.load(systemSoundType);
+ 	      await systemSoundPlayer!.play(systemSoundType);
+ 	      await systemSoundPlayer!.unload(systemSoundType);
+ 	      await systemSoundPlayer!.release();
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0100 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(false).assertTrue();
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
+ 	  
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0200
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0200
+ 	   * @tc.desc   SUCCESS
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	      let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+ 	      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+ 	      let flag: boolean = false;
+ 	      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+ 	        flag = true;
+ 	      }
+ 	      if (flag){
+ 	        done();
+ 	        return;
+ 	      }
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
+ 	      await systemSoundPlayer!.load(systemSoundType);
+ 	      await systemSoundPlayer!.play(systemSoundType);
+ 	      await systemSoundPlayer!.unload(systemSoundType);
+ 	      await systemSoundPlayer!.release();
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0200 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(false).assertTrue();
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
+ 
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0300
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0300
+ 	   * @tc.desc   SUCCESS
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	      let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+ 	      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+ 	      let flag: boolean = false;
+ 	      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+ 	        flag = true;
+ 	      }
+ 	      if (flag){
+ 	        done();
+ 	        return;
+ 	      }
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
+ 	      await systemSoundPlayer!.load(systemSoundType);
+ 	      await systemSoundPlayer!.play(systemSoundType);
+ 	      await systemSoundPlayer!.unload(systemSoundType);
+ 	      await systemSoundPlayer!.release();
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0300 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(false).assertTrue();
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
+ 
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400
+ 	   * @tc.desc   Service Died
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL2
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
+ 	      await systemSoundPlayer!.release();
+ 	      await systemSoundPlayer!.load(systemSoundType).then(() => {
+ 	        console.info('SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400 Succeeded in calling the load method.');
+ 	      }).catch((err: Error) => {
+ 	        console.error(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+ 	        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      });
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0400 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
+ 
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500
+ 	   * @tc.desc   Service Died
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL2
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	      let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+ 	      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+ 	      let flag: boolean = false;
+ 	      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+ 	        flag = true;
+ 	      }
+ 	      if (flag){
+ 	        done();
+ 	        return;
+ 	      }
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
+ 	      await systemSoundPlayer!.load(systemSoundType);
+ 	      await systemSoundPlayer!.release();
+ 	      await systemSoundPlayer!.play(systemSoundType).then(() => {
+ 	        console.info('SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500 Succeeded in calling the play method.');
+ 	      }).catch((err: Error) => {
+ 	        console.error(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+ 	        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      });
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0500 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
+ 	  
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600
+ 	   * @tc.desc   Service Died
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL2
+ 	   */
+ 	  it("SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+ 	    try {
+ 	      let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	      let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+ 	      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+ 	      let flag: boolean = false;
+ 	      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+ 	        flag = true;
+ 	      }
+ 	      if (flag){
+ 	        done();
+ 	        return;
+ 	      }
+ 	      let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = await systemSoundManager.createSystemSoundPlayer();
+ 	      let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
+ 	      await systemSoundPlayer!.load(systemSoundType);
+ 	      await systemSoundPlayer!.play(systemSoundType);
+ 	      await systemSoundPlayer!.release();
+ 	      await systemSoundPlayer!.unload(systemSoundType).then(() => {
+ 	        console.info('SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600 Succeeded in calling the unload method.');
+ 	      }).catch((err: Error) => {
+ 	        console.error(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+ 	        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      });
+ 	    } catch(error) {
+ 	      console.log(`SUB_MULTIMEDIA_AUDIO_RINGTONE_PUBLIC_PLAY_STATIC_0600 ERROR, code: ${error.code}, message: ${error.message}`);
+ 	      expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+ 	      done();
+ 	    }
+ 	    done();
+ 	  })
   })
 }

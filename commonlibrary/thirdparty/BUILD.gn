@@ -19,6 +19,7 @@ group("thirdparty") {
       "decimal:decimal",
       "musl:ActsThirdPartyMuslTest",
       "musl32:ActsThirdPartyMusl32Test",
+      "fdsan:ActsThirdPartyFdsanTest",
     ]
 
     if (current_cpu == "arm64") {

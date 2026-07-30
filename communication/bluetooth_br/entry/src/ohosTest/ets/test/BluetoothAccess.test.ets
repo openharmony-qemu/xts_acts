@@ -767,7 +767,6 @@ export default function btAccessTest() {
                 let isNotSupport = false;
                 bluetooth.disableBluetoothAsync().then(() => {
                     console.info("disableBluetoothAsync success");
-                    done();
                 }).catch((err: BusinessError) => {
                     console.error("disableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801) {
@@ -796,7 +795,6 @@ export default function btAccessTest() {
                 let isNotSupports = false;
                 bluetooth.enableBluetoothAsync().then(() => {
                     console.info("enableBluetoothAsync success");
-                    done();
                 }).catch((err: BusinessError) => {
                     console.error("enableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801  || Number(err.code) == 2900099) {

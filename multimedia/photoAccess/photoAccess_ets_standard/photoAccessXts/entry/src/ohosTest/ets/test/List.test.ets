@@ -35,6 +35,8 @@ import MediaAssetChangeRequestGetAssetsTest from './photoAccessHelper/MediaAsset
 import MediaAssetChangeRequestCreateImageAssetRequestTest
   from './photoAccessHelper/MediaAssetChangeRequest/createImageAssetRequest.test';
 import MediaAssetChangeRequestSetTitleTest from './photoAccessHelper/MediaAssetChangeRequest/setTitle.test';
+import MediaAssetChangeRequestSetFavoriteTest from "./photoAccessHelper/MediaAssetChangeRequest/setFavorite.test"
+import MediaAssetsChangeRequestSetFavoriteTest from "./photoAccessHelper/MediaAssetsChangeRequest/setFavorite.test"
 import MediaAssetChangeRequestDeleteAssetsTest from './photoAccessHelper/MediaAssetChangeRequest/deleteAssets.test';
 import MediaAssetChangeRequestGetWriteCacheHandlerTest
   from './photoAccessHelper/MediaAssetChangeRequest/getWriteCacheHandler.test';
@@ -156,6 +158,8 @@ export default function testsuite() {
   MediaAssetChangeRequestCreateImageAssetRequestTest();
   MediaAssetChangeRequestCreateVideoAssetRequestTest();
   MediaAssetChangeRequestSetTitleTest();
+  MediaAssetChangeRequestSetFavoriteTest();
+  MediaAssetsChangeRequestSetFavoriteTest();
   MediaAssetChangeRequestGetWriteCacheHandlerTest();
   MediaAssetChangeRequestAddResourceTest();
   MediaAssetChangeRequestSaveCameraPhotoTest();

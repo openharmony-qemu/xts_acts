@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,7 @@ function TSleep(delay:int):void {
   for(let t = Date.now(); Date.now() - t <= delay;);
 }
 
-export const Sleep = (ms: int) => {
+export function Sleep(ms: int): Promise<number> {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
       resolve(1)
@@ -47,15 +48,9 @@ export const Sleep = (ms: int) => {
   });
 }
 
-export function syncSleep(ms: int): void {
-  let start = Date.now();
-  while (Date.now() - start <= ms) {
-  }
-}
-
 type CB = () => void;
 
-export default function MessageTest2() {
+export default function MessageTest2(): void {
   describe('MessageTest2', (): void => {
     afterEach(async () => {
       await Utils.msSleep(100);
@@ -78,8 +73,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -120,8 +117,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, handler);
@@ -185,8 +184,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, 'obj', handler);
@@ -250,8 +251,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let callback: CB | undefined = message.getCallback();
@@ -291,8 +294,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let callback: CB | undefined = message.getCallback();
@@ -332,8 +337,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           let callback: CB | undefined = message.getCallback();
@@ -373,8 +380,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-              syncSleep(1000);
+            (async () => {
+              await Sleep(1000);
               flag = true;
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {
             console.log(`concurrency.Message callback！`);
@@ -418,8 +427,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            syncSleep(1000);
-            flag = true;
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -459,8 +470,10 @@ export default function MessageTest2() {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            syncSleep(1000);
-            flag = true;
+            (async () => {
+              await Sleep(1000);
+              flag = true;
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -850,11 +863,13 @@ export default function MessageTest2() {
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest005';
         let flag: boolean = false;
+        let firstStarted: boolean = false;
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            firstStarted = true;
             (async () => {
               await Sleep(1000);
               flag = true;
@@ -863,6 +878,9 @@ export default function MessageTest2() {
           let messageObj = new concurrency.Message(1, "messageObj", handler);
           let message1 = new concurrency.Message(1, handler);
           handler.sendMessage(messageObj);
+          while (!firstStarted) {
+            await Utils.msSleep(10);
+          }
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();

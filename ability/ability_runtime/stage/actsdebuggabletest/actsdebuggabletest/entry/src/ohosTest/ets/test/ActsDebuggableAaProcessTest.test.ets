@@ -46,7 +46,12 @@ export default function actsDebuggableAaProcessTest() {
 
   describe('ActsDebuggableAaProcessTest', ()=> {
     beforeAll(async ()=> {
-      await abilityDelegator.executeShellCommand('aa start -b com.example.timeout -a EntryAbility').then(data => {
+      let cmd = 'aa start -b com.example.timeout -a EntryAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s', 'beforeAll aa start  data is: ' + data.stdResult);
       }).catch((err:base.BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s', 'beforeAll err is: ' + JSON.stringify(err));

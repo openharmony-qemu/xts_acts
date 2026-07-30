@@ -168,7 +168,7 @@ it('test_formComponentJsunitStatic006', Level.LEVEL0, async (done: () => void): 
 
       console.info('test_formComponentJsunitStatic006 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('formComponent' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

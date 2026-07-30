@@ -67,3 +67,39 @@ export const checkHidebugDailyQuotaExceeded: () => boolean;
 export const checkHidebugCpuOverloaded: () => boolean;
 export const checkHidebugMemPressureCritical: () => boolean;
 export const checkHidebugStoragePressureCritical: () => boolean;
+export const TestHiDebugRegisterMemDumpListener1: () => number;
+export const TestHiDebugRegisterMemDumpListener2: () => number;
+export const TestHiDebugRegisterMemDumpListener3: () => number;
+export const TestHiDebugRegisterMemDumpListener4: () => number;
+export const TestHiDebugRegisterMemDumpListener5: () => number;
+export const TestHiDebugRegisterMemDumpListener6: () => number;
+export const TestHiDebugRegisterMemDumpListener7: () => number;
+export const TestHiDebugRegisterMemDumpListener8: () => number;
+export const TestHiDebugRegisterMemDumpListener9: () => number;
+export const TestHiDebugRegisterMemDumpListener10: () => number;
+export const TestHiDebugMemListenerType1: () => number;
+export const TestHiDebugMemListenerType2: () => number;
+export const TestHiDebugMemListenerType3: () => number;
+export const TestHiDebugUnregisterMemDumpListener1: () => number;
+export const TestHiDebugUnregisterMemDumpListener2: () => number;
+export const TestHiDebugUnregisterMemDumpListener3: () => number;
+export const TestHiDebugUnregisterMemDumpListener4: () => number;
+export const TestHiDebugUnregisterMemDumpListener5: () => number;
+export const TestHiDebugUnregisterMemDumpListener6: () => number;
+export const testAcquireAsyncContext: () => number;
+export const testAcquireAsyncContextMultiple: () => {
+  ctx0: number,
+  ctx1: number,
+  ctx2: number
+};
+export const testPushAsyncContext: (ctx: number) => number;
+export const testPopAsyncContext: (ctx: number) => number;
+export const testReleaseAsyncContext: (ctx: number) => number;
+export const testAcquireAndRelease: () => number;
+export const testPushPopSequence: () => number;
+export const testMultipleContextsPushPop: () => number;
+export const testContextStress: () => number;
+export const testPushWithoutPop: () => number;
+export const testInvalidContext: () => number;
+export const testZeroContext: () => number;
+export const testNestedPushPop: () => number;

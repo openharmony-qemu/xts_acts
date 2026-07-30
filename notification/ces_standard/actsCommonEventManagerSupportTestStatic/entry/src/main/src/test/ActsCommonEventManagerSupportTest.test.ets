@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +37,12 @@ export default function ActsCommonEventManagerSupportTest() {
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
+      let cmd = `aa start -a EntryAbility -b ${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
@@ -144,6 +150,7 @@ export default function ActsCommonEventManagerSupportTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_ADDED.valueOf()).assertEqual('usual.event.PACKAGE_ADDED')
+        expect(commonEventManager.Support.COMMON_EVENT_SKILL_CHANGED.valueOf()).assertEqual('usual.event.SKILL_CHANGED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_INSTALLATION_STARTED.valueOf())
           .assertEqual('usual.event.PACKAGE_INSTALLATION_STARTED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_REPLACED.valueOf())
@@ -964,5 +971,55 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700
+     * @tc.desc   specific volumes on the device have been encrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTED)
+        .assertEqual('usual.event.VOLUME_ENCRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4700 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800
+     * @tc.desc   specific volumes on the device have had their encryption policy set common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTION_POLICY_SET)
+        .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900
+     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
+        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 END`)
+      done()
+    })
   })
 }

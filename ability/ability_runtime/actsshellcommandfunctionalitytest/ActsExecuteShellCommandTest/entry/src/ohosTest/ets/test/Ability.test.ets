@@ -18,6 +18,10 @@ import appManager from '@ohos.application.appManager';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 
+let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
+
+let user = abilityDelegatorArguments.parameters["-u"];
+
 export default function abilityTest() {
     describe('ACTS_ExecuteShellCommandTest', () => {
 
@@ -57,6 +61,9 @@ export default function abilityTest() {
         it('ACTS_ExecuteShellCommand_Callback_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0200 --- start")
             let cmd = 'aa start -a MainAbility -b com.example.actskillprocesswithaccountclosetest'
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
             globalThis.abilityDelegator.executeShellCommand(cmd, 1,(err:BusinessError, data:AbilityDelegatorRegistry.ShellCmdResult) => {
                 console.log('ACTS_ExecuteShellCommand_Callback_0200 - executeShellCommand: start ')
                 console.log('ACTS_ExecuteShellCommand_Callback_0200 stdResult = ' + data.stdResult)
@@ -237,6 +244,9 @@ export default function abilityTest() {
         it('ACTS_ExecuteShellCommand_Promise_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0200 --- start")
             let cmd = 'aa start -d 0 -a MainAbility -b com.example.actskillprocesswithaccountclosetest'
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
             globalThis.abilityDelegator.executeShellCommand(cmd, 1).then((data:AbilityDelegatorRegistry.ShellCmdResult) => {
                 console.log('ACTS_ExecuteShellCommand_Promise_0200 - executeShellCommand: start ')
                 console.log('ACTS_ExecuteShellCommand_Promise_0200 stdResult = ' + data.stdResult)

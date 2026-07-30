@@ -71,7 +71,7 @@ struct Index {
 
           Button(this.textvalue[5])
             .labelStyle({textAlign:this.aaa})
-            .key('textValue')
+            .key('ButtonIndex1_textValue')
         }
 
         Row() {

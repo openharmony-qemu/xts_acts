@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,7 @@ import HidebuggwpasanTest from "./HiDeBugGwpAsan.test";
 import HidebugnewTest from "./HiDebugNew.test";
 import hidebugStrongTest from "./HiDeBugEx.test"
 import hidebugGetRssInfoTest from "./HidebugGetRssInfo.test"
+import HidebugStaticTest from "./HiDeBugStatic.test";
 
 export default function testsuite() {
     HidebugJsTest();
@@ -24,4 +26,5 @@ export default function testsuite() {
     HidebugnewTest();
     hidebugStrongTest();
     hidebugGetRssInfoTest();
+    HidebugStaticTest();
 }

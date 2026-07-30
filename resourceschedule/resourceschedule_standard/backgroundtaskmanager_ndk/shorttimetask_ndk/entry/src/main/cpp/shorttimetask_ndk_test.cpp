@@ -109,6 +109,19 @@ static napi_value GetTransientTaskInfo(napi_env env, napi_callback_info info)
    return result;
 }
 
+// 申请短时任务，入参reason为空串
+static napi_value RequestSuspendDelayWithReasonIsNull(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t res = OH_BackgroundTaskManager_RequestSuspendDelay("test", OnCallbackCompleted, &delaySuspendInfo);
+    if (res == 0) {
+        napi_create_int32(env, delaySuspendInfo.requestId, &result);
+    } else {
+        napi_create_int32(env, -1, &result);
+    }
+    return result;
+}
+
 
 
 EXTERN_C_START
@@ -119,6 +132,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetRemainingDelayTime", nullptr, GetRemainingDelayTime, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CancelSuspendDelay", nullptr, CancelSuspendDelay, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetTransientTaskInfo", nullptr, GetTransientTaskInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"RequestSuspendDelayWithReasonIsNull", nullptr, RequestSuspendDelayWithReasonIsNull, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

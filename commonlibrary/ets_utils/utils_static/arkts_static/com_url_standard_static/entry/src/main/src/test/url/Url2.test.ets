@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +18,7 @@ import { describe, expect, it, Level, Size, TestType } from '../../../../hypium/
 import { BusinessError } from '@ohos.base';
 import Url from '@ohos.url';
 
-export default function urlTest2() {
+export default function urlTest2(): void {
   describe('urlTest2', (): void => {
     /**
      * @tc.name   testParamsAppend001

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { ArrayList, buffer,  Deque, HashMap, HashSet, LightWeightMap,
   LightWeightSet,
   util } from '@kit.ArkTS';
@@ -592,7 +592,7 @@ export function testArrayListSort1() {
     arrayList.add(3);
     arrayList.add(1);
     arrayList.add(2);
-    arrayList.sort((a: number, b: number) => (a - b).toInt());
+    arrayList.sort((a: number, b: number) => (a - b));
     if (arrayList.getIndexOf(1) !== 0) {
       throw new Error(`${TAG} ArrayList sort method failed`)
     }

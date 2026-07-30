@@ -54,7 +54,7 @@ export default function ohosPromptJsunit() {
     beforeEach(async () => {
       console.info("OhosPrompt beforeEach start");
       let options: router.RouterOptions = {
-        url: 'pages/ohosPrompt',
+        url: 'MainAbility/pages/conponentadd/ohosPromptg',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import {
   Entry,
@@ -60,7 +60,7 @@ struct onKeyEventExample4 {
           .onClick((e: ClickEvent) => {
             this.myModifier.isOnKeyEventDispatchUndefined = !this.myModifier.isOnKeyEventDispatchUndefined
           })
-          .key('Common_OnKeyEventDispatch')
+          .key('onKeyEventDispatchAttrsModifierUndefined_Common_OnKeyEventDispatch')
       }
     }
   }

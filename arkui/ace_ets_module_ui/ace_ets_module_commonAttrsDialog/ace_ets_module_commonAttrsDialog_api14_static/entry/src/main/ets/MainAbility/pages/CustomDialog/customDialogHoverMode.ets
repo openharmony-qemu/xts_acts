@@ -15,49 +15,12 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ColumnOptions,
-  TextAlign,
-  Scroll,
-  Image,
-  Color,
-  $rawfile,
-  DragEvent,
-  $r,
-  ResourceStr,
-  HoverModeAreaType,
-  DismissDialogAction,
-  CustomDialog,
-  CustomDialogController,
-  TextInput,TextInputOptions,DismissReason,Offset
-// AlertDialog
-// ActionSheet
-// ContextMenu
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,Link } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, Scroll, Image, Color, $rawfile, DragEvent, $r, ResourceStr, HoverModeAreaType, DismissDialogAction, CustomDialog, CustomDialogController, TextInput, TextInputOptions, DismissReason, Offset } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
-import testsuite from '../../../../src/test/List.test'
-import {
-  State
-} from '@ohos.arkui.stateManagement'
-
+import testsuite from '../../../../src/test/List.test';
 @CustomDialog
 @Component
 struct CustomDialogExample {

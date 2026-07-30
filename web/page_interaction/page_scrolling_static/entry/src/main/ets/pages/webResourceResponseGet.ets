@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -24,7 +25,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -33,7 +34,7 @@ export class StringFields {
 struct webResourceResponseGet {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   controllerone: webView.WebviewController = new webView.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields();
+  stringObj: StringFields  = new StringFields ();
   @State webdata: string = '<!DOCTYPE html>\n' +
     '<html>\n' +
     '<head>\n' +

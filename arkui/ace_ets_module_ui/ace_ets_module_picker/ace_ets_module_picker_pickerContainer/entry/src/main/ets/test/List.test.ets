@@ -23,6 +23,12 @@ import pickerOnChangeTest from './picker/pickerOnChangeTest.test';
 import pickerOnChangeModifierTest from './picker/pickerOnChangeModifierTest.test';
 import pickerOnScrollStopTest from './picker/pickerOnScrollStopTest.test';
 import pickerOnScrollStopModifierTest from './picker/pickerOnScrollStopModifierTest.test';
+import UIPickerComponentItemHeightTest from './picker/UIPickerComponentItemHeightTest.test';
+import UIPickerComponentDisplayedItemCountTest from './picker/UIPickerComponentDisplayedItemCountTest.test';
+import calendarPickerDialogSystemMaterialTest from './SystemMaterial/calendarPickerDialogSystemMaterial.test';
+import datePickerDialogSystemMaterialTest from './SystemMaterial/datePickerDialogSystemMaterial.test';
+import textPickerDialogSystemMaterialTest from './SystemMaterial/textPickerDialogSystemMaterial.test';
+import timePickerDialogSystemMaterialTest from './SystemMaterial/timePickerDialogSystemMaterial.test';
 
 export default function testsuite() {
     pickerIndicatorTest();
@@ -35,4 +41,10 @@ export default function testsuite() {
     pickerOnChangeModifierTest();
     pickerOnScrollStopTest();
     pickerOnScrollStopModifierTest();
+    UIPickerComponentItemHeightTest();
+    UIPickerComponentDisplayedItemCountTest();
+    calendarPickerDialogSystemMaterialTest();
+    datePickerDialogSystemMaterialTest();
+    textPickerDialogSystemMaterialTest();
+    timePickerDialogSystemMaterialTest();
 }

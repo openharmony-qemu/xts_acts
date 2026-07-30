@@ -94,6 +94,7 @@ export default function flingError() {
 it('flingError_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[flingError_0200] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       let btn1: Component = await driver.findComponent(ON.id('fling_100004')) as Component;
       await btn1.click();
       await CommonFunc.sleep(1500);

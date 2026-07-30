@@ -135,7 +135,7 @@ export class KeyboardController {
       clearTimeout(t);
       commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0010", commonEventPublishData,
         this.publishCallback);
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0020(): void {
@@ -167,7 +167,7 @@ export class KeyboardController {
       clearTimeout(t);
       commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0020", commonEventPublishData,
         this.publishCallback);
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0030(): void {
@@ -203,7 +203,7 @@ export class KeyboardController {
         commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0030", commonEventPublishData,
           this.publishCallback);
       }
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0040(): void {
@@ -239,7 +239,7 @@ export class KeyboardController {
         commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0040", commonEventPublishData,
           this.publishCallback);
       }
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0050(): void {
@@ -275,7 +275,7 @@ export class KeyboardController {
         commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0050", commonEventPublishData,
           this.publishCallback);
       }
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0060(): void {
@@ -311,7 +311,7 @@ export class KeyboardController {
         commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0060", commonEventPublishData,
           this.publishCallback);
       }
-    }, 800);
+    }, 1000);
   }
 
   private SUB_Misc_InputMethod_Manage_Physical_Buttons_0070(): void {
@@ -347,6 +347,6 @@ export class KeyboardController {
         commoneventmanager.publish("SUB_Misc_InputMethod_Manage_Physical_Buttons_0070", commonEventPublishData,
           this.publishCallback);
       }
-    }, 800);
+    }, 1000);
   }
 }

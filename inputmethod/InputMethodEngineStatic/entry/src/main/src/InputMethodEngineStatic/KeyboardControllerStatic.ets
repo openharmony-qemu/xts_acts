@@ -1,4 +1,4 @@
- 'use static'
+'use static';
 
 import { inputMethodEngine, InputMethodExtensionContext, InputMethodSubtype, InputMethodExtraConfig } from '@kit.IMEKit';
 import display from '@ohos.display';
@@ -34,6 +34,7 @@ export class KeyboardControllerStatic {
   private STATUS_BARPanel: inputMethodEngine.Panel | null = null;
   private immersive: int = 0;
   private storage: LocalStorage;
+  private consumeKeyEvents: boolean | undefined = true;
 
 
   constructor(context: InputMethodExtensionContext) {
@@ -164,7 +165,19 @@ export class KeyboardControllerStatic {
               case 12:
                 console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0902 event: ${JSON.stringify(data.event)}`);
                 that.Sub_InputMethod_IME_Custom_static_0902();
-                break;            
+                break;
+              case 13:
+                console.info(`${TAG} ====> Sub_InputMethod_IMF_consumeKeyEvents_static_0300 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IMF_consumeKeyEvents_static_0300();
+                break;
+              case 14:
+                console.info(`${TAG} ====> Sub_InputMethod_IMF_consumeKeyEvents_static_0100 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IMF_consumeKeyEvents_static_0100();
+                break;
+              case 15:
+                console.info(`${TAG} ====> Sub_InputMethod_IMF_consumeKeyEvents_static_0200 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IMF_consumeKeyEvents_static_0200();
+                break;       
             }
           }
         }
@@ -311,7 +324,8 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
+      inputMethodAbility!.onPrivateCommand(
+        (record: Record<string, inputMethodEngine.CommandDataType>): void => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 onPrivateCommand into`);
         inputMethodAbility!.offPrivateCommand();
       });
@@ -334,7 +348,8 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
+      inputMethodAbility!.onPrivateCommand(
+        (record: Record<string, inputMethodEngine.CommandDataType>): void => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700 onPrivateCommand into`);
         inputMethodAbility!.offPrivateCommand((): void => {});
       });
@@ -901,7 +916,8 @@ export class KeyboardControllerStatic {
         type: inputMethodEngine.PanelType.STATUS_BAR,
         flag: inputMethodEngine.PanelFlag.FLG_FLOATING
       };
-      inputMethodAbility!.createPanel(this.mContext!, panelInfo).then(async(inputPanel: inputMethodEngine.Panel | null):void => {
+      inputMethodAbility!.createPanel(this.mContext!, panelInfo).then(
+        async (inputPanel: inputMethodEngine.Panel | null): Promise<void> => {
         if (inputPanel) {
           let wid = Math.floor(this.displayInfo!.width * 0.4).toInt();
           let hei = Math.floor(this.displayInfo!.height * 0.5).toInt();
@@ -1236,7 +1252,7 @@ export class KeyboardControllerStatic {
           count += 1;
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_offShow_0190 off Show count: ' + count);
         });
-        setInterval(async (t1: int):void => {
+        setInterval(async (t1: int): Promise<void> => {
           await this.softKeyboardPanel!.show();
           await this.softKeyboardPanel!.hide();
           timeCount += 1;
@@ -1546,7 +1562,7 @@ export class KeyboardControllerStatic {
     });
 
     let loopCount = 0;
-    setInterval(async (t: int):void => {
+    setInterval(async (t: int): Promise<void> => {
       await this.InputClient!.insertText('tttt');
       console.info(TAG + '====>keyboardController.insertText count: ' + count);
       if (loopCount === 2) {
@@ -1604,7 +1620,7 @@ export class KeyboardControllerStatic {
     });
 
     let loopCount = 0;
-    setInterval(async (t: int):void => {
+    setInterval(async (t: int): Promise<void> => {
       await this.InputClient!.insertText('tttt');
       console.info(TAG + '====>keyboardController.insertText count: ' + count);
       if (loopCount === 2) {
@@ -2975,7 +2991,7 @@ export class KeyboardControllerStatic {
     }    
   }
 
-  private SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
+  private async SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
     console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 data`);     
     try {
       inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {
@@ -2984,7 +3000,7 @@ export class KeyboardControllerStatic {
         if(InputClient == null) {
           console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient is null`); 
         } else {
-          setTimeout(async (): void => {
+          setTimeout(async (): Promise<void> => {
             InputClient.sendKeyFunction(0).then((result: boolean) => {
               if(result){
                 console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient success in key function`); 
@@ -3037,7 +3053,7 @@ export class KeyboardControllerStatic {
         if(InputClient == null) {
           console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 InputClient is null`); 
         } else {
-          setTimeout(async (): void => {
+          setTimeout(async (): Promise<void> => {
             try {
               let bool = await InputClient!.deleteForward(1);
               console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 deleteForward: ${bool}`);
@@ -4151,7 +4167,8 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel!.onSizeChange(async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
+        this.softKeyboardPanel!.onSizeChange(
+          (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea): void => {
           if (typeof (keyboardArea!.top) === 'int' && typeof (keyboardArea!.bottom) === 'int' && typeof (keyboardArea!.left) === 'int' && typeof (keyboardArea!.right) === 'int') {
             commonEventPublishData = {
                 data: 'SUCCESS'
@@ -4417,6 +4434,99 @@ export class KeyboardControllerStatic {
       console.info(TAG + '====>inputMethodAbility offInputStop_test destroy err: ' + JSON.stringify(err));
       commonEventManager.publish('inputMethodAbility_test_092', commonEventPublishData, () => {
       });
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_static_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_static_0300 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    let inputMethodEngineDelegate = inputMethodEngine.getKeyboardDelegate();
+    if (inputMethodEngineDelegate) {
+      inputMethodEngineDelegate!.onEditorAttributeChanged((attr: inputMethodEngine.EditorAttribute) => {
+        console.info(TAG + `====>on_EditorAttribute_callback, attr = ${JSON.stringify(attr)}`);
+        this.consumeKeyEvents = attr.consumeKeyEvents;
+        inputMethodEngineDelegate!.offEditorAttributeChanged();
+      });
+    }
+    try {
+      setTimeout(() => {
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0300 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode === false) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0300 success ');
+        commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0300', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_static_0300 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_static_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_static_0100 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    let inputMethodEngineDelegate = inputMethodEngine.getKeyboardDelegate();
+    if (inputMethodEngineDelegate) {
+      inputMethodEngineDelegate!.onEditorAttributeChanged((attr: inputMethodEngine.EditorAttribute) => {
+        console.info(TAG + `====>on_EditorAttribute_callback, attr = ${JSON.stringify(attr)}`);
+        this.consumeKeyEvents = attr.consumeKeyEvents;
+        inputMethodEngineDelegate!.offEditorAttributeChanged();
+      });
+    }
+    try {
+      setTimeout(() => {
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0100 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode === true) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0100 success ');
+        commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0100', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_static_0100 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_static_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_static_0200 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    let inputMethodEngineDelegate = inputMethodEngine.getKeyboardDelegate();
+    if (inputMethodEngineDelegate) {
+      inputMethodEngineDelegate!.onEditorAttributeChanged((attr: inputMethodEngine.EditorAttribute) => {
+        console.info(TAG + `====>on_EditorAttribute_callback, attr = ${JSON.stringify(attr)}`);
+        this.consumeKeyEvents = attr.consumeKeyEvents;
+        inputMethodEngineDelegate!.offEditorAttributeChanged();
+      });
+    }
+    try {
+      setTimeout(() => {
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0200 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode === false) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_static_0200 success ');
+        commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0200', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_static_0200 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commonEventManager.publish('Sub_InputMethod_IMF_consumeKeyEvents_static_0200', commonEventPublishData, this.publishCallback);
     }
   }
 

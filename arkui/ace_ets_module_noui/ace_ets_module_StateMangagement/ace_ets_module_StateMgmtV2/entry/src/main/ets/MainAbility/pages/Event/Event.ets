@@ -58,5 +58,7 @@ struct EventChild {
         })
         .id('eventButton2')
     }
+    .padding(20)
+    .margin(20)
   }
 }

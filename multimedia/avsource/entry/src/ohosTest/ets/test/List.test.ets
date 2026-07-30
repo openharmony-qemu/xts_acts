@@ -26,6 +26,8 @@ import audioDecoderAvBufferTest from './AudioDecAvBufferNdk.test';
 import audioEncoderAvBufferTest from './AudioEncAvBufferNdk.test';
 import videoProcessTsTest from './VideoProcessTs.test'
 import audiovividEncoderTest from "./AudioVividEncoder.test"
+import audioOpusCodecTest from "./AudioOpusCodec.test"
+import audioAmrEncoderTest from "./AudioAmrEncoder.test"
 
 export default function testsuite() {
   videoEnCoderNdkTest();
@@ -42,4 +44,6 @@ export default function testsuite() {
   audioEncoderAvBufferTest();
   videoProcessTsTest();
   audiovividEncoderTest();
+  audioOpusCodecTest();
+  audioAmrEncoderTest();
 }

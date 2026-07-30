@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +23,7 @@ import fs from '@ohos.file.fs'
 import { Hypium } from '../../../hypium/index';
 import { WriteOptions, ReadOptions } from '@ohos.file.fs'
 import { Callback } from '@ohos.base';
+import {  Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let audioManager: audio.AudioManager;
@@ -523,6 +525,648 @@ export default function audioCapturer() {
       }
       await audioCapPromise!.release();
       done();
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0100
+     * @tc.desc    AudioPlaybackCaptureMode MODE_DEFAULT value test.
+     *             测试点：验证 MODE_DEFAULT 枚举值
+     *             测试输入：AudioPlaybackCaptureMode.MODE_DEFAULT
+     *             测试输出：枚举值等于 0x0
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_DEFAULT).assertEqual(0x0);
+        console.info(`${Tag}: MODE_DEFAULT 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+  
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0200
+      * @tc.desc    AudioPlaybackCaptureMode MODE_MEDIA value test.
+      *             测试点：验证 MODE_MEDIA 枚举值
+      *             测试输入：AudioPlaybackCaptureMode.MODE_MEDIA
+      *             测试输出：枚举值等于 0x1
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_MEDIA).assertEqual(0x1);
+        console.info(`${Tag}: MODE_MEDIA 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0300
+      * @tc.desc    AudioPlaybackCaptureMode MODE_EXCLUDING_SELF value test.
+      *             测试点：验证 MODE_EXCLUDING_SELF 枚举值
+      *             测试输入：AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+      *             测试输出：枚举值等于 0x8000
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF).assertEqual(0x8000);
+        console.info(`${Tag}: MODE_EXCLUDING_SELF 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0100
+      * @tc.desc    PlaybackCaptureStartState STATE_SUCCESS value test.
+      *             测试点：验证 STATE_SUCCESS 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_SUCCESS
+      *             测试输出：枚举值等于 0
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_SUCCESS).assertEqual(0);
+        console.info(`${Tag}: STATE_SUCCESS 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0200
+      * @tc.desc    PlaybackCaptureStartState STATE_FAILED value test.
+      *             测试点：验证 STATE_FAILED 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_FAILED
+      *             测试输出：枚举值等于 1
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_FAILED).assertEqual(1);
+        console.info(`${Tag}: STATE_FAILED 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0300
+      * @tc.desc    PlaybackCaptureStartState STATE_NOT_AUTHORIZED value test.
+      *             测试点：验证 STATE_NOT_AUTHORIZED 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_NOT_AUTHORIZED
+      *             测试输出：枚举值等于 2
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertEqual(2);
+        console.info(`${Tag}: STATE_NOT_AUTHORIZED 枚举值验证成功`);
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_STATIC_0500
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_STATIC_0500
+      * @tc.desc    AudioCapturerInfo without playbackCaptureMode test.
+      *             测试点：验证不设置 playbackCaptureMode 创建 AudioCapturer
+      *             测试输入：不设置 playbackCaptureMode 属性
+      *             测试输出：requestPlaybackCaptureStart 调用失败
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let audioCapPromise: audio.AudioCapturer | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          }
+        };
+        audioCapPromise = await audio.createAudioCapturer(audioCapturerOptions);
+        audioCapPromise!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | undefined | null) => {
+          console.info(`${Tag} 回调触发, state: ${state}`);
+        });
+
+        await Utils.msSleep(500);
+        audioCapPromise?.release();
+        console.info(`${Tag}: AudioCapturer  playbackCaptureMode 测试失败`);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 6800103).assertTrue();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0100
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test
+      *             测试点：验证回调返回 STATE_SUCCESS 状态
+      *             测试输入：正常参数 MODE_DEFAULT
+      *             测试输出：回调返回STATE_SUCCESS
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0200
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test
+      *             测试点：验证回调返回 STATE_SUCCESS 状态
+      *             测试输入：正常参数 MODE_MEDIA
+      *             测试输出：回调返回STATE_SUCCESS
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_MEDIA
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0300
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test
+      *             测试点：验证回调返回 STATE_SUCCESS 状态
+      *             测试输入：正常参数 MODE_EXCLUDING_SELF
+      *             测试输出：回调返回STATE_SUCCESS
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_SUCCESS_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0100
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED_STATIC test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_DEFAULT
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0200
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED_STATIC test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_MEDIA
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_MEDIA
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0300
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED_STATIC test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_EXCLUDING_SELF
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        driver = await Driver.create();
+
+        const permissionTask = (async () => {
+          if (driver && !hasClickedPermission){
+            let permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+            if (permissionBtn){
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await Utils.msSleep(1000);
+            } else {
+              console.log(`${Tag}: 未找到允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer!.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState | null) => {
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await Utils.msSleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${Tag}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${Tag}:启动内录失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${Tag}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer !== null){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
     })
 
     /**
@@ -4256,6 +4900,167 @@ export default function audioCapturer() {
       await audioCapturer!.release();
       done();
     })
+
+    /**
+     * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 
+     * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 
+     * @tc.desc   setIndependentAudioSessionStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }      
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
     /**
  	    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1000 
  	    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1000 
@@ -4500,248 +5305,5 @@ export default function audioCapturer() {
           done();
         }
  	    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
-    * @tc.desc   setIndependentAudioSessionStrategy--0x00000001--VOIP_PRIVACY_TYPE_PUBLIC
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
-      };
-
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      expect(behavior).assertEqual(0x00000001)
-      try {
-        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100 ' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
-    * @tc.desc   setIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
-      };
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200 ' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
-    * @tc.desc   setIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
-      };
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300 ' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
-    * @tc.desc   setIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
-      };
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
-    * @tc.desc   setIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
-      };
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
-    * @tc.desc   setIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
-
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
-      };
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        for(let i=0 ; i < 100 ; i++){
-          audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
-        }
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100' + strategy + 'and ' + behavior);
-      } catch (Error) {
-        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100 Error:' + Error + Error.code);
-        expect(false).assertTrue();
-      }
-      await audioCapturer!.release();
-      done();
-    })
   })
 }

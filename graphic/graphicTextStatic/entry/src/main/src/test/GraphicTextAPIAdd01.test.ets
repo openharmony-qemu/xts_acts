@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,13 +29,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0100
-     * @tc.number GraphicTextAPIAdd01Static_0100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0100
      * @tc.desc   test loadFontSync
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -50,13 +51,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0200
-     * @tc.number GraphicTextAPIAdd01Static_0200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0200
      * @tc.desc   test loadFont
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -72,13 +73,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0300
-     * @tc.number GraphicTextAPIAdd01Static_0300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0300
      * @tc.desc   test loadFont
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -94,13 +95,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0400
-     * @tc.number GraphicTextAPIAdd01Static_0400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0400
      * @tc.desc   test loadFontSyncWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -116,13 +117,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0500
-     * @tc.number GraphicTextAPIAdd01Static_0500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0500
      * @tc.desc   test loadFontSyncWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -139,13 +140,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0600
-     * @tc.number GraphicTextAPIAdd01Static_0600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0600
      * @tc.desc   test loadFontWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -161,13 +162,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0700
-     * @tc.number GraphicTextAPIAdd01Static_0700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0700
      * @tc.desc   test loadFontWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -184,13 +185,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0800
-     * @tc.number GraphicTextAPIAdd01Static_0800
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0800
      * @tc.desc   test getRectsForRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -240,13 +241,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_0900
-     * @tc.number GraphicTextAPIAdd01Static_0900
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_0900
      * @tc.desc   test getGlyphPositionAtCoordinate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -278,13 +279,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1000
-     * @tc.number GraphicTextAPIAdd01Static_1000
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1000
      * @tc.desc   test loadFontWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -315,13 +316,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1100
-     * @tc.number GraphicTextAPIAdd01Static_1100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1100
      * @tc.desc   test loadFontWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
         try {
@@ -352,13 +353,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1200
-     * @tc.number GraphicTextAPIAdd01Static_1200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1200
      * @tc.desc   test loadFontWithCheck
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -413,13 +414,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1300
-     * @tc.number GraphicTextAPIAdd01Static_1300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1300
      * @tc.desc   text updateDecoration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd01Static_1300===="
         let fontCollection: text.FontCollection = new text.FontCollection();
@@ -461,13 +462,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1400
-     * @tc.number GraphicTextAPIAdd01Static_1400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1400
      * @tc.desc   text addText ‘’
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg  = "====www data GraphicTextAPIAdd01Static_1400===="
         let fontCollection: text.FontCollection = new text.FontCollection();
@@ -503,13 +504,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1500
-     * @tc.number GraphicTextAPIAdd01Static_1500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1500
      * @tc.desc   test getTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -546,13 +547,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1600
-     * @tc.number GraphicTextAPIAdd01Static_1600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1600
      * @tc.desc   test createTruncatedLine
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -592,13 +593,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_1700
-     * @tc.number GraphicTextAPIAdd01Static_1700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_1700
      * @tc.desc   test getTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -635,13 +636,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2000
-     * @tc.number GraphicTextAPIAdd01Static_2000
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2000
      * @tc.desc   test getTrailingSpaceWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         fontCollection.unloadFontSync('Clock_01');
@@ -686,13 +687,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2100
-     * @tc.number GraphicTextAPIAdd01Static_2100
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2100
      * @tc.desc   test getTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -762,13 +763,13 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2200
-     * @tc.number GraphicTextAPIAdd01Static_2200
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2200
      * @tc.desc   test getTrailingSpaceWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPIAdd01Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('GraphicTextAPIAdd01Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
@@ -812,7 +813,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2300
-     * @tc.number GraphicTextAPIAdd01Static_2300
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2300
      * @tc.desc   test getSystemFontFullNamesByType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -846,7 +847,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2400
-     * @tc.number GraphicTextAPIAdd01Static_2400
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2400
      * @tc.desc   test getFontDescriptorByFullName
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -917,7 +918,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2500
-     * @tc.number GraphicTextAPIAdd01Static_2500
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2500
      * @tc.desc   test getFontDescriptorsFromPath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -936,7 +937,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2600
-     * @tc.number GraphicTextAPIAdd01Static_2600
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2600
      * @tc.desc   test isFontSupported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -953,7 +954,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2700
-     * @tc.number GraphicTextAPIAdd01Static_2700
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2700
      * @tc.desc   test isFontSupported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +975,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2800
-     * @tc.number GraphicTextAPIAdd01Static_2800
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2800
      * @tc.desc   test getFontCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -992,7 +993,7 @@ export default function GraphicTextAPIAdd01() {
 
     /**
      * @tc.name   GraphicTextAPIAdd01Static_2900
-     * @tc.number GraphicTextAPIAdd01Static_2900
+     * @tc.number SUB_GRAPHIC_Text_GraphicTextAPI_Static_2900
      * @tc.desc   test getFontPathsByType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

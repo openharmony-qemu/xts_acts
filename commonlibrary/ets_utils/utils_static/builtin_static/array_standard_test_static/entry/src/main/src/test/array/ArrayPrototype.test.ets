@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -55,7 +56,7 @@ interface test0090 {
   value: number
 }
 
-export default function ArrayPrototypeTest() {
+export default function ArrayPrototypeTest(): void {
   describe('ArrayPrototypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1,4 +1,4 @@
- 'use static'
+'use static';
 
 import { inputMethodEngine, InputMethodExtensionContext, InputMethodSubtype } from '@kit.IMEKit';
 import display from '@ohos.display';
@@ -137,7 +137,71 @@ export class KeyboardControllerStatic {
               case 6:
                 console.info(`${TAG} ====> Sub_InputMethod_IMF_SecurityKeyboard_static_0700 event: ${JSON.stringify(data.event)}`);
                 that.Sub_InputMethod_IMF_SecurityKeyboard_static_0700();
-                break;            
+                break;
+              case 7:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0100 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0100();
+                break;
+              case 8:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0200 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0200();
+                break;
+              case 9:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0300 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0300();
+                break;
+              case 10:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0400 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0400();
+                break;
+              case 11:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0500 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0500();
+                break;
+              case 12:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0600 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0600();
+                break;
+              case 13:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0700 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0700();
+                break;
+              case 14:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0800 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0800();
+                break;
+              case 15:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_0900 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_0900();
+                break;
+              case 16:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1000 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1000();
+                break;
+              case 17:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1100 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1100();
+                break;
+              case 18:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1200 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1200();
+                break;
+              case 19:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1300 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1300();
+                break;
+              case 20:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1400 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1400();
+                break;
+              case 21:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1500 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1500();
+                break;
+              case 22:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_updatePanelRectSync_static_1600 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_updatePanelRectSync_static_1600();
+                break;
             }
           }
         }
@@ -331,6 +395,419 @@ export class KeyboardControllerStatic {
     }
   }
 
-  
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0100 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 100, top: 100, width: 100, height: 100 },
+        portraitRect: { left: 100, top: 100, width: 100, height: 100 },
+        landscapeInputRegion: [{ left: 0, top: 100, width: 100, height: 100 }],
+        portraitInputRegion: [{ left: 0, top: 100, width: 100, height: 100 }],
+        fullScreenMode: false
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FIXED, enhancedPanelRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0100 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0100 err.code:${err.code},err.message:${err.message}`);
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0100', commonEventPublishData, this.publishCallback);
+  }
+
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0200 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() },
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 }],
+        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width.toInt(), height: 760 }],
+        fullScreenMode: false
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0200 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0200 err.code:${err.code},err.message:${err.message}`);
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0300 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 0, top: 500, width: 400, height: 300 },
+        portraitRect: { left: 0, top: 1500, width: 300, height: 1000 },
+        landscapeAvoidY: 500,
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
+        portraitAvoidY: 1950,
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
+        fullScreenMode: true
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, enhancedPanelRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0300 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0300 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 12800017) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0400 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.5).toInt() },
+        landscapeAvoidY: 500,
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
+        portraitAvoidY: 1960,
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0400 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0400 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0500 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: 100, height: 100 },
+        portraitRect: { left: 100, top: 100, width: 100, height: 100 }
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FIXED, keyboardRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0500 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0500 err.code:${err.code},err.message:${err.message}`);
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0600(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0600 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0600 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0600 err.code:${err.code},err.message:${err.message}`);
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0600', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0700(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0700 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, keyboardRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0700 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0700 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0700', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0800(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0800 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: (this.displayInfo!.width * 10).toInt(),
+        height: (this.displayInfo!.height * 10).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 10).toInt(),
+        height: (this.displayInfo!.width * 10).toInt() }
+      };
+      this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0800 updatePanelRectSync success');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0800 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0800', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_0900(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_0900 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: 100, height: 100 },
+        portraitRect: { left: 100, top: 100, width: 100, height: 100 }
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FIXED, keyboardRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0900 startAbility success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0900', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_0900 err.code:${err.code},err.message:${err.message}`);
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_0900', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1000(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1000 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1000 startAbility success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1000', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1000 err.code:${err.code},err.message:${err.message}`);
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1000', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1100 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, keyboardRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1100 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1100', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1100 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1100', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1200 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let keyboardRect: inputMethodEngine.PanelRect = {
+        landscapeRect: { left: 100, top: 100, width: (this.displayInfo!.width * 10).toInt(),
+        height: (this.displayInfo!.height * 10).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 10).toInt(),
+        height: (this.displayInfo!.width * 10).toInt() }
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1200 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1200', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1200 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1200', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1300 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 100, top: 100, width: 100, height: 100 },
+        portraitRect: { left: 100, top: 100, width: 100, height: 100 },
+        landscapeInputRegion: [{ left: 0, top: 100, width: 100, height: 100 }],
+        portraitInputRegion: [{ left: 0, top: 100, width: 100, height: 100 }],
+        fullScreenMode: false
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FIXED, enhancedPanelRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1300 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1300', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1300 err.code:${err.code},err.message:${err.message}`);
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1300', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1400 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() },
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 }],
+        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width.toInt(), height: 760 }],
+        fullScreenMode: false
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1400 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1400', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1400 err.code:${err.code},err.message:${err.message}`);
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1400', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1500 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        landscapeRect: { left: 0, top: 500, width: 400, height: 300 },
+        portraitRect: { left: 0, top: 1500, width: 300, height: 1000 },
+        landscapeAvoidY: 500,
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
+        portraitAvoidY: 1950,
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
+        fullScreenMode: true
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, enhancedPanelRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1500 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1500', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1500 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 12800017) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1500', commonEventPublishData, this.publishCallback);
+    };
+  }
+
+  private async Sub_InputMethod_IME_updatePanelRectSync_static_1600(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_static_1600 data');
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
+        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.5).toInt() },
+        landscapeAvoidY: 500,
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
+        portraitAvoidY: 1960,
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
+      };
+      await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1600 updatePanelRectSync success');
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1600', commonEventPublishData, this.publishCallback);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_static_1600 err.code:${err.code},err.message:${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      commonEventManager.publish('Sub_InputMethod_IME_updatePanelRectSync_static_1600', commonEventPublishData, this.publishCallback);
+    };
+  }
 
 }

@@ -96,7 +96,7 @@ export default function richEditorApi7() {
         x:(Math.round(richEditor.left).toInt()) + 300, y: (Math.round(richEditor.top).toInt()) + 300
       }, MouseButton.MOUSE_BUTTON_LEFT)
       await CommonFunc.sleep(2000);
-      let text1 = inspector.getInspectorByKey('richEditorApi7_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi7' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('333');
 

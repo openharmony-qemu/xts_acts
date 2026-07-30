@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
  * limitations under the License.
  */
 
-import request from "@ohos.request";
+import request from '@ohos.request';
 import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size  } from "../../../hypium/index";
-import fs from '@ohos.file.fs'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let baseContext: common.UIAbilityContext | undefined;
@@ -39,7 +39,12 @@ export default function requestDownloadStageStaticUnit() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         await Utils.msSleep(1000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+        let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(4000)
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
@@ -105,7 +110,8 @@ export default function requestDownloadStageStaticUnit() {
         title: 'XTS download test!',
         background: false
       }
-      request.downloadFile(baseContext!, downloadFileConfig, async (err, downloadTask):void => {
+      request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask): void => {
+        async (err: BusinessError<void>|null, downloadTask: request.DownloadTask|undefined): Promise<void> => {
         console.info("====>SUB_Request_downloadStage_Supplemental_Static_0100 downloadTask: " + downloadTask);
         try{
           if(err){
@@ -133,6 +139,7 @@ export default function requestDownloadStageStaticUnit() {
         }catch(e){
           console.info("====>SUB_Request_downloadStage_Supplemental_Static_0100 except error: " + e);
         }
+      }(err, downloadTask)
       });
     });
 
@@ -761,7 +768,7 @@ export default function requestDownloadStageStaticUnit() {
         let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
         expect(downloadTask !== undefined).assertEqual(true);
 
-        request.downloadFile(baseContext!, downloadFileConfig, async (err, downloadTask):void => {
+        request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask): void => {
           console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 downloadTask: " + downloadTask);
           try{
             if(err){

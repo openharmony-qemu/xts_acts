@@ -44,7 +44,7 @@ struct KeyEventGetModifierKeyState {
       Button('Test Null Array')
         .width('90%')
         .height('8%')
-        .key('testNull')
+        .key('getModifierKeyStateNullAndUndefined_testNull')
         .onClick(() => {
           this.resetStates();
         })
@@ -63,7 +63,7 @@ struct KeyEventGetModifierKeyState {
       Button('Test Undefined Array')
         .width('90%')
         .height('8%')
-        .key('testUndefined')
+        .key('getModifierKeyStateNullAndUndefined_testUndefined')
         .onClick(() => {
           this.resetStates();
         })
@@ -101,7 +101,7 @@ struct KeyEventGetModifierKeyState {
       Button('Reset States')
         .width('90%')
         .height('8%')
-        .key('resetStates')
+        .key('getModifierKeyStateNullAndUndefined_resetStates')
         .onClick(() => {
           this.resetStates();
         })

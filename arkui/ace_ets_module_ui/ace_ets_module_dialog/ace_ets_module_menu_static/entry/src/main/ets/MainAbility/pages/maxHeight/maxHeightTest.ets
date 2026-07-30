@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,14 +14,13 @@
  * limitations under the License.
  */
 
-'use static'
 
 import { Entry, Text, Column, Row, Component, Button, Marquee, Scroll, MarqueeUpdateStrategy } from '@kit.ArkUI';
-import { Entry, Text, Column, Component, Button, ClickEvent, Divider, Image, KeyEvent, Padding, $r, Flex,
-  Color, FontWeight, KeyType, AxisModel, FocusAxisEvent, ButtonType, UIContext, TextAttribute, ButtonAttribute,
+import { ClickEvent, Divider, Image, KeyEvent, Padding, $r, Flex,
+  Color, FontWeight, KeyType, AxisModel, FocusAxisEvent, ButtonType, UIContext, TextAttribute,
   Position, Placement, MenuElement, LocalizedPadding, Margin, TabsController, Tabs, Visibility,TextAlign,
-  MenuOptions, BarState,  Menu, MenuItem, ResponseType, FlexAlign, ItemAlign, FlexDirection, CounterAttribute,
-  ContextMenuOptions, DividerMode, DividerStyleOptions, MenuItemGroup, ResponseType, DividerStyleOptions,
+  MenuOptions, BarState,  Menu, MenuItem, FlexAlign, ItemAlign, FlexDirection, CounterAttribute,
+  ContextMenuOptions, DividerMode, DividerStyleOptions, MenuItemGroup, ResponseType,
   AttributeModifier, ButtonAttribute, SubMenuExpandingMode, FontStyle, Font, CustomBuilder,
   MenuItemOptions, LengthMetrics, Builder, ResourceStr,
 } from '@ohos.arkui.component';

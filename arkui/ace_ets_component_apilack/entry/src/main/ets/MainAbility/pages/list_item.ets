@@ -41,7 +41,7 @@ struct List_itemOnSelect {
       Button("Click2").fontSize(50)
         .onClick(() => {
           console.info("Click2" + JSON.stringify(sendEventByKey("Del", 10, "")));
-        }).key("Click2")
+        }).key("list_item_Click2")
       List({ space: 10 }) {
         ListItem() {
           Text("Hello world") {
@@ -53,7 +53,7 @@ struct List_itemOnSelect {
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
         }
-        .key("ListItem")
+        .key("list_item_ListItem")
         .sticky(Sticky.None)
         .selectable(false)
         .editable(true)

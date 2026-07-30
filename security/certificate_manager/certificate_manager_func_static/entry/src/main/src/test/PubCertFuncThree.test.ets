@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +22,7 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { canIUse } from '@internal.full.global';
+import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -333,6 +335,162 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return error code 29700005.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 start');
+      const context: common.Context = await GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_USER;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 device not support CertificateManagerDialog');
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_APP, certScope CURRENT_USER. Return error code 401(CM_ERROR_INVALID_PARAMS).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200 start');
+      const context: common.Context = await GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_APP;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200 device not support CertificateManagerDialog');
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_UKEY, certScope CURRENT_USER. Return error code 401(CM_ERROR_INVALID_PARAMS).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300 start');
+      const context: common.Context = await GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_UKEY;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300 device not support CertificateManagerDialog');
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return error code 29700005.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 start');
+      const context: common.Context = await GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_SYSTEM;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 device not support CertificateManagerDialog');
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500
+     * @tc.desc   Call openInstallCertificateDialog with certType CA_CERT, certScope NOT_SPECIFIED. Return error code 29700003 if PC device is supported, otherwise return error code 29700004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500 start');
+      const context: common.Context = await GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.NOT_SPECIFIED;
+      let isSupport: boolean = certManagerDialog.supportsCACertDialog();
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          if (isSupport) {
+            hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500: the device supports CA dialog. Code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+          } else {
+            hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500: the device don't support CA dialog. Code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
+          }
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500 device not support CertificateManagerDialog');
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500 end');
       done();
     });
   })

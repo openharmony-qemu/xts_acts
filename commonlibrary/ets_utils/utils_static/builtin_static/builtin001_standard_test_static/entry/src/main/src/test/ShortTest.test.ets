@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -22,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function builtinsShortPrototypebTest() {
+export default function builtinsShortPrototypebTest(): void {
   describe('builtinsShortPrototypebTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {

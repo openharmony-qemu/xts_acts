@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1118,6 +1119,7 @@ export default function saveComponentStaticTest() {
       const TCNAME: string = 'Test_Security_SaveButton_Static_1500';
       console.info(`====>${TCNAME} START====`);
       let positX: String = '0';
+      let button_width: String = '0';
       gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
@@ -1127,6 +1129,8 @@ export default function saveComponentStaticTest() {
           let window_width: Int = properties.windowRect.width;
           console.info(`====>${TCNAME} properties.windowRect.width is: ` + window_width);
           positX = `-${Math.trunc(window_width / 2).toFixed(2)}px`;
+          button_width = `${Math.trunc(window_width / 2).toFixed(2)}px`;
+          console.info('====>${TCNAME} button_width is: ' + button_width);
         }
       } catch (err) {
         err = err as BusinessError;
@@ -1155,6 +1159,7 @@ export default function saveComponentStaticTest() {
           'borderWid': 0,
           'borderCol': '#ffffffff',
           'borderRad': 0,
+          'buWidth': button_width,
           'left': 12,
           'right': 12,
           'top': 4,
@@ -1704,8 +1709,8 @@ export default function saveComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keySave');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00vp');
-      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00vp');
+      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00fp');
+      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00fp');
       expect(obj.getElement('$attrs').getString('maxFontScale')).assertEqual('1.000000');
       expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual('1.000000');
       expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(true);

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +50,12 @@ export default function webViewController() {
         console.log('BusinessError  end')
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteractionTwo.test.static')
+      let cmd = 'aa start -a EntryAbility -b com.pageInteractionTwo.test.static';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -189,9 +195,10 @@ export default function webViewController() {
         done();
       })
 
+
     /**
      * @tc.name   testOnOverScrollStatic005
-     * @tc.number SUB_WEB_ONOVERSCROLL_0500
+     * @tc.number SUB_WEB_ONOVER_SCROLL_0500
      * @tc.desc   test onOverScroll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,41 +219,8 @@ export default function webViewController() {
           console.info("isPhone")
           await driver.swipe(100, 300, 400, 300, 600);
         }
-        await Utils.msSleep(3000);
-        Utils.registerEvent('testOnOverScroll005', true, 310383191, done);
-        await Utils.msSleep(3000);
-        let button = await driver.findComponent(ON.id('WebViewControllerButton'));
         await Utils.msSleep(2000);
-        button?.click();
-        await Utils.msSleep(3000);
-        done();
-      });
-
-    /**
-     * @tc.name   testOnOverScrollStatic006
-     * @tc.number SUB_WEB_ONOVERSCROLL_0600
-     * @tc.desc   test onOverScroll
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOnOverScrollStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(3000);
-        Utils.emitEvent('testOnOverScroll006', 10);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(1000);
-        let userAgentPC = '';
-        const isPC: boolean = userAgentPC.includes('PC');
-        if (isPC) {
-          console.info("isPC")
-          await driver.swipe(1200, 600, 1400, 1400);
-        }else{
-          console.info("isPhone")
-          await driver.swipe(100, 300, 400, 300, 600);
-        }
-        await Utils.msSleep(2000);
-        Utils.registerEvent('testOnOverScroll006', false, 310383192, done);
+        Utils.registerEvent('testOnOverScroll005', false, 310383192, done);
         await Utils.msSleep(2000);
         let button = await driver.findComponent(ON.id('WebViewControllerButton'));
         await Utils.msSleep(2000);

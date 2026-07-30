@@ -14,40 +14,11 @@
 * limitations under the License.
 */
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,
-  FlexWrap,$r
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  UIUtils
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, FlexWrap, $r } from '@ohos.arkui.component';
+import { State, Link, PropRef, UIUtils, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
-
 interface PropNumNum { number: number | string }
 
 class Num3 {
@@ -70,7 +41,7 @@ struct Child_AO {
         .onClick(():void => {
           this.count = 10;
         })
-        .key('state1')
+        .key('PropNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -78,7 +49,7 @@ struct Child_AO {
         .onClick(():void => {
           this.count = new Num3(20);
         })
-        .key('state2')
+        .key('PropNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -86,7 +57,7 @@ struct Child_AO {
         .onClick(():void => {
           this.count = { number: '30' } as PropNumNum;
         })
-        .key('state3')
+        .key('PropNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -94,7 +65,7 @@ struct Child_AO {
         .onClick(():void => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('PropNumber_state4')
         .height('5%')
 
       Text("切换变量赋值Boolean").height('5%')
@@ -102,7 +73,7 @@ struct Child_AO {
         .onClick(():void => {
           this.count = true;
         })
-        .key('state5')
+        .key('PropNumber_state5')
         .height('5%')
 
 

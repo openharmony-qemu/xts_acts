@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,6 +34,7 @@ import {
   NodeContainer,
   wrapBuilder,
   CustomBuilderT,
+  ReuseObject
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -52,7 +53,7 @@ function buildText(params: Params) {
 struct ReusableChildComponent2 {
   @State text: string = "false";
 
-  aboutToReuse(params: Record<string, object>) {
+  aboutToReuse(params: ReuseObject) {
     console.log("ReusableChildComponent2 Reusable " + JSON.stringify(params));
   }
 

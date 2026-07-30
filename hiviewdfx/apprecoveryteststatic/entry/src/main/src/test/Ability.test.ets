@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,6 +52,13 @@ export default function abilityTest() {
         it("DFX_DFR_AppRecovery_Interface_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0100 start---------------------");
             try{
+                let State1 = appRecovery.saveAppState();
+                console.info("====> DFX_DFR_AppRecovery_Interface_Static_0100  + " + State1);
+                expect(State1 == false).assertTrue();
+                appRecovery.enableAppRecovery();
+                let State2 = appRecovery.saveAppState();
+                console.info("====> DFX_DFR_AppRecovery_Interface_Static_0100  + " + State2);
+                expect(State2 == true).assertTrue();
                 appRecovery.enableAppRecovery(appRecovery.RestartFlag.ALWAYS_RESTART,
                     appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR,
                     appRecovery.SaveModeFlag.SAVE_WITH_FILE);
@@ -432,6 +440,92 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
             console.info("DFX_DFR_AppRecovery_Interface_Static_1800 end");
+        })
+
+        /**
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_1900
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_1900
+         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR + SAVE_WITH_FILE 枚举值覆盖测试;
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1900 start---------------------");
+        try{
+            appRecovery.enableAppRecovery(
+                appRecovery.RestartFlag.RESTART_WHEN_CPP_CRASH,
+                appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR,
+                appRecovery.SaveModeFlag.SAVE_WITH_FILE);
+        }catch(error){
+            console.info("DFX_DFR_AppRecovery_Interface_Static_1900 err = " + error);
+            expect(false).assertTrue();
+        }
+        console.info("DFX_DFR_AppRecovery_Interface_Static_1900 end");
+        })
+
+        /**
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2000
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2000
+         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_BACKGROUND + SAVE_WITH_FILE 枚举值覆盖测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2000 start---------------------");
+        try{
+            appRecovery.enableAppRecovery(
+                appRecovery.RestartFlag.RESTART_WHEN_CPP_CRASH,
+                appRecovery.SaveOccasionFlag.SAVE_WHEN_BACKGROUND,
+                appRecovery.SaveModeFlag.SAVE_WITH_FILE);
+        }catch(error){
+            console.info("DFX_DFR_AppRecovery_Interface_Static_2000 err = " + error);
+            expect(false).assertTrue();
+        }
+        console.info("DFX_DFR_AppRecovery_Interface_Static_2000 end");
+        })
+
+        /**
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2100
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2100
+         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR 枚举值覆盖测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2100 start---------------------");
+        try{
+            appRecovery.enableAppRecovery(
+                appRecovery.RestartFlag.RESTART_WHEN_CPP_CRASH,
+                appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR);
+        }catch(error){
+            console.info("DFX_DFR_AppRecovery_Interface_Static_2100 err = " + error);
+            expect(false).assertTrue();
+        }
+        console.info("DFX_DFR_AppRecovery_Interface_Static_2100 end");
+        })
+
+        /**
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2200
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2200
+         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_BACKGROUND 枚举值覆盖测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2200 start---------------------");
+        try{
+            appRecovery.enableAppRecovery(
+                appRecovery.RestartFlag.RESTART_WHEN_CPP_CRASH,
+                appRecovery.SaveOccasionFlag.SAVE_WHEN_BACKGROUND);
+        }catch(error){
+            console.info("DFX_DFR_AppRecovery_Interface_Static_2200 err = " + error);
+            expect(false).assertTrue();
+        }
+        console.info("DFX_DFR_AppRecovery_Interface_Static_2200 end");
         })
 
 

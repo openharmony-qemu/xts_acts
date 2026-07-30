@@ -20,28 +20,33 @@ struct TextEnableSelectedDataDetectorTest {
     Column() {
       Text('text_enableSelectedDataDetector_true_LocalDevice')
         .id('text_enableSelectedDataDetector_true_LocalDevice')
+        .key('text_enableSelectedDataDetector_true_LocalDevice')
         .enableSelectedDataDetector(true)
         .copyOption(CopyOptions.LocalDevice)
         .height('5%')
 
       Text('text_enableSelectedDataDetector_true_CROSS_DEVICE')
         .id('text_enableSelectedDataDetector_true_CROSS_DEVICE')
+        .key('text_enableSelectedDataDetector_true_CROSS_DEVICE')
         .enableSelectedDataDetector(true)
         .copyOption(CopyOptions.CROSS_DEVICE)
         .height('5%')
 
       Text('text_enableSelectedDataDetector_false')
         .id('text_enableSelectedDataDetector_false')
+        .key('text_enableSelectedDataDetector_false')
         .enableSelectedDataDetector(false)
         .height('5%')
 
       Text('text_enableSelectedDataDetector_undefined')
         .id('text_enableSelectedDataDetector_undefined')
+        .key('text_enableSelectedDataDetector_undefined')
         .enableSelectedDataDetector(undefined)
         .height('5%')
 
       Text('text_enableSelectedDataDetector_default')
         .id('text_enableSelectedDataDetector_default')
+        .key('text_enableSelectedDataDetector_default')
         .height('5%')
     }
     .width('100%')

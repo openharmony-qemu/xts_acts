@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -295,6 +296,84 @@ export default function HitraceMeterTest() {
         done();
       }
       console.info("DFX_DFR_HitraceMeter_Static_1000 end");
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_HitraceMeter_Static_1100
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Static_1100
+     * @tc.desc   验证startAsyncTrace枚举值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DFX_DFR_HitraceMeter_Static_1100", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      console.info("-------DFX_DFR_HitraceMeter_Static_1100 start--------");
+      try {
+        const COMMERCIAL = hiTraceMeter.HiTraceOutputLevel.COMMERCIAL;
+        hiTraceMeter.startSyncTrace(COMMERCIAL, "myTestFunc1", "key=value");
+        hiTraceMeter.startSyncTrace(COMMERCIAL, "myTestFunc2", "key=value");
+        hiTraceMeter.finishSyncTrace(COMMERCIAL);
+        hiTraceMeter.finishSyncTrace(COMMERCIAL);
+
+        const INFO = hiTraceMeter.HiTraceOutputLevel.INFO;
+        hiTraceMeter.startSyncTrace(INFO, "myTestFunc1", "key=value");
+        hiTraceMeter.startSyncTrace(INFO, "myTestFunc2", "key=value");
+        hiTraceMeter.finishSyncTrace(INFO);
+        hiTraceMeter.finishSyncTrace(INFO);
+
+        const CRITICAL = hiTraceMeter.HiTraceOutputLevel.CRITICAL;
+        hiTraceMeter.startSyncTrace(CRITICAL, "myTestFunc1", "key=value");
+        hiTraceMeter.startSyncTrace(CRITICAL, "myTestFunc2", "key=value");
+        hiTraceMeter.finishSyncTrace(CRITICAL);
+        hiTraceMeter.finishSyncTrace(CRITICAL);
+
+        const DEBUG = hiTraceMeter.HiTraceOutputLevel.DEBUG;
+        hiTraceMeter.startSyncTrace(DEBUG, "myTestFunc1", "key=value");
+        hiTraceMeter.startSyncTrace(DEBUG, "myTestFunc2", "key=value");
+        hiTraceMeter.finishSyncTrace(DEBUG);
+        hiTraceMeter.finishSyncTrace(DEBUG);
+
+        let traceCount = 1;
+        hiTraceMeter.traceByValue(COMMERCIAL, "myTestCount", traceCount);
+        traceCount = 2;
+        hiTraceMeter.traceByValue(DEBUG, "myTestCount", traceCount);
+        traceCount = 3;
+        hiTraceMeter.traceByValue(INFO, "myTestCount", traceCount);
+        traceCount = 4;
+        hiTraceMeter.traceByValue(CRITICAL, "myTestCount", traceCount);
+
+
+        hiTraceMeter.startAsyncTrace(COMMERCIAL, "myTestFunc", 3, "categoryTest", "key1=value");
+        hiTraceMeter.startAsyncTrace(COMMERCIAL, "myTestFunc", 4, "categoryTest", "key1=value1,key2=value2");
+        hiTraceMeter.finishAsyncTrace(COMMERCIAL, "myTestFunc", 3);
+        hiTraceMeter.finishAsyncTrace(COMMERCIAL, "myTestFunc", 4);
+
+        hiTraceMeter.startAsyncTrace(CRITICAL, "myTestFunc", 3, "categoryTest", "key1=value");
+        hiTraceMeter.startAsyncTrace(CRITICAL, "myTestFunc", 4, "categoryTest", "key1=value1,key2=value2");
+        hiTraceMeter.finishAsyncTrace(CRITICAL, "myTestFunc", 3);
+        hiTraceMeter.finishAsyncTrace(CRITICAL, "myTestFunc", 4);
+
+        hiTraceMeter.startAsyncTrace(INFO, "myTestFunc", 3, "categoryTest", "key1=value");
+        hiTraceMeter.startAsyncTrace(INFO, "myTestFunc", 4, "categoryTest", "key1=value1,key2=value2");
+        hiTraceMeter.finishAsyncTrace(INFO, "myTestFunc", 3);
+        hiTraceMeter.finishAsyncTrace(INFO, "myTestFunc", 4);
+
+        hiTraceMeter.startAsyncTrace(DEBUG, "myTestFunc", 3, "categoryTest", "key1=value");
+        hiTraceMeter.startAsyncTrace(DEBUG, "myTestFunc", 4, "categoryTest", "key1=value1,key2=value2");
+        hiTraceMeter.finishAsyncTrace(DEBUG, "myTestFunc", 3);
+        hiTraceMeter.finishAsyncTrace(DEBUG, "myTestFunc", 4);
+
+        const MAX = hiTraceMeter.HiTraceOutputLevel.MAX;
+        hiTraceMeter.startAsyncTrace(MAX, "myTestFunc", 3, "categoryTest", "key1=value");
+        hiTraceMeter.startAsyncTrace(MAX, "myTestFunc", 4, "categoryTest", "key1=value1,key2=value2");
+        hiTraceMeter.finishAsyncTrace(MAX, "myTestFunc", 3);
+        hiTraceMeter.finishAsyncTrace(MAX, "myTestFunc", 4);
+        done();
+      } catch (err) {
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("DFX_DFR_HitraceMeter_Static_1100 end");
     })
 
 

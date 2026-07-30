@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,17 +16,14 @@
 
 import cameraObj from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level, Hypium } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
-import { Hypium } from '../../../hypium/index';
-import Context from "application.Context";
+import Context from 'application.Context';
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
-
 const TAG = "CameraSessionZoomRatioTest: ";
 
 let mCameraManager: cameraObj.CameraManager | undefined;
@@ -344,7 +342,6 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('  cameraSessionZoomRatioTest afterAll case');
     })

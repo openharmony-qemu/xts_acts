@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -407,14 +408,17 @@ export default function PromiseTest() {
               const processedValue = testValue * 2;
               reject(new Error("Worker intentionally rejected the promise"));
               return processedValue;
-            }).then((result: number): void => {
+            });
+            try {
+              const result = job.Await();
               resolve(result);
-            }).catch((err: Error): void => {
+            } catch (err) {
               err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               reject(new Error("Worker intentionally rejected the promise"));
-            });
-            worker.quit();
+            } finally {
+              worker.join();
+            }
           });
           try {
             const result = await promise1;
@@ -1355,13 +1359,13 @@ export default function PromiseTest() {
           });
           const promise2 = Promise.resolve<Any>(undefined);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
-          const queue: containers.stackless.LinkedConcurrentQueue<number> = new containers.stackless.LinkedConcurrentQueue<number>();
+          const queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>();
           queue.add(2);
-          const promise4 = new Promise<containers.stackless.LinkedConcurrentQueue<number>>((resolve) => {
+          const promise4 = new Promise<containers.LinkedBlockingQueue<number>>((resolve) => {
             setTimeout(() => resolve(queue), 100);
           });
           let result =
-            await Promise.race<number | Any | [number, string] | containers.stackless.LinkedConcurrentQueue<number>>([promise1,
+            await Promise.race<number | Any | [number, string] | containers.LinkedBlockingQueue<number>>([promise1,
               promise2, promise3, promise4]) as undefined;
           expect(result).assertEqual(undefined);
         } catch (err) {

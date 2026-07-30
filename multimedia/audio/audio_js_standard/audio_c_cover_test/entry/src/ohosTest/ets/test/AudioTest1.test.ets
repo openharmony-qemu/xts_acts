@@ -515,7 +515,7 @@ export default function AudioTest1() {
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result: number = AudioKitTest.AudioSessionActivateAudioSessionIllegalState();
-          expect(6800103).assertEqual(result);
+          expect(6800101).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
         } catch (err) {

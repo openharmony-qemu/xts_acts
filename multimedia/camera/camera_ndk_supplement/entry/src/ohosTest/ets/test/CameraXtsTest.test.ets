@@ -1553,6 +1553,20 @@ export default function CameraXtsTest() {
     })
 
     /**
+     * @tc.name   testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPECOLOREFFECT
+     * @tc.number SUB_MULTIMEIDA_OH_Camera_ENUM_CONTROL_CENTER_TYPE_COLOR_EFFECT_0100
+     * @tc.desc   Test CONTROL_CENTER_EFFECT_TYPE_COLOR_EFFECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPECOLOREFFECT", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.sessionGetSupportedEffectTypes(camera.ControlCenterEffectType.COLOR_EFFECT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
      * @tc.name   testCameraControlCenterStatusInfo
      * @tc.number SUB_MULTIMEIDA_OH_Camera_ErrorCode11100
      * @tc.desc   Test Camera_ControlCenterStatusInfo

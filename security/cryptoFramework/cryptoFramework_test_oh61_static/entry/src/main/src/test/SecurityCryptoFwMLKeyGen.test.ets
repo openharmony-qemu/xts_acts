@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -41,7 +42,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         expect(pubKeyData instanceof Uint8Array).assertTrue();
         expect(pubKeyData.length).assertEqual(800);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Async_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Async_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -75,7 +76,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         expect(seed instanceof Uint8Array).assertTrue();
         expect(seed.length).assertEqual(64);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Async_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Async_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -106,7 +107,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
         expect(seed.length).assertEqual(64);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Async_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Async_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -136,7 +137,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let priKeyRaw: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_RAW);
         expect(priKeyRaw.length).assertEqual(1632);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Sync_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Sync_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -163,7 +164,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
         expect(seed.length).assertEqual(64);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Sync_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Sync_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -190,7 +191,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
         expect(seed.length).assertEqual(64);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_KeyGen_Sync_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_KeyGen_Sync_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -222,7 +223,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Async_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Async_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -249,7 +250,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Async_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Async_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -276,7 +277,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Async_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Async_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -303,7 +304,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Sync_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Sync_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -329,7 +330,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Sync_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Sync_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -355,7 +356,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
         let seed: Uint8Array = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
         expect(seed.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_DSA_KeyGen_Sync_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_DSA_KeyGen_Sync_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -391,7 +392,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           expect(pubKeyData instanceof Uint8Array).assertTrue();
           expect(pubKeyData.length).assertEqual(800);
         } catch (error) {
-          console.error(`[XTS] ML_KEM_KeyGen_Callback_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_KeyGen_Callback_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -433,7 +434,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           expect(seed instanceof Uint8Array).assertTrue();
           expect(seed.length).assertEqual(64);
         } catch (error) {
-          console.error(`[XTS] ML_KEM_KeyGen_Callback_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_KeyGen_Callback_0200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -472,7 +473,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
           expect(seed.length).assertEqual(64);
         } catch (error) {
-          console.error(`[XTS] ML_KEM_KeyGen_Callback_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_KEM_KeyGen_Callback_0300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -512,7 +513,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
           expect(seed.length).assertEqual(32);
         } catch (error) {
-          console.error(`[XTS] ML_DSA_KeyGen_Callback_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_KeyGen_Callback_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -547,7 +548,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
           expect(seed.length).assertEqual(32);
         } catch (error) {
-          console.error(`[XTS] ML_DSA_KeyGen_Callback_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_KeyGen_Callback_0200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -582,7 +583,7 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let seed: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
           expect(seed.length).assertEqual(32);
         } catch (error) {
-          console.error(`[XTS] ML_DSA_KeyGen_Callback_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ML_DSA_KeyGen_Callback_0300 ${error}`);
           expect(null).assertFail();
         }
         done();

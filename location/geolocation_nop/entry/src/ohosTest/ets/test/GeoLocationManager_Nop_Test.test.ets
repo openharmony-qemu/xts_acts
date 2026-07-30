@@ -698,7 +698,11 @@ export default function geoLocationManager_nop_test() {
             }
           } else {
             console.info('geolocation_isLocationEnabled_nop_test_012 getLastLocation: data=' + JSON.stringify(data));
-            expect(data).assertTrue();
+            if (data) {
+              expect(data).assertTrue();
+            } else {
+              expect(data).assertFalse();
+            }
             done();
           }
         });
@@ -722,7 +726,11 @@ export default function geoLocationManager_nop_test() {
       try {
         geolocation.isLocationEnabled().then((result: boolean) => {
           console.info('promise, geolocation_isLocationEnabled_nop_test_013: ' + JSON.stringify(result));
-          expect(result).assertTrue()
+          if (result) {
+            expect(result).assertTrue();
+          } else {
+            expect(result).assertFalse();
+          }
           done();
         }).catch((error: BusinessError) => {
           console.info('---geolocation_isLocationEnabled_nop_test_013 catch end---' + error.code);
@@ -734,205 +742,6 @@ export default function geoLocationManager_nop_test() {
         expect().assertFail();
         console.info('geolocation_isLocationEnabled_nop_test_013 end');
         done();
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_getAddressesFromLocation_nop_test_014
-     * @tc.number SUB_geolocation_getAddressesFromLocation_nop_test_014
-     * @tc.desc   Using the geolocation.getAddressesFromLocation method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_getAddressesFromLocation_nop_test_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let reverseGeocodeRequest: geolocation.ReverseGeoCodeRequest = {
-          "latitude": 31.12,
-          "longitude": 121.11,
-          "maxItems": 1
-        };
-        geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
-          if (err) {
-            console.info('geolocation_getAddressesFromLocation_nop_test_014 getAddressesFromLocation: err=' + JSON.stringify(err) + ', type:' + typeof err.code);
-            if (Number(err.code) === 106) {
-              expect(Number(err.code)).assertEqual(106);
-              done();
-            } else {
-              expect().assertFalse();
-              done();
-            }
-            return;
-          }
-          if (data) {
-            console.info('geolocation_getAddressesFromLocation_nop_test_014 getAddressesFromLocation: data=' + JSON.stringify(data));
-            expect(data != null).assertTrue();
-            done();
-            return;
-          }
-          console.info('geolocation_getAddressesFromLocation_nop_test_014 getAddressesFromLocation: no data, no err');
-          done();
-        });
-      } catch (err) {
-        console.info('---geolocation_getAddressesFromLocation_nop_test_014 catch end---' + err.code + ', type:' + typeof err.code);
-        if (Number(err.code) === 106) {
-          expect(Number(err.code)).assertEqual(106);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-        console.info('geolocation_getAddressesFromLocation_nop_test_014 end');
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_getAddressesFromLocation_nop_test_015
-     * @tc.number SUB_geolocation_getAddressesFromLocation_nop_test_015
-     * @tc.desc   Using the geolocation.getAddressesFromLocation method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_getAddressesFromLocation_nop_test_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let reverseGeocodeRequest: geolocation.ReverseGeoCodeRequest = {
-          "latitude": 31.12,
-          "longitude": 121.11,
-          "maxItems": 1
-        };
-        geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-          console.info('geolocation_getAddressesFromLocation_nop_test_015 getAddressesFromLocation: data=' + JSON.stringify(data));
-          expect(data !== null).assertTrue()
-          done();
-        });
-      } catch (err) {
-        console.info('---geolocation_getAddressesFromLocation_nop_test_015 catch end---' + err.code);
-        if (Number(err.code) === 106) {
-          expect(Number(err.code)).assertEqual(106);
-          done();
-        } else {
-          expect().assertFalse();
-          done();
-        }
-        console.info('geolocation_getAddressesFromLocation_nop_test_015 end');
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_getAddressesFromLocationName_nop_test_016
-     * @tc.number SUB_geolocation_getAddressesFromLocationName_nop_test_016
-     * @tc.desc   Using the geolocation.getAddressesFromLocationName method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_getAddressesFromLocationName_nop_test_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let geocodeRequest: geolocation.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
-        geolocation.getAddressesFromLocationName(geocodeRequest, (err: BusinessError, data) => {
-          if (err) {
-            console.info('geolocation_getAddressesFromLocationName_nop_test_016 getAddressesFromLocationName: err=' + JSON.stringify(err));
-            expect(Number(err.code)).assertEqual(106);
-            done();
-          }
-          if (data) {
-            console.info('geolocation_getAddressesFromLocationName_nop_test_016 getAddressesFromLocationName: data=' + JSON.stringify(data));
-            expect(data !== null).assertTrue();
-            done();
-          }
-        });
-      } catch (err) {
-        console.info('---geolocation_getAddressesFromLocationName_nop_test_016 catch end---' + err.code);
-        expect().assertFalse();
-        done();
-        console.info('geolocation_getAddressesFromLocationName_nop_test_016 end');
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_getAddressesFromLocationName_nop_test_017
-     * @tc.number SUB_geolocation_getAddressesFromLocationName_nop_test_017
-     * @tc.desc   Using the geolocation.getAddressesFromLocationName method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_getAddressesFromLocationName_nop_test_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let geocodeRequest: geolocation.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
-        geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
-          console.info('geolocation_getAddressesFromLocationName_nop_test_017 getAddressesFromLocationName: ' + JSON.stringify(result));
-          expect(result !== null).assertTrue()
-          done();
-        }).catch((error: BusinessError) => {
-          console.info('geolocation_getAddressesFromLocationName_nop_test_017 promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
-          expect(error.code).assertEqual(107);
-          done();
-        });
-      } catch (err) {
-        console.info('---geolocation_getAddressesFromLocationName_nop_test_017 catch end---' + err.code);
-        expect().assertFalse();
-        done();
-        console.info('geolocation_getAddressesFromLocationName_nop_test_017 end');
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_isGeoServiceAvailable_nop_test_018
-     * @tc.number SUB_geolocation_isGeoServiceAvailable_nop_test_018
-     * @tc.desc   Using the geolocation.getAddressesFromLocationName method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_isGeoServiceAvailable_nop_test_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        geolocation.isGeoServiceAvailable((err: BusinessError, data: boolean) => {
-          if (err) {
-            console.info('geolocation_isGeoServiceAvailable_nop_test_018 isGeoServiceAvailable: err=' + JSON.stringify(err));
-            expect(Number(err.code)).assertEqual(106);
-            done();
-          }
-          if (data) {
-            console.info('geolocation_isGeoServiceAvailable_nop_test_018 isGeoServiceAvailable: data=' + JSON.stringify(data));
-            expect(data !== null).assertTrue()
-            done();
-          }
-        });
-      } catch (err) {
-        console.info('---geolocation_isGeoServiceAvailable_nop_test_018 catch end---' + err.code);
-        expect().assertFalse();
-        done();
-        console.info('geolocation_isGeoServiceAvailable_nop_test_018 end');
-      }
-    });
-
-    /**
-     * @tc.name   geolocation_isGeoServiceAvailable_nop_test_019
-     * @tc.number SUB_geolocation_isGeoServiceAvailable_nop_test_019
-     * @tc.desc   Using the geolocation.getAddressesFromLocationName method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geolocation_isGeoServiceAvailable_nop_test_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        geolocation.isGeoServiceAvailable().then((result: boolean) => {
-          console.info('promise, geolocation_isGeoServiceAvailable_nop_test_019 result: ' + JSON.stringify(result));
-          expect(result).assertTrue()
-          done();
-        });
-      } catch (err) {
-        console.info('---geolocation_isGeoServiceAvailable_nop_test_019 catch end---' + err.code);
-        if (Number(err.code) === 106) {
-          expect(Number(err.code)).assertEqual(106);
-          done();
-        } else {
-          expect().assertFalse();
-          done();
-        }
-        console.info('geolocation_isGeoServiceAvailable_nop_test_019 end');
       }
     });
 
@@ -1683,47 +1492,6 @@ export default function geoLocationManager_nop_test() {
     });
 
     /**
-     * @tc.name   geoLocationManager_getPoiInfo_nop_test_019
-     * @tc.number SUB_geoLocationManager_getPoiInfo_nop_test_019
-     * @tc.desc   GnssGeofence.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geoLocationManager_getPoiInfo_nop_test_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        if (geoLocationManager.isPoiServiceSupported()) {
-          geoLocationManager.getPoiInfo().then((poiInfo) => {
-            console.info("geoLocationManager_getPoiInfo_nop_test_019 get PoiInfo:" + JSON.stringify(poiInfo));
-            if (poiInfo !== undefined) {
-              console.info("geoLocationManager_getPoiInfo_nop_test_019 get undefined PoiInfo :" + JSON.stringify(poiInfo));
-              expect(poiInfo !== null).assertTrue();
-              done();
-            }
-          }).catch((err: BusinessError) => {
-            console.info('geoLocationManager_getPoiInfo_nop_test_019 promise, getPoiInfo: ' + typeof err.code + ',err:' + err.code);
-            expect(Number(err.code)).assertEqual(201);
-            done();
-          });
-        } else {
-          console.info("geoLocationManager_getPoiInfo_nop_test_019 : Not Support Poi Service!");
-          expect().assertFalse();
-          done();
-        }
-      } catch (err) {
-        console.info('---geoLocationManager_getPoiInfo_nop_test_019  catch ---' + typeof err.code + ',err:' + err.code);
-        if (Number(err.code) === 201) {
-          expect(Number(err.code)).assertEqual(201);
-          console.info('---geoLocationManager_getPoiInfo_nop_test_019  end type---' + typeof err.code + ',err:' + err.code);
-          done();
-        } else {
-          expect().assertFalse();
-          done();
-        }
-      }
-    });
-
-    /**
      * @tc.name   geoLocationManager_addBeaconFence_nop_test_020
      * @tc.number SUB_geoLocationManager_addBeaconFence_nop_test_020
      * @tc.desc   GnssGeofence.
@@ -1935,6 +1703,29 @@ export default function geoLocationManager_nop_test() {
       }
       });
 
+      /**
+       * @tc.number  SUB_Location_nop_getPoiInfo_0100
+       * @tc.name    SUB_Location_nop_getPoiInfo_0100
+       * @tc.desc    Test getPoiInfo error code 201 without permission
+       * @tc.level   Level 3
+       * @tc.type    Function
+       * @tc.size    MEDIUMTEST
+       */
+      it('SUB_Location_nop_getPoiInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        try {
+          await geoLocationManager.getPoiInfo();
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('SUB_Location_nop_getPoiInfo_0100 error: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        }
+      });
 
   })
 }

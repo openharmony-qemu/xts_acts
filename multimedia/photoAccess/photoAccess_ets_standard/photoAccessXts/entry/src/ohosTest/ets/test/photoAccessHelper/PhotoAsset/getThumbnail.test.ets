@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, pushCreateAsset, LOG_TAG } from '../../common';
+import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, pushCreateAsset, LOG_TAG, waitForLcdSizePopulateds } from '../../common';
 import common from '@ohos.app.ability.common';
 import { JSON } from '@kit.ArkTS';
 
@@ -184,6 +184,7 @@ export default function getThumbnailTest() {
       await getPermission();
       await driveFn();
       await pushCreateAsset(testContext, fileNameList);
+      await waitForLcdSizePopulateds(fileNameList, 15000);
     });
 
     beforeEach(() => {

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -105,6 +106,25 @@ struct WebSchemeHandlerResponse {
                   error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
+                break;
+              }
+
+              case "emitActiveWebEngineVersion005": {
+                try {
+                  Utils.emitEvent(webview.ArkWebEngineVersion.M144, 2026030935)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'SwitchNextPageStatic': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/EnableAdvancedSecurityMode' })
+                console.log('push URL success')
+                Utils.emitEvent(true, 2026030936)
                 break;
               }
 

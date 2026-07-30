@@ -1,0 +1,64 @@
+/*
+ * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <climits>
+#include <gtest/gtest.h>
+#include "../Deqpgles31BaseFunc.h"
+#include "../ActsDeqpgles310010TestSuite.h"
+#include "shrinkdefine.h"
+
+using namespace std;
+using namespace testing::ext;
+using namespace OHOS;
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009332,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.0_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009333,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.1_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009334,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.16_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009335,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.1_1_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009336,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.16_1_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009337,
+        "KHR-GL40.pixelstoragemode",
+        "s.teximage3d.r16i.16_16_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009338,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.1_1_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009339,
+        "KHR-GL40.pixelstoragemod",
+        "es.teximage3d.r16i.16_1_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009340,
+        "KHR-GL40.pixelstoragemode",
+        "s.teximage3d.r16i.16_16_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009341,
+        "KHR-GL40.pixelstoragemode",
+        "s.teximage3d.r16i.16_16_4");

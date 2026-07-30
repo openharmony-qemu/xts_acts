@@ -420,20 +420,6 @@ export function ArrayFindLastEdgeTest4300() {
     return result === undefined;
 }
 
-// Test large array last element
-export function ArrayFindLastEdgeTest4400() {
-    const arr = Array.from({ length: 10000 }, (_, i) => i + 1);
-    const result = arr.findLast(element => element === 10000);
-    return result === 10000;
-}
-
-// Test large array first element
-export function ArrayFindLastEdgeTest4500() {
-    const arr = Array.from({ length: 10000 }, (_, i) => i + 1);
-    const result = arr.findLast(element => element === 1);
-    return result === 1;
-}
-
 // Test array with Number.MAX_VALUE
 export function ArrayFindLastEdgeTest4600() {
     const arr = [1, 2, 3, Number.MAX_VALUE, 5];

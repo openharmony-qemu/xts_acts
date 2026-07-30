@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { ArrayList, buffer, Deque, HashMap, LinkedList, TreeSet, url, util, Stack } from '@kit.ArkTS';
 
 interface GeneratedObjectLiteralInterface_1 {

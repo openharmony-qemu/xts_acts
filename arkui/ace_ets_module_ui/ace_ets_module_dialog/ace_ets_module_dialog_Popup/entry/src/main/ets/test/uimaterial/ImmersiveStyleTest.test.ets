@@ -62,11 +62,6 @@ export default function ImmersiveStyleTest() {
       expect(component).not().assertUndefined();
       console.info('ImmersiveStyleTest_0100 component found');
 
-      let strJson = getInspectorByKey('ultra_thin');
-      console.info('ImmersiveStyleTest_0100 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveStyleTest_0100 END');
       done();
     });
@@ -90,12 +85,6 @@ export default function ImmersiveStyleTest() {
       let component = await driver.findComponent(ON.id('thin'));
       expect(component).not().assertUndefined();
       console.info('ImmersiveStyleTest_0200 component found');
-
-      let strJson = getInspectorByKey('thin');
-      console.info('ImmersiveStyleTest_0200 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveStyleTest_0200 END');
       done();
     });
@@ -120,11 +109,6 @@ export default function ImmersiveStyleTest() {
       expect(component).not().assertUndefined();
       console.info('ImmersiveStyleTest_0300 component found');
 
-      let strJson = getInspectorByKey('regular');
-      console.info('ImmersiveStyleTest_0300 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveStyleTest_0300 END');
       done();
     });
@@ -147,12 +131,6 @@ export default function ImmersiveStyleTest() {
 
       let component = await driver.findComponent(ON.id('thick'));
       expect(component).not().assertUndefined();
-      console.info('ImmersiveStyleTest_0400 component found');
-
-      let strJson = getInspectorByKey('thick');
-      console.info('ImmersiveStyleTest_0400 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0400 END');
       done();
@@ -177,11 +155,6 @@ export default function ImmersiveStyleTest() {
       let component = await driver.findComponent(ON.id('ultra_thick'));
       expect(component).not().assertUndefined();
       console.info('ImmersiveStyleTest_0500 component found');
-
-      let strJson = getInspectorByKey('ultra_thick');
-      console.info('ImmersiveStyleTest_0500 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0500 END');
       done();

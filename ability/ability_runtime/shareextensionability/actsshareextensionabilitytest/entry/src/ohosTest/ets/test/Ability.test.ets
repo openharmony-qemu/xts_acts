@@ -882,7 +882,7 @@ export default function abilityTest() {
       }, (err: base.BusinessError) => {
         expect(err.code).assertEqual(0);
       });
-      await sleep(500);
+      await sleep(1500);
       await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
         console.info('====>Acts_ShareExtensionAbility_1700 : data : ' + JSON.stringify(data.stdResult));
         try {

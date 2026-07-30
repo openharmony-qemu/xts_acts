@@ -1,3 +1,4 @@
+'use static';
 import atomicsAddTest from './AtomicAddTest.test';
 import atomicsAndTest from './AtomicAndTest.test';
 import atomicsCompareExchangeTest from './AtomicCompareExchangeTest.test';

@@ -187,17 +187,16 @@ export default function graphicImagePixelMapAPI22() {
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: 8, size: { height: 4, width: 6 } 
       }
-      let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+      let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
       let pixelMap = image.createPixelMapSync(color, opts);
       try {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
-        expect().assertFail();
+        await pixelMap.release();
         done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
-        expect(Number(err.code) == 7600205).assertTrue();
-        await pixelMap.release();
+        expect().assertFail();
         done();
       }
     });
@@ -321,14 +320,14 @@ export default function graphicImagePixelMapAPI22() {
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: 8, size: { height: 4, width: 6 } 
       }
-      let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+      let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
       let pixelMap = image.createPixelMapSync(color, opts);
       
       await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
         console.info('www data createCroppedAndScaledPixelMap pass');
       }).catch((err: BusinessError) => {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
-        expect(Number(err.code) == 7600205).assertTrue();
+        expect().assertFail();
       });
       await pixelMap.release();
       done();

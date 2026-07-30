@@ -35,13 +35,17 @@ interface Param {
   data1: string,
   data2: Data2
 }
+
+initModule('./GetStateByIndexPage')
+
 @Entry({routeName:'pushNameRouter'})
 @Component
-struct PushNameRouterPage {
+struct PushNameRouterPage1 {
    routePage:() => void = () => {
      console.log('+++++++++++++++++++++++++++1');
     const uiContext = this.getUIContext();
     if (uiContext && uiContext.getRouter()) {
+      initModule('./GetStateByIndexPage')
       console.log('+++++++++++++++++++++++++++2');
       uiContext.getRouter().pushNamedRoute({
         name: 'pushNameRouter',

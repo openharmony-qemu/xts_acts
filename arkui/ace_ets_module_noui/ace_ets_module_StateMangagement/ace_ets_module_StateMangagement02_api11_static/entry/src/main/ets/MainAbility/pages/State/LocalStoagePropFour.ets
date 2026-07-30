@@ -74,12 +74,12 @@ struct LocalStoagePropFour {
       Button(`点击动态更改本地初始值`).onClick(():void=>{
         this.storProp1 += 10
         this.vae = storage111.get<number>('PropA') + ""
-      }).key('button_changeInitialValue').height('5%')
+      }).key('LocalStoagePropFour_button_changeInitialValue').height('5%')
 
       Button(`点击更改localstorage值`).onClick(():void=>{
         storage111.set<number>('PropA', 666)
         this.vae = storage111.get<number>('PropA') + ""
-      }).key('button_changeLocalStorageValue').height('5%')
+      }).key('LocalStoagePropFour_button_changeLocalStorageValue').height('5%')
 
       ChildComp({storProp1:this.storProp1,storProp2:this.storProp1,storProp3:this.storProp1,num:this.storProp1})
 
@@ -96,7 +96,7 @@ struct ChildComp {
   build() {
     Column(){
       Text(`State:${this.storProp1},Link:${this.storProp2},PropRef:${this.storProp3},Provide:${this.num}`)
-        .key('text_state').height('5%')
+        .key('LocalStoagePropFour_text_state').height('5%')
     }
   }
 }

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,42 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  it,
-  expect,
-  Level,
-  TestType,
-  Size
-} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import deviceInfo from "@ohos.deviceInfo"
+import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-
 export default function SegBtnItemTest0010() {
   describe('SegBtnItemTest0010', () => {
     beforeAll(async (): Promise<void> => {
@@ -93,6 +71,7 @@ export default function SegBtnItemTest0010() {
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
       console.info("[SegBtnItemTest0010_001] btn0.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -105,6 +84,7 @@ export default function SegBtnItemTest0010() {
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
       console.info("[SegBtnItemTest0010_001] btn1.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -114,6 +94,7 @@ export default function SegBtnItemTest0010() {
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[2]
       console.info("[SegBtnItemTest0010_001] btn2.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -121,6 +102,7 @@ export default function SegBtnItemTest0010() {
       expect(btn2.getElement('$attrs').getString("accessibilityLevel")).assertEqual('yes');
       await CommonFunc.sleep(500);
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -146,6 +128,7 @@ export default function SegBtnItemTest0010() {
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
       console.info("[SegBtnItemTest0010_002] btn0.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -158,6 +141,7 @@ export default function SegBtnItemTest0010() {
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
       console.info("[SegBtnItemTest0010_002] btn1.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -167,6 +151,7 @@ export default function SegBtnItemTest0010() {
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[2]
       console.info("[SegBtnItemTest0010_002] btn2.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -176,6 +161,7 @@ export default function SegBtnItemTest0010() {
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[3]
       console.info("[SegBtnItemTest0010_002] btn3.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -185,6 +171,7 @@ export default function SegBtnItemTest0010() {
       let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -199,6 +186,7 @@ export default function SegBtnItemTest0010() {
       let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
         .getArray("$children")[0]

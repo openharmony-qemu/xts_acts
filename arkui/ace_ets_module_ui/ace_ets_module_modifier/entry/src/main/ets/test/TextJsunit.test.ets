@@ -453,7 +453,7 @@ export default function textJsunit() {
     it('textTest_0023', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0023 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('text' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('text1');

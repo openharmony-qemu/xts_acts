@@ -18,4 +18,5 @@ export const test_ndk_getActiveWebEngineVersion: () => number;
 export const test_ndk_setActiveWebEngineVersionEvergreen: () => void;
 export const test_ndk_setActiveWebEngineVersionEvergreen114: () => void;
 export const test_ndk_setActiveWebEngineVersionEvergreen132: () => void;
+export const test_ndk_setActiveWebEngineVersionEvergreen144: () => void;
 export const IsActiveWebEngineEvergreen_c: () => boolean;

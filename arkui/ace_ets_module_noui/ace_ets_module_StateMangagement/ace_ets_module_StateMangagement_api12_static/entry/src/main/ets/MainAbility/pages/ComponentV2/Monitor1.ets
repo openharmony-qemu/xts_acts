@@ -14,26 +14,8 @@
  * limitations under the License.
  */
 //监听的变量未被装饰器修饰，被@Local修饰
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2,TabsController,Tabs
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,Local,Monitor,IMonitor,
-  StorageLink,ObservedV2,Trace,Param,Event,IMonitor
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2, TabsController, Tabs } from '@ohos.arkui.component';
+import { State, Watch, Link, Local, Monitor, IMonitor, StorageLink, ObservedV2, Trace, Param, Event } from '@ohos.arkui.stateManagement';
 @Entry
 @ComponentV2
 struct MonitorLocal {

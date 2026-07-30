@@ -14,34 +14,55 @@
  */
 import pointer from '@ohos.multimodalInput.pointer';
 import window from '@ohos.window';
-import { BusinessError }  from '@ohos.base'
+import { BusinessError } from '@ohos.base'
+
 @Entry
 @Component
 struct CursorControlExample {
   @State num1: PointerStyle = pointer.PointerStyle.DEFAULT
+  @State lastSetStyle: PointerStyle = pointer.PointerStyle.DEFAULT
   controller: TextInputController = new TextInputController()
 
+  private syncPointerStyle(): void {
+    window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+      if (error) {
+        console.error('[setCursor] getLastWindow error: ' + JSON.stringify(error));
+        return;
+      }
+      let windowId = win.getWindowProperties().id;
+      let style: pointer.PointerStyle = pointer.getPointerStyleSync(windowId);
+      console.info('[setCursor] getPointerStyleSync=' + style + ' lastSetStyle=' + this.lastSetStyle);
+      this.num1 = style !== pointer.PointerStyle.DEFAULT ? style : this.lastSetStyle;
+    });
+  }
+
   build() {
-    Column({space:10}) {
-      Button('setCursor枚举值：'+`${this.num1}`)
-        .onClick(()=>{
-        window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
-          let windowId = win.getWindowProperties().id;
-          let style: pointer.PointerStyle = pointer.getPointerStyleSync(windowId);
-          this.num1=style
-        });
-      })
+    Column({ space: 10 }) {
+      Button('setCursor枚举值：' + `${this.num1}`)
+        .onClick(() => {
+          this.syncPointerStyle();
+        })
         .key('setCursor_1')
-        .margin({top:10})
+        .margin({ top: 10 })
       Button('setCursor')
-        .onClick(()=>{
-        cursorControl.setCursor(pointer.PointerStyle.SOUTH)
-      })
+        .onClick(() => {
+          cursorControl.setCursor(pointer.PointerStyle.SOUTH);
+          this.lastSetStyle = pointer.PointerStyle.SOUTH;
+          this.num1 = pointer.PointerStyle.SOUTH;
+          setTimeout(() => {
+            this.syncPointerStyle();
+          }, 500);
+        })
         .key('setCursor_2')
       Button('restoreDefault')
-        .onClick(()=>{
-        cursorControl.restoreDefault()
-      })
+        .onClick(() => {
+          cursorControl.restoreDefault();
+          this.lastSetStyle = pointer.PointerStyle.DEFAULT;
+          this.num1 = pointer.PointerStyle.DEFAULT;
+          setTimeout(() => {
+            this.syncPointerStyle();
+          }, 500);
+        })
         .key('setCursor_3')
     }.width('100%')
   }

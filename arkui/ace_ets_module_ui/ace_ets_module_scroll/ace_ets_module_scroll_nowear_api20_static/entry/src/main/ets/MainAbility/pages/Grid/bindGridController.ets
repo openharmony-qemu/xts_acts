@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { BuilderNode, DrawContext, FrameNode, NodeContent, NodeController } from '@ohos.arkui.node'
 import {
@@ -195,7 +195,7 @@ struct BindGridController {
       .rowsTemplate('1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(5)
-      .key('grid_dragging_fling')
+      .key('bindGridController_grid_dragging_fling')
     this!.gridAttribute!.backgroundColor(Color.Pink)
     for (let i = 0; i < 40; i++) {
       let gridItemNode = typeNode.createGridItemNode(this.getUIContext());
@@ -225,7 +225,7 @@ struct BindGridController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str')
+          .key('bindGridController_str')
         Text(this.str1)
           .width('22%')
           .fontSize(16)
@@ -233,7 +233,7 @@ struct BindGridController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str1')
+          .key('bindGridController_str1')
         Text(this.str2)
           .width('22%')
           .fontSize(16)
@@ -249,7 +249,7 @@ struct BindGridController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str7')
+          .key('bindGridController_str7')
       }.height('6%')
 
       Row() {
@@ -268,7 +268,7 @@ struct BindGridController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str4')
+          .key('bindGridController_str4')
         Text(this.str5)
           .width('22%')
           .fontSize(16)
@@ -284,7 +284,7 @@ struct BindGridController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str6')
+          .key('bindGridController_str6')
       }.height('6%')
 
       Stack() {

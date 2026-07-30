@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +23,7 @@ import type { AsyncCallback, Callback } from '@ohos.base'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import deviceInfo from '@ohos.deviceInfo';
 import {Driver,ON} from '@ohos.UiTest';
+import { canIUse } from '@internal.full.global'
 
 let domain: int = 0x0000;
 let tag: string = 'WindowLayoutStaticTest';
@@ -36,6 +38,7 @@ export default function WindowLayoutStaticTest() {
         hilog.info(domain, tag, `deviceType: ${deviceType}`);
         let driver: Driver;
         let isFreeWindowMode:boolean = false;
+        let isSyscapSessionManagerSupported:boolean = false;
 
         beforeAll(() => {
             try {
@@ -50,6 +53,8 @@ export default function WindowLayoutStaticTest() {
             //isFreeWindowMode == true 自由窗口模式
             //isFreeWindowMode == false 非自由窗口模式
             console.info(`brforeAll isFreeWindowMode: ${isFreeWindowMode}`);
+            isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+            console.info(`brforeAll isSyscapSessionManagerSupported: ${isSyscapSessionManagerSupported}`);
         })
 
         /**
@@ -263,6 +268,47 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_setFollowParentWindowLayoutEnabled_0400
+         * @tc.name        testSetFollowParentWindowLayoutEnabled_ErrorCode1300004_MainWindow_static_004
+         * @tc.desc        setFollowParentWindowLayoutEnabled 1300004 test - main window call.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testSetFollowParentWindowLayoutEnabled_ErrorCode1300004_MainWindow_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetFollowParentWindowLayoutEnabled_ErrorCode1300004_MainWindow_static_004';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            try {
+                let mainWindow: window.Window = windowStage!.getMainWindowSync();
+                expect(!!mainWindow).assertTrue();
+                mainWindow.setFollowParentWindowLayoutEnabled(true).then(() => {
+                    hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    if (err!.code === 1300004) {
+                        hilog.info(domain, tag, msgStr + 'Unauthorized operation as expected - main window cannot call this API.');
+                        expect(err!.code).assertEqual(1300004);
+                        done();
+                    } else if (!isSyscapSessionManagerSupported) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        expect(err!.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                });
+            } catch (exception) {
+                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                expect(false).assertTrue();
+                done();
             }
         })
 
@@ -1121,7 +1167,8 @@ export default function WindowLayoutStaticTest() {
                 await subWin.setUIContent('pages/index2');
                 await subWin.showWindow();
                 await Utils.msSleep(1000);
-                subWin.minimize(async(err: BusinessError<void> | null): void => {
+                subWin.minimize((err: BusinessError<void> | null) : void => {
+                    async (err: BusinessError<void> | null): Promise<void> => {
                     if (err!.code) {
                         err === err as BusinessError;
                         if (err!.code === 801) {
@@ -1139,6 +1186,7 @@ export default function WindowLayoutStaticTest() {
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
                     await subWin.destroyWindow();
                     done();
+                }(err)
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
@@ -1222,7 +1270,7 @@ export default function WindowLayoutStaticTest() {
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
                     await subWin.destroyWindow();
                     done();
-                }).catch(async(err: Error): PromiseLike<void> | undefined => {
+                }).catch(async(err: Error): Promise<void> => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
                         hilog.info(domain, tag, msgStr + 'Capability not supported.');
@@ -4224,6 +4272,50 @@ export default function WindowLayoutStaticTest() {
                 hilog.error(domain, tag, msgStr + 'Failed to get window limits. Cause code: ' + err!.code + ', message: ' + err!.message);
                 expect(err!.code).assertEqual(1300002);
                 done();
+            }
+        })
+
+         /**
+         * @tc.number      SUB_BASIC_WMS_GetWindowLimits_Normal_0300
+         * @tc.name        testGetWindowLimits_AllProperties_static_001
+         * @tc.desc        getWindowLimits test - verify all return value properties.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testGetWindowLimits_AllProperties_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowLimits_AllProperties_static_001';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            try {
+                let mainWindow: window.Window = windowStage!.getMainWindowSync();
+                expect(!!mainWindow).assertTrue();
+                let windowLimits: window.WindowLimits = mainWindow.getWindowLimits();
+                hilog.info(domain, tag, msgStr + `getWindowLimits result: ${JSON.stringify(windowLimits)}`);
+                hilog.info(domain, tag, msgStr + `maxWidth: ${windowLimits.maxWidth}`);
+                hilog.info(domain, tag, msgStr + `maxHeight: ${windowLimits.maxHeight}`);
+                hilog.info(domain, tag, msgStr + `minWidth: ${windowLimits.minWidth}`);
+                hilog.info(domain, tag, msgStr + `minHeight: ${windowLimits.minHeight}`);
+                expect(windowLimits.maxWidth !== undefined).assertTrue();
+                expect(windowLimits.maxHeight !== undefined).assertTrue();
+                expect(windowLimits.minWidth !== undefined).assertTrue();
+                expect(windowLimits.minHeight !== undefined).assertTrue();
+                expect(windowLimits.maxWidth).assertLarger(0);
+                expect(windowLimits.maxHeight).assertLarger(0);
+                expect(windowLimits.minWidth).assertLarger(0);
+                expect(windowLimits.minHeight).assertLarger(0);
+                hilog.info(domain, tag, msgStr + 'Succeeded in verifying all WindowLimits properties.');
+                done();
+            } catch (exception) {
+                if (!isSyscapSessionManagerSupported) {
+                    hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                    expect(exception!.code).assertEqual(801);
+                    done();
+                }else {
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         })
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -117,7 +118,12 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
     beforeAll(async () => {
       hilog.info(DOMAIN, TAG, 'beforeAll: Test suite initialization');
       await Utils.msSleep(2000);
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
       hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);

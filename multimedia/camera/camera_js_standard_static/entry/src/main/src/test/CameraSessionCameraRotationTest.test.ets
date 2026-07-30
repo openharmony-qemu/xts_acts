@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -522,14 +523,13 @@ export default function cameraSessionCameraRotationTest() {
       console.info('beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async () => {
+      await releaseCameraSessionInstance();
       console.info('afterEach case');
     })
 
     afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
-      await stopCameraSession();
-      await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('afterAll case');
     })

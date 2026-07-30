@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +16,15 @@
 import { describe, it, expect, TestType, Size, Level ,beforeAll ,afterEach ,beforeEach } from "../../../hypium/index"
 import notificationManager from '@ohos.notificationManager'
 import wantAgent from '@ohos.app.ability.wantAgent'
+import wantagent from '@ohos.app.ability.wantAgent'
 import image from '@ohos.multimedia.image'
 import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import wantagent from '@ohos.app.ability.wantAgent';
 import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
-import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -44,7 +44,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
+      let cmd = `aa start -a EntryAbility -b ${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       let driver = Driver.create();

@@ -22,7 +22,7 @@ export default function shapeClippingJsunit() {
     beforeEach(async () => {
       console.info("shapeClipping beforeEach start");
       let options: router.RouterOptions  = {
-        url: 'pages/shapeClipping',
+        url: 'MainAbility/pages/conponentadd/shapeClipping_y',
       }
       try {
         router.clear();

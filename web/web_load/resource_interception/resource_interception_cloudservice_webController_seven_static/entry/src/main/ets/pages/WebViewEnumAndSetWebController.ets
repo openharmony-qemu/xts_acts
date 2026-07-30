@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,39 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnTitleReceiveEvent,
-  OnDataResubmittedEvent,
-  OnRenderExitedEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  MixedMode,
-  Button,
-  ClickEvent,
-  OnErrorReceiveEvent,
-  OnHttpErrorReceiveEvent,
-  OnPageBeginEvent,
-  Image,
-  OnPageEndEvent,
-  OnLoadInterceptEvent,
-  OnProgressChangeEvent,
-  Web
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { OnTitleReceiveEvent, OnDataResubmittedEvent, OnRenderExitedEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, MixedMode, Button, ClickEvent, OnErrorReceiveEvent, OnHttpErrorReceiveEvent, OnPageBeginEvent, Image, OnPageEndEvent, OnLoadInterceptEvent, OnProgressChangeEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import webview from '@ohos.web.webview';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
-import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../src/test/Interfaces'; //编译失败待解决P2 | 已解决
-import { Callback } from '@ohos.base'
-import { Callback, RecordData } from '@ohos.base'
+import Utils from '../../src/test/Util.test';
+import { JsProxyObject } from '../../src/test/Interfaces';
 import inspector from '@ohos.arkui.inspector';
-
 export class StringFields {
   public str: string = '';
 }

@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -90,7 +73,7 @@ it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): P
       //Size获取AppStorage中存在键值对的个数
       console.info('[LocalStorage39Jsunit_static_0200] START');
       let driver = Driver.create()
-      let Storage12Button1 = await driver.findComponent(ON.id('button4'));
+      let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button4'));
       await (Storage12Button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -113,7 +96,7 @@ it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): P
 it('LocalStorage39Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0400] START');
       let driver = Driver.create()
-      let Storage12Button1 = await driver.findComponent(ON.id('button1'));
+      let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button1'));
       await (Storage12Button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('keysText1');
@@ -134,7 +117,7 @@ it('LocalStorage39Jsunit_static_0400', Level.LEVEL0, async (done: () => void): P
 it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0600] START');
       let driver = Driver.create()
-      let Storage12Button1 = await driver.findComponent(ON.id('button2'));
+      let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button2'));
       await (Storage12Button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -156,7 +139,7 @@ it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): P
 it('LocalStorage39Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LocalStorage39Jsunit_static_0800] START');
       let driver = Driver.create()
-      let Storage12Button1 = await driver.findComponent(ON.id('button3'));
+      let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button3'));
       await (Storage12Button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

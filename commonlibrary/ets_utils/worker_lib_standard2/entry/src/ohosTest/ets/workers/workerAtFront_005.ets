@@ -17,16 +17,17 @@ import { worker, MessageEvents } from '@kit.ArkTS';
 import { Priority } from '@ohos.worker';
 
 const workerPort = worker.workerPort;
-class Person{
-  public name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-}
+
 workerPort.onmessage = (e: MessageEvents): void => {
   try {
-    workerPort.postMessageAtFront?.('a', Priority.HIGH, null);
-
+    if (e.data === 'testTransferNull') {
+      workerPort.postMessageAtFront?.('a', Priority.HIGH, null);
+    } else if (e.data === 'testTransferUndefined') {
+      workerPort.postMessageAtFront?.('b', Priority.IMMEDIATE, undefined);
+    } else if (e.data === 'testTransferArrayBuffer') {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      workerPort.postMessageAtFront?.(buffer, Priority.LOW, [buffer]);
+    }
   } catch (error) {
     workerPort.postMessage({ code: error.code, message: error.message });
   }

@@ -35,9 +35,9 @@ struct layoutWeight_flexShrink {
   }
   build() {
     Column({space:10} as ColumnOptions) {
-      Column(){Text('1')}.width(300).height(100).flexShrink(1).layoutWeight(this.addLayoutWeight).backgroundColor(0xF5DEB3).key('Column_layoutWeight_011')
-      Column(){Text('2')}.width(300).height(100).flexShrink(2).layoutWeight(this.addLayoutWeight).backgroundColor(0xD2B48C).key('Column_layoutWeight_012')
-      Column(){Text('3')}.width(300).height(100).flexShrink(2).layoutWeight(this.addLayoutWeight).backgroundColor(0xF5DEB3).key('Column_layoutWeight_013')
-    }.key('Column_layoutWeight_01').width(350).height(470).backgroundColor(0xAFEEEE)
+      Column(){Text('1')}.width(300).height(100).flexShrink(1).layoutWeight(this.addLayoutWeight).backgroundColor(0xF5DEB3).key('layoutWeight_flexShrink_Column_layoutWeight_011')
+      Column(){Text('2')}.width(300).height(100).flexShrink(2).layoutWeight(this.addLayoutWeight).backgroundColor(0xD2B48C).key('layoutWeight_flexShrink_Column_layoutWeight_012')
+      Column(){Text('3')}.width(300).height(100).flexShrink(2).layoutWeight(this.addLayoutWeight).backgroundColor(0xF5DEB3).key('layoutWeight_flexShrink_Column_layoutWeight_013')
+    }.key('layoutWeight_flexShrink_Column_layoutWeight_01').width(350).height(470).backgroundColor(0xAFEEEE)
   }
 }

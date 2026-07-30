@@ -41,10 +41,10 @@ struct layoutWeight_Part {
   build() {
     Column(){
       Column({space:10} as ColumnOptions) {
-        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight1).backgroundColor(0xF5DEB3).key('Column_layoutWeight_021')
-        Column(){Text('2')}.width(300).height(100).layoutWeight(this.layoutWeight2).backgroundColor(0xD2B48C).key('Column_layoutWeight_022')
-        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('Column_layoutWeight_023')
-      }.key('Column_layoutWeight_02').width(350).height(450).backgroundColor(0xAFEEEE)
+        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight1).backgroundColor(0xF5DEB3).key('layoutWeight_Part_Column_layoutWeight_021')
+        Column(){Text('2')}.width(300).height(100).layoutWeight(this.layoutWeight2).backgroundColor(0xD2B48C).key('layoutWeight_Part_Column_layoutWeight_022')
+        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('layoutWeight_Part_Column_layoutWeight_023')
+      }.key('layoutWeight_Part_Column_layoutWeight_02').width(350).height(450).backgroundColor(0xAFEEEE)
     }
   }
 }

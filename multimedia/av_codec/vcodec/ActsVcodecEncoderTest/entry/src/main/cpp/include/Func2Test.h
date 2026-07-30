@@ -85,7 +85,8 @@ extern int VideoEncodeSyncFormat0010Test();
 extern int VideoEncodeAnother0010Test();
 extern int VideoCapabilityConfig0010Test();
 extern int VideoCapabilityConfig0020Test();
-
+extern int VideoEncoderSetXPS0010Test();
+extern int VideoEncoderSetXPS0020Test();
 extern void InitFunc2Test();
 
 #endif // Func2TestH

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +14,12 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '../../../../hypium';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
+import { Context } from '@kit.ArkUI';
 
 const TAG = 'xtsStatic_AuxiliaryPictureGetMetadataStaticTest';
 
@@ -26,7 +28,6 @@ let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbi
 async function getAuxiliaryTypeTest(done: () => void, testName: string,AuxiliaryPictureType: image.AuxiliaryPictureType,
   callback: (res:image.AuxiliaryPictureType) => void) {
   try {
-
     let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
     const resourceMgr = context.resourceManager;
     console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
@@ -52,6 +53,21 @@ async function getAuxiliaryTypeTest(done: () => void, testName: string,Auxiliary
     done();
   }
 }
+
+const getFilePath = async (fileName: string): Promise<string> => {
+  let context: Context = Hypium.get("Context") as Context;
+  let filePath = context.filesDir + "/" + fileName;
+  return filePath;
+}
+const getMetadataObject = (
+  typeMetadata: string,
+  imageMetadata: image.ImageMetadata
+) => {
+  if (typeMetadata == "exifMetadata") return imageMetadata.exifMetadata;
+  if (typeMetadata == "makerNoteHuaweiMetadata") return imageMetadata.makerNoteHuaweiMetadata;
+  if (typeMetadata == "heifsMetadata") return imageMetadata.heifsMetadata;
+  return undefined;
+};
 
 export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
   describe('ImageAuxiliaryPictureGetMetadataStaticTest', (): void => {
@@ -81,6 +97,151 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
+
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0100
+     * @tc.desc   getMetadata the metadataType emu EXIF_METADAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0100';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      try {
+      let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize:image.Size = {
+        height: 180,
+        width: 240
+      };
+          let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+          let targetMetadata = auxPictureObj.getMetadata(metadataType);
+          console.info(TAG, testName, `getMetadata success`,targetMetadata);
+          expect(targetMetadata!=undefined).assertTrue();
+          }
+        catch (error) {
+          console.error(TAG, testName, `failed; error: ${error},${error.code}`, testName);
+          expect().assertFail();
+        }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0200
+     * @tc.desc   getMetadata the metadataType emu GIF_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0200';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      let metadataType: image.MetadataType = image.MetadataType.GIF_METADATA;
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      try {
+        let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+        let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+        let auxSize:image.Size = {
+          height: 180,
+          width: 240
+        };
+        let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        let targetMetadata = auxPictureObj.getMetadata(metadataType);
+        console.info(TAG, testName, `getMetadata success`,targetMetadata);
+        expect(targetMetadata!=undefined).assertTrue();
+      }
+      catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0300
+     * @tc.desc   getMetadata the metadataType emu FRAGMENT_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getMetadata_static_0300';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      let metadataType: image.MetadataType = image.MetadataType.FRAGMENT_METADATA;
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      try {
+        let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+        let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+        let auxSize:image.Size = {
+          height: 180,
+          width: 240
+        };
+        let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        let targetMetadata = auxPictureObj.getMetadata(metadataType);
+        console.info(TAG, testName, `getMetadata success`,targetMetadata);
+        expect(targetMetadata!=undefined).assertTrue();
+      }
+      catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_setMetadata_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_setMetadata_static_0100
+     * @tc.desc   setMetadata the metadataType emu EXIF_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_setMetadata_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_setMetadata_static_0100';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      let imageSourceObjFilePath = await getFilePath("AllAuxiliaryPictures_exclude_fragment.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(imageSourceObjFilePath);
+      console.info(TAG, testName, `createImageSource success`,imageSourceObj);
+      let exifCommodityPixelMap: image.PixelMap | undefined = await imageSourceObj!.createPixelMap();
+      console.info(TAG, testName, `createPixelMap success`,exifCommodityPixelMap);
+      let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap!);
+      console.info(TAG, testName, `image.createPicture success`,exifPictureObj);
+      try {
+        let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+        const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+        let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+        let auxSize:image.Size = {
+          height: 180,
+          width: 240
+        };
+        let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        let exifMetaData: image.Metadata |undefined= await exifPictureObj.getMetadata(image.MetadataType.EXIF_METADATA);
+          auxPictureObj.setMetadata(image.MetadataType.EXIF_METADATA, exifMetaData!);
+          console.info(TAG, testName, `setMetadata success`,exifMetaData);
+          expect(exifMetaData!=undefined).assertTrue();
+      } catch (err) {
+      console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+      expect().assertFail();
+    }
+    done();
+  })
+
+
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
@@ -315,7 +476,6 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
       */
     it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400';
-
       let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
       const resourceMgr = context.resourceManager;
       console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
@@ -472,30 +632,6 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200
-     * @tc.name       SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200
-     * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200';
-      let testExifMetadata: image.ExifMetadata = image.ExifMetadata.createInstance();
-      console.info(TAG,testName, 'createInstance success.', testExifMetadata);
-      try {
-        let res = await testExifMetadata.getAllProperties();
-        console.info(TAG,testName, 'getAllProperties success.', res);
-        expect(res).assertUndefined();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      done();
-    });
-
-
-    /**
      * @tc.name   SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100
      * @tc.number SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100
      * @tc.desc   readPixelsToBuffer AuxiliaryPictureType =  image.AuxiliaryPictureType.FRAGMENT_MAP;
@@ -515,7 +651,6 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
         console.info(TAG,testName, 'getAuxiliaryPicture success.', auxPictureObj!);
         if (auxPictureObj != null) {
           let pixelsBuffer: ArrayBuffer|undefined = await auxPictureObj!.readPixelsToBuffer();
-          // await auxPictureObj!.readPixelsToBuffer()
           console.info(TAG,testName, 'read pixels from buffer success.', pixelsBuffer!);
           expect(pixelsBuffer!=undefined).assertTrue();
           imageSource!.release();

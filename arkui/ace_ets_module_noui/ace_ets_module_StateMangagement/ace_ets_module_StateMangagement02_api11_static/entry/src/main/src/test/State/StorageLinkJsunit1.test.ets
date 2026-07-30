@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -115,11 +98,11 @@ it('StorageLinkJsunit1_static_0200', Level.LEVEL0, async (done: () => void): Pro
       //Get the init value of button_son2
       console.info('[StorageLinkJsunit1_static_0200] START');
       let driver = Driver.create()
-      let button_son2 = await driver.findComponent(ON.id('button_son2'));
+      let button_son2 = await driver.findComponent(ON.id('StorageLink1_button_son2'));
       await (button_son2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson2 = inspector.getInspectorByKey('button_son2');
+      let strJson2 = inspector.getInspectorByKey('StorageLink1_button_son2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[StorageLinkJsunit1_static_0200] son2 obj2 is: " + JSON.stringify(obj2));
       await CommonFunc.sleep(1000);
@@ -138,11 +121,11 @@ it('StorageLinkJsunit1_static_0300', Level.LEVEL0, async (done: () => void): Pro
       //Get the init value of button_son3
       console.info('[StorageLinkJsunit1_static_0300] START');
       let driver = Driver.create()
-      let button_son3 = await driver.findComponent(ON.id('button_son3'));
+      let button_son3 = await driver.findComponent(ON.id('StorageLink1_button_son3'));
       await (button_son3?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson3 = inspector.getInspectorByKey('button_son3');
+      let strJson3 = inspector.getInspectorByKey('StorageLink1_button_son3');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[StorageLinkJsunit1_static_0300] son3 obj3 is: " + JSON.stringify(obj3));
       await CommonFunc.sleep(1000);
@@ -161,11 +144,11 @@ it('StorageLinkJsunit1_static_0400', Level.LEVEL0, async (done: () => void): Pro
       //Get the init value of button_son4
       console.info('[StorageLinkJsunit1_static_0400] START');
       let driver = Driver.create()
-      let button_son4 = await driver.findComponent(ON.id('button_son4'));
+      let button_son4 = await driver.findComponent(ON.id('StorageLink1_button_son4'));
       await (button_son4?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson4 = inspector.getInspectorByKey('button_son4');
+      let strJson4 = inspector.getInspectorByKey('StorageLink1_button_son4');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info("[StorageLinkJsunit1_static_0400] son4 obj4 is: " + JSON.stringify(obj4));
       await CommonFunc.sleep(1000);
@@ -184,11 +167,11 @@ it('StorageLinkJsunit1_static_0500', Level.LEVEL0, async (done: () => void): Pro
       //Get the init value of button_son5
       console.info('[StorageLinkJsunit1_static_0500] START');
       let driver = Driver.create()
-      let button_son5 = await driver.findComponent(ON.id('button_son5'));
+      let button_son5 = await driver.findComponent(ON.id('StorageLink1_button_son5'));
       await (button_son5?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson5 = inspector.getInspectorByKey('button_son5');
+      let strJson5 = inspector.getInspectorByKey('StorageLink1_button_son5');
       let obj5 = JSON.parseJsonElement(strJson5);
       console.info("[StorageLinkJsunit1_static_0500] son5 obj5 is: " + JSON.stringify(obj5));
       await CommonFunc.sleep(1000);
@@ -207,11 +190,11 @@ it('StorageLinkJsunit1_static_0600', Level.LEVEL0, async (done: () => void): Pro
       //Get the init value of button_son6
       console.info('[StorageLinkJsunit1_static_0600] START');
       let driver = Driver.create()
-      let button_son6 = await driver.findComponent(ON.id('button_son6'));
+      let button_son6 = await driver.findComponent(ON.id('StorageLink1_button_son6'));
       await (button_son6?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson6 = inspector.getInspectorByKey('button_son6');
+      let strJson6 = inspector.getInspectorByKey('StorageLink1_button_son6');
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info("[StorageLinkJsunit1_static_0600] son6 obj6 is: " + JSON.stringify(obj6));
       await CommonFunc.sleep(1000);

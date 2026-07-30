@@ -53,7 +53,7 @@ export default function ActionSheetLifeTest() {
     it('ActionSheetLife_0001', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetLife_0001 START');
       await CommonFunc.sleep(1000);
-      sendEventByKey('ActionSheet',10,"")
+      sendEventByKey('ActionSheetLife' + '_ActionSheet',10,"")
       await CommonFunc.sleep(1000);
       let actionSheetFlag1 = getInspectorByKey('actionSheetFlag1');
       expect(JSON.parse(actionSheetFlag1).$attrs.content).assertEqual('true');

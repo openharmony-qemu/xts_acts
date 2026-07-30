@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import { url } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';
 
-export default function urlArktsStaTest() {
+export default function urlArktsStaTest(): void {
   describe('urlArktsStaTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

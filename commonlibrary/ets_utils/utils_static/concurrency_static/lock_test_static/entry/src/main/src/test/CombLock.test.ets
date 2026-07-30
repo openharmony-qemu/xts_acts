@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -29,20 +30,9 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BaseClass, CountClass, Event, SharedJob, sleep } from '../utils/Model';
 
-export let concurrentNum: number = 1
+export let concurrentNum = 1
 
-export let currentWorker: EAWorker | undefined = EAWorker.current()
-
-function normalizePhaseResult(result: string): string {
-  return result.split('').sort().join('')
-}
-
-function hasAllPhases(result: string): boolean {
-  return result.indexOf('1') >= 0 &&
-    result.indexOf('2') >= 0 &&
-    result.indexOf('3') >= 0 &&
-    result.indexOf('4') >= 0
-}
+export let currentWorker = EAWorker.current()
 
 export default function CombLockTest(): void {
   describe('CombLockTest', (): void => {
@@ -61,27 +51,27 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest001';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncMutex()
+        let lock = new Mutex()
         let count: number = 0
-        let funcA = async (): Promise<void> => {
-          await lock.lock()
+        let funcA = () => {
+          lock.lock()
           count++
           lock.unlock()
         }
-        let funcB = async (): Promise<void> => {
-          await lock.lock()
+        let funcB = () => {
+          lock.lock()
           count++
           lock.unlock()
-          await funcA()
+          funcA()
         }
-        let funcC = async (): Promise<void> => {
-          await lock.lock()
+        let funcC = () => {
+          lock.lock()
           count++
           lock.unlock()
-          await funcB()
+          funcB()
         }
         for (let i = 0; i < 100; i++) {
-          await funcC()
+          funcC()
         }
         console.log(`TESTCASE ${tag} result: ` + count)
         expect(count).assertEqual(300)
@@ -100,25 +90,26 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest002';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncMutex()
+        let lock = new Mutex()
         let count: number = 0
-        let funcA = async (): Promise<void> => {
-          await lock.lock()
+        let funcA = () => {
+          lock.lock()
           count++
           lock.unlock()
         }
-        let funcB = async (): Promise<void> => {
-          await funcA()
-          await lock.lock()
+        let funcB = () => {
+          funcA()
+          lock.lock()
           count++
           lock.unlock()
         }
-        let funcC = async (): Promise<void> => {
-          await funcB()
-          await lock.lock()
+        let funcC = () => {
+          funcB()
+          lock.lock()
           count++
           lock.unlock()
         }
+        let jobs: Job<void>[] = []
         for (let i = 0; i < 10; i++) {
           let eaw1 = new EAWorker()
           eaw1.start()
@@ -128,16 +119,19 @@ export default function CombLockTest(): void {
             await funcA()
             await funcB()
             await funcC()
-          })
+          }).Await()
           eaw1.join()
         }
         for (let i = 0; i < 10; i++) {
-          await funcC()
-          await funcB()
-          await funcA()
-          await funcB()
-          await funcC()
+          funcC()
+          funcB()
+          funcA()
+          funcB()
+          funcC()
         }
+        jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
+        value.Await()
+        )
         console.log(`TESTCASE ${tag} result: ` + count)
         expect(count).assertEqual(220)
         Done()
@@ -155,38 +149,38 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest003';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncMutex()
+        let lock = new Mutex()
         let count: number = 0
         let result: string = ''
-        let funcA = async (value: string): Promise<void> => {
-          await lock.lock()
+        let funcA = (value: string) => {
+          lock.lock()
           result += value
           lock.unlock()
         }
-        let funcB = async (value: string): Promise<void> => {
-          await funcA(value)
-          await lock.lock()
+        let funcB = (value: string) => {
+          funcA(value)
+          lock.lock()
           result += value
           lock.unlock()
         }
-        let funcC = async (value: string): Promise<void> => {
-          await funcB(value)
-          await lock.lock()
+        let funcC = (value: string) => {
+          funcB(value)
+          lock.lock()
           result += value
           lock.unlock()
         }
         let eaw1 = new EAWorker()
         eaw1.start()
-        await eaw1.run<Promise<void>>(async (): Promise<void> => {
-          await funcC('C')
-          await funcB('B')
-          await funcA('A')
-          await funcA('A')
-          await funcB('B')
-          await funcC('C')
-          await funcA('A')
-          await funcB('B')
-        })
+        eaw1.run<void>(() => {
+          funcC('C')
+          funcB('B')
+          funcA('A')
+          funcA('A')
+          funcB('B')
+          funcC('C')
+          funcA('A')
+          funcB('B')
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -199,47 +193,45 @@ export default function CombLockTest(): void {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level .
+     * @tc.level Level 2
      */
     it('CombLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest004';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let wLock = lock.writeLock()
         let count: number = 0
         let result: string = ''
-        let funcA = async (value: string): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await writeLock.lock()
+        let funcA = (value: string) => {
+          lock.writeLock().lock()
           result += value
-          writeLock.unlock()
+          lock.writeLock().unlock()
         }
-        let funcB = async (value: string): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await writeLock.lock()
+        let funcB = (value: string) => {
+          lock.writeLock().lock()
           result += value
-          writeLock.unlock()
-          await funcA(value)
+          lock.writeLock().unlock()
+          funcA(value)
         }
-        let funcC = async (value: string): Promise<void> => {
-          await wLock.lock()
+        let funcC = (value: string) => {
+          wLock.lock()
           result += value
           wLock.unlock()
-          await funcB(value)
+          funcB(value)
         }
         let eaw1 = new EAWorker()
         eaw1.start()
-        await eaw1.run<Promise<void>>(async (): Promise<void> => {
-          await funcC('C')
-          await funcB('B')
-          await funcA('A')
-          await funcA('A')
-          await funcB('B')
-          await funcC('C')
-          await funcA('A')
-          await funcB('B')
-        })
+        eaw1.run<void>(() => {
+          funcC('C')
+          funcB('B')
+          funcA('A')
+          funcA('A')
+          funcB('B')
+          funcC('C')
+          funcA('A')
+          funcB('B')
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -260,27 +252,27 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest005';
         console.info(`${tag} test start`);
 
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let wLock = lock.writeLock()
         let count: number = 0
-        let funcA = async (): Promise<void> => {
-          await wLock.lock()
+        let funcA = () => {
+          wLock.lock()
           count++
           wLock.unlock()
         }
-        let funcB = async (): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await funcA()
-          await writeLock.lock()
+        let funcB = () => {
+          funcA()
+          lock.writeLock().lock()
           count++
-          writeLock.unlock()
+          lock.writeLock().unlock()
         }
-        let funcC = async (): Promise<void> => {
-          await funcB()
-          await wLock.lock()
+        let funcC = () => {
+          funcB()
+          wLock.lock()
           count++
           wLock.unlock()
         }
+        let jobs: Job<void>[] = []
         for (let i = 0; i < 10; i++) {
           let eaw1 = new EAWorker()
           eaw1.start()
@@ -290,9 +282,12 @@ export default function CombLockTest(): void {
             await funcA()
             await funcC()
             await funcB()
-          })
+          }).Await()
           eaw1.join()
         }
+        jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
+        value.Await()
+        )
         console.log(`TESTCASE ${tag} result: ` + count)
         expect(count).assertEqual(110)
         Done()
@@ -310,42 +305,40 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest006';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let wLock = lock.writeLock()
         let rLock = lock.readLock()
         let count: number = 0
         let result: string = ''
-        let funcA = async (value: string): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await writeLock.lock()
+        let funcA = (value: string) => {
+          lock.writeLock().lock()
           result += value
-          writeLock.unlock()
+          lock.writeLock().unlock()
         }
-        let funcB = async (value: string): Promise<void> => {
-          let readLock = lock.readLock()
-          await readLock.lock()
+        let funcB = (value: string) => {
+          lock.readLock().lock()
           result += value
-          readLock.unlock()
-          await funcA(value)
+          lock.readLock().unlock()
+          funcA(value)
         }
-        let funcC = async (value: string): Promise<void> => {
-          await wLock.lock()
+        let funcC = (value: string) => {
+          wLock.lock()
           result += value
           wLock.unlock()
-          await funcB(value)
+          funcB(value)
         }
         let eaw1 = new EAWorker()
         eaw1.start()
         await eaw1.run<Promise<void>>(async (): Promise<void> => {
-          await funcC('C')
-          await funcB('B')
-          await funcA('A')
-          await funcA('A')
-          await funcB('B')
-          await funcC('C')
-          await funcA('A')
-          await funcB('B')
-        })
+          funcC('C')
+          funcB('B')
+          funcA('A')
+          funcA('A')
+          funcB('B')
+          funcC('C')
+          funcA('A')
+          funcB('B')
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -364,40 +357,38 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest007';
         console.info(`${tag} test start`);
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let wLock = lock.writeLock()
         let rLock = lock.readLock()
         let count: number = 0
         let result: string = ''
-        let funcA = async (value: string): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await writeLock.lock()
+        let funcA = (value: string) => {
+          lock.writeLock().lock()
           result += value
           count++
-          writeLock.unlock()
+          lock.writeLock().unlock()
         }
-        let funcB = async (value: string): Promise<void> => {
-          let writeLock = lock.writeLock()
-          await funcA(value)
-          await writeLock.lock()
+        let funcB = (value: string) => {
+          funcA(value)
+          lock.writeLock().lock()
           result += value
           count++
-          writeLock.unlock()
+          lock.writeLock().unlock()
         }
-        let funcC = async (value: string): Promise<void> => {
-          await funcB(value)
-          await wLock.lock()
+        let funcC = (value: string) => {
+          funcB(value)
+          wLock.lock()
           result += value
           count++
           wLock.unlock()
         }
         for (let i = 0; i < 100; i++) {
-          taskpool.execute(async () => {
-            await funcA('A')
-            await funcB('B')
-            await funcC('C')
-            await funcB('B')
-            await funcA('A')
+          taskpool.execute(() => {
+            funcA('A')
+            funcB('B')
+            funcC('C')
+            funcB('B')
+            funcA('A')
           })
         }
         let start = new Date().getTime()
@@ -427,30 +418,27 @@ export default function CombLockTest(): void {
         let results: Promise<int>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<int>((resolve: (value: int | PromiseLike<int>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<int>((resolve, reject) => {
             let eaw = new EAWorker()
             eaw.start()
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
+              let data = msg.getObject() as Mutex
               data.unlock()
               console.log(`${tag} main message cb id: ` + currentWorker?.getWorkerId())
               resolve(msg.getWhat())
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              data.unlock();
-              (async (): Promise<void> => {
-                await data.lock()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.unlock()
+              data.lock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              let mutexLock = new concurrency.stackless.AsyncMutex();
-              await mutexLock.lock()
+            eaw.run<void>(() => {
+              let mutexLock = new Mutex();
+              mutexLock.lock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, mutexLock, msgHandler))
             })
@@ -474,7 +462,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -500,60 +488,38 @@ export default function CombLockTest(): void {
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < concurrentNum; i++) {
-          let rwLock = new concurrency.stackless.AsyncReadWriteLock();
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let rwLock = new RWLock();
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
-            let isResolved = false
-            let stage1Ready = false
-            let tryResolve = (): void => {
-              if (!isResolved && hasAllPhases(res)) {
-                isResolved = true
-                resolve(res)
-              }
-            }
             let eaw = new EAWorker()
             eaw.start()
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncReadLock
+              let data = msg.getObject() as ReadLock
               data.unlock()
               res += '4'
-              tryResolve()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncWriteLock
-              data.unlock();
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock();
-                await readLock.lock()
-                res += '3'
-                tryResolve()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), readLock, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as WriteLock
+              let readLock = rwLock.readLock();
+              readLock.lock()
+              res += '3'
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), readLock, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
+            eaw.run<void>(() => {
               let writeLock = rwLock.writeLock();
-              await writeLock.lock()
+              writeLock.lock()
               res += '1'
-              stage1Ready = true
-              tryResolve()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, writeLock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                while (!stage1Ready) {
-                  await sleep(10)
-                }
-                let writeLock = rwLock.writeLock();
-                await writeLock.lock()
-                writeLock.unlock()
-                res += '2'
-                tryResolve()
-              })().catch(reject)
+              let writeLock = rwLock.writeLock();
+              res += '2'
+              writeLock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -568,19 +534,19 @@ export default function CombLockTest(): void {
           console.log(`${tag} end: ` + data.length)
           console.log(`${tag} result: ` + data)
           result = data[0]
-          let check: string[] = data.filter((value: string) => normalizePhaseResult(value) == '1234')
+          let check: string[] = data.filter((value: string) => value == '1234')
           console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
         }).catch((e) => {
           console.log(`${tag} error: ` + e)
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
         })
-        expect(normalizePhaseResult(result)).assertEqual('1234')
+        expect(result).assertEqual('1234')
         Done()
       })
 
@@ -599,8 +565,7 @@ export default function CombLockTest(): void {
         let results: Promise<int>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<int>((resolve: (value: int | PromiseLike<int>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<int>((resolve, reject) => {
             let currentWorker = new EAWorker()
             currentWorker.start()
             let eaw = new EAWorker()
@@ -609,23 +574,21 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
+              let data = msg.getObject() as Mutex
               data.unlock()
               console.log(`${tag} main message cb id: ` + currentWorker?.getWorkerId())
               resolve(msg.getWhat())
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              data.unlock();
-              (async (): Promise<void> => {
-                await data.lock()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.unlock()
+              data.lock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              let mutexLock = new concurrency.stackless.AsyncMutex();
-              await mutexLock.lock()
+            eaw.run<void>(() => {
+              let mutexLock = new Mutex();
+              mutexLock.lock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, mutexLock, msgHandler))
             })
@@ -648,7 +611,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -672,19 +635,10 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let rwLock = new RWLock();
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
-            let isResolved = false
-            let stage1Ready = false
-            let tryResolve = (): void => {
-              if (!isResolved && hasAllPhases(res)) {
-                isResolved = true
-                resolve(res)
-              }
-            }
             let currentWorker = new EAWorker()
             currentWorker.start()
             let eaw = new EAWorker()
@@ -693,134 +647,30 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncReadLock
+              let data = msg.getObject() as ReadLock
               data.unlock()
               res += '4'
-              tryResolve()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncWriteLock
-              data.unlock();
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock();
-                await readLock.lock()
-                res += '3'
-                tryResolve()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), readLock, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as WriteLock
+              let readLock = rwLock.readLock();
+              readLock.lock()
+              res += '3'
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), readLock, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
+            eaw.run<void>(() => {
               let writeLock = rwLock.writeLock();
-              await writeLock.lock()
+              writeLock.lock()
               res += '1'
-              stage1Ready = true
-              tryResolve()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, writeLock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                while (!stage1Ready) {
-                  await sleep(10)
-                }
-                let writeLock = rwLock.writeLock();
-                await writeLock.lock()
-                writeLock.unlock()
-                res += '2'
-                tryResolve()
-              })().catch(reject)
-            })
-            eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
-              reject(e)
-              eaw.quit()
-            })
-          })
-          results.push(workerPromise)
-        }
-        let result: string = ''
-        await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
-          result = data[0]
-          let check: string[] = data.filter((value: string) => normalizePhaseResult(value) == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
-        })
-        workers.forEach((eaw) => {
-          try {
-            eaw.quit()
-          } catch (e) {
-
-          }
-        })
-        expect(normalizePhaseResult(result)).assertEqual('1234')
-        Done()
-      });
-
-    /**
-     * @tc.number CombLock_Test_1200
-     * @tc.name CombLockTest012
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('CombLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const tag: string = 'CombLockTest012';
-        console.info(`${tag} test start`);
-        let results: Promise<string>[] = []
-        let workers: EAWorker[] = []
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
-        let count = new CountClass()
-        for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
-            let res = ''
-            let currentWorker = new EAWorker()
-            currentWorker.start()
-            let eaw = new EAWorker()
-            eaw.start()
-            workers.push(currentWorker)
-            workers.push(eaw)
-            let id = eaw.getWorkerId()
-            let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncWriteLock
-              (async (): Promise<void> => {
-                await data.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                resolve(res)
-              })().catch(reject)
-            }
-            let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncWriteLock
-              (async (): Promise<void> => {
-                await data.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
-            }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
               let writeLock = rwLock.writeLock();
-              await writeLock.lock()
-              count.setCount(count.getCount() + 1)
+              res += '2'
               writeLock.unlock()
-              let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
-              msgHandler.sendMessage(new concurrency.Message(123, writeLock, msgHandler))
-            })
-            eaw.postTask(() => {
-              let writeLock = rwLock.writeLock();
-              (async (): Promise<void> => {
-                await writeLock.lock()
-                count.setCount(count.getCount() + 1)
-                writeLock.unlock()
-              })().catch(reject)
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -842,7 +692,91 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
+          } catch (e) {
+
+          }
+        })
+        expect(result).assertEqual('1234')
+        Done()
+      });
+
+    /**
+     * @tc.number CombLock_Test_1200
+     * @tc.name CombLockTest012
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('CombLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: () => void): Promise<void> => {
+        const tag: string = 'CombLockTest012';
+        console.info(`${tag} test start`);
+        let results: Promise<string>[] = []
+        let workers: EAWorker[] = []
+        let rwLock = new RWLock();
+        let count = new CountClass()
+        for (let i = 0; i < concurrentNum; i++) {
+          let workerPromise = new Promise<string>((resolve, reject) => {
+            let res = ''
+            let currentWorker = new EAWorker()
+            currentWorker.start()
+            let eaw = new EAWorker()
+            eaw.start()
+            workers.push(currentWorker)
+            workers.push(eaw)
+            let id = eaw.getWorkerId()
+            let currentCB = (msg: concurrency.Message) => {
+              let data = msg.getObject() as WriteLock
+              data.lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              resolve(res)
+            }
+            let workerCB = (msg: concurrency.Message) => {
+              let data = msg.getObject() as WriteLock
+              data.lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
+            }
+            eaw.run<void>(() => {
+              let writeLock = rwLock.writeLock();
+              writeLock.lock()
+              count.setCount(count.getCount() + 1)
+              writeLock.unlock()
+              let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
+              msgHandler.sendMessage(new concurrency.Message(123, writeLock, msgHandler))
+            })
+            eaw.postTask(() => {
+              let writeLock = rwLock.writeLock();
+              writeLock.lock()
+              count.setCount(count.getCount() + 1)
+              writeLock.unlock()
+            })
+            eaw.setUncaughtExceptionHandler((e: Error) => {
+              console.log(`${tag} error: ` + e)
+              reject(e)
+              eaw.quit()
+            })
+          })
+          results.push(workerPromise)
+        }
+        let result: string = ''
+        await Promise.all(results).then((data: string[]): void => {
+          console.log(`${tag} end: ` + data.length)
+          console.log(`${tag} result: ` + data)
+          result = data[0]
+          let check: string[] = data.filter((value: string) => value == '1234')
+          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
+        }).catch((e) => {
+          console.log(`${tag} error: ` + e)
+        })
+        workers.forEach((eaw) => {
+          try {
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -865,11 +799,10 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = new CountClass()
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
             let currentWorker = new EAWorker()
             currentWorker.start()
@@ -879,37 +812,31 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                await data.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                resolve(res)
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                await data.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              await lock.lock()
+            eaw.run<void>(() => {
+              lock.lock()
               count.setCount(count.getCount() + 1)
               lock.unlock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, lock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                await lock.lock()
-                count.setCount(count.getCount() + 1)
-                lock.unlock()
-              })().catch(reject)
+              lock.lock()
+              count.setCount(count.getCount() + 1)
+              lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -931,7 +858,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -954,12 +881,11 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let lock = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let lock = new Mutex();
+        let rwLock = new RWLock();
         let count = new CountClass()
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
             let currentWorker = new EAWorker()
             currentWorker.start()
@@ -969,49 +895,39 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await data.lock()
-                await readLock.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                readLock.unlock()
-                resolve(res)
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.readLock().lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              rwLock.readLock().unlock()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let writeLock = rwLock.writeLock()
-                await data.lock()
-                await writeLock.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                writeLock.unlock()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
-            }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              let writeLock = rwLock.writeLock()
-              await writeLock.lock()
-              await lock.lock()
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.writeLock().lock()
               count.setCount(count.getCount() + 1)
-              writeLock.unlock()
+              data.unlock()
+              rwLock.writeLock().unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
+            }
+            eaw.run<void>(() => {
+              rwLock.writeLock().lock()
+              lock.lock()
+              count.setCount(count.getCount() + 1)
+              rwLock.writeLock().unlock()
               lock.unlock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, lock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await lock.lock()
-                await readLock.lock()
-                count.setCount(count.getCount() + 1)
-                readLock.unlock()
-                lock.unlock()
-              })().catch(reject)
+              lock.lock()
+              rwLock.readLock().lock()
+              count.setCount(count.getCount() + 1)
+              rwLock.readLock().unlock()
+              lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -1033,7 +949,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1057,62 +973,51 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let lock = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let lock = new Mutex();
+        let rwLock = new RWLock();
         let count = new CountClass()
         let currentWorker = EAWorker.current()
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
             let eaw = new EAWorker()
             eaw.start()
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await data.lock()
-                await readLock.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                readLock.unlock()
-                resolve(res)
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.readLock().lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              rwLock.readLock().unlock()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let writeLock = rwLock.writeLock()
-                await data.lock()
-                await writeLock.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                writeLock.unlock()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
-            }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              let writeLock = rwLock.writeLock()
-              await writeLock.lock()
-              await lock.lock()
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.writeLock().lock()
               count.setCount(count.getCount() + 1)
-              writeLock.unlock()
+              data.unlock()
+              rwLock.writeLock().unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
+            }
+            eaw.run<void>(() => {
+              rwLock.writeLock().lock()
+              lock.lock()
+              count.setCount(count.getCount() + 1)
+              rwLock.writeLock().unlock()
               lock.unlock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, lock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await lock.lock()
-                await readLock.lock()
-                count.setCount(count.getCount() + 1)
-                readLock.unlock()
-                lock.unlock()
-              })().catch(reject)
+              lock.lock()
+              rwLock.readLock().lock()
+              count.setCount(count.getCount() + 1)
+              rwLock.readLock().unlock()
+              lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -1134,7 +1039,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1157,13 +1062,12 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let lock = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let lock = new Mutex();
+        let rwLock = new RWLock();
         let asyncLock = new AsyncLock();
         let count = new CountClass()
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
             let currentWorker = new EAWorker()
             currentWorker.start()
@@ -1173,30 +1077,26 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                await data.lock()
-                asyncLock.lockAsync(() => {
-                  count.setCount(count.getCount() + 1)
-                }, AsyncLockMode.SHARED)
-                data.unlock();
-                resolve(res)
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              asyncLock.lockAsync(() => {
+                count.setCount(count.getCount() + 1)
+              }, AsyncLockMode.SHARED)
+              data.unlock()
+              resolve(res)
             }
             let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                await data.lock()
-                asyncLock.lockAsync(() => {
-                  count.setCount(count.getCount() + 1)
-                }, AsyncLockMode.SHARED)
-                data.unlock();
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
+              let data = msg.getObject() as Mutex
+              data.lock()
+              asyncLock.lockAsync(() => {
+                count.setCount(count.getCount() + 1)
+              }, AsyncLockMode.SHARED)
+              data.unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
             }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              await lock.lock()
+            eaw.run<void>(() => {
+              lock.lock()
               asyncLock.lockAsync(() => {
                 count.setCount(count.getCount() + 1)
               }, AsyncLockMode.SHARED)
@@ -1205,13 +1105,11 @@ export default function CombLockTest(): void {
               msgHandler.sendMessage(new concurrency.Message(123, lock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                await lock.lock()
-                asyncLock.lockAsync(() => {
-                  count.setCount(count.getCount() + 1)
-                }, AsyncLockMode.EXCLUSIVE)
-                lock.unlock()
-              })().catch(reject)
+              lock.lock()
+              asyncLock.lockAsync(() => {
+                count.setCount(count.getCount() + 1)
+              }, AsyncLockMode.EXCLUSIVE)
+              lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -1233,7 +1131,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1256,12 +1154,11 @@ export default function CombLockTest(): void {
         console.info(`${tag} test start`);
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
-        let lock = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let lock = new Mutex();
+        let rwLock = new RWLock();
         let count = new CountClass()
         for (let i = 0; i < concurrentNum; i++) {
-          let workerPromise = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void,
-            reject: (reason: Error) => void) => {
+          let workerPromise = new Promise<string>((resolve, reject) => {
             let res = ''
             let currentWorker = new EAWorker()
             currentWorker.start()
@@ -1271,53 +1168,43 @@ export default function CombLockTest(): void {
             workers.push(eaw)
             let id = eaw.getWorkerId()
             let currentCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await data.lock()
-                await readLock.lock()
-                AsyncLock.request(tag).lockAsync(() => {
-                  count.setCount(count.getCount() + 1)
-                }, AsyncLockMode.EXCLUSIVE)
-                data.unlock();
-                readLock.unlock()
-                resolve(res)
-              })().catch(reject)
-            }
-            let workerCB = (msg: concurrency.Message) => {
-              let data = msg.getObject() as concurrency.stackless.AsyncMutex
-              (async (): Promise<void> => {
-                let writeLock = rwLock.writeLock()
-                await data.lock()
-                await writeLock.lock()
-                count.setCount(count.getCount() + 1)
-                data.unlock();
-                writeLock.unlock()
-                let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
-                currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
-              })().catch(reject)
-            }
-            eaw.run<Promise<void>>(async (): Promise<void> => {
-              let writeLock = rwLock.writeLock()
-              await writeLock.lock()
-              await lock.lock()
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.readLock().lock()
               AsyncLock.request(tag).lockAsync(() => {
                 count.setCount(count.getCount() + 1)
               }, AsyncLockMode.EXCLUSIVE)
-              writeLock.unlock()
+              data.unlock()
+              rwLock.readLock().unlock()
+              resolve(res)
+            }
+            let workerCB = (msg: concurrency.Message) => {
+              let data = msg.getObject() as Mutex
+              data.lock()
+              rwLock.writeLock().lock()
+              count.setCount(count.getCount() + 1)
+              data.unlock()
+              rwLock.writeLock().unlock()
+              let currentHandler = new concurrency.MessageHandler(currentCB, currentWorker)
+              currentHandler.sendMessage(new concurrency.Message(msg.getWhat(), data, currentHandler))
+            }
+            eaw.run<void>(() => {
+              rwLock.writeLock().lock()
+              lock.lock()
+              AsyncLock.request(tag).lockAsync(() => {
+                count.setCount(count.getCount() + 1)
+              }, AsyncLockMode.EXCLUSIVE)
+              rwLock.writeLock().unlock()
               lock.unlock()
               let msgHandler = new concurrency.MessageHandler(workerCB, eaw)
               msgHandler.sendMessage(new concurrency.Message(123, lock, msgHandler))
             })
             eaw.postTask(() => {
-              (async (): Promise<void> => {
-                let readLock = rwLock.readLock()
-                await lock.lock()
-                await readLock.lock()
-                count.setCount(count.getCount() + 1)
-                readLock.unlock()
-                lock.unlock()
-              })().catch(reject)
+              lock.lock()
+              rwLock.readLock().lock()
+              count.setCount(count.getCount() + 1)
+              rwLock.readLock().unlock()
+              lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
               console.log(`${tag} error: ` + e)
@@ -1339,7 +1226,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1361,28 +1248,33 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest018';
         console.info(`${tag} test start`);
-        let mutexLock = new concurrency.stackless.AsyncMutex();
+        let mutexLock = new Mutex();
         const coroutines = 10;
         const workload = 1000;
 
         let count = 0;
-        let pros = new Array<Promise<void>>();
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          pros.push((async (): Promise<void> => {
-            for (let j = 0; j < workload; ++j) {
-              await mutexLock.lock();
-              try {
-                // 临界区资源
-                count++;
-              } finally {
-                mutexLock.unlock();
-              }
-            }
-          })());
-        }
+          workers[i].start();
 
-        await Promise.all(pros)
+          jobs.push(workers[i].run<void>(() => {
+            for (let j = 0; j < workload; ++j) {
+              mutexLock.lock();
+              // 临界区资源
+              count++;
+              mutexLock.unlock();
+            }
+          }));
+        }
+        // 等待所有任务完成
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
+
+        for (let worker of workers) {
+          worker.quit();
+        }
         console.log(`${tag} result: ` + count)
         expect(count).assertEqual(10000)
         Done()
@@ -1401,20 +1293,20 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest019';
         console.info(`${tag} test start`);
-        let readLock = new concurrency.stackless.AsyncReadWriteLock().readLock();
+        let readLock = new RWLock().readLock();
         const coroutines = 10;
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Promise<Promise<void>>>();
+        let jobs = new Array<Job<void>>();
         let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
           workers[i].start();
 
-          jobs.push(workers[i].run<Promise<void>>(async (): Promise<void> => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
-              await readLock.lock();
+              readLock.lock();
               //临界区资源
               count++;
               readLock.unlock();
@@ -1423,8 +1315,8 @@ export default function CombLockTest(): void {
         }
 
         // 等待所有任务完成
-        let sharedJob = new SharedJob<Promise<Promise<void>>>(jobs);
-        await sharedJob.Await();
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
 
         for (let worker of workers) {
           worker.quit();
@@ -1446,31 +1338,30 @@ export default function CombLockTest(): void {
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest020';
         console.info(`${tag} test start`);
-        let writeLock = new concurrency.stackless.AsyncReadWriteLock().writeLock();
+        let writeLock = new RWLock().writeLock();
         const coroutines = 10;
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Promise<void>>();
+        let jobs = new Array<Job<void>>();
         let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          jobs.push((async (): Promise<void> => {
+          workers[i].start();
+
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
-              await writeLock.lock();
-              try {
-                //临界区资源
-                count++;
-              } finally {
-                writeLock.unlock();
-              }
+              writeLock.lock();
+              //临界区资源
+              count++;
+              writeLock.unlock();
             }
-          })());
+          }));
         }
 
         // 等待所有任务完成
-        let sharedJob = new SharedJob<Promise<void>>(jobs);
-        await sharedJob.Await();
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
 
         for (let worker of workers) {
           worker.quit();
@@ -1492,34 +1383,32 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest021';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.SequenceRunner(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1551,33 +1440,31 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest022';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1605,33 +1492,31 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest023';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1659,34 +1544,32 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest024';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.AsyncRunner(tag, 20)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1715,34 +1598,32 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest025';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let group = new taskpool.TaskGroup(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await writeLock.lock()
+                lock.lock()
+                rwLock.writeLock().lock()
                 count++
                 lock.unlock()
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1770,30 +1651,28 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest026';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.SequenceRunner(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await writeLock.lock()
+                rwLock.writeLock().lock()
                 count++
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1824,30 +1703,28 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest027';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
           let runner = new taskpool.AsyncRunner(tag, 10)
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await writeLock.lock()
+                rwLock.writeLock().lock()
                 count++
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1878,29 +1755,27 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest028';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let writeLock = rwLock.writeLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await writeLock.lock()
+                rwLock.writeLock().lock()
                 count++
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -1931,14 +1806,14 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest029';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -1946,10 +1821,10 @@ export default function CombLockTest(): void {
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -1982,15 +1857,15 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest030';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
           let runner = new taskpool.AsyncRunner(tag, 10)
-          let task1 = new taskpool.Task(async () => {
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -1998,10 +1873,10 @@ export default function CombLockTest(): void {
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -2034,15 +1909,15 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest031';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.SequenceRunner(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -2050,10 +1925,10 @@ export default function CombLockTest(): void {
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
+                lock.lock()
                 count++
                 lock.unlock()
               } catch (e) {
@@ -2086,30 +1961,28 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest032';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.SequenceRunner(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2140,30 +2013,28 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest033';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
           let runner = new taskpool.AsyncRunner(tag, 100)
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2194,29 +2065,27 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest034';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await readLock.lock()
+                rwLock.readLock().lock()
                 count++
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2247,33 +2116,31 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest035';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2305,34 +2172,32 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest036';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         for (let i = 0; i < 10; i++) {
           let runner = new taskpool.AsyncRunner(tag, 100)
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2363,34 +2228,32 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest037';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncMutex()
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new Mutex()
+        let rwLock = new RWLock()
         let pros: Promise<Any>[] = []
         let runner = new taskpool.SequenceRunner(tag)
         for (let i = 0; i < 10; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
             }
           })
-          let task2 = new taskpool.Task(async () => {
-            let readLock = rwLock.readLock()
+          let task2 = new taskpool.Task(() => {
             for (let i = 0; i < 10; i++) {
               try {
-                await lock.lock()
-                await readLock.lock()
+                lock.lock()
+                rwLock.readLock().lock()
                 count++
                 lock.unlock()
-                readLock.unlock()
+                rwLock.readLock().unlock()
               } catch (e) {
                 console.info(`${tag} task1 error: ` + e);
               }
@@ -2421,18 +2284,17 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest038';
         console.info(`${tag} test start`);
         let count = 0
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let rwLock = new RWLock();
         let pros: Promise<void>[] = []
         for (let i = 0; i < concurrentNum; i++) {
           for (let i = 0; i < 100; i++) {
             let task1 = async () => {
               return await new Promise<void>((resolve) => {
-                setTimeout(async () => {
+                setTimeout(() => {
                   try {
-                    let readLock = rwLock.readLock()
-                    await readLock.lock()
+                    rwLock.readLock().lock()
                     count++
-                    readLock.unlock()
+                    rwLock.readLock().unlock()
                   } catch (e) {
                     console.log(`${tag} catch1: ` + e)
                   }
@@ -2442,10 +2304,9 @@ export default function CombLockTest(): void {
             }
             let task2 = async () => {
               try {
-                let writeLock = rwLock.writeLock()
-                await writeLock.lock()
+                rwLock.writeLock().lock()
                 count++
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.log(`${tag} catch2: ` + e)
               }
@@ -2478,18 +2339,17 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest039';
         console.info(`${tag} test start`);
         let count = 0
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let rwLock = new RWLock();
         let pros: Promise<void>[] = []
         for (let i = 0; i < concurrentNum; i++) {
           for (let i = 0; i < 100; i++) {
             let task1 = async () => {
               return await new Promise<void>((resolve) => {
-                setTimeout(async () => {
+                setTimeout(() => {
                   try {
-                    let writeLock = rwLock.writeLock()
-                    await writeLock.lock()
+                    rwLock.writeLock().lock()
                     count++
-                    writeLock.unlock()
+                    rwLock.writeLock().unlock()
                   } catch (e) {
                     console.log(`${tag} catch1: ` + e)
                   }
@@ -2499,10 +2359,9 @@ export default function CombLockTest(): void {
             }
             let task2 = async () => {
               try {
-                let writeLock = rwLock.writeLock()
-                await writeLock.lock()
+                rwLock.writeLock().lock()
                 count++
-                writeLock.unlock()
+                rwLock.writeLock().unlock()
               } catch (e) {
                 console.log(`${tag} catch2: ` + e)
               }
@@ -2535,37 +2394,33 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest040';
         console.info(`${tag} test start`);
         let count = 0
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let rwLock = new RWLock();
         let pros: Promise<Any>[] = []
         for (let i = 0; i < concurrentNum; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let innerPros: Promise<void>[] = []
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 100; i++) {
               let pro = new Promise<void>((resolve) => {
-                setTimeout(async () => {
+                setTimeout(() => {
                   try {
-                    let writeLock = rwLock.writeLock()
-                    await writeLock.lock()
+                    rwLock.writeLock().lock()
                     count++
-                    writeLock.unlock()
+                    rwLock.writeLock().unlock()
                   } catch (e) {
                     console.log(`${tag} catch1: ` + e)
                   }
                   resolve(undefined)
                 }, 10)
               })
-              innerPros.push(pro.then(async () => {
+              pro.then(() => {
                 try {
-                  let writeLock = rwLock.writeLock()
-                  await writeLock.lock()
+                  rwLock.writeLock().lock()
                   count++
-                  writeLock.unlock()
+                  rwLock.writeLock().unlock()
                 } catch (e) {
                   console.log(`${tag} catch2: ` + e)
                 }
-              }))
+              })
             }
-            await Promise.all(innerPros)
           })
           pros.push(taskpool.execute(task1))
         }
@@ -2592,37 +2447,33 @@ export default function CombLockTest(): void {
         const tag: string = 'CombLockTest041';
         console.info(`${tag} test start`);
         let count = 0
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let rwLock = new RWLock();
         let pros: Promise<Any>[] = []
         for (let i = 0; i < concurrentNum; i++) {
-          let task1 = new taskpool.Task(async () => {
-            let innerPros: Promise<void>[] = []
+          let task1 = new taskpool.Task(() => {
             for (let i = 0; i < 100; i++) {
               let pro = new Promise<void>((resolve) => {
-                setTimeout(async () => {
+                setTimeout(() => {
                   try {
-                    let readLock = rwLock.readLock()
-                    await readLock.lock()
+                    rwLock.readLock().lock()
                     count++
-                    readLock.unlock()
+                    rwLock.readLock().unlock()
                   } catch (e) {
                     console.log(`${tag} catch1: ` + e)
                   }
                   resolve(undefined)
                 }, 10)
               })
-              innerPros.push(pro.then(async () => {
+              pro.then(() => {
                 try {
-                  let writeLock = rwLock.writeLock()
-                  await writeLock.lock()
+                  rwLock.writeLock().lock()
                   count++
-                  writeLock.unlock()
+                  rwLock.writeLock().unlock()
                 } catch (e) {
                   console.log(`${tag} catch2: ` + e)
                 }
-              }))
+              })
             }
-            await Promise.all(innerPros)
           })
           pros.push(taskpool.execute(task1))
         }

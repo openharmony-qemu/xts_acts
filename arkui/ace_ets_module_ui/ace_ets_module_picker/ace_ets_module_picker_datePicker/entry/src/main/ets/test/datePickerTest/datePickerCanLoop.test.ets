@@ -59,7 +59,7 @@ export default function DatePickerCanLoopTest() {
       await button.click()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('datePicker');
+      let strJson = getInspectorByKey('datePickerCanLoop_datePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('DatePickerCanLoopTest_0100 true component obj is: ' + obj.$attrs.canLoop);
       expect(obj.$attrs.canLoop).assertEqual('true');
@@ -83,7 +83,7 @@ export default function DatePickerCanLoopTest() {
       await button.click()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('datePicker');
+      let strJson = getInspectorByKey('datePickerCanLoop_datePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('DatePickerCanLoopTest_0200 false component obj is: ' + obj.$attrs.canLoop);
       expect(obj.$attrs.canLoop).assertEqual('false');
@@ -107,7 +107,7 @@ export default function DatePickerCanLoopTest() {
       await button.click()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('datePicker');
+      let strJson = getInspectorByKey('datePickerCanLoop_datePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('DatePickerCanLoopTest_0300 null component obj is: ' + obj.$attrs.canLoop);
       expect(obj.$attrs.canLoop).assertEqual('true');
@@ -131,7 +131,7 @@ export default function DatePickerCanLoopTest() {
       await button.click()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('datePicker');
+      let strJson = getInspectorByKey('datePickerCanLoop_datePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('DatePickerCanLoopTest_0400 undefined component obj is: ' + obj.$attrs.canLoop);
       expect(obj.$attrs.canLoop).assertEqual('true');

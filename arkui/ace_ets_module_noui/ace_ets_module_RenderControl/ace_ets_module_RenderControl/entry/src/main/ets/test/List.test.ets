@@ -76,19 +76,17 @@ import ForEachTest010 from './Foreach/ForEachTest010.test';
 import ForEachTest030 from './Foreach/ForEachTest030.test';
 import ForEachTest0330 from './Foreach/ForEachTest0330.test';
 import ForEach001 from './Foreach/ForEach001.test';
-
 import RepeatCloseReuseTest0110 from './Repeat/RepeatCloseReuseTest0110.test';
 import RepeatLazyTest0150 from './Repeat/RepeatLazyTest0150.test';
-
 import repeatReusableFalse from './Repeat/repeatReusableFalse.test';
 import repeatReusableTrue from './Repeat/repeatReusableTrue.test';
 import RELOAD from './LazyForEach/RELOAD.test';
-
 import repeatVirtualScrollNullUndefinedTest from './Repeat/repeatVirtualScrollNullUndefinedTest.test';
 import lazyForEachOnDatasetChangeNullUndefinedTest from './LazyForEach/lazyForEachOnDatasetChangeNullUndefinedTest.test';
 import LazyForEachCustomComponentFreezeModeTest from './LazyForEach/LazyForEachCustomComponentFreezeModeTest.test';
 import RepeatReusableMemOptStrategyTest from './Repeat/RepeatReusableMemOptStrategyTest.test';
 import LazyForEachReusableMemOptStrategyTest from './LazyForEach/LazyForEachReusableMemOptStrategyTest.test';
+import LazyForEachDataReloadTest from './LazyForEach/LazyForEachDataReloadTest.test';
 
 export default function testsuite() {
     Foreach1();
@@ -154,17 +152,15 @@ export default function testsuite() {
     ForEachTest030();
     ForEachTest0330();
     ForEach001();
-
     RepeatCloseReuseTest0110();
     RepeatLazyTest0150();
-
     repeatReusableFalse();
 	repeatReusableTrue();
     RELOAD();
-
     repeatVirtualScrollNullUndefinedTest();
     lazyForEachOnDatasetChangeNullUndefinedTest();
     LazyForEachCustomComponentFreezeModeTest();
     RepeatReusableMemOptStrategyTest();
     LazyForEachReusableMemOptStrategyTest();
+    LazyForEachDataReloadTest();
 }

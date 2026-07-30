@@ -1,3 +1,4 @@
+'use static';
 
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
@@ -334,7 +335,7 @@ type GenericFunc<T> = (input: T) => T;
 
 type NumberSet = Set<number>;
 
-export default function SetKeysTest() {
+export default function SetKeysTest(): void {
   describe('SetKeysTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

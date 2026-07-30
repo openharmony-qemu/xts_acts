@@ -1455,5 +1455,139 @@ export default function Font2Test() {
       }
     );
 
+    /**
+     * @tc.name   testOHDrawingSetTypographyAttributeBool0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0100
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingSetTypographyAttributeBool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingSetTypographyAttributeBool0100();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingSetTypographyAttributeBool0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0200
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with nullptr typography
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingSetTypographyAttributeBool0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingSetTypographyAttributeBool0200();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingGetTypographyAttributeBool0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0100
+     * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with nullptr typography
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingGetTypographyAttributeBool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingGetTypographyAttributeBool0100();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingGetTypographyAttributeBool0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0200
+     * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with nullptr value out param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingGetTypographyAttributeBool0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingGetTypographyAttributeBool0200();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingSetTypographyAttributeBool0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0300
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with invalid attribute id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingSetTypographyAttributeBool0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingSetTypographyAttributeBool0300();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingGetTypographyAttributeBool0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0300
+     * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with invalid attribute id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingGetTypographyAttributeBool0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingGetTypographyAttributeBool0300();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingSetTypographyAttributeBool0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0400
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with bool false value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingSetTypographyAttributeBool0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingSetTypographyAttributeBool0400();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingGetTypographyAttributeBool0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0400
+     * @tc.desc   test OH_Drawing_GetTypographyAttributeBool default value is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingGetTypographyAttributeBool0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingGetTypographyAttributeBool0400();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testOHDrawingSetTypographyAttributeBool0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0500
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool set true then set false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingSetTypographyAttributeBool0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingSetTypographyAttributeBool0500();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

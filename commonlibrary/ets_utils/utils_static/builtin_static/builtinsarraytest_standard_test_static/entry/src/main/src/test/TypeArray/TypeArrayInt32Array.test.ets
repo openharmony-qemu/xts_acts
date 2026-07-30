@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +52,7 @@ interface GeneratedTypeLiteralInterface_6 {
   outliers: number[];
 }
 
-export default function typeArrayInt32ArrayTest() {
+export default function typeArrayInt32ArrayTest(): void {
   describe('TypeArrayInt32ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

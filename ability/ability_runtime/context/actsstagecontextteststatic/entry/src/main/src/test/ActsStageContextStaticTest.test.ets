@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,7 +64,12 @@ export default function actsStageContextTestStatic() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.stage_app.static").then((result: abilityDelegatorRegistry.ShellCmdResult) => {
+      let cmd = "aa start -a EntryAbility -b com.example.stage_app.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd).then((result: abilityDelegatorRegistry.ShellCmdResult) => {
         hilog.info(domain, tag, `ShellCmdResult stdResult:` + result.stdResult);
         hilog.info(domain, tag, `ShellCmdResult exitCode:` + result.exitCode);
       })

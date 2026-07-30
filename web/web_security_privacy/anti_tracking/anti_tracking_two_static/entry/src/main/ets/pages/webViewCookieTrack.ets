@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -16,20 +17,17 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import fs from '@ohos.file.fs';
-import { OnErrorReceiveEvent,IntelligentTrackingPreventionDetails,CacheMode,OnPageEndEvent,$rawfile,OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
-import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
-import Utils from '../../src/test/Util.test';
-import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import image from '@ohos.multimedia.image';
+import { OnErrorReceiveEvent, IntelligentTrackingPreventionDetails, CacheMode, OnPageEndEvent, $rawfile, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
-import { JsProxyObject } from '../../src/test/Interfaces';
-import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
+import image from '@ohos.multimedia.image';
+import { JsProxyObject } from '../../src/test/Interfaces';
+import { AppStorage } from 'arkui.stateManagement.storage.appStorage';
 class DataTrans {
   constructor() {
   }
@@ -83,17 +81,53 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
           .onClick( (e:ClickEvent) => {
             console.info("key==>" +  this.stringObj.str)
             switch ( this.stringObj.str) {
+              case 'testAddIntelligentTrackingPreventionBypassingListError001': {
+                try {
+                  let list = ['www.test1.com', 'www.test2.com'];
+                  webView.WebviewController.addIntelligentTrackingPreventionBypassingList(list);
+                  Utils.emitEvent(true, 202503301);
+                } catch (error) {
+                  let e: BusinessError = error as BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503301)
+                  } else {
+                    Utils.emitEvent(false, 202503301)
+                  }
+                }
+                break;
+              }
               case 'testRemoveIntelligentTrackingPreventionBypassingListError001': {
                 try {
-                  let list = ['www.test1.com','www.test2.com'];
+                  let list = ['www.test1.com', 'www.test2.com'];
                   webView.WebviewController.removeIntelligentTrackingPreventionBypassingList(list);
-                  Utils.emitEvent('401',202503208)
-                } catch (e) {
-                  e = e as BusinessError;
-                  let check = (v1: string, v2: string): boolean => {
-                    return v1 == v2 ? true: false;
+                  Utils.emitEvent(true, 202503302);
+                } catch (error) {
+                  let e: BusinessError = error as BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503302)
+                  } else {
+                    Utils.emitEvent(false, 202503302)
                   }
-                  Utils.emitEvent('401',202503208)
+                }
+                break;
+              }
+              case 'testClearIntelligentTrackingPreventionBypassingListError001': {
+                try {
+                  webView.WebviewController.clearIntelligentTrackingPreventionBypassingList();
+                  Utils.emitEvent(true, 202503303);
+                } catch (error) {
+                  let e: BusinessError = error as BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503303)
+                  } else {
+                    Utils.emitEvent(false, 202503303)
+                  }
                 }
                 break;
               }

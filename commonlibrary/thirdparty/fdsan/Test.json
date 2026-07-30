@@ -1,0 +1,27 @@
+{
+    "description": "Configuration for ActsThirdPartyFdsan Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "180000",
+        "shell-timeout": "600000",
+        "bundle-name": "com.thirdparty.fdsan.napitest",
+        "module-name": "entry_test",
+        "testcase-timeout": 60000
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsThirdPartyFdsanTest.hap",
+                "ActsThirdPartyFdsanMainTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },{
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602"
+            ]
+        }
+    ]
+}

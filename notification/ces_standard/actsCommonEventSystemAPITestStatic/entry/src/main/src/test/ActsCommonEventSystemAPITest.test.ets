@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +22,9 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import notificationManager from '@ohos.notificationManager'
 import notificationSubscribe from '@ohos.notificationSubscribe'
 import wantAgent from '@ohos.app.ability.wantAgent'
+import wantagent from '@ohos.app.ability.wantAgent'
 import image from '@ohos.multimedia.image'
 import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog';
-import wantagent from '@ohos.app.ability.wantAgent';
 import {
   Component,
   Driver,
@@ -90,7 +90,12 @@ export default function ActsCommonEventSystemAPITest() {
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000);
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
+      let cmd = `aa start -a EntryAbility -b ${bundleName}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd )
       await Utils.msSleep(2000);
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');

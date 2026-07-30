@@ -3,6 +3,8 @@ import hiddebughiperfTest from './HiDebugHiperf.test';
 import HidebugTest from './HiDeBugUn.test';
 import ActsHiDebugHiProfilerTest from './HiDebugHiProfiler.test';
 import HiDeBugTrace from './HiDeBugTrace.test';
+import ActsHiDebugRegisterTest from './HiDebugRegister.test';
+import HiDeBugAsyncContextTest from './HiDeBugAsyncContextTest.test';
 
 export default function testsuite() {
   abilityTest();
@@ -10,4 +12,6 @@ export default function testsuite() {
   HidebugTest();
   ActsHiDebugHiProfilerTest();
   HiDeBugTrace();
+  ActsHiDebugRegisterTest();
+  HiDeBugAsyncContextTest();
 }

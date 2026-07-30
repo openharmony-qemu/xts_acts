@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -388,7 +389,7 @@ class Test056OuterClass {
   inner: Test056InnerClass = new Test056InnerClass();
 }
 
-export default function JSONStringifyClassBasicTest() {
+export default function JSONStringifyClassBasicTest(): void {
   describe('JSONStringifyClassBasicTest', () => {
     beforeAll(() => {
     })

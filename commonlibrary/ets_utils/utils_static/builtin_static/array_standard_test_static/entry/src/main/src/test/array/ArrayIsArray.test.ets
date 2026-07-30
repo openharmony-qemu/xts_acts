@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,7 +76,7 @@ interface MockNodeList044 {
     item: (index: number) => null;
 }
 
-export default function ArrayIsArrayTest() {
+export default function ArrayIsArrayTest(): void {
   describe('ArrayIsArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

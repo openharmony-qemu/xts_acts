@@ -22,6 +22,8 @@ import WebSocketServerTest from './WebsocketServer.test';
 import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import connection from '@ohos.net.connection';
 import WebSocketMinSupportTlsProtocolTest from './WebSocketMinSupportTlsProtocol.test';
+import WebSocketSupportOriginPortTest from './WebSocketSupportOriginPort.test';
+import WebSocketSupportOriginPortCallbackTest from './WebSocketSupportOriginPortCallback.test';
  	 
 let netHandle = connection.getDefaultNetSync();
  	 
@@ -32,6 +34,8 @@ export default function testsuite() {
     WebSocketTest();
     WebSocketServerTest();
     WebSocketMinSupportTlsProtocolTest();
+    WebSocketSupportOriginPortTest();
+    WebSocketSupportOriginPortCallbackTest();
   } else {
     EmptyTestCheckNetwork();
   }

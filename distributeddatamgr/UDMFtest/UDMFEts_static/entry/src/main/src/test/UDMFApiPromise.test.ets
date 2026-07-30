@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -499,6 +500,8 @@ export default function UDMFApiPromiseTest() {
 			plainText.textContent = "hello world!";
 			let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
 			try {
+				let ret = await unifiedDataChannel.queryData(options);
+				console.log(tag, `Succeeded in querying data. size = ${ret.length}`);
 				unifiedDataChannel.insertData(options, unifiedData, (e, data) => {
 				console.log(tag, `insertData01500 success; data = ${data}, options = ${options}`);
 				let options2:unifiedDataChannel.Options = {
@@ -507,7 +510,10 @@ export default function UDMFApiPromiseTest() {
 				};
 				unifiedDataChannel.queryData(options2).then((data) => {
 					console.log(tag, `Succeeded in querying data. size = ${data.length}`);
-					expect(data.length).assertEqual(1)
+					expect(data.length - ret.length).assertEqual(1)
+					let records = data[data.length - 1].getRecords();
+					let plainText = records[0] as unifiedDataChannel.PlainText;
+					expect(plainText.textContent).assertEqual('hello world!');
 					done();
 				}).catch((err: Error) => {
 					console.error(tag, `Failed to query data. code is ${err.code}, message is ${err.message}`);

@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function ChipGroupSymbolItemOptionsTest() {
@@ -58,49 +59,24 @@ export default function ChipGroupSymbolItemOptionsTest() {
       console.info('[ChipGroupSymbolItemOptionsTest_001] START');
       await CommonFunc.sleep(1000);
 
-      let btn0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
+      let btn0: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn0_1', [0, 0, 0, 0, 0, 0]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn0.attrs.accessibilityDescription is: " + JSON.stringify(btn0.$attrs.accessibilityDescription));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn0.attrs.accessibilityLevel is: " + JSON.stringify(btn0.$attrs.accessibilityLevel));
       expect(btn0.$attrs.accessibilityDescription).assertEqual('ChipGroupItem_accessibilityDescription');
       expect(btn0.$attrs.accessibilityLevel).assertEqual('auto');
 
-      let btn1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
+      let btn1: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn1_2', [0, 0, 0, 0, 0, 1]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn1.attrs.accessibilityLevel is: " + JSON.stringify(btn1.$attrs.accessibilityLevel));
       expect(btn1.$attrs.accessibilityLevel).assertEqual('no-hide-descendants');
 
-      let btn1_image: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let btn1_image: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn1_image_3', [0, 0, 0, 0, 0, 1, 0, 0]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn1_image.attrs.width is: " + JSON.stringify(btn1_image.$attrs.width));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn1_image.attrs.height is: " + JSON.stringify(btn1_image.$attrs.height));
       expect(btn1_image.$attrs.width).assertEqual('36.00vp');
       expect(btn1_image.$attrs.height).assertEqual('36.00vp');
 
       // IconItemOptions: accessibilityText accessibilityDescription accessibilityLevel
-      let btn3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let btn3: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn3_4', [0, 0, 1, 0, 0]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn3.attrs.accessibilityText is: " + JSON.stringify(btn3.$attrs.accessibilityText));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn3.attrs.accessibilityDescription is: " + JSON.stringify(btn3.$attrs.accessibilityDescription));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn3.attrs.accessibilityLevel is: " + JSON.stringify(btn3.$attrs.accessibilityLevel));
@@ -108,12 +84,7 @@ export default function ChipGroupSymbolItemOptionsTest() {
       expect(btn3.$attrs.accessibilityDescription).assertEqual('IconGroupSuffix_accessibilityDescription');
       expect(btn3.$attrs.accessibilityLevel).assertEqual('yes');
 
-      let btn4: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[1]
+      let btn4: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn4_5', [0, 0, 1, 0, 1]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn4.attrs.accessibilityText is: " + JSON.stringify(btn4.$attrs.accessibilityText));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn4.attrs.accessibilityDescription is: " + JSON.stringify(btn4.$attrs.accessibilityDescription));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn4.attrs.accessibilityLevel is: " + JSON.stringify(btn4.$attrs.accessibilityLevel));
@@ -121,12 +92,7 @@ export default function ChipGroupSymbolItemOptionsTest() {
       expect(btn4.$attrs.accessibilityDescription).assertEqual('IconGroupSuffix_accessibilityDescription_2');
       expect(btn4.$attrs.accessibilityLevel).assertEqual('no');
 
-      let btn5: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[2]
+      let btn5: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn5_6', [0, 0, 1, 0, 2]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn5.attrs.accessibilityText is: " + JSON.stringify(btn5.$attrs.accessibilityText));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn5.attrs.accessibilityDescription is: " + JSON.stringify(btn5.$attrs.accessibilityDescription));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn5.attrs.accessibilityLevel is: " + JSON.stringify(btn5.$attrs.accessibilityLevel));
@@ -134,12 +100,7 @@ export default function ChipGroupSymbolItemOptionsTest() {
       expect(btn5.$attrs.accessibilityDescription).assertEqual('IconGroupSuffix_accessibilityDescription_3');
       expect(btn5.$attrs.accessibilityLevel).assertEqual('auto');
 
-      let btn6: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[3]
+      let btn6: ESObject = Utils.navigateInspectorPath('ChipGroupSymbolItemOptionsTest.test_btn6_7', [0, 0, 1, 0, 3]);
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn6.attrs.accessibilityText is: " + JSON.stringify(btn6.$attrs.accessibilityText));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn6.attrs.accessibilityDescription is: " + JSON.stringify(btn6.$attrs.accessibilityDescription));
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn6.attrs.accessibilityLevel is: " + JSON.stringify(btn6.$attrs.accessibilityLevel));

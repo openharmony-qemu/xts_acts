@@ -80,7 +80,7 @@ struct TabsBarPosition {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("barPositionText")
+        .key("tabs_barPositionText")
 
 
       Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
@@ -93,7 +93,7 @@ struct TabsBarPosition {
         }.tabBar('yellow')
 
       }
-      .key("barPositionTabs")
+      .key("tabs_barPositionTabs")
       .vertical(true)
       .scrollable(true)
       .barMode(BarMode.Fixed)

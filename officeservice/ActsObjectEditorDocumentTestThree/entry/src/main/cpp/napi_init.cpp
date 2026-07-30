@@ -970,6 +970,156 @@ static napi_value TestStreamGetSize_StreamFailed(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value TestCreateDocumentByOEid_OEIDFormatInvalid(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_ErrorCode code;
+    const char* invalidOeids[] = {
+        "", "a", "ab", "abcd", "123", "0123456789abcdef0123456789abcdeg",
+        "0123456789abcdef0123456789abcdef0", "0123456789abcdef0123456789abcdef01",
+        "0123456789abcdef0123456789abcdef012", "0123456789abcdef0123456789abcdef0123",
+        "0123456789abcdef0123456789abcdef01234", "0123456789abcdef0123456789abcdef012345",
+        "0123456789abcdef0123456789abcdef0123456", "0123456789abcdef0123456789abcdef01234567",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567Xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxxXxxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxXxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxxXxxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxxx", "012345678-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "0123456-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+        "0123456X-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "X1234567-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-Xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xXxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-Xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xXxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-Xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xXxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-Xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xXxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxGG", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxgG",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx1g", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxg1",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx--", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx__",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx//", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx||",
+        "0123456789abcdefG123456789abcdef", "G123456789abcdef0123456789abcdef",
+        "0123456789abcdef0123456789abcdefG", "0123456789ABCDEFG123456789ABCDEF",
+        "0123456789abcdef-123456789abcdef", "0123456789abcdef_123456789abcdef",
+        "0123456789abcdef/123456789abcdef", "0123456789abcdef|123456789abcdef",
+        "0123456789abcdef 123456789abcdef", "0123456789abcdef\n123456789abcdef",
+        "0123456789abcdef\t123456789abcdef", "0123456789ABCDEF0123456789ABCDEFZ",
+        "0123456789abcdef0123456789abcdefz", "0123456789abcdef0123456789abcdef{",
+        "0123456789abcdef0123456789abcdef}", "0123456789abcdef0123456789abcdef~",
+        "0123456789abcdef0123456789abcdef`"};
+    for (size_t i = 0; i < sizeof(invalidOeids) / sizeof(invalidOeids[0]); i++) {
+        code = OH_ContentEmbed_CreateDocumentByOEid(invalidOeids[i], &document);
+        OH_LOG_INFO(LOG_APP, "TestCreateDocumentByOEid_OEIDFormatInvalid case%{public}zu: %{public}d", i+1, code);
+        if (code != CE_ERR_PARAM_INVALID) {
+            OH_LOG_ERROR(LOG_APP, "TestCreateDocumentByOEid_OEIDFormatInvalid:%{public}s", invalidOeids[i]);
+            napi_create_int32(env, -1, &result);
+            return result;
+        }
+    }
+    napi_create_int32(env, CE_ERR_PARAM_INVALID, &result);
+    return result;
+}
+
+static napi_value TestStorageSetOEid_OEIDFormatInvalid(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_Storage *storage = nullptr;
+    ContentEmbed_ErrorCode code;
+    char validOeid[] = "000209FF-0000-0000-C000-000000000046";
+    code = OH_ContentEmbed_CreateDocumentByOEid(validOeid, &document);
+    OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid create doc code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    const char* invalidOeids[] = {
+        "", "a", "ab", "abcd", "123", "0123456789abcdef0123456789abcdeg",
+        "0123456789abcdef0123456789abcdef0", "0123456789abcdef0123456789abcdef01",
+        "0123456789abcdef0123456789abcdef012", "0123456789abcdef0123456789abcdef0123",
+        "0123456789abcdef0123456789abcdef01234", "0123456789abcdef0123456789abcdef012345",
+        "0123456789abcdef0123456789abcdef0123456", "0123456789abcdef0123456789abcdef01234567",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567Xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxxXxxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxXxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxxXxxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxxx", "012345678-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "0123456-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx"};
+    for (size_t i = 0; i < sizeof(invalidOeids) / sizeof(invalidOeids[0]); i++) {
+        code = OH_ContentEmbed_Storage_SetOEid(storage, (char*)invalidOeids[i], BUF_SIZE);
+        OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid case%{public}zu: %{public}d", i+1, code);
+        if (code != CE_ERR_PARAM_INVALID) {
+            OH_LOG_ERROR(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid:%{public}s", invalidOeids[i]);
+            napi_create_int32(env, -1, &result);
+            return result;
+        }
+    }
+    OH_ContentEmbed_DestroyDocument(document);
+    OH_ContentEmbed_DestroyStorage(storage);
+    napi_create_int32(env, CE_ERR_PARAM_INVALID, &result);
+    return result;
+}
+
+static napi_value TestStorageSetOEid_OEIDFormatInvalid2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    ContentEmbed_Document *document = nullptr;
+    ContentEmbed_Storage *storage = nullptr;
+    ContentEmbed_ErrorCode code;
+    char validOeid[] = "000209FF-0000-0000-C000-000000000046";
+    code = OH_ContentEmbed_CreateDocumentByOEid(validOeid, &document);
+    OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid2 create doc code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    const char* invalidOeids[] = {
+        "0123456X-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "X1234567-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-Xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xXxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-Xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xXxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-Xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xXxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-Xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xXxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxGG", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxgG",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx1g", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxg1",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx--", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx__",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx//", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxx||",
+        "0123456789abcdefG123456789abcdef", "G123456789abcdef0123456789abcdef",
+        "0123456789abcdef0123456789abcdefG", "0123456789ABCDEFG123456789ABCDEF",
+        "0123456789abcdef-123456789abcdef", "0123456789abcdef_123456789abcdef",
+        "0123456789abcdef/123456789abcdef", "0123456789abcdef|123456789abcdef",
+        "0123456789abcdef 123456789abcdef", "0123456789abcdef\n123456789abcdef",
+        "0123456789abcdef\t123456789abcdef", "0123456789ABCDEF0123456789ABCDEFZ",
+        "0123456789abcdef0123456789abcdefz", "0123456789abcdef0123456789abcdef{",
+        "0123456789abcdef0123456789abcdef}", "0123456789abcdef0123456789abcdef~",
+        "0123456789abcdef0123456789abcdef`"};
+    for (size_t i = 0; i < sizeof(invalidOeids) / sizeof(invalidOeids[0]); i++) {
+        code = OH_ContentEmbed_Storage_SetOEid(storage, (char*)invalidOeids[i], BUF_SIZE);
+        OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid2 case%{public}zu: %{public}d", i+1, code);
+        if (code != CE_ERR_PARAM_INVALID) {
+            OH_LOG_ERROR(LOG_APP, "TestStorageSetOEid_OEIDFormatInvalid2:%{public}s", invalidOeids[i]);
+            napi_create_int32(env, -1, &result);
+            return result;
+        }
+    }
+    OH_ContentEmbed_DestroyDocument(document);
+    OH_ContentEmbed_DestroyStorage(storage);
+    napi_create_int32(env, CE_ERR_PARAM_INVALID, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -983,11 +1133,20 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestStorageSetOEid_OEIDIsEmpty", nullptr,
             TestStorageSetOEid_OEIDIsEmpty,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStorageSetOEid_OEIDFormatInvalid", nullptr,
+            TestStorageSetOEid_OEIDFormatInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestStorageSetOEid_OEIDFormatInvalid2", nullptr,
+            TestStorageSetOEid_OEIDFormatInvalid2,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetOEidFromFormat_OEIDIsEmpty", nullptr,
             TestProxyGetOEidFromFormat_OEIDIsEmpty,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestCreateDocumentByOEid_OEIDIsValid", nullptr,
             TestCreateDocumentByOEid_OEIDIsValid,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestCreateDocumentByOEid_OEIDFormatInvalid", nullptr,
+            TestCreateDocumentByOEid_OEIDFormatInvalid,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestStorageCreateStorage_NameIsValid", nullptr,
             TestStorageCreateStorage_NameIsValid,

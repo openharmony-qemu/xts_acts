@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -14,6 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { HashSet } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface BaseProperties07 {
   baseProp: number;
@@ -84,20 +86,12 @@ interface ErrorWithCode07 {
 
 type MixedValueType07 = number | string | boolean | null | undefined;
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function HashSet07Test(): void {
   describe('HashSet07Test', (): void => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

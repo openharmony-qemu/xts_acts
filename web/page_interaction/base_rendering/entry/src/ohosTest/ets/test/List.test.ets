@@ -15,7 +15,9 @@
 
 import WebViewBlankScreenDetectionConfig from './WebViewBlankScreenDetectionConfig.test'
 import WebViewAISessionType from './WebViewAISessionType.test'
+import WebViewAISessionTypeNullUndefined from './WebViewAISessionTypeNullUndefined.test'
 export default function testsuite() {
   WebViewBlankScreenDetectionConfig()
   WebViewAISessionType()
+  WebViewAISessionTypeNullUndefined()
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -34,7 +35,7 @@ class C1 {
   name: string = ""
   age: string = ""
 }
-export default function StackTest1() {
+export default function StackTest1(): void {
   describe('StackTest1', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

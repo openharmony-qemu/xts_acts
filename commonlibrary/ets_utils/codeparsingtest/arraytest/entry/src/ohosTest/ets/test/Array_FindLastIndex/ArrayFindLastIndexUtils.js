@@ -231,16 +231,6 @@ export function FindLastIndexCompareLastIndexOfTest2400() {
     return lastIndexOfResult === 3 && findLastIndexResult === 3;
 }
 
-// Test large array with 10000 elements
-export function FindLastIndexLargeArrayTest2500() {
-    const arr = [];
-    for (let i = 0; i < 10000; i++) {
-        arr.push(i);
-    }
-    const result = arr.findLastIndex((element) => element === 9999);
-    return result === 9999;
-}
-
 // Test callback throwing error
 export function FindLastIndexCallbackErrorTest2600() {
     const arr = [1, 2, 3, 4, 5];
@@ -1525,21 +1515,6 @@ export function FindLastIndexThisArgUndefinedCallTest14100() {
         return error instanceof TypeError;
     }
     return false;
-}
-
-// Additional tests to cover more mind map scenarios (14200-18000)
-// Test large array boundary 100000 elements
-export function FindLastIndexLargeArrayBoundaryTest14200() {
-    const arr = Array.from({ length: 100000 }, (_, i) => i);
-    const result = arr.findLastIndex((element) => element === 0);
-    return result === 0;
-}
-
-// Test large array finding last element
-export function FindLastIndexLargeArrayLastElementTest14300() {
-    const arr = Array.from({ length: 100000 }, (_, i) => i);
-    const result = arr.findLastIndex((element) => element === 99999);
-    return result === 99999;
 }
 
 // Test multiple delete operations

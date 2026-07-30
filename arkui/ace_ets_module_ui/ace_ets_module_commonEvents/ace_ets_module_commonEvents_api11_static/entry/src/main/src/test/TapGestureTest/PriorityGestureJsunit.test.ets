@@ -82,7 +82,7 @@ export default function priorityGestureJsunit() {
      */
 it('priorityGestureTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000)
-      let rect = CommonFunc.getComponentRect('tapGesture')
+      let rect = CommonFunc.getComponentRect('priorityGesture_tapGesture')
       console.info("priorityGestureTest_0100 rectInfo is " + JSON.stringify(rect));
       let x_value: number = rect.left + (rect.right - rect.left) / 2;
       let y_value: number = rect.top + (rect.bottom - rect.top) / 2;

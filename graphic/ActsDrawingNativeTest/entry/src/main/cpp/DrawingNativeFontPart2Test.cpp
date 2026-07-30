@@ -14,6 +14,7 @@
  */
 
 #include <cmath>
+#include <cstdint>
 #include <random>
 #include <vector>
 #include "include/DrawingNativeFontTest.h"
@@ -25,9 +26,12 @@
 #define DRAWING_NUMBER_3 3
 #define DRAWING_NUMBER_4 4
 #define DRAWING_NUMBER_6 6
+#define DRAWING_NUMBER_8 8
 #define DRAWING_NUMBER_10 10
+#define DRAWING_NUMBER_12 12
 #define DRAWING_NUMBER_13 13
 #define DRAWING_NUMBER_20 20
+#define DRAWING_NUMBER_28 28
 #define DRAWING_NUMBER_29 29
 #define DRAWING_NUMBER_30 30
 #define DRAWING_NUMBER_35 35
@@ -1141,6 +1145,7 @@ int TestFontMeasureSingleChaWithFeaturesAbNormal()
     DrawingNativeFontPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestFontMeasureSingleChaWithFeaturesCalls()
 {
     DrawingNativeFontPart2TestSetUp();
@@ -1163,6 +1168,7 @@ int TestFontMeasureSingleChaWithFeaturesCalls()
     DrawingNativeFontPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestFontFeaturesAddFeatureNormal()
 {
     DrawingNativeFontPart2TestSetUp();
@@ -1181,6 +1187,7 @@ int TestFontFeaturesAddFeatureNormal()
     DrawingNativeFontPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestFontFeaturesAddFeatureAbNormal()
 {
     DrawingNativeFontPart2TestSetUp();
@@ -1197,6 +1204,7 @@ int TestFontFeaturesAddFeatureAbNormal()
     DrawingNativeFontPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestFontFeaturesandFeatureDestroyNull()
 {
     DrawingNativeFontPart2TestSetUp();
@@ -1213,6 +1221,95 @@ int TestFontFeaturesandFeatureDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestFontGetTextPathWithFallbackNomal()
+{
+    DrawingNativeFontPart2TestSetUp();
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    const char utf8Text[] = "Hello 你好";
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    
+    const char16_t utf16Text[] = u"魑魅魍魉";
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf16Text, DRAWING_NUMBER_8, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF16, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    
+    const char32_t utf32Text[] = U"龘 靐 鱻 羴";
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf32Text, DRAWING_NUMBER_28, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF32, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    
+    const char *text = "Ni-~好 @#$%^|";
+    uint16_t glyphs[12] = {0};
+    int glyphCount = OH_Drawing_FontCountText(font, text, strlen(text), OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_FontTextToGlyphs(
+        font, text, strlen(text), OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, glyphs, glyphCount);
+    size_t byteLength = glyphCount * sizeof(uint16_t);
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, glyphs, byteLength, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF32, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_FontDestroy(font);
+    OH_Drawing_PathDestroy(path);
+    DrawingNativeFontPart2TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestFontGetTextPathWithFallbackNull()
+{
+    DrawingNativeFontPart2TestSetUp();
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    const char utf8Text[] = "Hello 你好";
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        nullptr, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, nullptr, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf8Text, 0, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 0.0f, 100.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 0.0f, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
+    errorCode = OH_Drawing_FontGetTextPathWithFallback(
+        font, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_FontDestroy(font);
+    OH_Drawing_PathDestroy(path);
+    DrawingNativeFontPart2TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestFontGetTextPathWithFallbackMultipleCalls()
+{
+    DrawingNativeFontPart2TestSetUp();
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    const char utf8Text[] = "Hello 你好";
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_FontGetTextPathWithFallback(
+            font, utf8Text, DRAWING_NUMBER_12, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, 100.0f, 100.0f, path);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_FontDestroy(font);
+    OH_Drawing_PathDestroy(path);
+    DrawingNativeFontPart2TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

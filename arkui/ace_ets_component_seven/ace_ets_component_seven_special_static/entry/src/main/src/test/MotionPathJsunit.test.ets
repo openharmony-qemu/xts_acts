@@ -81,7 +81,7 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.info("motionPathTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("motionPathTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("motionPathTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('motionPath_button', 10, "")));
       await Utils.sleep(1000);
       console.info('motionPathTest_static_0100 END');
       done();

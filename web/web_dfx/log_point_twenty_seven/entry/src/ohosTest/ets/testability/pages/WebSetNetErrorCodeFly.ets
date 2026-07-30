@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils.test'
 import business_error from '@ohos.base'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_EIMIT_KEY = 108000;
 
 @Entry
@@ -24,7 +25,8 @@ const EVENT_ID_SET_EIMIT_KEY = 108000;
 struct webSetNetErrorCodeFly {
   controller: webview.WebviewController = new webview.WebviewController();
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
-  srcUrl: string = 'https://www.example.com/';
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = '';
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State emitKey: string = '';
@@ -236,11 +238,15 @@ struct webSetNetErrorCodeFly {
                   }
               })
           }
-          Web({ src: this.srcUrl, controller: this.controller })
+          Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
           .onPageEnd((event) => {
             console.log('onPageEnd url:' + event.url);
             this.isPageEnd = 1;
           })
       }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 }

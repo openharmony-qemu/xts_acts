@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,6 +38,8 @@ const VIDEO_SOURCE = 'H264_AAC.mp4';
 const FILE_LENGTH: Long = 1894335;
 const URL_TO_HEADER: Record<string, Record<string, string>> =
   { "https://xxx/xx.mp4" : {"content-length": "1894335"} }
+const TAG = 'AVPlayer.MediaSource';
+const url_1a1v_m3u8 = "https://hwposter-inland.hwcloudtest.cn/rem/DTA/20240117/h264-sm4c-hls/ChinaDRMLab_Promo_210525-264-30-480p-2000K/sm4c.m3u8"
 
 let avPlayer: media.AVPlayer | undefined;
 let mediaSource: media.MediaSource | undefined;
@@ -54,6 +57,72 @@ interface PreDownConfig {
   respondDataCount: number, // test for finishLoading
   needHeader: boolean,
   loadingError?: number
+}
+
+async function getAVPlayerRequest(testName: string, url: string, callBack: (request: media.MediaSourceLoadingRequest) => void) {
+  let avPlayer = await media.createAVPlayer()
+  let headers: Record<string, string> = {"User-Agent": "User-Agent-Value"};
+  let mediaSource1 : media.MediaSource | undefined = media.createMediaSourceWithUrl(url, headers);
+  let uuid: int = 1;
+  let requests1: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap<number, media.MediaSourceLoadingRequest>(); //uuid:request
+
+
+  let playStrategy: media.PlaybackStrategy = {
+    preferredWidth: 1,
+    preferredHeight: 2,
+    preferredBufferDuration: 3,
+    preferredHdr: false,
+    preferredBufferDurationForPlaying: 1,
+    showFirstFrameOnPrepare: false
+  };
+  let SourceCallbackCount: number = 0
+
+  let sourceOpenCallback: media.SourceOpenCallback = (request: media.MediaSourceLoadingRequest) => {
+    SourceCallbackCount++
+    console.log(TAG, testName, `Opening resource: ${request.url}`);
+    uuid += 1;
+    requests1.set(uuid, request);
+    callBack(request);
+    return uuid;
+  };
+
+  let sourceReadCallback: media.SourceReadCallback = (uuid: long, requestedOffset: long, requestedLength: long) => {
+    SourceCallbackCount++
+    console.log(TAG, `Reading resource with handle ${uuid}, offset: ${requestedOffset}, length: ${requestedLength}`);
+    avPlayer!!.release()
+  };
+
+  let sourceCloseCallback: media.SourceCloseCallback = (uuid: long) => {
+    SourceCallbackCount++
+    console.log(TAG, `Closing resource with handle ${uuid}`);
+    requests1.remove(uuid);
+  };
+
+  let resourceLoader: media.MediaSourceLoader = {
+    open: sourceOpenCallback,
+    read: sourceReadCallback,
+    close: sourceCloseCallback
+  };
+
+  mediaSource1!!.setMediaResourceLoaderDelegate(resourceLoader);
+  console.log(TAG, `setMediaResourceLoaderDelegate success`)
+  avPlayer?.onStateChange((state, reason) =>{
+    console.info(`state change, current state is: ${state}`)
+    if(state == "initialized"){
+      console.info(TAG, `avPlayer enter initialized state`)
+      avPlayer!!.prepare().then(() => {
+        console.log(TAG, `avPlayer.prepare().then`)
+      })
+    }
+    if(state == "prepared"){
+      console.info(TAG, `avPlayer enter prepared state`)
+    }
+    if(state == "released"){
+      console.info(TAG, `avPlayer enter released state`)
+    }
+  })
+  avPlayer!!.setMediaSource(mediaSource1 as media.MediaSource, playStrategy)
+  console.log(TAG, `setMediaSource success`)
 }
 
 function createEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfig, steps: Array<string>, done: () => void) {
@@ -632,6 +701,40 @@ export default function PreDownLoadTest() {
       expect(fileDescriptor).not().assertNull();
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100
+     * @tc.desc   TESTING_RESPONDDATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100 begin');
+      const testName = 'SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100';
+      try {
+        let header:Record<string, string> = {
+          'Transfer-Encoding':'xxx',
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'Content-length' : 'xxx'
+        };
+        await getAVPlayerRequest(testName, url_1a1v_m3u8, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(1, header, '');
+          console.info(TAG, 'SUCCEED', request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error}, ${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+      console.info('SUB_MULTIMEDIA_PLAYER_RESPOND_DATA_static_0100 end');
     });
   })
 }

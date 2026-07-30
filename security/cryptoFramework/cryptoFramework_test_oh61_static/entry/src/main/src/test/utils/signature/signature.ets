@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -24,7 +25,7 @@ export async function doSignature(algName: string,
 
     return data;
   } catch (error) {
-    console.error(`[XTS] doSignature ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doSignature ${error}`);
     throw error as Error;
   }
 }
@@ -38,7 +39,7 @@ export async function doVerify(algName: string, signData: cryptoFramework.DataBl
 
     return ret;
   } catch (error) {
-    console.error(`[XTS] doVerify ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doVerify ${error}`);
     throw error as Error;
   }
 }

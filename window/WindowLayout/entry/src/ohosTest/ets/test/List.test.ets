@@ -14,8 +14,10 @@
  */
 import windowLayoutTest from './WindowLayout.test';
 import windowMaximizeTest from './WindowMaximize.test';
+import WindowLayoutTest2 from './WindowLayout2.test';
 
 export default function testsuite() {
   windowLayoutTest();
   windowMaximizeTest();
+  WindowLayoutTest2();
 }

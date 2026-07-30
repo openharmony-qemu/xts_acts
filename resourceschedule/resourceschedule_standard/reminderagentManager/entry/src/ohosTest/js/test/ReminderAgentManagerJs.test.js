@@ -1943,6 +1943,344 @@ export default function ReminderAgentManagerTest() {
                 done();
             }
         })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000
+         * @tc.desc   test publishReminder timer with fixedTimeZone TimeZoneType.DEFAULT (callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: reminderAgent.TimeZoneType.DEFAULT
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1000 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100
+         * @tc.desc   test publishReminder timer with fixedTimeZone TimeZoneType.FIXED_TIME_ZONE (promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: reminderAgent.TimeZoneType.FIXED_TIME_ZONE
+            };
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100 promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                }).catch((err) => {
+                    console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100 promise err.code is: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1100 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200
+         * @tc.desc   test publishReminder and getAllValidReminders to verify fixedTimeZone TimeZoneType.SYSTEM_TIME_ZONE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: reminderAgent.TimeZoneType.SYSTEM_TIME_ZONE
+            };
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 publishReminder promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    reminderAgent.getAllValidReminders().then((reminders) => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 getAllValidReminders reminders.length = ' + reminders.length);
+                        expect(reminders.length).assertLarger(0);
+                        let found = false;
+                        for (let i = 0; i < reminders.length; i++) {
+                            if (reminders[i].reminderId === reminderId) {
+                                console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 found reminder, fixedTimeZone = ' + reminders[i].reminderReq.fixedTimeZone);
+                                expect(reminders[i].reminderReq.fixedTimeZone).assertEqual(reminderAgent.TimeZoneType.SYSTEM_TIME_ZONE);
+                                found = true;
+                                break;
+                            }
+                        }
+                        expect(found).assertTrue();
+                        done();
+                    }).catch((err) => {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 getAllValidReminders err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    });
+                }).catch((err) => {
+                    console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 publishReminder err.code is: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1200 error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300
+         * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters (callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                notificationRequestProxy: {
+                    appMessageId: 'test_msg_id_001',
+                    isAlertOnce: true
+                }
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1300 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400
+         * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters (promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                notificationRequestProxy: {
+                    appMessageId: 'test_msg_id_002',
+                    isAlertOnce: false
+                }
+            };
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400 promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                }).catch((err) => {
+                    console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400 promise err.code is: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1400 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500
+         * @tc.desc   test publishReminder and getAllValidReminders to verify notificationRequestProxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                notificationRequestProxy: {
+                    appMessageId: 'verify_msg_id',
+                    isAlertOnce: true
+                }
+            };
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 publishReminder promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    reminderAgent.getAllValidReminders().then((reminders) => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 getAllValidReminders reminders.length = ' + reminders.length);
+                        expect(reminders.length).assertLarger(0);
+                        let found = false;
+                        for (let i = 0; i < reminders.length; i++) {
+                            if (reminders[i].reminderId === reminderId) {
+                                console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 found reminder, notificationRequestProxy = ' + JSON.stringify(reminders[i].reminderReq.notificationRequestProxy));
+                                expect(reminders[i].reminderReq.notificationRequestProxy?.appMessageId).assertEqual('verify_msg_id');
+                                expect(reminders[i].reminderReq.notificationRequestProxy?.isAlertOnce).assertTrue();
+                                found = true;
+                                break;
+                            }
+                        }
+                        expect(found).assertTrue();
+                        done();
+                    }).catch((err) => {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 getAllValidReminders err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    });
+                }).catch((err) => {
+                    console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 publishReminder err.code is: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1500 error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+ 	     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600
+ 	     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600
+ 	     * @tc.desc   test publishReminder timer with fixedTimeZone TimeZoneType.FIXED_TIME_ZONE (callback)
+ 	     * @tc.type   FUNCTION
+ 	     * @tc.size   MEDIUMTEST
+ 	     * @tc.level  LEVEL3
+ 	     */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: reminderAgent.TimeZoneType.FIXED_TIME_ZONE
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1600 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700
+         * @tc.desc   test publishReminder timer with fixedTimeZone TimeZoneType.SYSTEM_TIME_ZONE (callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: reminderAgent.TimeZoneType.SYSTEM_TIME_ZONE
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1700 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800
+         * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters (callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                notificationRequestProxy: {
+                    appMessageId: 'test_msg_id_002',
+                    isAlertOnce: false
+                }
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1800 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
         
     })
 }

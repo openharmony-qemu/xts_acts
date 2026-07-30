@@ -1,0 +1,123 @@
+/*
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import hilog from '@ohos.hilog';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import pluginBundleManager from '@ohos.bundle.pluginBundleManager';
+import resourceManager from '@ohos.resourceManager';
+import { common} from '@kit.AbilityKit';
+
+const DOMAIN: number = 0x0000;
+const TAG: string = 'testTag';
+
+export default function abilityTest() {
+  describe('ActsAbilityTest', () => {
+    let context: common.UIAbilityContext;
+    beforeAll(() => {
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    })
+    /**
+     * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_0100
+     * @tc.number SUB_BMS_PC_Self_Dist_Plugin_0100
+     * @tc.desc   Test pluginBundleManager.installLocalPlugin error code 17700012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_BMS_PC_Self_Dist_Plugin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const itName = 'SUB_BMS_PC_Self_Dist_Plugin_0100';
+      hilog.info(DOMAIN, TAG, `${itName} start.`);
+      pluginBundleManager.installLocalPlugin([]).then(() => {
+        hilog.info(DOMAIN, TAG, `${itName} installLocalPlugin success.`);
+        expect().assertFail();
+        done();
+        hilog.info(DOMAIN, TAG, `${itName} end.`);
+      }).catch((err: BusinessError) => {
+        hilog.info(DOMAIN, TAG, `${itName} installLocalPlugin fail. code: ${err?.code}, msg: ${err?.message}`);
+        if (err?.code === 17700087) {
+          expect(err?.code).assertEqual(17700087);
+          expect(err?.message).assertEqual('BusinessError 17700087: Failed to install the plugin because the current device does not support plugin.');
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end.`);
+          return;
+        }
+        expect(err?.code).assertEqual(17700012);
+        expect(err?.message).assertEqual('BusinessError 17700012: Failed to install the hap since the path of the hap is invalid or too large size.');
+        done();
+        hilog.info(DOMAIN, TAG, `${itName} end.`);
+       })
+     })
+
+
+    /**
+     * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_0200
+     * @tc.number SUB_BMS_PC_Self_Dist_Plugin_0200
+     * @tc.desc   Test pluginBundleManager.uninstallLocalPlugin errorcode 17700092
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_PC_Self_Dist_Plugin_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const itName = 'SUB_BMS_PC_Self_Dist_Plugin_0200';
+      hilog.info(DOMAIN, TAG, `${itName} start.`);
+      pluginBundleManager.uninstallLocalPlugin('').then(() => {
+        hilog.info(DOMAIN, TAG, `${itName} uninstallLocalPlugin success.`);
+        expect().assertFail();
+        done();
+        hilog.info(DOMAIN, TAG, `${itName} end.`);
+      }).catch((err: BusinessError) => {
+        hilog.info(DOMAIN, TAG, `${itName} uninstallLocalPlugin fail. code: ${err?.code}, msg: ${err?.message}`);
+        expect(err?.code).assertEqual(17700092);
+        done();
+      })
+    })
+    
+    /**
+     * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_0300
+     * @tc.number SUB_BMS_PC_Self_Dist_Plugin_0300
+     * @tc.desc   Test pluginBundleManager.getAllLocalPluginInfoForSelf is normal 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_PC_Self_Dist_Plugin_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const itName = 'SUB_BMS_PC_Self_Dist_Plugin_0300';
+      hilog.info(DOMAIN, TAG, `${itName} start.`);
+      try {
+        let deviceCapability = context.resourceManager.getDeviceCapabilitySync();
+        hilog.info(DOMAIN, TAG, 'deviceType is ' + deviceCapability.deviceType);
+        pluginBundleManager.getAllLocalPluginInfoForSelf().then((data) => {
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf success.data:${JSON.stringify(data)}`);
+          expect(data.length).assertEqual(0)
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end.`);
+        }).catch((err: BusinessError) => {
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+          if (deviceCapability.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
+            expect(err?.code).assertEqual(201);
+            done();
+            hilog.info(DOMAIN, TAG, `${itName} end.`);
+          }else{
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (err){
+        hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+  })
+}

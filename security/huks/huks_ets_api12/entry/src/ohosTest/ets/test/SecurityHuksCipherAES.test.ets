@@ -31,7 +31,8 @@ import {
   ReBuildCipherData,
   CipherForGcm,
   GetGcmNoPaddingAadOptions,
-  GetCcmNoPaddingAadOptions
+  GetCcmNoPaddingAadOptions,
+  MergeCipherData
 } from './utils/huks/CipherUtils';
 import { GetDataBySize } from './utils/common/CommonUtils';
 import { GetGcmNoPaddingOptions } from './utils/huks/CipherUtils';

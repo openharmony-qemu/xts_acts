@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -661,7 +662,7 @@ namespace replaceAllHelperTest {
   }
 }
 
-export default function StringReplaceAllTest() {
+export default function StringReplaceAllTest(): void {
   describe('StringReplaceAllTest', () => {
     beforeAll(() => {});
     beforeEach(async () => {

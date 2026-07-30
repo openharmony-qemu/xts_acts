@@ -1,3 +1,4 @@
+'use static';
 
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
@@ -26,6 +27,7 @@ import {
   Size
 } from '../../../../hypium/index'
 import { buffer, HashMap, util } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface SimpleTestObject {
   a?: number;
@@ -83,14 +85,6 @@ interface TypedArrayTestObject {
   buffer: Uint8Array;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function HashMapTest04Test(): void {
   describe('hashMapTest04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -102,7 +96,7 @@ export default function HashMapTest04Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

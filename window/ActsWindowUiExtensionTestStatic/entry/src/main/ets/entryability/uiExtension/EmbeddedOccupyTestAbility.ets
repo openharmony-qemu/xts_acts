@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,7 @@ import { LocalStorage } from '@ohos.arkui.stateManagement';
 const TAG: string = '[ExampleEmbeddedAbility]'
 export default class EmbeddedOccupyTestAbility extends EmbeddedUIExtensionAbility {
   
-  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+  onSessionCreate(want: Want, session: UIExtensionContentSession): void {
     console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
     let param: Record<string, UIExtensionContentSession> = {
       'session1': session

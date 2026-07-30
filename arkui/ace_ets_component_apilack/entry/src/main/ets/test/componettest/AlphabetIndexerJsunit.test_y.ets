@@ -32,7 +32,7 @@ export default function alphabetIndexerJsunit() {
   describe('alphabetIndexerTest', () => {
     beforeEach(async () => {
       let options: router.RouterOptions  = {
-        uri: 'pages/AlphabetIndexer',
+        uri: 'MainAbility/pages/conponentadd/AlphabetIndexer_y',
       }
       try {
         router.clear();
@@ -65,7 +65,7 @@ export default function alphabetIndexerJsunit() {
     it('alphabetIndexerTest001', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001 START');
       await sleep(1)
-      let strJson = getInspectorByKey('alphabetIndexer');
+      let strJson = getInspectorByKey('AlphabetIndexer_y_alphabetIndexer');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('AlphabetIndexer');

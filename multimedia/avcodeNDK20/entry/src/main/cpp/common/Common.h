@@ -71,8 +71,13 @@
 #define PARAM_10000 10000
 #define PARAM_1024 1024
 #define PARAM_4096 4096
+#define PARAM_8000 8000
+#define PARAM_12200 12200
+#define PARAM_16000 16000
+#define PARAM_23850 23850
 #define PARAM_32000 32000
 #define PARAM_44100 44100
+#define PARAM_48000 48000
 #define PARAM_96000 96000
 #define PARAM_100000 100000
 #define PARAM_192000 192000
@@ -158,6 +163,7 @@
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_NEGATIVE_5 (-5)
 #define COLUMN_WIDTH_AND_HEIGHT 210
+#define BUFFER_SIZE_10M (10 * 1024 * 1024)
 
 #define DECLARE_KEYCODE_EVENT(name)                                                                                    \
     static napi_value GetKeyCodeEvent##name(napi_env env, napi_callback_info info)                                     \

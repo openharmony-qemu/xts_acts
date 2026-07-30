@@ -563,7 +563,11 @@ napi_value AudioRendererSetMarkPositionInvalidParam(napi_env env, napi_callback_
     }
     return nullptr;
 }
-
+bool g_flag = false;
+static void AudioRendererOnMarkReachedCb(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
+{
+    g_flag = true;
+}
 napi_value AudioRendererSetMarkPositionSuccess(napi_env env, napi_callback_info info)
 {
     OH_AudioStreamBuilder *builder;
@@ -583,7 +587,7 @@ napi_value AudioRendererSetMarkPositionSuccess(napi_env env, napi_callback_info 
     OH_AudioRenderer *audioRenderer;
     OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
 
-    OH_AudioRenderer_OnMarkReachedCallback callback;
+    OH_AudioRenderer_OnMarkReachedCallback callback = AudioRendererOnMarkReachedCb;
     auto result = OH_AudioRenderer_SetMarkPosition(audioRenderer, 1, callback, 0);
     if (result == AUDIOSTREAM_SUCCESS) {
         napi_value res;

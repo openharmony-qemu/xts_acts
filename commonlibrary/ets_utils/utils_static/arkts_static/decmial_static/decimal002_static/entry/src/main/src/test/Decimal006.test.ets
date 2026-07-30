@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,7 @@ function test_sinh_001(n: string, pr: number, rm: int, expected: string) {
   expect(expected).assertEqual(Decimal.sinh(n).valueOf());
 }
 
-export default function DecimalTest006() {
+export default function DecimalTest006(): void {
   describe("DecimalTest006", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

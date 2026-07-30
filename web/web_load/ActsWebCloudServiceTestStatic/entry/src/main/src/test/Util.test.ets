@@ -1,3 +1,4 @@
+'use static';
 import { expect } from "../../../hypium/index";
 import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
@@ -84,7 +85,12 @@ class Utils{
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd);
     hilog.info(0x0000, 'testTag', `UiTestCase, start abilityFinished`);
     return true;
   } catch(error) {

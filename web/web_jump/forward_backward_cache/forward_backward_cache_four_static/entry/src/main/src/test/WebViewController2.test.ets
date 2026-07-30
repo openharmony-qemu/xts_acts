@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -71,6 +72,26 @@ export default function webViewControllerJsunit2() {
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(3000);
       Utils.registerEvent("emitSetScrollbarMode002", 0, 202512091, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    });
+
+    /**
+     * @tc.name   testSetScrollbarModeStatic003
+     * @tc.number testSetScrollbarMode0003
+     * @tc.desc   SetScrollbarMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollbarModeStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(1000);
+      emitKey = 'emitSetScrollbarMode003';
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("emitSetScrollbarMode003", 2, 20260526, done);
       await Utils.msSleep(3000);
       inspector.sendEventByKey('webcomponent',10,'');
       await Utils.msSleep(6000);

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,9 @@
  * limitations under the License.
  */
 import ObserverNopTest from "./ObserverNopUnit.test";
+import ObserverSimNopTest from "./ObserverSimNopUnit.test";
+
 export default function testsuite() {
     ObserverNopTest();
+    ObserverSimNopTest();
 }

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-__attribute__((weak)) void call(void);
+__attribute__((weak)) void Call(void);
 
-void get_call(void)
+void GetCall(void)
 {
-    call();
+    Call();
 }

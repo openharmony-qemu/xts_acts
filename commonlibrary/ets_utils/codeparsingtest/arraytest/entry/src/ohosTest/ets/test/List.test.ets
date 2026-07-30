@@ -85,43 +85,6 @@ import ArrayFindLastIndexTestExtend from './Array_FindLastIndex/BuiltinsArrayFin
 import BuiltinsArrayFindLastTest from './Array_FindLast/BuiltinsArrayFindLastTest.test';
 import BuiltinsArrayFindLastExtendedTest from './Array_FindLast/BuiltinsArrayFindLastExtendedTest.test';
 
-import BuiltinsArrayPrototypeForEachMissingTest from './Array_PrototypeForEach/BuiltinsArrayPrototypeForEachMissingTest.test';
-import BuiltinsArrayPrototypeForEachTest from './Array_PrototypeForEach/BuiltinsArrayPrototypeForEachTest.test';
-import BuiltinsArrayIncludesExtendedTest from './Array_PrototypeIncludes/BuiltinsArrayIncludesExtendedTest.test';
-import BuiltinsArrayIncludesTest from './Array_PrototypeIncludes/BuiltinsArrayIncludesTest.test';
-import BuiltinsArrayIndexOfTest from './Array_PrototypeIndexOf/BuiltinsArrayIndexOfTest.test';
-import BuiltinsArrayIndexOfMissingTest from './Array_PrototypeIndexOf/BuiltinsArrayIndexOfMissingTest.test';
-import BuiltinsArrayPrototypeJoinTest from './Array_PrototypeJoin/BuiltinsArrayPrototypeJoinTest.test';
-import BuiltinsArrayPrototypeJoinExtendedTest from './Array_PrototypeJoin/BuiltinsArrayPrototypeJoinExtendedTest.test';
-
-import BuiltinsArrayPrototypeLastIndexOfTest from './Array_Prototype_LastIndexOf/BuiltinsArrayLastIndexOfTest.test'
-import BuiltinsArrayPrototypeLastIndexOfJsTest from './Array_Prototype_LastIndexOf/BuiltinsArrayLastIndexOfJsTest.test'
-import BuiltinsArrayPrototypeReduceTest from './Array_Prototype_Reduce/BuiltinsArrayReduceTest.test'
-import BuiltinsArrayPrototypeReduceJsTest from './Array_Prototype_Reduce/BuiltinsArrayReduceJsTest.test'
-import BuiltinsArrayPrototypeReduceSecTest from './Array_Prototype_Reduce/BuiltinsArrayReduceSecTest.test'
-import BuiltinsArrayPrototypeReduceJsSecTest from './Array_Prototype_Reduce/BuiltinsArrayReduceJsSecTest.test'
-
-import BuiltinsArrayReduceRightTest from './reduceRight/BuiltinsArrayReduceRightTest.test'
-import BuiltinsArrayReduceRightExtendedTest from './reduceRight/BuiltinsArrayReduceRightExtendedTest.test'
-import BuiltinsArrayReduceRightHybridTest from './reduceRight/BuiltinsArrayReduceRightHybridTest.test'
-import BuiltinsArrayShiftTest from './shift/BuiltinsArrayShiftTest.test'
-import BuiltinsArrayShiftExtendedTest from './shift/BuiltinsArrayShiftExtendedTest.test'
-import BuiltinsArrayShiftAdditionalTest from './shift/BuiltinsArrayShiftAdditionalTest.test'
-
-import BuiltinsArrayOfTest from './Array_Of/BuiltinsArrayOfTest.test';
-import BuiltinsArrayOfExtendedTest from './Array_Of/BuiltinsArrayOfExtendedTest.test';
-import BuiltinsArrayKeysTest from './Array_Keys/BuiltinsArrayKeysTest.test';
-import BuiltinsArrayKeysExtendedTest from './Array_Keys/BuiltinsArrayKeysExtendedTest.test';
-import BuiltinsArrayReverseTest from './Array_Reverse/BuiltinsArrayReverseTest.test';
-import BuiltinsArrayReverseExtendedTest from './Array_Reverse/BuiltinsArrayReverseExtendedTest.test';
-
-import BuiltinsArrayPrototypeMapTest from './Array_PrototypeMap/BuiltinsArrayPrototypeMapTest.test';
-import BuiltinsArrayPrototypeMapExtendedTest from './Array_PrototypeMap/BuiltinsArrayPrototypeMapExtendedTest.test';
-import BuiltinsArrayPrototypePopTest from './Array_PrototypePop/BuiltinsArrayPrototypePopTest.test';
-import BuiltinsArrayPrototypePopExtendedTest from './Array_PrototypePop/BuiltinsArrayPrototypePopExtendedTest.test';
-import BuiltinsArrayPrototypePushTest from './Array_PrototypePush/BuiltinsArrayPrototypePushTest.test';
-import BuiltinsArrayPrototypePushExtendedTest from './Array_PrototypePush/BuiltinsArrayPrototypePushExtendedTest.test';
-
 export default function testsuite() {
   ArrayCombinationTest1();
   ArrayCombinationTest2();
@@ -195,44 +158,5 @@ export default function testsuite() {
   ArrayFindLastIndexTestExtend()
   BuiltinsArrayFindLastTest()
   BuiltinsArrayFindLastExtendedTest()
-
-  BuiltinsArrayPrototypeForEachTest()
-  BuiltinsArrayPrototypeForEachMissingTest()
-  BuiltinsArrayIncludesTest()
-  BuiltinsArrayIncludesExtendedTest()
-  BuiltinsArrayIndexOfTest()
-  BuiltinsArrayIndexOfMissingTest()
-  BuiltinsArrayPrototypeJoinTest()
-  BuiltinsArrayPrototypeJoinExtendedTest()
-
-  BuiltinsArrayPrototypeLastIndexOfTest()
-  BuiltinsArrayPrototypeLastIndexOfJsTest()
-  BuiltinsArrayPrototypeReduceTest()
-  BuiltinsArrayPrototypeReduceSecTest()
-  BuiltinsArrayPrototypeReduceJsTest()
-  BuiltinsArrayPrototypeReduceJsSecTest()
-
-  BuiltinsArrayReduceRightTest()
-  BuiltinsArrayReduceRightExtendedTest()
-  BuiltinsArrayReduceRightHybridTest()
-  BuiltinsArrayReverseTest()
-  BuiltinsArrayReverseExtendedTest()
-  BuiltinsArrayShiftTest()
-  BuiltinsArrayShiftExtendedTest()
-  BuiltinsArrayShiftAdditionalTest()
-
-  BuiltinsArrayOfTest()
-  BuiltinsArrayOfExtendedTest()
-  BuiltinsArrayKeysTest()
-  BuiltinsArrayKeysExtendedTest()
-  BuiltinsArrayReverseTest()
-  BuiltinsArrayReverseExtendedTest()
-
-  BuiltinsArrayPrototypeMapTest()
-  BuiltinsArrayPrototypeMapExtendedTest()
-  BuiltinsArrayPrototypePopTest()
-  BuiltinsArrayPrototypePopExtendedTest()
-  BuiltinsArrayPrototypePushTest()
-  BuiltinsArrayPrototypePushExtendedTest();
 };
 

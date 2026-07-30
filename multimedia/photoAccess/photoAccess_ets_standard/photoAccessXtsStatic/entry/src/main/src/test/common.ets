@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';
 
-export const LOG_TAG = '[PhotoAccessXts].';
+export const LOG_TAG:string = '[PhotoAccessXts1].';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 const COMMON_WAIT_DURATION: number = 500;
@@ -61,7 +62,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
         hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
       });
-    await Utils.msSleep(5000);
+    await Utils.msSleep(1000);
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
     for (let i = 0; i < arr.length; i++) {
       let dr = Driver.create();
@@ -96,6 +97,16 @@ export async function createUserAlbum(testContext: common.Context, testName: str
     console.error(`Failed to createUserAlbum! error: ${error}`);
   }
 }
+
+export function fetchAllOption(): photoAccessHelper.FetchOptions {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  return ops;
+}
+
 export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
   const predicates = new dataSharePredicates.DataSharePredicates();
   predicates.equalTo(key, value);

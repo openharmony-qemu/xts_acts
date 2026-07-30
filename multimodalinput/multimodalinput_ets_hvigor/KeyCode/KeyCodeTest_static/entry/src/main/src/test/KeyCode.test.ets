@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -817,6 +818,31 @@ export default function MultimodalKeyCodeTest() {
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} leave`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Static_KeyCode_0100
+     * @tc.number SUB_MMI_Input_Api_Static_KeyCode_0100
+     * @tc.desc   Test keycode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Static_KeyCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MMI_Input_Api_Static_KeyCode_0100";
+      hilog.info(domain, tag, `${caseName} enter`);
+      try {
+        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK === 2740).assertTrue();
+        expect(KeyCode.KEYCODE_XKEY === 3232).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_UP == 3233).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_DOWN == 3234).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
         done();
       }
       hilog.info(domain, tag, `${caseName} leave`);

@@ -90,7 +90,7 @@ it('testrect_radius_static_02', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[testrect_radius] obj radius is : " + JSON.stringifyJsonElement(obj!.getElement('$attrs').getElement('radius')));
       console.info("[testrect_radius] obj1 radius is : " + JSON.stringifyJsonElement(obj1!.getElement('$attrs').getElement('radius')));
       //json返回值与设置值不统一，所以使用与原生返回做对比验证
-      expect(obj!.getElement('$attrs').getBoolean('radius')).assertEqual(obj1!.getElement('$attrs').getBoolean('radius'));
+      expect(JSON.stringifyJsonElement(obj!.getElement('$attrs').getElement('radius'))).assertEqual(JSON.stringifyJsonElement(obj1!.getElement('$attrs').getElement('radius')));
       console.info('[testrect_radius] END');
       done();
     });

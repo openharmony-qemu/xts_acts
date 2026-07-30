@@ -1,35 +1,6 @@
-'use static'
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ColumnOptions,
-  HorizontalAlign,
-  FlexAlign,
-  Color,
-  Scroller,
-  Scroll,
-  ScrollState,
-  Edge,
-  Row,
-  BarState,
-  Margin,
-  TextAlign,
-  VisibleAreaChangeCallback,
-  VisibleAreaEventOptions,
-  Area,
-  SizeOptions,
-  ForEach,
-  GestureRecognizer,
-  Stack,
-  GestureControl
-} from '@ohos.arkui.component'
-import { AttributeModifier, CommonAttribute, VisibleAreaChangeCallback } from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-
+'use static';
+import { Entry, Text, Column, Component, Button, ClickEvent, ColumnOptions, HorizontalAlign, FlexAlign, Color, Scroller, Scroll, ScrollState, Edge, Row, BarState, Margin, TextAlign, VisibleAreaChangeCallback, VisibleAreaEventOptions, Area, SizeOptions, ForEach, GestureRecognizer, Stack, GestureControl, AttributeModifier, CommonAttribute } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
 export class ShouldParallelModifier implements AttributeModifier<CommonAttribute> {
   public change: Boolean = true

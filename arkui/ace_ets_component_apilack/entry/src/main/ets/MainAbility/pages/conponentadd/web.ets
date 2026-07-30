@@ -147,7 +147,7 @@ struct Index {
           this.handler = event.handler;
         })
       Row() {
-        Button("web click").key('webcomponent').onClick(async () => {
+        Button("web click").key('web_webcomponent').onClick(async () => {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitStoreWebArchive": {

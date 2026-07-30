@@ -35,6 +35,7 @@ let mPreviewOutput: cameraObj.PreviewOutput | null = null;
 let mPhotoOutput: cameraObj.PhotoOutput | null = null;
 let mPhotoSurface: string;
 let receiver: image.ImageReceiver;
+let colorSpace: colorSpaceManager.ColorSpace;
 let power: ESObject;
 let context = getContext();
 let dr = Driver.create();
@@ -68,12 +69,15 @@ let createCameraSessionInstance = () => {
 }
 
 let createOutput = (idx: number) => {
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
+  let cameraOutputCap = mCameraManager.getSupportedFullOutputCapability(mCameraDevicesArray[idx],
     cameraObj.SceneMode.NORMAL_PHOTO);
   if (!isEmpty(cameraOutputCap)) {
     if (!isEmpty(cameraOutputCap.previewProfiles)) {
       for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
         mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], indexSurfaceId);
+        if (colorSpace == 9) {
+          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[1], indexSurfaceId);
+        }
         if (!isEmpty(mPreviewOutput)) { break; }
       }
     }
@@ -147,6 +151,13 @@ let getPhotoReceiverSurface = async () => {
   }
 }
 
+async function releaseCameraSession() {
+  console.info(TAG, 'releasePhotoSession.');
+  await mPreviewOutput?.release();
+  await mPhotoOutput?.release();
+  await mCameraSession?.release();
+}
+
 export default function colorManagementQueryTest() {
     describe('colorManagementQueryTest', () => {
       beforeAll(async () => {
@@ -201,11 +212,20 @@ export default function colorManagementQueryTest() {
           createCameraSessionInstance();
           await startCameraSession(0);
           let colorSpaces: Array<colorSpaceManager.ColorSpace> = [];
+          colorSpace = -1;
           let currentColorSpace: colorSpaceManager.ColorSpace | undefined = undefined;
           try {
               colorSpaces = mCameraSession.getSupportedColorSpaces();
+              console.info(`${testNum} colorSpaces length is: ${colorSpaces.length}`);
+              console.info(`${testNum} colorSpaces[2] is: ${colorSpaces[2]}`);
               if (colorSpaces.length>0&&!isEmpty(colorSpaces)) {
                   for (let i = 0; i < colorSpaces.length; i++) {
+                    if (colorSpaces[i] == 9) {
+                      colorSpace = colorSpaces[i];
+                      await releaseCameraSession();
+                      createCameraSessionInstance();
+                      await startCameraSession(0);
+                    }
                     await mCameraSession.setColorSpace(colorSpaces[i])
                     currentColorSpace = mCameraSession.getActiveColorSpace();
                     console.info(TAG + "currentColorSpace is " + currentColorSpace);

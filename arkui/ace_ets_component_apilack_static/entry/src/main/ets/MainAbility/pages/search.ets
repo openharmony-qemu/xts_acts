@@ -64,7 +64,7 @@ struct SearchOnCut {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onCutText")
+        .key("search_onCutText")
 
       Search({ value: '', placeholder: 'search-OnCut', controller: this.controller })
         .searchButton('Search')
@@ -87,7 +87,7 @@ struct SearchOnCut {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onPasteText")
+        .key("search_onPasteText")
 
       Search({ value: '', placeholder: 'search-OnPaste', controller: this.controller })
         .searchButton('Search')
@@ -110,7 +110,7 @@ struct SearchOnCut {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("copyOptionText")
+        .key("search_copyOptionText")
 
       Search({ value: '', placeholder: 'search-CopyOption', controller: this.controller })
         .searchButton('Search')

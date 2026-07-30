@@ -587,5 +587,89 @@ export default function abilityTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100
+     * @tc.number SUB_IMF_NDK_TEXTCONFIG_SETCONSUMEKEYEVENTS_0100
+     * @tc.desc   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100', Level.LEVEL3, (done: Function) => {
+      try {
+        let result = testNapi.SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100();
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100 result: ${result}`)
+        expect(expResult).assertEqual(result)
+        done();
+      } catch (err) {
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200
+     * @tc.number SUB_IMF_NDK_TEXTCONFIG_SETCONSUMEKEYEVENTS_0200
+     * @tc.desc   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200', Level.LEVEL3, (done: Function) => {
+      try {
+        let result = testNapi.SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200();
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200 result: ${result}`)
+        expect(expResult).assertEqual(result)
+        done();
+      } catch (err) {
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300
+     * @tc.number SUB_IMF_NDK_TEXTCONFIG_SETCONSUMEKEYEVENTS_0300
+     * @tc.desc   SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300', Level.LEVEL3, (done: Function) => {
+      try {
+        let result = testNapi.SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300();
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300 result: ${result}`)
+        expect(expResult).assertEqual(result)
+        done();
+      } catch (err) {
+        console.info(`====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400
+     * @tc.number SUB_IMF_NDK_TEXTCONFIG_GETCONSUMEKEYEVENTS_0400
+     * @tc.desc   SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400', Level.LEVEL3, (done: Function) => {
+      try {
+        let result = testNapi.SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400();
+        console.info(`====>SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400 result: ${result}`)
+        expect(expResult).assertEqual(result)
+        done();
+      } catch (err) {
+        console.info(`====>SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
+
   })
 }

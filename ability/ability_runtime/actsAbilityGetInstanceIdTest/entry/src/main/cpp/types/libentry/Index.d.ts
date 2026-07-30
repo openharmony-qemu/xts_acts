@@ -1,0 +1,13 @@
+export const add: (a: number, b: number) => number;
+export const tick: () => void;
+export const getInstanceId: () => string;
+export const getInstanceIdError1: () => string;
+export const getAbilityName: () => string;
+export const getAbilityNameError1: () => string;
+export const getAbilityNameError2: () => string;
+export const getAbilityNameError3: () => string;
+export const getEnv: () => number;
+export const getEnvError1: () => string;
+export const getEnvError2: () => string;
+export const getEnvError3: () => string;
+export const registerCallback: (callback: (message: string) => void) => void;

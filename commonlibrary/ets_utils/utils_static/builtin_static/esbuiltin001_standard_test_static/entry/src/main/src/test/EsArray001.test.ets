@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,7 +71,7 @@ function mapFn(value: number, index: int): number {
     return 127;
 }
 
-export default function EsArrayTest001(){
+export default function EsArrayTest001(): void {
     describe('EsArrayTest001', ():void => {
         // Defines a test suite. Two parameters are supported: test suite name and test suite function.
         beforeAll(():void => {

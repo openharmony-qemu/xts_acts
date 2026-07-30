@@ -210,6 +210,9 @@ import RichEditorControllerMethodsNull2Test from './RichEditor/RichEditorControl
 import RichEditorStyledStringControllerNullTest from './RichEditor/RichEditorStyledStringControllerNull.test';
 import RichEditorBaseControllerSetStyledPlaceholderTest from './RichEditorApi24Test/RichEditorBaseControllerSetStyledPlaceholder.test';
 import RichEditorHorizontalScrollingTest from './RichEditorApi26Test/RichEditorHorizontalScrolling.test';
+import RichEditorStrokeJoinStyleTest from './RichEditorApi26Test/RichEditorStrokeJoinStyle.test';
+import RichEditorShaderStyleTest from './RichEditorApi26Test/RichEditorShaderStyle.test';
+import RichEditorScrollToVisibleTest from './RichEditorApi26Test/RichEditorScrollToVisible.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -410,4 +413,8 @@ export default function testsuite() {
   RichEditorStyledStringControllerNullTest()
 
   RichEditorBaseControllerSetStyledPlaceholderTest()  // Api24
+  RichEditorHorizontalScrollingTest()
+  RichEditorStrokeJoinStyleTest()
+  RichEditorShaderStyleTest()
+   RichEditorScrollToVisibleTest()
 }

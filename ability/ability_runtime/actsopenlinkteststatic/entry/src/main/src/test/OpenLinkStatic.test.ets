@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +67,12 @@ export default function openLinkStaticTest() {
       hilog.info(domain, tag, "beforeAll start");
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll abilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openlinktest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.openlinktest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
       hilog.info(domain, tag, "Context: " + context!);

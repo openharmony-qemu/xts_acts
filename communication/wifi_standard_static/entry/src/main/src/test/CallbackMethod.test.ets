@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,33 +28,19 @@ let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
   "isHiddenSsid": false,
   "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
 };
-
-let wifiDeviceConfigs: wifiManager.WifiDeviceConfig = {
-  "ssid": "TEST_OPEN",
-  "bssid": "22:9b:e6:48:1f:5c",
-  "preSharedKey": "",
-  "isHiddenSsid": false,
-  "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
-};
 export default class CallbackMethods {
-
   static async getCurrentGroupCallback() : Promise<wifiManager.WifiP2pGroupInfo> {
     return new Promise<wifiManager.WifiP2pGroupInfo>((resolve, reject) => {
       wifiManager.getCurrentGroup((err: BusinessError | null, data: wifiManager.WifiP2pGroupInfo | undefined) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "getCurrentGroup callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'getCurrentGroup callback success result:' + JSON.stringify(data));
-            if (data != undefined) {
-              resolve(data);
-            }
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getCurrentGroup callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'getCurrentGroup callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
@@ -62,20 +49,15 @@ export default class CallbackMethods {
   static async getP2pLinkedInfoCallback() : Promise<wifiManager.WifiP2pLinkedInfo> {
     return new Promise<wifiManager.WifiP2pLinkedInfo>((resolve, reject) => {
       wifiManager.getP2pLinkedInfo((err: BusinessError | null, data: wifiManager.WifiP2pLinkedInfo | undefined) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "getP2pLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'getP2pLinkedInfo callback success result:' + JSON.stringify(data));
-            if (data != undefined) {
-              resolve(data);
-            }
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getP2pLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'getP2pLinkedInfo callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
@@ -84,20 +66,15 @@ export default class CallbackMethods {
   static async getP2pPeerDevicesCallback() : Promise<wifiManager.WifiP2pDevice[]> {
     return new Promise<wifiManager.WifiP2pDevice[]>((resolve, reject) => {
       wifiManager.getP2pPeerDevices((err: BusinessError | null, data: wifiManager.WifiP2pDevice[] | undefined) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "getP2pPeerDevices callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'getP2pPeerDevices callback success result:' + JSON.stringify(data));
-            if (data != undefined) {
-              resolve(data);
-            }
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getP2pPeerDevices callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'getP2pPeerDevices callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
@@ -106,64 +83,49 @@ export default class CallbackMethods {
   static async getP2pLocalDeviceCallback() : Promise<wifiManager.WifiP2pDevice> {
     return new Promise<wifiManager.WifiP2pDevice>((resolve, reject) => {
       wifiManager.getP2pLocalDevice((err: BusinessError | null, data: wifiManager.WifiP2pDevice | undefined) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "getP2pLocalDevice callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'getP2pLocalDevice callback success result:' + JSON.stringify(data));
-            if (data != undefined) {
-              resolve(data);
-            }
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getP2pLocalDevice callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'getP2pLocalDevice callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
   }
 
-  static async addDeviceConfigCallback() : Promise<int> {
+  static async addDeviceConfigCallback(wifiDeviceConfig: wifiManager.WifiDeviceConfig) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
-      wifiManager.addDeviceConfig(wifiDeviceConfig, (err: BusinessError | null, netWorkId?: int) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "addDeviceConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'addDeviceConfig callback success result:' + JSON.stringify(netWorkId));
-            if (netWorkId != undefined) {
-              resolve(netWorkId);
-            }
+      wifiManager.addDeviceConfig(wifiDeviceConfig, (err: BusinessError | null, data: int | undefined) => {
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "addDeviceConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'addDeviceConfig callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
   }
 
-  static async addCandidateConfigCallback() : Promise<int> {
+  static async addCandidateConfigCallback(wifiDeviceConfig: wifiManager.WifiDeviceConfig) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
-      wifiManager.addCandidateConfig(wifiDeviceConfigs, (err: BusinessError | null, netWorkId?: int) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "addCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'addCandidateConfig callback success result:' + JSON.stringify(netWorkId));
-            if (netWorkId != undefined) {
-              resolve(netWorkId);
-            }
+      wifiManager.addCandidateConfig(wifiDeviceConfig, (err: BusinessError | null, data: int | undefined) => {
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "addCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'addCandidateConfig callback success result:' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })
@@ -172,18 +134,29 @@ export default class CallbackMethods {
   static async removeCandidateConfigCallback(networkNum: int) : Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
       wifiManager.removeCandidateConfig(networkNum, (err: BusinessError | null) => {
-        try {
-          if (err != null) {
-            hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-            hilog.info(domain, tag, "removeCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-            reject(err);
-          } else {
-            hilog.info(domain, tag, 'removeCandidateConfig callback success');
-            resolve(true);
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "removeCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'removeCandidateConfig callback success');
+          resolve(true);
+        }
+      });
+    })
+  }
+  static async getLinkedInfoCallback() : Promise<wifiManager.WifiLinkedInfo> {
+    return new Promise<wifiManager.WifiLinkedInfo>((resolve, reject) => {
+      wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo | undefined) => {
+        if (err != null) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+          reject(err);
+        } else {
+          hilog.info(domain, tag, 'getLinkedInfo callback success' + JSON.stringify(data));
+          if (data != undefined) {
+            resolve(data);
           }
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
     })

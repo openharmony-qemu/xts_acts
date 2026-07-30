@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -25,7 +26,7 @@ import builtinsDoubleThirdPrototypebTest from './DoubleThirdTest.test';
 import builtinsDoubleFourthPrototypebTest from './DoubleFourthTest.test';
 import builtinsDoubleFifthPrototypebTest from './DoubleFifthTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   builtinsShortPrototypebTest();
   builtinsShortSecondPrototypebTest();
   builtinsFloatPrototypebTest();

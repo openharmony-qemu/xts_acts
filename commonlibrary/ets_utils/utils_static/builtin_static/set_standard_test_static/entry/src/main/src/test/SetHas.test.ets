@@ -1,3 +1,4 @@
+'use static';
 
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
@@ -90,7 +91,7 @@ interface Base19{
   value: string
 }
 
-export default function SetHasTest() {
+export default function SetHasTest(): void {
   describe('SetHasTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

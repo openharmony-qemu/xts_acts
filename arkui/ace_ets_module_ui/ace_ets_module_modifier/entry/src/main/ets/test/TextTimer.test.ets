@@ -158,7 +158,7 @@ export default function textTimer() {
     it('textTimerJsunit_0601', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0601 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('textTimer' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('TextTimerKey1'); //测试组件的key名称

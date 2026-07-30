@@ -16,6 +16,7 @@
 import setDefaultThemeTest from './themeTokens/SetDefaultTheme.test';
 import systemThemeTest from './themeTokens/SystemTheme.test';
 import withThemeTest from './themeTokens/WithTheme.test';
+import themeTokenType from './themeTokens/themeTokenType.test'
 // components
 import alphabetIndexerThemeTest from './components/AlphabetIndexer.test';
 import badgeThemeTest from './components/Badge.test';
@@ -78,4 +79,5 @@ export default function testsuite() {
   textPickerThemeTest();
   timePickerThemeTest();
   toggleThemeTest();
+  themeTokenType();
 }

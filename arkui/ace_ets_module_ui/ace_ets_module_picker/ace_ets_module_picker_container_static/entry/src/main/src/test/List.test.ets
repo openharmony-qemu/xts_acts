@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +23,8 @@ import UIPickerEnableHapModifierTest from './UIPickerComponent/UIPickerEnableHap
 import UIPickerOnChangeModifierTest from './UIPickerComponent/UIPickerOnChangeModifier.test';
 import UIPickerOnScrollStopModifierTest from './UIPickerComponent/UIPickerOnScrollStopModifier.test';
 import UIPickerIndicatorModifierTest from './UIPickerComponent/UIPickerIndicatorModifier.test';
+import UIPickerItemHeightTest from './UIPickerComponent/UIPickerItemHeight.test';
+import UIPickerDisplayedItemCountTest from './UIPickerComponent/UIPickerDisplayedItemCount.test';
 
 export default function testsuite() {
     UIPickerCanLoopTest();
@@ -34,4 +37,6 @@ export default function testsuite() {
     UIPickerOnChangeModifierTest();
     UIPickerOnScrollStopModifierTest();
     UIPickerIndicatorModifierTest();
+    UIPickerItemHeightTest();
+    UIPickerDisplayedItemCountTest();
 }

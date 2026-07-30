@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { TextSelectionClearPolicy } from '@kit.ArkUI';
+import { TextSelectionClearPolicy,TextMenuController  } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -25,15 +25,31 @@ struct SetTextSelectionClearPolicy {
   @State testText: string = 'This is test text for selection. Please long press to select.';
   uiContext: UIContext | undefined = undefined;
 
+  onPrepareMenu = () => {
+    return [];
+  }
+  onCreateMenu = () => {
+    return [];
+  }
+  onMenuItemClick = () => {
+    return false;
+  }
+  @State editMenuOptions: EditMenuOptions = {
+    onCreateMenu: this.onCreateMenu,
+    onMenuItemClick: this.onMenuItemClick,
+    onPrepareMenu: this.onPrepareMenu
+  };
   aboutToAppear(): void {
     this.uiContext = this.getUIContext();
   }
 
+
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text('setTextSelectionClearPolicy Test')
-        .fontSize(20)
+        .height('5%')
         .fontWeight(FontWeight.Bold)
+        .clip(true)
       Row(){
         Text(`Current Policy: ${this.currentPolicy}`)
           .id('text_current_policy')
@@ -43,20 +59,22 @@ struct SetTextSelectionClearPolicy {
         Text(`Selection: [${this.selectionStart}, ${this.selectionEnd}]`)
           .id('text_selection_range')
           .width('30%')
+          .clip(true)
 
         Text(`Change Count: ${this.selectionChangeCount}`)
           .id('text_selection_count')
           .width('30%')
+          .clip(true)
       }.height('5%')
       Divider()
       Text(this.testText)
         .id('text_selectable')
-        .fontSize(16)
         .copyOption(CopyOptions.LocalDevice)
         .width('90%')
-        .height('5%')
+        .height('10%')
         .border({ width: 1, color: Color.Blue })
-        .padding(10)
+        .maxLines(1)
+        .editMenuOptions(this.editMenuOptions)
         .onTextSelectionChange((start: number, end: number) => {
           this.selectionStart = start;
           this.selectionEnd = end;
@@ -70,12 +88,12 @@ struct SetTextSelectionClearPolicy {
       }
       .id('external_touch_area')
       .width('90%')
-      .height('5%')
+      .height('30%')
       .backgroundColor('#E0E0E0')
       .justifyContent(FlexAlign.Center)
       .borderRadius(10)
       Divider()
-      Row({ space: 10 }) {
+      Row() {
         Button('Set CLEAR_SELECTED_TEXT')
           .id('btn_clear_policy')
           .width('25%')

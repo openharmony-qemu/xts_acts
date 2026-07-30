@@ -13,9 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Row, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin, TapGesture, GestureEvent} from '@ohos.arkui.component'
+import {
+  Entry,
+  Component,
+  Column,
+  Row,
+  Text,
+  ColumnOptions,
+  TouchType,
+  CustomBuilder,
+  DragItemInfo,
+  Color,
+  Button,
+  TouchEvent,
+  Margin,
+  TapGesture,
+  GestureEvent
+} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct TapGestureExample {
@@ -24,21 +41,26 @@ struct TapGestureExample {
   @State fingers: int = 1
   @State distanceThreshold: number = 100;
 
-
-
   build() {
     Column() {
       // 单指双击文本触发手势事件
       Column() {
         Text('Click twice ').fontSize(28)
-      }.backgroundColor(Color.Green).width(200).height(150).gesture(
-        TapGesture({distanceThreshold : this.distanceThreshold,fingers:this.fingers})
+      }
+      .backgroundColor(Color.Green)
+      .width(200)
+      .height(150)
+      .gesture(
+        TapGesture({ distanceThreshold: this.distanceThreshold, fingers: this.fingers })
           .onAction((event: GestureEvent) => {
             if (event) {
-              this.value = JSON.stringify(event.fingerList[0])
+              this.value = '{"localX":' + JSON.stringify(event.fingerList[0].localX) + ',' + '"localY":' +
+              JSON.stringify(event.fingerList[0].localY) + '}'
             }
           })
-      ).key('interfaceTestKey')
+      )
+      .key('interfaceTestKey')
+
       Text(this.value).key('valueKey')
     }
     .height(200)

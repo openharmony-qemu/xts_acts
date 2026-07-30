@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,13 +13,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { printArgs1 } from './TaskMethodTest'
-import { ArkTools, Contexts, sleep, test2, testUI, testUI1 } from './Utils'
-import fs from '@ohos.file.fs'
-import {
-  //asyncLockWork,
-  printArgs1, setTimeOutWork } from './TaskMethodTest'
-
+import { printArgs1, setTimeOutWork } from './TaskMethodTest';
+import { ArkTools, Contexts, sleep, test2, testUI, testUI1 } from './Utils';
+import fs from '@ohos.file.fs';
 export async function multipleTask4() {
 
   for (let i = 0; i < 100; i++) {

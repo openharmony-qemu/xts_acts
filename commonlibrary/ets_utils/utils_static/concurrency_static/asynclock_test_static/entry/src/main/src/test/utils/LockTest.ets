@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -125,17 +126,13 @@ export async function exclusiveMultiWorkerTest() {
         return flag
       })().awaitSync()
     })
-    job1.then((workerResult: string): void => {
-      worker.join()
-      if (workerResult === "PASSED") {
-        resolve(undefined);
-      } else {
-        reject(Error(workerResult));
-      }
-    }).catch((err: Error): void => {
-      worker.join()
-      reject(err);
-    });
+    let workerresult = job1.Await()
+    worker.join()
+    if (workerresult === "PASSED") {
+      resolve(undefined);
+    } else {
+      reject(Error(workerresult));
+    }
   });
   let p2 = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
   return check("exclusiveMultiWorkerTest", Promise.all([p1, p2]));
@@ -219,17 +216,13 @@ export async function sharedMultiWorkerTest() {
         return flag
       })().awaitSync()
     })
-    job1.then((workerresult: string): void => {
-      worker.join()
-      if (workerresult === "PASSED") {
-        resolve(undefined);
-      } else {
-        reject(Error(workerresult));
-      }
-    }).catch((err: Error): void => {
-      worker.join()
-      reject(err);
-    });
+    let workerresult = job1.Await()
+    worker.join()
+    if (workerresult === "PASSED") {
+      resolve(undefined);
+    } else {
+      reject(Error(workerresult));
+    }
   });
   return check("sharedMultiWorkerTest", Promise.all([p1, p2]));
 }
@@ -639,7 +632,8 @@ export async function sequentialLockWorkerTest() {
       let job1 = worker.run<string>((): string => {
         return (async () => {
           let flag = ""
-          let result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
+          let result: Promise<void> | null = null;
+          result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
           await result.then(():void => {
             flag = 'PASSED'
           }, (e: Error):void => {
@@ -648,10 +642,9 @@ export async function sequentialLockWorkerTest() {
           return flag
         })().awaitSync()
       })
-      job1.then((workerResult: string): void => {
-        worker.join()
-        resolve(undefined);
-      });
+      job1.Await()
+      worker.join()
+      resolve(undefined);
   });
   let p = new Promise<void>((resolve, reject) => {
     let lockA = new AsyncLock();
@@ -1080,17 +1073,13 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
         return flag
       })().awaitSync()
     })
-    job.then((workerResult: string): void => {
+    let workerresult: string = job.Await()
+    if (workerresult === 'PASSED') {
       worker.join()
-      if (workerResult === 'PASSED') {
-        resolve(undefined);
-      } else {
-        reject(Error(workerResult));
-      }
-    }).catch((err: Error): void => {
-      worker.join()
-      reject(err);
-    });
+      resolve(undefined);
+    } else {
+      reject(Error(workerresult));
+    }
   });
   // p0 use the same lock with worker thread, if p0 resolved, means lock request created in worker thread is skipped as expected
   let p0 = lock.lockAsync(async (): Promise<void> => {
@@ -1102,9 +1091,9 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
   });
   return check('setDelayRequestAndCloseWorkerInstantlyTest', Promise.all([p, p0]));
 }
-function promiseLockAsync(): Promise<Promise<void>> {
+function promiseLockAsync(): Promise<void> {
   let lock = new AsyncLock;
-  return lock.lockAsync(async (): Promise<void> => {
+  return lock.lockAsync<void>(async (): Promise<void> => {
     await new Promise<number>((resolve): void => {
       setTimeout((): void => {
         resolve(1);
@@ -1190,12 +1179,12 @@ export function doubleExitSharedLockTest(): Promise<string> {
 //   return check(lockName, Promise.all([p, p0]));
 // }
 
-function lockAsyncPromise(mode?: AsyncLockMode): Promise<Promise<void>> {
+function lockAsyncPromise(mode?: AsyncLockMode): Promise<void> {
   if (mode == undefined) {
     mode = AsyncLockMode.EXCLUSIVE
   }
   let lock = AsyncLock.request('lock');
-  return lock.lockAsync(async (): Promise<void> => {
+  return lock.lockAsync<void>(async (): Promise<void> => {
     await new Promise<number>((resolve): void => {
       setTimeout((): void => {
         resolve(1);
@@ -1207,8 +1196,8 @@ function lockAsyncPromise(mode?: AsyncLockMode): Promise<Promise<void>> {
 
 // test entry point
 export async function pendingSharedRequestAfterGC(): Promise<string> {
-  let p: Promise<Promise<void>> = lockAsyncPromise(AsyncLockMode.SHARED);
-  let p0: Promise<Promise<void>> = lockAsyncPromise(AsyncLockMode.SHARED);
+  let p: Promise<void> = lockAsyncPromise(AsyncLockMode.SHARED);
+  let p0: Promise<void> = lockAsyncPromise(AsyncLockMode.SHARED);
   return check('pendingSharedRequestAfterGC', Promise.all([p, p0]));
 }
 

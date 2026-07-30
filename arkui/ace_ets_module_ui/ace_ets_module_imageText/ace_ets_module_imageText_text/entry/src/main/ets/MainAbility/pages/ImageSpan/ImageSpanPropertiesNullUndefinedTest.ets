@@ -31,6 +31,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
             Text() {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .id('ImageSpan_colorFilter_default')
+                .key('ImageSpan_colorFilter_default')
             }
               .width('30%')
               .height('5%')
@@ -41,6 +42,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .colorFilter(null)
                 .id('ImageSpan_colorFilter_null')
+                .key('ImageSpan_colorFilter_null')
             }
               .width('30%')
               .height('5%')
@@ -51,6 +53,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .colorFilter(undefined)
                 .id('ImageSpan_colorFilter_undefined')
+                .key('ImageSpan_colorFilter_undefined')
             }
               .width('30%')
               .height('5%')
@@ -69,6 +72,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
             Text() {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .id('ImageSpan_alt_default')
+                .key('ImageSpan_alt_default')
             }
               .width('30%')
               .height('5%')
@@ -79,6 +83,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .alt(null)
                 .id('ImageSpan_alt_null')
+                .key('ImageSpan_alt_null')
             }
               .width('30%')
               .height('5%')
@@ -89,6 +94,7 @@ struct ImageSpanPropertiesNullUndefinedTest {
               ImageSpan($r('sys.symbol.ohos_trash'))
                 .alt(undefined)
                 .id('ImageSpan_alt_undefined')
+                .key('ImageSpan_alt_undefined')
             }
               .width('30%')
               .height('5%')

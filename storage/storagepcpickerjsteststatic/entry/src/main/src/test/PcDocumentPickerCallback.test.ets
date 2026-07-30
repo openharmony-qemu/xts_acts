@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -137,6 +138,40 @@ export default function documentPcPickerCallback() {
       let testNum = "test_PcDocumentpicker_Select_Callback_static_005";
       let option: picker.DocumentSelectOptions = {
         authMode : true
+      };
+      await selectWithOption(testNum, done, option, context!);
+    });
+
+    /**
+     * @tc.name   test_PcDocumentpicker_Select_Callback_static_006
+     * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0600
+     * @tc.desc   select with option allowsMulFolderSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_PcDocumentpicker_Select_Callback_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let testNum = "test_PcDocumentpicker_Select_Callback_static_006";
+      let option: picker.DocumentSelectOptions = {
+        allowsMulFolderSelection : true
+      };
+      await selectWithOption(testNum, done, option, context!);
+    });
+
+    /**
+     * @tc.name   test_PcDocumentpicker_Select_Callback_static_007
+     * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0700
+     * @tc.desc   select with option allowsMulFolderSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_PcDocumentpicker_Select_Callback_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let testNum = "test_PcDocumentpicker_Select_Callback_static_007";
+      let option: picker.DocumentSelectOptions = {
+        allowsMulFolderSelection : false
       };
       await selectWithOption(testNum, done, option, context!);
     });

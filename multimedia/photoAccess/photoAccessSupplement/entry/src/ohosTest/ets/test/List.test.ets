@@ -64,8 +64,11 @@ import PhotoAssertHelperSuppTest from './photoAccess/PhotoAssertHelperSuppTest.t
 import PhotoSetTitleTestSupp from './photoAccess/PhotoAccessHelperSetTitle.test';
 import SendAblePhotoAssertHelperSuppTest from './photoAccess/SendAblePhotoAssertHelperSuppTest.test';
 import PhotoAccessHelperGetAlbumsSupp from './photoAccess/PhotoAccessHelperGetAlbumsTest.test';
+import PhotoNoPermissionSupp from './photoAccess/PhotoAccessHelperNoPermission.test';
+import photoExtraSuppTest from './photoAccess/photoAccessHelperExtra.test';
 
 export default function testsuite() {
+  PhotoNoPermissionSupp();
   PhotoAccessMediaAssetChangeRequestSuppTest();
   MediaAssetManagerRequestImageTest();
   mediaAssetManagerGetAssetsTest();
@@ -117,6 +120,7 @@ export default function testsuite() {
   sendablePhotoAccessHelperCreateAssetTest();
   PhotoAccessHelperRequestPhotoUrisReadPermissionSupp();
   PhotoAccessAPIEnumSupplementTest();
+  photoExtraSuppTest();
   PhotoShowAssetsFetchResultTest();
   PhotoAccessHelperReadonlyCommentSupp();
   photoFetchResultGetObjectByPositionTestSupp();

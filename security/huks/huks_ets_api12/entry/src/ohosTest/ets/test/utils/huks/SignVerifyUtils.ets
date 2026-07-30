@@ -162,6 +162,15 @@ export async function SignVerify(keyAlias: string, signVerifyOptions: huks.HuksO
   return true;
 }
 
+export async function SignVerifyReal(keyAlias1: string, keyAlias2: string, signVerifyOptions: huks.HuksOptions,
+  signVerifyData: SignVerifyData): Promise<boolean> {
+  SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN);
+  signVerifyData.signatureData = await DoSign(keyAlias1, signVerifyOptions, signVerifyData);
+  SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+  await DoVerify(keyAlias2, signVerifyOptions, signVerifyData);
+  return true;
+}
+
 export async function DoSign(keyAlias: string, signVerifyOptions: huks.HuksOptions, signVerifyData: SignVerifyData): Promise<Uint8Array> {
   let handle = (await huks.initSession(keyAlias, signVerifyOptions)).handle;
   if (signVerifyData.updateDataArr != null) {

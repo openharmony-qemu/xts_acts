@@ -74,7 +74,7 @@ export default function dividerJsunit() {
      */
 it('testDividerGetInspectorByKey010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDividerGetInspectorByKey010_static_01 START');
-      let strJson = inspector.getInspectorByKey('divider');
+      let strJson = inspector.getInspectorByKey('Divider' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("cd divider component obj is: " + JSON.stringify(obj));
      console.log("cd divider type" + JSON.stringify(obj.getString('$type')));

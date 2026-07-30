@@ -24,9 +24,8 @@ import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-import { jsonx } from "std/core"
-
 import { jsonx } from "std/core";
+
 export class RectValue {
   left: number = 0;
   top: number = 0;

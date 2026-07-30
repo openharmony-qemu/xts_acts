@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,73 +16,36 @@
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import FirstDialog from '../model/FirstDialog';
-import { AttributeUpdater } from '@kit.ArkUI';
 
 const TAG = '[AccessibilityFocusDrawLevel]';
 
-class MyAccessibilityModifier extends AttributeUpdater<CommonAttribute> {
-}
-
 @Entry
 @Component
-struct AccessibilityOptions {
+struct AccessibilityFocusDrawLevel {
   @State name: string = 'AccessibilityFocusDrawLevel';
-  @State stepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n'+'设备支持屏幕朗读时\n' + '操作步骤:\n' +
-    '1、"By Modifier"Text组件获焦\n' +
-    '2、点击"ChangeTextModifier_TOP"按钮，"By Modifier"Text组件再次获焦\n' +
-    '3、点击"ChangeTextModifier_SELF"按钮，"By Modifier"Text组件再次获焦\n' +
-    '4、"By State"Text组件获焦\n' +
-    '5、点击"Change state focusDrawLevel to TOP"按钮，"By State"Text组件再次获焦\n' +
-    '6、点击"Change state focusDrawlevel to SELF"按钮，"By State"Text组件再次获焦\n' +
-    '预期结果：\n' +
-    '1、绿框绘制在组件上，绿框绘制被裁切,屏幕朗读朗读“By Modifier”\n' +
-    '2、绿框绘制在组件上，绿框绘制正常,屏幕朗读朗读“By Modifier”\n' +
-    '3、绿框绘制在组件上，绿框绘制被裁切,屏幕朗读朗读“By Modifier”\n' +
-    '4、绿框绘制在组件上，绿框绘制被裁切,屏幕朗读朗读“By State”\n' +
-    '5、绿框绘制在组件上，绿框绘制正常,屏幕朗读朗读“By State”\n' +
-    '6、绿框绘制在组件上，绿框绘制被裁切,屏幕朗读朗读“By State”\n'
+  @State stepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n' +
+    '设备支持屏幕朗读时\n' +
+    '测试目的: 验证 AccessibilityFocusDrawLevel 接口在不同入参情况下的表现，验证由于组件被遮挡的情况下无障碍绿框仍然可以正常显示\n' +
+    '\n' +
+    '操作步骤:\n' +
+    '1、开启屏幕朗读功能\n' +
+    '2、聚焦在支持按钮在侧面依次下滑，听取播报以及界面无障碍绿框显示\n' +
+    '\n' +
+    '预期结果:\n' +
+    '2、依次播报 “文本1”,界面无绿框聚焦; “文本2”,界面有绿框聚焦在最上层文本6上; “文本3”,界面无绿框聚焦; “文本4”,界面无绿框聚焦;\n' +
+    '“文本5”,界面有绿框聚焦在文本5上; “文本6”,界面有绿框聚焦在文本6上;\n';
   @State vueStatus: boolean = false;
-  @State status1: boolean = false;
-  @State status2: boolean = false;
-  @State status3: boolean = false;
-  @State status4: boolean = false;
-  @State active: boolean = false;
-  @State intervalNum: number = 0;
-  @State yesEnable: boolean = false
-  // 默认不支持
-  @State onAccessibilityHoverEnable: boolean = false;
-  @State hoverText: string = 'no hover';
-  @State color: Color = Color.Blue;
-  @State text1: string = ''
-  @State text2: string = ''
-  @State text3: string = ''
-  @State text4: string = ''
-  private modifier: MyAccessibilityModifier = new MyAccessibilityModifier
-  @State focusDrawLevel: FocusDrawLevel = FocusDrawLevel.SELF
+  @State testResult1: boolean = false;
+  @State yesEnable: boolean = false;
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.vueStatus == false) {
+    if (this.vueStatus) {
       Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
       }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
-    } else {
-      Button({ stateEffect: this.vueStatus }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -90,12 +53,26 @@ struct AccessibilityOptions {
         router.back({
           url: 'pages/ArkUI/ArkUI_index',
           params: {
-            result: 'true ', title: this.name,
+            result: 'true ',
+            title: this.name,
           }
         })
         promptAction.showToast({
-          message: '通过', duration: 1000
+          message: '通过',
+          duration: 1000
         });
+      })
+    } else {
+      Button({ stateEffect: this.vueStatus }) {
+        Image($r('app.media.ic_public_pass'))
+          .width('20vp')
+          .height('20vp')
+      }
+      .width('30%')
+      .height('30vp')
+      .backgroundColor(Color.Grey)
+      .opacity(0.4)
+      .onClick(() => {
       })
     }
   }
@@ -107,7 +84,6 @@ struct AccessibilityOptions {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -115,34 +91,19 @@ struct AccessibilityOptions {
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
-          result: 'false', title: this.name,
+          result: 'false',
+          title: this.name,
         }
       })
       promptAction.showToast({
-        message: '失败', duration: 1000
+        message: '失败',
+        duration: 1000
       });
     })
   }
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
-  }
-
-  onPageShow() {
-    this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&
-        this.text4 === 'HOVER_CANCEL') {
-        this.vueStatus = true;
-      }
-    }, 500)
-  }
-
-  onPageHide() {
-    clearInterval(this.intervalNum)
-  }
-
-  aboutToDisappear() {
-    clearInterval(this.intervalNum)
   }
 
   build() {
@@ -176,122 +137,101 @@ struct AccessibilityOptions {
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
 
-      Column({ space: 12 }) {
-        Row() {
-          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
+      Row({ space: 10 }) {
+        Text(`是否设备支持屏幕朗读`)
+          .fontColor(Color.Green)
+          .fontSize('14fp')
+          .margin({ top: 10 })
+      }
+
+      Row({ space: 10 }) {
+        Column() {
+          Button(`不支持`)
+            .borderRadius(8)
+            .backgroundColor(0x317aff)
+            .width('30%')
+            .enabled(!this.yesEnable)
+            .opacity(!this.yesEnable ? 1 : 0.4)
+            .onClick(async () => {
+            })
         }
-        Row() {
+
+        Column() {
+          Button(`支持`)
+            .borderRadius(8)
+            .backgroundColor(0x317aff)
+            .width('30%')
+            .onClick(async () => {
+              this.vueStatus = true;
+            })
+        }
+      }
+      .height('6%')
+
+      Scroll() {
+        Column({ space: 8 }) {
           Column() {
-            Button(`不支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .enabled(!this.yesEnable)
-              .opacity(!this.yesEnable ? 1 : 0.4)
-              .onClick(async () => {
-              })
-          }
-
-          Column() {
-            Button(`支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .onClick(async () => {
-                this.yesEnable = true
-                this.onAccessibilityHoverEnable = true
-              })
-          }
-        }.height('5%')
-
-        Column({ space: 10 }) {
-          Scroll(){
-            Column() {
+            Stack() {
               Column() {
-                Text('By Modifier')
-                  .accessibilityLevel('yes')
-                  .fontSize('50fp')
-                  .fontWeight(FontWeight.Bold)
-                  .attributeModifier(this.modifier)
-                  .focusable(true)
+                Text('文本1')
+                  .fontSize(18)
+                  .fontColor('#2D2D2D')
+                  .fontWeight(FontWeight.Medium)
+                  .accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
+                Text('文本2')
+                  .fontSize(18)
+                  .fontColor('#2D2D2D')
+                  .fontWeight(FontWeight.Medium)
+                  .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
               }
-              .margin('3vp')
-              .borderRadius(50)
-              .borderWidth(1)
-              .borderColor(Color.Blue)
-              .clip(true)
+              .padding({ top: 8, bottom: 8 })
 
-              Button('ChangeTextModifier_TOP')
-                .accessibilityLevel('yes')
-                .margin('3vp')
-                .onClick(() => {
-                  this.status1 = true;
-                  this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
-                  if(this.status1&&this.status2&&this.status3&&this.status4){
-                    this.vueStatus = true;
-                  }else{
-                    this.vueStatus = false;
-                  }
-                })
-              Button('ChangeTextModifier_SELF')
-                .accessibilityLevel('yes')
-                .margin('3vp')
-                .onClick(() => {
-                  this.status2 = true;
-                  this.modifier.attribute?.accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
-                  if(this.status1&&this.status2&&this.status3&&this.status4){
-                    this.vueStatus = true;
-                  }else{
-                    this.vueStatus = false;
-                  }
-                })
               Column() {
-                Text('By State')
-                  .accessibilityLevel('yes')
-                  .key('State')
-                  .fontSize('50fp')
-                  .fontWeight(FontWeight.Bold)
-                  .focusable(true)
-                  .accessibilityFocusDrawLevel(this.focusDrawLevel)
+                Text('文本3')
+                  .fontSize(18)
+                  .fontColor('#FFFFFF')
+                  .fontWeight(FontWeight.Medium)
+                  .accessibilityFocusDrawLevel(null)
+                Text('文本4')
+                  .fontSize(18)
+                  .fontColor('#FFFFFF')
+                  .fontWeight(FontWeight.Medium)
+                  .accessibilityFocusDrawLevel(undefined)
               }
-              .margin('3vp')
-              .borderRadius(50)
-              .clip(true)
-              .borderWidth(1)
-              .borderColor(Color.Blue)
+              .padding({ top: 8, bottom: 8 })
 
-              Button('Change state focusDrawLevel to TOP')
-                .accessibilityLevel('yes')
-                .margin('3vp')
-                .onClick(() => {
-                  this.status3 = true;
-                  this.focusDrawLevel = FocusDrawLevel.TOP;
-                  if(this.status1&&this.status2&&this.status3&&this.status4){
-                    this.vueStatus = true;
-                  }else{
-                    this.vueStatus = false;
-                  }
-                })
-              Button('Change state focusDrawlevel to SELF')
-                .accessibilityLevel('yes')
-                .margin('3vp')
-                .onClick(() => {
-                  this.status4 = true;
-                  this.focusDrawLevel = FocusDrawLevel.SELF;
-                  if(this.status1&&this.status2&&this.status3&&this.status4){
-                    this.vueStatus = true;
-                  }else{
-                    this.vueStatus = false;
-                  }
-                })
-
+              Column() {
+                Text('文本5')
+                  .fontSize(18)
+                  .fontColor('#FFFFFF')
+                  .fontWeight(FontWeight.Medium)
+                Text('文本6')
+                  .fontSize(18)
+                  .fontColor('#FFFFFF')
+                  .fontWeight(FontWeight.Medium)
+              }
+              .backgroundColor('#4A90E2')
+              .padding({
+                left: 12,
+                right: 12,
+                top: 10,
+                bottom: 10
+              })
+              .borderRadius(6)
             }
+            .width('100%')
+            .margin({ top: 10, bottom: 10 })
           }
+          .width('100%')
+          .height('50%')
+          .margin({ top: 15 })
         }
-        .accessibilityGroup(true, { accessibilityPreferred: true })
-      }.height('80%')
+        .width('100%')
+        .padding({ left: '8vp', right: '8vp' })
+      }
+      .scrollBar(BarState.Auto)
+      .height('60%')
       .width('100%')
-      .backgroundColor(Color.White)
 
       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);
@@ -300,7 +240,6 @@ struct AccessibilityOptions {
             .width('20vp')
             .height('20vp')
         }
-        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -324,9 +263,9 @@ struct AccessibilityOptions {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
-
-    }.width('100%')
+    }
+    .width('100%')
     .height('100%')
-    .backgroundColor('#F1F3F5')
+    .backgroundColor('#F7F9FC')
   }
 }

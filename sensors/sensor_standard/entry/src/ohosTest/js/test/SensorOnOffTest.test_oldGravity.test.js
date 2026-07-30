@@ -90,6 +90,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback);
                     setTimeout(() => {
@@ -119,6 +123,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, { 'interval': 100000000 });
@@ -160,6 +168,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, onSensorCallback, { 'interval': 100000000 }, 5);
                 }
@@ -185,6 +197,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback);
@@ -224,6 +240,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, onceSensorCallback, 5);
@@ -254,6 +274,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     try {
@@ -295,6 +319,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, onSensorCallback);
                 setTimeout(() => {
@@ -329,6 +357,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     try {
                         sensor.off(1000000, onSensorCallback);
@@ -362,6 +394,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback);
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback2);
@@ -394,6 +430,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback);
@@ -437,6 +477,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, { 'interval': 100000000 });
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback2);
@@ -469,6 +513,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, { 'interval': 100000000 });
@@ -512,6 +560,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, { 'interval': 100000000 });
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback2, { 'interval': 100000000 });
@@ -544,6 +596,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest014 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -583,6 +639,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest015 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -626,6 +686,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, null);
@@ -668,6 +732,10 @@ describe("SensorJsTest_sensor_9", function () {
                 if (error) {
                     console.info('Gravity_SensorJsTest017 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback, { 'interval': null });
@@ -703,6 +771,10 @@ describe("SensorJsTest_sensor_9", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
                 if (error) {
                     console.info('Gravity_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

@@ -82,6 +82,9 @@ import ImageAnimatorImagesUndefinedAndNullTest from './ImageAnimatorUndefinedAnd
 import AnimationStopModeTest from './drawableDescriptor/AnimationStopMode.test';
 import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
 import ImageReloadKeyTest from './ImageReloadKeyTest/ImageReloadKey.test';
+import DrawableDescriptorReleaseTest from './drawableDescriptor/DrawableDescriptorRelease.test';
+import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptor/PixelMapDrawableDescriptorConstructor.test';
+import PictureDrawableDescriptorSetHdrCompositionTest from './drawableDescriptor/PictureDrawableDescriptorSetHdrComposition.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -154,4 +157,7 @@ export default function testsuite() {
   AnimationStopModeTest();
   ImageColorFilterTest();
   ImageReloadKeyTest();
+  DrawableDescriptorReleaseTest();
+  PixelMapDrawableDescriptorConstructorTest();
+  PictureDrawableDescriptorSetHdrCompositionTest();
 }

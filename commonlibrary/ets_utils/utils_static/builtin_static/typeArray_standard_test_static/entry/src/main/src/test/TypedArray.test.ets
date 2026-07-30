@@ -1,22 +1,9 @@
-import { describe, expect, it, Level, Size, TestType } from "../../../hypium/index";
+'use static';
+import { describe, expect, it, Level, Size, TestType, afterAll, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from "../../../hypium/index";
-import Utils from './Util.test';
-
-export default function typedArray() {
+export default function typedArray(): void {
   describe('typedArrayTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

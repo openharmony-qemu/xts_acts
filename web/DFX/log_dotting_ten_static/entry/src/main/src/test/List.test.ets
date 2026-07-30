@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 import  WebEngineVersion from './WebViewActiveWebEngineVersion.test'
+import EnableAdvancedSecurityModeTest from './EnableAdvancedSecurityMode.test'
 export default function testsuite() {
   WebEngineVersion();
+  EnableAdvancedSecurityModeTest();
 }

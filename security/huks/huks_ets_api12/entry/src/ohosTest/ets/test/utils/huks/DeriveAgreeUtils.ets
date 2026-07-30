@@ -99,6 +99,16 @@ export function GetDeriveAgreeFinishOptions(keyAlias: string): huks.HuksOptions 
   return huksOptions;
 }
 
+export function GetHmacMacOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_HMAC),
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)
+    )
+  }
+  return huksOptions;
+}
+
 export async function Derive(keyAlias: string, initOption: huks.HuksOptions, finishOption: huks.HuksOptions): Promise<huks.HuksReturnResult> {
   let handle: number = (await huks.initSession(keyAlias, initOption)).handle;
   await huks.updateSession(handle, initOption);

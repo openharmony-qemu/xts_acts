@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function sleep(time: int): Promise<void> {
   return new Promise<void>((re, je) => {

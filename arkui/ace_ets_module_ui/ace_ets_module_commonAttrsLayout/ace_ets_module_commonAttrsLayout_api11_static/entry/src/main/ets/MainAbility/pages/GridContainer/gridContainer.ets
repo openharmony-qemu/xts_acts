@@ -104,7 +104,7 @@ struct GridContainerExample {
         }
       }
       .width('90%')
-      .key('gridContainer')
+      .key('gridContainer_gridContainer')
       .margin({ top: 300 } as Margin)
     }
   }

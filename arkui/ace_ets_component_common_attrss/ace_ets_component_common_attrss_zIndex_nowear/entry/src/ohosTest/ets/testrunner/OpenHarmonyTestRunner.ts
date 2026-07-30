@@ -62,6 +62,10 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     let cmd = 'aa start -d 0 -a com.acts.arkui.component.common.attrs.zIndex.nowear.test.MainAbility' +
     ' -b ' + abilityDelegatorArguments.bundleName;
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     let debug = abilityDelegatorArguments.parameters['-D'];
     if (debug == 'true') {
       cmd += ' -D';

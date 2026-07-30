@@ -1,3 +1,4 @@
+'use static';
 import BuiltinsNumberConstructorTest from "./Number001.test";
 import BuiltinsNumberIsFiniteTest from "./Number002.test";
 import BuiltinsNumberIsIntegerTest from "./Number003.test";
@@ -10,7 +11,7 @@ import BuiltinsToStringTest from "./ToString001.test";
 import BuiltinsValueOfTest from "./ValueOf001.test";
 import ArrayTest from "./Array.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   BuiltinsNumberConstructorTest();   
   BuiltinsNumberIsFiniteTest();      
   BuiltinsNumberIsIntegerTest();    

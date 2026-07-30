@@ -28,5 +28,8 @@ ohos_moduletest_suite("ActsVulkanDescriptorindexingTest") {
     "../../../../../../../base/startup/init/interfaces/kits/syscap:deviceinfo_ndk",
     "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan:deqp_vk_execute",
   ]
+  external_deps = [
+    "init:libbegetutil",
+  ]
   cflags = [ "-Wno-error" ]
 }

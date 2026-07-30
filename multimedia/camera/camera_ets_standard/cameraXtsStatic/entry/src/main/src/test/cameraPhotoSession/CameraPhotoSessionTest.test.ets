@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2897,6 +2898,35 @@ export default function PhotoOutputStaticTest(): void {
             let res = camera.ControlCenterEffectType.PORTRAIT;
             console.info(TAG, testName, ' emu is : ', res);
             expect(res).assertEqual(1);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0300
+     * @tc.desc   EMU api COLOR_EFFECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0300';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            let res = camera.ControlCenterEffectType.COLOR_EFFECT;
+            res = camera.ControlCenterEffectType.BEAUTY;
+            console.info(TAG, testName, ' emu is : ', res);
+            expect(res).assertEqual(0);
           } catch (err) {
             console.error(TAG, testName, " FAILED", err.code);
             expect().assertFail();

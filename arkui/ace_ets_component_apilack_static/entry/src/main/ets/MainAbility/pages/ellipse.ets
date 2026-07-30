@@ -64,7 +64,7 @@ struct EllipseNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("ellipse_neText")
 
       Image($rawfile('test.png'))
         .maskShape(new EllipseShape({ width: '150px', height: '150px' } as ShapeSize))

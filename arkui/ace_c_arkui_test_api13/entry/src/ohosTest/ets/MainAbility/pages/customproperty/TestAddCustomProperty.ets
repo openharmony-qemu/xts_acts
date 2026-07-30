@@ -34,8 +34,8 @@ struct TestAddCustomProperty {
       }
       .width('100%')
       .height('60%')
-      Text(this.customPropertyValue + '').key('customPropertyValue')
-      Button('CustomProperty').key('buttonCustomProperty')
+      Text(this.customPropertyValue + '').key('TestAddCustomProperty_customPropertyValue')
+      Button('CustomProperty').key('TestAddCustomProperty_buttonCustomProperty')
         .onClick(()=>{
           let uiContext:UIContext = this.getUIContext();
           if (uiContext) {

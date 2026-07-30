@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/PopupV2/PopupV2Direction",
+    "MainAbility/pages/PopupV2/PopupV2OnClose",
+    "MainAbility/pages/PopupV2/PopupV2Button"
+  ]
+}

@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,
   Button,
@@ -33,36 +34,37 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct WaterFlowView {
   private _position: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
-  @State minSize: number = 50
-  @State maxSize: number = 100
-  @State fontSize: number = 24
-  @State colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as number[]
+  @State minSize: Double = 50
+  @State maxSize: Double = 100
+  @State fontSize: Double = 24
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
-  private itemWidthArray: int[] = [] as int[]
-  private itemHeightArray: int[] = [] as int[]
+  private itemWidthArray: Double[] = [] as Double[]
+  private itemHeightArray: Double[] = [] as Double[]
 
-  getSize() {
+  getSize():Double {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  getItemSizeArray() {
+  getItemSizeArray():void {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize().toInt())
-      this.itemHeightArray.push(this.getSize().toInt())
+      this.itemWidthArray.push(this.getSize() as Double)
+      this.itemHeightArray.push(this.getSize() as Double)
     }
   }
 
-  aboutToAppear() {
+  aboutToAppear():void {
     this.getItemSizeArray()
   }
 
   @Builder
-  itemFoot() {
+  itemFoot():void {
     Column() {
       Text(`Footer`)
         .fontSize(10)
@@ -74,7 +76,7 @@ export struct WaterFlowView {
     }
   }
 
-  build() {
+  build():void{
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
       ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as int[], (item: int, index: int) => {
         FlowItem() {
@@ -84,7 +86,7 @@ export struct WaterFlowView {
         }
         .width(this.itemWidthArray[item])
         .height(this.itemHeightArray[item])
-        .backgroundColor(this.colors[item % 5].toInt())
+        .backgroundColor(this.colors[item % 5] as int)
       }, (item: int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')

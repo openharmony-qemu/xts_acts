@@ -169,7 +169,7 @@ export default function gridItemJsunit() {
     it('testGridItem_0106', Level.LEVEL0, async (done: Function) => {
       console.info('testGridItem_0106 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('gridItem' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

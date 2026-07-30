@@ -14,39 +14,11 @@
  * limitations under the License.
  */
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,
-  FlexWrap,$r
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,Consume,Provide,UIUtils
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, FlexWrap, $r } from '@ohos.arkui.component';
+import { State, Link, PropRef, Consume, Provide, UIUtils, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
-
 interface Num2info {
   number: string | number;
 }
@@ -85,7 +57,7 @@ struct Ancestors_AR {
         .onClick(():void => {
           this.count = 10;
         })
-        .key('state1')
+        .key('ProvideNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -93,7 +65,7 @@ struct Ancestors_AR {
         .onClick(():void => {
           this.count = new Num2(20);
         })
-        .key('state2')
+        .key('ProvideNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -101,7 +73,7 @@ struct Ancestors_AR {
         .onClick(():void => {
           this.count = { number: '30' } as Num2info;
         })
-        .key('state3')
+        .key('ProvideNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -109,7 +81,7 @@ struct Ancestors_AR {
         .onClick(():void => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('ProvideNumber_state4')
         .height('5%')
 
       Text("切换变量赋值boolean").height('5%')
@@ -117,7 +89,7 @@ struct Ancestors_AR {
         .onClick(():void => {
           this.count = true;
         })
-        .key('state5')
+        .key('ProvideNumber_state5')
         .height('5%')
 
       Child_AR()

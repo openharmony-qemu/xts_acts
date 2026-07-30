@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +34,7 @@ struct AddMonitorWildcard {
   @Local cls: AddMonitorClass = new AddMonitorClass(100, 100);
   @Local public num: int = 0;
   monitorHandle: IMonitorDecoratedVariable | undefined = undefined;
-  onClsChanged(m: IMonitor) {
+  onClsChanged(m: IMonitor): void {
     this.num++
   }
 

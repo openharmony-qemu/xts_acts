@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -227,7 +228,7 @@ class TestWorker extends EAWorker {
   override start(): void{
     super.start();
   }
-  override join(): Promise<void> {
+  override join(): Job<void> {
     this.joinCalled = true;
     return super.join();
   }
@@ -744,7 +745,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(promiseThrowException);
+          await worker.run<Promise<void>>(promiseThrowException).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -773,7 +774,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(() => {
+          await worker.run<Promise<void>>(() => {
             return new Promise<void>((resolve, reject) => {
               processDataAsync(TEST_INPUT)
                 .then((result: string) => {
@@ -786,7 +787,7 @@ export default function EAWorkerTest() {
                   reject(err);
                 });
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -815,7 +816,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(() => {
+          await worker.run<Promise<void>>(() => {
             return new Promise<void>((resolve, reject) => {
               processDataAsync(TEST_INPUT)
                 .then((result: string) => {
@@ -826,7 +827,7 @@ export default function EAWorkerTest() {
                   resolve(undefined);
                 });
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1234,7 +1235,7 @@ export default function EAWorkerTest() {
         worker.start()
         work2.start()
         try {
-          const task = worker.run<void>(async () => {
+          const task = worker.run<Promise<void>>(async () => {
             executedFlag = true;
             await new Promise<void>((resolve) => {
               setTimeout(() => resolve(undefined), 3000);
@@ -1245,9 +1246,9 @@ export default function EAWorkerTest() {
               });
               executedFlag = true;
             });
-            await nestedTask;
+            nestedTask.Await();
           });
-          await task;
+          await task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1278,7 +1279,7 @@ export default function EAWorkerTest() {
         worker.start()
         work2.start()
         try {
-          const task = worker.run<void>(async () => {
+          const task = worker.run<Promise<void>>(async () => {
             executedFlag = true;
             await new Promise<void>((resolve) => {
               setTimeout(() => resolve(undefined), 3000);
@@ -1289,9 +1290,9 @@ export default function EAWorkerTest() {
               });
               executedFlag = true;
             });
-            await nestedTask;
+            nestedTask.Await();
           });
-          await task;
+          await task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1322,7 +1323,7 @@ export default function EAWorkerTest() {
         worker.start()
         work2.start()
         try {
-          const task = worker.run<void>(async () => {
+          const task = worker.run<Promise<void>>(async () => {
             executedFlag = true;
 
             await new Promise<void>((resolve) => {
@@ -1334,9 +1335,9 @@ export default function EAWorkerTest() {
               });
               executedFlag = true;
             });
-            await nestedTask;
+            nestedTask.Await();
           });
-          await task;
+          await task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);

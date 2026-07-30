@@ -18,25 +18,19 @@ import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hy
 
 let TAG = "BufferSupplementTest";
 
-function sleep(time: number) {
-  return new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, time)
-  }).then(() => {
-    console.info(`sleep ${time} over...`)
-  })
-}
-
 interface GeneratedObjectLiteralInterface_1 {
   type: string;
   endings: string;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ActsBuffer3Test() {
   describe('ActsBuffer3Test', () => {
     afterEach(async (done: Function) => {
-      await sleep(20);
+      await sleep(50);
       done();
     })
 

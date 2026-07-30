@@ -1152,20 +1152,6 @@ export default function functional_group_test() {
     });
 
     /**
-     * @tc.name   pthread_cond
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_0100
-     * @tc.desc   libc-test pthread_cond
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("pthread_cond", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   socket
      * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_0100
      * @tc.desc   libc-test socket
@@ -1231,6 +1217,243 @@ export default function functional_group_test() {
      */
     it("dlclose_reset", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("dlclose_reset");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fscanf
+     * @tc.number SUB_THIRDPARTY_MUSL_FSCANF_0100
+     * @tc.desc   libc-test fscanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fscanf", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fscanf");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   clock_gettime
+     * @tc.number SUB_THIRDPARTY_MUSL_CLOCK_GETTIME_0100
+     * @tc.desc   libc-test clock_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("clock_gettime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("clock_gettime");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   a_gnu_Unwind_Find_exidx
+     * @tc.number SUB_THIRDPARTY_MUSL_A_GNU_UNWIND_FIND_EXIDX_0100
+     * @tc.desc   libc-test a_gnu_Unwind_Find_exidx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("a_gnu_Unwind_Find_exidx", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("a_gnu_Unwind_Find_exidx");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dirfd
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRFD_0100
+     * @tc.desc   libc-test dirfd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dirfd", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dirfd");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dladdr
+     * @tc.number SUB_THIRDPARTY_MUSL_DLADDR_0100
+     * @tc.desc   libc-test dladdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dladdr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dladdr");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fcntl_ext
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL_EXT_0100
+     * @tc.desc   libc-test fcntl_ext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fcntl_ext", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fcntl_ext");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fopen
+     * @tc.number SUB_THIRDPARTY_MUSL_FOPEN_0100
+     * @tc.desc   libc-test fopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fopen", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fopen");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   getprocpid
+     * @tc.number SUB_THIRDPARTY_MUSL_GETPROCPID_0100
+     * @tc.desc   libc-test getprocpid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("getprocpid", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getprocpid");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   getspnam
+     * @tc.number SUB_THIRDPARTY_MUSL_GETSPNAM_0100
+     * @tc.desc   libc-test getspnam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("getspnam", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getspnam");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   ldso_randomization_test
+     * @tc.number SUB_THIRDPARTY_MUSL_LDSO_RANDOMIZATION_TEST_0100
+     * @tc.desc   libc-test ldso_randomization_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("ldso_randomization_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("ldso_randomization_test");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   lseek
+     * @tc.number SUB_THIRDPARTY_MUSL_LSEEK_0100
+     * @tc.desc   libc-test lseek
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("lseek", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("lseek");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   nftw
+     * @tc.number SUB_THIRDPARTY_MUSL_NFTW_0100
+     * @tc.desc   libc-test nftw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("nftw", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("nftw");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pread
+     * @tc.number SUB_THIRDPARTY_MUSL_PREAD_0100
+     * @tc.desc   libc-test pread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pread", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pread");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   preadv
+     * @tc.number SUB_THIRDPARTY_MUSL_PREADV_0100
+     * @tc.desc   libc-test preadv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("preadv", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("preadv");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   strcpy_test
+     * @tc.number SUB_THIRDPARTY_MUSL_STRCPY_TEST_0100
+     * @tc.desc   libc-test strcpy_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("strcpy_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("strcpy_test");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   tolower
+     * @tc.number SUB_THIRDPARTY_MUSL_TOLOWER_0100
+     * @tc.desc   libc-test tolower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("tolower", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tolower");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   toupper
+     * @tc.number SUB_THIRDPARTY_MUSL_TOUPPER_0100
+     * @tc.desc   libc-test toupper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("toupper", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("toupper");
       expect(result).assertEqual(0);
       done();
     });

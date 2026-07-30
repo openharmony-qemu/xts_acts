@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +30,7 @@ import { BusinessError } from '@ohos.base';
 import Url from '@ohos.url';
 import Utils from '../Util.test';
 
-export default function Escape_Url() {
+export default function Escape_Url(): void {
   describe('Escape_Url', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

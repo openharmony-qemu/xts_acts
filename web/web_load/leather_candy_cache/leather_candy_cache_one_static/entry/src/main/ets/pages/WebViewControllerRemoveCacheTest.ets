@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,17 +14,15 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web, } from '@ohos.arkui.component'
-import webview from '@ohos.web.webview'
-import events_emitter from '@ohos.events.emitter'
+import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import webview from '@ohos.web.webview';
+import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import image from '@ohos.multimedia.image';
-import { BusinessError, Callback, RecordData } from '@ohos.base'
 import appManager from '@ohos.app.ability.appManager';
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../hypium/index';
-
 export class StringFields {
   public str: string = '';
 }

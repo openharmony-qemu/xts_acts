@@ -1035,6 +1035,463 @@ static napi_value CheckHidebugStoragePressureCritical(napi_env env, napi_callbac
     return ret;
 }
 
+// 内存监听回调函数
+static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag Callback1, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
+        fd, tag, mayReportToOEM, arg);
+    return true;
+}
+
+static bool memDumpListenerCallback2(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag Callback2, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
+        fd, tag, mayReportToOEM, arg);
+    return true;
+}
+
+static bool memDumpListenerCallbackFalse(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM,
+                                         const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag False, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
+        fd, tag, mayReportToOEM, arg);
+    return false;
+}
+
+// 测试注册内存监听器
+napi_value TestHiDebugRegisterMemDumpListener1(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app1", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app2", memDumpListenerCallback2);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app3", memDumpListenerCallbackFalse);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener4(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener(NULL, memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener5(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app4", NULL);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener6(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener7(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_dup", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag first register res is %{public}d", code1);
+    HiDebug_ErrorCode code2 = OH_HiDebug_RegisterMemDumpListener("test_dup", memDumpListenerCallback2);
+    OH_LOG_INFO(LOG_APP, "testTag second register res is %{public}d", code2);
+    napi_value result;
+    napi_create_int32(env, code2, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener8(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    char longName[257] = {0};
+    memset(longName, 'a', 256);
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener(longName, memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener9(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("a", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugRegisterMemDumpListener10(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("测试应用", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// OH_HiDebug_MemListenerType 枚举测试
+napi_value TestHiDebugMemListenerType1(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    OH_HiDebug_MemListenerType type = OH_HIDEBUG_DO_NOTHING;
+    OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_DO_NOTHING value is %{public}d", type);
+    napi_value result;
+    napi_create_int32(env, type, &result);
+    return result;
+}
+
+napi_value TestHiDebugMemListenerType2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    OH_HiDebug_MemListenerType type = OH_HIDEBUG_RUNNING_GC;
+    OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_RUNNING_GC value is %{public}d", type);
+    napi_value result;
+    napi_create_int32(env, type, &result);
+    return result;
+}
+
+napi_value TestHiDebugMemListenerType3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    OH_HiDebug_MemListenerType type = OH_HIDEBUG_DUMP_SNAPSHOT;
+    OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_DUMP_SNAPSHOT value is %{public}d", type);
+    napi_value result;
+    napi_create_int32(env, type, &result);
+    return result;
+}
+
+// 测试注销内存监听器
+napi_value TestHiDebugUnregisterMemDumpListener1(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_unregister1", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code1);
+    HiDebug_ErrorCode code2 = OH_HiDebug_UnregisterMemDumpListener("test_unregister1");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code2);
+    napi_value result;
+    napi_create_int32(env, code2, &result);
+    return result;
+}
+
+napi_value TestHiDebugUnregisterMemDumpListener2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener("test_unregister2");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugUnregisterMemDumpListener3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener(NULL);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugUnregisterMemDumpListener4(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener("");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+napi_value TestHiDebugUnregisterMemDumpListener5(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener(nullptr);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+napi_value TestHiDebugUnregisterMemDumpListener6(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_unregister3", memDumpListenerCallback1);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code1);
+    HiDebug_ErrorCode code2 = OH_HiDebug_UnregisterMemDumpListener("test_unregister4");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code2);
+    napi_value result;
+    napi_create_int32(env, code2, &result);
+    return result;
+}
+
+static napi_value TestAcquireAsyncContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_AcquireAsyncContext start");
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    napi_value result;
+    napi_create_bigint_uint64(env, ctx, &result);
+    return result;
+}
+static napi_value TestAcquireAsyncContextMultiple(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestAcquireAsyncContextMultiple start");
+    int count = 3;
+    std::vector<uint64_t> contexts;
+    for (int i = 0; i < count; i++) {
+        uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+        contexts.push_back(ctx);
+    }
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    for (size_t i = 0; i < contexts.size(); i++) {
+        napi_value ctxValue;
+        napi_create_bigint_uint64(env, contexts[i], &ctxValue);
+        std::string key = "ctx" + std::to_string(i);
+        napi_set_named_property(env, resultObj, key.c_str(), ctxValue);
+    }
+    return resultObj;
+}
+static napi_value TestPushAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    OH_HiDebug_PushAsyncContext(ctx);
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestPopAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr); 
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    OH_HiDebug_PopAsyncContext(ctx);
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestReleaseAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    OH_HiDebug_ReleaseAsyncContext(ctx);
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestAcquireAndRelease(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestAcquireAndRelease start");
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    if (ctx != 0) {
+        OH_HiDebug_ReleaseAsyncContext(ctx);
+    }
+    napi_value result;
+    napi_create_int32(env, (ctx != 0) ? 1 : 0, &result);
+    return result;
+}
+static napi_value TestPushPopSequence(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestPushPopSequence start");
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    if (ctx == 0) {
+        napi_value result;
+        napi_create_int32(env, 0, &result);  // 返回0表示失败
+        return result;
+    }
+    OH_HiDebug_PushAsyncContext(ctx);
+    OH_HiDebug_PopAsyncContext(ctx);
+    OH_HiDebug_ReleaseAsyncContext(ctx);
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestMultipleContextsPushPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestMultipleContextsPushPop start");
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    
+    if (ctx1 == 0 || ctx2 == 0) {
+        if (ctx1 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx1);
+        }
+        if (ctx2 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx2);
+        }
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    OH_HiDebug_PopAsyncContext(ctx2);
+    OH_HiDebug_PopAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestContextStress(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestContextStress start");
+    int count = 100;
+    int successCount = 0;
+    for (int i = 0; i < count; i++) {
+        uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+        if (ctx != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx);
+            successCount++;
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "testTag Stress test completed: %{public}d/%{public}d", successCount, count);
+    napi_value result;
+    napi_create_int32(env, successCount, &result);
+    return result;
+}
+static napi_value TestPushWithoutPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestPushWithoutPop start"); 
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    if (ctx1 == 0 || ctx2 == 0) {
+        if (ctx1 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx1);
+        }
+        if (ctx2 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx2);
+        }
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestInvalidContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestInvalidContext start");
+    uint64_t invalidCtx = 0xFFFFFFFFFFFFFFFFULL;
+    OH_HiDebug_PushAsyncContext(invalidCtx);
+    OH_HiDebug_PopAsyncContext(invalidCtx);
+    OH_HiDebug_ReleaseAsyncContext(invalidCtx);  
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestZeroContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestZeroContext start");
+    uint64_t zeroCtx = 0;
+    OH_HiDebug_PushAsyncContext(zeroCtx);
+    OH_HiDebug_PopAsyncContext(zeroCtx);
+    OH_HiDebug_ReleaseAsyncContext(zeroCtx);
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestNestedPushPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestNestedPushPop start");
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx3 = OH_HiDebug_AcquireAsyncContext();
+    if (ctx1 == 0 || ctx2 == 0 || ctx3 == 0) {
+        if (ctx1 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx1);
+        }
+        if (ctx2 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx2);
+        }
+        if (ctx3 != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx3);
+        }
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    OH_HiDebug_PushAsyncContext(ctx3);
+    OH_HiDebug_PopAsyncContext(ctx3);
+    OH_HiDebug_PopAsyncContext(ctx2);
+    OH_HiDebug_PopAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    OH_HiDebug_ReleaseAsyncContext(ctx3);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1066,7 +1523,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "startProfiler", nullptr, HiDebugStartProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "startProfilerNull", nullptr, HiDebugStartProfilerNull, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "stopProfiler", nullptr, HiDebugStopProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestRequestTrace", nullptr, TestRequestTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
+		{ "TestRequestTrace", nullptr, TestRequestTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier1", nullptr, TestRequestTraceIdentifier1, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier2", nullptr, TestRequestTraceIdentifier2, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier3", nullptr, TestRequestTraceIdentifier3, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -1101,7 +1558,59 @@ static napi_value Init(napi_env env, napi_value exports)
           napi_default, nullptr },
         { "checkHidebugStoragePressureCritical", nullptr, CheckHidebugStoragePressureCritical, nullptr, nullptr,
           nullptr, napi_default, nullptr },
-        
+        { "TestHiDebugRegisterMemDumpListener1", nullptr, TestHiDebugRegisterMemDumpListener1, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener2", nullptr, TestHiDebugRegisterMemDumpListener2, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener3", nullptr, TestHiDebugRegisterMemDumpListener3, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener4", nullptr, TestHiDebugRegisterMemDumpListener4, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener5", nullptr, TestHiDebugRegisterMemDumpListener5, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener6", nullptr, TestHiDebugRegisterMemDumpListener6, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener7", nullptr, TestHiDebugRegisterMemDumpListener7, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener8", nullptr, TestHiDebugRegisterMemDumpListener8, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener9", nullptr, TestHiDebugRegisterMemDumpListener9, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugRegisterMemDumpListener10", nullptr, TestHiDebugRegisterMemDumpListener10, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugMemListenerType1", nullptr, TestHiDebugMemListenerType1, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "TestHiDebugMemListenerType2", nullptr, TestHiDebugMemListenerType2, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "TestHiDebugMemListenerType3", nullptr, TestHiDebugMemListenerType3, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener1", nullptr, TestHiDebugUnregisterMemDumpListener1, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener2", nullptr, TestHiDebugUnregisterMemDumpListener2, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener3", nullptr, TestHiDebugUnregisterMemDumpListener3, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener4", nullptr, TestHiDebugUnregisterMemDumpListener4, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener5", nullptr, TestHiDebugUnregisterMemDumpListener5, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        { "TestHiDebugUnregisterMemDumpListener6", nullptr, TestHiDebugUnregisterMemDumpListener6, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
+        {"testAcquireAsyncContext", nullptr, TestAcquireAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testAcquireAsyncContextMultiple", nullptr, TestAcquireAsyncContextMultiple, nullptr, nullptr, 
+        nullptr, napi_default, nullptr},
+        {"testPushAsyncContext", nullptr, TestPushAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPopAsyncContext", nullptr, TestPopAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testReleaseAsyncContext", nullptr, TestReleaseAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testAcquireAndRelease", nullptr, TestAcquireAndRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPushPopSequence", nullptr, TestPushPopSequence, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testMultipleContextsPushPop", nullptr, TestMultipleContextsPushPop, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testContextStress", nullptr, TestContextStress, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPushWithoutPop", nullptr, TestPushWithoutPop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testInvalidContext", nullptr, TestInvalidContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testZeroContext", nullptr, TestZeroContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testNestedPushPop", nullptr, TestNestedPushPop, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

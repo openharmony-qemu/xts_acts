@@ -1697,2185 +1697,2025 @@ function testSetDisallowedPolicy() {
     done();
   });
 
-    /**
-     * @tc.name   test_set_disallowed_policy_0174
-     * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0174
-     * @tc.desc   test restrictions setDisallowedPolicy without admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_set_disallowed_policy_0174", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
-      }
-      done();
-    });
-  
-    /**
-     * @tc.name   test_set_disallowed_policy_0175
-     * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0175
-     * @tc.desc   test restrictions setDisallowedPolicy with normal admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_set_disallowed_policy_0175", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200002).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-  
-    /**
-     * @tc.name   test_set_disallowed_policy_0176
-     * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0176
-     * @tc.desc   test restrictions setDisallowedPolicy with invalid admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_set_disallowed_policy_0176", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(INVALID_WANT, LABEL_HDC_REMOTE, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   setDisallowedPolicy_test_001
-     * @tc.number setDisallowedPolicy_test_001
-     * @tc.desc   setDisallowedPolicy with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicy_test_001  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicy(null, LABEL_VIRTUAL_SERVICE, true);
-        console.info(' --- setDisallowedPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicy_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setDisallowedPolicy_test_002
-     * @tc.number setDisallowedPolicy_test_002
-     * @tc.desc   setDisallowedPolicy with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicy_test_002  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE, true);
-        console.info(' --- setDisallowedPolicy_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicy_test_002  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setDisallowedPolicy_test_003
-     * @tc.number setDisallowedPolicy_test_003
-     * @tc.desc   setDisallowedPolicy with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicy_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicy_test_003  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, null, true);
-        console.info(' --- setDisallowedPolicy_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicy_test_003  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setDisallowedPolicy_test_004
-     * @tc.number setDisallowedPolicy_test_004
-     * @tc.desc   setDisallowedPolicy with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicy_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicy_test_004  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, undefined, true);
-        console.info(' --- setDisallowedPolicy_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicy_test_004  -------- END --------');
-     })
-
-   /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0100
-    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using byod admin (disallow true)
+  /**
+    * @tc.name   test_set_disallowed_policy_0174
+    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0174
+    * @tc.desc   test restrictions setDisallowedPolicy without admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-        expect(ret).assertTrue();
-        await sleep(3000);
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-   /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0200
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0300
-    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using normal admin (should fail with 9200002)
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-        expect(ret).assertFalse();
-      } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0400
-    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using super admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-        expect(ret).assertTrue();
-        await sleep(3000);
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0500
-    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
-        expect(false).assertTrue();
-      } catch (error) {
+  it("test_set_disallowed_policy_0174", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 9200001).assertTrue();
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0600
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0600
-    * @tc.desc   test restrictions setDisallowedPolicy with null admin
+  /**
+    * @tc.name   test_set_disallowed_policy_0175
+    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0175
+    * @tc.desc   test restrictions setDisallowedPolicy with normal admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0700
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0700
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI_P2P, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0800
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0800
-    * @tc.desc   test restrictions setDisallowedPolicy with null feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0800", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, null, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_0900
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0900
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_0900", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   test_set_disallowed_policy_wifi_p2p_1000
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_1000
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_wifi_p2p_1000", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, null);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-   /**
-    * @tc.name   test_set_disallowed_policy_uinput_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0100
-    * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using byod admin (should fail with 9200002)
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
-        expect(false).assertTrue();
-      } catch (error) {
+  it("test_set_disallowed_policy_0175", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_HDC_REMOTE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 9200002).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_uinput_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0200
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  /**
+    * @tc.name   test_set_disallowed_policy_0176
+    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0176
+    * @tc.desc   test restrictions setDisallowedPolicy with invalid admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_uinput_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, undefined);
-        expect(false).assertTrue();
-      } catch (error) {
+  it("test_set_disallowed_policy_0176", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(INVALID_WANT, LABEL_HDC_REMOTE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  })
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0300
-    * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using normal admin (should fail with 9200002)
+  /**
+    * @tc.name   setDisallowedPolicy_test_001
+    * @tc.number setDisallowedPolicy_test_001
+    * @tc.desc   setDisallowedPolicy with null parameter admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_uinput_0300", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
-        expect(ret).assertTrue();
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
-      } catch (error) {
+  it("setDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicy_test_001  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicy(null, LABEL_VIRTUAL_SERVICE, true);
+      console.info(' --- setDisallowedPolicy_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicy_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setDisallowedPolicy_test_002
+    * @tc.number setDisallowedPolicy_test_002
+    * @tc.desc   setDisallowedPolicy with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicy_test_002  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE, true);
+      console.info(' --- setDisallowedPolicy_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicy_test_002  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setDisallowedPolicy_test_003
+    * @tc.number setDisallowedPolicy_test_003
+    * @tc.desc   setDisallowedPolicy with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicy_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicy_test_003  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, null, true);
+      console.info(' --- setDisallowedPolicy_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicy_test_003  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setDisallowedPolicy_test_004
+    * @tc.number setDisallowedPolicy_test_004
+    * @tc.desc   setDisallowedPolicy with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicy_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicy_test_004  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, undefined, true);
+      console.info(' --- setDisallowedPolicy_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicy_test_004  -------- END --------');
+    })
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0100
+  * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using byod admin (disallow true)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+      expect(ret).assertTrue();
+      await sleep(3000);
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0200
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0300
+  * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using normal admin (should fail with 9200002)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0400
+  * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+      expect(ret).assertTrue();
+      await sleep(3000);
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0500
+  * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0600
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0600
+  * @tc.desc   test restrictions setDisallowedPolicy with null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0700
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0700
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI_P2P, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0800
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0800
+  * @tc.desc   test restrictions setDisallowedPolicy with null feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_0900
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0900
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_wifi_p2p_1000
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_1000
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_wifi_p2p_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0100
+  * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using byod admin (should fail with 9200002)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0200
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0300
+  * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using normal admin (should fail with 9200002)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
+    } catch (error) {
+      expect(Number(error.code) === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0400
+  * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0500
+  * @tc.desc   test restrictions setDisallowedPolicy with uinput feature without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0600
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0600
+  * @tc.desc   test restrictions setDisallowedPolicy with null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.LOCAL_INPUT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0700
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0700
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.LOCAL_INPUT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0800
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0800
+  * @tc.desc   test restrictions setDisallowedPolicy with null feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_0900
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0900
+  * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_uinput_1000
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_1000
+  * @tc.desc   test restrictions setDisallowedPolicy with null disable
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_uinput_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0100
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump feature using byod admin (disallow true)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 9200002).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0400
-    * @tc.desc   test restrictions setDisallowedPolicy with uinput feature using super admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0400", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
-        expect(ret).assertTrue();
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0200
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump undefined disallow
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0500
-    * @tc.desc   test restrictions setDisallowedPolicy with uinput feature without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, false);
-        expect(false).assertTrue();
-      } catch (error) {
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0300
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump feature normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0400
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump feature super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0500
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 9200001).assertTrue();
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0600
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0600
-    * @tc.desc   test restrictions setDisallowedPolicy with null admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0600", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.LOCAL_INPUT, false);
-        expect(false).assertTrue();
-      } catch (error) {
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0600
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0600
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump with null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0700
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0700
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0700", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.LOCAL_INPUT, false);
-        expect(false).assertTrue();
-      } catch (error) {
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0700
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0700
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump with undefined admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0800
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0800
-    * @tc.desc   test restrictions setDisallowedPolicy with null feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_uinput_0800", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, null, false);
-        expect(false).assertTrue();
-      } catch (error) {
+  /**
+  * @tc.name   test_set_disallowed_policy_core_dump_0800
+  * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0800
+  * @tc.desc   test restrictions setDisallowedPolicy with coredump with null disallow
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_disallowed_policy_core_dump_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_0900
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_0900
-    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature without admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_uinput_0900", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
-        expect(false).assertTrue();
-      } catch (error) {
+    it("test_set_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0200
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature using byod admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0300
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-    * @tc.name   test_set_disallowed_policy_uinput_1000
-    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_UINPUT_1000
-    * @tc.desc   test restrictions setDisallowedPolicy with null disable
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0400
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_uinput_1000", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, null);
-        expect(false).assertTrue();
-      } catch (error) {
+    it("test_set_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
         expect(Number(error.code) === 401).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
-      done();
-    });
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0100
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature using byod admin (disallow true)
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0500
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null feature
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200002).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0200
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump undefined disallow
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0300
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature normal admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("test_set_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-        expect(ret).assertFalse();
-      } catch (error) {
+    it("test_set_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0400
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature super admin
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0600
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined feature
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-        expect(ret).assertTrue();
-      } catch (error) {
+    it("test_set_disallowed_policy_disk_erasure_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0500
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump without admin
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0700
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null disallow
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+    it("test_set_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0600
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0600
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump with null admin
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0800
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined disallow
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+    it("test_set_disallowed_policy_disk_erasure_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0700
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0700
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump with undefined admin
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_0900
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0900
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin set disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("test_set_disallowed_policy_disk_erasure_0900", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_erasure_1000
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_1000
+    * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin cancel disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("test_set_disallowed_policy_disk_erasure_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, false);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_sudo_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0500
+    * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null feature
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+    it("test_set_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 
-   /**
-    * @tc.name   test_set_disallowed_policy_core_dump_0800
-    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0800
-    * @tc.desc   test restrictions setDisallowedPolicy with coredump with null disallow
+  /**
+    * @tc.name   test_set_disallowed_policy_sudo_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0600
+    * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined feature
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("test_set_disallowed_policy_core_dump_0800", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, null);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0100
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature without admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0200
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0200
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature using byod admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200002).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0300
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0300
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0400
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0500
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0500
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, null, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0600
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0600
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0600", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0700
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0700
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, null);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0800
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0800
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_disk_erasure_0800", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_0900
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0900
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin set disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it("test_set_disallowed_policy_disk_erasure_0900", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
-        expect(ret).assertTrue();
-      } catch (error) {
+    it("test_set_disallowed_policy_sudo_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
-      done();
-    });
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 
-    /**
-     * @tc.name   test_set_disallowed_policy_disk_erasure_1000
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_1000
-     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin cancel disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it("test_set_disallowed_policy_disk_erasure_1000", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, false);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
-        expect(ret).assertFalse();
-      } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
+  /**
+  * @tc.name   getDisallowedPolicy_test_001
+  * @tc.number getDisallowedPolicy_test_001
+  * @tc.desc   getDisallowedPolicy with undefined parameter admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("getDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedPolicy_test_001  -------- START --------');
+    try {
+      restrictions.getDisallowedPolicy(null, LABEL_PRINTER);
+      console.info(' --- getDisallowedPolicy_test_001 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- getDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(error === null).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedPolicy_test_001  -------- END --------');
+  })
 
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0100
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature without admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0300
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0300
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.SUDO, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0400
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0500
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0500
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, null, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0600
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0600
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0600", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0700
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0700
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, null);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0800
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0800
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_set_disallowed_policy_sudo_0800", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, undefined);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_0900
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0900
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin set disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it("test_set_disallowed_policy_sudo_0900", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
-        expect(ret).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_set_disallowed_policy_sudo_1000
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_1000
-     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin cancel disallow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it("test_set_disallowed_policy_sudo_1000", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, false);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
-        expect(ret).assertFalse();
-      } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-    * @tc.name   getDisallowedPolicy_test_001
-    * @tc.number getDisallowedPolicy_test_001
+  /**
+    * @tc.name   getDisallowedPolicy_test_002
+    * @tc.number getDisallowedPolicy_test_002
     * @tc.desc   getDisallowedPolicy with undefined parameter admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("getDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedPolicy_test_001  -------- START --------');
-      try {
-        restrictions.getDisallowedPolicy(null, LABEL_PRINTER);
-        console.info(' --- getDisallowedPolicy_test_001 error is expected, but it done.');
-      } catch (error) {
-        console.info(' --- getDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error === null).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedPolicy_test_001  -------- END --------');
-    })
-
-    /**
-     * @tc.name   getDisallowedPolicy_test_002
-     * @tc.number getDisallowedPolicy_test_002
-     * @tc.desc   getDisallowedPolicy with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedPolicy_test_002  -------- START --------');
-      try {
-        restrictions.getDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE);
-        console.info(' --- getDisallowedPolicy_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedPolicy_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_001
-     * @tc.number setDisallowedPolicyForAccount_test_001
-     * @tc.desc   setDisallowedPolicyForAccount with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_001  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(null, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
-        console.info(' --- setDisallowedPolicyForAccount_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_002
-     * @tc.number setDisallowedPolicyForAccount_test_002
-     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_002  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
-        console.info(' --- setDisallowedPolicyForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_003
-     * @tc.number setDisallowedPolicyForAccount_test_003
-     * @tc.desc   setDisallowedPolicyForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_003  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, null);
-        console.info(' --- setDisallowedPolicyForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_004
-     * @tc.number setDisallowedPolicyForAccount_test_004
-     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_004  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, undefined);
-        console.info(' --- setDisallowedPolicyForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_004  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_005
-     * @tc.number setDisallowedPolicyForAccount_test_005
-     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_005  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, DEFAULT_USER_ID);
-        console.info(' --- setDisallowedPolicyForAccount_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_005  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setDisallowedPolicyForAccount_test_006
-     * @tc.number setDisallowedPolicyForAccount_test_006
-     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setDisallowedPolicyForAccount_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setDisallowedPolicyForAccount_test_006  -------- START --------');
-      try {
-        restrictions.setDisallowedPolicyForAccount(SELFWANT, undefined, true, DEFAULT_USER_ID);
-        console.info(' --- setDisallowedPolicyForAccount_test_006 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setDisallowedPolicyForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setDisallowedPolicyForAccount_test_006  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedPolicyForAccount_test_002
-     * @tc.number getDisallowedPolicyForAccount_test_002
-     * @tc.desc   getDisallowedPolicyForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedPolicyForAccount_test_002  -------- START --------');
-      try {
-        restrictions.getDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, DEFAULT_USER_ID);
-        console.info(' --- getDisallowedPolicyForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedPolicyForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedPolicyForAccount_test_003
-     * @tc.number getDisallowedPolicyForAccount_test_003
-     * @tc.desc   getDisallowedPolicyForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedPolicyForAccount_test_003  -------- START --------');
-      try {
-        restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, null);
-        console.info(' --- getDisallowedPolicyForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedPolicyForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedPolicyForAccount_test_004
-     * @tc.number getDisallowedPolicyForAccount_test_004
-     * @tc.desc   getDisallowedPolicyForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedPolicyForAccount_test_004  -------- START --------');
-      try {
-        restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, undefined);
-        console.info(' --- getDisallowedPolicyForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedPolicyForAccount_test_004  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_001
-     * @tc.number addDisallowedListForAccount_test_001
-     * @tc.desc   addDisallowedListForAccount with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_001  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
-        console.info(' --- addDisallowedListForAccount_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_002
-     * @tc.number addDisallowedListForAccount_test_002
-     * @tc.desc   addDisallowedListForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_002  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
-        console.info(' --- addDisallowedListForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_003
-     * @tc.number addDisallowedListForAccount_test_003
-     * @tc.desc   addDisallowedListForAccount with null parameter list
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_003  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
-        console.info(' --- addDisallowedListForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_004
-     * @tc.number addDisallowedListForAccount_test_004
-     * @tc.desc   addDisallowedListForAccount with undefined parameter list
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_004  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
-        console.info(' --- addDisallowedListForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_004  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_005
-     * @tc.number addDisallowedListForAccount_test_005
-     * @tc.desc   addDisallowedListForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_005  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
-        console.info(' --- addDisallowedListForAccount_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_005  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   addDisallowedListForAccount_test_006
-     * @tc.number addDisallowedListForAccount_test_006
-     * @tc.desc   addDisallowedListForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDisallowedListForAccount_test_006  -------- START --------');
-      try {
-        restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
-        console.info(' --- addDisallowedListForAccount_test_006 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addDisallowedListForAccount_test_006  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_001
-     * @tc.number removeDisallowedListForAccount_test_001
-     * @tc.desc   removeDisallowedListForAccount with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_001  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
-        console.info(' --- removeDisallowedListForAccount_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_002
-     * @tc.number removeDisallowedListForAccount_test_002
-     * @tc.desc   removeDisallowedListForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_002  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
-        console.info(' --- removeDisallowedListForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_003
-     * @tc.number removeDisallowedListForAccount_test_003
-     * @tc.desc   removeDisallowedListForAccount with null parameter list
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_003  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
-        console.info(' --- removeDisallowedListForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_004
-     * @tc.number removeDisallowedListForAccount_test_004
-     * @tc.desc   removeDisallowedListForAccount with undefined parameter list
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_004  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
-        console.info(' --- removeDisallowedListForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_004  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_005
-     * @tc.number removeDisallowedListForAccount_test_005
-     * @tc.desc   removeDisallowedListForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_005  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
-        console.info(' --- removeDisallowedListForAccount_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_005  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   removeDisallowedListForAccount_test_006
-     * @tc.number removeDisallowedListForAccount_test_006
-     * @tc.desc   removeDisallowedListForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("removeDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDisallowedListForAccount_test_006  -------- START --------');
-      try {
-        restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
-        console.info(' --- removeDisallowedListForAccount_test_006 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeDisallowedListForAccount_test_006  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedListForAccount_test_001
-     * @tc.number getDisallowedListForAccount_test_001
-     * @tc.desc   getDisallowedListForAccount with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedListForAccount_test_001  -------- START --------');
-      try {
-        restrictions.getDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
-        console.info(' --- getDisallowedListForAccount_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedListForAccount_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedListForAccount_test_002
-     * @tc.number getDisallowedListForAccount_test_002
-     * @tc.desc   getDisallowedListForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedListForAccount_test_002  -------- START --------');
-      try {
-        restrictions.getDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
-        console.info(' --- getDisallowedListForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedListForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedListForAccount_test_003
-     * @tc.number getDisallowedListForAccount_test_003
-     * @tc.desc   getDisallowedListForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedListForAccount_test_003  -------- START --------');
-      try {
-        restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null);
-        console.info(' --- getDisallowedListForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedListForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getDisallowedListForAccount_test_004
-     * @tc.number getDisallowedListForAccount_test_004
-     * @tc.desc   getDisallowedListForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDisallowedListForAccount_test_004  -------- START --------');
-      try {
-        restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined);
-        console.info(' --- getDisallowedListForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getDisallowedListForAccount_test_004  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestriction_test_001
-     * @tc.number setUserRestriction_test_001
-     * @tc.desc   setUserRestriction with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestriction_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestriction_test_001  -------- START --------');
-      try {
-        restrictions.setUserRestriction(null, LABEL_SET_APN, true);
-        console.info(' --- setUserRestriction_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestriction_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestriction_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestriction_test_002
-     * @tc.number setUserRestriction_test_002
-     * @tc.desc   setUserRestriction with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestriction_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestriction_test_002  -------- START --------');
-      try {
-        restrictions.setUserRestriction(undefined, LABEL_SET_APN, true);
-        console.info(' --- setUserRestriction_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestriction_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestriction_test_002  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setUserRestriction_test_003
-     * @tc.number setUserRestriction_test_003
-     * @tc.desc   setUserRestriction with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestriction_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestriction_test_003  -------- START --------');
-      try {
-        restrictions.setUserRestriction(SELFWANT, null, true);
-        console.info(' --- setUserRestriction_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestriction_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestriction_test_003  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setUserRestriction_test_004
-     * @tc.number setUserRestriction_test_004
-     * @tc.desc   setUserRestriction with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestriction_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestriction_test_004  -------- START --------');
-      try {
-        restrictions.setUserRestriction(SELFWANT, undefined, true);
-        console.info(' --- setUserRestriction_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestriction_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestriction_test_004  -------- END --------');
-    })
-
-    /**
-     * @tc.name   getUserRestricted_test_002
-     * @tc.number getUserRestricted_test_002
-     * @tc.desc   getUserRestricted with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestricted_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestricted_test_002  -------- START --------');
-      try {
-        restrictions.getUserRestricted(undefined, LABEL_SET_ETHERNET_IP);
-        console.info(' --- getUserRestricted_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestricted_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestricted_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_001
-     * @tc.number setUserRestrictionForAccount_test_001
-     * @tc.desc   setUserRestrictionForAccount with null parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_001  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(null, LABEL_MODIFY_WALLPAPER, 100, true);
-        console.info(' --- setUserRestrictionForAccount_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_001  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_002
-     * @tc.number setUserRestrictionForAccount_test_002
-     * @tc.desc   setUserRestrictionForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_002  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100, true);
-        console.info(' --- setUserRestrictionForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_003
-     * @tc.number setUserRestrictionForAccount_test_003
-     * @tc.desc   setUserRestrictionForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_003  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null, true);
-        console.info(' --- setUserRestrictionForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_004
-     * @tc.number setUserRestrictionForAccount_test_004
-     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_004  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined, true);
-        console.info(' --- setUserRestrictionForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_004  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_005
-     * @tc.number setUserRestrictionForAccount_test_005
-     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_005  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(SELFWANT, null, 100, true);
-        console.info(' --- setUserRestrictionForAccount_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_005  -------- END --------');
-    })
-
-    /**
-     * @tc.name   setUserRestrictionForAccount_test_006
-     * @tc.number setUserRestrictionForAccount_test_006
-     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("setUserRestrictionForAccount_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setUserRestrictionForAccount_test_006  -------- START --------');
-      try {
-        restrictions.setUserRestrictionForAccount(SELFWANT, undefined, 100, true);
-        console.info(' --- setUserRestrictionForAccount_test_006 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- setUserRestrictionForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- setUserRestrictionForAccount_test_006  -------- END --------');
-    })
-
-    /**
-     * @tc.name   getUserRestrictedForAccount_test_002
-     * @tc.number getUserRestrictedForAccount_test_002
-     * @tc.desc   getUserRestrictedForAccount with undefined parameter admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestrictedForAccount_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestrictedForAccount_test_002  -------- START --------');
-      try {
-        restrictions.getUserRestrictedForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100);
-        console.info(' --- getUserRestrictedForAccount_test_002 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestrictedForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestrictedForAccount_test_002  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getUserRestrictedForAccount_test_003
-     * @tc.number getUserRestrictedForAccount_test_003
-     * @tc.desc   getUserRestrictedForAccount with null parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestrictedForAccount_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestrictedForAccount_test_003  -------- START --------');
-      try {
-        restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null);
-        console.info(' --- getUserRestrictedForAccount_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestrictedForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestrictedForAccount_test_003  -------- END --------');
-    })
-
-
-    /**
-     * @tc.name   getUserRestrictedForAccount_test_004
-     * @tc.number getUserRestrictedForAccount_test_004
-     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestrictedForAccount_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestrictedForAccount_test_004  -------- START --------');
-      try {
-        restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined);
-        console.info(' --- getUserRestrictedForAccount_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestrictedForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestrictedForAccount_test_004  -------- END --------');
-    })
-
-    /**
-     * @tc.name   getUserRestrictedForAccount_test_005
-     * @tc.number getUserRestrictedForAccount_test_005
-     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestrictedForAccount_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestrictedForAccount_test_005  -------- START --------');
-      try {
-        restrictions.getUserRestrictedForAccount(SELFWANT, null, 100);
-        console.info(' --- getUserRestrictedForAccount_test_005 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestrictedForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestrictedForAccount_test_005  -------- END --------');
-    })
-
-    /**
-     * @tc.name   getUserRestrictedForAccount_test_006
-     * @tc.number getUserRestrictedForAccount_test_006
-     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("getUserRestrictedForAccount_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getUserRestrictedForAccount_test_006  -------- START --------');
-      try {
-        restrictions.getUserRestrictedForAccount(SELFWANT, undefined, 100);
-        console.info(' --- getUserRestrictedForAccount_test_006 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getUserRestrictedForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
-      }
-      done();
-      console.info(' --- getUserRestrictedForAccount_test_006  -------- END --------');
-    })
+  it("getDisallowedPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedPolicy_test_002  -------- START --------');
+    try {
+      restrictions.getDisallowedPolicy(undefined, LABEL_VIRTUAL_SERVICE);
+      console.info(' --- getDisallowedPolicy_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedPolicy_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_001
+    * @tc.number setDisallowedPolicyForAccount_test_001
+    * @tc.desc   setDisallowedPolicyForAccount with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_001  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(null, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
+      console.info(' --- setDisallowedPolicyForAccount_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_002
+    * @tc.number setDisallowedPolicyForAccount_test_002
+    * @tc.desc   setDisallowedPolicyForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_002  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, true, DEFAULT_USER_ID);
+      console.info(' --- setDisallowedPolicyForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_003
+    * @tc.number setDisallowedPolicyForAccount_test_003
+    * @tc.desc   setDisallowedPolicyForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_003  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, null);
+      console.info(' --- setDisallowedPolicyForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_004
+    * @tc.number setDisallowedPolicyForAccount_test_004
+    * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_004  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, true, undefined);
+      console.info(' --- setDisallowedPolicyForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_004  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_005
+    * @tc.number setDisallowedPolicyForAccount_test_005
+    * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_005  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, DEFAULT_USER_ID);
+      console.info(' --- setDisallowedPolicyForAccount_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_005  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setDisallowedPolicyForAccount_test_006
+    * @tc.number setDisallowedPolicyForAccount_test_006
+    * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setDisallowedPolicyForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setDisallowedPolicyForAccount_test_006  -------- START --------');
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, undefined, true, DEFAULT_USER_ID);
+      console.info(' --- setDisallowedPolicyForAccount_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setDisallowedPolicyForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setDisallowedPolicyForAccount_test_006  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedPolicyForAccount_test_002
+    * @tc.number getDisallowedPolicyForAccount_test_002
+    * @tc.desc   getDisallowedPolicyForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedPolicyForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedPolicyForAccount_test_002  -------- START --------');
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, LABEL_FINGER_PRINT, DEFAULT_USER_ID);
+      console.info(' --- getDisallowedPolicyForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedPolicyForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedPolicyForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedPolicyForAccount_test_003
+    * @tc.number getDisallowedPolicyForAccount_test_003
+    * @tc.desc   getDisallowedPolicyForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedPolicyForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedPolicyForAccount_test_003  -------- START --------');
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, null);
+      console.info(' --- getDisallowedPolicyForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedPolicyForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedPolicyForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedPolicyForAccount_test_004
+    * @tc.number getDisallowedPolicyForAccount_test_004
+    * @tc.desc   getDisallowedPolicyForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedPolicyForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedPolicyForAccount_test_004  -------- START --------');
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_FINGER_PRINT, undefined);
+      console.info(' --- getDisallowedPolicyForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedPolicyForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedPolicyForAccount_test_004  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_001
+    * @tc.number addDisallowedListForAccount_test_001
+    * @tc.desc   addDisallowedListForAccount with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_001  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+      console.info(' --- addDisallowedListForAccount_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_002
+    * @tc.number addDisallowedListForAccount_test_002
+    * @tc.desc   addDisallowedListForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_002  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+      console.info(' --- addDisallowedListForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_003
+    * @tc.number addDisallowedListForAccount_test_003
+    * @tc.desc   addDisallowedListForAccount with null parameter list
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_003  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
+      console.info(' --- addDisallowedListForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_004
+    * @tc.number addDisallowedListForAccount_test_004
+    * @tc.desc   addDisallowedListForAccount with undefined parameter list
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_004  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
+      console.info(' --- addDisallowedListForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_004  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_005
+    * @tc.number addDisallowedListForAccount_test_005
+    * @tc.desc   addDisallowedListForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_005  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
+      console.info(' --- addDisallowedListForAccount_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_005  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   addDisallowedListForAccount_test_006
+    * @tc.number addDisallowedListForAccount_test_006
+    * @tc.desc   addDisallowedListForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("addDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedListForAccount_test_006  -------- START --------');
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
+      console.info(' --- addDisallowedListForAccount_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedListForAccount_test_006  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_001
+    * @tc.number removeDisallowedListForAccount_test_001
+    * @tc.desc   removeDisallowedListForAccount with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_001  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+      console.info(' --- removeDisallowedListForAccount_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_002
+    * @tc.number removeDisallowedListForAccount_test_002
+    * @tc.desc   removeDisallowedListForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_002  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
+      console.info(' --- removeDisallowedListForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_003
+    * @tc.number removeDisallowedListForAccount_test_003
+    * @tc.desc   removeDisallowedListForAccount with null parameter list
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_003  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null, DEFAULT_USER_ID);
+      console.info(' --- removeDisallowedListForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_004
+    * @tc.number removeDisallowedListForAccount_test_004
+    * @tc.desc   removeDisallowedListForAccount with undefined parameter list
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_004  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined, DEFAULT_USER_ID);
+      console.info(' --- removeDisallowedListForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_004  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_005
+    * @tc.number removeDisallowedListForAccount_test_005
+    * @tc.desc   removeDisallowedListForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_005  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, null);
+      console.info(' --- removeDisallowedListForAccount_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_005  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   removeDisallowedListForAccount_test_006
+    * @tc.number removeDisallowedListForAccount_test_006
+    * @tc.desc   removeDisallowedListForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("removeDisallowedListForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedListForAccount_test_006  -------- START --------');
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, undefined);
+      console.info(' --- removeDisallowedListForAccount_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedListForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedListForAccount_test_006  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedListForAccount_test_001
+    * @tc.number getDisallowedListForAccount_test_001
+    * @tc.desc   getDisallowedListForAccount with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedListForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedListForAccount_test_001  -------- START --------');
+    try {
+      restrictions.getDisallowedListForAccount(null, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
+      console.info(' --- getDisallowedListForAccount_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedListForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedListForAccount_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedListForAccount_test_002
+    * @tc.number getDisallowedListForAccount_test_002
+    * @tc.desc   getDisallowedListForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedListForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedListForAccount_test_002  -------- START --------');
+    try {
+      restrictions.getDisallowedListForAccount(undefined, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
+      console.info(' --- getDisallowedListForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedListForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedListForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedListForAccount_test_003
+    * @tc.number getDisallowedListForAccount_test_003
+    * @tc.desc   getDisallowedListForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedListForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedListForAccount_test_003  -------- START --------');
+    try {
+      restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null);
+      console.info(' --- getDisallowedListForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedListForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedListForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getDisallowedListForAccount_test_004
+    * @tc.number getDisallowedListForAccount_test_004
+    * @tc.desc   getDisallowedListForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getDisallowedListForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getDisallowedListForAccount_test_004  -------- START --------');
+    try {
+      restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, undefined);
+      console.info(' --- getDisallowedListForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getDisallowedListForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getDisallowedListForAccount_test_004  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestriction_test_001
+    * @tc.number setUserRestriction_test_001
+    * @tc.desc   setUserRestriction with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_001  -------- START --------');
+    try {
+      restrictions.setUserRestriction(null, LABEL_SET_APN, true);
+      console.info(' --- setUserRestriction_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestriction_test_002
+    * @tc.number setUserRestriction_test_002
+    * @tc.desc   setUserRestriction with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_002  -------- START --------');
+    try {
+      restrictions.setUserRestriction(undefined, LABEL_SET_APN, true);
+      console.info(' --- setUserRestriction_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_002  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestriction_test_003
+    * @tc.number setUserRestriction_test_003
+    * @tc.desc   setUserRestriction with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_003  -------- START --------');
+    try {
+      restrictions.setUserRestriction(SELFWANT, null, true);
+      console.info(' --- setUserRestriction_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_003  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestriction_test_004
+    * @tc.number setUserRestriction_test_004
+    * @tc.desc   setUserRestriction with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_004  -------- START --------');
+    try {
+      restrictions.setUserRestriction(SELFWANT, undefined, true);
+      console.info(' --- setUserRestriction_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_004  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestricted_test_002
+    * @tc.number getUserRestricted_test_002
+    * @tc.desc   getUserRestricted with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestricted_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestricted_test_002  -------- START --------');
+    try {
+      restrictions.getUserRestricted(undefined, LABEL_SET_ETHERNET_IP);
+      console.info(' --- getUserRestricted_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestricted_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestricted_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_001
+    * @tc.number setUserRestrictionForAccount_test_001
+    * @tc.desc   setUserRestrictionForAccount with null parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_001", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_001  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(null, LABEL_MODIFY_WALLPAPER, 100, true);
+      console.info(' --- setUserRestrictionForAccount_test_001 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_001  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_002
+    * @tc.number setUserRestrictionForAccount_test_002
+    * @tc.desc   setUserRestrictionForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_002  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100, true);
+      console.info(' --- setUserRestrictionForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_003
+    * @tc.number setUserRestrictionForAccount_test_003
+    * @tc.desc   setUserRestrictionForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_003  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null, true);
+      console.info(' --- setUserRestrictionForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_004
+    * @tc.number setUserRestrictionForAccount_test_004
+    * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_004  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined, true);
+      console.info(' --- setUserRestrictionForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_004  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_005
+    * @tc.number setUserRestrictionForAccount_test_005
+    * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_005  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, null, 100, true);
+      console.info(' --- setUserRestrictionForAccount_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_005  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_006
+    * @tc.number setUserRestrictionForAccount_test_006
+    * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_006  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, undefined, 100, true);
+      console.info(' --- setUserRestrictionForAccount_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_006  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestrictedForAccount_test_002
+    * @tc.number getUserRestrictedForAccount_test_002
+    * @tc.desc   getUserRestrictedForAccount with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestrictedForAccount_test_002", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestrictedForAccount_test_002  -------- START --------');
+    try {
+      restrictions.getUserRestrictedForAccount(undefined, LABEL_MODIFY_WALLPAPER, 100);
+      console.info(' --- getUserRestrictedForAccount_test_002 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestrictedForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestrictedForAccount_test_002  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getUserRestrictedForAccount_test_003
+    * @tc.number getUserRestrictedForAccount_test_003
+    * @tc.desc   getUserRestrictedForAccount with null parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestrictedForAccount_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestrictedForAccount_test_003  -------- START --------');
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, null);
+      console.info(' --- getUserRestrictedForAccount_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestrictedForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestrictedForAccount_test_003  -------- END --------');
+  })
+
+
+  /**
+    * @tc.name   getUserRestrictedForAccount_test_004
+    * @tc.number getUserRestrictedForAccount_test_004
+    * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestrictedForAccount_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestrictedForAccount_test_004  -------- START --------');
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, undefined);
+      console.info(' --- getUserRestrictedForAccount_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestrictedForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestrictedForAccount_test_004  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestrictedForAccount_test_005
+    * @tc.number getUserRestrictedForAccount_test_005
+    * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestrictedForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestrictedForAccount_test_005  -------- START --------');
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, null, 100);
+      console.info(' --- getUserRestrictedForAccount_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestrictedForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestrictedForAccount_test_005  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestrictedForAccount_test_006
+    * @tc.number getUserRestrictedForAccount_test_006
+    * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestrictedForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestrictedForAccount_test_006  -------- START --------');
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, undefined, 100);
+      console.info(' --- getUserRestrictedForAccount_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestrictedForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestrictedForAccount_test_006  -------- END --------');
+  })
 
   /**
    * @tc.name   test_set_disallowed_policy_0177
@@ -3985,8 +3825,2427 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
-}
 
+  /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFICREDIRECTION_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with traffic_redirection feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_traffic_redirection_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_rs232_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRS232_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with rs232 feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_rs232_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RS232, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_inactive_user_freeze_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYINACTIVEUSERFREEZE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with inactive_user_freeze feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_inactive_user_freeze_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.INACTIVE_USER_FREEZE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_maintenance_mode_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMAINTENANCEMODE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with maintenance_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_maintenance_mode_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MAINTENANCE_MODE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_screen_shot_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSCREENSHOT_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with screen_shot feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_screen_shot_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_SHOT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_screen_record_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSCREENRECORD_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with screen_record feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_screen_record_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_RECORD, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_developer_mode_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDEVELOPERMODE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with developer_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_developer_mode_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DEVELOPER_MODE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_ota_update_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYOTAUPDATE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with ota_update feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_ota_update_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.OTA_UPDATE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_bluetooth_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYBLUETOOTH_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with bluetooth feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_bluetooth_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.BLUETOOTH, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_modify_date_time_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMODIFYDATETIME_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with modify_date_time feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_modify_date_time_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MODIFY_DATE_TIME, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_printer_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPRINTER_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with printer feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_printer_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRINTER, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_hdc_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYHDC_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with hdc feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_hdc_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_microphone_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMICROPHONE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with microphone feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_microphone_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MICROPHONE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_fingerprint_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFINGERPRINT_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with fingerprint feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_fingerprint_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.FINGERPRINT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_usb_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUSB_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with usb feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_usb_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_wifi_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFI_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with wifi feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_wifi_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_tethering_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTETHERING_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with tethering feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_tethering_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TETHERING, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_camera_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCAMERA_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with camera feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_camera_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CAMERA, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_mtp_client_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMTPCLIENT_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with mtp_client feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_mtp_client_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_CLIENT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_mtp_server_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMTPSERVER_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with mtp_server feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_mtp_server_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_SERVER, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_samba_client_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSAMBACLIENT_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with samba_client feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_samba_client_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_CLIENT, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_samba_server_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSAMBASERVER_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with samba_server feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_samba_server_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_SERVER, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_backup_and_restore_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYBACKUPANDRESTORE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with backup_and_restore feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_backup_and_restore_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.BACKUP_AND_RESTORE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_mms_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMMS_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with mms feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_mms_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MMS, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_sms_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSMS_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with sms feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_sms_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SMS, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_mobile_data_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMOBILEDATA_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with mobile_data feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_mobile_data_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MOBILE_DATA, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_airplane_mode_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYAIRPLANEMODE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with airplane_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_airplane_mode_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.AIRPLANE_MODE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_vpn_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYVPN_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with vpn feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_vpn_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.VPN, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_notification_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNOTIFICATION_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with notification feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_notification_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NOTIFICATION, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_nfc_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNFC_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with nfc feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_nfc_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NFC, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_private_space_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPRIVATESPACE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with private_space feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_private_space_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRIVATE_SPACE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_telephone_call_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTELEPHONECALL_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with telephone_call feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_telephone_call_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TELEPHONE_CALL, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_app_clone_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYAPPCLONE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with app_clone feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_app_clone_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.APP_CLONE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_external_storage_card_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYEXTERNALSTORAGECARD_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with external_storage_card feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_external_storage_card_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.EXTERNAL_STORAGE_CARD, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_random_mac_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRANDOMMAC_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with random_mac feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_random_mac_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RANDOM_MAC, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_unmute_device_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUNMUTEDEVICE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with unmute_device feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_unmute_device_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.UNMUTE_DEVICE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_hdc_remote_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYHDCREMOTE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with hdc_remote feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_hdc_remote_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC_REMOTE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_virtual_service_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYVIRTUALSERVICE_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with virtual_service feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_virtual_service_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.VIRTUAL_SERVICE, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_usb_serial_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUSBSERIAL_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with usb_serial feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_usb_serial_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB_SERIAL, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_disk_recovery_key_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISKRECOVERYKEY_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with disk_recovery_key feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_disk_recovery_key_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_RECOVERY_KEY, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_near_link_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNEARLINK_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with near_link feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_near_link_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NEAR_LINK, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_reset_factory_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRESETFACTORY_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with reset_factory feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_reset_factory_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RESET_FACTORY, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_remote_desk_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYREMOTEDESK_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with remote_desk feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_remote_desk_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DESK, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_remote_diagnosis_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYREMOTEDIAGNOSIS_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with remote_diagnosis feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_remote_diagnosis_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DIAGNOSIS, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_for_account_fingerprint_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTFINGERPRINT_0100
+    * @tc.desc   test restrictions setDisallowedPolicyForAccount with fingerprint feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_for_account_fingerprint_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.FINGERPRINT, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_for_account_print_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTPRINT_0100
+    * @tc.desc   test restrictions setDisallowedPolicyForAccount with print feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_for_account_print_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.PRINT, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_set_disallowed_policy_for_account_mtp_client_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTMTPCLIENT_0100
+    * @tc.desc   test restrictions setDisallowedPolicyForAccount with mtp_client feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_set_disallowed_policy_for_account_mtp_client_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.MTP_CLIENT, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_usb_storage_device_write_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTUSBSTORAGEDEVICEWRITE_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with usb_storage_device_write feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_usb_storage_device_write_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.USB_STORAGE_DEVICE_WRITE, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_disk_recovery_key_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTDISKRECOVERYKEY_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with disk_recovery_key feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_disk_recovery_key_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISK_RECOVERY_KEY, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_sudo_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTSUDO_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with sudo feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_sudo_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.SUDO, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_outgoing_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTDISTRIBUTEDTRANSMISSIONOUTGOING_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with distributed_transmission_outgoing feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_distributed_transmission_outgoing_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION_OUTGOING, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_open_file_boost_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTOPENFILEBOOST_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with open_file_boost feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_open_file_boost_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.OPEN_FILE_BOOST, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_apn_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETAPN_0100
+     * @tc.desc   test restrictions setUserRestriction with set_apn settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_apn_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_APN, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_power_long_press_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONPOWERLONGPRESS_0100
+     * @tc.desc   test restrictions setUserRestriction with power_long_press settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_power_long_press_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.POWER_LONG_PRESS, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_ethernet_ip_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETETHERNETIP_0100
+     * @tc.desc   test restrictions setUserRestriction with set_ethernet_ip settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_ethernet_ip_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_ETHERNET_IP, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_device_name_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETDEVICENAME_0100
+     * @tc.desc   test restrictions setUserRestriction with set_device_name settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_device_name_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_DEVICE_NAME, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_biometrics_and_screen_lock_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETBIOMETRICSANDSCREENLOCK_0100
+     * @tc.desc   test restrictions setUserRestriction with set_biometrics_and_screen_lock settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_biometrics_and_screen_lock_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_for_account_modify_wallpaper_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONFORACCOUNTMODIFYWALLPAPER_0100
+     * @tc.desc   test restrictions setUserRestrictionForAccount with modify_wallpaper settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_for_account_modify_wallpaper_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestrictionForAccount(undefined, restrictions.SettingsForAccount.MODIFY_WALLPAPER, DEFAULT_USER_ID, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFICREDIRECTION_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with traffic_redirection feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_traffic_redirection_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_rs232_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYRS232_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with rs232 feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_rs232_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.RS232);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_bluetooth_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYBLUETOOTH_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with bluetooth feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_bluetooth_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.BLUETOOTH);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_modify_date_time_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMODIFYDATETIME_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with modify_date_time feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_modify_date_time_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MODIFY_DATE_TIME);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_printer_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYPRINTER_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with printer feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_printer_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRINTER);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_hdc_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYHDC_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with hdc feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_hdc_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_microphone_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMICROPHONE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with microphone feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_microphone_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MICROPHONE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_fingerprint_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFINGERPRINT_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with fingerprint feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_fingerprint_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.FINGERPRINT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_usb_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYUSB_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with usb feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_usb_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_wifi_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFI_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with wifi feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_wifi_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_tethering_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTETHERING_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with tethering feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_tethering_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.TETHERING);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_inactive_user_freeze_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYINACTIVEUSERFREEZE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with inactive_user_freeze feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_inactive_user_freeze_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.INACTIVE_USER_FREEZE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_camera_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCAMERA_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with camera feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_camera_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.CAMERA);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_mtp_client_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMTPCLIENT_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with mtp_client feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_mtp_client_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_CLIENT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_mtp_server_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMTPSERVER_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with mtp_server feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_mtp_server_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_SERVER);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_samba_client_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSAMBACLIENT_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with samba_client feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_samba_client_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_CLIENT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_samba_server_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSAMBASERVER_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with samba_server feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_samba_server_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_SERVER);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_backup_and_restore_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYBACKUPANDRESTORE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with backup_and_restore feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_backup_and_restore_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.BACKUP_AND_RESTORE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_maintenance_mode_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMAINTENANCEMODE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with maintenance_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_maintenance_mode_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MAINTENANCE_MODE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_mms_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMMS_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with mms feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_mms_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MMS);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_sms_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSMS_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with sms feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_sms_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SMS);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_mobile_data_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYMOBILEDATA_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with mobile_data feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_mobile_data_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.MOBILE_DATA);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_airplane_mode_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYAIRPLANEMODE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with airplane_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_airplane_mode_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.AIRPLANE_MODE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_vpn_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYVPN_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with vpn feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_vpn_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.VPN);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_notification_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYNOTIFICATION_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with notification feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_notification_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.NOTIFICATION);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_nfc_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYNFC_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with nfc feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_nfc_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.NFC);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_private_space_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYPRIVATESPACE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with private_space feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_private_space_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRIVATE_SPACE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_telephone_call_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTELEPHONECALL_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with telephone_call feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_telephone_call_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.TELEPHONE_CALL);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_app_clone_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYAPPCLONE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with app_clone feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_app_clone_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.APP_CLONE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_external_storage_card_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYEXTERNALSTORAGECARD_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with external_storage_card feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_external_storage_card_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.EXTERNAL_STORAGE_CARD);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_random_mac_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYRANDOMMAC_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with random_mac feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_random_mac_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.RANDOM_MAC);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_unmute_device_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYUNMUTEDEVICE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with unmute_device feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_unmute_device_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.UNMUTE_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_hdc_remote_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYHDCREMOTE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with hdc_remote feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_hdc_remote_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC_REMOTE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_virtual_service_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYVIRTUALSERVICE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with virtual_service feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_virtual_service_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.VIRTUAL_SERVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_usb_serial_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYUSBSERIAL_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with usb_serial feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_usb_serial_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB_SERIAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_screen_shot_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSCREENSHOT_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with screen_shot feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_screen_shot_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_SHOT);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_screen_record_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSCREENRECORD_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with screen_record feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_screen_record_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_RECORD);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_recovery_key_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISKRECOVERYKEY_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with disk_recovery_key feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_disk_recovery_key_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_RECOVERY_KEY);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_near_link_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYNEARLINK_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with near_link feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_near_link_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.NEAR_LINK);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_developer_mode_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDEVELOPERMODE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with developer_mode feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_developer_mode_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.DEVELOPER_MODE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_reset_factory_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYRESETFACTORY_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with reset_factory feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_reset_factory_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.RESET_FACTORY);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_remote_desk_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYREMOTEDESK_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with remote_desk feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_remote_desk_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DESK);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_remote_diagnosis_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYREMOTEDIAGNOSIS_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with remote_diagnosis feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_remote_diagnosis_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DIAGNOSIS);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_ota_update_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYOTAUPDATE_0800
+    * @tc.desc   test restrictions getDisallowedPolicy with ota_update feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_ota_update_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.OTA_UPDATE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+  done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_fingerprint_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTFINGERPRINT_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with fingerprint feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_fingerprint_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.FINGERPRINT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_print_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTPRINT_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with print feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_print_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.PRINT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_mtp_client_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTMTPCLIENT_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with mtp_client feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_mtp_client_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.MTP_CLIENT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_usb_storage_device_write_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTUSBSTORAGEDEVICEWRITE_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with usb_storage_device_write feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_usb_storage_device_write_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.USB_STORAGE_DEVICE_WRITE, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_disk_recovery_key_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTDISKRECOVERYKEY_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with disk_recovery_key feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_disk_recovery_key_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISK_RECOVERY_KEY, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_sudo_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTSUDO_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with sudo feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_sudo_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.SUDO, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_outgoing_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTDISTRIBUTEDTRANSMISSIONOUTGOING_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with distributed_transmission_outgoing feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_outgoing_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION_OUTGOING, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_open_file_boost_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYFORACCOUNTOPENFILEBOOST_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with open_file_boost feature undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_open_file_boost_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.OPEN_FILE_BOOST, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+}
 function testGetDisallowedPolicy() {
   /**
    * @tc.name   test_get_disallowed_policy_0100
@@ -4035,165 +6294,21 @@ function testGetDisallowedPolicy() {
     done();
   });
 
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0100
-    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using byod admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(false).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0200
-    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using null admin (should succeed)
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(false).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0300
-    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using super admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(false).assertTrue();
-     } finally {
-       await adminManager.disableSuperAdmin(SELFHAPNAME);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0400
-    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using normal admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(Number(error.code) === 9200002).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0500
-    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
-     try {
-       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(false).assertTrue();
-     } catch (error) {
-       expect(error.code == 9200001).assertTrue();
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0600
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0600
-    * @tc.desc   test restrictions getDisallowedPolicy with null feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       restrictions.getDisallowedPolicy(SELFWANT, null);
-       expect(false).assertTrue();
-     } catch (error) {
-       expect(Number(error.code) === 401).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_wifi_p2p_0700
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0700
-    * @tc.desc   test restrictions getDisallowedPolicy with undefined feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       restrictions.getDisallowedPolicy(SELFWANT, undefined);
-       expect(false).assertTrue();
-     } catch (error) {
-       expect(Number(error.code) === 401).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
   /**
-   * @tc.name   test_get_disallowed_policy_uinput_0100
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0100
-   * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using byod admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_get_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0100
+  * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using byod admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
-      expect(false).assertTrue();
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+      expect(ret).assertFalse();
     } catch (error) {
-      expect(Number(error.code) === 9200002).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -4201,17 +6316,38 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.name   test_get_disallowed_policy_uinput_0200
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0200
-   * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using null admin (should succeed)
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_get_disallowed_policy_uinput_0200", Level.LEVEL2, async (done: Function) => {
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0200
+  * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using null admin (should succeed)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0300
+  * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.LOCAL_INPUT);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
       expect(ret).assertFalse();
     } catch (error) {
       expect(false).assertTrue();
@@ -4222,38 +6358,17 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.name   test_get_disallowed_policy_uinput_0300
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0300
-   * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using super admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_get_disallowed_policy_uinput_0300", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    try {
-      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
-      expect(ret).assertFalse();
-    } catch (error) {
-      expect(false).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
-   * @tc.name   test_get_disallowed_policy_uinput_0400
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0400
-   * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using normal admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_get_disallowed_policy_uinput_0400", Level.LEVEL2, async (done: Function) => {
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0400
+  * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
       expect(ret).assertFalse();
     } catch (error) {
       expect(Number(error.code) === 9200002).assertTrue();
@@ -4264,242 +6379,482 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.name   test_get_disallowed_policy_uinput_0500
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0500
-   * @tc.desc   test restrictions getDisallowedPolicy with uinput feature without admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function) => {
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0500
+  * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
     try {
-      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200001).assertTrue();
+      expect(error.code == 9200001).assertTrue();
     }
     done();
   });
 
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0100
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0100
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature byod admin
+  /**
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0600
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0600
+  * @tc.desc   test restrictions getDisallowedPolicy with null feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_wifi_p2p_0700
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0700
+  * @tc.desc   test restrictions getDisallowedPolicy with undefined feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+/**
+  * @tc.name   test_get_disallowed_policy_uinput_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0100
+  * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using byod admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+it("test_get_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
+  await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+  try {
+    let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+    expect(false).assertTrue();
+  } catch (error) {
+    expect(Number(error.code) === 9200002).assertTrue();
+  } finally {
+    await adminManager.disableAdmin(SELFWANT);
+  }
+  done();
+});
+
+/**
+  * @tc.name   test_get_disallowed_policy_uinput_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0200
+  * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using null admin (should succeed)
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+it("test_get_disallowed_policy_uinput_0200", Level.LEVEL2, async (done: Function) => {
+  await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+  try {
+    let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.LOCAL_INPUT);
+    expect(ret).assertFalse();
+  } catch (error) {
+    expect(false).assertTrue();
+  } finally {
+    await adminManager.disableSuperAdmin(SELFHAPNAME);
+  }
+  done();
+});
+
+/**
+  * @tc.name   test_get_disallowed_policy_uinput_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0300
+  * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+it("test_get_disallowed_policy_uinput_0300", Level.LEVEL2, async (done: Function) => {
+  await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+  try {
+    let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+    expect(ret).assertFalse();
+  } catch (error) {
+    expect(false).assertTrue();
+  } finally {
+    await adminManager.disableSuperAdmin(SELFHAPNAME);
+  }
+  done();
+});
+
+/**
+  * @tc.name   test_get_disallowed_policy_uinput_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0400
+  * @tc.desc   test restrictions getDisallowedPolicy with uinput feature using normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+it("test_get_disallowed_policy_uinput_0400", Level.LEVEL2, async (done: Function) => {
+  await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+  try {
+    let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+    expect(ret).assertFalse();
+  } catch (error) {
+    expect(Number(error.code) === 9200002).assertTrue();
+  } finally {
+    await adminManager.disableAdmin(SELFWANT);
+  }
+  done();
+});
+
+/**
+  * @tc.name   test_get_disallowed_policy_uinput_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0500
+  * @tc.desc   test restrictions getDisallowedPolicy with uinput feature without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function) => {
+  try {
+    restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+    expect(false).assertTrue();
+  } catch (error) {
+    expect(Number(error.code) === 9200001).assertTrue();
+  }
+  done();
+});
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0100
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature byod admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0200
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0200
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0300
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0300
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature super admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0400
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0400
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 9200002).assertTrue();  
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0500
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();  
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0600
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0600
+  * @tc.desc   test restrictions getDisallowedPolicy with unknow feature
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();  
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_disallowed_policy_core_dump_0700
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0700
+  * @tc.desc   test restrictions getDisallowedPolicy with coredump feature undefined admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();  
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0100
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature without admin
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-   it("test_get_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(Number(error.code) === 9200002).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0200
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0200
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature null admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-     try {
-       let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(false).assertTrue();
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0300
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0300
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature super admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(false).assertTrue();
-     } finally {
-       await adminManager.disableSuperAdmin(SELFHAPNAME);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0400
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0400
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature normal admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-     try {
-       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(Number(error.code) === 9200002).assertTrue();  
-     } finally {
-       await adminManager.disableAdmin(SELFWANT);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0500
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0500
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature without admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
-     try {
-       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(false).assertTrue();
-     } catch (error) {
-       expect(Number(error.code) === 9200001).assertTrue();  
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0600
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0600
-    * @tc.desc   test restrictions getDisallowedPolicy with unknow feature
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
-     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-     try {
-       restrictions.getDisallowedPolicy(SELFWANT, -1);
-       expect(false).assertTrue();
-     } catch (error) {
-       expect(Number(error.code) === 801).assertTrue();  
-     } finally {
-       await adminManager.disableSuperAdmin(SELFHAPNAME);
-     }
-     done();
-   });
-
-   /**
-    * @tc.name   test_get_disallowed_policy_core_dump_0700
-    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0700
-    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature undefined admin
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-   it("test_get_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
-     try {
-       let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP);
-       expect(ret).assertFalse();
-     } catch (error) {
-       expect(Number(error.code) === 401).assertTrue();  
-     }
-done();
-    });
-
-    /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0100
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature without admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_get_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
-        expect(false).assertTrue();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+  it("test_get_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
       }
-      done();
-    });
+    }
+    done();
+  });
 
-    /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0200
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0200
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_get_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0200
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(ret).assertFalse();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0300
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
+    try {
+      let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(ret).assertFalse();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0400
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0500
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0600
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it("test_get_disallowed_policy_disk_erasure_0600", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_disallowed_policy_disk_erasure_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0700
+    * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature byod admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_get_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
-        let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(ret).assertFalse();
       } catch (error) {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(Number(error.code) === 9200002).assertTrue();
         }
       } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+        await adminManager.disableAdmin(SELFWANT);
       }
       done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0300
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0300
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_get_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
-      try {
-        let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE);
-        expect(ret).assertFalse();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0400
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_get_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
+    * @tc.name   test_get_disallowed_policy_sudo_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0400
+    * @tc.desc   test restrictions getDisallowedPolicy with sudo feature null feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_get_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.getDisallowedPolicy(SELFWANT, null);
@@ -4517,14 +6872,14 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0500
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0500
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined feature
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_get_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
+    * @tc.name   test_get_disallowed_policy_sudo_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0500
+    * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_get_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.getDisallowedPolicy(SELFWANT, undefined);
@@ -4540,192 +6895,6 @@ done();
       }
       done();
     });
-
-    /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0600
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0600
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature super admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("test_get_disallowed_policy_disk_erasure_0600", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
-        expect(ret).assertFalse();
-      } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_get_disallowed_policy_disk_erasure_0700
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0700
-     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature byod admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it("test_get_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
-       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-       try {
-         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
-         expect(ret).assertFalse();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 9200002).assertTrue();
-         }
-       } finally {
-         await adminManager.disableAdmin(SELFWANT);
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0100
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0100
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature without admin
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it("test_get_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
-       try {
-         restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
-         expect(false).assertTrue();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 9200001).assertTrue();
-         }
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0300
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0300
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined admin
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it("test_get_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
-       try {
-         let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO);
-         expect(ret).assertFalse();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 401).assertTrue();
-         }
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0400
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0400
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature null feature
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it("test_get_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
-       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-       try {
-         restrictions.getDisallowedPolicy(SELFWANT, null);
-         expect(false).assertTrue();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 401).assertTrue();
-         }
-       } finally {
-         await adminManager.disableSuperAdmin(SELFHAPNAME);
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0500
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0500
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined feature
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it("test_get_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
-       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-       try {
-         restrictions.getDisallowedPolicy(SELFWANT, undefined);
-         expect(false).assertTrue();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 401).assertTrue();
-         }
-       } finally {
-         await adminManager.disableSuperAdmin(SELFHAPNAME);
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0600
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0600
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature super admin
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL0
-      */
-     it("test_get_disallowed_policy_sudo_0600", Level.LEVEL0, async (done: Function) => {
-       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-       try {
-         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
-         expect(ret).assertFalse();
-       } catch (error) {
-         expect(Number(error.code) === 801).assertTrue();
-       } finally {
-         await adminManager.disableSuperAdmin(SELFHAPNAME);
-       }
-       done();
-     });
-
-     /**
-      * @tc.name   test_get_disallowed_policy_sudo_0700
-      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0700
-      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature byod admin
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it("test_get_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
-       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-       try {
-         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
-         expect(ret).assertFalse();
-       } catch (error) {
-         if (Number(error.code) === 801) {
-           expect(Number(error.code) === 801).assertTrue();
-         } else {
-           expect(Number(error.code) === 9200002).assertTrue();
-         }
-       } finally {
-         await adminManager.disableAdmin(SELFWANT);
-       }
-       done();
-     });
 
     /**
      * @tc.name   test_get_disallowed_policy_0102
@@ -8213,6 +10382,116 @@ function testSetUserRestrictionPolicy() {
     }
     done();
   });
+
+   /**
+    * @tc.name   test_set_user_restriction_set_apn_null_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETAPNNULL_0700
+    * @tc.desc   test restrictions setUserRestriction with set_apn feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_set_apn_null_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestriction(null, restrictions.SettingsForDevice.SET_APN, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_set_user_restriction_power_long_press_null_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONPOWERLONGPRESSNULL_0700
+    * @tc.desc   test restrictions setUserRestriction with power_long_press feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_power_long_press_null_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestriction(null, restrictions.SettingsForDevice.POWER_LONG_PRESS, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_set_user_restriction_set_ethernet_ip_null_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETERNETIPNULL_0700
+    * @tc.desc   test restrictions setUserRestriction with set_ethernet_ip feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_set_ethernet_ip_null_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestriction(null, restrictions.SettingsForDevice.SET_ETHERNET_IP, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_set_user_restriction_set_device_name_null_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETDEVICENAMENULL_0700
+    * @tc.desc   test restrictions setUserRestriction with set_device_name feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_set_device_name_null_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestriction(null, restrictions.SettingsForDevice.SET_DEVICE_NAME, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_set_user_restriction_set_biometrics_and_screen_lock_null_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETBIOMETRICSANDSCREENLOCKNULL_0700
+    * @tc.desc   test restrictions setUserRestriction with set_biometrics_and_screen_lock feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_set_biometrics_and_screen_lock_null_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestriction(null, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
 }
 
 function testGetUserRestrictedPolicy() {
@@ -8518,6 +10797,210 @@ function testGetUserRestrictedPolicy() {
     }
     done();
   });
+
+  /**
+    * @tc.name   test_get_user_restricted_set_apn_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETAPN_0400
+    * @tc.desc   test restrictions getUserRestricted with set_apn feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_user_restricted_set_apn_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(undefined, restrictions.SettingsForDevice.SET_APN);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_user_restricted_power_long_press_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDPOWERLONGPRESS_0400
+    * @tc.desc   test restrictions getUserRestricted with power_long_press feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_user_restricted_power_long_press_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(undefined, restrictions.SettingsForDevice.POWER_LONG_PRESS);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_user_restricted_set_ethernet_ip_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETERNETIP_0400
+    * @tc.desc   test restrictions getUserRestricted with set_ethernet_ip feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_user_restricted_set_ethernet_ip_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(undefined, restrictions.SettingsForDevice.SET_ETHERNET_IP);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_user_restricted_set_device_name_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETDEVICENAME_0400
+    * @tc.desc   test restrictions getUserRestricted with set_device_name feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_user_restricted_set_device_name_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(undefined, restrictions.SettingsForDevice.SET_DEVICE_NAME);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_get_user_restricted_set_biometrics_and_screen_lock_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETBIOMETRICSANDSCREENLOCK_0400
+    * @tc.desc   test restrictions getUserRestricted with set_biometrics_and_screen_lock feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_get_user_restricted_set_biometrics_and_screen_lock_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(undefined, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_set_apn_null_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETAPNNULL_0500
+  * @tc.desc   test restrictions getUserRestricted with set_apn feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_set_apn_null_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_APN);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_power_long_press_null_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDPOWERLONGPRESSNULL_0500
+  * @tc.desc   test restrictions getUserRestricted with power_long_press feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_power_long_press_null_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.POWER_LONG_PRESS);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_set_ethernet_ip_null_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETERNETIPNULL_0500
+  * @tc.desc   test restrictions getUserRestricted with set_ethernet_ip feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_set_ethernet_ip_null_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_ETHERNET_IP);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_set_device_name_null_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETDEVICENAMENULL_0500
+  * @tc.desc   test restrictions getUserRestricted with set_device_name feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_set_device_name_null_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_DEVICE_NAME);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_set_biometrics_and_screen_lock_null_0500
+  * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDSETBIOMETRICSANDSCREENLOCKNULL_0500
+  * @tc.desc   test restrictions getUserRestricted with set_biometrics_and_screen_lock feature null admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_set_biometrics_and_screen_lock_null_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
 }
 
 function testSetUserRestrictionForAccountPolicy() {
@@ -8631,6 +11114,28 @@ function testSetUserRestrictionForAccountPolicy() {
     }
     done();
   });
+
+   /**
+    * @tc.name   test_set_user_restriction_for_account_modify_wallpaper_null_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONFORACCOUNTMODIFYWALLPAPERNULL_0300
+    * @tc.desc   test restrictions setUserRestrictionForAccount with modify_wallpaper feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_set_user_restriction_for_account_modify_wallpaper_null_0300", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.setUserRestrictionForAccount(null, restrictions.SettingsForAccount.MODIFY_WALLPAPER, DEFAULT_USER_ID, false);
+       expect(false).assertTrue();
+     } catch (error) {
+       if (Number(error.code) === 801) {
+         expect(Number(error.code) === 801).assertTrue();
+       } else {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+     }
+     done();
+   });
 }
 
 function testGetUserRestrictedForAccountPolicy() {
@@ -8757,6 +11262,46 @@ function testGetUserRestrictedForAccountPolicy() {
     }
     done();
   });
+
+    /**
+     * @tc.name   test_get_user_restricted_for_account_modify_wallpaper_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDFORACCOUNTMODIFYWALLPAPER_0400
+     * @tc.desc   test restrictions getUserRestrictedForAccount with modify_wallpaper feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_get_user_restricted_for_account_modify_wallpaper_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.getUserRestrictedForAccount(undefined, restrictions.SettingsForAccount.MODIFY_WALLPAPER, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_get_user_restricted_for_account_modify_wallpaper_null_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERRESTRICTEDFORACCOUNTMODIFYWALLPAPERNULL_0500
+    * @tc.desc   test restrictions getUserRestrictedForAccount with modify_wallpaper feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_get_user_restricted_for_account_modify_wallpaper_null_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.getUserRestrictedForAccount(null, restrictions.SettingsForAccount.MODIFY_WALLPAPER, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    });
 }
 
 function testSetDisallowedForAccountPolicy26() {

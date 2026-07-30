@@ -58,7 +58,6 @@ struct GrandSon2 {
 
 @ComponentV2
 struct ChildTest2 {
-
   build() {
     Column() {
       GrandSon2()
@@ -85,6 +84,11 @@ struct Provider18 {
           }).fontSize(9)
         ChildTest2()
       }.width('100%')
-    }.width('100%').height('100%').align(Alignment.Top).scrollBar(BarState.Off)
+    }
+    .width('100%')
+    .height('100%')
+    .align(Alignment.Top)
+    .scrollBar(BarState.Off)
+    .padding({top:10})
   }
 }

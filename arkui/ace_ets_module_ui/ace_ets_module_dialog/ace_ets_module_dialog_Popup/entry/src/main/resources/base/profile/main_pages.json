@@ -35,6 +35,16 @@
     "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
-    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial"
+    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial",
+    "MainAbility/pages/popup/PopupColorMode",
+    "MainAbility/pages/popup/PopupBackgroundTestPage",
+    "MainAbility/pages/popup/PopupLevelMode",
+    
+    "MainAbility/pages/popupBackground/CustomPopupOptionsBackgroundBlurStyleOptions",
+    "MainAbility/pages/popupBackground/CustomPopupOptionsBackgroundEffect",
+    "MainAbility/pages/popupBackground/PopupBackgroundBlurStyleOptions",
+    "MainAbility/pages/popupBackground/PopupBackgroundEffect",
+    "MainAbility/pages/popupBackground/PopupCommonOptionsBackgroundBlurStyleOptions",
+    "MainAbility/pages/popupBackground/PopupCommonOptionsBackgroundEffect"
   ]
 }

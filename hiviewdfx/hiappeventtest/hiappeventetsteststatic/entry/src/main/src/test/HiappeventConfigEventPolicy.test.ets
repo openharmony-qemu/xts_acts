@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent'
@@ -15,18 +16,18 @@ interface errobj {
 }
 
 export default function configEventPolicyStrongTest() {
-  describe('configEventPolicyTestAdapt001', (): void => {
+  describe('configEventPolicyStrongTest', (): void => {
     hilog.info(domain, tag, 'describe start');
     /**
-     * @tc.name   testHiAppEventconfigEventPolicy020
-     * @tc.number testHiAppEventconfigEventPolicy020
+     * @tc.name   testHiAppEventconfigEventPolicystatic020
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_ConfigEventPolicystatic_6600
      * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-MainThreadJank-autoStopSampling为false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHiAppEventconfigEventPolicy020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, `testHiAppEventconfigEventPolicy020 start`);
+    it('testHiAppEventconfigEventPolicystatic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, `testHiAppEventconfigEventPolicystatic020 start`);
         let policy: hiAppEvent.EventPolicy = {
           "mainThreadJankPolicy": {
             "logType": 1,
@@ -38,25 +39,25 @@ export default function configEventPolicyStrongTest() {
           }
         };
         hiAppEvent.configEventPolicy(policy).then(() => {
-          hilog.info(domain, tag, `testHiAppEventconfigEventPolicy020 configEventPolicy call successful`);
+          hilog.info(domain, tag, `testHiAppEventconfigEventPolicystatic020 configEventPolicy call successful`);
           done();
         }).catch((err: Error) => {
-          hilog.error(domain, tag, 'testHiAppEventconfigEventPolicy020 message :(%{public}s', err.message);
+          hilog.error(domain, tag, 'testHiAppEventconfigEventPolicystatic020 message :(%{public}s', err.message);
           expect(false).assertTrue();
           done();
         });
-        hilog.info(domain, tag, `testHiAppEventconfigEventPolicy020 end`);
+        hilog.info(domain, tag, `testHiAppEventconfigEventPolicystatic020 end`);
       })
     /**
-     * @tc.name   testHiAppEventconfigEventPolicy021
-     * @tc.number testHiAppEventconfigEventPolicy021
+     * @tc.name   testHiAppEventconfigEventPolicystatic021
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_ConfigEventPolicystatic_6700
      * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank为undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHiAppEventconfigEventPolicy021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, `testHiAppEventconfigEventPolicy021 start`);
+    it('testHiAppEventconfigEventPolicystatic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, `testHiAppEventconfigEventPolicystatic021 start`);
       let policy: hiAppEvent.EventPolicy = {
         "mainThreadJankPolicy": undefined
       };
@@ -64,11 +65,11 @@ export default function configEventPolicyStrongTest() {
         hilog.error(domain, tag, `Unexpected success for undefined policy`);
         done();
       }).catch((err: Error) => {
-        hilog.error(domain, tag, 'testHiAppEventconfigEventPolicy001 Code: ${err?.code}, message: ${err?.message}');
+        hilog.error(domain, tag, 'testHiAppEventconfigEventPolicystatic021 Code: ${err?.code}, message: ${err?.message}');
         expect(false).assertTrue;
         done();
       });
-      hilog.info(domain, tag, `testHiAppEventconfigEventPolicy021 end`);
+      hilog.info(domain, tag, `testHiAppEventconfigEventPolicystatic021 end`);
     })
   })
 }

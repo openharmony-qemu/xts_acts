@@ -19,6 +19,8 @@
 #include "securec.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define OPER_INTERVAL 200 // 200 ms
 #define SERVICE_NUM 4
@@ -34,7 +36,11 @@ static BOOL Initialize(Service *service, Identity identity);
 static BOOL MessageHandle(Service *service, Request *msg);
 static TaskConfig GetTaskConfig(Service *service);
 
+#ifdef XTS_OVERLAY_ENABLE
+static Vector g_nodeVector __attribute__((section(".sbss")));
+#else
 static Vector g_nodeVector;
+#endif
 typedef struct Node {
     int id;
     const char *name;
@@ -80,28 +86,6 @@ typedef struct DemoService {
     int serviceCalledCount;
 } DemoService;
 
-static BOOL DefaultApi001(IUnknown *iUnknown, char *para1)
-{
-    (void)iUnknown;
-    (void)para1;
-    return TRUE;
-}
-static int32 SendRequestProxyDF(const Identity *identity, const Request *request, Handler handler)
-{
-    return SAMGR_SendRequest(identity, request, handler);
-}
-
-static BOOL FeatureApi001(IUnknown *iUnknown, char *para1)
-{
-    (void)iUnknown;
-    (void)para1;
-    return TRUE;
-}
-static int32 SendRequestProxyF(const Identity *identity, const Request *request, Handler handler)
-{
-    return SAMGR_SendRequest(identity, request, handler);
-}
-
 static DemoService g_service[] = {
     {
         .GetName = GetName,
@@ -111,8 +95,8 @@ static DemoService g_service[] = {
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     },
@@ -124,8 +108,8 @@ static DemoService g_service[] = {
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     },
@@ -137,8 +121,8 @@ static DemoService g_service[] = {
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     },
@@ -150,8 +134,8 @@ static DemoService g_service[] = {
         .ref = 1,
         .iUnknown = {
             DEFAULT_IUNKNOWN_IMPL,
-            .DefaultApi001 = DefaultApi001,
-            .SendRequestProxyDF = SendRequestProxyDF,
+            .DefaultApi001 = SamgrTestDummyApiHandler,
+            .SendRequestProxyDF = SamgrTestSendRequestProxy,
         },
         .serviceCalledCount = 0,
     }
@@ -170,7 +154,11 @@ static const char *GetName(Service *service)
     }
 }
 
+#ifdef XTS_OVERLAY_ENABLE
+static int g_initlizationOrder __attribute__((section(".sbss")));
+#else
 static int g_initlizationOrder = 0;
+#endif
 static BOOL Initialize(Service *service, Identity identity)
 {
     DemoService *demoService = (DemoService *)service;
@@ -214,44 +202,16 @@ static TaskConfig GetTaskConfig(Service *service)
     return config;
 }
 
-static const char *FEATURE_GetName(Feature *feature)
-{
-    (void)feature;
-    return "featureName501";
-}
-
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    (void)parent;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-}
-
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
-
-static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
-{
-    (void)request;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->featureCalledCount++;
-
-    return TRUE;
-}
-
 static DemoFeature g_createFeature = {
-    .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage,
+    .GetName = SamgrTestGetFeatureName501,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessageIncrement,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
-        .FeatureApi001 = FeatureApi001,
-        .SendRequestProxyF = SendRequestProxyF,
+        .FeatureApi001 = SamgrTestDummyApiHandler,
+        .SendRequestProxyF = SamgrTestSendRequestProxy,
     },
     .identity = {-1, -1, NULL},
     .featureCalledCount = 0,
@@ -261,10 +221,7 @@ static void ServiceInit(void)
 {
     g_nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
     for (int i = 0; i < SERVICE_NUM; i++) {
-        BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service[i]);
-        if (result == FALSE) {
-            printf("[hctest]E RegisterService failed, occurs: %d\n", i);
-        }
+        SamgrTestRegisterService((Service *)&g_service[i]);
     }
 }
 SYS_SERVICE_INIT(ServiceInit);
@@ -272,52 +229,15 @@ SYS_SERVICE_INIT(ServiceInit);
 static void FeatureInit(void)
 {
     for (int i = 0; i < SERVICE_NUM; i++) {
-        BOOL result1 = SAMGR_GetInstance()->RegisterDefaultFeatureApi(g_service[i].GetName((Service *)&g_service[i]),
-            GET_IUNKNOWN(g_service[i]));
-        BOOL result2 = SAMGR_GetInstance()->RegisterFeature(g_service[i].GetName((Service *)&g_service[i]), 
-                                                            (Feature *)&g_createFeature);
-        BOOL result3 = SAMGR_GetInstance()->RegisterFeatureApi(g_service[i].GetName((Service *)&g_service[i]), 
-                                                               "featureName501", GET_IUNKNOWN(g_createFeature));
-        if (result1 == FALSE || result2 == FALSE || result3 == FALSE) {
-            printf("[hctest]E failed to register feature or api.\n");
-        }
+        SamgrTestRegisterDefaultFeatureApi(g_service[i].GetName((Service *)&g_service[i]),
+                                           GET_IUNKNOWN(g_service[i]));
+        SamgrTestRegisterFeature(g_service[i].GetName((Service *)&g_service[i]),
+                                 (Feature *)&g_createFeature);
+        SamgrTestRegisterFeatureApi(g_service[i].GetName((Service *)&g_service[i]),
+                                    "featureName501", GET_IUNKNOWN(g_createFeature));
     }
 }
 SYS_FEATURE_INIT(FeatureInit);
-
-static DemoApi *GetIUnknown(const char *serviceName, const char *featureName)
-{
-    DemoApi *demoApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(serviceName, featureName);
-    if (iUnknown == NULL) {
-        printf("[hctest]failed to GetFeatureApi.\n");
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&demoApi);
-    if (result == 0 && demoApi != NULL) {
-        return demoApi;
-    } else {
-        printf("[hctest]failed to QueryInterface.\n");
-        return NULL;
-    }
-}
-
-static DefaultFeatureApi *GetDefaultIUnknown(const char *serviceName)
-{
-    DefaultFeatureApi *defaultApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetDefaultFeatureApi(serviceName);
-    if (iUnknown == NULL) {
-        printf("[hctest]failed to GetFeatureApi.\n");
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&defaultApi);
-    if (result == 0 && defaultApi != NULL) {
-        return defaultApi;
-    } else {
-        printf("[hctest]failed to QueryInterface.\n");
-        return NULL;
-    }
-}
 
 LITE_TEST_SUIT(distributedschedule, samgr, SingleTaskFuncTestSuite);
 
@@ -335,7 +255,7 @@ static BOOL SingleTaskFuncTestSuiteTearDown(void)
         SAMGR_GetInstance()->UnregisterDefaultFeatureApi(g_service[i].GetName((Service *)&g_service[i]));
         SAMGR_GetInstance()->UnregisterService(g_service[i].GetName((Service *)&g_service[i]));
     }
-    
+
     for (int i = 0; i < VECTOR_Num(&g_nodeVector); i++) {
         Node *vectorAt = (Node *)VECTOR_At(&g_nodeVector, i);
         if (vectorAt != NULL) {
@@ -343,8 +263,68 @@ static BOOL SingleTaskFuncTestSuiteTearDown(void)
         }
     }
     VECTOR_Clear(&g_nodeVector);
-    
+
     return TRUE;
+}
+
+static void CheckSingleTaskFeatureApi(const char *serviceName)
+{
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown(serviceName, "featureName501");
+    if (demoApi == NULL) {
+        TEST_FAIL();
+    }
+    BOOL result = demoApi->FeatureApi001((IUnknown *)demoApi, "xxxx");
+    TEST_ASSERT_EQUAL_INT(result, TRUE);
+
+    g_createFeature.featureCalledCount = 0;
+    Request request = {.msgId = 0, .msgValue = 0};
+    char *body = "I wanna async call good result!";
+    request.len = (int16)(strlen(body) + 1);
+    request.data = malloc(request.len);
+    if (request.data == NULL) {
+        TEST_FAIL();
+    }
+    strcpy_s(request.data, request.len, body);
+    int32 result2 = demoApi->SendRequestProxyF(&(g_createFeature.identity), &request, NULL);
+    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
+    osDelay(OPER_INTERVAL);
+    TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
+    free(request.data);
+    request.data = NULL;
+    demoApi->Release((IUnknown *)demoApi);
+}
+
+static void CheckSingleTaskDefaultApi(const char *serviceName, Identity *identity, int *calledCount)
+{
+    DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown(serviceName);
+    if (defaultApi == NULL) {
+        TEST_FAIL();
+    }
+    BOOL result = defaultApi->DefaultApi001((IUnknown *)defaultApi, "yyyy");
+    TEST_ASSERT_EQUAL_INT(result, TRUE);
+
+    Request request = {.msgId = 0, .msgValue = 0};
+    char *body = "I want to call defaultFeature!";
+    request.len = (int16)(strlen(body) + 1);
+    request.data = malloc(request.len);
+    if (request.data == NULL) {
+        TEST_FAIL();
+    }
+    strcpy_s(request.data, request.len, body);
+    int32 result2 = defaultApi->SendRequestProxyDF(identity, &request, NULL);
+    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
+    osDelay(OPER_INTERVAL);
+    TEST_ASSERT_EQUAL_INT(*calledCount == 1, TRUE);
+    free(request.data);
+    request.data = NULL;
+    defaultApi->Release((IUnknown *)defaultApi);
+}
+
+static void CheckSingleTaskService(int index)
+{
+    CheckSingleTaskFeatureApi(g_serviceNameArray[index]);
+    CheckSingleTaskDefaultApi(g_serviceNameArray[index], &g_service[index].identity,
+                              &g_service[index].serviceCalledCount);
 }
 
 /**
@@ -357,58 +337,7 @@ static BOOL SingleTaskFuncTestSuiteTearDown(void)
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0010, Function | MediumTest | Level2)
 {
-    // test featureApi function
-    DemoApi *demoApi = GetIUnknown("SingleTS01", "featureName501");
-    if (demoApi == NULL) {
-        TEST_FAIL();
-    }
-    BOOL result = demoApi->FeatureApi001((IUnknown *)demoApi, "xxxx");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    g_createFeature.featureCalledCount = 0;
-    Request request = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body = "I wanna async call good result!";
-    request.len = (int16)(strlen(body) + 1);
-    request.data = malloc(request.len);
-    if (request.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request.data, request.len, body);
-    int32 result2 = demoApi->SendRequestProxyF(&(g_createFeature.identity), &request, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
-
-    // test defaultFeatureApi function
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SingleTS01");
-    if (defaultApi == NULL) {
-        TEST_FAIL();
-    }
-    result = defaultApi->DefaultApi001((IUnknown *)defaultApi, "yyyy");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    Request request2 = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body2 = "I want to call defaultFeature!";
-    request2.len = (int16)(strlen(body2) + 1);
-    request2.data = malloc(request2.len);
-    if (request2.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request2.data, request2.len, body2);
-    result2 = defaultApi->SendRequestProxyDF(&(g_service[0].identity), &request2, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
+    CheckSingleTaskService(INDEX0);
 };
 
 /**
@@ -421,56 +350,7 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0010, Function | MediumTes
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0020, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SingleTS02", "featureName501");
-    if (demoApi == NULL) {
-        TEST_FAIL();
-    }
-    BOOL result = demoApi->FeatureApi001((IUnknown *)demoApi, "xxxx");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    g_createFeature.featureCalledCount = 0;
-    Request request = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body = "I wanna async call good result!";
-    request.len = (int16)(strlen(body) + 1);
-    request.data = malloc(request.len);
-    if (request.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request.data, request.len, body);
-    int32 result2 = demoApi->SendRequestProxyF(&(g_createFeature.identity), &request, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
-
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SingleTS02");
-    if (defaultApi == NULL) {
-        TEST_FAIL();
-    }
-    result = defaultApi->DefaultApi001((IUnknown *)defaultApi, "yyyy");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    Request request2 = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body2 = "I want to call defaultFeature!";
-    request2.len = (int16)(strlen(body2) + 1);
-    request2.data = malloc(request2.len);
-    if (request2.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request2.data, request2.len, body2);
-    result2 = defaultApi->SendRequestProxyDF(&(g_service[1].identity), &request2, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_service[1].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
+    CheckSingleTaskService(INDEX1);
 };
 
 /**
@@ -483,56 +363,7 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0020, Function | MediumTes
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0030, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SingleTS03", "featureName501");
-    if (demoApi == NULL) {
-        TEST_FAIL();
-    }
-    BOOL result = demoApi->FeatureApi001((IUnknown *)demoApi, "xxxx");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    g_createFeature.featureCalledCount = 0;
-    Request request = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body = "I wanna async call good result!";
-    request.len = (int16)(strlen(body) + 1);
-    request.data = malloc(request.len);
-    if (request.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request.data, request.len, body);
-    int32 result2 = demoApi->SendRequestProxyF(&(g_createFeature.identity), &request, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
-
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SingleTS03");
-    if (defaultApi == NULL) {
-        TEST_FAIL();
-    }
-    result = defaultApi->DefaultApi001((IUnknown *)defaultApi, "yyyy");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    Request request2 = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body2 = "I want to call defaultFeature!";
-    request2.len = (int16)(strlen(body2) + 1);
-    request2.data = malloc(request2.len);
-    if (request2.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request2.data, request2.len, body2);
-    result2 = defaultApi->SendRequestProxyDF(&(g_service[INDEX2].identity), &request2, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_service[INDEX2].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
+    CheckSingleTaskService(INDEX2);
 };
 
 /**
@@ -545,56 +376,7 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0030, Function | MediumTes
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0040, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("SingleTS04", "featureName501");
-    if (demoApi == NULL) {
-        TEST_FAIL();
-    }
-    BOOL result = demoApi->FeatureApi001((IUnknown *)demoApi, "xxxx");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    g_createFeature.featureCalledCount = 0;
-    Request request = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body = "I wanna async call good result!";
-    request.len = (int16)(strlen(body) + 1);
-    request.data = malloc(request.len);
-    if (request.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request.data, request.len, body);
-    int32 result2 = demoApi->SendRequestProxyF(&(g_createFeature.identity), &request, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
-
-    DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SingleTS04");
-    if (defaultApi == NULL) {
-        TEST_FAIL();
-    }
-    result = defaultApi->DefaultApi001((IUnknown *)defaultApi, "yyyy");
-    TEST_ASSERT_EQUAL_INT(result, TRUE);
-
-    Request request2 = {
-        .msgId = 0,
-        .msgValue = 0
-    };
-    char *body2 = "I want to call defaultFeature!";
-    request2.len = (int16)(strlen(body2) + 1);
-    request2.data = malloc(request2.len);
-    if (request2.data == NULL) {
-        TEST_FAIL();
-    }
-    strcpy_s(request2.data, request2.len, body2);
-    result2 = defaultApi->SendRequestProxyDF(&(g_service[INDEX3].identity), &request2, NULL);
-    TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
-    osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(g_service[INDEX3].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
+    CheckSingleTaskService(INDEX3);
 };
 
 /**

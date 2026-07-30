@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
@@ -27,14 +27,16 @@ import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
-export default function PopupNodeTest() {
+export default function PopupNodeTest(): void {
   describe('PopupNodeTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("PopupTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("PopupTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/popup/PopupIndex',
@@ -68,7 +70,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupTextOptionsText', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupTextOptionsText', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupTextOptionsText START');
       let driver = Driver.create();
       let textComponent:Component | null = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
@@ -80,11 +83,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: textComponent object getDescription: ' + JSON.stringify(textComponent.getDescription()));
         expect(textComponent !== null).assertEqual(true);
         console.info('PopupTest: popupTextOptionsText END');
-        done();
       } else {
         console.info('PopupTest: textComponent is undefined');
         expect().assertFail();
-        done();
       }
     });
 
@@ -96,7 +97,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupTextOptionsFontSize', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupTextOptionsFontSize', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupTextOptionsFontSize START');
       try {
         const driver = Driver.create();
@@ -105,11 +107,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupTextOptionsFontSize - fontSize should be 20');
         console.info('PopupTest: popupTextOptionsFontSize END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupTextOptionsFontSize error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -121,7 +121,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupTextOptionsFontColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupTextOptionsFontColor', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupTextOptionsFontColor START');
       try {
         const driver = Driver.create();
@@ -130,11 +131,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupTextOptionsFontColor - fontColor should be Color.Red');
         console.info('PopupTest: popupTextOptionsFontColor END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupTextOptionsFontColor error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -146,7 +145,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupTextOptionsFontWeight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupTextOptionsFontWeight', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupTextOptionsFontWeight START');
       try {
         const driver = Driver.create();
@@ -162,11 +162,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: titleComponent object tree =', JSON.stringify(titleComponent));
         console.info('PopupTest: popupTextOptionsFontWeight - fontWeight should be FontWeight.Normal');
         console.info('PopupTest: popupTextOptionsFontWeight END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupTextOptionsFontWeight error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -178,7 +176,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupButtonOptionsText', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupButtonOptionsText', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupButtonOptionsText START');
       try {
         const driver = Driver.create();
@@ -187,11 +186,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         expect(popupButton !== null).assertEqual(true);
         console.info('PopupTest: popupButtonOptionsText END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupButtonOptionsText error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -203,7 +200,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupButtonOptionsFontSize', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupButtonOptionsFontSize', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupButtonOptionsFontSize START');
       try {
         const driver = Driver.create();
@@ -212,11 +210,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         console.info('PopupTest: popupButtonOptionsFontSize - fontSize should be 18');
         console.info('PopupTest: popupButtonOptionsFontSize END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupButtonOptionsFontSize error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -228,7 +224,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupButtonOptionsFontColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupButtonOptionsFontColor', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupButtonOptionsFontColor START');
       try {
         const driver = Driver.create();
@@ -237,11 +234,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         console.info('PopupTest: popupButtonOptionsFontColor - fontColor should be Color.Blue');
         console.info('PopupTest: popupButtonOptionsFontColor END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupButtonOptionsFontColor error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -253,7 +248,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupIconOptionsWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupIconOptionsWidth', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupIconOptionsWidth START');
       try {
         const driver = Driver.create();
@@ -262,11 +258,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupIconOptionsWidth - width should be 40');
         console.info('PopupTest: popupIconOptionsWidth END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupIconOptionsWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -278,7 +272,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupIconOptionsHeight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupIconOptionsHeight', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupIconOptionsHeight START');
       try {
         const driver = Driver.create();
@@ -287,11 +282,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupIconOptionsHeight - height should be 40');
         console.info('PopupTest: popupIconOptionsHeight END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupIconOptionsHeight error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -303,7 +296,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupIconOptionsFillColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupIconOptionsFillColor', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupIconOptionsFillColor START');
       try {
         const driver = Driver.create();
@@ -312,11 +306,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupIconOptionsFillColor - fillColor should be Color.Green');
         console.info('PopupTest: popupIconOptionsFillColor END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupIconOptionsFillColor error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -328,7 +320,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupIconOptionsBorderRadius', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupIconOptionsBorderRadius', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupIconOptionsBorderRadius START');
       try {
         const driver = Driver.create();
@@ -337,11 +330,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupIconOptionsBorderRadius - borderRadius should be 8');
         console.info('PopupTest: popupIconOptionsBorderRadius END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupIconOptionsBorderRadius error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -353,7 +344,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsShowClose', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsShowClose', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsShowClose START');
       try {
         const driver = Driver.create();
@@ -361,11 +353,9 @@ export default function PopupNodeTest() {
         expect(!!closeButton).assertEqual(true);
         console.info('PopupTest: popupOptionsShowClose - showClose should be true, close button found');
         console.info('PopupTest: popupOptionsShowClose END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsShowClose error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -377,7 +367,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsDirection', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsDirection', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsDirection START');
       try {
         const driver = Driver.create();
@@ -386,11 +377,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsDirection - direction should be Direction.Rtl');
         console.info('PopupTest: popupOptionsDirection END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsDirection error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -402,7 +391,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsMaxWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsMaxWidth', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsMaxWidth START');
       try {
         const driver = Driver.create();
@@ -411,11 +401,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsMaxWidth - maxWidth should be 300vp');
         console.info('PopupTest: popupOptionsMaxWidth END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsMaxWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -427,7 +415,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupIconOptionsImage', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupIconOptionsImage', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupIconOptionsImage START');
       try {
         const driver = Driver.create();
@@ -435,11 +424,9 @@ export default function PopupNodeTest() {
         expect(!!imageComponent).assertEqual(true);
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupIconOptionsImage END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupIconOptionsImage error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -451,7 +438,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsIcon', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsIcon', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsIcon START');
       try {
         const driver = Driver.create();
@@ -459,11 +447,9 @@ export default function PopupNodeTest() {
         expect(!!imageComponent).assertEqual(true);
         console.info('PopupTest: imageComponent object tree =', JSON.stringify(imageComponent));
         console.info('PopupTest: popupOptionsIcon END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsIcon error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -475,7 +461,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsTitle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsTitle', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsTitle START');
       try {
         const driver = Driver.create();
@@ -483,11 +470,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: titleComponent object tree =', JSON.stringify(titleComponent));
         expect(titleComponent !== null).assertEqual(true);
         console.info('PopupTest: popupOptionsTitle END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsTitle error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -499,7 +484,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsOnClose', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsOnClose', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsOnClose START');
       try {
         const driver = Driver.create();
@@ -507,11 +493,9 @@ export default function PopupNodeTest() {
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsOnClose END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsOnClose error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -523,13 +507,14 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupButtonOptionsAction', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupButtonOptionsAction', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupButtonOptionsAction START');
       try {
         const driver = Driver.create();
         const popupButton = await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!popupButton).assertEqual(true);
-        await (popupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(SLEEP_TIME);
         const actionResultText = inspector.getInspectorByKey('actionResult');
         const actionResultObj = JSON.parseJsonElement(actionResultText);
@@ -537,11 +522,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: actionResult value = ' + actionResultValue);
         expect(actionResultValue).assertEqual('button_action_called');
         console.info('PopupTest: popupButtonOptionsAction END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupButtonOptionsAction error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -553,7 +536,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupOptionsButtons', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupOptionsButtons', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupOptionsButtons START');
       try {
         const driver = Driver.create();
@@ -563,11 +547,9 @@ export default function PopupNodeTest() {
         expect(!!button2).assertEqual(true);
         console.info('PopupTest: popupOptionsButtons - buttons count should be 2, both buttons found');
         console.info('PopupTest: popupOptionsButtons END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupOptionsButtons error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -579,7 +561,8 @@ export default function PopupNodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupBindPopupByButton', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupBindPopupByButton', Level.LEVEL1, async () => {
+
       console.info('PopupTest: popupBindPopupByButton START');
       try {
         let options: router.RouterOptions = {
@@ -592,7 +575,7 @@ export default function PopupNodeTest() {
         const showPopupButton = await driver.findComponent(ON.id('btnShowPopupByBindPopup'));
         console.info('PopupTest: popupBindPopupByButton get showPopupButton success');
         expect(!!showPopupButton).assertEqual(true);
-        await (showPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(SLEEP_TIME * 2);
         let popupBuilder = await driver.findComponent(ON.text('PopB', MatchPattern.EQUALS));
         if (!popupBuilder) {
@@ -603,11 +586,9 @@ export default function PopupNodeTest() {
         console.info('PopupTest: popupBindPopupByButton popupMessage exist');
         console.info('PopupTest: popupBindPopupByButton - Popup displayed successfully after button click');
         console.info('PopupTest: popupBindPopupByButton END');
-        done();
       } catch (error) {
         console.error('PopupTest: popupBindPopupByButton error:' + error);
         expect().assertFail();
-        done();
       }
     });
   });

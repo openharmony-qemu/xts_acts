@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -329,7 +330,7 @@ export default function fileIORandomAccessFileWrite() {
           let length = 4096;
           randomaccessfile?.write(new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
-          }).catch((err: Error): Promise<void> => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', 'create randomAccessFile failed with error message: ' +  err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();

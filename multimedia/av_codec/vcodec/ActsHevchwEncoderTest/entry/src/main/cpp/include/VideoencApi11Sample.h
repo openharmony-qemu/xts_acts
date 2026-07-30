@@ -28,6 +28,7 @@
 #include "include/NoCopyable.h"
 #include <unordered_map>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
+#include <multimedia/player_framework/native_avcodec_videobase.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avbuffer.h>
 #include <native_window/external_window.h>
@@ -84,9 +85,6 @@ public:
     bool modeEnableRun = false;
     bool enablePTSBasedRateControl = false;
     bool maxbframesEnable = false;
-    bool enableRepeat = false;
-    bool enableSeekEos = false;
-    bool setMaxCount = false;
     uint32_t inCount = 0;
     uint32_t defaultBitrateMode = CBR;
     OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -130,8 +128,9 @@ public:
     void StopOutloop();
     int32_t ReadMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
+    int32_t CompleteRoiWorkflow(const char *externalRoiString);
+    OH_AVErrCode RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats, uint32_t count);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
-    void InputEnableRepeatSleep();
     struct EncoderConfig {
         uint32_t width = 0;             // 视频宽度（默认值）
         uint32_t height = 0;            // 视频高度（默认值）

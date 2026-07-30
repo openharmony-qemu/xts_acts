@@ -502,7 +502,7 @@ export default function RelationalStoreCloudSyncTest() {
         };
         try {
             await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
-            await rdbStore!.cloudSync(null, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(null, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync succeeded');
@@ -512,7 +512,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("401");
         }
         try {
-            await rdbStore!.cloudSync(undefined, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(undefined, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync succeeded');
@@ -524,7 +524,7 @@ export default function RelationalStoreCloudSyncTest() {
         try {
             await rdbStore!.close();
             await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
-            await rdbStore!.cloudSync(config1, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config1, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync1 succeeded');
@@ -534,7 +534,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config2, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config2, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync2 succeeded');
@@ -544,7 +544,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config3, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config3, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync3 succeeded');
@@ -554,7 +554,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config4, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config4, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync4 succeeded');
@@ -564,7 +564,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config5, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config5, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync5 succeeded');
@@ -620,6 +620,203 @@ export default function RelationalStoreCloudSyncTest() {
             } else {
                 expect(e.code).assertEqual("14800014");
             }
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0100
+     * @tc.name cloudSyncExModeIllegalTest001
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode传入非法枚举值(-1).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: -1 as relationalStore.SyncMode
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode -1 succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode -1 error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0200
+     * @tc.name cloudSyncExModeIllegalTest002
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode传入非法枚举值(100).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: 100 as relationalStore.SyncMode
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode 100 succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode 100 error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0300
+     * @tc.name cloudSyncExModeIllegalTest003
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode传入非法枚举值(3.14浮点数).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: 3.14 as relationalStore.SyncMode
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode 3.14 succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode 3.14 error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0400
+     * @tc.name cloudSyncExModeIllegalTest004
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode传入非法枚举值(0不在合法范围内).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: 0 as relationalStore.SyncMode
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode 0 succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode 0 error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0500
+     * @tc.name cloudSyncExModeIllegalTest005
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode传入非法枚举值(99999超大值).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('cloudSyncExModeIllegalTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: 99999 as relationalStore.SyncMode
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode 99999 succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode 99999 error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0600
+     * @tc.name cloudSyncExModeIllegalTest006
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig.mode与enablePredicate/predicate组合非法值场景.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('cloudSyncExModeIllegalTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+            const config: relationalStore.CloudSyncConfig = {
+                mode: -1 as relationalStore.SyncMode,
+                enablePredicate: true,
+                predicate: predicates
+            };
+            await rdbStore!.cloudSyncEx(config, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with illegal mode combined with predicate succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with illegal mode combined error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0700
+     * @tc.name cloudSyncExModeIllegalTest007
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig为null时mode非法场景.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            await rdbStore!.cloudSyncEx(null, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with null config succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with null config error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
+        }
+    });
+
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCEX_MODE_ILLEGAL_0800
+     * @tc.name cloudSyncExModeIllegalTest008
+     * @tc.desc 测试 cloudSyncEx 方法 - CloudSyncConfig为undefined时mode非法场景.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('cloudSyncExModeIllegalTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        try {
+            await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+            await rdbStore!.cloudSyncEx(undefined, (progressDetails: relationalStore.ProgressDetails) => {
+                console.info(TAG + `progress: ${progressDetails.schedule}`);
+            });
+            console.info(TAG + 'cloudSyncEx with undefined config succeeded unexpectedly');
+            expect().assertFail();
+        } catch (e) {
+            console.error(TAG + `cloudSyncEx with undefined config error, code is ${e.code}, message is ${e.message}`);
+            expect(e.code).assertEqual("401");
         }
     });
   });

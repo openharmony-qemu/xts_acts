@@ -1,48 +1,28 @@
 {
   "string": [
     {
-      "name": "phone_entry_dsc",
-      "value": "i am an entry for phone"
+      "name": "module_desc",
+      "value": "module description"
     },
     {
-      "name": "phone_entry_main",
-      "value": "the phone entry ability"
-    },
-    {
-      "name": "entry_label",
-      "value": "ActsNotificationThreeWatchTest"
-    },
-    {
-      "name": "form_description",
-      "value": "my form"
-    },
-    {
-      "name": "description_application",
-      "value": "demo for test"
-    },
-    {
-      "name": "entry_desc",
+      "name": "EntryAbility_desc",
       "value": "description"
     },
     {
-      "name": "MainAbility_desc",
-      "value": "description"
-    },
-    {
-      "name": "MainAbility_label",
+      "name": "EntryAbility_label",
       "value": "label"
     },
     {
-      "name": "StaticNotificationSubscriber_desc",
-      "value": "description"
+      "name": "notification",
+      "value": "NOTIFICATION_CONTROLLER"
     },
     {
-      "name": "StaticNotificationSubscriber_label",
-      "value": "label"
+      "name": "access_bluetooth",
+      "value": "ACCESS_BLUETOOTH"
     },
     {
-      "name": "Blutooth_reason",
-      "value": "blutooth_reason"
+      "name": "bundleList",
+      "value": "GET_INSTALLED_BUNDLE_LIST"
     }
   ]
 }

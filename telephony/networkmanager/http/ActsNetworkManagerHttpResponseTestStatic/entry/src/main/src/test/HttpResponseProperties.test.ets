@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,9 +22,9 @@ import Utils from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-const ADDR_TEST_STREAM_HTTPS: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
+const ADDR_TEST_STREAM_HTTPS: string = "https://httpbin.moyufangge.com/image/svg";
 
-const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
 
 const ExpectFail = () => {
     try {

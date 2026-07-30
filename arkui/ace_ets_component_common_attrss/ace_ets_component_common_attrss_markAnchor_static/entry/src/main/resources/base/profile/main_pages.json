@@ -1,6 +1,5 @@
 {
   "src": [
-    "MainAbility/pages/index/Index",
-    "MainAbility/pages/Search/SearchType"
+    "MainAbility/pages/index/Index"
   ]
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -326,6 +327,27 @@ let createPhotoSession = (mode: cameraObj.SceneMode) => {
   cameraSession!.beginConfig();
 }
 
+let releaseAll = async () => {
+  if (AVRecorder) {
+    await AVRecorder!.release();
+  }
+  if (cameraInput) {
+    await cameraInput!.close();
+  }
+  if (previewOutput) {
+    await previewOutput!.release();
+  }
+  if (photoOutput) {
+    await photoOutput!.release();
+  }
+  if (videoOutput) {
+    await videoOutput!.release();
+  }
+  if (cameraSession) {
+    await cameraSession!.release();
+  }
+}
+
 // 释放相机资源
 let stopCameraSession = async () => {
   cameraSession!.beginConfig();
@@ -480,6 +502,7 @@ export default function cameraJSUnitOutput() {
     }
     await cameraSession!.commitConfig();
     cameraSession!.start();
+    await Utils.msSleep(500);
   }
 
 
@@ -3588,6 +3611,149 @@ export default function cameraJSUnitOutput() {
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100 PASS");
       await Utils.msSleep(1000);
       done();
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0100
+     * @tc.desc      test sub multimedia camera previewOutput isLogViewAssistSupported when session start
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0100"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let cameraIndex = 0
+        await startSession(cameraIndex, cameraObj.SceneMode.NORMAL_VIDEO)
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = previewOutput!.isLogViewAssistSupported()
+        console.info(`previewOutPut isLogViewAssistSupported: ${isSupported}`);
+        if (isSupported) {
+          previewOutput!.setLogViewAssistEnable(true)
+          console.info(`previewOutPut setLogViewAssistEnable enable success`);
+          previewOutput!.setLogViewAssistEnable(false)
+          console.info(`previewOutPut setLogViewAssistEnable diaable success`);
+        } else {
+          try {
+            previewOutput!.setLogViewAssistEnable(true)
+            console.error(`previewOutPut setLogViewAssistEnable enable expect failed, but success`);
+            expect().assertFail()
+          } catch (err) {
+            console.info(`previewOutPut setLogViewAssistEnable enable failed: ${JSON.stringify(err)}`);
+            expect(err.code == 801).assertTrue()
+          }
+          try {
+            previewOutput!.setLogViewAssistEnable(false)
+            console.error(`previewOutPut setLogViewAssistEnable diaable expect failed, but success`);
+            expect().assertFail()
+          } catch (err) {
+            console.info(`previewOutPut setLogViewAssistEnable diaable failed: ${JSON.stringify(err)}`);
+            expect(err.code == 801).assertTrue()
+          }
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+ 
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        releaseAll()
+        done()
+      }
+    })
+ 
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0200
+     * @tc.desc      test sub multimedia camera previewOutput isLogViewAssistSupported when session not config
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0200"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let cameraIndex = 0
+        createOutput(cameraIndex, cameraObj.SceneMode.NORMAL_VIDEO)
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = previewOutput!.isLogViewAssistSupported()
+        console.info(`previewOutPut isLogViewAssistSupported: ${isSupported}`);
+        expect(isSupported).assertFalse()
+        try {
+          previewOutput!.setLogViewAssistEnable(true)
+          console.error(`setLogViewAssistEnable expected failed, but success`)
+          expect().assertFail()
+        } catch (error) {
+          console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
+          expect(error.code == 801).assertTrue()
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+ 
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        releaseAll()
+        done()
+      }
+    })
+ 
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0500
+     * @tc.desc      test sub multimedia camera previewOutput setLogViewAssistEnable when session not commit
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_STATIC_0500"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let cameraIndex = 0
+        await getVideoSurface();
+        getCameraDevices()
+        createPhotoSession(cameraObj.SceneMode.NORMAL_VIDEO)
+        createOutput(cameraIndex, cameraObj.SceneMode.NORMAL_VIDEO)
+        console.info('videoSurfaceId: ' + videoSurfaceId)
+        videoOutput = cameraManager!.createVideoOutput(videoProfilesArray[0], videoSurfaceId!);
+        createInput(cameraIndex);
+        cameraSession!.addInput(cameraInput!);
+        cameraSession!.addOutput(previewOutput!);
+        cameraSession!.addOutput(videoOutput!);
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = previewOutput!.isLogViewAssistSupported()
+        console.info(`previewOutPut isLogViewAssistSupported: ${isSupported}`);
+        if (isSupported) {
+          try {
+            previewOutput!.setLogViewAssistEnable(true)
+            console.error(`setLogViewAssistEnable expected failed, but success`)
+            expect().assertFail()
+          } catch (error) {
+            console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
+            expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+          }
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+ 
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        releaseAll()
+        done()
+      }
     })
   })
 }

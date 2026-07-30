@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -201,7 +202,7 @@ class ToJSONArrayClass implements JsonSerializable {
 //   }
 // }
 
-export default function JSONStringifyBasicTest() {
+export default function JSONStringifyBasicTest(): void {
   describe('JSONStringifyBasicTest', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

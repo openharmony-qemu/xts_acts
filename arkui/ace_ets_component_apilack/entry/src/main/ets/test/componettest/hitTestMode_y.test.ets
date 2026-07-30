@@ -22,7 +22,7 @@ export default function hitTestModeJsunit() {
     beforeEach(async () => {
       console.info("hitTestMode beforeEach start");
       let options: router.RouterOptions  = {
-        url: 'pages/hitTestMode',
+        url: 'MainAbility/pages/conponentadd/hitTestMode_y',
       }
       try {
         router.clear();

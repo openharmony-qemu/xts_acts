@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -150,7 +151,9 @@ struct WebComponent {
               } catch (error) {
                 // 判断是否为方法未实现的错误
                 let errMsg = error?.message ?? String(error);
-                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                console.error(`Error: ${errMsg}`);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError') ||
+                 errMsg.includes('Capability not supported')) {
                   // 当前设备不支持该API，测试用例视为通过
                   console.info('No implementation found')
                   Utils.emitEvent('success', 2603261011);

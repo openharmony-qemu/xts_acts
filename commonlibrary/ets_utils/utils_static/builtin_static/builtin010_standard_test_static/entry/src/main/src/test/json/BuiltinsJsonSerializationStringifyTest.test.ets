@@ -1,7 +1,8 @@
+'use static';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function builtinsJsonSerializationStringifyTest() {
+export default function builtinsJsonSerializationStringifyTest(): void {
   describe('BuiltinsJsonSerializationStringifyTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

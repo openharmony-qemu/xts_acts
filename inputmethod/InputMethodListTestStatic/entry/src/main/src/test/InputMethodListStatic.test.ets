@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,12 @@ export default function inputMethodListJSUnit() {
         console.info('====>beforeAll Driver.create success');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         await Utils.msSleep(2000);
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.inputmethodlist.test.static');
+        let cmd = 'aa start -a EntryAbility -b com.acts.inputmethodlist.test.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd);
         await Utils.msSleep(3000);
         done();
       } catch (err) {

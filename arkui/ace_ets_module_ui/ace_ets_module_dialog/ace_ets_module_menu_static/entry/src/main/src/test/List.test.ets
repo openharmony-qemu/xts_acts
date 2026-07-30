@@ -36,8 +36,13 @@ import SheetTest from './SheetTest/Sheet.test'
 import scrollBarTest from './scrollBarTest/scrollBarTest.test';
 import maxHeightTest from './maxHeightTest/maxHeightTest.test';
 import targetSpaceTest from './targetSpaceTest/targetSpaceTest.test';
+import ContextMenuMaxHeightTest from './BindContextMenuTest/ContextMenuMaxHeightTest.test'
+import GridStyleTest from './GridStyleTest/GridStyleTest.test'
+import BindMenuWithResponseTest from './BindContextMenuTest/BindMenuWithResponse.test'
+import BindContextMenuResponseTypeTest from './BindContextMenuTest/BindContextMenuResponseType.test'
+import SubMenuBuilderTest from './OpenMenuTest/SubMenuBuilderTest.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
   maskTest();
   maskColorTest();
   maskBackgroundBlurStyleTest();
@@ -61,4 +66,9 @@ export default function testsuite() {
   scrollBarTest();
   maxHeightTest();
   targetSpaceTest();
+  ContextMenuMaxHeightTest();
+  GridStyleTest();
+  BindMenuWithResponseTest();
+  BindContextMenuResponseTypeTest();
+  SubMenuBuilderTest();
 }

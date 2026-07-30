@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -36,7 +36,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
   onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteraction.test.static')
+    let cmd = 'aa start -a EntryAbility -b com.pageInteraction.test.static';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd)
   }
   onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');

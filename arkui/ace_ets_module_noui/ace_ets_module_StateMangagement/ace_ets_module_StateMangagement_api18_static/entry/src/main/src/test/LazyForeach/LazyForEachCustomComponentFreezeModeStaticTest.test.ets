@@ -15,32 +15,20 @@
  * limitations under the License.
  */
  
-import inspector from '@ohos.arkui.inspector'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import inspector from '@ohos.arkui.inspector';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix,
-} from '@ohos.UiTest';
-import { LazyForEachReleaseStrategy } from '@ohos.arkui.component';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { LazyForEachReleaseStrategy, LazyForEachCustomComponentFreezeMode } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {UtilsTest,startAbility} from '../Util.test'
-import { LazyForEachCustomComponentFreezeMode } from '@ohos.arkui.component';
+import { UtilsTest, startAbility } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -48,7 +36,7 @@ let flexGrow = 3;
 let compareFlexGrow = 1;
 const uiContext = new UIContext();
  
-export default function LazyForEachCustomComponentFreezeModeStaticTest() {
+export default function LazyForEachCustomComponentFreezeModeStaticTest(): void {
   describe('LazyForEachCustomComponentFreezeModeStaticTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("LazyForEachCustomComponentFreezeModeStaticTest beforeEach start");

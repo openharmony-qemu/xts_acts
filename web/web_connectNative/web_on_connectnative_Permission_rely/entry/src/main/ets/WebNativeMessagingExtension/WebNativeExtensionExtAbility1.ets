@@ -17,7 +17,8 @@ import fs from '@ohos.file.fs';
 import util from '@ohos.util';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
-import { BusinessError,commonEventManager } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import { JSON } from '@kit.ArkTS';
 const TAG: string = 'testTag';
 
 
@@ -52,7 +53,7 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
       if (stringData.startsWith("startAbility")) {
         try {
           let want: Want = {
-            bundleName: "com.acts.context.webonconnectnativerely",
+            bundleName: "com.acts.context.webonconnectnativerelypermission",
             abilityName: "EntryAbility"
           }
           hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbility start connectId:${connectId}`);
@@ -60,9 +61,9 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
         } catch (error) {
           hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbility connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
         }
-      }  else if(stringData.startsWith("terminateSelf")) {
+      } else if(stringData.startsWith("terminateSelf")) {
         this.context.terminateSelf();
-      }else {
+      } else {
         hilog.error(0x0000, TAG, `WebExtensionAbility1 readPipe connectId:${connectId}, command unknown :${stringData}`);
       }
     } catch (error) {
@@ -73,6 +74,12 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
 
   onConnectNative(connect: ConnectionInfo): void {
     hilog.info(0x0000, TAG, `WebExtensionAbility1 onConnectNative, connectionId: ${connect.connectionId} fdRead: ${connect.fdRead} fdWrite: ${connect.fdWrite}  bundleName: ${connect.bundleName} extensionOrgin: ${connect.extensionOrigin}`);
+
+    if (connect.extensionOrigin === 'startAbilityForResult_permission') {
+      this.doStartAbilityForResult();
+      return;
+    }
+
     this.waitForCommand(connect.connectionId, connect.fdRead);
     this.context.stopNativeConnection(10000000).catch((err: BusinessError) => {
       console.error(`failed to enable, ${err}`);
@@ -83,6 +90,24 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
         publishEvent("webNativeMessaging1_startAbility_400", 100);
       }
     })
+  }
+
+  async doStartAbilityForResult(): Promise<void> {
+    try {
+      let want: Want = {
+        bundleName: 'com.acts.context.webonconnectnativerelypermission',
+        abilityName: 'EntryAbility',
+        parameters: { 'callType': 'forResult' }
+      };
+      hilog.info(0x0000, TAG, 'doStartAbilityForResult: calling this.context.startAbilityForResult(want)');
+      const result = await this.context.startAbilityForResult(want);
+      hilog.info(0x0000, TAG, `doStartAbilityForResult unexpected success: ${JSON.stringify(result)}`);
+      publishEvent('webNativeMessaging2_startAbilityForResult_permission', 0);
+    } catch (error) {
+      const err = error as BusinessError;
+      hilog.error(0x0000, TAG, `doStartAbilityForResult error code: ${err.code}, message: ${err.message}`);
+      publishEvent('webNativeMessaging2_startAbilityForResult_permission', err.code ?? 0);
+    }
   }
   
   onDisconnectNative(connect: ConnectionInfo): void {

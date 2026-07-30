@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 RKH Corp.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsDataViewGetFloat64Test() {
+export default function BuiltinsDataViewGetFloat64Test(): void {
   describe("BuiltinsDataViewGetFloat64Test", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

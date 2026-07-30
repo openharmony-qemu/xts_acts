@@ -668,7 +668,7 @@ int PARAM_CHECK_016()
     format = OH_AVFormat_Create();
     codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = aDecBufferDemo->SetCallback(codec);
-    channel = CHANNEL_COUNT_2; // 2 channel
+    channel = CHANNEL_COUNT_7; // 7 channel
     result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
     ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
     result0 = aDecBufferDemo->Destroy(codec);
@@ -711,7 +711,7 @@ int PARAM_CHECK_017()
     format = OH_AVFormat_Create();
     codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = aDecBufferDemo->SetCallback(codec);
-    sampleRate = SAMPLE_RATE_8001; // 8001hz
+    sampleRate = SAMPLE_RATE_48001; // 48001hz
     result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
     ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
     result0 = aDecBufferDemo->Destroy(codec);

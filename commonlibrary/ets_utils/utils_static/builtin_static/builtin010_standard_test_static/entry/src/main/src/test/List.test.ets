@@ -1,3 +1,4 @@
+'use static';
 import builtinsBooleanBoxBoxText from './booleanBox/BuiltinsBooleanBoxBoxTest.test';
 import builtinsBooleanBoxConstructorText from './booleanBox/BuiltinsBooleanBoxConstructorTest.test';
 import builtinsBooleanBoxGetText from './booleanBox/BuiltinsBooleanBoxGetTest.test';
@@ -77,7 +78,7 @@ import builtinsShortBoxSetText from './shortBox/BuiltinsShortBoxSetTest.test';
 import builtinsShortCharGetText from './shortBox/BuiltinsShortBoxGetTest.test';
 
 
-export default function testsuite() {
+export default function testsuite(): void {
   builtinsBooleanBoxBoxText();
   builtinsBooleanBoxConstructorText();
   builtinsBooleanBoxGetText();

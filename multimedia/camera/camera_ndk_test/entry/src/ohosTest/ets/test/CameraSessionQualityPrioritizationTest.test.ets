@@ -22,6 +22,7 @@ import fs from '@ohos.file.fs';
 import featureAbility from '@ohos.ability.featureAbility'
 
 const TAG = "CameraXts CameraSessionQualityPrioritizationTest: ";
+const CAMERA_INVALID_ARGUMENT = 7400101;
 
 // Define global letiables
 let mPhotoSurface: string;
@@ -297,5 +298,31 @@ export default function CameraSessionQualityPrioritizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002 ends here");
     });
 
+    /**
+     * @tc.name   TestOHGetSensorPixelArraySizeWithoutCamera_0100
+     * @tc.number SUB_MULTIMEIDA_CAMERA_DEVICE_GET_SENSOR_PIXEL_ARRAY_SIZE_0100
+     * @tc.desc   Test device property  in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TestOHGetSensorPixelArraySizeWithoutCamera_0100', Level.LEVEL0, () => {
+      let ret = cameraObj.testOHGetSensorPixelArraySizeWithoutCamera();
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.name   TestOHGetSensorColorFilterArrangementWithoutCamera_0100
+     * @tc.number SUB_MULTIMEIDA_CAMERA_DEVICE_ET_SENSOR_COLOR_FILTER_ARRANGEMENT_WITHOUT_CAMERA_0200
+     * @tc.desc   Test device property  in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TestOHGetSensorColorFilterArrangementWithoutCamera_0100', Level.LEVEL0, () => {
+      let ret = cameraObj.testOHGetSensorColorFilterArrangementWithoutCamera();
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    
   })
 }

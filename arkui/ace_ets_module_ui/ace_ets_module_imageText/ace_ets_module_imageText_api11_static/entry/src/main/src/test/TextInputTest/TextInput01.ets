@@ -44,10 +44,7 @@ export default function textInputTest() {
 
     beforeAll(async (): Promise<void> => {
       console.info("ActsTextInputTest beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -66,6 +63,7 @@ export default function textInputTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push ActsTextInputTest page error:" + err);
       }
       console.info("ActsTextInputTest beforeEach end");
@@ -91,7 +89,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -117,7 +115,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -143,7 +141,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("7");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -169,7 +167,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("7");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -195,7 +193,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 END ');
     //     } catch (err) {
-    //       expect().assertFail();
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -223,7 +221,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual(str.length.toString());
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -249,7 +247,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 END ');
     //     } catch (err) {
-    //       expect().assertFail();
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -275,7 +273,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0800 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -301,7 +299,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 END ');
     //     } catch (err) {
-    //       expect().assertFail();
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -327,7 +325,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1000 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -354,7 +352,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("3");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -381,7 +379,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -407,7 +405,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("7");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -433,7 +431,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("70");
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1400 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretPosition_static_1400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -460,7 +458,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("0.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -487,7 +485,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("7.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -514,7 +512,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("7.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -541,7 +539,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("4.00px");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -568,7 +566,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -595,7 +593,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -622,7 +620,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -649,7 +647,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0800 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -676,7 +674,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0900 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -703,7 +701,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00fp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1000 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -730,7 +728,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -757,7 +755,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("7.00lpx");
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_CaretWidth_static_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -783,7 +781,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#3300FF00");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -809,7 +807,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#33FD0000");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -835,7 +833,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#338A2BE2");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -861,7 +859,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#33FFC0CB");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0400 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -887,7 +885,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#33FD0000");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0500 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -913,7 +911,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('backgroundColor'));
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0600 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -939,7 +937,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('backgroundColor'));
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0700 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -965,7 +963,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('backgroundColor'));
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0800 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -991,7 +989,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#33FD0000");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0900 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1017,7 +1015,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('backgroundColor'));
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1000 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1043,7 +1041,7 @@ export default function textInputTest() {
           expect(obj.getElement('$attrs').getString('selectedBackgroundColor')).assertEqual("#3300FF00");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1076,7 +1074,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("7.00vp");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1110,7 +1108,7 @@ export default function textInputTest() {
           expect(cursorStyle.getString('width')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_TextInput_selectedColor_static_1300 ERR  ' + JSON.stringify(err));
         }
         done();

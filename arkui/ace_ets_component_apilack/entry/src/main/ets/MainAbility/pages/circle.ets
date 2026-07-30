@@ -46,7 +46,7 @@ struct CircleNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("circle_neText")
 
       Circle()
         .width(`${this.w}`)

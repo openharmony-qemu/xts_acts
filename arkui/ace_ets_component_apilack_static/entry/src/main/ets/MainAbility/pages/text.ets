@@ -96,7 +96,7 @@ struct TextMinFontSize {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("copyOptionText")
+        .key("text_copyOptionText")
         .copyOption(CopyOptions.None)
 
     }.width("100%").height("100%")

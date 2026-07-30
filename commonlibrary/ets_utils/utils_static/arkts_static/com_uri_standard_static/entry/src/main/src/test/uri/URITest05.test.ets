@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -14,6 +15,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { uri } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface ErrorWithCode {
   code: number;
@@ -43,14 +45,6 @@ interface TestObjectForCtor0046 {
   regex: Object;
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
 export default function URI05Test(): void {
   describe('URI05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -62,7 +56,7 @@ export default function URI05Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     });
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -21,7 +21,7 @@ struct DragRecognizerExample {
   build() {
     Column() {
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('DragRecognizer_PanRecognizer')
       }
       .key('Drag')
       .margin(5)

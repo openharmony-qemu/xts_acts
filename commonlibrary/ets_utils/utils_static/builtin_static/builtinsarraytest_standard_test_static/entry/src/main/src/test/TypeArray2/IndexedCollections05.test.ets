@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -226,7 +227,7 @@ class Arr {
   }
 }
 
-export default function IndexedCollections05Test() {
+export default function IndexedCollections05Test(): void {
   describe('IndexedCollections05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

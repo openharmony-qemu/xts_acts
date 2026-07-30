@@ -14,31 +14,14 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -92,7 +75,7 @@ it('ConsumeArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ConsumeArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
+      let button = await driver.findComponent(ON.id('ConsumeArray1_state5'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray1');
@@ -115,7 +98,7 @@ it('ConsumeArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ConsumeArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state6'));
+      let button = await driver.findComponent(ON.id('ConsumeArray1_state6'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray1');
@@ -138,7 +121,7 @@ it('ConsumeArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ConsumeArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state7'));
+      let button = await driver.findComponent(ON.id('ConsumeArray1_state7'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray1');
@@ -161,7 +144,7 @@ it('ConsumeArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ConsumeArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state8'));
+      let button = await driver.findComponent(ON.id('ConsumeArray1_state8'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray1');
@@ -184,7 +167,7 @@ it('ConsumeArray_static_0900', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('StateArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state9'));
+      let button = await driver.findComponent(ON.id('ConsumeArray1_state9'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray1New');

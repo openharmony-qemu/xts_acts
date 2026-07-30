@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -76,7 +77,7 @@ interface TestObj13 {
   b?: number;
 }
 
-export default function JSONStringifyReplacerTest() {
+export default function JSONStringifyReplacerTest(): void {
   describe('JSONStringifyReplacerTest', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

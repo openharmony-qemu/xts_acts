@@ -55,7 +55,7 @@ export default function grid_colSpanJsunit() {
     it('testgrid_colSpan0001',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_colSpan0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('gridContainer');
+      let strJson = getInspectorByKey('grid_col' + '_gridContainer');
       console.info("[testgrid_colSpan0001] component height strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('GridCol');

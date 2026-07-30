@@ -27,11 +27,9 @@
  	 import CommonFunc from '../../../ets/MainAbility/common/Common';
  	 import RectValue from '../../../ets/MainAbility/common/Rect';
  	 import {MessageManager,Callback,Message} from '../../../ets/MainAbility/common/MessageManager';
- 	 import { Router } from '@ohos.arkui.UIContext';
  	 import { AppStorage } from '@ohos.arkui.stateManagement';
  	 import { UtilsTest } from '../Util.test';
  	 import inspector from '@ohos.arkui.inspector';
- 	 import { UIContext } from '@ohos.arkui.UIContext'
  	 import hilog from '@ohos.hilog'
  	 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
  	 import UIAbility from '@ohos.app.ability.UIAbility';

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -48,7 +49,7 @@ export default function cloudCloudSyncTest() {
         fileSync.start().then(() => {
           hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_001 start sync successfully');
           expect(true).assertTrue();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_001 sync failed : " + err.message + ", error code: " + err.code);
         });
       } catch (e) {

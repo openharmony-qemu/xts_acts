@@ -16,20 +16,17 @@
 import SpaceMainNumberJsunit from './Flex/SpaceMainNumber.test';
 import SpaceMain5JustifyContentJsunit from './Flex/SpaceMain5JustifyContent.test';
 import SpaceCross5AlignItemsJsunit from './Flex/SpaceCross5AlignItems.test';
-import RelativeContainerApi from './RelativeContainer/RelativeContainerApi.test'
+import RelativeContainerApi from './RelativeContainer/RelativeContainerApi.test';
 import SpaceMainNumberJsunit from './Flex/SpaceMainNumber.test.ets';
 import SpaceMain5JustifyContentJsunit from './Flex/SpaceMain5JustifyContent.test.ets';
 import SpaceCross5AlignItemsJsunit from './Flex/SpaceCross5AlignItems.test.ets';
-import RelativeContainerApi from './RelativeContainer/RelativeContainerApi.test'
-import RelativeContainerLocalizedDirectionStartTest
-  from './RelativeContainer/RelativeContainerLocalizedDirectionStartTest.test'
+import RelativeContainerLocalizedDirectionStartTest from './RelativeContainer/RelativeContainerLocalizedDirectionStartTest.test';
 import FlexSpaceTest from './Flex/FlexSpaceTest.test.ets';
-import ColumnReverseTest from './Column/ColumnReverseTest.test.ets'
-import RowReverseTest from './Row/RowReverseTest.test.ets'
-import APIremoveGestureByTag from './Column/APIremoveGestureByTag.test'
-import APIaccessibilityTextHint from './Column/APIaccessibilityTextHint.test'
-import RelativeContainerStartApi from './RelativeContainerStart/RelativeContainerStartApi.test'
-
+import ColumnReverseTest from './Column/ColumnReverseTest.test.ets';
+import RowReverseTest from './Row/RowReverseTest.test.ets';
+import APIremoveGestureByTag from './Column/APIremoveGestureByTag.test';
+import APIaccessibilityTextHint from './Column/APIaccessibilityTextHint.test';
+import RelativeContainerStartApi from './RelativeContainerStart/RelativeContainerStartApi.test';
 export default function testsuite() {
   FlexSpaceTest();
   RelativeContainerLocalizedDirectionStartTest();

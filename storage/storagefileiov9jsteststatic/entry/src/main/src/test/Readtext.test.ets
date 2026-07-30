@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -518,7 +519,7 @@ export default function fileIOReadtext() {
           expect(str == FILE_CONTENT.slice(1, FILE_CONTENT.length + 1)).assertTrue();
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_007 has error' + JSON.stringify(err));
           expect(false).assertTrue();
         });

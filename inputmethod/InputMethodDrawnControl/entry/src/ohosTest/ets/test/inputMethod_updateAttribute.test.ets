@@ -431,7 +431,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributePromise_1400';
       try {
         await inputMethod.getController().updateAttribute({
-          textInputType: inputMethod.TextInputType.NEW_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NEW_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         });
         console.info(`${CASE_NAME} execution success`);
         done();
@@ -454,7 +454,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributePromise_1500';
       try {
         await inputMethod.getController().updateAttribute({
-          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         });
         console.info(`${CASE_NAME} execution success`);
         done();
@@ -713,7 +713,7 @@ export default function inputMethodTest() {
       };
       try {
         inputMethod.getController().updateAttribute({
-          textInputType: inputMethod.TextInputType.NUMBER_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         }, CallBack);
       } catch (error) {
         console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
@@ -739,7 +739,7 @@ export default function inputMethodTest() {
       };
       try {
         inputMethod.getController().updateAttribute({
-          textInputType: inputMethod.TextInputType.SCREEN_LOCK_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.SCREEN_LOCK_PASSWORD, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         }, CallBack);
       } catch (error) {
         console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);

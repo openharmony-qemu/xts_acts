@@ -14,40 +14,12 @@
  * limitations under the License.
  */
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,
-  FlexWrap,$r,Resource
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,Consume,Provide,UIUtils
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, FlexWrap, $r, Resource } from '@ohos.arkui.component';
+import { State, Link, PropRef, Consume, Provide, UIUtils, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
-
 @Component
 struct Child_AI {
   // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
@@ -84,7 +56,7 @@ struct Ancestors_AI {
         .onClick(():void => {
           this.Array = [10] as Array<number>;
         })
-        .key('state1')
+        .key('ProvideArray_state1')
         .height('5%')
 
       Text("切换变量Array<boolean>类型[1]-->[true]").height('5%')
@@ -92,7 +64,7 @@ struct Ancestors_AI {
         .onClick(():void => {
           this.Array = [true];
         })
-        .key('state2')
+        .key('ProvideArray_state2')
         .height('5%')
 
       Text("切换变量boolean类型[1]-->true").height('5%')
@@ -100,7 +72,7 @@ struct Ancestors_AI {
         .onClick(():void => {
           this.Array = true;
         })
-        .key('state3')
+        .key('ProvideArray_state3')
         .height('5%')
 
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
@@ -108,7 +80,7 @@ struct Ancestors_AI {
         .onClick(():void => {
           this.Array = [$r('app.string.number')];
         })
-        .key('state4')
+        .key('ProvideArray_state4')
         .height('5%')
 
       Child_AI()

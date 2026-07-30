@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,6 @@
  * limitations under the License.
  */
 import FloatingBallTest from "./FloatingBall.test";
-export default function testsuite() {
+export default function testsuite(): void {
   FloatingBallTest();
 }

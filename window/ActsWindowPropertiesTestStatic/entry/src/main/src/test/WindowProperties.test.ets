@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +31,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
+import { canIUse } from '@internal.full.global'
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -1940,48 +1942,6 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-         * @tc.number     testGetWindowDensityInfoErrCode1300002_static_0100
-         * @tc.name       testGetWindowDensityInfoErrCode1300002_0100_static
-         * @tc.desc       testGetWindowDensityInfoErrCode1300002_static_0100
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 3
-         */
-        it('testGetWindowDensityInfoErrCode1300002_0100_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testGetWindowDensityInfoErrCode1300002_0100_static";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            hilog.info(domain, tag,msgStr + 'begin.');
-            let subWin: window.Window | undefined = undefined;
-            windowStage!.createSubWindow('testGetWindowDensityInfoErrCode1300002_SubWindow_Promise')
-                .then((data:window.Window) => {
-                    (async () => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.getWindowDensityInfo();
-                        hilog.error(domain, tag,msgStr + 'Succeeded in calling getWindowDensityInfo.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-                        expect(e.code).assertEqual(1300002);
-                        expect(e.message!==null).assertTrue();
-                        done()
-                    }
-                    })().awaitSync()
-                })
-                .catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
-                    done()
-                });
-
-        })
-
-        /**
          * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0100
          * @tc.name       testGetWindowDensityInfo_static
          * @tc.desc       getWindowDensityInfo
@@ -3632,7 +3592,7 @@ export default function WindowPropertiesTest() {
                     console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message !== null).assertTrue();
@@ -3703,10 +3663,11 @@ export default function WindowPropertiesTest() {
             let win: window.Window  = await windowStage!.createSubWindow('testWindowOffScreenshot_RepeatOff_static');
             console.log(msgStr + 'windowStage!.createSubWindow success');
             expect(!!win).assertTrue();
+            let callback = () => {
+             console.log(`${caseName} screenshot happened`);
+            }
             try {
-                (win as window.Window).onScreenshot(() => {
-                    console.info(msgStr + 'screenshot happened.');
-                });
+                (win as window.Window).onScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
@@ -3714,7 +3675,7 @@ export default function WindowPropertiesTest() {
                 done();
             }
             try {
-                (win as window.Window).offScreenshot();
+                (win as window.Window).offScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
@@ -4171,7 +4132,1858 @@ export default function WindowPropertiesTest() {
                 done()
             }
         })
+    
+    /**
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_Static_0600
+     * @tc.name testSetCustomDensity_applyToSubWindow_true_static
+     * @tc.desc 验证setCustomDensity接口applyToSubWindow设置为true时子窗立即跟随主窗生效
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetCustomDensity_applyToSubWindow_true_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetCustomDensity_applyToSubWindow_true_static';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          windowStage!.setCustomDensity(2.0, true);
+          hilog.info(domain, tag, msgStr + 'setCustomDensity with applyToSubWindow true success');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr +
+            `Failed to setCustomDensity. Cause code: ${exception.code}, message: ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Current device not support API:setCustomDensity');
+            expect(exception.message !== null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
 
+    /**
+     * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_Static_0700
+     * @tc.name       testSetCustomDensity_applyToSubWindow_false_static
+     * @tc.desc       验证setCustomDensity接口applyToSubWindow设置为false时子窗不立即跟随主窗生效
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testSetCustomDensity_applyToSubWindow_false_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetCustomDensity_applyToSubWindow_false_static';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          windowStage!.setCustomDensity(1.5, false);
+          hilog.info(domain, tag, msgStr + 'setCustomDensity with applyToSubWindow false success');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr +
+            `Failed to setCustomDensity. Cause code: ${exception.code}, message: ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, msgStr + 'Current device not support API:setCustomDensity');
+            expect(exception.message !== null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_setWindowMask_ErrorCode401_0100
+     * @tc.name       test_setWindowMask_EmptyArray_static_0100
+     * @tc.desc       验证子窗调用setWindowMask接口传入空数组返回401错误码
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it("test_setWindowMask_EmptyArray_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = "test_setWindowMask_EmptyArray_static_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let windowMask: Array<Array<Long>> = [];
+        let subWin: window.Window = await windowStage!.createSubWindow('test_setWindowMask_EmptyArray_static_0100');
+        hilog.info(domain, tag, msgStr + 'Succeeded in creating the sub window.');
+        await subWin.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + 'Succeeded in loading the sub window content.');
+        await subWin.showWindow();
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, msgStr + 'Succeeded in showing the sub window.');
+        try {
+          let promise = subWin.setWindowMask(windowMask);
+          promise.then(() => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in setting the window mask.');
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            hilog.error(domain, tag,
+              msgStr + 'Failed to set the window mask. Cause code: ' + err.code + ', message: ' + err.message);
+            expect(err.code).assertEqual(401);
+            expect(err.message !== null).assertTrue();
+            done();
+          });
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + 'Failed to set the window mask. Cause code: ' + exception.code + ', message: ' +
+            exception.message);
+          await subWin.destroyWindow();
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== null).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_401_static_0100
+     * @tc.name        test_setWindowCornerRadius_401_static
+     * @tc.desc        验证子窗调用setWindowCornerRadius接口传入负数参数返回401错误码
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('test_setWindowCornerRadius_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "test_setWindowCornerRadius_401_static";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let subWindowClass: window.Window = await windowStage!.createSubWindow("test_setWindowCornerRadius_401");
+        hilog.info(domain, tag, `${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('pages/index2');
+        hilog.info(domain, tag, `${caseName} Succeeded in loading the sub window content.`);
+        await subWindowClass.showWindow();
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, `${caseName} Succeeded in showing the sub window.`);
+        try {
+          subWindowClass.setWindowCornerRadius(-1.0).then(() => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in calling setWindowCornerRadius.');
+            expect(false).assertTrue();
+          }).catch((err: Error): PromiseLike<void> | undefined => {
+            hilog.error(domain, tag,
+              msgStr + 'Failed to call setWindowCornerRadius. Cause code: ' + err.code + ', message: ' + err.message);
+            expect(err.code).assertEqual(401);
+            expect(err.message !== null).assertTrue();
+          });
+          await subWindowClass.destroyWindow();
+          done()
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + 'Failed to set the call setWindowCornerRadius. Cause code: ' + exception.code + ', message: ' +
+            exception.message);
+          await subWindowClass.destroyWindow();
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== null).assertTrue();
+          done()
+        }
+      })
+
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_401_static_0100
+     * @tc.name        test_setWindowShadowRadius_401_static
+     * @tc.desc        验证子窗调用setWindowShadowRadius接口传入负数参数返回401错误码
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('test_setWindowShadowRadius_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "test_setWindowShadowRadius_401_static";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let subWindowClass = await windowStage!.createSubWindow('test_setWindowShadowRadius_401');
+        hilog.info(domain, tag, `${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('pages/index2');
+        hilog.info(domain, tag, `${caseName} Succeeded in loading the sub window content.`);
+        await subWindowClass.showWindow();
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, `${caseName} Succeeded in showing the sub window.`);
+        try {
+          subWindowClass.setWindowShadowRadius(-1.0)
+          hilog.info(domain, tag, msgStr + 'Succeeded in calling setWindowShadowRadius.');
+          await subWindowClass.destroyWindow();
+          expect(false).assertTrue();
+          done()
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + 'Failed to set the call setWindowShadowRadius. Cause code: ' + exception.code + ', message: ' +
+            exception.message);
+          await subWindowClass.destroyWindow();
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== null).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_ERRCODE_401_static_0100
+     * @tc.name        test_getAllWindowLayoutInfo_invalidDisplayId_static
+     * @tc.desc        test_getAllWindowLayoutInfo_invalidDisplayId_static
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('test_getAllWindowLayoutInfo_invalidDisplayId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_invalidDisplayId_static';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let displayId: Long = -1;
+          let promise = window.getAllWindowLayoutInfo(displayId)
+          promise.then((data: Array<window.WindowLayoutInfo>) => {
+            hilog.info(domain, tag,
+              `${caseName} :Succeeded in obtaining all window layout info. Data: ` + JSON.stringify(data));
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error): PromiseLike<void> | undefined => {
+            hilog.error(domain, tag,
+              `${caseName} :Failed to obtain all window layout info. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code === 401) {
+              expect(err.code).assertEqual(401);
+              expect(err.message !== null).assertTrue();
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 401) {
+            expect(err.code).assertEqual(401);
+            expect(err.message !== null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.number       SUB_BASIC_WMS_GET_WINDOW_DENSITY_INFO_ERRCODE_1300002_STATIC_0100
+     * @tc.name         SUB_BASIC_WMS_GET_WINDOW_DENSITY_INFO_ERRCODE_1300002_STATIC_0100
+     * @tc.desc         SUB_BASIC_WMS_GET_WINDOW_DENSITY_INFO_ERRCODE_1300002_STATIC_0100
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 3
+     */
+    it('SUB_BASIC_WMS_GET_WINDOW_DENSITY_INFO_ERRCODE_1300002_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_BASIC_WMS_GET_WINDOW_DENSITY_INFO_ERRCODE_1300002_STATIC_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let subWin: window.Window | undefined = undefined;
+        windowStage!.createSubWindow('testGetWindowDensityInfoErrCode1300002_SubWindow_Promise')
+          .then((data: window.Window) => {
+            (async () => {
+              subWin = data;
+              expect(!!subWin).assertTrue();
+              hilog.info(domain, tag, msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+              await (subWin! as window.Window).destroyWindow();
+              try {
+                subWin!.getWindowDensityInfo();
+                hilog.error(domain, tag, msgStr + 'Succeeded in calling getWindowDensityInfo.');
+                expect(false).assertTrue();
+                done()
+              } catch (e) {
+                e = e as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(e.code) + ` message:${e.message}`);
+                expect(e.code).assertEqual(1300002);
+                expect(e.message !== null).assertTrue();
+                done()
+              }
+            })().awaitSync()
+          })
+          .catch((err: Error): PromiseLike<void> | undefined => {
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+            expect(false).assertTrue();
+            done()
+          });
+
+      })
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_SetWindowBackgroundColor_EmptyString_static_0100
+     * @tc.name        testSetWindowBackgroundColor_EmptyString_static_0100
+     * @tc.desc        验证主窗口调用setWindowBackgroundColor接口传入空字符串返回错误码
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('testSetWindowBackgroundColor_EmptyString_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowBackgroundColor_EmptyString_static_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        try {
+          windowClass.setWindowBackgroundColor('');
+          hilog.info(domain, tag, msgStr + 'Succeeded in calling setWindowBackgroundColor.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + 'Failed to set the background color. Cause code: ' + exception.code + ', message: ' +
+            exception.message);
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== null).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_GetStatusBarProperty_1300004_static_0100
+     * @tc.name       testGetStatusBarProperty_1300004_static
+     * @tc.desc       验证子窗口调用getStatusBarProperty接口返回1300004错误码
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testGetStatusBarProperty_1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetStatusBarProperty_1300004_static";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let subWindowClass: window.Window = await windowStage!.createSubWindow('testGetStatusBarProperty_1300004');
+        hilog.info(domain, tag, `${caseName} Succeeded in creating the sub window.`);
+        try {
+          let res: window.StatusBarProperty = subWindowClass.getStatusBarProperty();
+          hilog.info(domain, tag, msgStr + 'Succeeded in calling getStatusBarProperty.');
+          await subWindowClass.destroyWindow();
+          expect(false).assertTrue();
+          done()
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + 'Failed to call getStatusBarProperty. Cause code: ' + exception.code + ', message: ' +
+            exception.message);
+          await subWindowClass.destroyWindow();
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} The current device type does not support to getStatusBarProperty.`);
+            expect(exception.message !== null).assertTrue();
+            done();
+          } else {
+            hilog.error(domain, tag, `${caseName} Unauthorized operation.`);
+            expect(exception.code).assertEqual(1300004);
+            expect(exception.message !== null).assertTrue();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_noOption_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0100
+     * @tc.desc   不传option参数，获取所有可见窗口布局信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_noOption_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_noOption_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId);
+          hilog.info(domain, tag, `${caseName} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          if (data.length > 0) {
+            let rect = data[0].windowRect;
+            expect(rect.left >= 0).assertTrue();
+            expect(rect.top >= 0).assertTrue();
+            expect(rect.width > 0).assertTrue();
+            expect(rect.height > 0).assertTrue();
+            let alpha = data[0].windowAlpha;
+            expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+          }
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Capability not supported.`);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_defaultOption_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0200
+     * @tc.desc   传入默认option，获取所有可见窗口布局信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_defaultOption_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_defaultOption_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let option: window.WindowInfoOptions = {};
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          hilog.info(domain, tag, `${caseName} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          if (data.length > 0) {
+            let rect = data[0].windowRect;
+            expect(rect.left >= 0).assertTrue();
+            expect(rect.top >= 0).assertTrue();
+            expect(rect.width > 0).assertTrue();
+            expect(rect.height > 0).assertTrue();
+            let alpha = data[0].windowAlpha;
+            expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+          }
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Capability not supported.`);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_excludeSystemWindows_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0300
+     * @tc.desc   excludeSystemWindows为true，排除系统窗口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_excludeSystemWindows_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_excludeSystemWindows_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let option: window.WindowInfoOptions = { excludeSystemWindows: true };
+        let config: window.Configuration = {
+          name: 'test_getAllWindowLayoutInfo_excludeSystemWindows_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          hilog.info(domain, tag, `${caseName} createWindow success.`);
+          await testWindow.setUIContent("pages/index2");
+          hilog.info(domain, tag, `${caseName} setUIContent success.`);
+          await testWindow.showWindow();
+          hilog.info(domain, tag, `${caseName} showWindow success.`);
+          let windowLimits = testWindow.getWindowLimits();
+          hilog.info(domain, tag, `${caseName} getWindowLimits: ${JSON.stringify(windowLimits)}`);
+
+          let tmpWindowWidth = windowLimits.minWidth! + 100;
+          let tmpWindowHeight = windowLimits.minHeight! + 100;
+          await testWindow.resize(tmpWindowWidth!, tmpWindowHeight!);
+          hilog.info(domain, tag, `${caseName} resize success.`);
+          await testWindow.moveWindowTo(100, 100);
+          hilog.info(domain, tag, `${caseName} moveWindowTo success.`);
+          await Utils.msSleep(500);
+          try {
+            let data = await window.getAllWindowLayoutInfo(displayId, option);
+            hilog.info(domain, tag,
+              `${caseName} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+            let flag = false;
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].windowRect.width === tmpWindowWidth && data[i].windowRect.height === tmpWindowHeight) {
+                flag = true;
+              }
+            }
+            expect(flag).assertTrue()
+            done();
+          } catch (exception) {
+            hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+            if (exception.code === 801) {
+              hilog.info(domain, tag, `${caseName} Capability not supported.`);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } finally {
+            await testWindow.destroyWindow();
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} Failed to create window. Cause: ${err.code}, ${err.message}`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_invalidAboveWindowId_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0400
+     * @tc.desc   foregroundAboveWindow传入不存在windowId，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_invalidAboveWindowId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_invalidAboveWindowId_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let option: window.WindowInfoOptions = { foregroundAboveWindow: -1 };
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          hilog.error(domain, tag, `${caseName} Should not succeed. Data: ${JSON.stringify(data)}`);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 1300016) {
+            hilog.info(domain, tag, `${caseName} Expected error 1300016.`);
+            expect(exception.code).assertEqual(1300016);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_invalidBelowWindowId_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0500
+     * @tc.desc   foregroundBelowWindow传入不存在windowId，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_invalidBelowWindowId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_invalidBelowWindowId_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let option: window.WindowInfoOptions = { foregroundBelowWindow: -1 };
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          hilog.error(domain, tag, `${caseName} Should not succeed. Data: ${JSON.stringify(data)}`);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 1300016) {
+            hilog.info(domain, tag, `${caseName} Expected error 1300016.`);
+            expect(exception.code).assertEqual(1300016);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_sameWindowId_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0600
+     * @tc.desc   foregroundBelowWindow和foregroundAboveWindow等于主窗windowId，返回空数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_sameWindowId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_sameWindowId_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let mainWindowId: int = mainWindow.getWindowProperties().id;
+        hilog.info(domain, tag, `${caseName} mainWindowId: ${mainWindowId}`);
+        let option: window.WindowInfoOptions = {
+          foregroundBelowWindow: mainWindowId,
+          foregroundAboveWindow: mainWindowId
+        };
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          hilog.info(domain, tag, `${caseName} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+          expect(data.length === 0).assertTrue();
+          hilog.info(domain, tag, `${caseName} Empty array returned as expected.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Capability not supported.`);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_excludeSystemWindowsFalse_static
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_STATIC_0700
+     * @tc.desc   excludeSystemWindows为false，不排除系统窗口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getAllWindowLayoutInfo_excludeSystemWindowsFalse_static',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_getAllWindowLayoutInfo_excludeSystemWindowsFalse_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let displayId: Long = mainWindow.getWindowProperties().displayId ?? 0;
+        let option: window.WindowInfoOptions = { excludeSystemWindows: false };
+        try {
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          hilog.info(domain, tag, `${caseName} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          if (data.length > 0) {
+            let rect = data[0].windowRect;
+            expect(rect.left >= 0).assertTrue();
+            expect(rect.top >= 0).assertTrue();
+            expect(rect.width > 0).assertTrue();
+            expect(rect.height > 0).assertTrue();
+            let alpha = data[0].windowAlpha;
+            expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+          }
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Capability not supported.`);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWatermarkImageForAppWindowswithMainWindow_static
+     * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_static_0200
+     * @tc.desc   验证主窗设置和取消水印成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetWatermarkImageForAppWindowswithMainWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWatermarkImageForAppWindowswithMainWindow_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        const rawFile: Uint8Array = await context!.resourceManager.getRawFileContent("test2.jpg");
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        try {
+          let imageSource: image.ImageSource | undefined = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+          let pixelMap = (await imageSource!.createPixelMap()) as image.PixelMap;
+          hilog.info(domain, tag, caseName + " Succeeded in creating pixelmap.");
+          try {
+            let promise = window.setWatermarkImageForAppWindows(pixelMap);
+            promise.then(async () => {
+              hilog.info(domain, tag, caseName + " Succeeded in setting watermark image.");
+              await window.setWatermarkImageForAppWindows(undefined);
+              hilog.info(domain, tag, caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
+              done();
+            }).catch((err: Error) => {
+              hilog.error(domain, tag,
+                `${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code === 801) {
+                done()
+              } else {
+                expect(err.code).assertEqual(1300016);
+                done();
+              }
+            });
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag,
+              `${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetStartWindowBackgroundColor_200_static
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_static_0100
+     * @tc.desc   setStartWindowBackgroundColor入参长度200
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level3
+     */
+    it('testSetStartWindowBackgroundColor_200_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetStartWindowBackgroundColor_200_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let promise =
+            window.setStartWindowBackgroundColor('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              ColorMetrics.numeric(0xff000000.toInt()));
+          promise.then(() => {
+            hilog.info(domain, tag, caseName + ' Succeeded in setting the starting window color.');
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            hilog.error(domain, tag,
+              caseName + ' Failed to set the starting window color. Cause code: ' + err.code + ', message: ' +
+              err.message);
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+              expect(err.message !== null).assertTrue();
+              done()
+            } else {
+              expect(err.code).assertEqual(1300003);
+              expect(err.message !== null).assertTrue();
+              done()
+            }
+          });
+        } catch (e) {
+          e = e as BusinessError;
+          hilog.error(domain, tag, caseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_standardRGB_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0100
+     * @tc.desc   设置标准RGB颜色，验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_standardRGB_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_standardRGB_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#FF0000';
+        let inactiveColor: string = '#00FF00';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_ARGB_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0200
+     * @tc.desc   设置ARGB颜色（含透明度），验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_ARGB_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_ARGB_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#80FF0000';
+        let inactiveColor: string = '#8000FF00';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_transparent_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0300
+     * @tc.desc   设置全透明颜色，验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_transparent_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_transparent_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#00000000';
+        let inactiveColor: string = '#00000000';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_lowercase_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0400
+     * @tc.desc   使用小写颜色格式，验证接口调用成功（不区分大小写）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_lowercase_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_lowercase_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#ff0000';
+        let inactiveColor: string = '#00ff00';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_focusStateChange_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0500
+     * @tc.desc   设置焦点态和非焦点态颜色，验证颜色设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_focusStateChange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_focusStateChange_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#FFFFFF';
+        let inactiveColor: string = '#CCCCCC';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_windowDestroyed_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0600
+     * @tc.desc   窗口销毁后调用，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let activeColor: string = '#FF0000';
+        let inactiveColor: string = '#00FF00';
+        let config: window.Configuration = {
+          name: 'testSetWindowContainerModalColor_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            testWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+            hilog.error(domain, tag, `${caseName} Should not succeed.`);
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, `${caseName} Expected error 1300002.`);
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} Failed to create window. Cause: ${err.code}, ${err.message}`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_subWindow_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0700
+     * @tc.desc   子窗口调用，验证1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_subWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_subWindow_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let activeColor: string = '#FF0000';
+        let inactiveColor: string = '#00FF00';
+        let config: window.Configuration = {
+          name: 'testSetWindowContainerModalColor_subWindow_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          try {
+            testWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+            hilog.error(domain, tag, `${caseName} Should not succeed.`);
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+            if (exception.code === 1300004) {
+              hilog.info(domain, tag, `${caseName} Expected error 1300004.`);
+              expect(exception.code).assertEqual(1300004);
+              done();
+            } else if (exception.code === 801) {
+              hilog.info(domain, tag, `${caseName} Expected error 801.`);
+              expect(exception.code).assertEqual(801);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } finally {
+            await testWindow.destroyWindow();
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, `${caseName} Failed to create window. Cause: ${err.code}, ${err.message}`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_emptyString_static
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_static_0800
+     * @tc.desc   设置空字符串颜色，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_emptyString_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowContainerModalColor_emptyString_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '';
+        let inactiveColor: string = '';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.error(domain, tag, `${caseName} Should not succeed.`);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 401) {
+            hilog.info(domain, tag, `${caseName} Expected error 401.`);
+            expect(exception.code).assertEqual(401);
+            done();
+          } else if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name testSetWindowMaskWithAlpha_subWindow_normal_param_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0100
+     * @tc.desc 验证子窗口上使用合法参数设置窗口掩码成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('testSetWindowMaskWithAlpha_subWindow_normal_param_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_subWindow_normal_param_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_subWindow_normal_param');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          for (let i = 0; i < maskHeight; i++) {
+            for (let j = 0; j < maskWidth; j++) {
+              windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+            }
+          }
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_floatWindow_normal_param_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0200
+     * @tc.desc   验证全局悬浮窗上使用合法参数设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_floatWindow_normal_param_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_floatWindow_normal_param_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let config: window.Configuration = {
+          name: "testSetWindowMaskWithAlpha_floatWindow_normal_param",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: context!
+        };
+
+        let subWindow: window.Window;
+        subWindow = await window.createWindow(config);
+        hilog.info(domain, tag, msgStr + ' createWindow success');
+        try {
+          await subWindow.setUIContent('pages/index2');
+          hilog.info(domain, tag, msgStr + ' setUIContent success');
+          await subWindow.showWindow();
+          hilog.info(domain, tag, msgStr + ' showWindow success');
+          await Utils.msSleep(300);
+
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          for (let i = 0; i < maskHeight; i++) {
+            for (let j = 0; j < maskWidth; j++) {
+              windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+            }
+          }
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          if (subWindow) {
+            await subWindow.destroyWindow();
+            hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          }
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_all_transparent_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0300
+     * @tc.desc   验证所有像素alpha值为0时设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_all_transparent_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_alpha_all_transparent_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_alpha_all_transparent');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(0);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_all_opaque_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0400
+     * @tc.desc   验证所有像素alpha值为255时设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_all_opaque_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_alpha_all_opaque_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_alpha_all_opaque');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(255);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_mixed_values_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0500
+     * @tc.desc   验证使用不同alpha值（0-255范围内的多种值）设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_mixed_values_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_alpha_mixed_values_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_alpha_mixed_values');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          let alphaValues = [0, 64, 128, 192, 255];
+          for (let i = 0; i < windowMask.length; i++) {
+            windowMask[i] = alphaValues[i % alphaValues.length];
+          }
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_maskWidth_not_match_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0600
+     * @tc.desc   验证maskWidth不等于窗口宽度时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_maskWidth_not_match_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_maskWidth_not_match_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_maskWidth_not_match');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth + 10, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 1300016) {
+            expect(err.code).assertEqual(1300016);
+          } else if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_maskHeight_not_match_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0700
+     * @tc.desc   验证maskHeight不等于窗口高度时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_maskHeight_not_match_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_maskHeight_not_match_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_maskHeight_not_match');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight + 10);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 1300016) {
+            expect(err.code).assertEqual(1300016);
+          } else if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_array_length_not_match_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_static_0800
+     * @tc.desc   验证windowMask数组长度不等于maskWidth×maskHeight时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_array_length_not_match_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_array_length_not_match_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_array_length_not_match');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight - 10);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 1300016) {
+            expect(err.code).assertEqual(1300016);
+          } else if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_mainWindow_1300004_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_ERROR_static_0100
+     * @tc.desc   验证在主窗口上调用抛出错误码1300004（未授权操作）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_mainWindow_1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_mainWindow_1300004_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        try {
+          let maskWidth = windowStage!.getMainWindowSync().getWindowProperties().windowRect.width;
+          let maskHeight = windowStage!.getMainWindowSync().getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await windowStage!.getMainWindowSync().setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          if (err.code === 1300004) {
+            expect(err.code).assertEqual(1300004);
+          } else if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_destroyedWindow_1300002_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_ERROR_static_0200
+     * @tc.desc   验证在已销毁的窗口上调用抛出错误码1300002（窗口状态异常）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_destroyedWindow_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_destroyedWindow_1300002_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_destroyedWindow_1300002');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        hilog.info(domain, tag, msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+        await subWindow.destroyWindow();
+        hilog.info(domain, tag, msgStr + ' destroyWindow success');
+        await Utils.msSleep(500);
+
+        try {
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          expect(err.code).assertEqual(1300002);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_and_clearWindowMask_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_FUNCTION_static_0300
+     * @tc.desc   验证setWindowMaskWithAlpha与clearWindowMask配合使用清除掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetWindowMaskWithAlpha_and_clearWindowMask_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_and_clearWindowMask_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_and_clearWindowMask');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let windowLimits = subWindow.getWindowLimits();
+          let minWidth = windowLimits.minWidth as int;
+          let minHeight = windowLimits.minHeight as int;
+          hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+          await subWindow.resize(minWidth, minHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          for (let i = 0; i < maskHeight; i++) {
+            for (let j = 0; j < maskWidth; j++) {
+              windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+            }
+          }
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+
+          await subWindow.clearWindowMask();
+          hilog.info(domain, tag, msgStr + ' clearWindowMask success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_largeWindowSize_static
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_BOUNDARY_static_0200
+     * @tc.desc   验证在大尺寸窗口时设置掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_largeWindowSize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetWindowMaskWithAlpha_largeWindowSize_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow = await windowStage!.createSubWindow('testSetWindowMaskWithAlpha_largeWindowSize');
+        hilog.info(domain, tag, msgStr + ' createSubWindow success');
+        await subWindow.setUIContent('pages/index2');
+        hilog.info(domain, tag, msgStr + ' setUIContent success');
+        await subWindow.showWindow();
+        hilog.info(domain, tag, msgStr + ' showWindow success');
+        await Utils.msSleep(300);
+
+        try {
+          let displayInfo = display.getDefaultDisplaySync();
+          let largeWidth = Double.toInt(Math.floor(displayInfo.width * 0.8));
+          let largeHeight = Double.toInt(Math.floor(displayInfo.height * 0.6));
+          hilog.info(domain, tag, msgStr + ' largeWidth:' + largeWidth + ', largeHeight:' + largeHeight);
+
+          await subWindow.resize(largeWidth, largeHeight);
+          hilog.info(domain, tag, msgStr + ' resize success: ' + largeWidth + ' x ' + largeHeight);
+          await Utils.msSleep(500);
+
+          let maskWidth = subWindow.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          hilog.info(domain, tag,
+            msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+          let windowMask = new Uint8Array(maskWidth * maskHeight);
+          hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
+          windowMask.fill(128);
+
+          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow success');
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow.destroyWindow();
+          hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
+          if (err.code === 801) {
+            hilog.info(domain, tag, msgStr + ' The current device type does not support.');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
+        /**
+         * @tc.number      SUB_WINDOW_ENV_SYSTEM_DENSITY_static_0100
+         * @tc.name        testEnvSystemDensity_static
+         * @tc.desc        验证@Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
+        it('testEnvSystemDensity_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testEnvSystemDensity_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            
+            try {
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                hilog.info(domain, tag, msgStr + 'canIUse SystemCapability.Window.SessionManager: ' + canIUseRes);
+                
+                let envSystemDensity = AppStorage.get<double>('SystemDensity') as double;
+                hilog.info(domain, tag, msgStr + 'envSystemDensity from page: ' + envSystemDensity);
+                
+                let windowClass: window.Window = windowStage!.getMainWindowSync();
+                let densityInfo = windowClass.getWindowDensityInfo();
+                hilog.info(domain, tag, msgStr + 'densityInfo: ' + JSON.stringify(densityInfo));
+                let systemDensityFromApi = densityInfo.systemDensity;
+                hilog.info(domain, tag, msgStr + 'systemDensity from getWindowDensityInfo: ' + systemDensityFromApi);
+                
+                expect(envSystemDensity).assertEqual(systemDensityFromApi);
+                hilog.info(domain, tag, msgStr + 'Succeeded. envSystemDensity equals systemDensity from API.');
+                
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                if (exception.code === 801) {
+                    if (!canIUseRes) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported and canIUse is false.');
+                        expect(exception.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported but canIUse is true.');
+                        expect(false).assertTrue();
+                        done();
+                    }
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_ENV_DISPLAY_ID_static_0100
+         * @tc.name        testEnvDisplayId_static
+         * @tc.desc        验证@Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
+        it('testEnvDisplayId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testEnvDisplayId_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            
+            try {
+                let windowClass: window.Window = windowStage!.getMainWindowSync();
+                await windowClass.setUIContent('pages/Index');
+                await Utils.msSleep(500);
+                
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                hilog.info(domain, tag, msgStr + 'canIUse SystemCapability.Window.SessionManager: ' + canIUseRes);
+                
+                let envDisplayId = AppStorage.get<long>('DisplayId') as long;
+                hilog.info(domain, tag, msgStr + 'envDisplayId from page: ' + envDisplayId);
+                
+                let displayInfo = display.getDefaultDisplaySync();
+                hilog.info(domain, tag, msgStr + 'displayInfo: ' + JSON.stringify(displayInfo));
+                let displayIdFromApi = displayInfo.id;
+                hilog.info(domain, tag, msgStr + 'displayId from getDefaultDisplaySync: ' + displayIdFromApi);
+                
+                expect(envDisplayId).assertEqual(displayIdFromApi);
+                hilog.info(domain, tag, msgStr + 'Succeeded. envDisplayId equals displayId from API.');
+                
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+                expect(false).assertTrue();
+                done();
+            }
+        })
 
     })
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +28,7 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }
 
-  onDestroy(): Promise<void> {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 

@@ -86,7 +86,7 @@ export default function edgeEffectJsunit() {
      */
 it('edgeEffectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('edgeEffectTest_static_0100 START');
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('edgeEffect' + '_list');
       console.info("edgeEffectTest_static_0100 component strJson:" + strJson);
       console.info("edgeEffectTest_static_0100 component obj is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -121,7 +121,7 @@ it('edgeEffectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise
         console.log("edgeEffectTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJsonNew: string = inspector.getInspectorByKey('list');
+      let strJsonNew: string = inspector.getInspectorByKey('edgeEffect' + '_list');
       console.info("edgeEffectTest_static_0200 component objNew is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('edgeEffect'))

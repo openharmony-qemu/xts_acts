@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -55,7 +56,12 @@ let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager()
 
 let getPermission = async () => {
   console.info('getPermission isstart');
-  abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actsetdistrubutedtable");
+  let cmd = "aa start -a EntryAbility -b com.acts.actsetdistrubutedtable";
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  abilityDelegator.executeShellCommand(cmd);
   await Utils.msSleep(5000)
   context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
   atManager.requestPermissionsFromUser(context!, ['ohos.permission.DISTRIBUTED_DATASYNC'], (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {

@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, afterEach, TestType } from '../../../hypium/index';
-import { Color } from '@ohos.arkui.component'
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../hypium/index';
+import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
-
 import Utils from '../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -29,8 +28,6 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
-// import Utils from './Utils';
-
 let emitKey = "emitUserAgent";
 
 export default function selectmenuTest() {
@@ -101,7 +98,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL0, async (done:
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 start");
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('selectTest2');
+          let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest2');
 
           console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0200]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.Center");
@@ -128,7 +125,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL0, async (done:
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 start");
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('selectTest3');
+          let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest3');
 
           console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0300]:" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual("MenuAlignType.End");

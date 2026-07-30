@@ -40,11 +40,11 @@ export default function customPropertyTest(){
       await Utils.sleep(1000)
       let driver = await Driver.create()
       await Utils.sleep(1000)
-      let button = await driver.findComponent(ON.id('buttonCustomProperty'));
+      let button = await driver.findComponent(ON.id('TestAddCustomProperty_buttonCustomProperty'));
       await button.click();
       await Utils.sleep(1000)
 
-      let strJson = getInspectorByKey('customPropertyValue');
+      let strJson = getInspectorByKey('TestAddCustomProperty_customPropertyValue');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[testAddCustomProperty001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual("aaa")
@@ -66,11 +66,11 @@ export default function customPropertyTest(){
       await Utils.sleep(1000)
       let driver = await Driver.create()
       await Utils.sleep(1000)
-      let button = await driver.findComponent(ON.id('buttonCustomProperty'));
+      let button = await driver.findComponent(ON.id('TestRemoveCustomProperty_buttonCustomProperty'));
       await button.click();
       await Utils.sleep(1000)
 
-      let strJson = getInspectorByKey('customPropertyValue');
+      let strJson = getInspectorByKey('TestRemoveCustomProperty_customPropertyValue');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[testRemoveCustomProperty002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual("undefined")

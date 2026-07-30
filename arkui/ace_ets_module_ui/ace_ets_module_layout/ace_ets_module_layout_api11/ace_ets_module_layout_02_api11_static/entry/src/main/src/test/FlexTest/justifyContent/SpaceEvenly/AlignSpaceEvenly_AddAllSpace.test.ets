@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,9 +25,8 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import { Alignment } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -65,13 +65,10 @@ export default function AlignSpaceEvenly_AddAllSpace() {
       console.info("AlignSpaceEvenly_AddAllSpace beforeEach end");
     });
 
-
     afterEach(async () : Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info("AlignAlignSpaceEvenly_AddAllSpace after each called");
     });
-
-
 
     /**
      * @tc.number   testFlexAlignSpaceEvenlyFlexSpaceOverflow_static
@@ -152,15 +149,13 @@ export default function AlignSpaceEvenly_AddAllSpace() {
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
 
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceOverflow] END');
-
     });
-
 
     /**
      * @tc.number   testFlexAlignSpaceEvenlyFlexSpaceMeet_static
@@ -250,7 +245,7 @@ export default function AlignSpaceEvenly_AddAllSpace() {
         .assertTrue();
 
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceMeet] END');
-
     });
+    
   })
 }

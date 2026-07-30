@@ -25,10 +25,10 @@ export default function abilityTest() {
         url: "MainAbility/pages/segmentButton/SegmentButtonIndex",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         if (pages == null || !("Index" == pages.name)) {
-          let driver = Driver.create()
+          let driver = await Driver.create()
           await router.push(options);
           await driver.delayMs(2000);
         }
@@ -38,7 +38,7 @@ export default function abilityTest() {
       done()
     })
     afterEach(async (done: Function) => {
-      let driver = Driver.create()
+      let driver = await Driver.create()
       await driver.delayMs(2);
       done()
     })
@@ -52,7 +52,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Advanced_ui_SegmentButton_0100', Level.LEVEL0, async (done: Function) => {
-      let driver = Driver.create()
+      let driver = await Driver.create()
       let singleTextSegmentButton = await driver.findComponent(ON.text('单选文字1'))
       let singleTextSegmentButtonIsEnabled = await singleTextSegmentButton.isEnabled()
       expect(singleTextSegmentButtonIsEnabled).assertTrue()
@@ -89,7 +89,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Advanced_ui_SegmentButton_0200', Level.LEVEL0, async (done: Function) => {
-      let driver = Driver.create()
+      let driver = await Driver.create()
       let multipleTextSegmentButton = await driver.findComponent(ON.text('多选文字1'))
       let multipleTextSegmentButtonType = await multipleTextSegmentButton.getType()
       expect(multipleTextSegmentButtonType).assertEqual('Text')
@@ -118,7 +118,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Advanced_ui_SegmentButton_0300', Level.LEVEL0, async (done: Function) => {
-      let driver = Driver.create()
+      let driver = await Driver.create()
       let tabSegmentButton = await driver.findComponent(ON.text('页签1'))
       let tabSegmentButtonType = await tabSegmentButton.getType()
       expect(tabSegmentButtonType).assertEqual('Text')

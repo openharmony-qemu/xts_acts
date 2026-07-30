@@ -76,14 +76,14 @@ export default function List_ListSize() {
     it('testListListSizeMeet',  Level.LEVEL0, async (done: Function) => {
       console.info('testListListSizeMeet START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_ListSize_01');
+      let strJson = getInspectorByKey('List_ListSize' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_ListSize_011: RectValue = CommonFunc.getComponentRect('List_ListSize_011');
-      let List_ListSize_012: RectValue = CommonFunc.getComponentRect('List_ListSize_012');
-      let List_ListSize_013: RectValue = CommonFunc.getComponentRect('List_ListSize_013');
-      let List_ListSize_014: RectValue = CommonFunc.getComponentRect('List_ListSize_014');
-      let List_ListSize_01: RectValue = CommonFunc.getComponentRect('List_ListSize_01');
+      let List_ListSize_011: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_011');
+      let List_ListSize_012: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_012');
+      let List_ListSize_013: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_013');
+      let List_ListSize_014: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_014');
+      let List_ListSize_01: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_01');
       expect(List_ListSize_011.left).assertEqual(List_ListSize_01.left);
       expect(List_ListSize_012.left).assertEqual(List_ListSize_01.left);
       expect(List_ListSize_013.left).assertEqual(List_ListSize_01.left);
@@ -112,7 +112,7 @@ export default function List_ListSize() {
         Math.round(List_ListSize_012.left + ((List_ListSize_012.right - List_ListSize_012.left) / 2)),
         Math.round(List_ListSize_012.bottom));
       await CommonFunc.sleep(1000);
-      let List_ListSize_024: RectValue = CommonFunc.getComponentRect('List_ListSize_014');
+      let List_ListSize_024: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_014');
       expect(Math.abs(Math.floor((List_ListSize_01.bottom - List_ListSize_024.bottom) - vp2px(40))) <= 1).assertTrue();
       console.info('testListListSizeMeet END');
       done();

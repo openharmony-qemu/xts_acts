@@ -75,7 +75,7 @@ export default function textAreaOnCutJsunit() {
 it('testtextAreaOnCut_static_0001', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -96,7 +96,7 @@ it('testtextAreaOnCut_static_0001', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0002', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -117,7 +117,7 @@ it('testtextAreaOnCut_static_0002', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0003', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0003 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -138,7 +138,7 @@ it('testtextAreaOnCut_static_0003', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0004', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0004 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -159,7 +159,7 @@ it('testtextAreaOnCut_static_0004', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0005', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0005 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -180,7 +180,7 @@ it('testtextAreaOnCut_static_0005', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0006', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0006 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -202,7 +202,7 @@ it('testtextAreaOnCut_static_0006', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0009', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut009 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
@@ -223,7 +223,7 @@ it('testtextAreaOnCut_static_0009', Level.LEVEL0, async () => {
 it('testtextAreaOnCut_static_0010', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0010 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('textArea_onCutText');
       console.info("[testtextAreaOnCut0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');

@@ -452,5 +452,215 @@ export default function saveCompCustomizeTest() {
       let driver = Driver.create();
       await clickSecComponent(TCNAME, customText, driver);
     });
+    
+    /**
+     * @tc.name   Test_Security_Button_Save_Customize_0800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0800
+     * @tc.desc   Test SaveComponent attr symbolIconColor set Array<ResourceColor> validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_0800';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#08';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolIconColor': new Array<ResourceColor>(0xff00ff00, 0xffff00ff),
+            'symbolRenderingStrategy': SymbolRenderingStrategy.MULTIPLE_OPACITY,
+            'symbolFontWeight': FontWeight.Bold
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.symbolIconColor).assertEqual('#FF00FF00, #FFFF00FF');
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.MULTIPLE_OPACITY');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Bold');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+    
+    /**
+     * @tc.name   Test_Security_Button_Save_Customize_0900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0900
+     * @tc.desc   Test SaveComponent attr SymbolFontWeight set number validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_0900';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#09';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolRenderingStrategy': SymbolRenderingStrategy.SINGLE,
+            'symbolFontWeight': 900
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('900');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+    
+    /**
+     * @tc.name   Test_Security_Button_Save_Customize_1000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_1000
+     * @tc.desc   Test SaveComponent attr SymbolFontWeight set string validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_1000';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#10';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolRenderingStrategy': SymbolRenderingStrategy.MULTIPLE_COLOR,
+            'symbolFontWeight': 'lighter'
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.MULTIPLE_COLOR');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Lighter');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+    
+    /**
+     * @tc.name   Test_Security_Button_Save_Customize_1100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_1100
+     * @tc.desc   Test SaveComponent attr SymbolIconColor set empty array and SymbolFontWeight set empty string validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_1100';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#11';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolIconColor': [],
+            'symbolFontWeight': ''
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.symbolIconColor).assertEqual('#FFFFFFFF');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+    
+    /**
+     * @tc.name   Test_Security_Button_Save_Customize_1200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_1200
+     * @tc.desc   Test SaveComponent attr SymbolFontWeight set resource validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_Customize_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_Save_Customize_1200';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#12';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolFontWeight': $r('app.string.FontWeight_Bold')
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Bold');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
   })
 }

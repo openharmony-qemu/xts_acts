@@ -864,7 +864,12 @@ export default function startAndTerminateTest() {
             };
             if (data.event === 'ACTS_TEST_START01') {
               setTimeout(async () => {
-                await abilityDelegator.executeShellCommand('aa start -a UiAbility10 -b com.test.actsstartandterminatetest')
+                let cmd = 'aa start -a UiAbility10 -b com.test.actsstartandterminatetest';
+                let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+                if(user !== undefined){
+                    cmd += ' -u ' + user;
+                }
+                await abilityDelegator.executeShellCommand(cmd)
                   .then(data => {
                     hilog.info(0x0000, 'testTag', '%{public}s',
                       'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800 data is: ' + JSON.stringify(data));

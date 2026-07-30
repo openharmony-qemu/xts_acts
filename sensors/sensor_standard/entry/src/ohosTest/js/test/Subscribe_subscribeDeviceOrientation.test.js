@@ -73,6 +73,10 @@ describe("SensorJsTest_sensor_27", function () {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeDeviceOrientation({
                         interval: 'game',
@@ -116,6 +120,10 @@ describe("SensorJsTest_sensor_27", function () {
            sensor.getSingleSensor(DeviceOrientationId ,(error, data) => {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                         sensor.subscribeDeviceOrientation({
@@ -162,6 +170,10 @@ describe("SensorJsTest_sensor_27", function () {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                         sensor.subscribeDeviceOrientation({
                             interval: 'normal',
@@ -205,6 +217,10 @@ describe("SensorJsTest_sensor_27", function () {
            sensor.getSingleSensor(DeviceOrientationId ,(error, data) => {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                             sensor.subscribeDeviceOrientation({
@@ -264,6 +280,10 @@ describe("SensorJsTest_sensor_27", function () {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeDeviceOrientation({
                         interval: 'xxx',
@@ -303,6 +323,10 @@ describe("SensorJsTest_sensor_27", function () {
            sensor.getSingleSensor(DeviceOrientationId ,(error, data) => {
                 if (error) {
                     console.info('subscribeDeviceOrientation_SensorJsTest006 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeDeviceOrientation({

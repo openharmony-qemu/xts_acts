@@ -21,6 +21,7 @@ struct customSaveSetNull {
   @State bgType: ButtonType = ButtonType.Normal
   @State iconSize: number | SizeOptions = 16
   @State customIcon: Resource = $r('app.media.icon')
+  @State symbolIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus')
   @State customText: string = '自定义保存'
   @State iconRadius: number | BorderRadiuses = {topLeft: 2, topRight: 2, bottomLeft: 2, bottomRight: 2}
   @State isShow: number = 0
@@ -136,6 +137,62 @@ struct customSaveSetNull {
               .key('customSave3')
           }
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
+
+          Column() {
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
+              .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
+                try {
+                  let clickData:events_emitter.EventData = {
+                    data: {
+                      'clickResult': result,
+                    }
+                  }
+                  let clickEvent:events_emitter.InnerEvent = {
+                    eventId: 2,
+                    priority: events_emitter.EventPriority.LOW
+                  }
+                  console.debug('====>page_SaveButton onclick result:' + JSON.stringify(result))
+                  events_emitter.emit(clickEvent, clickData)
+                } catch (err) {
+                  console.debug('====>page_SaveButton emit action state err: ' + JSON.stringify(err.message))
+                }
+              })
+              .setIcon(this.symbolIcon)
+              .setText(this.customText)
+              .symbolIconColor(undefined)
+              .symbolRenderingStrategy(undefined)
+              .symbolFontWeight(undefined)
+              .key('customSave4')
+          }
+          .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
+
+          Column() {
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
+              .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
+                try {
+                  let clickData:events_emitter.EventData = {
+                    data: {
+                      'clickResult': result,
+                    }
+                  }
+                  let clickEvent:events_emitter.InnerEvent = {
+                    eventId: 2,
+                    priority: events_emitter.EventPriority.LOW
+                  }
+                  console.debug('====>page_SaveButton onclick result:' + JSON.stringify(result))
+                  events_emitter.emit(clickEvent, clickData)
+                } catch (err) {
+                  console.debug('====>page_SaveButton emit action state err: ' + JSON.stringify(err.message))
+                }
+              })
+              .setIcon(this.symbolIcon)
+              .setText(this.customText)
+              .symbolIconColor(null)
+              .symbolRenderingStrategy(null)
+              .symbolFontWeight(null)
+              .key('customSave5')
+          }
+          .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
           Button('点击切换安全控件')
             .width('50%')

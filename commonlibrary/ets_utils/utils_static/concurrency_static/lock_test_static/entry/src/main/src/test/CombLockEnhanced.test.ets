@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -23,11 +24,11 @@ import {
   Size
 } from "../../../hypium/index";
 import Utils from './Util.test';
-import { CountClass, Event, sleep } from '../utils/Model';
+import { BaseClass, CountClass, Event, sleep } from '../utils/Model';
 
 export default function CombLockEnhancedTest(): void {
   describe('CombLockEnhancedTest', (): void => {
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.msSleep(200);
     })
 
@@ -43,33 +44,31 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedMutexRWLockDeadlock';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let resultCount = new AtomicInt(0);
         let worker1Completed = new AtomicInt(0);
         let worker2Completed = new AtomicInt(0);
 
         let worker1 = new EAWorker();
         worker1.start();
-        worker1.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        worker1.run<void>(() => {
+          mutex.lock();
           resultCount.fetchAdd(1);
           mutex.unlock();
-          let writeLock = rwLock.writeLock();
-          await writeLock.lock();
+          rwLock.writeLock().lock();
           resultCount.fetchAdd(1);
-          writeLock.unlock();
+          rwLock.writeLock().unlock();
           worker1Completed.fetchAdd(1);
         });
 
         let worker2 = new EAWorker();
         worker2.start();
-        worker2.run<Promise<void>>(async (): Promise<void> => {
-          let writeLock = rwLock.writeLock();
-          await writeLock.lock();
+        worker2.run<void>(() => {
+          rwLock.writeLock().lock();
           resultCount.fetchAdd(1);
-          writeLock.unlock();
-          await mutex.lock();
+          rwLock.writeLock().unlock();
+          mutex.lock();
           resultCount.fetchAdd(1);
           mutex.unlock();
           worker2Completed.fetchAdd(1);
@@ -101,21 +100,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockOrderProtocol';
         console.info(`${TAG} test start`);
-        let locks: concurrency.stackless.AsyncMutex[] = [
-          new concurrency.stackless.AsyncMutex(),
-          new concurrency.stackless.AsyncMutex(),
-          new concurrency.stackless.AsyncMutex()
-        ];
+        let locks: Mutex[] = [new Mutex(), new Mutex(), new Mutex()];
         let count = new AtomicInt(0);
         let workerCount = 10;
 
         for (let i = 0; i < workerCount; i++) {
           let worker = new EAWorker();
           worker.start();
-          worker.run<Promise<void>>(async (): Promise<void> => {
-            await locks[0].lock();
-            await locks[1].lock();
-            await locks[2].lock();
+          worker.run<void>(() => {
+            locks[0].lock();
+            locks[1].lock();
+            locks[2].lock();
             count.fetchAdd(1);
             locks[2].unlock();
             locks[1].unlock();
@@ -222,17 +217,16 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedMutexRWLockAsyncLock';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let asyncLock = new AsyncLock();
         let count = new AtomicInt(0);
 
-        await asyncLock.lockAsync(async () => {
-          await mutex.lock();
-          let readLock = rwLock.readLock();
-          await readLock.lock();
+        await asyncLock.lockAsync(() => {
+          mutex.lock();
+          rwLock.readLock().lock();
           count.fetchAdd(1);
-          readLock.unlock();
+          rwLock.readLock().unlock();
           mutex.unlock();
         }, AsyncLockMode.EXCLUSIVE);
 
@@ -253,18 +247,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedNestedDifferentLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let result: string = '';
 
-        await mutex.lock();
+        mutex.lock();
         result += 'M';
 
-        let readLock = rwLock.readLock();
-        await readLock.lock();
+        rwLock.readLock().lock();
         result += 'R';
 
-        readLock.unlock();
+        rwLock.readLock().unlock();
         result += 'R2';
 
         mutex.unlock();
@@ -287,18 +280,18 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedEventMutexSync';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
+        let mutex = new Mutex();
         let event = new Event();
         let result = new AtomicReference<string>('');
 
         let worker1 = new EAWorker();
         worker1.start();
-        worker1.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        worker1.run<void>(() => {
+          mutex.lock();
           result.exchange(result.load() + 'W1-1');
           mutex.unlock();
           event.Wait();
-          await mutex.lock();
+          mutex.lock();
           result.exchange(result.load() + 'W1-2');
           mutex.unlock();
         });
@@ -307,8 +300,8 @@ export default function CombLockEnhancedTest(): void {
 
         let worker2 = new EAWorker();
         worker2.start();
-        worker2.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        worker2.run<void>(() => {
+          mutex.lock();
           result.exchange(result.load() + 'W2');
           mutex.unlock();
           event.Fire();
@@ -334,7 +327,7 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedCondVarMutexPattern';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
+        let mutex = new Mutex();
         let event = new Event();
         let data = new CountClass();
         let produced = new AtomicInt(0);
@@ -342,12 +335,12 @@ export default function CombLockEnhancedTest(): void {
 
         let consumer = new EAWorker();
         consumer.start();
-        consumer.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        consumer.run<void>(() => {
+          mutex.lock();
           while (produced.load() < 1) {
             mutex.unlock();
             event.Wait();
-            await mutex.lock();
+            mutex.lock();
           }
           data.setCount(data.getCount() + 1);
           consumed.fetchAdd(1);
@@ -356,8 +349,8 @@ export default function CombLockEnhancedTest(): void {
 
         let producer = new EAWorker();
         producer.start();
-        producer.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        producer.run<void>(() => {
+          mutex.lock();
           data.setCount(data.getCount() + 1);
           produced.fetchAdd(1);
           event.Fire();
@@ -387,7 +380,7 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockViaMessage';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
+        let mutex = new Mutex();
         let result = new AtomicInt(0);
 
         let worker1 = new EAWorker();
@@ -398,15 +391,15 @@ export default function CombLockEnhancedTest(): void {
         worker2.start();
         let worker2Completed = new AtomicInt(0);
 
-        worker1.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        worker1.run<void>(() => {
+          mutex.lock();
           result.store(100);
           mutex.unlock();
           worker1Completed.fetchAdd(1);
         });
 
-        worker2.run<Promise<void>>(async (): Promise<void> => {
-          await mutex.lock();
+        worker2.run<void>(() => {
+          mutex.lock();
           result.store(200);
           mutex.unlock();
           worker2Completed.fetchAdd(1);
@@ -439,18 +432,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedTaskPoolWithLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let count = new AtomicInt(0);
         let taskCount = 50;
 
         for (let i = 0; i < taskCount; i++) {
-          taskpool.execute(async (): Promise<void> => {
-            await mutex.lock();
-            let readLock = rwLock.readLock();
-            await readLock.lock();
+          taskpool.execute(() => {
+            mutex.lock();
+            rwLock.readLock().lock();
             count.fetchAdd(1);
-            readLock.unlock();
+            rwLock.readLock().unlock();
             mutex.unlock();
           });
         }
@@ -476,18 +468,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedSequenceRunnerWithLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let count = new AtomicInt(0);
         let runner = new taskpool.SequenceRunner(TAG);
 
         for (let i = 0; i < 10; i++) {
-          let task = new taskpool.Task(async (): Promise<void> => {
-            await mutex.lock();
-            let writeLock = rwLock.writeLock();
-            await writeLock.lock();
+          let task = new taskpool.Task(() => {
+            mutex.lock();
+            rwLock.writeLock().lock();
             count.fetchAdd(1);
-            writeLock.unlock();
+            rwLock.writeLock().unlock();
             mutex.unlock();
           });
           await runner.execute(task);
@@ -510,18 +501,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedAsyncRunnerWithLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let runner = new taskpool.AsyncRunner(TAG, 5);
         let completedTasks = new AtomicInt(0);
 
         for (let i = 0; i < 10; i++) {
-          let task = new taskpool.Task(async (): Promise<void> => {
-            await mutex.lock();
-            let readLock = rwLock.readLock();
-            await readLock.lock();
-            setTimeout((): void => {
-              readLock.unlock();
+          let task = new taskpool.Task(() => {
+            mutex.lock();
+            rwLock.readLock().lock();
+            setTimeout(() => {
+              rwLock.readLock().unlock();
               mutex.unlock();
               completedTasks.fetchAdd(1);
             }, 10);
@@ -550,18 +540,17 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedTaskGroupWithLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let count = new AtomicInt(0);
         let group = new taskpool.TaskGroup(TAG);
 
         for (let i = 0; i < 10; i++) {
-          let task = new taskpool.Task(async (): Promise<void> => {
-            await mutex.lock();
-            let writeLock = rwLock.writeLock();
-            await writeLock.lock();
+          let task = new taskpool.Task(() => {
+            mutex.lock();
+            rwLock.writeLock().lock();
             count.fetchAdd(1);
-            writeLock.unlock();
+            rwLock.writeLock().unlock();
             mutex.unlock();
           });
           group.addTask(task);
@@ -586,23 +575,22 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockOrderMultipleTypes';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let asyncLock = new AsyncLock();
         let result: string = '';
 
-        await mutex.lock();
+        mutex.lock();
         result += 'M';
 
-        let readLock = rwLock.readLock();
-        await readLock.lock();
+        rwLock.readLock().lock();
         result += 'R';
 
         await asyncLock.lockAsync(() => {
           result += 'A';
         }, AsyncLockMode.EXCLUSIVE);
 
-        readLock.unlock();
+        rwLock.readLock().unlock();
         result += 'R2';
 
         mutex.unlock();
@@ -625,14 +613,13 @@ export default function CombLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedErrorRecoveryWithLocks';
         console.info(`${TAG} test start`);
-        let mutex = new concurrency.stackless.AsyncMutex();
-        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
+        let mutex = new Mutex();
+        let rwLock = new RWLock();
         let count = new AtomicInt(0);
         let errorCaught = new AtomicInt(0);
 
-        let readLock = rwLock.readLock();
-        await mutex.lock();
-        await readLock.lock();
+        mutex.lock();
+        rwLock.readLock().lock();
 
         try {
           count.fetchAdd(1);
@@ -640,14 +627,14 @@ export default function CombLockEnhancedTest(): void {
         } catch (e) {
           errorCaught.fetchAdd(1);
         } finally {
-          readLock.unlock();
+          rwLock.readLock().unlock();
           mutex.unlock();
         }
 
-        await mutex.lock();
-        await readLock.lock();
+        mutex.lock();
+        rwLock.readLock().lock();
         count.fetchAdd(1);
-        readLock.unlock();
+        rwLock.readLock().unlock();
         mutex.unlock();
 
         console.info(`${TAG} count: ${count.load()}, error caught: ${errorCaught.load()}`);

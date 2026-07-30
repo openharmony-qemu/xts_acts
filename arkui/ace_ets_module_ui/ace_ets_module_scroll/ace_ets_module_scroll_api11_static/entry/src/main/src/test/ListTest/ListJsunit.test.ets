@@ -88,7 +88,7 @@ export default function listJsunit() {
 it('testList_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_01] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_01] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -122,7 +122,7 @@ it('testList_static_02', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_02] START');
       AppStorage.setOrCreate<Axis>('listDirection', Axis.Horizontal);
       await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_02] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -143,7 +143,7 @@ it('testList_static_02', Level.LEVEL1, async (done: () => void): Promise<void> =
     //   console.info('[testList_static_03] START');
     //   AppStorage.setOrCreate<boolean>('editMode', true);
     //   await CommonFunc.sleep(4000);
-    //   let strJson: string = inspector.getInspectorByKey('list');
+    //   let strJson: string = inspector.getInspectorByKey('list' + '_list');
     //
     //   console.info("[testList_static_03] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
@@ -163,7 +163,7 @@ it('testList_static_04', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_04] START');
       AppStorage.setOrCreate<EdgeEffect>('edgeEffect', EdgeEffect.Spring);
       await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_04] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -185,7 +185,7 @@ it('testList_static_05', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_05] START');
       AppStorage.setOrCreate<boolean>('chainAnimation', true);
       await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_05] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -206,7 +206,7 @@ it('testList_static_06', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_06] START');
       AppStorage.setOrCreate<number | string>('strokeWidth', '3.000000vp');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_06] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -228,7 +228,7 @@ it('testList_static_07', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_07] START');
       AppStorage.setOrCreate<string>('color', "#FF0000FF");
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_07] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -250,7 +250,7 @@ it('testList_static_08', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_08] START');
       AppStorage.setOrCreate('startMargin', "30.000000vp");
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_08] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -272,7 +272,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_09] START');
       AppStorage.setOrCreate<number | string>('endMargin', "30.000000vp");
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_09] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
@@ -293,7 +293,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
     //   console.info('[testList_static_10] START');
     //   AppStorage.setOrCreate<boolean | string>('editMode', "true123");
     //   await CommonFunc.sleep(4000);
-    //   let strJson: string = inspector.getInspectorByKey('list');
+    //   let strJson: string = inspector.getInspectorByKey('list' + '_list');
     //
     //   console.info("[testList_static_10] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
@@ -312,7 +312,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
     //   console.info('[testList_static_11] START');
     //   AppStorage.setOrCreate<boolean | string>('editMode', "39000000");
     //   await CommonFunc.sleep(4000);
-    //   let strJson: string = inspector.getInspectorByKey('list');
+    //   let strJson: string = inspector.getInspectorByKey('list' + '_list');
     //
     //   console.info("[testList_static_11] JSON.parse(strJson) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
     //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
@@ -332,7 +332,7 @@ it('testList_static_12', Level.LEVEL1, async (done: () => void): Promise<void> =
       console.info('[testList_static_12] START');
       AppStorage.setOrCreate<boolean | string>('chainAnimation', "true123");
       await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('list');
+      let strJson: string = inspector.getInspectorByKey('list' + '_list');
 
       console.info("[testList_static_12] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));

@@ -16,8 +16,11 @@
 export const TestLoadDocumentFromFile_Normal: () => number;
 export const TestDocumentGetNativeFilePath_OEIDIsEmpty: () => number;
 export const TestStorageSetOEid_OEIDIsEmpty: () => number;
+export const TestStorageSetOEid_OEIDFormatInvalid: () => number;
+export const TestStorageSetOEid_OEIDFormatInvalid2: () => number;
 export const TestProxyGetOEidFromFormat_OEIDIsEmpty: () => number;
 export const TestCreateDocumentByOEid_OEIDIsValid: () => number;
+export const TestCreateDocumentByOEid_OEIDFormatInvalid: () => number;
 export const TestStorageCreateStorage_NameIsValid: () => number;
 export const TestStorageCreateStorage_NameExceedMaxLen: () => number;
 export const TestStorageGetStorage_NameIsValid: () => number;

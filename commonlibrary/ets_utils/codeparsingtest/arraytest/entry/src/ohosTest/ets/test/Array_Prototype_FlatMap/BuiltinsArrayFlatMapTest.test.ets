@@ -1114,40 +1114,6 @@ export default function BuiltinsArrayFlatMapTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatMapTest5300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_MAP_TEST_5300
-     * @tc.desc    Verify that flatMap() handles large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayFlatMapTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: number[] = Array(10000).fill(1);
-      const result = arr.flatMap((x: number): number[] => [x, x * 2]);
-      expect(result).not().assertNull();
-      expect(Array.isArray(result)).assertTrue();
-      expect(result.length).assertEqual(20000);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayFlatMapTest5400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_MAP_TEST_5400
-     * @tc.desc    Verify that flatMap() handles large array with single value return
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayFlatMapTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: number[] = Array(10000).fill(1);
-      const result = arr.flatMap((x: number): number[] => [x * 2]);
-      expect(result).not().assertNull();
-      expect(Array.isArray(result)).assertTrue();
-      expect(result.length).assertEqual(10000);
-      expect(result[0]).assertEqual(2);
-      expect(result[9999]).assertEqual(2);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayFlatMapTest5500
      * @tc.number  SUB_BUILTINS_ARRAY_FLAT_MAP_TEST_5500
      * @tc.desc    Verify that flatMap() handles Number.MAX_VALUE

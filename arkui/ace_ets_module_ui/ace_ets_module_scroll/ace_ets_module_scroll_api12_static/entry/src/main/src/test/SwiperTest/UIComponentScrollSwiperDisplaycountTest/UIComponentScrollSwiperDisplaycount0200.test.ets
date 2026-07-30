@@ -88,6 +88,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0200', Level.LEVEL0, 
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0200 START");
       await CommonFunc.sleep(2000)
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       let swiper = await driver.findComponent(ON.id("btnDisplaycount0200"));
       await (swiper?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,7 +59,12 @@ export default function actslocationTest() {
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-          abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.location.geolocation.core")
+          let cmd = "aa start -a EntryAbility -b ohos.acts.location.geolocation.core";
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd)
           await Utils.msSleep(4000);
           g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
           hilog.info(domain, tag, 'get UIAbilityContext end');
@@ -1508,6 +1514,7 @@ export default function actslocationTest() {
                 wlanBssidArray, rssiThreshold, needStartScan);
             hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_promiss_0100 result: %{public}s', JSON.stringify(result));
             expect(result instanceof Array).assertTrue();
+            expect(result.length > 0).assertTrue();
             if (result.length > 0) {
               hilog.info(domain, tag, 'result[0].index: %{public}d', result[0].index);
               hilog.info(domain, tag, 'result[0].ssid: %{public}s', result[0].ssid);
@@ -1615,8 +1622,8 @@ export default function actslocationTest() {
          */
         it('SUB_Location_findMatchingWlan_promiss_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
           try {
-            geoLocationManager.disableLocation()
-            await Utils.msSleep(1000)
+            geoLocationManager.disableLocation();
+            await Utils.msSleep(1000);
             let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
             if (locationEnabled) {
                 hilog.info(domain, tag, 'Location is enabled, skip error code test');
@@ -1675,8 +1682,27 @@ export default function actslocationTest() {
         done();
       })
 
-        
-
+      /**
+       * @tc.number   SUB_core_isLocationEnabled_0200
+       * @tc.name   SUB_core_isLocationEnabled_0200
+       * @tc.desc   Test isLocationEnabled returns true or false
+       * @tc.level  Level 2
+       * @tc.type   Function
+       * @tc.size   MEDIUMTEST
+       */
+      it('SUB_core_isLocationEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        try {
+          let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
+          if (locationEnabled) {
+            expect(locationEnabled).assertTrue();
+          } else {
+            expect(locationEnabled).assertFalse();
+          }
+        } catch (error) {
+          error = error as BusinessError;
+          expect(error.code).assertEqual(3301000);
+        }
+      })
 
 
 

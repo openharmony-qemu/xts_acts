@@ -33,7 +33,6 @@ import webgl2_uniform from './WebGL2.uniform.js'
 import webgl2_vertex from './WebGL2.vertex.js'
 
 export default function testsuite() {
-    webgl1_attribute()
     webgl1_enum()
     webgl1_program()
     webgl1_shader()
@@ -50,4 +49,5 @@ export default function testsuite() {
     webgl2_transform()
     webgl2_uniform()
     webgl2_vertex()
+    webgl1_attribute()
 }

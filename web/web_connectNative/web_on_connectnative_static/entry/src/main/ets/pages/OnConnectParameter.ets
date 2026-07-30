@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,FullScreenEnterEvent,FullScreenExitHandler} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 import webView from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, Level, it, expect } from '../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
-import emitter from '@ohos.events.emitter';
-import { Callback, RecordData} from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
-import inspector from '@ohos.arkui.inspector';
-class ConnectionCallback implements webNativeMessagingExtensionManager.WebExtensionConnectionCallback  {
-
-  constructor() {
-  }
-  onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo){
-    console.info(`OnConnectParameter001 onConnect called`);
-  }
-  onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo){
-    console.info(`OnConnectParameter001 onDisconnect called`);
-  }
-  onFailed(code: webNativeMessagingExtensionManager.NmErrorCode,
-    errMsg: string){
-    console.info(`OnConnectParameter001 onDisconnect code: ${code} errMsg: ${errMsg}`);
-  }
+function isCapabilityNotSupportedCode(code: number): boolean {
+  // Convert to string for comparison to avoid type mismatch with NmErrorCode enum
+  return String(code) === '801';
 }
+
 export class StringFields {
   public str: string = '';
 }
@@ -46,8 +32,8 @@ export class StringFields {
 @Entry
 @Component
 struct WebOnConnectParameter {
-  stringObj: StringFields  = new StringFields();
-  controller: webView.WebviewController = new webView.WebviewController(undefined);
+  stringObj: StringFields = new StringFields();
+  controller: webView.WebviewController = new webView.WebviewController();
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -73,32 +59,127 @@ struct WebOnConnectParameter {
       Row() {
         Button('OnConnectParameter click')
           .key('OnConnectParameterTestButton')
-          .onClick( (e:ClickEvent) => {
-          console.info('key==>' +  this.stringObj.str)
-          switch (this.stringObj.str) {
-            case 'OnConnectParameter001': {
-              try {
-                let callback = new ConnectionCallback()
-                let mockConnection: webNativeMessagingExtensionManager.ConnectionNativeInfo = {
-                  connectionId: 1,
-                  bundleName: "com.example.extension",
-                  extensionOrigin: "chrome-extension://test/",
-                  extensionPid: 1234
-                };
-
-                callback.onConnect(mockConnection);
-                console.log(`mockConnection.connectionId: ${mockConnection.connectionId}`);
-                console.log(`mockConnection.bundleName: ${mockConnection.bundleName}`);
-                console.log(`mockConnection.extensionOrigin: ${mockConnection.extensionOrigin}`);
-                console.log(`mockConnection.extensionPid: ${mockConnection.extensionPid}`);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+          .onClick((e: ClickEvent) => {
+            console.info('key==>' + this.stringObj.str)
+            switch (this.stringObj.str) {
+              case 'OnConnectParameter001': {
+                try {
+                  let receivedConnectionId: int = -1;
+                  let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+                      receivedConnectionId = connection.connectionId;
+                      console.info(`OnConnectParameter001 onConnect: connectionId=${receivedConnectionId}, ` +
+                        `bundleName=${connection.bundleName}, extensionOrigin=${connection.extensionOrigin}, ` +
+                        `extensionPid=${connection.extensionPid}`);
+                    },
+                    onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
+                    onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {}
+                  };
+                  let mockConnection: webNativeMessagingExtensionManager.ConnectionNativeInfo = {
+                    connectionId: 1,
+                    bundleName: "com.example.extension",
+                    extensionOrigin: "chrome-extension://test/",
+                    extensionPid: 1234
+                  };
+                  testCallback.onConnect(mockConnection);
+                  Utils.emitEvent(String(receivedConnectionId), 20260601);
+                } catch (error) {
+                  const err = error as BusinessError;
+                  console.error(`OnConnectParameter001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('-1', 20260601);
+                }
+                break;
               }
-              break;
+              case 'OnFailedPermissionDenyStatic001': {
+                try {
+                  let receivedCode: number = -1;
+                  let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
+                    onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
+                    onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
+                      receivedCode = Number(code);
+                      console.info(`OnFailedPermissionDenyStatic001 onFailed: code=${receivedCode}, errMsg=${errMsg}`);
+                    }
+                  };
+                  testCallback.onFailed(
+                    webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY,
+                    "Permission denied: missing ohos.permission.WEB_NATIVE_MESSAGING"
+                  );
+                  Utils.emitEvent(String(receivedCode), 20260602);
+                } catch (error) {
+                  const err = error as BusinessError;
+                  console.error(`OnFailedPermissionDenyStatic001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('-1', 20260602);
+                }
+                break;
+              }
+              case 'OnConnectBundleNameEmptyStatic001': {
+                try {
+                  let receivedBundleName: string = 'NOT_SET';
+                  let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+                      receivedBundleName = connection.bundleName;
+                      console.info(`OnConnectBundleNameEmptyStatic001 onConnect: bundleName='${receivedBundleName}'`);
+                    },
+                    onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
+                    onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {}
+                  };
+                  let mockConnection: webNativeMessagingExtensionManager.ConnectionNativeInfo = {
+                    connectionId: 2,
+                    bundleName: "",
+                    extensionOrigin: "chrome-extension://test/",
+                    extensionPid: 5678
+                  };
+                  testCallback.onConnect(mockConnection);
+                  Utils.emitEvent(receivedBundleName, 20260603);
+                } catch (error) {
+                  const err = error as BusinessError;
+                  console.error(`OnConnectBundleNameEmptyStatic001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('ERROR', 20260603);
+                }
+                break;
+              }
+              case 'DisconnectNativePermissionDenyStatic001': {
+                let doTest = async () => {
+                  try {
+                    await webNativeMessagingExtensionManager.disconnectNative(1);
+                    Utils.emitEvent(0, 20260604);
+                  } catch (error) {
+                    let err = error as BusinessError;
+                    console.error(`DisconnectNativePermissionDenyStatic001 error: ${err.code}, ${err.message}`);
+                    if (isCapabilityNotSupportedCode(err.code)) {
+                      console.log('DisconnectNativePermissionDenyStatic001_Skipped - capability not supported (error 801)');
+                      Utils.emitEvent(201, 20260604);
+                    } else {
+                      Utils.emitEvent(err.code, 20260604);
+                    }
+                  }
+                };
+                doTest();
+                break;
+              }
+              case 'DisconnectNativeNullUndefinedParamStatic001': {
+                let doTest = async () => {
+                  try {
+                    await webNativeMessagingExtensionManager.disconnectNative(0);
+                    Utils.emitEvent(0, 20260605);
+                  } catch (error) {
+                    let err = error as BusinessError;
+                    console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${err.code}, ${err.message}`);
+                    if (isCapabilityNotSupportedCode(err.code)) {
+                      console.log('DisconnectNativeNullUndefinedParamStatic001_Skipped - capability not supported (error 801)');
+                      Utils.emitEvent(201, 20260605);
+                    } else {
+                      Utils.emitEvent(err.code, 20260605);
+                    }
+                   
+                  }
+                };
+                doTest();
+                break;
+              }
             }
-          }
-        })
+          })
       }
       Web({ src: 'www.example.com', controller: this.controller })
     }

@@ -77,9 +77,9 @@ export default function List_divider_number() {
       });
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number_listItem_01');
-      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number_listItem_02');
-      let List_01 = CommonFunc.getComponentRect('List_divider_number_list_01');
+      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_01');
+      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_02');
+      let List_01 = CommonFunc.getComponentRect('List_divider_number' + '_list_01');
 
       console.log('get divider width')
       expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(0)));
@@ -104,9 +104,9 @@ export default function List_divider_number() {
       });
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number_listItem_01');
-      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number_listItem_02');
-      let List_01 = CommonFunc.getComponentRect('List_divider_number_list_01');
+      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_01');
+      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_02');
+      let List_01 = CommonFunc.getComponentRect('List_divider_number' + '_list_01');
 
       console.log('get divider width')
       expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(0)));
@@ -131,9 +131,9 @@ export default function List_divider_number() {
       });
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number_listItem_01');
-      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number_listItem_02');
-      let List_01 = CommonFunc.getComponentRect('List_divider_number_list_01');
+      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_01');
+      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_02');
+      let List_01 = CommonFunc.getComponentRect('List_divider_number' + '_list_01');
 
       console.log('get divider width')
       expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(20)));
@@ -161,9 +161,9 @@ export default function List_divider_number() {
       });
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number_listItem_01');
-      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number_listItem_02');
-      let List_01 = CommonFunc.getComponentRect('List_divider_number_list_01');
+      let ListItem_01 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_01');
+      let ListItem_02 = CommonFunc.getComponentRect('List_divider_number' + '_listItem_02');
+      let List_01 = CommonFunc.getComponentRect('List_divider_number' + '_list_01');
 
       console.log('get divider width')
       expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(vp2px(20)));

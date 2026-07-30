@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +43,7 @@ function test_sign_002 (n: number, expected: number) {
   }
 }
 
-export default function DecimalTest020() {
+export default function DecimalTest020(): void {
   describe("DecimalTest020", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -124,20 +124,25 @@ export default function inputMethodEngineStatic() {
         beforeAll(async (done: ()=> void) => {
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-              await Utils.msSleep(2000);
-              abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.inputmethodEngine.test.static');
-              await Utils.msSleep(2000);
+              await Utils.msSleep(1000);
+              let cmd = 'aa start -a EntryAbility -b com.acts.inputmethodEngine.test.static';
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              abilityDelegator.executeShellCommand(cmd);
+              await Utils.msSleep(1000);
               await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
               await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
               console.info('====>beforeAll inputMethod_enable success');
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               textArea = await driver.findComponent(ON.type('TextArea'));
               console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
               rectInfo = await textArea!.getBounds();
               console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               await runCmd(rectInfo);
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               done();
             } catch (err) {
               console.info('====>beforeAll throw err:' + JSON.stringify(err.message));
@@ -529,6 +534,219 @@ export default function inputMethodEngineStatic() {
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
             testTemplate('Sub_InputMethod_IME_Custom_static_0902', 12, done)
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_static_0300
+         * @tc.number SUB_INPUTMETHOD_IMF_CONSUMEKEYEVENTS_STATIC_0300
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IMF_consumeKeyEvents_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await inputMethod.getController().detach();
+            let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0300';
+            let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
+            let unSubscriberCallback = (err: BusinessError | null) => {
+                console.info(`====>${testName} unSubscriberCallback start`);
+                if (err) {
+                    console.info(`====>${testName} unSubscriberCallback failed: ${JSON.stringify(err)}`);
+                } else {
+                    console.info(`====>${testName} unSubscriberCallback finish`)
+                }
+            }
+            let subscriberCallback = (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined | null) => {
+                console.info(`====>${testName} subscriberCallback data: ${JSON.stringify(data)}`);
+                if (data != undefined) {
+                    const currentSubscriber = subscriber as commonEventManager.CommonEventSubscriber;
+                    commonEventManager.unsubscribe(currentSubscriber, unSubscriberCallback);
+                    setTimeout(() => {
+                        try {
+                            expect(data?.data).assertEqual("SUCCESS");
+                            console.info(`====>${testName} end`);
+                            inputMethod.getController().recvMessage();
+                            done();
+                        } catch (err) {
+                            console.info(`====>${testName} err: ${JSON.stringify(err)}`);
+                            done();
+                        }
+                    }, 500)
+                }
+            }
+
+            let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+                events: [testName]
+            }
+            commonEventManager.createSubscriber(commonEventSubscribeInfo, (err: BusinessError | null, data: commonEventManager.CommonEventSubscriber | undefined | null): void => {
+                try {
+                    if (data != undefined) {
+                        subscriber = data as commonEventManager.CommonEventSubscriber;
+                        commonEventManager.subscribe(data, subscriberCallback);
+                        console.info(`====>${testName} subscriber finish`);
+                    }        
+                } catch (err) {
+                    console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+                }
+
+                let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+                    code: 13
+                }
+                commonEventManager.publish('keyboardControllerStatic', commonEventPublishData, (err: BusinessError | null) => {
+                    const ATTRIBUTE: inputMethod.TextConfig = {
+                        inputAttribute: {
+                            textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+                        }
+                    }
+                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    console.info(`====>${testName} publishCallback start`);
+                    if (err) {
+                        console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
+                    }
+                })
+            })
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_static_0100
+         * @tc.number SUB_INPUTMETHOD_IMF_CONSUMEKEYEVENTS_STATIC_0100
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IMF_consumeKeyEvents_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await inputMethod.getController().detach();
+            let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0100';
+            let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
+            let unSubscriberCallback = (err: BusinessError | null) => {
+                console.info(`====>${testName} unSubscriberCallback start`);
+                if (err) {
+                    console.info(`====>${testName} unSubscriberCallback failed: ${JSON.stringify(err)}`);
+                } else {
+                    console.info(`====>${testName} unSubscriberCallback finish`)
+                }
+            }
+            let subscriberCallback = (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined | null) => {
+                console.info(`====>${testName} subscriberCallback data: ${JSON.stringify(data)}`);
+                if (data != undefined) {
+                    const currentSubscriber = subscriber as commonEventManager.CommonEventSubscriber;
+                    commonEventManager.unsubscribe(currentSubscriber, unSubscriberCallback);
+                    setTimeout(() => {
+                        try {
+                            expect(data?.data).assertEqual("SUCCESS");
+                            console.info(`====>${testName} end`);
+                            inputMethod.getController().recvMessage();
+                            done();
+                        } catch (err) {
+                            console.info(`====>${testName} err: ${JSON.stringify(err)}`);
+                            done();
+                        }
+                    }, 500)
+                }
+            }
+
+            let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+                events: [testName]
+            }
+            commonEventManager.createSubscriber(commonEventSubscribeInfo, (err: BusinessError | null, data: commonEventManager.CommonEventSubscriber | undefined | null): void => {
+                try {
+                    if (data != undefined) {
+                        subscriber = data as commonEventManager.CommonEventSubscriber;
+                        commonEventManager.subscribe(data, subscriberCallback);
+                        console.info(`====>${testName} subscriber finish`);
+                    }        
+                } catch (err) {
+                    console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+                }
+
+                let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+                    code: 14
+                }
+                commonEventManager.publish('keyboardControllerStatic', commonEventPublishData, (err: BusinessError | null) => {
+                    const ATTRIBUTE: inputMethod.TextConfig = {
+                        inputAttribute: {
+                            textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED, consumeKeyEvents: true
+                        }
+                    }
+                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    console.info(`====>${testName} publishCallback start`);
+                    if (err) {
+                        console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
+                    }
+                })
+            })
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_static_0200
+         * @tc.number SUB_INPUTMETHOD_IMF_CONSUMEKEYEVENTS_STATIC_0200
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IMF_consumeKeyEvents_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await inputMethod.getController().detach();
+            let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0200';
+            let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
+            let unSubscriberCallback = (err: BusinessError | null) => {
+                console.info(`====>${testName} unSubscriberCallback start`);
+                if (err) {
+                    console.info(`====>${testName} unSubscriberCallback failed: ${JSON.stringify(err)}`);
+                } else {
+                    console.info(`====>${testName} unSubscriberCallback finish`)
+                }
+            }
+            let subscriberCallback = (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined | null) => {
+                console.info(`====>${testName} subscriberCallback data: ${JSON.stringify(data)}`);
+                if (data != undefined) {
+                    const currentSubscriber = subscriber as commonEventManager.CommonEventSubscriber;
+                    commonEventManager.unsubscribe(currentSubscriber, unSubscriberCallback);
+                    setTimeout(() => {
+                        try {
+                            expect(data?.data).assertEqual("SUCCESS");
+                            console.info(`====>${testName} end`);
+                            inputMethod.getController().recvMessage();
+                            done();
+                        } catch (err) {
+                            console.info(`====>${testName} err: ${JSON.stringify(err)}`);
+                            done();
+                        }
+                    }, 500)
+                }
+            }
+
+            let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+                events: [testName]
+            }
+            commonEventManager.createSubscriber(commonEventSubscribeInfo, (err: BusinessError | null, data: commonEventManager.CommonEventSubscriber | undefined | null): void => {
+                try {
+                    if (data != undefined) {
+                        subscriber = data as commonEventManager.CommonEventSubscriber;
+                        commonEventManager.subscribe(data, subscriberCallback);
+                        console.info(`====>${testName} subscriber finish`);
+                    }        
+                } catch (err) {
+                    console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+                }
+
+                let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+                    code: 15
+                }
+                commonEventManager.publish('keyboardControllerStatic', commonEventPublishData, (err: BusinessError | null) => {
+                    const ATTRIBUTE: inputMethod.TextConfig = {
+                        inputAttribute: {
+                            textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED, consumeKeyEvents: false
+                        }
+                    }
+                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    console.info(`====>${testName} publishCallback start`);
+                    if (err) {
+                        console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
+                    }
+                })
+            })
         });
 
         /** 

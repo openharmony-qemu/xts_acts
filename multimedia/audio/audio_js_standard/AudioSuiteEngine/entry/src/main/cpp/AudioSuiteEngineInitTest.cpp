@@ -69,6 +69,7 @@ std::vector<OH_AudioNode_Type> audioNodeTypeTest = {
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST),
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST),
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST),
 };
 
 std::vector<OH_Audio_SampleFormat> audioSampleFormatTest = {
@@ -3151,6 +3152,45 @@ static napi_value AudioSuiteEngine_setAudioFormat_006(napi_env env, napi_callbac
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast
+        <OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    
+    OH_AudioFormat audioFormatError;
+    audioFormatError.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_32000;
+    audioFormatError.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_AMB_ORDER1_ACN_N3D;
+    audioFormatError.channelCount = 4;
+    audioFormatError.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatError.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S32LE;
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetAudioFormat(audioNode, &audioFormatError);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_FORMAT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_setAudioFormat_007 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_setAudioFormat_007 fail, result is: %{public}d", result);
+    return res;
+}
+
 static napi_value AudioSuiteEngine_DestroyNode_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -5030,6 +5070,8 @@ static napi_value OH_AudioSuiteEngine_AudioNodeType_003(napi_env env, napi_callb
     OH_AudioNode_Type geberalVoice =
         static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
     OH_AudioNode_Type tempoPitch = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    OH_AudioNode_Type hoaSpaceRender =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
 
     if (spacerRender != OH_AudioNode_Type::EFFECT_NODE_TYPE_SPACE_RENDER) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
@@ -5052,6 +5094,11 @@ static napi_value OH_AudioSuiteEngine_AudioNodeType_003(napi_env env, napi_callb
     if (tempoPitch != OH_AudioNode_Type::EFFECT_NODE_TYPE_TEMPO_PITCH) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
         LOG("AudioNodeType_003 fail, EFFECT_NODE_TYPE_TEMPO_PITCH is: %{public}d", EFFECT_NODE_TYPE_TEMPO_PITCH);
+        return result;
+    }
+    if (hoaSpaceRender != OH_AudioNode_Type::EFFECT_NODE_TYPE_HOA_SPACE_RENDER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_003fail,EFFECT_NODE_TYPE_HOA_SPACE_RENDERis: %{public}d", EFFECT_NODE_TYPE_HOA_SPACE_RENDER);
         return result;
     }
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
@@ -9003,6 +9050,564 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100(n
     return res;
 }
 
+// ==================== 配置结构体 ====================
+struct HOATestConfig {
+    OH_Audio_SampleRate samplingRate;
+    OH_AudioChannelLayout channelLayout;
+    uint32_t channelCount;
+    OH_Audio_SampleFormat sampleFormat;
+    bool isValidFormat;
+};
+
+// ==================== 资源结构体 ====================
+struct HOATestResources {
+    OH_AudioSuiteEngine *engine;
+    OH_AudioSuitePipeline *pipeline;
+    OH_AudioNodeBuilder *inputBuilder;
+    OH_AudioNode *inputNode;
+    OH_AudioNodeBuilder *hoaBuilder;
+    OH_AudioNode *hoaNode;
+    OH_AudioNodeBuilder *outBuilder;
+    OH_AudioNode *outNode;
+};
+
+// ==================== 资源创建函数 ====================
+static void CreateHOATestResources(HOATestResources* res, const OH_AudioFormat& inputFormat)
+{
+    res->engine = nullptr;
+    res->pipeline = nullptr;
+    res->inputBuilder = nullptr;
+    res->inputNode = nullptr;
+    res->hoaBuilder = nullptr;
+    res->hoaNode = nullptr;
+    res->outBuilder = nullptr;
+    res->outNode = nullptr;
+    
+    OH_AudioSuiteEngine_Create(&res->engine);
+    OH_AudioSuiteEngine_CreatePipeline(res->engine, &res->pipeline,
+        static_cast<OH_AudioSuite_PipelineWorkMode>(
+            AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    
+    OH_AudioSuiteNodeBuilder_Create(&res->inputBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(res->inputBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(res->inputBuilder, inputFormat);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(res->inputBuilder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(res->pipeline, res->inputBuilder, &res->inputNode);
+    
+    OH_AudioSuiteNodeBuilder_Create(&res->hoaBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(res->hoaBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(res->pipeline, res->hoaBuilder, &res->hoaNode);
+    
+    OH_AudioSuiteNodeBuilder_Create(&res->outBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(res->outBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(res->outBuilder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(res->pipeline, res->outBuilder, &res->outNode);
+}
+
+// ==================== 资源清理函数 ====================
+static void DestroyHOATestResources(HOATestResources* res)
+{
+    if (res->outNode) {
+        OH_AudioSuiteEngine_DestroyNode(res->outNode);
+        res->outNode = nullptr;
+    }
+    if (res->outBuilder) {
+        OH_AudioSuiteNodeBuilder_Destroy(res->outBuilder);
+        res->outBuilder = nullptr;
+    }
+    if (res->hoaNode) {
+        OH_AudioSuiteEngine_DestroyNode(res->hoaNode);
+        res->hoaNode = nullptr;
+    }
+    if (res->hoaBuilder) {
+        OH_AudioSuiteNodeBuilder_Destroy(res->hoaBuilder);
+        res->hoaBuilder = nullptr;
+    }
+    if (res->inputNode) {
+        OH_AudioSuiteEngine_DestroyNode(res->inputNode);
+        res->inputNode = nullptr;
+    }
+    if (res->inputBuilder) {
+        OH_AudioSuiteNodeBuilder_Destroy(res->inputBuilder);
+        res->inputBuilder = nullptr;
+    }
+    if (res->pipeline) {
+        OH_AudioSuiteEngine_DestroyPipeline(res->pipeline);
+        res->pipeline = nullptr;
+    }
+    if (res->engine) {
+        OH_AudioSuiteEngine_Destroy(res->engine);
+        res->engine = nullptr;
+    }
+}
+
+// ==================== 简化后的测试执行函数 ====================
+static bool RunHOAInputTest(const HOATestConfig& config)
+{
+    // 检查HOA节点是否支持创建
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    
+    // 如果不支持HOA节点，用例直接通过
+    if (!isHOASupported) {
+        LOG("HOA node not supported, skip test");
+        return true;
+    }
+    HOATestResources res;
+    
+    const OH_AudioFormat inputFormat = {
+        .samplingRate = config.samplingRate,
+        .channelLayout = config.channelLayout,
+        .channelCount = config.channelCount,
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .sampleFormat = config.sampleFormat
+    };
+    
+    CreateHOATestResources(&res, inputFormat);
+    
+    OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(res.inputNode, res.hoaNode);
+    OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(res.hoaNode, res.outNode);
+    OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_StartPipeline(res.pipeline);
+    
+    if (r3 == AUDIOSUITE_SUCCESS) {
+        OH_AudioSuiteEngine_StopPipeline(res.pipeline);
+    }
+    
+    DestroyHOATestResources(&res);
+    
+    bool actualSuccess = (r1 == AUDIOSUITE_SUCCESS && r2 == AUDIOSUITE_SUCCESS && r3 == AUDIOSUITE_SUCCESS);
+    return (actualSuccess == config.isValidFormat);
+}
+
+// ==================== 测试1：有效HOA输入测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_VALID_INPUT_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    
+    static const HOATestConfig configs[] = {
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_SN3D, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_FUMA, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER2_ACN_N3D, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER2_ACN_SN3D, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER2_FUMA, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER3_ACN_N3D, 16, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER3_ACN_SN3D, 16, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER3_FUMA, 16, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER1_ACN_SN3D, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER1_FUMA, 4, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER2_ACN_N3D, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER2_ACN_SN3D, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER2_FUMA, 9, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER3_ACN_N3D, 16, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER3_ACN_SN3D, 16, AUDIO_SAMPLE_S32LE, true},
+        {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER3_FUMA, 16, AUDIO_SAMPLE_S32LE, true},
+    };
+    
+    int passCount = 0;
+    int total = sizeof(configs) / sizeof(configs[0]);
+    
+    for (int i = 0; i < total; i++) {
+        if (RunHOAInputTest(configs[i])) {
+            passCount++;
+            LOG("HOA_VALID[%d] pass", i);
+        } else {
+            LOG("HOA_VALID[%d] fail", i);
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+    
+    napi_create_int32(env, (passCount == total)
+        ? static_cast<int32_t>(TestResult::TEST_PASS) : static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    return res;
+}
+
+// ==================== 测试2：无效HOA输入测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_INVALID_INPUT_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    static const HOATestConfig configs[] = {
+        {SAMPLE_RATE_16000, CH_LAYOUT_STEREO, 2, AUDIO_SAMPLE_S16LE, false},
+        {SAMPLE_RATE_48000, CH_LAYOUT_STEREO, 2, AUDIO_SAMPLE_S16LE, false},
+        {SAMPLE_RATE_16000, CH_LAYOUT_5POINT1, 6, AUDIO_SAMPLE_S16LE, false},
+        {SAMPLE_RATE_48000, CH_LAYOUT_5POINT1, 6, AUDIO_SAMPLE_S16LE, false},
+        {SAMPLE_RATE_8000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_SAMPLE_S32LE, false},
+        {SAMPLE_RATE_8000, CH_LAYOUT_AMB_ORDER2_ACN_N3D, 9, AUDIO_SAMPLE_S32LE, false},
+        {SAMPLE_RATE_44100, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_SAMPLE_S32LE, false},
+        {SAMPLE_RATE_8000, CH_LAYOUT_STEREO, 2, AUDIO_SAMPLE_S16LE, false},
+        {SAMPLE_RATE_44100, CH_LAYOUT_5POINT1, 6, AUDIO_SAMPLE_S16LE, false},
+    };
+    
+    int passCount = 0;
+    int total = sizeof(configs) / sizeof(configs[0]);
+    
+    for (int i = 0; i < total; i++) {
+        if (RunHOAInputTest(configs[i])) {
+            passCount++;
+            LOG("HOA_INVALID[%d] pass", i);
+        } else {
+            LOG("HOA_INVALID[%d] fail", i);
+        }
+    }
+    
+    napi_create_int32(env, (passCount == total)
+        ? static_cast<int32_t>(TestResult::TEST_PASS) : static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    return res;
+}
+
+// ==================== 测试3：HOA链路无效测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_CHAIN_INVALID_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    if (!isHOASupported) {
+        LOG("HOA node not supported, test pass");
+        int32_t testResult = static_cast<int32_t>(TestResult::TEST_PASS);
+        napi_create_int32(env, testResult, &res);
+        return res;
+    }
+    static const AudioNodeTypeTest middleTypes[] = {
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST,
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_NOISE_REDUCTION_TEST,
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_SOUND_FIELD_TEST,
+    };
+    
+    int passCount = 0;
+    int total = sizeof(middleTypes) / sizeof(middleTypes[0]);
+    
+    HOATestResources resObj;
+    const OH_AudioFormat hoaFormat = {
+        SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4,
+        AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE
+    };
+    
+    for (int i = 0; i < total; i++) {
+        CreateHOATestResources(&resObj, hoaFormat);        
+        // 创建中间节点
+        OH_AudioNodeBuilder *midBuilder = nullptr;
+        OH_AudioNode *midNode = nullptr;
+        OH_AudioSuiteNodeBuilder_Create(&midBuilder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(midBuilder, static_cast<OH_AudioNode_Type>(middleTypes[i]));
+        OH_AudioSuiteEngine_CreateNode(resObj.pipeline, midBuilder, &midNode);        
+        // 连接：input -> middle -> hoa -> out
+        OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(resObj.inputNode, midNode);
+        OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(midNode, resObj.hoaNode);
+        OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_ConnectNodes(resObj.hoaNode, resObj.outNode);
+        OH_AudioSuite_Result r4 = OH_AudioSuiteEngine_StartPipeline(resObj.pipeline);        
+        // 清理中间节点
+        OH_AudioSuiteEngine_DestroyNode(midNode);
+        OH_AudioSuiteNodeBuilder_Destroy(midBuilder);        
+        DestroyHOATestResources(&resObj);        
+        if (r4 != AUDIOSUITE_SUCCESS) {
+            passCount++;
+            LOG("HOA_CHAIN[%d] pass", i);
+        } else {
+            LOG("HOA_CHAIN[%d] fail", i);
+        }
+    }
+    
+    napi_create_int32(env, (passCount == total)
+        ? static_cast<int32_t>(TestResult::TEST_PASS) : static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    return res;
+}
+
+// ==================== 测试4：多输入节点测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_MULTI_INPUT_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    HOATestResources res1, res2;
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    
+    if (!isHOASupported) {
+        LOG("HOA node not supported, test pass");
+        int32_t testResult = static_cast<int32_t>(TestResult::TEST_PASS);
+        napi_create_int32(env, testResult, &res);
+        return res;
+    }
+    const OH_AudioFormat fmt1 = {SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4,
+        AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE};
+    const OH_AudioFormat fmt2 = {SAMPLE_RATE_48000, CH_LAYOUT_AMB_ORDER1_ACN_SN3D, 4,
+        AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE};
+    
+    CreateHOATestResources(&res1, fmt1);
+    
+    // 创建第二个输入节点
+    OH_AudioNodeBuilder *in2Builder = nullptr;
+    OH_AudioNode *in2Node = nullptr;
+    OH_AudioSuiteNodeBuilder_Create(&in2Builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(in2Builder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(in2Builder, fmt2);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(in2Builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(res1.pipeline, in2Builder, &in2Node);
+    
+    // 两个输入连接同一HOA节点
+    OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(res1.inputNode, res1.hoaNode);
+    OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(in2Node, res1.hoaNode);
+    OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_ConnectNodes(res1.hoaNode, res1.outNode);
+    OH_AudioSuite_Result r4 = OH_AudioSuiteEngine_StartPipeline(res1.pipeline);
+    
+    OH_AudioSuiteEngine_DestroyNode(in2Node);
+    OH_AudioSuiteNodeBuilder_Destroy(in2Builder);
+    DestroyHOATestResources(&res1);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_HOA_MULTI_INPUT_TEST_0100 result is: %{public}d, %{public}d, %{public}d, %{public}d",
+        r1, r2, r3, r4);
+    napi_create_int32(env, (r4 == AUDIOSUITE_SUCCESS)
+        ? static_cast<int32_t>(TestResult::TEST_PASS) : static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    return res;
+}
+
+// ==================== 测试5：HOA节点连接均衡器后输出测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_TO_EQ_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    
+    // 检查HOA节点是否支持创建
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    
+    // 如果不支持HOA节点，用例直接通过
+    if (!isHOASupported) {
+        LOG("HOA node not supported, test pass");
+        int32_t testResult = static_cast<int32_t>(TestResult::TEST_PASS);
+        napi_create_int32(env, testResult, &res);
+        return res;
+    }
+    
+    HOATestResources resObj;
+    const OH_AudioFormat hoaFormat = {
+        SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4,
+        AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE
+    };
+    
+    CreateHOATestResources(&resObj, hoaFormat);
+    
+    // 创建均衡器节点（在HOA节点之后）
+    OH_AudioNodeBuilder *eqBuilder = nullptr;
+    OH_AudioNode *eqNode = nullptr;
+    OH_AudioSuiteNodeBuilder_Create(&eqBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(eqBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST));
+    OH_AudioSuiteEngine_CreateNode(resObj.pipeline, eqBuilder, &eqNode);
+    
+    // 连接：HOA输入 -> HOA效果 -> 均衡器 -> 输出
+    OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(resObj.inputNode, resObj.hoaNode);
+    OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(resObj.hoaNode, eqNode);
+    OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_ConnectNodes(eqNode, resObj.outNode);
+    OH_AudioSuite_Result r4 = OH_AudioSuiteEngine_StartPipeline(resObj.pipeline);
+    
+    // 停止管线
+    if (r4 == AUDIOSUITE_SUCCESS) {
+        OH_AudioSuiteEngine_StopPipeline(resObj.pipeline);
+    }
+    
+    // 清理均衡器节点
+    OH_AudioSuiteEngine_DestroyNode(eqNode);
+    OH_AudioSuiteNodeBuilder_Destroy(eqBuilder);
+    
+    DestroyHOATestResources(&resObj);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_HOA_TO_EQ_TEST_0100 result is: %{public}d, %{public}d, %{public}d, %{public}d",
+        r1, r2, r3, r4);
+    // 验证：管线启动应该成功
+    bool allSuccess = (r1 == AUDIOSUITE_SUCCESS &&  r2 == AUDIOSUITE_SUCCESS &&  r3 == AUDIOSUITE_SUCCESS && 
+                       r4 == AUDIOSUITE_SUCCESS);
+    
+    int32_t testResult = allSuccess ? static_cast<int32_t>(TestResult::TEST_PASS)
+        : static_cast<int32_t>(TestResult::TEST_FAIL);
+    napi_create_int32(env, testResult, &res);
+    return res;
+}
+
+// ==================== 测试6：HOA效果节点级联失败测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_CASCADE_FAIL_TEST_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    
+    if (!isHOASupported) {
+        LOG("HOA node not supported, test pass");
+        int32_t testResult = static_cast<int32_t>(TestResult::TEST_PASS);
+        napi_create_int32(env, testResult, &res);
+        return res;
+    }
+    
+    HOATestResources resObj;
+    const OH_AudioFormat hoaFormat = {
+        SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE
+    };
+    
+    CreateHOATestResources(&resObj, hoaFormat);
+    
+    OH_AudioNodeBuilder *hoa2Builder = nullptr;
+    OH_AudioNode *hoa2Node = nullptr;
+    OH_AudioSuiteNodeBuilder_Create(&hoa2Builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(hoa2Builder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(resObj.pipeline, hoa2Builder, &hoa2Node);
+    
+    OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(resObj.inputNode, resObj.hoaNode);
+    OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(resObj.hoaNode, hoa2Node);
+    OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_ConnectNodes(hoa2Node, resObj.outNode);
+    OH_AudioSuite_Result r4 = OH_AudioSuiteEngine_StartPipeline(resObj.pipeline);
+    
+    if (r4 == AUDIOSUITE_SUCCESS) {
+        OH_AudioSuiteEngine_StopPipeline(resObj.pipeline);
+    }
+    
+    OH_AudioSuiteEngine_DestroyNode(hoa2Node);
+    OH_AudioSuiteNodeBuilder_Destroy(hoa2Builder);
+    
+    DestroyHOATestResources(&resObj);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_HOA_CASCADE_FAIL_TEST_0100result is: %{public}d, %{public}d, %{public}d, %{public}d",
+        r1, r2, r3, r4);
+    int32_t testResult = (r4 == AUDIOSUITE_ERROR_INVALID_STATE)
+        ? static_cast<int32_t>(TestResult::TEST_PASS)
+        : static_cast<int32_t>(TestResult::TEST_FAIL);
+    napi_create_int32(env, testResult, &res);
+    return res;
+}
+
+// ==================== 测试7：HOA输入经均衡器到HOA效果失败测试 ====================
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    
+    OH_AudioNode_Type hoaType = static_cast<OH_AudioNode_Type>(
+        AudioNodeTypeTest::EFFECT_NODE_TYPE_HOA_SPACE_RENDER_TEST);
+    bool isHOASupported = IsNodeTypeSupported(hoaType);
+    
+    if (!isHOASupported) {
+        LOG("HOA node not supported, test pass");
+        int32_t testResult = static_cast<int32_t>(TestResult::TEST_PASS);
+        napi_create_int32(env, testResult, &res);
+        return res;
+    }
+    
+    HOATestResources resObj;
+    const OH_AudioFormat hoaFormat = {
+        SAMPLE_RATE_16000, CH_LAYOUT_AMB_ORDER1_ACN_N3D, 4, AUDIO_ENCODING_TYPE_RAW, AUDIO_SAMPLE_S32LE
+    };
+    
+    CreateHOATestResources(&resObj, hoaFormat);
+    
+    OH_AudioNodeBuilder *eqBuilder = nullptr;
+    OH_AudioNode *eqNode = nullptr;
+    OH_AudioSuiteNodeBuilder_Create(&eqBuilder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(eqBuilder,
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST));
+    OH_AudioSuiteEngine_CreateNode(resObj.pipeline, eqBuilder, &eqNode);
+    
+    OH_AudioSuite_Result r1 = OH_AudioSuiteEngine_ConnectNodes(resObj.inputNode, eqNode);
+    OH_AudioSuite_Result r2 = OH_AudioSuiteEngine_ConnectNodes(eqNode, resObj.hoaNode);
+    OH_AudioSuite_Result r3 = OH_AudioSuiteEngine_ConnectNodes(resObj.hoaNode, resObj.outNode);
+    OH_AudioSuite_Result r4 = OH_AudioSuiteEngine_StartPipeline(resObj.pipeline);
+    
+    if (r4 == AUDIOSUITE_SUCCESS) {
+        OH_AudioSuiteEngine_StopPipeline(resObj.pipeline);
+    }
+    
+    OH_AudioSuiteEngine_DestroyNode(eqNode);
+    OH_AudioSuiteNodeBuilder_Destroy(eqBuilder);
+    
+    DestroyHOATestResources(&resObj);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100 is: %{public}d, %{public}d, %{public}d, %{public}d",
+        r1, r2, r3, r4);
+    int32_t testResult = (r4 == AUDIOSUITE_ERROR_INVALID_STATE)
+        ? static_cast<int32_t>(TestResult::TEST_PASS)
+        : static_cast<int32_t>(TestResult::TEST_FAIL);
+    napi_create_int32(env, testResult, &res);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(audioSuiteEngine, audioSuitePipeline, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(nullptr, audioSuitePipeline, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(audioSuiteEngine, nullptr, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(nullptr, nullptr, -1);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -9205,6 +9810,8 @@ static napi_value Init(napi_env env, napi_value exports)
           nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_setAudioFormat_006", nullptr, AudioSuiteEngine_setAudioFormat_006,
           nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700", nullptr,
+          SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_DestroyNode_001", nullptr, AudioSuiteEngine_DestroyNode_001,
           nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_DestroyNode_002", nullptr, AudioSuiteEngine_DestroyNode_002,
@@ -9559,6 +10166,28 @@ static napi_value Init(napi_env env, napi_value exports)
         { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100", nullptr,
             SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_VALID_INPUT_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_VALID_INPUT_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_INVALID_INPUT_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_INVALID_INPUT_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_CHAIN_INVALID_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_CHAIN_INVALID_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_MULTI_INPUT_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_MULTI_INPUT_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_TO_EQ_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_TO_EQ_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_CASCADE_FAIL_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_CASCADE_FAIL_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

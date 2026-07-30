@@ -377,15 +377,13 @@ export default function windowControlsTest() {
               done()
             }).catch((err: BusinessError) => {
               console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
+              expect(err.code).assertEqual(1300016);
               done()
             });
           } catch (exception) {
             console.error(caseName +` Failed to set image for recent.`+exception.code+','+exception.message);
-            expect(exception.code).assertEqual(1300016);
-            expect(exception.message).assertEqual('Parameter validation error. Possible causes: 1.The value of the parameter is out of the allowed range;2.The length of the parameter exceeds the allowed length;3.The parameter format is incorrect.')
+            expect(false).assertTrue();
             done();
-
           }
         })
       } else {
@@ -677,6 +675,291 @@ export default function windowControlsTest() {
         done()
       }
     })
+
+/**
+ * @tc.name   testsetImageForRecent_0200
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_1000
+ * @tc.desc   testsetImageForRecent number is 1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+it('testsetImageForRecent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    let caseName = 'testsetImageForRecent_0200';
+    console.log( caseName +' begin');
+    if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i+1] = 0;
+            bufferArr[i+2] = 122;
+            bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+            pixelMap = data;
+            console.info(caseName +` Succeeded in creating pixelMap`);
+            try {
+                let promise = windowStage.setImageForRecent(1, ImageFit.Fill);
+                promise.then(() => {
+                    console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError) => {
+                    console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(1300016);
+                    done();
+                });
+            } catch (exception) {
+                console.error(caseName +` Failed to set image for recent mjb. errcode : ${exception.code}, errmessage : ${exception.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+    } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+    }
+})
+
+/**
+ * @tc.name   testsetImageForRecent_0300
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_0600
+ * @tc.desc   testsetImageForRecent number is null
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+it('testsetImageForRecent_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    let caseName = 'testsetImageForRecent_0300';
+    console.log( caseName +' begin');
+    if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i+1] = 0;
+            bufferArr[i+2] = 122;
+            bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+            pixelMap = data;
+            console.info(caseName +` Succeeded in creating pixelMap`);
+            try {
+                let promise = windowStage.setImageForRecent(null, ImageFit.Fill);
+                promise.then(() => {
+                    console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError) => {
+                    console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (exception) {
+                console.error(caseName +` Failed to set image for recent. errcode : ${exception.code}, errmessage : ${exception.message}`);
+                expect(exception.code).assertEqual(401);
+                done()
+            }
+        })
+    } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+    }
+})
+
+/**
+ * @tc.name   testsetImageForRecent_0400
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_0700
+ * @tc.desc   testsetImageForRecent number is undefined
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+it('testsetImageForRecent_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    let caseName = 'testsetImageForRecent_0400';
+    console.log( caseName +' begin');
+    if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i+1] = 0;
+            bufferArr[i+2] = 122;
+            bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+            pixelMap = data;
+            console.info(caseName +` Succeeded in creating pixelMap`);
+            try {
+                let promise = windowStage.setImageForRecent(undefined, ImageFit.Fill);
+                promise.then(() => {
+                    console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError) => {
+                    console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (exception) {
+                console.error(caseName +` Failed to set image for recent. errcode : ${exception.code}, errmessage : ${exception.message}`);
+                expect(exception.code).assertEqual(401);
+                done()
+            }
+        })
+    } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+    }
+})
+
+
+/**
+ * @tc.name   testsetImageForRecent_0500
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_0800
+ * @tc.desc   testsetImageForRecent number is null
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+it('testsetImageForRecent_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    let caseName = 'testsetImageForRecent_0500';
+    console.log( caseName +' begin');
+    if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i+1] = 0;
+            bufferArr[i+2] = 122;
+            bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+            pixelMap = data;
+            console.info(caseName +` Succeeded in creating pixelMap`);
+            try {
+                let promise = windowStage.setImageForRecent(pixelMap, null);
+                promise.then(() => {
+                    console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError) => {
+                    console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (exception) {
+                console.error(caseName +` Failed to set image for recent. errcode : ${exception.code}, errmessage : ${exception.message}`);
+                expect(exception.code).assertEqual(401);
+                done()
+            }
+        })
+    } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+    }
+})
+
+
+/**
+ * @tc.name   testsetImageForRecent_0600
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_0900
+ * @tc.desc   testsetImageForRecent number is undefined
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+it('testsetImageForRecent_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    let caseName = 'testsetImageForRecent_0600';
+    console.log( caseName +' begin');
+    if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i+1] = 0;
+            bufferArr[i+2] = 122;
+            bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+            pixelMap = data;
+            console.info(caseName +` Succeeded in creating pixelMap`);
+            try {
+                let promise = windowStage.setImageForRecent(pixelMap, undefined);
+                promise.then(() => {
+                    console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError) => {
+                    console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (exception) {
+                console.error(caseName +` Failed to set image for recent. errcode : ${exception.code}, errmessage : ${exception.message}`);
+                expect(exception.code).assertEqual(401);
+                done()
+            }
+        })
+    } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+    }
+})
+
+/**
+ * @tc.name   testsetImageForRecent_0700
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_1100
+ * @tc.desc   testsetImageForRecent number success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+it('testsetImageForRecent_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+  let caseName = 'testsetImageForRecent_0700';
+  console.log( caseName +' begin');
+  if (deviceInfo.deviceType == '2in1') {
+    let resourceId: number = $r("app.media.startIcon").id;
+    console.info(caseName + ' resourceId: ' + resourceId);
+
+    try {
+      let promise = windowStage.setImageForRecent(resourceId, ImageFit.Fill);
+      promise.then(() => {
+        console.info(caseName + ' Succeeded in setting image for recent');
+        done();
+      }).catch((err: BusinessError) => {
+        console.error(caseName + ' Failed to set image for recent. Cause code: ' + err.code + ', message: ' + err.message);
+        expect(false).assertTrue();
+        done();
+      });
+    } catch (exception) {
+      console.error(caseName + ' Failed to set image for recent. errcode: ' + exception.code + ', errmessage: ' + exception.message);
+      expect(false).assertTrue();
+      done();
+    }
+  } else {
+    console.info(caseName + ' Unsupported devices.');
+    done();
+  }
+});
+
+
 
   })
 }

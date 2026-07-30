@@ -55,7 +55,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0001', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0001] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -75,7 +75,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0002', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0002] component height strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -95,7 +95,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0003', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0003 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0003] component fontSize strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -115,7 +115,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0004', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0004 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0004] component opacity strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -135,7 +135,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0005', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0005 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0005] component align strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -155,7 +155,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0006', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0006 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0006] component fontColor strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -175,7 +175,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0007', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0007 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0007] component lineHeight strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -195,7 +195,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0009', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition009 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0009] component padding strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -215,7 +215,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0010', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0010 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionText');
+      let strJson = getInspectorByKey('tabs2_barPositionText');
       console.info("[testtabsBarPosition0010] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -235,7 +235,7 @@ export default function tabsBarPositionJsunit() {
     it('testtabsBarPosition0011', Level.LEVEL1, async () => {
       console.info('tabsBarPosition testtabsBarPosition0011 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('barPositionTabs');
+      let strJson = getInspectorByKey('tabs2_barPositionTabs');
       console.info("[testtabsBarPosition0011] component barPosition strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Tabs');

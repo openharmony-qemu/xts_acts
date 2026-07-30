@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +79,12 @@ export default function requestPermissionsStaticTest() {
         hilog.info(domain, tag, 'BusinessError end');
       });
       await Utils.msSleep(1000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.requestPermissionsTest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.requestPermissionsTest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         await Utils.msSleep(2000)
@@ -438,6 +444,38 @@ export default function requestPermissionsStaticTest() {
       } catch (error) {
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_011 error" + JSON.stringify(error));
         expect(error?.code).assertEqual(ERR_PARAM_ILLEGAL);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Access_Token_requestPermissionsFromUser_1200
+     * @tc.number SUB_Access_Token_requestPermissionsFromUser_1200
+     * @tc.desc   test requestPermissionsFromUser with system_grant permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Access_Token_requestPermissionsFromUser_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 start");
+      let permissionList: Array<Permissions> = new Array<Permissions>('ohos.permission.USE_BLUETOOTH');
+      try {
+        atManager.requestPermissionsFromUser(testAbilityContext!, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+          if (error) {
+            hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 error " + JSON.stringify(error));
+            expect(false).assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, `SUB_Access_Token_requestPermissionsFromUser_1200 data ${data} `);
+            expect(data?.permissions.length).assertEqual(permissionList.length);
+            expect(data?.authResults[0]).assertEqual(0); // 0: granted
+            expect(data?.dialogShownResults?.[0]).assertEqual(false);
+            done();
+          }
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 catch err" + JSON.stringify(error));
+        expect(false).assertFail();
         done();
       }
     })

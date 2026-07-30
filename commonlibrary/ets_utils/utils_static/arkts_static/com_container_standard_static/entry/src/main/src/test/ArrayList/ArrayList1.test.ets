@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +40,7 @@ class C1 {
   }
 }
 
-export default function ArraylistTest1() {
+export default function ArraylistTest1(): void {
   describe("ArraylistTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
@@ -599,7 +600,7 @@ export default function ArraylistTest1() {
       arrayList.add(1);
       arrayList.add(2);
       arrayList.add(14);
-      arrayList.sort((a, b) => (a - b).toInt());
+      arrayList.sort((a, b) => (a - b));
       let arr: Array<Number> = new Array<Number>();
       arrayList.forEach((item: Number, index) => {
         arr.push(item);
@@ -1100,8 +1101,8 @@ export default function ArraylistTest1() {
       arrayList.add("b");
       arrayList.add("e");
       arrayList.add("d");
-      let arrayListCb1: ArrayListComparatorFn<string> = (a: string, b: string): int => {
-        return a.localeCompare(b).toInt();
+      let arrayListCb1: ArrayListComparatorFn<string> = (a: string, b: string): double => {
+        return a.localeCompare(b);
       }
       arrayList.sort(arrayListCb1);
       let arr: Array<String> = new Array<String>();

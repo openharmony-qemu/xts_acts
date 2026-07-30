@@ -20,7 +20,7 @@
       {
         "name": "default",
         "compatibleSdkVersion": "23",
-        "compileSdkVersion": "26",
+        "compileSdkVersion": "26.0.0",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -29,7 +29,6 @@
             "useNormalizedOHMUrl": true
           }
         },
-        "targetSdkVersion": 23
       }
     ],
     "buildModeSet": [

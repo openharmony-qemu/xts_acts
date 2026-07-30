@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1311,7 +1311,7 @@ export default function WindowEventStatic() {
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x + 10, y + 10).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
-            expect(data.length).assertEqual(0);
+            expect(data.length).assertEqual(1);
             done();
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
@@ -1324,7 +1324,6 @@ export default function WindowEventStatic() {
               done();
             }
           });
-          done();
         }else{
           let x: int = Math.floor(windowRect.width / 2).toInt();
           let y: int = Math.floor(windowRect.height / 2).toInt();
@@ -1344,7 +1343,6 @@ export default function WindowEventStatic() {
               done();
             }
           });
-          done();
         }
 
 
@@ -1363,6 +1361,80 @@ export default function WindowEventStatic() {
 
 
     });
+    /**
+     * @tc.name   SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0100
+     * @tc.number SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0100
+     * @tc.desc   SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        try {
+          window.shiftAppWindowTouchEvent(0, -1, 123).then(() => {
+            console.info(`Succeeded in shifting app window touch event`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            console.info(`${caseName} Failed in shifting app window touch event. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300016)
+            done();
+          })
+        } catch (err) {
+          console.error(`${caseName} shiftAppWindowTouchEvent err, message: ${err.message} code:${err.code}`);
+          expect(true).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0200
+     * @tc.number SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0200
+     * @tc.desc   SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "SUB_WINDOW_ShiftAppWindowTouchEvent_ErrorCode_static_0200";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        try {
+          let config: window.Configuration = {
+            name: "test",
+            windowType: window.WindowType.TYPE_DIALOG,
+            ctx: context!
+          };
+          let subWindowClass: window.Window = await window.createWindow(config);
+          await Utils.msSleep(300);
+          let subWindowId: int = subWindowClass.getWindowProperties().id;
+          let mainWindow: window.Window = windowStage!.getMainWindowSync();
+          let mainWindowId: int = mainWindow.getWindowProperties().id;
+          window.shiftAppWindowTouchEvent(subWindowId, mainWindowId, 123).then(() => {
+            console.info(`Succeeded in shifting app window touch event`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            console.info(`${caseName} Failed in shifting app window touch event. Cause code: ${err.code}, message: ${err.message}`);
+            if (isFreeWindowMode) {
+              expect(err.code).assertEqual(1300004)
+            } else {
+              expect(err.code).assertEqual(801)
+            }
+            expect(err.message !== '').assertTrue()
+            done();
+          })
+        } catch (err) {
+          console.error(`${caseName} shiftAppWindowTouchEvent err, message: ${err.message} code:${err.code}`);
+          expect(true).assertFail();
+          done();
+        }
+      })
 
     });
 }

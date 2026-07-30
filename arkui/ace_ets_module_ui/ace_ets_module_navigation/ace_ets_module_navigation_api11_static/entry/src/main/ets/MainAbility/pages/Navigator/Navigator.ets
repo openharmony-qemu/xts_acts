@@ -13,18 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, Visibility, NavigationCommonTitle, NavDestinationCommonTitle, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
 export interface Txt {
   text: string
 }
@@ -39,19 +29,19 @@ struct navigator_testcase {
       Navigation({}) {
         Text('Navigator test  go to Navigator， back called')
       }
-      .key('navigator')
+      .key('Navigator_Navigator_navigator')
 
 
       Navigation({}) {
         Text('Navigator test  go to Navigator, router called')
       }
-      .key('navigator2')
+      .key('Navigator_Navigator_navigator2')
 
 
       Navigation({}) {
         Text('Navigator test  go to Navigator，changed called')
       }
-      .key('navigator3')
+      .key('Navigator_Navigator_navigator3')
 
     }.width(300)
     .height(300)

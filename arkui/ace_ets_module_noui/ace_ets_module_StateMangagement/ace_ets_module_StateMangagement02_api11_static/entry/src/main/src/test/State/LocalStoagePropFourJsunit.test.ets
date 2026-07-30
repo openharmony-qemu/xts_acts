@@ -13,38 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -93,7 +76,7 @@ export default function LocalStoagePropFourJsunit() {
 it('LocalStoagePropFourJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[LocalStoagePropFourJsunit_static_0200] START');
-      let strJson1 = inspector.getInspectorByKey('text_state');
+      let strJson1 = inspector.getInspectorByKey('LocalStoagePropFour_text_state');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStoagePropFourJsunit_static_0200] obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:1,Link:1,PropRef:1,Provide:1');
@@ -118,7 +101,7 @@ it('LocalStoagePropFourJsunit_static_0200', Level.LEVEL0, async (done: () => voi
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('localstorage:1,storProp1:1');
 
       let driver = Driver.create()
-      let button_changeInitialValue = await driver.findComponent(ON.id('button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(ON.id('LocalStoagePropFour_button_changeInitialValue'));
       await (button_changeInitialValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -128,7 +111,7 @@ it('LocalStoagePropFourJsunit_static_0200', Level.LEVEL0, async (done: () => voi
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('localstorage:1,storProp1:11');
 
 
-      let button_changeLocalStorageValue = await driver.findComponent(ON.id('button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(ON.id('LocalStoagePropFour_button_changeLocalStorageValue'));
       await (button_changeLocalStorageValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

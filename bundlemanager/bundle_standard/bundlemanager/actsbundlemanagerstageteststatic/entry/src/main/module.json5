@@ -114,7 +114,7 @@
           }
         ],
         "name": "Form",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "form",
         "exported": true
       },
@@ -136,7 +136,7 @@
           }
         ],
         "name": "Form1",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "form",
         "exported": true
       },
@@ -145,7 +145,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "workScheduler",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "workScheduler",
         "exported": true
       },
@@ -154,7 +154,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "inputMethod",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "inputMethod",
         "exported": true
       },
@@ -163,7 +163,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "accessibility",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "accessibility",
         "exported": true
       },
@@ -172,7 +172,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "fileShare",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "fileShare",
         "exported": true
       },
@@ -181,7 +181,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "staticSubscriber",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "staticSubscriber",
         "exported": true
       },
@@ -190,7 +190,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "wallpaper",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "wallpaper",
         "exported": true
       },
@@ -199,7 +199,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "backup",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "backup",
         "exported": true
       },
@@ -208,7 +208,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "window",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "window",
         "exported": true
       },
@@ -217,7 +217,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "enterpriseAdmin",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "enterpriseAdmin",
         "exported": true
       },
@@ -226,7 +226,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "thumbnail",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "thumbnail",
         "exported": true
       },
@@ -235,7 +235,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "preview",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "preview",
         "exported": true
       },
@@ -244,7 +244,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "driver",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "driver",
         "exported": true
       },
@@ -253,7 +253,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "appAccountAuthorization",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "appAccountAuthorization",
         "exported": true
       },
@@ -262,7 +262,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "push",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "push",
         "exported": true
       },
@@ -271,7 +271,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "action",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "action",
         "exported": true
       },
@@ -280,7 +280,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "share",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "share",
         "exported": true
       },
@@ -289,7 +289,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "adsService",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "adsService",
         "exported": true
       },
@@ -298,7 +298,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "embeddedUI",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "embeddedUI",
         "exported": true
       },
@@ -314,7 +314,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "print",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "print",
         "exported": true
       },
@@ -323,7 +323,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "insightIntentUI",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "insightIntentUI",
         "exported": true
       },
@@ -332,7 +332,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "fence",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "fence",
         "exported": true
       },
@@ -341,7 +341,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "formEdit",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "formEdit",
         "exported": true
       },
@@ -350,7 +350,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "distributed",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "distributed",
         "exported": true
       },
@@ -359,7 +359,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "callerInfoQuery",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "callerInfoQuery",
         "exported": true
       },
@@ -368,7 +368,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "appService",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "appService",
         "exported": true
       },
@@ -377,7 +377,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "liveForm",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "liveForm",
         "exported": true
       },
@@ -386,7 +386,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "webNativeMessaging",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "webNativeMessaging",
         "exported": true
       },
@@ -395,7 +395,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "notificationSubscriber",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "notificationSubscriber",
         "exported": true
       },
@@ -404,7 +404,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "selection",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "selection",
         "exported": true
       },
@@ -413,7 +413,7 @@
         "icon": "$media:icon",
         "label": "$string:entry_label",
         "name": "partnerAgent",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "type": "partnerAgent",
         "visible": true
       }

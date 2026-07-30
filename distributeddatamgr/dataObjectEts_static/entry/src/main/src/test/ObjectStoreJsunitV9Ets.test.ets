@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,7 @@ export default function ObjectStoreJsunitV9Ets(): void {
       done();
     })
 
-    beforeEach(async (): void => {
+    beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
       context = context;
     })

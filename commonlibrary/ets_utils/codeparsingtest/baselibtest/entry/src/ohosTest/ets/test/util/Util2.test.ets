@@ -50,7 +50,7 @@ export default function util2Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -1327,6 +1327,270 @@ export default function util2Test() {
       expect(result3).assertEqual(true);
       let res = vector.convertToArray();
       expect(res.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   testGetHash_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_6700
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        let rationalNumber = util.RationalNumber.parseRationalNumber(null, 2);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rationalNumber = util.RationalNumber.parseRationalNumber(undefined, 2);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rationalNumber = util.RationalNumber.parseRationalNumber(1, null);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rationalNumber = util.RationalNumber.parseRationalNumber(1, undefined);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rational = util.RationalNumber.createRationalFromString("");
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rational = util.RationalNumber.createRationalFromString(null);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let rational = util.RationalNumber.createRationalFromString(undefined);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      try {
+        let result = rationalNumber.compare(null);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result = rationalNumber.compare(undefined);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result = util.RationalNumber.getCommonFactor(null, 6);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result = util.RationalNumber.getCommonFactor(undefined, 6);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result = util.RationalNumber.getCommonFactor(5, null);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result = util.RationalNumber.getCommonFactor(5, undefined);
+        expect().assertFail()
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+    });
+
+
+    /**
+     * @tc.name   testGetHash_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_6800
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let type = new util.types();
+      let result1 = type.isAnyArrayBuffer(null);
+      expect(result1).assertFalse();
+      let result2 = type.isAnyArrayBuffer(undefined);
+      expect(result2).assertFalse();
+
+      let result3 = type.isArrayBufferView(null);
+      expect(result3).assertFalse();
+      let result4 = type.isArrayBufferView(undefined);
+      expect(result4).assertFalse();
+
+      let result5 = type.isArgumentsObject(null);
+      expect(result5).assertFalse();
+      let result6 = type.isArgumentsObject(undefined);
+      expect(result6).assertFalse();
+
+      let result7 = type.isArrayBuffer(null);
+      expect(result7).assertFalse();
+      let result8 = type.isArrayBuffer(undefined);
+      expect(result8).assertFalse();
+
+      let result9 = type.isBigInt64Array(null);
+      expect(result9).assertFalse();
+      let result10 = type.isBigInt64Array(undefined);
+      expect(result10).assertFalse();
+
+      let result11 = type.isBigUint64Array(null);
+      expect(result11).assertFalse();
+      let result12 = type.isBigUint64Array(undefined);
+      expect(result12).assertFalse();
+
+      let result13 = type.isBooleanObject(null);
+      expect(result13).assertFalse();
+      let result14 = type.isBooleanObject(undefined);
+      expect(result14).assertFalse();
+
+      let result15 = type.isDataView(null);
+      expect(result15).assertFalse();
+      let result16 = type.isDataView(undefined);
+      expect(result16).assertFalse();
+
+      let result17 = type.isFloat32Array(null);
+      expect(result17).assertFalse();
+      let result18 = type.isFloat32Array(undefined);
+      expect(result18).assertFalse();
+
+      let result19 = type.isFloat64Array(null);
+      expect(result19).assertFalse();
+      let result20 = type.isFloat64Array(undefined);
+      expect(result20).assertFalse();
+
+      let result21 = type.isGeneratorFunction(null);
+      expect(result21).assertFalse();
+      let result22 = type.isGeneratorFunction(undefined);
+      expect(result22).assertFalse();
+
+      let result23 = type.isGeneratorObject(null);
+      expect(result23).assertFalse();
+      let result24 = type.isGeneratorObject(undefined);
+      expect(result24).assertFalse();
+
+      let result25 = type.isInt8Array(null);
+      expect(result25).assertFalse();
+      let result26 = type.isInt8Array(undefined);
+      expect(result26).assertFalse();
+
+      let result27 = type.isUint8Array(null);
+      expect(result27).assertFalse();
+      let result28 = type.isUint8Array(undefined);
+      expect(result28).assertFalse();
+
+      let result29 = type.isInt16Array(null);
+      expect(result29).assertFalse();
+      let result30 = type.isInt16Array(undefined);
+      expect(result30).assertFalse();
+
+      let result31 = type.isUint16Array(null);
+      expect(result31).assertFalse();
+      let result32 = type.isUint16Array(undefined);
+      expect(result32).assertFalse();
+
+      let result33 = type.isInt32Array(null);
+      expect(result33).assertFalse();
+      let result34 = type.isInt32Array(undefined);
+      expect(result34).assertFalse();
+
+      let result35 = type.isUint32Array(null);
+      expect(result35).assertFalse();
+      let result36 = type.isUint32Array(undefined);
+      expect(result36).assertFalse();
+
+      let result37 = type.isBigInt64Array(null);
+      expect(result37).assertFalse();
+      let result38 = type.isBigInt64Array(undefined);
+      expect(result38).assertFalse();
+
+      let result39 = type.isBigUint64Array(null);
+      expect(result39).assertFalse();
+      let result40 = type.isBigUint64Array(undefined);
+      expect(result40).assertFalse();
+
+      let result41 = type.isMap(null);
+      expect(result41).assertFalse();
+      let result42 = type.isMap(undefined);
+      expect(result42).assertFalse();
+
+      let result43 = type.isMapIterator(null);
+      expect(result43).assertFalse();
+      let result44 = type.isMapIterator(undefined);
+      expect(result44).assertFalse();
+
+      let result45 = type.isNativeError(null);
+      expect(result45).assertFalse();
+      let result46 = type.isNativeError(undefined);
+      expect(result46).assertFalse();
+
+      let result47 = type.isProxy(null);
+      expect(result47).assertFalse();
+      let result48 = type.isProxy(undefined);
+      expect(result48).assertFalse();
+
+      let result49 = type.isRegExp(null);
+      expect(result49).assertFalse();
+      let result50 = type.isRegExp(undefined);
+      expect(result50).assertFalse();
+
+      let result51 = type.isSet(null);
+      expect(result51).assertFalse();
+      let result52 = type.isSet(undefined);
+      expect(result52).assertFalse();
+
+      let result53 = type.isSetIterator(null);
+      expect(result53).assertFalse();
+      let result54 = type.isSetIterator(undefined);
+      expect(result54).assertFalse();
+
+      let result55 = type.isSymbolObject(null);
+      expect(result55).assertFalse();
+      let result56 = type.isSymbolObject(undefined);
+      expect(result56).assertFalse();
+
+      let result57 = type.isTypedArray(null);
+      expect(result57).assertFalse();
+      let result58 = type.isTypedArray(undefined);
+      expect(result58).assertFalse();
+
+      let result59 = type.isUint8ClampedArray(null);
+      expect(result59).assertFalse();
+      let result60 = type.isUint8ClampedArray(undefined);
+      expect(result60).assertFalse();
+
+      let result61 = type.isWeakMap(null);
+      expect(result61).assertFalse();
+      let result62 = type.isWeakMap(undefined);
+      expect(result62).assertFalse();
+
+      let result63 = type.isWeakSet(null);
+      expect(result63).assertFalse();
+      let result64 = type.isWeakSet(undefined);
+      expect(result64).assertFalse();
     });
 
   })

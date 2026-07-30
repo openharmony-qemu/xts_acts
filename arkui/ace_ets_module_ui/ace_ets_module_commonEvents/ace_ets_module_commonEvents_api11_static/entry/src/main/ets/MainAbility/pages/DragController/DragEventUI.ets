@@ -93,6 +93,7 @@ struct DragEventUI {
           .onDragStart((event:DragEvent, extraParams?:String|undefined): DragItemInfo => {
             event.dragBehavior = DragBehavior.COPY
             event.setResult(DragResult.DRAG_SUCCESSFUL);
+            return {} as DragItemInfo
           })
           .onDragEnd((event: DragEvent, extraParams?: string): void => {
             const promptAction = new PromptAction()

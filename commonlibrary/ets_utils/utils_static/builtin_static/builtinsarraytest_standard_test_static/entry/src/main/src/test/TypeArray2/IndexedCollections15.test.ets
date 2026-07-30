@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +63,7 @@ type ArrayElement1 = null | undefined | number | number[]
 
 type ArrayElement2 = boolean | boolean[]
 
-export default function IndexedCollections15Test() {
+export default function IndexedCollections15Test(): void {
   describe('IndexedCollections15Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

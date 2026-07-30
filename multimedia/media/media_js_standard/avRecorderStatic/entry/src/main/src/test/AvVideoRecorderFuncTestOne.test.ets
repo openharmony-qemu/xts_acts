@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -228,6 +229,9 @@ export function avVideoRecorderTestOne() {
     const CURRENT_AUDIOCAPTURER_INFO_CALLBACK_EVENT = 'audioCapturerInfoCallback';
     const ENCODER_INFO_CALLBACK_EVENT = 'availableEncoderCallback';
     const MAX_AMPLITUDE_CALLBACK_EVENT = 'maxAmplitudeCallback';
+    const SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT = 'setMuteWhenInterrupted';
+    const SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERR = 'setMuteWhenInterruptedErr';
+    const SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERROR = 'setMuteWhenInterruptedError';
     const END_EVENT = 'end';
 
     const CREATE_PROMISE_EVENT = 'createPromise';
@@ -1562,6 +1566,66 @@ export function avVideoRecorderTestOne() {
         console.info('avRecorder getCurrentAudioCapturerInfo failed and catch error is ' + error);
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
       }
+    } as Callback<eventEmitter.EventData>);
+
+    eventEmitter.onEventData(SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT, (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_PROMISE_EVENT eventData = ', JSON.stringify(eventData))
+      let data = eventData.data as Record<String, RecordData>;
+      let mySteps: string[] = data?.get('mySteps') as string[];
+      mySteps.shift();
+      let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder;
+      let done: () => void = data?.get('done') as () => void;
+      let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
+      let recorderTime: number = data?.get('recorderTime') as number;
+      commonFun.sleep(1000).awaitSync();
+      avRecorder!!.setWillMuteWhenInterrupted(true).then(() => {
+        console.info('setWillMuteWhenInterrupted success');
+        toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
+      }).catch((error: Error) => {
+        console.error('setWillMuteWhenInterrupted failed and catch error is ' + error.message);
+        expect(false).assertEqual(true)
+        done();
+      });
+    } as Callback<eventEmitter.EventData>);
+
+    eventEmitter.onEventData(SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERR, (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_PROMISE_EVENT eventData = ', JSON.stringify(eventData))
+      let data = eventData.data as Record<String, RecordData>;
+      let mySteps: string[] = data?.get('mySteps') as string[];
+      mySteps.shift();
+      let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder;
+      let done: () => void = data?.get('done') as () => void;
+      let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
+      let recorderTime: number = data?.get('recorderTime') as number;
+      commonFun.sleep(1000).awaitSync();
+      avRecorder!!.setWillMuteWhenInterrupted(true).then(() => {
+        console.info('setWillMuteWhenInterrupted success');
+        expect(false).assertEqual(true)
+        done();
+      }).catch((error: Error) => {
+        console.error('setWillMuteWhenInterrupted failed and catch error is ' + error.message);
+        toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
+      });
+    } as Callback<eventEmitter.EventData>);
+
+    eventEmitter.onEventData(SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERROR, (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_PROMISE_EVENT eventData = ', JSON.stringify(eventData))
+      let data = eventData.data as Record<String, RecordData>;
+      let mySteps: string[] = data?.get('mySteps') as string[];
+      mySteps.shift();
+      let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder;
+      let done: () => void = data?.get('done') as () => void;
+      let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
+      let recorderTime: number = data?.get('recorderTime') as number;
+      commonFun.sleep(1000).awaitSync();
+      avRecorder!!.setWillMuteWhenInterrupted(false).then(() => {
+        console.info('setWillMuteWhenInterrupted success');
+        toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
+      }).catch((error: Error) => {
+        console.error('setWillMuteWhenInterrupted failed and catch error is ' + error.message);
+        expect(false).assertEqual(true)
+        done();
+      });
     } as Callback<eventEmitter.EventData>);
 
     /**
@@ -10909,6 +10973,115 @@ export function avVideoRecorderTestOne() {
       );
       eventEmitterFun(avRecorder, AutoCreateConfig, recorderTime, mySteps, done);
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_0100 end');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0100
+     * @tc.desc   AvRecorder - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportCameraVideoProfiles) {
+        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
+        expect(isSupportCameraVideoProfiles).assertTrue();
+        done();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0100 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject!.fdNumber;
+      avConfig.url = fdPath;
+      let mySteps = new Array<string>(
+        // create avRecorder
+        CREATE_CALLBACK_EVENT,
+        // set mute when interrupted
+        SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT,
+        // init avRecorder
+        SETONCALLBACK_EVENT, PREPARE_CALLBACK_EVENT,
+        // release avRecorder
+        RELEASECORDER_CALLBACK_EVENT,
+        // end
+        END_EVENT
+      );
+      eventEmitterFun(avRecorder, avConfig, recorderTime, mySteps, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0100 end');
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0200
+     * @tc.desc   AvRecorder - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportCameraVideoProfiles) {
+        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
+        expect(isSupportCameraVideoProfiles).assertTrue();
+        done();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0200 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject!.fdNumber;
+      avConfig.url = fdPath;
+      let mySteps = new Array<string>(
+        // create avRecorder
+        CREATE_CALLBACK_EVENT,
+        // init avRecorder
+        SETONCALLBACK_EVENT, PREPARE_CALLBACK_EVENT,
+        // set mute when interrupted
+        SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERR,
+        // release avRecorder
+        RELEASECORDER_CALLBACK_EVENT,
+        // end
+        END_EVENT
+      );
+      eventEmitterFun(avRecorder, avConfig, recorderTime, mySteps, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0200 end');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0300
+     * @tc.desc   AvRecorder - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportCameraVideoProfiles) {
+        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
+        expect(isSupportCameraVideoProfiles).assertTrue();
+        done();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0300 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject!.fdNumber;
+      avConfig.url = fdPath;
+      let mySteps = new Array<string>(
+        // create avRecorder
+        CREATE_CALLBACK_EVENT,
+        // init avRecorder
+        SETONCALLBACK_EVENT, PREPARE_CALLBACK_EVENT,
+        // set not mute when interrupted
+        SET_WILL_MUTE_WHEN_INTERRUPTED_EVENT_ERROR,
+        // release avRecorder
+        RELEASECORDER_CALLBACK_EVENT,
+        // end
+        END_EVENT
+      );
+      eventEmitterFun(avRecorder, avConfig, recorderTime, mySteps, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_SET_WILL_MUTE_WHEN_INTERRUPTED_static_0300 end');
       done();
     })
   })

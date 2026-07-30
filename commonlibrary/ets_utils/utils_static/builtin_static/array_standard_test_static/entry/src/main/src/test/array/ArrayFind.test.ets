@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -137,7 +138,7 @@ class Obj118 {
     }
 }
 
-export default function ArrayFindTest() {
+export default function ArrayFindTest(): void {
   describe('ArrayFindTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

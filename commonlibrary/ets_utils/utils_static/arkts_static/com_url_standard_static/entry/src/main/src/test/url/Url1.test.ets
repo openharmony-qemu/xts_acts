@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +47,7 @@ interface KeyTestCase {
   expectedResult: boolean;
 }
 
-export default function urlTest1() {
+export default function urlTest1(): void {
   describe('urlTest1', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

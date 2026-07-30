@@ -71,7 +71,8 @@
  	         "usedScene": {
  	           "when": "always"
  	         }
- 	    }
+ 	    },
+      {"name": "ohos.permission.VISIBLE_WINDOW_INFO"}
     ]
   }
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -326,6 +327,38 @@ export default function metaDataStaticTest(): void {
         done();
       }
     });
+
+    /**
+     * @tc.number      SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700
+     * @tc.name        SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700
+     * @tc.desc        Verify HEIFS metadata persistence after getBlob/setBlob and packToFile for HEIC
+     *                 1.Read HEIFS metadata from source as ArrayBuffer using getBlob
+     *                 2.Write ArrayBuffer to target HEIC using setBlob
+     *                 3.Pack to HEIC file with needsPackProperties=true
+     *                 4.Verify transferred metadata persists in packed file
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700";
+      let sourceFileName = "C027.heic";
+      let targetFileName = "test_blob_v1.heic";
+      let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(TAG,testTag + "device is not support heif encode");
+        done();
+      } else {
+        let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "heifsMetadata",
+          camelCaseMetadataKeys);
+        console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
+        expect(result).assertTrue();
+        done();
+      }
+    });
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -114,7 +115,7 @@ export default function fileIOFdatasync() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -206,7 +207,7 @@ export default function fileIOFdatasync() {
       try {
         fs.fdatasync(-1).then(() => {
           expect(false).assertTrue();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_005 error: {message: ' + JSON.stringify(err) + '}');
           expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
           done();

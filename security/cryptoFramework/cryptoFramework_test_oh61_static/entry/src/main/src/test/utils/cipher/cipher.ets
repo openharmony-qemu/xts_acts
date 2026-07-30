@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -31,7 +32,7 @@ export async function doCipher(algName: string, isEncrypt: boolean, rawData: cry
     console.info("[XTS] doCipher success");
     return data;
   } catch (error) {
-    console.error(`[XTS] doCipher ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doCipher ${error}`);
     throw error as Error;
   }
 }

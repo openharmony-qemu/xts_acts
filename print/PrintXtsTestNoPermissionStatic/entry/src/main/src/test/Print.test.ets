@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -765,6 +766,178 @@ export default function printTest() {
       }
       hilog.info(domain, tag, '%{public}s', 'print_function_2100 end');
     })
+
+    /**
+       * @tc.name   SUB_Oh_Print_RegisterWatermark_2200
+       * @tc.number SUB_Oh_Print_RegisterWatermark_2200
+      * @tc.desc   check registerWatermarkCallback api without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_RegisterWatermark_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_RegisterWatermark_2200 start');
+   
+         try {
+           let watermarkCallback: print.WatermarkCallback = (jobId: string, fd: int) => {
+             hilog.info(domain, tag, 'SUB_Oh_Print_RegisterWatermark_2200 callback, jobId: %{public}s, fd: %{public}d', jobId, fd);
+           };
+           print.registerWatermarkCallback(watermarkCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Print_RegisterWatermark_2200 success');
+           done();
+         } catch (err) {
+           const error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_RegisterWatermark_2200 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+           done();
+         }
+   
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_RegisterWatermark_2200 end');
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Print_UnregWatermarkCb_2300
+       * @tc.number SUB_Oh_Print_UnregWatermarkCb_2300
+      * @tc.desc   check unregisterWatermarkCallback api with callback without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_UnregWatermarkCb_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UnregWatermarkCb_2300 start');
+   
+         try {
+           let watermarkCallback: print.WatermarkCallback = (jobId: string, fd: int) => {
+             hilog.info(domain, tag, 'SUB_Oh_Print_UnregWatermarkCb_2300 callback, jobId: %{public}s, fd: %{public}d', jobId, fd);
+           };
+           print.unregisterWatermarkCallback(watermarkCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Print_UnregWatermarkCb_2300 success');
+           done();
+         } catch (err) {
+           const error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_UnregWatermarkCb_2300 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+           done();
+         }
+   
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UnregWatermarkCb_2300 end');
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Print_UnregWatermark_2400
+       * @tc.number SUB_Oh_Print_UnregWatermark_2400
+      * @tc.desc   check unregisterWatermarkCallback api without callback without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_UnregWatermark_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UnregWatermark_2400 start');
+   
+         try {
+           print.unregisterWatermarkCallback();
+           hilog.info(domain, tag, 'SUB_Oh_Print_UnregWatermark_2400 success');
+           done();
+         } catch (err) {
+           const error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_UnregWatermark_2400 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+           done();
+         }
+   
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UnregWatermark_2400 end');
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Print_NotifyWatermark_2500
+       * @tc.number SUB_Oh_Print_NotifyWatermark_2500
+      * @tc.desc   check notifyWatermarkComplete api without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_NotifyWatermark_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_NotifyWatermark_2500 start');
+   
+         try {
+           let jobId: string = 'testJobId';
+           let result: print.WatermarkHandleResult = print.WatermarkHandleResult.WATERMARK_HANDLE_SUCCESS;
+           print.notifyWatermarkComplete(jobId, result);
+           hilog.info(domain, tag, 'SUB_Oh_Print_NotifyWatermark_2500 success');
+           done();
+         } catch (err) {
+           const error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_NotifyWatermark_2500 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+           done();
+         }
+   
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_NotifyWatermark_2500 end');
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Print_UpdateJobState_2600
+       * @tc.number SUB_Oh_Print_UpdateJobState_2600
+      * @tc.desc   check updatePrintJobState api (promise) without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_UpdateJobState_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UpdateJobState_2600 start');
+         try {
+           let jobId: string = 'testJobId';
+           let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_COMPLETED;
+           let subState: print.PrintJobSubState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+           print.updatePrintJobState(jobId, state, subState).then(() => {
+             hilog.info(domain, tag, 'SUB_Oh_Print_UpdateJobState_2600 success');
+             done();
+           }).catch((err: Error) => {
+             let error = err as BusinessError;
+             hilog.info(domain, tag, 'SUB_Oh_Print_UpdateJobState_2600 errorCode = %{public}d', error.code);
+             expect(error.code).assertEqual(201);
+             done();
+           });
+         } catch (err) {
+           let error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_UpdateJobState_2600 error');
+           expect().assertFail();
+           done();
+         }
+          hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UpdateJobState_2600 end');
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Print_UpdateJobStateCb_2700
+       * @tc.number SUB_Oh_Print_UpdateJobStateCb_2700
+      * @tc.desc   check updatePrintJobState api (callback) without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Print_UpdateJobStateCb_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UpdateJobStateCb_2700 start');
+         try {
+           let jobId: string = 'testJobId';
+           let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_COMPLETED;
+           let subState: print.PrintJobSubState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+           print.updatePrintJobState(jobId, state, subState, (err: BusinessError<void>|null, data: undefined) => {
+             if (err != null) {
+               hilog.error(domain, tag, 'SUB_Oh_Print_UpdateJobStateCb_2700 error, code: %{public}d, message: %{public}s',
+                 err.code, err.message);
+               expect(err.code).assertEqual(201);
+             }
+             done();
+           });
+         } catch (err) {
+           const error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Print_UpdateJobStateCb_2700 error');
+           expect().assertFail();
+           done();
+         }
+          hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Print_UpdateJobStateCb_2700 end');
+       })
+
 
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });

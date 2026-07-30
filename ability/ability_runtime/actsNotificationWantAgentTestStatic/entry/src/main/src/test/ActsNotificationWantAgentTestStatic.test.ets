@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -723,10 +724,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5050 START')
         WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY;
         WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
-        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): void => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): void => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(data).assertEqual(wantAgent.OperationType.START_ABILITY)
             done()
@@ -756,10 +757,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5051 START')
         WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITIES;
         WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
-        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): void => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): void => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(data).assertEqual(wantAgent.OperationType.START_ABILITIES)
             done()
@@ -789,10 +790,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5052 START')
         WantAgentInfo.actionType = wantAgent.OperationType.START_SERVICE;
         WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
-        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): void => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): void => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(data).assertEqual(wantAgent.OperationType.START_SERVICE)
             done()
@@ -822,10 +823,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5053 START')
         WantAgentInfo.actionType = wantAgent.OperationType.SEND_COMMON_EVENT;
         WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
-        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): void => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): void => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(data).assertEqual(wantAgent.OperationType.SEND_COMMON_EVENT)
             done()
@@ -855,10 +856,10 @@ export default function ActsNotificationWantAgentStaticTest() {
         hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_static_5055 START')
         WantAgentInfo.actionType = wantAgent.OperationType.UNKNOWN_TYPE;
         WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
-        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): Promise<_WantAgent> => {
+        wantAgent.getWantAgent(WantAgentInfo).then((data: _WantAgent): void => {
           WantAgent = data
           hilog.info(domain, tag, 'getWantAgent Promise success: ' + JSON.stringify(data))
-          wantAgent.getOperationType(WantAgent).then((data: Int): Promise<Int> => {
+          wantAgent.getOperationType(WantAgent).then((data: Int): void => {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(data).assertEqual(wantAgent.OperationType.UNKNOWN_TYPE)
             done()

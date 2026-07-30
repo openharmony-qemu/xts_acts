@@ -13,25 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,TimePickerResult,TimePickerResult,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, TimePickerResult, Text, FlexDirection, ItemAlign, Divider, $r, MenuItem, BlurStyleActivePolicy, AdaptiveColor, ThemeColorMode, MenuElement, Row, AlertDialogParamWithButtons, FlexOptions, ColumnOptions, RowOptions, Flex, Builder, MenuItemOptions, ResourceStr, Menu, BackgroundBlurStyleOptions, BlurStyle, Scroll, FontWeight, TextAlign, ForEach, ListItem, LocalizedBorderRadiuses, $$, SheetOptions, FlexAlign, CustomDialogController, TextInput, CustomDialogControllerOptions, ButtonType, Scroller, Color, Rectangle, ActionSheetOptions, ControlSize, DialogAlignment, TextInputController, Margin } from '@ohos.arkui.component';
+import { State, Link, PropRef, Observed, ObjectLink } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TimePickerDialogOptions111 {

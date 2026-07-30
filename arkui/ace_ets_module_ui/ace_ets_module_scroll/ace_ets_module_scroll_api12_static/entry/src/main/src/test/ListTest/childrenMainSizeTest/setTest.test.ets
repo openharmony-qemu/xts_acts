@@ -80,6 +80,7 @@ it('setTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> 
       console.info('setTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let set_childDefaultSize: Component = await driver.findComponent(ON.id('set_childDefaultSize')) as Component;
       await set_childDefaultSize.click();
       await CommonFunc.sleep(1000);

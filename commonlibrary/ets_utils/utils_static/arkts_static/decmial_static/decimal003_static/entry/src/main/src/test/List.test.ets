@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,7 @@ import DecimalTest015 from './Decimal015.test';
 import DecimalTest016 from './Decimal016.test';
 import DecimalTest017 from './Decimal017.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
 
   DecimalTest012();
   DecimalTest013();

@@ -65,6 +65,8 @@ import SearchPropertiesNullUndefined03Test from './SearchTest/SearchPropertiesNu
 import SearchControllerMethodsTest from './SearchTest/SearchControllerMethodsTest.test';
 import SearchOnWillCopyTest from './SearchApi26Test/SearchOnWillCopy.test';
 import SearchOnWillCutTest from './SearchApi26Test/SearchOnWillCut.test';
+import SearchStrokeJoinStyleTest from './SearchApi26Test/SearchStrokeJoinStyle.test';
+import SearchShaderStyleTest from './SearchApi26Test/SearchShaderStyle.test';
 
 
 export default function testsuite() {
@@ -119,4 +121,6 @@ export default function testsuite() {
   SearchControllerMethodsTest();
   SearchOnWillCopyTest();
   SearchOnWillCutTest();
+  SearchStrokeJoinStyleTest();
+  SearchShaderStyleTest();
 }

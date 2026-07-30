@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -275,5 +276,30 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100
+     * @tc.name    SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100
+     * @tc.desc    Test getPlayingStateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let state: a2dp.PlayingState = a2dpSrc!.getPlayingState("");
+        hilog.info(domain, tag, "getPlayingState:" + state);
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+        hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801 || err.code === 2900004) {
+          hilog.info(domain, tag, 'api is not support or profile not support');
+          expect(err.code === 801 || err.code === 2900004).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
   })
 }

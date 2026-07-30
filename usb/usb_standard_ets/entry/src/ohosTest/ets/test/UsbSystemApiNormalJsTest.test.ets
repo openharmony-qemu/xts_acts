@@ -15,6 +15,7 @@
 
 import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import usbMgr from "@ohos.usbManager"
+import { isFilteredDevice } from './FilterUtils';
 import bundleManager from '@ohos.bundle.bundleManager'
 
 
@@ -24,7 +25,7 @@ export default function UsbSystemApiNormalJsTest() {
   describe('UsbSystemApiNormalJsTest', () => {
 
     const TAG: string = "[UsbSystemApiNormalJsTest]";
-    let deviceList = usbMgr.getDevices();
+    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
     let portCurrentMode = 0;
     
 

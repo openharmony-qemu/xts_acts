@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,
   Button,
@@ -30,19 +31,20 @@ import {
   Position,
   BarPosition
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State, PropRef  } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
-  @Link _position!: Position;
+  @PropRef _position!: Position;
   private componentKey: string = '';
 
   @Builder
-  TabBuilder(index: number, name: string) {
+  TabBuilder(index: number, name: string):void {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
@@ -57,23 +59,9 @@ export struct TabsView {
     }.width('100%')
   }
 
-  build() {
+  build():void {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-      // TabContent() {
-      //   Column().width('100%').height('100%').backgroundColor('#00CB87')
-      // }.tabBar(this.TabBuilder(0, 'green'))
-      //
-      // TabContent() {
-      //   Column().width('100%').height('100%').backgroundColor('#007DFF')
-      // }.tabBar(this.TabBuilder(1, 'blue'))
-      //
-      // TabContent() {
-      //   Column().width('100%').height('100%').backgroundColor('#FFBF00')
-      // }.tabBar(this.TabBuilder(2, 'yellow'))
-      //
-      // TabContent() {
-      //   Column().width('100%').height('100%').backgroundColor('#E67C92')
-      // }.tabBar(this.TabBuilder(3, 'pink'))
+      
     }
     .vertical(false)
     .barMode(BarMode.Fixed)

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -795,7 +796,8 @@ export default function stdProcessOnUncaughtErrorTest(): void {
 
                 await Utils.msSleep(50);
 
-                eaw.quit();
+                let job = eaw.join();
+                job.Await();
 
                 expect(listenerCalled).assertTrue();
                 expect((capturedErrorObj! as Error).message).assertEqual("EAWorker destruction error");

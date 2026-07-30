@@ -29,35 +29,41 @@ struct TextBaselineOffset {
       // 测试1: 默认值（未设置 baselineOffset）
       Text('Default BaselineOffset')
         .id('text_baselineoffset_default')
+        .key('text_baselineoffset_default')
         .height('5%')
 
       // 测试2: baselineOffset: 10
       Text('BaselineOffset: 10')
         .id('text_baselineoffset_10')
+        .key('text_baselineoffset_10')
         .baselineOffset(10)
         .height('5%')
 
       // 测试3: baselineOffset: -5
       Text('BaselineOffset: -5')
         .id('text_baselineoffset_negative')
+        .key('text_baselineoffset_negative')
         .baselineOffset(-5)
         .height('5%')
 
       // 测试4: baselineOffset: 0
       Text('BaselineOffset: 0')
         .id('text_baselineoffset_zero')
+        .key('text_baselineoffset_zero')
         .baselineOffset(0)
         .height('5%')
 
       // 测试5: null 参数
       Text('BaselineOffset with null')
         .id('text_baselineoffset_null')
+        .key('text_baselineoffset_null')
         .baselineOffset(null)
         .height('5%')
 
       // 测试6: undefined 参数
       Text('BaselineOffset with undefined')
         .id('text_baselineoffset_undefined')
+        .key('text_baselineoffset_undefined')
         .baselineOffset(undefined)
         .height('5%')
     }

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -51,7 +52,12 @@ export default function ActsRequestDialogStaticTest() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.example.requestdialog.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.example.requestdialog.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(5000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');

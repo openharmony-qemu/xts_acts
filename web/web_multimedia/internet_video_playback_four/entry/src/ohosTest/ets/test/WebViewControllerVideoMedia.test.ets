@@ -16,9 +16,9 @@ import { beforeAll, beforeEach, describe, it , expect, TestType, Size, Level } f
 import Utils from './Utils.test';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
+import wifiMg from '@ohos.wifiManager';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import wifiMg from '@ohos.wifiManager';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const driver = Driver.create();
@@ -89,12 +89,139 @@ export default function webViewControllerVideoMedia() {
     })
 
     /**
+     * @tc.name   StopAllMedia0100
+     * @tc.number Acts_StopAllMedia_0100
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('StopAllMedia0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0100", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0100", 3, 350010, done);
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0200
+     * @tc.number Acts_StopAllMedia_0200
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0200", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0200", 0, 350020, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0300
+     * @tc.number Acts_StopAllMedia_0300
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0300", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0300", 3, 350030, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0400
+     * @tc.number Acts_StopAllMedia_0400
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0400", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0400", 2, 350040, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0500
+     * @tc.number Acts_StopAllMedia_0500
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0500", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0500", 2, 350050, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0600
+     * @tc.number Acts_StopAllMedia_0600
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0600", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0600", 3, 350060, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0700
+     * @tc.number Acts_StopAllMedia_0700
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0700", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0700", 3, 350070, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   StopAllMedia0800
+     * @tc.number Acts_StopAllMedia_0800
+     * @tc.desc   test WebViewControllerVideoMedia
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('StopAllMedia0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("StopAllMedia0800", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("StopAllMedia0800", 3, 350080, done);
+      let driver = Driver.create();
+      let StartModel = await driver.findComponent(ON.id("WebViewControllerVideoMedia"));
+      await StartModel.click();
+    })
+
+    /**
      * @tc.name   ResumeAllMedia0100
      * @tc.number Acts_ResumeAllMedia_0100
      * @tc.desc   test WebViewControllerVideoMedia
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LE
      */
     it('ResumeAllMedia0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("ResumeAllMedia0100", EVENT_ID_SET_EMIT_KEY);

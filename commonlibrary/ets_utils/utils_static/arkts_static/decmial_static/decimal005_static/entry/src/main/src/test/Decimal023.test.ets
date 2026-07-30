@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +51,7 @@ function test_add_005 (addendA: string, addendB: number, expected: string) {
   expect(expected).assertEqual(new Decimal(addendA).add(addendB).valueOf());
 }
 
-export default function DecimalTest023() {
+export default function DecimalTest023(): void {
   describe("DecimalTest023", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

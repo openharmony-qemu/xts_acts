@@ -92,7 +92,7 @@ struct themeSliderPage {
       WithTheme({ theme: this.themeArray[this.themeIndex] }) {
         // WithTheme作用域
         Column({ space: '8vp' }) {
-          Text(`使用WithTheme`).key('themeText')
+          Text(`使用WithTheme`).key('themePageSliderTest_themeText')
           Text('block').fontSize(9).fontColor(0xCCCCCC).margin(15).width('90%')
           Slider({ style: SliderStyle.OutSet, value: 40 })
             .blockSize({ width: 40, height: 40 })

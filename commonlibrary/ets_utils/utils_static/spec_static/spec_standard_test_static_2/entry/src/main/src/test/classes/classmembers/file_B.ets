@@ -1,3 +1,4 @@
+'use static';
 import { A } from './file_A1.ets'
 
 class B1 extends A {

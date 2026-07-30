@@ -18,7 +18,6 @@
 #include "http_request.h"
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
-#include <hilog/log.h>
 
 const int GLOBAL_NETSTACK = 0xFF00;
 const char *TAG = "[netstack]";

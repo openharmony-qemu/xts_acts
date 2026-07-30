@@ -25,7 +25,12 @@ const TestTag = 'uitestUiWindowTest';
 const WindowsErrorCode = 17000005;
 
 async function startAbility(bundleName: string, abilityName: string) {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`${TestTag}, start abilityFinished: ${result}`)
   }).catch((err: BusinessError) => {
     console.error(`${TestTag}, start abilityFailed: ${err}`)

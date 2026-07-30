@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -448,7 +449,6 @@ export default function cameraSessionFlashTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('afterAll case');

@@ -18,6 +18,7 @@ import cloudSync from '@ohos.file.cloudSync';
 import fileUri from '@ohos.file.fileuri';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
+import cloudSyncManager from '@ohos.file.cloudSyncManager';
 
 
 export default function CloudFileTest(){
@@ -376,5 +377,258 @@ describe('cloud_file_test', () => {
      done();
    });
 
+   /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_001
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0100
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+		    await fileCache.cleanAllFileCache();
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_001 has failed for ' + err.message + ', code: ' + err.code);
+        expect(err.code === 13900010).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_002
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0200
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_002', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		    await fileCache.cleanAllFileCache();
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_002 has failed for ' + err.message + ', code: ' + err.code);
+        expect(err.code === 13900010).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_003
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0300
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_003', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		    await fileCache.cleanAllFileCache();
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+        await fileCache.cleanAllFileCache()
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_003 has failed for ' + err.message + ', code: ' + err.code);
+        expect(err.code === 13900010).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_001
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0100
+     * @tc.desc   function of DownloadStopReason, NO_STOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.NO_STOP;
+        expect(value1).assertEqual(0);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_001 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_002
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0200
+     * @tc.desc   function of DownloadStopReason, NETWORK_UNAVAILABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_002', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.NETWORK_UNAVAILABLE;
+        expect(value1).assertEqual(1);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_002 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_003
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0300
+     * @tc.desc   function of DownloadStopReason, LOCAL_STORAGE_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_003', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.LOCAL_STORAGE_FULL;
+        expect(value1).assertEqual(2);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_003 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_004
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0400
+     * @tc.desc   function of DownloadStopReason, TEMPERATURE_LIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_004', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.TEMPERATURE_LIMIT;
+        expect(value1).assertEqual(3);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_004 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_005
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0500
+     * @tc.desc   function of DownloadStopReason, USER_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_005', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.USER_STOPPED;
+        expect(value1).assertEqual(4);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_005 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_006
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0600
+     * @tc.desc   function of DownloadStopReason, APP_UNLOAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_006', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.APP_UNLOAD;
+        expect(value1).assertEqual(5);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_006 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadStopReason_007
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTOPREASON_0700
+     * @tc.desc   function of DownloadStopReason, OTHER_REASON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadStopReason_007', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadStopReason.OTHER_REASON;
+        expect(value1).assertEqual(6);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadStopReason_007 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadState_001
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTATE_0100
+     * @tc.desc   function of DownloadState, RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadState_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadState.RUNNING;
+        expect(value1).assertEqual(0);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadState_001 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadState_002
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTATE_0200
+     * @tc.desc   function of DownloadState, COMPLETED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadState_002', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadState.COMPLETED;
+        expect(value1).assertEqual(1);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadState_002 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_cloudSyncManager_DownloadState_003
+     * @tc.number SUB_STORAGE_CLOUDSYNCMANAGER_DOWNLOADSTATE_0300
+     * @tc.desc   function of DownloadState, STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSyncManager_DownloadState_003', Level.LEVEL3, async (done: Function) => {
+      try {
+        let value1 = cloudSyncManager.DownloadState.STOPPED;
+        expect(value1).assertEqual(2);
+      } catch (err) {
+        console.error('test_cloudSyncManager_DownloadState_003 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }

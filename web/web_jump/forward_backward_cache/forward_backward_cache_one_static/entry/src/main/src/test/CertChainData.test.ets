@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,12 +109,12 @@ export default function CertChainDataTest() {
     it('testOnSslErrorEventStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>{
         await Utils.msSleep(2000);
-        Utils.emitEvent("onSslErrorEvent", 10);
+        Utils.emitEvent("emitOnSslErrorEvent", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("onSslErrorEvent",true,2024120993,done);
+        Utils.registerEvent("testOnSslErrorEvent",true,2024120993,done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('certChainDataWeb',10,'');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(10000);
         done();
       })
 

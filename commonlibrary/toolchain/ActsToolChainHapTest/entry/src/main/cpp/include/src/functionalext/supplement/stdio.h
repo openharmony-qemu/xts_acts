@@ -30,4 +30,6 @@ int AsprintfTest();
 int ClearerrTest();
 int DprintfTest();
 
+int FopenTest();
+
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_STDIO_H_H

@@ -22,7 +22,7 @@ import hilog from '@ohos.hilog'
 const waitUiReadyMs: int = 1000;
 const TestTag: string = 'UiTest_TAG';
 const ParameterErrorCode: int = 17000007;
-const ErrorCode17000005: int = 17000005;
+const DeviceErrorCode = 17000005;
 
 function sleep(nm: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -52,7 +52,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverClickAtErrorSpeedTooSmall start`);
       const options: TouchOptions = { speed: 199 };
       try {
-        await driver!.clickAt({x: 100, y: 100}, options)
+        await driver!.clickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -72,7 +72,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverClickAtErrorSpeedTooLarge start`);
       const options: TouchOptions = { speed: 40001 };
       try {
-        await driver!.clickAt({x: 100, y: 100}, options)
+        await driver!.clickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -93,7 +93,7 @@ export default function uitestApi26ErrorTest(): void {
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: -0.1 };
       try {
-        await driver!.clickAt(point, options)
+        await driver!.clickAtWithOptions(point, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -114,7 +114,7 @@ export default function uitestApi26ErrorTest(): void {
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: 1.5 };
       try {
-        await driver!.clickAt(point, options);
+        await driver!.clickAtWithOptions(point, options);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
@@ -136,7 +136,7 @@ export default function uitestApi26ErrorTest(): void {
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { duration: 1000 };
       try {
-        await driver!.clickAt(point, options)
+        await driver!.clickAtWithOptions(point, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -157,7 +157,7 @@ export default function uitestApi26ErrorTest(): void {
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { duration: 0 };
       try {
-        await driver!.clickAt(point, options)
+        await driver!.clickAtWithOptions(point, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -177,7 +177,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall start`);
       const options: TouchOptions = { duration: 1499 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -197,7 +197,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooSmall start`);
       const options: TouchOptions = { pressure: -0.1 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -217,7 +217,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooLarge start`);
       const options: TouchOptions = { pressure: 1.1 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -237,7 +237,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooSmall start`);
       const options: TouchOptions = { speed: 199 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -257,7 +257,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooLarge start`);
       const options: TouchOptions = { speed: 40001 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -277,7 +277,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorSpeedNegative start`);
       const options: TouchOptions = { speed: -100 };
       try {
-        await driver!.longClickAt({x: 100, y: 100}, options)
+        await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
@@ -297,7 +297,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative start`);
       const options: TouchOptions = { speed: -1 };
       try {
-        await driver!.swipeBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.swipeBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative error is: ${JSON.stringify(err)}`)
@@ -318,7 +318,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenPressureOutOfRangeLow start`);
       const options: TouchOptions = { pressure: -0.1 };
       try {
-        await driver!.swipeBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.swipeBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenPressureOutOfRangeLow error is: ${JSON.stringify(err)}`)
@@ -339,7 +339,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenPressureOutOfRangeHigh start`);
       const options: TouchOptions = { pressure: 1.1 };
       try {
-        await driver!.swipeBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.swipeBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenPressureOutOfRangeHigh error is: ${JSON.stringify(err)}`)
@@ -360,7 +360,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff start`);
       const options: TouchOptions = { speed: 800 };
       try {
-        await driver!.swipeBetween({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
+        await driver!.swipeBetweenWithOptions({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff error is: ${JSON.stringify(err)}`)
@@ -382,7 +382,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed start`);
       const options: TouchOptions = { speed: -1 };
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed error is: ${JSON.stringify(err)}`)
@@ -404,7 +404,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverDragBetweenWithDurationLessThanMin start`);
       const options: TouchOptions = { duration: 1000 };
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverDragBetweenWithDurationLessThanMin error is ${JSON.stringify(err)}`)
@@ -427,7 +427,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { speed: 40001 };
       try {
-        await driver!.dragBetween(from, to, touchOptions);
+        await driver!.dragBetweenWithOptions(from, to, touchOptions);
       } catch (err) {
         console.log(`${TestTag}, testDriverDragBetweenErrorSpeedTooLarge error is: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -449,7 +449,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { speed: 199 };
       try {
-        await driver!.dragBetween(from, to, touchOptions);
+        await driver!.dragBetweenWithOptions(from, to, touchOptions);
       } catch (err) {
         console.log(`${TestTag}, testDriverDragBetweenErrorSpeedTooSmall error is: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -469,7 +469,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverDragBetweenWithNegativePressure start`);
       const options: TouchOptions = { pressure: -0.5 };
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverDragBetweenWithNegativePressure error is: ${JSON.stringify(err)}`)
@@ -490,7 +490,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverDragBetweenWithPressureGreaterThanOne start`);
       const options: TouchOptions = { pressure: 1.5 };
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
+        await driver!.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverDragBetweenWithPressureGreaterThanOne error is: ${JSON.stringify(err)}`)
@@ -511,7 +511,7 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff start`);
       const options: TouchOptions = { speed: 800 };
       try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
+        await driver!.dragBetweenWithOptions({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff error is: ${JSON.stringify(err)}`)
@@ -596,7 +596,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverMouseDragPressureMinimum start`);
       try {
         const touchOptions: TouchOptions = { pressure: 0 };
-        await driver!.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        await driver!.mouseDragWithOptions({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
@@ -617,7 +617,7 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverMouseDragPressureMaximum start`);
       const touchOptions: TouchOptions = { pressure: 1 };
       try {
-        await driver!.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        await driver!.mouseDragWithOptions({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
@@ -640,7 +640,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { speed: -100 };
       try {
-        await driver!.mouseDrag(from, to, touchOptions);
+        await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error is: ${JSON.stringify(err)}`);
@@ -663,7 +663,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { duration: 1499 };
       try {
-        await driver!.mouseDrag(from, to, touchOptions);
+        await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall error is: ${JSON.stringify(err)}`);
@@ -686,7 +686,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { pressure: -0.1 };
       try {
-        await driver!.mouseDrag(from, to, touchOptions);
+        await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall error is: ${JSON.stringify(err)}`);
@@ -709,7 +709,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { pressure: 1.1 };
       try {
-        await driver!.mouseDrag(from, to, touchOptions);
+        await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
@@ -732,7 +732,7 @@ export default function uitestApi26ErrorTest(): void {
       const to: Point = { x: 500, y: 800, displayId: 1 };
       const touchOptions: TouchOptions = { pressure: 1.0 };
       try {
-        await driver!.mouseDrag(from, to, touchOptions);
+        await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff error is: ${JSON.stringify(err)}`);
@@ -756,7 +756,7 @@ export default function uitestApi26ErrorTest(): void {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint error: ' + error.code);
-        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+        expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });

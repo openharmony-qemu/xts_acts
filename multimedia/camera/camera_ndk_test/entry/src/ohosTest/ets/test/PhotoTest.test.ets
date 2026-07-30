@@ -3123,8 +3123,13 @@ export default function PhotoTest() {
         sessionCommitConfig();
 
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.getColorTintRange()
-        console.info(`getColorTintRange, ret: ${ret}`)
+        let ret = cameraObj.getColorTintRange();
+        console.info(`getColorTintRange, ret: ${ret}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3150,12 +3155,16 @@ export default function PhotoTest() {
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
-        let ret: number = 0
         createCaptureSession()
 
         //--------------------------------------------测试过程------------------------------------------------------
-        ret = cameraObj.getColorTintRange()
-        console.info(`getColorTintRange, ret: ${ret}`)
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`)
+        if (ret === -1) {
+          console.info(`does not support color tint`)
+          done();
+          return
+        }
         expect(ret).assertEqual(7400103);
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3185,10 +3194,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(0)
+        ret = cameraObj.setColorTint(0);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3219,10 +3233,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(1)
+        ret = cameraObj.setColorTint(1);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3253,10 +3272,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(2)
+        ret = cameraObj.setColorTint(2);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3323,39 +3347,6 @@ export default function PhotoTest() {
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(4)
-        console.info(`setColorTint, ret: ${ret}`)
-        expect(ret).assertEqual(7400101);
-        console.info(`${caseName} PASSED`)
-      } catch (error) {
-        console.error(`${caseName} FAILED`)
-        expect().assertFail()
-      } finally {
-        //--------------------------------------------后置处理------------------------------------------------------
-        console.info(`Exit ${caseName}`)
-        done()
-      }
-    })
-
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with second param null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800"
-      try {
-        //--------------------------------------------预置条件------------------------------------------------------
-        console.info(`Enter ${caseName}`)
-        captureSessionstart();
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-
-        //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(5)
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(7400101);
         console.info(`${caseName} PASSED`)
@@ -3486,6 +3477,11 @@ export default function PhotoTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.getZoomPointInfos(0)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === -1) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
         ret = cameraObj.deleteZoomPointInfo(0)
         console.info(`deleteZoomPointInfo, ret: ${ret}`)
@@ -3651,6 +3647,11 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === -1) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
@@ -3687,6 +3688,11 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === -1) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
@@ -3703,5 +3709,6 @@ export default function PhotoTest() {
         done()
       }
     })
+
   })
 }

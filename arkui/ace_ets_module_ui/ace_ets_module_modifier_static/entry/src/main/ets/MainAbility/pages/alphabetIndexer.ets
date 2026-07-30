@@ -68,7 +68,7 @@ struct AlphabetIndexerTest {
     Row() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier2 as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("alphabetIndexer_changeButton")
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .key('alphabetIndexerTest1')
         .attributeModifier(this.customModifier1 as CustomModifier)

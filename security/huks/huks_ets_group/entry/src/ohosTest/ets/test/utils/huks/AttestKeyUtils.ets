@@ -30,6 +30,15 @@ export function GetAttestKeyOptions(): huks.HuksOptions {
   return huksOptions;
 }
 
+export function GetAttestKeyBaseOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, StringToUint8Array("challenge_data")),
+    )
+  };
+  return huksOptions;
+}
+
 async function ParsingCert(certData: string): Promise<void> {
   let textEncoder = new util.TextEncoder();
   let encodingBlob: cert.EncodingBlob = {

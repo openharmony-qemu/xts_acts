@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -120,7 +121,12 @@ export default function relationalStoreDistributedTest() {
   describe('relationalStoreDistributedTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
     })

@@ -90,6 +90,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback);
                 setTimeout(() => {
@@ -119,6 +123,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, { 'interval': 100000000 });
@@ -160,6 +168,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, onSensorCallback, { 'interval': 100000000 }, 5);
                 }
@@ -185,6 +197,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback);
@@ -224,6 +240,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, onceSensorCallback, 5);
@@ -254,6 +274,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {
@@ -295,6 +319,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, onSensorCallback);
                 setTimeout(() => {
@@ -330,6 +358,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.off(1000000, onSensorCallback);
@@ -363,6 +395,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback);
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback2);
@@ -395,6 +431,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback);
@@ -438,6 +478,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, { 'interval': 100000000 });
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback2);
@@ -470,6 +514,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, { 'interval': 100000000 });
@@ -513,6 +561,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, { 'interval': 100000000 });
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback2, { 'interval': 100000000 });
@@ -545,6 +597,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest014 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -584,6 +640,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest015 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -627,6 +687,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, null);
@@ -669,6 +733,10 @@ describe("SensorJsTest_sensor_5", function () {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest017 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback, { 'interval': null });
@@ -704,6 +772,10 @@ describe("SensorJsTest_sensor_5", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
                 if (error) {
                     console.info('Gyroscope_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

@@ -76,7 +76,7 @@ struct MyComponent_AL {
         .onClick((e: ClickEvent) => {
           this.count = 10;
         })
-        .key('state1')
+        .key('StateNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -84,7 +84,7 @@ struct MyComponent_AL {
         .onClick((e: ClickEvent) => {
           this.count = new Num1(20);
         })
-        .key('state2')
+        .key('StateNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -92,7 +92,7 @@ struct MyComponent_AL {
         .onClick((e: ClickEvent) => {
           this.count = '30';
         })
-        .key('state3')
+        .key('StateNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -100,7 +100,7 @@ struct MyComponent_AL {
         .onClick((e: ClickEvent) => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('StateNumber_state4')
         .height('5%')
 
       Text("切换变量赋值Boolean").height('5%')
@@ -108,7 +108,7 @@ struct MyComponent_AL {
         .onClick((e: ClickEvent) => {
           this.count = true;
         })
-        .key('state5')
+        .key('StateNumber_state5')
         .height('5%')
 
     }.width('100%')

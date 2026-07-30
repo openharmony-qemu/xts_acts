@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -39,7 +40,7 @@ class InfoC {
   }
 }
 
-export default function TreeMapTest1() {
+export default function TreeMapTest1(): void {
   describe("TreeMapTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

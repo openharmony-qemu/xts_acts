@@ -6,18 +6,15 @@ const DOMAIN = 0x0000;
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World';
+  @State message: string = 'Hello World'
 
   build() {
     Row() {
       Column() {
         Text(this.message)
-          .fontSize($r('app.float.page_text_font_size'))
+          .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
-            this.message = 'Welcome';
-            hilog.info(DOMAIN, 'testTag', 'Test NAPI 2 + 3 = %{public}d', testNapi.runFuncTest(1));
-            hilog.info(DOMAIN, 'testTag', 'Test NAPI 2 + 3 = %{public}d',`entry 对象: ${testNapi}, 类型: ${typeof testNapi}`);
           })
       }
       .width('100%')

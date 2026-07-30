@@ -14,38 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  Column,
-  Row,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  Button,
-  TouchEvent,
-  Margin,
-  Scroller,
-  GestureRecognizer,
-  PanRecognizer,
-  GestureEvent,
-  ScrollableTargetInfo,
-  Stack,
-  Alignment,
-  Scroll,
-  TextAlign,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  EdgeEffect,
-  GestureControl,RichEditorDeleteValue,
-  PanGesture,
-GestureRecognizerState,RichEditorController,RichEditor,RichEditorChangeValue,RichEditorTextSpanResult,RichEditorOptions,RichEditorLayoutStyle,LongPressGesture,Direction,RichEditorRange,ClickEvent,$r,LayoutManager,RichEditorOptions,MutableStyledString,TextStyle,StyledString,RichEditorStyledStringController,Resource,ImageAttachment,FontWeight,FontStyle,StyledStringKey,RichEditorStyledStringOptions,TextEditControllerEx,TextMenuItem,TextRange,TextMenuItemId,CopyOptions,RichEditorInsertValue,Builder
-,CutEvent,CopyEvent} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Row, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin, Scroller, GestureRecognizer, PanRecognizer, GestureEvent, ScrollableTargetInfo, Stack, Alignment, Scroll, TextAlign, ForEach, ScrollDirection, BarState, EdgeEffect, GestureControl, RichEditorDeleteValue, PanGesture, GestureRecognizerState, RichEditorController, RichEditor, RichEditorChangeValue, RichEditorTextSpanResult, RichEditorOptions, RichEditorLayoutStyle, LongPressGesture, Direction, RichEditorRange, ClickEvent, $r, LayoutManager, MutableStyledString, TextStyle, StyledString, RichEditorStyledStringController, Resource, ImageAttachment, FontWeight, FontStyle, StyledStringKey, RichEditorStyledStringOptions, TextEditControllerEx, TextMenuItem, TextRange, TextMenuItemId, CopyOptions, RichEditorInsertValue, Builder, CutEvent, CopyEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
@@ -64,15 +34,24 @@ build() {
 
     Column() {
 
-      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback')
-      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-      Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
-      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
-      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback')
-      Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
+      Row(){
+        Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback').width('25%').clip(true)
+        Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback').width('25%').clip(true)
+        Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').width('25%').clip(true)
+        Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore').width('25%').clip(true)
+      }.height('5%')
+      Row(){
+        Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore').width('30%').clip(true)
+        Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback').width('30%').clip(true)
+        Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter').width('30%').clip(true)
+      }.height('5%')
 
-
+      Button('int callback status')
+        .onClick((e: ClickEvent) => {
+          this.onWillChangeCallback = false;
+          this.replacedSpansCallback = false;
+          this.onDidChangeCallback = false;
+        }).id('int_callback_status').height('5%')
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .height(200)
         .borderWidth(1)
@@ -139,13 +118,6 @@ build() {
           console.log('RichEditorController：onPaste');
         })
         .id('rich_struct')
-
-      Button('int callback status')
-        .onClick((e: ClickEvent) => {
-          this.onWillChangeCallback = false;
-          this.replacedSpansCallback = false;
-          this.onDidChangeCallback = false;
-        }).id('int_callback_status')
 
     }
   }

@@ -38,6 +38,7 @@ export default function DragAndDrogXComponent() {
     let ImageComponentThreePoint: Point;
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`NativeXComponent/DragAndDrogXComponent`);
+      await Utils.sleep(2000);
       ImageComponentOne = await Utils.driver.findComponent(ON.id('ImageOne'));
       ImageComponentOnePoint = await ImageComponentOne.getBoundsCenter();
       console.info(`====>ComponentPoint x====${ImageComponentOnePoint.x} y====${ImageComponentOnePoint.y}`);

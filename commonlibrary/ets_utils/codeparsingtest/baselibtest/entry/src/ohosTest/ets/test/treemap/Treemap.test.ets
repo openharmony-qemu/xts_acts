@@ -12,8 +12,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { TreeMap } from '@kit.ArkTS';
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function TreemapTest() {
   describe('treeMapTest', () => {
@@ -22,7 +26,8 @@ export default function TreemapTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -226,14 +231,13 @@ export default function TreemapTest() {
      */
     it('testHasKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHasKey0001";
-      try {
-        let treeMap: TreeMap<string, number> = new TreeMap();
-        let result = treeMap.hasKey("");
-        expect(result).assertEqual(false);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.code}`);
-        expect().assertFail();
-      }
+      let treeMap: TreeMap<string, number> = new TreeMap();
+      let result = treeMap.hasKey("");
+      expect(result).assertEqual(false);
+      let result2 = treeMap.hasKey(null);
+      expect(result2).assertEqual(false);
+      let result3 = treeMap.hasKey(null);
+      expect(result3).assertEqual(false);
     });
 
     /**
@@ -2517,14 +2521,17 @@ export default function TreemapTest() {
      */
     it('testTreeMapComparatorConstruct0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeMapComparatorConstruct0001";
+
       class A {
         time: number = 0;
+
         constructor(time: number) {
-            this.time = time;
+          this.time = time;
         }
       }
+
       let mp: TreeMap<A, number> = new TreeMap((first: A, second: A) => {
-          return first.time > second.time;
+        return first.time > second.time;
       });
       try {
         const a1 = new A(1);
@@ -2538,9 +2545,9 @@ export default function TreemapTest() {
         mp.set(a4, 4);
         mp.set(a5, 5);
         for (let i = 0; i < 5; i++) {
-            mp.remove(a1);
-            expect(mp.hasKey(a1)).assertEqual(false);
-            mp.set(a1, 1);
+          mp.remove(a1);
+          expect(mp.hasKey(a1)).assertEqual(false);
+          mp.set(a1, 1);
         }
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2558,14 +2565,17 @@ export default function TreemapTest() {
      */
     it('testTreeMapComparatorConstruct0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeMapComparatorConstruct0002";
+
       class A {
         name: string;
+
         constructor(name: string) {
-            this.name = name;
+          this.name = name;
         }
       }
+
       let mp: TreeMap<A, number> = new TreeMap((first: A, second: A) => {
-          return first.name > second.name;
+        return first.name > second.name;
       });
       try {
         const a1 = new A('jflksad');
@@ -2579,9 +2589,9 @@ export default function TreemapTest() {
         mp.set(a4, 4);
         mp.set(a5, 5);
         for (let i = 0; i < 5; i++) {
-            mp.remove(a1);
-            expect(mp.hasKey(a1)).assertEqual(false);
-            mp.set(a1, 1);
+          mp.remove(a1);
+          expect(mp.hasKey(a1)).assertEqual(false);
+          mp.set(a1, 1);
         }
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2599,14 +2609,17 @@ export default function TreemapTest() {
      */
     it('testTreeMapComparatorConstruct0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeMapComparatorConstruct0003";
+
       class A {
         value: number;
         name: string;
+
         constructor(value: number, name: string) {
-            this.value = value;
-            this.name = name;
+          this.value = value;
+          this.name = name;
         }
       }
+
       let mp: TreeMap<A, number> = new TreeMap((first: A, second: A) => {
         if (first.value == second.value) {
           return first.name > second.name;
@@ -2635,9 +2648,9 @@ export default function TreemapTest() {
         mp.set(aa4, 1);
         mp.set(aa5, 1);
         for (let i = 0; i < 5; i++) {
-            mp.remove(a1);
-            expect(mp.hasKey(a1)).assertEqual(false);
-            mp.set(a1, 1);
+          mp.remove(a1);
+          expect(mp.hasKey(a1)).assertEqual(false);
+          mp.set(a1, 1);
         }
         expect(mp.length).assertEqual(10);
         expect(mp.hasKey(a1)).assertEqual(true);
@@ -2666,10 +2679,10 @@ export default function TreemapTest() {
       let treeMap = new TreeMap<string, number | null | undefined>();
       treeMap.set("squirrel", 123);
       treeMap.set("sparrow", 356);
-      let map : TreeMap<string, number> = new TreeMap();
+      let map: TreeMap<string, number> = new TreeMap();
       map.set("demo", 12);
       map.setAll(treeMap);
-      map.forEach((value ?: number, key ?: string) : void => {
+      map.forEach((value ?: number, key ?: string): void => {
         console.info("value: " + value, "key: " + key);
       })
       try {

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -341,5 +342,213 @@ export default function MakerNoteHuaweiMetadataTest(): void {
       done();
     })
 
+
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_MetadataType_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_MetadataType_static_0100
+     * @tc.desc       image - MetadataType 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_MetadataType_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_MetadataType_static_0100';
+      try {
+        expect(Number(image.MetadataType.PNG_METADATA)).assertEqual(19);
+        expect(Number(image.MetadataType.JFIF_METADATA)).assertEqual(20);
+        expect(Number(image.MetadataType.TIFF_METADATA)).assertEqual(21);
+        expect(Number(image.MetadataType.XMP_METADATA)).assertEqual(22);
+        expect(Number(image.MetadataType.AVIS_METADATA)).assertEqual(23);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_GifPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_GifPropertyKey_static_0100
+     * @tc.desc       image - GifPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_GifPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GifPropertyKey_static_0100';
+      try {
+        expect(image.GifPropertyKey.GIF_HAS_GLOBAL_COLOR_MAP).assertEqual('GifHasGlobalColorMap');
+        expect(image.GifPropertyKey.GIF_CANVAS_WIDTH).assertEqual('GifCanvasWidth');
+        expect(image.GifPropertyKey.GIF_CANVAS_HEIGHT).assertEqual('GifCanvasHeight');
+        expect(image.GifPropertyKey.GIF_LOOP_COUNT).assertEqual('GifLoopCount');
+        expect(image.GifPropertyKey.GIF_UNCLAMPED_DELAY_TIME).assertEqual('GifUnclampedDelayTime');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_HeifsPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_HeifsPropertyKey_static_0100
+     * @tc.desc       image - HeifsPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_HeifsPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_HeifsPropertyKey_static_0100';
+      try {
+        expect(image.HeifsPropertyKey.HEIFS_UNCLAMPED_DELAY_TIME).assertEqual('HeifsUnclampedDelayTime');
+        expect(image.HeifsPropertyKey.HEIFS_CANVAS_HEIGHT).assertEqual('HeifsCanvasHeight');
+        expect(image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH).assertEqual('HeifsCanvasWidth');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100
+     * @tc.desc       image - TiffPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100';
+      try {
+        expect(image.TiffPropertyKey.DOCUMENT_NAME).assertEqual('TiffDocumentName');
+        expect(image.TiffPropertyKey.PHOTOMETRIC_INTERPRETATION).assertEqual('TiffPhotometricInterpretation');
+        expect(image.TiffPropertyKey.ORIENTATION).assertEqual('TiffOrientation');
+        expect(image.TiffPropertyKey.RESOLUTION_UNIT).assertEqual('TiffResolutionUnit');
+        expect(image.TiffPropertyKey.COPYRIGHT).assertEqual('TiffCopyright');
+        expect(image.TiffPropertyKey.DATE_TIME).assertEqual('TiffDateTime');
+        expect(image.TiffPropertyKey.IMAGE_DESCRIPTION).assertEqual('TiffImageDescription');
+        expect(image.TiffPropertyKey.Y_RESOLUTION).assertEqual('TiffYResolution');
+        expect(image.TiffPropertyKey.X_RESOLUTION).assertEqual('TiffXResolution');
+        expect(image.TiffPropertyKey.WHITE_POINT).assertEqual('TiffWhitePoint');
+        expect(image.TiffPropertyKey.TILE_LENGTH).assertEqual('TiffTileLength');
+        expect(image.TiffPropertyKey.TRANSFER_FUNCTION).assertEqual('TiffTransferFunction');
+        expect(image.TiffPropertyKey.TILE_WIDTH).assertEqual('TiffTileWidth');
+        expect(image.TiffPropertyKey.MAKE).assertEqual('TiffMake');
+        expect(image.TiffPropertyKey.MODEL).assertEqual('TiffModel');
+        expect(image.TiffPropertyKey.HOST_COMPUTER).assertEqual('TiffHostComputer');
+        expect(image.TiffPropertyKey.COMPRESSION).assertEqual('TiffCompression');
+        expect(image.TiffPropertyKey.SOFTWARE).assertEqual('TiffSoftware');
+        expect(image.TiffPropertyKey.PRIMARY_CHROMATICITIES).assertEqual('TiffPrimaryChromaticities');
+        expect(image.TiffPropertyKey.ARTIST).assertEqual('TiffArtist');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100
+     * @tc.desc       image - JfifPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100';
+      try {
+        expect(image.JfifPropertyKey.DENSITY_UNIT).assertEqual('JfifDensityUnit');
+        expect(image.JfifPropertyKey.X_DENSITY).assertEqual('JfifXDensity');
+        expect(image.JfifPropertyKey.Y_DENSITY).assertEqual('JfifYDensity');
+        expect(image.JfifPropertyKey.VERSION).assertEqual('JfifVersion');
+        expect(image.JfifPropertyKey.IS_PROGRESSIVE).assertEqual('JfifIsProgressive');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_PngPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_PngPropertyKey_static_0100
+     * @tc.desc       image - PngPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_PngPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_PngPropertyKey_static_0100';
+      try {
+        expect(image.PngPropertyKey.X_PIXELS_PER_METER).assertEqual('PngXPixelsPerMeter');
+        expect(image.PngPropertyKey.MODIFICATION_TIME).assertEqual('PngModificationTime');
+        expect(image.PngPropertyKey.SOFTWARE).assertEqual('PngSoftware');
+        expect(image.PngPropertyKey.COPYRIGHT).assertEqual('PngCopyright');
+        expect(image.PngPropertyKey.CREATION_TIME).assertEqual('PngCreationTime');
+        expect(image.PngPropertyKey.SRGB_INTENT).assertEqual('PngSRGBIntent');
+        expect(image.PngPropertyKey.AUTHOR).assertEqual('PngAuthor');
+        expect(image.PngPropertyKey.INTERLACE_TYPE).assertEqual('PngInterlaceType');
+        expect(image.PngPropertyKey.WARNING).assertEqual('PngWarning');
+        expect(image.PngPropertyKey.Y_PIXELS_PER_METER).assertEqual('PngYPixelsPerMeter');
+        expect(image.PngPropertyKey.GAMMA).assertEqual('PngGamma');
+        expect(image.PngPropertyKey.CHROMATICITIES).assertEqual('PngChromaticities');
+        expect(image.PngPropertyKey.DESCRIPTION).assertEqual('PngDescription');
+        expect(image.PngPropertyKey.TITLE).assertEqual('PngTitle');
+        expect(image.PngPropertyKey.COMMENT).assertEqual('PngComment');
+        expect(image.PngPropertyKey.DISCLAIMER).assertEqual('PngDisclaimer');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_XMPTagType_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_XMPTagType_static_0100
+     * @tc.desc       image - XMPTagType 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_XMPTagType_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_XMPTagType_static_0100';
+      try {
+        expect(Number(image.XMPTagType.UNKNOWN)).assertEqual(0);
+        expect(Number(image.XMPTagType.STRING)).assertEqual(1);
+        expect(Number(image.XMPTagType.UNORDERED_ARRAY)).assertEqual(2);
+        expect(Number(image.XMPTagType.ORDERED_ARRAY)).assertEqual(3);
+        expect(Number(image.XMPTagType.ALTERNATE_ARRAY)).assertEqual(4);
+        expect(Number(image.XMPTagType.ALTERNATE_TEXT)).assertEqual(5);
+        expect(Number(image.XMPTagType.STRUCTURE)).assertEqual(6);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_AvisPropertyKey_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_AvisPropertyKey_static_0100
+     * @tc.desc       image - AvisPropertyKey 类型覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_AvisPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AvisPropertyKey_static_0100';
+      try {
+        expect(image.AvisPropertyKey.DELAY_TIME).assertEqual('AvisDelayTime');
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Error', error.message, error.code);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

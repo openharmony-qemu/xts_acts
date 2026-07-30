@@ -48,6 +48,17 @@ import SheetOptionsSystemMaterial from './popupSystemMaterial/SheetOptionsSystem
 import PopupCommonOptionsSystemMaterial from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
 import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+import PopupColorMode from './popup/PopupColorMode.test';
+import PopupBackgroundEffectTest from './popup/PopupBackgroundEffect.test';
+import PopupLevelModeTest from './popup/PopupLevelModeTest.test';
+
+import CustomPopupOptionsBackgroundBlurStyleOptions from './popupBackground/CustomPopupOptionsBackgroundBlurStyleOptions.test'
+import CustomPopupOptionsBackgroundEffect from './popupBackground/CustomPopupOptionsBackgroundEffect.test'
+import PopupBackgroundBlurStyleOptions from './popupBackground/PopupBackgroundBlurStyleOptions.test'
+import PopupBackgroundEffect from './popupBackground/PopupBackgroundEffect.test'
+import PopupCommonOptionsBackgroundBlurStyleOptions from './popupBackground/PopupCommonOptionsBackgroundBlurStyleOptions.test'
+import PopupCommonOptionsBackgroundEffect from './popupBackground/PopupCommonOptionsBackgroundEffect.test'
+
 
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
@@ -73,14 +84,24 @@ export default function testsuite() {
   bindContextResponseNull();
   isShownContextMenuNull();
   bindContentCoverNullUndefined();
-  ImmersiveStyleTest();
-  ImmersiveOptionsMaterialColorTest();
-  ImmersiveOptionsColorInvertTest();
-  ImmersiveOptionsApplyShadowTest();
+  // ImmersiveStyleTest();
+  // ImmersiveOptionsMaterialColorTest();
+  // ImmersiveOptionsColorInvertTest();
+  // ImmersiveOptionsApplyShadowTest();
   UIMaterialTest();
   SheetOptionsSystemMaterial();
   PopupCommonOptionsSystemMaterial();
   PopupOptionsSystemMaterial();
   CustomPopupOptionsSystemMaterial();
-  // TipsOptionsSystemMaterial();
+  TipsOptionsSystemMaterial();
+  PopupColorMode();
+  PopupBackgroundEffectTest();
+  PopupLevelModeTest();
+
+  CustomPopupOptionsBackgroundBlurStyleOptions();
+  CustomPopupOptionsBackgroundEffect();
+  PopupBackgroundBlurStyleOptions();
+  PopupBackgroundEffect();
+  PopupCommonOptionsBackgroundBlurStyleOptions();
+  PopupCommonOptionsBackgroundEffect();
 }

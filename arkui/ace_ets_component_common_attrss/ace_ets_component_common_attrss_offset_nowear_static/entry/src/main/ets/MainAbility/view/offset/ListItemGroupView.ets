@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,
   Button,ForEach,
@@ -30,12 +31,12 @@ import {
   Builder,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { StoragePropRef } from '@ohos.arkui.stateManagement';
+import { StoragePropRef,State,Link,PropRef } from '@ohos.arkui.stateManagement';
 
-
+@Entry
 @Component
 export struct ListItemGroupView {
-  @StoragePropRef('_offset') _offset: Position = { x: 0, y: 0 } as Position;
+  @PropRef _offset!: Position;
   private componentKey: string = '';
   private parentWidth: number = 100;
   private parentHeight: number = 600;
@@ -46,7 +47,7 @@ export struct ListItemGroupView {
   private projects: string[] = ['Chinese', 'mathematics', 'English']
 
   @Builder
-  itemHead(text: string) {
+  itemHead(text: string):void {
     Text(text)
       .fontSize(20)
       .backgroundColor(0xAABBCC)
@@ -55,7 +56,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  itemFoot(num: number) {
+  itemFoot(num: number):void {
     Text('have ' + num + 'classes')
       .fontSize(16)
       .backgroundColor(0xAABBCC)
@@ -64,7 +65,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  content(project: string) {
+  content(project: string):void {
     Text(project)
       .width('100%')
       .height(100)
@@ -73,14 +74,14 @@ export struct ListItemGroupView {
       .backgroundColor(0xFFFFFF)
   }
 
-  build() {
+  build():void {
     List({ space: 20 }) {
       ListItemGroup({
         header: ()=>{
-        this.itemHead('Monday')
+          this.itemHead('Monday')
         },
         footer: ()=>{
-        this.itemFoot(this.projects.length)
+          this.itemFoot(this.projects.length)
         }
       } as ListItemGroupOptions) {
         ForEach(this.projects, (project: string) => {
@@ -98,10 +99,10 @@ export struct ListItemGroupView {
 
       ListItemGroup({
         header: ()=>{
-        this.itemHead('Tuesday')
+          this.itemHead('Tuesday')
         },
         footer: ()=>{
-        this.itemFoot(this.projects.length)
+          this.itemFoot(this.projects.length)
         }
       } as ListItemGroupOptions) {
         ForEach(this.projects, (project: string) => {

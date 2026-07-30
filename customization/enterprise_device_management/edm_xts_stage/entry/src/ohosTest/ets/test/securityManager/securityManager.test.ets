@@ -2187,6 +2187,24 @@ function testGetClipboardPolicyByBundleName() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0900
+   * @tc.desc   test securityManager getAppClipboardPolicy with empty string bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0900", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, '', CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
 }
 
 function testSetScreenLockDisabledForAccount() {
@@ -4429,13 +4447,15 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getPasswordPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getPasswordPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getPasswordPolicy(null);
-        console.info(' --- getPasswordPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(null);
+        expect(result !== undefined).assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getPasswordPolicy_test_001  -------- END --------');

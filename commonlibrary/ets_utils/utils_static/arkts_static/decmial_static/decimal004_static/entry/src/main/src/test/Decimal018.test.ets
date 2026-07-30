@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +39,7 @@ function test_log_002 (n: string, base: number, expected: string, sd: number, rm
   expect(expected).assertEqual(Decimal.log(n, base).valueOf());
   expect(expected).assertEqual(new Decimal(n).log(base).valueOf());
 }
-export default function DecimalTest018() {
+export default function DecimalTest018(): void {
   describe("DecimalTest018", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

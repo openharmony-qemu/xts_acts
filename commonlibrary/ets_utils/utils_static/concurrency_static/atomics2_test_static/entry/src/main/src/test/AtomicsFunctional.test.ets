@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -120,12 +120,12 @@ async function runTaskpoolResults(count: int, work: Function): Promise<Any[]> {
   return results;
 }
 
-async function runEAWorkers<R>(count: int, work: Function): Promise<R[]> {
+function runEAWorkers<R>(count: int, work: Function): R[] {
   const results: R[] = new Array<R>();
 
   for (let start = 0; start < count; start += EA_WORKER_BATCH_SIZE) {
     const workers: EAWorker[] = new Array<EAWorker>();
-    const promises: Promise<R>[] = new Array<Promise<R>>();
+    const jobs: Job<R>[] = new Array<Job<R>>();
     let batchEnd = start + EA_WORKER_BATCH_SIZE;
     if (batchEnd > count) {
       batchEnd = count;
@@ -135,15 +135,15 @@ async function runEAWorkers<R>(count: int, work: Function): Promise<R[]> {
       const worker = new EAWorker();
       workers.push(worker);
       worker.start();
-      promises.push(worker.run<R>(work, i));
+      jobs.push(worker.run<R>(work, i));
     }
 
-    for (let i = 0; i < promises.length; i++) {
-      results.push(await promises[i] as R);
+    for (let i = 0; i < jobs.length; i++) {
+      results.push(jobs[i].Await());
     }
 
     for (let i = 0; i < workers.length; i++) {
-      workers[i].quit();
+      workers[i].join().Await();
     }
   }
 
@@ -496,7 +496,7 @@ export default function atomicsFunctionalTest(): void {
       const atom = new AtomicReference<RefIdValue>(createRefValue(-1));
       const counter = new AtomicInt(0);
 
-      await runEAWorkers<int>(10, (index: int): int => {
+      runEAWorkers<int>(10, (index: int): int => {
         if (index < 9) {
           atom.store(values[index]);
           counter.fetchAdd(1);
@@ -520,7 +520,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicReference<int>(0);
-      const results = await runEAWorkers<int>(10, (index: int): int => atom.compareAndSwap(0, index + 1));
+      const results = runEAWorkers<int>(10, (index: int): int => atom.compareAndSwap(0, index + 1));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -543,7 +543,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicReference<int>(200);
-      const results = await runEAWorkers<int>(10, (index: int): int => {
+      const results = runEAWorkers<int>(10, (index: int): int => {
         if (index % 4 == 0) {
           atom.store(200);
           return atom.load();
@@ -573,7 +573,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicReference<int>(500);
-      const results = await runEAWorkers<int>(10, (index: int): int => {
+      const results = runEAWorkers<int>(10, (index: int): int => {
         if (index == 0 || index == 1) {
           return atom.load();
         }
@@ -889,7 +889,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicInt(0);
-      await runEAWorkers<int>(100, (): int => atom.fetchAdd(1));
+      runEAWorkers<int>(100, (): int => atom.fetchAdd(1));
       expect(atom.load()).assertEqual(100);
     });
 
@@ -903,7 +903,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicInt(0);
-      const results = await runEAWorkers<int>(100, (): int => atom.compareAndSwap(0, 1));
+      const results = runEAWorkers<int>(100, (): int => atom.compareAndSwap(0, 1));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -926,7 +926,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicInt(300);
-      const results = await runEAWorkers<int>(100, (index: int): int => {
+      const results = runEAWorkers<int>(100, (index: int): int => {
         if (index % 4 == 0) {
           return atom.fetchAdd(0);
         }
@@ -955,7 +955,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicInt(255);
-      const results = await runEAWorkers<int>(100, (index: int): int => {
+      const results = runEAWorkers<int>(100, (index: int): int => {
         switch (index % 9) {
           case 0:
             return atom.load();
@@ -1122,7 +1122,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicLong(LONG_ZERO);
-      await runEAWorkers<long>(100, (): long => atom.fetchAdd(LONG_HUNDRED));
+      runEAWorkers<long>(100, (): long => atom.fetchAdd(LONG_HUNDRED));
       expect(atom.load()).assertEqual(10000);
     });
 
@@ -1136,7 +1136,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicLong(LONG_ZERO);
-      const results = await runEAWorkers<long>(100, (): long => atom.compareAndSwap(LONG_ZERO, LONG_ONE));
+      const results = runEAWorkers<long>(100, (): long => atom.compareAndSwap(LONG_ZERO, LONG_ONE));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -1159,7 +1159,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicLong(LONG_255);
-      const results = await runEAWorkers<long>(100, (index: int): long => {
+      const results = runEAWorkers<long>(100, (index: int): long => {
         switch (index % 9) {
           case 0:
             return atom.load();
@@ -1282,7 +1282,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicShort(0);
-      await runEAWorkers<short>(100, (): short => atom.fetchAdd(1));
+      runEAWorkers<short>(100, (): short => atom.fetchAdd(1));
       expect(atom.load()).assertEqual(100);
     });
 
@@ -1296,7 +1296,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicShort(0);
-      const results = await runEAWorkers<short>(100, (): short => atom.compareAndSwap(0, 1));
+      const results = runEAWorkers<short>(100, (): short => atom.compareAndSwap(0, 1));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -1319,7 +1319,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicShort(255);
-      const results = await runEAWorkers<short>(100, (index: int): short => {
+      const results = runEAWorkers<short>(100, (index: int): short => {
         switch (index % 9) {
           case 0:
             return atom.load();
@@ -1426,7 +1426,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicByte(0);
-      await runEAWorkers<byte>(100, (): byte => atom.fetchAdd(1));
+      runEAWorkers<byte>(100, (): byte => atom.fetchAdd(1));
       expect(atom.load()).assertEqual(100);
     });
 
@@ -1440,7 +1440,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicByte(0);
-      const results = await runEAWorkers<byte>(100, (): byte => atom.compareAndSwap(0, 1));
+      const results = runEAWorkers<byte>(100, (): byte => atom.compareAndSwap(0, 1));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -1463,7 +1463,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicByte(25);
-      const results = await runEAWorkers<byte>(100, (index: int): byte => {
+      const results = runEAWorkers<byte>(100, (index: int): byte => {
         switch (index % 9) {
           case 0:
             return atom.load();
@@ -1587,7 +1587,7 @@ export default function atomicsFunctionalTest(): void {
       const chars = createCharValues();
       const counter = new AtomicInt(0);
 
-      await runEAWorkers<int>(chars.length, (index: int): int => {
+      runEAWorkers<int>(chars.length, (index: int): int => {
         if (index < chars.length - 1) {
           atom.store(chars[index]);
           counter.fetchAdd(1);
@@ -1612,7 +1612,7 @@ export default function atomicsFunctionalTest(): void {
     it('atomicsFunctionalTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicChar(c'Z');
       const chars = createCharValues();
-      const results = await runEAWorkers<char>(chars.length, (index: int): char => atom.exchange(chars[index]));
+      const results = runEAWorkers<char>(chars.length, (index: int): char => atom.exchange(chars[index]));
 
       let initialCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -1636,7 +1636,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicChar(c'A');
-      const results = await runEAWorkers<char>(10, (): char => atom.compareAndSwap(c'A', c'B'));
+      const results = runEAWorkers<char>(10, (): char => atom.compareAndSwap(c'A', c'B'));
 
       let successCount = 0;
       for (let i = 0; i < results.length; i++) {
@@ -1659,7 +1659,7 @@ export default function atomicsFunctionalTest(): void {
      */
     it('atomicsFunctionalTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const atom = new AtomicChar(c'Q');
-      const results = await runEAWorkers<char>(10, (index: int): char => {
+      const results = runEAWorkers<char>(10, (index: int): char => {
         if (index % 4 == 0) {
           return atom.load();
         }

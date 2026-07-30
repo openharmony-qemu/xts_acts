@@ -129,7 +129,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
             }.width('100%').height('100%').backgroundColor(Color.Yellow)
           }.tabBar(SubTabBarStyle.of("tab1")
             .padding(this.subTabBarStylePaddingNumber))
-          .key('subTabBarNumberTest')
+          .key('tabsThird_subTabBarNumberTest_01')
   
           TabContent() {
             Column(){
@@ -137,7 +137,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
             }.width('100%').height('100%').backgroundColor(Color.Pink)
           }.tabBar(BottomTabBarStyle.of('app.media.icon', "tab1")
             .padding(this.bottomTabBarStylePaddingNumber))
-          .key('bottomTabBarNumberTest')
+          .key('tabsThird_bottomTabBarNumberTest_01')
         }
         .vertical(false)
         .attributeModifier(this.modifier1)
@@ -197,7 +197,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
             }.width('100%').height('100%').backgroundColor(Color.Yellow)
           }.tabBar(SubTabBarStyle.of("tab1")
             .padding(this.subTabBarStylePaddingNumber))
-          .key('subTabBarNumberTest')
+          .key('tabsThird_subTabBarNumberTest_02')
   
           TabContent() {
             Column(){
@@ -205,7 +205,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
             }.width('100%').height('100%').backgroundColor(Color.Pink)
           }.tabBar(BottomTabBarStyle.of('app.media.icon', "tab1")
             .padding(this.bottomTabBarStylePaddingNumber))
-          .key('bottomTabBarNumberTest')
+          .key('tabsThird_bottomTabBarNumberTest_02')
         }
         .vertical(false)
         .barGridAlign({

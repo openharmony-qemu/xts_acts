@@ -33,7 +33,9 @@ struct Index {
       this.message = "ndk测试:当前是 M114";
     } else if (tmp_result == webview.ArkWebEngineVersion.M132) {
       this.message = "ndk测试:当前是 M132";
-    } else {
+    } else if (tmp_result == webview.ArkWebEngineVersion.M144) {
+      this.message = "ndk测试:当前是 M144";
+    }else {
       this.message = "ndk测试:error";
     }
   }

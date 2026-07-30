@@ -86,7 +86,7 @@ struct OhosRouterA {
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
       Button('Push')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_01')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -101,7 +101,7 @@ struct OhosRouterA {
           });
         });
       Button('back')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_02')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -115,7 +115,7 @@ struct OhosRouterA {
           });
         });
       Button('pushUrl')
-        .key('pushButtonA1')
+        .key('ohosRouterA_y_pushButtonA1_01')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -140,7 +140,7 @@ struct OhosRouterA {
 
         });
       Button('pushUrl')
-        .key('pushButtonA1')
+        .key('ohosRouterA_y_pushButtonA1_02')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -188,7 +188,7 @@ struct OhosRouterA {
           ;
         });
       Button('replaceUrl')
-        .key('pushButtonA1')
+        .key('ohosRouterA_y_pushButtonA1_03')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -211,7 +211,7 @@ struct OhosRouterA {
         });
 
       Button('clear')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_03')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -225,7 +225,7 @@ struct OhosRouterA {
           });
         });
       Button('getLength')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_04')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -239,7 +239,7 @@ struct OhosRouterA {
           });
         });
       Button('enableAlertBeforeBackPage')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_05')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -253,7 +253,7 @@ struct OhosRouterA {
           });
         });
       Button('enableBackPageAlert')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_06')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -269,7 +269,7 @@ struct OhosRouterA {
         });
 
       Button('disableAlertBeforeBackPage')
-        .key('pushButtonA')
+        .key('ohosRouterA_y_pushButtonA_07')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)

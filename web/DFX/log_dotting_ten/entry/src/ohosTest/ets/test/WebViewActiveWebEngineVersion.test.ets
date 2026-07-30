@@ -188,5 +188,19 @@ export default function WebViewActiveWebEngineVersion() {
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
+    /**
+     * @tc.name   emitIsActiveWebEngineEvergreen010
+     * @tc.number SUB_ACE_BASIC_ETS_ISACTIVEWEBENGINEEVERGREEN_1000
+     * @tc.desc   IsActiveWebEngineEvergreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitIsActiveWebEngineEvergreen010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitIsActiveWebEngineEvergreen010', 10)
+      Utils.registerEvent('emitIsActiveWebEngineEvergreen010', true, 20260519, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+
   })
 }

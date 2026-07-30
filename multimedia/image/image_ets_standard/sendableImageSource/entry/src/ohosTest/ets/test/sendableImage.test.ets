@@ -586,7 +586,7 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100"
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
@@ -632,7 +632,7 @@ export default function sendableImageSource() {
           y: 0
         }
       }
-      imageSourceApi.createPixelMap(opt).then(async (pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap(opt).then(async (pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         let info = await pixelMap.getImageInfo()
         console.info(`0x0000 ${tag} pixelMap size is ${info.size.height} ${info.size.width}`);
@@ -670,7 +670,7 @@ export default function sendableImageSource() {
       let opt: image.DecodingOptions = {
         sampleSize: 0
       }
-      imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(isEmpty(pixelMap)).assertTrue()
         done()
@@ -713,7 +713,7 @@ export default function sendableImageSource() {
         desiredDynamicRange:image.DecodingDynamicRange.AUTO,
         desiredColorSpace:colorSpace
       }
-      imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
@@ -745,7 +745,7 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.release().then(() => {
+      await imageSourceApi.release().then(() => {
         console.info(`0x0000 ${tag} release success ${JSON.stringify(imageSourceApi.createPixelMap())}`);
         expect(isEmpty(imageSourceApi.createPixelMap())).assertTrue()
         done()
@@ -773,7 +773,7 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, 'uri')
-      imageSourceApi.release().then(() => {
+      await imageSourceApi.release().then(() => {
         imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
           console.info(`0x0000 ${tag} success ${pixelMap}`)
         }).catch((error: BusinessError) => {
@@ -934,7 +934,7 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_GET_RECEIVING_SURFACES_0100"
       let receiver = await getImageReceiver(1)
-      receiver.getReceivingSurfaceId().then((id: string) => {
+      await receiver.getReceivingSurfaceId().then((id: string) => {
         console.info(`0x0000 ${tag} success ${receiver} ${id}`)
         expect(isEmpty(id)).assertFalse()
         done()
@@ -1330,7 +1330,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -1353,7 +1352,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -1404,8 +1402,8 @@ export default function sendableImageSource() {
       }
       if (pixelMap != undefined) {
         await pixelMap.release()
+        done();
       }
-      done();
     })
 
     /**
@@ -1421,7 +1419,7 @@ export default function sendableImageSource() {
       const readBuffer: ArrayBuffer = new ArrayBuffer(3301488);
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         pixelMap.readPixelsToBuffer(readBuffer).then(() => {
@@ -1444,7 +1442,7 @@ export default function sendableImageSource() {
       const readBuffer: ArrayBuffer = new ArrayBuffer(96);
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
@@ -1484,7 +1482,7 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         pixelMap.readPixels(area).then(() => {
@@ -1519,7 +1517,7 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         try {
@@ -1672,7 +1670,7 @@ export default function sendableImageSource() {
       alphaType: 3
       }
       let pixelMap: sendableImage.PixelMap | undefined = undefined;
-      sendableImage.createPixelMap(color, opts).then((srcPixelMap: sendableImage.PixelMap) => {
+      await sendableImage.createPixelMap(color, opts).then((srcPixelMap: sendableImage.PixelMap) => {
         pixelMap = srcPixelMap;
         console.info(tag + " Successed in creating PixelMap. " + pixelMap);
         try {
@@ -1692,7 +1690,6 @@ export default function sendableImageSource() {
           done();
         }
       })
-      done();
     })
 
     /**
@@ -1768,7 +1765,7 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         try {
@@ -1804,7 +1801,7 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         try {
@@ -1840,7 +1837,7 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         try {
@@ -1883,7 +1880,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       })
-      done();
     })
 
     /**
@@ -1904,7 +1900,7 @@ export default function sendableImageSource() {
         size: {height: 4,width: 6}
       };
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-      pixelMap.opacity(rate).then(() => {
+      await pixelMap.opacity(rate).then(() => {
         console.info(tag + ' Succeeded in setting the transparent ratio.')
         pixelMap.release();
         done();
@@ -1913,7 +1909,6 @@ export default function sendableImageSource() {
         expect(e).assertEqual(62980115);
         done();
       })
-      done();
     })
 
     /**
@@ -1934,7 +1929,7 @@ export default function sendableImageSource() {
         size: {height: 4,width: 6}
       };
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-      pixelMap.opacity(rate).then(() => {
+      await pixelMap.opacity(rate).then(() => {
         console.info(tag + ' Succeeded in setting the transparent ratio.')
         pixelMap.release();
         done();
@@ -1943,7 +1938,6 @@ export default function sendableImageSource() {
         expect(e).assertEqual(62980115);
         done();
       })
-      done();
     })
 
     /**
@@ -1974,7 +1968,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       })
-      done();
     })
 
     /**
@@ -2007,7 +2000,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2040,7 +2032,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2070,7 +2061,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       })
-      done();
     })
 
     /**
@@ -2101,7 +2091,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2128,7 +2117,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2159,7 +2147,6 @@ export default function sendableImageSource() {
         await pixelMap.release();
         done();
       }
-      done();
     })
 
     /**
@@ -2188,7 +2175,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2217,7 +2203,6 @@ export default function sendableImageSource() {
         await pixelMap.release();
         done();
       }
-      done();
     })
 
     /**
@@ -2247,7 +2232,6 @@ export default function sendableImageSource() {
         await pixelMap.release();
         done();
       }
-      done();
     })
 
     /**
@@ -2265,7 +2249,7 @@ export default function sendableImageSource() {
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-      pixelMap.applyColorSpace(targetColorSpace).then(() => {
+      await pixelMap.applyColorSpace(targetColorSpace).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         pixelMap.release();
         done();
@@ -2274,7 +2258,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
         })
-      done();
     })
 
     /**
@@ -2292,7 +2275,7 @@ export default function sendableImageSource() {
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-      pixelMap.applyColorSpace(null!).then(() => {
+      await pixelMap.applyColorSpace(null!).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         done();
       }).catch((error: BusinessError) => {
@@ -2301,7 +2284,6 @@ export default function sendableImageSource() {
         pixelMap.release();
         done();
         })
-      done();
     })
 
     /**
@@ -2329,7 +2311,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
     
     /**
@@ -2357,7 +2338,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       }
-      done();
     })
 
     /**
@@ -2380,16 +2360,16 @@ export default function sendableImageSource() {
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         pixelMap.readPixels(area).then(() => {
           console.info(tag + ' Succeeded in reading the image data in the area.');
-          pixelMap.release();
           done();
         }).catch((error: BusinessError) => {
           console.error(tag + ` Failed to read the image data in the area. error is ${error}`);
-          expect().assertFail();
+          expect(error).assertEqual(62980115);
+          pixelMap.release();
           done();
         })
       })
@@ -2410,26 +2390,25 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: null!, width: null!},
+        region: {size: {height: -1, width: -1},
         x: 0,
         y: 0}
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         pixelMap.readPixels(area).then(() => {
           console.info(tag + ' Succeeded in reading the image data in the area.');
-          pixelMap.release();
           done();
         }).catch((error: BusinessError) => {
           console.error(tag + ` Failed to read the image data in the area. error is ${error}`);
-          expect().assertFail();
+          expect(error).assertEqual(62980115);
+          pixelMap.release();
           done();
         })
       })
-      done();
     })
     
     /**
@@ -2444,7 +2423,7 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100"
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName);
-      imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         let ret = pixelMap.isStrideAlignment
@@ -2464,7 +2443,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
       })
-      done();
     })
 
     /**
@@ -2480,7 +2458,7 @@ export default function sendableImageSource() {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-      pixelMap.release().then(() => {
+      await pixelMap.release().then(() => {
         console.info(tag + ' Succeeded in releasing pixelmap object.');
         done();
       }).catch((error: BusinessError) => {
@@ -2488,7 +2466,6 @@ export default function sendableImageSource() {
         expect().assertFail();
         done();
         })
-      done();
     })
 
     /**
@@ -2572,7 +2549,7 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      receiver.readLatestImage().then((img: sendableImage.Image) => {
+      await receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(tag + ' readLatestImage succeeded.');
           done();
       }).catch((error: BusinessError) => {
@@ -2580,7 +2557,6 @@ export default function sendableImageSource() {
         expect(error).assertUndefined();
         done();
       })
-      done();
     })
  
     /**
@@ -2598,7 +2574,7 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      receiver.readNextImage().then((img: sendableImage.Image) => {
+      await receiver.readNextImage().then((img: sendableImage.Image) => {
           console.info(tag + ' readNextImage  succeeded.');
           done();
       }).catch((error: BusinessError) => {
@@ -2606,7 +2582,6 @@ export default function sendableImageSource() {
         expect(error).assertUndefined();
         done();
       })
-      done();
     })
 
     /**
@@ -2624,7 +2599,7 @@ export default function sendableImageSource() {
       let fileName = 'dog.astc'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-      pixelMap.applyColorSpace(targetColorSpace).then(() => {
+      await pixelMap.applyColorSpace(targetColorSpace).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         done();
       }).catch((error: BusinessError) => {
@@ -2640,7 +2615,6 @@ export default function sendableImageSource() {
           done();
         }
       })
-      done();
     })
 
   })

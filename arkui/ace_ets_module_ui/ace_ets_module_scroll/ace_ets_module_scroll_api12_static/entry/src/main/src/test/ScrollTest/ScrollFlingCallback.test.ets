@@ -80,6 +80,7 @@ export default function ScrollFlingCallbackJsunit() {
 it('ScrollFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollFlingCallbackTest_0100 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver1.findComponent(ON.id('btn_scroll_fling_01'));
       await button!.click();
       await CommonFunc.sleep(1000);
@@ -101,6 +102,7 @@ it('ScrollFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promi
 it('ScrollFlingCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollFlingCallbackTest_0200 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver1.findComponent(ON.id('btn_scroll_fling_02'));
       await button!.click();
       await CommonFunc.sleep(1000);

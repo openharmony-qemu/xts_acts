@@ -74,6 +74,9 @@ import TextAreaTypeTest from './TextAreaTest/TextAreaType.test';
 import TextAreaStyleTest from './TextAreaTest/TextAreaStyle.test';
 import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
 import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
+import TextAreaStrokeJoinStyleTest from './TextAreaApi26Test/TextAreaStrokeJoinStyle.test';
+import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.test';
+import TextAreaPunctuationOverflowTest from './TextAreaApi26Test/TextAreaPunctuationOverflow.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -130,6 +133,9 @@ import TextInputMethodsNullTest from './TextInputTest/TextInputMethodsNull.test'
 import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControllerMethodsNull.test';
 import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.test';
 import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
+import TextInputStrokeJoinStyleTest from './TextInputApi26Test/TextInputStrokeJoinStyle.test';
+import TextInputShaderStyleTest from './TextInputApi26Test/TextInputShaderStyle.test';
+import TextInputPunctuationOverflowTest from './TextInputApi26Test/TextInputPunctuationOverflow.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
@@ -296,4 +302,15 @@ export default function testsuite() {
   TextInputContentTypeParamTest();
   TextInputOnNeedSoftkeyboardTest();  // Api24
   TextInputOrphanCharOptimizationTest();
+  
+  TextAreaOnWillCopyTest();           // Api26
+  TextAreaOnWillCutTest();
+  TextAreaStrokeJoinStyleTest();
+  TextAreaShaderStyleTest();
+  TextAreaPunctuationOverflowTest();
+  TextInputOnWillCopyTest();
+  TextInputOnWillCutTest();
+  TextInputStrokeJoinStyleTest();
+  TextInputShaderStyleTest();
+  TextInputPunctuationOverflowTest();
 }

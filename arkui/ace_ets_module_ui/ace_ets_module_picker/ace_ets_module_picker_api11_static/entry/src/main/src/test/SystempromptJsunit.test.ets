@@ -66,7 +66,7 @@ it('promptTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
       console.info('promptTest_0100 is start');
       try{
         await Utils.sleep(1500);
-      console.info("promptTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1',10,"")));
+      console.info("promptTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('systemPrompt' + '_button1',10,"")));
       await Utils.sleep(1500);
       }catch(e){
         expect().assertFail()
@@ -86,7 +86,7 @@ it('promptTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
       console.info('promptTest_0200 is start');
       try{
         await Utils.sleep(1500);
-      console.info("promptTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button2',10,"")));
+      console.info("promptTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('systemPrompt' + '_button2',10,"")));
       await Utils.sleep(1500);
       }catch(e){
         expect().assertFail()

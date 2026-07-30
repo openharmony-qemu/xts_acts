@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -2913,6 +2914,135 @@ export default function avRecorderTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 end');
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0200
+     * @tc.desc   Test setMetadata in idle state expecting error code 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0200 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.wav`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = 'fd://' + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      let result = await commonFun.avRecorderSetMetadataInIdleStateTest(avConfig, RECORDER_TIME, done);
+      expect(result).assertEqual(true);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0200 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0300
+     * @tc.desc   Test setMetadata with oversized value expecting error code 5400108
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0300 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.wav`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = 'fd://' + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      let result = await commonFun.avRecorderSetMetadataOversizedValueTest(avConfig, RECORDER_TIME, done);
+      expect(result).assertEqual(true);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0300 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTest(avConfig, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTestErrorState(avConfig, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTestOutRange(avConfig, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300 end')
+    })
   })
 }
 

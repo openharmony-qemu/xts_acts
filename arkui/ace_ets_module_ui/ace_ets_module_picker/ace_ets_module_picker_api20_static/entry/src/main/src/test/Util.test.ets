@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +34,12 @@ class UtilsTest{
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
     try {
       if (!UtilsTest.isStartedAbility) {
-        await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+        let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         hilog.info(domain, tag, `startAbility, success`);
         UtilsTest.isStartedAbility = true;
       }
@@ -47,7 +53,12 @@ class UtilsTest{
 }
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     return true;

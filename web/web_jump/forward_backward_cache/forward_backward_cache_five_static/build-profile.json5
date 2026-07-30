@@ -22,7 +22,7 @@
         "name": "default",
         "signingConfig": "default",
         "compatibleSdkVersion": "20",
-        "compileSdkVersion": "26",
+        "compileSdkVersion": "26.0.0",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -31,7 +31,6 @@
             "useNormalizedOHMUrl": true
           }
         },
-        "targetSdkVersion": "20"
       }
     ],
     "buildModeSet": [

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -25,6 +26,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface UtilObj1 {
   name: string;
@@ -111,20 +113,10 @@ interface SetObj1 {
   size: number;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
-
-
 export default function Util1Test(): void {
   describe('Util1Test', () => {
     afterEach(async () => {
-      // 如果 500ms 还是太慢，可以改小一点，比如 50-100ms
-      await sleep(100);
+      await Utils.msSleep(30);
     });
 
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

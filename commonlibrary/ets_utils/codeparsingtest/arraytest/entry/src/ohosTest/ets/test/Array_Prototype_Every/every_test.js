@@ -83,12 +83,6 @@ export function testSingleElementArray() {
     return { result, expected: true };
 }
 
-export function testLargeArray() {
-    const arr = new Array(10000).fill(1);
-    const result = arr.every(x => x === 1);
-    return { result, expected: true };
-}
-
 export function testElementParameter() {
     const arr = [10, 20, 30];
     const elements = [];

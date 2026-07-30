@@ -134,6 +134,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingFontCountText),
     DECL_NAPI_DESC(DrawingFontTextToGlyphs),
     DECL_NAPI_DESC(DrawingFontGetWidths),
+    DECL_NAPI_DESC(DrawingFontGetTextPathWithFallback),
     DECL_NAPI_DESC(DrawingFontSetLinearText),
     DECL_NAPI_DESC(DrawingFontSetTextSkewX),
     DECL_NAPI_DESC(DrawingFontSetFakeBoldText),

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,7 @@ import {
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
-export default function BigInt64ArrayTest() {
+export default function BigInt64ArrayTest(): void {
   describe('BigInt64ArrayTest', (): void => {
     // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);

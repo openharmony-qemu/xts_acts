@@ -32,6 +32,10 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
             cmd += ' -D'
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         abilityDelegator.executeShellCommand(cmd, (err, data) => {
             hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
             hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', data.stdResult ?? '');

@@ -90,7 +90,7 @@ export default function listItemJsunit2() {
 it('testListItem_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testListItem_static_01] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('ListItem');
+      let strJson = inspector.getInspectorByKey('listItem2' + '_ListItem');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_01] obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('sticky')).assertEqual('Sticky.Normal');
@@ -124,7 +124,7 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
         console.log("[testListItem_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('ListItem');
+      let strJson = inspector.getInspectorByKey('listItem2' + '_ListItem');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_02] obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('sticky')).assertEqual('Sticky.None');

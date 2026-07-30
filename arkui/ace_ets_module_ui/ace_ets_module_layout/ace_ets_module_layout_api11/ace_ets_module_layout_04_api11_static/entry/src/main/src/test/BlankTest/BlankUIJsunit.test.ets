@@ -173,7 +173,7 @@ it('blankJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJson = inspector.getInspectorByKey('blankUIJsunit_blank');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[blankJsunit_static_0600'] component obj is: " + JSON.stringify(obj));
-      let text_rect = await CommonFunc.getComponentRect('text');
+      let text_rect = await CommonFunc.getComponentRect('blankParentWidth' + '_text');
       let toggle_rect = await CommonFunc.getComponentRect('toggle');
       console.info("[blankJsunit_static_0600'] text_rect is " + JSON.stringify(text_rect) + "toggle_rect is " + JSON.stringify(toggle_rect));
       

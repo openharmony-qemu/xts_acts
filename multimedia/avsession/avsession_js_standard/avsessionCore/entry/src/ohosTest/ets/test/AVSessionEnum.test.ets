@@ -1152,8 +1152,15 @@ export default function abilityTest() {
       expect(avSession.ExtraKey.DLNA_DIDL_LITE).assertEqual('DIDL-Lite' as avSession.ExtraKey);
       console.info(`TestLog: DLNA_CURRENT_URI_METADATA is ${avSession.ExtraKey.DLNA_CURRENT_URI_METADATA}`);
       expect(avSession.ExtraKey.DLNA_CURRENT_URI_METADATA).assertEqual('CurrentURIMetadata' as avSession.ExtraKey);
+      console.info(`TestLog: SUPPORT_URL_CASTING is ${avSession.ExtraKey.SUPPORT_URL_CASTING}`);
+      expect(avSession.ExtraKey.SUPPORT_URL_CASTING).assertEqual('url-cast' as avSession.ExtraKey);
+      console.info(`TestLog: REQUIRE_ABILITY_LIST is ${avSession.ExtraKey.REQUIRE_ABILITY_LIST}`);
+      expect(avSession.ExtraKey.REQUIRE_ABILITY_LIST).assertEqual('requireAbilityList' as avSession.ExtraKey);
+      console.info(`TestLog: LIVE_VIEW_HIDDEN_WHEN_KEYGUARD is ${avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD}`);
+      expect(avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD).assertEqual('hw_live_view_hidden_when_keyguard' as avSession.ExtraKey);
       done();
     })
+
 
   })
 }

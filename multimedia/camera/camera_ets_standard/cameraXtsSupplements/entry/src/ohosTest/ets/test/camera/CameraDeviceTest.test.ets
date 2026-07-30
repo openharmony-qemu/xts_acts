@@ -614,6 +614,291 @@ export default function CameraDeviceTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0100
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0100
+     * @tc.desc   CAMERA isLogicalCamera
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0100',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0100'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"isLogicalCamera : ",camera.isLogicalCamera);
+          //不同设备结果不同不能确定断言
+          }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0200
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0200
+     * @tc.desc   CAMERA constituentCameraDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0200',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0200'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          if(camera.isLogicalCamera) {
+            console.info(TAG, testName, "isLogicalCamera : ", camera.constituentCameraDevices?.length);
+            //不同设备结果不同不能确定断言
+          }else{
+            console.info(TAG, testName, "该设备不支持 ");
+          }
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0300
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0300
+     * @tc.desc   CAMERA lensFocalLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0300',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0300'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"lensFocalLength : ",camera.lensFocalLength);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0400
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0400
+     * @tc.desc   CAMERA minimumFocusDistance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0400',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0400'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"minimumFocusDistance : ",camera.minimumFocusDistance);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0500
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0500
+     * @tc.desc   CAMERA lensDistortion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0500',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0500'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"lensDistortion : ",camera.lensDistortion);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0600
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0600
+     * @tc.desc   CAMERA lensIntrinsicCalibration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0600',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0600'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"lensIntrinsicCalibration : ",camera.lensIntrinsicCalibration);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0700
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0700
+     * @tc.desc   CAMERA sensorPhysicalSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0700',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0700'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"sensorPhysicalSize : ",camera.sensorPhysicalSize);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0800
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0800
+     * @tc.desc   CAMERA sensorPixelArraySize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0800',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0800'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"sensorPixelArraySize : ",camera.sensorPixelArraySize);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0900
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0900
+     * @tc.desc   CAMERA sensorColorFilterArrangement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0900',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_0900'
+      try {
+
+        for (let index = 0; index < mCameraDeviceArray.length; index++) {
+          const camera = mCameraDeviceArray[index];
+          console.info(TAG,testName,"sensorColorFilterArrangement : ",camera.sensorColorFilterArrangement);
+          //不同设备结果不同不能确定断言
+        }
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_FlashState_0100
+     * @tc.number SUB_MEDIA_CAMERA_FlashState_0100
+     * @tc.desc   CAMERA FlashState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_FlashState_0100',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_FlashState_0100'
+      try {
+          expect(camera.FlashState.FLASH_STATE_UNAVAILABLE).assertEqual(0)
+          expect(camera.FlashState.FLASH_STATE_READY).assertEqual(1)
+          expect(camera.FlashState.FLASH_STATE_FLASHING).assertEqual(2);
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_SensorColorFilterArrangement_0100
+     * @tc.number SUB_MEDIA_CAMERA_SensorColorFilterArrangement_0100
+     * @tc.desc   CAMERA SensorColorFilterArrangement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_SensorColorFilterArrangement_0100',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_SensorColorFilterArrangement_0100'
+      try {
+        expect(camera.SensorColorFilterArrangement.BGGR).assertEqual(0)
+        expect(camera.SensorColorFilterArrangement.GBRG).assertEqual(1)
+        expect(camera.SensorColorFilterArrangement.GRBG).assertEqual(2);
+        expect(camera.SensorColorFilterArrangement.RGGB).assertEqual(3);
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_OISAxes_0100
+     * @tc.number SUB_MEDIA_CAMERA_OISAxes_0100
+     * @tc.desc   CAMERA OISAxes YAW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_OISAxes_0100',Level.LEVEL1, async () => {
+      const testName = 'SUB_MEDIA_CAMERA_OISAxes_0100'
+      try {
+        expect(camera.OISAxes.YAW).assertEqual(1);
+      } catch (error) {
+        console.error(TAG,testName,error,error.code)
+        expect().assertFail();
+      }
+    });
+    /**
+ 	    * @tc.name   SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100
+ 	    * @tc.number SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100
+ 	    * @tc.desc   automotiveCameraPosition normal test
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL1
+ 	    */
+ 	  it('SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100',Level.LEVEL1, async () => {
+ 	    const testName = 'test010_automotiveCameraPosition'
+ 	    try {
+ 	      let position = camera.CameraPosition.CAMERA_POSITION_BACK;
+ 	      console.info(TAG,testName, 'position');
+ 	      let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
+ 	      console.info(TAG,testName, 'type');
+ 	      if (mCameraDeviceArray.length > 0) {
+ 	        let automotiveCameraPosition = mCameraDeviceArray[0].automotiveCameraPosition;
+ 	        console.info(TAG,testName,'automotiveCameraPosition: ', automotiveCameraPosition);
+ 	        expect(automotiveCameraPosition).assertLargerOrEqual(0);
+ 	      }
+ 	    } catch (error) {
+ 	      console.error(TAG,testName, error, error.code)
+ 	      expect().assertFail();
+ 	    }
+ 	  });
   })
 }
 

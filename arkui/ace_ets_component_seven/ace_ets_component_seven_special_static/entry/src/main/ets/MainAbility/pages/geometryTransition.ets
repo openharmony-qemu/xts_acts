@@ -34,7 +34,7 @@ struct geometryTransition7Example {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, }) {
-      Button(this.show).width(80).height(30).backgroundColor(0x317aff).margin({ bottom: 50 } as Margin).key('button')
+      Button(this.show).width(80).height(30).backgroundColor(0x317aff).margin({ bottom: 50 } as Margin).key('geometryTransition_button')
         .onClick((e: ClickEvent) => {
           try {
             let backData: events_emitter.EventData = {

@@ -68,6 +68,7 @@ it('ListAddApi_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ListAddApi_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let button: Component = await driver.findComponent(ON.id('ListAddApiBt')) as Component;
       await button.click()
       await CommonFunc.sleep(1000);

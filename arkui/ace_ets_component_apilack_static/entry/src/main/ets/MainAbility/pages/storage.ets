@@ -53,8 +53,8 @@ export default class MainAbility extends Ability {
     AppStorage.setOrCreate<Want>('want', want)
   }
 
-  onDestroy(): Promise<void> {
-    console.log("[Demo MainAbility onDestroy]")
+  async onDestroy(): Promise<void> {
+    console.log('[Demo MainAbility onDestroy]')
   }
 
   onWindowStageCreate() {

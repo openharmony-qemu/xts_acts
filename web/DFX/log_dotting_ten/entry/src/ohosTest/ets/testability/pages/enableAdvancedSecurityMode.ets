@@ -298,6 +298,29 @@ struct EnableAdvancedSecurityMode {
               }
               break;
             }
+            case 'emitEnableAdvancedSecurityMode019': {
+              try {
+                webview.WebviewController.enableAdvancedSecurityMode(null);
+                Utils.emitEvent(true, 210019);
+              } catch (error) {
+                console.info('emitEnableAdvancedSecurityMode019 catch: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 210019);
+              }
+              break;
+            }
+            case 'emitEnableAdvancedSecurityMode020': {
+              try {
+                webview.WebviewController.enableAdvancedSecurityMode(undefined);
+                Utils.emitEvent(true, 210020);
+              } catch (error) {
+                console.info('emitEnableAdvancedSecurityMode020 catch: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 210020);
+              }
+              break;
+            }
+
+
+
             default:
               break;
           }

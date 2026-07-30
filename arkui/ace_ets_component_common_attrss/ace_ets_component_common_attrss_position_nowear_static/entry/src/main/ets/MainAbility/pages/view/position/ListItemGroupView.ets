@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   List,
   ListItemGroup,
@@ -32,6 +33,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct ListItemGroupView {
   @Link _position!: Position;
@@ -43,7 +45,7 @@ export struct ListItemGroupView {
   private projects: string[] = ['item1', 'item2', 'item3']
 
   @Builder
-  itemHead(text: string) {
+  itemHead(text: string):void {
     Text(text)
       .fontSize(20)
       .backgroundColor(0xAABBCC)
@@ -52,7 +54,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  itemFoot(num: number) {
+  itemFoot(num: number):void {
     Text('total:' + num)
       .fontSize(16)
       .backgroundColor(0xAABBCC)
@@ -61,7 +63,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  content(project: string) {
+  content(project: string):void {
     Text(project)
       .width('100%')
       .height(100)
@@ -70,30 +72,9 @@ export struct ListItemGroupView {
       .backgroundColor(0xFFFFFF)
   }
 
-  build() {
+  build():void {
     List({ space: 20 }) {
-      // ListItemGroup({ header: this.itemHead('Group1'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
-      //   ForEach(this.projects, (project: string) => {
-      //     ListItem() {
-      //       this.content(project)
-      //     }
-      //   }, (item: string) => item)
-      // }
-      // .borderRadius(20)
-      // .position(this._position)
-      // .key(this.componentKey)
-      // .divider({ strokeWidth: 1, color: Color.Blue })
-      //
-      // ListItemGroup({ header: this.itemHead('Group2'), footer: this.itemFoot(this.projects.length) } as ListItemGroupOptions) {
-      //   ForEach(this.projects, (project: string) => {
-      //     ListItem() {
-      //       this.content(project)
-      //     }
-      //   }, (item: string) => item)
-      // }
-      // .borderRadius(20)
-      // .key(this.referenceComponentKey)
-      // .divider({ strokeWidth: 1, color: Color.Blue })
+
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

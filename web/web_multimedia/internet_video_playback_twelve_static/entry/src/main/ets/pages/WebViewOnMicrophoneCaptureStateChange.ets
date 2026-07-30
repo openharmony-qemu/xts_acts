@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, $rawfile, Column, Row, Button, ClickEvent, Web, $rawfile, MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
+import { Entry, Component, $rawfile, Column, Row, Button, ClickEvent, Web,  MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -88,7 +89,7 @@ struct webViewController {
                 } else {
                   this.controller.pauseMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251229);
+                    Utils.emitEvent(MicrophoneCaptureState.PAUSED, 20251229);
                   }, 1000)
                 }
 
@@ -104,7 +105,7 @@ struct webViewController {
                 } else {
                   this.controller.resumeMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251230);
+                    Utils.emitEvent(MicrophoneCaptureState.ACTIVE, 20251230);
                   },1000)
                 }
 
@@ -126,6 +127,35 @@ struct webViewController {
 
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitPauseMicrophoneStatic001": {
+              try {
+                this.controller.pauseMicrophone();
+                Utils.emitEvent(true, 20260501);
+              } catch (error) {
+                error = error as BusinessError;
+                const e = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${e.code},  Message: ${e.message}`);
+                if (Number((error as BusinessError).code) === 17100001) {
+                  Utils.emitEvent(true, 20260501);
+                } else {
+                  Utils.emitEvent(false, 20260501);
+                }
+              }
+              break;
+            }
+
+            case "emitPauseMicrophoneErrorCodeStatic001": {
+              try {
+                let controllerNull: webView.WebviewController = new webView.WebviewController(undefined);
+                controllerNull.pauseMicrophone();
+                Utils.emitEvent(0, 20260502);
+              } catch (error) {
+                const err = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${err.code}, Message: ${err.message}`);
+                Utils.emitEvent(err.code, 20260502);
               }
               break;
             }

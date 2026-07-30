@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -750,6 +751,68 @@ export default function AVPlayerTrackFilterTest() {
         avPlayer?.release();
       });
       console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1400
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1400
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1400';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully");
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredVideoMimeTypes: [''],
+        preferredAudioMimeTypes: [''],
+        preferredAudioLanguages: [''],
+        preferredSubtitleLanguages: [''],
+      }
+      await avPlayer!.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer!.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        await avPlayer!.release();
+      }).catch((error: Error) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer?.release();
+      });
+      console.info(TAG, testName, "AVPlayer setTrackSelectionFilter test completed successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1500
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1500
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_STATIC_1500';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully");
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredVideoMimeTypes: [],
+        preferredAudioMimeTypes: [],
+        preferredAudioLanguages: [],
+        preferredSubtitleLanguages: [],
+      }
+      await avPlayer!.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer!.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        await avPlayer!.release();
+      }).catch((error: Error) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer?.release();
+      });
+      console.info(TAG, testName, "AVPlayer setTrackSelectionFilter test completed successfully");
       done();
     })
   })

@@ -81,7 +81,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0001';
       const path = 'test_exif_v2.jpg';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -97,7 +97,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0002';
       const path = 'test.gif';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -113,7 +113,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0003';
       const path = 'test.ico';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -129,7 +129,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0004';
       const path = 'test.jpeg';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -145,7 +145,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0005';
       const path = 'test.jpg';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -161,7 +161,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0006';
       const path = 'test.png';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -177,7 +177,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0007';
       const path = 'test.svg';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
 
@@ -193,7 +193,7 @@ export default function PictureGetGainmapPixelmapTest() {
       const testName = 'SUB_MEDIA_PICTURE_GET_GAIN_MAP_PIXEL_MAP_0008';
       const path = 'test.webp';
       await getGainmapPixelmapPromiseTest(done, testName, path, (data: image.PixelMap | null) => {
-        expect(data).assertUndefined();
+        expect(data).assertNull();
       });
     })
   })

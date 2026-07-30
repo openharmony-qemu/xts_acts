@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,6 +42,8 @@ import {
   Dimension,
   SizeOptions,
   Resource,
+  ResourceColor,
+  SymbolRenderingStrategy,
   BorderRadiuses
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -84,6 +87,9 @@ struct saveButtonCustomize {
   @State stateEft: boolean | undefined = undefined
   @State iconSizeW: number | undefined = undefined
   @State iconSizeH: number | undefined = undefined
+  @State symbolIconColor: Array<ResourceColor> | undefined = undefined
+  @State symbolRenderingStrategy: SymbolRenderingStrategy | undefined = undefined
+  @State symbolFontWeight: int | FontWeight | string | Resource | undefined = undefined
 
   private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
     (eventData: events_emitter.EventData) => {
@@ -117,6 +123,21 @@ struct saveButtonCustomize {
           bottomLeft: data['icRadsBl'] as Int, 
           bottomRight: data['icRadsBr'] as Int
         } as BorderRadiuses;
+      }
+      if (data['symbolIconColor'] != null) {
+        this.symbolIconColor = data['symbolIconColor'] as Array<ResourceColor>;
+      }
+      if (data['symbolRenderingStrategy'] != null) {
+        this.symbolRenderingStrategy = data['symbolRenderingStrategy'] as SymbolRenderingStrategy;
+      }
+      if (data['symbolFontWeight'] != null && data['symbolFontWeight'] == FontWeight.Bold) {
+        this.symbolFontWeight = data['symbolFontWeight'] as FontWeight;
+      } else if (data['symbolFontWeight'] != null && data['symbolFontWeight'] == $r('app.string.FontWeight_Bold')) {
+        this.symbolFontWeight = data['symbolFontWeight'] as Resource;
+      } else if (data['symbolFontWeight'] != null && data['symbolFontWeight'] == 900) {
+        this.symbolFontWeight = data['symbolFontWeight'] as Int;
+      } else {
+        this.symbolFontWeight = data['symbolFontWeight'] as String;
       }
     }
   }
@@ -180,6 +201,9 @@ struct saveButtonCustomize {
             .setText(this.customText)
             .iconBorderRadius(this.iconRadius)
             .stateEffect(this.stateEft)
+            .symbolIconColor(this.symbolIconColor)
+            .symbolRenderingStrategy(this.symbolRenderingStrategy)
+            .symbolFontWeight(this.symbolFontWeight)
             .id('keySave')
         }.width(100)
       }.width('100%').alignItems(HorizontalAlign.Center)

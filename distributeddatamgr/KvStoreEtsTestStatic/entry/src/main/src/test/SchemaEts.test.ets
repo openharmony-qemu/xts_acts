@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium';
 import ddm from '@ohos.data.distributedKVStore';
-import common from "@ohos.app.ability.common";
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
@@ -129,7 +128,12 @@ export default function schemaTest(){
         try {
           hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
           await Utils.msSleep(2000)
-          // abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+          let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd)
           await abilityDelegator.startAbility({
             bundleName: 'com.example.kvstoreetstest.static',
             abilityName: 'EntryAbility'

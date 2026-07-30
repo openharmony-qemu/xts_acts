@@ -40,7 +40,7 @@ struct textAreaOnCaretAndKeyboard {
         .width('95%')
       Row( { space: 5 } as RowOptions){
         Button('Caret: 8')
-          .key('button')
+          .key('textAreaOnCaretAndKeyboard_button')
           .onClick((e:ClickEvent) => {
             this.controller.caretPosition(8)
           })

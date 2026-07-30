@@ -226,6 +226,25 @@ struct Index {
                 break;
               }
 
+              case "emitIsActiveWebEngineEvergreen010": {
+                try {
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersionEvergreen144();
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    console.log('emitActiveWebEngineVersion010' + tmp_result);
+                    if(tmp_result == 3) {
+                      Utils.emitEvent(true, 20260519);
+                    }
+                  } else {
+                    Utils.emitEvent(true, 20260519);
+                  }
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
             }
           })
       }

@@ -28,8 +28,8 @@ struct popupColorModeDemo {
     '2.点击FOLLOW_SYSTEM和DARK按钮,点击粉色button,观察弹出的气泡颜色\n' +
     '3.点击FOLLOW_TARGET和LIGHT按钮,点击粉色button,观察弹出的气泡颜色\n' +
     '4.点击FOLLOW_TARGET和DARK按钮,点击粉色button,观察弹出的气泡颜色\n' +
-    '预期结果：\n' + '1.弹出的气泡为白色背景\n' + '2.弹出的气泡为白色背景\n' +
-    '3.弹出的气泡为白色背景\n' + '4.弹出的气泡为黑色背景\n'
+    '预期结果：\n' + '1.弹出的气泡为浅色背景\n' + '2.弹出的气泡为浅色背景\n' +
+    '3.弹出的气泡为浅色背景\n' + '4.弹出的气泡为深色背景\n'
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   @State colorMode: AnchoredColorMode | undefined | null = AnchoredColorMode.FOLLOW_SYSTEM

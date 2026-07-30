@@ -38,7 +38,11 @@
 #include "src/functionalext/supplement/errno.h"
 #include "src/functionalext/supplement/exit.h"
 #include "src/functionalext/supplement/fcntl.h"
+#include "src/functionalext/fortify.h"
 #include "src/functionalext/supplement/ldso.h"
+#include "src/functionalext/ldso_randomization.h"
+#include "src/functionalext/supplement/passwd.h"
+#include "src/functionalext/string.h"
 #include "src/functionalext/supplement/legacy.h"
 #include "src/functionalext/supplement/linux.h"
 #include "src/functionalext/supplement/locale.h"
@@ -1043,7 +1047,24 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "__fwriting", &FwritingTest },
     { "_flushlbf", &FlushlbfTest },
     { "a_cxa_atexit", &ACxaAtexitTest },
+    { "a_cxa_finalize", &ACxaFinalizeTest },
+    { "a_gnu_Unwind_Find_exidx", &AGnuUnwindFindExidxTest },
+    { "dirfd", &DirfdTest },
+    { "dladdr", &DladdrTest },
     { "double_exit", &DoubleExitTest },
+    { "fcntl_ext", &FcntlExtTest },
+    { "fopen", &FopenTest },
+    { "fscanf", &FscanfTest },
+    { "getprocpid", &GetprocpidTest },
+    { "getspnam", &GetspnamTest },
+    { "ldso_randomization_test", &LdsoRandomizationTestTest },
+    { "lseek", &LseekTest },
+    { "nftw", &NftwTest },
+    { "pread", &PreadTest },
+    { "preadv", &PreadvTest },
+    { "strcpy_test", &StrcpyTestTest },
+    { "tolower", &TolowerTest },
+    { "toupper", &ToupperTest },
     { "gethostbyname2", &Gethostbyname2Test },
     { "gethostbyname_r", &GethostbynameRTest },
     { "lfind", &LfindTest },

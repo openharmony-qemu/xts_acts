@@ -90,11 +90,11 @@ struct SearchPage {
   build() {
     Column() {
       Row(){
-        Text('onSubmit:' + this.submitValue).fontSize(10).key('submit').textAlign(TextAlign.Center).width('20%')
-        Text('onChange:' + this.changeValue).fontSize(10).key('change').textAlign(TextAlign.Center).width('20%')
-        Text('onCopy:' + this.copyValue).fontSize(10).key('copy').textAlign(TextAlign.Center).width('20%')
+        Text('onSubmit:' + this.submitValue).fontSize(10).key('SearchPage_submit').textAlign(TextAlign.Center).width('20%')
+        Text('onChange:' + this.changeValue).fontSize(10).key('SearchPage_change').textAlign(TextAlign.Center).width('20%')
+        Text('onCopy:' + this.copyValue).fontSize(10).key('SearchPage_copy').textAlign(TextAlign.Center).width('20%')
         Text('onCut:' + this.cutValue).fontSize(10).key('cut_SearchPage').textAlign(TextAlign.Center).width('20%')
-        Text('onPaste:' + this.pasteValue).fontSize(10).key('paste').textAlign(TextAlign.Center).width('20%')
+        Text('onPaste:' + this.pasteValue).fontSize(10).key('SearchPage_paste').textAlign(TextAlign.Center).width('20%')
       }.height('5%')
       Search({ value: this.changeValue, placeholder: this.placeholder, icon: this.icon, controller: this.controller })
         .searchButton(this.searchButton, {fontSize: 10}).id("searchButton")
@@ -127,7 +127,7 @@ struct SearchPage {
         .onClick(() => {
           // 设置光标位置到输入的第一个字符后
           this.controller.caretPosition(this.positionValue)
-        }).key('button').height('5%')
+        }).key('SearchPage_button').height('5%')
     }.width('100%')
   }
 }

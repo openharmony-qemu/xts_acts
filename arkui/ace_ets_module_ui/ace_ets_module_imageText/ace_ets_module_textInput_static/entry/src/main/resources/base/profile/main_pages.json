@@ -3,6 +3,9 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/TextInput/TextInputAttributeIndex",
     "MainAbility/pages/TextInputApi26/TextInputOnWillCopy",
- 	  "MainAbility/pages/TextInputApi26/TextInputOnWillCut"
+    "MainAbility/pages/TextInputApi26/TextInputOnWillCut",
+    "MainAbility/pages/TextInputApi26/TextInputShaderStyle",
+    "MainAbility/pages/TextInputApi26/TextInputStrokeJoinStyle",
+    "MainAbility/pages/TextInputApi26/TextInputPunctuationOverflow"
   ]
 }

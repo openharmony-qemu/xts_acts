@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +48,7 @@ interface test0042 {
 }
 interface MapForEach01 {}
 
-export default function MapForeachTest() {
+export default function MapForeachTest(): void {
   describe('MapForeachTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -551,10 +551,10 @@ export default function MultimodalInputKeyCodeTest() {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_0100";
       console.info(`${caseName} enter`);
       try {
-        let KEYCODE_XKEY = 3232;
-        let KEYCODE_AOD_SINGLE_CLICK = 2740;
-        expect(KeyCode.KEYCODE_XKEY == KEYCODE_XKEY).assertTrue();
-        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK == KEYCODE_AOD_SINGLE_CLICK).assertTrue();
+        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK === 2740).assertTrue();
+        expect(KeyCode.KEYCODE_XKEY === 3232).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_UP == 3233).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_DOWN == 3234).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} catch fail`);

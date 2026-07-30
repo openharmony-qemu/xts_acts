@@ -129,7 +129,7 @@ struct appStorage_test {
         }
       }
     }
-    .key('flex')
+    .key('AppStorage_flex')
     .width('100%')
     .height('100%')
   }

@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import emitter from '@ohos.events.emitter'
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, Callback } from '@ohos.base';
+import { Callback } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import notificationManager from '@ohos.notificationManager';
 import {
@@ -40,7 +41,6 @@ import { Router } from '@ohos.arkui.UIContext';
 import { UIContext } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
 import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import wantagent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';

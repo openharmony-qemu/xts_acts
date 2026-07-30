@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,14 +42,14 @@ export default function shouldRecognizerParallelWith(): void{
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('get getCurrentLocalPositionstate pages:' + JSON.stringify(pages));
-        if (!('getCurrentLocalPosition' == pages.name)) {
-          console.info('get getCurrentLocalPosition state pages.name:' + JSON.stringify(pages.name));
+        console.info('get shouldRecognizerParallelWith pages:' + JSON.stringify(pages));
+        if (!('shouldRecognizerParallelWith' == pages.name)) {
+          console.info('get shouldRecognizerParallelWith state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push getCurrentLocalPosition page error:' + err);
+        console.error('push shouldRecognizerParallelWith page error:' + err);
       }
     });
 
@@ -91,7 +92,7 @@ export default function shouldRecognizerParallelWith(): void{
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] strJson1 content: ' +
       JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('start');
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('notValid');
 
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] END');

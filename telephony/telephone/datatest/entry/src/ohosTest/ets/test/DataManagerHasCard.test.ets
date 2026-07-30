@@ -17,6 +17,15 @@ import { describe, it, expect, beforeAll, afterAll , Level, Size, TestType} from
 import data from '@ohos.telephony.data';
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
+import { common } from '@kit.AbilityKit';
+
+const ExpectFail: () => void = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(`expectFail failed err: ${JSON.stringify(err)}`);
+  }
+};
 
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
@@ -830,7 +839,68 @@ export default function dataManagerTest() {
       }
       console.info(`${caseName} test end `);
     });
-    
+
+    /**
+     * @tc.name   testTelephonyDataShowSystemApnSettings0100
+     * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0100
+     * @tc.desc   Test ShowSystemApnSettings undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyDataShowSystemApnSettings0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testTelephonyDataShowSystemApnSettings0100";
+      console.info(`${caseName} test start `);
+      try{
+        let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+        data.showSystemApnSettings(undefined).then(() => {
+          console.info(`${caseName} showSystemApnSettings success`);
+          ExpectFail();
+          done();
+        }).catch((error: BusinessError)=>{
+          console.info(`${caseName} showSystemApnSettings failed, error:${JSON.stringify(error)}`);
+          console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+          ExpectTrue(error == null);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test end `);
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyDataShowSystemApnSettings0200
+     * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0200
+     * @tc.desc   Test ShowSystemApnSettings null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyDataShowSystemApnSettings0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testTelephonyDataShowSystemApnSettings0200";
+      console.info(`${caseName} test start `);
+      try{
+        let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+        data.showSystemApnSettings(null).then(() => {
+          console.info(`${caseName} showSystemApnSettings success`);
+          ExpectFail();
+          done();
+        }).catch((error: BusinessError)=>{
+          console.info(`${caseName} showSystemApnSettings failed, error:${JSON.stringify(error)}`);
+          console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+          ExpectTrue(error == null);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test end `);
+      }
+    });
   });
 }
 

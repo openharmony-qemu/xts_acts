@@ -70,6 +70,7 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
         console.info('[bluetooth_js]acl state change result'+ JSON.stringify(data));
         expect(data).not().assertUndefined();
     }
+    
 
     const PROFILE_UUID_HFP_AG = '0000111F-0000-1000-8000-00805F9B34FB';
     const PROFILE_UUID_HFP_HF = '0000111E-0000-1000-8000-00805F9B34FB';
@@ -4248,7 +4249,12 @@ describe('btConnectionTest', () => {
             console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
         } catch (err) {
             console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]connection on/offScanModeChange is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -4267,7 +4273,12 @@ describe('btConnectionTest', () => {
             console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
         } catch (err) {
             console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]connection on/offScanModeChange is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -4477,6 +4488,171 @@ describe('btConnectionTest', () => {
         } catch (err) {
             console.error("[bluetooth_js]connection on/offAclStateChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
             expect().assertFail();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_ONACLSTATECHANGE_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_ONACLSTATECHANGE_0200
+     * @tc.desc   TEST onAclStateChange event api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_ONACLSTATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.onAclStateChange(onReceiveEvent_AclStateResult);
+            await sleep(500);
+            bluetooth.offAclStateChange();
+        } catch (error) {
+            if (error.code == 801) {
+                console.info('[bluetooth_js]onAclStateChange is not support');
+                expect(true).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_ACLSTATE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_ACLSTATE_0100
+     * @tc.desc   Test ScanMode enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_ACLSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let STATE_CONNECTED = bluetooth.AclState.STATE_CONNECTED;
+            console.info("[bluetooth_js]AclState STATE_CONNECTED: " + STATE_CONNECTED);
+            expect(STATE_CONNECTED).assertEqual(0);
+
+            let STATE_DISCONNECTED = bluetooth.AclState.STATE_DISCONNECTED;
+            console.info("[bluetooth_js]AclState STATE_DISCONNECTED: " + STATE_DISCONNECTED);
+            expect(STATE_DISCONNECTED).assertEqual(1);
+        } catch (err) {
+            console.info("bluetooth AclState  errCode:" + err.code + ",bluetooth AclState errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0200
+     * @tc.desc   Test disconnectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.disconnectAllowedProfiles('', (err, data: void)=> {
+                        if (err) {
+                            console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err);
+                        } else
+                        {
+                            console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP()
+            console.info("[bluetooth_js]disconnectAllowedProfiles success");
+            expect().assertFail();
+        } catch (err) {
+            console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("disconnectAllowedProfiles is not support");
+                expect(true).assertTrue();
+            }else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0300
+     * @tc.desc   Test disconnectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.disconnectAllowedProfiles(null, (err, data: void)=> {
+                        if (err) {
+                            console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err);
+                        } else
+                        {
+                            console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP()
+            console.info("[bluetooth_js]disconnectAllowedProfiles success");
+            expect().assertFail();
+        } catch (err) {
+            console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("disconnectAllowedProfiles is not support");
+                expect(true).assertTrue();
+            }else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0400
+     * @tc.desc   Test disconnectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.disconnectAllowedProfiles(undefined, (err, data: void)=> {
+                        if (err) {
+                            console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err);
+                        } else
+                        {
+                            console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP()
+            console.info("[bluetooth_js]disconnectAllowedProfiles success");
+            expect().assertFail();
+        } catch (err) {
+            console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("disconnectAllowedProfiles is not support");
+                expect(true).assertTrue();
+            }else {
+                expect(Number(err.code)).assertEqual(401);
+            }
         }
         done();
     })

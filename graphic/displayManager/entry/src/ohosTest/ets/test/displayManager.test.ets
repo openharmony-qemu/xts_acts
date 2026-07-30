@@ -92,7 +92,11 @@ export default function displayTest() {
     let isSupportRotate = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
     let displayClass = display.getDefaultDisplaySync();
+    let isSyscapSessionManagerSupported = false;
+    let curWindowBrightness = 0.0;
+    let isDeskTop: boolean = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -110,6 +114,14 @@ export default function displayTest() {
       console.error(`beforeAll isPCStatus: ` + isPCStatus);
 
       let windowClass = windowStage.getMainWindowSync();
+      let promiseSnapshot = windowClass.getWindowStateSnapshot();
+      promiseSnapshot.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPCMode=${jsonObj["isPcMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
       isFreeWindowMode = windowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
@@ -138,6 +150,36 @@ export default function displayTest() {
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
+      //提前调整，覆盖系统亮度
+      await windowClass.setWindowBrightness(0.5);
+      await sleep(300);
+      try {
+        let properties = windowClass.getWindowProperties();
+        curWindowBrightness = properties.brightness;
+        console.log(`beforeAll getBrightnessInfo: ${JSON.stringify(curWindowBrightness)}`);
+      } catch (exception) {
+        console.error(`beforeAll Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+      try {
+        let capabilityData:string = displayClass.getDisplayCapability();
+        console.log('jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
+        let result = display.isFoldable();
+        if (!result) {
+          if (Number(JSON.parse(capabilityData).buildin_screen) === 0) {
+            isDeskTop = true;
+          }
+        }
+        console.log('jsUnittest beforeAll isDeskTop ' + isDeskTop);
+      } catch (err) {
+        console.log('jsUnittest beforeAll getDisplayCapability failed ' + err.code);
+        if(!isSyscapSessionManagerSupported){
+          console.log('jsUnittest beforeAll code =' + err.code);
+        }else {
+          console.log('jsUnittest getDisplayCapability failed');
+        }
+      }
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -623,21 +665,237 @@ export default function displayTest() {
      * @tc.level  LEVEL0
      */
     it('testIsCaptured', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsCaptured';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      try {
-        let status = display.isCaptured();
-        console.log(msgStr + 'status:' + status);
-        expect(status).assertFalse();
+let caseName = 'testIsCaptured';
+let msgStr = 'jsunittest ' + caseName + ' ';
+console.log(msgStr + 'begin');
+try {
+let status = display.isCaptured();
+console.log(msgStr + 'status:' + status);
+expect(status).assertFalse();
+class VirtualScreenConfig {
+name : string = '';
+width : number = 0;
+height : number = 0;
+density : number = 0;
+surfaceId : string = '';
+supportsFocus ?: boolean = true;
+}
+
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured();
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_default
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ * @tc.desc   check current device capture status with bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+ it('testIsCapturedByBundleName_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_default';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ["com.example.displaymanager"];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_empty_array
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
+ * @tc.desc   check current device capture status with empty bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_empty_array', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_empty_array';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = [];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_1400004
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+ * @tc.desc   check current device capture status with bundleName list input which is over max size
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_1400004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_1400004';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
+     '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36',
+      '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56',
+       '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76',
+        '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101'];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'succeeded in calling isCapturedByBundleName')
+    expect().assertFail();
+    done();
+  }
+  catch (error) {
+    console.error(msgStr + 'Failed. Code: ' + JSON.stringify(error));
+    expect(error.code).assertEqual(1400004)
+    done();
+  }
+});
+/**
+ * @tc.name      testIsCaptured_004
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0010
+ * @tc.desc      Test isCaptured with undefined parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_004';
+  console.info(`${message} begin`);
+  try {
+    let undefinedParam: undefined = undefined;
+    let result: boolean;
+    try {
+      result = display.isCaptured(undefinedParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Undefined parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-      catch (exception) {
-        console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-        expect().assertFail();
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
+
+/**
+ * @tc.name      testIsCaptured_006
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0020
+ * @tc.desc      Test isCaptured with null parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_006';
+  console.info(`${message} begin`);
+  try {
+    let nullParam: null = null;
+    let result: boolean;
+    try {
+      result = display.isCaptured(nullParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Null parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-    });
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
     /**
      * @tc.name   test_getAvailableArea_default
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
@@ -827,403 +1085,7 @@ export default function displayTest() {
         done();
       }
     });
-    /**
-     * @tc.name   test_getAvailableArea_ststus_bar_hide
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-     * @tc.desc   test_getAvailableArea_ststus_bar_hide
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_getAvailableArea_ststus_bar_hide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'test_getAvailableArea_ststus_bar_hide';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          await mainWindowClass.setWindowLayoutFullScreen(true).then(async () => {
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            let displayClass1 = display.getDefaultDisplaySync();
-            let promise = displayClass1.getAvailableArea();
-            promise.then((data1) => {
-              console.info(msgStr + 'Succeeded get the available area in this display. data1: ' + JSON.stringify(data1));
-              if (AvailableArea.top == 0) {
-                mainWindowClass.setWindowLayoutFullScreen(false);
-                done();
-              }
-              else if (AvailableArea.top != 0) {
-                expect(data1.top).assertEqual(0);
-                mainWindowClass.setWindowLayoutFullScreen(false);
-                done();
-              }
-              else {
-                expect(false).assertTrue();
-                done();
-              }
-            }).catch((err: BusinessError) => {
-              console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-              if (err.code == 801) {
-                console.info(msgStr + 'The device not support getAvailableArea');
-                done();
-              }
-              else {
-                expect().assertFail();
-                done();
-              }
-            });
-          }).catch((err: BusinessError) => {
-            console.error(msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-            done();
-          })
 
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
-     * @tc.desc   test_on_availableAreaChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display | null = null;
-      displayClass = display.getDefaultDisplaySync();
-      try {
-        displayClass.on('availableAreaChange', (data: display.Rect) => {
-          console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-          done();
-        });
-        displayClass.off('availableAreaChange');
-        done();
-      }
-      catch (err) {
-        console.error(msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(msgStr + 'The device not support getAvailableArea');
-          done();
-        }
-        else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
-
-    /**
-     * @tc.name   test_on_availableAreaChange_triggers
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-     * @tc.desc   test_on_availableAreaChange_triggers
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_triggers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_triggers';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', (data: display.Rect) => {
-              console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-              sleep(500);
-              expect(data.height).assertLarger(AvailableArea.height);
-              expect(data.left).assertLargerOrEqual(0);
-              expect(data.top).assertLargerOrEqual(0);
-              expect(data.width).assertLargerOrEqual(0);
-              displayClass.off('availableAreaChange');
-              mainWindowClass.recover();
-              done();
-            });
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(500);
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_Two_callback
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-     * @tc.desc   test_on_availableAreaChange_Two_callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_Two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_Two_callback';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(4);
-            displayClass.off('availableAreaChange');
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_off_callback1
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-     * @tc.desc   test_on_availableAreaChange_off_callback1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_off_callback1';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num--;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            displayClass.off('availableAreaChange', callback2);
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(2);
-            displayClass.off('availableAreaChange');
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_off_callback_all
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-     * @tc.desc   test_on_availableAreaChange_off_callback_all
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_off_callback_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_off_callback_all';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            displayClass.off('availableAreaChange');
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(0);
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_off_availableAreaChange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
-     * @tc.desc   test_off_availableAreaChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_off_availableAreaChange';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        displayClass = display.getDefaultDisplaySync();
-        displayClass.off('availableAreaChange');
-        done();
-      }
-      catch (err) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(msgStr + 'The device not support getAvailableArea');
-          done();
-        }
-        else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
     /**
      * @tc.name   testGetAllDisplayPhysicalResolution
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
@@ -1607,8 +1469,13 @@ export default function displayTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-
-          done();
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
+              expect(err.code).assertEqual(801)
+              done();
+          } else {
+              expect(err.code).assertEqual(1400001);
+              done();
+          }
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -3035,41 +2902,52 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
-     * @tc.name       testGetBrightnessInfowithMainDisplayid
-     * @tc.desc       查询主屏亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
+    * @tc.name       testGetBrightnessInfowithMainDisplayid
+    * @tc.desc       查询主屏亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testGetBrightnessInfowithMainDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithMainDisplayid';
       try {
-        let brightnessInfo = display.getBrightnessInfo(0);
+        let brightnessInfo = await display.getBrightnessInfo(0);
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-        expect(brightnessInfo.sdrNits).assertLarger(0);
-        expect(brightnessInfo.currentHeadroom).assertLarger(0);
-        expect(brightnessInfo.maxHeadroom).assertLarger(0);
+        if (deviceType !== 'tv' && !isDeskTop) {
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(curWindowBrightness - 0.01);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(curWindowBrightness + 0.01);
+        } else {
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+        }
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
-     * @tc.name       testGetBrightnessInfowithVirtualDisplayid
-     * @tc.desc       查询虚拟屏亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
+    * @tc.name       testGetBrightnessInfowithVirtualDisplayid
+    * @tc.desc       查询虚拟屏亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testGetBrightnessInfowithVirtualDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithVirtualDisplayid';
       try {
@@ -3088,6 +2966,7 @@ export default function displayTest() {
         expect(brightnessInfo.sdrNits).assertEqual(500);
         expect(brightnessInfo.currentHeadroom).assertEqual(1);
         expect(brightnessInfo.maxHeadroom).assertEqual(1);
+        expect(brightnessInfo.brightnessPosition).assertEqual(0);
         await display.destroyVirtualScreen(screenId).then(() =>{
           console.info(caseName + 'Succeeded in destroyVirtualScreen1');
         }).catch((err:BusinessError) => {
@@ -3096,23 +2975,24 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
-     * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
-     * @tc.desc       查询大于0但不存在的屏幕亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
+    * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
+    * @tc.desc       查询大于0但不存在的屏幕亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level3
+    */
     it('testGetBrightnessInfowithNonExistedDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNonExistedDisplayId';
       try {
@@ -3122,23 +3002,24 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(e.code).assertEqual(1400004);
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
-     * @tc.name       testGetBrightnessInfowithNegativeDisplayId
-     * @tc.desc       查询小于0不存在的屏幕亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
+    * @tc.name       testGetBrightnessInfowithNegativeDisplayId
+    * @tc.desc       查询小于0不存在的屏幕亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level3
+    */
     it('testGetBrightnessInfowithNegativeDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNegativeDisplayId';
       try {
@@ -3148,11 +3029,13 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(e.code).assertEqual(1400004);
-          done();
+          done()
         }
       }
     });
@@ -3176,7 +3059,7 @@ export default function displayTest() {
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        if (deviceType !== 'tv') {
+        if (deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
@@ -3186,6 +3069,8 @@ export default function displayTest() {
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3198,6 +3083,8 @@ export default function displayTest() {
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3256,12 +3143,13 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           display.off('brightnessInfoChange');
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -3291,7 +3179,7 @@ export default function displayTest() {
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        if(deviceType !== 'tv') {
+        if(deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
@@ -3301,6 +3189,8 @@ export default function displayTest() {
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3313,6 +3203,8 @@ export default function displayTest() {
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3383,12 +3275,13 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        display.off('brightnessInfoChange');
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
+          display.off('brightnessInfoChange');
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -3405,7 +3298,7 @@ export default function displayTest() {
       let caseName = 'testOnBrightnessInfoChange_0300';
       let subWindowClass: window.Window | undefined;
       try {
-        if (deviceType !== 'tv') {
+        if (deviceType !== 'tv' && !isDeskTop) {
           subWindowClass = await windowStage.createSubWindow(caseName);
         subWindowClass.setUIContent('testability/pages/getSurfaceId')
         await subWindowClass.resizeAsync(1000, 1200);
@@ -3456,6 +3349,8 @@ export default function displayTest() {
           expect(brightnessInfo.sdrNits).assertLarger(0);
           expect(brightnessInfo.currentHeadroom).assertLarger(0);
           expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
           console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
         };
 
@@ -3507,13 +3402,15 @@ export default function displayTest() {
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         await subWindowClass?.destroyWindow();
-        if (e.code == 801) {
+
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           display.off('brightnessInfoChange');
           await terminateAbility(caseName);
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -4352,7 +4249,169 @@ export default function displayTest() {
       }
     });
 
+    /**
+    * @tc.name   test_on_availableAreaChange_registerListener
+    * @tc.number SUB_BASIC_WMS_on_availableAreaChange_registerListener_0600
+    * @tc.desc   test_on_availableAreaChange register listener
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_on_availableAreaChange_registerListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_on_availableAreaChange_registerListener';
+      console.log(caseName + ' begin');
+      try {
+        let displayClass: display.Display = display.getDefaultDisplaySync();
+        let windowClass = windowStage.getMainWindowSync();
+        let count: number = 0;
+        let callback: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            count++;
+        };
+        if (isFreeWindowMode) {
+          let cap: string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+          if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+            displayClass = display.getDisplayByIdSync(999);
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+            try {
+              let moveConfiguration: window.MoveConfiguration = {
+                displayId: 999
+              };
+              let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+              promise2.then(() => {
+                console.info(caseName + ' Succeeded in moving the window2.');
+                let rect = windowClass?.getWindowProperties().windowRect;
+                console.info(caseName + ` Get window rect: ` + JSON.stringify(rect));
+              }).catch((err: BusinessError) => {
+                console.error(caseName + ` Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+            } catch (exception) {
+              console.error(caseName + ` Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+            }
+          } else {
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+          }
+          await sleep(1000);
+          windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          windowClass.setTitleAndDockHoverShown(false, false);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          windowClass.recover();
+          displayClass.off('availableAreaChange', callback);
+        } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
+          displayClass.on('availableAreaChange', callback);
+          await sleep(2000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          displayClass.off('availableAreaChange', callback);
+        } else {
+          expect(count).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
+    /**
+    * @tc.name   test_on_availableAreaChange_registerListener2
+    * @tc.number SUB_BASIC_WMS_on_availableAreaChange_registerListener_0700
+    * @tc.desc   test_on_availableAreaChange register listener
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_on_availableAreaChange_registerListener2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_on_availableAreaChange_registerListener2';
+      console.log(caseName + ' begin');
+      try {
+        let displayClass: display.Display = display.getDefaultDisplaySync();
+        let windowClass = windowStage.getMainWindowSync();
+        let count1: number = 0;
+        let count2: number = 0;
+        let callback1: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            count1++;
+        };
+        let callback2: Callback<display.Rect> = (data: display.Rect) => {
+          console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+          count2++;
+      };
+        if (isFreeWindowMode) {
+          let cap: string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+          if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+            displayClass = display.getDisplayByIdSync(999);
+            displayClass.on('availableAreaChange', callback1);
+            displayClass.on('availableAreaChange', callback2);
+            displayClass.off('availableAreaChange', callback2);
+            await sleep(2000);
+            try {
+              let moveConfiguration: window.MoveConfiguration = {
+                displayId: 999
+              };
+              let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+              promise2.then(() => {
+                console.info(caseName + ' Succeeded in moving the window2.');
+                let rect = windowClass?.getWindowProperties().windowRect;
+                console.info(caseName + ` Get window rect: ` + JSON.stringify(rect));
+              }).catch((err: BusinessError) => {
+                console.error(caseName + ` Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+            } catch (exception) {
+              console.error(caseName + ` Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+            }
+          } else {
+            displayClass.on('availableAreaChange', callback1);
+            displayClass.on('availableAreaChange', callback2);
+            displayClass.off('availableAreaChange', callback2);
+            await sleep(2000);
+          }
+          await sleep(1000);
+          windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          windowClass.setTitleAndDockHoverShown(false, false);
+          await sleep(1000);
+          expect(count1).assertLarger(0);
+          expect(count2).assertEqual(0);
+          windowClass.recover();
+          displayClass.off('availableAreaChange');
+        } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
+          displayClass.on('availableAreaChange', callback1);
+          displayClass.on('availableAreaChange', callback2);
+          displayClass.off('availableAreaChange', callback2);
+          await sleep(2000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          expect(count1).assertLarger(0);
+          expect(count2).assertEqual(0);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          displayClass.off('availableAreaChange');
+        } else {
+          expect(count2).assertEqual(0);
+          expect(count2).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
   })

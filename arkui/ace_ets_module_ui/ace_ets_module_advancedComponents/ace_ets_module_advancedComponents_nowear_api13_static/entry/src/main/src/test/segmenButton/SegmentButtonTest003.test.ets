@@ -75,6 +75,7 @@ it('SegmentButtonTest003_static_001', Level.LEVEL1, async (done: () => void): Pr
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[3]
       console.info("[SegmentButtonTest003_static_001] component obj is: " + JSON.stringify(obj));
@@ -95,6 +96,7 @@ it('SegmentButtonTest003_static_002', Level.LEVEL1, async (done: () => void): Pr
       console.info('[SegmentButtonTest003_static_002] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]

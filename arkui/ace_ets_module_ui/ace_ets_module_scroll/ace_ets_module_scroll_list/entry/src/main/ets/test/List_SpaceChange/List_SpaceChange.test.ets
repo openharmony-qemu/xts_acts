@@ -78,8 +78,8 @@ export default function list_SpaceChangeTest() {
       let secondListItem = CommonFunc.getComponentRect('List_SpaceChange02');
       let thirdListItem = CommonFunc.getComponentRect('List_SpaceChange03');
       let fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      let listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
-      let listContainerStrJson = getInspectorByKey('List_SpaceChange_Container01');
+      let listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_SpaceChange' + '_Container01');
       let listWidth: number = listContainer.right - listContainer.left;
       let listHeight: number = listContainer.bottom - listContainer.top;
       let listItemHeight: number = firstListItem.bottom - firstListItem.top;
@@ -122,7 +122,7 @@ export default function list_SpaceChangeTest() {
       await CommonFunc.sleep(1000);
 
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
+      listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - vp2px(60)))) <= 1).assertTrue();
 
       console.info('[testListSpaceChangeUnfill] END');
@@ -152,8 +152,8 @@ export default function list_SpaceChangeTest() {
       let secondListItem = CommonFunc.getComponentRect('List_SpaceChange02');
       let thirdListItem = CommonFunc.getComponentRect('List_SpaceChange03');
       let fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      let listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
-      let listContainerStrJson = getInspectorByKey('List_SpaceChange_Container01');
+      let listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_SpaceChange' + '_Container01');
       let listWidth: number = listContainer.right - listContainer.left;
       let listHeight: number = listContainer.bottom - listContainer.top;
       let listItemHeight: number = firstListItem.bottom - firstListItem.top;
@@ -196,7 +196,7 @@ export default function list_SpaceChangeTest() {
       await CommonFunc.sleep(2000);
 
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
+      listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
       if (fourthListItem.bottom < listContainer.bottom ){
         expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - vp2px(120)))) <= 1).assertTrue();
       } else {
@@ -230,8 +230,8 @@ export default function list_SpaceChangeTest() {
       let secondListItem = CommonFunc.getComponentRect('List_SpaceChange02');
       let thirdListItem = CommonFunc.getComponentRect('List_SpaceChange03');
       let fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      let listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
-      let listContainerStrJson = getInspectorByKey('List_SpaceChange_Container01');
+      let listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_SpaceChange' + '_Container01');
       let listWidth: number = listContainer.right - listContainer.left;
       let listHeight: number = listContainer.bottom - listContainer.top;
       let listItemHeight: number = firstListItem.bottom - firstListItem.top;
@@ -272,7 +272,7 @@ export default function list_SpaceChangeTest() {
         Math.round(globalThis.winTop + secondListItem.bottom));
       await CommonFunc.sleep(1000);
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
-      listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
+      listContainer = CommonFunc.getComponentRect('List_SpaceChange' + '_Container01');
       if (fourthListItem.bottom < listContainer.bottom ){
         expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - vp2px(180)))) <= 1).assertTrue();
       } else {

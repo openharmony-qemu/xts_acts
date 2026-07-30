@@ -13,51 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Builder,
-  NavPathStack,
-  FontWeight,
-  Navigation,
-  NavDestination,
-  NavigationMode,
-  ButtonType,
-  Color,
-  DatePicker,
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  Observed,
-  Environment
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, NavPathStack, FontWeight, Navigation, NavDestination, NavigationMode, ButtonType, Color, DatePicker } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, LocalStorageLink, Environment, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from "@ohos.hilog";
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
-
 @Entry
 @Component
 struct StorageProp20 {
@@ -89,7 +49,7 @@ struct CompStorageProp20 {
   build() {
     Column(){
       Text(`State:${this.storProp1}`).height('5%')
-        .key('text_state')
+        .key('StorageProp20_text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
       Text(`PropRef:${this.storProp3}`).height('5%')

@@ -14,45 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign,
-  ArrowStyle,
-  SwiperAutoFill,
-  Padding,
-  Indicator,
-  FontWeight,
-  Flex,
-  FlexAlign,
-  List,
-  ListItem,
-  $r
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign, ArrowStyle, SwiperAutoFill, Padding, Indicator, FontWeight, Flex, FlexAlign, List, ListItem, $r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 export class MyDataSource implements IDataSource<number> {
   private list: number[] = []
   private listener?: DataChangeListener = undefined
@@ -103,7 +66,7 @@ struct SwiperExample2 {
             .fontSize(20)
         }, (item: number) => item.toString())
       }
-      .key('swiper')
+      .key('Swiper2_swiper')
       .cachedCount(2)
       .index(1)
       .autoPlay(true, undefined)

@@ -1,3 +1,4 @@
+'use static';
 import Array_Some_Test_static from './ArraySomeTest.test';
 import Array_Sort_Test_static from './ArraySortTest.test';
 import Array_Sort_Second_Test_static from './ArraySortSecondTest.test';
@@ -10,7 +11,7 @@ import Array_Reduce_Right_Test_static from './ArrayReduceRightTest.test';
 import Array_Reduce_Right_U_Test_static from './ArrayReduceRightUTest.test';
 import Array_Reduce_Test_static from './ArrayReduceTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   Array_Some_Test_static();
   Array_Sort_Test_static();
   Array_Sort_Second_Test_static();

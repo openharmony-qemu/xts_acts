@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,17 +14,14 @@
  * limitations under the License.
  */
 import audio from '@ohos.multimedia.audio';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll, Level, TestType, Size } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
 import Utils from './Util.test';
-import { Driver, MatchPattern, ON } from "@ohos.UiTest";
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
-import { Permissions }  from 'permissions';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
+import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { Permissions } from 'permissions';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let tag: string = 'AudioCpaturerEnhanceTest';
 let g_context: common.UIAbilityContext;

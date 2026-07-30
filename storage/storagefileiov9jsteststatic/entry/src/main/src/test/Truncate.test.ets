@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -117,7 +118,7 @@ export default function fileIOTruncate() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           console.log('fileIO_truncate_async_static_002 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -149,7 +150,7 @@ export default function fileIOTruncate() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           console.log('fileIO_truncate_async_static_003 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });

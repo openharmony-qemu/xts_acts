@@ -1,3 +1,4 @@
+'use static';
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -146,7 +147,7 @@ export default function LeftHandSideExpressionsTest() {
      * @tc.level     Level 2
      */
     it("testLeftHandSideExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let matrix: FixedArray<number[]> = [[0, 0], [0, 0]];
+      let matrix: Array<number[]> = [[0, 0], [0, 0]];
       matrix[0][1] = 80;
       expect(matrix[0][1]).assertEqual(80);
     })

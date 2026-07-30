@@ -26,6 +26,7 @@ struct TextExample_1 {
       Column({ space: 12 }) {
         Text(this.lineBreakStrategyText)
           .id('textLineBreakStrategy')
+          .key('textLineBreakStrategy')
         Button('show strategyStatus')
           .id('btnlineBreakStrategy')
           .onClick(() => {

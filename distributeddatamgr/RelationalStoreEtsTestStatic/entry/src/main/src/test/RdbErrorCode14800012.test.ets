@@ -1,29 +1,16 @@
-import {
-  describe,
-  it,
-  expect,
-  TestType,
-  Size,
-  Level,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll
-} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
-import relationalStore from '@ohos.data.relationalStore'
+'use static';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
+import dataRdb from '@ohos.data.relationalStore';
+import relationalStore from '@ohos.data.relationalStore';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import dsPredicates from '@ohos.data.dataSharePredicates'
+import dsPredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import relationalStore from '@ohos.data.relationalStore';
-import dataRdb from '@ohos.data.relationalStore';
 import fs from '@ohos.file.fs';
-
 let num = 'a'.repeat(1024 * 1024 * 2);
 const valueBucket2m: relationalStore.ValuesBucket = {
   'name': num,
@@ -127,7 +114,12 @@ export default function RdbErrorCode14800012() {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll begin');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       dbPath = context!.databaseDir + "/rdb/" + dbName;

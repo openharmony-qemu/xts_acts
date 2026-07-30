@@ -15,56 +15,22 @@
  */
 
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  TestType,
-  Size
-} from "../../../../hypium/index"
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AnimationStatus, FillMode } from '@ohos.arkui.component';
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -288,7 +254,7 @@ it('imageAniamtorJsunit_static_0700', Level.LEVEL1, async (done: () => void): Pr
       // test the image event start and Finish
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('start'));
+      let btn = await driver.findComponent(ON.id('imageAnimator' + '_start'));
       await CommonFunc.sleep(1000);
       expect(btn != null).assertTrue();
       await (btn?.click() as Promise<void>);
@@ -327,7 +293,7 @@ it('imageAniamtorJsunit_static_0800', Level.LEVEL1, async (done: () => void): Pr
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let btn2 = await driver.findComponent(ON.id('start'));
+      let btn2 = await driver.findComponent(ON.id('imageAnimator' + '_start'));
       expect(btn2 != null).assertTrue();
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -336,7 +302,7 @@ it('imageAniamtorJsunit_static_0800', Level.LEVEL1, async (done: () => void): Pr
       console.info('imageAnimatorJsunit_0800 component obj is: ' + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onRepeat');
 
-      let btn3 = await driver.findComponent(ON.id('pause'));
+      let btn3 = await driver.findComponent(ON.id('imageAnimator' + '_pause'));
       expect(btn3 != null).assertTrue();
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

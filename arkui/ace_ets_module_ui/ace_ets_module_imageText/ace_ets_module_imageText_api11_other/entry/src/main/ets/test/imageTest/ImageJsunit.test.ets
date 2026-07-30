@@ -64,7 +64,7 @@ export default function imageJsunit() {
      */
     it('testGetImageAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr1 START');
-      let strJson = getInspectorByKey('image1');
+      let strJson = getInspectorByKey('Image' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.log("image1 matchTextDirection" + JSON.stringify(obj.$attrs.matchTextDirection));
@@ -99,7 +99,7 @@ export default function imageJsunit() {
      */
     it('testGetImageAttr020', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr2 START');
-      let strJson = getInspectorByKey('image2');
+      let strJson = getInspectorByKey('Image' + '_image2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.log("image2 objectFit" + JSON.stringify(obj.$attrs.objectFit));

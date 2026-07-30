@@ -64,7 +64,7 @@ struct List_itemOnSelect {
       Button("Click2").fontSize(50)
         .onClick((e: ClickEvent) => {
           console.info("Click2" + JSON.stringify(inspector.sendEventByKey("Del", 10, "")));
-        }).key("Click2")
+        }).key("list_item_Click2")
       List({ space: 10 }) {
         ListItem() {
           Text("Hello world") {
@@ -76,7 +76,7 @@ struct List_itemOnSelect {
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
         }
-        .key("ListItem")
+        .key("list_item_ListItem")
         .selectable(false)
         // .editable(true)
         .swipeAction({ end: this.itemEnd })

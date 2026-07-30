@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2024 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,12 @@ export default function ActsZlibInterfaceTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.actszlibinterfacetest.test.static");
+      let cmd = "aa start -a EntryAbility -b com.actszlibinterfacetest.test.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
       let dirAll = AppStorage.get<string>("dir");
       if(dirAll) {
@@ -64,7 +70,7 @@ export default function ActsZlibInterfaceTest() {
         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
       };
       try {
-        zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
+        zlib.compressFile(inFile33, outFile35, options).then((): void => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
             zlib.getOriginalSize(outFile35).then((data: long): void => {

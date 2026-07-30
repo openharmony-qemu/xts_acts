@@ -43,11 +43,11 @@
     "MainAbility/pages/promptAction/showDialogTest",
     "MainAbility/pages/promptAction/showToast",
     "MainAbility/pages/promptAction/updateCustomDialog",
-    "MainAbility/pages/UIContext/closeBindSheet",
+
     "MainAbility/pages/UIContext/closeCustomDialog",
-    "MainAbility/pages/UIContext/openBindSheet",
+
     "MainAbility/pages/UIContext/openCustomDialog",
-    "MainAbility/pages/UIContext/updateBindSheet",
+
     "MainAbility/pages/UIContext/updateCustomDialog"
   ]
 }

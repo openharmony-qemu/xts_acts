@@ -60,20 +60,18 @@ export default function Grid_Col_Order_Number() {
                     name: 'addOrder', value: -1
                 });
     
-
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
-
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_0100] END');
       done();
@@ -94,23 +92,18 @@ export default function Grid_Col_Order_Number() {
                     name: 'addOrder', value: 0
                 });
 
-
-      
-   
-
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
-
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_0200] END');
       done();
@@ -131,21 +124,18 @@ export default function Grid_Col_Order_Number() {
                     name: 'addOrder', value: 2
                 });
 
-      
-
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
-
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Grid_Col_Order_Number_01.top - Grid_Col_Order_Number_04.bottom) - vp2px(10)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_04.top - Grid_Col_Order_Number_03.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Order_Number_01.top - Grid_Col_Order_Number_04.bottom) - vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Number_TEST_0300] END');
       done();

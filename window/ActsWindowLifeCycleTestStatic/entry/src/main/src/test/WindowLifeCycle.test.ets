@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,6 +35,7 @@ import { Permissions }  from 'permissions';
 import { Driver,ON,Component, Point } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import deviceInfo from '@ohos.deviceInfo';
+import { canIUse } from '@internal.full.global';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -116,6 +118,7 @@ export default function WindowLifeCycleTest() {
         //let isAutoWindow: string = '';
         let isPCStatus: string = '';
         let isFreeWindowMode:boolean = false;
+        let canIUseRes: boolean = false;
         let windowclassArr:Array<window.Window>;
         let deviceType: string = deviceInfo.deviceType;
         console.info(`deviceType: ${deviceType}`);
@@ -157,6 +160,8 @@ export default function WindowLifeCycleTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             await getPermision();
             hilog.info(domain, tag, 'jsUnittest clickButtonDriver before');
             await Utils.msSleep(500);
@@ -3985,9 +3990,11 @@ export default function WindowLifeCycleTest() {
                     await windowClass2.destroyWindow();
                     hilog.info(0x0000, '[ANI]', msgStr + ' windowClass2 destroyWindow success ');
                     await Utils.msSleep(500);
-                    await windowClass.minimize();
-                    hilog.info(0x0000, '[ANI]', msgStr + ' windowClass minimize success ');
-                    await Utils.msSleep(500);
+                    if (canIUseRes) {
+                       await windowClass.minimize();
+                       hilog.info(0x0000, '[ANI]', msgStr + ' windowClass minimize success ');
+                       await Utils.msSleep(500);
+                    }
                     await windowClass.destroyWindow();
                     hilog.info(0x0000, '[ANI]', msgStr + ' windowClass destroyWindow success ');
                     await Utils.msSleep(500);
@@ -3997,7 +4004,12 @@ export default function WindowLifeCycleTest() {
                     expect(windowEventChangeArray[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
                     expect(windowEventChangeArray[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
                     expect(windowEventChangeArray[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
-                    expect(windowEventChangeArray[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+                    if (canIUseRes) {
+                       expect(windowEventChangeArray[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
+                       expect(windowEventChangeArray[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+                    } else {
+                       expect(windowEventChangeArray[5]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+                    }
                     done();
                 } catch (exception) {
                     exception = exception as BusinessError;
@@ -4257,7 +4269,7 @@ export default function WindowLifeCycleTest() {
                             msgStr + 'windowStageLifecycleEventChangeArray:' + JSON.stringify(windowStageLifecycleEventChangeArray));
                     };
                 windowStage!.onWindowStageLifecycleEvent(onWindowStageLifecycleEventCallBack);
-                if (isPCStatus != '') {
+                if (deviceType === '2in1') {
                     let mainWin: window.Window = windowStage!.getMainWindowSync();
                     await mainWin.minimize();
                     await Utils.msSleep(1000);
@@ -4269,7 +4281,7 @@ export default function WindowLifeCycleTest() {
                     await terminateAbility(caseName);
                     await Utils.msSleep(1000);
                 }
-                if (isPCStatus != '' || !isFreeWindowMode) {
+                if ((deviceType === '2in1' || !isFreeWindowMode) && canIUseRes) {
                     expect(windowStageLifecycleEventChangeArray.length).assertEqual(4);
                     expect(windowStageLifecycleEventChangeArray[0]).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
                     expect(windowStageLifecycleEventChangeArray[1]).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
@@ -4846,7 +4858,7 @@ export default function WindowLifeCycleTest() {
               expect(text2 === null).assertTrue();
               await terminateAbility(caseName);
               done();
-            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+            }).catch(async (err: Error): Promise<void> => {
               console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
               await terminateAbility(caseName);
               expect(false).assertTrue();
@@ -4859,7 +4871,7 @@ export default function WindowLifeCycleTest() {
               expect(count === 1).assertTrue();
               await terminateAbility(caseName);
               done();
-            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+            }).catch(async (err: Error): Promise<void> => {
               console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
               await terminateAbility(caseName);
               expect(false).assertTrue();
@@ -4874,6 +4886,41 @@ export default function WindowLifeCycleTest() {
           done();
         }
       });
+    
+   /**
+   * @tc.number SUB_WINDOW_CreateSubWindowCallbackErrCode_static_0100
+   * @tc.name SUB_WINDOW_CreateSubWindowCallbackErrCode_static_0100
+   * @tc.desc SUB_WINDOW_CreateSubWindowCallbackErrCode_static_0100
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 3
+   */
+  it('SUB_WINDOW_CreateSubWindowCallbackErrCode_static_0100', Level.LEVEL3,
+    async (done: () => void): Promise<void> =>  {
+      let caseName: string = "SUB_WINDOW_CreateSubWindowCallbackErrCode_static_0100";
+      let msgStr: string = 'jsunittest ' + caseName + ' ';
+      hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+      try {
+        windowStage!.createSubWindow('', (err: BusinessError | null, data: window.Window | undefined): void => {
+          const errCode: number = err!.code;
+          if (errCode) {
+            hilog.error(0x0000, '[ANI]',
+              msgStr + `Failed to createSubWindow. Cause code: ${err!.code}, message: ${err!.message}`);
+            expect(errCode).assertEqual(1300002);
+            done();
+          } else {
+            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling createSubWindow');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (exception) {
+        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+        expect(false).assertTrue();
+        done()
+      }
+    })
+    
     })
 
 }

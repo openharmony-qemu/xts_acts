@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -110,7 +111,8 @@ let playParameters: PlayParameters = {
   loop: 0,
   leftVolume: 0.2,
   rightVolume: 0.8,
-  priority: 0
+  priority: 0,
+  pitch: 2
 }
 function expectFalse() {
   try {
@@ -2605,6 +2607,56 @@ export default function soundPoolTest() {
           }
         }).catch((error: Error) => {
           console.info(`${TAG}: play(soundID, params) with params.parallelPlayFlag fail, error: [${JSON.stringify(error)}]`);
+          expectFalse();
+        })
+        if (streamId_ != -1) {
+          await sleep(5000);
+          await soundPool!!.stop(streamId_);
+        }
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+        }
+        soundPool!!.onError((error: BusinessError) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        } as ErrorCallback<BusinessError>)
+        soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
+        await sleep(2000);
+        let streamId_ = -1;
+        await soundPool!!.play(soundId, {
+          pitch: 5
+        }).then((streamId: int) => {
+          if (streamId > 0) {
+            console.info(`${TAG}: play(soundID, params) with params.pitch success, streamId: ${streamId}`);
+            streamId_ = Double.toInt(streamId);
+            expect(streamId_ > 0).assertTrue();
+          } else {
+            console.info(`${TAG}: play(soundID, params) with params.pitch fail! streamId: ${streamId}`);
+            expectFalse();
+          }
+        }).catch((error: Error) => {
+          console.info(`${TAG}: play(soundID, params) with params.pitch fail, error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
         if (streamId_ != -1) {

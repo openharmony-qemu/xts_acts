@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -110,7 +111,7 @@ import IndexedCollections19Test from "./TypeArray2/IndexedCollections19.test";
 import IndexedCollections20Test from "./TypeArray2/IndexedCollections20.test";
 
 
-export default function testsuite() {
+export default function testsuite(): void {
 
   ArrayConstructor1Test();
   ArrayConstructor2Test();

@@ -13,51 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Builder,
-  NavPathStack,
-  FontWeight,
-  Navigation,
-  NavDestination,
-  NavigationMode,
-  ButtonType,
-  Color,
-  DatePicker
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  Observed,
-  Environment
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, NavPathStack, FontWeight, Navigation, NavDestination, NavigationMode, ButtonType, Color, DatePicker } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, LocalStorageLink, Environment, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from "@ohos.hilog";
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
-
 AppStorage.clear()
 export enum KFC21{D = 1,H,Y}
 Environment.envProps([
@@ -79,25 +39,25 @@ struct StoragePropRef21 {
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')
-        .key("button1")
+        .key("StorageProp21_button1")
         .onClick((e: ClickEvent) => {
           this.stringCode = 'cd';
         })
 
       Button(`button2: ${this.numberCode}`).width("100%").height('5%')
-        .key("button2")
+        .key("StorageProp21_button2")
         .onClick((e: ClickEvent) => {
           this.numberCode = 3
         })
 
       Button(`button3: ${this.booleanCode}`).width("100%").height('5%')
-        .key("button3")
+        .key("StorageProp21_button3")
         .onClick((e: ClickEvent) => {
           this.booleanCode = false
         })
 
       Button(`button4: ${this.enumCode}`).width("100%").height('5%')
-        .key("button4")
+        .key("StorageProp21_button4")
         .onClick((e: ClickEvent) => {
           this.enumCode = KFC21.Y
         })

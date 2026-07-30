@@ -54,7 +54,7 @@ struct PlacementExample {
   build() {
     Flex({ direction: FlexDirection.Column }) {
       Button('custom popup')
-        .key('button')
+        .key('placement_button')
         .onClick((e: ClickEvent) => {
           this.customPopup = !this.customPopup
           try{

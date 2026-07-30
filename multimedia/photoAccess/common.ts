@@ -32,6 +32,7 @@ const DEFAULT_SLEEP_TIME = 10;
 
 const context = globalThis.abilityContext;
 const pathDir = context.filesDir;
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
 
 let validImageExt = ['.jpg']
 let validVideoExt = ['.mp4']
@@ -251,7 +252,11 @@ export function checkSystemAlbum(expect, testNum, album, expectedSubType) : void
 }
 
 export async function startAbility(bundleName: string, abilityName: string) : Promise<void> {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd1 = `aa start -b ${bundleName} -a ${abilityName}`;
+  if(user !== undefined){
+      cmd1 += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd1).then(result => {
     console.info(`[picker] start abilityFinished: ${result}`);
   }).catch(err => {
     console.error(`[picker] start abilityFailed: ${err}`);

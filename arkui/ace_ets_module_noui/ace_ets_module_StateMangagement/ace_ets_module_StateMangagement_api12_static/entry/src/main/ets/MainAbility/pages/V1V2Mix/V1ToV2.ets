@@ -14,27 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2,TabsController,Tabs,Builder,ResourceColor
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  StorageLink,Consume,PropRef,Provide,StoragePropRef,Param,Event,PropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2, TabsController, Tabs, Builder, ResourceColor } from '@ohos.arkui.component';
+import { State, Watch, Link, StorageLink, Consume, PropRef, Provide, StoragePropRef, Param, Event } from '@ohos.arkui.stateManagement';
 export enum MemberType {
   first = 1,
   second = 2
@@ -117,7 +98,7 @@ struct V1ToV2ComponentCorrect_TestV2Child {
       Text(JSON.stringify(this.consumeNullValue)).key('consume_null_value')
       Text(`${this.storageLinkUndefinedValue}`).key('storage_link_undefined_value')
       Text(this.storagePropStringValue).key('storage_prop_string_value')
-      Text(`${this.funcValue2()}`).key('func_value2')
+      Text(`${this.funcValue2()}`).key('V1ToV2_func_value2')
       Text(`${this.linkBooleanValue}`).key('link_boolean_value')
 
 

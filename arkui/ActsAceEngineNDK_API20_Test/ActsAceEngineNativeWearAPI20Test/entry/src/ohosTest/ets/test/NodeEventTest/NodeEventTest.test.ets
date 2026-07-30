@@ -28,6 +28,7 @@ export default function NodeEventTest() {
   describe('NodeEventTest', () => {
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`NodeEventTest/NodeEventTest`, done);
+      await Utils.sleep(2000);
     });
     /**
      * @tc.name   testOHArkUINodeEventGetNumberValue0100

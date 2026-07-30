@@ -39,6 +39,11 @@ export default function windowNdk() {
     let context: common.UIAbilityContext;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let systemUiVisible:string = '';
+    let isStatusBarVisible : boolean = false;
+    let isNavigationVisible  : boolean = false;
+    let isTypeFloatNavigationVisible : boolean = false;
+    let isNavigationIndicatorVisible : boolean = false;
     let isFreeWindowMode = false;
     const WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801;
     let deviceType: string = deviceInfo.deviceType;
@@ -74,6 +79,19 @@ export default function windowNdk() {
       } catch (err) {
         console.error('findComponent allowed failed: ' + JSON.stringify(err));
       }
+      let promise = WindowClass.getWindowStateSnapshot();
+      promise.then((data)=>{
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}, systemUiVisible=${jsonObj["systemUiVisible"]}`);
+        systemUiVisible = jsonObj["systemUiVisible"];
+        isStatusBarVisible = systemUiVisible[0] === '1';
+        isNavigationVisible = systemUiVisible[1] === '1';
+        isTypeFloatNavigationVisible = systemUiVisible[2] === '1';
+        isNavigationIndicatorVisible = systemUiVisible[3] === '1';
+        console.info(`beforeAll: systemUiVisible=${systemUiVisible}`);
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
     })
     beforeEach(() => {
       console.log(`${Tag}:beforeEach start... `);
@@ -136,6 +154,27 @@ export default function windowNdk() {
         done();
       }
 
+    })
+
+    /**
+     * @tc.name   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0201
+     * @tc.desc   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002";
+      let result = windowNdkTest.unFilterKeyCode(-1);
+      console.info(`${caseName}: unFilterKeyCode result: ${result}`);
+      if (result == 1000 || result == 2000) {
+        console.info(`${caseName}: unFilterKeyCode success`);
+        done();
+      } else {
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -432,13 +471,13 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
+        expect(flag).assertEqual(true)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(true)
+        expect(flag).assertEqual(false)
         done()
       }
     })
@@ -453,6 +492,7 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -463,15 +503,15 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
-        WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
-        done()
-      }else{
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
         expect(flag).assertEqual(true)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
         done()
       }
     })
@@ -486,6 +526,7 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -496,15 +537,15 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
+        expect(flag).assertEqual(true)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        windowNdkTest.setWindowStatusBarEnabled(windowId, true ,true);
-        await sleep(500)
-        expect(flag).assertEqual(true)
+        expect(flag).assertEqual(false)
         done()
       }
     })
@@ -1056,6 +1097,22 @@ export default function windowNdk() {
       let result = windowNdkTest.setBackgroundColor(-1, '#FF00FF00');
       console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
       expect(result).assertEqual(1300002);
+      done();
+    })
+
+    /**
+     * @tc.name   test_setBackgroundColor_empty
+     * @tc.number SUB_WINDOW_SETWINDOWBACKGROUNDCOLOR_FUNCTION_1000
+     * @tc.desc   test_setBackgroundColor_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setBackgroundColor_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_setBackgroundColor_empty";
+      let result = windowNdkTest.setBackgroundColor(windowId, '');
+      console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
+      expect(result).assertEqual(401);
       done();
     })
 
@@ -2150,11 +2207,11 @@ export default function windowNdk() {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`${caseName} windowId: ${windowId}`);
-          let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(0);
-
+          
           if (isSupport === true){
+            let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${Result}`);
+            expect(Result).assertEqual(0);
             windowStage.setCustomDensity(2.0,true);
             await sleep(500);
             let CB_count = windowNdkTest.getFrameMetricsCBCount();
@@ -2172,12 +2229,12 @@ export default function windowNdk() {
 
             await sleep(500);
             windowStage.setCustomDensity(-1.0);
+            let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${ResultOff}`);
+            expect(ResultOff).assertEqual(0);
           }
-          
-          let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${ResultOff}`);
-          expect(ResultOff).assertEqual(0);
           done()
+          
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
           expect(false).assertTrue();
@@ -2204,13 +2261,13 @@ export default function windowNdk() {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`${caseName} windowId: ${windowId}`);
-          let ResultOn: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
-          await sleep(500);
-          let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${ResultOff}`);
-          expect(ResultOff).assertEqual(0);
           
           if (isSupport === true){
+            let ResultOn: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+            await sleep(500);
+            let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${ResultOff}`);
+            expect(ResultOff).assertEqual(0);
             windowStage.setCustomDensity(2.0,true);
             await sleep(500);
             let CB_count = windowNdkTest.getFrameMetricsCBCount();
@@ -2440,11 +2497,18 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsIsFirstDrawFrameOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} isFirstDrawFrame: ${okResult.isFirstDrawFrame}`);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsIsFirstDrawFrameOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} isFirstDrawFrame: ${okResult.isFirstDrawFrame}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+          }
           
-          expect(okResult.resultCode).assertEqual(0);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2466,12 +2530,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetInputHandlingDurationOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} duration: ${okResult.duration}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.duration).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetInputHandlingDurationOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} duration: ${okResult.duration}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.duration).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2493,12 +2564,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} duration: ${okResult.duration}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.duration).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} duration: ${okResult.duration}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.duration).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2520,12 +2598,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetVsyncTimestampOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} timestamp: ${okResult.timestamp}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.timestamp).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetVsyncTimestampOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} timestamp: ${okResult.timestamp}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.timestamp).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));

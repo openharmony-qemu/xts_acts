@@ -886,3 +886,316 @@ napi_value OHDrawingReleaseArrayBuffer0700(napi_env env, napi_callback_info info
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
+
+/**
+ * @tc.name   testOHDrawingSetTypographyAttributeBool0100
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0100
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyAttributeBool0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    bool getValue = BOOL_FALSE_VALUE;
+    errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == BOOL_TRUE_VALUE);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyAttributeBool0200
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0200
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with nullptr typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyAttributeBool0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(nullptr,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyAttributeBool0100
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0100
+ * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with nullptr typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyAttributeBool0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool getValue = BOOL_FALSE_VALUE;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(nullptr,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyAttributeBool0200
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0200
+ * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with nullptr value out param
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyAttributeBool0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, nullptr);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyAttributeBool0300
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0300
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with invalid attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyAttributeBool0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
+        static_cast<OH_Drawing_TypographyAttributeId>(INVALID_ATTR_ID), BOOL_TRUE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyAttributeBool0300
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0300
+ * @tc.desc   test OH_Drawing_GetTypographyAttributeBool with invalid attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyAttributeBool0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    bool getValue = BOOL_FALSE_VALUE;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        static_cast<OH_Drawing_TypographyAttributeId>(INVALID_ATTR_ID), &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyAttributeBool0400
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0400
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with bool false value
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyAttributeBool0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    bool getValue = BOOL_TRUE_VALUE;
+    errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyAttributeBool0400
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyAttributeBool_0400
+ * @tc.desc   test OH_Drawing_GetTypographyAttributeBool default value is false
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyAttributeBool0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    bool getValue = BOOL_TRUE_VALUE;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyAttributeBool0500
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0500
+ * @tc.desc   test OH_Drawing_SetTypographyAttributeBool set true then set false
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyAttributeBool0500(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
+    NAPI_ASSERT(env, fontCollection != nullptr, "fontCollection is nullptr");
+    OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr");
+    OH_Drawing_TypographyCreate *handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
+    NAPI_ASSERT(env, handler != nullptr, "handler is nullptr");
+    OH_Drawing_TypographyHandlerAddText(handler, "test");
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    NAPI_ASSERT(env, typography != nullptr, "typography is nullptr");
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_TRUE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    bool getValue = BOOL_FALSE_VALUE;
+    errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == BOOL_TRUE_VALUE);
+
+    errorCode = OH_Drawing_SetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, BOOL_FALSE_VALUE);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    getValue = BOOL_TRUE_VALUE;
+    errorCode = OH_Drawing_GetTypographyAttributeBool(typography,
+        TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT, &getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == BOOL_FALSE_VALUE);
+
+    OH_Drawing_DestroyTypography(typography);
+    typography = nullptr;
+    OH_Drawing_DestroyTypographyHandler(handler);
+    handler = nullptr;
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}

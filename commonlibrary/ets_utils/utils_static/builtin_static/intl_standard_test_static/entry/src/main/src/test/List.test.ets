@@ -1,5 +1,6 @@
+'use static';
 
 import etsIntlFunTest from "./Intl.test.ets"
-export default function testsuite() {
+export default function testsuite(): void {
   etsIntlFunTest();
 }

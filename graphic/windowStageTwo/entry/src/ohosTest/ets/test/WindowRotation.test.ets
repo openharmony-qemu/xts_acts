@@ -260,6 +260,7 @@ export default function windowRotationTest() {
     it('test_RotationChange_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0500';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      let count = 0;
       console.log(msgStr + 'begin');
       if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0500');
@@ -283,6 +284,7 @@ export default function windowRotationTest() {
                 height: 0,
               }
             };
+            count ++ ;
             console.log(`${caseName} :rotationCallback rotationInfo: ${JSON.stringify(rotationInfo)}`);
             if (rotationInfo.type === window.RotationChangeType.WINDOW_WILL_ROTATE) {
               rotationResult.rectType = window.RectType.RELATIVE_TO_SCREEN;
@@ -346,6 +348,8 @@ export default function windowRotationTest() {
           expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minWidth);
           expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minHeight);
           subWindowClass.off('rotationChange', rotationCallback);
+          console.log(`${msgStr} + 'count' : ${count}`);
+          expect(count).assertEqual(2);
           await subWindowClass.destroyWindow();
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
           done();
@@ -2272,7 +2276,7 @@ export default function windowRotationTest() {
         } catch (err) {
           console.error(`${caseName} Failed to create or destroy window. Cause code:${err.code}, message: ${err.message}`);
 
-          if (!canIUse) {
+          if (!canIUseRes) {
             expect(err.code).assertEqual(801);
             done();
           } else {
@@ -2287,6 +2291,38 @@ export default function windowRotationTest() {
 
       
     });
+
+
+
+/**
+ * @tc.name   testExecutionResult_enum
+ * @tc.number SUB_BASIC_WMS_testExecutionResult_enum_0100
+ * @tc.desc   枚举调用覆盖
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testExecutionResult_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName: string = 'testExecutionResult_enum';
+  let msgStr: string = 'jsUnittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+
+  let mainWin: window.Window = windowStage.getMainWindowSync();
+  console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+  try {
+    expect(!!mainWin).assertTrue();
+    expect(window.OrientationExecutionResult.ORIENTATION_APPLIED).assertEqual(0);
+    expect(window.OrientationExecutionResult.ORIENTATION_IGNORED).assertEqual(1);
+    expect(window.OrientationExecutionResult.ORIENTATION_PENDING).assertEqual(2);
+    done();
+  } catch(exception) {
+    console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+    expect().assertFail()
+    done()
+  }
+});
+
+
 
 
   })

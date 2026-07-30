@@ -1,3 +1,4 @@
+'use static';
 
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
@@ -15,6 +16,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index'
 import { buffer, HashMap,util } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface MapPropertyTestObject {
   map: Map<string, string>;
@@ -37,20 +39,12 @@ interface RegExpPropertyTestObject {
   flags: RegExp;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function HashMapTest05Test(): void {
   describe('hashMapTest05Test', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

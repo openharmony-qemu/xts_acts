@@ -122,9 +122,7 @@ static napi_value NULL_CHECK(napi_env env, napi_callback_info info)
             Acts::AudioDecoder::NULL_CHECK_022, Acts::AudioDecoder::NULL_CHECK_023, Acts::AudioDecoder::NULL_CHECK_024,
             Acts::AudioDecoder::NULL_CHECK_025, Acts::AudioDecoder::NULL_CHECK_026, Acts::AudioDecoder::NULL_CHECK_027,
             Acts::AudioDecoder::NULL_CHECK_028, Acts::AudioDecoder::NULL_CHECK_029, Acts::AudioDecoder::NULL_CHECK_030,
-            Acts::AudioDecoder::NULL_CHECK_031, Acts::AudioDecoder::NULL_CHECK_032, Acts::AudioDecoder::NULL_CHECK_033,
-            Acts::AudioDecoder::NULL_CHECK_034, Acts::AudioDecoder::NULL_CHECK_035, Acts::AudioDecoder::NULL_CHECK_036,
-            Acts::AudioDecoder::NULL_CHECK_037, Acts::AudioDecoder::NULL_CHECK_038, Acts::AudioDecoder::NULL_CHECK_039,
+            Acts::AudioDecoder::NULL_CHECK_031,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

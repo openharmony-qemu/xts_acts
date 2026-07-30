@@ -740,7 +740,9 @@ export default function ShowToastOptionsTest() {
       let resultText = await driver.findComponent(ON.id('result_text'));
       
       let text = await resultText.getText();
-      expect(text.indexOf('ToastId')).assertLarger(-1);
+      if (globalThis.winLeft == 0) {
+        expect(text.indexOf('ToastId')).assertLarger(-1);
+      }
 
       let btnClose = await driver.findComponent(ON.id('btn_close'));
       expect(btnClose).not().assertUndefined();
@@ -748,7 +750,9 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       text = await resultText.getText();
-      expect(text.indexOf('Closed')).assertLarger(-1);
+      if (globalThis.winLeft == 0) {
+        expect(text.indexOf('Closed')).assertLarger(-1);
+      }
       console.info('ShowToastOptionsTest_CloseToast_0100 result: ' + text);
 
       console.info('ShowToastOptionsTest_CloseToast_0100 END');

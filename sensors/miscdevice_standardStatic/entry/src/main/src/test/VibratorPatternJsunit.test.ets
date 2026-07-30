@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,7 @@ export default function VibratorJsTest_misc_9() {
     let INVALID_EFFECT_ID = "haptic.xxx.yyy";
     let effectit = vibrator.EffectId.EFFECT_CLOCK_TIMER
 
-    beforeAll((done: () => void): Promise<void> =>{
+    beforeAll((done: () => void): void =>{
       hilog.info(domain, tag, 'beforeAll called');
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 Device type ' + deviceInfo.deviceType);
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 isAvailable ' + isAvailable);

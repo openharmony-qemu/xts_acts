@@ -1158,7 +1158,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         }
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertNull();
+        expect(null).assertFail();
       }
       done();
     });

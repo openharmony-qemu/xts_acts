@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
-import { RecordData } from '@ohos.base';
+import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -84,7 +83,7 @@ export default function datePickerJsunit() {
      */
 it('datePickerTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerText_0100 START');
-      let strJson = inspector.getInspectorByKey('datePicker');
+      let strJson = inspector.getInspectorByKey('datePickerneww' + '_datePicker');
       console.info("datePickerText_0100 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("datePickerText_0100 component obj is: " + JSON.stringify(obj));
@@ -132,7 +131,7 @@ it('datePickerTest_static_0300', Level.LEVEL1, async (done: () => void): Promise
       } catch (err) {
         console.info("datePickerTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("datePickerTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('datePicker',10,"")));
+      console.info("datePickerTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('datePickerneww' + '_datePicker',10,"")));
       await Utils.sleep(2000);
       console.info('datePickerTest_0300 END');
       done();

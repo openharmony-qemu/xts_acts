@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -17,12 +18,11 @@ import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview';
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import deviceInfo from '@ohos.deviceInfo';
 import { canIUse } from '@internal.full.global'
 import { BusinessError } from '@ohos.base'
-import {OnNativeEmbedVisibilityChangeCallback,NativeEmbedDataInfo,Edges,Position ,TextInput,NativeEmbedDataInfo,OnNativeEmbedVisibilityChangeCallback,NativeEmbedTouchInfo,wrapBuilder} from "@ohos.arkui.component"
+import {OnNativeEmbedVisibilityChangeCallback,Edges,Position,NativeEmbedTouchInfo,wrapBuilder} from "@ohos.arkui.component"
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
@@ -33,9 +33,9 @@ import { CustomBuilderT ,ForEach,NodeContainer,NativeEmbedVisibilityInfo,SslErro
 import { UIContext } from '@ohos.arkui.UIContext';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
-import { wrapBuilder,Text,TouchType} from "@ohos.arkui.component"
+import { Text,TouchType} from "@ohos.arkui.component"
 import image from '@ohos.multimedia.image';
 import { JsProxyObject } from '../../src/test/Interfaces';
 import emitter from '@ohos.events.emitter';

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -163,6 +164,12 @@ export default class Commmon {
   resourceName() {
     let timestamp = Date.now();
     let filename = `avRecorder_${timestamp}.m4a`;
+    return filename;
+  }
+
+  resourceNameAac() {
+    let timestamp = Date.now();
+    let filename = `avRecorder_${timestamp}.aac`;
     return filename;
   }
 
@@ -2767,6 +2774,269 @@ export default class Commmon {
       console.error('avRecorder is undefined');
       done();
       return false;
+    }
+  }
+
+  async avRecorderSetMetadataInIdleStateTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        let meta : Record<string, string> = {
+          'com.openharmony.deferredvideoenhanceflag':'10',
+          'com.openharmony.videoId':'20'
+        };
+        try {
+          avRecorder!.setMetadata(meta);
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(5400102);
+        }
+        await this.preparePromise(avRecorder, avConfig);
+        await this.startPromise(avRecorder, recorderTime);
+        await this.pausePromise(avRecorder);
+        await this.resumePromise(avRecorder);
+        await this.stopPromise(avRecorder);
+        await avRecorder!.reset().then(() => {
+          console.info('reset avRecorderSetMetadataInIdleStateTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataInIdleStateTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataInIdleStateTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
+  }
+
+  async avRecorderSetMetadataOversizedValueTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        let largeValue = 'a'.repeat(257);
+        let meta : Record<string, string> = {
+          'com.openharmony.deferredvideoenhanceflag':largeValue,
+        };
+        try {
+          avRecorder!.setMetadata(meta);
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(5400108);
+        }
+        await this.startPromise(avRecorder, recorderTime);
+        await this.pausePromise(avRecorder);
+        await this.resumePromise(avRecorder);
+        await this.stopPromise(avRecorder);
+        await avRecorder!.reset().then(() => {
+          console.info('reset avRecorderSetMetadataOversizedValueTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataOversizedValueTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
+  }
+
+  async handleWaterMark(avRecorder: media.AVRecorder) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect(watermarkCount).assertEqual(1);
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect().assertFail();
+    }
+  }
+
+  async handleWaterMarkErrorState(avRecorder: media.AVRecorder) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(5400102);
+    }
+  }
+
+  async handleWaterMarkOutRange(avRecorder: media.AVRecorder) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+      // 循环调用 addWatermark 6次
+      for (let i = 0; i < 6; i++) {
+        const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
+        console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
+        expect(watermarkCount).assertEqual(i + 1);
+      } 
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(5400108);
+    }
+  }
+
+  async avRecorderAddWatermarkTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
+    let result = false;
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMark(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
+  }
+
+  async avRecorderAddWatermarkTestErrorState(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
+    let result = false;
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        await this.handleWaterMarkErrorState(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
+  }
+
+  async avRecorderAddWatermarkTestOutRange(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
+    let result = false;
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMarkOutRange(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
     }
   }
 

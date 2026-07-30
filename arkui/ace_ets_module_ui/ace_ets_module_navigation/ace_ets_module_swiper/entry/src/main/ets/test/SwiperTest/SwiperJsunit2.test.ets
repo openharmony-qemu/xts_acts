@@ -90,7 +90,7 @@ export default function swiperJsunit2() {
     it('swiperTest001', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ Swiper TestCase 1 START ++++++++++++++++');
       await sleep(1)
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('Swiper2' + '_swiper');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.$type))

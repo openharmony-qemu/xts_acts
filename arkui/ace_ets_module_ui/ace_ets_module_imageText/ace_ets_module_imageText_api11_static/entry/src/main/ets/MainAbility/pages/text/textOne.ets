@@ -96,7 +96,7 @@ struct TextExample1 {
         .border({ width: 1 })
         .padding(10)
         .width('100%')
-        .key('text1')
+        .key('textOne_text1')
       Text('TextAlign set to Start.')
         .textAlign(TextAlign.Start)
         .fontSize(12)
@@ -116,7 +116,7 @@ struct TextExample1 {
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
-        .width('100%').key('text2')
+        .width('100%').key('textOne_text2')
       Text('This is the text content with textAlign set to Start.')
         .textAlign(TextAlign.Start)
         .fontSize(12)
@@ -157,7 +157,7 @@ struct TextExample1 {
         .fontSize(12).border({ width: 1 }).padding(10)
       Text('This is the text with the line height set. This is the text with the line height set.')
         .fontSize(12).border({ width: 1 }).padding(10)
-        .lineHeight(this.lineHeight).key('text5')
+        .lineHeight(this.lineHeight).key('textOne_text5')
     }.height(600).width(350).padding({ left: 35, right: 35, top: 35 } as Padding)
   }
 }

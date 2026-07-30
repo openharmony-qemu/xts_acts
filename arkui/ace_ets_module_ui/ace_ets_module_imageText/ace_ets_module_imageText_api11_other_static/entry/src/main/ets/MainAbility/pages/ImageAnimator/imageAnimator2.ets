@@ -151,7 +151,7 @@ struct ImageAnimatorExample {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('pause').key('button1').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('pause').key('imageAnimator2_button1').width(100).padding(5).onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Paused
           try {
             let backData: events_emitter.EventData = {
@@ -170,7 +170,7 @@ struct ImageAnimatorExample {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('stop').key('button2').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('stop').key('imageAnimator2_button2').width(100).padding(5).onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Stopped
           try {
             let backData: events_emitter.EventData = {
@@ -192,7 +192,7 @@ struct ImageAnimatorExample {
       }
 
       Row() {
-        Button('reverse').key('button3').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('reverse').key('imageAnimator2_button3').width(100).padding(5).onClick((e: ClickEvent) => {
           this.reverse = !this.reverse
           try {
             let backData: events_emitter.EventData = {
@@ -210,7 +210,7 @@ struct ImageAnimatorExample {
             console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('once').key('button4').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('once').key('imageAnimator2_button4').width(100).padding(5).onClick((e: ClickEvent) => {
           this.iterations = 1
           try {
             let backData: events_emitter.EventData = {
@@ -228,7 +228,7 @@ struct ImageAnimatorExample {
             console.info("button4 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('iteration').key('button5').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('iteration').key('imageAnimator2_button5').width(100).padding(5).onClick((e: ClickEvent) => {
           this.iterations = -1
           try {
             let backData: events_emitter.EventData = {

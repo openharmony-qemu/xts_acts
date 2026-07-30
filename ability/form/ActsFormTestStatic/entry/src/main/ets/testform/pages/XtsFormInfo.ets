@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Text, Component, Button, ClickEvent, Entry } from '@ohos.arkui.component';
+import { Column, Text, Component, Button, ClickEvent, Entry } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog';
 import formInfo from '@ohos.app.form.formInfo';
 
@@ -29,29 +30,31 @@ struct XtsFormInfo {
   }
 
   build() {
-    Text('XTS FormInfo').fontSize(20)
-    Button('123').onClick((event: ClickEvent) => {
-      hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123');
-      let extraData: Record<string, object> = {
-        'abc1': '123',
-        'abc2': '123',
-        'abc3': '123',
-      }
-      let runningFormInfoFo: formInfo.RunningFormInfo = {
-        formId: 'formId',
-        bundleName: 'bundleName',
-        hostBundleName: 'hostBundleName',
-        formLocation: formInfo.FormLocation.DESKTOP,
-        visibilityType: formInfo.VisibilityType.FORM_VISIBLE,
-        moduleName: 'moduleName',
-        abilityName: 'abilityName',
-        formName: 'formName',
-        dimension: 123,
-        formUsageState: formInfo.FormUsageState.UNUSED,
-        formDescription: 'formDescription',
-        extraData: extraData,
-      }
-      hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123456');
-    })
+    Column() {
+      Text('XTS FormInfo').fontSize(20)
+      Button('123').onClick((event: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123');
+        let extraData: Record<string, object> = {
+          'abc1': '123',
+          'abc2': '123',
+          'abc3': '123',
+        }
+        let runningFormInfoFo: formInfo.RunningFormInfo = {
+          formId: 'formId',
+          bundleName: 'bundleName',
+          hostBundleName: 'hostBundleName',
+          formLocation: formInfo.FormLocation.DESKTOP,
+          visibilityType: formInfo.VisibilityType.FORM_VISIBLE,
+          moduleName: 'moduleName',
+          abilityName: 'abilityName',
+          formName: 'formName',
+          dimension: 123,
+          formUsageState: formInfo.FormUsageState.UNUSED,
+          formDescription: 'formDescription',
+          extraData: extraData,
+        }
+        hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123456');
+      })
+    }
   }
 }

@@ -13,34 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {MessageManager,Callback} from '../../common/MessageManager';
-import {
-  Entry,
-  Component,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Image,
-  SizeOptions,
-  ImageSize,
-  Position,
-  Alignment,
-  Row,
-  Padding,
-  ForEach,Grid,Flex,GridItem,WordBreak,SizeOptions,Button,ClickEvent,
-  GeometryInfo,Layoutable,ConstraintSizeOptions,Measurable,MeasureResult,SizeResult,
-  Builder,BuilderParam,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { MessageManager, Callback } from '../../common/MessageManager';
+import { Entry, Component, Column, ColumnOptions, Text, Color, Image, SizeOptions, ImageSize, Position, Alignment, Row, Padding, ForEach, Grid, Flex, GridItem, WordBreak, Button, ClickEvent, GeometryInfo, Layoutable, ConstraintSizeOptions, Measurable, MeasureResult, SizeResult, Builder, BuilderParam } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct onMeasureSize2 {

@@ -22,6 +22,14 @@ import AlertDialogTest from './AlertDialogTest/AlertDialog.test';
 import LoadingDialogTest from './LoadingDialogTest/LoadingDialog.test'; 
 import CustomContentDialogTest from './CustomContentDialogTest/CustomContentDialog.test'; 
 
+import SheetOptionsSystemMaterialTest from './SheetOptions/SheetOptionsSystemMaterialTest.test'; 
+import PopupOptionsSystemMaterialTest from './PopupOptions/PopupOptionsSystemMaterialTest.test'; 
+import CustomPopupOptionsSystemMaterialTest from './CustomPopupOptions/CustomPopupOptionsSystemMaterialTest.test'; 
+import PopupCommonOptionsColorModeSystemMaterialTest from './PopupCommonOptions/PopupCommonOptionsColorModeSystemMaterialTest.test'; 
+import PopupOptionsColorModeTest from './PopupOptions/PopupOptionsColorModeTest.test';
+import CustomPopupOptionsColorModeTest from './CustomPopupOptions/CustomPopupOptionsColorModeTest.test';
+import ContextMenuOptionsColorModeTest from './ContextMenuOptions/ContextMenuOptionsColorModeTest.test';
+
 export default function testsuite() {
   ButtonOptionsTest();
   TipsDialogTest();
@@ -30,4 +38,12 @@ export default function testsuite() {
   AlertDialogTest();
   CustomContentDialogTest();
   LoadingDialogTest();
+
+  SheetOptionsSystemMaterialTest();
+  PopupOptionsSystemMaterialTest();
+  CustomPopupOptionsSystemMaterialTest();
+  PopupCommonOptionsColorModeSystemMaterialTest();
+  PopupOptionsColorModeTest();
+  CustomPopupOptionsColorModeTest();
+  ContextMenuOptionsColorModeTest();
 }

@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
+import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -81,7 +81,7 @@ export default function checkboxJsunit() {
 it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_100] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_100 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('grayscale')).assertEqual(0);
       console.info('testCheckbox_100 END');
@@ -100,7 +100,7 @@ it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_200] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_200 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
       console.info('testCheckbox_200 END');
@@ -119,7 +119,7 @@ it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_300 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('borderRadius')));
@@ -140,7 +140,7 @@ it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_400_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
 
       console.info("testCheckbox_400 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");

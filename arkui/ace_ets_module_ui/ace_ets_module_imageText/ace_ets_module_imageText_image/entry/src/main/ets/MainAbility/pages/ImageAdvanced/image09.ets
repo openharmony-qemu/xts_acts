@@ -25,6 +25,7 @@ struct ImageAdvancedImage09 {
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
         .id('loadingResult09')
+        .key('loadingResult09')
 
       Image(this.src)
         .width(100)

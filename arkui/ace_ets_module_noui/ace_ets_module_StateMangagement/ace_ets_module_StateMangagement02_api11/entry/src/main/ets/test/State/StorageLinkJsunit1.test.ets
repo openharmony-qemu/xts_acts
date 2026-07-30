@@ -92,11 +92,11 @@ export default function StorageLinkJsunit1() {
       // Get the init value of button_son2
       console.info('[StorageLinkJsunit1_0200] START');
       let driver = await UiDriver.create()
-      let button_son2 = await driver.findComponent(BY.key('button_son2'));
+      let button_son2 = await driver.findComponent(BY.key('StorageLink1_button_son2'));
       await button_son2.click();
       await CommonFunc.sleep(2000);
 
-      let strJson2 = getInspectorByKey('button_son2');
+      let strJson2 = getInspectorByKey('StorageLink1_button_son2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[StorageLinkJsunit1_0200] son2 obj2 is: " + JSON.stringify(obj2));
       await CommonFunc.sleep(1000);
@@ -117,11 +117,11 @@ export default function StorageLinkJsunit1() {
       // Get the init value of button_son3
       console.info('[StorageLinkJsunit1_0300] START');
       let driver = await UiDriver.create()
-      let button_son3 = await driver.findComponent(BY.key('button_son3'));
+      let button_son3 = await driver.findComponent(BY.key('StorageLink1_button_son3'));
       await button_son3.click();
       await CommonFunc.sleep(2000);
 
-      let strJson3 = getInspectorByKey('button_son3');
+      let strJson3 = getInspectorByKey('StorageLink1_button_son3');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info("[StorageLinkJsunit1_0300] son3 obj3 is: " + JSON.stringify(obj3));
       await CommonFunc.sleep(1000);
@@ -142,11 +142,11 @@ export default function StorageLinkJsunit1() {
       // Get the init value of button_son4
       console.info('[StorageLinkJsunit1_0400] START');
       let driver = await UiDriver.create()
-      let button_son4 = await driver.findComponent(BY.key('button_son4'));
+      let button_son4 = await driver.findComponent(BY.key('StorageLink1_button_son4'));
       await button_son4.click();
       await CommonFunc.sleep(2000);
 
-      let strJson4 = getInspectorByKey('button_son4');
+      let strJson4 = getInspectorByKey('StorageLink1_button_son4');
       let obj4: ESObject = JSON.parse(strJson4);
       console.info("[StorageLinkJsunit1_0400] son4 obj4 is: " + JSON.stringify(obj4));
       await CommonFunc.sleep(1000);
@@ -167,11 +167,11 @@ export default function StorageLinkJsunit1() {
       // Get the init value of button_son5
       console.info('[StorageLinkJsunit1_0500] START');
       let driver = await UiDriver.create()
-      let button_son5 = await driver.findComponent(BY.key('button_son5'));
+      let button_son5 = await driver.findComponent(BY.key('StorageLink1_button_son5'));
       await button_son5.click();
       await CommonFunc.sleep(2000);
 
-      let strJson5 = getInspectorByKey('button_son5');
+      let strJson5 = getInspectorByKey('StorageLink1_button_son5');
       let obj5: ESObject = JSON.parse(strJson5);
       console.info("[StorageLinkJsunit1_0500] son5 obj5 is: " + JSON.stringify(obj5));
       await CommonFunc.sleep(1000);
@@ -192,11 +192,11 @@ export default function StorageLinkJsunit1() {
       // Get the init value of button_son6
       console.info('[StorageLinkJsunit1_0600] START');
       let driver = await UiDriver.create()
-      let button_son6 = await driver.findComponent(BY.key('button_son6'));
+      let button_son6 = await driver.findComponent(BY.key('StorageLink1_button_son6'));
       await button_son6.click();
       await CommonFunc.sleep(2000);
 
-      let strJson6 = getInspectorByKey('button_son6');
+      let strJson6 = getInspectorByKey('StorageLink1_button_son6');
       let obj6: ESObject = JSON.parse(strJson6);
       console.info("[StorageLinkJsunit1_0600] son6 obj6 is: " + JSON.stringify(obj6));
       await CommonFunc.sleep(1000);

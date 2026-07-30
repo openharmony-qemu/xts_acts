@@ -82,7 +82,8 @@
         "./resource/media/H264_AAC.m3u8 -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/",
         "./resource/media/H264_AAC0.ts -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/",
         "./resource/media/H264_AAC1.ts -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/",
-        "./resource/media/H264_AAC2.ts -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/"
+        "./resource/media/H264_AAC2.ts -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/",
+        "./resource/media/watermark.png -> /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files/"
       ]
     },
     {

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { util } from '@kit.ArkTS';
 
 export function textDecoder() {

@@ -35,7 +35,7 @@ struct Index11 {
                 this.enableStateAnimationIndex = 0;
               })
 
-            Button('true').key('true')
+            Button('true').key('segmentButtonEnableStateAnimation_true')
               .onClick(() => {
                 this.enableStateAnimationIndex = 1;
               })
@@ -53,7 +53,7 @@ struct Index11 {
             options: this.tabOptions,
             selectedIndexes: this.tabSelected2,
             enableStateAnimation: this.enableStateAnimation[this.enableStateAnimationIndex]
-          })
+          }).key('segmentButtonEnableStateAnimation_target')
           Text('' + this.enableStateAnimation[this.enableStateAnimationIndex]).fontSize(18).fontWeight(FontWeight.Bold).key('text1')
           Row({ space: 10 }) {
             Button('push 1')

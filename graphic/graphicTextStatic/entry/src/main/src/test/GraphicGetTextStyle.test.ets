@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -729,6 +730,13 @@ export default function GraphicGetTextStyle() {
           expect(runTextStyle.fontFeatures != undefined).assertTrue();
           expect(runTextStyle.fontFeatures?.length).assertLarger(0);
           expect(runTextStyle.fontEdging).assertEqual(drawing.FontEdging.ANTI_ALIAS);
+          let fontFeatures: text.FontFeature = runTextStyle.fontFeatures![0];
+          expect(fontFeatures.name).assertEqual('liga');
+          expect(fontFeatures.value).assertEqual(1);
+          let fontVariations: text.FontVariation = runTextStyle.fontVariations![0];
+          expect(fontVariations.axis).assertEqual('wght');
+          expect(fontVariations.value).assertEqual(400);
+          expect(fontVariations.isNormalized).assertFalse();
           console.info(msgStr + ' end');
           fontCollection.unloadFontSync('text_test');
           done();

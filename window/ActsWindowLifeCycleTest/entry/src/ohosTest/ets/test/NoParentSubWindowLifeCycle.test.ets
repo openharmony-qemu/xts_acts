@@ -69,6 +69,7 @@ export default function NoParentSubWindowLifeCycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
+    let canIUseRes: boolean = false;
     let isPCMode: boolean = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
@@ -81,6 +82,8 @@ export default function NoParentSubWindowLifeCycle() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       let promise = windowClass.getWindowStateSnapshot();
       promise.then((data) => {
         let jsonObj: object = JSON.parse(data);
@@ -141,8 +144,13 @@ it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefine
         }).catch((err: BusinessError) => {
         console.error(msgStr +
           `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
-        done();
+         if (!canIUseRes) {
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
       });
     } catch (exception) {
       console.error(msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
@@ -226,8 +234,13 @@ it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_01
         }).catch((err: BusinessError) => {
         console.error(msgStr +
           `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
-        done();
+         if (!canIUseRes) {
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
       });
     } catch (exception) {
       console.error(msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
@@ -428,8 +441,13 @@ it('SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100',
       }).catch((err: BusinessError) => {
       console.error(msgStr +
         `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-      expect(false).assertTrue();
-      done();
+         if (!canIUseRes) {
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
     });
   }
 )
@@ -485,7 +503,12 @@ it('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100',
     } catch (err) {
       console.error(msgStr +
         `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-      expect(false).assertTrue();
+      if (!canIUseRes) {
+        expect(err.code).assertEqual(1300002);
+        expect(err.message !== '').assertTrue();
+      } else {
+         expect(false).assertTrue();
+      }
       done();
     }
   }
@@ -519,7 +542,7 @@ it('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_Two_callback_OffWindowEvent_0100'
       decorEnabled: true,
       zLevelAboveParentLoosened: true
     };
-    await windowStage.createSubWindowWithOptions('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0200',
+     windowStage.createSubWindowWithOptions('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0200',
       subWindowOptions).then(async (data) => {
       subWindow = data;
       console.log(msgStr + 'windowStage.createSubWindow success');
@@ -543,7 +566,12 @@ it('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_Two_callback_OffWindowEvent_0100'
       }
     }).catch((err: BusinessError) => {
       console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-      expect(true).assertFail();
+      if (!canIUseRes) {
+        expect(err.code).assertEqual(1300002);
+        expect(err.message !== '').assertTrue();
+      } else {
+         expect(false).assertTrue();
+      }
       done();
     });
   });
@@ -597,8 +625,13 @@ it('SUB_WINDOW_NoParentSubWindow_setParentWindow_Normal_0100', TestType.FUNCTION
       });
     } catch (e) {
       console.error(msgStr + `Failed to setParentWindow. Cause: ${e.code}, message: ${e.message}`);
+      if (!canIUseRes) {
+        expect(e.code).assertEqual(1300002);
+        expect(e.message !== '').assertTrue();
+      } else {
+         expect(false).assertTrue();
+      }
       await terminateAbility(message)
-      expect(true).assertFail();
       done();
     }
   })
@@ -650,8 +683,13 @@ it('SUB_WINDOW_NoParentSubWindow_setParentWindow_1300009_0100', TestType.FUNCTIO
       });
     } catch (e) {
       console.error(msgStr + `Failed to setParentWindow. Cause: ${e.code}, message: ${e.message}`);
+      if (!canIUseRes) {
+        expect(e.code).assertEqual(1300002);
+        expect(e.message !== '').assertTrue();
+      } else {
+         expect(false).assertTrue();
+      }
       await windowClass.destroyWindow();
-      expect(true).assertFail();
       done();
     }
   })
@@ -693,7 +731,12 @@ it('SUB_WINDOW_NoParentSubWindow_findWindow_normal_0100', TestType.FUNCTION | Si
         }).catch((err: BusinessError) => {
         console.error(msgStr +
           `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message !== '').assertTrue();
+         } else {
+          expect(false).assertTrue();
+         }
         done();
       });
     } catch (exception) {
@@ -744,7 +787,12 @@ it('SUB_WINDOW_NoParentSubWindow_GetUIContext_normal_0100', TestType.FUNCTION | 
         }).catch((err: BusinessError) => {
         console.error(msgStr +
           `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+          if (!canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message !== '').assertTrue();
+         } else {
+          expect(false).assertTrue();
+         }
         done();
       });
     } catch (exception) {
@@ -795,7 +843,12 @@ it('SUB_WINDOW_NoParentSubWindow_LoadContentByName_normal_0100', TestType.FUNCTI
         }).catch((err: BusinessError) => {
         console.error(msgStr +
           `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message !== '').assertTrue();
+         } else {
+          expect(false).assertTrue();
+         }
         done();
       });
     } catch (exception) {

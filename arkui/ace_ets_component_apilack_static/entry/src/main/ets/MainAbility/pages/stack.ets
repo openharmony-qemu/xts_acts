@@ -64,7 +64,7 @@ struct StackAlignContent {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("alignContentText")
+        .key("stack_alignContentText")
 
 
       Stack({ alignContent: Alignment.Bottom }) {
@@ -79,7 +79,7 @@ struct StackAlignContent {
           .height('60%')
           .backgroundColor(0xc1cbac)
           .align(Alignment.Top)
-      }.key("Stack")
+      }.key("stack_Stack")
       .width('100%').height(150).margin({ top: 5 } as Margin)
 
     }.width("100%").height("100%")

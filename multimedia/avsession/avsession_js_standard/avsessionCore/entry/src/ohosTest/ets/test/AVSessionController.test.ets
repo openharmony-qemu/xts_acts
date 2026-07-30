@@ -37,7 +37,7 @@ export default function abilityTest() {
     let TAG: string = "[AVSessionController]";
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
-    let tag: string = 'VoiceCallXTS';
+    let tag: string = 'AVSessionControllerXTS';
     let keyItem: Key = {code:0x49, pressedTime:2, deviceId:0};
     let event:KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
     let event1: string = 'aaa'
@@ -1663,6 +1663,27 @@ export default function abilityTest() {
         done();
       });
 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.number SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.desc   SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await controller.destroy();
+      controller.destroy((err: BusinessError) => {
+        if (err) {
+          console.error(`Failed to destroy controller, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(6600103);
+          return;
+        } 
+        console.info('Succeeded in destroying.');
+        done();
+      });
+      done();
+    })
   })
 }
 

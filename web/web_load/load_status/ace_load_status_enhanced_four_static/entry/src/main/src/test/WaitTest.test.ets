@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -21,14 +22,14 @@ export default async function waitForExist<T extends targetType> (
   expectValue: T,
   interval:int =3000,
   tryTime:int =20
-):Promise<T>{
+):Promise<Awaited<T>>{
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
     const tempValue = await new Promise<T>((resolve) => {
       setTimeout(()=>resolve(stateGetter()), interval);
     })
-    let currentValue = tempValue as Promise<T> | T;
+    let currentValue = tempValue;
     console.log(testsuite + ' debug wait for exist' + nums + ' times, currentValue: ' + currentValue
       + ',expectValue ' + expectValue)
 
@@ -36,13 +37,13 @@ export default async function waitForExist<T extends targetType> (
       if (currentValue != null) {
         console.log(testsuite + ' debug wait for success exist');
         isSuccess = true;
-        return currentValue as Promise<T> | T;
+        return currentValue;
       }
     } else {
       if (currentValue == expectValue) {
         console.log(testsuite + ' debug wait for success exist');
         isSuccess = true;
-        return currentValue as Promise<T> | T;
+        return currentValue;
       }
     }
     nums++;
@@ -54,5 +55,5 @@ export default async function waitForExist<T extends targetType> (
     setTimeout(() => result(stateGetter()), interval);
   });
   console.log(testsuite + ' debug wait for failed exist ' + currentValue);
-  return currentValue as Promise<T> | T;
+  return currentValue;
 }

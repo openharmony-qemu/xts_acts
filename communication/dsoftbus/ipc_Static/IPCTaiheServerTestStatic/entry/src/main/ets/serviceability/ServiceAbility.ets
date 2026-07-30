@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +17,8 @@
 import hilog from '@ohos.hilog';
 import rpc from '@ohos.rpc';
 import Want from '@ohos.app.ability.Want';
-import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import ServiceExtensionAbility from '@ohos.app.ability.ServiceExtensionAbility';
-
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag_server'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 

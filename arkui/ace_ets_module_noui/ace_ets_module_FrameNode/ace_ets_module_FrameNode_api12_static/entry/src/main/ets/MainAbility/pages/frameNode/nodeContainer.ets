@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,CustomBuilderT,wrapBuilder,
-  ColumnOptions,Margin,Button,NodeContainer,Visibility
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BuilderNode, FrameNode, NodeController } from '@ohos.arkui.node'
-import { UIContext } from '@ohos.arkui.UIContext'
+import { Entry, Column, Component, Builder, Text, ColumnOptions, WrappedBuilder, Flex, CustomBuilderT, wrapBuilder, Margin, Button, NodeContainer, Visibility, ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { BuilderNode, FrameNode, NodeController } from '@ohos.arkui.node';
+import { UIContext } from '@ohos.arkui.UIContext';
 let frameNode:FrameNode|undefined=new FrameNode( AppStorage.get<UIContext>('UIContent')!)
 let childList =new Array<FrameNode>()
 for (let i= 0;i<10;i++){

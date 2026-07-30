@@ -45,7 +45,59 @@ export default function systemManagerTest() {
     testIsActivationLockDisabled();
     testSetInstallLocalEnterpriseAppEnabledForAccount();
     testGetInstallLocalEnterpriseAppEnabledForAccount();
+    testSetOtaUpdateNonceEnable();
+ 	  testIsOtaUpdateNonceEnable();
   })
+}
+
+function testSetOtaUpdateNonceEnable() {
+  /**
+  * @tc.name   test_set_ota_update_nonce_enable_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_NONCE_ENABLE_JS_0100
+  * @tc.desc   test systemManager SetOtaUpdateNonceEnable with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_ota_update_nonce_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.setOtaUpdateNonceEnable(SELFWANT, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+ 	 
+function testIsOtaUpdateNonceEnable() {
+  /**
+  * @tc.name   test_is_ota_update_nonce_enable_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_OTA_UPDATE_NONCE_ENABLE_JS_0100
+  * @tc.desc   test systemManager isOtaUpdateNonceEnable success with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_ota_update_nonce_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result: boolean = systemManager.isOtaUpdateNonceEnable(SELFWANT);
+      expect(result).assertFalse();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testSetNTPSever() {

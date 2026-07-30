@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,7 +62,7 @@ function stringToArrayBuffer(str: string): ArrayBuffer {
   return uint8Array.buffer;
 }
 
-export default function actsXml3Test() {
+export default function actsXml3Test(): void {
   describe('actsXml3Test', (): void => {
 
     /**

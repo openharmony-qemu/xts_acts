@@ -1661,18 +1661,30 @@ napi_value TestProxyGetSnapshot_Normal(napi_env env, napi_callback_info info)
 napi_value TestProxyStartWork_Error(napi_env env, napi_callback_info info)
 {
     char oeid[] = "111209FF-BBBB-DDDD-CAAA-220000000046";
-    ContentEmbed_Document* oeDocument;
     napi_value result;
-    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
-    OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error document ret: %{public}d", errCode);
-    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_create_int32(env, errCode, &result);
-        return result;
-    }
-    if (errCode != CE_ERR_OK) {
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error create info ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
     }
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error get info ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error get format count ret: %{public}d", code);
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_DEVICE_NOT_SUPPORTED, &result);
+        return result;
+    }
+    ContentEmbed_Document* oeDocument;
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error document ret: %{public}d", errCode);
     ContentEmbed_ExtensionProxy* proxy = nullptr;
     errCode = OH_ContentEmbed_CreateExtensionProxy(oeDocument, &proxy, g_contextPtr);
     OH_LOG_INFO(LOG_APP, "TestProxyStartWork_Error proxy ret: %{public}d", errCode);
