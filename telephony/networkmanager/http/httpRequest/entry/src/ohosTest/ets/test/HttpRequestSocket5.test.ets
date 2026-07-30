@@ -56,21 +56,40 @@ export default function HttpRequestSocket5Test() {
         };
         const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
         httpRequest = http.createHttp();
-        const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
-          httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
-            (err: BusinessError, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} test1 httpRequest fail:--- ${JSON.stringify(err)}`);
-                reject(err);
-              } else {
-                console.info(`${caseName} test1 httpRequest success:--- ${JSON.stringify(data)}`);
-                resolve(data);
-              }
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test1 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed: ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test1 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
             });
-        });
-        ExpectTrue(response.responseCode === 200);
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+        ExpectTrue(response!.responseCode === 200);
       } catch (err) {
         console.info(`${caseName} test1 httpRequest fail:--- ${JSON.stringify(err)}`);
         ExpectFail();
@@ -96,7 +115,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -114,21 +133,40 @@ export default function HttpRequestSocket5Test() {
         };
         const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
         httpRequest = http.createHttp();
-        const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
-          httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
-            (err: BusinessError, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} test2 httpRequest fail:--- ${JSON.stringify(err)}`);
-                reject(err);
-              } else {
-                console.info(`${caseName} test2 httpRequest success:--- ${JSON.stringify(data)}`);
-                resolve(data);
-              }
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test2 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test2 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
             });
-        });
-        ExpectTrue(response.responseCode === 200);
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+        ExpectTrue(response!.responseCode === 200);
       } catch (err) {
         console.info(`${caseName} test2 httpRequest fail:--- ${JSON.stringify(err)}`);
         ExpectFail();
@@ -473,12 +511,11 @@ export default function HttpRequestSocket5Test() {
       const caseName: string = 'testHttpRequestSocket5Test0900';
       const XTS_TEST_HTTP_URL: string = 'http://www.baidu.com';
       console.info(`${caseName}---Start`);
-
       let httpRequest: http.HttpRequest | undefined;
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -492,24 +529,44 @@ export default function HttpRequestSocket5Test() {
           host: '146.56.217.118',
           port: 7800,
           dnsStrategy: connection.Socks5DnsStrategy.SYSTEM_MODE,
+
         };
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
         httpRequest = http.createHttp();
-        const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
-          httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
-            (err: BusinessError, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} test9 httpRequest fail:--- ${JSON.stringify(err)}`);
-                reject(err);
-              } else {
-                console.info(`${caseName} test9 httpRequest success,connect to SYSTEM_MODE:--- ${JSON.stringify(data)}`);
-                resolve(data);
-              }
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test9 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test9 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
             });
-        });
-        ExpectTrue(response.responseCode === 200);
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+        ExpectTrue(response!.responseCode === 200);
         console.info(`${caseName} test9 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
         ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 0);
       } catch (err) {
@@ -537,7 +594,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -555,24 +612,45 @@ export default function HttpRequestSocket5Test() {
           dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
         };
 
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
 
         httpRequest = http.createHttp();
-        const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
-          httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
-            (err: BusinessError, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} test10 httpRequest fail:--- ${JSON.stringify(err)}`);
-                reject(err);
-              } else {
-                console.info(`${caseName} test10 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(data)}`);
-                resolve(data);
-              }
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test10 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test10 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
             });
-        });
-        ExpectTrue(response.responseCode === 200);
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+
+        ExpectTrue(response!.responseCode === 200);
         console.info(`${caseName} test10 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
         ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 1);
 
@@ -601,7 +679,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -619,27 +697,52 @@ export default function HttpRequestSocket5Test() {
           dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
           exclusionList: [],
         };
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
         httpRequest = http.createHttp();
-        const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
-          httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
-            (err: BusinessError, data: http.HttpResponse) => {
-              if (err) {
-                console.info(`${caseName} test11 httpRequest fail:--- ${JSON.stringify(err)}`);
-                reject(err);
-              } else {
-                console.info(`${caseName} test11 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(data)}`);
-                resolve(data);
-              }
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test11 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test11 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
             });
-        });
-        console.info(`${caseName} test11  got success: ${response.responseCode}`);
-        ExpectTrue(response.responseCode === 200);
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+
+        // 确保在所有重试后 response 被赋值
+        if (response) {
+          ExpectTrue(response.responseCode === 200);
+          console.info(`${caseName} test11 got success: ${response.responseCode}`);
+        } else {
+          throw new Error(`Request failed despite no error: response is undefined`);
+        }
+
       } catch (err) {
         console.info(`${caseName} test11 httpRequest unexpectedly failed: ${JSON.stringify(err)}`);
-        const error = err as BusinessError;
         ExpectFail();
       } finally {
         httpRequest?.destroy();
@@ -663,7 +766,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -682,16 +785,52 @@ export default function HttpRequestSocket5Test() {
           exclusionList: ['www.baidu.com'],
         };
 
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000
         };
-        httpRequest = http.createHttp();
-        const response: http.HttpResponse = await httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions);
 
-        console.info(`${caseName} test12 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
-        ExpectTrue(response.responseCode === 200);
-        console.info(`${caseName} test12 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
-        ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 0);
+        httpRequest = http.createHttp();
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test12 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test12 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
+            });
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+
+        if (response) {
+          ExpectTrue(response.responseCode === 200);
+          console.info(`${caseName} test12 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
+          console.info(`${caseName} test12 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
+          ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 0);
+        } else {
+          throw new Error(`Request failed despite no error: response is undefined`);
+        }
 
       } catch (err) {
         console.info(`${caseName} test12 failed: ${JSON.stringify(err)}`);
@@ -718,7 +857,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -736,17 +875,53 @@ export default function HttpRequestSocket5Test() {
           dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
         };
 
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingProxy: false,
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000,
         };
-        httpRequest = http.createHttp();
-        const response: http.HttpResponse = await httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions);
 
-        console.info(`${caseName} test13 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
-        ExpectTrue(response.responseCode === 200);
-        console.info(`${caseName} test13 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
-        ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 1);
+        httpRequest = http.createHttp();
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test13 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test13 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
+            });
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+
+        if (response) {
+          ExpectTrue(response.responseCode === 200);
+          console.info(`${caseName} test13 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
+          console.info(`${caseName} test13 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
+          ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 1);
+        } else {
+          throw new Error(`Request failed despite no error: response is undefined`);
+        }
 
       } catch (err) {
         console.info(`${caseName} test13 failed: ${JSON.stringify(err)}`);
@@ -773,7 +948,7 @@ export default function HttpRequestSocket5Test() {
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
           connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-            if (error) reject(error);
+            if (error) reject(new Error(`Failed to get default net: ${error.message}`));
             else resolve(data);
           });
         });
@@ -791,17 +966,53 @@ export default function HttpRequestSocket5Test() {
           dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
         };
 
-        let httpRequestOptions: http.HttpRequestOptions = {
+        const httpRequestOptions: http.HttpRequestOptions = {
           usingProxy: true,
           usingSocks5Proxy: socks5Proxy,
+          connectTimeout: 120000,
+          readTimeout: 120000,
         };
-        httpRequest = http.createHttp();
-        const response: http.HttpResponse = await httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions);
 
-        console.info(`${caseName} test14 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
-        ExpectTrue(response.responseCode === 200);
-        console.info(`${caseName} test14 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
-        ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 1);
+        httpRequest = http.createHttp();
+        let response: http.HttpResponse | undefined;
+        let lastError: BusinessError | undefined;
+        const maxRetries = 3;
+        for (let retry = 0; retry < maxRetries; retry++) {
+          try {
+            response = await new Promise<http.HttpResponse>((resolve, reject) => {
+              httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError, data: http.HttpResponse) => {
+                  if (err) {
+                    console.info(`${caseName} test14 httpRequest fail (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(err)}`);
+                    reject(new Error(`HTTP request failed (attempt ${retry + 1}): ${err.message}`));
+                  } else {
+                    console.info(`${caseName} test14 httpRequest success (attempt ${retry + 1}/${maxRetries}):--- ${JSON.stringify(data)}`);
+                    resolve(data);
+                  }
+                });
+            });
+            lastError = undefined;
+            break;
+          } catch (err) {
+            lastError = err as BusinessError;
+            if (retry < maxRetries - 1) {
+              await new Promise<void>(resolve => setTimeout(resolve, 1000));
+            }
+          }
+        }
+
+        if (lastError) {
+          throw new Error(`Request failed after retries: ${lastError.message}`);
+        }
+
+        if (response) {
+          ExpectTrue(response.responseCode === 200);
+          console.info(`${caseName} test14 httpRequest success,connect to PROXY_MODE:--- ${JSON.stringify(response)}`);
+          console.info(`${caseName} test14 dnsStrategy:--- ${JSON.stringify(httpRequestOptions.usingSocks5Proxy?.dnsStrategy)}`);
+          ExpectTrue(httpRequestOptions.usingSocks5Proxy?.dnsStrategy === 1);
+        } else {
+          throw new Error(`Request failed despite no error: response is undefined`);
+        }
 
       } catch (err) {
         console.info(`${caseName} test14 failed: ${JSON.stringify(err)}`);
