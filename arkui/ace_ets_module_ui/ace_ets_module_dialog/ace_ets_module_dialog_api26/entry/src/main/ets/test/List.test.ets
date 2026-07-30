@@ -35,6 +35,10 @@ import DialogButtonMatrix from './dialog/DialogButtonMatrix.test';
 import DialogLifeCallbacks from './dialog/DialogLifeCallbacks.test';
 import DialogBaseSizeBorder from './dialog/DialogBaseSizeBorder.test';
 import DialogEnumsAssertExtra from './dialog/DialogEnumsAssertExtra.test';
+import DialogAlignWordBreak from './dialog/DialogAlignWordBreak.test';
+import DialogAlignWordBreakExtra from './dialog/DialogAlignWordBreakExtra.test';
+import DialogAbnormalOpts from './dialog/DialogAbnormalOpts.test';
+import DialogAbnormalOptsExtra from './dialog/DialogAbnormalOptsExtra.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
@@ -59,4 +63,8 @@ export default function testsuite() {
   DialogLifeCallbacks();
   DialogBaseSizeBorder();
   DialogEnumsAssertExtra();
+  DialogAlignWordBreak();
+  DialogAlignWordBreakExtra();
+  DialogAbnormalOpts();
+  DialogAbnormalOptsExtra();
 }

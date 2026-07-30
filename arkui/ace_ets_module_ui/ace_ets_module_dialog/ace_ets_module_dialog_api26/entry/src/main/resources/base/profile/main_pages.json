@@ -22,6 +22,10 @@
     "MainAbility/pages/dialog/DialogButtonMatrix",
     "MainAbility/pages/dialog/DialogLifeCallbacks",
     "MainAbility/pages/dialog/DialogBaseSizeBorder",
-    "MainAbility/pages/dialog/DialogEnumsAssertExtra"
+    "MainAbility/pages/dialog/DialogEnumsAssertExtra",
+    "MainAbility/pages/dialog/DialogAlignWordBreak",
+    "MainAbility/pages/dialog/DialogAlignWordBreakExtra",
+    "MainAbility/pages/dialog/DialogAbnormalOpts",
+    "MainAbility/pages/dialog/DialogAbnormalOptsExtra"
   ]
 }
