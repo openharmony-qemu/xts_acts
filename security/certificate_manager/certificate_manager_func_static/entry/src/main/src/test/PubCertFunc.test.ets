@@ -25,6 +25,9 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { canIUse } from '@internal.full.global';
+import { Driver, ON, Component } from '@ohos.UiTest';
+
+import { openCertificateManagerDialogTest } from './utils/common/common_function';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -99,7 +102,18 @@ let caCert: Uint8Array = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x0
 
 export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', (): void => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();
+      //去除充电框影响
+      let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
+		  if (button1 !== undefined) {
+		    await button1.click();
+		  }
+      //去除添加到桌面影响
+      let button2 = await driver.findComponent(ON.text("不添加")) ?? undefined;
+		  if (button2 !== undefined) {
+		    await button2.click();
+		  }
     });
     beforeEach(() => {
     });
@@ -519,6 +533,98 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         expect(error.code).assertEqual(17500011);
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050
+     * @tc.desc   normal test with PAGE_MAIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 start');
+      const context :common.Context = await GlobalContext.getContext();
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 success');
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 e.code: ${error.code}, message: ${error.message}`);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0050 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060
+     * @tc.desc   normal test with PAGE_CA_CERTIFICATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 start');
+      const context :common.Context = await GlobalContext.getContext();
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE);
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 success');
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 e.code: ${error.code}, message: ${error.message}`);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0060 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070
+     * @tc.desc   normal test with PAGE_CREDENTIAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 start');
+      const context :common.Context = await GlobalContext.getContext();
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL);
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 success');
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 e.code: ${error.code}, message: ${error.message}`);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0070 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080
+     * @tc.desc   normal test with PAGE_INSTALL_CERTIFICATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 start');
+      const context :common.Context = await GlobalContext.getContext();
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE);
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 success');
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 e.code: ${error.code}, message: ${error.message}`);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_Static_0080 end');
       done();
     });
   })
