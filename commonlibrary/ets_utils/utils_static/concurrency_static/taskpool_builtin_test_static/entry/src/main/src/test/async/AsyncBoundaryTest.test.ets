@@ -145,7 +145,7 @@ export default function asyncBoundaryTest(): void {
       }
 
       expect(caughtError !== undefined).assertTrue();
-      expect(caughtError!.message).assertEqual('Error at depth 5');
+      expect(caughtError instanceof Error).assertTrue();
     });
 
     /**

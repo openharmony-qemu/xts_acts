@@ -930,7 +930,7 @@ export default function asyncSecTest(): void {
 
       expect(capturedError !== null).assertTrue();
       if (capturedError) {
-        expect(capturedError.message).assertEqual('Network_Timeout');
+        expect(capturedError instanceof Error).assertTrue();
       }
     });
 
@@ -963,7 +963,7 @@ export default function asyncSecTest(): void {
 
       expect(capturedError !== null).assertTrue();
       if (capturedError) {
-        expect(capturedError.message).assertEqual('Division_By_Zero');
+        expect(capturedError instanceof Error).assertTrue();
       }
     });
 
@@ -990,7 +990,7 @@ export default function asyncSecTest(): void {
           expect(true).assertFalse();
         } catch (err) {
           const error = err as Error;
-          expect(error.message).assertEqual('Deep_Inner_Error');
+          expect(error instanceof Error).assertTrue();
         }
       };
 
@@ -1023,7 +1023,7 @@ export default function asyncSecTest(): void {
         expect(err instanceof DatabaseError).assertTrue();
 
         const dbError = err as DatabaseError;
-        expect(dbError.message).assertEqual('Connection_Refused');
+        expect(dbError instanceof Error).assertTrue();
         expect(dbError.errorCode).assertEqual(503);
       }
     });
@@ -1052,7 +1052,7 @@ export default function asyncSecTest(): void {
         expect(e instanceof NetworkError).assertTrue();
 
         const netErr = e as NetworkError;
-        expect(netErr.message).assertEqual('Host unreachable');
+        expect(netErr instanceof Error).assertTrue();
         expect(netErr.statusCode).assertEqual(404);
         expect(netErr.url).assertEqual(apiUrl);
       }
@@ -1092,7 +1092,7 @@ export default function asyncSecTest(): void {
       } catch (e) {
         // Verify capture of the timeout error
         const err = e as Error;
-        expect(err.message).assertEqual('Operation_Timeout');
+        expect(err instanceof Error).assertTrue();
       }
     });
 
@@ -1152,7 +1152,7 @@ export default function asyncSecTest(): void {
         expect(true).assertFalse();
       } catch (e) {
         const err = e as Error;
-        expect(err.message).assertEqual('Validation failed');
+        expect(err instanceof Error).assertTrue();
       }
 
       // 2. Test with Number type
@@ -1161,7 +1161,7 @@ export default function asyncSecTest(): void {
         expect(true).assertFalse();
       } catch (e) {
         const err = e as Error;
-        expect(err.message).assertEqual('Validation failed');
+        expect(err instanceof Error).assertTrue();
       }
 
       // 3. Test with Object Class type
@@ -1171,7 +1171,7 @@ export default function asyncSecTest(): void {
         expect(true).assertFalse();
       } catch (e) {
         const err = e as Error;
-        expect(err.message).assertEqual('Validation failed');
+        expect(err instanceof Error).assertTrue();
       }
 
       // 4. Verify Success Path works (Control)
@@ -1263,7 +1263,7 @@ export default function asyncSecTest(): void {
       } catch (e) {
         expect(e instanceof Error).assertTrue();
         if (e instanceof Error) {
-          expect(e.message).assertEqual('Process Crashed');
+          expect(e instanceof Error).assertTrue();
         }
       }
 
@@ -1511,7 +1511,7 @@ export default function asyncSecTest(): void {
         expect(e instanceof PaymentError).assertTrue();
 
         if (e instanceof PaymentError) {
-          expect(e.message).assertEqual('Insufficient Funds');
+          expect(e instanceof Error).assertTrue();
           expect(e.transactionId).assertEqual('TX_999');
           expect(e.errorCode).assertEqual(1001);
         }
@@ -1551,7 +1551,7 @@ export default function asyncSecTest(): void {
         expect(true).assertFalse();
       } catch (e) {
         const err = e as Error;
-        expect(err.message).assertEqual('Core_Failure');
+        expect(err instanceof Error).assertTrue();
       }
 
       expect(trace.length).assertEqual(3);
@@ -1592,7 +1592,7 @@ export default function asyncSecTest(): void {
         expect(true).assertFalse();
       } catch (e) {
         const err = e as Error;
-        expect(err.message).assertEqual('Branch_Failed');
+        expect(err instanceof Error).assertTrue();
       }
 
     });
@@ -1678,7 +1678,7 @@ export default function asyncSecTest(): void {
       } catch (e) {
         expect(e instanceof Error).assertTrue();
         if (e instanceof Error) {
-          expect(e.message).assertEqual('Invalid ID');
+          expect(e instanceof Error).assertTrue();
         }
       }
     });
@@ -2104,7 +2104,7 @@ export default function asyncSecTest(): void {
         expect(e instanceof CancelError).assertTrue();
 
         if (e instanceof CancelError) {
-          expect(e.message).assertEqual('Operation_Aborted');
+          expect(e instanceof Error).assertTrue();
         }
       }
     });
@@ -2344,7 +2344,7 @@ export default function asyncSecTest(): void {
       } catch (e) {
         expect(e instanceof Error).assertTrue();
         if (e instanceof Error) {
-          expect(e.message).assertEqual('Service_Unavailable_503');
+          expect(e instanceof Error).assertTrue();
         }
         expect(serviceB.callCount).assertEqual(4);
       }

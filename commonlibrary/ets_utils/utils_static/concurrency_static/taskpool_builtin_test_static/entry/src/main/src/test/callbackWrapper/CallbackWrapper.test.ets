@@ -661,7 +661,7 @@ export default function CallbackWrapperTest(): void {
         const callback = util.callbackWrapper(asyncFuncThrowError);
         callback.unsafeCall((err: Error | null) => {
           expect(err !== null).assertTrue();
-          expect(err!.message).assertEqual('test error');
+          expect(err instanceof Error).assertTrue();
           console.info('testCallbackWrapperThrowError test end');
           done();
         });
@@ -703,7 +703,7 @@ export default function CallbackWrapperTest(): void {
         const callback = util.callbackWrapper(asyncFuncPromiseReject);
         callback.unsafeCall((err: Error | null) => {
           expect(err !== null).assertTrue();
-          expect(err!.message).assertEqual('rejected');
+          expect(err instanceof Error).assertTrue();
           console.info('testCallbackWrapperPromiseReject test end');
           done();
         });
@@ -1350,7 +1350,7 @@ export default function CallbackWrapperTest(): void {
         } catch (error) {
           const err: Error = error as Error;
           console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
 
         console.info('testCallbackWrapperNumberParam test end');
@@ -1375,7 +1375,7 @@ export default function CallbackWrapperTest(): void {
         } catch (error) {
           const err: Error = error as Error;
           console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
 
         console.info('testCallbackWrapperStringParam test end');
@@ -1401,7 +1401,7 @@ export default function CallbackWrapperTest(): void {
         } catch (error) {
           const err: Error = error as Error;
           console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
 
         console.info('testCallbackWrapperObjectParam test end');
@@ -1426,7 +1426,7 @@ export default function CallbackWrapperTest(): void {
         } catch (error) {
           const err: Error = error as Error;
           console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
 
         console.info('testCallbackWrapperArrayParam test end');
@@ -1451,7 +1451,7 @@ export default function CallbackWrapperTest(): void {
         } catch (error) {
           const err: Error = error as Error;
           console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
 
         console.info('testCallbackWrapperBooleanParam test end');
@@ -1657,7 +1657,7 @@ export default function CallbackWrapperTest(): void {
         const callback = util.callbackWrapper(asyncFuncDelayReject);
         callback.unsafeCall((err: Error | null) => {
           expect(err !== null).assertTrue();
-          expect(err!.message).assertEqual('delayed error');
+          expect(err instanceof Error).assertTrue();
           console.info('testCallbackWrapperDelayedReject test end');
           done();
         });

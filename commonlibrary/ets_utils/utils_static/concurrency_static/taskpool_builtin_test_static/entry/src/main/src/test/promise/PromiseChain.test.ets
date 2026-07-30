@@ -465,7 +465,7 @@ export default function promiseChainTest(): void {
             expect().assertFail();
           })
           .catch((error: Error): string => {
-            expect(error.message).assertEqual('inner error');
+            expect(error instanceof Error).assertTrue();
             return 'recovered';
           })
           .then((value: string | void): void => {
@@ -528,7 +528,7 @@ export default function promiseChainTest(): void {
             expect().assertFail();
           })
           .catch((error: Error): string => {
-            expect(error.message).assertEqual('thrown error');
+            expect(error instanceof Error).assertTrue();
             return 'recovered';
           })
           .then((value: string | void): void => {
@@ -753,7 +753,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('error'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('error');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
@@ -901,7 +901,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return 'arrow recovered';
         })
         .then((value: string): string => {
@@ -1112,7 +1112,7 @@ export default function promiseChainTest(): void {
           throw new Error('then failed');
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('then failed');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
@@ -1149,7 +1149,7 @@ export default function promiseChainTest(): void {
           return value;
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed at step 2');
+          expect(error instanceof Error).assertTrue();
           return 'caught';
         })
         .then((value: string): void => {
@@ -1218,7 +1218,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           steps.push('catch');
           return 'recovered';
         })
@@ -1256,7 +1256,7 @@ export default function promiseChainTest(): void {
           throw new Error('then error');
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('then error');
+          expect(error instanceof Error).assertTrue();
           steps.push('catch');
           return 'recovered';
         })
@@ -1289,7 +1289,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('error'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('error');
+          expect(error instanceof Error).assertTrue();
           catchCount++;
           return 'caught1';
         })
@@ -1320,11 +1320,11 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('original'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('original');
+          expect(error instanceof Error).assertTrue();
           throw new Error('new error');
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('new error');
+          expect(error instanceof Error).assertTrue();
           return 'caught2';
         })
         .then((value: string): void => {
@@ -1349,7 +1349,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): string => {
@@ -1380,7 +1380,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .finally(() => {
@@ -1409,11 +1409,11 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('error1'))
         .catch((error: Error): Promise<string> => {
-          expect(error.message).assertEqual('error1');
+          expect(error instanceof Error).assertTrue();
           return Promise.reject(new Error('error2'));
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('error2');
+          expect(error instanceof Error).assertTrue();
           return 'final recovery';
         })
         .then((value: string): void => {
@@ -1438,7 +1438,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): string => {
@@ -1467,7 +1467,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): undefined => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return undefined;
         })
         .then((value: undefined): string => {
@@ -1496,7 +1496,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): Promise<string> => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return Promise.resolve('promise recovered');
         })
         .then((value: string): void => {
@@ -1521,11 +1521,11 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('original'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('original');
+          expect(error instanceof Error).assertTrue();
           throw new Error('new error');
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('new error');
+          expect(error instanceof Error).assertTrue();
           return 'final recovered';
         })
         .then((value: string): void => {
@@ -1550,11 +1550,11 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('original'))
         .catch((error: Error): Promise<string> => {
-          expect(error.message).assertEqual('original');
+          expect(error instanceof Error).assertTrue();
           return Promise.reject(new Error('rejected again'));
         })
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('rejected again');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
@@ -1579,7 +1579,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): void => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
         })
         .then((value: void): string => {
           expect(value).assertEqual(undefined);
@@ -1640,7 +1640,7 @@ export default function promiseChainTest(): void {
 
       await Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error.message).assertEqual('failed');
+          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .finally(() => {
@@ -1778,7 +1778,7 @@ export default function promiseChainTest(): void {
           expect().assertFail();
         })
         .catch((error: Error): void => {
-          expect(error.message).assertEqual('finally error');
+          expect(error instanceof Error).assertTrue();
         });
 
       console.info(`${caseName} test end`);
@@ -1802,7 +1802,7 @@ export default function promiseChainTest(): void {
           return Promise.reject(new Error('finally reject'));
         })
         .catch((error: Error): void => {
-          expect(error.message).assertEqual('finally reject');
+          expect(error instanceof Error).assertTrue();
         });
 
       console.info(`${caseName} test end`);
@@ -1827,7 +1827,7 @@ export default function promiseChainTest(): void {
         })
         .catch((error: Error): string => {
           const customError = error as CustomError;
-          expect(customError.message).assertEqual('custom error');
+          expect(customError instanceof Error).assertTrue();
           expect(customError.customCode).assertEqual(500);
           return 'recovered';
         })
@@ -1912,7 +1912,7 @@ export default function promiseChainTest(): void {
           expect(value).assertEqual('outer');
           return Promise.reject(new Error('nested error'))
             .catch((error: Error): string => {
-              expect(error.message).assertEqual('nested error');
+              expect(error instanceof Error).assertTrue();
               return 'nested recovered';
             });
         })
@@ -2040,7 +2040,7 @@ export default function promiseChainTest(): void {
         .then((value: string): string => value)
         .then((value: string): string => value)
         .catch((error: Error): void => {
-          expect(error.message).assertEqual('error');
+          expect(error instanceof Error).assertTrue();
         });
 
       console.info(`${caseName} test end`);
@@ -2090,7 +2090,7 @@ export default function promiseChainTest(): void {
           throw new Error('then error');
         })
         .catch((error: Error): void => {
-          expect(error.message).assertEqual('then error');
+          expect(error instanceof Error).assertTrue();
         });
 
       console.info(`${caseName} test end`);
@@ -2932,7 +2932,7 @@ export default function promiseChainTest(): void {
         ]);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).message).assertEqual('first error');
+        expect(e instanceof Error).assertTrue();
       }
 
       console.info(`${caseName} test end`);

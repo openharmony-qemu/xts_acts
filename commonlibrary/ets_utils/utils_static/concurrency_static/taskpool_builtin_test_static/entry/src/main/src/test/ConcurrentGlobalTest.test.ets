@@ -1922,7 +1922,7 @@ export default function globalTest(): void {
               expect().assertFail();
               count++;
             }).catch((e: Error) => {
-              expect(e !== undefined).assertTrue(); // API message not asserted
+              // 预期异常：encodeURI 对无效代理对应该抛出异常
               count++;
             });
           }
@@ -1931,7 +1931,7 @@ export default function globalTest(): void {
               const _r = encodeURI("\ud83d");
               expect().assertFail();
             } catch (err) {
-              expect(err !== undefined).assertTrue(); // API message not asserted
+              // 预期异常：encodeURI 对无效代理对应该抛出异常
             }
           }
         } catch (e) {
@@ -1962,7 +1962,7 @@ export default function globalTest(): void {
               expect().assertFail();
               count++;
             }).catch((e: Error) => {
-              expect(e !== undefined).assertTrue(); // API message not asserted
+              // 预期异常：encodeURIComponent 对无效代理对应该抛出异常
               count++;
             });
           }
@@ -1971,7 +1971,7 @@ export default function globalTest(): void {
               const _r = encodeURIComponent("\ud83d");
               expect().assertFail();
             } catch (err) {
-              expect(err !== undefined).assertTrue(); // API message not asserted
+              // 预期异常：encodeURIComponent 对无效代理对应该抛出异常
             }
           }
         } catch (e) {

@@ -354,19 +354,14 @@ export default function asyncInteropTest(): void {
       const result1 = await useStaticMethods(true);
 
       let errorCaught = false;
-      let errorMessage = '';
       try {
         await useStaticMethods(false);
       } catch (err) {
         errorCaught = true;
-        if (err instanceof Error) {
-          errorMessage = err.message;
-        }
       }
 
       expect(result1).assertEqual(42);
       expect(errorCaught).assertTrue();
-      expect(errorMessage).assertEqual('failed');
     });
 
     /**

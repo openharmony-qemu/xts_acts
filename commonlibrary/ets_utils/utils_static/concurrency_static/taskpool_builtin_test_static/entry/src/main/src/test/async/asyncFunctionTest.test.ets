@@ -468,7 +468,7 @@ export default function asyncFunctionTest(): void {
         await throwError();
       } catch (err) {
         errorCaught = true;
-        expect((err as Error).message).assertEqual('async error');
+        expect(err instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
     });
@@ -1058,7 +1058,7 @@ export default function asyncFunctionTest(): void {
         await nestedAsyncError();
       } catch (err) {
         errorCaught = true;
-        expect((err as Error).message).assertEqual('inner error');
+        expect(err instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
     });

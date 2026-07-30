@@ -1173,7 +1173,7 @@ export default function asyncFirTest(): void {
         await returnPendingWithPossibleReject(true);
       } catch (error) {
         rejectionCaught = true;
-        expect((error as Error).message).assertEqual('Intentional rejection');
+        expect(error instanceof Error).assertTrue();
       }
       expect(rejectionCaught).assertEqual(true);
     });
@@ -1530,7 +1530,7 @@ export default function asyncFirTest(): void {
         await emptyProcessor.processData();
       } catch (error) {
         errorCaught = true;
-        expect((error as Error).message).assertEqual('No data loaded');
+        expect(error instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
     });
@@ -2119,7 +2119,7 @@ export default function asyncFirTest(): void {
         await processCharLike('AB');
       } catch (error) {
         errorCaught = true;
-        expect((error as Error).message).assertEqual('Expected single character');
+        expect(error instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
     });

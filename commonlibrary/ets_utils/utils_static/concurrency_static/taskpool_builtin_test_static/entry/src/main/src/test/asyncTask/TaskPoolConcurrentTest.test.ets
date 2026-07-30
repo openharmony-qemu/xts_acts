@@ -8,7 +8,10 @@ function testTaskPoolExecute(arr: Array<number>, taskCounter: AtomicInt): void {
       arr.push(i);
       arr.pop();
     } catch (e) {
-      // 竞态容忍
+      // 竞态容忍：Array 并发操作可能抛出异常
+      if (!(e instanceof Error)) {
+        throw e; // 非预期异常重新抛出
+      }
     }
     taskCounter.fetchAdd(1);
   }
@@ -96,7 +99,10 @@ export default function TaskPoolConcurrentTest(): void {
               a.push(j);
               a.pop();
             } catch (e) {
-              // 竞态容忍
+              // 竞态容忍：Array 并发操作可能抛出异常
+              if (!(e instanceof Error)) {
+                throw e; // 非预期异常重新抛出
+              }
             }
             tc.fetchAdd(1);
           }
@@ -147,11 +153,18 @@ export default function TaskPoolConcurrentTest(): void {
       while (periodicCounter.load() < 10) {
         await Utils.msSleep(100);
       }
+      let beforeCount: number = periodicCounter.load();
       try {
         taskpool.cancel(task);
       } catch (e) {
-        // 取消容忍
+        // 取消容忍：任务可能已执行完毕导致取消失败
+        if (!(e instanceof Error)) {
+          throw e; // 非预期异常重新抛出
+        }
       }
+      // 验证取消后周期任务不再继续执行（最多容忍3次残留执行）
+      await Utils.msSleep(300);
+      expect(periodicCounter.load() - beforeCount <= 3).assertTrue();
       expect(periodicCounter.load() >= 10).assertTrue();
     });
 
@@ -238,7 +251,10 @@ export default function TaskPoolConcurrentTest(): void {
       try {
         taskpool.cancel(task);
       } catch (e) {
-        // 取消容忍
+        // 取消容忍：任务可能已执行完毕导致取消失败
+        if (!(e instanceof Error)) {
+          throw e; // 非预期异常重新抛出
+        }
       }
       expect(counter.load() >= 50).assertTrue();
     });

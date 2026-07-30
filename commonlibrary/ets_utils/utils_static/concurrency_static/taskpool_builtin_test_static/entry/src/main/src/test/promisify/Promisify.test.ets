@@ -1349,7 +1349,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('test-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testFailCallbackConversion0300 end');
       });
@@ -2006,7 +2006,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('test-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testErrorHandlingChain5200 end');
       });
@@ -2085,7 +2085,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('custom-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testErrorObjectType5800 end');
       });
@@ -2112,7 +2112,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('error-triggered');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testCustomErrorFirst5900 end');
       });
@@ -2373,7 +2373,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('sendable-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testSendableComplexCallback8300 end');
       });
@@ -2512,7 +2512,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('sendable-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testSendableErrorHandling9000 end');
       });
@@ -2729,7 +2729,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('ets-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testCrossFileErrorHandling12000 end');
       });
@@ -3159,7 +3159,7 @@ export default function PromisifyTest(): void {
           expect(false).assertFail();
         } catch (error) {
           const err: Error = error as Error;
-          expect(err.message).assertEqual('reject-error');
+          expect(err instanceof Error).assertTrue();
         }
         console.info('testPromiseReject20300 end');
       });

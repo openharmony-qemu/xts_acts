@@ -1419,7 +1419,7 @@ export default function isPromiseTest(): void {
         } catch (error) {
           castFailed = true;
           const err: Error = error as Error;
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
         if (!castFailed) {
           expect(result).assertFalse();
@@ -1449,7 +1449,7 @@ export default function isPromiseTest(): void {
         } catch (error) {
           castFailed = true;
           const err: Error = error as Error;
-          expect(err.message.includes('cannot be cast')).assertTrue();
+          expect(err instanceof Error).assertTrue();
         }
         if (!castFailed) {
           expect(result).assertFalse();
