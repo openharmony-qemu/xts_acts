@@ -458,7 +458,7 @@ export default function HttpRequestOptionsTest() {
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
-                        httpRequest.request('http://httpbin.org/anything', httpRequestOptions).then((data: http.HttpResponse) => {
+                        httpRequest.request('http://httpbin.moyufangge.com', httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} firstResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                             httpResponseCache.flush((err: BusinessError) => {
                                 if (err) {
