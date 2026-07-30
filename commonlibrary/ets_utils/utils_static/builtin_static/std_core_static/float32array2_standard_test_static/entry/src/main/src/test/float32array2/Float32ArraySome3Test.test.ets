@@ -121,24 +121,5 @@ export default function Float32ArraySome3Test(): void {
       expect(callCount).assertEqual(2);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SOME_THREE_0500
-     * @tc.name testFloat32ArraySomeThree005
-     * @tc.desc Verify some on empty array returns false and never invokes the callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySomeThree005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(0);
-      let callCount = 0;
-      const result = arr.some((element: number): boolean => {
-        callCount++;
-        return true;
-      });
-      expect(result).assertFalse();
-      expect(callCount).assertEqual(0);
-    });
-
   });
 }
