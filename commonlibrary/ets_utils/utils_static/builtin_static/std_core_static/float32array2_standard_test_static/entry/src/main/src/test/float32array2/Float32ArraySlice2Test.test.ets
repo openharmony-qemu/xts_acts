@@ -239,6 +239,7 @@ export default function Float32ArraySlice2Test(): void {
       const r = arr.slice(0, 1);
       const atValue013 = r.at(0);
       expect(atValue013).assertNaN();
+      expect(r.length).assertEqual(1);
     });
 
     /**
@@ -618,6 +619,8 @@ export default function Float32ArraySlice2Test(): void {
       const r = arr.slice(1, -1);
       const atValue038 = r.at(1);
       expect(atValue038).assertEqual(30.0);
+      expect(r.$_get(0)).assertEqual(20.0);
+      expect(r.$_get(2)).assertEqual(40.0);
     });
 
     /**
@@ -967,61 +970,12 @@ export default function Float32ArraySlice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0620
      * @tc.name testFloat32ArraySliceTwo062
-     * @tc.desc Verify slice(-2)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySliceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      const result = arr.slice(-2);
-      const atValue062 = result.at(0);
-      expect(atValue062).assertEqual(4.0);
-      expect(result.at(1)).assertEqual(5.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0630
-     * @tc.name testFloat32ArraySliceTwo063
-     * @tc.desc Verify slice(1,-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySliceTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0]);
-      const result = arr.slice(1, -1);
-      const atValue063 = result.at(1);
-      expect(atValue063).assertEqual(30.0);
-      expect(result.$_get(0)).assertEqual(20.0);
-      expect(result.$_get(2)).assertEqual(40.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0640
-     * @tc.name testFloat32ArraySliceTwo064
-     * @tc.desc Verify slice NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySliceTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([Number.NaN, 2.0, 3.0]);
-      const result = arr.slice(0, 1);
-      const atValue064 = result.at(0);
-      expect(atValue064).assertNaN();
-      expect(result.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0650
-     * @tc.name testFloat32ArraySliceTwo065
      * @tc.desc Verify slice(0,2) returns a copy; modifying the copy does not affect the original array element at index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       r.$_set(0, 99.0);
@@ -1030,14 +984,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0660
-     * @tc.name testFloat32ArraySliceTwo066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0630
+     * @tc.name testFloat32ArraySliceTwo063
      * @tc.desc Verify slice(0,2) returns a copy; modifying the copy element at index 1 does not affect original array element at index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       r.$_set(1, 88.0);
@@ -1046,14 +1000,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0670
-     * @tc.name testFloat32ArraySliceTwo067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0640
+     * @tc.name testFloat32ArraySliceTwo064
      * @tc.desc Verify $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 6.0, 7.0]);
       const r = arr.slice(0, 3);
       r.$_set(0, 100.0);
@@ -1062,14 +1016,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0680
-     * @tc.name testFloat32ArraySliceTwo068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0650
+     * @tc.name testFloat32ArraySliceTwo065
      * @tc.desc Verify fill on slice does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 3);
       r.fill(0.0);
@@ -1078,14 +1032,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0690
-     * @tc.name testFloat32ArraySliceTwo069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0660
+     * @tc.name testFloat32ArraySliceTwo066
      * @tc.desc Verify reverse on slice does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(0, 5);
       r.reverse();
@@ -1094,14 +1048,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0700
-     * @tc.name testFloat32ArraySliceTwo070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0670
+     * @tc.name testFloat32ArraySliceTwo067
      * @tc.desc Verify sort on slice does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 3.0, 1.0, 4.0, 2.0]);
       const r = arr.slice(0, 5);
       r.sort();
@@ -1110,14 +1064,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0710
-     * @tc.name testFloat32ArraySliceTwo071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0680
+     * @tc.name testFloat32ArraySliceTwo068
      * @tc.desc Verify copyWithin on slice does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0]);
       const r = arr.slice(0, 5);
       r.copyWithin(0, 3, 5);
@@ -1126,14 +1080,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0720
-     * @tc.name testFloat32ArraySliceTwo072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0690
+     * @tc.name testFloat32ArraySliceTwo069
      * @tc.desc Verify set on slice does not mutate original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       r.set([99.0, 88.0]);
@@ -1142,14 +1096,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0730
-     * @tc.name testFloat32ArraySliceTwo073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0700
+     * @tc.name testFloat32ArraySliceTwo070
      * @tc.desc Verify two slices share no buffer (deep copy)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r1 = arr.slice(0, 2);
       const r2 = arr.slice(0, 2);
@@ -1159,14 +1113,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0740
-     * @tc.name testFloat32ArraySliceTwo074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0710
+     * @tc.name testFloat32ArraySliceTwo071
      * @tc.desc Verify slice at(-1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
       const result = arr.slice(1, 3);
       const atValue074 = result.at(-1);
@@ -1175,14 +1129,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0750
-     * @tc.name testFloat32ArraySliceTwo075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0720
+     * @tc.name testFloat32ArraySliceTwo072
      * @tc.desc Verify fill on slice does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(0, 4);
       r.fill(0.0);
@@ -1191,14 +1145,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0760
-     * @tc.name testFloat32ArraySliceTwo076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0730
+     * @tc.name testFloat32ArraySliceTwo073
      * @tc.desc Verify byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       r.$_set(0, 99.0);
@@ -1206,14 +1160,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0770
-     * @tc.name testFloat32ArraySliceTwo077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0740
+     * @tc.name testFloat32ArraySliceTwo074
      * @tc.desc Verify length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       r.$_set(0, 99.0);
@@ -1221,14 +1175,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0780
-     * @tc.name testFloat32ArraySliceTwo078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0750
+     * @tc.name testFloat32ArraySliceTwo075
      * @tc.desc Verify slice Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, 2.0]);
       const result = arr.slice(0, 1);
       const atValue078 = result.at(0);
@@ -1237,14 +1191,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0790
-     * @tc.name testFloat32ArraySliceTwo079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0760
+     * @tc.name testFloat32ArraySliceTwo076
      * @tc.desc Verify slice -0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0, 2.0]);
       const result = arr.slice(0, 1);
       const element079 = 1 / result.$_get(0);
@@ -1253,14 +1207,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0800
-     * @tc.name testFloat32ArraySliceTwo080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0770
+     * @tc.name testFloat32ArraySliceTwo077
      * @tc.desc Verify slice slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(0, 3).slice(1);
       const atValue080 = r.at(0);
@@ -1268,14 +1222,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0810
-     * @tc.name testFloat32ArraySliceTwo081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0780
+     * @tc.name testFloat32ArraySliceTwo078
      * @tc.desc Verify chain slice().slice() copies elements correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice().slice();
       const atValue081 = r.at(2);
@@ -1283,28 +1237,28 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0820
-     * @tc.name testFloat32ArraySliceTwo082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0790
+     * @tc.name testFloat32ArraySliceTwo079
      * @tc.desc Verify slice length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
       const r = arr.slice(0, 4).slice(1, 3);
       expect(r.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0830
-     * @tc.name testFloat32ArraySliceTwo083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0800
+     * @tc.name testFloat32ArraySliceTwo080
      * @tc.desc Verify slice Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 3).slice(0, 2);
       expect(r.length).assertEqual(2);
@@ -1315,14 +1269,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0840
-     * @tc.name testFloat32ArraySliceTwo084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0810
+     * @tc.name testFloat32ArraySliceTwo081
      * @tc.desc Verify fill on full slice does not affect original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.0, 8.0, 9.0]);
       const r = arr.slice(0, arr.length);
       r.fill(0.0);
@@ -1331,14 +1285,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0850
-     * @tc.name testFloat32ArraySliceTwo085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0820
+     * @tc.name testFloat32ArraySliceTwo082
      * @tc.desc Verify slice(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0);
       r.$_set(1, 55.0);
@@ -1347,14 +1301,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0860
-     * @tc.name testFloat32ArraySliceTwo086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0830
+     * @tc.name testFloat32ArraySliceTwo083
      * @tc.desc Verify triple chain slice() returns correct element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
       const r = arr.slice(0, 6).slice(1, 5).slice(1, 3);
       const atValue086 = r.at(0);
@@ -1362,14 +1316,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0870
-     * @tc.name testFloat32ArraySliceTwo087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0840
+     * @tc.name testFloat32ArraySliceTwo084
      * @tc.desc Verify slice(-1) on subarray returns last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(0, 4).slice(-1);
       const atValue087 = r.at(0);
@@ -1377,14 +1331,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0880
-     * @tc.name testFloat32ArraySliceTwo088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0850
+     * @tc.name testFloat32ArraySliceTwo085
      * @tc.desc Verify slice(0, 2) returns an independent copy with length 2 and elements 1.0, 2.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice(0, 2);
       expect(r.length).assertEqual(2);
@@ -1393,14 +1347,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0890
-     * @tc.name testFloat32ArraySliceTwo089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0860
+     * @tc.name testFloat32ArraySliceTwo086
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice(0, 3);
       r.$_set(0, 99.0);
@@ -1409,14 +1363,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0900
-     * @tc.name testFloat32ArraySliceTwo090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0870
+     * @tc.name testFloat32ArraySliceTwo087
      * @tc.desc Verify slice buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r1 = arr.slice(0, 3);
       const r2 = arr.slice(0, 3);
@@ -1426,14 +1380,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0910
-     * @tc.name testFloat32ArraySliceTwo091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0880
+     * @tc.name testFloat32ArraySliceTwo088
      * @tc.desc Verify slice byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(0, 1.0);
@@ -1444,28 +1398,28 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0920
-     * @tc.name testFloat32ArraySliceTwo092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0890
+     * @tc.name testFloat32ArraySliceTwo089
      * @tc.desc Verify slice ArrayBuffer byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(1, 4);
       expect(r.buffer.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0930
-     * @tc.name testFloat32ArraySliceTwo093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0900
+     * @tc.name testFloat32ArraySliceTwo090
      * @tc.desc Verify buffer slice buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 4);
       const view = new Float32Array(arr.buffer);
@@ -1475,14 +1429,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0940
-     * @tc.name testFloat32ArraySliceTwo094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0910
+     * @tc.name testFloat32ArraySliceTwo091
      * @tc.desc Verify buffer.byteLength buffer.byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(32);
       const arr = new Float32Array(buf, 0, 8);
       const r = arr.slice(0, 2);
@@ -1490,14 +1444,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0950
-     * @tc.name testFloat32ArraySliceTwo095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0920
+     * @tc.name testFloat32ArraySliceTwo092
      * @tc.desc Verify buffer slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 2);
       const v = new Float32Array(arr.buffer);
@@ -1507,14 +1461,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0960
-     * @tc.name testFloat32ArraySliceTwo096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0930
+     * @tc.name testFloat32ArraySliceTwo093
      * @tc.desc Verify fill buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 4);
       r.fill(0.0);
@@ -1524,61 +1478,42 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0970
-     * @tc.name testFloat32ArraySliceTwo097
-     * @tc.desc Verify slice buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArraySliceTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0, 3.0]);
-      const r1 = arr.slice(0, 3);
-      const r2 = arr.slice(0, 3);
-      const r3 = arr.slice(0, 3);
-      r1.$_set(0, 10.0);
-      r2.$_set(0, 20.0);
-      const atValue099 = r3.at(0);
-      expect(atValue099).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0980
-     * @tc.name testFloat32ArraySliceTwo098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0940
+     * @tc.name testFloat32ArraySliceTwo094
      * @tc.desc Verify slice byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(-2);
       expect(r.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0990
-     * @tc.name testFloat32ArraySliceTwo099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0950
+     * @tc.name testFloat32ArraySliceTwo095
      * @tc.desc Verify slice byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
       const r = arr.slice(2, 5);
       expect(r.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1000
-     * @tc.name testFloat32ArraySliceTwo100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0960
+     * @tc.name testFloat32ArraySliceTwo096
      * @tc.desc Verify buffer buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice(0, 3);
       const rv = new Float32Array(r.buffer);
@@ -1588,28 +1523,28 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1010
-     * @tc.name testFloat32ArraySliceTwo101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0970
+     * @tc.name testFloat32ArraySliceTwo097
      * @tc.desc Verify buffer.byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice(0, 0);
       expect(r.buffer.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1020
-     * @tc.name testFloat32ArraySliceTwo102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0980
+     * @tc.name testFloat32ArraySliceTwo098
      * @tc.desc Verify slice() creates independent copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice();
       arr.$_set(2, 99.0);
@@ -1618,28 +1553,28 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1030
-     * @tc.name testFloat32ArraySliceTwo103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0990
+     * @tc.name testFloat32ArraySliceTwo099
      * @tc.desc Verify buffer.byteLength 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const r = arr.slice(1, 2);
       expect(r.buffer.byteLength).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1040
-     * @tc.name testFloat32ArraySliceTwo104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1000
+     * @tc.name testFloat32ArraySliceTwo100
      * @tc.desc Verify set buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 4);
       r.set([99.0, 99.0, 99.0, 99.0]);
@@ -1648,14 +1583,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1050
-     * @tc.name testFloat32ArraySliceTwo105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1010
+     * @tc.name testFloat32ArraySliceTwo101
      * @tc.desc Verify copyWithin on slice does not mutate original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const r = arr.slice(0, 5);
       r.copyWithin(0, 4, 5);
@@ -1664,14 +1599,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1060
-     * @tc.name testFloat32ArraySliceTwo106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1020
+     * @tc.name testFloat32ArraySliceTwo102
      * @tc.desc Verify reverse buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.slice(0, 4);
       r.reverse();
@@ -1681,14 +1616,14 @@ export default function Float32ArraySlice2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1070
-     * @tc.name testFloat32ArraySliceTwo107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_1030
+     * @tc.name testFloat32ArraySliceTwo103
      * @tc.desc Verify sort buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArraySliceTwo107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArraySliceTwo103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       const r = arr.slice(0, 3);
       r.sort();
