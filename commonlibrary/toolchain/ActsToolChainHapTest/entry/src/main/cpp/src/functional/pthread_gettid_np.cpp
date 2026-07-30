@@ -17,6 +17,7 @@
 #include <cstdio>
 #include <cstring>
 #include <pthread.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
 
@@ -30,20 +31,30 @@ int PthreadGettidNpTest()
 {
     int status = SUCCESS_CODE;
 
-    if (!(gettid() == pthread_gettid_np(pthread_self()))) {
-        LibcTestError(&status, "gettid() == pthread_gettid_np(pthread_self()) failed: pthread_gettid_np() is failed\n");
+    pid_t kernelTid = static_cast<pid_t>(syscall(SYS_gettid));
+    pid_t gettidResult = gettid();
+    pid_t npTid = pthread_gettid_np(pthread_self());
+    if (kernelTid != gettidResult) {
+        LibcTestError(&status, "syscall(SYS_gettid)=%d != gettid()=%d\n", kernelTid, gettidResult);
+    }
+    if (kernelTid != npTid) {
+        LibcTestError(&status, "syscall(SYS_gettid)=%d != pthread_gettid_np(pthread_self())=%d\n", kernelTid, npTid);
     }
 
     pid_t tid;
     pthread_t t;
-    pthread_create(&t, nullptr, PthreadTest, &tid);
+    int createRet = pthread_create(&t, nullptr, PthreadTest, &tid);
+    if (createRet != 0) {
+        LibcTestError(&status, "pthread_create failed, ret=%d errno=%d\n", createRet, errno);
+        return status;
+    }
     pid_t recvResult = pthread_gettid_np(t);
     if (!(pthread_join(t, nullptr) == 0)) {
         LibcTestError(&status, "pthread_join(t, nullptr) == 0 failed: pthread_join is failed\n");
     }
 
     if (!(tid == recvResult)) {
-        LibcTestError(&status, "tid == recvResult failed: the tid of pthread or tid of pthread_gettid_np() is wrong\n");
+        LibcTestError(&status, "tid == recvResult failed: tid=%d, recvResult=%d\n", tid, recvResult);
     }
     return status;
 }
