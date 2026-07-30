@@ -1,0 +1,14 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPValidTest",
+    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPErrorTest",
+    "MainAbility/pages/popupBackground/PopupBackgroundBlurStyleOptions",
+    "MainAbility/pages/popupBackground/PopupCommonOptionsBackgroundBlurStyleOptions",
+    "MainAbility/pages/popupBackground/CustomPopupOptionsBackgroundBlurStyleOptions",
+    "MainAbility/pages/CustomDialog/CustomDialogDisplayModeInSubWindow",
+    "MainAbility/pages/CustomDialog/CustomDialogSystemMaterial",
+    "MainAbility/pages/Menu/subMenuBuilder",
+    "MainAbility/pages/MenuSystemMaterial/MenuSystemMaterial"
+  ]
+}
