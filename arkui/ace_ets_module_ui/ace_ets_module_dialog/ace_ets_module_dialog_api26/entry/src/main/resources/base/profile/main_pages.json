@@ -1,5 +1,9 @@
 {
   "src": [
-    "MainAbility/pages/index/index"
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/popup/PopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupCommonOptionsColorMode",
+    "MainAbility/pages/popup/PopupOptionsLevelMode",
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode"
   ]
 }

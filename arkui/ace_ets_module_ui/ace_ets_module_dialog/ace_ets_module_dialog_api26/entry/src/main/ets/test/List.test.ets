@@ -13,5 +13,14 @@
  * limitations under the License.
  */
 
+import PopupOptionsColorMode from './popup/PopupOptionsColorMode.test';
+import PopupCommonOptionsColorMode from './popup/PopupCommonOptionsColorMode.test';
+import PopupOptionsLevelMode from './popup/PopupOptionsLevelMode.test';
+import CustomPopupOptionsLevelMode from './popup/CustomPopupOptionsLevelMode.test';
+
 export default function testsuite() {
+  PopupOptionsColorMode();
+  PopupCommonOptionsColorMode();
+  PopupOptionsLevelMode();
+  CustomPopupOptionsLevelMode();
 }
