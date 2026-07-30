@@ -2353,7 +2353,7 @@ napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback
     }
     
     if (supportResult != true && supportResult != false) {
-        error = CAMERA_INVALID_ARGUMENT; 
+        error = CAMERA_INVALID_ARGUMENT;
     }
     
     napi_value ret;
