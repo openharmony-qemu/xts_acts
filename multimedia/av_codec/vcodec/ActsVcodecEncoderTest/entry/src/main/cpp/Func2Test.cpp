@@ -541,7 +541,7 @@ napi_value VideoEncodeHevcCapability4900Test(napi_env env, napi_callback_info in
         if (levels == nullptr) { return CreateIntInt32Result(env, -1); }
         if (levelNum <= 0) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < levelNum; i++) {
-            if (evels[i] < 0) { return CreateIntInt32Result(env, -1); }
+            if (levels[i] < 0) { return CreateIntInt32Result(env, -1); }
         }
         TearDown();
         return CreateIntInt32Result(env, 0);

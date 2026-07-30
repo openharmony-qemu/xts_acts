@@ -1115,7 +1115,7 @@ napi_value VideoEncodeApiDual0400(napi_env env, napi_callback_info info)
         OH_AVCodec *vencCodec = nullptr;
         if (OH_VideoEncoder_CreateSecondaryFromPrimary(
             primaryVencCodec, &vencCodec) != AV_ERR_OK) {
-                return CreateIntInt32Result(env, -1)
+                return CreateIntInt32Result(env, -1);
             }
         if (vencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(primaryVencCodec);
@@ -1195,6 +1195,20 @@ napi_value VideoEncodeApiDual0700(napi_env env, napi_callback_info info)
     } else {
         return CreateIntInt32Result(env, 0);
     }
+}
+
+napi_value VideoEncodeApiDual0800(napi_env env, napi_callback_info info)
+{
+    const uint32_t lengths[] = {0, 255, 256};
+    for (uint32_t len : lengths) {
+        std::string mimeStr(len, 'a');
+        OH_AVCodec *vencCodec = nullptr;
+        if (OH_VideoEncoder_CreatePrimaryWithPreproc(mimeStr.c_str(),
+        &vencCodec) != AV_ERR_INVALID_VAL) {
+            return CreateIntInt32Result(env, -1);
+        }
+    }
+    return CreateIntInt32Result(env, 0);
 }
 
 void InitApiTest()

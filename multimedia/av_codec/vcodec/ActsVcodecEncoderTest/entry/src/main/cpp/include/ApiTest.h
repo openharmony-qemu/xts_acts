@@ -78,6 +78,7 @@ napi_value VideoEncodeApiDual0400(napi_env env, napi_callback_info info);
 napi_value VideoEncodeApiDual0500(napi_env env, napi_callback_info info);
 napi_value VideoEncodeApiDual0600(napi_env env, napi_callback_info info);
 napi_value VideoEncodeApiDual0700(napi_env env, napi_callback_info info);
+napi_value VideoEncodeApiDual0800(napi_env env, napi_callback_info info);
 extern void InitApiTest();
 extern void TestTearDownApi();
 

@@ -79,6 +79,7 @@ export const VideoEncodeApiDual0400: () => Promise<number>;
 export const VideoEncodeApiDual0500: () => Promise<number>;
 export const VideoEncodeApiDual0600: () => Promise<number>;
 export const VideoEncodeApiDual0700: () => Promise<number>;
+export const VideoEncodeApiDual0800: () => Promise<number>;
 export const VideoEncodeFunction0100Test: () => Promise<number>;
 export const VideoEncodeFunction0200Test: () => Promise<number>;
 export const VideoEncodeFunction0300Test: () => Promise<number>;

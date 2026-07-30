@@ -838,5 +838,17 @@ export default function VideoEncoderApiTest() {
       let result: number = await testNapi.VideoEncodeApiDual0700();
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0800
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoEncodeApiDual0800();
+      expect(result).assertEqual(0);
+    });
   });
 }

@@ -173,6 +173,7 @@ static void InitPush2(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoEncodeApiDual0500", VideoEncodeApiDual0500));
     desc.push_back(XL("VideoEncodeApiDual0600", VideoEncodeApiDual0600));
     desc.push_back(XL("VideoEncodeApiDual0700", VideoEncodeApiDual0700));
+    desc.push_back(XL("VideoEncodeApiDual0800", VideoEncodeApiDual0800));
     desc.push_back(XL("VideoEncodeFunction0100Test", VideoEncodeFunction0100Test));
     desc.push_back(XL("VideoEncodeFunction0200Test", VideoEncodeFunction0200Test));
     desc.push_back(XL("VideoEncodeFunction0300Test", VideoEncodeFunction0300Test));

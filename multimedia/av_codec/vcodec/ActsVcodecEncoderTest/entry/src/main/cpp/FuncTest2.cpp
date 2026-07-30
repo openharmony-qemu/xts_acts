@@ -516,7 +516,7 @@ napi_value VideoEncodeCapability8000Test(napi_env env, napi_callback_info info)
         if (levels == nullptr) { return CreateIntInt32Result(env, -1); }
         if (levelNum <= 0) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < levelNum; i++) {
-            if (evels[i] < 0) { return CreateIntInt32Result(env, -1); }
+            if (levels[i] < 0) { return CreateIntInt32Result(env, -1); }
         }
         return CreateIntInt32Result(env, 0);
     }
@@ -1052,7 +1052,7 @@ napi_value VideoEncodeHevcCapability3000Test(napi_env env, napi_callback_info in
 
 napi_value VideoEncodeSetMaxFrameDelayCount0100Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
         if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
@@ -1069,7 +1069,7 @@ napi_value VideoEncodeSetMaxFrameDelayCount0100Test(napi_env env, napi_callback_
 
 napi_value VideoEncodeSetMaxFrameDelayCount0200Test(napi_env env, napi_callback_info info)
 {
-    if (cap_hevc) {
+    if (cap_hevc && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
@@ -1086,7 +1086,7 @@ napi_value VideoEncodeSetMaxFrameDelayCount0200Test(napi_env env, napi_callback_
 
 napi_value VideoEncodeSetMaxFrameDelayCount0300Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
         if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
@@ -1105,7 +1105,7 @@ napi_value VideoEncodeSetMaxFrameDelayCount0300Test(napi_env env, napi_callback_
 
 napi_value VideoEncodeSetMaxFrameDelayCount0400Test(napi_env env, napi_callback_info info)
 {
-    if (cap_hevc) {
+    if (cap_hevc && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
