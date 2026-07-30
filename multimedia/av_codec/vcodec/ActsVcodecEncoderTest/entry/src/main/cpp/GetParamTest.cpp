@@ -276,15 +276,17 @@ static int32_t PreparePreProcess0100Sample(VEncAPI11Sample *vEncSample)
 static int32_t ConfigureSecondaryEncoderPreProcess0100(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = false;
-    vEncSample->DEFAULT_WIDTH = 1280;
-    vEncSample->DEFAULT_HEIGHT = 720;
+    vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+    vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
     if (vEncSample->SwitchSecondaryEncoder() != AV_ERR_OK) {
         return -1;
     }
+    constexpr int32_t encDownsamplingWidth = 640;
+    constexpr int32_t encDownsamplingHeight = 360;
     vEncSample->preProcessParameter.configEnable = true;
     vEncSample->preProcessParameter.enableDownsampling = true;
-    vEncSample->preProcessParameter.downsamplingWidth = 640;
-    vEncSample->preProcessParameter.downsamplingHeight = 360;
+    vEncSample->preProcessParameter.downsamplingWidth = encDownsamplingWidth;
+    vEncSample->preProcessParameter.downsamplingHeight = encDownsamplingHeight;
     if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) {
         return -1;
     }
@@ -297,8 +299,10 @@ static int32_t ConfigureSecondaryEncoderPreProcess0100(VEncAPI11Sample *vEncSamp
 static int32_t ConfigurePrimaryEncoderPreProcess0100(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = true;
-    vEncSample->preProcessParameter.downsamplingWidth = 380;
-    vEncSample->preProcessParameter.downsamplingHeight = 200;
+    constexpr int32_t encDownWidth = 380;
+    constexpr int32_t encDownHeight = 200;
+    vEncSample->preProcessParameter.downsamplingWidth = encDownWidth;
+    vEncSample->preProcessParameter.downsamplingHeight = encDownHeight;
     if (vEncSample->SwitchPrimaryEncoder() != AV_ERR_OK) {
         return -1;
     }
@@ -366,17 +370,21 @@ static int32_t PreparePreProcess0200Sample(VEncAPI11Sample *vEncSample)
 static int32_t ConfigureSecondaryEncoderPreProcess0200(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = false;
-    vEncSample->DEFAULT_WIDTH = 1280;
-    vEncSample->DEFAULT_HEIGHT = 720;
+    vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+    vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
     if (vEncSample->SwitchSecondaryEncoder() != AV_ERR_OK) {
         return -1;
     }
+    constexpr int32_t encCropLeft = 100;
+    constexpr int32_t encCropRight = 1199;
+    constexpr int32_t encCropTop = 100;
+    constexpr int32_t encCropBottom = 699;
     vEncSample->preProcessParameter.configEnable = true;
     vEncSample->preProcessParameter.enableCrop = true;
-    vEncSample->preProcessParameter.cropLeft = 100;
-    vEncSample->preProcessParameter.cropRight = 1199;
-    vEncSample->preProcessParameter.cropTop = 100;
-    vEncSample->preProcessParameter.cropBottom = 699;
+    vEncSample->preProcessParameter.cropLeft = encCropLeft;
+    vEncSample->preProcessParameter.cropRight = encCropRight;
+    vEncSample->preProcessParameter.cropTop = encCropTop;
+    vEncSample->preProcessParameter.cropBottom = encCropBottom;
     if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) {
         return -1;
     }
@@ -389,11 +397,15 @@ static int32_t ConfigureSecondaryEncoderPreProcess0200(VEncAPI11Sample *vEncSamp
 static int32_t ConfigurePrimaryEncoderPreProcess0200(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = true;
+    constexpr int32_t encCropLeft = 50;
+    constexpr int32_t encCropRight = 999;
+    constexpr int32_t encCropTop = 0;
+    constexpr int32_t encCropBottom = 499;
     vEncSample->preProcessParameter.enableCrop = true;
-    vEncSample->preProcessParameter.cropLeft = 50;
-    vEncSample->preProcessParameter.cropRight = 999;
-    vEncSample->preProcessParameter.cropTop = 0;
-    vEncSample->preProcessParameter.cropBottom = 499;
+    vEncSample->preProcessParameter.cropLeft = encCropLeft;
+    vEncSample->preProcessParameter.cropRight = encCropRight;
+    vEncSample->preProcessParameter.cropTop = encCropTop;
+    vEncSample->preProcessParameter.cropBottom = encCropBottom;
     if (vEncSample->SwitchPrimaryEncoder() != AV_ERR_OK) {
         return -1;
     }
@@ -461,14 +473,15 @@ static int32_t PreparePreProcess0300Sample(VEncAPI11Sample *vEncSample)
 static int32_t ConfigureSecondaryEncoderPreProcess0300(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = false;
-    vEncSample->DEFAULT_WIDTH = 1280;
-    vEncSample->DEFAULT_HEIGHT = 720;
+    vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+    vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
     if (vEncSample->SwitchSecondaryEncoder() != AV_ERR_OK) {
         return -1;
     }
+    constexpr double encDropFrameRate = 25.57;
     vEncSample->preProcessParameter.configEnable = true;
     vEncSample->preProcessParameter.enableDFrame = true;
-    vEncSample->preProcessParameter.dropFrameRate = 25.57;
+    vEncSample->preProcessParameter.dropFrameRate = encDropFrameRate;
     if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) {
         return -1;
     }
@@ -481,8 +494,9 @@ static int32_t ConfigureSecondaryEncoderPreProcess0300(VEncAPI11Sample *vEncSamp
 static int32_t ConfigurePrimaryEncoderPreProcess0300(VEncAPI11Sample *vEncSample)
 {
     vEncSample->SURF_INPUT = true;
+    constexpr double encDropFrameNum = 15.89;
     vEncSample->preProcessParameter.enableDFrame = true;
-    vEncSample->preProcessParameter.dropFrameRate = 15.89;
+    vEncSample->preProcessParameter.dropFrameRate = encDropFrameNum;
     if (vEncSample->SwitchPrimaryEncoder() != AV_ERR_OK) {
         return -1;
     }
