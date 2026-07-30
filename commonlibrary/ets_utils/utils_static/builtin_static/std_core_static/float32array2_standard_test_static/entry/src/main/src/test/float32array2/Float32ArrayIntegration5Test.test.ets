@@ -1002,7 +1002,7 @@ export default function Float32ArrayIntegration5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5600
      * @tc.name testFloat32ArrayIntegrationFive056
-     * @tc.desc Verify for-of iterates over and sums all elements
+     * @tc.desc Verify values iterator iterates over and sums all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1010,9 +1010,10 @@ export default function Float32ArrayIntegration5Test(): void {
     it('testFloat32ArrayIntegrationFive056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10, 20, 30]);
       let sum = 0.0;
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        sum = sum + v;
+      const iterator = arr.values();
+      for (let result = iterator.next(); !result.done; result = iterator.next()) {
+        const value = result.value!;
+        sum = sum + value;
       }
       expect(sum).assertEqual(60);
     });

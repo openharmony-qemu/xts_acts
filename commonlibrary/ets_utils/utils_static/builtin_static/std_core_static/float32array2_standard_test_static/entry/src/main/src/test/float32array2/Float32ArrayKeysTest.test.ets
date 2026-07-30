@@ -323,8 +323,11 @@ export default function Float32ArrayKeysTest(): void {
     it('testFloat32ArrayKeys018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       const iterator = arr.keys();
-      const result = iterator.next();
-      expect(result.done).assertTrue();
+      let count = 0;
+      for (let result = iterator.next(); !result.done; result = iterator.next()) {
+        count = count + 1;
+      }
+      expect(count).assertEqual(0);
     });
 
     /**
@@ -771,6 +774,7 @@ export default function Float32ArrayKeysTest(): void {
       let count = 0;
       for (let __f32e = it2.next();!__f32e.done; __f32e = it2.next()) {
         const k = __f32e.value!;
+        expect(k).assertEqual(count);
         count = count + 1;
       }
       expect(count).assertEqual(2);
@@ -809,6 +813,7 @@ export default function Float32ArrayKeysTest(): void {
       let n = 0;
       for (let __f32e = itA.next();!__f32e.done; __f32e = itA.next()) {
         const k = __f32e.value!;
+        expect(k).assertEqual(n);
         n = n + 1;
       }
       expect(n).assertEqual(3);
@@ -1264,6 +1269,9 @@ export default function Float32ArrayKeysTest(): void {
       expect(iteratorValue072).assertEqual(0);
       const iteratorValue072Part2 = it.next().value;
       expect(iteratorValue072Part2).assertEqual(1);
+      const iteratorValue072Part3 = it.next().value;
+      expect(iteratorValue072Part3).assertEqual(2);
+      expect(it.next().done).assertTrue();
     });
 
     /**
@@ -1424,11 +1432,17 @@ export default function Float32ArrayKeysTest(): void {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const before0 = arr.$_get(0);
       const before1 = arr.$_get(1);
-      arr.keys();
+      const before2 = arr.$_get(2);
+      const it = arr.keys();
+      expect(it.next().value).assertEqual(0);
+      expect(it.next().value).assertEqual(1);
+      expect(it.next().value).assertEqual(2);
+      expect(it.next().done).assertTrue();
       const element081 = arr.$_get(0);
       expect(element081).assertEqual(before0);
       const element081Part2 = arr.$_get(1);
       expect(element081Part2).assertEqual(before1);
+      expect(arr.$_get(2)).assertEqual(before2);
     });
 
     /**

@@ -978,18 +978,16 @@ export default function Float32ArrayIteratorTest(): void {
      */
     it('testFloat32ArrayIterator055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
-      const viaIt: number[] = [];
-      const viaValues: number[] = [];
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        viaIt.push(v);
-      }
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        viaValues.push(v);
-      }
-      expect(viaIt.length).assertEqual(viaValues.length);
-      expect(viaIt[1]).assertEqual(2.0);
+      const viaIt = arr.$_iterator();
+      const viaValues = arr.values();
+      expect(viaIt.next().value).assertEqual(1.0);
+      expect(viaValues.next().value).assertEqual(1.0);
+      expect(viaIt.next().value).assertEqual(2.0);
+      expect(viaValues.next().value).assertEqual(2.0);
+      expect(viaIt.next().value).assertEqual(3.0);
+      expect(viaValues.next().value).assertEqual(3.0);
+      expect(viaIt.next().done).assertTrue();
+      expect(viaValues.next().done).assertTrue();
     });
 
     /**
@@ -1660,12 +1658,11 @@ export default function Float32ArrayIteratorTest(): void {
      */
     it('testFloat32ArrayIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Number.NaN, Number.NaN, Number.NaN);
-      let count = 0;
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        count = count + 1;
-      }
-      expect(count).assertEqual(3);
-      expect(arr.$_get(0)).assertNaN();
+      const iterator = arr.$_iterator();
+      expect(iterator.next().value).assertNaN();
+      expect(iterator.next().value).assertNaN();
+      expect(iterator.next().value).assertNaN();
+      expect(iterator.next().done).assertTrue();
     });
 
     /**

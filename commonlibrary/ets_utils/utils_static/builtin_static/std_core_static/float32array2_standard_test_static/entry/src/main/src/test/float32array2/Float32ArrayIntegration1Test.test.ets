@@ -292,7 +292,7 @@ export default function Float32ArrayIntegration1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_ONE_0180
      * @tc.name testFloat32ArrayIntegrationOne018
-     * @tc.desc Verify length=-0.5 RangeError
+     * @tc.desc Verify length=-0.5 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

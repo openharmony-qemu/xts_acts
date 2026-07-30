@@ -217,7 +217,7 @@ export default function Float32ArrayIntegration4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayIntegrationFour012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = new Float32Array([16777217]);
+      const src: FixedArray<number> = [16777217];
       const dst = new Float32Array(1);
       dst.set(src);
       const element012 = dst.$_get(0);
@@ -403,7 +403,7 @@ export default function Float32ArrayIntegration4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FOUR_2500
      * @tc.name testFloat32ArrayIntegrationFour025
-     * @tc.desc Verify findLast with strict NaN comparison has no match and throws Error per SDK behavior
+     * @tc.desc Verify findLast with strict NaN comparison throws Error when there is no match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

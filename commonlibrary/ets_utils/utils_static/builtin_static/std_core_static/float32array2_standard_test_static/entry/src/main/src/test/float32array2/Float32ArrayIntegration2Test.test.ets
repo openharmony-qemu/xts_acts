@@ -129,7 +129,7 @@ export default function Float32ArrayIntegration2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_TWO_0700
      * @tc.name testFloat32ArrayIntegrationTwo007
-     * @tc.desc Verify at(5) on length-1 array returns undefined
+     * @tc.desc Verify at(2) on length-2 array returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -327,8 +327,21 @@ export default function Float32ArrayIntegration2Test(): void {
      */
     it('testFloat32ArrayIntegrationTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
-      const r = arr.forEach((v: number, index: int, array: Float32Array): void => {});
+      let callbackCount = 0;
+      let valueSum = 0.0;
+      let lastIndex: int = -1;
+      let receivedSource = true;
+      const r = arr.forEach((v: number, index: int, array: Float32Array): void => {
+        callbackCount = callbackCount + 1;
+        valueSum = valueSum + v;
+        lastIndex = index;
+        receivedSource = receivedSource && array === arr;
+      });
       expect(r).assertUndefined();
+      expect(callbackCount).assertEqual(2);
+      expect(valueSum).assertEqual(3.0);
+      expect(lastIndex).assertEqual(1);
+      expect(receivedSource).assertTrue();
     });
 
     /**
@@ -1150,8 +1163,14 @@ export default function Float32ArrayIntegration2Test(): void {
      */
     it('testFloat32ArrayIntegrationTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
-      arr.filter((v: number, index: int, array: Float32Array): boolean => v > 1);
+      const result = arr.filter((v: number, index: int, array: Float32Array): boolean => v > 1);
       expect(arr.length).assertEqual(3);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+      expect(result.length).assertEqual(2);
+      expect(result.$_get(0)).assertEqual(2.0);
+      expect(result.$_get(1)).assertEqual(3.0);
     });
 
     /**
@@ -1503,7 +1522,7 @@ export default function Float32ArrayIntegration2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_TWO_9900
      * @tc.name testFloat32ArrayIntegrationTwo099
-     * @tc.desc Verify for-of on [1,2,3] sum of values equals 6
+     * @tc.desc Verify values iterator on [1,2,3] sums all values to 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1511,9 +1530,10 @@ export default function Float32ArrayIntegration2Test(): void {
     it('testFloat32ArrayIntegrationTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       let sum: number = 0;
-      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        sum = sum + v;
+      const iterator = arr.values();
+      for (let result = iterator.next(); !result.done; result = iterator.next()) {
+        const value = result.value!;
+        sum = sum + value;
       }
       expect(sum).assertEqual(6.0);
     });
