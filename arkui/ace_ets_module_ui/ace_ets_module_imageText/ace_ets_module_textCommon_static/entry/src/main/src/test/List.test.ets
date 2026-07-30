@@ -5,6 +5,7 @@ import EditDecorationThicknessScaleTest from './EditCommonTest/EditDecorationThi
 import SetTextSelectionClearPolicyTest from './UIContext/SetTextSelectionClearPolicy.test';
 import TextSymbolWithEnvFontScaleTest from './WithEnvTest/TextSymbolWithEnvFontScale.test';
 import TextMenuItemIdTest from './TextMenuItemIdTest/TextMenuItemId.test';
+import DisableMenuItemsTest from './UIContext/DisableMenuItems.test';
 
 export default function testsuite() {
   TextCommonTest();
@@ -12,4 +13,5 @@ export default function testsuite() {
   EditDecorationThicknessScaleTest();
   SetTextSelectionClearPolicyTest();
   TextSymbolWithEnvFontScaleTest();
+  DisableMenuItemsTest();
 }
