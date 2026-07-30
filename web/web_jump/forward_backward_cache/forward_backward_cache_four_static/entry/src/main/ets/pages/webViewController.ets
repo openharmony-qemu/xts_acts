@@ -16,7 +16,7 @@
 import { Entry, Component, Column, Row, Button, ClickEvent, Web, WebBypassVsyncCondition } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
 import { BusinessError } from '@ohos.base';
@@ -542,6 +542,230 @@ struct Index {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(false, 2026052031);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncPartitionedTrueStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=true', false);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, true);
+                console.log('emitFetchCookieSyncPartitionedTrueStatic cookie = ' + this.cookieResult);
+                Utils.emitEvent(this.cookieResult, 2026072401);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072401);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncPartitionedFalseStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=false', false);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, false);
+                console.log('emitFetchCookieSyncPartitionedFalseStatic cookie = ' + this.cookieResult);
+                Utils.emitEvent(this.cookieResult, 2026072402);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072402);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncPartitionedDefaultStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=default', false);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false);
+                console.log('emitFetchCookieSyncPartitionedDefaultStatic cookie = ' + this.cookieResult);
+                Utils.emitEvent(this.cookieResult, 2026072403);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072403);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncPartitionedIncognitoStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(true);
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=incognito', true);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', true, true);
+                console.log('emitFetchCookieSyncPartitionedIncognitoStatic cookie = ' + this.cookieResult);
+                Utils.emitEvent(this.cookieResult, 2026072404);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072404);
+              }
+              break;
+            }
+
+            case 'emitFetchCookiePartitionedTrueStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(false);
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'async=true', false);
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, true)
+                  .then((cookie: string) => {
+                    console.log('emitFetchCookiePartitionedTrueStatic cookie = ' + cookie);
+                    Utils.emitEvent(cookie, 2026072405);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(String(error.code) + String(error.message), 2026072405);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072405);
+              }
+              break;
+            }
+
+            case 'emitFetchCookiePartitionedFalseStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(false);
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'async=false', false);
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, false)
+                  .then((cookie: string) => {
+                    console.log('emitFetchCookiePartitionedFalseStatic cookie = ' + cookie);
+                    Utils.emitEvent(cookie, 2026072406);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(String(error.code) + String(error.message), 2026072406);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072406);
+              }
+              break;
+            }
+
+            case 'emitFetchCookiePartitionedIncognitoStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(true);
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'async=incognito', true);
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', true, true)
+                  .then((cookie: string) => {
+                    console.log('emitFetchCookiePartitionedIncognitoStatic cookie = ' + cookie);
+                    Utils.emitEvent(cookie, 2026072407);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(String(error.code) + String(error.message), 2026072407);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072407);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncPartitionedErrorUrlStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.fetchCookieSync('', false, true);
+              } catch (error) {
+                const actualResult = String(error.code) + String(error.message);
+                console.error('emitFetchCookieSyncPartitionedErrorUrlStatic actualResult: ' + actualResult);
+                Utils.emitEvent(actualResult, 2026072408);
+              }
+              break;
+            }
+
+            case 'emitFetchCookiePartitionedErrorUrlStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.fetchCookie('', false, true)
+                  .then((cookie: string) => {
+                    Utils.emitEvent(cookie, 2026072409);
+                  })
+                  .catch((error) => {
+                    Utils.emitEvent(String(error.code) + String(error.message), 2026072409);
+                  });
+              } catch (error) {
+                Utils.emitEvent(String(error.code) + String(error.message), 2026072409);
+              }
+              break;
+            }
+
+            case 'emitAttrPartitionedSyncTrueStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'name=value; Secure; SameSite=None; Partitioned;', false);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, true);
+                console.log('emitAttrPartitionedSyncTrueStatic cookie = ' + this.cookieResult);
+                if (this.cookieResult.indexOf('name=value') >= 0) {
+                  Utils.emitEvent('pass', 2026072414);
+                } else {
+                  Utils.emitEvent('fail', 2026072414);
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 2026072414);
+              }
+              break;
+            }
+
+            case 'emitAttrPartitionedSyncFalseStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'name=value; Secure; SameSite=None; Partitioned;', false);
+                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, false);
+                console.log('emitAttrPartitionedSyncFalseStatic cookie = ' + this.cookieResult);
+                if (this.cookieResult.indexOf('name=value') < 0) {
+                  Utils.emitEvent('pass', 2026072415);
+                } else {
+                  Utils.emitEvent('fail', 2026072415);
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 2026072415);
+              }
+              break;
+            }
+
+            case 'emitAttrPartitionedAsyncTrueStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'name=value; Secure; SameSite=None; Partitioned;', false);
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, true)
+                  .then((cookie: string) => {
+                    console.log('emitAttrPartitionedAsyncTrueStatic cookie = ' + cookie);
+                    if (cookie.indexOf('name=value') >= 0) {
+                      Utils.emitEvent('pass', 2026072416);
+                    } else {
+                      Utils.emitEvent('fail', 2026072416);
+                    }
+                  })
+                  .catch((error) => {
+                    Utils.emitEvent('fail', 2026072416);
+                  });
+              } catch (error) {
+                Utils.emitEvent('fail', 2026072416);
+              }
+              break;
+            }
+
+            case 'emitAttrPartitionedAsyncFalseStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'name=value; Secure; SameSite=None; Partitioned;', false);
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, false)
+                  .then((cookie: string) => {
+                    console.log('emitAttrPartitionedAsyncFalseStatic cookie = ' + cookie);
+                    if (cookie.indexOf('name=value') < 0) {
+                      Utils.emitEvent('pass', 2026072417);
+                    } else {
+                      Utils.emitEvent('fail', 2026072417);
+                    }
+                  })
+                  .catch((error) => {
+                    Utils.emitEvent('pass', 2026072417);
+                  });
+              } catch (error) {
+                Utils.emitEvent('fail', 2026072417);
               }
               break;
             }
