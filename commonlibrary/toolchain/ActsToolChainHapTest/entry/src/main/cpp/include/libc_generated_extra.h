@@ -399,6 +399,7 @@ int MmapTest();
 int ModfTest();
 int ModffTest();
 int ModflTest();
+int MprotectTest();
 int Mrand48Test();
 int MremapTest();
 int MsyncTest();

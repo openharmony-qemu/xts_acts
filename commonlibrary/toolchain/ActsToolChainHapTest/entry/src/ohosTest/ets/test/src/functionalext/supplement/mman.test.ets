@@ -31,7 +31,19 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
-
+    /**
+     * @tc.name   mprotect
+     * @tc.number SUB_THIRDPARTY_MUSL_MPROTECT_0100
+     * @tc.desc   libc-test mprotect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mprotect", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mprotect");
+      expect(result).assertEqual(0);
+      done();
+    });
     /**
      * @tc.name   munlock
      * @tc.number SUB_THIRDPARTY_MUSL_MUNLOCK_0100

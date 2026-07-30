@@ -15,7 +15,6 @@
 
 #include <csignal>
 #include <string>
-#include <sys/syscall.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <unordered_map>
@@ -494,6 +493,7 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "mktime_sup", &MktimeSupTest },
     { "mlock", &MlockTest },
     { "mlock2", &Mlock2Test },
+    { "mprotect", &MprotectTest },
     { "mrand48", &Mrand48Test },
     { "mtx_init", &MtxInitTest },
     { "mtx_lock", &MtxLockTest },
@@ -1149,13 +1149,9 @@ static int RunByNameForked(const std::string& name)
         sigset_t fullset;
         sigfillset(&fullset);
         sigprocmask(SIG_UNBLOCK, &fullset, nullptr);
-        struct sigaction sa;
-        sa.sa_handler = SIG_DFL;
-        sigfillset(&sa.sa_mask);
-        sa.sa_flags = 0;
         for (int sig = 1; sig < NSIG; ++sig) {
             if (sig != SIGKILL && sig != SIGSTOP) {
-                syscall(SYS_rt_sigaction, sig, &sa, nullptr, sizeof(sigset_t));
+                signal(sig, SIG_DFL);
             }
         }
         g_tStatus = 0;

@@ -593,6 +593,7 @@ add_library(
     src/functionalext/supplement/misc/setlogmask.cpp
     src/functionalext/supplement/misc/uname.cpp
     src/functionalext/supplement/mman/mlock.cpp
+    src/functionalext/supplement/mman/mprotect.cpp
     src/functionalext/supplement/mman/munlock.cpp
     src/functionalext/supplement/multibyte/mblen.cpp
     src/functionalext/supplement/multibyte/mbrtoc16.cpp
