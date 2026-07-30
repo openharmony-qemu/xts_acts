@@ -90,7 +90,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0400
      * @tc.name testUint8ClampedArraySortTwo004
-     * @tc.desc Verify sort [10,20] with arr[0]=0.4 clamped to 0: sorted [0,20]
+     * @tc.desc Verify sort [10,20] with arr[0]=0.4 clamped to 0 returns [0,20]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -107,7 +107,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0500
      * @tc.name testUint8ClampedArraySortTwo005
-     * @tc.desc Verify sort [10,20] with arr[0]=1e9 clamped to 255: sorted [20,255]
+     * @tc.desc Verify sort [10,20] with arr[0]=1e9 clamped to 255 returns [20,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -124,7 +124,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0600
      * @tc.name testUint8ClampedArraySortTwo006
-     * @tc.desc Verify sort [10,20] with arr[0]=-1e9 clamped to 0: sorted [0,20]
+     * @tc.desc Verify sort [10,20] with arr[0]=-1e9 clamped to 0 returns [0,20]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -141,7 +141,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0700
      * @tc.name testUint8ClampedArraySortTwo007
-     * @tc.desc Verify sort [10,20] with arr[0]=MAX_VALUE clamped to 255: sorted [20,255]
+     * @tc.desc Verify sort [10,20] with arr[0]=Number.MAX_VALUE clamped to 255 returns [20,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -158,7 +158,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0800
      * @tc.name testUint8ClampedArraySortTwo008
-     * @tc.desc Verify sort [10,20] with arr[0]=MIN_VALUE clamped to 0: sorted [0,20]
+     * @tc.desc Verify sort [10,20] with arr[0]=Number.MIN_VALUE clamped to 0 returns [0,20]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -175,7 +175,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_0900
      * @tc.name testUint8ClampedArraySortTwo009
-     * @tc.desc Verify sort [10,20] with arr[0]=-0 clamped to 0: sorted [0,20]
+     * @tc.desc Verify sort [10,20] with arr[0]=-0 clamped to 0 returns [0,20]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -192,7 +192,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1000
      * @tc.name testUint8ClampedArraySortTwo010
-     * @tc.desc Verify sort [10,20] with arr[0]=2147483648 clamped to 255: sorted [20,255]
+     * @tc.desc Verify sort [10,20] with arr[0]=2147483648 clamped to 255 returns [20,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -262,7 +262,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1400
      * @tc.name testUint8ClampedArraySortTwo014
-     * @tc.desc Verify compareFn return positive length=3 [1,3,2]
+     * @tc.desc Verify compareFn return constant 1 keeps order on [1,3,2] → [1,3,2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -279,7 +279,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1500
      * @tc.name testUint8ClampedArraySortTwo015
-     * @tc.desc Verify compareFn return negative length=3 [3,1,2]
+     * @tc.desc Verify compareFn return constant -1 reverses on [3,1,2] → [2,1,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -296,7 +296,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1600
      * @tc.name testUint8ClampedArraySortTwo016
-     * @tc.desc Verify compareFn return constant 1 length=3 [10,20,30]
+     * @tc.desc Verify compareFn return constant 1 stable on [10,20,30] → [10,20,30]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -313,7 +313,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1700
      * @tc.name testUint8ClampedArraySortTwo017
-     * @tc.desc Verify compareFn return constant -1 length=3 [10,20,30]
+     * @tc.desc Verify compareFn return constant -1 reverses on [10,20,30] → [30,20,10]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -330,7 +330,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_1800
      * @tc.name testUint8ClampedArraySortTwo018
-     * @tc.desc Verify compareFn return 0 length unchanged [1,2,3]
+     * @tc.desc Verify compareFn return constant 0 stable on [1,2,3] → [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -578,7 +578,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_3200
      * @tc.name testUint8ClampedArraySortTwo032
-     * @tc.desc Verify sort result typeof is not number [2,1]
+     * @tc.desc Verify sort result typeof is not 'number' on [2,1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -594,7 +594,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_3300
      * @tc.name testUint8ClampedArraySortTwo033
-     * @tc.desc Verify sort result typeof is not string [2,1]
+     * @tc.desc Verify sort result typeof is not 'string' on [2,1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -610,7 +610,7 @@ export default function uint8ClampedArraySortTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_TWO_3400
      * @tc.name testUint8ClampedArraySortTwo034
-     * @tc.desc Verify sort result typeof is not boolean [2,1]
+     * @tc.desc Verify sort result typeof is not 'boolean' on [2,1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

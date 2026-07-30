@@ -919,7 +919,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_5700
      * @tc.name testUint8ClampedArraySubarrayTwo057
-     * @tc.desc Verify subarray does not modify source length [1,2,3,4]
+     * @tc.desc Verify subarray(1,3) on [1,2,3,4] does not mutate source length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -933,7 +933,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_5800
      * @tc.name testUint8ClampedArraySubarrayTwo058
-     * @tc.desc Verify subarray does not modify source first element [10,20,30]
+     * @tc.desc Verify subarray(1,2) on [10,20,30] does not mutate source first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -947,7 +947,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_5900
      * @tc.name testUint8ClampedArraySubarrayTwo059
-     * @tc.desc Verify subarray does not modify source last element [10,20,30]
+     * @tc.desc Verify subarray(0,1) on [10,20,30] does not mutate source last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -961,7 +961,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_6000
      * @tc.name testUint8ClampedArraySubarrayTwo060
-     * @tc.desc Verify subarray does not modify source byteLength [1,2,3,4]
+     * @tc.desc Verify subarray(0,2) on [1,2,3,4] does not mutate source byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -975,7 +975,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_6100
      * @tc.name testUint8ClampedArraySubarrayTwo061
-     * @tc.desc Verify subarray beyond begin does not modify source length [1,2,3]
+     * @tc.desc Verify subarray(999) beyond begin on [1,2,3] does not mutate source length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -989,7 +989,7 @@ export default function uint8ClampedArraySubarrayTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SUBARRAY_TWO_6200
      * @tc.name testUint8ClampedArraySubarrayTwo062
-     * @tc.desc Verify subarray negative begin does not modify source length [1,2,3]
+     * @tc.desc Verify subarray(-2) negative begin on [1,2,3] does not mutate source length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

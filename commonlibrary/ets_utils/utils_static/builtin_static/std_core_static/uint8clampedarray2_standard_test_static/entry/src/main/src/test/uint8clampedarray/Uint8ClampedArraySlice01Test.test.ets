@@ -36,7 +36,7 @@ export default function uint8ClampedArraySliceOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SLICE_ONE_0100
      * @tc.name testUint8ClampedArraySliceOne001
-     * @tc.desc Verify slice() no-arg on [1,2,3,4,5] returns [1,2,3,4,5]
+     * @tc.desc Verify arr.slice() on [1,2,3,4,5] returns [1,2,3,4,5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -44,6 +44,25 @@ export default function uint8ClampedArraySliceOneTest(): void {
     it('testUint8ClampedArraySliceOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const r = arr.slice();
+      expect(r.length).assertEqual(5);
+      expect(r[0]).assertEqual(1);
+      expect(r[1]).assertEqual(2);
+      expect(r[2]).assertEqual(3);
+      expect(r[3]).assertEqual(4);
+      expect(r[4]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SLICE_ONE_5600
+     * @tc.name testUint8ClampedArraySliceOne056
+     * @tc.desc Verify arr.slice(0, arr.length) on [1,2,3,4,5] returns [1,2,3,4,5]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArraySliceOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
+      const r = arr.slice(0, arr.length);
       expect(r.length).assertEqual(5);
       expect(r[0]).assertEqual(1);
       expect(r[1]).assertEqual(2);
@@ -905,25 +924,6 @@ export default function uint8ClampedArraySliceOneTest(): void {
       const arr = new Uint8ClampedArray([1, 2, 3, 4]);
       const r = arr.slice(2, 1);
       expect(r.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SLICE_ONE_5600
-     * @tc.name testUint8ClampedArraySliceOne056
-     * @tc.desc Verify slice(0, arr.length) on [1,2,3,4,5] returns [1,2,3,4,5]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArraySliceOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      const r = arr.slice(0, arr.length);
-      expect(r.length).assertEqual(5);
-      expect(r[0]).assertEqual(1);
-      expect(r[1]).assertEqual(2);
-      expect(r[2]).assertEqual(3);
-      expect(r[3]).assertEqual(4);
-      expect(r[4]).assertEqual(5);
     });
 
     /**

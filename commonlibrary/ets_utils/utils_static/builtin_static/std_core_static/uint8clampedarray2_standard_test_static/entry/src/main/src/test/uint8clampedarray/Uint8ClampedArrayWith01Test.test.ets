@@ -576,7 +576,7 @@ export default function uint8ClampedArrayWithOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_ONE_3000
      * @tc.name testUint8ClampedArrayWithOne030
-     * @tc.desc Verify with() arity 0
+     * @tc.desc Verify with() arity 0 throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -595,7 +595,7 @@ export default function uint8ClampedArrayWithOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_ONE_3100
      * @tc.name testUint8ClampedArrayWithOne031
-     * @tc.desc Verify index with(0) arity 1
+     * @tc.desc Verify with(0) arity 1 throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

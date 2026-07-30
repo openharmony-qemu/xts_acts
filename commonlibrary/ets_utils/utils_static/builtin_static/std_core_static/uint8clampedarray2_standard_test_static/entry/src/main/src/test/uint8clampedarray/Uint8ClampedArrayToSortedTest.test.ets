@@ -329,7 +329,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_1800
      * @tc.name testUint8ClampedArrayToSorted018
-     * @tc.desc Verify toSorted [5,-1,3] with -1 clamped to 0 returns [0,3,5]
+     * @tc.desc Verify toSorted [5,-1,3] clamps -1 to 0 and returns [0,3,5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -346,7 +346,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_1900
      * @tc.name testUint8ClampedArrayToSorted019
-     * @tc.desc Verify toSorted [5,256,3] with 256 clamped to 255 returns [3,5,255]
+     * @tc.desc Verify toSorted [5,256,3] clamps 256 to 255 and returns [3,5,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -363,7 +363,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_2000
      * @tc.name testUint8ClampedArrayToSorted020
-     * @tc.desc Verify NaN clamp 0
+     * @tc.desc Verify toSorted [5,Number.NaN,3] clamps NaN to 0 and returns [0,3,5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -380,7 +380,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_2100
      * @tc.name testUint8ClampedArrayToSorted021
-     * @tc.desc Verify Infinity clamp 255
+     * @tc.desc Verify toSorted [5,Number.POSITIVE_INFINITY,3] clamps +Inf to 255 and returns [3,5,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -389,15 +389,15 @@ export default function uint8ClampedArrayToSortedTest(): void {
       const arr = new Uint8ClampedArray([5, Number.POSITIVE_INFINITY, 3]);
       const sorted = arr.toSorted();
       expect(sorted.length).assertEqual(3);
-      expect(sorted[2]).assertEqual(255);
       expect(sorted[0]).assertEqual(3);
       expect(sorted[1]).assertEqual(5);
+      expect(sorted[2]).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_2200
      * @tc.name testUint8ClampedArrayToSorted022
-     * @tc.desc Verify -Infinity clamp 0
+     * @tc.desc Verify toSorted [5,-Number.POSITIVE_INFINITY,3] clamps -Inf to 0 and returns [0,3,5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -414,7 +414,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_2300
      * @tc.name testUint8ClampedArrayToSorted023
-     * @tc.desc Verify 0.5 0
+     * @tc.desc Verify toSorted [0.5,1,2] clamps 0.5 to 0 and returns [0,1,2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -431,7 +431,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_2400
      * @tc.name testUint8ClampedArrayToSorted024
-     * @tc.desc Verify 127.5 128
+     * @tc.desc Verify toSorted [127.5,5,10] clamps 127.5 to 128 and returns [5,10,128]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -440,9 +440,9 @@ export default function uint8ClampedArrayToSortedTest(): void {
       const arr = new Uint8ClampedArray([127.5, 5, 10]);
       const sorted = arr.toSorted();
       expect(sorted.length).assertEqual(3);
-      expect(sorted[2]).assertEqual(128);
       expect(sorted[0]).assertEqual(5);
       expect(sorted[1]).assertEqual(10);
+      expect(sorted[2]).assertEqual(128);
     });
 
     /**
@@ -992,7 +992,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_5600
      * @tc.name testUint8ClampedArrayToSorted056
-     * @tc.desc Verify toSorted ascend 0 1
+     * @tc.desc Verify toSorted [9,4,7,2,8] ascending: sorted[0]&lt;=sorted[1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1006,7 +1006,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_5700
      * @tc.name testUint8ClampedArrayToSorted057
-     * @tc.desc Verify toSorted ascend 1 2
+     * @tc.desc Verify toSorted [9,4,7,2,8] ascending: sorted[1]&lt;=sorted[2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1020,7 +1020,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_5800
      * @tc.name testUint8ClampedArrayToSorted058
-     * @tc.desc Verify toSorted ascend 2 3
+     * @tc.desc Verify toSorted [9,4,7,2,8] ascending: sorted[2]&lt;=sorted[3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1034,7 +1034,7 @@ export default function uint8ClampedArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSORTED_5900
      * @tc.name testUint8ClampedArrayToSorted059
-     * @tc.desc Verify toSorted ascend 3 4
+     * @tc.desc Verify toSorted [9,4,7,2,8] ascending: sorted[3]&lt;=sorted[4]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

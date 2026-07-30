@@ -159,7 +159,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_0800
      * @tc.name testUint8ClampedArrayToReversed008
-     * @tc.desc Verify toReversed [256,1,2] with 256 clamped to 255 returns [2,1,255]
+     * @tc.desc Verify toReversed clamping on [256,1,2]: r[0]=2, r[1]=1, r[2]=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -176,7 +176,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_0900
      * @tc.name testUint8ClampedArrayToReversed009
-     * @tc.desc Verify toReversed [-1,1,2] with -1 clamped to 0 returns [2,1,0]
+     * @tc.desc Verify toReversed clamping on [-1,1,2]: r[0]=2, r[1]=1, r[2]=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -185,15 +185,15 @@ export default function uint8ClampedArrayToReversedTest(): void {
       const arr = new Uint8ClampedArray([-1, 1, 2]);
       const r = arr.toReversed();
       expect(r.length).assertEqual(3);
-      expect(r[2]).assertEqual(0);
       expect(r[0]).assertEqual(2);
       expect(r[1]).assertEqual(1);
+      expect(r[2]).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1000
      * @tc.name testUint8ClampedArrayToReversed010
-     * @tc.desc Verify 127.5 half-even clamp 128
+     * @tc.desc Verify toReversed clamping on [127.5,1,2]: r[0]=2, r[1]=1, r[2]=128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -210,7 +210,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1100
      * @tc.name testUint8ClampedArrayToReversed011
-     * @tc.desc Verify 128.5 half-even clamp 128
+     * @tc.desc Verify toReversed clamping on [128.5,1,2]: r[0]=2, r[1]=1, r[2]=128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -227,7 +227,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1200
      * @tc.name testUint8ClampedArrayToReversed012
-     * @tc.desc Verify NaN clamp 0 0
+     * @tc.desc Verify toReversed clamping on [Number.NaN,1,2]: r[0]=2, r[1]=1, r[2]=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -244,7 +244,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1300
      * @tc.name testUint8ClampedArrayToReversed013
-     * @tc.desc Verify toReversed clamps Infinity to 255 at last position after reversal
+     * @tc.desc Verify toReversed clamping on [Number.POSITIVE_INFINITY,1,2]: r[0]=2, r[1]=1, r[2]=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -261,7 +261,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1400
      * @tc.name testUint8ClampedArrayToReversed014
-     * @tc.desc Verify toReversed clamps negative Infinity to 0 at last position after reversal
+     * @tc.desc Verify toReversed clamping on [-Number.POSITIVE_INFINITY,1,2]: r[0]=2, r[1]=1, r[2]=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -278,7 +278,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1500
      * @tc.name testUint8ClampedArrayToReversed015
-     * @tc.desc Verify 0.9 round 1
+     * @tc.desc Verify toReversed clamping on [0.9,1,2]: r[0]=2, r[1]=1, r[2]=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -295,7 +295,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1600
      * @tc.name testUint8ClampedArrayToReversed016
-     * @tc.desc Verify 0.4 round 0
+     * @tc.desc Verify toReversed clamping on [0.4,1,2]: r[0]=2, r[1]=1, r[2]=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -312,7 +312,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1700
      * @tc.name testUint8ClampedArrayToReversed017
-     * @tc.desc Verify 0.5 half-even round 0
+     * @tc.desc Verify toReversed clamping on [0.5,1,2]: r[0]=2, r[1]=1, r[2]=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -349,7 +349,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_1900
      * @tc.name testUint8ClampedArrayToReversed019
-     * @tc.desc Verify toReversed returns a new array distinct from source
+     * @tc.desc Verify toReversed [1,2,3] result is distinct from source (r!=arr) and returns [3,2,1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -366,7 +366,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_2000
      * @tc.name testUint8ClampedArrayToReversed020
-     * @tc.desc Verify toReversed called twice returns two distinct arrays
+     * @tc.desc Verify toReversed [1,2,3] two calls produce distinct arrays (r1!=r2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -376,9 +376,6 @@ export default function uint8ClampedArrayToReversedTest(): void {
       const r1 = arr.toReversed();
       const r2 = arr.toReversed();
       expect(r1).not().assertEqual(r2);
-      expect(r1[0]).assertEqual(3);
-      expect(r1[1]).assertEqual(2);
-      expect(r1[2]).assertEqual(1);
       expect(r2[0]).assertEqual(3);
       expect(r2[1]).assertEqual(2);
       expect(r2[2]).assertEqual(1);
@@ -387,7 +384,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_2100
      * @tc.name testUint8ClampedArrayToReversed021
-     * @tc.desc Verify toReversed [1,2,3] returns [3,2,1]
+     * @tc.desc Verify toReversed [1,2,3] mutating r[0]=99 does not affect arr (arr stays [1,2,3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -396,9 +393,9 @@ export default function uint8ClampedArrayToReversedTest(): void {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       const r = arr.toReversed();
       r[0] = 99;
-      expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
       expect(r[0]).assertEqual(99);
       expect(r[1]).assertEqual(2);
       expect(r[2]).assertEqual(1);
@@ -407,7 +404,7 @@ export default function uint8ClampedArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOREVERSED_2200
      * @tc.name testUint8ClampedArrayToReversed022
-     * @tc.desc Verify toReversed [1,2,3] returns [3,2,1]
+     * @tc.desc Verify toReversed [1,2,3] mutating arr[0]=200 after call does not affect r (r stays [3,2,1])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -417,9 +414,9 @@ export default function uint8ClampedArrayToReversedTest(): void {
       const r = arr.toReversed();
       arr[0] = 200;
       expect(r.length).assertEqual(3);
-      expect(r[2]).assertEqual(1);
       expect(r[0]).assertEqual(3);
       expect(r[1]).assertEqual(2);
+      expect(r[2]).assertEqual(1);
     });
 
     /**

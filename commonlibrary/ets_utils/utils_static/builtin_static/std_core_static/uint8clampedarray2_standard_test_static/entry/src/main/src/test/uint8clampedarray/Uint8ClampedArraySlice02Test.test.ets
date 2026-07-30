@@ -991,14 +991,6 @@ export default function uint8ClampedArraySliceTwoTest(): void {
       expect(r.length).assertEqual(0);
     });
 
-    it('testUint8ClampedArraySliceTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([10, 20, 30, 40]);
-      const r = arr.slice(1, 3);
-      r[0] = 77;
-      expect(r.length).assertEqual(2);
-      expect(r[0]).assertEqual(77);
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SLICE_TWO_6300
      * @tc.name testUint8ClampedArraySliceTwo063

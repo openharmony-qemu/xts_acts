@@ -153,7 +153,7 @@ export default function uint8ClampedArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_0900
      * @tc.name testUint8ClampedArrayValues009
-     * @tc.desc Verify values() on [10,20] third next().done=true after exhaustion
+     * @tc.desc Verify values() on [10,20] third next().done=true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -215,7 +215,7 @@ export default function uint8ClampedArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1300
      * @tc.name testUint8ClampedArrayValues013
-     * @tc.desc Verify 256 values 255 clamp
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=256 → values().next().value=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -223,14 +223,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = 256;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(255);
+      expect(arr.values().next().value).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1400
      * @tc.name testUint8ClampedArrayValues014
-     * @tc.desc Verify -1 values 0 clamp
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=-1 → values().next().value=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -238,14 +237,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = -1;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
+      expect(arr.values().next().value).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1500
      * @tc.name testUint8ClampedArrayValues015
-     * @tc.desc Verify NaN values 0
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=Number.NaN → values().next().value=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -253,14 +251,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = Number.NaN;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
+      expect(arr.values().next().value).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1600
      * @tc.name testUint8ClampedArrayValues016
-     * @tc.desc Verify Infinity values 255
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=Number.POSITIVE_INFINITY → values().next().value=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -268,14 +265,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = Number.POSITIVE_INFINITY;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(255);
+      expect(arr.values().next().value).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1700
      * @tc.name testUint8ClampedArrayValues017
-     * @tc.desc Verify -Infinity values 0
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=-Number.POSITIVE_INFINITY → values().next().value=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -283,14 +279,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = -Number.POSITIVE_INFINITY;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
+      expect(arr.values().next().value).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1800
      * @tc.name testUint8ClampedArrayValues018
-     * @tc.desc Verify 127.5 values 128 half-even
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=127.5 → values().next().value=128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -298,14 +293,13 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = 127.5;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(128);
+      expect(arr.values().next().value).assertEqual(128);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_1900
      * @tc.name testUint8ClampedArrayValues019
-     * @tc.desc Verify 128.5 values 128 half-even
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=128.5 → values().next().value=128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -313,8 +307,77 @@ export default function uint8ClampedArrayValuesTest(): void {
     it('testUint8ClampedArrayValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
       arr[0] = 128.5;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(128);
+      expect(arr.values().next().value).assertEqual(128);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3400
+     * @tc.name testUint8ClampedArrayValues034
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=0.5 → values().next().value=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(1);
+      arr[0] = 0.5;
+      expect(arr.values().next().value).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3500
+     * @tc.name testUint8ClampedArrayValues035
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=0.4 → values().next().value=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(1);
+      arr[0] = 0.4;
+      expect(arr.values().next().value).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3600
+     * @tc.name testUint8ClampedArrayValues036
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=0.9 → values().next().value=1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(1);
+      arr[0] = 0.9;
+      expect(arr.values().next().value).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3700
+     * @tc.name testUint8ClampedArrayValues037
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=1e9 → values().next().value=255
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(1);
+      arr[0] = 1e9;
+      expect(arr.values().next().value).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3800
+     * @tc.name testUint8ClampedArrayValues038
+     * @tc.desc Verify Uint8ClampedArray clamping: arr[0]=-1e9 → values().next().value=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(1);
+      arr[0] = -1e9;
+      expect(arr.values().next().value).assertEqual(0);
     });
 
     /**
@@ -550,81 +613,6 @@ export default function uint8ClampedArrayValuesTest(): void {
       it.next();
       it.next();
       expect(it.next().done).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3400
-     * @tc.name testUint8ClampedArrayValues034
-     * @tc.desc Verify 0.5 values 0 half-even
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(1);
-      arr[0] = 0.5;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3500
-     * @tc.name testUint8ClampedArrayValues035
-     * @tc.desc Verify 0.4 values 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(1);
-      arr[0] = 0.4;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3600
-     * @tc.name testUint8ClampedArrayValues036
-     * @tc.desc Verify 0.9 values 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(1);
-      arr[0] = 0.9;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3700
-     * @tc.name testUint8ClampedArrayValues037
-     * @tc.desc Verify 1e9 values 255 clamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(1);
-      arr[0] = 1e9;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(255);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUES_3800
-     * @tc.name testUint8ClampedArrayValues038
-     * @tc.desc Verify -1e9 values 0 clamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(1);
-      arr[0] = -1e9;
-      const it = arr.values();
-      expect(it.next().value).assertEqual(0);
     });
 
     /**

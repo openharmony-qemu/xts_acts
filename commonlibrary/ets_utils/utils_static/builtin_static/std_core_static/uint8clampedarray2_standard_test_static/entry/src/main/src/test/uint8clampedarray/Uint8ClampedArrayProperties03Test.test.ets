@@ -108,21 +108,20 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_0600
      * @tc.name testUint8ClampedArrayPropertiesThree006
-     * @tc.desc Verify name FixedArray 'Uint8ClampedArray'
+     * @tc.desc Verify Uint8ClampedArray.from([1,2,3]).name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testUint8ClampedArrayPropertiesThree006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: Array<number> = [1, 2, 3];
-      const arr = Uint8ClampedArray.from(src);
+      const arr = Uint8ClampedArray.from([1, 2, 3]);
       expect(arr.name).assertEqual('Uint8ClampedArray');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_0700
      * @tc.name testUint8ClampedArrayPropertiesThree007
-     * @tc.desc Verify name ArrayBuffer 'Uint8ClampedArray'
+     * @tc.desc Verify new Uint8ClampedArray(new ArrayBuffer(4)).name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -135,7 +134,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_0800
      * @tc.name testUint8ClampedArrayPropertiesThree008
-     * @tc.desc Verify name of 'Uint8ClampedArray'
+     * @tc.desc Verify Uint8ClampedArray.of(1,2).name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -148,7 +147,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_0900
      * @tc.name testUint8ClampedArrayPropertiesThree009
-     * @tc.desc Verify name subarray 'Uint8ClampedArray'
+     * @tc.desc Verify subarray(1,3) on [1,2,3,4] has length=2, name='Uint8ClampedArray', elements [2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -165,7 +164,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_1000
      * @tc.name testUint8ClampedArrayPropertiesThree010
-     * @tc.desc Verify name slice 'Uint8ClampedArray'
+     * @tc.desc Verify slice(0,2) on [1,2,3,4] has name='Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -179,42 +178,39 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_1100
      * @tc.name testUint8ClampedArrayPropertiesThree011
-     * @tc.desc Verify name map 'Uint8ClampedArray'
+     * @tc.desc Verify [1,2,3].map(x=>x).name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testUint8ClampedArrayPropertiesThree011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      const m = arr.map((x: number) => x);
+      const m = new Uint8ClampedArray([1, 2, 3]).map((x: number) => x);
       expect(m.name).assertEqual('Uint8ClampedArray');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_1200
      * @tc.name testUint8ClampedArrayPropertiesThree012
-     * @tc.desc Verify name filter 'Uint8ClampedArray'
+     * @tc.desc Verify [1,2,3].filter(x=>x>0).name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testUint8ClampedArrayPropertiesThree012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      const f = arr.filter((x: number) => x > 0);
+      const f = new Uint8ClampedArray([1, 2, 3]).filter((x: number) => x > 0);
       expect(f.name).assertEqual('Uint8ClampedArray');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_1300
      * @tc.name testUint8ClampedArrayPropertiesThree013
-     * @tc.desc Verify name toReversed 'Uint8ClampedArray'
+     * @tc.desc Verify [1,2,3].toReversed().name equals 'Uint8ClampedArray'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testUint8ClampedArrayPropertiesThree013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      const r = arr.toReversed();
+      const r = new Uint8ClampedArray([1, 2, 3]).toReversed();
       expect(r.name).assertEqual('Uint8ClampedArray');
     });
 
@@ -445,7 +441,8 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     it('testUint8ClampedArrayPropertiesThree028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2]);
       try {
-        (arr as object as Record<string, int>);
+        const obj: Object = arr as Object;
+        obj as Record<string, int>;
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
@@ -508,7 +505,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3300
      * @tc.name testUint8ClampedArrayPropertiesThree033
-     * @tc.desc Verify source [256] length 1
+     * @tc.desc Verify new Uint8ClampedArray([256]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -521,7 +518,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3400
      * @tc.name testUint8ClampedArrayPropertiesThree034
-     * @tc.desc Verify source [-1] length 1
+     * @tc.desc Verify new Uint8ClampedArray([-1]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -534,7 +531,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3500
      * @tc.name testUint8ClampedArrayPropertiesThree035
-     * @tc.desc Verify source [NaN] length 1
+     * @tc.desc Verify new Uint8ClampedArray([Number.NaN]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -547,7 +544,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3600
      * @tc.name testUint8ClampedArrayPropertiesThree036
-     * @tc.desc Verify source [Infinity] length 1
+     * @tc.desc Verify new Uint8ClampedArray([Number.POSITIVE_INFINITY]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -560,7 +557,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3700
      * @tc.name testUint8ClampedArrayPropertiesThree037
-     * @tc.desc Verify source [-Infinity] length 1
+     * @tc.desc Verify new Uint8ClampedArray([-Number.POSITIVE_INFINITY]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -573,7 +570,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3800
      * @tc.name testUint8ClampedArrayPropertiesThree038
-     * @tc.desc Verify source [0xFF] length 1
+     * @tc.desc Verify new Uint8ClampedArray([0xFF]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -586,7 +583,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_3900
      * @tc.name testUint8ClampedArrayPropertiesThree039
-     * @tc.desc Verify source [0o377] length 1
+     * @tc.desc Verify new Uint8ClampedArray([0o377]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -599,7 +596,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4000
      * @tc.name testUint8ClampedArrayPropertiesThree040
-     * @tc.desc Verify source [0b11111111] length 1
+     * @tc.desc Verify new Uint8ClampedArray([0b11111111]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -612,7 +609,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4100
      * @tc.name testUint8ClampedArrayPropertiesThree041
-     * @tc.desc Verify source [1e2] length 1
+     * @tc.desc Verify new Uint8ClampedArray([1e2]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -625,7 +622,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4200
      * @tc.name testUint8ClampedArrayPropertiesThree042
-     * @tc.desc Verify source [1e9] length 1
+     * @tc.desc Verify new Uint8ClampedArray([1e9]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -638,7 +635,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4300
      * @tc.name testUint8ClampedArrayPropertiesThree043
-     * @tc.desc Verify source [-1e9] length 1
+     * @tc.desc Verify new Uint8ClampedArray([-1e9]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -651,7 +648,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4400
      * @tc.name testUint8ClampedArrayPropertiesThree044
-     * @tc.desc Verify source [0.5] length 1
+     * @tc.desc Verify new Uint8ClampedArray([0.5]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -664,7 +661,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4500
      * @tc.name testUint8ClampedArrayPropertiesThree045
-     * @tc.desc Verify source [127.5] length 1
+     * @tc.desc Verify new Uint8ClampedArray([127.5]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -677,7 +674,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4600
      * @tc.name testUint8ClampedArrayPropertiesThree046
-     * @tc.desc Verify source [Number.MAX_VALUE] length 1
+     * @tc.desc Verify new Uint8ClampedArray([Number.MAX_VALUE]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -690,7 +687,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4700
      * @tc.name testUint8ClampedArrayPropertiesThree047
-     * @tc.desc Verify source [Number.MIN_VALUE] length 1
+     * @tc.desc Verify new Uint8ClampedArray([Number.MIN_VALUE]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -703,7 +700,7 @@ export default function uint8ClampedArrayPropertiesThreeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_THREE_4800
      * @tc.name testUint8ClampedArrayPropertiesThree048
-     * @tc.desc Verify source [-0] length 1
+     * @tc.desc Verify new Uint8ClampedArray([-0]) length=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

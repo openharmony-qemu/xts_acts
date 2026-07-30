@@ -50,7 +50,7 @@ export default function uint8ClampedArraySomeOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SOME_ONE_0200
      * @tc.name testUint8ClampedArraySomeOne002
-     * @tc.desc Verify some with always-true predicate returns true on [1,2,3]
+     * @tc.desc Verify some always-true on [1,2,3] returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -64,7 +64,7 @@ export default function uint8ClampedArraySomeOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SOME_ONE_0300
      * @tc.name testUint8ClampedArraySomeOne003
-     * @tc.desc Verify some with always-false predicate returns false on [1,2,3]
+     * @tc.desc Verify some always-false on [1,2,3] returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

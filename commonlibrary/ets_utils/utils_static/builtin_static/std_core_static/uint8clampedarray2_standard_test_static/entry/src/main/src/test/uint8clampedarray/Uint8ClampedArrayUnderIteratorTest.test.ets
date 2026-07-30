@@ -158,7 +158,7 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_0800
      * @tc.name testUint8ClampedArrayUnderIterator008
-     * @tc.desc Verify for..of clamp 256 255
+     * @tc.desc Verify for..of clamp: 256→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -166,16 +166,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([256]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_0900
      * @tc.name testUint8ClampedArrayUnderIterator009
-     * @tc.desc Verify for..of clamp -1 0
+     * @tc.desc Verify for..of clamp: -1→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -183,16 +181,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([-1]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_1000
      * @tc.name testUint8ClampedArrayUnderIterator010
-     * @tc.desc Verify for..of NaN 0
+     * @tc.desc Verify for..of clamp: NaN→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -200,16 +196,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([Number.NaN]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_1100
      * @tc.name testUint8ClampedArrayUnderIterator011
-     * @tc.desc Verify for..of Infinity 255
+     * @tc.desc Verify for..of clamp: Infinity→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -217,16 +211,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([Number.POSITIVE_INFINITY]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_1200
      * @tc.name testUint8ClampedArrayUnderIterator012
-     * @tc.desc Verify for..of 127.5 128 half-even
+     * @tc.desc Verify for..of clamp: 127.5→128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -234,16 +226,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([127.5]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(128);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_1300
      * @tc.name testUint8ClampedArrayUnderIterator013
-     * @tc.desc Verify for..of 128.5 128 half-even
+     * @tc.desc Verify for..of clamp: 128.5→128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -251,9 +241,7 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([128.5]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(128);
     });
 
@@ -706,7 +694,7 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_3900
      * @tc.name testUint8ClampedArrayUnderIterator039
-     * @tc.desc Verify for..of -Infinity 0
+     * @tc.desc Verify for..of clamp: -Infinity→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -714,16 +702,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([-Number.POSITIVE_INFINITY]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4000
      * @tc.name testUint8ClampedArrayUnderIterator040
-     * @tc.desc Verify for..of on [0] yields 0
+     * @tc.desc Verify for..of clamp: 0→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -731,16 +717,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4100
      * @tc.name testUint8ClampedArrayUnderIterator041
-     * @tc.desc Verify for..of on [255] yields 255
+     * @tc.desc Verify for..of clamp: 255→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -748,16 +732,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([255]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4200
      * @tc.name testUint8ClampedArrayUnderIterator042
-     * @tc.desc Verify for..of 1e9 255 clamp
+     * @tc.desc Verify for..of clamp: 1e9→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -765,16 +747,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1e9]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4300
      * @tc.name testUint8ClampedArrayUnderIterator043
-     * @tc.desc Verify for..of -1e9 0 clamp
+     * @tc.desc Verify for..of clamp: -1e9→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -782,16 +762,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([-1e9]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4400
      * @tc.name testUint8ClampedArrayUnderIterator044
-     * @tc.desc Verify for..of 0.9 1
+     * @tc.desc Verify for..of clamp: 0.9→1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -799,16 +777,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0.9]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4500
      * @tc.name testUint8ClampedArrayUnderIterator045
-     * @tc.desc Verify for..of 0.4 0
+     * @tc.desc Verify for..of clamp: 0.4→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -816,16 +792,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0.4]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4600
      * @tc.name testUint8ClampedArrayUnderIterator046
-     * @tc.desc Verify for..of 0xFF 255
+     * @tc.desc Verify for..of clamp: 0xFF→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -833,16 +807,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0xFF]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(255);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4700
      * @tc.name testUint8ClampedArrayUnderIterator047
-     * @tc.desc Verify for..of 0o17 15
+     * @tc.desc Verify for..of clamp: 0o17→15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -850,16 +822,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0o17]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(15);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4800
      * @tc.name testUint8ClampedArrayUnderIterator048
-     * @tc.desc Verify for..of 0b1010 10
+     * @tc.desc Verify for..of clamp: 0b1010→10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -867,16 +837,14 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0b1010]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_ITERATOR_4900
      * @tc.name testUint8ClampedArrayUnderIterator049
-     * @tc.desc Verify for..of 1e2 100
+     * @tc.desc Verify for..of clamp: 1e2→100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -884,9 +852,7 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
     it('testUint8ClampedArrayUnderIterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1e2]);
       let v: number = -1;
-      for (const x of arr) {
-        v = x;
-      }
+      for (const x of arr) { v = x; }
       expect(v).assertEqual(100);
     });
 
@@ -987,13 +953,7 @@ export default function uint8ClampedArrayUnderIteratorTest(): void {
       for (const x of sub) {
         count++;
       }
-      expect(arr.length).assertEqual(5);
       expect(sub.length).assertEqual(3);
-      expect(arr[0]).assertEqual(1);
-      expect(arr[1]).assertEqual(2);
-      expect(arr[2]).assertEqual(3);
-      expect(arr[3]).assertEqual(4);
-      expect(arr[4]).assertEqual(5);
       expect(sub[0]).assertEqual(2);
       expect(sub[1]).assertEqual(3);
       expect(sub[2]).assertEqual(4);

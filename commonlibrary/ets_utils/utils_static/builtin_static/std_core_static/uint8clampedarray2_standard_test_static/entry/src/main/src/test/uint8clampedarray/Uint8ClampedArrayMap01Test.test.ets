@@ -18,6 +18,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+
 export default function uint8ClampedArrayMapOneTest(): void {
   describe('Uint8ClampedArrayMapOneTest', (): void => {
     beforeAll(() => {
@@ -44,8 +45,7 @@ export default function uint8ClampedArrayMapOneTest(): void {
     it('testUint8ClampedArrayMapOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       try {
-        const mapFn = (arr as Object as Record<string, (fn: object) => Uint8ClampedArray>)['map'] as (fn: object) => Uint8ClampedArray;
-        mapFn(undefined as Object);
+        arr.map((undefined as Object) as (v: number, i: int, a: Uint8ClampedArray) => number);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

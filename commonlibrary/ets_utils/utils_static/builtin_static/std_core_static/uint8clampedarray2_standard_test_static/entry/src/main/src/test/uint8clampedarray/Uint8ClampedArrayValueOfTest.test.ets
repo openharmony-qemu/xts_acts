@@ -658,7 +658,7 @@ export default function uint8ClampedArrayValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4200
      * @tc.name testUint8ClampedArrayValueOf042
-     * @tc.desc Verify valueOf index 0 equal
+     * @tc.desc Verify valueOf on [10,20,30] v[0] equals arr[0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -672,7 +672,7 @@ export default function uint8ClampedArrayValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4300
      * @tc.name testUint8ClampedArrayValueOf043
-     * @tc.desc Verify valueOf index 0 value 10
+     * @tc.desc Verify valueOf on [10,20,30] v[0] equals 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -686,7 +686,7 @@ export default function uint8ClampedArrayValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4400
      * @tc.name testUint8ClampedArrayValueOf044
-     * @tc.desc Verify valueOf last value 30
+     * @tc.desc Verify valueOf on [10,20,30] v[1] equals 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -694,13 +694,13 @@ export default function uint8ClampedArrayValueOfTest(): void {
     it('testUint8ClampedArrayValueOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
       const v = arr.valueOf();
-      expect(v[2]).assertEqual(30);
+      expect(v[1]).assertEqual(20);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4500
      * @tc.name testUint8ClampedArrayValueOf045
-     * @tc.desc Verify valueOf mid value 20
+     * @tc.desc Verify valueOf on [10,20,30] v[2] equals 30
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -708,13 +708,13 @@ export default function uint8ClampedArrayValueOfTest(): void {
     it('testUint8ClampedArrayValueOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
       const v = arr.valueOf();
-      expect(v[1]).assertEqual(20);
+      expect(v[2]).assertEqual(30);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4600
      * @tc.name testUint8ClampedArrayValueOf046
-     * @tc.desc Verify valueOf clamp 256 255
+     * @tc.desc Verify valueOf clamp [256]→255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -728,7 +728,7 @@ export default function uint8ClampedArrayValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4700
      * @tc.name testUint8ClampedArrayValueOf047
-     * @tc.desc Verify valueOf clamp -1 0
+     * @tc.desc Verify valueOf clamp [-1]→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -742,7 +742,7 @@ export default function uint8ClampedArrayValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_VALUEOF_4800
      * @tc.name testUint8ClampedArrayValueOf048
-     * @tc.desc Verify valueOf clamp NaN 0
+     * @tc.desc Verify valueOf clamp [Number.NaN]→0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

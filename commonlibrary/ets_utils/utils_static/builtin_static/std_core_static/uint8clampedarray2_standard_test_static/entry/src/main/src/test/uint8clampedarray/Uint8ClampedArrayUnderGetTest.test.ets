@@ -238,7 +238,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_0160
      * @tc.name testUint8ClampedArrayUnderGet016
-     * @tc.desc Verify index=length throws RangeError
+     * @tc.desc Verify $_get(3) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -256,7 +256,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_0170
      * @tc.name testUint8ClampedArrayUnderGet017
-     * @tc.desc Verify index=INT_MAX throws RangeError
+     * @tc.desc Verify $_get(2147483647) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -274,7 +274,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_0180
      * @tc.name testUint8ClampedArrayUnderGet018
-     * @tc.desc Verify index=-1 throws RangeError
+     * @tc.desc Verify $_get(-1) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -292,7 +292,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_0190
      * @tc.name testUint8ClampedArrayUnderGet019
-     * @tc.desc Verify index=INT_MIN throws RangeError
+     * @tc.desc Verify $_get(-2147483648) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1545,7 +1545,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_1020
      * @tc.name testUint8ClampedArrayUnderGet102
-     * @tc.desc Verify $_get(0) equals arr[0]
+     * @tc.desc Verify $_get(0) equals arr[0] on [42,84,126]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1558,7 +1558,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_1030
      * @tc.name testUint8ClampedArrayUnderGet103
-     * @tc.desc Verify $_get(1) equals arr[1]
+     * @tc.desc Verify $_get(1) equals arr[1] on [42,84,126]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1571,7 +1571,7 @@ export default function uint8ClampedArrayUnderGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_GET_1040
      * @tc.name testUint8ClampedArrayUnderGet104
-     * @tc.desc Verify $_get(2) equals arr[2]
+     * @tc.desc Verify $_get(2) equals arr[2] on [42,84,126]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

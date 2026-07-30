@@ -18,6 +18,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+
 export default function uint8ClampedArrayReduceRightOneTest(): void {
   describe('Uint8ClampedArrayReduceRightOneTest', (): void => {
     beforeAll(() => {

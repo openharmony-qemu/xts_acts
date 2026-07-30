@@ -64,7 +64,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0030
      * @tc.name testUint8ClampedArrayToString003
-     * @tc.desc Verify [0] toString '0'
+     * @tc.desc Verify toString on Uint8ClampedArray [0] returns '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -77,7 +77,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0040
      * @tc.name testUint8ClampedArrayToString004
-     * @tc.desc Verify [255] toString '255' uint8
+     * @tc.desc Verify toString on Uint8ClampedArray [255] returns '255'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -90,7 +90,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0050
      * @tc.name testUint8ClampedArrayToString005
-     * @tc.desc Verify [256] clamp 255 toString '255'
+     * @tc.desc Verify toString on Uint8ClampedArray [256] clamps to '255'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -103,7 +103,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0060
      * @tc.name testUint8ClampedArrayToString006
-     * @tc.desc Verify [-1] clamp 0 toString '0'
+     * @tc.desc Verify toString on Uint8ClampedArray [-1] clamps to '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -116,7 +116,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0070
      * @tc.name testUint8ClampedArrayToString007
-     * @tc.desc Verify [NaN] clamp 0 toString '0'
+     * @tc.desc Verify toString on Uint8ClampedArray [Number.NaN] clamps to '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -129,7 +129,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0080
      * @tc.name testUint8ClampedArrayToString008
-     * @tc.desc Verify [Infinity] clamp 255 toString '255'
+     * @tc.desc Verify toString on Uint8ClampedArray [Number.POSITIVE_INFINITY] clamps to '255'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -142,7 +142,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0090
      * @tc.name testUint8ClampedArrayToString009
-     * @tc.desc Verify [-Infinity] clamp 0 toString '0'
+     * @tc.desc Verify toString on Uint8ClampedArray [-Number.POSITIVE_INFINITY] clamps to '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -155,7 +155,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0100
      * @tc.name testUint8ClampedArrayToString010
-     * @tc.desc Verify [0.5] half-even round 0 toString '0'
+     * @tc.desc Verify toString on Uint8ClampedArray [0.5] clamps to '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -168,7 +168,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0110
      * @tc.name testUint8ClampedArrayToString011
-     * @tc.desc Verify [127.5] half-even round 128 toString '128'
+     * @tc.desc Verify toString on Uint8ClampedArray [127.5] clamps to '128'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -181,7 +181,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0120
      * @tc.name testUint8ClampedArrayToString012
-     * @tc.desc Verify [128.5] half-even round 128 toString '128'
+     * @tc.desc Verify toString on Uint8ClampedArray [128.5] clamps to '128'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1016,7 +1016,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0760
      * @tc.name testUint8ClampedArrayToString076
-     * @tc.desc Verify empty toString join
+     * @tc.desc Verify toString() equals join(',') on empty Uint8ClampedArray(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1029,7 +1029,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0770
      * @tc.name testUint8ClampedArrayToString077
-     * @tc.desc Verify [42] single-element toString equals join comma
+     * @tc.desc Verify toString() equals join(',') on single-element Uint8ClampedArray [42]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1042,7 +1042,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0780
      * @tc.name testUint8ClampedArrayToString078
-     * @tc.desc Verify [1,2,3,4,5] multi-element toString equals join comma
+     * @tc.desc Verify toString() equals join(',') on multi-element Uint8ClampedArray [1,2,3,4,5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1055,7 +1055,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0790
      * @tc.name testUint8ClampedArrayToString079
-     * @tc.desc Verify Uint8ClampedArray(8) all-zero toString equals join comma
+     * @tc.desc Verify toString() equals join(',') on Uint8ClampedArray(8) all-zero array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1068,7 +1068,7 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0800
      * @tc.name testUint8ClampedArrayToString080
-     * @tc.desc Verify [255,255,255] all-255 toString equals join comma
+     * @tc.desc Verify toString() equals join(',') on Uint8ClampedArray [255,255,255]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1081,13 +1081,55 @@ export default function uint8ClampedArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0810
      * @tc.name testUint8ClampedArrayToString081
-     * @tc.desc Verify [-1, 256, NaN, 100] clamped toString equals join comma
+     * @tc.desc Verify toString() equals join(',') on clamped [-1,256,Number.NaN,100] which becomes [0,255,0,100]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testUint8ClampedArrayToString081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([-1, 256, Number.NaN, 100]);
+      expect(arr.toString()).assertEqual(arr.join(','));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0830
+     * @tc.name testUint8ClampedArrayToString083
+     * @tc.desc Verify toString() equals join(',') on slice(0,3) of Uint8ClampedArray [1,2,3,4]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayToString083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Uint8ClampedArray([1, 2, 3, 4]);
+      const arr = parent.slice(0, 3);
+      expect(arr.toString()).assertEqual(arr.join(','));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0840
+     * @tc.name testUint8ClampedArrayToString084
+     * @tc.desc Verify toString() equals join(',') on Uint8ClampedArray(3) with index writes [11,22,33]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayToString084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(3);
+      arr[0] = 11; arr[1] = 22; arr[2] = 33;
+      expect(arr.toString()).assertEqual(arr.join(','));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0850
+     * @tc.name testUint8ClampedArrayToString085
+     * @tc.desc Verify toString() equals join(',') on Uint8ClampedArray(4).fill(99)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayToString085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(4);
+      arr.fill(99);
       expect(arr.toString()).assertEqual(arr.join(','));
     });
 
@@ -1110,48 +1152,6 @@ export default function uint8ClampedArrayToStringTest(): void {
       expect(arr[3]).assertEqual(4);
       expect(sub[0]).assertEqual(2);
       expect(sub[1]).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0830
-     * @tc.name testUint8ClampedArrayToString083
-     * @tc.desc Verify [1,2,3,4].slice(0,3) toString equals join comma
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayToString083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3, 4]);
-      const s = arr.slice(0, 3);
-      expect(s.toString()).assertEqual(s.join(','));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0840
-     * @tc.name testUint8ClampedArrayToString084
-     * @tc.desc Verify Uint8ClampedArray(3) with index writes 11,22,33 toString equals join comma
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayToString084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(3);
-      arr[0] = 11; arr[1] = 22; arr[2] = 33;
-      expect(arr.toString()).assertEqual(arr.join(','));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_TOSTRING_0850
-     * @tc.name testUint8ClampedArrayToString085
-     * @tc.desc Verify Uint8ClampedArray(4).fill(99) toString equals join comma
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArrayToString085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray(4);
-      arr.fill(99);
-      expect(arr.toString()).assertEqual(arr.join(','));
     });
 
     /**

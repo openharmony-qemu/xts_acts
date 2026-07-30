@@ -62,7 +62,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_0300
      * @tc.name testUint8ClampedArrayPropertiesOne003
-     * @tc.desc Verify new Uint8ClampedArray(4) buffer not null
+     * @tc.desc Verify new Uint8ClampedArray(4).buffer is not null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -75,7 +75,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_0400
      * @tc.name testUint8ClampedArrayPropertiesOne004
-     * @tc.desc Verify new Uint8ClampedArray(4) byteOffset=0
+     * @tc.desc Verify new Uint8ClampedArray(4).byteOffset equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -88,7 +88,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_0500
      * @tc.name testUint8ClampedArrayPropertiesOne005
-     * @tc.desc Verify new Uint8ClampedArray(4) byteLength=4
+     * @tc.desc Verify new Uint8ClampedArray(4).byteLength equals 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -101,7 +101,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_0600
      * @tc.name testUint8ClampedArrayPropertiesOne006
-     * @tc.desc Verify new Uint8ClampedArray(4) length=4
+     * @tc.desc Verify new Uint8ClampedArray(4).length equals 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -231,7 +231,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_1600
      * @tc.name testUint8ClampedArrayPropertiesOne016
-     * @tc.desc Verify 255 length=255
+     * @tc.desc Verify Uint8ClampedArray(255) length=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -244,7 +244,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_1700
      * @tc.name testUint8ClampedArrayPropertiesOne017
-     * @tc.desc Verify 255 byteLength=255
+     * @tc.desc Verify Uint8ClampedArray(255) byteLength=255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -257,7 +257,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_1800
      * @tc.name testUint8ClampedArrayPropertiesOne018
-     * @tc.desc Verify 256 length=256
+     * @tc.desc Verify Uint8ClampedArray(256) length=256
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -270,7 +270,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_1900
      * @tc.name testUint8ClampedArrayPropertiesOne019
-     * @tc.desc Verify 256 byteLength=256
+     * @tc.desc Verify Uint8ClampedArray(256) byteLength=256
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -309,7 +309,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_2200
      * @tc.name testUint8ClampedArrayPropertiesOne022
-     * @tc.desc Verify 65535 length=65535
+     * @tc.desc Verify Uint8ClampedArray(65535) length=65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -322,7 +322,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_2300
      * @tc.name testUint8ClampedArrayPropertiesOne023
-     * @tc.desc Verify 65535 byteLength=65535
+     * @tc.desc Verify Uint8ClampedArray(65535) byteLength=65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -335,7 +335,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_2400
      * @tc.name testUint8ClampedArrayPropertiesOne024
-     * @tc.desc Verify 65536 length=65536
+     * @tc.desc Verify Uint8ClampedArray(65536) length=65536
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1095,7 +1095,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_7800
      * @tc.name testUint8ClampedArrayPropertiesOne078
-     * @tc.desc Verify length 0 after new Uint8ClampedArray()
+     * @tc.desc Verify new Uint8ClampedArray() length=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1108,7 +1108,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_7900
      * @tc.name testUint8ClampedArrayPropertiesOne079
-     * @tc.desc Verify byteLength 0 after new Uint8ClampedArray()
+     * @tc.desc Verify new Uint8ClampedArray() byteLength=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1121,7 +1121,7 @@ export default function uint8ClampedArrayPropertiesOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_PROPERTIES_ONE_8000
      * @tc.name testUint8ClampedArrayPropertiesOne080
-     * @tc.desc Verify byteOffset 0 after new Uint8ClampedArray()
+     * @tc.desc Verify new Uint8ClampedArray() byteOffset=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

@@ -147,7 +147,7 @@ export default function uint8ClampedArraySortOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_ONE_0800
      * @tc.name testUint8ClampedArraySortOne008
-     * @tc.desc Verify compareFn TypeError e.name
+     * @tc.desc Verify compareFn throws TypeError propagates with correct e.name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -165,7 +165,7 @@ export default function uint8ClampedArraySortOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_ONE_0900
      * @tc.name testUint8ClampedArraySortOne009
-     * @tc.desc Verify compareFn RangeError e.name
+     * @tc.desc Verify compareFn throws RangeError propagates with correct e.name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1480,25 +1480,6 @@ export default function uint8ClampedArraySortOneTest(): void {
       expect(r[2]).assertEqual(100);
       expect(r[3]).assertEqual(255);
       expect(r[4]).assertEqual(255);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_SORT_ONE_8400
-     * @tc.name testUint8ClampedArraySortOne084
-     * @tc.desc Verify sort construct mixed clamp r[4]=255
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testUint8ClampedArraySortOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([256, -1, Number.NaN, Number.POSITIVE_INFINITY, 100]);
-      const r = arr.sort();
-      expect(r.length).assertEqual(5);
-      expect(r[4]).assertEqual(255);
-      expect(r[0]).assertEqual(0);
-      expect(r[1]).assertEqual(0);
-      expect(r[2]).assertEqual(100);
-      expect(r[3]).assertEqual(255);
     });
   });
 }

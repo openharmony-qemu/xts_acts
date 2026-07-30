@@ -467,7 +467,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_2600
      * @tc.name testUint8ClampedArrayUnderSetOne026
-     * @tc.desc Verify value=0.5 half-even round 0
+     * @tc.desc Verify $_set(0, 0.5) half-even rounds to 0 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -484,7 +484,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_2700
      * @tc.name testUint8ClampedArrayUnderSetOne027
-     * @tc.desc Verify value=1.5 half-even round 2
+     * @tc.desc Verify $_set(0, 1.5) half-even rounds to 2 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -501,7 +501,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_2800
      * @tc.name testUint8ClampedArrayUnderSetOne028
-     * @tc.desc Verify value=2.5 half-even round 2
+     * @tc.desc Verify $_set(0, 2.5) half-even rounds to 2 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -518,7 +518,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_2900
      * @tc.name testUint8ClampedArrayUnderSetOne029
-     * @tc.desc Verify value=254.5 half-even round 254
+     * @tc.desc Verify $_set(0, 254.5) half-even rounds to 254 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -535,7 +535,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_3000
      * @tc.name testUint8ClampedArrayUnderSetOne030
-     * @tc.desc Verify value=255.5 round clamp 255
+     * @tc.desc Verify $_set(0, 255.5) half-even rounds to 255 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -862,7 +862,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_4900
      * @tc.name testUint8ClampedArrayUnderSetOne049
-     * @tc.desc Verify value=-0.4 round clamp 0
+     * @tc.desc Verify $_set(0, -0.4) rounds to 0 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -879,7 +879,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_5000
      * @tc.name testUint8ClampedArrayUnderSetOne050
-     * @tc.desc Verify value=-0.5 round clamp 0
+     * @tc.desc Verify $_set(0, -0.5) rounds to 0 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -896,7 +896,7 @@ export default function uint8ClampedArrayUnderSetOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_UNDER_SET_ONE_5100
      * @tc.name testUint8ClampedArrayUnderSetOne051
-     * @tc.desc Verify value=-0.9 round clamp 0
+     * @tc.desc Verify $_set(0, -0.9) rounds to 0 on [0,0,0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

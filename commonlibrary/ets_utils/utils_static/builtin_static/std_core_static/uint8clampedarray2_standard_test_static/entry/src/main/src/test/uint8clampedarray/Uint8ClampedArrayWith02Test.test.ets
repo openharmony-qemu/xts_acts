@@ -336,7 +336,15 @@ export default function uint8ClampedArrayWithTwoTest(): void {
       expect(arr[0]).assertEqual(10);
     });
 
-    it('testUint8ClampedArrayWithTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_TWO_6400
+     * @tc.name testUint8ClampedArrayWithTwo064
+     * @tc.desc Verify chain with(0,99).with(1,88) on [10,20,30] returns [99,88,30]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUint8ClampedArrayWithTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
       const r = arr.with(0, 99.0).with(1, 88.0);
       expect(r.length).assertEqual(3);
@@ -477,7 +485,7 @@ export default function uint8ClampedArrayWithTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_TWO_2700
      * @tc.name testUint8ClampedArrayWithTwo027
-     * @tc.desc Verify with(0,Infinity) on [10,20,30] clamps value to 255
+     * @tc.desc Verify with(0,Infinity) clamps to 255 on [10,20,30]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -494,7 +502,7 @@ export default function uint8ClampedArrayWithTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_TWO_2800
      * @tc.name testUint8ClampedArrayWithTwo028
-     * @tc.desc Verify with(0,-Infinity) on [10,20,30] clamps value to 0
+     * @tc.desc Verify with(0,-Infinity) clamps to 0 on [10,20,30]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1029,7 +1037,7 @@ export default function uint8ClampedArrayWithTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_TWO_5900
      * @tc.name testUint8ClampedArrayWithTwo059
-     * @tc.desc Verify with index INT_MAX throws RangeError
+     * @tc.desc Verify with(INT_MAX,99) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1047,7 +1055,7 @@ export default function uint8ClampedArrayWithTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8CLAMPEDARRAY_WITH_TWO_6000
      * @tc.name testUint8ClampedArrayWithTwo060
-     * @tc.desc Verify with index length throws RangeError
+     * @tc.desc Verify with(3,99) throws RangeError on [1,2,3]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
