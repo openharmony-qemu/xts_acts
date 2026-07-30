@@ -4353,7 +4353,6 @@ export default function AVPlayerLocalTest() {
             adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
             let callback: media.OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => {
               console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600 callback adsId: ${adsId}, reason: ${reason}`);
-              statusReceived = true;
             };
             adsController?.onAdsEventListenerLoadingError(callback);
           }
@@ -4450,7 +4449,6 @@ export default function AVPlayerLocalTest() {
             adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
             let callback: media.OnAdsEventAdsStartedHandle = (adsId: string, duration: int) => {
               console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700 callback adsId: ${adsId}, duration: ${duration}`);
-              statusReceived = true;
             };
             adsController?.onAdsListenerAdsStarted(callback);
           }
