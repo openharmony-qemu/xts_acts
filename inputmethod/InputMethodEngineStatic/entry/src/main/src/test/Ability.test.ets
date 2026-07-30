@@ -597,8 +597,10 @@ export default function inputMethodEngineStatic() {
                         inputAttribute: {
                             textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
                         }
-                    }
-                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    };
+                    setTimeout(() => {
+                        inputMethod.getController().attach(true, ATTRIBUTE);
+                    }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
                         console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
@@ -668,8 +670,10 @@ export default function inputMethodEngineStatic() {
                         inputAttribute: {
                             textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED, consumeKeyEvents: true
                         }
-                    }
-                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    };
+                    setTimeout(() => {
+                        inputMethod.getController().attach(true, ATTRIBUTE);
+                    }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
                         console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
@@ -739,8 +743,10 @@ export default function inputMethodEngineStatic() {
                         inputAttribute: {
                             textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED, consumeKeyEvents: false
                         }
-                    }
-                    inputMethod.getController().attach(true, ATTRIBUTE);
+                    };
+                    setTimeout(() => {
+                        inputMethod.getController().attach(true, ATTRIBUTE);
+                    }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
                         console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
