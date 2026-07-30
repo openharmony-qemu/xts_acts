@@ -36,8 +36,8 @@ export default function actsWifiManagerFunctionsTest() {
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
-      await Utils.openWifi();
       await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
+      await Utils.openWifi();
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
       done();
     });
@@ -62,6 +62,8 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       let networkId: int = 500;
       try {
+        //DTS2026071712031因是首条用例，原应用此时未打开页面，导致原用例报错401。现用例有概率打开应用，偶现报错2501000.故等待5s稳定让应用打开页面后再执行用例
+        await Utils.msSleep(5000);
         await wifiManager.removeCandidateConfig(networkId);
         hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
         expect().assertFail();
@@ -71,7 +73,7 @@ export default function actsWifiManagerFunctionsTest() {
           hilog.info(domain, tag, `${caseName} api is not support`);
           expect(err.code).assertEqual(801);
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(2501000);
         }
       }
       hilog.info(domain, tag, `${caseName} test end`);
