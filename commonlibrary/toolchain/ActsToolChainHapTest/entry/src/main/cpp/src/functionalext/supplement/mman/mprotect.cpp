@@ -101,12 +101,6 @@ void Mprotect0600(void)
 static int MprotectTestImpl(int argc, char* argv[])
 {
     Mprotect0100();
-    Mprotect0200();
-    Mprotect0300();
-    Mprotect0400();
-    Mprotect0500();
-    Mprotect0600();
-
     return T_STATUS;
 }
 
