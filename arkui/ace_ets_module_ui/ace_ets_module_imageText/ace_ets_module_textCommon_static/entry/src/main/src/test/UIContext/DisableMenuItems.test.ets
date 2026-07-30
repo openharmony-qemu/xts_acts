@@ -22,7 +22,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import { TextMenuController } from '@kit.ArkUI';
+import { TextMenuController } from '@ohos.arkui.UIContext';
 
 export default function DisableMenuItemsTest() {
   describe('DisableMenuItemsTest', () => {
@@ -106,6 +106,9 @@ export default function DisableMenuItemsTest() {
       if (translateMenu !== null) {
         console.info('[disableMenuItems_0100] translate_menu_test found, TRANSLATE not disabled: expected');
       }
+
+      await (textInput?.click() as Promise<void>);
+      await CommonFunc.sleep(500);
 
       let externalArea = await driver.findComponent(ON.id('external_touch_area'));
       if (externalArea !== null) {
