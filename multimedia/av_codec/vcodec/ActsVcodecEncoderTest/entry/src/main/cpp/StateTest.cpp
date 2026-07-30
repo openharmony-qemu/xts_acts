@@ -83,7 +83,7 @@ static napi_value CreateIntInt32Result(napi_env env, int32_t value)
 
 napi_value VideoEncodeState0100Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Flush();
         if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
@@ -98,7 +98,7 @@ napi_value VideoEncodeState0100Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0101Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Stop();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -111,7 +111,7 @@ napi_value VideoEncodeState0101Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0200Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -128,7 +128,7 @@ napi_value VideoEncodeState0200Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0300Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -145,7 +145,7 @@ napi_value VideoEncodeState0300Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0400Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -162,7 +162,7 @@ napi_value VideoEncodeState0400Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0500Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -181,7 +181,7 @@ napi_value VideoEncodeState0500Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0600Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -201,7 +201,7 @@ napi_value VideoEncodeState0600Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0700Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -220,7 +220,7 @@ napi_value VideoEncodeState0700Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0800Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -240,7 +240,7 @@ napi_value VideoEncodeState0800Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState0900Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -257,7 +257,7 @@ napi_value VideoEncodeState0900Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1000Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -276,7 +276,7 @@ napi_value VideoEncodeState1000Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1100Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -295,7 +295,7 @@ napi_value VideoEncodeState1100Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1200Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -314,7 +314,7 @@ napi_value VideoEncodeState1200Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1300Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -335,7 +335,7 @@ napi_value VideoEncodeState1300Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1400Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -354,7 +354,7 @@ napi_value VideoEncodeState1400Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1500Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -373,7 +373,7 @@ napi_value VideoEncodeState1500Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1600Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
@@ -396,7 +396,7 @@ napi_value VideoEncodeState1600Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1700Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -415,7 +415,7 @@ napi_value VideoEncodeState1700Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1800Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -436,7 +436,7 @@ napi_value VideoEncodeState1800Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState1900Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -455,7 +455,7 @@ napi_value VideoEncodeState1900Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2000Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -474,7 +474,7 @@ napi_value VideoEncodeState2000Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2100Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -497,7 +497,7 @@ napi_value VideoEncodeState2100Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2200Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -519,7 +519,7 @@ napi_value VideoEncodeState2200Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2300Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -538,7 +538,7 @@ napi_value VideoEncodeState2300Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2400Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -557,7 +557,7 @@ napi_value VideoEncodeState2400Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2500Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -578,7 +578,7 @@ napi_value VideoEncodeState2500Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2600Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -597,7 +597,7 @@ napi_value VideoEncodeState2600Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2700Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -616,7 +616,7 @@ napi_value VideoEncodeState2700Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2800Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -641,7 +641,7 @@ napi_value VideoEncodeState2800Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState2900Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -658,7 +658,7 @@ napi_value VideoEncodeState2900Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3000Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -675,7 +675,7 @@ napi_value VideoEncodeState3000Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3100Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -698,7 +698,7 @@ napi_value VideoEncodeState3100Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3200Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -717,7 +717,7 @@ napi_value VideoEncodeState3200Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3300Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Reset();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -732,7 +732,7 @@ napi_value VideoEncodeState3300Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3400Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Release();
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -745,7 +745,7 @@ napi_value VideoEncodeState3400Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3500Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackFlush = true;
         vEncSample->SURF_INPUT = true;
@@ -761,7 +761,7 @@ napi_value VideoEncodeState3500Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3600Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         vEncSample->SURF_INPUT = true;
@@ -777,7 +777,7 @@ napi_value VideoEncodeState3600Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3700Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->inputCallbackFlush = true;
         int32_t ret = vEncSample->StartVideoEncoder();
@@ -792,7 +792,7 @@ napi_value VideoEncodeState3700Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3800Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->inputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();
@@ -807,7 +807,7 @@ napi_value VideoEncodeState3800Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState3900Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackFlush = true;
         int32_t ret = vEncSample->StartVideoEncoder();
@@ -822,7 +822,7 @@ napi_value VideoEncodeState3900Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState4000Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();
@@ -837,7 +837,7 @@ napi_value VideoEncodeState4000Test(napi_env env, napi_callback_info info)
 
 napi_value VideoEncodeState4100Test(napi_env env, napi_callback_info info)
 {
-    if(InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();

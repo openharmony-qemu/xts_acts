@@ -258,7 +258,7 @@ napi_value VideoEncodeRepeat0100Test(napi_env env, napi_callback_info info)
     return CreateIntInt32Result(env, 0);
 }
 
-napi_value VideoEncodePreProcess0100Test(napi_env env, napi_callback_info info)
+napi_value PreProcess0100(napi_env env, napi_callback_info info)
 {
     if (cap != nullptr && OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_PREPROC_DOWNSAMPLING)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -322,7 +322,7 @@ napi_value VideoEncodePreProcess0100Test(napi_env env, napi_callback_info info)
     return CreateIntInt32Result(env, 0);
 }
 
-napi_value VideoEncodePreProcess0200Test(napi_env env, napi_callback_info info)
+napi_value PreProcess0200(napi_env env, napi_callback_info info)
 {
     if (cap_hevc != nullptr && OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_ENCODER_PREPROC_CROP)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -395,7 +395,7 @@ napi_value VideoEncodePreProcess0200Test(napi_env env, napi_callback_info info)
     return CreateIntInt32Result(env, 0);
 }
 
-napi_value VideoEncodePreProcess0300Test(napi_env env, napi_callback_info info)
+napi_value PreProcess0300Test(napi_env env, napi_callback_info info)
 {
     if (cap != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();

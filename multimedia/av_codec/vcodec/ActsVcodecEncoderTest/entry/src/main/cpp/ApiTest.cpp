@@ -397,7 +397,8 @@ napi_value VideoEncodeIllegalPara2600Test(napi_env env, napi_callback_info info)
         attr.offset = 0;
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
 
-        if (OH_VideoEncoder_PushInputData(venc_, 0, attr) != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        if (OH_VideoEncoder_PushInputData(venc_, 0, attr) !=
+        AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
         TestTearDownApi();
         return CreateIntInt32Result(env, 0);
     } else {
@@ -609,7 +610,8 @@ napi_value VideoEncodeApi0600Test(napi_env env, napi_callback_info info)
         if (OH_VideoEncoder_PushInputData(venc_, index, attr) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         signal_->inIdxQueue_.pop();
         index = signal_->inIdxQueue_.front();
-        if (OH_VideoEncoder_PushInputData(venc_, index, attr) != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        if (OH_VideoEncoder_PushInputData(venc_, index, attr) !=
+        AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         signal_->inIdxQueue_.pop();
         lock.unlock();
         OH_VideoEncoder_Stop(venc_);
@@ -742,8 +744,10 @@ napi_value VideoEncodeApi1200Test(napi_env env, napi_callback_info info)
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
 
-        if (OH_VideoEncoder_SetParameter(venc_, format) != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
-        if (OH_VideoEncoder_SetParameter(venc_, format) != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        if (OH_VideoEncoder_SetParameter(venc_, format) !=
+        AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        if (OH_VideoEncoder_SetParameter(venc_, format) !=
+        AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         TestTearDownApi();
         return CreateIntInt32Result(env, 0);
     } else {
@@ -791,7 +795,8 @@ napi_value VideoEncodeApi1400Test(napi_env env, napi_callback_info info)
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
-            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+            if (OH_VideoEncoder_Configure(venc_, format) !=
+            AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
             TestTearDownApi();
             return CreateIntInt32Result(env, 0);
         }
@@ -817,11 +822,13 @@ napi_value VideoEncodeApi1410Test(napi_env env, napi_callback_info info)
             if (OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CQ) != true) {
                 return CreateIntInt32Result(env, -1);
             }
-            if (OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, -1) != true) { return CreateIntInt32Result(env, -1); }
+            if (OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, -1) !=
+            true) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
-            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+            if (OH_VideoEncoder_Configure(venc_, format) !=
+            AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
             TestTearDownApi();
             return CreateIntInt32Result(env, 0);
         }
@@ -834,7 +841,8 @@ napi_value VideoEncodeApi1410Test(napi_env env, napi_callback_info info)
 napi_value VideoEncodeSyncApi0010Test(napi_env env, napi_callback_info info)
 {
     uint32_t index;
-    if (OH_VideoEncoder_QueryInputBuffer(nullptr, &index, -1) != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+    if (OH_VideoEncoder_QueryInputBuffer(nullptr, &index, -1) !=
+    AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
     TestTearDownApi();
     return CreateIntInt32Result(env, 0);
 }
@@ -860,7 +868,8 @@ napi_value VideoEncodeSyncApi0020Test(napi_env env, napi_callback_info info)
             if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             if (OH_VideoEncoder_Prepare(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             if (OH_VideoEncoder_Start(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-            if (OH_VideoEncoder_QueryInputBuffer(venc_, &index, INT64_MAX) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+            if (OH_VideoEncoder_QueryInputBuffer(venc_, &index, INT64_MAX) !=
+            AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             TestTearDownApi();
             return CreateIntInt32Result(env, 0);
         }
@@ -889,7 +898,8 @@ napi_value VideoEncodeSyncApi0030Test(napi_env env, napi_callback_info info)
             if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             if (OH_VideoEncoder_Prepare(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             if (OH_VideoEncoder_Start(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-            if (OH_VideoEncoder_QueryInputBuffer(venc_, &index, INT64_MIN) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+            if (OH_VideoEncoder_QueryInputBuffer(venc_, &index, INT64_MIN) !=
+            AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             TestTearDownApi();
             return CreateIntInt32Result(env, 0);
         }
@@ -907,7 +917,8 @@ napi_value VideoEncodeSyncApi0040Test(napi_env env, napi_callback_info info)
 napi_value VideoEncodeSyncApi0050Test(napi_env env, napi_callback_info info)
 {
     uint32_t index;
-    if (OH_VideoEncoder_QueryOutputBuffer(nullptr, &index, -1) != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+    if (OH_VideoEncoder_QueryOutputBuffer(nullptr, &index, -1) !=
+    AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
     TestTearDownApi();
     return CreateIntInt32Result(env, 0);
 }
@@ -927,7 +938,7 @@ napi_value VideoEncodeSyncApi0060Test(napi_env env, napi_callback_info info)
         vEncSample->Release();
         TestTearDownApi();
         return CreateIntInt32Result(env, 0);
-    } 
+    }
     return CreateIntInt32Result(env, 0);
 }
 
@@ -1097,15 +1108,15 @@ napi_value VideoEncodeApiDual0400(napi_env env, napi_callback_info info)
     if (cap) {
         OH_AVCodec *primaryVencCodec = nullptr;
         if (OH_VideoEncoder_CreatePrimaryWithPreproc(
-                OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec) != AV_ERR_OK) {
-            return CreateIntInt32Result(env, -1);
-        }
+            OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1);
+            }
         if (primaryVencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         OH_AVCodec *vencCodec = nullptr;
         if (OH_VideoEncoder_CreateSecondaryFromPrimary(
-                primaryVencCodec, &vencCodec) != AV_ERR_OK) {
-            return CreateIntInt32Result(env, -1);
-        }
+            primaryVencCodec, &vencCodec) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1)
+            }
         if (vencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(vencCodec);
@@ -1139,26 +1150,26 @@ napi_value VideoEncodeApiDual0600(napi_env env, napi_callback_info info)
     if (cap) {
         OH_AVCodec *primaryVencCodec = nullptr;
         if (OH_VideoEncoder_CreatePrimaryWithPreproc(
-                OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec) != AV_ERR_OK) {
-            return CreateIntInt32Result(env, -1);
-        }
+            OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1);
+            }
         if (primaryVencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         OH_AVCodec *secondaryVencCodec = nullptr;
         if (OH_VideoEncoder_CreateSecondaryFromPrimary(
-                primaryVencCodec, &secondaryVencCodec) != AV_ERR_OK) {
-            return CreateIntInt32Result(env, -1);
-        }
+            primaryVencCodec, &secondaryVencCodec) != AV_ERR_OK) {
+                return CreateIntInt32Result(env, -1);
+            }
         if (secondaryVencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         if (OH_VideoEncoder_CreateSecondaryFromPrimary(
-                primaryVencCodec, &secondaryVencCodec) != AV_ERR_INVALID_VAL) {
-            return CreateIntInt32Result(env, -1);
-        }
+            primaryVencCodec, &secondaryVencCodec) != AV_ERR_INVALID_VAL) {
+                return CreateIntInt32Result(env, -1);
+            }
         if (secondaryVencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
         OH_AVCodec *thirdVencCodec = nullptr;
         if (OH_VideoEncoder_CreateSecondaryFromPrimary(
-                primaryVencCodec, &thirdVencCodec) != AV_ERR_OPERATE_NOT_PERMIT) {
-            return CreateIntInt32Result(env, -1);
-        }
+            primaryVencCodec, &thirdVencCodec) != AV_ERR_OPERATE_NOT_PERMIT) {
+                return CreateIntInt32Result(env, -1);
+            }
         OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(secondaryVencCodec);
         OH_VideoEncoder_Destroy(thirdVencCodec);

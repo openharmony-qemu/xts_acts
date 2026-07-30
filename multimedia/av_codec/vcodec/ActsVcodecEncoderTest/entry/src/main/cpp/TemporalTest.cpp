@@ -184,7 +184,8 @@ napi_value VideoTemporalEncodeFunction0020Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -209,7 +210,8 @@ napi_value VideoTemporalEncodeFunction0030Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -235,7 +237,8 @@ napi_value VideoTemporalEncodeFunction0040Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = 0;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -260,7 +263,8 @@ napi_value VideoTemporalEncodeFunction0440Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = 0;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -285,7 +289,8 @@ napi_value VideoTemporalEncodeFunction0050Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -311,7 +316,8 @@ napi_value VideoTemporalEncodeFunction0060Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = vEncSample->DEFAULT_FRAME_RATE-1;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -337,7 +343,8 @@ napi_value VideoTemporalEncodeFunction0070Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -363,7 +370,8 @@ napi_value VideoTemporalEncodeFunction0080Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = vEncSample->DEFAULT_FRAME_RATE-1;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -387,7 +395,8 @@ napi_value VideoTemporalEncodeFunction0090Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -412,7 +421,8 @@ napi_value VideoTemporalEncodeFunction0100Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_3;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -437,7 +447,8 @@ napi_value VideoTemporalEncodeFunction0110Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -463,7 +474,8 @@ napi_value VideoTemporalEncodeFunction0120Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_5;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -487,7 +499,8 @@ napi_value VideoTemporalEncodeFunction0130Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_6;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -512,7 +525,8 @@ napi_value VideoTemporalEncodeFunction0140Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_8;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -537,7 +551,8 @@ napi_value VideoTemporalEncodeFunction0150Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_9;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -563,7 +578,8 @@ napi_value VideoTemporalEncodeFunction0160Test(napi_env env, napi_callback_info 
         int32_t temporalGopSize = 12;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -589,7 +605,8 @@ napi_value VideoTemporalEncodeFunction0170Test(napi_env env, napi_callback_info 
         vEncSample->enableForceIDR = true;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -616,7 +633,8 @@ napi_value VideoTemporalEncodeFunction0180Test(napi_env env, napi_callback_info 
         vEncSample->enableForceIDR = true;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -839,7 +857,8 @@ napi_value LTR_FUNC_010Test(napi_env env, napi_callback_info info)
         int32_t temporalGopSize = 0;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1033,7 +1052,8 @@ napi_value VideoUniformlyEncodeFunction0100Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1082,7 +1102,8 @@ napi_value VideoUniformlyEncodeFunction0300Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1107,7 +1128,8 @@ napi_value VideoUniformlyEncodeFunction0400Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_4;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1156,7 +1178,8 @@ napi_value VideoUniformlyEncodeFunction0600Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1205,7 +1228,8 @@ napi_value VideoUniformlyEncodeFunction0800Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1230,7 +1254,8 @@ napi_value VideoUniformlyEncodeFunction0900Test(napi_env env, napi_callback_info
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_4;
         if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
-        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }

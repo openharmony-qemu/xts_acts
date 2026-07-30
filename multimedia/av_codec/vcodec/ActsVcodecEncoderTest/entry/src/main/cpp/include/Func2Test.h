@@ -83,7 +83,7 @@ napi_value VideoEncodeRgba10101020180Test(napi_env env, napi_callback_info info)
 napi_value VideoEncodeRgba10101020190Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeSyncFormat0010Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeAnother0010Test(napi_env env, napi_callback_info info);
-napi_value VideoCapabilityConfig0010Test(napi_env env, napi_callback_info info);
+napi_value CapabilityConfig0010(napi_env env, napi_callback_info info);
 napi_value VideoCapabilityConfig0020Test(napi_env env, napi_callback_info info);
 napi_value VideoEncoderSetXPS0010Test(napi_env env, napi_callback_info info);
 napi_value VideoEncoderSetXPS0020Test(napi_env env, napi_callback_info info);

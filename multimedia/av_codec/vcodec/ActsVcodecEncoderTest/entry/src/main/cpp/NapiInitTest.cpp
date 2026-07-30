@@ -339,9 +339,9 @@ static void InitPush6(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoEncodeMseQp0300Test", VideoEncodeMseQp0300Test));
     desc.push_back(XL("VideoEncodeMseQp0400Test", VideoEncodeMseQp0400Test));
     desc.push_back(XL("VideoEncodeRepeat0100Test", VideoEncodeRepeat0100Test));
-    desc.push_back(XL("VideoEncodePreProcess0100Test", VideoEncodePreProcess0100Test));
-    desc.push_back(XL("VideoEncodePreProcess0200Test", VideoEncodePreProcess0200Test));
-    desc.push_back(XL("VideoEncodePreProcess0300Test", VideoEncodePreProcess0300Test));
+    desc.push_back(XL("PreProcess0100", PreProcess0100));
+    desc.push_back(XL("PreProcess0200", PreProcess0200));
+    desc.push_back(XL("PreProcess0300Test", PreProcess0300Test));
     desc.push_back(XL("RESET_BITRATE_001Test", RESET_BITRATE_001Test));
     desc.push_back(XL("RESET_BITRATE_002Test", RESET_BITRATE_002Test));
     desc.push_back(XL("RESET_BITRATE_003Test", RESET_BITRATE_003Test));
@@ -591,7 +591,7 @@ static void InitPush11(std::vector<napi_property_descriptor> &desc)
 
 static void InitPush12(std::vector<napi_property_descriptor> &desc)
 {
-    desc.push_back(XL("VideoCapabilityConfig0010Test", VideoCapabilityConfig0010Test));
+    desc.push_back(XL("CapabilityConfig0010", CapabilityConfig0010));
     desc.push_back(XL("VideoCapabilityConfig0020Test", VideoCapabilityConfig0020Test));
     desc.push_back(XL("VideoEncoderSetXPS0010Test", VideoEncoderSetXPS0010Test));
     desc.push_back(XL("VideoEncoderSetXPS0020Test", VideoEncoderSetXPS0020Test));

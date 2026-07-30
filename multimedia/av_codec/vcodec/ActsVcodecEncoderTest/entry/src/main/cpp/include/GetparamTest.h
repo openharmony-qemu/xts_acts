@@ -21,9 +21,9 @@ napi_value VideoEncodeMseQp0200Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeMseQp0300Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeMseQp0400Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeRepeat0100Test(napi_env env, napi_callback_info info);
-napi_value VideoEncodePreProcess0100Test(napi_env env, napi_callback_info info);
-napi_value VideoEncodePreProcess0200Test(napi_env env, napi_callback_info info);
-napi_value VideoEncodePreProcess0300Test(napi_env env, napi_callback_info info);
+napi_value PreProcess0100(napi_env env, napi_callback_info info);
+napi_value PreProcess0200(napi_env env, napi_callback_info info);
+napi_value PreProcess0300Test(napi_env env, napi_callback_info info);
 
 extern void InitGetparamTest();
 extern void TestTearDownGetparam();

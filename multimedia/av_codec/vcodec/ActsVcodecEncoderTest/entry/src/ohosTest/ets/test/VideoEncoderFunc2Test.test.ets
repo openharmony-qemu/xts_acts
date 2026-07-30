@@ -1049,7 +1049,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_CAPABILITY_CONFIG_0010Test start');
-      let result: number = await testNapi.VideoCapabilityConfig0010Test();
+      let result: number = await testNapi.CapabilityConfig0010();
       expect(result).assertEqual(0);
     });
 
