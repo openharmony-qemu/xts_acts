@@ -2756,7 +2756,7 @@ function testSetDisallowedPolicy() {
       console.info(' --- getDisallowedPolicy_test_001 error is expected, but it done.');
     } catch (error) {
       console.info(' --- getDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error === null).assertTrue();
+      expect(false).assertTrue();
     }
     done();
     console.info(' --- getDisallowedPolicy_test_001  -------- END --------');
@@ -9794,7 +9794,7 @@ function testRemoveDisallowedListForAccountPolicy() {
     try {
       restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, [], DEFAULT_USER_ID);
     } catch (error) {
-      expect(error === null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

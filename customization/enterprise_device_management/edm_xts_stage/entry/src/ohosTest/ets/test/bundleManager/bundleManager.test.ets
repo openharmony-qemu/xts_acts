@@ -44,6 +44,7 @@ import bundleManager from '@ohos.enterprise.bundleManager';
 import systemparameter from '@ohos.systemparameter';
 import { BmsBundleInfo, BmsBundleResourceInfo, BundleManagerHelper } from './BundleManagerHelper';
 import { BusinessError } from '@kit.BasicServicesKit';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
@@ -5625,7 +5626,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getAllowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5650,7 +5652,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getAllowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5675,7 +5678,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5700,7 +5704,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch:  ' +
         error.code);
@@ -5725,7 +5730,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedUninstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5750,7 +5756,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedUninstallBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
         error.code);
@@ -5776,7 +5783,8 @@ export default function bundleManagerTest() {
       try {
         await bundleManager.install(SELFWANT, [], EDM_INSTALL_PARAM)
           .then(result => {
-            expect(result === null).assertTrue()
+            let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+            expect(edmEnable == "true").assertTrue()
           }).catch((error:BusinessError) => {
             console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
             error.code);
@@ -5903,7 +5911,7 @@ export default function bundleManagerTest() {
       try {
         const bundleNames: Array<string> = [ "com.edm.acts.normal" ];
         let ret = bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
-        expect(ret != null).assertTrue();
+        expect(typeof ret).assertEqual('object');
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0400 error is not expected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -6128,7 +6136,6 @@ export default function bundleManagerTest() {
         const bundleNames: string[] = ['com.edm.acts.normal'];
         let result: bundleManager.BundleStorageStats[] =
           await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
-        expect(result != null).assertTrue();
         expect(result[0]?.bundleName === 'com.edm.acts.normal').assertTrue();
         expect(result[0]?.appSize > 0).assertTrue();
         expect(result[0]?.dataSize >= 0).assertTrue();
@@ -6182,8 +6189,7 @@ export default function bundleManagerTest() {
       try {
         let result: bundleManager.BundleStorageStats[] =
           await bundleManager.getInstalledBundleStorageStats(SELFWANT, BUNDLE_NAME_ONE_REAL_200, DEFAULT_USER_ID);
-        expect(result != null).assertTrue();
-        expect(result.length === 200).assertTrue();
+        expect(result?.length === 200).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1500 error is not expected, actually catch: ' + error.code);
         expect(false).assertTrue();

@@ -86,7 +86,7 @@ function testSetLocationPolicy() {
       let getPolicy: locationManager.LocationPolicy = locationManager.getLocationPolicy(SELFWANT);
       expect(getPolicy == locationManager.LocationPolicy.FORCE_OPEN_LOCATION_SERVICE).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -228,7 +228,7 @@ function testGetLocationPolicy() {
     try {
       locationManager.getLocationPolicy(null);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     }
     done();
   });

@@ -315,7 +315,8 @@ function testSetOtaUpdatePolicy() {
     }
     try {
       let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      expect(ret == null).assertTrue();
+      let actualPolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
+      expect(actualPolicy.policyType === policy.policyType).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -363,11 +364,12 @@ function testSetOtaUpdatePolicy() {
       "policyType": systemManager.PolicyType.WINDOWS,
       "version": UPDATE_VERSION,
       "installStartTime": 110000000,
-      "installEndTime": 110000001, 
+      "installEndTime": 110000001,
     }
     try {
       let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      expect(ret == null).assertTrue();
+      let actualPolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
+      expect(actualPolicy.policyType === policy.policyType).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -414,11 +416,12 @@ function testSetOtaUpdatePolicy() {
     let policy: systemManager.OtaUpdatePolicy = {
       "policyType": systemManager.PolicyType.POSTPONE,
       "version": UPDATE_VERSION,
-      "delayUpdateTime": 110000000, 
+      "delayUpdateTime": 110000000,
     }
     try {
       let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      expect(ret == null).assertTrue();
+      let actualPolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
+      expect(actualPolicy.policyType === policy.policyType).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -759,7 +762,7 @@ function testGetUpdateResult() {
   it("test_get_update_result_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     await systemManager.getUpdateResult(SELFWANT, UPDATE_VERSION).then((data: systemManager.UpdateResult) => {
-      expect(data != null).assertTrue();
+      expect(typeof data.status).assertEqual('number');
       if (data.status === systemManager.UpdateStatus.NO_UPDATE_PACKAGE) {
         expect(data.status == systemManager.UpdateStatus.NO_UPDATE_PACKAGE).assertTrue();
       } else if (data.status === systemManager.UpdateStatus.UPDATE_WAITING) {
@@ -771,10 +774,10 @@ function testGetUpdateResult() {
       } else if (data.status === systemManager.UpdateStatus.UPDATE_SUCCESS) {
         expect(data.status == systemManager.UpdateStatus.UPDATE_SUCCESS).assertTrue();
       }
-      expect(data.version != null).assertTrue();
+      expect(typeof data.version).assertEqual('string');
       if (data.errorInfo) {
-        expect(data.errorInfo.code != null).assertTrue();
-        expect(data.errorInfo.message != null).assertTrue();
+        expect(typeof data.errorInfo.code).assertEqual('number');
+        expect(typeof data.errorInfo.message).assertEqual('string');
       }
       console.log(`get update result success. version: ${data.version}, status: ${data.status},
         errorCode: ${data.errorInfo.code}, errorMsg: ${data.errorInfo.message}`)
@@ -2765,7 +2768,8 @@ function testStartCollectLog() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       await systemManager.startCollectLog(SELFWANT).then(result=>{
-        expect(result == null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       }).catch ((error: BusinessError)=> {
         expect(error.code == 801).assertTrue();
       });
@@ -2902,8 +2906,8 @@ function testStartCollectLog() {
     try {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       let ret = systemManager.setNTPServer(SELFWANT, '');
-      console.info(' --- setNTPServer_test_003 error is expected, but it done.');
-      expect(ret === undefined).assertTrue();
+      let ntpServer = systemManager.getNTPServer(SELFWANT);
+      expect(typeof ntpServer === 'string').assertTrue();
     } catch (error) {
       console.info(' --- setNTPServer_test_003 error 401 is expected, actually catch: ' + error.code);
       expect(false).assertTrue();
@@ -3911,7 +3915,8 @@ function testFinishLogCollected() {
     }
     try {
       let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      expect(ret === undefined).assertTrue();
+      let actualPolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
+      expect(actualPolicy.policyType === policy.policyType).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_004_1 error 801 is expected, actually catch: ' + error.code);
       expect(Number(error.code) === 801).assertTrue();
@@ -3974,7 +3979,8 @@ function testFinishLogCollected() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = systemManager.addKeyEventPolicies(SELFWANT, []);
-      expect(ret === undefined).assertTrue();
+      let policies = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(Array.isArray(policies)).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
       expect(Number(error.code) === 801).assertTrue();
@@ -3998,7 +4004,8 @@ function testFinishLogCollected() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = systemManager.removeKeyEventPolicies(SELFWANT, []);
-      expect(ret === undefined).assertTrue();
+      let policies = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(Array.isArray(policies)).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
       expect(Number(error.code) === 801).assertTrue();

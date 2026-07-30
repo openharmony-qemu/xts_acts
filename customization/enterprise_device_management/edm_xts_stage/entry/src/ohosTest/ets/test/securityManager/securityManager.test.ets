@@ -724,10 +724,9 @@ function testGetPasswordPolicy() {
     try {
       securityManager.setPasswordPolicy(SELFWANT, PASSWORD_POLICY);
       let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(SELFWANT);
-      expect(result !== undefined).assertTrue();
-      expect(result.complexityRegex === PASSWORD_POLICY.complexityRegex);
-      expect(result.validityPeriod === PASSWORD_POLICY.validityPeriod);
-      expect(result.additionalDescription === PASSWORD_POLICY.additionalDescription);
+      expect(result?.complexityRegex === PASSWORD_POLICY.complexityRegex);
+      expect(result?.validityPeriod === PASSWORD_POLICY.validityPeriod);
+      expect(result?.additionalDescription === PASSWORD_POLICY.additionalDescription);
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -831,7 +830,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = await securityManager.installUserCertificate(SELFWANT, CERTIFICATE);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -853,7 +852,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = await securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -959,7 +958,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_VALID_ACCOUNTID);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -1002,7 +1001,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS, INT_VALID_ACCOUNTID);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       let res = securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
       expect(res.length > 0).assertTrue();
       await securityManager.uninstallUserCertificate(SELFWANT, path);
@@ -4450,7 +4449,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(null);
-        expect(result !== undefined).assertTrue();
+        expect(typeof result.minPasswordLength).assertEqual('number');
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
         expect(false).assertTrue();
