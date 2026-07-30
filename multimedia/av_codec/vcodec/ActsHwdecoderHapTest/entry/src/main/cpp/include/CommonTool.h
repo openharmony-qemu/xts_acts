@@ -133,6 +133,13 @@ inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, 
     return GetInt32ArgImpl(env, info, index, defaultValue);
 }
 
+static inline napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
 template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
 {
     try {
