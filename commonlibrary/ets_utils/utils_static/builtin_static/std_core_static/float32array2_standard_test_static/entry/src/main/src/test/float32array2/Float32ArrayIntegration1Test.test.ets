@@ -1580,7 +1580,7 @@ export default function Float32ArrayIntegration1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_ONE_1000
      * @tc.name testFloat32ArrayIntegrationOne100
-     * @tc.desc Verify valueOf()
+     * @tc.desc Verify valueOf() returns the same Float32Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1591,7 +1591,9 @@ export default function Float32ArrayIntegration1Test(): void {
       const element117 = v.$_get(1);
       expect(element117).assertEqual(2.0);
       expect(v.length).assertEqual(2);
-      expect(v === a).assertTrue();
+      expect(v).assertEqual(a);
+      v.$_set(0, 3.0);
+      expect(a.$_get(0)).assertEqual(3.0);
     });
 
     /**
