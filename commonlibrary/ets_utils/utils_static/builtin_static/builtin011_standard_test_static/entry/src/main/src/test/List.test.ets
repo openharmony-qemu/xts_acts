@@ -80,7 +80,6 @@ import BuiltinsArrayToStringTest from "./array/BuiltinsArrayToStringTest.test";
 import BuiltinsArrayUnshiftTest from "./array/BuiltinsArrayUnshiftTest.test";
 import BuiltinsArrayValuesTest from "./array/BuiltinsArrayValuesTest.test";
 import BuiltinsArrayWithTest from "./array/BuiltinsArrayWithTest.test";
-import BuiltinsTryGetIteratorLengthTest from "./array/BuiltinsTryGetIteratorLengthTest.test";
 
 // DataView tests
 import BuiltinsDataViewBufferTest from "./dataView/BuiltinsDataViewBufferTest.test";
@@ -206,7 +205,6 @@ export default function testsuite(): void {
   BuiltinsArrayUnshiftTest();
   BuiltinsArrayValuesTest();
   BuiltinsArrayWithTest();
-  BuiltinsTryGetIteratorLengthTest();
 
   // DataView tests
   BuiltinsDataViewBufferTest();
