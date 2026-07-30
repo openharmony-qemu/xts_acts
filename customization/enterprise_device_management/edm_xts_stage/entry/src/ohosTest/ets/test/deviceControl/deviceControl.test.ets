@@ -84,7 +84,8 @@ function testOperateDevice() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

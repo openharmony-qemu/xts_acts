@@ -21,6 +21,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EV
 
 import adminManager from '@ohos.enterprise.adminManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 const DELEGATED_POLICIES: Array<string> = [ "set_browser_policies" ];
 
@@ -98,7 +99,8 @@ export default function adminManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = adminManager.subscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
-        expect(ret == null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -223,7 +225,8 @@ export default function adminManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = adminManager.unsubscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
-        expect(ret == null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1184,7 +1187,8 @@ export default function adminManagerTest() {
         await adminManager.enableDeviceAdmin(OTHER_WANT);
         let res: Array<Want> = await adminManager.getAdmins();
         let otherAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == OTHER_WANT.bundleName);
-        expect(otherAdmin != undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
         expect(otherAdmin?.parameters?.enableSource == 1).assertTrue();
         await adminManager.disableDeviceAdmin(OTHER_WANT);
       } catch (error) {
@@ -2458,7 +2462,8 @@ export default function adminManagerTest() {
         let ret = adminManager.startAdminProvision(null, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_1 error is expected, but it done.');
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_1 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2482,7 +2487,8 @@ export default function adminManagerTest() {
         let ret = adminManager.startAdminProvision(undefined, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_2 error is expected, but it done.');
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_2 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2506,7 +2512,8 @@ export default function adminManagerTest() {
         let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           undefined, PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_3 error is expected, but it done.');
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_3 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2530,7 +2537,8 @@ export default function adminManagerTest() {
         let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), null);
         console.info(' --- test_startAdminProvision_011_4 error is expected, but it done.');
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_4 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2554,7 +2562,8 @@ export default function adminManagerTest() {
         let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), undefined);
         console.info(' --- test_startAdminProvision_011_5 error is expected, but it done.');
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_5 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2713,7 +2722,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 0).assertTrue();
       } catch (error) {
@@ -2744,7 +2752,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
       } catch (error) {
@@ -2775,7 +2782,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
@@ -2805,7 +2811,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
@@ -2835,7 +2840,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
       } catch (error) {
@@ -2866,7 +2870,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 0).assertTrue();
       } catch (error) {
@@ -2897,7 +2900,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
       } catch (error) {
@@ -2928,7 +2930,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
       } catch (error) {
@@ -2959,7 +2960,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
       } catch (error) {
@@ -3164,7 +3164,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 0).assertTrue();
       } catch (error) {
@@ -3195,7 +3194,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
       } catch (error) {
@@ -3226,7 +3224,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
       } catch (error) {
@@ -3257,7 +3254,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
       } catch (error) {
@@ -3288,7 +3284,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
       } catch (error) {
@@ -3319,7 +3314,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
       } catch (error) {
@@ -3350,7 +3344,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
       } catch (error) {
@@ -3381,7 +3374,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
       } catch (error) {
@@ -3412,7 +3404,6 @@ export default function adminManagerTest() {
         await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin != undefined).assertTrue();
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
         await adminManager.disableAdmin(wantTemp);

@@ -19,6 +19,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID, getErro
 import adminManager from '@ohos.enterprise.adminManager';
 import bluetoothManager from '@ohos.enterprise.bluetoothManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 import wifiManager from '@ohos.enterprise.wifiManager';
 import restrictions from '@ohos.enterprise.restrictions';
 import fs from '@ohos.file.fs';
@@ -414,7 +415,8 @@ export default function deviceSettingsTest() {
       try {
         let time = new Date().getTime().toString();
         let ret = deviceSettings.setValue(SELFWANT, ITEM_DATE_TIME, time);
-        expect(ret == null).assertTrue();
+        let value = deviceSettings.getValue(SELFWANT, ITEM_DATE_TIME);
+        expect(value === time).assertTrue();
       } catch (error) {
         expect(false).assertFail();
       } finally {
@@ -845,7 +847,8 @@ export default function deviceSettingsTest() {
       try {
         let bundleName = inputMethod.getCurrentInputMethod().name;
         let ret = deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, bundleName);
-        expect(ret == null).assertTrue();
+        let value = deviceSettings.getValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD);
+        expect(value === bundleName).assertTrue();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -853,7 +856,7 @@ export default function deviceSettingsTest() {
       }
       done();
     });
-    
+
     /**
      * @tc.name   test_device_settings_set_home_wall_paper_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0100

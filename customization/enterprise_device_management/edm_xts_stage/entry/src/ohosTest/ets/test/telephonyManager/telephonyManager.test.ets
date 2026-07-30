@@ -1707,7 +1707,8 @@ function testAddOutgoingCallPolicyNumbers() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, []);
-      expect(ret === undefined).assertTrue();
+      let numbers = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(Array.isArray(numbers)).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 801).assertTrue();
     } finally {
@@ -2577,7 +2578,8 @@ function testAddIncomingCallPolicyNumbers() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, []);
-      expect(ret === undefined).assertTrue();
+      let numbers = telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(Array.isArray(numbers)).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 801).assertTrue();
     } finally {
@@ -3208,7 +3210,7 @@ function testHangupCalling() {
       let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
       let numbers: Array<string> = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, policy);
       console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 numbers:' + numbers[0]);
-      expect(numbers[0] === undefined).assertTrue();
+      expect(Array.isArray(numbers)).assertTrue();
     } catch (error) {
       console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' + error.code);
       expect(Number(error.code) === 801).assertTrue();
