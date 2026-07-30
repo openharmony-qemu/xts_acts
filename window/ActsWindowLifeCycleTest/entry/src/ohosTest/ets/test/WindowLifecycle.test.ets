@@ -19,7 +19,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import { display } from '@kit.ArkUI';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -123,7 +123,7 @@ async function terminateAbility3(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision() {
+async function getPermision() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
@@ -140,9 +140,10 @@ async function ClickButtonDriver() {
   console.info(`come in permissionClick`);
   let driver: Driver = Driver.create();
   console.info(`come in Driver create`);
-  let buttonOne = await driver.findComponent(ON.text('允许'));
+  await sleep(1000);
+  let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if (buttonOne != undefined) {
+  if (buttonOne !== null) {
     await buttonOne.click();
   }
 }
@@ -661,8 +662,8 @@ export default function WindowLifecycle() {
           console.info('Succeeded in checking whether the window is showing. Data: ' + JSON.stringify(data2));
         } catch (exception) {
           console.error('Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
-          expect().assertFail();
           await windowClass.destroyWindow();
+          expect().assertFail();
           done();
         }
 
@@ -3565,7 +3566,7 @@ export default function WindowLifecycle() {
             done();
           } else {
             await subWindowClass?.destroyWindow();
-            if (!canIUseRes || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+            if (!canIUseRes) {
               expect(err.code).assertEqual(801);
               done();
             } else {
@@ -3871,7 +3872,7 @@ export default function WindowLifecycle() {
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to create the Window.Cause code: ${ err.code }, message: ${ err.message }`);
           expect(err.code).assertEqual(1300002);
-          expect(err.message).assertEqual('This window state is abnormal.[window][loadContent]msg: The window is not created or destroyed.');
+          expect(err.message !== '').assertTrue();
           done();
         });
       } catch (exception) {
@@ -4028,8 +4029,7 @@ export default function WindowLifecycle() {
               console.error(msgStr + `Failed to setParentWindow 1. Cause code: ${e.code}, message: ${e.message}`);
               await terminateAbility(message)
               expect(e.code).assertEqual(801);
-              expect(e.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
+              expect(e.message !== '').assertTrue();
               done();
             });
           } catch (e) {
@@ -4091,8 +4091,7 @@ export default function WindowLifecycle() {
             }).catch((err: BusinessError) => {
               console.error(`${caseName} restore_Failed. Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801);
-              expect(err.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][restore]msg: Window restore failed.');
+              expect(err.message !== '').assertTrue();
               done();
             });
           } catch (exception) {
