@@ -1082,7 +1082,6 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
         if (found(queryInfo4)) {
             result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo4, &cameraSize, &cameras);
         }
-        break;
     default:
         break;
     }
@@ -1174,6 +1173,38 @@ napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_
         break;
     case CASE_INDEX_4:
         result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(NULL, imageRotation);
+        break;    
+    default:
+        break;
+    }
+    ReleasePhotoSession();
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
+napi_value metadataOutputAddMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    CreatePhotoSession();
+    Camera_ErrorCode result;
+    uint32_t size;
+    Camera_MetadataObjectType type1[] = {FACE_DETECTION};
+    Camera_MetadataObjectType type2[] = {CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY};
+    Camera_MetadataObjectType type3[] = {CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION};
+    switch (index) {
+    case CASE_INDEX_1:
+        result = OH_MetadataOutput_AddMetadataObjectTypes(nullptr, type1, size);
+        break;
+    case CASE_INDEX_2:
+        result = OH_MetadataOutput_AddMetadataObjectTypes(nullptr, type2, size);
+        break;
+    case CASE_INDEX_3:
+        result = OH_MetadataOutput_AddMetadataObjectTypes(nullptr, type3, size);
         break;
     default:
         break;
@@ -1182,6 +1213,314 @@ napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
+}
+
+napi_value metadataOutputRemoveMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    CreatePhotoSession();
+    Camera_ErrorCode result;
+    uint32_t size;
+    Camera_MetadataObjectType type1[] = {FACE_DETECTION};
+    Camera_MetadataObjectType type2[] = {CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY};
+    Camera_MetadataObjectType type3[] = {CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION};
+    switch (index) {
+    case CASE_INDEX_1:
+        result = OH_MetadataOutput_RemoveMetadataObjectTypes(nullptr, type1, size);
+        break;
+    case CASE_INDEX_2:
+        result = OH_MetadataOutput_RemoveMetadataObjectTypes(nullptr, type2, size);
+        break;
+    case CASE_INDEX_3:
+        result = OH_MetadataOutput_RemoveMetadataObjectTypes(nullptr, type3, size);
+        break;
+    default:
+        break;
+    }
+    ReleasePhotoSession();
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
+napi_value OHCameraManagerCreateMetadataOutputWithObjectTypesSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = OH_CameraManager_CreateMetadataOutputWithObjectTypes(nullptr, nullptr, 1, nullptr);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+napi_value OHPhotoOutputGetPhotoRotationWithoutDeviceDegreeSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(nullptr, nullptr);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value OHVideoOutputGetVideoRotationWithoutDeviceDegreeSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = OH_VideoOutput_GetVideoRotationWithoutDeviceDegree(nullptr, nullptr);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value TestOHCaptureSessionIsLockFocusTrackingSupported(napi_env env, napi_callback_info info)
+{
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    ReleasePhotoSession();
+    napi_value result;
+    napi_get_boolean(env, isSupported, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWhenNotSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (!isSupported) {
+        Camera_Point focusPoint = {0.5, 0.5};
+        Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+            ReleasePhotoSession();
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWhenNotSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (!isSupported) {
+        Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+            ReleasePhotoSession();
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestIsLockFocusTrackingSupportedWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (isSupported) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsLockFocusTrackingSupported failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestIsLockFocusTrackingSupportedWithNullptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(nullptr);
+    if (isSupported) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsLockFocusTrackingSupported failed.");
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingNormalValidPoint(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_UnlockFocusTracking(captureSession);
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWithNullptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(nullptr, focusPoint);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_Point focusPoint = {0.5, 0.5};
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingRepeatLock(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_UnlockFocusTracking(captureSession);
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTracking(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWithNullptr(napi_env env, napi_callback_info info)
+{
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(nullptr);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingRepeatUnlock(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
 }
 
 napi_value TestOHMetadataObjectExtGetBoundingBox(napi_env env, napi_callback_info info)
@@ -1282,6 +1621,10 @@ napi_value TestOHMetadataObjectExtGetPitchAngle(napi_env env, napi_callback_info
     case CASE_INDEX_1:
         result = OH_MetadataObjectExt_GetPitchAngle(nullptr, &pitchAngle);
         break;
+    case CASE_INDEX_2:
+        OH_Camera_MetadataObjectExt* MetadataObjectExt;
+        result = OH_MetadataObjectExt_GetPitchAngle(MetadataObjectExt, nullptr);
+        break;
     default:
         break;
     }
@@ -1326,6 +1669,9 @@ napi_value TestOHMetadataObjectExtGetRollAngle(napi_env env, napi_callback_info 
     case CASE_INDEX_1:
         result = OH_MetadataObjectExt_GetRollAngle(nullptr, &rollAngle);
         break;
+    case CASE_INDEX_2:
+        result = OH_MetadataObjectExt_GetRollAngle(MetadataObjectExt, nullptr);
+        break;
     default:
         break;
     }
@@ -1348,6 +1694,9 @@ napi_value TestOHMetadataObjectExtGetTimestamp(napi_env env, napi_callback_info 
     case CASE_INDEX_1:
         result = OH_MetadataObjectExt_GetTimestamp(nullptr, &timestamp);
         break;
+    case CASE_INDEX_2:
+        result = OH_MetadataObjectExt_GetTimestamp(MetadataObjectExt, nullptr);
+        break;
     default:
         break;
     }
@@ -1369,6 +1718,9 @@ napi_value TestOHMetadataObjectExtGetYawAngle(napi_env env, napi_callback_info i
     switch (index) {
     case CASE_INDEX_1:
         result = OH_MetadataObjectExt_GetYawAngle(nullptr, &yawAngle);
+        break;
+    case CASE_INDEX_2:
+        result = OH_MetadataObjectExt_GetYawAngle(MetadataObjectExt, nullptr);
         break;
     default:
         break;
