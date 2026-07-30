@@ -2081,7 +2081,7 @@ export default function wifiManagerTest() {
             console.info('[bluetooth_js]descriptorWrite is not support');
             expect(error.code).assertEqual(801);
           } else {
-            expect(error.code).assertEqual(NOT_PERMISSION);
+            expect(error.code).assertEqual(201);
           }
         }
         console.info(`${caseName} test end`);
