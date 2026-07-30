@@ -1510,7 +1510,7 @@ export default function Float32ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_FOUR_0930
      * @tc.name testFloat32ArrayConstructorFour093
-     * @tc.desc Verify overload 12 different offset view does not affect
+     * @tc.desc Verify overload 12 non-overlapping offset views do not affect each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1521,6 +1521,12 @@ export default function Float32ArrayConstructor4Test(): void {
       const observedValue097Part2 = new Float32Array(buf, 4, 1);
       expect(observedValue097.buffer).assertEqual(buf);
       expect(observedValue097Part2.buffer).assertEqual(buf);
+      observedValue097.$_set(0, 1.0);
+      expect(observedValue097.$_get(0)).assertEqual(1.0);
+      expect(observedValue097Part2.$_get(0)).assertEqual(0.0);
+      observedValue097Part2.$_set(0, 2.0);
+      expect(observedValue097.$_get(0)).assertEqual(1.0);
+      expect(observedValue097Part2.$_get(0)).assertEqual(2.0);
     });
 
     /**

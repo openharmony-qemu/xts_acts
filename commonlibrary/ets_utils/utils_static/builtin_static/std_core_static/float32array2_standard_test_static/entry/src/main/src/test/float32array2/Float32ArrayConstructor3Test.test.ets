@@ -845,6 +845,8 @@ export default function Float32ArrayConstructor3Test(): void {
       view.$_set(0, 1.5);
       view.$_set(1, 2.5);
       expect(buf.byteLength).assertEqual(8);
+      expect(view.$_get(0)).assertEqual(1.5);
+      expect(view.$_get(1)).assertEqual(2.5);
     });
 
     /**
@@ -1398,6 +1400,8 @@ export default function Float32ArrayConstructor3Test(): void {
       arr.$_set(0, 1.5);
       arr.$_set(1, 2.5);
       expect(buf.byteLength).assertEqual(16);
+      expect(arr.$_get(0)).assertEqual(1.5);
+      expect(arr.$_get(1)).assertEqual(2.5);
     });
 
     /**
@@ -1984,6 +1988,8 @@ export default function Float32ArrayConstructor3Test(): void {
       const observedValue123Part2 = new Float32Array(buf, 0, 1);
       observedValue123.$_set(1, 5.0);
       expect(observedValue123Part2.byteLength).assertEqual(4);
+      expect(observedValue123.$_get(1)).assertEqual(5.0);
+      expect(observedValue123Part2.$_get(0)).assertEqual(0.0);
     });
 
     /**

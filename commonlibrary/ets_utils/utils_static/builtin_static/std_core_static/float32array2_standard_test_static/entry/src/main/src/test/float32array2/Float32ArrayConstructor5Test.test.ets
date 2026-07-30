@@ -963,14 +963,19 @@ export default function Float32ArrayConstructor5Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorFive060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(2);
+      const buf = new ArrayBuffer(8);
+      const arr = new Float32Array(buf);
+      arr.$_set(0, 9.0);
+      arr.$_set(1, 8.0);
       try {
-        new Float32Array(new ArrayBuffer(8), 2);
+        new Float32Array(buf, 2);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
       expect(arr.length).assertEqual(2);
+      expect(arr.$_get(0)).assertEqual(9.0);
+      expect(arr.$_get(1)).assertEqual(8.0);
     });
 
     /**
@@ -991,6 +996,8 @@ export default function Float32ArrayConstructor5Test(): void {
       }
       const element075 = arr.$_get(0);
       expect(element075).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
+      expect(arr.length).assertEqual(2);
     });
 
     /**
@@ -1010,6 +1017,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
       expect(arr.length).assertEqual(2);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
     });
 
     /**
@@ -1022,13 +1031,20 @@ export default function Float32ArrayConstructor5Test(): void {
      */
     it('testFloat32ArrayConstructorFive063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
+      let callbackInvoked = false;
       try {
-        arr.reduce((acc: number, v: number, index: int, array: Float32Array) => acc + v);
+        arr.reduce((acc: number, v: number, index: int, array: Float32Array): number => {
+          callbackInvoked = true;
+          return acc + v;
+        });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
       expect(arr.name).assertEqual('Float32Array');
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(callbackInvoked).assertFalse();
     });
 
     /**
@@ -1050,6 +1066,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(2);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
     });
 
     /**
@@ -1061,14 +1079,19 @@ export default function Float32ArrayConstructor5Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorFive065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const outer = new Float32Array(3);
+      const buf = new ArrayBuffer(8);
+      const outer = new Float32Array(buf);
+      outer.$_set(0, 7.0);
+      outer.$_set(1, 8.0);
       try {
-        new Float32Array(new ArrayBuffer(8), 2, 1);
+        new Float32Array(buf, 2, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-      expect(outer.byteLength).assertEqual(12);
+      expect(outer.byteLength).assertEqual(8);
+      expect(outer.$_get(0)).assertEqual(7.0);
+      expect(outer.$_get(1)).assertEqual(8.0);
     });
 
     /**
@@ -1088,6 +1111,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
       expect(arr.buffer.byteLength).assertEqual(8);
+      expect(arr.$_get(0)).assertEqual(0);
+      expect(arr.$_get(1)).assertEqual(0);
     });
 
     /**
@@ -1112,6 +1137,9 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(3);
+      expect(arr.$_get(0)).assertEqual(3.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
+      expect(arr.$_get(2)).assertEqual(2.0);
     });
 
     /**
@@ -1135,6 +1163,7 @@ export default function Float32ArrayConstructor5Test(): void {
       }
       const element083 = arr.$_get(0);
       expect(element083).assertEqual(5.0);
+      expect(arr.$_get(1)).assertEqual(0.0);
     });
 
     /**
@@ -1147,6 +1176,8 @@ export default function Float32ArrayConstructor5Test(): void {
      */
     it('testFloat32ArrayConstructorFive069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0);
+      arr.$_set(0, 6.0);
+      arr.$_set(1, 7.0);
       try {
         arr.forEach((v: number, index: int, array: Float32Array) => {
           throw new Error('fe');
@@ -1156,6 +1187,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteOffset).assertEqual(0);
+      expect(arr.$_get(0)).assertEqual(6.0);
+      expect(arr.$_get(1)).assertEqual(7.0);
     });
 
     /**
@@ -1167,15 +1200,18 @@ export default function Float32ArrayConstructor5Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorFive070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(Float32Array.of(1.0, 2.0));
+      const buf = new ArrayBuffer(4);
+      const arr = new Float32Array(buf);
+      arr.$_set(0, 1.0);
       try {
-        new Float32Array(new ArrayBuffer(4), 2);
+        new Float32Array(buf, 2);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-      const element085 = arr.$_get(1);
-      expect(element085).assertEqual(2.0);
+      const element085 = arr.$_get(0);
+      expect(element085).assertEqual(1.0);
+      expect(arr.length).assertEqual(1);
     });
 
     /**
@@ -1187,14 +1223,19 @@ export default function Float32ArrayConstructor5Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorFive071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Float32Array(1);
+      const buf = new ArrayBuffer(8);
+      const first = new Float32Array(buf);
+      first.$_set(0, 3.0);
+      first.$_set(1, 4.0);
       try {
-        new Float32Array(new ArrayBuffer(8), 3, 1);
+        new Float32Array(buf, 3, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
       expect(first.name).assertEqual('Float32Array');
+      expect(first.$_get(0)).assertEqual(3.0);
+      expect(first.$_get(1)).assertEqual(4.0);
     });
 
     /**
@@ -1207,13 +1248,19 @@ export default function Float32ArrayConstructor5Test(): void {
      */
     it('testFloat32ArrayConstructorFive072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
+      let callbackInvoked = false;
       try {
-        arr.reduceRight((acc: number, v: number, index: int, array: Float32Array) => acc + v);
+        arr.reduceRight((acc: number, v: number, index: int, array: Float32Array): number => {
+          callbackInvoked = true;
+          return acc + v;
+        });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
       expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(callbackInvoked).assertFalse();
     });
 
     /**
@@ -1225,14 +1272,19 @@ export default function Float32ArrayConstructor5Test(): void {
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorFive073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const existing = new Float32Array(new ArrayBuffer(8), 0, 2);
+      const buf = new ArrayBuffer(8);
+      const existing = new Float32Array(buf, 0, 2);
+      existing.$_set(0, 3.0);
+      existing.$_set(1, 4.0);
       try {
-        new Float32Array(new ArrayBuffer(8), 6, 1);
+        new Float32Array(buf, 6, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
       expect(existing.length).assertEqual(2);
+      expect(existing.$_get(0)).assertEqual(3.0);
+      expect(existing.$_get(1)).assertEqual(4.0);
     });
 
     /**
@@ -1245,6 +1297,9 @@ export default function Float32ArrayConstructor5Test(): void {
      */
     it('testFloat32ArrayConstructorFive074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
+      const existing = new Float32Array(buf);
+      existing.$_set(0, 3.0);
+      existing.$_set(1, 4.0);
       try {
         new Float32Array(buf, 0, 3);
         expect().assertFail();
@@ -1252,6 +1307,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('RangeError');
       }
       expect(buf.byteLength).assertEqual(8);
+      expect(existing.$_get(0)).assertEqual(3.0);
+      expect(existing.$_get(1)).assertEqual(4.0);
     });
 
     /**
@@ -1273,6 +1330,8 @@ export default function Float32ArrayConstructor5Test(): void {
       }
       const element090 = arr.$_get(2);
       expect(element090).assertEqual(5.0);
+      expect(arr.$_get(0)).assertEqual(5.0);
+      expect(arr.$_get(1)).assertEqual(5.0);
     });
 
     /**
@@ -1294,6 +1353,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.length).assertEqual(2);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
     });
 
     /**
@@ -1306,6 +1367,7 @@ export default function Float32ArrayConstructor5Test(): void {
      */
     it('testFloat32ArrayConstructorFive077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 4, 1);
+      arr.$_set(0, 7.0);
       try {
         arr.every((v: number, index: int, array: Float32Array) => {
           throw new Error('ev');
@@ -1315,6 +1377,8 @@ export default function Float32ArrayConstructor5Test(): void {
         expect(e.name).assertEqual('Error');
       }
       expect(arr.byteOffset).assertEqual(4);
+      expect(arr.length).assertEqual(1);
+      expect(arr.$_get(0)).assertEqual(7.0);
     });
 
     /**

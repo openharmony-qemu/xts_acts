@@ -357,6 +357,7 @@ export default function Float32ArrayConstructor1Test(): void {
       const arr = new Float32Array(src);
       const element030 = Math.abs(arr.$_get(0) - 0.3);
       expect(element030).assertLarger(1e-9);
+      expect(element030).assertLess(2e-8);
     });
 
     /**
@@ -536,6 +537,7 @@ export default function Float32ArrayConstructor1Test(): void {
       const arr = new Float32Array(src);
       const element042 = arr.$_get(0);
       expect(element042).assertEqual(5.0);
+      expect(arr.$_get(1)).assertEqual(5.0);
       const element042Part2 = arr.$_get(2);
       expect(element042Part2).assertEqual(5.0);
     });
@@ -553,6 +555,8 @@ export default function Float32ArrayConstructor1Test(): void {
       const arr = new Float32Array(src);
       const element043 = arr.$_get(0);
       expect(element043).assertEqual(-1.0);
+      const middle = 1.0 / arr.$_get(1);
+      expect(middle).assertEqual(Number.POSITIVE_INFINITY);
       const element043Part2 = arr.$_get(2);
       expect(element043Part2).assertEqual(1.0);
     });
@@ -1110,6 +1114,7 @@ export default function Float32ArrayConstructor1Test(): void {
       arr.$_set(1, 200.0);
       const element086 = arr.$_get(0);
       expect(element086).assertEqual(10.0);
+      expect(arr.$_get(1)).assertEqual(200.0);
       const element086Part2 = arr.$_get(2);
       expect(element086Part2).assertEqual(30.0);
     });
@@ -1161,6 +1166,10 @@ export default function Float32ArrayConstructor1Test(): void {
       const first = it.next().value!;
       expect(first[0]).assertEqual(0);
       expect(first[1]).assertEqual(7.0);
+      const second = it.next().value!;
+      expect(second[0]).assertEqual(1);
+      expect(second[1]).assertEqual(8.0);
+      expect(it.next().done).assertTrue();
     });
 
     /**
@@ -1692,20 +1701,18 @@ export default function Float32ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1090
      * @tc.name testFloat32ArrayConstructorOne109
-     * @tc.desc Verify Float32Array write of 0 is readable via DataView
+     * @tc.desc Verify Float32Array write of 0 replaces an existing non-zero value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorOne109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const view = new Float32Array(buf, 0);
+      const view = new Float32Array([1.0, 2.0]);
       view.$_set(0, 0.0);
-      const dv = new DataView(buf);
-      const observedValue130 = dv.getFloat32(0);
+      const observedValue130 = view.$_get(0);
       expect(observedValue130).assertEqual(0);
-      const observedValue130Part2 = dv.getFloat32(4);
-      expect(observedValue130Part2).assertEqual(0);
+      const observedValue130Part2 = view.$_get(1);
+      expect(observedValue130Part2).assertEqual(2.0);
     });
 
     /**
@@ -1761,7 +1768,7 @@ export default function Float32ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1130
      * @tc.name testFloat32ArrayConstructorOne113
-     * @tc.desc Verify Float32Array write updates underlying bytes (endian-aware spot check)
+     * @tc.desc Verify Float32Array write updates all underlying bytes on either native endianness
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1771,10 +1778,11 @@ export default function Float32ArrayConstructor1Test(): void {
       const view = new Float32Array(buf);
       view.$_set(0, 1.0);
       const bytes = new Uint8Array(buf);
-      const element134 = bytes.$_get(0);
-      expect(element134).assertEqual(0);
-      const element134Part2 = bytes.$_get(3);
-      expect(element134Part2).assertEqual(63);
+      const isLittleEndian = bytes.$_get(0) === 0 && bytes.$_get(1) === 0 &&
+        bytes.$_get(2) === 128 && bytes.$_get(3) === 63;
+      const isBigEndian = bytes.$_get(0) === 63 && bytes.$_get(1) === 128 &&
+        bytes.$_get(2) === 0 && bytes.$_get(3) === 0;
+      expect(isLittleEndian || isBigEndian).assertTrue();
     });
 
     /**
