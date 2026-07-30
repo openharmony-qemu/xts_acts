@@ -1155,7 +1155,7 @@ static int RunByNameForked(const std::string& name)
         sa.sa_flags = 0;
         for (int sig = 1; sig < NSIG; ++sig) {
             if (sig != SIGKILL && sig != SIGSTOP) {
-                syscall(SYS_rt_sigaction, sig, &sa, nullptr, 8);
+                syscall(SYS_rt_sigaction, sig, &sa, nullptr, sizeof(sigset_t));
             }
         }
         g_tStatus = 0;
