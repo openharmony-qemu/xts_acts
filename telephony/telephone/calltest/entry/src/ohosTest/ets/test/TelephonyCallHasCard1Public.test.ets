@@ -823,5 +823,225 @@ export default function HasCard1PublicTest() {
       }
     });
 
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0100
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_0100
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_UNCONDITIONAL and specialPhone, expect error 8401002 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0100";
+        console.info(`${caseName} testTelephonyCallManager start `);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done()
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
+          done()
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0200
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_0200
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_BUSY and specialPhone, expect error 8401002 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0200";
+        console.info(`${caseName} start`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_BUSY, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0300
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_0300
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_NO_REPLY and specialPhone, expect error 8401002 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0300";
+        console.info(`${caseName} start`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NO_REPLY, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0400
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_0400
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_NOT_REACHABLE and specialPhone, expect error 8401002 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0400";
+        console.info(`${caseName} start`);
+        try {
+          let data: call.CallTransferResult =
+            await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NOT_REACHABLE, specialPhone);
+          console.info(`${caseName} getCallTransferInfo success, status->${data.status}, number->${data.number}, startHour->${data.startHour}, startMinute->${data.startMinute}, endHour->${data.endHour}, endMinute->${data.endMinute}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8401002 || err.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0500
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_ERROR_0500
+     * @tc.desc   Get call transfer info with null type and errPhone, expect error 401 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0500";
+        console.info(`${caseName} start`);
+        try {
+          await call.getCallTransferInfo(null, errPhone);
+          console.info(`${caseName} fail, should throw error`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0600
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_ERROR_0600
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_UNCONDITIONAL and empty number, expect error 8300001 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0600";
+        console.info(`${caseName} start`);
+        try {
+          await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, '');
+          console.info(`${caseName} fail, should throw error`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 8300001);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0700
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_ERROR_0700
+     * @tc.desc   Get call transfer info with undefined type and specialPhone, expect error 401 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0700";
+        console.info(`${caseName} start`);
+        try {
+          await call.getCallTransferInfo(undefined, specialPhone);
+          console.info(`${caseName} fail, should throw error`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0800
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_ERROR_0800
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_UNCONDITIONAL and null number, expect error 401 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0800";
+        console.info(`${caseName} start`);
+        try {
+          await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, null);
+          console.info(`${caseName} fail, should throw error`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0900
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_ERROR_0900
+     * @tc.desc   Get call transfer info with TRANSFER_TYPE_UNCONDITIONAL and undefined number, expect error 401 Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName: string = "testTelephonyCallGetCallTransferInfo0900";
+        console.info(`${caseName} start`);
+        try {
+          await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, undefined);
+          console.info(`${caseName} fail, should throw error`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${caseName} success, err code->${err.code},err message->${err.message}`);
+          ExpectTrue(err.code === 401);
+          done();
+        }
+      });
+
   });
 }
