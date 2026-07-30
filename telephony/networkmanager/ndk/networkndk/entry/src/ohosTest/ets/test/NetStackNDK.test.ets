@@ -1267,7 +1267,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_NULL_certChain");
+      const testParam = "TEST_NULL_certChain";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_NULL_certChain");
       expect(result).assertEqual(ERROR_CODE_2305001);
     });
 
@@ -1280,7 +1282,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_zero_certCount");
+      const testParam = "TEST_zero_certCount";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_zero_certCount");
       expect(result).assertEqual(ERROR_CODE_2305002);
     });
 
@@ -1293,7 +1297,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_certChain");
+      const testParam = "TEST_invalid_certChain";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_invalid_certChain");
       expect(result).assertEqual(ERROR_CODE_2305004);
     });
 
@@ -1306,7 +1312,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_NULL_data");
+      const testParam = "TEST_NULL_data";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_NULL_data");
       expect(result).assertEqual(ERROR_CODE_2305006);
     });
 
@@ -1319,7 +1327,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_zero_size");
+      const testParam = "TEST_zero_size";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_zero_size");
       expect(result).assertEqual(ERROR_CODE_2305007);
     });
 
@@ -1332,7 +1342,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_type");
+      const testParam = "TEST_invalid_type";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_invalid_type");
       expect(result).assertEqual(ERROR_CODE_2305009);
     });
 
@@ -1345,7 +1357,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_double_free");
+      const testParam = "TEST_double_free";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_double_free");
       expect(result).assertEqual(ERROR_CODE_2305010);
     });
 
@@ -1358,7 +1372,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_large_certCount");
+      const testParam = "TEST_large_certCount";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_large_certCount");
       expect(result).assertEqual(ERROR_CODE_2305024);
     });
 
@@ -1371,7 +1387,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_invalid_certChain_ptr");
+      const testParam = "TEST_invalid_certChain_ptr";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_invalid_certChain_ptr");
       expect(result).assertEqual(ERROR_CODE_2305027);
     });
 
@@ -1384,7 +1402,9 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL0
      */
     it('testOHNetStackFreeCertChainParam_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result : number = wsAPI.OHNetStackFreeCertChain("TEST_memory_error");
+      const testParam = "TEST_memory_error";
+      let result : number = wsAPI.OHNetStackFreeCertChain(testParam);
+      expect(testParam).assertEqual("TEST_memory_error");
       expect(result).assertEqual(ERROR_CODE_2305062);
     });
   });
