@@ -4449,7 +4449,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(null);
-        expect(typeof result.minPasswordLength).assertEqual('number');
+        expect(typeof result.complexityRegex === 'string').assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
         expect(false).assertTrue();
