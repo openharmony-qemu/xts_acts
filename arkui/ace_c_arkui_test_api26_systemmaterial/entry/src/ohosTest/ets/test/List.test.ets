@@ -16,10 +16,12 @@ import ImmersiveMaterialTest from './systemMaterial/ImmersiveMaterialTest.test';
 import NullPointerApisTest from './systemMaterial/NullPointerApisTest.test';
 import CustomDialogSystemMaterialTest from './systemMaterial/CustomDialogSystemMaterialTest.test';
 import CustomDialogDisplayModeTest from './systemMaterial/CustomDialogDisplayModeTest.test';
+import CustomDialogOpenCallbackTest from './systemMaterial/CustomDialogOpenCallbackTest.test';
 
 export default function testsuite() {
   ImmersiveMaterialTest();
   NullPointerApisTest();
   CustomDialogSystemMaterialTest();
   CustomDialogDisplayModeTest();
+  CustomDialogOpenCallbackTest();
 }

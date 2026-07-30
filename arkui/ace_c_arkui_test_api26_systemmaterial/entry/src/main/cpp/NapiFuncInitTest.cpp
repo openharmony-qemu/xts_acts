@@ -100,6 +100,13 @@ static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
             TestCustomDialogSetDisplayModeInSubWindow002),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
             TestCustomDialogSetDisplayModeInSubWindow003),
+        MakeMaterialProp("testDialogOpenCallbackErrorEnumValues001", TestDialogOpenCallbackErrorEnumValues001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackNullOptions001",
+            TestCustomDialogOpenDialogWithCallbackNullOptions001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackUserData001",
+            TestCustomDialogOpenDialogWithCallbackUserData001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackValidOptions001",
+            TestCustomDialogOpenDialogWithCallbackValidOptions001),
     };
     *count = sizeof(desc) / sizeof(desc[0]);
     return desc;
