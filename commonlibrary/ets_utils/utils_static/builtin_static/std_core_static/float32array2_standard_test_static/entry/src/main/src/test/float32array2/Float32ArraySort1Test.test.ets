@@ -783,7 +783,7 @@ export default function Float32ArraySort1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_ONE_0410
      * @tc.name testFloat32ArraySortOne041
-     * @tc.desc Verify sort places values not below 4.0 after values below 4.0
+     * @tc.desc Verify sort comparator orders values less than 4.0 before values >= 4.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
