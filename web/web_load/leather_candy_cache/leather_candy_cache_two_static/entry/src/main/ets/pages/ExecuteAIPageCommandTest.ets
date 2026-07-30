@@ -73,6 +73,7 @@ const liteDomFunction0025: string = '{"method":"getLiteDom"}';
 @Component
 struct ExecuteAIPageCommandTest {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = ''
 
   aboutToAppear() {
@@ -264,6 +265,18 @@ struct ExecuteAIPageCommandTest {
                 error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148126)
+              }
+              break;
+            }
+            case 'testExecuteAIPageCommand017': {
+              let msg = 'testExecuteAIPageCommand017'
+              try {
+                this.controllerNull.executeAIPageCommand(fullDomFunction0001);
+                Utils.emitEvent(true, 148127)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
+                Utils.emitEvent(error.code, 148127)
               }
               break;
             }

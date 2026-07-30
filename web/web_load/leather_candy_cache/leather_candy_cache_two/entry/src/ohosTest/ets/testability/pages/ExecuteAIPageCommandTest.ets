@@ -128,7 +128,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand003': {
               let msg = 'testExecuteAIPageCommand003'
               try {
-                await this.controllerNull.executeAIPageCommand(null);
+                await this.controller.executeAIPageCommand(null);
                 Utils.emitEvent(true, 148113)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
@@ -286,6 +286,17 @@ struct ExecuteAIPageCommandTest {
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148126)
+              }
+              break;
+            }
+            case 'testExecuteAIPageCommand017': {
+              let msg = 'testExecuteAIPageCommand017'
+              try {
+                await this.controllerNull.executeAIPageCommand(fullDomFunction0001);
+                Utils.emitEvent(true, 148127)
+              } catch (error) {
+                console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
+                Utils.emitEvent(error.code, 148127)
               }
               break;
             }
