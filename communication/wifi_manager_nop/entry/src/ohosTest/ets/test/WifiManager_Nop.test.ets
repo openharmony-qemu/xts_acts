@@ -2072,7 +2072,7 @@ export default function wifiManagerTest() {
             networkId: 0,
             withUserAction: false
           };
-          wifiManager.connectToCandidateConfig(settings);
+          await wifiManager.connectToCandidateConfig(settings);
           console.log(`${caseName} connectToCandidateConfig(settings) get result success`);
           expect().assertFail();
         } catch (error) {
