@@ -336,7 +336,7 @@ napi_value VideoEncodeCapability7100Test(napi_env env, napi_callback_info info)
         if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum);
         if (pixelFormat == nullptr) { return CreateIntInt32Result(env, -1); }
-        if (pixelFormatNum <=0) { return CreateIntInt32Result(env, -1); }
+        if (pixelFormatNum <= 0) { return CreateIntInt32Result(env, -1); }
         if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < pixelFormatNum; i++) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -589,7 +589,7 @@ napi_value VideoEncodeHevcCapability0400Test(napi_env env, napi_callback_info in
     if (cap_hevc) {
         if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         const char *name = OH_AVCapability_GetName(cap_hevc);
-        if (name == nullptr ) { return CreateIntInt32Result(env, -1); }
+        if (name == nullptr) { return CreateIntInt32Result(env, -1); }
         if (0 >= strlen(name)) { return CreateIntInt32Result(env, -1); }
         return CreateIntInt32Result(env, 0);
     }

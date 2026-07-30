@@ -406,7 +406,6 @@ napi_value VideoEncodeFunction1000Test(napi_env env, napi_callback_info info)
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
             if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-
             if (OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CBR) != true) {
                 return CreateIntInt32Result(env, -1);
             }
@@ -708,7 +707,7 @@ napi_value VideoEncodeCapability0900Test(napi_env env, napi_callback_info info)
 napi_value VideoEncodeCapability1000Test(napi_env env, napi_callback_info info)
 {
     const char *name = OH_AVCapability_GetName(nullptr);
-    if (name == nullptr ) { return CreateIntInt32Result(env, -1); }
+    if (name == nullptr) { return CreateIntInt32Result(env, -1); }
     if (0 != strlen(name)) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
 }
@@ -718,7 +717,7 @@ napi_value VideoEncodeCapability1100Test(napi_env env, napi_callback_info info)
     if (cap) {
         if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         const char *name = OH_AVCapability_GetName(cap);
-        if (name == nullptr ) { return CreateIntInt32Result(env, -1); }
+        if (name == nullptr) { return CreateIntInt32Result(env, -1); }
         if (0 >= strlen(name)) { return CreateIntInt32Result(env, -1); }
         return CreateIntInt32Result(env, 0);
     } else {
