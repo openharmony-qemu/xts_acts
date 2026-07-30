@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import PresetTest from './Preset.test';
 import AlertDialogAJsunit from './Dialog/AlertDialogAJsunit.test';
 import showAlertDialogMode from './Dialog/showAlertDialogMode.test'
 import AlertDialogFalse from './alertDialogTest/AlertDialogFalse.test';
@@ -47,6 +48,7 @@ import OpenOrderOverlayTest from './OpenOrderOverlay/OpenOrderOverlay.test';
 import DisplayModeInSubWindowTest from './DialogDisplayMode/DisplayModeInSubWindow.test';
 
 export default function testsuite() {
+  PresetTest();
   AlertDialogAJsunit();
   AlertDialog1();
   AlertDialog2();
