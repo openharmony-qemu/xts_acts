@@ -62,6 +62,7 @@ export default function ImageMatrixTest() {
     it('ImageMatrixTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageMatrixTest_0100] START');
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('button1'));
       await button1.click();
       await CommonFunc.sleep(2000);

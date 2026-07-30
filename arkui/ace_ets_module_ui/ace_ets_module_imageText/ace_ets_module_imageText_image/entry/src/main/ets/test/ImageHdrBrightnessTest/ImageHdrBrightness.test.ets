@@ -38,6 +38,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_001', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr00'));
       await button.click();
       await Utils.sleep(1000);
@@ -59,6 +60,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr03'));
       await button.click();
       await Utils.sleep(1000);
@@ -80,6 +82,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_003', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr08'));
       await button.click();
       await Utils.sleep(1000);
@@ -101,6 +104,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_004', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr10'));
       await button.click();
       await Utils.sleep(1000);
@@ -122,6 +126,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_005', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr_1'));
       await button.click();
       await Utils.sleep(1000);
@@ -143,6 +148,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_006', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr20'));
       await button.click();
       await Utils.sleep(1000);
@@ -164,6 +170,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_007', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdr20'));
       await button.click();
       await Utils.sleep(1000);
@@ -185,6 +192,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_008', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdrNull'));
       await button.click();
       await Utils.sleep(1000);
@@ -206,6 +214,7 @@ export default function ImageHDRBrightnessTest() {
      */
     it('ImageHDRBrightnessTest_009', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('hdrUndefined'));
       await button.click();
       await Utils.sleep(1000);
