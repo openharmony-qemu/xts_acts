@@ -908,19 +908,16 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
-    OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
-    OH_LOG_ERROR(LOG_APP, "size is %{public}d", size);
+    OH_LOG_ERROR(LOG_APP, "size is %{public}d, apertures is %{public}d", size, apertures);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
         OH_CaptureSession_Release(captureSession);
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double setAperture;
-    setAperture = apertures[0].apertures[0];
+    double setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
-    float zoom;
-    zoom = apertures->zoomRange.maxZoom;
+    float zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
     OH_CaptureSession_SetZoomRatio(captureSession, zoom);
     const int waitZoomSeconds = 1;
@@ -1007,8 +1004,7 @@ napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     double setAperture;
     setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
-    float zoom;
-    zoom = apertures->zoomRange.maxZoom;
+    float zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
     OH_CaptureSession_SetZoomRatio(captureSession, zoom);
     const int waitZoomSeconds = 1;
@@ -1062,11 +1058,9 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
         napi_create_int32(env, CAMERA_SESSION_NOT_CONFIG, &result);
         return result;
     }
-    double setAperture;
-    setAperture = apertures[0].apertures[0];
+    double setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
-    float zoom;
-    zoom = apertures->zoomRange.maxZoom;
+    float zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
     OH_CaptureSession_SetZoomRatio(captureSession, zoom);
     const int waitZoomSeconds = 1;
@@ -1270,7 +1264,8 @@ napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     return result;
 }
 
-napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
+napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -1291,7 +1286,8 @@ napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info) {
+napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -1426,7 +1422,8 @@ napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info
 
 OH_Camera_MetadataObjectExt** g_metadataObjectExt;
 uint32_t g_metadataSize;
-void OnMetadataObjectExtAvailable(void* context, OH_Camera_MetadataObjectExt** metadataObjectExt, uint32_t size)
+void OnMetadataObjectExtAvailable(void* context, OH_Camera_MetadataObjectExt** metadataObjectExt,
+    uint32_t size)
 {
     g_metadataObjectExt = metadataObjectExt;
     g_metadataSize = size;
@@ -2359,8 +2356,8 @@ napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback
     }
     
     if (supportResult != true && supportResult != false) {
-            error = CAMERA_INVALID_ARGUMENT; 
-        }
+        error = CAMERA_INVALID_ARGUMENT; 
+    }
     
     napi_value ret;
     napi_create_int32(env, error, &ret);
@@ -2368,22 +2365,21 @@ napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback
 }
 napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
 {
-   size_t argc = 1;
+    size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
     
-    bool enabled;
-    enabled = true;
+    bool enabled = true;
     bool supportResult = false;
     Camera_ErrorCode error = CAMERA_OK;
     switch (index) {
     case CASE_INDEX_1:
         supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
         LOGI("supportResult is :,%{public}d", supportResult);
-        if(supportResult == true){
+        if (supportResult == true) {
         error = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput, enabled);
         }
         break;
@@ -2398,7 +2394,8 @@ napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callb
 
 napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info)
 {
-    if (CAMERA_ERROR_OPTIONAL_PROPERTY_NOT_EXIST != 7400113 ) {
+    int32_t errorVal = 7400103;
+    if (CAMERA_ERROR_OPTIONAL_PROPERTY_NOT_EXIST != errorVal) {
         napi_value result;
         napi_get_boolean(env, false, &result);
         return result;

@@ -1173,7 +1173,7 @@ napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_
         break;
     case CASE_INDEX_4:
         result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(NULL, imageRotation);
-        break;    
+        break;
     default:
         break;
     }
