@@ -105,6 +105,9 @@ export const testFrameMetricsIsFirstDrawFrameNullptr: () => number;
 export const testFrameMetricsGetInputHandlingDurationNullptr: () => number;
 export const testFrameMetricsGetLayoutMeasureDurationNullptr: () => number;
 export const testFrameMetricsGetVsyncTimestampNullptr: () => number;
+export const testFrameMetricsGetInputHandlingDurationWithNullDuration: () => number;
+export const testFrameMetricsGetLayoutMeasureDurationWithNullDuration: () => number;
+export const testFrameMetricsGetVsyncTimestampWithNullTimestamp: () => number;
 
 export interface FrameMetricsResult {
     resultCode: number;
