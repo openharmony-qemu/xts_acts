@@ -94,6 +94,8 @@ export default function WindowLayoutTest() {
         let driver: Driver = Driver.create();
         let deviceType: string = deviceInfo.deviceType;
         let isSyscapSessionManagerSupported:boolean = false;
+        let displayWidth: number = 0;
+        let displayHeight: number = 0;
 
         console.log(`come in Driver create`);
         beforeAll(() => {
@@ -126,7 +128,9 @@ export default function WindowLayoutTest() {
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
             console.info(`brforeAll isSyscapSessionManagerSupported: ${isSyscapSessionManagerSupported}`);
             console.info(`brforeAll deviceType: ${deviceType}`);
-
+            displayWidth = display.getDefaultDisplaySync().width;
+            displayHeight = display.getDefaultDisplaySync().height;
+            console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
         })
 
         /**
@@ -2324,10 +2328,12 @@ export default function WindowLayoutTest() {
                     await subWindowClass.setUIContent('pages/index2');
                     await subWindowClass.showWindow();
                     let displayId:Long|undefined = subWindowClass!.getWindowProperties().displayId;
+                    console.info(`${message} displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
+                    await subWindowClass.resize(Number(displayWidth*0.5),Number(displayHeight*0.5));
                     let moveConfiguration: window.MoveConfiguration = {
                         displayId: displayId
                     }
-                    let promise = subWindowClass.moveWindowToGlobal(300, 300, moveConfiguration);
+                    let promise = subWindowClass.moveWindowToGlobal(Number(displayWidth*0.3),Number(displayHeight*0.3), moveConfiguration);
                     promise.then(async () => {
                         console.info(`${message} succeed in moveWindowToGlobal`);
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -2339,8 +2345,8 @@ export default function WindowLayoutTest() {
                     await Utils.msSleep(1000);
                     let rect = subWindowClass.getWindowProperties().windowRect;
                     console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
-                    expect(rect.left).assertEqual(300);
-                    expect(rect.top).assertEqual(300);
+                    expect(rect.left).assertEqual(Math.floor(displayWidth*0.3));
+                    expect(rect.top).assertEqual(Math.floor(displayWidth*0.3))
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
