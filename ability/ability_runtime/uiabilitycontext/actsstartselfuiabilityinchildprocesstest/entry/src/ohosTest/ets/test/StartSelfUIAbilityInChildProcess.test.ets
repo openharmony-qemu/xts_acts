@@ -17,9 +17,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { common, Want } from '@kit.AbilityKit';
 import { BusinessError} from '@kit.BasicServicesKit';
 import commonEventManager from '@ohos.commonEventManager';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let context: common.UIAbilityContext;
 const DOMAIN = 0x0000;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+let cmd = 'aa start -a TestAbility' + ' -b ' + 'com.example.startselfuiabilityinchildprocesstest';
+ 	
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
@@ -32,6 +36,13 @@ export default function StartSelfUIAbilityInChildProcessTest() {
   describe('StartSelfUIAbilityInChildProcessTest', () => {
     beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+    })
+    beforeEach(() => {
+      abilityDelegator.executeShellCommand(cmd);
     })
 
     /**
@@ -160,7 +171,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             expect(e.code).assertEqual(801);
             done();
           });
-        await sleep(300);
+        await sleep(500);
         context.startSelfUIAbilityInChildProcess(want, '2')
           .then(() => {
             hilog.info(DOMAIN, 'testTag', '${CASE_NAME} start2 succeed');
@@ -511,16 +522,24 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
             subscriber = data;
             await commonEventManager.subscribe(subscriber,
-              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
                 hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
                 let res: boolean = data.parameters?.result?.startsWith(bundleName+bundleName+':entry:'+abilityName);
                 expect(res).assertTrue();
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
+                try {
+                  await commonEventManager.publish('terminateChildAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
                 done();
               });
-            context.startSelfUIAbilityInChildProcess(want, '1')
+            context.startSelfUIAbilityInChildProcess(want, '13')
               .then(() => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
               })
@@ -557,7 +576,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
         abilityName: 'SpecifiedAbility'
       };
       try {
-        await context.startSelfUIAbilityInChildProcess(want, '2')
+        await context.startSelfUIAbilityInChildProcess(want, '14')
           .then(async () => {
             hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
          })
@@ -567,20 +586,28 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             expect(e.code).assertEqual(801);
             done();
           });
-        await sleep(300);
-        await context.startSelfUIAbilityInChildProcess(want, '2')
-        .then(async () => {
-          hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
-          expect().assertFail();
-          done();
-        })
-        .catch((e: BusinessError) => {
-          let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
-          hilog.error(DOMAIN, 'testTag', msg);
-          expect(e.code).assertEqual(16000131);
-          done();
-        });
-     } catch (e) {
+        await sleep(500);
+        await context.startSelfUIAbilityInChildProcess(want, '14')
+          .then(async () => {
+            hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
+            expect().assertFail();
+            done();
+          })
+          .catch(async (e: BusinessError) => {
+            let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
+            hilog.error(DOMAIN, 'testTag', msg);
+            expect(e.code).assertEqual(16000131);
+            try {
+              await commonEventManager.publish('terminateChildAbility', (result) => {
+                hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+              });
+            } catch (e) {
+              hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+            }
+            await sleep(500);
+            done();
+          });
+      } catch (e) {
         let msg: string = `${CASE_NAME} failed, code:${e.code}, message:${e.message}`;
         hilog.error(DOMAIN, 'testTag', msg);
         expect().assertFail();
@@ -622,9 +649,8 @@ export default function StartSelfUIAbilityInChildProcessTest() {
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
-                done();
               });
-            await context.startSelfUIAbilityInChildProcess(want, '3')
+            await context.startSelfUIAbilityInChildProcess(want, '15')
               .then(async () => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
             })
@@ -635,7 +661,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
               done();
             });
           })
-        await sleep(300);
+        await sleep(500);
         await commonEventManager.createSubscriber({
           events: ['startSpecifiedAbilityResult'],
         } as commonEventManager.CommonEventSubscribeInfo)
@@ -643,16 +669,24 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
             subscriber = data;
             await commonEventManager.subscribe(subscriber,
-              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
                 hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
                 let res: boolean = data.parameters?.result?.startsWith(bundleName+bundleName+':entry:'+abilityName);
                 expect(res).assertTrue();
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
+                try {
+                  await commonEventManager.publish('terminateChildAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
                 done();
               });
-            await context.startSelfUIAbilityInChildProcess(want, '4')
+            await context.startSelfUIAbilityInChildProcess(want, '152')
               .then(async () => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
             })
@@ -699,16 +733,24 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
             subscriber = data;
             await commonEventManager.subscribe(subscriber,
-              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
                 hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
                 let res: boolean = data.parameters?.result?.startsWith(bundleName+bundleName+':entry:'+abilityName);
                 expect(res).assertTrue();
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
+                try {
+                  await commonEventManager.publish('terminateMultitonAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
                 done();
               });
-            await context.startSelfUIAbilityInChildProcess(want, '1')
+            await context.startSelfUIAbilityInChildProcess(want, '16')
               .then(async () => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
             })
@@ -719,7 +761,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
               done();
             });
           })
-        await sleep(300);
+        await sleep(500);
       } catch (e) {
         let msg: string = `${CASE_NAME} failed, code:${e.code}, message:${e.message}`;
         hilog.error(DOMAIN, 'testTag', msg);
@@ -762,9 +804,8 @@ export default function StartSelfUIAbilityInChildProcessTest() {
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
-                done();
               });
-            await context.startSelfUIAbilityInChildProcess(want, '2')
+            await context.startSelfUIAbilityInChildProcess(want, '17')
               .then(async () => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
             })
@@ -775,7 +816,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
               done();
             });
           })
-        await sleep(300);
+        await sleep(500);
         await commonEventManager.createSubscriber({
           events: ['startMultitonAbilityResult'],
         } as commonEventManager.CommonEventSubscribeInfo)
@@ -783,16 +824,24 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
             subscriber = data;
             await commonEventManager.subscribe(subscriber,
-              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
                 hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
                 let res: boolean = data.parameters?.result?.startsWith(bundleName+bundleName+':entry:'+abilityName);
                 expect(res).assertTrue();
                 commonEventManager.unsubscribe(subscriber, () => {
                   hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
                 });
+                try {
+                  await commonEventManager.publish('terminateMultitonAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
                 done();
               });
-            await context.startSelfUIAbilityInChildProcess(want, '2')
+            await context.startSelfUIAbilityInChildProcess(want, '17')
               .then(async () => {
                 hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
             })
@@ -822,33 +871,79 @@ export default function StartSelfUIAbilityInChildProcessTest() {
     it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityInChildProcess_1800', Level.LEVEL1, async (done: Function) => {
       const CASE_NAME: string = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityInChildProcess_1800';
       hilog.info(DOMAIN, 'testTag', `${CASE_NAME}  start`);
+      let subscriber: commonEventManager.CommonEventSubscriber;
+      let bundleName: string = 'com.example.startselfuiabilityinchildprocesstest';
+      let abilityName: string = 'MultitonAbility';
 
       let want: Want = {
-        bundleName: 'com.example.startselfuiabilityinchildprocesstest',
-        abilityName: 'MultitonAbility'
+        bundleName: bundleName,
+        abilityName: abilityName
       };
       try {
-        await context.startSelfUIAbilityInChildProcess(want, '3')
-          .then(() => {
-            hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
-            context.startSelfUIAbilityInChildProcess(want, '4')
-              .then(() => {
-                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} start2 succeed');
-                done();
+        await commonEventManager.createSubscriber({
+          events: ['startMultitonAbilityResult'],
+        } as commonEventManager.CommonEventSubscribeInfo)
+          .then(async (data: commonEventManager.CommonEventSubscriber) => {
+            hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+            subscriber = data;
+            await commonEventManager.subscribe(subscriber,
+              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+                hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
+                let res: boolean =
+                  data.parameters?.result?.startsWith(bundleName + bundleName + ':entry:' + abilityName);
+                expect(res).assertTrue();
+                commonEventManager.unsubscribe(subscriber, () => {
+                  hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+                });
+              });
+            await context.startSelfUIAbilityInChildProcess(want, '18')
+              .then(async () => {
+                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
               })
               .catch((e: BusinessError) => {
-                let msg = `${CASE_NAME} start2 error, code:${e.code}, message:${e.message}`;
+                let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
+                hilog.error(DOMAIN, 'testTag', msg);
+                expect(e.code).assertEqual(801);
+                done();
+              });
+          })
+        await sleep(500);
+        await commonEventManager.createSubscriber({
+          events: ['startMultitonAbilityResult'],
+        } as commonEventManager.CommonEventSubscribeInfo)
+          .then(async (data: commonEventManager.CommonEventSubscriber) => {
+            hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+            subscriber = data;
+            await commonEventManager.subscribe(subscriber,
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
+                hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
+                let res: boolean =
+                  data.parameters?.result?.startsWith(bundleName + bundleName + ':entry:' + abilityName);
+                expect(res).assertTrue();
+                commonEventManager.unsubscribe(subscriber, () => {
+                  hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+                });
+                try {
+                  await commonEventManager.publish('terminateMultitonAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
+                done();
+              });
+            await context.startSelfUIAbilityInChildProcess(want, '182')
+              .then(async () => {
+                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
+              })
+              .catch((e: BusinessError) => {
+                let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
                 hilog.error(DOMAIN, 'testTag', msg);
                 expect().assertFail();
                 done();
               });
-         })
-          .catch((e: BusinessError) => {
-            let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
-            hilog.error(DOMAIN, 'testTag', msg);
-            expect(e.code).assertEqual(801);
-            done();
-          });
+          })
       } catch (e) {
         let msg: string = `${CASE_NAME} failed, code:${e.code}, message:${e.message}`;
         hilog.error(DOMAIN, 'testTag', msg);
@@ -868,33 +963,79 @@ export default function StartSelfUIAbilityInChildProcessTest() {
     it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityInChildProcess_1900', Level.LEVEL1, async (done: Function) => {
       const CASE_NAME: string = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityInChildProcess_1900';
       hilog.info(DOMAIN, 'testTag', `${CASE_NAME}  start`);
+      let subscriber: commonEventManager.CommonEventSubscriber;
+      let bundleName: string = 'com.example.startselfuiabilityinchildprocesstest';
+      let abilityName: string = 'SpecifiedAbility';
 
       let want: Want = {
-        bundleName: 'com.example.startselfuiabilityinchildprocesstest',
-        abilityName: 'SpecifiedAbility'
+        bundleName: bundleName,
+        abilityName: abilityName
       };
       try {
-        await context.startSelfUIAbilityInChildProcess(want, '')
-          .then(() => {
-            hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
-            context.startSelfUIAbilityInChildProcess(want, '')
-              .then(() => {
-                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} start2 succeed');
-                done();
+        await commonEventManager.createSubscriber({
+          events: ['startSpecifiedAbilityResult'],
+        } as commonEventManager.CommonEventSubscribeInfo)
+          .then(async (data: commonEventManager.CommonEventSubscriber) => {
+            hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+            subscriber = data;
+            await commonEventManager.subscribe(subscriber,
+              (err: BusinessError, data: commonEventManager.CommonEventData) => {
+                hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
+                let res: boolean =
+                  data.parameters?.result?.startsWith(bundleName + bundleName + ':entry:' + abilityName);
+                expect(res).assertTrue();
+                commonEventManager.unsubscribe(subscriber, () => {
+                  hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+                });
+              });
+            await context.startSelfUIAbilityInChildProcess(want, '')
+              .then(async () => {
+                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
               })
               .catch((e: BusinessError) => {
-                let msg = `${CASE_NAME} start2 error, code:${e.code}, message:${e.message}`;
+                let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
                 hilog.error(DOMAIN, 'testTag', msg);
                 expect(e.code).assertEqual(801);
                 done();
               });
-         })
-          .catch((e: BusinessError) => {
-            let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
-            hilog.error(DOMAIN, 'testTag', msg);
-            expect(e.code).assertEqual(801);
-            done();
-          });
+          })
+        await sleep(500);
+        await commonEventManager.createSubscriber({
+          events: ['startSpecifiedAbilityResult'],
+        } as commonEventManager.CommonEventSubscribeInfo)
+          .then(async (data: commonEventManager.CommonEventSubscriber) => {
+            hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+            subscriber = data;
+            await commonEventManager.subscribe(subscriber,
+              async (err: BusinessError, data: commonEventManager.CommonEventData) => {
+                hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(data)}.`);
+                let res: boolean =
+                  data.parameters?.result?.startsWith(bundleName + bundleName + ':entry:' + abilityName);
+                expect(res).assertTrue();
+                commonEventManager.unsubscribe(subscriber, () => {
+                  hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+                });
+                try {
+                  await commonEventManager.publish('terminateChildAbility', (result) => {
+                    hilog.info(DOMAIN, 'testTag', 'commonEventManager.publish succeed');
+                  });
+                } catch (e) {
+                  hilog.error(DOMAIN, 'testTag', `publish terminateChildAbility failed: ${e.code}`);
+                }
+                await sleep(500);
+                done();
+              });
+            await context.startSelfUIAbilityInChildProcess(want, '')
+              .then(async () => {
+                hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
+              })
+              .catch((e: BusinessError) => {
+                let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
+                hilog.error(DOMAIN, 'testTag', msg);
+                expect().assertFail();
+                done();
+              });
+          })
       } catch (e) {
         let msg: string = `${CASE_NAME} failed, code:${e.code}, message:${e.message}`;
         hilog.error(DOMAIN, 'testTag', msg);
