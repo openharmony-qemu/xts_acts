@@ -21,11 +21,7 @@
 #define MAX_THREAD 16
 
 using namespace std;
-using namespace OHOS;
-using namespace OHOS::Media;
 
-namespace OHOS {
-namespace Media {
 class HwdecHdr2SdrNdkTest {
 public:
     static void SetUpTestCase();
@@ -70,6 +66,22 @@ void HwdecHdr2SdrNdkTest::TearDown()
     }
 }
 
+namespace {
+struct Hdr2SdrTestGuard {
+    ~Hdr2SdrTestGuard()
+    {
+        if (format != nullptr) {
+            OH_AVFormat_Destroy(format);
+            format = nullptr;
+        }
+        if (vdec_ != NULL) {
+            OH_VideoDecoder_Destroy(vdec_);
+            vdec_ = nullptr;
+        }
+    }
+};
+} // namespace
+
 /**
  * @tc.name   HEVC_HW_HDR2SDR_FUNC_002
  * @tc.number HEVC_HW_HDR2SDR_FUNC_002
@@ -78,34 +90,43 @@ void HwdecHdr2SdrNdkTest::TearDown()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HEVC_HW_HDR2SDR_FUNC_002()
+int HevcHwHdr2sdrFunc002Test()
 {
     if (cap_hevc) {
-        if (!access("/system/lib64/media/", 0)) {
+        Hdr2SdrTestGuard guard;
+        if (!access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
             vdec_ = OH_VideoDecoder_CreateByName(g_codecNameHEVC.c_str());
-            ASSERT_NE(nullptr, vdec_);
+            if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
-            ASSERT_EQ(
-                true,
-                OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT));
-            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA));
-            ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_Configure(vdec_, format));
+            if (format == nullptr) { return -1; }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE,
+                OH_COLORSPACE_BT709_LIMIT)) {
+                return -1;
+            }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {
+                return -1;
+            }
+            if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_INVALID_VAL) { return -1; }
         } else {
             vdec_ = OH_VideoDecoder_CreateByName(g_codecNameHEVC.c_str());
-            ASSERT_NE(nullptr, vdec_);
+            if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
-            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT));
-            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH));
-            ASSERT_EQ(
-                true,
-                OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT));
-            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA));
-            ASSERT_EQ(AV_ERR_UNSUPPORT, OH_VideoDecoder_Configure(vdec_, format));
+            if (format == nullptr) { return -1; }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT)) { return -1; }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH)) { return -1; }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE,
+                OH_COLORSPACE_BT709_LIMIT)) {
+                return -1;
+            }
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {
+                return -1;
+            }
+            if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_UNSUPPORT) { return -1; }
         }
     }
-    return SUCCESS_CODE;
+    return 0;
 }
-} // namespace Media
-} // namespace OHOS
+
+void InitHwdecHdr2sdrTest()
+{
+}

@@ -16,58 +16,52 @@
 #ifndef STATE_TEST_H
 #define STATE_TEST_H
 
-namespace OHOS {
-namespace Media {
+#include "napi/native_api.h"
 
-namespace StateTest {
-void SetUp(void);
-void TearDown(void);
-} // namespace StateTest
+int VideoHwdecState0100Test();
+int VideoHwdecState0101Test();
+int VideoHwdecState0200Test();
+int VideoHwdecState0300Test();
+int VideoHwdecState0400Test();
+int VideoHwdecState0500Test();
+int VideoHwdecState0600Test();
+int VideoHwdecState0700Test();
+int VideoHwdecState0800Test();
+int VideoHwdecState0900Test();
+int VideoHwdecState1000Test();
+int VideoHwdecState1100Test();
+int VideoHwdecState1200Test();
+int VideoHwdecState1300Test();
+int VideoHwdecState1400Test();
+int VideoHwdecState1500Test();
+int VideoHwdecState1600Test();
+int VideoHwdecState1700Test();
+int VideoHwdecState1800Test();
+int VideoHwdecState1900Test();
+int VideoHwdecState2000Test();
+int VideoHwdecState2100Test();
+int VideoHwdecState2200Test();
+int VideoHwdecState2300Test();
+int VideoHwdecState2400Test();
+int VideoHwdecState2500Test();
+int VideoHwdecState2600Test();
+int VideoHwdecState2700Test();
+int VideoHwdecState2800Test();
+int VideoHwdecState2900Test();
+int VideoHwdecState3000Test();
+int VideoHwdecState3100Test();
+int VideoHwdecState3200Test();
+int VideoHwdecState3300Test();
+int VideoHwdecState3400Test();
+int VideoHwdecState3500Test();
+int VideoHwdecState3600Test();
+int VideoHwdecState3700Test();
+int VideoHwdecState3800Test();
+int VideoHwdecState3900Test();
+int VideoHwdecState4000Test();
+int VideoHwdecState4100Test();
+int VideoHwdecState4200Test();
 
-int VIDEO_HWDEC_STATE_0100();
-int VIDEO_HWDEC_STATE_0101();
-int VIDEO_HWDEC_STATE_0200();
-int VIDEO_HWDEC_STATE_0300();
-int VIDEO_HWDEC_STATE_0400();
-int VIDEO_HWDEC_STATE_0500();
-int VIDEO_HWDEC_STATE_0600();
-int VIDEO_HWDEC_STATE_0700();
-int VIDEO_HWDEC_STATE_0800();
-int VIDEO_HWDEC_STATE_0900();
-int VIDEO_HWDEC_STATE_1000();
-int VIDEO_HWDEC_STATE_1100();
-int VIDEO_HWDEC_STATE_1200();
-int VIDEO_HWDEC_STATE_1300();
-int VIDEO_HWDEC_STATE_1400();
-int VIDEO_HWDEC_STATE_1500();
-int VIDEO_HWDEC_STATE_1600();
-int VIDEO_HWDEC_STATE_1700();
-int VIDEO_HWDEC_STATE_1800();
-int VIDEO_HWDEC_STATE_1900();
-int VIDEO_HWDEC_STATE_2000();
-int VIDEO_HWDEC_STATE_2100();
-int VIDEO_HWDEC_STATE_2200();
-int VIDEO_HWDEC_STATE_2300();
-int VIDEO_HWDEC_STATE_2400();
-int VIDEO_HWDEC_STATE_2500();
-int VIDEO_HWDEC_STATE_2600();
-int VIDEO_HWDEC_STATE_2700();
-int VIDEO_HWDEC_STATE_2800();
-int VIDEO_HWDEC_STATE_2900();
-int VIDEO_HWDEC_STATE_3000();
-int VIDEO_HWDEC_STATE_3100();
-int VIDEO_HWDEC_STATE_3200();
-int VIDEO_HWDEC_STATE_3300();
-int VIDEO_HWDEC_STATE_3400();
-int VIDEO_HWDEC_STATE_3500();
-int VIDEO_HWDEC_STATE_3600();
-int VIDEO_HWDEC_STATE_3700();
-int VIDEO_HWDEC_STATE_3800();
-int VIDEO_HWDEC_STATE_3900();
-int VIDEO_HWDEC_STATE_4000();
-int VIDEO_HWDEC_STATE_4100();
-int VIDEO_HWDEC_STATE_4200();
-} // namespace Media
-} // namespace OHOS
+void InitStateTest();
 
 #endif // STATE_TEST_H
