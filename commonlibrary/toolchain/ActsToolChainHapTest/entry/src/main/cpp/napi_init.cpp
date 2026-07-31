@@ -1135,6 +1135,25 @@ static int (*FindByName(const std::string& name))()
     return it->second;
 }
 
+static void ResetChildSignals()
+{
+    sigset_t fullset;
+    sigfillset(&fullset);
+    sigprocmask(SIG_UNBLOCK, &fullset, nullptr);
+    for (int sig = 1; sig < NSIG; ++sig) {
+        if (sig != SIGKILL && sig != SIGSTOP) {
+            signal(sig, SIG_DFL);
+        }
+    }
+    struct sigaction saIgn = {};
+    saIgn.sa_handler = SIG_IGN;
+    sigemptyset(&saIgn.sa_mask);
+    constexpr int sigsetBytes = 8;
+    for (int sig = SIGRTMIN; sig < NSIG; ++sig) {
+        syscall(SYS_rt_sigaction, sig, &saIgn, nullptr, sigsetBytes);
+    }
+}
+
 static int RunByNameForked(const std::string& name)
 {
     auto* testFunc = FindByName(name);
@@ -1147,21 +1166,7 @@ static int RunByNameForked(const std::string& name)
         return -K_RUN_TEST_FORK_FAILED;
     }
     if (pid == 0) {
-        sigset_t fullset;
-        sigfillset(&fullset);
-        sigprocmask(SIG_UNBLOCK, &fullset, nullptr);
-        for (int sig = 1; sig < NSIG; ++sig) {
-            if (sig != SIGKILL && sig != SIGSTOP) {
-                signal(sig, SIG_DFL);
-            }
-        }
-        struct sigaction sa_ign = {};
-        sa_ign.sa_handler = SIG_IGN;
-        sigemptyset(&sa_ign.sa_mask);
-        constexpr int sigsetBytes = 8;
-        for (int sig = SIGRTMIN; sig < NSIG; ++sig) {
-            syscall(SYS_rt_sigaction, sig, &sa_ign, nullptr, sigsetBytes);
-        }
+        ResetChildSignals();
         g_tStatus = 0;
         int childRc = K_CHILD_EXIT_CAP;
         try {

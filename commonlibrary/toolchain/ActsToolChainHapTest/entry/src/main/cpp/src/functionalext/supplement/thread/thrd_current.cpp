@@ -103,7 +103,10 @@ void ThrdCurrent0100(void)
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    thrd_sleep(&sleepTime, nullptr);
+    result = thrd_sleep(&sleepTime, nullptr);
+    if (result != 0) {
+        t_error("%s thrd_sleep failed", __func__);
+    }
 
     result = thrd_join(thr, nullptr);
     if (result != thrd_success) {
