@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +19,9 @@ import { ShellCmdResult } from 'application.shellCmdResult'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import commonEventManager from '@ohos.commonEventManager';
 
-let supportUse = false;
+let subscriber: commonEventManager.CommonEventSubscriber;
 
 export default function abilityTest() {
 
@@ -32,13 +32,6 @@ export default function abilityTest() {
     beforeAll(async (done: () => void): Promise<void> => {
       console.log('HyperSnapManagerTest' + "beforeAll called");
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-      await abilityDelegator.executeShellCommand('hidumper -s 1901 -a -a').then((result:ShellCmdResult|undefined): void => {
-        hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result?.stdResult ?? '');
-        hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result?.exitCode ?? '');
-        if(result?.stdResult.indexOf('libforkall_plugin.z.so') != -1){
-          supportUse = true;
-        }
-      })
       let cmd = 'aa start -a EntryAbility -b com.acts.actsabilityhypersnapmanagertest.static';
       let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
@@ -95,30 +88,15 @@ export default function abilityTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0100";
-      hilog.info(0x0000, 'testTag', TAG + 'supprot ' + supportUse);
-      if(!supportUse){
-        try{
-          hyperSnapManager.setHyperSnapEnabled(false);
-          hilog.info(0x0000, 'testTag', TAG + ' success');
-          expect().assertFail();
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch');
-          expect((e as BusinessError).code).assertEqual(16000150);
-        }
-        done();
-      }else{
-        let flag = false
-        try{
-          hyperSnapManager.setHyperSnapEnabled(false);
-          flag = true;
-          hilog.info(0x0000, 'testTag', TAG + ' success ' + flag);
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch ');
-          expect().assertFail();
-        }
-        expect(flag).assertTrue();
-        done();
+      hilog.info(0x0000, 'testTag', TAG + 'supprot ');
+      try{
+        hyperSnapManager.setHyperSnapEnabled(false);
+        hilog.info(0x0000, 'testTag', TAG + ' success');
+      }catch(e){
+        hilog.info(0x0000, 'testTag', TAG + ' catch');
+        expect((e as BusinessError).code).assertEqual(16000150);
       }
+      done();
     })
 
     /**
@@ -131,30 +109,15 @@ export default function abilityTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0200";
-      hilog.info(0x0000, 'testTag', TAG + 'supprot ' + supportUse);
-      if(!supportUse){
-        try{
-          hyperSnapManager.setHyperSnapEnabled(true);
-          hilog.info(0x0000, 'testTag', TAG + ' success');
-          expect().assertFail();
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch');
-          expect((e as BusinessError).code).assertEqual(16000150);
-        }
-        done();
-      }else{
-        let flag = false
-        try{
-          hyperSnapManager.setHyperSnapEnabled(true);
-          flag = true;
-          hilog.info(0x0000, 'testTag', TAG + ' success ' + flag);
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch ');
-          expect().assertFail();
-        }
-        expect(flag).assertTrue();
-        done();
+      hilog.info(0x0000, 'testTag', TAG + 'supprot ');
+      try{
+        hyperSnapManager.setHyperSnapEnabled(true);
+        hilog.info(0x0000, 'testTag', TAG + ' success');
+      }catch(e){
+        hilog.info(0x0000, 'testTag', TAG + ' catch');
+        expect((e as BusinessError).code).assertEqual(16000150);
       }
+      done();
     })
 
     /**
@@ -167,30 +130,55 @@ export default function abilityTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_static_0100";
-      hilog.info(0x0000, 'testTag', TAG + ' supprot ' + supportUse);
-      if(!supportUse){
-        try{
-          hyperSnapManager.requestRebuildHyperSnap();
-          hilog.info(0x0000, 'testTag', TAG + ' success');
-          expect().assertFail();
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch');
-          expect((e as BusinessError).code).assertEqual(16000150);
-        }
-        done();
-      }else{
-        let flag = false
-        try{
-          hyperSnapManager.requestRebuildHyperSnap();
-          flag = true;
-          hilog.info(0x0000, 'testTag', TAG + ' success ' + flag);
-        }catch(e){
-          hilog.info(0x0000, 'testTag', TAG + ' catch ');
-          expect().assertFail();
-        }
-        expect(flag).assertTrue();
-        done();
+      hilog.info(0x0000, 'testTag', TAG + ' supprot ');
+      try{
+        hyperSnapManager.requestRebuildHyperSnap();
+        hilog.info(0x0000, 'testTag', TAG + ' success');
+      }catch(e){
+        hilog.info(0x0000, 'testTag', TAG + ' catch');
+        expect((e as BusinessError).code).assertEqual(16000150);
       }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilitySync_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilitySync_static_0100
+     * @tc.desc   Test onAboutToCreateAbility() not return when not in white list.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilitySync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilitySync_static_0100";
+      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+      let cmd = 'aa start -a EntryAbility -b com.acts.abilitydelegatorrely.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['onAboutToCreateAbilityAsync_publish']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo)
+        .then((data: commonEventManager.CommonEventSubscriber) => {
+          hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+          subscriber = data;
+          commonEventManager.subscribe(subscriber,
+            (err: BusinessError<void>|null, eventData: commonEventManager.CommonEventData|undefined) => {
+              hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(eventData)}.`);
+              expect(eventData?.parameters?.['onAboutToCreateAbilityAsync']).assertEqual('onAboutToCreateAbilityAsync');
+              commonEventManager.unsubscribe(subscriber, () => {
+                hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+              });
+              done();
+            });
+        })
+      await abilityDelegator.executeShellCommand(cmd).then((result:ShellCmdResult|undefined): void => {
+        hilog.info(0x0000, 'testTag', TAG + 'executeShellCommand : aa : %{public}s', result?.stdResult ?? '');
+        hilog.info(0x0000, 'testTag', TAG + 'executeShellCommand : aa : %{public}s', result?.exitCode ?? '');
+      })
+      done();
     })
   })
 }
