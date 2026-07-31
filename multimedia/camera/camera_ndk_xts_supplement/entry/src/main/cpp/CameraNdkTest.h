@@ -53,14 +53,6 @@ napi_value metadataOutputRemoveMetadataObjectTypes(napi_env env, napi_callback_i
 napi_value OHVideoOutputGetVideoRotationWithoutDeviceDegreeSupp(napi_env env, napi_callback_info info);
 napi_value OHPhotoOutputGetPhotoRotationWithoutDeviceDegreeSupp(napi_env env, napi_callback_info info);
 napi_value OHCameraManagerCreateMetadataOutputWithObjectTypesSupp(napi_env env, napi_callback_info info);
-napi_value TestLockFocusTrackingNormalValidPoint(napi_env env, napi_callback_info info);
-napi_value TestLockFocusTrackingWithNullptr(napi_env env, napi_callback_info info);
-napi_value TestLockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info);
-napi_value TestLockFocusTrackingRepeatLock(napi_env env, napi_callback_info info);
-napi_value TestUnlockFocusTracking(napi_env env, napi_callback_info info);
-napi_value TestUnlockFocusTrackingWithNullptr(napi_env env, napi_callback_info info);
-napi_value TestUnlockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info);
-napi_value TestLockFocusTrackingRepeatUnlock(napi_env env, napi_callback_info info);
 napi_value TestOHMetadataObjectExtGetBoundingBox(napi_env env, napi_callback_info info);
 napi_value TestOHMetadataObjectExtGetEmotion(napi_env env, napi_callback_info info);
 napi_value TestOHMetadataObjectExtGetLeftEyeBoundingBox(napi_env env, napi_callback_info info);
