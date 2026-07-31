@@ -615,19 +615,31 @@ export default function windowPCTest() {
     it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_createSubWindowWithOptions_windowRect_801'
-        let options: window.SubWindowOptions = {
+        let firstOptions: window.SubWindowOptions = {
           title: 'subwindow0',
+          decorEnabled: false
+        };
+        let firstSubWindow = await windowStage.createSubWindowWithOptions('subwindow0', firstOptions);
+        console.info(`${message} succeed in creating the first subwindow`);
+        await sleep(1000);
+        let limit = firstSubWindow.getWindowLimits();
+        console.info(`${message} getWindowLimits: ${JSON.stringify(limit)}`);
+        await firstSubWindow.destroyWindow();
+        await sleep(1000);
+
+        let options: window.SubWindowOptions = {
+          title: 'subwindow1',
           decorEnabled: false,
           windowRect: {
             left: 100,
             top: 100,
-            width: 300,
-            height: 300
+            width: Number(limit.minWidth),
+            height: Number(limit.minHeight)
           }
         };
-        let promise = windowStage.createSubWindowWithOptions('subwindow0', options);
+        let promise = windowStage.createSubWindowWithOptions('subwindow1', options);
         await promise.then(async (data) => {
-          console.info('succeed in create the subwindow');
+          console.info(`${message} succeed in creating the second subwindow`);
           let subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
           await subWindowClass.showWindow();
@@ -642,7 +654,6 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801 || err.code == 1300002) {
-
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -651,7 +662,11 @@ export default function windowPCTest() {
         });
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
-        expect().assertFail()
+        if (err.code == 801 || err.code == 1300002) {
+          console.error(`The device not support createSubWindowWithOptions`);
+        } else {
+          expect().assertFail()
+        }
         done();
       }
       ;

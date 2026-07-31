@@ -1653,25 +1653,42 @@ export default function windowPropertiesTest() {
      */
     it("testOnRectChangeOptionsResizeSubWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "TestOnRectChangeOptionsResizeSubWindow";
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
       try {
         let subWindowClass = await windowStage.createSubWindow("subwindow");
         console.info(`${caseName} Succeeded in creating the sub window.`);
         await subWindowClass.showWindow();
         await sleep(1000);
+        let windowLimits = subWindowClass.getWindowLimits();
+        let minWidth = Number(windowLimits.minWidth);
+        let minHeight = Number(windowLimits.minHeight);
+        console.info(`${caseName} Succeeded getWindowLimits. minWidth: ${minWidth}, minHeight: ${minHeight}`);
         subWindowClass.on('windowSizeChange', async (data) => {
           console.info(`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
-          expect(data.width).assertEqual(500);
-          expect(data.height).assertEqual(500);
+          expect(data.width).assertEqual(minWidth);
+          expect(data.height).assertEqual(minHeight);
           subWindowClass.off('windowSizeChange');
           await subWindowClass.destroyWindow();
           done();
         });
-        await subWindowClass.resize(500, 500);
+        await subWindowClass.resize(minWidth, minHeight);
         console.info(`${caseName} Succeeded in changing the sub window size.`);
       } catch (error) {
         console.error(`${caseName}: Error: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
+        if (!isSupport) {
+          if (error.code === 801) {
+            console.info(`${caseName} Capability not supported.`);
+            expect(error.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     })
     /**
