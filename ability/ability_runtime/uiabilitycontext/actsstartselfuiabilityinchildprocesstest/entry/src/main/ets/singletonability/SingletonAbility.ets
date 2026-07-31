@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { AbilityConstant, UIAbility, Want, common } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import appManager from '@ohos.app.ability.appManager';
@@ -21,14 +21,25 @@ import { BusinessError } from '@ohos.base';
 
 const DOMAIN = 0x0000;
 const TAG = 'entry SingletonAbility'
+let terminateSubscriber: commonEventManager.CommonEventSubscriber;
 
 export default class SingletonAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', `${TAG} onCreate`);
+    commonEventManager.createSubscriber({
+        events: ['terminateSingletonAbility']
+      }).then((subscriber) => {
+        terminateSubscriber = subscriber;
+        commonEventManager.subscribe(terminateSubscriber, () => {
+          this.context.terminateSelf();
+          hilog.info(DOMAIN, 'testTag', '%{public}s', `${TAG} terminateSelf`);
+        });
+      });
   }
 
   onDestroy(): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', `${TAG} onDestroy`);
+    commonEventManager.unsubscribe(terminateSubscriber);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
