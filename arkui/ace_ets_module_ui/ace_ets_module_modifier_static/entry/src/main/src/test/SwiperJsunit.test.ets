@@ -303,7 +303,8 @@ it('swiperTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<voi
     let indexBefore = Number(objNew.getElement('$attrs').getString('index'));
     console.info("swiperTest_static_0013 index before: " + indexBefore);
  
-    let driver = Driver.create();
+    let driver = await Driver.create();
+    await UtilsTest.msSleep(1000);
     let nextBtn = await driver.findComponent(ON.id('changeButton'));
     await (nextBtn?.click() as Promise<void>);
     await UtilsTest.msSleep(1000);
@@ -316,13 +317,6 @@ it('swiperTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<voi
     expect(indexAfter !== indexBefore).assertTrue();
     console.info('swiperTest_static_0013 END');
     done();
-      // console.info('swiperTest_static_0013 START');
-      // let strJsonNew = inspector.getInspectorByKey('swiper');
-      // let objNew = JSON.parseJsonElement(strJsonNew);
-      // console.info("swiperTest_static_0013 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('index')).assertEqual('1');
-      // console.info('swiperTest_static_0013 END');
-      // done();
     });
 
     
