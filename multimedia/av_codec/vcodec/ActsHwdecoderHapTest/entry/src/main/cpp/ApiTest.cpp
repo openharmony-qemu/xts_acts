@@ -111,7 +111,7 @@ int VideoHwdecIllegalPara0100Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByMime(NULL);
-    if (nullptr != vdec_) { return -1; }
+    if (vdec_ != nullptr) { return -1; }
     return 0;
 }
 
@@ -128,7 +128,7 @@ int VideoHwdecIllegalPara0200Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(NULL);
-    if (nullptr != vdec_) { return -1; }
+    if (vdec_ != nullptr) { return -1; }
     return 0;
 }
 
@@ -149,7 +149,7 @@ int VideoHwdecIllegalPara3300Test()
     cb_.onStreamChanged = VdecFormatChanged;
     cb_.onNeedInputData = VdecInputDataReady;
     cb_.onNeedOutputData = VdecOutputDataReady;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_SetCallback(NULL, cb_, static_cast<void*>(signal_))) {
+    if (OH_VideoDecoder_SetCallback(NULL, cb_, static_cast<void*>(signal_)) != AV_ERR_INVALID_VAL) {
         return -1;
     }
     return 0;
@@ -168,14 +168,14 @@ int VideoHwdecIllegalPara1800Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     OH_AVCodecAsyncCallback cb2_;
     cb2_.onError = NULL;
     cb2_.onStreamChanged = NULL;
     cb2_.onNeedInputData = NULL;
     cb2_.onNeedOutputData = NULL;
-    if (AV_ERR_OK != OH_VideoDecoder_SetCallback(vdec_, cb2_, static_cast<void*>(signal_))) {
+    if (OH_VideoDecoder_SetCallback(vdec_, cb2_, static_cast<void*>(signal_)) != AV_ERR_OK) {
         return -1;
     }
     return 0;
@@ -199,7 +199,7 @@ int VideoHwdecIllegalPara0300Test()
     cb_.onStreamChanged = VdecFormatChanged;
     cb_.onNeedInputData = VdecInputDataReady;
     cb_.onNeedOutputData = VdecOutputDataReady;
-    if (AV_ERR_OK != OH_VideoDecoder_SetCallback(vdec_, cb_, NULL)) { return -1; }
+    if (OH_VideoDecoder_SetCallback(vdec_, cb_, NULL) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -213,7 +213,7 @@ int VideoHwdecIllegalPara0300Test()
  */
 int VideoHwdecIllegalPara0400Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Destroy(NULL)) { return -1; }
+    if (OH_VideoDecoder_Destroy(NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -230,8 +230,8 @@ int VideoHwdecIllegalPara0500Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Configure(vdec_, NULL)) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -248,8 +248,8 @@ int VideoHwdecIllegalPara1400Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Configure(NULL, format)) { return -1; }
+    if (format == nullptr) { return -1; }
+    if (OH_VideoDecoder_Configure(NULL, format) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -266,10 +266,10 @@ int VideoHwdecIllegalPara5000Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
     string widthStr = "width";
     (void)OH_AVFormat_SetIntValue(format, widthStr.c_str(), DEFAULT_WIDTH);
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Configure(NULL, format)) { return -1; }
+    if (OH_VideoDecoder_Configure(NULL, format) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -286,13 +286,13 @@ int VideoHwdecIllegalPara5100Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Configure(NULL, format)) { return -1; }
+    if (OH_VideoDecoder_Configure(NULL, format) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -306,7 +306,7 @@ int VideoHwdecIllegalPara5100Test()
  */
 int VideoHwdecIllegalPara0600Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Start(NULL)) { return -1; }
+    if (OH_VideoDecoder_Start(NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -320,7 +320,7 @@ int VideoHwdecIllegalPara0600Test()
  */
 int VideoHwdecIllegalPara0700Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Stop(NULL)) { return -1; }
+    if (OH_VideoDecoder_Stop(NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -334,7 +334,7 @@ int VideoHwdecIllegalPara0700Test()
  */
 int VideoHwdecIllegalPara0800Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Flush(NULL)) { return -1; }
+    if (OH_VideoDecoder_Flush(NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -348,7 +348,7 @@ int VideoHwdecIllegalPara0800Test()
  */
 int VideoHwdecIllegalPara0900Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Reset(NULL)) { return -1; }
+    if (OH_VideoDecoder_Reset(NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -362,7 +362,7 @@ int VideoHwdecIllegalPara0900Test()
  */
 int VideoHwdecIllegalPara1000Test()
 {
-    if (nullptr != OH_VideoDecoder_GetOutputDescription(NULL)) { return -1; }
+    if (OH_VideoDecoder_GetOutputDescription(NULL) != nullptr) { return -1; }
     return 0;
 }
 
@@ -379,7 +379,7 @@ int VideoHwdecIllegalPara1100Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_SetParameter(vdec_, NULL)) { return -1; }
+    if (OH_VideoDecoder_SetParameter(vdec_, NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -395,7 +395,7 @@ int VideoHwdecIllegalPara4100Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     ret = OH_VideoDecoder_Prepare(nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -412,13 +412,13 @@ int VideoHwdecIllegalPara1500Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_SetParameter(NULL, format)) { return -1; }
+    if (OH_VideoDecoder_SetParameter(NULL, format) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -435,7 +435,7 @@ int VideoHwdecIllegalPara1200Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_SetSurface(vdec_, NULL)) { return -1; }
+    if (OH_VideoDecoder_SetSurface(vdec_, NULL) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -468,7 +468,7 @@ int VideoHwdecIllegalPara1600Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(INVALID_CODEC_NAME.c_str());
-    if (nullptr != vdec_) { return -1; }
+    if (vdec_ != nullptr) { return -1; }
     return 0;
 }
 
@@ -485,7 +485,7 @@ int VideoHwdecIllegalPara1700Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByMime(INVALID_CODEC_NAME.c_str());
-    if (nullptr != vdec_) { return -1; }
+    if (vdec_ != nullptr) { return -1; }
     return 0;
 }
 
@@ -504,11 +504,11 @@ int VideoHwdecIllegalPara2200Test()
     bool isValid = false;
     OH_AVErrCode ret = AV_ERR_OK;
     ret = OH_VideoDecoder_IsValid(nullptr, &isValid);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
     ret = OH_VideoDecoder_IsValid(vdec_, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -522,7 +522,7 @@ int VideoHwdecIllegalPara2200Test()
  */
 int VideoHwdecIllegalPara2500Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_RenderOutputData(NULL, 0)) { return -1; }
+    if (OH_VideoDecoder_RenderOutputData(NULL, 0) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -539,7 +539,7 @@ int VideoHwdecIllegalPara2600Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_RenderOutputData(vdec_, 0)) { return -1; }
+    if (OH_VideoDecoder_RenderOutputData(vdec_, 0) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -553,7 +553,7 @@ int VideoHwdecIllegalPara2600Test()
  */
 int VideoHwdecIllegalPara2700Test()
 {
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_FreeOutputData(NULL, 0)) { return -1; }
+    if (OH_VideoDecoder_FreeOutputData(NULL, 0) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -570,7 +570,7 @@ int VideoHwdecIllegalPara2800Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_FreeOutputData(vdec_, 0)) { return -1; }
+    if (OH_VideoDecoder_FreeOutputData(vdec_, 0) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -587,7 +587,7 @@ int VideoHwdecIllegalPara2900Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_FreeOutputData(vdec_, -1)) { return -1; }
+    if (OH_VideoDecoder_FreeOutputData(vdec_, -1) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -611,7 +611,7 @@ int VideoHwdecIllegalPara3000Test()
     attr.offset = -1;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
 
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(vdec_, 0, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(vdec_, 0, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -631,7 +631,7 @@ int VideoHwdecIllegalPara3100Test()
     attr.offset = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
 
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(NULL, -1, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(NULL, -1, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -651,7 +651,7 @@ int VideoHwdecIllegalPara3200Test()
     attr.offset = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
 
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(NULL, 0, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(NULL, 0, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -689,18 +689,18 @@ int VideoHwdecApi0200Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -717,19 +717,19 @@ int VideoHwdecApi0300Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_Start(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -746,20 +746,20 @@ int VideoHwdecApi0400Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Stop(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Stop(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Stop(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Stop(vdec_) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -776,21 +776,21 @@ int VideoHwdecApi0500Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Stop(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Reset(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Reset(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Stop(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Reset(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Reset(vdec_) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -807,22 +807,22 @@ int VideoHwdecApi0600Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
     OH_AVCodecAsyncCallback cb_;
     cb_.onError = VdecError;
     cb_.onStreamChanged = VdecFormatChanged;
     cb_.onNeedInputData = VDecNeedInputData;
-    if (AV_ERR_OK != OH_VideoDecoder_SetCallback(vdec_, cb_, static_cast<void*>(signal_))) {
+    if (OH_VideoDecoder_SetCallback(vdec_, cb_, static_cast<void*>(signal_)) != AV_ERR_OK) {
         return -1;
     }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
     for (int i = 0; i < LOOP_COUNT_TWO; i++) {
         unique_lock<mutex> lock(signal_->inMutex_);
         signal_->inCond_.wait(lock, []() { return signal_->inIdxQueue_.size() > 0; });
@@ -834,9 +834,9 @@ int VideoHwdecApi0600Test()
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         cout << "OH_VideoDecoder_PushInputData  index:" << index << endl;
         if (i == 0) {
-            if (AV_ERR_OK != OH_VideoDecoder_PushInputData(vdec_, index, attr)) { return -1; }
+            if (OH_VideoDecoder_PushInputData(vdec_, index, attr) != AV_ERR_OK) { return -1; }
         } else {
-            if (AV_ERR_INVALID_STATE != OH_VideoDecoder_PushInputData(vdec_, 0, attr)) { return -1; }
+            if (OH_VideoDecoder_PushInputData(vdec_, 0, attr) != AV_ERR_INVALID_STATE) { return -1; }
         }
     }
     OH_VideoDecoder_Destroy(vdec_);
@@ -858,20 +858,20 @@ int VideoHwdecApi0700Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Flush(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Flush(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Flush(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Flush(vdec_) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -888,23 +888,23 @@ int VideoHwdecApi0800Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Stop(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Stop(vdec_) != AV_ERR_OK) { return -1; }
     int32_t destroyRet = OH_VideoDecoder_Destroy(vdec_);
     vdec_ = nullptr;
-    if (AV_ERR_OK != destroyRet) { return -1; }
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Destroy(vdec_)) { return -1; }
+    if (destroyRet != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Destroy(vdec_) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -947,8 +947,8 @@ int VideoHwdecApi1000Test()
     cb_.onStreamChanged = VdecFormatChanged;
     cb_.onNeedInputData = VdecInputDataReady;
     cb_.onNeedOutputData = VdecOutputDataReady;
-    if (AV_ERR_OK != OH_VideoDecoder_SetCallback(vdec_, cb_, NULL)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_SetCallback(vdec_, cb_, NULL)) { return -1; }
+    if (OH_VideoDecoder_SetCallback(vdec_, cb_, NULL) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_SetCallback(vdec_, cb_, NULL) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -966,11 +966,11 @@ int VideoHwdecApi1100Test()
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
     format = OH_VideoDecoder_GetOutputDescription(vdec_);
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
     OH_AVFormat_Destroy(format);
     format = nullptr;
     format = OH_VideoDecoder_GetOutputDescription(vdec_);
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
     return 0;
 }
 
@@ -987,18 +987,18 @@ int VideoHwdecApi1200Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
 
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
 
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
 
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_SetParameter(vdec_, format)) { return -1; }
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_SetParameter(vdec_, format)) { return -1; }
+    if (OH_VideoDecoder_SetParameter(vdec_, format) != AV_ERR_INVALID_STATE) { return -1; }
+    if (OH_VideoDecoder_SetParameter(vdec_, format) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -1102,7 +1102,7 @@ int VideoHwdecCapApi0600Test()
  */
 int VideoHwdecCapApi0700Test()
 {
-    if (0 != OH_AVCapability_GetMaxSupportedInstances(nullptr)) { return -1; }
+    if (OH_AVCapability_GetMaxSupportedInstances(nullptr) != 0) { return -1; }
     return 0;
 }
 
@@ -1120,9 +1120,9 @@ int VideoHwdecCapApi0800Test()
     if (cap == nullptr) { return -1; }
     string codecName = OH_AVCapability_GetName(cap);
     if (codecName == "OMX.hisi.video.decoder.avc") {
-        if (1 >= OH_AVCapability_GetMaxSupportedInstances(cap)) { return -1; }
+        if (OH_AVCapability_GetMaxSupportedInstances(cap) <= 1) { return -1; }
     } else {
-        if (MAX_SUPPORTED_INSTANCES_EXPECTED != OH_AVCapability_GetMaxSupportedInstances(cap)) {
+        if (OH_AVCapability_GetMaxSupportedInstances(cap) != MAX_SUPPORTED_INSTANCES_EXPECTED) {
             return -1;
         }
     }
@@ -1173,9 +1173,9 @@ int VideoHwdecCapApi3100Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthAlignment(capability, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1192,7 +1192,7 @@ int VideoHwdecCapApi3200Test()
     OH_AVErrCode ret = AV_ERR_OK;
     int32_t alignment = 0;
     ret = OH_AVCapability_GetVideoWidthAlignment(nullptr, &alignment);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1208,11 +1208,11 @@ int VideoHwdecCapApi3300Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     int32_t alignment = 0;
     ret = OH_AVCapability_GetVideoWidthAlignment(capability, &alignment);
     cout << "WidthAlignment " << alignment << endl;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (alignment < 0) { return -1; }
     return 0;
 }
@@ -1229,9 +1229,9 @@ int VideoHwdecCapApi3400Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightAlignment(capability, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1248,7 +1248,7 @@ int VideoHwdecCapApi3500Test()
     OH_AVErrCode ret = AV_ERR_OK;
     int32_t alignment = 0;
     ret = OH_AVCapability_GetVideoHeightAlignment(nullptr, &alignment);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1264,11 +1264,11 @@ int VideoHwdecCapApi3600Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     int32_t alignment = 0;
     ret = OH_AVCapability_GetVideoHeightAlignment(capability, &alignment);
     cout << "HeightAlignment " << alignment << endl;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (alignment < 0) { return -1; }
     return 0;
 }
@@ -1287,9 +1287,9 @@ int VideoHwdecCapApi3700Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(nullptr, DEFAULT_HEIGHT, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1305,9 +1305,9 @@ int VideoHwdecCapApi3800Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, DEFAULT_HEIGHT, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1325,9 +1325,9 @@ int VideoHwdecCapApi3900Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, 0, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1345,10 +1345,10 @@ int VideoHwdecCapApi4000Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, DEFAULT_HEIGHT, &range);
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
     return 0;
@@ -1368,9 +1368,9 @@ int VideoHwdecCapApi4100Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRangeForWidth(nullptr, DEFAULT_WIDTH, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1386,9 +1386,9 @@ int VideoHwdecCapApi4200Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, DEFAULT_WIDTH, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1406,9 +1406,9 @@ int VideoHwdecCapApi4300Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, 0, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1426,9 +1426,9 @@ int VideoHwdecCapApi4400Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRangeForWidth(capability, DEFAULT_WIDTH, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
@@ -1448,7 +1448,7 @@ int VideoHwdecCapApi4500Test()
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVRange range;
     ret = OH_AVCapability_GetVideoWidthRange(nullptr, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1464,9 +1464,9 @@ int VideoHwdecCapApi4600Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRange(capability, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1484,9 +1484,9 @@ int VideoHwdecCapApi4700Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRange(capability, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
@@ -1506,7 +1506,7 @@ int VideoHwdecCapApi4800Test()
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVRange range;
     ret = OH_AVCapability_GetVideoHeightRange(nullptr, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1522,9 +1522,9 @@ int VideoHwdecCapApi4900Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRange(capability, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1543,14 +1543,14 @@ int VideoHwdecCapApi5000Test()
     OH_AVRange heightRange;
     SafeMemcpy(&widthRange, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
     if (heightRange.minVal < 0) { return -1; }
     if (heightRange.maxVal <= 0) { return -1; }
     ret = OH_AVCapability_GetVideoWidthRange(capability, &widthRange);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (widthRange.minVal < 0) { return -1; }
     if (widthRange.maxVal <= 0) { return -1; }
     return 0;
@@ -1573,12 +1573,12 @@ int VideoHwdecCapApi1700Test()
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     if (capability) {
         ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
         if (heightRange.minVal < 0) { return -1; }
         if (heightRange.maxVal <= 0) { return -1; }
         ret = OH_AVCapability_GetVideoWidthRange(capability, &widthRange);
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         if (widthRange.minVal < 0) { return -1; }
         if (widthRange.maxVal <= 0) { return -1; }
     }
@@ -1596,7 +1596,7 @@ int VideoHwdecCapApi1700Test()
 int VideoHwdecCapApi5100Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_IsVideoSizeSupported(capability, 0, DEFAULT_HEIGHT)) { return -1; }
     return 0;
 }
@@ -1612,7 +1612,7 @@ int VideoHwdecCapApi5100Test()
 int VideoHwdecCapApi5200Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_IsVideoSizeSupported(capability, DEFAULT_WIDTH, 0)) { return -1; }
     return 0;
 }
@@ -1640,11 +1640,11 @@ int VideoHwdecCapApi5300Test()
 int VideoHwdecCapApi9400Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     OH_AVRange heightRange;
     OH_AVRange widthRange;
-    if (AV_ERR_OK != OH_AVCapability_GetVideoHeightRange(capability, &heightRange)) { return -1; }
-    if (AV_ERR_OK != OH_AVCapability_GetVideoWidthRange(capability, &widthRange)) { return -1; }
+    if (OH_AVCapability_GetVideoHeightRange(capability, &heightRange) != AV_ERR_OK) { return -1; }
+    if (OH_AVCapability_GetVideoWidthRange(capability, &widthRange) != AV_ERR_OK) { return -1; }
     if (OH_AVCapability_IsVideoSizeSupported(capability, widthRange.maxVal + 1, heightRange.maxVal + 1)) {
         return -1;
     }
@@ -1661,7 +1661,7 @@ int VideoHwdecCapApi9400Test()
 int VideoHwdecCapApi5400Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (!OH_AVCapability_IsVideoSizeSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT)) {
         return -1;
     }
@@ -1681,7 +1681,7 @@ int VideoHwdecCapApi5500Test()
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVRange range;
     ret = OH_AVCapability_GetVideoFrameRateRange(nullptr, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1697,9 +1697,9 @@ int VideoHwdecCapApi5600Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRange(capability, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1717,9 +1717,9 @@ int VideoHwdecCapApi5700Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRange(capability, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
     return 0;
@@ -1741,7 +1741,7 @@ int VideoHwdecCapApi1600Test()
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     if (capability) {
         ret = OH_AVCapability_GetVideoFrameRateRange(capability, &range);
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         if (range.minVal < 0) { return -1; }
         if (range.maxVal <= 0) { return -1; }
     }
@@ -1761,7 +1761,7 @@ int VideoHwdecCapApi5800Test()
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVRange range;
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1777,9 +1777,9 @@ int VideoHwdecCapApi5900Test()
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1797,9 +1797,9 @@ int VideoHwdecCapApi6000Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, 0, DEFAULT_HEIGHT, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1817,9 +1817,9 @@ int VideoHwdecCapApi6100Test()
     OH_AVRange range;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, 0, &range);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1839,23 +1839,23 @@ int VideoHwdecCapApi6200Test()
     OH_AVRange widthRange;
     SafeMemcpy(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoHeightRange(capability, &heightRange);
     cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(capability, heightRange.maxVal, &widthRange);
     cout << "minval=" << widthRange.minVal << "  maxval=" << widthRange.maxVal << endl;
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, HD_WIDTH, HD_HEIGHT, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
     ret = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, widthRange.maxVal, heightRange.maxVal, &range);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
     if (range.minVal < 0) { return -1; }
     if (range.maxVal <= 0) { return -1; }
@@ -1873,7 +1873,7 @@ int VideoHwdecCapApi6200Test()
 int VideoHwdecCapApi6300Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, 0, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE)) {
         return -1;
     }
@@ -1891,7 +1891,7 @@ int VideoHwdecCapApi6300Test()
 int VideoHwdecCapApi6400Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, 0, DEFAULT_FRAME_RATE)) {
         return -1;
     }
@@ -1909,7 +1909,7 @@ int VideoHwdecCapApi6400Test()
 int VideoHwdecCapApi6500Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0)) {
         return -1;
     }
@@ -1943,7 +1943,7 @@ int VideoHwdecCapApi6600Test()
 int VideoHwdecCapApi6700Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (!OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE)) {
         return -1;
     }
@@ -1964,7 +1964,7 @@ int VideoHwdecCapApi6800Test()
     const int32_t* pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
     ret = OH_AVCapability_GetVideoSupportedPixelFormats(nullptr, &pixelFormat, &pixelFormatNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -1981,9 +1981,9 @@ int VideoHwdecCapApi6900Test()
     OH_AVErrCode ret = AV_ERR_OK;
     uint32_t pixelFormatNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, nullptr, &pixelFormatNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2000,9 +2000,9 @@ int VideoHwdecCapApi7000Test()
     OH_AVErrCode ret = AV_ERR_OK;
     const int32_t* pixelFormat = nullptr;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2022,34 +2022,34 @@ int VideoHwdecCapApi7100Test()
     const int32_t* pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, &pixelFormatNum);
-    if (nullptr == pixelFormat) { return -1; }
+    if (pixelFormat == nullptr) { return -1; }
     if (pixelFormatNum <= 0) { return -1; }
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     for (int i = 0; i < pixelFormatNum; i++) {
         vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        if (nullptr == vdec_) { return -1; }
+        if (vdec_ == nullptr) { return -1; }
         format = OH_AVFormat_Create();
-        if (nullptr == format) { return -1; }
+        if (format == nullptr) { return -1; }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         if (pixelFormat[i] < 0) { return -1; }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
-        if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+        if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
         OH_AVFormat_Destroy(format);
         format = nullptr;
         OH_VideoDecoder_Destroy(vdec_);
         vdec_ = nullptr;
     }
     vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
     format = OH_AVFormat_Create();
-    if (nullptr == format) { return -1; }
+    if (format == nullptr) { return -1; }
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
-    if (AV_ERR_OK == OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) == AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -2071,32 +2071,32 @@ int VideoHwdecCapApi1200Test()
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     if (capability) {
         ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, &pixelFormatNum);
-        if (nullptr == pixelFormat) { return -1; }
+        if (pixelFormat == nullptr) { return -1; }
         if (pixelFormatNum <= 0) { return -1; }
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         for (int i = 0; i < pixelFormatNum; i++) {
             vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-            if (nullptr == vdec_) { return -1; }
+            if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
-            if (nullptr == format) { return -1; }
+            if (format == nullptr) { return -1; }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             if (pixelFormat[i] < 0) { return -1; }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
-            if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+            if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
             OH_AVFormat_Destroy(format);
             format = nullptr;
             OH_VideoDecoder_Destroy(vdec_);
             vdec_ = nullptr;
         }
         vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        if (nullptr == vdec_) { return -1; }
+        if (vdec_ == nullptr) { return -1; }
         format = OH_AVFormat_Create();
-        if (nullptr == format) { return -1; }
+        if (format == nullptr) { return -1; }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
-        if (AV_ERR_OK == OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+        if (OH_VideoDecoder_Configure(vdec_, format) == AV_ERR_OK) { return -1; }
     }
     return 0;
 }
@@ -2115,7 +2115,7 @@ int VideoHwdecCapApi7200Test()
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     ret = OH_AVCapability_GetSupportedProfiles(nullptr, &profiles, &profileNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2132,9 +2132,9 @@ int VideoHwdecCapApi7300Test()
     OH_AVErrCode ret = AV_ERR_OK;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedProfiles(capability, nullptr, &profileNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2151,9 +2151,9 @@ int VideoHwdecCapApi7400Test()
     OH_AVErrCode ret = AV_ERR_OK;
     const int32_t* profiles = nullptr;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2171,11 +2171,11 @@ int VideoHwdecCapApi7500Test()
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (profileNum <= 0) { return -1; }
-    if (nullptr == profiles) { return -1; }
+    if (profiles == nullptr) { return -1; }
     for (int i = 0; i < profileNum; i++) {
         if (profiles[i] < 0) { return -1; }
     }
@@ -2198,9 +2198,9 @@ int VideoHwdecCapApi1300Test()
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     if (capability) {
         ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         if (profileNum <= 0) { return -1; }
-        if (nullptr == profiles) { return -1; }
+        if (profiles == nullptr) { return -1; }
         for (int i = 0; i < profileNum; i++) {
             if (profiles[i] < 0) { return -1; }
         }
@@ -2222,7 +2222,7 @@ int VideoHwdecCapApi7600Test()
     const int32_t* levels = nullptr;
     uint32_t levelNum = 0;
     ret = OH_AVCapability_GetSupportedLevelsForProfile(nullptr, AVC_PROFILE_BASELINE, &levels, &levelNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2240,9 +2240,9 @@ int VideoHwdecCapApi7700Test()
     const int32_t* levels = nullptr;
     uint32_t levelNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, 1, &levels, &levelNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2259,9 +2259,9 @@ int VideoHwdecCapApi7800Test()
     OH_AVErrCode ret = AV_ERR_OK;
     uint32_t levelNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, AVC_PROFILE_BASELINE, nullptr, &levelNum);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2278,9 +2278,9 @@ int VideoHwdecCapApi7900Test()
     OH_AVErrCode ret = AV_ERR_OK;
     const int32_t* levels = nullptr;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, AVC_PROFILE_BASELINE, &levels, nullptr);
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2300,16 +2300,16 @@ int VideoHwdecCapApi8000Test()
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     if (profileNum <= 0) { return -1; }
-    if (nullptr == profiles) { return -1; }
+    if (profiles == nullptr) { return -1; }
     for (int i = 0; i < profileNum; i++) {
         if (profiles[i] < 0) { return -1; }
         ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
-        if (AV_ERR_OK != ret) { return -1; }
-        if (nullptr == levels) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
+        if (levels == nullptr) { return -1; }
         if (levelNum <= 0) { return -1; }
         for (int j = 0; j < levelNum; j++) {
             if (levels[j] < 0) { return -1; }
@@ -2336,14 +2336,14 @@ int VideoHwdecCapApi1400Test()
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     if (capability) {
         ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-        if (AV_ERR_OK != ret) { return -1; }
+        if (ret != AV_ERR_OK) { return -1; }
         if (profileNum <= 0) { return -1; }
-        if (nullptr == profiles) { return -1; }
+        if (profiles == nullptr) { return -1; }
         for (int i = 0; i < profileNum; i++) {
             if (profiles[i] < 0) { return -1; }
             ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
-            if (AV_ERR_OK != ret) { return -1; }
-            if (nullptr == levels) { return -1; }
+            if (ret != AV_ERR_OK) { return -1; }
+            if (levels == nullptr) { return -1; }
             if (levelNum <= 0) { return -1; }
             for (int j = 0; j < levelNum; j++) {
                 if (levels[j] < 0) { return -1; }
@@ -2378,7 +2378,7 @@ int VideoHwdecCapApi8100Test()
 int VideoHwdecCapApi8200Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (OH_AVCapability_AreProfileAndLevelSupported(capability, 1, 1)) { return -1; }
     return 0;
 }
@@ -2394,7 +2394,7 @@ int VideoHwdecCapApi8200Test()
 int VideoHwdecCapApi8300Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
-    if (nullptr == capability) { return -1; }
+    if (capability == nullptr) { return -1; }
     if (!OH_AVCapability_AreProfileAndLevelSupported(capability, AVC_PROFILE_BASELINE, 1)) {
         return -1;
     }
@@ -2420,9 +2420,9 @@ int VideoHwdecAttimeApi0010Test()
     vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vDecSample->rsAtTime = true;
     vDecSample->isAPI = true;
-    if (AV_ERR_OK != vDecSample->RunVideoDecSurface(g_codecName)) { return -1; }
+    if (vDecSample->RunVideoDecSurface(g_codecName) != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
-    if (AV_ERR_INVALID_VAL != vDecSample->errCount) { return -1; }
+    if (vDecSample->errCount != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2437,7 +2437,7 @@ int VideoHwdecAttimeApi0010Test()
 int VideoDecodeSyncApi0010Test()
 {
     uint32_t index;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_QueryInputBuffer(nullptr, &index, -1)) { return -1; }
+    if (OH_VideoDecoder_QueryInputBuffer(nullptr, &index, -1) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2455,15 +2455,15 @@ int VideoDecodeSyncApi0020Test()
     if (!guard.ok) { return -1; }
     uint32_t index;
     vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
     format = OH_AVFormat_Create();
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Prepare(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MAX)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Prepare(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MAX) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -2481,15 +2481,15 @@ int VideoDecodeSyncApi0030Test()
     if (!guard.ok) { return -1; }
     uint32_t index;
     vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-    if (nullptr == vdec_) { return -1; }
+    if (vdec_ == nullptr) { return -1; }
     format = OH_AVFormat_Create();
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Prepare(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Start(vdec_)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MIN)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Prepare(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Start(vdec_) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_QueryInputBuffer(vdec_, &index, INT64_MIN) != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -2503,7 +2503,7 @@ int VideoDecodeSyncApi0030Test()
  */
 int VideoDecodeSyncApi0040Test()
 {
-    if (nullptr != OH_VideoDecoder_GetInputBuffer(nullptr, 1)) { return -1; }
+    if (OH_VideoDecoder_GetInputBuffer(nullptr, 1) != nullptr) { return -1; }
     return 0;
 }
 
@@ -2518,7 +2518,7 @@ int VideoDecodeSyncApi0040Test()
 int VideoDecodeSyncApi0050Test()
 {
     uint32_t index;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_QueryOutputBuffer(nullptr, &index, -1)) { return -1; }
+    if (OH_VideoDecoder_QueryOutputBuffer(nullptr, &index, -1) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2536,15 +2536,15 @@ int VideoDecodeSyncApi0060Test()
     vDecSample->enableSyncMode = 1;
     vDecSample->syncOutputWaitTime = INT64_MAX;
     vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
-    if (AV_ERR_OK != vDecSample->CreateVideoDecoder(g_codecName)) { return -1; }
+    if (vDecSample->CreateVideoDecoder(g_codecName) != AV_ERR_OK) { return -1; }
     OH_LOG_INFO(LOG_APP, "dwl CreateVideoDecoder sucess");
-    if (AV_ERR_OK != vDecSample->ConfigureVideoDecoder()) { return -1; }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
     OH_LOG_INFO(LOG_APP, "dwl ConfigureVideoDecoder sucess");
-    if (AV_ERR_OK != vDecSample->StartVideoDecoder()) { return -1; }
+    if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
     OH_LOG_INFO(LOG_APP, "dwl StartVideoDecoder sucess");
     vDecSample->WaitForEOS();
     OH_LOG_INFO(LOG_APP, "dwl WaitForEOS sucess");
-    if (AV_ERR_OK != vDecSample->errCount) { return -1; }
+    if (vDecSample->errCount != AV_ERR_OK) { return -1; }
     OH_LOG_INFO(LOG_APP, "dwl errCount sucess");
     return 0;
 }
@@ -2563,11 +2563,11 @@ int VideoDecodeSyncApi0070Test()
     vDecSample->enableSyncMode = 1;
     vDecSample->syncOutputWaitTime = INT64_MIN;
     vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
-    if (AV_ERR_OK != vDecSample->CreateVideoDecoder(g_codecName)) { return -1; }
-    if (AV_ERR_OK != vDecSample->ConfigureVideoDecoder()) { return -1; }
-    if (AV_ERR_OK != vDecSample->StartVideoDecoder()) { return -1; }
+    if (vDecSample->CreateVideoDecoder(g_codecName) != AV_ERR_OK) { return -1; }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
+    if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != vDecSample->errCount) { return -1; }
+    if (vDecSample->errCount != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -2581,7 +2581,7 @@ int VideoDecodeSyncApi0070Test()
  */
 int VideoDecodeSyncApi0080Test()
 {
-    if (nullptr != OH_VideoDecoder_GetOutputBuffer(nullptr, 1)) { return -1; }
+    if (OH_VideoDecoder_GetOutputBuffer(nullptr, 1) != nullptr) { return -1; }
     return 0;
 }
 
@@ -2636,10 +2636,10 @@ int VideoHwdecApiAdd0010Test()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
-    if (AV_ERR_OK != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
-    if (AV_ERR_OK != OH_VideoDecoder_Prepare(vdec_)) { return -1; }
+    if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_OK) { return -1; }
+    if (OH_VideoDecoder_Prepare(vdec_) != AV_ERR_OK) { return -1; }
     uint32_t index = 0;
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_QueryOutputBuffer(vdec_, &index, 0)) { return -1; }
+    if (OH_VideoDecoder_QueryOutputBuffer(vdec_, &index, 0) != AV_ERR_INVALID_STATE) { return -1; }
     OH_VideoDecoder_Destroy(vdec_);
     vdec_ = nullptr;
     return 0;
@@ -2655,7 +2655,7 @@ int VideoHwdecApiAdd0010Test()
  */
 int VideoHwdecApiAdd0020Test()
 {
-    if (nullptr != OH_AVBuffer_GetNativeBuffer(nullptr)) { return -1; }
+    if (OH_AVBuffer_GetNativeBuffer(nullptr) != nullptr) { return -1; }
     return 0;
 }
 
@@ -2677,7 +2677,7 @@ int VideoHwdecApiAdd0030Test()
     attr.size = -1;
     attr.offset = -1;
     attr.flags = AVCODEC_BUFFER_FLAGS_DISPOSABLE;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(vdec_, 0, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(vdec_, 0, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2699,7 +2699,7 @@ int VideoHwdecApiAdd0040Test()
     attr.size = -1;
     attr.offset = -1;
     attr.flags = AVCODEC_BUFFER_FLAGS_INCOMPLETE_FRAME;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(vdec_, 0, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(vdec_, 0, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2713,7 +2713,7 @@ int VideoHwdecApiAdd0050Test()
     attr.size = -1;
     attr.offset = -1;
     attr.flags = AVCODEC_BUFFER_FLAGS_INCOMPLETE_FRAME;
-    if (AV_ERR_INVALID_VAL != OH_VideoDecoder_PushInputData(vdec_, -1, attr)) { return -1; }
+    if (OH_VideoDecoder_PushInputData(vdec_, -1, attr) != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -2722,7 +2722,7 @@ int VideoHwdecApiAdd0060Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_RenderOutputData(vdec_, -1)) { return -1; }
+    if (OH_VideoDecoder_RenderOutputData(vdec_, -1) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -2731,7 +2731,7 @@ int VideoHwdecApiAdd0070Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_PushInputBuffer(vdec_, -1)) { return -1; }
+    if (OH_VideoDecoder_PushInputBuffer(vdec_, -1) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -2740,7 +2740,7 @@ int VideoHwdecApiAdd0080Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_RenderOutputBuffer(vdec_, -1)) { return -1; }
+    if (OH_VideoDecoder_RenderOutputBuffer(vdec_, -1) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -2750,7 +2750,7 @@ int VideoHwdecApiAdd0090Test()
     if (!guard.ok) { return -1; }
     const int64_t kInvalidTimestamp = -100000000;
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, -1, kInvalidTimestamp)) {
+    if (OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, -1, kInvalidTimestamp) != AV_ERR_INVALID_STATE) {
         return -1;
     }
     return 0;
@@ -2761,7 +2761,7 @@ int VideoHwdecApiAdd0100Test()
     ApiTestGuard guard;
     if (!guard.ok) { return -1; }
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    if (AV_ERR_INVALID_STATE != OH_VideoDecoder_FreeOutputBuffer(vdec_, -1)) { return -1; }
+    if (OH_VideoDecoder_FreeOutputBuffer(vdec_, -1) != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 

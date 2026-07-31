@@ -94,23 +94,23 @@ int HevcHwHdr2sdrFunc002Test()
 {
     if (cap_hevc) {
         Hdr2SdrTestGuard guard;
-        if (!access("/system/lib64/media/", 0)) {
+        if (!access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
             vdec_ = OH_VideoDecoder_CreateByName(g_codecNameHEVC.c_str());
-            if (nullptr == vdec_) { return -1; }
+            if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
-            if (nullptr == format) { return -1; }
+            if (format == nullptr) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT)) {
                 return -1;
             }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {
                 return -1;
             }
-            if (AV_ERR_INVALID_VAL != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+            if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_INVALID_VAL) { return -1; }
         } else {
             vdec_ = OH_VideoDecoder_CreateByName(g_codecNameHEVC.c_str());
-            if (nullptr == vdec_) { return -1; }
+            if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
-            if (nullptr == format) { return -1; }
+            if (format == nullptr) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT)) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH)) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT)) {
@@ -119,7 +119,7 @@ int HevcHwHdr2sdrFunc002Test()
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {
                 return -1;
             }
-            if (AV_ERR_UNSUPPORT != OH_VideoDecoder_Configure(vdec_, format)) { return -1; }
+            if (OH_VideoDecoder_Configure(vdec_, format) != AV_ERR_UNSUPPORT) { return -1; }
         }
     }
     return 0;

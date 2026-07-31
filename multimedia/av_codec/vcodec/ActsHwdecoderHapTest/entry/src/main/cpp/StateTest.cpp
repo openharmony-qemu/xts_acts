@@ -97,9 +97,9 @@ int VideoHwdecState0100Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -116,7 +116,7 @@ int VideoHwdecState0101Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -133,11 +133,11 @@ int VideoHwdecState0200Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -154,11 +154,11 @@ int VideoHwdecState0300Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -175,11 +175,11 @@ int VideoHwdecState0400Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -196,13 +196,13 @@ int VideoHwdecState0500Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -220,14 +220,14 @@ int VideoHwdecState0600Test()
     if (!guard.ok) { return -1; }
     vDecSample->afterEosDestroyCodec = false;
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -246,12 +246,12 @@ int VideoHwdecState0700Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -268,15 +268,15 @@ int VideoHwdecState0800Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->StartVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -295,10 +295,10 @@ int VideoHwdecState0900Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -317,12 +317,12 @@ int VideoHwdecState1000Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -341,12 +341,12 @@ int VideoHwdecState1100Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -365,12 +365,12 @@ int VideoHwdecState1200Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -389,14 +389,14 @@ int VideoHwdecState1300Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_INVALID_VAL != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_VAL) { return -1; }
     return 0;
 }
 
@@ -415,12 +415,12 @@ int VideoHwdecState1400Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -439,12 +439,12 @@ int VideoHwdecState1500Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -463,16 +463,16 @@ int VideoHwdecState1600Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
-    if (0 != vDecSample->errCount) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
+    if (vDecSample->errCount != 0) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     return 0;
 }
 
@@ -489,13 +489,13 @@ int VideoHwdecState1700Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -512,13 +512,13 @@ int VideoHwdecState1800Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->StateEos();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -535,13 +535,13 @@ int VideoHwdecState1900Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -558,13 +558,13 @@ int VideoHwdecState2000Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -581,17 +581,17 @@ int VideoHwdecState2100Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -608,16 +608,16 @@ int VideoHwdecState2200Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     cout << "set callback" << endl;
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -634,13 +634,13 @@ int VideoHwdecState2300Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -657,13 +657,13 @@ int VideoHwdecState2400Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -680,15 +680,15 @@ int VideoHwdecState2500Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -705,13 +705,13 @@ int VideoHwdecState2600Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -728,13 +728,13 @@ int VideoHwdecState2700Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -751,19 +751,19 @@ int VideoHwdecState2800Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -780,11 +780,11 @@ int VideoHwdecState2900Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -801,11 +801,11 @@ int VideoHwdecState3000Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -822,17 +822,17 @@ int VideoHwdecState3100Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Start();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Stop();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->Flush();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -849,13 +849,13 @@ int VideoHwdecState3200Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Start();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_INVALID_STATE != ret) { return -1; }
+    if (ret != AV_ERR_INVALID_STATE) { return -1; }
     ret = vDecSample->SetVideoDecoderCallback();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -872,9 +872,9 @@ int VideoHwdecState3300Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Reset();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     ret = vDecSample->ConfigureVideoDecoder();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -891,7 +891,7 @@ int VideoHwdecState3400Test()
     StateTestGuard guard;
     if (!guard.ok) { return -1; }
     int32_t ret = vDecSample->Release();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -911,7 +911,7 @@ int VideoHwdecState3500Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -930,7 +930,7 @@ int VideoHwdecState3600Test()
     vDecSample->inputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
@@ -950,7 +950,7 @@ int VideoHwdecState3700Test()
     vDecSample->outputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
@@ -970,7 +970,7 @@ int VideoHwdecState3800Test()
     vDecSample->outputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
@@ -992,7 +992,7 @@ int VideoHwdecState3900Test()
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
     vDecSample->WaitForEOS();
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     return 0;
 }
 
@@ -1012,7 +1012,7 @@ int VideoHwdecState4000Test()
     vDecSample->inputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
@@ -1033,7 +1033,7 @@ int VideoHwdecState4100Test()
     vDecSample->outputCallbackFlush = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
@@ -1054,7 +1054,7 @@ int VideoHwdecState4200Test()
     vDecSample->outputCallbackStop = true;
     int32_t ret = vDecSample->StartVideoDecoder();
     vDecSample->afterEosDestroyCodec = false;
-    if (AV_ERR_OK != ret) { return -1; }
+    if (ret != AV_ERR_OK) { return -1; }
     vDecSample->WaitForEOS();
     return 0;
 }
