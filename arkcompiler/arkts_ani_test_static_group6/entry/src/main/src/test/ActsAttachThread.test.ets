@@ -208,8 +208,8 @@ export default function AttachThreadTest():void {
           const cls = new Foo();
           return cls.test_AttachDetach();
         });
-        const result = await job;
-        await worker.join();
+        const result = await job.Await();
+        worker.join().Await();
         return result;
       });
 
@@ -344,8 +344,8 @@ export default function AttachThreadTest():void {
           const cls = new Foo();
           return cls.test_Attach_CurrentManagedThreadShouldFail();
         });
-        const result = await job;
-        await worker.join();
+        const result = await job.Await();
+        worker.join().Await();
         expect(result).assertEqual(1);
       });
 
