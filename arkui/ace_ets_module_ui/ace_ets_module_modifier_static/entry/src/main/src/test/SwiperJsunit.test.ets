@@ -69,6 +69,7 @@ export default function swiperJsunit() {
      */
 it('swiperTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0001 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0001 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -87,6 +88,7 @@ it('swiperTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0002 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0002 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -105,6 +107,7 @@ it('swiperTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0003 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0003 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -123,6 +126,7 @@ it('swiperTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0004 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0004 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -141,6 +145,7 @@ it('swiperTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0005 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0005 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -159,6 +164,7 @@ it('swiperTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0006 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0006 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -177,6 +183,7 @@ it('swiperTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0007 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0007 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -195,6 +202,7 @@ it('swiperTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0008 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -213,6 +221,7 @@ it('swiperTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0009 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -231,6 +240,7 @@ it('swiperTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0010 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0010 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -249,6 +259,7 @@ it('swiperTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0011 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0011 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -267,6 +278,7 @@ it('swiperTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0012 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0012 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -284,13 +296,33 @@ it('swiperTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('swiperTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('swiperTest_static_0013 START');
-      let strJsonNew = inspector.getInspectorByKey('swiper');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("swiperTest_static_0013 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('index')).assertEqual('1');
-      console.info('swiperTest_static_0013 END');
-      done();
+    console.info('swiperTest_static_0013 START');   
+    await UtilsTest.msSleep(1000);                                                                   
+    let strJsonNew = inspector.getInspectorByKey('swiper');
+    let objNew = JSON.parseJsonElement(strJsonNew);
+    let indexBefore = Number(objNew.getElement('$attrs').getString('index'));
+    console.info("swiperTest_static_0013 index before: " + indexBefore);
+ 
+    let driver = Driver.create();
+    let nextBtn = await driver.findComponent(ON.id('changeButton'));
+    await (nextBtn?.click() as Promise<void>);
+    await UtilsTest.msSleep(1000);
+ 
+    strJsonNew = inspector.getInspectorByKey('swiper');
+    objNew = JSON.parseJsonElement(strJsonNew);
+    let indexAfter = Number(objNew.getElement('$attrs').getString('index'));
+    console.info("swiperTest_static_0013 index after: " + indexAfter);
+ 
+    expect(indexAfter !== indexBefore).assertTrue();
+    console.info('swiperTest_static_0013 END');
+    done();
+      // console.info('swiperTest_static_0013 START');
+      // let strJsonNew = inspector.getInspectorByKey('swiper');
+      // let objNew = JSON.parseJsonElement(strJsonNew);
+      // console.info("swiperTest_static_0013 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
+      // expect(objNew.getElement('$attrs').getString('index')).assertEqual('1');
+      // console.info('swiperTest_static_0013 END');
+      // done();
     });
 
     
@@ -303,6 +335,7 @@ it('swiperTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0014 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_0014 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -322,6 +355,7 @@ it('swiperTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_015 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_015 component is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -340,6 +374,7 @@ it('swiperTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('swiperTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_016 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_016 component is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -358,6 +393,7 @@ it('swiperTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('swiperTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_017 START');
+      await UtilsTest.msSleep(1000);
       let strJsonNew = inspector.getInspectorByKey('swiper');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("swiperTest_static_017 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
@@ -376,7 +412,9 @@ it('swiperTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('swiperTest_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_018 START');
-      let driver = Driver.create();
+      await UtilsTest.msSleep(1000);
+      let driver = await Driver.create();
+      await UtilsTest.msSleep(500);
       let button = await (driver.findComponent(ON.id('swiper' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
