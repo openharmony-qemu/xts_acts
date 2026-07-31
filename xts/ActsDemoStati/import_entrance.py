@@ -1,522 +1,332 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""
+Smart File Organizer
+====================
+A Python script to automatically organize files in a directory based on their extensions.
+
+Features:
+- Configurable file categories via JSON config.
+- Dry-run mode to preview changes.
+- Detailed logging.
+- Command-line interface.
+- Error handling for common issues (permissions, locked files).
+
+Usage:
+    python file_organizer.py --source ./Downloads --config config.json --dry-run
+    python file_organizer.py --source ./Downloads
+"""
+
 import os
 import sys
+import json
 import shutil
-import zipfile
-import argparse
 import logging
-import time
-import fnmatch
-import re
-import stat
-import platform
+import argparse
+import datetime
 from pathlib import Path
-from datetime import datetime
-from typing import List, Optional, Tuple, Generator
+from typing import Dict, List, Optional, Tuple
 
-# 尝试导入 tqdm 用于进度条，如果失败则使用内置实现
-try:
-    from tqdm import tqdm
-    HAS_TQDM = True
-except ImportError:
-    HAS_TQDM = False
+# ================= Configuration Constants =================
 
+DEFAULT_CONFIG = {
+    "images": ["jpg", "jpeg", "png", "gif", "bmp", "svg", "webp"],
+    "documents": ["pdf", "doc", "docx", "txt", "rtf", "odt", "xls", "xlsx", "ppt", "pptx"],
+    "videos": ["mp4", "avi", "mkv", "mov", "wmv", "flv"],
+    "audio": ["mp3", "wav", "aac", "flac", "ogg", "wma"],
+    "archives": ["zip", "rar", "7z", "tar", "gz", "bz2"],
+    "code": ["py", "js", "html", "css", "java", "cpp", "c", "h", "json", "xml", "yaml", "yml"],
+    "executables": ["exe", "msi", "dmg", "apk", "deb"],
+    "others": []  # Files not matching any category go here
+}
 
-# 日志配置
-LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
-LOG_FILE = "file_manager.log"
+DEFAULT_LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+LOG_FILE_NAME = "organizer.log"
 
-# 颜色代码 (用于终端输出美化)
-class Colors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+# ================= Logger Setup =================
 
-
-def setup_logger(log_level=logging.INFO):
+def setup_logger(log_file: str = LOG_FILE_NAME, verbose: bool = False) -> logging.Logger:
     """
-    设置日志记录器
-    """
-    logger = logging.getLogger("FileManager")
-    logger.setLevel(log_level)
+    Set up the logger to write to both file and console.
     
-    # 清除已有的 handler
+    Args:
+        log_file: Path to the log file.
+        verbose: If True, log DEBUG level; otherwise INFO.
+        
+    Returns:
+        Configured logger instance.
+    """
+    logger = logging.getLogger("FileOrganizer")
+    logger.setLevel(logging.DEBUG)
+    
+    # Prevent adding multiple handlers if called multiple times
     if logger.handlers:
-        logger.handlers.clear()
+        return logger
 
-    # 控制台 Handler
-    console_handler = logging.StreamHandler(sys.stdout)
-    console_handler.setLevel(log_level)
-    console_formatter = logging.Formatter("%(levelname)s: %(message)s")
-    console_handler.setFormatter(console_formatter)
-    logger.addHandler(console_handler)
-
-    # 文件 Handler
-    file_handler = logging.FileHandler(LOG_FILE, encoding='utf-8')
+    # File Handler
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
     file_handler.setLevel(logging.DEBUG)
-    file_formatter = logging.Formatter(LOG_FORMAT)
-    file_handler.setFormatter(file_formatter)
+    file_handler.setFormatter(logging.Formatter(DEFAULT_LOG_FORMAT))
     logger.addHandler(file_handler)
+
+    # Console Handler
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.DEBUG if verbose else logging.INFO)
+    console_handler.setFormatter(logging.Formatter(DEFAULT_LOG_FORMAT))
+    logger.addHandler(console_handler)
 
     return logger
 
-def print_success(msg: str):
-    """打印成功信息"""
-    print(f"{Colors.OKGREEN}[SUCCESS]{Colors.ENDC} {msg}")
+# ================= Configuration Manager =================
 
-def print_error(msg: str):
-    """打印错误信息"""
-    print(f"{Colors.FAIL}[ERROR]{Colors.ENDC} {msg}")
-
-def print_warning(msg: str):
-    """打印警告信息"""
-    print(f"{Colors.WARNING}[WARNING]{Colors.ENDC} {msg}")
-
-def print_info(msg: str):
-    """打印普通信息"""
-    print(f"{Colors.OKBLUE}[INFO]{Colors.ENDC} {msg}")
-
-def get_file_size(file_path: str) -> int:
-    """获取文件大小（字节）"""
-    try:
-        return os.path.getsize(file_path)
-    except OSError:
-        return 0
-
-def format_size(size_bytes: int) -> str:
-    """格式化文件大小"""
-    if size_bytes == 0:
-        return "0 B"
-    units = ['B', 'KB', 'MB', 'GB', 'TB']
-    i = 0
-    while size_bytes >= 1024 and i < len(units) - 1:
-        size_bytes /= 1024.0
-        i += 1
-    return f"{size_bytes:.2f} {units[i]}"
-
-def confirm_action(prompt: str) -> bool:
-    """
-    用户确认操作
-    """
-    try:
-        response = input(f"{prompt} (y/n): ").strip().lower()
-        return response in ['y', 'yes']
-    except KeyboardInterrupt:
-        print("\n操作已取消。")
-        sys.exit(0)
-
-def is_safe_path(base_path: str, target_path: str) -> bool:
-    """
-    检查目标路径是否在基础路径内，防止路径遍历攻击
-    """
-    try:
-        base = os.path.realpath(base_path)
-        target = os.path.realpath(target_path)
-        return target.startswith(base)
-    except Exception:
-        return False
-
-# ================= 核心类：FileManager =================
-
-class FileManager:
-    """
-    文件管理器核心类
-    """
+class ConfigManager:
+    """Handles loading and validating configuration."""
     
-    def __init__(self, logger: logging.Logger):
-        self.logger = logger
-        self.base_dir = os.getcwd()
+    def __init__(self, config_path: Optional[str] = None):
+        self.config_path = config_path
+        self.categories: Dict[str, List[str]] = {}
+        self.load_config()
 
-    def _resolve_path(self, path: str) -> str:
-        """
-        解析路径，支持相对路径和绝对路径
-        """
-        if os.path.isabs(path):
-            return path
-        return os.path.join(self.base_dir, path)
-
-    def _check_exists(self, path: str, is_dir: bool = False) -> bool:
-        """
-        检查路径是否存在
-        """
-        resolved = self._resolve_path(path)
-        if is_dir:
-            return os.path.isdir(resolved)
-        return os.path.exists(resolved)
-
-
-    def create_directory(self, path: str, parents: bool = True, exist_ok: bool = True) -> bool:
-        """
-        创建文件夹
-        
-        Args:
-            path: 文件夹路径
-            parents: 如果为True，则创建所有必要的父目录
-            exist_ok: 如果目录已存在，是否报错
-            
-        Returns:
-            bool: 是否成功
-        """
-        try:
-            resolved_path = self._resolve_path(path)
-            self.logger.info(f"尝试创建目录: {resolved_path}")
-            
-            if os.path.exists(resolved_path):
-                if os.path.isfile(resolved_path):
-                    raise FileExistsError(f"路径已存在且是一个文件: {resolved_path}")
-                if not exist_ok:
-                    raise FileExistsError(f"目录已存在: {resolved_path}")
-                print_warning(f"目录已存在: {resolved_path}")
-                return True
-
-            os.makedirs(resolved_path, exist_ok=exist_ok)
-            print_success(f"目录创建成功: {resolved_path}")
-            self.logger.info(f"目录创建成功: {resolved_path}")
-            return True
-
-        except Exception as e:
-            print_error(f"创建目录失败: {e}")
-            self.logger.error(f"创建目录失败: {e}", exc_info=True)
-            return False
-    def copy_item(self, src: str, dst: str, overwrite: bool = False) -> bool:
-        """
-        复制文件或文件夹
-        
-        Args:
-            src: 源路径
-            dst: 目标路径
-            overwrite: 是否覆盖已存在的文件
-            
-        Returns:
-            bool: 是否成功
-        """
-        try:
-            src_resolved = self._resolve_path(src)
-            dst_resolved = self._resolve_path(dst)
-
-            if not os.path.exists(src_resolved):
-                raise FileNotFoundError(f"源路径不存在: {src_resolved}")
-
-            if os.path.exists(dst_resolved):
-                if not overwrite:
-                    if not confirm_action(f"目标已存在: {dst_resolved}。是否覆盖?"):
-                        print_info("操作已取消。")
-                        return False
-                # 如果目标是目录且源是文件，则复制到目录内
-                if os.path.isdir(dst_resolved):
-                    dst_resolved = os.path.join(dst_resolved, os.path.basename(src_resolved))
-
-            self.logger.info(f"开始复制: {src_resolved} -> {dst_resolved}")
-            
-            # 使用 shutil.copy2 保留元数据
-            if os.path.isdir(src_resolved):
-                # 复制目录
-                if os.path.exists(dst_resolved):
-                    shutil.rmtree(dst_resolved)
-                shutil.copytree(src_resolved, dst_resolved)
-            else:
-                # 复制文件
-                shutil.copy2(src_resolved, dst_resolved)
-
-            print_success(f"复制成功: {dst_resolved}")
-            self.logger.info(f"复制成功: {dst_resolved}")
-            return True
-
-        except Exception as e:
-            print_error(f"复制失败: {e}")
-            self.logger.error(f"复制失败: {e}", exc_info=True)
-            return False
-
-    def move_item(self, src: str, dst: str, overwrite: bool = False) -> bool:
-        """
-        移动文件或文件夹
-        
-        Args:
-            src: 源路径
-            dst: 目标路径
-            overwrite: 是否覆盖
-            
-        Returns:
-            bool: 是否成功
-        """
-        try:
-            src_resolved = self._resolve_path(src)
-            dst_resolved = self._resolve_path(dst)
-
-            if not os.path.exists(src_resolved):
-                raise FileNotFoundError(f"源路径不存在: {src_resolved}")
-
-            if os.path.exists(dst_resolved):
-                if not overwrite:
-                    if not confirm_action(f"目标已存在: {dst_resolved}。是否覆盖?"):
-                        print_info("操作已取消。")
-                        return False
-                if os.path.isdir(dst_resolved):
-                    dst_resolved = os.path.join(dst_resolved, os.path.basename(src_resolved))
-
-            self.logger.info(f"开始移动: {src_resolved} -> {dst_resolved}")
-            
-            # 如果目标存在且是目录，先删除
-            if os.path.exists(dst_resolved):
-                if os.path.isdir(dst_resolved):
-                    shutil.rmtree(dst_resolved)
-                else:
-                    os.remove(dst_resolved)
-
-            shutil.move(src_resolved, dst_resolved)
-            
-            print_success(f"移动成功: {dst_resolved}")
-            self.logger.info(f"移动成功: {dst_resolved}")
-            return True
-
-        except Exception as e:
-            print_error(f"移动失败: {e}")
-            self.logger.error(f"移动失败: {e}", exc_info=True)
-            return False
-
-    def delete_item(self, path: str, force: bool = False) -> bool:
-        """
-        删除文件或文件夹
-        
-        Args:
-            path: 要删除的路径
-            force: 是否强制删除（跳过确认）
-            
-        Returns:
-            bool: 是否成功
-        """
-        try:
-            resolved_path = self._resolve_path(path)
-
-            if not os.path.exists(resolved_path):
-                raise FileNotFoundError(f"路径不存在: {resolved_path}")
-
-            if not force:
-                if not confirm_action(f"确定要删除: {resolved_path} 吗? (此操作不可恢复)"):
-                    print_info("操作已取消。")
-                    return False
-
-            self.logger.info(f"开始删除: {resolved_path}")
-
-            if os.path.isdir(resolved_path):
-                shutil.rmtree(resolved_path)
-            else:
-                os.remove(resolved_path)
-
-            print_success(f"删除成功: {resolved_path}")
-            self.logger.info(f"删除成功: {resolved_path}")
-            return True
-
-        except Exception as e:
-            print_error(f"删除失败: {e}")
-            self.logger.error(f"删除失败: {e}", exc_info=True)
-            return False
-
-    def list_directory(self, path: str, recursive: bool = False, pattern: str = None) -> List[str]:
-        """
-        列出目录内容
-        
-        Args:
-            path: 目录路径
-            recursive: 是否递归
-            pattern: 文件名匹配模式 (glob style, e.g., "*.txt")
-            
-        Returns:
-            List[str]: 文件路径列表
-        """
-        try:
-            resolved_path = self._resolve_path(path)
-            if not os.path.isdir(resolved_path):
-                raise NotADirectoryError(f"路径不是目录: {resolved_path}")
-
-            files = []
-            self.logger.info(f"列出目录: {resolved_path}, 递归: {recursive}, 模式: {pattern}")
-
-            if recursive:
-                for root, dirs, filenames in os.walk(resolved_path):
-                    for filename in filenames:
-                        if pattern and not fnmatch.fnmatch(filename, pattern):
-                            continue
-                        files.append(os.path.join(root, filename))
-            else:
-                for item in os.listdir(resolved_path):
-                    full_path = os.path.join(resolved_path, item)
-                    if os.path.isfile(full_path):
-                        if pattern and not fnmatch.fnmatch(item, pattern):
-                            continue
-                        files.append(full_path)
-                    elif os.path.isdir(full_path) and not pattern:
-                        # 如果不指定模式，通常只列文件，但如果需要列目录可在此修改
-                        pass
-
-            # 排序
-            files.sort()
-            
-            print_info(f"找到 {len(files)} 个文件。")
-            for f in files:
-                print(f"  - {f}")
-            
-            return files
-
-        except Exception as e:
-            print_error(f"列出目录失败: {e}")
-            self.logger.error(f"列出目录失败: {e}", exc_info=True)
-            return []
-
-    def search_files(self, path: str, pattern: str, recursive: bool = True) -> List[str]:
-        """
-        搜索文件
-        
-        Args:
-            path: 搜索起始路径
-            pattern: 搜索模式 (支持正则或 glob)
-            recursive: 是否递归搜索
-            
-        Returns:
-            List[str]: 匹配的文件路径列表
-        """
-        try:
-            resolved_path = self._resolve_path(path)
-            if not os.path.exists(resolved_path):
-                raise FileNotFoundError(f"路径不存在: {resolved_path}")
-
-            matches = []
-            self.logger.info(f"搜索文件: 路径={resolved_path}, 模式={pattern}")
-
-            # 使用正则表达式进行更强大的搜索
+    def load_config(self):
+        """Load configuration from JSON file or use defaults."""
+        if self.config_path and os.path.exists(self.config_path):
             try:
-                regex = re.compile(pattern)
-                use_regex = True
-            except re.error:
-                use_regex = False
+                with open(self.config_path, 'r', encoding='utf-8') as f:
+                    self.categories = json.load(f)
+                logging.info(f"Configuration loaded from {self.config_path}")
+            except json.JSONDecodeError as e:
+                logging.error(f"Invalid JSON in config file: {e}")
+                self.categories = DEFAULT_CONFIG
+            except Exception as e:
+                logging.error(f"Error reading config file: {e}")
+                self.categories = DEFAULT_CONFIG
+        else:
+            logging.info("Using default configuration.")
+            self.categories = DEFAULT_CONFIG
 
-            if recursive:
-                for root, dirs, files in os.walk(resolved_path):
-                    for filename in files:
-                        if use_regex:
-                            if regex.search(filename):
-                                matches.append(os.path.join(root, filename))
-                        else:
-                            if fnmatch.fnmatch(filename, pattern):
-                                matches.append(os.path.join(root, filename))
-            else:
-                for item in os.listdir(resolved_path):
-                    full_path = os.path.join(resolved_path, item)
-                    if os.path.isfile(full_path):
-                        if use_regex:
-                            if regex.search(item):
-                                matches.append(full_path)
-                        else:
-                            if fnmatch.fnmatch(item, pattern):
-                                matches.append(full_path)
-
-            matches.sort()
-            print_info(f"搜索完成，找到 {len(matches)} 个匹配项。")
-            for m in matches:
-                print(f"  - {m}")
-            
-            return matches
-
-        except Exception as e:
-            print_error(f"搜索失败: {e}")
-            self.logger.error(f"搜索失败: {e}", exc_info=True)
-            return []
-
-
-    def compress_to_zip(self, source_dir: str, output_zip: str, exclude_patterns: List[str] = None) -> bool:
+    def get_category_for_extension(self, ext: str) -> str:
         """
-        将文件夹压缩为 ZIP
+        Determine the category for a given file extension.
         
         Args:
-            source_dir: 源文件夹路径
-            output_zip: 输出的 ZIP 文件路径
-            exclude_patterns: 排除的文件模式列表 (e.g., ["*.log", "__pycache__"])
+            ext: File extension without the dot (e.g., 'jpg').
             
         Returns:
-            bool: 是否成功
+            Category name (e.g., 'images') or 'others'.
         """
+        ext_lower = ext.lower()
+        for category, extensions in self.categories.items():
+            if ext_lower in extensions:
+                return category
+        return "others"
+
+# ================= File Organizer Core =================
+
+class FileOrganizer:
+    """Core logic for organizing files."""
+    
+    def __init__(self, source_dir: str, config_manager: ConfigManager, dry_run: bool = False):
+        self.source_dir = Path(source_dir).resolve()
+        self.config_manager = config_manager
+        self.dry_run = dry_run
+        self.logger = logging.getLogger("FileOrganizer")
+        self.stats = {
+            "processed": 0,
+            "moved": 0,
+            "skipped": 0,
+            "errors": 0
+        }
+
+    def validate_source(self) -> bool:
+        """Check if the source directory exists and is readable."""
+        if not self.source_dir.exists():
+            self.logger.error(f"Source directory does not exist: {self.source_dir}")
+            return False
+        if not self.source_dir.is_dir():
+            self.logger.error(f"Source path is not a directory: {self.source_dir}")
+            return False
+        if not os.access(self.source_dir, os.R_OK):
+            self.logger.error(f"No read permission for: {self.source_dir}")
+            return False
+        return True
+
+    def get_files_to_process(self) -> List[Path]:
+        """
+        Get a list of files in the source directory (non-recursive).
+        Excludes hidden files and directories.
+        """
+        files = []
         try:
-            source_resolved = self._resolve_path(source_dir)
-            output_resolved = self._resolve_path(output_zip)
+            for item in self.source_dir.iterdir():
+                if item.is_file() and not item.name.startswith('.'):
+                    files.append(item)
+        except PermissionError:
+            self.logger.error(f"Permission denied accessing: {self.source_dir}")
+        return files
 
-            if not os.path.isdir(source_resolved):
-                raise NotADirectoryError(f"源路径不是目录: {source_resolved}")
-
-            if not output_resolved.endswith('.zip'):
-                output_resolved += '.zip'
-
-            self.logger.info(f"开始压缩: {source_resolved} -> {output_resolved}")
+    def move_file(self, file_path: Path, target_dir: Path) -> bool:
+        """
+        Move a file to the target directory.
+        
+        Args:
+            file_path: Path to the source file.
+            target_dir: Path to the destination directory.
             
-            # 计算总文件大小用于进度条
-            total_size = 0
-            file_count = 0
-            all_files = []
-            
-            for root, dirs, files in os.walk(source_resolved):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    # 检查排除模式
-                    if exclude_patterns:
-                        skip = False
-                        for pat in exclude_patterns:
-                            if fnmatch.fnmatch(file, pat) or fnmatch.fnmatch(os.path.basename(root), pat):
-                                skip = True
-                                break
-                        if skip:
-                            continue
-                    
-                    all_files.append(file_path)
-                    total_size += get_file_size(file_path)
-                    file_count += 1
+        Returns:
+            True if successful, False otherwise.
+        """
+        target_path = target_dir / file_path.name
+        
+        # Handle duplicate filenames
+        if target_path.exists():
+            stem = file_path.stem
+            suffix = file_path.suffix
+            counter = 1
+            while target_path.exists():
+                new_name = f"{stem}_{counter}{suffix}"
+                target_path = target_dir / new_name
+                counter += 1
+            self.logger.warning(f"Duplicate file renamed: {file_path.name} -> {target_path.name}")
 
-            if file_count == 0:
-                print_warning("没有文件需要压缩。")
+        try:
+            if self.dry_run:
+                self.logger.info(f"[DRY RUN] Would move: {file_path.name} -> {target_dir.name}/")
+                self.stats["moved"] += 1
                 return True
-
-            print_info(f"共 {file_count} 个文件，总大小 {format_size(total_size)}")
-
-            with zipfile.ZipFile(output_resolved, 'w', zipfile.ZIP_DEFLATED) as zipf:
-                if HAS_TQDM:
-                    progress_bar = tqdm(total=total_size, unit='B', unit_scale=True, desc="Compressing")
-                
-                for file_path in all_files:
-                    # 计算相对路径
-                    arcname = os.path.relpath(file_path, source_resolved)
-                    zipf.write(file_path, arcname)
-                    
-                    if HAS_TQDM:
-                        progress_bar.update(get_file_size(file_path))
-
-                if HAS_TQDM:
-                    progress_bar.close()
-
-            print_success(f"压缩成功: {output_resolved}")
-            self.logger.info(f"压缩成功: {output_resolved}")
-            return True
-
+            else:
+                shutil.move(str(file_path), str(target_path))
+                self.logger.info(f"Moved: {file_path.name} -> {target_dir.name}/")
+                self.stats["moved"] += 1
+                return True
+        except shutil.Error as e:
+            self.logger.error(f"Shutil error moving {file_path.name}: {e}")
+            self.stats["errors"] += 1
+            return False
+        except PermissionError:
+            self.logger.error(f"Permission denied moving {file_path.name}")
+            self.stats["errors"] += 1
+            return False
         except Exception as e:
-            print_error(f"压缩失败: {e}")
-            self.logger.error(f"压缩失败: {e}", exc_info=True)
+            self.logger.error(f"Unexpected error moving {file_path.name}: {e}")
+            self.stats["errors"] += 1
             return False
 
+    def organize(self):
+        """Main method to execute the organization process."""
+        if not self.validate_source():
+            return
 
-    def extract_zip(self, zip_file: str, output_dir: str = None) -> bool:
-        """
-        解压 ZIP 文件
-        
-        Args:
-            zip_file: ZIP 文件路径
-            output_dir: 输出目录，如果为 None 则解压到当前目录
+        self.logger.info(f"Starting organization for: {self.source_dir}")
+        if self.dry_run:
+            self.logger.warning("=== DRY RUN MODE: No files will be moved ===")
+
+        files = self.get_files_to_process()
+        self.logger.info(f"Found {len(files)} files to process.")
+
+        for file_path in files:
+            self.stats["processed"] += 1
+            ext = file_path.suffix.lstrip('.')
             
-        Returns:
-            bool: 是否成功
+            if not ext:
+                self.logger.debug(f"Skipping file with no extension: {file_path.name}")
+                self.stats["skipped"] += 1
+                continue
+
+            category = self.config_manager.get_category_for_extension(ext)
+            target_dir = self.source_dir / category
+
+            # Create target directory if it doesn't exist
+            if not self.dry_run:
+                target_dir.mkdir(parents=True, exist_ok=True)
+            else:
+                # In dry run, we just log that the dir would be created
+                if not target_dir.exists():
+                    self.logger.debug(f"[DRY RUN] Would create directory: {target_dir.name}")
+
+            self.move_file(file_path, target_dir)
+
+        self.print_summary()
+
+    def print_summary(self):
+        """Print a summary of the operation."""
+        self.logger.info("="*30)
+        self.logger.info("Operation Summary:")
+        self.logger.info(f"  Processed: {self.stats['processed']}")
+        self.logger.info(f"  Moved:     {self.stats['moved']}")
+        self.logger.info(f"  Skipped:   {self.stats['skipped']}")
+        self.logger.info(f"  Errors:    {self.stats['errors']}")
+        self.logger.info("="*30)
+
+# ================= CLI Interface =================
+
+def parse_arguments() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Smart File Organizer - Automatically organize files by extension.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s --source ./Downloads
+  %(prog)s --source ./Downloads --config my_config.json --dry-run
+  %(prog)s --source ./Downloads --verbose
         """
-        try:
-            zip_resolved
+    )
+    
+    parser.add_argument(
+        "--source", "-s",
+        type=str,
+        required=True,
+        help="Path to the directory to organize."
+    )
+    
+    parser.add_argument(
+        "--config", "-c",
+        type=str,
+        default=None,
+        help="Path to a JSON configuration file. Uses defaults if not provided."
+    )
+    
+    parser.add_argument(
+        "--dry-run", "-d",
+        action="store_true",
+        help="Preview changes without moving any files."
+    )
+    
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Enable verbose logging (DEBUG level)."
+    )
+
+    return parser.parse_args()
+
+# ================= Main Entry Point =================
+
+def main():
+    """Main entry point for the script."""
+    args = parse_arguments()
+    
+    # Setup Logger
+    logger = setup_logger(verbose=args.verbose)
+    
+    # Load Configuration
+    config_manager = ConfigManager(config_path=args.config)
+    
+    # Initialize Organizer
+    organizer = FileOrganizer(
+        source_dir=args.source,
+        config_manager=config_manager,
+        dry_run=args.dry_run
+    )
+    
+    # Execute
+    try:
+        organizer.organize()
+    except KeyboardInterrupt:
+        logger.info("Operation cancelled by user.")
+        sys.exit(0)
+    except Exception as e:
+        logger.critical(f"Fatal error: {e}", exc_info=True)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
