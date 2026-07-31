@@ -67,7 +67,8 @@ constexpr int32_t SYNC_WAIT_TIME_US = 100000;
 
 struct CodecGuard {
     OH_AVCodec* ptr = nullptr;
-    ~CodecGuard() {
+    ~CodecGuard()
+    {
         if (ptr) { OH_VideoDecoder_Destroy(ptr); }
     }
 };
