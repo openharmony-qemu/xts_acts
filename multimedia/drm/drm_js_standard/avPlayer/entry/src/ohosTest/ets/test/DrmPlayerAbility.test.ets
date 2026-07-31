@@ -3454,6 +3454,7 @@ export default function abilityTest() {
                     keySession.processMediaKeyResponse(licenseResponseByte).then(async (keyId) => {
                         console.info("XX SESSION_ON_OFF_0100 is ",sign)
                         await sleep(30000);
+                        console.info("XX SESSION_ON_OFF_0100 is ",sign);
                         expect(sign).assertEqual(2);
                         console.info("XX SESSION_ON_OFF_0100 2 is ",sign)
                         keySession.off('keyRequired');
