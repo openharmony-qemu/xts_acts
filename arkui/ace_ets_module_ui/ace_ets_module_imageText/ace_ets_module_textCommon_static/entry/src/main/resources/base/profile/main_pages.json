@@ -3,6 +3,9 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/TextCommon/TextCommonIndex",
     "MainAbility/pages/EditCommon/EditDecorationThicknessScale",
-    "MainAbility/pages/UIContext/SetTextSelectionClearPolicy"
+    "MainAbility/pages/UIContext/SetTextSelectionClearPolicy",
+    "MainAbility/pages/WithEnv/TextSymbolWithEnvFontScale",
+    "MainAbility/pages/TextMenuItemId/TextMenuItemId",
+    "MainAbility/pages/UIContext/DisableMenuItems"
   ]
 }

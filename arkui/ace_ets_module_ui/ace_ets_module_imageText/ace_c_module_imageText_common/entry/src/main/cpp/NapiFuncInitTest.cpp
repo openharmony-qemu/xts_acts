@@ -135,6 +135,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ParagraphStyleTailIndentsTest_005", nullptr, ParagraphStyleTailIndentsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ParagraphStyleTailIndentsTest_006", nullptr, ParagraphStyleTailIndentsTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ParagraphStyleTailIndentsTest_007", nullptr, ParagraphStyleTailIndentsTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_008", nullptr, ParagraphStyleTailIndentsTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"LinearGradientTest_001", nullptr, LinearGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"LinearGradientTest_002", nullptr, LinearGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
