@@ -18,98 +18,98 @@ import entry from 'libentry.so';
 export default function BframeFuncTest() {
   describe('BframeFuncTest', () => {
     beforeAll(() => {
-      entry.Bframe_Func_Test_Prepare(0);
+      entry.Bframe_SetUpTestCase();
     })
     beforeEach(() => {
 
     })
     afterEach(() => {
-      entry.Bframe_Func_Test_Prepare(3)
+      entry.Bframe_TearDown()
     })
     afterAll(() => {
 
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_001
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_001
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00100
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00100
      * @tc.desc   test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_001', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(0);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00100', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_001();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_002
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_002
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00200
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_002', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(1);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00200', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_002();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_003
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_003
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00300
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_003', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(2);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00300', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_003();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_004
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_004
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00400
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_004', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(3);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00400', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_004();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_005
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_005
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00500
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_005', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(4);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00500', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_005();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_B_FUNC_006
-     * @tc.number VIDEO_HW_ENCODE_B_FUNC_006
+     * @tc.name   SUB_VIDEO_HW_ENCODE_B_FUNC_00600
+     * @tc.number SUB_VIDEO_HW_ENCODE_B_FUNC_00600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HW_ENCODE_B_FUNC_006', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Bframe_Func_Test(5);
+    it('SUB_VIDEO_HW_ENCODE_B_FUNC_00600', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_B_FUNC_006();
       expect(result).assertEqual(0);
       done();
     })
