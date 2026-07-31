@@ -43,7 +43,6 @@ napi_value captureSessionBeginConfig(napi_env env, napi_callback_info info);
 napi_value captureSessionEnableMacroConfigAllow(napi_env env, napi_callback_info info);
 napi_value captureSessionSetVideoStabilizationMode(napi_env env, napi_callback_info info);
 napi_value captureSessionRelease(napi_env env, napi_callback_info info);
-napi_value captureSessionEmu(napi_env env, napi_callback_info info);
 napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info info);
 napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_info info);
 napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info info);
@@ -73,8 +72,6 @@ napi_value OHCaptureSessionDeleteSupportedEffectTypes(napi_env env, napi_callbac
 napi_value OHCaptureSessionGetSupportedEffectTypesSupp(napi_env env, napi_callback_info info);
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info);
 napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback_info info);
-napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info);
-napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackNullOutput(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackNullCallback(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackAllNull(napi_env env, napi_callback_info info);
@@ -99,27 +96,16 @@ napi_value TestUnregisterErrorCallbackTwice(napi_env env, napi_callback_info inf
 napi_value TestCheckLockTrackingSupportReturnValue(napi_env env, napi_callback_info info);
 napi_value TestCheckLockTrackingSupportReturnBoolean(napi_env env, napi_callback_info info);
 napi_value TestLockWhenTrackingNotSupported(napi_env env, napi_callback_info info);
-napi_value TestLockTrackingNullMetadataOutput(napi_env env, napi_callback_info info);
 napi_value TestLockTrackingNullPoint(napi_env env, napi_callback_info info);
 napi_value TestLockTrackingInvalidPoint(napi_env env, napi_callback_info info);
 napi_value TestLockTrackingValidPoint(napi_env env, napi_callback_info info);
 napi_value TestLockTrackingWithoutSessionConfig(napi_env env, napi_callback_info info);
-napi_value TestUnlockTrackingNullMetadataOutput(napi_env env, napi_callback_info info);
 napi_value TestUnlockTrackingNormal(napi_env env, napi_callback_info info);
 napi_value TestUnlockThenLock(napi_env env, napi_callback_info info);
 napi_value TestUnlockWhenNotLocked(napi_env env, napi_callback_info info);
 napi_value TestUnlockWithoutSessionConfig(napi_env env, napi_callback_info info);
-napi_value TestIsLockFocusTracked(napi_env env, napi_callback_info info);
-napi_value TestGetYawAngle(napi_env env, napi_callback_info info);
-napi_value TestGetTimestamp(napi_env env, napi_callback_info info);
-napi_value TestGetRollAngle(napi_env env, napi_callback_info info);
-napi_value TestGetRightEyeBoundingBox(napi_env env, napi_callback_info info);
-napi_value TestGetPitchAngle(napi_env env, napi_callback_info info);
-napi_value TestGetMetadataObjectType(napi_env env, napi_callback_info info);
-napi_value TestGetLeftEyeBoundingBox(napi_env env, napi_callback_info info);
-napi_value TestGetEmotion(napi_env env, napi_callback_info info);
-napi_value TestGetBoundingBox(napi_env env, napi_callback_info info);
-napi_value TestDestroy(napi_env env, napi_callback_info info);
+napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback_info info);
+napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

@@ -1777,66 +1777,168 @@ napi_value TestOHMetadataObjectExtIsLockFocusTracked(napi_env env, napi_callback
     return ret;
 }
 
-napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback_info info)
+extern  OH_Camera_MetadataObjectExt** g_metadataObjectExt;
+extern  uint32_t g_metadataSize;
+napi_value TestIsLockFocusTracked(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    Camera_ErrorCode error = CAMERA_OK;
-    bool supportResult = false;
-    switch (index) {
-    case CASE_INDEX_1:
-        supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
-        LOGI("supportResult is :,%{public}d", supportResult);
-        break;
-    default:
-        break;
+    OH_LOG_INFO(LOG_APP, "TestIsLockFocusTracked g_metadataSize: %{public}d", g_metadataSize);
+    bool isTracked = false;
+    if (g_metadataSize > 0) {
+        isTracked = OH_MetadataObjectExt_IsLockFocusTracked(g_metadataObjectExt[0]);
     }
-    
-    if (supportResult != true && supportResult != false) {
-        error = CAMERA_INVALID_ARGUMENT;
-    }
-    
-    napi_value ret;
-    napi_create_int32(env, error, &ret);
-    return ret;
+ 
+    napi_value result;
+    napi_get_boolean(env, isTracked, &result);
+    return result;
 }
-
-napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
+ 
+napi_value TestGetYawAngle(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    
-    bool enabled = true;
-    bool supportResult = false;
-    Camera_ErrorCode error = CAMERA_OK;
-    switch (index) {
-    case CASE_INDEX_1:
-        supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
-        LOGI("supportResult is :,%{public}d", supportResult);
-        if (supportResult == true) {
-        error = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput, enabled);
-        }
-        break;
-    default:
-        break;
+    OH_LOG_INFO(LOG_APP, "TestGetYawAngle g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        float yawAngle;
+        ret = OH_MetadataObjectExt_GetYawAngle(g_metadataObjectExt[0], &yawAngle);
     }
-
-    napi_value ret;
-    napi_create_int32(env, error, &ret);
-    return ret;
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetTimestamp(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetTimestamp g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        int64_t timestamp;
+        ret = OH_MetadataObjectExt_GetTimestamp(g_metadataObjectExt[0], &timestamp);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetRollAngle(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetRollAngle g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        float rollAngle;
+        ret = OH_MetadataObjectExt_GetRollAngle(g_metadataObjectExt[0], &rollAngle);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetRightEyeBoundingBox(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetRightEyeBoundingBox g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        OH_Camera_Rect_Ext rightEyeBoundingBox;
+        ret = OH_MetadataObjectExt_GetRightEyeBoundingBox(g_metadataObjectExt[0], &rightEyeBoundingBox);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetPitchAngle(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetPitchAngle g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        float pitchAngle;
+        ret = OH_MetadataObjectExt_GetPitchAngle(g_metadataObjectExt[0], & pitchAngle);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetMetadataObjectType(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetMetadataObjectType g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        Camera_MetadataObjectType type;
+        ret = OH_MetadataObjectExt_GetMetadataObjectType(g_metadataObjectExt[0], &type);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetLeftEyeBoundingBox(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetLeftEyeBoundingBox g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        OH_Camera_Rect_Ext leftEyeBoundingBox;
+        ret = OH_MetadataObjectExt_GetLeftEyeBoundingBox(g_metadataObjectExt[0], &leftEyeBoundingBox);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetEmotion(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetEmotion g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        OH_Camera_MetadataObjectEmotion emotion;
+        ret = OH_MetadataObjectExt_GetEmotion(g_metadataObjectExt[0], &emotion);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestGetBoundingBox(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetBoundingBox g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        OH_Camera_Rect_Ext boundingBox;
+        ret = OH_MetadataObjectExt_GetBoundingBox(g_metadataObjectExt[0], &boundingBox);
+        OH_LOG_INFO(LOG_APP, "OH_Camera_Rect_Ext height: %{public}d", boundingBox.height);
+        OH_LOG_INFO(LOG_APP, "OH_Camera_Rect_Ext width: %{public}d", boundingBox.width);
+        OH_LOG_INFO(LOG_APP, "OH_Camera_Rect_Ext topLeftX: %{public}d", boundingBox.topLeftX);
+        OH_LOG_INFO(LOG_APP, "OH_Camera_Rect_Ext topLeftY: %{public}d", boundingBox.topLeftY);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+ 
+napi_value TestDestroy(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestDestroy g_metadataSize: %{public}d", g_metadataSize);
+    Camera_ErrorCode ret = CAMERA_OK;
+    if (g_metadataSize > 0) {
+        OH_Camera_Rect_Ext boundingBox;
+        OH_MetadataObjectExt_Destroy(g_metadataObjectExt, g_metadataSize);
+    }
+ 
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
 }
 
 napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info)
 {
-    int32_t errorVal = 7400103;
+    int32_t errorVal = 7400113;
     if (CAMERA_ERROR_OPTIONAL_PROPERTY_NOT_EXIST != errorVal) {
         napi_value result;
         napi_get_boolean(env, false, &result);
@@ -1844,5 +1946,89 @@ napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_i
     }
     napi_value result;
     napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value captureSessionEmu(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    int32_t code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = Camera_PhotoQualityPrioritization::CAMERA_PHOTO_QUALITY_PRIORITIZATION_HIGH_QUALITY;
+        break;
+    case CASE_INDEX_2:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_NON_FOLDABLE;
+        break;
+    case CASE_INDEX_3:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_EXPANDED;
+        break;
+    case CASE_INDEX_4:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_FOLDED;
+        break;
+    default:
+        break;
+    }
+
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info)
+{
+    if (CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION != 0 ||
+        CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY != 1 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_FACE != 2 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_BODY != 3 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_FACE != 4 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_BODY != 5 ||
+        CAMERA_METADATA_OBJECT_TYPE_SALIENT_DETECTION != 6 ||
+        CAMERA_METADATA_OBJECT_TYPE_BAR_CODE_DETECTION != 7 ||
+        CAMERA_METADATA_OBJECT_TYPE_BASIC_FACE_DETECTION != 8) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info)
+{
+    if (OH_CAMERA_METADATA_OBJECT_EMOTION_NEUTRAL != 0 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SADNESS != 1 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SMILE != 2 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SURPRISE != 3) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value TestLockTrackingNullMetadataOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_Point point = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(nullptr, &point);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockTrackingNullMetadataOutput(napi_env env, napi_callback_info info)
+{
+    Camera_ErrorCode ret = OH_MetadataOutput_UnlockMetadataObjectTracking(nullptr);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
     return result;
 }
