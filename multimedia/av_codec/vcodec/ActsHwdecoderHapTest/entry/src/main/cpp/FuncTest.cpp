@@ -516,8 +516,8 @@ int OutputDecsFunc001Test()
         if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
         vDecSample->WaitForEOS();
         if (vDecSample->errCount != AV_ERR_OK) { return -1; }
-        return 0;
     }
+    return 0;
 }
 /**
  * @tc.name   OUTPUT_DECS_FUNC_002
@@ -641,8 +641,8 @@ int OutputDecsFunc005Test()
         if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
         vDecSample->WaitForEOS();
         if (vDecSample->errCount != AV_ERR_OK) { return -1; }
-        return 0;
     }
+    return 0;
 }
 /**
  * @tc.name   OUTPUT_DECS_FUNC_006
