@@ -53,6 +53,15 @@ export default function concurrencyCoveredSupplement() {
       } catch (e) {
         expect(e.code).assertEqual(10200012);
       }
+      try {
+        let arrayPara = [1, 2, 3];
+        let array = new collections.Array<number>(1, ...arrayPara);
+        let ctor = collections.Array as Function;
+        (ctor as Function)(1, ...arrayPara);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200012);
+      }
     });
 
     /**

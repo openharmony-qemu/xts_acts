@@ -2299,5 +2299,28 @@ export default function taskPoolCoverageTest() {
         expect(e.code).assertEqual(10200014);
       }
     });
+    /**
+     * @tc.name   concurrencyCoveredSupplement0352
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0235
+     * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, configs: Configs) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement0352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let group = new taskpool.TaskGroup();
+          group.addTask(fun,1)
+          taskpool.execute(group)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
   });
 }
