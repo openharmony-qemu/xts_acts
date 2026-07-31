@@ -18,211 +18,211 @@ import entry from 'libentry.so';
 export default function SqrFuncTest() {
   describe('SqrFuncTest', () => {
     beforeAll(() => {
-      entry.Sqr_Func_Test_Prepare(0);
+      entry.Sqr_SetUpTestCase();
     })
     beforeEach(() => {
       
     })
     afterEach(() => {
-      entry.Sqr_Func_Test_Prepare(3)
+      entry.Sqr_TearDown()
     })
     afterAll(() => {
 
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_001
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_001
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00100
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_001", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(0);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00100", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_001();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_002
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_002
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00200
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_002", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(1);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00200", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_002();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_003
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_003
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00300
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_003", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(2);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00300", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_003();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_004
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_004
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00400
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_004", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(3);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00400", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_004();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_005
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_005
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00500
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_005", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(4);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00500", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_005();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_006
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_006
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00600
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_006", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(5);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00600", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_006();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_007
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_007
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00700
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_007", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(6);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00700", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_007();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_008
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_008
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00800
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_008", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(7);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00800", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_008();
       expect(result).assertEqual(0);
       done();
     })
 
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_009
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_009
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_00900
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_00900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_009", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(8);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_00900", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_009();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_010
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_010
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_01000
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_01000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_010", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(9);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_01000", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_010();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_011
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_011
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_01100
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_01100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_011", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(10);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_01100", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_011();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_012
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_012
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_01200
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_01200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_012", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(11);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_01200", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_012();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_013
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_013
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_01300
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_01300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_013", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(12);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_01300", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_013();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_014
-     * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_014
+     * @tc.name   SUB_VIDEO_HW_ENCODE_SQR_FUNC_01400
+     * @tc.number SUB_VIDEO_HW_ENCODE_SQR_FUNC_01400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_SQR_FUNC_014", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Sqr_Func_Test(13);
+    it("SUB_VIDEO_HW_ENCODE_SQR_FUNC_01400", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_SQR_FUNC_014();
       expect(result).assertEqual(0);
       done();
     })

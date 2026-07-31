@@ -104,7 +104,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_API_0200', Level.LEVEL2, async () => {
       console.info('VideoTemporalEncodeApi0020Test start');
-      let result: number = await testNapi.runTemporalTest(0);
+      let result: number = await testNapi.VideoTemporalEncodeApi0020Test();
       expect(result).assertEqual(0);
     });
 
@@ -118,7 +118,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_API_0300', Level.LEVEL2, async () => {
       console.info('VideoTemporalEncodeApi0030Test start');
-      let result: number = await testNapi.runTemporalTest(1);
+      let result: number = await testNapi.VideoTemporalEncodeApi0030Test();
       expect(result).assertEqual(0);
     });
 
@@ -132,7 +132,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0100', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0010Test start');
-      let result: number = await testNapi.runTemporalTest(2);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0010Test();
       expect(result).assertEqual(0);
     });
 
@@ -146,7 +146,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0200', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0020Test start');
-      let result: number = await testNapi.runTemporalTest(3);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0020Test();
       expect(result).assertEqual(0);
     });
 
@@ -160,7 +160,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0300', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0030Test start');
-      let result: number = await testNapi.runTemporalTest(4);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0030Test();
       expect(result).assertEqual(0);
     });
 
@@ -174,7 +174,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0400', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0040Test start');
-      let result: number = await testNapi.runTemporalTest(5);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0040Test();
       expect(result).assertEqual(0);
     });
 
@@ -188,7 +188,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_PART_FOUR_0400', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0440Test start');
-      let result: number = await testNapi.runTemporalTest(6);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0440Test();
       expect(result).assertEqual(0);
     });
 
@@ -202,7 +202,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0500', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0050Test start');
-      let result: number = await testNapi.runTemporalTest(7);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0050Test();
       expect(result).assertEqual(0);
     });
 
@@ -216,7 +216,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0600', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0060Test start');
-      let result: number = await testNapi.runTemporalTest(8);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0060Test();
       expect(result).assertEqual(0);
     });
 
@@ -230,7 +230,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0700', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0070Test start');
-      let result: number = await testNapi.runTemporalTest(9);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0070Test();
       expect(result).assertEqual(0);
     });
 
@@ -244,7 +244,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0800', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0080Test start');
-      let result: number = await testNapi.runTemporalTest(10);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0080Test();
       expect(result).assertEqual(0);
     });
 
@@ -258,7 +258,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_0900', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0090Test start');
-      let result: number = await testNapi.runTemporalTest(11);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0090Test();
       expect(result).assertEqual(0);
     });
 
@@ -272,7 +272,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1000', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0100Test start');
-      let result: number = await testNapi.runTemporalTest(12);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -286,7 +286,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1400', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0140Test start');
-      let result: number = await testNapi.runTemporalTest(16);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0140Test();
       expect(result).assertEqual(0);
     });
 
@@ -300,7 +300,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1100', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0110Test start');
-      let result: number = await testNapi.runTemporalTest(13);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0110Test();
       expect(result).assertEqual(0);
     });
 
@@ -314,7 +314,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1200', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0120Test start');
-      let result: number = await testNapi.runTemporalTest(14);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0120Test();
       expect(result).assertEqual(0);
     });
 
@@ -328,7 +328,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1300', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0130Test start');
-      let result: number = await testNapi.runTemporalTest(15);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0130Test();
       expect(result).assertEqual(0);
     });
 
@@ -342,7 +342,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1500', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0150Test start');
-      let result: number = await testNapi.runTemporalTest(17);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0150Test();
       expect(result).assertEqual(0);
     });
 
@@ -356,7 +356,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1600', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0160Test start');
-      let result: number = await testNapi.runTemporalTest(18);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0160Test();
       expect(result).assertEqual(0);
     });
 
@@ -370,7 +370,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1700', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0170Test start');
-      let result: number = await testNapi.runTemporalTest(19);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0170Test();
       expect(result).assertEqual(0);
     });
 
@@ -384,7 +384,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_TEMPORAL_ENCODE_FUNCTION_1800', Level.LEVEL1, async () => {
       console.info('VideoTemporalEncodeFunction0180Test start');
-      let result: number = await testNapi.runTemporalTest(20);
+      let result: number = await testNapi.VideoTemporalEncodeFunction0180Test();
       expect(result).assertEqual(0);
     });
 
@@ -398,7 +398,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0100', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_001Test start');
-      let result: number = await testNapi.runTemporalTest(21);
+      let result: number = await testNapi.LTR_FUNC_001Test();
       expect(result).assertEqual(0);
     });
 
@@ -412,7 +412,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0200', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_002Test start');
-      let result: number = await testNapi.runTemporalTest(22);
+      let result: number = await testNapi.LTR_FUNC_002Test();
       expect(result).assertEqual(0);
     });
 
@@ -426,7 +426,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0400', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_004Test start');
-      let result: number = await testNapi.runTemporalTest(23);
+      let result: number = await testNapi.LTR_FUNC_004Test();
       expect(result).assertEqual(0);
     });
 
@@ -440,7 +440,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0500', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_005Test start');
-      let result: number = await testNapi.runTemporalTest(24);
+      let result: number = await testNapi.LTR_FUNC_005Test();
       expect(result).assertEqual(0);
     });
 
@@ -454,7 +454,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0600', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_006Test start');
-      let result: number = await testNapi.runTemporalTest(25);
+      let result: number = await testNapi.LTR_FUNC_006Test();
       expect(result).assertEqual(0);
     });
 
@@ -468,7 +468,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0700', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_007Test start');
-      let result: number = await testNapi.runTemporalTest(26);
+      let result: number = await testNapi.LTR_FUNC_007Test();
       expect(result).assertEqual(0);
     });
 
@@ -482,7 +482,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0800', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_008Test start');
-      let result: number = await testNapi.runTemporalTest(27);
+      let result: number = await testNapi.LTR_FUNC_008Test();
       expect(result).assertEqual(0);
     });
 
@@ -496,7 +496,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_0900', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_009Test start');
-      let result: number = await testNapi.runTemporalTest(28);
+      let result: number = await testNapi.LTR_FUNC_009Test();
       expect(result).assertEqual(0);
     });
 
@@ -510,7 +510,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1000', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_010Test start');
-      let result: number = await testNapi.runTemporalTest(29);
+      let result: number = await testNapi.LTR_FUNC_010Test();
       expect(result).assertEqual(0);
     });
 
@@ -524,7 +524,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1100', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_011Test start');
-      let result: number = await testNapi.runTemporalTest(30);
+      let result: number = await testNapi.LTR_FUNC_011Test();
       expect(result).assertEqual(0);
     });
 
@@ -538,7 +538,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1200', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_012Test start');
-      let result: number = await testNapi.runTemporalTest(31);
+      let result: number = await testNapi.LTR_FUNC_012Test();
       expect(result).assertEqual(0);
     });
 
@@ -552,7 +552,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1300', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_013Test start');
-      let result: number = await testNapi.runTemporalTest(32);
+      let result: number = await testNapi.LTR_FUNC_013Test();
       expect(result).assertEqual(0);
     });
 
@@ -566,7 +566,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1400', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_014Test start');
-      let result: number = await testNapi.runTemporalTest(33);
+      let result: number = await testNapi.LTR_FUNC_014Test();
       expect(result).assertEqual(0);
     });
 
@@ -580,7 +580,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1500', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_015Test start');
-      let result: number = await testNapi.runTemporalTest(34);
+      let result: number = await testNapi.LTR_FUNC_015Test();
       expect(result).assertEqual(0);
     });
 
@@ -594,7 +594,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_LTR_FUNC_1600', Level.LEVEL1, async () => {
       console.info('LTR_FUNC_016Test start');
-      let result: number = await testNapi.runTemporalTest(35);
+      let result: number = await testNapi.LTR_FUNC_016Test();
       expect(result).assertEqual(0);
     });
 
@@ -608,7 +608,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100', Level.LEVEL0, async () => {
       console.info('VideoUniformlyEncodeFunction0100Test start');
-      let result: number = await testNapi.runTemporalTest(36);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -622,7 +622,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0200Test start');
-      let result: number = await testNapi.runTemporalTest(37);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0200Test();
       expect(result).assertEqual(0);
     });
 
@@ -636,7 +636,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0300Test start');
-      let result: number = await testNapi.runTemporalTest(38);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0300Test();
       expect(result).assertEqual(0);
     });
 
@@ -650,7 +650,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0400Test start');
-      let result: number = await testNapi.runTemporalTest(39);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0400Test();
       expect(result).assertEqual(0);
     });
 
@@ -664,7 +664,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0500Test start');
-      let result: number = await testNapi.runTemporalTest(40);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0500Test();
       expect(result).assertEqual(0);
     });
 
@@ -678,7 +678,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0600', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0600Test start');
-      let result: number = await testNapi.runTemporalTest(41);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0600Test();
       expect(result).assertEqual(0);
     });
 
@@ -692,7 +692,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0700', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0700Test start');
-      let result: number = await testNapi.runTemporalTest(42);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0700Test();
       expect(result).assertEqual(0);
     });
 
@@ -706,7 +706,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0800', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0800Test start');
-      let result: number = await testNapi.runTemporalTest(43);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0800Test();
       expect(result).assertEqual(0);
     });
 
@@ -720,7 +720,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_0900', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction0900Test start');
-      let result: number = await testNapi.runTemporalTest(44);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction0900Test();
       expect(result).assertEqual(0);
     });
 
@@ -734,7 +734,7 @@ export default function VideoEncoderTemporalTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_UNIFORMLY_ENCODE_FUNCTION_1000', Level.LEVEL1, async () => {
       console.info('VideoUniformlyEncodeFunction1000Test start');
-      let result: number = await testNapi.runTemporalTest(45);
+      let result: number = await testNapi.VideoUniformlyEncodeFunction1000Test();
       expect(result).assertEqual(0);
     });
   });

@@ -16,16 +16,16 @@
 #ifndef CONFIGURE_TEST_H
 #define CONFIGURE_TEST_H
 
-extern int VideoEncodeHevcCapability1800Test();
-extern int VideoEncodeCapability4000Test();
-extern int VideoEncodeCapability4400Test();
-extern int VideoEncodeCapability4410Test();
-extern int VideoEncodeCapability4700Test();
-extern int VideoEncodeCapability4710Test();
-extern int VideoEncodeCapability5000Test();
-extern int VideoEncodeCapability5010Test();
-extern int VideoEncodeCapability5020Test();
-extern int VideoEncodeCapability5030Test();
+napi_value VideoEncodeHevcCapability1800Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability4000Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability4400Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability4410Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability4700Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability4710Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability5000Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability5010Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability5020Test(napi_env env, napi_callback_info info);
+napi_value VideoEncodeCapability5030Test(napi_env env, napi_callback_info info);
 extern void InitConfigureTest();
 extern void TestTearDownConfigure();
 

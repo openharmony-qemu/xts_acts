@@ -26,6 +26,7 @@
 #include "avcodec_codec_name.h"
 #include <multimedia/player_framework/native_avcapability.h>
 #include "include/OhosCommonTest.h"
+#include <napi/native_api.h>
 using namespace std;
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -34,7 +35,7 @@ VEncNdkSample *vEncSample = NULL;
 OH_AVCapability *cap = nullptr;
 bool g_createCodecSuccess = false;
 
-static void InitCapAndEncoder(void)
+static int InitCapAndEncoder(void)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr) {
@@ -42,16 +43,17 @@ static void InitCapAndEncoder(void)
         const char *codeName = OH_AVCapability_GetName(cap);
         cout << "codecname: " << codeName << endl;
         int32_t ret = vEncSample->CreateVideoEncoder(codeName);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return -1; }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return -1; }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return -1; }
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
         g_createCodecSuccess = true;
     } else {
         cout << "can not get Capability" << endl;
     }
+    return 0;
 }
 
 static void TestSetUp(void)
@@ -72,730 +74,779 @@ static void TestSetUpTestCase(void) {}
 
 static void TestTearDownTestCase(void) {}
 
-int VideoEncodeState0100Test()
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
 {
-    InitCapAndEncoder();
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+napi_value VideoEncodeState0100Test(napi_env env, napi_callback_info info)
+{
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0101Test()
+napi_value VideoEncodeState0101Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0200Test()
+napi_value VideoEncodeState0200Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0300Test()
+napi_value VideoEncodeState0300Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0400Test()
+napi_value VideoEncodeState0400Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0500Test()
+napi_value VideoEncodeState0500Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0600Test()
+napi_value VideoEncodeState0600Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0700Test()
+napi_value VideoEncodeState0700Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0800Test()
+napi_value VideoEncodeState0800Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState0900Test()
+napi_value VideoEncodeState0900Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1000Test()
+napi_value VideoEncodeState1000Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1100Test()
+napi_value VideoEncodeState1100Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1200Test()
+napi_value VideoEncodeState1200Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1300Test()
+napi_value VideoEncodeState1300Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1400Test()
+napi_value VideoEncodeState1400Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1500Test()
+napi_value VideoEncodeState1500Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1600Test()
+napi_value VideoEncodeState1600Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->StartVideoEncoder();
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_EQ(0, vEncSample->errCount);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1700Test()
+napi_value VideoEncodeState1700Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1800Test()
+napi_value VideoEncodeState1800Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "flush ok" << endl;
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "start ok" << endl;
         ret = vEncSample->state_EOS();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState1900Test()
+napi_value VideoEncodeState1900Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2000Test()
+napi_value VideoEncodeState2000Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2100Test()
+napi_value VideoEncodeState2100Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2200Test()
+napi_value VideoEncodeState2200Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "set callback" << endl;
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2300Test()
+napi_value VideoEncodeState2300Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2400Test()
+napi_value VideoEncodeState2400Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2500Test()
+napi_value VideoEncodeState2500Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2600Test()
+napi_value VideoEncodeState2600Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2700Test()
+napi_value VideoEncodeState2700Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2800Test()
+napi_value VideoEncodeState2800Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState2900Test()
+napi_value VideoEncodeState2900Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3000Test()
+napi_value VideoEncodeState3000Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3100Test()
+napi_value VideoEncodeState3100Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Stop();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3200Test()
+napi_value VideoEncodeState3200Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Start();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3300Test()
+napi_value VideoEncodeState3300Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3400Test()
+napi_value VideoEncodeState3400Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         int32_t ret = vEncSample->Release();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3500Test()
+napi_value VideoEncodeState3500Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackFlush = true;
         vEncSample->SURF_INPUT = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3600Test()
+napi_value VideoEncodeState3600Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         vEncSample->SURF_INPUT = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3700Test()
+napi_value VideoEncodeState3700Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->inputCallbackFlush = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3800Test()
+napi_value VideoEncodeState3800Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->inputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState3900Test()
+napi_value VideoEncodeState3900Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackFlush = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState4000Test()
+napi_value VideoEncodeState4000Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeState4100Test()
+napi_value VideoEncodeState4100Test(napi_env env, napi_callback_info info)
 {
-    InitCapAndEncoder();
+    if (InitCapAndEncoder() == -1) { return CreateIntInt32Result(env, -1); }
     if (cap != nullptr) {
         vEncSample->outputCallbackStop = true;
         int32_t ret = vEncSample->StartVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        return 0;
+        TestTearDownState();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
