@@ -1154,7 +1154,7 @@ export default function MechanicManagerAPI() {
         const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0400`;
         console.info(`======>${LOG_NAME} begin======`);
         try {
-          let isControlSupported = mechanicManager.isControlSupported(1);
+          let isControlSupported = mechanicManager.isControlSupported(-1);
           console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
           expect(isControlSupported == false).assertTrue();
         } catch (error) {
