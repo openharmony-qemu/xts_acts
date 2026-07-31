@@ -259,6 +259,7 @@ export default function AVPlayerSelectTrackTest() {
         await changeAudioTrack();
         avPlayer!!.selectTrack(selectedTrack as int, media.SwitchMode.SEGMENT);
         await getCurrentAudioTrack();
+        await mediaTestBase.msleepAsync(2000);
         console.log("playedOperation currentTrack is " + currentTrack + " ;selectedTrack is " + selectedTrack)
         expect(currentTrack).assertEqual(selectedTrack);
       }
@@ -292,6 +293,7 @@ export default function AVPlayerSelectTrackTest() {
         await changeAudioTrack();
         avPlayer!!.selectTrack(selectedTrack as int, media.SwitchMode.CLOSEST);
         await getCurrentAudioTrack();
+        await mediaTestBase.msleepAsync(2000);
         expect(currentTrack).assertEqual(selectedTrack);
       }
 
