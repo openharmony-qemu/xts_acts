@@ -43,7 +43,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedMutexRWLockDeadlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedMutexRWLockDeadlock';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let resultCount = new AtomicInt(0);
@@ -81,7 +81,7 @@ export default function CombLockEnhancedTest(): void {
         worker1.join();
         worker2.join();
 
-        
+
         expect(resultCount.load()).assertLargerOrEqual(4);
         expect(worker1Completed.load()).assertEqual(1);
         expect(worker2Completed.load()).assertEqual(1);
@@ -99,7 +99,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedLockOrderProtocol', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockOrderProtocol';
-        
+
         let locks: Mutex[] = [new Mutex(), new Mutex(), new Mutex()];
         let count = new AtomicInt(0);
         let workerCount = 10;
@@ -123,7 +123,7 @@ export default function CombLockEnhancedTest(): void {
           await sleep(100);
         }
 
-        
+
         expect(count.load()).assertEqual(workerCount);
         Done();
       });
@@ -139,7 +139,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedAsyncLockTimeout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedAsyncLockTimeout';
-        
+
         let lock = new AsyncLock();
         let count = new AtomicInt(0);
         let timeoutOccurred = new AtomicInt(0);
@@ -155,12 +155,13 @@ export default function CombLockEnhancedTest(): void {
               count.fetchAdd(1);
             }, AsyncLockMode.EXCLUSIVE, options);
           } catch (e) {
+            expect(e instanceof Error).assertTrue();
+            expect((e as Error).message.length > 0).assertTrue();
             timeoutOccurred.fetchAdd(1);
-            
           }
         }, AsyncLockMode.EXCLUSIVE);
 
-        
+
         expect(count.load()).assertEqual(1);
         expect(timeoutOccurred.load()).assertEqual(1);
         Done();
@@ -177,7 +178,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedAsyncLockSignalAbort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedAsyncLockSignalAbort';
-        
+
         let lock = new AsyncLock();
         let count = new AtomicInt(0);
         let abortOccurred = new AtomicInt(0);
@@ -194,12 +195,13 @@ export default function CombLockEnhancedTest(): void {
               return 'should not execute';
             }, AsyncLockMode.EXCLUSIVE, options);
           } catch (e) {
+            expect(e instanceof Error).assertTrue();
+            expect((e as Error).message.length > 0).assertTrue();
             abortOccurred.fetchAdd(1);
-            
           }
         }, AsyncLockMode.EXCLUSIVE);
 
-        
+
         expect(count.load()).assertEqual(1);
         expect(abortOccurred.load()).assertEqual(1);
         Done();
@@ -216,7 +218,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedMutexRWLockAsyncLock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedMutexRWLockAsyncLock';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let asyncLock = new AsyncLock();
@@ -230,7 +232,7 @@ export default function CombLockEnhancedTest(): void {
           mutex.unlock();
         }, AsyncLockMode.EXCLUSIVE);
 
-        
+
         expect(count.load()).assertEqual(1);
         Done();
       });
@@ -246,7 +248,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedNestedDifferentLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedNestedDifferentLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let result: string = '';
@@ -263,7 +265,7 @@ export default function CombLockEnhancedTest(): void {
         mutex.unlock();
         result += 'M2';
 
-        
+
         expect(result).assertEqual('MRR2M2');
         Done();
       });
@@ -279,7 +281,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedEventMutexSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedEventMutexSync';
-        
+
         let mutex = new Mutex();
         let event = new Event();
         let result = new AtomicReference<string>('');
@@ -310,7 +312,7 @@ export default function CombLockEnhancedTest(): void {
         worker1.join();
         worker2.join();
 
-        
+
         expect(result.load().indexOf('W1-1')).assertLargerOrEqual(0);
         Done();
       });
@@ -326,7 +328,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedCondVarMutexPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedCondVarMutexPattern';
-        
+
         let mutex = new Mutex();
         let event = new Event();
         let data = new CountClass();
@@ -362,7 +364,7 @@ export default function CombLockEnhancedTest(): void {
         consumer.join();
         producer.join();
 
-        
+
         expect(produced.load()).assertEqual(1);
         expect(consumed.load()).assertEqual(1);
         Done();
@@ -379,7 +381,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedLockViaMessage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockViaMessage';
-        
+
         let mutex = new Mutex();
         let result = new AtomicInt(0);
 
@@ -413,7 +415,7 @@ export default function CombLockEnhancedTest(): void {
         worker1.join();
         worker2.join();
 
-        
+
         expect(worker1Completed.load()).assertEqual(1);
         expect(worker2Completed.load()).assertEqual(1);
         expect(result.load() === 100 || result.load() === 200).assertEqual(true);
@@ -431,7 +433,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedTaskPoolWithLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedTaskPoolWithLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let count = new AtomicInt(0);
@@ -451,7 +453,7 @@ export default function CombLockEnhancedTest(): void {
           await sleep(100);
         }
 
-        
+
         expect(count.load()).assertEqual(taskCount);
         Done();
       });
@@ -467,7 +469,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedSequenceRunnerWithLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedSequenceRunnerWithLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let count = new AtomicInt(0);
@@ -484,7 +486,7 @@ export default function CombLockEnhancedTest(): void {
           await runner.execute(task);
         }
 
-        
+
         expect(count.load()).assertEqual(10);
         Done();
       });
@@ -500,7 +502,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedAsyncRunnerWithLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedAsyncRunnerWithLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let runner = new taskpool.AsyncRunner(TAG, 5);
@@ -523,7 +525,7 @@ export default function CombLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        
+
         expect(completedTasks.load()).assertEqual(10);
         Done();
       });
@@ -539,7 +541,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedTaskGroupWithLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedTaskGroupWithLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let count = new AtomicInt(0);
@@ -558,7 +560,7 @@ export default function CombLockEnhancedTest(): void {
 
         await taskpool.execute(group);
 
-        
+
         expect(count.load()).assertEqual(10);
         Done();
       });
@@ -574,7 +576,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedLockOrderMultipleTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedLockOrderMultipleTypes';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let asyncLock = new AsyncLock();
@@ -596,7 +598,7 @@ export default function CombLockEnhancedTest(): void {
         mutex.unlock();
         result += 'M2';
 
-        
+
         expect(result).assertEqual('MRAR2M2');
         Done();
       });
@@ -612,7 +614,7 @@ export default function CombLockEnhancedTest(): void {
     it('combLockEnhancedErrorRecoveryWithLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'combLockEnhancedErrorRecoveryWithLocks';
-        
+
         let mutex = new Mutex();
         let rwLock = new RWLock();
         let count = new AtomicInt(0);
@@ -625,6 +627,8 @@ export default function CombLockEnhancedTest(): void {
           count.fetchAdd(1);
           throw new Error("test error");
         } catch (e) {
+          expect(e instanceof Error).assertTrue();
+          expect((e as Error).message.length > 0).assertTrue();
           errorCaught.fetchAdd(1);
         } finally {
           rwLock.readLock().unlock();
@@ -637,7 +641,7 @@ export default function CombLockEnhancedTest(): void {
         rwLock.readLock().unlock();
         mutex.unlock();
 
-        
+
         expect(count.load()).assertEqual(2);
         expect(errorCaught.load()).assertEqual(1);
         Done();
