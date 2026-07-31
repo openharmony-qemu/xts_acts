@@ -4545,6 +4545,28 @@ Camera_ErrorCode NDKCamera::GetColorTintRange()
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetColorTintRangeWithParamNull(int32_t useCaseCode)
+{
+    LOG("GetColorTintRange useCaseCode: %{public}d", useCaseCode);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, &g_maxTint);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(nullptr, &g_minTint, &g_maxTint);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, nullptr, &g_maxTint);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, nullptr);
+    }
+    
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetColorTintRange failed. %{public}d", ret_);
+    } else {
+        LOG("OH_CaptureSession_GetColorTintRange success. %{public}d", ret_);
+    }
+    return ret_;
+}
+
+
 Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
 {
     uint32_t colorTint;
@@ -4582,6 +4604,10 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
             LOG("set: %d, get: %d", colorTint, g_currentTint);
             ret_ = static_cast<Camera_ErrorCode>(-1);
         };
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTint(nullptr, &g_currentTint);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTint(captureSession_, nullptr);
     }
 
     if (ret_ != CAMERA_OK) {

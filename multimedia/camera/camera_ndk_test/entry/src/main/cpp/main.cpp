@@ -3925,6 +3925,21 @@ static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetColorTintRangeWithParamNull(napi_env env, napi_callback_info info) 
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetColorTintRangeWithParamNull(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SetColorTint(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4518,6 +4533,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"waitForExposureFinish", nullptr, WaitForExposureFinish, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getColorTintRange", nullptr, GetColorTintRange, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"getColorTintRangeWithParamNull", nullptr, GetColorTintRangeWithParamNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         {"setColorTint", nullptr, SetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },

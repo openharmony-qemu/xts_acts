@@ -22,6 +22,7 @@ import SessionTest2 from './Session22.test';
 import VideoTest from './Video.test';
 import PhotoTest from './PhotoTest.test';
 import Demo from './Demo1.test';
+import SetSessionModeTest from './SetSessionMode.test';
 
 let testContext: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -36,5 +37,6 @@ export default function testsuite() {
     VideoTest();
     PhotoTest();
     Demo();
+    SetSessionModeTest();
   }
 }

@@ -488,6 +488,7 @@ public:
     bool WaitForExposureFinish();
     // colorTint
     Camera_ErrorCode GetColorTintRange();
+    Camera_ErrorCode GetColorTintRangeWithParamNull(int useCaseCode);
     Camera_ErrorCode SetColorTint(int useCaseCode);
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
