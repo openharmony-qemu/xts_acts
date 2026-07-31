@@ -67,7 +67,14 @@ constexpr int32_t SYNC_WAIT_TIME_US = 100000;
 
 struct CodecGuard {
     OH_AVCodec* ptr = nullptr;
-    ~CodecGuard() { if (ptr) { OH_VideoDecoder_Destroy(ptr); } }
+    ~CodecGuard() {
+        if (ptr) { OH_VideoDecoder_Destroy(ptr); }
+    }
+};
+
+struct CapCfg {
+    int32_t profile;
+    int32_t level;
 };
 
 static bool CapConfigCheck(OH_AVCapability* capability, int32_t profile, int32_t level)
@@ -1365,26 +1372,31 @@ int VideoCapabilityConfig0010Test()
         g_codecName = OH_AVCapability_GetName(cap);
         guard.ptr = vdec = OH_VideoDecoder_CreateByName(g_codecName.c_str());
         if (vdec == nullptr) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_1)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_1b)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_11)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_12)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_13)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_2)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_21)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_22)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_3)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_31)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_32)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_4)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_41)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_42)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_5)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_51)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_52)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_6)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_61)) { return -1; }
-        if (!CapConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_62)) { return -1; }
+        const CapCfg cfgs[] = {
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_1 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_1b },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_11 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_12 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_13 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_2 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_21 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_22 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_3 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_31 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_32 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_4 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_41 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_42 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_5 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_51 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_52 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_6 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_61 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_62 },
+        };
+        for (const auto& c : cfgs) {
+            if (!CapConfigCheck(cap, c.profile, c.level)) { return -1; }
+        }
         guard.ptr = nullptr;
         if (OH_VideoDecoder_Destroy(vdec) != AV_ERR_OK) { return -1; }
     } else {
@@ -1450,21 +1462,26 @@ int VideoCapabilityConfig0030Test()
         g_codecNameVVC = OH_AVCapability_GetName(cap_vvc);
         guard.ptr = vdec = OH_VideoDecoder_CreateByName(g_codecNameVVC.c_str());
         if (vdec == nullptr) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10, VVC_LEVEL_1)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12, VVC_LEVEL_2)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_INTRA, VVC_LEVEL_21)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MULTI_MAIN_10, VVC_LEVEL_3)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_444, VVC_LEVEL_31)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444, VVC_LEVEL_4)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444, VVC_LEVEL_41)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444_INTRA, VVC_LEVEL_5)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444_INTRA, VVC_LEVEL_51)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MULTI_MAIN_10_444, VVC_LEVEL_52)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_STILL, VVC_LEVEL_6)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_STILL, VVC_LEVEL_61)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_10_444_STILL, VVC_LEVEL_62)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_12_444_STILL, VVC_LEVEL_63)) { return -1; }
-        if (!CapConfigCheck(cap_vvc, VVC_PROFILE_MAIN_16_444_STILL, VVC_LEVEL_155)) { return -1; }
+        const CapCfg cfgs[] = {
+            { VVC_PROFILE_MAIN_10, VVC_LEVEL_1 },
+            { VVC_PROFILE_MAIN_12, VVC_LEVEL_2 },
+            { VVC_PROFILE_MAIN_12_INTRA, VVC_LEVEL_21 },
+            { VVC_PROFILE_MULTI_MAIN_10, VVC_LEVEL_3 },
+            { VVC_PROFILE_MAIN_10_444, VVC_LEVEL_31 },
+            { VVC_PROFILE_MAIN_12_444, VVC_LEVEL_4 },
+            { VVC_PROFILE_MAIN_16_444, VVC_LEVEL_41 },
+            { VVC_PROFILE_MAIN_12_444_INTRA, VVC_LEVEL_5 },
+            { VVC_PROFILE_MAIN_16_444_INTRA, VVC_LEVEL_51 },
+            { VVC_PROFILE_MULTI_MAIN_10_444, VVC_LEVEL_52 },
+            { VVC_PROFILE_MAIN_10_STILL, VVC_LEVEL_6 },
+            { VVC_PROFILE_MAIN_12_STILL, VVC_LEVEL_61 },
+            { VVC_PROFILE_MAIN_10_444_STILL, VVC_LEVEL_62 },
+            { VVC_PROFILE_MAIN_12_444_STILL, VVC_LEVEL_63 },
+            { VVC_PROFILE_MAIN_16_444_STILL, VVC_LEVEL_155 },
+        };
+        for (const auto& c : cfgs) {
+            if (!CapConfigCheck(cap_vvc, c.profile, c.level)) { return -1; }
+        }
         guard.ptr = nullptr;
         if (OH_VideoDecoder_Destroy(vdec) != AV_ERR_OK) { return -1; }
     } else {

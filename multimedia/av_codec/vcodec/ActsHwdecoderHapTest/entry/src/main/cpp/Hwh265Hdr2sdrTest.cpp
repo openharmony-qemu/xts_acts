@@ -99,7 +99,8 @@ int HevcHwHdr2sdrFunc002Test()
             if (vdec_ == nullptr) { return -1; }
             format = OH_AVFormat_Create();
             if (format == nullptr) { return -1; }
-            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT)) {
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE,
+                OH_COLORSPACE_BT709_LIMIT)) {
                 return -1;
             }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {
@@ -113,7 +114,8 @@ int HevcHwHdr2sdrFunc002Test()
             if (format == nullptr) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT)) { return -1; }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH)) { return -1; }
-            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE, OH_COLORSPACE_BT709_LIMIT)) {
+            if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE,
+                OH_COLORSPACE_BT709_LIMIT)) {
                 return -1;
             }
             if (!OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA)) {

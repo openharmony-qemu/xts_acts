@@ -1944,7 +1944,8 @@ int VideoHwdecCapApi6700Test()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
     if (capability == nullptr) { return -1; }
-    if (!OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE)) {
+    if (!OH_AVCapability_AreVideoSizeAndFrameRateSupported(capability, DEFAULT_WIDTH, DEFAULT_HEIGHT,
+        DEFAULT_FRAME_RATE)) {
         return -1;
     }
     return 0;
@@ -2334,20 +2335,19 @@ int VideoHwdecCapApi1400Test()
     uint32_t profileNum = 0;
     const int32_t* profiles = nullptr;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
-    if (capability) {
-        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    if (capability == nullptr) { return 0; }
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    if (ret != AV_ERR_OK) { return -1; }
+    if (profileNum <= 0) { return -1; }
+    if (profiles == nullptr) { return -1; }
+    for (int i = 0; i < profileNum; i++) {
+        if (profiles[i] < 0) { return -1; }
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
         if (ret != AV_ERR_OK) { return -1; }
-        if (profileNum <= 0) { return -1; }
-        if (profiles == nullptr) { return -1; }
-        for (int i = 0; i < profileNum; i++) {
-            if (profiles[i] < 0) { return -1; }
-            ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
-            if (ret != AV_ERR_OK) { return -1; }
-            if (levels == nullptr) { return -1; }
-            if (levelNum <= 0) { return -1; }
-            for (int j = 0; j < levelNum; j++) {
-                if (levels[j] < 0) { return -1; }
-            }
+        if (levels == nullptr) { return -1; }
+        if (levelNum <= 0) { return -1; }
+        for (int j = 0; j < levelNum; j++) {
+            if (levels[j] < 0) { return -1; }
         }
     }
     return 0;
