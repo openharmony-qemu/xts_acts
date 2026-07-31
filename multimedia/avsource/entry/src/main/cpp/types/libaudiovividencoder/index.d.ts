@@ -50,6 +50,7 @@ export const GetMetaLenBuilderNullCheck: () => number;
 export const GetMetaLenLenNullCheck: () => number;
 export const GetMetaBuilderNullCheck: () => number;
 export const GetMetaBufferNullCheck: () => number;
+export const GetMetaWithoutStaticMeta: () => number;
 export const DestroyBuilderNullCheck: () => number;
 export const CreateEmptyBuilderNullCheck: () => number;
 export const AddObjectBuilderNullCheck: () => number;
