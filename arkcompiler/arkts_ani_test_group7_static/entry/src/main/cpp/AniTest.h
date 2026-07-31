@@ -59,6 +59,8 @@ inline ani_ref g_asyncCallbackRef = nullptr;
 inline ani_vm *g_vm = nullptr;
 inline ani_ref g_cachedStringClass = nullptr;
 
+using AtomicInt = std::atomic<int>;
+
 inline ani_object CreateObjectFromClass(ani_env *env, ani_class objClass)
 {
     ani_method ctor = nullptr;
@@ -183,6 +185,9 @@ inline ani_size ProbePathLength(ani_env *env, ani_string path)
 
 inline char *AllocAndReadPath(ani_env *env, ani_string path, ani_size needed)
 {
+    if (needed == 0 || needed > PATH_PROBE_SIZE) {
+        return nullptr;
+    }
     char *buf = static_cast<char *>(malloc(needed + 1));
     if (buf == nullptr) {
         return nullptr;
@@ -419,7 +424,7 @@ ani_boolean testAniErrorTrigger([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     return (status == ANI_OK) ? ANI_TRUE : ANI_FALSE;
 }
 
-inline void SumSquareWorker(ani_vm *vm, int i, std::atomic<int> &sum)
+inline void SumSquareWorker(ani_vm *vm, int i, AtomicInt &sum)
 {
     ani_env *threadEnv = nullptr;
     if (vm->AttachCurrentThread(nullptr, ANI_VERSION_1, &threadEnv) != ANI_OK) {
@@ -429,7 +434,7 @@ inline void SumSquareWorker(ani_vm *vm, int i, std::atomic<int> &sum)
     vm->DetachCurrentThread();
 }
 
-inline void RunSumThreads(ani_vm *vm, ani_int taskCount, std::atomic<int> &sum)
+inline void RunSumThreads(ani_vm *vm, ani_int taskCount, AtomicInt &sum)
 {
     std::vector<std::thread> threads;
     for (int i = 0; i < taskCount; i++) {
@@ -444,7 +449,7 @@ inline void RunSumThreads(ani_vm *vm, ani_int taskCount, std::atomic<int> &sum)
 
 inline bool RunSumTest(ani_vm *vm, ani_int taskCount, int &outExpectedSum)
 {
-    std::atomic<int> sum{0};
+    AtomicInt sum{0};
     RunSumThreads(vm, taskCount, sum);
     int expected = 0;
     for (int i = 0; i < taskCount; i++) {
@@ -454,7 +459,7 @@ inline bool RunSumTest(ani_vm *vm, ani_int taskCount, int &outExpectedSum)
     return (sum.load() == expected);
 }
 
-inline void IncrementCounterWorker(ani_vm *vm, std::atomic<int> &counter)
+inline void IncrementCounterWorker(ani_vm *vm, AtomicInt &counter)
 {
     ani_env *threadEnv = nullptr;
     if (vm->AttachCurrentThread(nullptr, ANI_VERSION_1, &threadEnv) != ANI_OK) {
@@ -466,7 +471,7 @@ inline void IncrementCounterWorker(ani_vm *vm, std::atomic<int> &counter)
     vm->DetachCurrentThread();
 }
 
-inline void RunIncrementThreads(ani_vm *vm, ani_int taskCount, std::atomic<int> &counter)
+inline void RunIncrementThreads(ani_vm *vm, ani_int taskCount, AtomicInt &counter)
 {
     std::vector<std::thread> threads;
     for (int i = 0; i < taskCount; i++) {
@@ -481,7 +486,7 @@ inline void RunIncrementThreads(ani_vm *vm, ani_int taskCount, std::atomic<int> 
 
 inline bool RunContentionTest(ani_vm *vm, ani_int taskCount)
 {
-    std::atomic<int> counter{0};
+    AtomicInt counter{0};
     RunIncrementThreads(vm, taskCount, counter);
     int expected = taskCount * INCREMENTS_PER_THREAD;
     return (counter.load() == expected);
