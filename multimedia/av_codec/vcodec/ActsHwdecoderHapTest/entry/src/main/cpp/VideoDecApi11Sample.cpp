@@ -1036,6 +1036,7 @@ void VDecAPI11Sample::GetStride()
     g_decSample->sliceHeight_ = sliceHeight;
     g_decSample->picWidth_ = picWidth;
     g_decSample->picHeight_ = picHeight;
+    
     OH_AVFormat_Destroy(format);
 }
 

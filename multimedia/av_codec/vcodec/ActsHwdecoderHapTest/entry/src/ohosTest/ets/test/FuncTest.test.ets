@@ -13,23 +13,74 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
-import entry from 'libentry.so';
+import testNapi from 'libentry.so';
+import hilog from '@ohos.hilog';
+import fs from '@ohos.file.fs';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+interface FileCopyInfo {
+  raw: string;
+  target: string;
+}
+
+function getContext(): Context {
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+  let context = abilityDelegator.getAppContext();
+  return context;
+}
+
+async function copyRawFileToSandbox(context: Context, rawFileName: string, targetPath: string): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    context.resourceManager.getRawFileContent(rawFileName, (error, buffer) => {
+      if (error) {
+        console.error(`[copyRawFile] ${rawFileName} copy failed: ${error.code}, message: ${error.message}`);
+        reject(error);
+      } else {
+        try {
+          let file = fs.openSync(targetPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+          fs.writeSync(file.fd, buffer.buffer);
+          fs.closeSync(file);
+          console.info(`[copyRawFile] ${rawFileName} copy success to ${targetPath}`);
+          resolve();
+        } catch (e) {
+          console.error(`[copyRawFile] ${rawFileName} write failed: ${JSON.stringify(e)}`);
+          reject(e);
+        }
+      }
+    });
+  });
+}
 
 export default function FuncTest() {
   describe('FuncTest', () => {
 
-    beforeAll(() => {
-      entry.Func_Test_Prepare(0);
-    })
-    beforeEach(() => {
+    beforeAll(async () => {
+      console.info('FuncTest beforeAll called');
+      try {
+        let context = getContext();
+        let filesDir = context.filesDir;
+        let mediaDir = filesDir + '/media';
+        if (!fs.accessSync(mediaDir)) {
+          fs.mkdirSync(mediaDir);
+        }
+      } catch (error) {
+        console.error(`[beforeAll] Setup failed: ${JSON.stringify(error)}`);
+      }
+      testNapi.initTests();
+      console.info('[beforeAll] initTests completed');
+    });
 
-    })
-    afterEach(() => {
-
-    })
     afterAll(() => {
+      console.info('FuncTest afterAll called');
+    });
 
-    })
+    beforeEach(() => {
+      console.info('FuncTest beforeEach called');
+    });
+
+    afterEach(() => {
+      console.info('FuncTest afterEach called');
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0200
@@ -39,11 +90,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_0200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(0);
+    it('VIDEO_HWDEC_FUNCTION_0200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0300
@@ -53,11 +103,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_HWDEC_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(1);
+    it('VIDEO_HWDEC_FUNCTION_0300', Level.LEVEL0, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0400
@@ -67,11 +116,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_HWDEC_FUNCTION_0400', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(2);
+    it('VIDEO_HWDEC_FUNCTION_0400', Level.LEVEL0, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0700
@@ -81,11 +129,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_FUNCTION_0700', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Func_Test(3);
+    it('VIDEO_HWDEC_FUNCTION_0700', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0800
@@ -95,11 +142,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_FUNCTION_0800', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Func_Test(4);
+    it('VIDEO_HWDEC_FUNCTION_0800', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_0900
@@ -109,11 +155,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_FUNCTION_0900', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Func_Test(5);
+    it('VIDEO_HWDEC_FUNCTION_0900', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecFunction0900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1000
@@ -123,11 +168,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_FUNCTION_1000', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Func_Test(6);
+    it('VIDEO_HWDEC_FUNCTION_1000', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1100
@@ -137,11 +181,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_FUNCTION_1100', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Func_Test(7);
+    it('VIDEO_HWDEC_FUNCTION_1100', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1200
@@ -151,11 +194,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_1200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(8);
+    it('VIDEO_HWDEC_FUNCTION_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1300
@@ -165,11 +207,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_1300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(9);
+    it('VIDEO_HWDEC_FUNCTION_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1400
@@ -179,11 +220,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_1400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(10);
+    it('VIDEO_HWDEC_FUNCTION_1400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1600
@@ -193,11 +233,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_1600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(11);
+    it('VIDEO_HWDEC_FUNCTION_1600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FUNCTION_1700
@@ -207,11 +246,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_FUNCTION_1700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Func_Test(12);
+    it('VIDEO_HWDEC_FUNCTION_1700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecFunction1700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SURF_CHANGE_FUNC_001
@@ -221,11 +259,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SURF_CHANGE_FUNC_001', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(13);
+    it('SURF_CHANGE_FUNC_001', Level.LEVEL0, async () => {
+      let result: number = await testNapi.SurfChangeFunc001Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SURF_CHANGE_FUNC_002
@@ -235,11 +272,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SURF_CHANGE_FUNC_002', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(14);
+    it('SURF_CHANGE_FUNC_002', Level.LEVEL0, async () => {
+      let result: number = await testNapi.SurfChangeFunc002Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SURF_CHANGE_FUNC_003
@@ -249,11 +285,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SURF_CHANGE_FUNC_003', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(15);
+    it('SURF_CHANGE_FUNC_003', Level.LEVEL0, async () => {
+      let result: number = await testNapi.SurfChangeFunc003Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SURF_CHANGE_FUNC_004
@@ -263,11 +298,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SURF_CHANGE_FUNC_004', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(16);
+    it('SURF_CHANGE_FUNC_004', Level.LEVEL0, async () => {
+      let result: number = await testNapi.SurfChangeFunc004Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_001
@@ -277,11 +311,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_001', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(17);
+    it('OUTPUT_DECS_FUNC_001', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc001Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_002
@@ -291,11 +324,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_002', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(18);
+    it('OUTPUT_DECS_FUNC_002', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc002Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_003
@@ -305,11 +337,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_003', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(19);
+    it('OUTPUT_DECS_FUNC_003', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc003Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_004
@@ -319,11 +350,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_004', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(20);
+    it('OUTPUT_DECS_FUNC_004', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc004Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_005
@@ -333,11 +363,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_005', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(21);
+    it('OUTPUT_DECS_FUNC_005', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc005Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_006
@@ -347,11 +376,10 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_006', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(22);
+    it('OUTPUT_DECS_FUNC_006', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc006Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   OUTPUT_DECS_FUNC_007
@@ -361,10 +389,9 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OUTPUT_DECS_FUNC_007', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Func_Test(23);
+    it('OUTPUT_DECS_FUNC_007', Level.LEVEL0, async () => {
+      let result: number = await testNapi.OutputDecsFunc007Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
   })
 }
