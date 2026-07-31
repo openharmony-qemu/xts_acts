@@ -81,7 +81,8 @@ it('NavigationBindToScrollable_static_0100', Level.LEVEL0, async (done: () => vo
       console.info('NavigationBindToScrollable_0100 START');
 
       try {
-        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let driver = await Driver.create();
         await CommonFunc.sleep(1000);
 
         let btn1 = await driver.findComponent(ON.text('push pageOne'));

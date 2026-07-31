@@ -58,7 +58,7 @@ export default function RouterMode() {
       console.info('RouterMode_0100 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('401Btn1'));
@@ -85,7 +85,7 @@ export default function RouterMode() {
       console.info('RouterMode_0200 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('100002Btn1'));
@@ -112,7 +112,7 @@ export default function RouterMode() {
       console.info('RouterMode_0300 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.text('routerPushUrl100003'));
