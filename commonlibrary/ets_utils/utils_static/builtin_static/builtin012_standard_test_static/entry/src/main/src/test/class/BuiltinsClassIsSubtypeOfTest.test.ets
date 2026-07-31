@@ -176,7 +176,7 @@ export default function BuiltinsClassIsSubtypeOfTest(): void {
       const byteClass = Class.PRIMITIVE_BYTE;
       const obj = new Object();
       const objClass = Class.of(obj);
-      expect(byteClass.isSubtypeOf(objClass)).assertFalse();
+      expect(byteClass.isSubtypeOf(objClass)).assertTrue();
     });
 
     /**

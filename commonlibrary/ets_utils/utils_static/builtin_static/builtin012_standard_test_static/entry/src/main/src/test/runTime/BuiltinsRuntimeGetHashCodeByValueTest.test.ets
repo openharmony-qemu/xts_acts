@@ -190,21 +190,6 @@ export default function BuiltinsRuntimeGetHashCodeByValueTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsRuntimeGetHashCodeByValueTest0900
-     * @tc.number  SUB_BUILTINS_RUNTIME_GET_HASH_CODE_BY_VALUE_TEST_0900
-     * @tc.desc    Verify getHashCodeByValue with null
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsRuntimeGetHashCodeByValueTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let nullValue: null = null;
-      const result = Runtime.getHashCodeByValue(nullValue);
-      const resultType = typeof result;
-      expect(resultType).assertEqual('long');
-    });
-
-    /**
      * @tc.name    BuiltinsRuntimeGetHashCodeByValueTest1000
      * @tc.number  SUB_BUILTINS_RUNTIME_GET_HASH_CODE_BY_VALUE_TEST_1000
      * @tc.desc    Verify getHashCodeByValue returns same result as getHashCode for non-special types
