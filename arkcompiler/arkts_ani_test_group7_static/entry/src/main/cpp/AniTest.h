@@ -61,15 +61,11 @@ inline ani_ref g_cachedStringClass = nullptr;
 
 inline ani_object createEmptyObject([[maybe_unused]] ani_env *env)
 {
-    ani_class objClass = nullptr;
+    ani_class objClass = nullptr; ani_method ctor = nullptr; ani_object obj = nullptr;
     if (env->FindClass("std.core.Object", &objClass) != ANI_OK) {
         return nullptr;
     }
-    ani_method ctor = nullptr;
-    if (env->Class_FindMethod(objClass, "<ctor>", "", &ctor) != ANI_OK) {
-        ctor = nullptr;
-    }
-    ani_object obj = nullptr;
+    env->Class_FindMethod(objClass, "<ctor>", "", &ctor);
     if (env->Object_New(objClass, ctor, &obj) != ANI_OK) {
         return nullptr;
     }
@@ -164,34 +160,35 @@ ani_boolean testAniXorEncrypt([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return ANI_TRUE;
 }
 
+inline char *ResolvePath(ani_env *env, ani_string path)
+{
+    char probe[PATH_PROBE_SIZE];
+    ani_size needed = 0;
+    env->String_GetUTF8(path, probe, sizeof(probe), &needed);
+    if (needed == 0 || needed > PATH_PROBE_SIZE) {
+        return nullptr;
+    }
+    char *buf = static_cast<char *>(malloc(needed + 1));
+    if (buf == nullptr) {
+        return nullptr;
+    }
+    ani_size actualLen = 0;
+    if (env->String_GetUTF8(path, buf, needed + 1, &actualLen) != ANI_OK) {
+        free(buf);
+        return nullptr;
+    }
+    return buf;
+}
+
 ani_boolean testAniFileCopy([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object,
     ani_string srcPath, ani_string dstPath, ani_long size)
 {
     if (srcPath == nullptr || dstPath == nullptr || size <= 0) {
         return ANI_FALSE;
     }
-    char probe[PATH_PROBE_SIZE];
-    ani_size srcNeeded = 0;
-    ani_size dstNeeded = 0;
-    env->String_GetUTF8(srcPath, probe, sizeof(probe), &srcNeeded);
-    env->String_GetUTF8(dstPath, probe, sizeof(probe), &dstNeeded);
-    if (srcNeeded == 0 || dstNeeded == 0) {
-        return ANI_FALSE;
-    }
-    if (srcNeeded > PATH_PROBE_SIZE || dstNeeded > PATH_PROBE_SIZE) {
-        return ANI_FALSE;
-    }
-    char *srcBuf = static_cast<char *>(malloc(srcNeeded + 1));
-    char *dstBuf = static_cast<char *>(malloc(dstNeeded + 1));
+    char *srcBuf = ResolvePath(env, srcPath);
+    char *dstBuf = ResolvePath(env, dstPath);
     if (srcBuf == nullptr || dstBuf == nullptr) {
-        free(srcBuf);
-        free(dstBuf);
-        return ANI_FALSE;
-    }
-    ani_size srcLen = 0;
-    ani_size dstLen = 0;
-    if (env->String_GetUTF8(srcPath, srcBuf, srcNeeded + 1, &srcLen) != ANI_OK ||
-        env->String_GetUTF8(dstPath, dstBuf, dstNeeded + 1, &dstLen) != ANI_OK) {
         free(srcBuf);
         free(dstBuf);
         return ANI_FALSE;
@@ -261,7 +258,8 @@ ani_long testAniCreatePhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return reinterpret_cast<int64_t>(state);
 }
 
-ani_double testAniStepPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_long handle, ani_double dt)
+ani_double testAniStepPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object,
+    ani_long handle, ani_double dt)
 {
     if (handle == 0 || dt <= 0.0) {
         return 0.0;
@@ -303,6 +301,30 @@ void testAniDestroyPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_o
     }
 }
 
+inline ani_size SampleFeatureArray(ani_env *env, ani_array input, ani_size len, ani_array output)
+{
+    ani_size outIdx = 0;
+    for (ani_size i = 0; i < len; i += FEATURE_SAMPLE_INTERVAL) {
+        ani_ref elem_ref = nullptr;
+        if (env->Array_Get(input, i, &elem_ref) != ANI_OK) {
+            return static_cast<ani_size>(-1);
+        }
+        ani_double val = 0;
+        if (env->Primitive_Unbox_Double((ani_object)elem_ref, &val) != ANI_OK) {
+            return static_cast<ani_size>(-1);
+        }
+        ani_object boxed = nullptr;
+        if (env->Primitive_Box_Double(val, &boxed) != ANI_OK) {
+            return static_cast<ani_size>(-1);
+        }
+        if (env->Array_Set(output, outIdx, (ani_ref)boxed) != ANI_OK) {
+            return static_cast<ani_size>(-1);
+        }
+        outIdx++;
+    }
+    return outIdx;
+}
+
 ani_object testAniFeatureExtract([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_array input)
 {
     if (input == nullptr) {
@@ -324,24 +346,9 @@ ani_object testAniFeatureExtract([[maybe_unused]] ani_env *env, [[maybe_unused]]
     if (env->Array_New(outLen, undefined_ref, &output) != ANI_OK) {
         return nullptr;
     }
-    ani_size outIdx = 0;
-    for (ani_size i = 0; i < len; i += FEATURE_SAMPLE_INTERVAL) {
-        ani_ref elem_ref = nullptr;
-        if (env->Array_Get(input, i, &elem_ref) != ANI_OK) {
-            return nullptr;
-        }
-        ani_double val = 0;
-        if (env->Primitive_Unbox_Double((ani_object)elem_ref, &val) != ANI_OK) {
-            return nullptr;
-        }
-        ani_object boxed = nullptr;
-        if (env->Primitive_Box_Double(val, &boxed) != ANI_OK) {
-            return nullptr;
-        }
-        if (env->Array_Set(output, outIdx, (ani_ref)boxed) != ANI_OK) {
-            return nullptr;
-        }
-        outIdx++;
+    ani_size outIdx = SampleFeatureArray(env, input, len, output);
+    if (outIdx == static_cast<ani_size>(-1)) {
+        return nullptr;
     }
     ani_object obj = createEmptyObject(env);
     if (obj == nullptr) {
@@ -375,18 +382,8 @@ ani_boolean testAniErrorTrigger([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     return (status == ANI_OK) ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_object testAniParallelSum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_int taskCount)
+inline bool RunSumTest(ani_vm *vm, ani_int taskCount, int &outExpectedSum)
 {
-    if (taskCount < MIN_TASK_COUNT) {
-        taskCount = MIN_TASK_COUNT;
-    }
-    if (taskCount > MAX_TASK_COUNT) {
-        taskCount = MAX_TASK_COUNT;
-    }
-    ani_vm *vm = nullptr;
-    if (env->GetVM(&vm) != ANI_OK) {
-        return nullptr;
-    }
     std::atomic<int> sum{0};
     std::vector<std::thread> threads;
     for (int i = 0; i < taskCount; i++) {
@@ -402,15 +399,20 @@ ani_object testAniParallelSum([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     for (auto &t : threads) {
         t.join();
     }
-    int expectedSum = 0;
+    int expected = 0;
     for (int i = 0; i < taskCount; i++) {
-        expectedSum += i * i;
+        expected += i * i;
     }
-    bool sumCorrect = (sum.load() == expectedSum);
+    outExpectedSum = expected;
+    return (sum.load() == expected);
+}
+
+inline bool RunContentionTest(ani_vm *vm, ani_int taskCount)
+{
     std::atomic<int> counter{0};
-    std::vector<std::thread> contentionThreads;
+    std::vector<std::thread> threads;
     for (int i = 0; i < taskCount; i++) {
-        contentionThreads.emplace_back([vm, &counter]() {
+        threads.emplace_back([vm, &counter]() {
             ani_env *threadEnv = nullptr;
             if (vm->AttachCurrentThread(nullptr, ANI_VERSION_1, &threadEnv) != ANI_OK) {
                 return;
@@ -421,11 +423,28 @@ ani_object testAniParallelSum([[maybe_unused]] ani_env *env, [[maybe_unused]] an
             vm->DetachCurrentThread();
         });
     }
-    for (auto &t : contentionThreads) {
+    for (auto &t : threads) {
         t.join();
     }
-    int expectedCount = taskCount * INCREMENTS_PER_THREAD;
-    bool contentionCorrect = (counter.load() == expectedCount);
+    int expected = taskCount * INCREMENTS_PER_THREAD;
+    return (counter.load() == expected);
+}
+
+ani_object testAniParallelSum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_int taskCount)
+{
+    if (taskCount < MIN_TASK_COUNT) {
+        taskCount = MIN_TASK_COUNT;
+    }
+    if (taskCount > MAX_TASK_COUNT) {
+        taskCount = MAX_TASK_COUNT;
+    }
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        return nullptr;
+    }
+    int expectedSum = 0;
+    bool sumCorrect = RunSumTest(vm, taskCount, expectedSum);
+    bool contentionCorrect = RunContentionTest(vm, taskCount);
     ani_object obj = createEmptyObject(env);
     if (obj == nullptr) {
         return nullptr;
@@ -443,6 +462,15 @@ ani_object testAniParallelSum([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return obj;
 }
 
+inline void ReleaseCallbackRef(ani_env *threadEnv, ani_ref ref)
+{
+    std::lock_guard<std::mutex> lock(g_asyncMutex);
+    if (g_asyncCallbackRef == ref) {
+        threadEnv->GlobalReference_Delete(g_asyncCallbackRef);
+        g_asyncCallbackRef = nullptr;
+    }
+}
+
 inline void RunAsyncCallback(ani_vm *vm, ani_ref ref)
 {
     if (ref == nullptr || vm == nullptr) {
@@ -455,17 +483,12 @@ inline void RunAsyncCallback(ani_vm *vm, ani_ref ref)
     ani_fn_object fnObj = (ani_fn_object)ref;
     ani_ref result = nullptr;
     threadEnv->FunctionalObject_Call(fnObj, 0, nullptr, &result);
-    {
-        std::lock_guard<std::mutex> lock(g_asyncMutex);
-        if (g_asyncCallbackRef == ref) {
-            threadEnv->GlobalReference_Delete(g_asyncCallbackRef);
-            g_asyncCallbackRef = nullptr;
-        }
-    }
+    ReleaseCallbackRef(threadEnv, ref);
     vm->DetachCurrentThread();
 }
 
-ani_boolean testAniAsyncCompute([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_fn_object callback)
+ani_boolean testAniAsyncCompute([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object,
+    ani_fn_object callback)
 {
     if (callback == nullptr) {
         return ANI_FALSE;
@@ -559,12 +582,14 @@ ani_boolean testAniDynamicRegistration([[maybe_unused]] ani_env *env)
     }
     ani_int addResult = 0;
     ani_int addA = 3;
-    if (env->Function_Call_Int(addFn, &addResult, addA, 5) != ANI_OK || addResult != 8) {
+    ani_int addB = 5;
+    if (env->Function_Call_Int(addFn, &addResult, addA, addB) != ANI_OK || addResult != 8) {
         return ANI_FALSE;
     }
     ani_int subResult = 0;
     ani_int subA = 10;
-    if (env->Function_Call_Int(subFn, &subResult, subA, 4) != ANI_OK || subResult != 6) {
+    ani_int subB = 4;
+    if (env->Function_Call_Int(subFn, &subResult, subA, subB) != ANI_OK || subResult != 6) {
         return ANI_FALSE;
     }
     return ANI_TRUE;

@@ -1129,7 +1129,7 @@ ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
 {
     std::cout << "testTag : entering libentry.so's ANI_Constructor" << std::endl;
     ani_status status = bindCase(vm, "entry.src.main.src.ets.Index.Foo");
-	bindModuleFunctions(vm);
+    bindModuleFunctions(vm);
     if (!AssertEqMsg(status, ANI_OK, "bindCase failed")) {
         return status;
     }
