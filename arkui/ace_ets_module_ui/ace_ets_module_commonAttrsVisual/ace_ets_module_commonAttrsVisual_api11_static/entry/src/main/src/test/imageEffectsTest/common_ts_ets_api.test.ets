@@ -120,26 +120,26 @@ it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async (
      * @tc.desc     testcommon_ts_ets_apiEnvProp_static_0001
      * @tc.level    Level.LEVEL2
      */
-    // it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
-    //   console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
-    //   await Utils.sleep(2000);
-    //   try {
-    //     let innerEvent: emitter.InnerEvent = {
-    //       eventId: 60231,
-    //       priority: emitter.EventPriority.LOW
-    //     }
-    //     let callback = (eventData: emitter.EventData) => {
-    //       console.info("common_ts_ets_apiEnvProp0001 get event state result is: " + JSON.stringify(eventData));
-    //       const data: Record<String,RecordData> =
-    //         eventData.data as Record<String,RecordData>
-    //       expect(data['Result']).assertEqual(false);
-    //     }
-    //     console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
-    //     emitter.on(innerEvent, callback);
-    //   } catch (err) {
-    //     console.info("common_ts_ets_apiEnvProp0001 on emitter err : " + JSON.stringify(err));
-    //   }
-    // });
+    it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
+       console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
+       await Utils.sleep(2000);
+       try {
+         let innerEvent: emitter.InnerEvent = {
+           eventId: 60231,
+           priority: emitter.EventPriority.LOW
+         }
+         let callback = (eventData: emitter.EventData) => {
+           console.info("common_ts_ets_apiEnvProp0001 get event state result is: " + JSON.stringify(eventData));
+           const data: Record<String,RecordData> =
+             eventData.data as Record<String,RecordData>
+           expect(data['Result']).assertEqual(false);
+         }
+         console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
+         emitter.on(innerEvent, callback);
+       } catch (err) {
+        console.info("common_ts_ets_apiEnvProp0001 on emitter err : " + JSON.stringify(err));
+      }
+    });
 
 
     
