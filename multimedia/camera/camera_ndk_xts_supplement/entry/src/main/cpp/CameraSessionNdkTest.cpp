@@ -1352,6 +1352,41 @@ napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback
     return ret;
 }
 
+napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info)
+{
+    if (CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION != 0 ||
+        CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY != 1 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_FACE != 2 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_BODY != 3 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_FACE != 4 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_BODY != 5 ||
+        CAMERA_METADATA_OBJECT_TYPE_SALIENT_DETECTION != 6 ||
+        CAMERA_METADATA_OBJECT_TYPE_BAR_CODE_DETECTION != 7 ||
+        CAMERA_METADATA_OBJECT_TYPE_BASIC_FACE_DETECTION != 8) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info)
+{
+    if (OH_CAMERA_METADATA_OBJECT_EMOTION_NEUTRAL != 0 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SADNESS != 1 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SMILE != 2 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SURPRISE != 3) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
 OH_Camera_MetadataObjectExt** g_metadataObjectExt;
 uint32_t g_metadataSize;
 void OnMetadataObjectExtAvailable(void* context, OH_Camera_MetadataObjectExt** metadataObjectExt,

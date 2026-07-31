@@ -72,6 +72,8 @@ napi_value OHCaptureSessionDeleteSupportedEffectTypes(napi_env env, napi_callbac
 napi_value OHCaptureSessionGetSupportedEffectTypesSupp(napi_env env, napi_callback_info info);
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info);
 napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback_info info);
+napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info);
+napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackNullOutput(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackNullCallback(napi_env env, napi_callback_info info);
 napi_value TestRegisterMetadataCallbackAllNull(napi_env env, napi_callback_info info);

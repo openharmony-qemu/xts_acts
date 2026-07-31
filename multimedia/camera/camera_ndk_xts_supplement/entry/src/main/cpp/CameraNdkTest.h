@@ -90,8 +90,6 @@ napi_value TestGetBoundingBox(napi_env env, napi_callback_info info);
 napi_value TestDestroy(napi_env env, napi_callback_info info);
 napi_value CheckOptionalPropertyNotExistEnumValues(napi_env env, napi_callback_info info);
 napi_value captureSessionEmu(napi_env env, napi_callback_info info);
-napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info);
-napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info);
 napi_value TestLockTrackingNullMetadataOutput(napi_env env, napi_callback_info info);
 napi_value TestUnlockTrackingNullMetadataOutput(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
