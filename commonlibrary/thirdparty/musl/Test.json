@@ -22,7 +22,7 @@
                 "reboot",
                 "power-shell wakeup",
                 "power-shell setmode 602",
-                "sleep 30"
+                "sleep 15"
             ]
         }
     ]
