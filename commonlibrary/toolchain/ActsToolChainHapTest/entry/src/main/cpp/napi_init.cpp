@@ -15,6 +15,7 @@
 
 #include <csignal>
 #include <string>
+#include <sys/syscall.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <unordered_map>
@@ -1153,6 +1154,13 @@ static int RunByNameForked(const std::string& name)
             if (sig != SIGKILL && sig != SIGSTOP) {
                 signal(sig, SIG_DFL);
             }
+        }
+        struct sigaction sa_ign = {};
+        sa_ign.sa_handler = SIG_IGN;
+        sigemptyset(&sa_ign.sa_mask);
+        constexpr int sigsetBytes = 8;
+        for (int sig = SIGRTMIN; sig < NSIG; ++sig) {
+            syscall(SYS_rt_sigaction, sig, &sa_ign, nullptr, sigsetBytes);
         }
         g_tStatus = 0;
         int childRc = K_CHILD_EXIT_CAP;

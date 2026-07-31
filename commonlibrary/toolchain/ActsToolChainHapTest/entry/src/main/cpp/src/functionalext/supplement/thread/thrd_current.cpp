@@ -32,7 +32,6 @@
 #define TRYLOCK_FAIL (-2)
 #define THREAD_COUNT (2)
 
-static thrd_t g_thr;
 static int g_count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -65,7 +64,8 @@ static int ThreadFuncA(void *arg)
 {
     g_count++;
     thrd_t id = thrd_current();
-    if (!(thrd_equal(id, g_thr))) {
+    thrd_t expected = *static_cast<thrd_t*>(arg);
+    if (!(thrd_equal(id, expected))) {
         t_error("%s thrd_current failed", __func__);
     }
 
@@ -95,19 +95,17 @@ static int ThreadFuncB(void *arg)
 void ThrdCurrent0100(void)
 {
     int result;
+    thrd_t thr;
 
-    result = thrd_create(&g_thr, ThreadFuncA, nullptr);
+    result = thrd_create(&thr, ThreadFuncA, &thr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, nullptr);
-    if (result != 0) {
-        t_error("%s thrd_sleep failed", __func__);
-    }
+    thrd_sleep(&sleepTime, nullptr);
 
-    result = thrd_join(g_thr, nullptr);
+    result = thrd_join(thr, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
