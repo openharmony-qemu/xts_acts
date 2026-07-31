@@ -19,6 +19,7 @@ group("backgroundtaskmanager_new_test") {
     deps = [
       "backgroundprocessmanager:ActsResourcescheduleBackgroundProcessMgrTest",
       "longtimetask:ActsResourcescheduleLongTimeTaskTest",
+      "backgroundloader:ActsResourcescheduleBackgroundLoaderTest",
     ]
   }
 }
