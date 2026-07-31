@@ -3123,15 +3123,16 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         console.info(`${caseName} test start`);
         let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
         expect(tcp).assertInstanceOf('Object');
-        let bindAddress: socket.NetAddress = {
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let listenAddress: socket.NetAddress = {
           address: '127.0.0.1',
           port: 4047
         };
-        await tcp.bind(bindAddress).catch((err:BusinessError) => {
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
           });
         let tcpConnectOptions: socket.TCPConnectOptions = {
-          address: bindAddress
+          address: listenAddress
         };
         await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
               console.info('fail to connect' + err.code.toString());
