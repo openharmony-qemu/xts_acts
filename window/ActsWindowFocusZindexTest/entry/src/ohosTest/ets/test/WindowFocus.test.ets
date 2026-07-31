@@ -1960,6 +1960,111 @@ export default function windowFocusTest() {
       }
     })
 
+/**
+     * @tc.name SUB_WINDOW_SetWindowFocusable_Callback_Undefined_0100
+     * @tc.number SUB_WINDOW_SetWindowFocusable_Callback_Undefined_0100
+     * @tc.desc SUB_WINDOW_SetWindowFocusable_Callback_Undefined_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_WINDOW_SetWindowFocusable_Callback_Undefined_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetWindowFocusable_Callback_Undefined_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow: window.Window = await windowStage.createSubWindow('SetWindowFocusable_Callback_Undefined_0100');
+      try {
+        subWindow.setWindowFocusable(undefined, async (err: BusinessError) => {
+          await subWindow!.destroyWindow()
+          let errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to call setWindowFocusable. Cause:' + JSON.stringify(err));
+            expect(false).assertTrue();
+            done()
+            return;
+          }
+          console.info(msgStr + 'Succeeded in calling setWindowFocusable.');
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+        await subWindow!.destroyWindow()
+        expect(exception.code).assertEqual(401);
+        expect(exception.message !== '').assertTrue();
+        done()
+      }
+    })
 
+    /**
+     * @tc.name   SUB_WINDOW_SetWindowFocusable_Promise_Undefined_0100
+     * @tc.number SUB_WINDOW_SetWindowFocusable_Promise_Undefined_0100
+     * @tc.desc   SUB_WINDOW_SetWindowFocusable_Promise_Undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetWindowFocusable_Promise_Undefined_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetWindowFocusable_Promise_Undefined_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow: window.Window = await windowStage.createSubWindow('SetWindowFocusable_Promise_Undefined_0100');
+      try {
+        subWindow.setWindowFocusable(undefined).then(async () => {
+          console.info(msgStr + 'Succeeded in calling setWindowFocusable.');
+          await subWindow.destroyWindow()
+          expect(false).assertTrue();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call setWindowFocusable. Cause: ' + JSON.stringify(err));
+          await subWindow.destroyWindow()
+          expect(false).assertTrue();
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        await subWindow.destroyWindow()
+        expect(exception.code).assertEqual(401);
+        expect(exception.message !== '').assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetExclusivelyHighlighted_Undefined_0100
+     * @tc.number SUB_WINDOW_SetExclusivelyHighlighted_Undefined_0100
+     * @tc.desc   SUB_WINDOW_SetExclusivelyHighlighted_Undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetExclusivelyHighlighted_Undefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_SetExclusivelyHighlighted_Undefined_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let subWindow: window.Window = await windowStage.createSubWindow('SetExclusivelyHighlighted_Undefined_0100');
+        try {
+          let promise = subWindow.setExclusivelyHighlighted(undefined);
+          promise.then(async () => {
+            console.info('Succeeded in setting the window to be exclusively highlight.');
+            await subWindow.destroyWindow()
+            expect(false).assertTrue();
+            done()
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            expect(false).assertTrue();
+            done()
+          });
+        } catch (exception) {
+          console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+          await subWindow.destroyWindow()
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done()
+        }
+      })
+      
   })
 }

@@ -2357,5 +2357,218 @@ export default function windowZindexTest() {
         }
       });
 
+/**
+     * @tc.number     SUB_WINDOW_SetWindowTopmost_Promise_Undefined_0100
+     * @tc.name       SUB_WINDOW_SetWindowTopmost_Promise_Undefined_0100
+     * @tc.desc       SUB_WINDOW_SetWindowTopmost_Promise_Undefined_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('SUB_WINDOW_SetWindowTopmost_Promise_Undefined_0100', Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = "SUB_WINDOW_SetWindowTopmost_Promise_Undefined_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let mainWindow: window.Window = windowStage.getMainWindowSync();
+        try {
+          await mainWindow.setWindowTopmost(undefined);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause Code: ${JSON.stringify(exception.code)} message:${exception.message}`);
+          if (!isFreeWindowMode) {
+            expect(exception.code).assertEqual(801);
+          } else {
+            expect(exception.code).assertEqual(401);
+          }
+          expect(exception.message !== '').assertTrue();
+          done()
+        }
+      });
+
+    /**
+     * @tc.name SUB_WINDOW_SetRaiseByClickEnabled_Undefined_0100
+     * @tc.number SUB_WINDOW_SetRaiseByClickEnabled_Undefined_0100
+     * @tc.desc SUB_WINDOW_SetRaiseByClickEnabled_Undefined_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_WINDOW_SetRaiseByClickEnabled_Undefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_SetRaiseByClickEnabled_Undefined_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let subWindow: window.Window = await windowStage.createSubWindow('SetRaiseByClickEnabled_Undefined_0100');
+        try {
+          let promise = subWindow.setRaiseByClickEnabled(undefined);
+          promise.then(async () => {
+            console.info('Succeeded in setRaiseByClickEnabled.');
+            await subWindow.destroyWindow()
+            expect(false).assertTrue();
+            done()
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to setRaiseByClickEnabled. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow()
+            expect(err.code).assertEqual(401);
+            expect(err.message !== '').assertTrue();
+            done()
+          });
+        } catch (exception) {
+          console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + `message:${exception.message}`);
+          await subWindow.destroyWindow()
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetWindowModal_Undefined_0100
+     * @tc.number SUB_WINDOW_SetWindowModal_Undefined_0100
+     * @tc.desc   SUB_WINDOW_SetWindowModal_Undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetWindowModal_Undefined_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetWindowModal_Undefined_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        await windowStage.setWindowModal(undefined);
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        if (!isFreeWindowMode) {
+          expect(exception.code).assertEqual(801);
+        } else {
+          expect(exception.code).assertEqual(401);
+        }
+        expect(exception.message != null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetSubWindowModal_isModal_Undefined_0100
+     * @tc.number SUB_WINDOW_SetSubWindowModal_isModal_Undefined_0100
+     * @tc.desc   SUB_WINDOW_SetSubWindowModal_isModal_Undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_WINDOW_SetSubWindowModal_isModal_Undefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_SetSubWindowModal_isModal_Undefined_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let subWindowClass: window.Window =
+          await windowStage.createSubWindow('SetSubWindowModal_isModal_Undefined_0100');
+        try {
+          await subWindowClass.setSubWindowModal(undefined).then(async () => {
+            console.info(msgStr + 'Succeeded in setting subwindow modal');
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
+            if (!canIUseRes) {
+              await subWindowClass.destroyWindow();
+              expect(err.code).assertEqual(801);
+              expect(err.message !== '').assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        } catch (error) {
+          console.error(msgStr + 'Failed :' + JSON.stringify(error.code) + error.message);
+          await subWindowClass.destroyWindow();
+          expect(error.code).assertEqual(401);
+          expect(error.message !== '').assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetSubWindowModal_ModalityType_Undefined_0100
+     * @tc.number SUB_WINDOW_SetSubWindowModal_ModalityType_Undefined_0100
+     * @tc.desc   SUB_WINDOW_SetSubWindowModal_ModalityType_Undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_WINDOW_SetSubWindowModal_ModalityType_Undefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_SetSubWindowModal_ModalityType_Undefined_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let subWindowClass: window.Window =
+          await windowStage.createSubWindow('SetSubWindowModal_ModalityType_Undefined_0100');
+        try {
+          await subWindowClass.setSubWindowModal(undefined, undefined).then(async () => {
+            console.info(msgStr + 'Succeeded in setting subwindow modal');
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
+            if (!canIUseRes) {
+              await subWindowClass.destroyWindow();
+              expect(err.code).assertEqual(801);
+              expect(err.message !== '').assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        } catch (error) {
+          console.error(msgStr + 'Failed :' + JSON.stringify(error.code) + error.message);
+          await subWindowClass.destroyWindow();
+          expect(error.code).assertEqual(401);
+          expect(error.message !== '').assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetSubWindowModal_ModalityType_Null_0100
+     * @tc.number SUB_WINDOW_SetSubWindowModal_ModalityType_Null_0100
+     * @tc.desc   SUB_WINDOW_SetSubWindowModal_ModalityType_Null_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_WINDOW_SetSubWindowModal_ModalityType_Null_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_SetSubWindowModal_ModalityType_Null_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let subWindowClass: window.Window =
+          await windowStage.createSubWindow('SetSubWindowModal_ModalityType_Null_0100');
+        try {
+          await subWindowClass.setSubWindowModal(null, null).then(async () => {
+            console.info(msgStr + 'Succeeded in setting subwindow modal');
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
+            if (!canIUseRes) {
+              await subWindowClass.destroyWindow();
+              expect(err.code).assertEqual(801);
+              expect(err.message !== '').assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        } catch (error) {
+          console.error(msgStr + 'Failed :' + JSON.stringify(error.code) + error.message);
+          await subWindowClass.destroyWindow();
+          expect(error.code).assertEqual(401);
+          expect(error.message !== '').assertTrue();
+          done();
+        }
+      })
+
   })
 }
