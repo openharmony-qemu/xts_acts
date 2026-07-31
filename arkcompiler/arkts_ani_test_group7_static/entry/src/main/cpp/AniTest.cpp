@@ -1033,7 +1033,11 @@ static ani_status BindLoadLibErrorAndDisasmCases(ani_env *env, ani_class cls, an
 }
 static ani_status BindScenarioCases(ani_env *env, ani_class cls)
 {
-    ani_status status = BindManglingTypeParamCreateCases(env, cls);
+    ani_status status = BindInstanceMethods(env, cls, methods.data(), methods.size());
+    if (!AssertEqMsg(status, ANI_OK, "Bind methods failed")) {
+        return status;
+    }
+    status = BindManglingTypeParamCreateCases(env, cls);
     if (!AssertEqMsg(status, ANI_OK, "BindManglingTypeParamCreateCases failed")) {
         return status;
     }
