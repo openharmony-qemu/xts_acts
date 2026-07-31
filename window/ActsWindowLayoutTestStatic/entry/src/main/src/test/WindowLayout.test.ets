@@ -2329,11 +2329,11 @@ export default function WindowLayoutTest() {
                     await subWindowClass.showWindow();
                     let displayId:Long|undefined = subWindowClass!.getWindowProperties().displayId;
                     console.info(`${message} displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
-                    await subWindowClass.resize(Number(displayWidth*0.5),Number(displayHeight*0.5));
+                   await subWindowClass.resize((displayWidth*0.5).toInt(), (displayHeight*0.5).toInt());
                     let moveConfiguration: window.MoveConfiguration = {
                         displayId: displayId
                     }
-                    let promise = subWindowClass.moveWindowToGlobal(Number(displayWidth*0.3),Number(displayHeight*0.3), moveConfiguration);
+                    let promise = subWindowClass.moveWindowToGlobal((displayWidth*0.5).toInt(), (displayHeight*0.5).toInt(), moveConfiguration);
                     promise.then(async () => {
                         console.info(`${message} succeed in moveWindowToGlobal`);
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -2345,8 +2345,8 @@ export default function WindowLayoutTest() {
                     await Utils.msSleep(1000);
                     let rect = subWindowClass.getWindowProperties().windowRect;
                     console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
-                    expect(rect.left).assertEqual(Math.floor(displayWidth*0.3));
-                    expect(rect.top).assertEqual(Math.floor(displayWidth*0.3))
+                    expect(rect.left).assertEqual(Math.floor(displayWidth*0.3)as int);
+                    expect(rect.top).assertEqual(Math.floor(displayWidth*0.3)as int)
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
