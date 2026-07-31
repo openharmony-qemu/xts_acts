@@ -19,6 +19,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 import adminManager from '@ohos.enterprise.adminManager';
 import deviceControl from '@ohos.enterprise.deviceControl';
 import restrictions from '@ohos.enterprise.restrictions';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const LOCK_SCREEN: string = "lockScreen";
 const OPERATE_DEVICE: string = "operateDevice";
