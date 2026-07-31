@@ -157,6 +157,80 @@ struct webErrorPageTest {
                 }
                 break;
               }
+              case 'emitSetErrorPageEnabledWithSubframe01': {
+                try {
+                  this.controller.setErrorPageEnabled(true, true);
+                  let enableResult = this.controller.getErrorPageEnabled();
+                  let subframeResult = this.controller.getSubframeErrorPageEnabled();
+                  console.log(this.emitKey + ' getErrorPageEnabled：' + enableResult +
+                    ' getSubframeErrorPageEnabled：' + subframeResult);
+                  Utils.emitEvent(`${enableResult},${subframeResult}`, 2026072101);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.message, 2026072101);
+                }
+                break;
+              }
+              case 'emitSetErrorPageEnabledWithSubframe02': {
+                try {
+                  this.controller.setErrorPageEnabled(true, false);
+                  let enableResult = this.controller.getErrorPageEnabled();
+                  let subframeResult = this.controller.getSubframeErrorPageEnabled();
+                  console.log(this.emitKey + ' getErrorPageEnabled：' + enableResult +
+                    ' getSubframeErrorPageEnabled：' + subframeResult);
+                  Utils.emitEvent(`${enableResult},${subframeResult}`, 2026072102);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.message, 2026072102);
+                }
+                break;
+              }
+              case 'emitSetErrorPageEnabledWithSubframe03': {
+                try {
+                  this.controller.setErrorPageEnabled(false, true);
+                  let enableResult = this.controller.getErrorPageEnabled();
+                  let subframeResult = this.controller.getSubframeErrorPageEnabled();
+                  console.log(this.emitKey + ' getErrorPageEnabled：' + enableResult +
+                    ' getSubframeErrorPageEnabled：' + subframeResult);
+                  Utils.emitEvent(`${enableResult},${subframeResult}`, 2026072103);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.message, 2026072103);
+                }
+                break;
+              }
+              case 'emitSetErrorPageEnabledWithSubframe04': {
+                try {
+                  this.controller.setErrorPageEnabled(false, false);
+                  let enableResult = this.controller.getErrorPageEnabled();
+                  let subframeResult = this.controller.getSubframeErrorPageEnabled();
+                  console.log(this.emitKey + ' getErrorPageEnabled：' + enableResult +
+                    ' getSubframeErrorPageEnabled：' + subframeResult);
+                  Utils.emitEvent(`${enableResult},${subframeResult}`, 2026072104);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.message, 2026072104);
+                }
+                break;
+              }
+              case 'emitSetErrorPageEnabledWithSubframeErrorCode01': {
+                try {
+                  this.controllerTwo.setErrorPageEnabled(true, true);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(Number(error.code), 2026072105);
+                }
+                break;
+              }
+              case 'emitGetSubframeErrorPageEnabledErrorCode01': {
+                try {
+                  this.controllerTwo.getSubframeErrorPageEnabled();
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(Number(error.code), 2026072106);
+                }
+                break;
+              }
             }
          })
       }

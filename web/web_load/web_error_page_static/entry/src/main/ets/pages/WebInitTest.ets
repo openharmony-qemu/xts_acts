@@ -226,6 +226,82 @@ struct webViewController {
                 break;
               }
 
+              case 'emitSetErrorPageEnabledWithSubframe01': {
+                try {
+                  this.controller.setErrorPageEnabled(true, true);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' + (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60620);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.message, 60620);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframe02': {
+                try {
+                  this.controller.setErrorPageEnabled(true, false);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' + (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60621);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.message, 60621);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframe03': {
+                try {
+                  this.controller.setErrorPageEnabled(false, true);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' + (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60622);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.message, 60622);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframe04': {
+                try {
+                  this.controller.setErrorPageEnabled(false, false);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' + (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60623);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.message, 60623);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframeErrorCode01': {
+                try {
+                  this.controllerTwo.setErrorPageEnabled(true, true);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(Number(error.code), 60624);
+                }
+                break;
+              }
+
+              case 'emitGetSubframeErrorPageEnabledErrorCode01': {
+                try {
+                  this.controllerTwo.getSubframeErrorPageEnabled();
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(Number(error.code), 60625);
+                }
+                break;
+              }
+
             }
           })
 
