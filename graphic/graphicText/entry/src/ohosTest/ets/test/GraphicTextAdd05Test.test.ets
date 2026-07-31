@@ -1400,40 +1400,55 @@ export default function GraphicTextAdd05Test() {
           let promiseFontType = text.getSystemFontFullNamesByType(fontType)
           promiseFontType.then((data:Array<string>) => {
             console.info(msg + ` then font list size: ${data.length}`)
-            console.info(msg + ' data[0] = ' + data[0])
-            let promise = text.getFontDescriptorByFullName(data[0], fontType)
-            promise.then((fontDescriptor: text.FontDescriptor) => {
-              console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + JSON.stringify(fontDescriptor) )
-              console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + fontDescriptor )
-              console.info(msg + ` desc: ${JSON.stringify(fontDescriptor)}`)
-              expect(fontDescriptor.path).assertEqual('/system/fonts/HarmonyOS_Sans.ttf');
-              expect(fontDescriptor.postScriptName).assertEqual('HarmonyOS_Sans');
-              expect(fontDescriptor.fullName).assertEqual('HarmonyOS Sans');
-              expect(fontDescriptor.fontFamily).assertEqual('HarmonyOS Sans');
-              expect(fontDescriptor.fontSubfamily).assertEqual('Regular');
-              expect(fontDescriptor.weight).assertEqual(3);
-              expect(fontDescriptor.width).assertEqual(5);
-              expect(fontDescriptor.italic).assertEqual(0);
-              expect(fontDescriptor.monoSpace).assertFalse();
-              expect(fontDescriptor.symbolic).assertFalse();
-              expect(fontDescriptor.localPostscriptName).assertEqual('HarmonyOS_Sans');
-              expect(fontDescriptor.localFullName).assertEqual('HarmonyOS Sans');
-              expect(fontDescriptor.localFamilyName).assertEqual('HarmonyOS Sans');
-              expect(fontDescriptor.localSubFamilyName).assertEqual('Regular');
-              expect(fontDescriptor.version).assertEqual('Version 2.040');
-              expect(fontDescriptor.manufacture).assertEqual('Hanyi Fonts');
-              expect(fontDescriptor.copyright).assertEqual('Copyright 2021-2024 Huawei Device Co., Ltd. All Rights Reserved.');
-              expect(fontDescriptor.trademark).assertEqual('');
-              expect(fontDescriptor.license).assertEqual('');
-              expect(fontDescriptor.index).assertEqual(0);
-              done()
-            }).catch((error: BusinessError) => {
-              console.error(msg + ` Failed to get fontDescriptor by fullName, error: ${JSON.stringify(error)}`);
+            let flag = false;
+            let target: string = 'HarmonyOS Sans';
+            let index = data.indexOf(target);
+            if (index !== -1) {
+              console.info(msg + ` 找到，下标为: ${index}`);
+              flag = true;
+            } else {
+              console.info(msg + ` 没找到`);
               expect().assertFail();
-              done()
-            });
+            }
+            if (flag) {
+              let promise = text.getFontDescriptorByFullName('HarmonyOS Sans', fontType)
+              promise.then((fontDescriptor: text.FontDescriptor) => {
+                console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + JSON.stringify(fontDescriptor) )
+                console.log(msg + ' Succeed in text.getFontDescriptorByFullName  ' + fontDescriptor )
+                console.info(msg + ` desc: ${JSON.stringify(fontDescriptor)}`)
+                expect(fontDescriptor.path).assertEqual('/system/fonts/HarmonyOS_Sans.ttf');
+                expect(fontDescriptor.postScriptName).assertEqual('HarmonyOS_Sans');
+                expect(fontDescriptor.fullName).assertEqual('HarmonyOS Sans');
+                expect(fontDescriptor.fontFamily).assertEqual('HarmonyOS Sans');
+                expect(fontDescriptor.fontSubfamily).assertEqual('Regular');
+                expect(fontDescriptor.weight).assertEqual(3);
+                expect(fontDescriptor.width).assertEqual(5);
+                expect(fontDescriptor.italic).assertEqual(0);
+                expect(fontDescriptor.monoSpace).assertFalse();
+                expect(fontDescriptor.symbolic).assertFalse();
+                expect(fontDescriptor.localPostscriptName).assertEqual('HarmonyOS_Sans');
+                expect(fontDescriptor.localFullName).assertEqual('HarmonyOS Sans');
+                expect(fontDescriptor.localFamilyName).assertEqual('HarmonyOS Sans');
+                expect(fontDescriptor.localSubFamilyName).assertEqual('Regular');
+                expect(fontDescriptor.version).assertEqual('Version 2.040');
+                expect(fontDescriptor.manufacture).assertEqual('Hanyi Fonts');
+                expect(fontDescriptor.copyright).assertEqual('Copyright 2021-2024 Huawei Device Co., Ltd. All Rights Reserved.');
+                expect(fontDescriptor.trademark).assertEqual('');
+                expect(fontDescriptor.license).assertEqual('');
+                expect(fontDescriptor.index).assertEqual(0);
+                done()
+              }).catch((error: BusinessError) => {
+                console.error(msg + ` Failed to get fontDescriptor by fullName, error: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done()
+              });
+            } else {
+              expect().assertFail();
+              done();
+            }
           }).catch((error: BusinessError) => {
             console.error(`Failed to get font fullNames by type, error: ${JSON.stringify(error)}`);
+            done();
           });
         } catch(err){
           console.info(msg + ' Failed in text.getSystemFontFullNamesByType.  Cause: ' + JSON.stringify(err));
