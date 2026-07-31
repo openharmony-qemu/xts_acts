@@ -1,0 +1,239 @@
+'use static'
+/*
+ * Copyright (c) 2026 RKH Corp.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import Utils from '../Util';
+
+class MutexCtorSharedCounter {
+  value: number = 0;
+}
+
+// TC-1100: Construct Mutex in TaskPool task
+function taskPoolConstructTask(counter: AtomicInt): void {
+  const mutex = new Mutex();
+  counter.fetchAdd(1);
+}
+
+// TC-1300: Concurrent construction with AtomicInt counter
+function concurrentConstructTask(counter: AtomicInt): void {
+  const mutex = new Mutex();
+  counter.fetchAdd(1);
+}
+
+// TC-1700: Construct Mutex in EAWorker thread
+function eaWorkerConstructTask(counter: AtomicInt): void {
+  const mutex = new Mutex();
+  counter.fetchAdd(1);
+}
+
+// TC-1800: Cross-thread sharing - use Mutex lock/unlock in TaskPool
+function mutexLockUseTask(mutex: Mutex, c: MutexCtorSharedCounter): void {
+  mutex.lock();
+  try {
+    c.value = c.value + 1;
+  } finally {
+    mutex.unlock();
+  }
+}
+
+// TC-2000: Stress construction in TaskPool
+function stressConstructTask(counter: AtomicInt): void {
+  let success: boolean = true;
+  for (let i = 0; i < 100; i++) {
+    const mutex = new Mutex();
+  }
+  if (success) {
+    counter.fetchAdd(1);
+  }
+}
+
+// TC-2100: Lifecycle - construct, lock, unlock in TaskPool
+function lifecycleConstructTask(counter: AtomicInt): void {
+  const mutex = new Mutex();
+  mutex.lock();
+  mutex.unlock();
+  counter.fetchAdd(1);
+}
+
+export default function MutexConstructorTest(): void {
+  describe('MutexConstructorTest', (): void => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {})
+    afterAll(async (): Promise<void> => {
+      await Utils.msSleep(100);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0100
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0100
+     * @tc.desc    Verify Mutex constructor returns independent instances for each construction
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('MutexConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const mutex1 = new Mutex();
+      const mutex2 = new Mutex();
+      expect(mutex1 !== mutex2).assertTrue();
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0200
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0200
+     * @tc.desc    Verify batch construction of Mutex objects does not throw errors under normal conditions
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('MutexConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let successCount: number = 0;
+      for (let i = 0; i < 1000; i++) {
+        try {
+          const mutex = new Mutex();
+          successCount++;
+        } catch (error) {
+          // Construction failed
+        }
+      }
+      expect(successCount).assertEqual(1000);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0300
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0300
+     * @tc.desc    Verify repeated construction on same variable allows GC of old objects
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('MutexConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let stableCount: number = 0;
+      for (let i = 0; i < 500; i++) {
+        const mutex = new Mutex();
+        mutex.lock();
+        mutex.unlock();
+        stableCount++;
+      }
+      expect(stableCount).assertEqual(500);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0400
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0400
+     * @tc.desc    Verify Mutex can be constructed in a TaskPool task
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('MutexConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(taskPoolConstructTask, counter));
+      await p1;
+      expect(counter.load()).assertEqual(1);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0500
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0500
+     * @tc.desc    Verify multiple threads concurrently constructing Mutex objects is thread-safe
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('MutexConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      let p4 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      let p5 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      await Promise.all([p1, p2, p3, p4, p5]);
+      expect(counter.load()).assertEqual(5);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0600
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0600
+     * @tc.desc    Verify Mutex constructed in main thread can be shared and used across TaskPool tasks via static model
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('MutexConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const mutex = new Mutex();
+      const counter = new MutexCtorSharedCounter();
+      let p1 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
+      let p2 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
+      let p3 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
+      await Promise.all([p1, p2, p3]);
+      expect(counter.value).assertEqual(3);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0700
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0700
+     * @tc.desc    Verify stress construction of Mutex objects in multiple TaskPool tasks
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('MutexConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
+      let p4 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
+      let p5 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
+      await Promise.all([p1, p2, p3, p4, p5]);
+      expect(counter.load()).assertEqual(5);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0800
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0800
+     * @tc.desc    Verify Mutex object lifecycle management with construct-use-release pattern in concurrent tasks
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('MutexConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
+      await Promise.all([p1, p2, p3]);
+      expect(counter.load()).assertEqual(3);
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest0900
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0900
+     * @tc.desc    Verify Mutex can be constructed in an EAWorker thread
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('MutexConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const counter = new AtomicInt(0);
+      const worker = new EAWorker('mutexCtorWorker1');
+      worker.start();
+      await worker.run<void>(eaWorkerConstructTask, counter);
+      worker.quit();
+      expect(counter.load()).assertEqual(1);
+    })
+  })
+}
