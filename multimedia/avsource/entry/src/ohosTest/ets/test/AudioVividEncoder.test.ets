@@ -642,5 +642,18 @@ export default function audiovividEncoderTest() {
       expect(audiovividencoder.AudioVividMetaBuilderErrorUse()).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testGetMetaWithoutStaticMeta
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4900
+     * @tc.desc   test GetMetaWithoutStaticMeta
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetMetaWithoutStaticMeta', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.GetMetaWithoutStaticMeta()).assertEqual(0);
+      done();
+    });
   })
 }
