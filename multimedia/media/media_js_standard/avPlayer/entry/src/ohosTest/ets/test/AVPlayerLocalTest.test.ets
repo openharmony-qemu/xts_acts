@@ -4447,7 +4447,7 @@ export default function AVPlayerLocalTest() {
             setSource(avPlayer, fileDescriptor);
             adsController = await media.createAVAdsController(avPlayer);
             adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
-            let callback: media.OnAdsEventAdsStartedHandle = (adsId: string, duration: int) => {
+            let callback: media.OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => {
               console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700 callback adsId: ${adsId}, duration: ${duration}`);
             };
             adsController?.onAdsListenerAdsStarted(callback);
