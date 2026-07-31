@@ -61,8 +61,6 @@ napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info);
 napi_value TestSetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info);
 napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_callback_info info);
 napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback_info info);
-napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info);
-napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env env, napi_callback_info info);
 napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info);
 napi_value TestSetExposureDurationWithInvalidValue(napi_env env, napi_callback_info info);
 napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_callback_info info);

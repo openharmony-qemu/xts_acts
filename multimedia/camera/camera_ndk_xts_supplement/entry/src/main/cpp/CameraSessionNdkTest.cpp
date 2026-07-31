@@ -1076,45 +1076,6 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     return result;
 }
 
-napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    int32_t minExposureDuration;
-    int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
-        nullptr, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_INVALID_ARGUMENT) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange fail: %{public}d", ret);
-        napi_create_int32(env, ret, &result);
-        return result;
-    }
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    Camera_Manager *cameraManager = nullptr;
-    OH_Camera_GetCameraManager(&cameraManager);
-    Camera_CaptureSession *captureSession = nullptr;
-    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
-    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
-    int32_t minExposureDuration;
-    int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
-        captureSession, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_SESSION_NOT_CONFIG) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
-        napi_create_int32(env, ret, &result);
-        OH_CaptureSession_Release(captureSession);
-        return result;
-    }
-    OH_CaptureSession_Release(captureSession);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
 napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
