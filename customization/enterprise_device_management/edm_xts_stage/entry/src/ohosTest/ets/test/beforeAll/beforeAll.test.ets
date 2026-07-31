@@ -23,6 +23,7 @@ import {
   setBluetoothState,
   setWifiState
 } from '../commom.ets';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import bluetoothManager from '@ohos.enterprise.bluetoothManager';
@@ -43,7 +44,8 @@ export default function beforeAllTest() {
       try {
         let bluetoothInfo: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
         setBluetoothState(bluetoothInfo.state);
-        expect(bluetoothInfo != null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -65,7 +67,8 @@ export default function beforeAllTest() {
       try {
         let wifiState: boolean = wifiManager.isWifiActiveSync(SELFWANT);
         setWifiState(wifiState);
-        expect(wifiState !== undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {

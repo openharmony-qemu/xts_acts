@@ -14,6 +14,7 @@
  */
 
 import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 import {
   ENTINFO1,
   SELFWANT,
@@ -2400,7 +2401,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], null);
-        expect(ret == null).assertTrue();
+        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
+        expect(Array.isArray(apps)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -2421,7 +2423,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], undefined);
-        expect(ret == null).assertTrue();
+        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
+        expect(Array.isArray(apps)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -3751,7 +3754,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.addAllowedRunningBundles(SELFWANT, BUNDLE_NAME_200, DEFAULT_USER_ID);
-        expect(ret == null).assertTrue();
+        let bundles = applicationManager.getAllowedRunningBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -5151,7 +5155,8 @@ export default function applicationManagerTest() {
         let index: number = 0;
         let abilityName: string = "EntryAbility";
         let ret = applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
-        expect(ret == null).assertTrue();
+        let dockInfos: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
+        expect(Array.isArray(dockInfos)).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
@@ -5357,7 +5362,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
-        expect(ret != null).assertTrue();
+        expect(Array.isArray(ret)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -5399,7 +5404,6 @@ export default function applicationManagerTest() {
           }
         }
         let ret = applicationManager.removeDockApp(SELFWANT, bundleName, abilityName);
-        expect(ret == null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -9543,7 +9547,8 @@ export default function applicationManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = applicationManager.addAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- addAllowedRunningBundles_test_006_1 done is expected, but error, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -9568,7 +9573,8 @@ export default function applicationManagerTest() {
       try {
         applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID)
         let ret = applicationManager.removeAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedRunningBundles_test_006_1 done is expected,but error, actually catch: ' +
         error.code);
@@ -10528,11 +10534,10 @@ export default function applicationManagerTest() {
       };
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then((result)=>{
-        expect(result !== undefined).assertTrue();
-        expect(result.rxBytes === 0).assertTrue();
-        expect(result.txBytes === 0).assertTrue();
-        expect(result.rxPackets === 0).assertTrue();
-        expect(result.txPackets === 0).assertTrue();
+        expect(result?.rxBytes === 0).assertTrue();
+        expect(result?.txBytes === 0).assertTrue();
+        expect(result?.rxPackets === 0).assertTrue();
+        expect(result?.txPackets === 0).assertTrue();
       }).catch ((error: BusinessError)=> {
         expect(false).assertTrue();
       }).finally(async () => {

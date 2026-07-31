@@ -110,9 +110,9 @@ export default function bluetoothManagerTest() {
        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
        try {
          let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
-         expect(result.name != null).assertTrue();
-         expect(result.state != null).assertTrue();
-         expect(result.connectionState != null).assertTrue();
+         expect(typeof result.name === 'string').assertTrue();
+         expect(typeof result.state === 'number').assertTrue();
+         expect(typeof result.connectionState === 'number').assertTrue();
          console.log('result.name:' + result.name + ' result.state:' +
            result.state + ' result.connectionState:' + result.connectionState);
        } catch(error) {

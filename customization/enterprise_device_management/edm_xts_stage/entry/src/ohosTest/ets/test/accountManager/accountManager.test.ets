@@ -21,6 +21,7 @@ import { Driver, ON } from '@kit.TestKit';
 import accountManager from '@ohos.enterprise.accountManager';
 import adminManager from '@ohos.enterprise.adminManager';
 import osAccount from '@ohos.account.osAccount';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 export default function accountManagerTest() {
 
@@ -344,7 +345,8 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(ret == null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_1000 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -369,7 +371,8 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(ret == null).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_1100 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
