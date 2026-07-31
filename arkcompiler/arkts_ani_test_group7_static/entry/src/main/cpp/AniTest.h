@@ -183,21 +183,26 @@ inline ani_size ProbePathLength(ani_env *env, ani_string path)
     return needed;
 }
 
+inline bool ReadPathContent(ani_env *env, ani_string path, char *buf, ani_size needed)
+{
+    ani_size actualLen = 0;
+    if (env->String_GetUTF8(path, buf, needed + 1, &actualLen) != ANI_OK) {
+        return false;
+    }
+    return true;
+}
+
 inline char *AllocAndReadPath(ani_env *env, ani_string path, ani_size needed)
 {
     if (needed == 0 || needed > PATH_PROBE_SIZE) {
         return nullptr;
     }
     char *buf = static_cast<char *>(malloc(needed + 1));
-    if (buf == nullptr) {
-        return nullptr;
+    if (buf != nullptr && ReadPathContent(env, path, buf, needed)) {
+        return buf;
     }
-    ani_size actualLen = 0;
-    if (env->String_GetUTF8(path, buf, needed + 1, &actualLen) != ANI_OK) {
-        free(buf);
-        return nullptr;
-    }
-    return buf;
+    free(buf);
+    return nullptr;
 }
 
 inline char *ResolvePath(ani_env *env, ani_string path)
