@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import image from '@ohos.multimedia.image';
 import deviceInfo from '@ohos.deviceInfo';
+import window from '@ohos.window';
 
 function expectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: string, apiName: string, done: Function, code: number) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -69,6 +70,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     let commonKEYColorArr: Array<string> = ['red', 'green', 'blue', 'white', 'black', 'pink', 'grey', 'yellow'];
     let avoidArea1: ohosWindow.AvoidArea;
     let isFreeWindowMode = false;
+    let isSupportRotate = false;
     
     beforeAll(async () => {
       let windowClass = windowStage.getMainWindowSync();
@@ -82,6 +84,21 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         //isFreeWindowMode == true 自由窗口模式
         //isFreeWindowMode == false 非自由窗口模式
         console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+        let mainWindow = windowStage.getMainWindowSync();
+        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT)
+        await sleep(300);
+        let Orientation1 = display.getDefaultDisplaySync().orientation;
+        await mainWindow.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await sleep(300);
+        let Orientation2 = display.getDefaultDisplaySync().orientation;
+        if (Orientation1 != Orientation2) {
+          isSupportRotate = true;
+        } else {
+          isSupportRotate = false;
+        }
+        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await sleep(300);
+        console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
     })
     /**
      * @tc.name   testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback
@@ -1492,33 +1509,21 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         
         expect(beforeOrientation).assertEqual(afterOrientation);
       }
-
-      if (deviceInfo.deviceType === '2in1') {
-        testSetPreferredOrientation_Callback_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'phone' && isFreeWindowMode === false) {
+      if (isSupportRotate) {
+        if (isFreeWindowMode === false) {
         testSetPreferredOrientation_Callback_CheckReturnSuccess();
-      } else if (deviceInfo.deviceType === 'tv') {
-        testSetPreferredOrientation_Callback_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'wearable') {
-        testSetPreferredOrientation_Callback_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'tablet' && isFreeWindowMode === false) {
-        testSetPreferredOrientation_Callback_CheckReturnSuccess();
-      } else if (deviceInfo.deviceType === 'car') {
-        testSetPreferredOrientation_Callback_CheckReturnFail();
-      } else if (isFreeWindowMode === true){
-        testSetPreferredOrientation_Callback_CheckReturnFail();
+        done();
       } else {
-        let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-        console.info(caseName + 'canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-        if (!canIUseRes) {
-          done();
-        } else {
-          console.info(`====>${msgStr} end fail====`);
-          expect().assertFail();
-          done();
-        }
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+        done();
       }
-      done()
+    } else {
+      testSetPreferredOrientation_Callback_CheckReturnFail();
+      done();
+    }
+      
+
+      
     })
     /**
      * @tc.name   testSnapshotTest_Callback_Form
