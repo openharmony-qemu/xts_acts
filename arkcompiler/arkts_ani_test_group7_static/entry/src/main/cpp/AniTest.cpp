@@ -770,7 +770,7 @@ std::array methods = {
     ani_native_function{"testAniStepPhysics", "ld:d",
         reinterpret_cast<void *>(testAniStepPhysics)},
     ani_native_function{"testAniDestroyPhysics", "l:",
-        reinterpret_cast<void *>(testAniDestroyPhysics)},
+        reinterpret_cast<void *>(TestAniDestroyPhysics)},
     ani_native_function{"testAniFeatureExtract", "C{std.core.Array}:C{std.core.Object}",
         reinterpret_cast<void *>(testAniFeatureExtract)},
     ani_native_function{"testAniErrorTrigger", ":z",

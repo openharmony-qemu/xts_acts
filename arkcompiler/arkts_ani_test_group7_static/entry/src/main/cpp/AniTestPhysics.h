@@ -88,7 +88,7 @@ ani_double testAniStepPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return static_cast<double>(dt * state[PHYSICS_GRAVITY_INDEX]);
 }
 
-void testAniDestroyPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_long handle)
+void TestAniDestroyPhysics([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object, ani_long handle)
 {
     if (handle != 0) {
         auto handleAddr = static_cast<uintptr_t>(handle);
