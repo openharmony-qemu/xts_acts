@@ -17,8 +17,7 @@
 #define ARKUI_CAPI_SYSTEM_MATERIAL_HELPERS_H
 
 #include "common/common.h"
-#include <arkui/error_code.h>
-#include <arkui/native_dialog.h>
+#include "systemMaterial/CustomDialogApi26Compat.h"
 #include <arkui/native_material.h>
 #include <arkui/native_node.h>
 

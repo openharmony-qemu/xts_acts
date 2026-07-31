@@ -71,6 +71,11 @@ napi_value TestCustomDialogSetDisplayModeInSubWindow001(napi_env env, napi_callb
 napi_value TestCustomDialogSetDisplayModeInSubWindow002(napi_env env, napi_callback_info info);
 napi_value TestCustomDialogSetDisplayModeInSubWindow003(napi_env env, napi_callback_info info);
 
+napi_value TestDialogOpenCallbackErrorEnumValues001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackNullOptions001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackUserData001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackValidOptions001(napi_env env, napi_callback_info info);
+
 napi_value TestGetNodeSnapshotSizeLimitationNull001(napi_env env, napi_callback_info info);
 napi_value TestRenderNodeUtilsSetRectShapeOptionValueNull001(napi_env env, napi_callback_info info);
 napi_value TestRenderNodeUtilsSetRoundRectShapeOptionValueNull001(napi_env env, napi_callback_info info);

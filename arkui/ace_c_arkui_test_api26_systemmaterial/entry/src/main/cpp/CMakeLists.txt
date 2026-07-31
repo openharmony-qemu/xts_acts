@@ -5,6 +5,9 @@ project(SystemMaterialCapiXts)
 set(NATIVE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DOHOS_PLATFORM)
 
+# OpenDialogWithCallback error codes: declare via CustomDialogApi26Compat.h.
+# Do NOT prepend static SDK usr/include — it breaks C++ standard headers (nullptr_t).
+
 include_directories(
     ${NATIVE_ROOT}
     ${NATIVE_ROOT}/include
@@ -16,6 +19,7 @@ add_library(nativefunc SHARED
     systemMaterial/NullPointerApisTest.cpp
     systemMaterial/CustomDialogMaterialTest.cpp
     systemMaterial/CustomDialogDisplayModeTest.cpp
+    systemMaterial/CustomDialogOpenCallbackTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
 )
 
