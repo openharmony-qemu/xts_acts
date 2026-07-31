@@ -22,8 +22,8 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium/index";
-import Utils from './Util.test';
+} from "../../../hypium";
+import Utils from './Util';
 import { BaseClass, sleep } from '../utils/Model';
 
 export default function RWLockEnhancedTest(): void {
@@ -43,7 +43,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedReadToWriteUpgrade', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReadToWriteUpgrade';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -67,7 +67,7 @@ export default function RWLockEnhancedTest(): void {
         worker.join().Await();
         await sleep(200);
 
-        console.info(`${TAG} result: ${result.load()}`);
+        
         expect(result.load()).assertEqual('RW');
         Done();
       });
@@ -83,7 +83,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedWriteToReadDowngrade', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriteToReadReadDowngrade';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -111,7 +111,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
         worker.join().Await();
-        console.info(`${TAG} result: ${result.load()}, worker completed: ${workerCompleted.load()}`);
+        
         expect(workerCompleted.load()).assertEqual(1);
         Done();
       });
@@ -127,7 +127,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedMultipleReadLocksNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMultipleReadLocksNested';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock1 = rwLock.readLock();
         let rLock2 = rwLock.readLock();
@@ -142,7 +142,7 @@ export default function RWLockEnhancedTest(): void {
         rLock2.unlock();
         rLock1.unlock();
 
-        console.info(`${TAG} count: ${count.load()}`);
+        
         expect(count.load()).assertEqual(2);
         Done();
       });
@@ -158,7 +158,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedWriterStarvation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriterStarvation';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -191,7 +191,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        console.info(`${TAG} read count: ${readCount.load()}, writer executed: ${writerExecuted.load()}`);
+        
         expect(readCount.load()).assertLarger(0);
         expect(writerExecuted.load()).assertEqual(1);
         Done();
@@ -208,7 +208,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedReaderStarvation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReaderStarvation';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -241,7 +241,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        console.info(`${TAG} write count: ${writeCount.load()}, reader executed: ${readerExecuted.load()}`);
+        
         expect(writeCount.load()).assertLarger(0);
         expect(readerExecuted.load()).assertEqual(1);
         Done();
@@ -258,7 +258,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedMassiveReadersWriters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMassiveReadersWriters';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let readCount = new AtomicInt(0);
         let writeCount = new AtomicInt(0);
@@ -294,7 +294,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        console.info(`${TAG} read count: ${readCount.load()}, write count: ${writeCount.load()}`);
+        
         expect(readCount.load() + writeCount.load()).assertLargerOrEqual(55);
         Done();
       });
@@ -310,7 +310,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedAlternatingReadWrite', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedAlternatingReadWrite';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -327,7 +327,7 @@ export default function RWLockEnhancedTest(): void {
           wLock.unlock();
         }
 
-        console.info(`${TAG} sequence: ${sequence.toString()}`);
+        
         expect(sequence.length).assertEqual(iterations * 2);
         Done();
       });
@@ -343,7 +343,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedReaderDataConsistency', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReaderDataConsistency';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let data: BaseClass = new BaseClass();
         let writeCount = new AtomicInt(0);
@@ -376,7 +376,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        console.info(`${TAG} write count: ${writeCount.load()}, read count: ${readCount.load()}`);
+        
         expect(writeCount.load()).assertEqual(1);
         expect(readCount.load()).assertEqual(10);
         Done();
@@ -393,7 +393,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedWriterExclusivity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriterExclusivity';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let wLock = rwLock.writeLock();
         let concurrentWrites = new AtomicInt(0);
@@ -433,7 +433,7 @@ export default function RWLockEnhancedTest(): void {
         job.Await();
         worker.join().Await();
 
-        console.info(`${TAG} max concurrent writes: ${maxConcurrent.load()}`);
+        
         expect(maxConcurrent.load()).assertLessOrEqual(1);
         Done();
       });
@@ -449,7 +449,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedReadLockDoubleUnlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReadLockDoubleUnlock';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let errorCount = 0;
@@ -461,10 +461,10 @@ export default function RWLockEnhancedTest(): void {
           rLock.unlock();
         } catch (e) {
           errorCount++;
-          console.info(`${TAG} caught expected error: ${e.message}`);
+          
         }
 
-        console.info(`${TAG} error count: ${errorCount}`);
+        
         expect(errorCount).assertEqual(1);
         Done();
       });
@@ -480,7 +480,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedWriteLockDoubleUnlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriteLockDoubleUnlock';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let wLock = rwLock.writeLock();
         let errorCount = 0;
@@ -492,10 +492,10 @@ export default function RWLockEnhancedTest(): void {
           wLock.unlock();
         } catch (e) {
           errorCount++;
-          console.info(`${TAG} caught expected error: ${e.message}`);
+          
         }
 
-        console.info(`${TAG} error count: ${errorCount}`);
+        
         expect(errorCount).assertEqual(1);
         Done();
       });
@@ -511,7 +511,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedMixedLockUsage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMixedLockUsage';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
@@ -536,7 +536,7 @@ export default function RWLockEnhancedTest(): void {
         job.Await();
         worker.join().Await();
 
-        console.info(`${TAG} count: ${count.load()}`);
+        
         expect(count.load()).assertEqual(3);
         Done();
       });
@@ -552,7 +552,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedConcurrentReadersSameLock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedConcurrentReadersSameLock';
-        console.info(`${TAG} test start`);
+        
         let rwLock = new RWLock();
         let rLock = rwLock.readLock();
         let count = new AtomicInt(0);
@@ -574,7 +574,7 @@ export default function RWLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        console.info(`${TAG} reader count: ${count.load()}, unlocked: ${unlockCount.load()}`);
+        
         expect(count.load()).assertLargerOrEqual(readerCount);
         Done();
       });
@@ -590,7 +590,7 @@ export default function RWLockEnhancedTest(): void {
     it('rwLockEnhancedMultipleRWLockInstances', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMultipleRWLockInstances';
-        console.info(`${TAG} test start`);
+        
         let lock1 = new RWLock();
         let lock2 = new RWLock();
         let count1 = new AtomicInt(0);
@@ -605,7 +605,7 @@ export default function RWLockEnhancedTest(): void {
         lock2.writeLock().unlock();
         lock1.writeLock().unlock();
 
-        console.info(`${TAG} count1: ${count1.load()}, count2: ${count2.load()}`);
+        
         expect(count1.load()).assertEqual(1);
         expect(count2.load()).assertEqual(1);
         Done();

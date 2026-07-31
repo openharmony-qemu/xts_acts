@@ -25,14 +25,13 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index';
-import hilog from '@ohos.hilog'
-import Utils from './Util.test';
+} from '../../../hypium';
+import Utils from './Util';
 import { BaseClass, CountClass, Event, SharedJob, sleep } from '../utils/Model';
 
-export let concurrentNum = 1
+export let concurrentNum: number = 1
 
-export let currentWorker = EAWorker.current()
+export let currentWorker: EAWorker | undefined = EAWorker.current()
 
 export default function CombLockTest(): void {
   describe('CombLockTest', (): void => {
@@ -50,7 +49,7 @@ export default function CombLockTest(): void {
     it('CombLockTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest001';
-        console.info(`${tag} test start`);
+        
         let lock = new Mutex()
         let count: number = 0
         let funcA = () => {
@@ -73,7 +72,7 @@ export default function CombLockTest(): void {
         for (let i = 0; i < 100; i++) {
           funcC()
         }
-        console.log(`TESTCASE ${tag} result: ` + count)
+        
         expect(count).assertEqual(300)
         Done()
       });
@@ -89,7 +88,7 @@ export default function CombLockTest(): void {
     it('CombLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest002';
-        console.info(`${tag} test start`);
+        
         let lock = new Mutex()
         let count: number = 0
         let funcA = () => {
@@ -132,7 +131,7 @@ export default function CombLockTest(): void {
         jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
         value.Await()
         )
-        console.log(`TESTCASE ${tag} result: ` + count)
+        
         expect(count).assertEqual(220)
         Done()
       });
@@ -148,7 +147,7 @@ export default function CombLockTest(): void {
     it('CombLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest003';
-        console.info(`${tag} test start`);
+        
         let lock = new Mutex()
         let count: number = 0
         let result: string = ''
@@ -182,7 +181,7 @@ export default function CombLockTest(): void {
           funcB('B')
         }).Await()
         eaw1.join()
-        console.log(`TESTCASE ${tag} result: ` + result)
+        
         expect(result).assertEqual('CCCBBAABBCCCABB')
         Done()
       });
@@ -198,7 +197,7 @@ export default function CombLockTest(): void {
     it('CombLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest004';
-        console.info(`${tag} test start`);
+        
         let lock = new RWLock()
         let wLock = lock.writeLock()
         let count: number = 0
@@ -233,7 +232,7 @@ export default function CombLockTest(): void {
           funcB('B')
         }).Await()
         eaw1.join()
-        console.log(`TESTCASE ${tag} result: ` + result)
+        
         expect(result).assertEqual('CCCBBAABBCCCABB')
         Done()
       });
@@ -250,7 +249,7 @@ export default function CombLockTest(): void {
     it('CombLockTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest005';
-        console.info(`${tag} test start`);
+        
 
         let lock = new RWLock()
         let wLock = lock.writeLock()
@@ -288,7 +287,7 @@ export default function CombLockTest(): void {
         jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
         value.Await()
         )
-        console.log(`TESTCASE ${tag} result: ` + count)
+        
         expect(count).assertEqual(110)
         Done()
       });
@@ -304,7 +303,7 @@ export default function CombLockTest(): void {
     it('CombLockTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest006';
-        console.info(`${tag} test start`);
+        
         let lock = new RWLock()
         let wLock = lock.writeLock()
         let rLock = lock.readLock()
@@ -340,7 +339,7 @@ export default function CombLockTest(): void {
           funcB('B')
         }).Await()
         eaw1.join()
-        console.log(`TESTCASE ${tag} result: ` + result)
+        
         expect(result).assertEqual('CCCBBAABBCCCABB')
         Done()
       });
@@ -356,7 +355,7 @@ export default function CombLockTest(): void {
     it('CombLockTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest007';
-        console.info(`${tag} test start`);
+        
         let lock = new RWLock()
         let wLock = lock.writeLock()
         let rLock = lock.readLock()
@@ -394,9 +393,9 @@ export default function CombLockTest(): void {
         let start = new Date().getTime()
         while (count < 900) {
           await sleep(100)
-          console.log(`TESTCASE ${tag} result: ` + count)
+          
         }
-        console.log(`TESTCASE ${tag} result: ` + count)
+        
         expect(count).assertEqual(900)
         Done()
       })
@@ -413,8 +412,7 @@ export default function CombLockTest(): void {
     it('CombLockTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest008';
-        console.info(`${tag} test start`);
-        let currentWorker = EAWorker.current()
+        
         let results: Promise<int>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < concurrentNum; i++) {
@@ -426,7 +424,7 @@ export default function CombLockTest(): void {
             let currentCB = (msg: concurrency.Message) => {
               let data = msg.getObject() as Mutex
               data.unlock()
-              console.log(`${tag} main message cb id: ` + currentWorker?.getWorkerId())
+              
               resolve(msg.getWhat())
             }
             let workerCB = (msg: concurrency.Message) => {
@@ -443,7 +441,7 @@ export default function CombLockTest(): void {
               msgHandler.sendMessage(new concurrency.Message(123, mutexLock, msgHandler))
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -451,14 +449,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: number = 0
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: int[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data.length.toDouble()
           let check: int[] = data.filter((value: int) => value == 123)
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -467,6 +468,8 @@ export default function CombLockTest(): void {
 
           }
         })
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         expect(result).assertEqual(concurrentNum)
         Done()
       });
@@ -483,7 +486,7 @@ export default function CombLockTest(): void {
     it('CombLockTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest009';
-        console.info(`${tag} test start`);
+        
         let currentWorker = EAWorker.current()
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
@@ -522,7 +525,7 @@ export default function CombLockTest(): void {
               writeLock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -530,14 +533,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -547,6 +553,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(result).assertEqual('1234')
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       })
 
@@ -561,7 +569,7 @@ export default function CombLockTest(): void {
     it('CombLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest010';
-        console.info(`${tag} test start`);
+        
         let results: Promise<int>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < concurrentNum; i++) {
@@ -576,7 +584,7 @@ export default function CombLockTest(): void {
             let currentCB = (msg: concurrency.Message) => {
               let data = msg.getObject() as Mutex
               data.unlock()
-              console.log(`${tag} main message cb id: ` + currentWorker?.getWorkerId())
+              
               resolve(msg.getWhat())
             }
             let workerCB = (msg: concurrency.Message) => {
@@ -593,7 +601,7 @@ export default function CombLockTest(): void {
               msgHandler.sendMessage(new concurrency.Message(123, mutexLock, msgHandler))
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -601,13 +609,16 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: int = 0
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: int[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
-          console.log(`${tag} result: ` + data[0])
+          
+          
+          
           result = data[0]
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -617,6 +628,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(result).assertEqual(123)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -632,7 +645,7 @@ export default function CombLockTest(): void {
     it('CombLockTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest011';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let rwLock = new RWLock();
@@ -673,7 +686,7 @@ export default function CombLockTest(): void {
               writeLock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -681,14 +694,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -698,6 +714,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(result).assertEqual('1234')
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -712,7 +730,7 @@ export default function CombLockTest(): void {
     it('CombLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest012';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let rwLock = new RWLock();
@@ -757,7 +775,7 @@ export default function CombLockTest(): void {
               writeLock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -765,14 +783,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -782,6 +803,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -796,7 +819,7 @@ export default function CombLockTest(): void {
     it('CombLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest013';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let lock = new Mutex();
@@ -839,7 +862,7 @@ export default function CombLockTest(): void {
               lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -847,14 +870,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -864,6 +890,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -878,7 +906,7 @@ export default function CombLockTest(): void {
     it('CombLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest014';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let lock = new Mutex();
@@ -930,7 +958,7 @@ export default function CombLockTest(): void {
               lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -938,14 +966,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -955,6 +986,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -970,7 +1003,7 @@ export default function CombLockTest(): void {
     it('CombLockTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest015';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let lock = new Mutex();
@@ -1020,7 +1053,7 @@ export default function CombLockTest(): void {
               lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -1028,14 +1061,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -1045,6 +1081,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -1059,7 +1097,7 @@ export default function CombLockTest(): void {
     it('CombLockTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest016';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let lock = new Mutex();
@@ -1112,7 +1150,7 @@ export default function CombLockTest(): void {
               lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -1120,14 +1158,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -1137,6 +1178,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       });
 
@@ -1151,7 +1194,7 @@ export default function CombLockTest(): void {
     it('CombLockTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest017';
-        console.info(`${tag} test start`);
+        
         let results: Promise<string>[] = []
         let workers: EAWorker[] = []
         let lock = new Mutex();
@@ -1207,7 +1250,7 @@ export default function CombLockTest(): void {
               lock.unlock()
             })
             eaw.setUncaughtExceptionHandler((e: Error) => {
-              console.log(`${tag} error: ` + e)
+              
               reject(e)
               eaw.quit()
             })
@@ -1215,14 +1258,17 @@ export default function CombLockTest(): void {
           results.push(workerPromise)
         }
         let result: string = ''
+        let promiseFailed: boolean = false;
+        let promiseError: string = '';
         await Promise.all(results).then((data: string[]): void => {
-          console.log(`${tag} end: ` + data.length)
-          console.log(`${tag} result: ` + data)
+          
+          
           result = data[0]
           let check: string[] = data.filter((value: string) => value == '1234')
-          console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
-        }).catch((e) => {
-          console.log(`${tag} error: ` + e)
+          
+        }).catch((e: Error) => {
+          promiseFailed = true;
+          promiseError = e.message;
         })
         workers.forEach((eaw) => {
           try {
@@ -1232,6 +1278,8 @@ export default function CombLockTest(): void {
           }
         })
         expect(count.getCount()).assertLessOrEqual(concurrentNum * 4)
+        expect(promiseFailed).assertFalse();
+        expect(promiseError).assertEqual('');
         Done()
       })
 
@@ -1247,7 +1295,7 @@ export default function CombLockTest(): void {
     it('CombLockTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest018';
-        console.info(`${tag} test start`);
+        
         let mutexLock = new Mutex();
         const coroutines = 10;
         const workload = 1000;
@@ -1275,7 +1323,7 @@ export default function CombLockTest(): void {
         for (let worker of workers) {
           worker.quit();
         }
-        console.log(`${tag} result: ` + count)
+        
         expect(count).assertEqual(10000)
         Done()
       });
@@ -1292,7 +1340,7 @@ export default function CombLockTest(): void {
     it('CombLockTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest019';
-        console.info(`${tag} test start`);
+        
         let readLock = new RWLock().readLock();
         const coroutines = 10;
         const workload = 1000;
@@ -1321,7 +1369,7 @@ export default function CombLockTest(): void {
         for (let worker of workers) {
           worker.quit();
         }
-        console.log(`${tag} result: ` + count)
+        
         expect(count <= 10000).assertEqual(true)
         Done()
       })
@@ -1337,7 +1385,7 @@ export default function CombLockTest(): void {
     it('CombLockTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest020';
-        console.info(`${tag} test start`);
+        
         let writeLock = new RWLock().writeLock();
         const coroutines = 10;
         const workload = 1000;
@@ -1366,7 +1414,7 @@ export default function CombLockTest(): void {
         for (let worker of workers) {
           worker.quit();
         }
-        console.log(`${tag} result: ` + count)
+        
         expect(count).assertEqual(10000)
         Done()
       });
@@ -1381,7 +1429,7 @@ export default function CombLockTest(): void {
     it('CombLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest021';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1397,7 +1445,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1410,7 +1458,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1419,10 +1467,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1438,7 +1486,7 @@ export default function CombLockTest(): void {
     it('CombLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest022';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1453,7 +1501,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1466,7 +1514,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1474,7 +1522,7 @@ export default function CombLockTest(): void {
           pros.push(taskpool.execute(task2))
         }
         await Promise.all(pros)
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1490,7 +1538,7 @@ export default function CombLockTest(): void {
     it('CombLockTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest023';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1505,7 +1553,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1518,7 +1566,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1526,7 +1574,7 @@ export default function CombLockTest(): void {
           pros.push(taskpool.executeDelayed(10, task2))
         }
         await Promise.all(pros)
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1542,7 +1590,7 @@ export default function CombLockTest(): void {
     it('CombLockTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest024';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1558,7 +1606,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1571,7 +1619,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1579,7 +1627,7 @@ export default function CombLockTest(): void {
           pros.push(runner.execute(task2))
         }
         await Promise.all(pros)
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1596,7 +1644,7 @@ export default function CombLockTest(): void {
     it('CombLockTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest025';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1612,7 +1660,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1625,7 +1673,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1633,7 +1681,7 @@ export default function CombLockTest(): void {
           group.addTask(task2)
         }
         await taskpool.execute(group)
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1649,7 +1697,7 @@ export default function CombLockTest(): void {
     it('CombLockTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest026';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1663,7 +1711,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1674,7 +1722,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1683,10 +1731,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1701,7 +1749,7 @@ export default function CombLockTest(): void {
     it('CombLockTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest027';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1715,7 +1763,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1726,7 +1774,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1735,10 +1783,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -1753,7 +1801,7 @@ export default function CombLockTest(): void {
     it('CombLockTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest028';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1766,7 +1814,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1777,7 +1825,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1786,10 +1834,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -1804,7 +1852,7 @@ export default function CombLockTest(): void {
     it('CombLockTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest029';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1817,7 +1865,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1828,7 +1876,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1837,10 +1885,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1855,7 +1903,7 @@ export default function CombLockTest(): void {
     it('CombLockTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest030';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1869,7 +1917,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1880,7 +1928,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1889,10 +1937,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1907,7 +1955,7 @@ export default function CombLockTest(): void {
     it('CombLockTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest031';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1921,7 +1969,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1932,7 +1980,7 @@ export default function CombLockTest(): void {
                 count++
                 lock.unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1941,10 +1989,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -1959,7 +2007,7 @@ export default function CombLockTest(): void {
     it('CombLockTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest032';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -1973,7 +2021,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1984,7 +2032,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -1993,10 +2041,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -2011,7 +2059,7 @@ export default function CombLockTest(): void {
     it('CombLockTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest033';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -2025,7 +2073,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2036,7 +2084,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2045,10 +2093,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2063,7 +2111,7 @@ export default function CombLockTest(): void {
     it('CombLockTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest034';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -2076,7 +2124,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2087,7 +2135,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2096,10 +2144,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2114,7 +2162,7 @@ export default function CombLockTest(): void {
     it('CombLockTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest035';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -2129,7 +2177,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2142,7 +2190,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2151,10 +2199,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2170,7 +2218,7 @@ export default function CombLockTest(): void {
     it('CombLockTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest036';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -2186,7 +2234,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2199,7 +2247,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2208,10 +2256,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2226,7 +2274,7 @@ export default function CombLockTest(): void {
     it('CombLockTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest037';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new Mutex()
         let rwLock = new RWLock()
@@ -2242,7 +2290,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2255,7 +2303,7 @@ export default function CombLockTest(): void {
                 lock.unlock()
                 rwLock.readLock().unlock()
               } catch (e) {
-                console.info(`${tag} task1 error: ` + e);
+                throw e as Error;
               }
             }
           })
@@ -2264,10 +2312,10 @@ export default function CombLockTest(): void {
         }
         await Promise.all(pros).then((res: Any[]) => {
           res.forEach((data: Any) => {
-            console.info(`${tag} result: ` + data);
+            
           })
         })
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(200)
         Done()
       });
@@ -2282,7 +2330,7 @@ export default function CombLockTest(): void {
     it('CombLockTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest038';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let rwLock = new RWLock();
         let pros: Promise<void>[] = []
@@ -2296,7 +2344,7 @@ export default function CombLockTest(): void {
                     count++
                     rwLock.readLock().unlock()
                   } catch (e) {
-                    console.log(`${tag} catch1: ` + e)
+                    throw e as Error;
                   }
                   resolve(undefined)
                 }, 10)
@@ -2308,7 +2356,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.log(`${tag} catch2: ` + e)
+                throw e as Error;
               }
             }
             pros.push(task1())
@@ -2319,9 +2367,9 @@ export default function CombLockTest(): void {
         let start = new Date().getTime()
         while (count < 100 * concurrentNum) {
           await sleep(100)
-          console.log(`TESTCASE ${tag} count: ` + count)
+          
         }
-        console.log(`TESTCASE ${tag} count: ` + count)
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2337,7 +2385,7 @@ export default function CombLockTest(): void {
     it('CombLockTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest039';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let rwLock = new RWLock();
         let pros: Promise<void>[] = []
@@ -2351,7 +2399,7 @@ export default function CombLockTest(): void {
                     count++
                     rwLock.writeLock().unlock()
                   } catch (e) {
-                    console.log(`${tag} catch1: ` + e)
+                    throw e as Error;
                   }
                   resolve(undefined)
                 }, 10)
@@ -2363,7 +2411,7 @@ export default function CombLockTest(): void {
                 count++
                 rwLock.writeLock().unlock()
               } catch (e) {
-                console.log(`${tag} catch2: ` + e)
+                throw e as Error;
               }
             }
             pros.push(task1())
@@ -2374,9 +2422,9 @@ export default function CombLockTest(): void {
         let start = new Date().getTime()
         while (count < 100 * concurrentNum) {
           await sleep(100)
-          console.log(`TESTCASE ${tag} count: ` + count)
+          
         }
-        console.log(`TESTCASE ${tag} count: ` + count)
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2392,7 +2440,7 @@ export default function CombLockTest(): void {
     it('CombLockTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest040';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let rwLock = new RWLock();
         let pros: Promise<Any>[] = []
@@ -2406,7 +2454,7 @@ export default function CombLockTest(): void {
                     count++
                     rwLock.writeLock().unlock()
                   } catch (e) {
-                    console.log(`${tag} catch1: ` + e)
+                    throw e as Error;
                   }
                   resolve(undefined)
                 }, 10)
@@ -2417,7 +2465,7 @@ export default function CombLockTest(): void {
                   count++
                   rwLock.writeLock().unlock()
                 } catch (e) {
-                  console.log(`${tag} catch2: ` + e)
+                  throw e as Error;
                 }
               })
             }
@@ -2428,9 +2476,9 @@ export default function CombLockTest(): void {
         let start = new Date().getTime()
         while (count < 100 * concurrentNum) {
           await sleep(100)
-          console.log(`TESTCASE ${tag} count: ` + count)
+          
         }
-        console.log(`TESTCASE ${tag} count: ` + count)
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });
@@ -2445,7 +2493,7 @@ export default function CombLockTest(): void {
     it('CombLockTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest041';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let rwLock = new RWLock();
         let pros: Promise<Any>[] = []
@@ -2459,7 +2507,7 @@ export default function CombLockTest(): void {
                     count++
                     rwLock.readLock().unlock()
                   } catch (e) {
-                    console.log(`${tag} catch1: ` + e)
+                    throw e as Error;
                   }
                   resolve(undefined)
                 }, 10)
@@ -2470,7 +2518,7 @@ export default function CombLockTest(): void {
                   count++
                   rwLock.writeLock().unlock()
                 } catch (e) {
-                  console.log(`${tag} catch2: ` + e)
+                  throw e as Error;
                 }
               })
             }
@@ -2481,9 +2529,9 @@ export default function CombLockTest(): void {
         let start = new Date().getTime()
         while (count < 100 * concurrentNum) {
           await sleep(100)
-          console.log(`TESTCASE ${tag} count: ` + count)
+          
         }
-        console.log(`TESTCASE ${tag} count: ` + count)
+        
         expect(count).assertLessOrEqual(200)
         Done()
       });

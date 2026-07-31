@@ -25,9 +25,8 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index';
-import hilog from '@ohos.hilog'
-import Utils from './Util.test';
+} from '../../../hypium';
+import Utils from './Util';
 import { BaseClass, Event } from '../utils/Model';
 
 
@@ -47,7 +46,7 @@ export default function RWLockTest(): void {
     it('RWLockTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest001';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         lock.lock()
@@ -82,7 +81,7 @@ export default function RWLockTest(): void {
         while (count < 5) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(5)
         Done()
       });
@@ -98,7 +97,7 @@ export default function RWLockTest(): void {
     it('RWLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest002';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         lock.lock()
@@ -132,7 +131,7 @@ export default function RWLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       });
@@ -148,7 +147,7 @@ export default function RWLockTest(): void {
     it('RWLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest003';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         let lock2 = new RWLock().readLock()
@@ -185,7 +184,7 @@ export default function RWLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       });
@@ -201,7 +200,7 @@ export default function RWLockTest(): void {
     it('RWLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest004';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         for (let i = 0; i < 1000; i++) {
@@ -215,7 +214,7 @@ export default function RWLockTest(): void {
           lock.unlock()
         }
         await func()
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(1001)
         Done()
       });
@@ -232,7 +231,7 @@ export default function RWLockTest(): void {
     it('RWLockTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest005';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         lock.lock()
@@ -245,7 +244,7 @@ export default function RWLockTest(): void {
           count++
           expect(e.message).assertContain('state is already unlocked')
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(1)
         Done()
       });
@@ -261,7 +260,7 @@ export default function RWLockTest(): void {
     it('RWLockTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest006';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let class1 = new BaseClass()
         let lock = new RWLock().readLock()
@@ -294,7 +293,7 @@ export default function RWLockTest(): void {
         while (await class1.getCount() < 111) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(111)
         Done()
       });
@@ -310,7 +309,7 @@ export default function RWLockTest(): void {
     it('RWLockTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest007';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let finish = 0
         let lock = new RWLock().readLock()
@@ -347,7 +346,7 @@ export default function RWLockTest(): void {
         while (finish < 20) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count <= 20001).assertEqual(true)
         Done()
       })
@@ -364,7 +363,7 @@ export default function RWLockTest(): void {
     it('RWLockTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest008';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let class1 = new BaseClass()
         let lock = new RWLock().readLock()
@@ -402,7 +401,7 @@ export default function RWLockTest(): void {
         while (await class1.getCount() < 21) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(21)
         Done()
       });
@@ -419,7 +418,7 @@ export default function RWLockTest(): void {
     it('RWLockTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest009';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         let lock2 = new RWLock().readLock()
@@ -442,7 +441,7 @@ export default function RWLockTest(): void {
         lock3.unlock()
         lock2.unlock()
         lock.unlock()
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       })
@@ -458,7 +457,7 @@ export default function RWLockTest(): void {
     it('RWLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest010';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         let lock2 = new RWLock().readLock()
@@ -496,7 +495,7 @@ export default function RWLockTest(): void {
         while (await class1.getCount() < 3) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertLessOrEqual(3)
         Done()
       });
@@ -513,7 +512,7 @@ export default function RWLockTest(): void {
     it('RWLockTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest011';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         lock.lock()
@@ -548,7 +547,7 @@ export default function RWLockTest(): void {
         while (count < 5) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(5)
         Done()
       });
@@ -564,7 +563,7 @@ export default function RWLockTest(): void {
     it('RWLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest012';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         lock.lock()
@@ -598,7 +597,7 @@ export default function RWLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       });
@@ -614,7 +613,7 @@ export default function RWLockTest(): void {
     it('RWLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest013';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         let lock2 = new RWLock().writeLock()
@@ -651,7 +650,7 @@ export default function RWLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       });
@@ -667,7 +666,7 @@ export default function RWLockTest(): void {
     it('RWLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest014';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         for (let i = 0; i < 1000; i++) {
@@ -681,7 +680,7 @@ export default function RWLockTest(): void {
           lock.unlock()
         }
         await func()
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(1001)
         Done()
       });
@@ -698,7 +697,7 @@ export default function RWLockTest(): void {
     it('RWLockTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest015';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         lock.lock()
@@ -709,7 +708,7 @@ export default function RWLockTest(): void {
           count++
           expect(e.message).assertContain('state is already unlocked')
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(1)
         Done()
       });
@@ -725,7 +724,7 @@ export default function RWLockTest(): void {
     it('RWLockTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest016';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         for (let i = 0; i < 100; i++) {
@@ -754,7 +753,7 @@ export default function RWLockTest(): void {
         while (count < 111) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(111)
         Done()
       });
@@ -770,7 +769,7 @@ export default function RWLockTest(): void {
     it('RWLockTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest017';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         for (let i = 0; i < 10; i++) {
@@ -803,7 +802,7 @@ export default function RWLockTest(): void {
         while (count < 20001) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(20001)
         Done()
       })
@@ -820,7 +819,7 @@ export default function RWLockTest(): void {
     it('RWLockTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest018';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         for (let i = 0; i < 10; i++) {
@@ -854,7 +853,7 @@ export default function RWLockTest(): void {
         while (count < 21) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(21)
         Done()
       });
@@ -871,7 +870,7 @@ export default function RWLockTest(): void {
     it('RWLockTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest019';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().writeLock()
         let lock2 = new RWLock().writeLock()
@@ -894,7 +893,7 @@ export default function RWLockTest(): void {
         lock3.unlock()
         lock2.unlock()
         lock.unlock()
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(6)
         Done()
       })
@@ -911,7 +910,7 @@ export default function RWLockTest(): void {
     it('RWLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest021';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock().readLock()
         let lock2 = new RWLock().readLock()
@@ -947,7 +946,7 @@ export default function RWLockTest(): void {
         while (count < 201) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(201)
         Done()
       });
@@ -963,7 +962,7 @@ export default function RWLockTest(): void {
     it('RWLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest022';
-        console.info(`${tag} test start`);
+        
         let count = 0
         let lock = new RWLock()
         let rLock = lock.readLock()
@@ -972,7 +971,7 @@ export default function RWLockTest(): void {
         try {
           rLock.unlock()
         } catch (e) {
-          console.log(`TESTCASE ${tag} error1: ` + e);
+          
           expect(e.message).assertContain('state is already unlocked')
           count++
         }
@@ -981,7 +980,7 @@ export default function RWLockTest(): void {
         try {
           wLock.unlock()
         } catch (e) {
-          console.log(`TESTCASE ${tag} error2: ` + e);
+          
           expect(e.message).assertContain('state is already unlocked')
           count++
         }
@@ -991,7 +990,7 @@ export default function RWLockTest(): void {
         while (count < 2) {
           await Utils.msSleep(200)
         }
-        console.info(`${tag} test result: ${count}`);
+        
         expect(count).assertEqual(2)
         Done()
       });
@@ -1007,7 +1006,7 @@ export default function RWLockTest(): void {
     it('RWLockTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest023';
-        console.info(`${tag} test start`);
+        
         let result = ''
         let lock = new RWLock()
         let rLock = lock.readLock()
@@ -1038,7 +1037,7 @@ export default function RWLockTest(): void {
         wLock.lock()
         result += '4'
         wLock.unlock()
-        console.log(`TESTCASE ${tag} end, result: ` + result);
+        
         expect(result).assertEqual('01234')
         Done()
       });
@@ -1054,7 +1053,7 @@ export default function RWLockTest(): void {
     it('RWLockTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest024';
-        console.info(`${tag} test start`);
+        
         let result = ''
         let lock = new RWLock()
         let rLock = lock.readLock()
@@ -1098,7 +1097,7 @@ export default function RWLockTest(): void {
         }
         wLock.lock()
         wLock.unlock()
-        console.log(`TESTCASE ${tag} end, result: ` + result);
+        
         expect(result.startsWith('0') && result.endsWith('1')).assertEqual(true)
         Done()
       });
@@ -1115,7 +1114,7 @@ export default function RWLockTest(): void {
     it('RWLockTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest025';
-        console.info(`${tag} test start`);
+        
         let result = ''
         let lock = new RWLock()
         let rLock = lock.readLock()
@@ -1159,7 +1158,7 @@ export default function RWLockTest(): void {
         while (count < 10) {
           await Utils.msSleep(100)
         }
-        console.log(`TESTCASE ${tag} end, result: ` + result);
+        
         expect(result.startsWith('0') && result.endsWith('1')).assertEqual(true)
         Done()
       });
@@ -1175,7 +1174,7 @@ export default function RWLockTest(): void {
     it('RWLockTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest026';
-        console.info(`${tag} test start`);
+        
         let class1 = new BaseClass()
         let result = ''
         let lock = new RWLock()
@@ -1230,7 +1229,7 @@ export default function RWLockTest(): void {
         while (await class1.getCount() < 40) {
           await Utils.msSleep(100)
         }
-        console.log(`TESTCASE ${tag} end, result: ` + result);
+        
         expect(await class1.getCount()).assertEqual(40)
         Done()
       });
