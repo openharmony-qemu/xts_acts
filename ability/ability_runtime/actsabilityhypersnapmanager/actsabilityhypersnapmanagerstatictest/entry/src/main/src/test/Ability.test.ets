@@ -142,15 +142,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100
-     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilityAsync_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilityAsync_static_0100
      * @tc.desc   Test onAboutToCreateAbility() not return when not in white list.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100";
+    it('SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilityAsync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbilityAsync_static_0100";
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
       let cmd = 'aa start -a EntryAbility -b com.acts.abilitydelegatorrely.static';
       let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
