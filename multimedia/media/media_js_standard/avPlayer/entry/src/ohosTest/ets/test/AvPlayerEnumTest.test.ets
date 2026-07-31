@@ -306,6 +306,25 @@ export default function AvPlayerEnumTest() {
  	    expect(media.PlaybackMetricsKey.TOTAL_LIP_ASYNC_TIME).assertEqual('total_lip_async_time');
       done();
     });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500
+    * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500', Level.LEVEL0, async (done: Function) => {
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING).assertEqual(1);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LIP_ASYNC).assertEqual(2);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE).assertEqual(3);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR).assertEqual(4);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_CHANGED).assertEqual(5);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY).assertEqual(6);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL).assertEqual(7);
+      done();
+    });
   })
 }
 

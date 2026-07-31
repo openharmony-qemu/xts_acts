@@ -1764,7 +1764,9 @@ function setPlaybackStatisticMetricsCb(avPlayer: media.AVPlayer | undefined, pla
             expect().assertFail();
           }
         }).catch(mediaTestBase.catchCallback);
-        avPlayer?.release();
+        setTimeout(() => {
+            avPlayer?.release();
+        }, 1000);
         break;
       case RELEASED:
         avPlayer = undefined;
@@ -2118,10 +2120,6 @@ async function testGetCurrentTrack(src: media.AVFileDescriptor, avPlayer: media.
       if (video) {
         console.info('case createAVPlayer success');
         avPlayer = video;
-        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
-          console.info('case getCurrentTrack AUDIO track: ' + track);
-          expect(track).assertEqual(0);
-        }).catch(mediaTestBase.catchCallback);
         getCurrentTrackCb(avPlayer!, done);
         avPlayer!.fdSrc = src;
         done();

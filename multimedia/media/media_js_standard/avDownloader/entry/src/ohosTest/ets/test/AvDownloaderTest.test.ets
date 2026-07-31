@@ -550,7 +550,7 @@ export default function AvDownloaderTest() {
         expect(avDownloaderManager != null).assertTrue();
         if (avDownloaderManager != null) {
           let statusReceived: boolean = false;
-          let callback: (taskId: string, state: string) => void = (taskId: string, state: string) => {
+          let callback: media.OnAVDownloadTaskStateHandle = (taskId: string, state: media.AVDownloadTaskState) => {
             console.info(`${TAG}: offStatusChange_001 callback taskId: ${taskId}, state: ${state}`);
             statusReceived = true;
           };

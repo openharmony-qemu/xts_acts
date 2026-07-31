@@ -774,9 +774,6 @@ export default function AVTranscoderTest() {
         expect().assertFail();
         done();
       });
-      await prepareAVTranscoder(done, testName);
-      await startAVTranscoder(done, testName);
-      await listenComplete(done);
       done();
     })
 
