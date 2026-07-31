@@ -43,6 +43,8 @@ static Camera_PreviewOutput *previewOutput = nullptr;
 static Camera_PhotoOutput *photoOutput = nullptr;
 static Camera_CaptureSession *captureSession = nullptr;
 static char  g_faceId[256];
+static OH_Camera_MetadataObjectExt** g_metadataObjectExt;
+static uint32_t g_metadataSize;
 
 static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
