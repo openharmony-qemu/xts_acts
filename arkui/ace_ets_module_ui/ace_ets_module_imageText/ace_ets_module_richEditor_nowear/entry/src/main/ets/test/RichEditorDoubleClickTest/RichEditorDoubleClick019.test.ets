@@ -67,21 +67,16 @@ export default function RichEditorDoubleClick019() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_013 START');
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick019'));
-      let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
       let message = await driver.findComponent(ON.id('message'));
-      await driver.click(getBounds.left + 180, getBounds.top + 40);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 180, getBounds.top + 40);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 30, getBounds.top + 80);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 80);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');

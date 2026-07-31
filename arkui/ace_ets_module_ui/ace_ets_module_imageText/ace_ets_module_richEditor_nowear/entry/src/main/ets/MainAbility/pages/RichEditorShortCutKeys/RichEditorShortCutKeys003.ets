@@ -42,7 +42,6 @@ struct RichEditorShortCutKeys003 {
       RichEditor({ controller: this.controller })
         .padding('10px')
         .height(300)
-        .width(200)
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady(() => {
