@@ -1704,6 +1704,46 @@ export default function actslocationTest() {
         }
       })
 
+      /**
+       * @tc.number  SUB_core_isPoiServiceSupported_0100
+       * @tc.name  SUB_core_isPoiServiceSupported_0100
+       * @tc.desc  Test isPoiServiceSupported returns a boolean value
+       * @tc.level  Level 0
+       * @tc.type  Function
+       * @tc.size  MEDIUMTEST
+       */
+      it('SUB_core_isPoiServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+        try {
+          let poiServiceState: boolean = geoLocationManager.isPoiServiceSupported();
+          expect(typeof poiServiceState).assertEqual('boolean');
+        } catch (error) {
+          error = error as BusinessError;
+          expect(error.code).assertEqual(801);
+        }
+      })
+
+      /**
+       * @tc.number  SUB_core_isPoiServiceSupported_0200
+       * @tc.name  SUB_core_isPoiServiceSupported_0200
+       * @tc.desc  Test isPoiServiceSupported returns true or false
+       * @tc.level  Level 2
+       * @tc.type  Function
+       * @tc.size  MEDIUMTEST
+       */
+      it('SUB_core_isPoiServiceSupported_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        try {
+          let poiServiceState: boolean = geoLocationManager.isPoiServiceSupported();
+          if (poiServiceState) {
+            expect(poiServiceState).assertTrue();
+          } else {
+            expect(poiServiceState).assertFalse();
+          }
+        } catch (error) {
+          error = error as BusinessError;
+          expect(error.code).assertEqual(801);
+        }
+      })
+
 
 
     })
