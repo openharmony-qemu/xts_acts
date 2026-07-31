@@ -746,6 +746,10 @@ export default function abilityTest() {
         expect(JSON.stringify(expectInfo.supportDimensions)).assertEqual(JSON.stringify(result.supportDimensions));
         expect(JSON.stringify(expectInfo.customizeData)).assertEqual(JSON.stringify(result.customizeData));
         expect(JSON.stringify(expectInfo.supportedShapes)).assertEqual(JSON.stringify(result.supportedShapes));
+        expect(expectInfo.displayNameId).assertEqual(result.displayNameId);
+        expect(expectInfo.isDynamic).assertEqual(result.isDynamic);
+        expect(expectInfo.transparencyEnabled).assertEqual(result.transparencyEnabled);
+        expect(expectInfo.updateEnabled).assertEqual(result.updateEnabled);
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest end`);
     }
 }
