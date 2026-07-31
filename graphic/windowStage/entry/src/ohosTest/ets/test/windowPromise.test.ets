@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import image from '@ohos.multimedia.image';
 import deviceInfo from '@ohos.deviceInfo';
+import window from '@ohos.window';
 
 function expectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: string, apiName: string, done: Function,
   code: number) {
@@ -65,6 +66,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     let commonKEYColorArr: Array<string> = ['red', 'green', 'blue', 'white', 'black', 'pink', 'grey', 'yellow'];
     let avoidArea1: ohosWindow.AvoidArea;
     let isFreeWindowMode = false;
+    let isSupportRotate = false;
     
     beforeAll(async () => {
       let windowClass = windowStage.getMainWindowSync();
@@ -78,6 +80,21 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         //isFreeWindowMode == true 自由窗口模式
         //isFreeWindowMode == false 非自由窗口模式
         console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+        let mainWindow = windowStage.getMainWindowSync();
+        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT)
+        await sleep(300);
+        let Orientation1 = display.getDefaultDisplaySync().orientation;
+        await mainWindow.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await sleep(300);
+        let Orientation2 = display.getDefaultDisplaySync().orientation;
+        if (Orientation1 != Orientation2) {
+          isSupportRotate = true;
+        } else {
+          isSupportRotate = false;
+        }
+        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await sleep(300);
+        console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
     })
     /**
      * @tc.name   testListener_Sys_AvoidAreaChange_Promise
@@ -1060,122 +1077,111 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       await (wndData as ohosWindow.Window).destroy();
       done();
     })
-    /**
-     * @tc.name   testSetPreferredOrientation_Promise
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
-     * @tc.desc   Sets the display direction property of the window
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetPreferredOrientation_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testSetPreferredOrientation_Promise';
-      let msgStr: string = 'jsUnittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
+/** @tc.name   testSetPreferredOrientation_Promise
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
+ * @tc.desc   Sets the display direction property of the window
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testSetPreferredOrientation_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+  async (done: Function) => {
+    let caseName: string = 'testSetPreferredOrientation_Promise';
+    let msgStr: string = 'jsUnittest ' + caseName + ' ';
+    console.log(msgStr + 'begin');
+    let testSetPreferredOrientation_Promise_CheckReturnFail = async () => {
+      console.error(msgStr + 'Failed to setPreferredOrientation Cause: CheckReturnFail'
+        + 'deviceType: ' + JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: ' +
+      JSON.stringify(isFreeWindowMode));
 
-      let testSetPreferredOrientation_Promise_CheckReturnSuccess = async () => {
-        let mainWin: ohosWindow.Window | void = await windowStage.getMainWindow().catch((err: BusinessError) => {
-          unexpectedError(TRUE_FLAG, err, caseName, 'windowStage.getMainWindow', done);
-        });
-        console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
-        expect(!!mainWin).assertTrue();
-        let num = 0
-        let orientationItem = ['UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
-          'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
-          'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED', 'AUTO_ROTATION_LANDSCAPE_RESTRICTED', 'LOCKED',
-          'AUTO_ROTATION_UNSPECIFIED',
-          'USER_ROTATION_PORTRAIT', 'USER_ROTATION_LANDSCAPE', 'USER_ROTATION_PORTRAIT_INVERTED',
-          'USER_ROTATION_LANDSCAPE_INVERTED', 'FOLLOW_DESKTOP', 'UNSPECIFIED'];
-        for (let i = 0; i < orientationItem.length; i++) {
-          await sleep(900)
-          await sleep(900)
-          let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
-          console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
-          console.log(msgStr + 'i : ' + i + ' ,ohosWindow.Orientation : ' + JSON.stringify(orientationItem[i]));
-          await (mainWin as ohosWindow.Window).setPreferredOrientation(orientation).then(() => {
-            console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
-            num++
-            if (num == orientationItem.length) {
-              done();
-            }
-          }).catch((err: BusinessError) => {
-            console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
-          });
-          await sleep(900)
-          await sleep(300)
-        }
+      let mainWin: ohosWindow.Window | void;
+
+      let displayClass: display.Display | null = null;
+      try {
+        displayClass = display.getDefaultDisplaySync();
+      } catch (exception) {
+        console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
       }
+      let beforeOrientation = displayClass?.orientation;
+      console.info(
+        msgStr + 'Succeeded in get displayClass.beforeOrientation . beforeOrientation: ' + beforeOrientation);
 
-      let testSetPreferredOrientation_Promise_CheckReturnFail = async () => {
-        console.error(msgStr + 'Failed to setPreferredOrientation Cause: CheckReturnFail' 
-          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: '+ JSON.stringify(isFreeWindowMode));
+      mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
+        console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
+      expect(!!mainWin).assertTrue();
 
-        let mainWin: ohosWindow.Window | void;  
+      let orientation: ohosWindow.Orientation = ohosWindow.Orientation.PORTRAIT_INVERTED;
+      await (mainWin as ohosWindow.Window).setPreferredOrientation(orientation).then(() => {
+        console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
+      }).catch((err: BusinessError) => {
+        console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
+      });
+      await sleep(900)
+      await sleep(300)
+      console.info(msgStr + 'Succeeded in setting window orientation . orientation: ' + orientation);
 
-        let displayClass: display.Display | null = null;
-        try {
-          displayClass = display.getDefaultDisplaySync();
-        } catch (exception) {
-          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
-        }
-        let beforeOrientation = displayClass?.orientation;
-        console.info(msgStr + 'Succeeded in get displayClass.beforeOrientation . beforeOrientation: ' + beforeOrientation);
-        
-        mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
-          console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        });
-        expect(!!mainWin).assertTrue();
+      try {
+        displayClass = display.getDefaultDisplaySync();
+      } catch (exception) {
+        console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
+      }
+      let afterOrientation = displayClass?.orientation;
+      console.info(
+        msgStr + 'Succeeded in get displayClass.afterOrientation . afterOrientation: ' + afterOrientation);
 
-        let orientation: ohosWindow.Orientation = ohosWindow.Orientation.PORTRAIT_INVERTED;
+      expect(beforeOrientation).assertEqual(afterOrientation);
+    }
+    let testSetPreferredOrientation_Promise_CheckReturnSuccess = async () => {
+      let mainWin: ohosWindow.Window | void = await windowStage.getMainWindow().catch((err: BusinessError) => {
+        unexpectedError(TRUE_FLAG, err, caseName, 'windowStage.getMainWindow', done);
+      });
+      console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+      expect(!!mainWin).assertTrue();
+      let num = 0
+      let orientationItem = ['UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
+        'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
+        'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED', 'AUTO_ROTATION_LANDSCAPE_RESTRICTED',
+        'LOCKED',
+        'AUTO_ROTATION_UNSPECIFIED',
+        'USER_ROTATION_PORTRAIT', 'USER_ROTATION_LANDSCAPE', 'USER_ROTATION_PORTRAIT_INVERTED',
+        'USER_ROTATION_LANDSCAPE_INVERTED', 'FOLLOW_DESKTOP', 'UNSPECIFIED'];
+      for (let i = 0; i < orientationItem.length; i++) {
+        await sleep(900)
+        await sleep(900)
+        let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
+        console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
+        console.log(msgStr + 'i : ' + i + ' ,ohosWindow.Orientation : ' + JSON.stringify(orientationItem[i]));
         await (mainWin as ohosWindow.Window).setPreferredOrientation(orientation).then(() => {
           console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
+          num++
+          if (num == orientationItem.length) {
+            done();
+          }
         }).catch((err: BusinessError) => {
           console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
         });
         await sleep(900)
         await sleep(300)
-        console.info(msgStr + 'Succeeded in setting window orientation . orientation: ' + orientation);
-
-        try {
-          displayClass = display.getDefaultDisplaySync();
-        } catch (exception) {
-          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
-        }
-        let afterOrientation = displayClass?.orientation;
-        console.info(msgStr + 'Succeeded in get displayClass.afterOrientation . afterOrientation: ' + afterOrientation);
-        
-        expect(beforeOrientation).assertEqual(afterOrientation);
       }
-
-      if (deviceInfo.deviceType === '2in1') {
-        testSetPreferredOrientation_Promise_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'phone' && isFreeWindowMode === false) {
+    }
+    if (isSupportRotate) {
+      if (isFreeWindowMode === false) {
         testSetPreferredOrientation_Promise_CheckReturnSuccess();
-      } else if (deviceInfo.deviceType === 'tv') {
-        testSetPreferredOrientation_Promise_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'wearable') {
-        testSetPreferredOrientation_Promise_CheckReturnFail();
-      } else if (deviceInfo.deviceType === 'tablet' && isFreeWindowMode === false) {
-        testSetPreferredOrientation_Promise_CheckReturnSuccess();
-      } else if (deviceInfo.deviceType === 'car') {
-        testSetPreferredOrientation_Promise_CheckReturnFail();
-      } else if (isFreeWindowMode === true){
-        testSetPreferredOrientation_Promise_CheckReturnFail();
+        done();
       } else {
-        let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-        console.info(caseName + 'canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-        if (!canIUseRes) {
-          done();
-        } else {
-          console.info(`====>${msgStr} end fail====`);
-          expect().assertFail();
-          done();
-        }
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+        done();
       }
-      done()
-    })
+    } else {
+      testSetPreferredOrientation_Promise_CheckReturnFail();
+      done();
+    }
+
+  })
+
     /**
      * @tc.name   testSetForbidSplitMove_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1120
