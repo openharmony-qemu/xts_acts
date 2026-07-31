@@ -690,68 +690,6 @@ struct Index {
               break;
             }
 
-            case 'emitFetchCookieSyncPartitionedNullStatic': {
-              try {
-                web_webview.WebCookieManager.clearAllCookiesSync();
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=null', false);
-                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, null);
-                console.log('emitFetchCookieSyncPartitionedNullStatic cookie = ' + this.cookieResult);
-                Utils.emitEvent(this.cookieResult, 2026072410);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 2026072410);
-              }
-              break;
-            }
-
-            case 'emitFetchCookieSyncPartitionedUndefinedStatic': {
-              try {
-                web_webview.WebCookieManager.clearAllCookiesSync();
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'part=undefined', false);
-                this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false, undefined);
-                console.log('emitFetchCookieSyncPartitionedUndefinedStatic cookie = ' + this.cookieResult);
-                Utils.emitEvent(this.cookieResult, 2026072411);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 2026072411);
-              }
-              break;
-            }
-
-            case 'emitFetchCookiePartitionedNullStatic': {
-              try {
-                web_webview.WebCookieManager.clearAllCookiesSync();
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'async=null', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, null)
-                  .then((cookie: string) => {
-                    Utils.emitEvent(cookie, 2026072412);
-                  })
-                  .catch((error) => {
-                    Utils.emitEvent(String(error.code), 2026072412);
-                  });
-              } catch (error) {
-                Utils.emitEvent(String(error.code), 2026072412);
-              }
-              break;
-            }
-
-            case 'emitFetchCookiePartitionedUndefinedStatic': {
-              try {
-                web_webview.WebCookieManager.clearAllCookiesSync();
-                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'async=undefined', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', false, undefined)
-                  .then((cookie: string) => {
-                    Utils.emitEvent(cookie, 2026072413);
-                  })
-                  .catch((error) => {
-                    Utils.emitEvent(String(error.code), 2026072413);
-                  });
-              } catch (error) {
-                Utils.emitEvent(String(error.code), 2026072413);
-              }
-              break;
-            }
-
             case 'emitAttrPartitionedSyncTrueStatic': {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
