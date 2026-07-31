@@ -5626,7 +5626,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getAllowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getAllowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
@@ -5652,7 +5652,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getAllowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getAllowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
@@ -5678,7 +5678,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getDisallowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getDisallowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
@@ -5704,7 +5704,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getDisallowedInstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getDisallowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch:  ' +
@@ -5730,7 +5730,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getDisallowedUninstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
@@ -5756,7 +5756,7 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        let bundles = bundleManager.getDisallowedUninstallBundles(SELFWANT, DEFAULT_USER_ID);
+        let bundles = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
