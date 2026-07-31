@@ -656,7 +656,8 @@ napi_value CheckNodeNextFocus(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem* itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1836,7 +1837,8 @@ napi_value CheckNodeFocusMoveForward(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1865,7 +1867,8 @@ napi_value CheckNodeFocusMoveBackward(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1894,7 +1897,8 @@ napi_value CheckNodeFocusMoveUp(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1923,7 +1927,8 @@ napi_value CheckNodeFocusMoveDown(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1953,7 +1958,8 @@ napi_value CheckNodeFocusMoveLeft(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
@@ -1983,7 +1989,8 @@ napi_value CheckNodeFocusMoveRight(napi_env env, napi_callback_info info)
     int32_t setResult = RowComponent.setAttribute(NODE_NEXT_FOCUS, &item);
     const ArkUI_AttributeItem *itemptr = RowComponent.getAttribute(NODE_NEXT_FOCUS);
     if (itemptr != nullptr) {
-        bool condition = itemptr->value[0].i32 == focusMove && itemptr->object == TextComponent.GetComponent();
+        auto nextFocusNodes = reinterpret_cast<ArkUI_NodeHandle *>(itemptr->object);
+        bool condition = itemptr->value[0].i32 == focusMove && nextFocusNodes[0] == TextComponent.GetComponent();
         if (condition && setResult == ARKUI_ERROR_CODE_NO_ERROR) {
             result = 1;
         } else if (setResult != ARKUI_ERROR_CODE_NO_ERROR) {
