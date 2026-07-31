@@ -39,6 +39,7 @@ Camera_Profile *photoProfile = nullptr;
 Camera_PreviewOutput *previewOutput = nullptr;
 Camera_PhotoOutput *photoOutput = nullptr;
 Camera_CaptureSession *captureSession = nullptr;
+Camera_MetadataOutput *metadataOutput = nullptr;
 
 void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
@@ -151,6 +152,25 @@ void createPhotoOutput(char *surfaceID)
     }
 }
 
+void CreateMetadataOutput(char *surfaceID)
+{
+    const Camera_Device camera = cameras[0];
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &camera, Camera_SceneMode::NORMAL_PHOTO, &cameraOutputCapability);
+    previewProfile = cameraOutputCapability->previewProfiles[0];
+    photoProfile = cameraOutputCapability->photoProfiles[0];
+    Camera_ErrorCode preCode =
+        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surfaceID, &previewOutput);
+    Camera_ErrorCode photoSurface =
+        OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
+    Camera_MetadataObjectType profile[1] = {CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION};
+    ret = OH_CameraManager_CreateMetadataOutputWithObjectTypes(cameraManager, profile, 1, &metadataOutput);
+    if (ret != CAMERA_OK) {
+    OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateMetadataOutputWithObjectTypes failed.");
+    }
+}
+
 void CreateCaptureSession()
 {
     if (cameraManager == nullptr) {
@@ -191,6 +211,21 @@ void CreateCaptureSession()
     LOGI("camera session start end");
 }
 
+void CreateMetadataCaptureSession()
+{
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_PHOTO);
+    ret = OH_CaptureSession_BeginConfig(captureSession);
+    ret = OH_CaptureSession_AddInput(captureSession, cameraInput);
+    ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
+    ret = OH_CaptureSession_AddPhotoOutput(captureSession, photoOutput);
+    ret = OH_CaptureSession_AddMetadataOutput(captureSession, metadataOutput);
+    ret = OH_CaptureSession_CommitConfig(captureSession);
+    ret = OH_CaptureSession_Start(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
+    }
+}
 
 napi_value initWithSurface(napi_env env, napi_callback_info info)
 {
@@ -554,38 +589,6 @@ napi_value captureSessionSetWhiteBalance(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value captureSessionEmu(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    int32_t code;
-    switch (index) {
-    case CASE_INDEX_1:
-        code = Camera_PhotoQualityPrioritization::CAMERA_PHOTO_QUALITY_PRIORITIZATION_HIGH_QUALITY;
-        break;
-    case CASE_INDEX_2:
-        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_NON_FOLDABLE;
-        break;
-    case CASE_INDEX_3:
-        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_EXPANDED;
-        break;
-    case CASE_INDEX_4:
-        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_FOLDED;
-        break;
-    default:
-        break;
-    }
-
-    napi_value ret;
-    napi_create_int32(env, code, &ret);
-    return ret;
-}
-
 napi_value OHCaptureSessionGetSupportedEffectTypesSupp(napi_env env, napi_callback_info info)
 {
     Camera_ErrorCode errorCode;
@@ -873,8 +876,7 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
-    OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
-    OH_LOG_ERROR(LOG_APP, "size is %{public}d", size);
+    OH_LOG_ERROR(LOG_APP, "size is %{public}d, apertures is %{public}d", size, apertures);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
         OH_CaptureSession_Release(captureSession);
@@ -931,6 +933,7 @@ napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_cal
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
     Camera_ErrorCode ret = OH_CaptureSession_GetPhysicalAperture(captureSession, &aperture);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetPhysicalAperture failed. %{public}d", ret);
@@ -1062,46 +1065,7 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     int32_t maxExposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
         captureSession, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_OK && ret != CAMERA_OPERATION_NOT_ALLOWED) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
-        napi_create_int32(env, ret, &result);
-        OH_CaptureSession_Release(captureSession);
-        return result;
-    }
-    OH_CaptureSession_Release(captureSession);
-    napi_create_int32(env, 0, &result);
-    return result;
-}
-
-napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    int32_t minExposureDuration;
-    int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
-        nullptr, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_INVALID_ARGUMENT) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange fail: %{public}d", ret);
-        napi_create_int32(env, ret, &result);
-        return result;
-    }
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    Camera_Manager *cameraManager = nullptr;
-    OH_Camera_GetCameraManager(&cameraManager);
-    Camera_CaptureSession *captureSession = nullptr;
-    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
-    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
-    int32_t minExposureDuration;
-    int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
-        captureSession, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+    if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);
         OH_CaptureSession_Release(captureSession);
@@ -1166,6 +1130,7 @@ napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
     int32_t exposureDuration = 1000;
     Camera_ErrorCode ret = OH_CaptureSession_SetExposureDuration(captureSession, exposureDuration);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
@@ -1338,6 +1303,838 @@ napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback
         break;
     case CASE_INDEX_2:
         error = OH_CaptureSession_UnregisterIsoChangeCallback(nullptr, OnIsoValueChanged);
+        break;
+    default:
+        break;
+    }
+
+    napi_value ret;
+    napi_create_int32(env, error, &ret);
+    return ret;
+}
+
+napi_value checkMetadataObjectTypeEnumValues(napi_env env, napi_callback_info info)
+{
+    if (CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION != 0 ||
+        CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY != 1 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_FACE != 2 ||
+        CAMERA_METADATA_OBJECT_TYPE_CAT_BODY != 3 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_FACE != 4 ||
+        CAMERA_METADATA_OBJECT_TYPE_DOG_BODY != 5 ||
+        CAMERA_METADATA_OBJECT_TYPE_SALIENT_DETECTION != 6 ||
+        CAMERA_METADATA_OBJECT_TYPE_BAR_CODE_DETECTION != 7 ||
+        CAMERA_METADATA_OBJECT_TYPE_BASIC_FACE_DETECTION != 8) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value checkMetadataObjectEmotionEnumValues(napi_env env, napi_callback_info info)
+{
+    if (OH_CAMERA_METADATA_OBJECT_EMOTION_NEUTRAL != 0 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SADNESS != 1 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SMILE != 2 ||
+        OH_CAMERA_METADATA_OBJECT_EMOTION_SURPRISE != 3) {
+        napi_value result;
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+OH_Camera_MetadataObjectExt** g_metadataObjectExt;
+uint32_t g_metadataSize;
+void OnMetadataObjectExtAvailable(void* context, OH_Camera_MetadataObjectExt** metadataObjectExt,
+    uint32_t size)
+{
+    g_metadataObjectExt = metadataObjectExt;
+    g_metadataSize = size;
+    for (int i = 0; i < size; i++) {
+        OH_Camera_MetadataObjectExt* MetadataObjectExt = metadataObjectExt[i];
+        Camera_MetadataObjectType type;
+        Camera_ErrorCode ret = OH_MetadataObjectExt_GetMetadataObjectType(MetadataObjectExt, &type);
+        OH_LOG_INFO(LOG_APP, "OH_MetadataObjectExt_GetMetadataObjectType ret. %{public}d", ret);
+        int64_t timestamp;
+        ret = OH_MetadataObjectExt_GetTimestamp(MetadataObjectExt, &timestamp);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetTimestamp failed. %{public}d", ret);
+        }
+        OH_Camera_Rect_Ext boundingBox;
+        ret = OH_MetadataObjectExt_GetBoundingBox(MetadataObjectExt, &boundingBox);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetBoundingBox failed. %{public}d", ret);
+        }
+        float pitchAngle;
+        ret = OH_MetadataObjectExt_GetPitchAngle(MetadataObjectExt, & pitchAngle);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetPitchAngle failed. %{public}d", ret);
+        }
+        float yawAngle;
+        ret = OH_MetadataObjectExt_GetYawAngle(MetadataObjectExt, &yawAngle);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetYawAngle failed. %{public}d", ret);
+        }
+        float rollAngle;
+        ret = OH_MetadataObjectExt_GetRollAngle(MetadataObjectExt, &rollAngle);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetRollAngle failed. %{public}d", ret);
+        }
+        OH_Camera_Rect_Ext leftEyeBoundingBox;
+        ret = OH_MetadataObjectExt_GetLeftEyeBoundingBox(MetadataObjectExt, &leftEyeBoundingBox);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetLeftEyeBoundingBox failed. %{public}d", ret);
+        }
+        OH_Camera_Rect_Ext rightEyeBoundingBox;
+        ret = OH_MetadataObjectExt_GetRightEyeBoundingBox(MetadataObjectExt, &rightEyeBoundingBox);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetRightEyeBoundingBox failed. %{public}d", ret);
+        }
+        OH_Camera_MetadataObjectEmotion emotion;
+        ret = OH_MetadataObjectExt_GetEmotion(MetadataObjectExt, &emotion);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_MetadataObjectExt_GetEmotion failed. %{public}d", ret);
+        }
+    }
+}
+
+void OnMetadataOutputErrorExt(void* context, Camera_ErrorCode errorCode)
+{
+    OH_LOG_ERROR(LOG_APP, "Metadata output error: %{public}d", errorCode);
+}
+
+napi_value TestRegisterMetadataCallbackNullOutput(napi_env env, napi_callback_info info)
+{
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        nullptr, nullptr, eventCallback);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterMetadataCallbackNullCallback(napi_env env, napi_callback_info info)
+{
+    size_t uuidLen = 0;
+    char faceID[256];
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed. %{public}d", ret);
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterMetadataCallbackAllNull(napi_env env, napi_callback_info info)
+{
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(nullptr, nullptr, nullptr);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterMetadataCallbackNormal(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed. %{public}d", ret);
+        OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+        OH_CaptureSession_Release(captureSession);
+    }
+    OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    OH_CaptureSession_Release(captureSession);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterMetadataCallbackDuplicate(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret1 = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret1 != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed.");
+        OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret1, &result);
+        return result;
+    }
+    Camera_ErrorCode ret2 = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret2 != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed.");
+        OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret1, &result);
+        return result;
+    }
+    OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret2, &result);
+    return result;
+}
+
+napi_value TestRegisterAndUnregisterMetadataCallback(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterMetadataCallbackNullOutput(napi_env env, napi_callback_info info)
+{
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
+        nullptr, nullptr, eventCallback);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterMetadataCallbackNullCallback(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterMetadataCallbackNotRegistered(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterMetadataCallbackRegistered(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterMetadataCallbackTriggerAfterUnregister(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterMetadataCallbackTwice(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_value result;
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnMetadataObjectExtAvailable eventCallback = OnMetadataObjectExtAvailable;
+    OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(metadataOutput, nullptr, eventCallback);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
+        metadataOutput, nullptr, eventCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterErrorCallbackNullOutput(napi_env env, napi_callback_info info)
+{
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterErrorExtCallback(nullptr, nullptr, errorCallback);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterErrorCallbackNullCallback(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterErrorExtCallback(metadataOutput, nullptr, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterErrorCallbackAllNull(napi_env env, napi_callback_info info)
+{
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterErrorExtCallback(nullptr, nullptr, nullptr);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestRegisterErrorCallbackNormal(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    Camera_ErrorCode ret = OH_MetadataOutput_RegisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_RegisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterErrorCallbackNullOutput(napi_env env, napi_callback_info info)
+{
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterErrorExtCallback(nullptr, nullptr, errorCallback);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterErrorCallbackNullCallback(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterErrorCallbackNotRegistered(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterErrorCallbackRegistered(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    OH_MetadataOutput_RegisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnregisterErrorCallbackTwice(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    OH_MetadataOutput_OnErrorExt errorCallback = OnMetadataOutputErrorExt;
+    OH_MetadataOutput_RegisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnregisterErrorExtCallback(metadataOutput, nullptr, errorCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnregisterErrorExtCallback failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestCheckLockTrackingSupportReturnValue(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    bool isSupported = OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(metadataOutput);
+    if (isSupported != true && isSupported != false) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_IsLockMetadataObjectTrackingSupported failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestCheckLockTrackingSupportReturnBoolean(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    bool isSupported = OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(metadataOutput);
+    
+    OH_CaptureSession_Release(captureSession);
+    napi_get_boolean(env, isSupported, &result);
+    return result;
+}
+
+napi_value TestLockWhenTrackingNotSupported(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    Camera_Point point = {0.5, 0.5};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    bool isSupported = OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(metadataOutput);
+    if (!isSupported) {
+        OH_LOG_ERROR(LOG_APP, "Camera does not support lock tracking");
+        Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+        OH_LOG_INFO(LOG_APP, "OH_MetadataOutput_LockMetadataObjectTracking error code: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestLockTrackingNullPoint(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_LockMetadataObjectTracking failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockTrackingInvalidPoint(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_Point invalidPoints[] = {{-0.1, 0.5}, {0.5, 1.1}, {1.1, -0.1}, {-0.1, -0.1}};
+    for (auto& point : invalidPoints) {
+        Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+        if (ret != CAMERA_INVALID_ARGUMENT) {
+            OH_LOG_ERROR(LOG_APP, "Lock tracking failed: invalid point (%f, %f)", point.x, point.y);
+            OH_CaptureSession_Release(captureSession);
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestLockTrackingValidPoint(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    bool isSupported = OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(metadataOutput);
+    if (isSupported) {
+        Camera_Point validPoints[] = {{0.0, 0.0}, {0.5, 0.5}, {1.0, 1.0}};
+        for (auto& point : validPoints) {
+        Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+            if (ret != CAMERA_OK) {
+                OH_LOG_ERROR(LOG_APP, "Lock tracking failed: valid point (%f, %f)", point.x, point.y);
+                OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+                OH_CaptureSession_Release(captureSession);
+                napi_create_int32(env, ret, &result);
+                return result;
+            }
+        }
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestLockTrackingWithoutSessionConfig(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_MetadataObjectType profile[1] = {CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION};
+    OH_CameraManager_CreateMetadataOutputWithObjectTypes(cameraManager, profile, 1, &metadataOutput);
+    Camera_Point point = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_LockMetadataObjectTracking failed");
+        OH_MetadataOutput_Release(metadataOutput);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_MetadataOutput_Release(metadataOutput);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockTrackingNormal(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_Point point = {0.5, 0.5};
+    OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnlockMetadataObjectTracking failed");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestUnlockThenLock(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_Point point = {0.5, 0.5};
+    OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+    OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+    Camera_ErrorCode ret = OH_MetadataOutput_LockMetadataObjectTracking(metadataOutput, &point);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_LockMetadataObjectTracking failed");
+        OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockWhenNotLocked(napi_env env, napi_callback_info info)
+{
+    char faceID[256];
+    size_t uuidLen = 0;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    CreateMetadataOutput(faceID);
+    CreateMetadataCaptureSession();
+    Camera_ErrorCode ret = OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnlockMetadataObjectTracking failed");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockWithoutSessionConfig(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_MetadataObjectType profile[1] = {CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION};
+    OH_CameraManager_CreateMetadataOutputWithObjectTypes(cameraManager, profile, 1, &metadataOutput);
+    Camera_ErrorCode ret = OH_MetadataOutput_UnlockMetadataObjectTracking(metadataOutput);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_MetadataOutput_UnlockMetadataObjectTracking failed");
+        OH_MetadataOutput_Release(metadataOutput);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_MetadataOutput_Release(metadataOutput);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+napi_value PhotoOutputIsAutoExtendedGainmapSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode error = CAMERA_OK;
+    bool supportResult = false;
+    switch (index) {
+    case CASE_INDEX_1:
+        supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
+        LOGI("supportResult is :,%{public}d", supportResult);
+        break;
+    default:
+        break;
+    }
+    
+    if (supportResult != true && supportResult != false) {
+        error = CAMERA_INVALID_ARGUMENT;
+    }
+    
+    napi_value ret;
+    napi_create_int32(env, error, &ret);
+    return ret;
+}
+
+napi_value PhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    
+    bool enabled = true;
+    bool supportResult = false;
+    Camera_ErrorCode error = CAMERA_OK;
+    switch (index) {
+    case CASE_INDEX_1:
+        supportResult = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput);
+        LOGI("supportResult is :,%{public}d", supportResult);
+        if (supportResult == true) {
+        error = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput, enabled);
+        }
         break;
     default:
         break;
