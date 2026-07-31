@@ -2537,15 +2537,10 @@ int VideoDecodeSyncApi0060Test()
     vDecSample->syncOutputWaitTime = INT64_MAX;
     vDecSample->inpDir = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
     if (vDecSample->CreateVideoDecoder(g_codecName) != AV_ERR_OK) { return -1; }
-    OH_LOG_INFO(LOG_APP, "dwl CreateVideoDecoder sucess");
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
-    OH_LOG_INFO(LOG_APP, "dwl ConfigureVideoDecoder sucess");
     if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
-    OH_LOG_INFO(LOG_APP, "dwl StartVideoDecoder sucess");
     vDecSample->WaitForEOS();
-    OH_LOG_INFO(LOG_APP, "dwl WaitForEOS sucess");
     if (vDecSample->errCount != AV_ERR_OK) { return -1; }
-    OH_LOG_INFO(LOG_APP, "dwl errCount sucess");
     return 0;
 }
 

@@ -19,11 +19,6 @@
 #include "include/CommonTool.h"
 #include "hilog/log.h"
 
-#undef LOG_DOMAIN
-#undef LOG_TAG
-#define LOG_DOMAIN 0x3200
-#define LOG_TAG "dwl"
-
 #define MAX_THREAD 16
 
 using namespace std;
@@ -516,17 +511,11 @@ int OutputDecsFunc001Test()
         vDecSample->expectCropRight = DEFAULT_WIDTH - 1;
 
         if (vDecSample->CreateVideoDecoder(g_codecName) != AV_ERR_OK) { return -1; }
-        OH_LOG_ERROR(LOG_APP, "dwl CreateVideoDecoder sucess");
         if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
-        OH_LOG_ERROR(LOG_APP, "dwl ConfigureVideoDecoder sucess");
         if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return -1; }
-        OH_LOG_ERROR(LOG_APP, "dwl SetVideoDecoderCallback sucess");
         if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
-        OH_LOG_ERROR(LOG_APP, "dwl StartVideoDecoder sucess");
         vDecSample->WaitForEOS();
-        OH_LOG_ERROR(LOG_APP, "dwl WaitForEOS sucess");
         if (vDecSample->errCount != AV_ERR_OK) { return -1; }
-        OH_LOG_ERROR(LOG_APP, "dwl errCount sucess");
         return 0;
     }
 }
