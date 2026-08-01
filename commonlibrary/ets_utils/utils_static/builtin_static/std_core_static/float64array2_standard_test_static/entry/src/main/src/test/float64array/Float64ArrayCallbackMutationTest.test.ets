@@ -1983,3 +1983,192 @@ export default function Float64ArrayCallbackMutationTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCallbackMutation075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(5.0, 6.0, 7.0);
+      const mapped: Float64Array = arr.map((v: number, index: int, source: Float64Array): number => {
+        if (index === 0) {
+          source.$_set(2, 10.0);
+        }
+        return v * 2.0;
+      });
+      const filtered: Float64Array = mapped.filter((v: number, index: int, source: Float64Array): boolean => {
+        if (index === 0) {
+          source.$_set(1, 40.0);
+        }
+        return v >= 2.0;
+      });
+      const actualLength = filtered.length;
+      const expectedLength: int = 3;
+      expect(actualLength).assertEqual(expectedLength);
+      const actualElement1 = filtered.$_get(1);
+      const expectedElement1: number = 40.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+      const actualElement1Second = mapped.$_get(1);
+      const expectedElement1Second: number = 40.0;
+      expect(actualElement1Second).assertEqual(expectedElement1Second);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 10.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CALLBACK_MUTATION_7600
+     * @tc.name testFloat64ArrayCallbackMutation076
+     * @tc.desc Verify filter-map chain keeps view source mutation separate from the original
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayCallbackMutation076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(11.0, 12.0, 13.0, 14.0);
+      const filtered: Float64Array = arr.filter((v: number, index: int, source: Float64Array): boolean => {
+        if (index === 0) {
+          source.$_set(3, 40.0);
+        }
+        return v > 11.0;
+      });
+      const mapped: Float64Array = filtered.map((v: number, index: int, source: Float64Array): number => {
+        if (index === 0) {
+          source.$_set(2, 30.0);
+        }
+        return v * 10.0;
+      });
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = 300.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+      const actualElement2Second = filtered.$_get(2);
+      const expectedElement2Second: number = 30.0;
+      expect(actualElement2Second).assertEqual(expectedElement2Second);
+      const actualElement3 = arr.$_get(3);
+      const expectedElement3: number = 40.0;
+      expect(actualElement3).assertEqual(expectedElement3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CALLBACK_MUTATION_7700
+     * @tc.name testFloat64ArrayCallbackMutation077
+     * @tc.desc Verify map-reduce chain consumes a callback-updated mapped value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayCallbackMutation077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(12.0, 24.0, 36.0);
+      const mapped: Float64Array = arr.map((v: number, index: int, source: Float64Array): number => {
+        if (index === 0) {
+          source.$_set(2, 10.0);
+        }
+        return v + 1.0;
+      });
+      const total: number = mapped.reduce((acc: number, v: number, index: int, source: Float64Array): number => {
+        if (index === 0) {
+          source.$_set(1, 30.0);
+        }
+        return acc + v;
+      }, 0.0);
+      const actualResult = total;
+      const expectedResult: number = 54.0;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualElement1 = mapped.$_get(1);
+      const expectedElement1: number = 30.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 10.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CALLBACK_MUTATION_7800
+     * @tc.name testFloat64ArrayCallbackMutation078
+     * @tc.desc Verify filter-reduceRight chain preserves reverse callback mutation order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayCallbackMutation078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(-5.0, 10.0, 15.0, 20.0);
+      const filtered: Float64Array = arr.filter((v: number, index: int, source: Float64Array): boolean => {
+        if (index === 0) {
+          source.$_set(2, 30.0);
+        }
+        return v % 2.0 === 0.0;
+      });
+      const total: number = filtered.reduceRight((acc: number, v: number, index: int, source: Float64Array): number => {
+        if (index === 1) {
+          source.$_set(0, 20.0);
+        }
+        return acc + v;
+      }, 0.0);
+      const actualResult = total;
+      const expectedResult: number = 70.0;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualElement0 = filtered.$_get(0);
+      const expectedElement0: number = 20.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 30.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CALLBACK_MUTATION_7900
+     * @tc.name testFloat64ArrayCallbackMutation079
+     * @tc.desc Verify map callback mutation reaches the last element of a critical-size array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayCallbackMutation079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const size: int = 1024;
+      const arr: Float64Array = new Float64Array(size);
+      for (let i: int = 0; i < size; i++) {
+        arr.$_set(i, i + 1);
+      }
+      let calls: int = 0;
+      const mapped: Float64Array = arr.map((v: number, index: int, source: Float64Array): number => {
+        calls++;
+        if (index === 0) {
+          source.$_set(size - 1, Number.MAX_VALUE);
+        }
+        return v;
+      });
+      expect(calls).assertEqual(size);
+      const actualElementAtsize1 = mapped.$_get(size - 1);
+      const expectedElementAtsize1: number = Number.MAX_VALUE;
+      expect(actualElementAtsize1).assertEqual(expectedElementAtsize1);
+      const actualElementAtsize1Second = arr.$_get(size - 1);
+      const expectedElementAtsize1Second: number = Number.MAX_VALUE;
+      expect(actualElementAtsize1Second).assertEqual(expectedElementAtsize1Second);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CALLBACK_MUTATION_8000
+     * @tc.name testFloat64ArrayCallbackMutation080
+     * @tc.desc Verify callback mutation preserves static radix and scientific literal values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayCallbackMutation080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(0x4);
+      arr.$_set(0, 0b1);
+      arr.$_set(0o1, 2e0);
+      arr.$_set(0x2, 3.0e0);
+      arr.$_set(3, 4.0e0);
+      const mapped: Float64Array = arr.map((v: number, index: int, source: Float64Array): number => {
+        if (index === 0) {
+          source.$_set(0o3, 0x20 + 0b10);
+        }
+        return v;
+      });
+      const actualElement3 = mapped.$_get(3);
+      const expectedElement3: number = 34.0;
+      expect(actualElement3).assertEqual(expectedElement3);
+      const actualElement3Second = arr.$_get(3);
+      const expectedElement3Second: number = 34.0;
+      expect(actualElement3Second).assertEqual(expectedElement3Second);
+      const actualLength = mapped.length;
+      const expectedLength: int = 0x4;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+  })
+}
