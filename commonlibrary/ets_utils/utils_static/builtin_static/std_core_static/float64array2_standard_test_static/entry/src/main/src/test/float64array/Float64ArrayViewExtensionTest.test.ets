@@ -1998,3 +1998,140 @@ export default function Float64ArrayViewExtensionTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayViewExtension098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Float64Array = new Float64Array(4);
+      const u8: Uint8Array = new Uint8Array([0, 128, 255, 1]);
+      target.set(u8);
+      const actualElement0Tenth = target.$_get(0);
+      const expectedElement0Tenth: number = 0;
+      expect(actualElement0Tenth).assertEqual(expectedElement0Tenth);
+      const actualElement1Sixth = target.$_get(1);
+      const expectedElement1Sixth: number = 128;
+      expect(actualElement1Sixth).assertEqual(expectedElement1Sixth);
+      const actualElement2Sixth = target.$_get(2);
+      const expectedElement2Sixth: number = 255;
+      expect(actualElement2Sixth).assertEqual(expectedElement2Sixth);
+      const actualElement3Fifth = target.$_get(3);
+      const expectedElement3Fifth: number = 1;
+      expect(actualElement3Fifth).assertEqual(expectedElement3Fifth);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_0990
+     * @tc.name testFloat64ArrayViewExtension099
+     * @tc.desc Verify multiple views aliasing via buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayViewExtension099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const firstResult: Float64Array = new Float64Array(buf);
+      const secondResult: Float64Array = new Float64Array(buf);
+      firstResult.$_set(0, 42.0);
+      const actualElement0Twelfth = secondResult.$_get(0);
+      const expectedElement0Twelfth: number = 42.0;
+      expect(actualElement0Twelfth).assertEqual(expectedElement0Twelfth);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_1000
+     * @tc.name testFloat64ArrayViewExtension100
+     * @tc.desc Verify subnormal + normal mixed in constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayViewExtension100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([Number.MIN_VALUE, 1.0, Number.MAX_VALUE]);
+      const actualElement0Twelfth = arr.$_get(0);
+      const expectedElement0Twelfth: number = Number.MIN_VALUE;
+      expect(actualElement0Twelfth).assertEqual(expectedElement0Twelfth);
+      const actualElement1Seventh = arr.$_get(1);
+      const expectedElement1Seventh: number = 1.0;
+      expect(actualElement1Seventh).assertEqual(expectedElement1Seventh);
+      const actualElement2Seventh = arr.$_get(2);
+      const expectedElement2Seventh: number = Number.MAX_VALUE;
+      expect(actualElement2Seventh).assertEqual(expectedElement2Seventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_1010
+     * @tc.name testFloat64ArrayViewExtension101
+     * @tc.desc Verify subnormal through of()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayViewExtension101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(Number.MIN_VALUE, 2e-308);
+      const actualElement0Twelfth = arr.$_get(0);
+      const expectedElement0Twelfth: number = Number.MIN_VALUE;
+      expect(actualElement0Twelfth).assertEqual(expectedElement0Twelfth);
+      const actualElement1Seventh = arr.$_get(1);
+      const expectedElement1Seventh: number = 2e-308;
+      expect(actualElement1Seventh).assertEqual(expectedElement1Seventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_1020
+     * @tc.name testFloat64ArrayViewExtension102
+     * @tc.desc Verify multiple set operations from different typed arrays
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayViewExtension102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Float64Array = new Float64Array(6);
+      const i32: Int32Array = new Int32Array([1, 2]);
+      const u8: Uint8Array = new Uint8Array([3, 4]);
+      const f32: Float32Array = new Float32Array([5.0, 6.0]);
+      target.set(i32, 0);
+      target.set(u8, 2);
+      target.set(f32, 4);
+      const actualElement0Twelfth = target.$_get(0);
+      const expectedElement0Twelfth: number = 1;
+      expect(actualElement0Twelfth).assertEqual(expectedElement0Twelfth);
+      const actualElement1Seventh = target.$_get(1);
+      const expectedElement1Seventh: number = 2;
+      expect(actualElement1Seventh).assertEqual(expectedElement1Seventh);
+      const actualElement2Seventh = target.$_get(2);
+      const expectedElement2Seventh: number = 3;
+      expect(actualElement2Seventh).assertEqual(expectedElement2Seventh);
+      const actualElement3Sixth = target.$_get(3);
+      const expectedElement3Sixth: number = 4;
+      expect(actualElement3Sixth).assertEqual(expectedElement3Sixth);
+      const actualElementAt4Second = target.$_get(4);
+      const expectedElementAt4Second: number = 5.0;
+      expect(actualElementAt4Second).assertEqual(expectedElementAt4Second);
+      const actualElementAt5Third = target.$_get(5);
+      const expectedElementAt5Third: number = 6.0;
+      expect(actualElementAt5Third).assertEqual(expectedElementAt5Third);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_1030
+     * @tc.name testFloat64ArrayViewExtension103
+     * @tc.desc Verify business call order chain across view and copy differs by mutation sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayViewExtension103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
+      const shared = source.subarray(1, 4).fill(9.0, 1, 2);
+      const copied = source.slice(1, 4).fill(7.0, 1, 2);
+      const actualElement1Seventh = shared.$_get(1);
+      const expectedElement1Seventh: number = 9.0;
+      expect(actualElement1Seventh).assertEqual(expectedElement1Seventh);
+      const actualElement1Eighth = copied.$_get(1);
+      const expectedElement1Eighth: number = 7.0;
+      expect(actualElement1Eighth).assertEqual(expectedElement1Eighth);
+      const actualElement2Seventh = source.$_get(2);
+      const expectedElement2Seventh: number = 9.0;
+      expect(actualElement2Seventh).assertEqual(expectedElement2Seventh);
+      const actualElement1Ninth = source.$_get(1);
+      const expectedElement1Ninth: number = 2.0;
+      expect(actualElement1Ninth).assertEqual(expectedElement1Ninth);
+    });
+  })
+}
