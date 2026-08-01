@@ -302,52 +302,12 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1500
      * @tc.name testFloat64ArrayTruncationAlignment015
-     * @tc.desc Verify length 3 offset 0 buffer 16 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayTruncationAlignment015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(16);
-        const arr = new Float64Array(buf, 0, 3);
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1600
-     * @tc.name testFloat64ArrayTruncationAlignment016
-     * @tc.desc Verify length 2 offset 8 buffer 16 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayTruncationAlignment016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(16);
-        const arr = new Float64Array(buf, 8, 2);
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1700
-     * @tc.name testFloat64ArrayTruncationAlignment017
      * @tc.desc Verify 0.1 + 0.2 != 0.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, 0.1 + 0.2);
       const actualResult = arr[0];
@@ -356,14 +316,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1800
-     * @tc.name testFloat64ArrayTruncationAlignment018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1600
+     * @tc.name testFloat64ArrayTruncationAlignment016
      * @tc.desc Verify 0.1 + 0.2 equals 0.30000000000000004
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, 0.1 + 0.2);
       const actualResult = arr[0];
@@ -372,14 +332,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1900
-     * @tc.name testFloat64ArrayTruncationAlignment019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1700
+     * @tc.name testFloat64ArrayTruncationAlignment017
      * @tc.desc Verify 1.0 / 3.0 * 3.0 rounds to 1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, 1.0 / 3.0 * 3.0);
       const actualResult = arr[0];
@@ -388,14 +348,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2000
-     * @tc.name testFloat64ArrayTruncationAlignment020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1800
+     * @tc.name testFloat64ArrayTruncationAlignment018
      * @tc.desc Verify MAX_SAFE_INTEGER exact representation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, 9007199254740991);
       const actualResult = arr[0];
@@ -404,14 +364,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2100
-     * @tc.name testFloat64ArrayTruncationAlignment021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_1900
+     * @tc.name testFloat64ArrayTruncationAlignment019
      * @tc.desc Verify out-of-range MAX_VALUE literal rounds to MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, 1.7976931348623158e+308);
       const maxValue: number = 1.7976931348623157e+308;
@@ -419,14 +379,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2200
-     * @tc.name testFloat64ArrayTruncationAlignment022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2000
+     * @tc.name testFloat64ArrayTruncationAlignment020
      * @tc.desc Verify MIN_SAFE_INTEGER exact representation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(1);
       arr.$_set(0, -9007199254740991);
       const actualResultSecond = arr[0];
@@ -435,14 +395,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2300
-     * @tc.name testFloat64ArrayTruncationAlignment023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2100
+     * @tc.name testFloat64ArrayTruncationAlignment021
      * @tc.desc Verify subarray write affects parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float64Array.of(1.0, 2.0, 3.0);
       const child = parent.subarray(1, 3);
       child[0] = 999.0;
@@ -452,14 +412,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2400
-     * @tc.name testFloat64ArrayTruncationAlignment024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2200
+     * @tc.name testFloat64ArrayTruncationAlignment022
      * @tc.desc Verify parent write affects subarray child
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float64Array.of(1.0, 2.0, 3.0);
       const child = parent.subarray(1, 3);
       parent[1] = 888.0;
@@ -469,14 +429,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2500
-     * @tc.name testFloat64ArrayTruncationAlignment025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2300
+     * @tc.name testFloat64ArrayTruncationAlignment023
      * @tc.desc Verify multilevel subarray shares buffer with root
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const child1 = parent.subarray(1, 4);
       const child2 = child1.subarray(1, 3);
@@ -487,14 +447,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2600
-     * @tc.name testFloat64ArrayTruncationAlignment026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2400
+     * @tc.name testFloat64ArrayTruncationAlignment024
      * @tc.desc Verify multiple overlapping subarray views affect each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float64Array.of(1.0, 2.0, 3.0);
       const view1 = parent.subarray(0, 2);
       const view2 = parent.subarray(1, 3);
@@ -509,14 +469,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2700
-     * @tc.name testFloat64ArrayTruncationAlignment027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2500
+     * @tc.name testFloat64ArrayTruncationAlignment025
      * @tc.desc Verify $_set 0.1 preserves double precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 0.1);
       const actualElement0 = arr.$_get(0);
@@ -525,14 +485,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2800
-     * @tc.name testFloat64ArrayTruncationAlignment028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2600
+     * @tc.name testFloat64ArrayTruncationAlignment026
      * @tc.desc Verify $_set 0.1 + 0.2 equals classic double precision issue 0.30000000000000004
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 0.1 + 0.2);
       const actualElement0 = arr.$_get(0);
@@ -541,14 +501,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2900
-     * @tc.name testFloat64ArrayTruncationAlignment029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2700
+     * @tc.name testFloat64ArrayTruncationAlignment027
      * @tc.desc Verify $_set 2^53 = 9007199254740992 preserves exact integer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 9007199254740992);
       const actualElement0 = arr.$_get(0);
@@ -557,14 +517,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3000
-     * @tc.name testFloat64ArrayTruncationAlignment030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2800
+     * @tc.name testFloat64ArrayTruncationAlignment028
      * @tc.desc Verify $_set 2^53+1 = 9007199254740993 truncates to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 9007199254740993);
       const actualElement0 = arr.$_get(0);
@@ -573,14 +533,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3100
-     * @tc.name testFloat64ArrayTruncationAlignment031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2900
+     * @tc.name testFloat64ArrayTruncationAlignment029
      * @tc.desc Verify $_set 2^53+2 = 9007199254740994 is exactly representable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 9007199254740994);
       const actualElement0 = arr.$_get(0);
@@ -589,14 +549,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3200
-     * @tc.name testFloat64ArrayTruncationAlignment032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3000
+     * @tc.name testFloat64ArrayTruncationAlignment030
      * @tc.desc Verify $_set 2^53+3 = 9007199254740995 rounds to 9007199254740996
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 9007199254740995);
       const actualElement0 = arr.$_get(0);
@@ -605,14 +565,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3300
-     * @tc.name testFloat64ArrayTruncationAlignment033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3100
+     * @tc.name testFloat64ArrayTruncationAlignment031
      * @tc.desc Verify $_set 2^53-1 = 9007199254740991 is exactly representable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 9007199254740991);
       const actualElement0 = arr.$_get(0);
@@ -621,14 +581,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3400
-     * @tc.name testFloat64ArrayTruncationAlignment034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3200
+     * @tc.name testFloat64ArrayTruncationAlignment032
      * @tc.desc Verify a value above the maximum finite double becomes positive Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, Number.MAX_VALUE * 1.001);
       const actualElement0 = arr.$_get(0);
@@ -637,14 +597,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3500
-     * @tc.name testFloat64ArrayTruncationAlignment035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3300
+     * @tc.name testFloat64ArrayTruncationAlignment033
      * @tc.desc Verify a value below the minimum finite double becomes negative Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, -Number.MAX_VALUE * 1.001);
       const actualElement0 = arr.$_get(0);
@@ -653,14 +613,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3600
-     * @tc.name testFloat64ArrayTruncationAlignment036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3400
+     * @tc.name testFloat64ArrayTruncationAlignment034
      * @tc.desc Verify $_set Number.MIN_VALUE is exactly representable (5e-324)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, Number.MIN_VALUE);
       const actualElement0 = arr.$_get(0);
@@ -669,14 +629,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3700
-     * @tc.name testFloat64ArrayTruncationAlignment037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3500
+     * @tc.name testFloat64ArrayTruncationAlignment035
      * @tc.desc Verify $_set Number.MIN_VALUE / 2 underflows to +0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, Number.MIN_VALUE / 2);
       const actualElement0 = 1 / arr.$_get(0);
@@ -685,14 +645,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3800
-     * @tc.name testFloat64ArrayTruncationAlignment038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3600
+     * @tc.name testFloat64ArrayTruncationAlignment036
      * @tc.desc Verify $_set -Number.MIN_VALUE / 2 underflows to -0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, -Number.MIN_VALUE / 2);
       const actualElement0 = 1 / arr.$_get(0);
@@ -701,14 +661,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3900
-     * @tc.name testFloat64ArrayTruncationAlignment039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3700
+     * @tc.name testFloat64ArrayTruncationAlignment037
      * @tc.desc Verify with index 0 truncates 2^53+1 to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const r: Float64Array = arr.with(0, 9007199254740993);
       const actualElement0 = r.$_get(0);
@@ -720,14 +680,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4000
-     * @tc.name testFloat64ArrayTruncationAlignment040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3800
+     * @tc.name testFloat64ArrayTruncationAlignment038
      * @tc.desc Verify fill 2^53+1 truncates all elements to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(3);
       arr.fill(9007199254740993);
       const actualElement0 = arr.$_get(0);
@@ -739,14 +699,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4100
-     * @tc.name testFloat64ArrayTruncationAlignment041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3900
+     * @tc.name testFloat64ArrayTruncationAlignment039
      * @tc.desc Verify fill 0.1+0.2 fills all elements with double precision sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(2);
       arr.fill(0.1 + 0.2);
       const actualElement0 = arr.$_get(0);
@@ -758,14 +718,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4200
-     * @tc.name testFloat64ArrayTruncationAlignment042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4000
+     * @tc.name testFloat64ArrayTruncationAlignment040
      * @tc.desc Verify set copies 2^53+1 with truncation to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float64Array = new Float64Array([9007199254740993]);
       const dst: Float64Array = new Float64Array(1);
       dst.set(src);
@@ -775,14 +735,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4300
-     * @tc.name testFloat64ArrayTruncationAlignment043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4100
+     * @tc.name testFloat64ArrayTruncationAlignment041
      * @tc.desc Verify copyWithin propagates truncated double precision value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([0.1 + 0.2, 0.0, 0.0]);
       arr.copyWithin(1, 0, 1);
       const actualElement1Second = arr.$_get(1);
@@ -791,14 +751,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4400
-     * @tc.name testFloat64ArrayTruncationAlignment044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4200
+     * @tc.name testFloat64ArrayTruncationAlignment042
      * @tc.desc Verify of(2^53+1) truncates to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(9007199254740993);
       const actualElement0Third = arr.$_get(0);
       const expectedElement0Third: number = 9007199254740992;
@@ -806,14 +766,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4500
-     * @tc.name testFloat64ArrayTruncationAlignment045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4300
+     * @tc.name testFloat64ArrayTruncationAlignment043
      * @tc.desc Verify of(0.1 + 0.2) preserves double precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(0.1 + 0.2);
       const actualElement0Third = arr.$_get(0);
       const expectedElement0Third: number = 0.30000000000000004;
@@ -821,14 +781,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4600
-     * @tc.name testFloat64ArrayTruncationAlignment046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4400
+     * @tc.name testFloat64ArrayTruncationAlignment044
      * @tc.desc Verify Number.MAX_VALUE is stored and read exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, Number.MAX_VALUE);
       const actualElement0Third = arr.$_get(0);
@@ -837,14 +797,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4700
-     * @tc.name testFloat64ArrayTruncationAlignment047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4500
+     * @tc.name testFloat64ArrayTruncationAlignment045
      * @tc.desc Verify -Number.MAX_VALUE is stored and read exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, -Number.MAX_VALUE);
       const actualElement0Third = arr.$_get(0);
@@ -853,14 +813,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4800
-     * @tc.name testFloat64ArrayTruncationAlignment048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4600
+     * @tc.name testFloat64ArrayTruncationAlignment046
      * @tc.desc Verify $_set large int 4294967296 (2^32) exact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 4294967296);
       const actualElement0Third = arr.$_get(0);
@@ -869,14 +829,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4900
-     * @tc.name testFloat64ArrayTruncationAlignment049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4700
+     * @tc.name testFloat64ArrayTruncationAlignment047
      * @tc.desc Verify $_set int 2147483647 exact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 2147483647);
       const actualElement0Third = arr.$_get(0);
@@ -885,14 +845,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5000
-     * @tc.name testFloat64ArrayTruncationAlignment050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4800
+     * @tc.name testFloat64ArrayTruncationAlignment048
      * @tc.desc Verify $_set int -2147483648 exact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, -2147483648);
       const actualElement0Third = arr.$_get(0);
@@ -901,14 +861,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5100
-     * @tc.name testFloat64ArrayTruncationAlignment051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4900
+     * @tc.name testFloat64ArrayTruncationAlignment049
      * @tc.desc Verify assigning hexadecimal literal 0x9 produces 9.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 0x9);
       const actualElement0Third = arr.$_get(0);
@@ -917,14 +877,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5200
-     * @tc.name testFloat64ArrayTruncationAlignment052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5000
+     * @tc.name testFloat64ArrayTruncationAlignment050
      * @tc.desc Verify $_set 1.0e3 preserves 1000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 1.0e3);
       const actualElement0Third = arr.$_get(0);
@@ -933,14 +893,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5300
-     * @tc.name testFloat64ArrayTruncationAlignment053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5100
+     * @tc.name testFloat64ArrayTruncationAlignment051
      * @tc.desc Verify from array 0.1 preserves double precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.from([0.1]);
       const actualElement0Third = arr.$_get(0);
       const expectedElement0Third: number = 0.1;
@@ -948,14 +908,14 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5400
-     * @tc.name testFloat64ArrayTruncationAlignment054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5200
+     * @tc.name testFloat64ArrayTruncationAlignment052
      * @tc.desc Verify from array 2^53+1 truncates to 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayTruncationAlignment052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.from([9007199254740993]);
       const actualElement0Third = arr.$_get(0);
       const expectedElement0Third: number = 9007199254740992;
@@ -963,15 +923,15 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5500
-     * @tc.name testFloat64ArrayTruncationAlignment055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5300
+     * @tc.name testFloat64ArrayTruncationAlignment053
      * @tc.desc Verify business call order with integer index produces normal negative no-op
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayTruncationAlignment055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inventory: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+    it('testFloat64ArrayTruncationAlignment053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inventory: Float64Array = Float64Array.of(Number.MIN_VALUE, -0.0, NaN);
       const before = inventory.join(',');
       const adjusted = inventory.slice(0).fill(9.0, 1, 1);
       expect(adjusted.join(',')).assertEqual(before);

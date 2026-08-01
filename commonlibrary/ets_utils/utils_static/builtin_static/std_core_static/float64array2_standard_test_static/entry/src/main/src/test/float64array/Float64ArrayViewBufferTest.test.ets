@@ -44,7 +44,7 @@ export default function Float64ArrayViewBufferTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0100
      * @tc.name testFloat64ArrayViewBuffer001
      * @tc.desc Verify subarray write parent changes child element
      * @tc.size MediumTest
@@ -61,7 +61,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0200
      * @tc.name testFloat64ArrayViewBuffer002
      * @tc.desc Verify subarray write child changes parent element
      * @tc.size MediumTest
@@ -78,7 +78,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0300
      * @tc.name testFloat64ArrayViewBuffer003
      * @tc.desc Verify two views on same ArrayBuffer write parent read child
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0400
      * @tc.name testFloat64ArrayViewBuffer004
      * @tc.desc Verify two views write child read parent
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0500
      * @tc.name testFloat64ArrayViewBuffer005
      * @tc.desc Verify two disjoint subarrays write back to parent
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0600
      * @tc.name testFloat64ArrayViewBuffer006
      * @tc.desc Verify nested subarray still shares buffer
      * @tc.size MediumTest
@@ -154,7 +154,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0700
      * @tc.name testFloat64ArrayViewBuffer007
      * @tc.desc Verify subarray byteOffset = parent.bo + start*8
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0800
      * @tc.name testFloat64ArrayViewBuffer008
      * @tc.desc Verify subarray negative index wrap shares buffer
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0900
      * @tc.name testFloat64ArrayViewBuffer009
      * @tc.desc Verify three disjoint views on same buffer
      * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1000
      * @tc.name testFloat64ArrayViewBuffer010
      * @tc.desc Verify zero-length subarray stays empty after parent change
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1100
      * @tc.name testFloat64ArrayViewBuffer011
      * @tc.desc Verify fill on subarray only affects parent range
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1200
      * @tc.name testFloat64ArrayViewBuffer012
      * @tc.desc Verify reverse on subarray reverses parent range
      * @tc.size MediumTest
@@ -266,7 +266,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1300
      * @tc.name testFloat64ArrayViewBuffer013
      * @tc.desc Verify sort on subarray sorts parent range
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1400
      * @tc.name testFloat64ArrayViewBuffer014
      * @tc.desc Verify copyWithin on subarray rewrites parent slots
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1500
      * @tc.name testFloat64ArrayViewBuffer015
      * @tc.desc Verify set on subarray affects parent
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1600
      * @tc.name testFloat64ArrayViewBuffer016
      * @tc.desc Verify fill on subarray does not overflow view bounds
      * @tc.size MediumTest
@@ -340,7 +340,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1700
      * @tc.name testFloat64ArrayViewBuffer017
      * @tc.desc Verify with on subarray does not pollute parent
      * @tc.size MediumTest
@@ -357,7 +357,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1800
      * @tc.name testFloat64ArrayViewBuffer018
      * @tc.desc Verify map on subarray does not pollute parent
      * @tc.size MediumTest
@@ -376,7 +376,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1900
      * @tc.name testFloat64ArrayViewBuffer019
      * @tc.desc Verify toReversed on subarray does not pollute parent
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2000
      * @tc.name testFloat64ArrayViewBuffer020
      * @tc.desc Verify toSorted on subarray does not pollute parent
      * @tc.size MediumTest
@@ -410,7 +410,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2100
      * @tc.name testFloat64ArrayViewBuffer021
      * @tc.desc Verify reverse returns same reference
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2200
      * @tc.name testFloat64ArrayViewBuffer022
      * @tc.desc Verify nested reverse(reverse(x)) restores order
      * @tc.size MediumTest
@@ -447,7 +447,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2300
      * @tc.name testFloat64ArrayViewBuffer023
      * @tc.desc Verify nested map(map(x)) adds twice
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2400
      * @tc.name testFloat64ArrayViewBuffer024
      * @tc.desc Verify nested filter then map
      * @tc.size MediumTest
@@ -492,7 +492,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2500
      * @tc.name testFloat64ArrayViewBuffer025
      * @tc.desc Verify nested fill then copyWithin chain
      * @tc.size MediumTest
@@ -512,7 +512,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2600
      * @tc.name testFloat64ArrayViewBuffer026
      * @tc.desc Verify nested with immutable chain does not affect original
      * @tc.size MediumTest
@@ -532,7 +532,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2700
      * @tc.name testFloat64ArrayViewBuffer027
      * @tc.desc Verify slice then subarray write does not change original
      * @tc.size MediumTest
@@ -550,7 +550,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2800
      * @tc.name testFloat64ArrayViewBuffer028
      * @tc.desc Verify forEach sees modification during iteration
      * @tc.size MediumTest
@@ -574,7 +574,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_2900
      * @tc.name testFloat64ArrayViewBuffer029
      * @tc.desc Verify $_set then at reads same value
      * @tc.size MediumTest
@@ -590,7 +590,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3000
      * @tc.name testFloat64ArrayViewBuffer030
      * @tc.desc Verify fill partial then slice
      * @tc.size MediumTest
@@ -610,7 +610,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3100
      * @tc.name testFloat64ArrayViewBuffer031
      * @tc.desc Verify $_set then reverse moves value to symmetric position
      * @tc.size MediumTest
@@ -627,7 +627,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3200
      * @tc.name testFloat64ArrayViewBuffer032
      * @tc.desc Verify modification before forEach iteration
      * @tc.size MediumTest
@@ -649,7 +649,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3300
      * @tc.name testFloat64ArrayViewBuffer033
      * @tc.desc Verify subarray write parent read child: parent index1 change reflected in child
      * @tc.size MediumTest
@@ -666,7 +666,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3400
      * @tc.name testFloat64ArrayViewBuffer034
      * @tc.desc Verify subarray write child read parent: child element0 change reflected in parent index1
      * @tc.size MediumTest
@@ -683,7 +683,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3500
      * @tc.name testFloat64ArrayViewBuffer035
      * @tc.desc Verify two non-overlapping subarrays each write to parent distinct slots
      * @tc.size MediumTest
@@ -705,7 +705,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3600
      * @tc.name testFloat64ArrayViewBuffer036
      * @tc.desc Verify nested subarray still shares underlying buffer
      * @tc.size MediumTest
@@ -723,7 +723,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3700
      * @tc.name testFloat64ArrayViewBuffer037
      * @tc.desc Verify ArrayBuffer offsets: two views on same buffer write parent read child
      * @tc.size MediumTest
@@ -741,7 +741,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3800
      * @tc.name testFloat64ArrayViewBuffer038
      * @tc.desc Verify ArrayBuffer offsets: write child read parent
      * @tc.size MediumTest
@@ -759,7 +759,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_3900
      * @tc.name testFloat64ArrayViewBuffer039
      * @tc.desc Verify three disjoint views on shared buffer each write separately
      * @tc.size MediumTest
@@ -787,7 +787,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4000
      * @tc.name testFloat64ArrayViewBuffer040
      * @tc.desc Verify set on subarray view affects parent corresponding slots
      * @tc.size MediumTest
@@ -807,7 +807,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4100
      * @tc.name testFloat64ArrayViewBuffer041
      * @tc.desc Verify fill on subarray view only affects parent corresponding range
      * @tc.size MediumTest
@@ -836,7 +836,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4200
      * @tc.name testFloat64ArrayViewBuffer042
      * @tc.desc Verify reverse on subarray view reverses parent corresponding range
      * @tc.size MediumTest
@@ -856,7 +856,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4300
      * @tc.name testFloat64ArrayViewBuffer043
      * @tc.desc Verify sort on subarray view sorts parent corresponding range
      * @tc.size MediumTest
@@ -876,7 +876,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4400
      * @tc.name testFloat64ArrayViewBuffer044
      * @tc.desc Verify copyWithin on subarray view modifies parent corresponding slots
      * @tc.size MediumTest
@@ -893,7 +893,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4500
      * @tc.name testFloat64ArrayViewBuffer045
      * @tc.desc Verify with on subarray returns new array does not pollute parent
      * @tc.size MediumTest
@@ -913,7 +913,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4600
      * @tc.name testFloat64ArrayViewBuffer046
      * @tc.desc Verify map on subarray returns new array parent unchanged
      * @tc.size MediumTest
@@ -933,7 +933,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4700
      * @tc.name testFloat64ArrayViewBuffer047
      * @tc.desc Verify ArrayBuffer.isView returns true for Float64Array
      * @tc.size MediumTest
@@ -946,7 +946,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4800
      * @tc.name testFloat64ArrayViewBuffer048
      * @tc.desc Verify ArrayBuffer.isView returns false for bare ArrayBuffer
      * @tc.size MediumTest
@@ -959,7 +959,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_4900
      * @tc.name testFloat64ArrayViewBuffer049
      * @tc.desc Verify offset views on shared buffer see each others writes
      * @tc.size MediumTest
@@ -977,7 +977,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5000
      * @tc.name testFloat64ArrayViewBuffer050
      * @tc.desc Verify subarray zero-length view stays empty after parent modification
      * @tc.size MediumTest
@@ -994,7 +994,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5100
      * @tc.name testFloat64ArrayViewBuffer051
      * @tc.desc Verify slice returned independent buffer does not share with original
      * @tc.size MediumTest
@@ -1011,7 +1011,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5200
      * @tc.name testFloat64ArrayViewBuffer052
      * @tc.desc Verify ArrayBuffer.isView returns true for subarray
      * @tc.size MediumTest
@@ -1025,7 +1025,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5300
      * @tc.name testFloat64ArrayViewBuffer053
      * @tc.desc Verify overlapping views share data
      * @tc.size MediumTest
@@ -1048,7 +1048,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5400
      * @tc.name testFloat64ArrayViewBuffer054
      * @tc.desc Verify three non-overlapping views
      * @tc.size MediumTest
@@ -1075,7 +1075,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5500
      * @tc.name testFloat64ArrayViewBuffer055
      * @tc.desc Verify fill on one view does not overlap others
      * @tc.size MediumTest
@@ -1093,7 +1093,7 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5600
      * @tc.name testFloat64ArrayViewBuffer056
      * @tc.desc Verify reverse on view only reverses that view region
      * @tc.size MediumTest
@@ -1119,52 +1119,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5700
      * @tc.name testFloat64ArrayViewBuffer057
-     * @tc.desc Verify constructor buf offset 0 works
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayViewBuffer057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(16);
-      const arr: Float64Array = new Float64Array(buf, 0, 2);
-      const actualLengthThird = arr.length;
-      const expectedLengthThird: int = 2;
-      expect(actualLengthThird).assertEqual(expectedLengthThird);
-      const actualByteOffsetSecond = arr.byteOffset;
-      const expectedByteOffsetSecond: int = 0;
-      expect(actualByteOffsetSecond).assertEqual(expectedByteOffsetSecond);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0580
-     * @tc.name testFloat64ArrayViewBuffer058
-     * @tc.desc Verify constructor buf offset 16 works
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayViewBuffer058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(32);
-      const arr: Float64Array = new Float64Array(buf, 16, 2);
-      const actualLengthThird = arr.length;
-      const expectedLengthThird: int = 2;
-      expect(actualLengthThird).assertEqual(expectedLengthThird);
-      const actualByteOffsetSecond = arr.byteOffset;
-      const expectedByteOffsetSecond: int = 16;
-      expect(actualByteOffsetSecond).assertEqual(expectedByteOffsetSecond);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0590
-     * @tc.name testFloat64ArrayViewBuffer059
      * @tc.desc Verify sort on view only sorts view region
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
       const firstResult: Float64Array = new Float64Array(buf, 0, 2);
       const secondResult: Float64Array = new Float64Array(buf, 16, 2);
@@ -1180,33 +1142,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0600
-     * @tc.name testFloat64ArrayViewBuffer060
-     * @tc.desc Verify constructor with buf offset 24
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayViewBuffer060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(32);
-      const arr: Float64Array = new Float64Array(buf, 24, 1);
-      const actualLengthThird = arr.length;
-      const expectedLengthThird: int = 1;
-      expect(actualLengthThird).assertEqual(expectedLengthThird);
-      const actualByteOffsetSecond = arr.byteOffset;
-      const expectedByteOffsetSecond: int = 24;
-      expect(actualByteOffsetSecond).assertEqual(expectedByteOffsetSecond);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0610
-     * @tc.name testFloat64ArrayViewBuffer061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5800
+     * @tc.name testFloat64ArrayViewBuffer058
      * @tc.desc Verify overlapping views with reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
       const firstResult: Float64Array = new Float64Array(buf, 0, 3);
       const secondResult: Float64Array = new Float64Array(buf, 8, 2);
@@ -1220,14 +1163,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0620
-     * @tc.name testFloat64ArrayViewBuffer062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_5900
+     * @tc.name testFloat64ArrayViewBuffer059
      * @tc.desc Verify set on view modifies buffer only in view region
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
       const firstResult: Float64Array = new Float64Array(buf, 0, 2);
       const secondResult: Float64Array = new Float64Array(buf, 16, 2);
@@ -1242,14 +1185,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0630
-     * @tc.name testFloat64ArrayViewBuffer063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6000
+     * @tc.name testFloat64ArrayViewBuffer060
      * @tc.desc Verify map on view creates independent Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const firstResult: Float64Array = new Float64Array(buf, 0, 2);
       firstResult.$_set(0, 1.0);
@@ -1262,14 +1205,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0640
-     * @tc.name testFloat64ArrayViewBuffer064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6100
+     * @tc.name testFloat64ArrayViewBuffer061
      * @tc.desc Verify filter on view creates independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
       const v: Float64Array = new Float64Array(buf, 0, 3);
       v.$_set(0, 1.0);
@@ -1283,14 +1226,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0650
-     * @tc.name testFloat64ArrayViewBuffer065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6200
+     * @tc.name testFloat64ArrayViewBuffer062
      * @tc.desc Verify subarray shares buffer with parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const sub = arr.subarray(1, 3);
       expect(sub.buffer).assertEqual(arr.buffer);
@@ -1303,14 +1246,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0660
-     * @tc.name testFloat64ArrayViewBuffer066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6300
+     * @tc.name testFloat64ArrayViewBuffer063
      * @tc.desc Verify slice creates independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const s = arr.slice(1, 3);
       expect(s.buffer === arr.buffer).assertFalse();
@@ -1323,14 +1266,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0670
-     * @tc.name testFloat64ArrayViewBuffer067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6400
+     * @tc.name testFloat64ArrayViewBuffer064
      * @tc.desc Verify parent modification visible in subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const sub = arr.subarray(0, 2);
       arr.$_set(0, 99.0);
@@ -1340,14 +1283,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0680
-     * @tc.name testFloat64ArrayViewBuffer068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6500
+     * @tc.name testFloat64ArrayViewBuffer065
      * @tc.desc Verify parent fill visible in subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = arr.subarray(0, 3);
       arr.fill(7.0, 0, 3);
@@ -1360,14 +1303,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0690
-     * @tc.name testFloat64ArrayViewBuffer069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6600
+     * @tc.name testFloat64ArrayViewBuffer066
      * @tc.desc Verify subarray reverse visible in parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const sub = arr.subarray(0, 3);
       sub.reverse();
@@ -1383,14 +1326,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0700
-     * @tc.name testFloat64ArrayViewBuffer070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6700
+     * @tc.name testFloat64ArrayViewBuffer067
      * @tc.desc Verify slice modification does not affect parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const s = arr.slice(0, 2);
       s.$_set(0, 99.0);
@@ -1400,14 +1343,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0710
-     * @tc.name testFloat64ArrayViewBuffer071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6800
+     * @tc.name testFloat64ArrayViewBuffer068
      * @tc.desc Verify subarray of subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const s1 = arr.subarray(1, 4);
       const s2 = s1.subarray(1, 3);
@@ -1421,14 +1364,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0720
-     * @tc.name testFloat64ArrayViewBuffer072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_6900
+     * @tc.name testFloat64ArrayViewBuffer069
      * @tc.desc Verify subarray byteOffset increments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const sub = arr.subarray(1, 3);
       const actualByteOffsetThird = arr.byteOffset;
@@ -1440,14 +1383,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0730
-     * @tc.name testFloat64ArrayViewBuffer073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7000
+     * @tc.name testFloat64ArrayViewBuffer070
      * @tc.desc Verify subarray length = end - begin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = arr.subarray(1, 4);
       const actualLengthFourth = sub.length;
@@ -1456,29 +1399,29 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0740
-     * @tc.name testFloat64ArrayViewBuffer074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7100
+     * @tc.name testFloat64ArrayViewBuffer071
      * @tc.desc Verify subarray(0) full array view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+    it('testFloat64ArrayViewBuffer071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(Number.MIN_VALUE, -0.0, Number.MAX_SAFE_INTEGER);
       const actualLengthFourth = arr.subarray(0).length;
       const expectedLengthFourth: int = 3;
       expect(actualLengthFourth).assertEqual(expectedLengthFourth);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0750
-     * @tc.name testFloat64ArrayViewBuffer075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7200
+     * @tc.name testFloat64ArrayViewBuffer072
      * @tc.desc Verify subarray byteLength = length * 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(5);
       const sub = arr.subarray(2, 4);
       const actualByteLength = sub.byteLength;
@@ -1487,14 +1430,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0760
-     * @tc.name testFloat64ArrayViewBuffer076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7300
+     * @tc.name testFloat64ArrayViewBuffer073
      * @tc.desc Verify copyWithin on subarray only modifies subarray region
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const sub = arr.subarray(1, 4);
       sub.copyWithin(0, 1, 2);
@@ -1507,15 +1450,15 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0770
-     * @tc.name testFloat64ArrayViewBuffer077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7400
+     * @tc.name testFloat64ArrayViewBuffer074
      * @tc.desc Verify slice no args copies full array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+    it('testFloat64ArrayViewBuffer074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(NaN, Infinity, -Infinity);
       const s = arr.slice();
       const actualLengthFourth = s.length;
       const expectedLengthFourth: int = 3;
@@ -1524,14 +1467,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0780
-     * @tc.name testFloat64ArrayViewBuffer078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7500
+     * @tc.name testFloat64ArrayViewBuffer075
      * @tc.desc Verify Float64Array.set(Int32Array)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f64: Float64Array = new Float64Array(2);
       const i32: Int32Array = new Int32Array([10, 20]);
       f64.set(i32);
@@ -1544,14 +1487,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0790
-     * @tc.name testFloat64ArrayViewBuffer079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7600
+     * @tc.name testFloat64ArrayViewBuffer076
      * @tc.desc Verify Float64Array.set(Uint8Array)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f64: Float64Array = new Float64Array(2);
       const u8: Uint8Array = new Uint8Array([255, 0]);
       f64.set(u8);
@@ -1564,14 +1507,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0800
-     * @tc.name testFloat64ArrayViewBuffer080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7700
+     * @tc.name testFloat64ArrayViewBuffer077
      * @tc.desc Verify new Float64Array(Int32Array)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const i32: Int32Array = new Int32Array([1, 2, 3]);
       const f64: Float64Array = new Float64Array(i32);
       const actualLengthFourth = f64.length;
@@ -1586,14 +1529,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0810
-     * @tc.name testFloat64ArrayViewBuffer081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7800
+     * @tc.name testFloat64ArrayViewBuffer078
      * @tc.desc Verify Float64Array.set(Float32Array)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f64: Float64Array = new Float64Array(2);
       const f32: Float32Array = new Float32Array([1.5, 2.5]);
       f64.set(f32);
@@ -1606,14 +1549,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0820
-     * @tc.name testFloat64ArrayViewBuffer082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_7900
+     * @tc.name testFloat64ArrayViewBuffer079
      * @tc.desc Verify values are copied into the destination starting at the offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f64: Float64Array = new Float64Array(4);
       const src: Float64Array = Float64Array.of(1.0, 2.0);
       f64.set(src, 1);
@@ -1629,14 +1572,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0830
-     * @tc.name testFloat64ArrayViewBuffer083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8000
+     * @tc.name testFloat64ArrayViewBuffer080
      * @tc.desc Verify byteLength equals length multiplied by BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(4);
       const actualBytesPerElement = arr.BYTES_PER_ELEMENT;
       const expectedBytesPerElement: int = 8;
@@ -1654,14 +1597,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0840
-     * @tc.name testFloat64ArrayViewBuffer084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8100
+     * @tc.name testFloat64ArrayViewBuffer081
      * @tc.desc Verify constructor buf with byteOffset only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
       const arr: Float64Array = new Float64Array(buf, 8);
       const actualLengthFifth = arr.length;
@@ -1670,14 +1613,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0850
-     * @tc.name testFloat64ArrayViewBuffer085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8200
+     * @tc.name testFloat64ArrayViewBuffer082
      * @tc.desc Verify constructor buf with byteOffset 0 and length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const arr: Float64Array = new Float64Array(buf, 0, 2);
       const actualLengthFifth = arr.length;
@@ -1686,14 +1629,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0860
-     * @tc.name testFloat64ArrayViewBuffer086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8300
+     * @tc.name testFloat64ArrayViewBuffer083
      * @tc.desc Verify buf length multiple of 8 only required for direct buf constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
       const arr: Float64Array = new Float64Array(buf, 0, 3);
       const actualLengthFifth = arr.length;
@@ -1702,14 +1645,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0870
-     * @tc.name testFloat64ArrayViewBuffer087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8400
+     * @tc.name testFloat64ArrayViewBuffer084
      * @tc.desc Verify byteOffset = 0 for normal constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(4);
       const actualByteOffsetFifth = arr.byteOffset;
       const expectedByteOffsetFifth: int = 0;
@@ -1720,14 +1663,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0880
-     * @tc.name testFloat64ArrayViewBuffer088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8500
+     * @tc.name testFloat64ArrayViewBuffer085
      * @tc.desc Verify buffer property returns same ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(3);
       const buf = arr.buffer;
       const actualByteLengthSecond = buf.byteLength;
@@ -1736,14 +1679,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0890
-     * @tc.name testFloat64ArrayViewBuffer089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8600
+     * @tc.name testFloat64ArrayViewBuffer086
      * @tc.desc Verify name property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(0);
       const actualName = arr.name;
       const expectedName: string = 'Float64Array';
@@ -1751,14 +1694,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0900
-     * @tc.name testFloat64ArrayViewBuffer090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8700
+     * @tc.name testFloat64ArrayViewBuffer087
      * @tc.desc Verify constructor with length and buffer view byteOffset matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
       const v: Float64Array = new Float64Array(buf, 8, 2);
       const actualByteOffsetFifth = v.byteOffset;
@@ -1773,14 +1716,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0910
-     * @tc.name testFloat64ArrayViewBuffer091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8800
+     * @tc.name testFloat64ArrayViewBuffer088
      * @tc.desc Verify buffer slice creates new buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const b2 = buf.slice(0);
       const actualByteLengthSecond = b2.byteLength;
@@ -1790,14 +1733,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0920
-     * @tc.name testFloat64ArrayViewBuffer092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_8900
+     * @tc.name testFloat64ArrayViewBuffer089
      * @tc.desc Verify constructor with number length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(10.0);
       const actualLengthFifth = arr.length;
       const expectedLengthFifth: int = 10;
@@ -1805,14 +1748,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0930
-     * @tc.name testFloat64ArrayViewBuffer093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9000
+     * @tc.name testFloat64ArrayViewBuffer090
      * @tc.desc Verify constructor from FixedArray<int>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1, 2, 3]);
       const actualLengthFifth = arr.length;
       const expectedLengthFifth: int = 3;
@@ -1823,14 +1766,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0940
-     * @tc.name testFloat64ArrayViewBuffer094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9100
+     * @tc.name testFloat64ArrayViewBuffer091
      * @tc.desc Verify constructor from Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const arr: Float64Array = new Float64Array(src);
       const actualLengthFifth = arr.length;
@@ -1843,14 +1786,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0950
-     * @tc.name testFloat64ArrayViewBuffer095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9200
+     * @tc.name testFloat64ArrayViewBuffer092
      * @tc.desc Verify toSorted result from subarray stays detached after parent mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(3.0, 1.0, 2.0, 4.0);
       const child: Float64Array = parent.subarray(0, 3);
       const sorted: Float64Array = child.toSorted();
@@ -1870,14 +1813,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0960
-     * @tc.name testFloat64ArrayViewBuffer096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9300
+     * @tc.name testFloat64ArrayViewBuffer093
      * @tc.desc Verify with result from subarray stays detached after parent mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(10.0, 20.0, 30.0, 40.0);
       const child: Float64Array = parent.subarray(1, 4);
       const replaced: Float64Array = child.with(0, 77.0);
@@ -1897,14 +1840,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0970
-     * @tc.name testFloat64ArrayViewBuffer097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9400
+     * @tc.name testFloat64ArrayViewBuffer094
      * @tc.desc Verify nested subarray keeps byteOffset length and parent writeback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const outer: Float64Array = parent.subarray(1, 5);
       const inner: Float64Array = outer.subarray(1, 3);
@@ -1922,14 +1865,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0980
-     * @tc.name testFloat64ArrayViewBuffer098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9500
+     * @tc.name testFloat64ArrayViewBuffer095
      * @tc.desc Verify slice copy subarray mutation stays isolated from original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const copy: Float64Array = parent.slice(1, 4);
       const sub: Float64Array = copy.subarray(1, 3);
@@ -1945,14 +1888,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_0990
-     * @tc.name testFloat64ArrayViewBuffer099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9600
+     * @tc.name testFloat64ArrayViewBuffer096
      * @tc.desc Verify critical static invalid buffer offset throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(0x10);
       try {
         const view = new Float64Array(buf, 0b1);
@@ -1969,14 +1912,14 @@ export default function Float64ArrayViewBufferTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_1000
-     * @tc.name testFloat64ArrayViewBuffer100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_BUFFER_9700
+     * @tc.name testFloat64ArrayViewBuffer097
      * @tc.desc Verify chained view buffer slice keeps copy isolated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayViewBuffer100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayViewBuffer097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const copy = source.subarray(1, 4).slice(0, 2);
       copy.$_set(0, 20.0);
