@@ -637,7 +637,7 @@ export default function Float64ArrayBoundaryNumericTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_0390
      * @tc.name testFloat64ArrayBoundaryNumeric039
-     * @tc.desc Verify sort places Infinity at end
+     * @tc.desc Verify sort returns Infinity as the last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1313,7 +1313,7 @@ export default function Float64ArrayBoundaryNumericTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_0830
      * @tc.name testFloat64ArrayBoundaryNumeric083
-     * @tc.desc Verify sort places NaN at end
+     * @tc.desc Verify sort returns finite values before NaN values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1332,7 +1332,7 @@ export default function Float64ArrayBoundaryNumericTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_0840
      * @tc.name testFloat64ArrayBoundaryNumeric084
-     * @tc.desc Verify toSorted places NaN at end
+     * @tc.desc Verify toSorted returns NaN as the last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

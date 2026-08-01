@@ -1561,7 +1561,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_0810
      * @tc.name testFloat64ArrayDimension081
-     * @tc.desc Verify sort places subnormal 5e-324 at beginning
+     * @tc.desc Verify sort returns subnormal 5e-324 as the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
