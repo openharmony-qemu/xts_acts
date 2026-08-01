@@ -261,7 +261,7 @@ struct Second {
           if (event) {
             console.log('title:' + event.title);
             let title:string  = event.title;
-            if(event.title='baidu.com'||event.title='百度一下'){
+            if(event.title=='baidu.com'||event.title=='百度一下'){
               this.title = 1;
             }
             if(event.isRealTitle){
