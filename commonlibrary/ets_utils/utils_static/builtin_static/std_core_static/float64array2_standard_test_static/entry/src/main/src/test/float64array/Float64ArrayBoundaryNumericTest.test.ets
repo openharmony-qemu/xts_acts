@@ -1983,3 +1983,156 @@ export default function Float64ArrayBoundaryNumericTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayBoundaryNumeric122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(3.0, 1.0, 2.0);
+      const r: Float64Array = arr.filter((v: number): boolean => v > 1.0);
+      r.sort();
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = 3.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement0Second = r.$_get(0);
+      const expectedElement0Second: number = 2.0;
+      expect(actualElement0Second).assertEqual(expectedElement0Second);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1230
+     * @tc.name testFloat64ArrayBoundaryNumeric123
+     * @tc.desc Verify disjoint subarrays write different parent slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
+      const a: Float64Array = parent.subarray(0, 2);
+      const b: Float64Array = parent.subarray(2, 4);
+      a.$_set(1, 20.0);
+      b.$_set(0, 30.0);
+      const actualElement1 = parent.$_get(1);
+      const expectedElement1: number = 20.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+      const actualElement2 = parent.$_get(2);
+      const expectedElement2: number = 30.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1240
+     * @tc.name testFloat64ArrayBoundaryNumeric124
+     * @tc.desc Verify overlapping subarrays expose last write in shared slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent: Float64Array = Float64Array.of(NaN, -0.0, Number.MAX_SAFE_INTEGER);
+      const a: Float64Array = parent.subarray(0, 2);
+      const b: Float64Array = parent.subarray(1, 3);
+      a.$_set(1, 20.0);
+      b.$_set(0, 30.0);
+      const actualElement1 = parent.$_get(1);
+      const expectedElement1: number = 30.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1250
+     * @tc.name testFloat64ArrayBoundaryNumeric125
+     * @tc.desc Verify offset view shares corresponding full view slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const full: Float64Array = new Float64Array(buf);
+      const offset: Float64Array = new Float64Array(buf, 8, 2);
+      offset.$_set(0, 55.0);
+      const actualElement1 = full.$_get(1);
+      const expectedElement1: number = 55.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1260
+     * @tc.name testFloat64ArrayBoundaryNumeric126
+     * @tc.desc Verify slice from offset view does not share buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const full: Float64Array = new Float64Array(buf);
+      const offset: Float64Array = new Float64Array(buf, 8, 2);
+      const copy: Float64Array = offset.slice();
+      copy.$_set(0, 66.0);
+      const actualElement1 = full.$_get(1);
+      const expectedElement1: number = 0.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1270
+     * @tc.name testFloat64ArrayBoundaryNumeric127
+     * @tc.desc Verify subarray from offset view still shares buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(32);
+      const full: Float64Array = new Float64Array(buf);
+      const offset: Float64Array = new Float64Array(buf, 8, 3);
+      const child: Float64Array = offset.subarray(1);
+      child.$_set(0, 77.0);
+      const actualElement2 = full.$_get(2);
+      const expectedElement2: number = 77.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1280
+     * @tc.name testFloat64ArrayBoundaryNumeric128
+     * @tc.desc Verify valueOf repeated calls return same reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0);
+      const a: Float64Array = arr.valueOf();
+      const b: Float64Array = arr.valueOf();
+      expect(a).assertEqual(b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1290
+     * @tc.name testFloat64ArrayBoundaryNumeric129
+     * @tc.desc Verify subarray valueOf returns the subarray itself
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0);
+      const child: Float64Array = arr.subarray(1);
+      expect(child.valueOf() === child).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_BOUNDARY_NUMERIC_1300
+     * @tc.name testFloat64ArrayBoundaryNumeric130
+     * @tc.desc Verify slice valueOf returns slice copy not original
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayBoundaryNumeric130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0);
+      const copy: Float64Array = arr.slice();
+      expect(copy.valueOf() === copy).assertTrue();
+      expect(copy).not().assertEqual(arr);
+    });
+  })
+}
