@@ -2333,7 +2333,7 @@ export default function WindowLayoutTest() {
                     let moveConfiguration: window.MoveConfiguration = {
                         displayId: displayId
                     }
-                    let promise = subWindowClass.moveWindowToGlobal((displayWidth*0.5).toInt(), (displayHeight*0.5).toInt(), moveConfiguration);
+                    let promise = subWindowClass.moveWindowToGlobal((displayWidth*0.3).toInt(), (displayHeight*0.3).toInt(), moveConfiguration);
                     promise.then(async () => {
                         console.info(`${message} succeed in moveWindowToGlobal`);
                     }).catch((err: Error):PromiseLike<void>|undefined => {
