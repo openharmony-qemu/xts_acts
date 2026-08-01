@@ -1989,3 +1989,77 @@ export default function Float64ArraySupplementaryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySupplementary101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0);
+      const cn: string = arr.name;
+      const actualResultSixth = cn;
+      const expectedResultSixth: string = 'Float64Array';
+      expect(actualResultSixth).assertEqual(expectedResultSixth);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUPPLEMENTARY_1020
+     * @tc.name testFloat64ArraySupplementary102
+     * @tc.desc Verify valueOf returns same instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySupplementary102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      expect(arr.valueOf()).assertEqual(arr);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUPPLEMENTARY_1030
+     * @tc.name testFloat64ArraySupplementary103
+     * @tc.desc Verify Float64Array.of result length and byteLength
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySupplementary103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0);
+      const actualLengthSixth = arr.length;
+      const expectedLengthSixth: int = 2;
+      expect(actualLengthSixth).assertEqual(expectedLengthSixth);
+      const actualByteLength = arr.byteLength;
+      const expectedByteLength: int = 16;
+      expect(actualByteLength).assertEqual(expectedByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUPPLEMENTARY_1040
+     * @tc.name testFloat64ArraySupplementary104
+     * @tc.desc Verify BYTES_PER_ELEMENT value is 8 as double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySupplementary104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0);
+      const actualBytesPerElement = arr.BYTES_PER_ELEMENT;
+      const expectedBytesPerElement: int = 8;
+      expect(actualBytesPerElement).assertEqual(expectedBytesPerElement);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUPPLEMENTARY_1050
+     * @tc.name testFloat64ArraySupplementary105
+     * @tc.desc Verify supplementary chain handles critical 1000 element boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySupplementary105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(1000);
+      arr.$_set(999, Number.MAX_VALUE);
+      const tail = arr.subarray(998).filter((v: number): boolean => v > 0.0);
+      const actualLengthSixth = tail.length;
+      const expectedLengthSixth: int = 1;
+      expect(actualLengthSixth).assertEqual(expectedLengthSixth);
+      const actualElement0Ninth = tail.$_get(0);
+      const expectedElement0Ninth: number = Number.MAX_VALUE;
+      expect(actualElement0Ninth).assertEqual(expectedElement0Ninth);
+    });
+  })
+}
