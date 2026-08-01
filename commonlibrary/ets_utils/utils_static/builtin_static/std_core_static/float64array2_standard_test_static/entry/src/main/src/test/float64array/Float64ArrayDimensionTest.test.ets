@@ -1981,3 +1981,1328 @@ export default function Float64ArrayDimensionTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDimension102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Int32Array = new Int32Array([1, 2]);
+      const dst: Float64Array = new Float64Array(2);
+      dst.set(src);
+      const actualLength = dst.length;
+      const expectedLength: int = 2;
+      expect(actualLength).assertEqual(expectedLength);
+      const actualElement0 = dst.$_get(0);
+      const expectedElement0: number = 1.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement1 = dst.$_get(1);
+      const expectedElement1: number = 2.0;
+      expect(actualElement1).assertEqual(expectedElement1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1030
+     * @tc.name testFloat64ArrayDimension103
+     * @tc.desc Verify set from Uint8Array partial coverage
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Uint8Array = new Uint8Array([1, 2, 3, 4]);
+      const dst: Float64Array = new Float64Array(8);
+      dst.set(src);
+      const actualElement0 = dst.$_get(0);
+      const expectedElement0: number = 1.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement3 = dst.$_get(3);
+      const expectedElement3: number = 4.0;
+      expect(actualElement3).assertEqual(expectedElement3);
+      const actualElementAt4 = dst.$_get(4);
+      const expectedElementAt4: number = 0.0;
+      expect(actualElementAt4).assertEqual(expectedElementAt4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1040
+     * @tc.name testFloat64ArrayDimension104
+     * @tc.desc Verify set from Int32Array at large offset 7
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Int32Array = new Int32Array([5, 6]);
+      const dst: Float64Array = new Float64Array(10);
+      dst.set(src, 7);
+      const actualElementAt7 = dst.$_get(7);
+      const expectedElementAt7: number = 5.0;
+      expect(actualElementAt7).assertEqual(expectedElementAt7);
+      const actualElementAt8 = dst.$_get(8);
+      const expectedElementAt8: number = 6.0;
+      expect(actualElementAt8).assertEqual(expectedElementAt8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1050
+     * @tc.name testFloat64ArrayDimension105
+     * @tc.desc Verify set from Uint8Array fills at end of target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Uint8Array = new Uint8Array([99]);
+      const dst: Float64Array = new Float64Array(3);
+      dst.set(src, 2);
+      const actualElement2 = dst.$_get(2);
+      const expectedElement2: number = 99.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1060
+     * @tc.name testFloat64ArrayDimension106
+     * @tc.desc Verify reduce accumulator propagation sum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      const sum: number = arr.reduce((acc: number, v: number): number => {
+        return acc + v;
+      }, 0.0);
+      const actualResult = sum;
+      const expectedResult: number = 15.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1070
+     * @tc.name testFloat64ArrayDimension107
+     * @tc.desc Verify reduceRight sum of numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const sum: number = arr.reduceRight((acc: number, v: number): number => {
+        return acc + v;
+      }, 0.0);
+      const actualResult = sum;
+      const expectedResult: number = 6.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1080
+     * @tc.name testFloat64ArrayDimension108
+     * @tc.desc Verify reduceRight subtract from right to left
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const r = arr.reduceRight((acc: number, v: number): number => {
+        return acc - v;
+      }, 10.0);
+      const actualResult = r;
+      const expectedResult: number = 4.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1090
+     * @tc.name testFloat64ArrayDimension109
+     * @tc.desc Verify reduce accumulator object counter propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(10.0, 20.0, 30.0);
+      const sum: number = arr.reduce((acc: number, v: number): number => {
+        return acc + v;
+      }, 0.0);
+      const actualResult = sum;
+      const expectedResult: number = 60.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1100
+     * @tc.name testFloat64ArrayDimension110
+     * @tc.desc Verify reduce accumulator multiply propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(2.0, 3.0, 4.0);
+      const prod: number = arr.reduce((acc: number, v: number): number => {
+        return acc * v;
+      }, 1.0);
+      const actualResult = prod;
+      const expectedResult: number = 24.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1110
+     * @tc.name testFloat64ArrayDimension111
+     * @tc.desc Verify reduce subtract propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(10.0, 3.0, 2.0);
+      const r = arr.reduce((acc: number, v: number): number => {
+        return acc - v;
+      }, 100.0);
+      const actualResult = r;
+      const expectedResult: number = 85.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1120
+     * @tc.name testFloat64ArrayDimension112
+     * @tc.desc Verify forEach external counter increments per element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      let cnt: int = 0;
+      arr.forEach((v: number): void => {
+        cnt++;
+      });
+      const actualResult = cnt;
+      const expectedResult: number = 3;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1130
+     * @tc.name testFloat64ArrayDimension113
+     * @tc.desc Verify forEach external array collects values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const collected: Float64Array = new Float64Array(3);
+      let idx: int = 0;
+      arr.forEach((v: number): void => {
+        collected.$_set(idx, v * 2.0);
+        idx++;
+      });
+      const actualElement0 = collected.$_get(0);
+      const expectedElement0: number = 2.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = collected.$_get(2);
+      const expectedElement2: number = 6.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1140
+     * @tc.name testFloat64ArrayDimension114
+     * @tc.desc Verify forEach external sum accumulator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      let sum: number = 0.0;
+      arr.forEach((v: number): void => {
+        sum += v;
+      });
+      const actualResult = sum;
+      const expectedResult: number = 15.0;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1150
+     * @tc.name testFloat64ArrayDimension115
+     * @tc.desc Verify forEach external sum with index tracking
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      let sum: number = 0.0;
+      let sumIdx: int = 0;
+      arr.forEach((v: number, i: int): void => {
+        sum += v;
+        sumIdx += i;
+      });
+      const actualResult = sum;
+      const expectedResult: number = 6.0;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualResultSecond = sumIdx;
+      const expectedResultSecond: number = 3;
+      expect(actualResultSecond).assertEqual(expectedResultSecond);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1160
+     * @tc.name testFloat64ArrayDimension116
+     * @tc.desc Verify forEach external state with array reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      let len: int = 0;
+      arr.forEach((v: number, i: int, a: Float64Array): void => {
+        len = a.length;
+      });
+      const actualResult = len;
+      const expectedResult: number = 3;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1170
+     * @tc.name testFloat64ArrayDimension117
+     * @tc.desc Verify map linear transform y = 2 * x
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return v * 2.0;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = 2.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = 6.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1180
+     * @tc.name testFloat64ArrayDimension118
+     * @tc.desc Verify map linear transform y = x / 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(2.0, 4.0, 6.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return v / 2.0;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = 1.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = 3.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1190
+     * @tc.name testFloat64ArrayDimension119
+     * @tc.desc Verify map transform to range [0,1] via division
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(0.0, 5.0, 10.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return v / 10.0;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = 0.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = 1.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1200
+     * @tc.name testFloat64ArrayDimension120
+     * @tc.desc Verify map linear shift y = x + 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return v + 1.0;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = 2.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = 4.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1210
+     * @tc.name testFloat64ArrayDimension121
+     * @tc.desc Verify map nonlinear transform y = x * x
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return v * v;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = 1.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElementAt4 = mapped.$_get(4);
+      const expectedElementAt4: number = 25.0;
+      expect(actualElementAt4).assertEqual(expectedElementAt4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1220
+     * @tc.name testFloat64ArrayDimension122
+     * @tc.desc Verify map linear transform y = -x
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const mapped: Float64Array = arr.map((v: number): number => {
+        return -v;
+      });
+      const actualElement0 = mapped.$_get(0);
+      const expectedElement0: number = -1.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = mapped.$_get(2);
+      const expectedElement2: number = -3.0;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1230
+     * @tc.name testFloat64ArrayDimension123
+     * @tc.desc Verify constructor negative length -1 throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Float64Array(-1);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1240
+     * @tc.name testFloat64ArrayDimension124
+     * @tc.desc Verify constructor NaN length creates empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(NaN);
+      const actualLength = arr.length;
+      const expectedLength: int = 0;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1250
+     * @tc.name testFloat64ArrayDimension125
+     * @tc.desc Verify constructor Infinity length throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Float64Array(Infinity);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1260
+     * @tc.name testFloat64ArrayDimension126
+     * @tc.desc Verify constructor buffer offset 1 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 1, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1270
+     * @tc.name testFloat64ArrayDimension127
+     * @tc.desc Verify constructor buffer offset 2 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 2, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1280
+     * @tc.name testFloat64ArrayDimension128
+     * @tc.desc Verify constructor buffer offset 3 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 3, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1290
+     * @tc.name testFloat64ArrayDimension129
+     * @tc.desc Verify constructor buffer offset 4 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 4, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1300
+     * @tc.name testFloat64ArrayDimension130
+     * @tc.desc Verify constructor buffer offset 5 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 5, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1310
+     * @tc.name testFloat64ArrayDimension131
+     * @tc.desc Verify constructor buffer offset 6 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 6, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1320
+     * @tc.name testFloat64ArrayDimension132
+     * @tc.desc Verify constructor buffer offset 7 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 7, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1330
+     * @tc.name testFloat64ArrayDimension133
+     * @tc.desc Verify constructor buffer too small for offset+length throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(16);
+        new Float64Array(buf, 8, 3);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1340
+     * @tc.name testFloat64ArrayDimension134
+     * @tc.desc Verify constructor buffer offset 0 length too large throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(8);
+        new Float64Array(buf, 0, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1350
+     * @tc.name testFloat64ArrayDimension135
+     * @tc.desc Verify constructor buffer negative offset throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, -8, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1360
+     * @tc.name testFloat64ArrayDimension136
+     * @tc.desc Verify constructor buffer offset beyond bounds throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(16);
+        new Float64Array(buf, 16, 1);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1370
+     * @tc.name testFloat64ArrayDimension137
+     * @tc.desc Verify constructor negative length on buffer variant throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 0, -1);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1380
+     * @tc.name testFloat64ArrayDimension138
+     * @tc.desc Verify constructor Infinity length on buffer variant throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32);
+        new Float64Array(buf, 0, Infinity);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1390
+     * @tc.name testFloat64ArrayDimension139
+     * @tc.desc Verify constructor buffer zero length with offset at end works
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(32);
+      const arr: Float64Array = new Float64Array(buf, 24, 0);
+      const actualLength = arr.length;
+      const expectedLength: int = 0;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1400
+     * @tc.name testFloat64ArrayDimension140
+     * @tc.desc Verify constructor buffer offset 9 not multiple of 8 throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(64);
+        new Float64Array(buf, 9, 2);
+        expect().assertFail();
+      } catch (e) {
+        const actualName = e.name;
+        const expectedName: string = 'RangeError';
+        expect(actualName).assertEqual(expectedName);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1410
+     * @tc.name testFloat64ArrayDimension141
+     * @tc.desc Verify includes finds subnormal 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 5e-324, 3.0);
+      const r: boolean = arr.includes(5e-324);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1420
+     * @tc.name testFloat64ArrayDimension142
+     * @tc.desc Verify includes finds -0 as distinct value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, -0.0, 3.0);
+      const r: boolean = arr.includes(-0.0);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1430
+     * @tc.name testFloat64ArrayDimension143
+     * @tc.desc Verify includes finds MIN_VALUE 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(5e-324, 1.0);
+      const r: boolean = arr.includes(5e-324);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1440
+     * @tc.name testFloat64ArrayDimension144
+     * @tc.desc Verify includes returns true for NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, NaN, 3.0);
+      const r: boolean = arr.includes(NaN);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1450
+     * @tc.name testFloat64ArrayDimension145
+     * @tc.desc Verify includes finds Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, Infinity, 3.0);
+      const r: boolean = arr.includes(Infinity);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1460
+     * @tc.name testFloat64ArrayDimension146
+     * @tc.desc Verify includes finds -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, -Infinity, 3.0);
+      const r: boolean = arr.includes(-Infinity);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1470
+     * @tc.name testFloat64ArrayDimension147
+     * @tc.desc Verify includes subnormal 5e-324 with fromIndex non-zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 5e-324, 5e-324);
+      const r: boolean = arr.includes(5e-324, 2);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1480
+     * @tc.name testFloat64ArrayDimension148
+     * @tc.desc Verify includes -0 in array with both zeros
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(0.0, 0.0);
+      const r: boolean = arr.includes(-0.0);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1490
+     * @tc.name testFloat64ArrayDimension149
+     * @tc.desc Verify includes MIN_VALUE not found returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
+      const r: boolean = arr.includes(5e-324);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1500
+     * @tc.name testFloat64ArrayDimension150
+     * @tc.desc Verify lastIndexOf finds subnormal 5e-324 at last occurrence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(5e-324, 1.0, 5e-324);
+      const idx: int = arr.lastIndexOf(5e-324);
+      const actualResult = idx;
+      const expectedResult: number = 2;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1510
+     * @tc.name testFloat64ArrayDimension151
+     * @tc.desc Verify indexOf finds -0 at correct index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, -0.0, 3.0);
+      const idx: int = arr.indexOf(-0.0);
+      const actualResult = idx;
+      const expectedResult: number = 1;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1520
+     * @tc.name testFloat64ArrayDimension152
+     * @tc.desc Verify lastIndexOf finds -0 at correct index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(-0.0, 1.0, -0.0);
+      const idx: int = arr.lastIndexOf(-0.0);
+      const actualResult = idx;
+      const expectedResult: number = 2;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1530
+     * @tc.name testFloat64ArrayDimension153
+     * @tc.desc Verify indexOf finds MAX_VALUE at correct index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 1.7976931348623157e308, 3.0);
+      const idx: int = arr.indexOf(1.7976931348623157e308);
+      const actualResult = idx;
+      const expectedResult: number = 1;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1540
+     * @tc.name testFloat64ArrayDimension154
+     * @tc.desc Verify lastIndexOf finds MAX_VALUE at last position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.7976931348623157e308, 1.0, 1.7976931348623157e308);
+      const idx: int = arr.lastIndexOf(1.7976931348623157e308);
+      const actualResult = idx;
+      const expectedResult: number = 2;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1550
+     * @tc.name testFloat64ArrayDimension155
+     * @tc.desc Verify indexOf NaN returns -1 as NaN never matches
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, NaN, 3.0);
+      const idx: int = arr.indexOf(NaN);
+      const actualResult = idx;
+      const expectedResult: number = -1;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1560
+     * @tc.name testFloat64ArrayDimension156
+     * @tc.desc Verify lastIndexOf -Infinity at correct position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, -Infinity, 3.0, -Infinity);
+      const idx: int = arr.lastIndexOf(-Infinity);
+      const actualResult = idx;
+      const expectedResult: number = 3;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1570
+     * @tc.name testFloat64ArrayDimension157
+     * @tc.desc Verify fill with subnormal 5e-324 fills all positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(5e-324);
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = 5e-324;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 5e-324;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1580
+     * @tc.name testFloat64ArrayDimension158
+     * @tc.desc Verify fill with MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(1.7976931348623157e308);
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = 1.7976931348623157e308;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 1.7976931348623157e308;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1590
+     * @tc.name testFloat64ArrayDimension159
+     * @tc.desc Verify fill with MIN_VALUE 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(5e-324);
+      const actualElement1 = arr.$_get(1);
+      const expectedElement1: number = 5e-324;
+      expect(actualElement1).assertEqual(expectedElement1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1600
+     * @tc.name testFloat64ArrayDimension160
+     * @tc.desc Verify fill with NaN fills all positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(NaN);
+      expect(Number.isNaN(arr.$_get(0))).assertTrue();
+      expect(Number.isNaN(arr.$_get(2))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1610
+     * @tc.name testFloat64ArrayDimension161
+     * @tc.desc Verify fill with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(Infinity);
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = Infinity;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = Infinity;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1620
+     * @tc.name testFloat64ArrayDimension162
+     * @tc.desc Verify fill with -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(-Infinity);
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = -Infinity;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = -Infinity;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1630
+     * @tc.name testFloat64ArrayDimension163
+     * @tc.desc Verify fill partial range 1-3 with subnormal 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(5);
+      arr.fill(5e-324, 1, 3);
+      const actualElement0 = arr.$_get(0);
+      const expectedElement0: number = 0.0;
+      expect(actualElement0).assertEqual(expectedElement0);
+      const actualElement1 = arr.$_get(1);
+      const expectedElement1: number = 5e-324;
+      expect(actualElement1).assertEqual(expectedElement1);
+      const actualElement2 = arr.$_get(2);
+      const expectedElement2: number = 5e-324;
+      expect(actualElement2).assertEqual(expectedElement2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1640
+     * @tc.name testFloat64ArrayDimension164
+     * @tc.desc Verify fill with -0 sign detection via 1.0/x
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array(3);
+      arr.fill(-0.0);
+      expect(1.0 / arr.$_get(1) === -Infinity).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1650
+     * @tc.name testFloat64ArrayDimension165
+     * @tc.desc Verify toString subnormal 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(5e-324);
+      const s: string = arr.toString();
+      const actualResult = s;
+      const expectedResult: string = '5e-324';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1660
+     * @tc.name testFloat64ArrayDimension166
+     * @tc.desc Verify toString -0 shows as 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(-0.0);
+      const s: string = arr.toString();
+      const actualResult = s;
+      const expectedResult: string = '0';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1670
+     * @tc.name testFloat64ArrayDimension167
+     * @tc.desc Verify toString NaN representation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(NaN);
+      const s: string = arr.toString();
+      const actualResult = s;
+      const expectedResult: string = 'NaN';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1680
+     * @tc.name testFloat64ArrayDimension168
+     * @tc.desc Verify toString Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(Infinity);
+      const s: string = arr.toString();
+      const actualResult = s;
+      const expectedResult: string = 'Infinity';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1690
+     * @tc.name testFloat64ArrayDimension169
+     * @tc.desc Verify toString -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(-Infinity);
+      const s: string = arr.toString();
+      const actualResult = s;
+      const expectedResult: string = '-Infinity';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1700
+     * @tc.name testFloat64ArrayDimension170
+     * @tc.desc Verify join with subnormal shows proper format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 5e-324, 2.0);
+      const s: string = arr.join('|');
+      const actualResult = s;
+      const expectedResult: string = '1|5e-324|2';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1710
+     * @tc.name testFloat64ArrayDimension171
+     * @tc.desc Verify join -0 with separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(-0.0, 1.0, -0.0);
+      const s: string = arr.join(',');
+      const actualResult: string = s;
+      const expectedResult: string = '0,1,0';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1720
+     * @tc.name testFloat64ArrayDimension172
+     * @tc.desc Verify join MAX_VALUE with separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.7976931348623157e308, 2.0);
+      const s: string = arr.join();
+      const actualResult = s;
+      const expectedResult: string = '1.7976931348623157e+308,2';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1730
+     * @tc.name testFloat64ArrayDimension173
+     * @tc.desc Verify join mixed special values NaN, Infinity, -Infinity, 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(NaN, Infinity, -Infinity, 0.0);
+      const s: string = arr.join(',');
+      const actualResult: string = s;
+      const expectedResult: string = 'NaN,Infinity,-Infinity,0';
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1740
+     * @tc.name testFloat64ArrayDimension174
+     * @tc.desc Verify find locates subnormal 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 5e-324, 3.0);
+      const r = arr.find((v: number): boolean => {
+        return v < 1.0;
+      });
+      const actualResult = r;
+      const expectedResult: number = 5e-324;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1750
+     * @tc.name testFloat64ArrayDimension175
+     * @tc.desc Verify findIndex locates MIN_VALUE 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDimension175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 5e-324, 3.0);
+      const idx: int = arr.findIndex((v: number): boolean => {
+        return v < 1.0;
+      });
+      const actualResult = idx;
+      const expectedResult: number = 1;
+      expect(actualResult).assertEqual(expectedResult);
+    });
+
+  })
+}
