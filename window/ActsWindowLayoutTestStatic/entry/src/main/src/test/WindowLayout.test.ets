@@ -2346,7 +2346,7 @@ export default function WindowLayoutTest() {
                     let rect = subWindowClass.getWindowProperties().windowRect;
                     console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
                     expect(rect.left).assertEqual(Math.floor(displayWidth*0.3).toInt());
-                    expect(rect.top).assertEqual(Math.floor(displayWidth*0.3).toInt())
+                    expect(rect.top).assertEqual(Math.floor(displayHeight*0.3).toInt())
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
