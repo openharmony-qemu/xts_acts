@@ -1972,3 +1972,384 @@ export default function Float64ArrayPropertyTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayProperty108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.from([1.0, 2.0, 3.0]);
+      const actualLengthSeventh = arr.length;
+      const expectedLengthSeventh: int = 3;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualByteLengthSeventh = arr.byteLength;
+      const expectedByteLengthSeventh: int = 24;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      const actualByteOffsetSixth = arr.byteOffset;
+      const expectedByteOffsetSixth: int = 0;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualBytesPerElementFourth = arr.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFourth: int = 8;
+      expect(actualBytesPerElementFourth).assertEqual(expectedBytesPerElementFourth);
+      const actualNameSeventh = arr.name;
+      const expectedNameSeventh: string = 'Float64Array';
+      expect(actualNameSeventh).assertEqual(expectedNameSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1090
+     * @tc.name testFloat64ArrayProperty109
+     * @tc.desc Verify subarray shares buffer and has correct byteOffset byteLength
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float64Array(16);
+      const sub = parent.subarray(4, 12);
+      expect(sub.buffer).assertEqual(parent.buffer);
+      const actualByteOffsetSixth = sub.byteOffset;
+      const expectedByteOffsetSixth: int = parent.byteOffset + 32;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = sub.byteLength;
+      const expectedByteLengthSeventh: int = 64;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      const actualLengthSeventh = sub.length;
+      const expectedLengthSeventh: int = 8;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualBytesPerElementFourth = sub.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFourth: int = 8;
+      expect(actualBytesPerElementFourth).assertEqual(expectedBytesPerElementFourth);
+      const actualNameSeventh = sub.name;
+      const expectedNameSeventh: string = 'Float64Array';
+      expect(actualNameSeventh).assertEqual(expectedNameSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1100
+     * @tc.name testFloat64ArrayProperty110
+     * @tc.desc Verify chained subarray properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float64Array(20);
+      const sub1 = parent.subarray(4, 16);
+      const sub2 = sub1.subarray(2, 8);
+      expect(sub2.buffer).assertEqual(parent.buffer);
+      const actualByteOffsetSixth = sub2.byteOffset;
+      const expectedByteOffsetSixth: int = 48;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = sub2.byteLength;
+      const expectedByteLengthSeventh: int = 48;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      const actualLengthSeventh = sub2.length;
+      const expectedLengthSeventh: int = 6;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualBytesPerElementFourth = sub2.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFourth: int = 8;
+      expect(actualBytesPerElementFourth).assertEqual(expectedBytesPerElementFourth);
+      const actualNameSeventh = sub2.name;
+      const expectedNameSeventh: string = 'Float64Array';
+      expect(actualNameSeventh).assertEqual(expectedNameSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1110
+     * @tc.name testFloat64ArrayProperty111
+     * @tc.desc Verify slice creates new buffer with byteOffset=0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float64Array(16);
+      const sliced = parent.slice(4, 12);
+      expect(sliced.buffer).not().assertEqual(parent.buffer);
+      const actualByteOffsetSixth = sliced.byteOffset;
+      const expectedByteOffsetSixth: int = 0;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = sliced.byteLength;
+      const expectedByteLengthSeventh: int = 64;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      const actualLengthSeventh = sliced.length;
+      const expectedLengthSeventh: int = 8;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualBytesPerElementFourth = sliced.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFourth: int = 8;
+      expect(actualBytesPerElementFourth).assertEqual(expectedBytesPerElementFourth);
+      const actualNameSeventh = sliced.name;
+      const expectedNameSeventh: string = 'Float64Array';
+      expect(actualNameSeventh).assertEqual(expectedNameSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1120
+     * @tc.name testFloat64ArrayProperty112
+     * @tc.desc Verify multiple views on same buffer have independent offsets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(256);
+      const firstResult = new Float64Array(buf, 0, 8);
+      const secondResult = new Float64Array(buf, 64, 8);
+      const thirdResult = new Float64Array(buf, 128, 8);
+      expect(firstResult.buffer).assertEqual(buf);
+      expect(secondResult.buffer).assertEqual(buf);
+      expect(thirdResult.buffer).assertEqual(buf);
+      const actualByteOffsetSixth = firstResult.byteOffset;
+      const expectedByteOffsetSixth: int = 0;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteOffsetSeventh = secondResult.byteOffset;
+      const expectedByteOffsetSeventh: int = 64;
+      expect(actualByteOffsetSeventh).assertEqual(expectedByteOffsetSeventh);
+      const actualByteOffsetEighth = thirdResult.byteOffset;
+      const expectedByteOffsetEighth: int = 128;
+      expect(actualByteOffsetEighth).assertEqual(expectedByteOffsetEighth);
+      const actualLengthSeventh = firstResult.length;
+      const expectedLengthSeventh: int = 8;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualLengthEighth = secondResult.length;
+      const expectedLengthEighth: int = 8;
+      expect(actualLengthEighth).assertEqual(expectedLengthEighth);
+      const actualLengthNinth = thirdResult.length;
+      const expectedLengthNinth: int = 8;
+      expect(actualLengthNinth).assertEqual(expectedLengthNinth);
+      const actualBytesPerElementFourth = firstResult.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFourth: int = 8;
+      expect(actualBytesPerElementFourth).assertEqual(expectedBytesPerElementFourth);
+      const actualBytesPerElementFifth = secondResult.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementFifth: int = 8;
+      expect(actualBytesPerElementFifth).assertEqual(expectedBytesPerElementFifth);
+      const actualBytesPerElementSixth = thirdResult.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementSixth: int = 8;
+      expect(actualBytesPerElementSixth).assertEqual(expectedBytesPerElementSixth);
+      const actualNameSeventh = firstResult.name;
+      const expectedNameSeventh: string = 'Float64Array';
+      expect(actualNameSeventh).assertEqual(expectedNameSeventh);
+      const actualNameEighth = secondResult.name;
+      const expectedNameEighth: string = 'Float64Array';
+      expect(actualNameEighth).assertEqual(expectedNameEighth);
+      const actualNameNinth = thirdResult.name;
+      const expectedNameNinth: string = 'Float64Array';
+      expect(actualNameNinth).assertEqual(expectedNameNinth);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1130
+     * @tc.name testFloat64ArrayProperty113
+     * @tc.desc Verify buffer from ArrayBuffer constructor equal to passed buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(128);
+      const view1 = new Float64Array(buf, 0, 8);
+      const view2 = new Float64Array(buf, 32, 4);
+      expect(view1.buffer).assertEqual(buf);
+      expect(view2.buffer).assertEqual(buf);
+      const actualByteOffsetSixth = view1.byteOffset;
+      const expectedByteOffsetSixth: int = 0;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteOffsetSeventh = view2.byteOffset;
+      const expectedByteOffsetSeventh: int = 32;
+      expect(actualByteOffsetSeventh).assertEqual(expectedByteOffsetSeventh);
+      const actualLengthSeventh = view1.length;
+      const expectedLengthSeventh: int = 8;
+      expect(actualLengthSeventh).assertEqual(expectedLengthSeventh);
+      const actualLengthEighth = view2.length;
+      const expectedLengthEighth: int = 4;
+      expect(actualLengthEighth).assertEqual(expectedLengthEighth);
+      const actualByteLengthSeventh = view1.byteLength;
+      const expectedByteLengthSeventh: int = 64;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      const actualByteLengthEighth = view2.byteLength;
+      const expectedByteLengthEighth: int = 32;
+      expect(actualByteLengthEighth).assertEqual(expectedByteLengthEighth);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1140
+     * @tc.name testFloat64ArrayProperty114
+     * @tc.desc Verify byteOffset 8 boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(128);
+      const arr = new Float64Array(buf, 8, 4);
+      const actualByteOffsetSixth = arr.byteOffset;
+      const expectedByteOffsetSixth: int = 8;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = arr.byteLength;
+      const expectedByteLengthSeventh: int = 32;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1150
+     * @tc.name testFloat64ArrayProperty115
+     * @tc.desc Verify byteOffset 128 boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(1024);
+      const arr = new Float64Array(buf, 128, 32);
+      const actualByteOffsetSixth = arr.byteOffset;
+      const expectedByteOffsetSixth: int = 128;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = arr.byteLength;
+      const expectedByteLengthSeventh: int = 256;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1160
+     * @tc.name testFloat64ArrayProperty116
+     * @tc.desc Verify buffer.byteLength >= byteLength for direct array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(5);
+      expect(arr.buffer.byteLength >= arr.byteLength).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1170
+     * @tc.name testFloat64ArrayProperty117
+     * @tc.desc Verify buffer from ArrayBuffer view equals passed buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(24);
+      const arr = new Float64Array(buf, 8, 2);
+      expect(arr.buffer).assertEqual(buf);
+      const actualByteOffsetSixth = arr.byteOffset;
+      const expectedByteOffsetSixth: int = 8;
+      expect(actualByteOffsetSixth).assertEqual(expectedByteOffsetSixth);
+      const actualByteLengthSeventh = arr.byteLength;
+      const expectedByteLengthSeventh: int = 16;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1180
+     * @tc.name testFloat64ArrayProperty118
+     * @tc.desc Verify buffer from copy constructor is independent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Float64Array([1.0, 2.0]);
+      const copied = new Float64Array(src);
+      const actualByteLengthSeventh = copied.buffer.byteLength;
+      const expectedByteLengthSeventh: int = 16;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+      expect(copied.buffer).not().assertEqual(src.buffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1190
+     * @tc.name testFloat64ArrayProperty119
+     * @tc.desc Verify buffer from FixedArray constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numbers: FixedArray<number> = [1.0, 2.0];
+      const arr = new Float64Array(numbers);
+      const actualByteLengthSeventh = arr.buffer.byteLength;
+      const expectedByteLengthSeventh: int = 16;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1200
+     * @tc.name testFloat64ArrayProperty120
+     * @tc.desc Verify empty array buffer byteLength is 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(0);
+      const actualByteLengthSeventh = arr.buffer.byteLength;
+      const expectedByteLengthSeventh: int = 0;
+      expect(actualByteLengthSeventh).assertEqual(expectedByteLengthSeventh);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1210
+     * @tc.name testFloat64ArrayProperty121
+     * @tc.desc Verify repeated length reads return same value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(10);
+      const l1 = arr.length;
+      const l2 = arr.length;
+      const l3 = arr.length;
+      const actualResult = l1;
+      const expectedResult: number = 10;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualResultSecond = l2;
+      const expectedResultSecond: number = 10;
+      expect(actualResultSecond).assertEqual(expectedResultSecond);
+      const actualResultThird = l3;
+      const expectedResultThird: number = 10;
+      expect(actualResultThird).assertEqual(expectedResultThird);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1220
+     * @tc.name testFloat64ArrayProperty122
+     * @tc.desc Verify repeated byteLength reads return same value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(48);
+      const arr = new Float64Array(buf, 16, 2);
+      const b1 = arr.byteLength;
+      const b2 = arr.byteLength;
+      const actualResult = b1;
+      const expectedResult: number = 16;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualResultSecond = b2;
+      const expectedResultSecond: number = 16;
+      expect(actualResultSecond).assertEqual(expectedResultSecond);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY_1230
+     * @tc.name testFloat64ArrayProperty123
+     * @tc.desc Verify repeated byteOffset reads return same value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayProperty123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(48);
+      const arr = new Float64Array(buf, 16, 2);
+      const o1 = arr.byteOffset;
+      const o2 = arr.byteOffset;
+      const actualResult = o1;
+      const expectedResult: number = 16;
+      expect(actualResult).assertEqual(expectedResult);
+      const actualResultSecond = o2;
+      const expectedResultSecond: number = 16;
+      expect(actualResultSecond).assertEqual(expectedResultSecond);
+    });
+
+  })
+}
