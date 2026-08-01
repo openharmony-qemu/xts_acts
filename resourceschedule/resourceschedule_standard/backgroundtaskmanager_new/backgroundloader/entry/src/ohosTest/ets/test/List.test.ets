@@ -14,7 +14,9 @@
  */
 
 import BackgroundLoaderNormalTest from './BackgroundLoaderNormalTest.test';
+import BackgroundLoaderErrorCodeTest from './BackgroundLoaderErrorCodeTest.test';
 
 export default function testsuite() {
   BackgroundLoaderNormalTest();
+  BackgroundLoaderErrorCodeTest();
 }
