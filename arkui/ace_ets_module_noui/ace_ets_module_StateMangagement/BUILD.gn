@@ -31,6 +31,7 @@ group("ActsAceEtsModuleStateMangagementTest") {
     "ace_ets_module_StateMangagement_api12_static:ActsAceEtsModuleStateMangagementApi12StaticTest",
     "ace_ets_module_StateMgmtV104:ActsAceEtsModuleStateMgmtV104Test",
     "ace_ets_module_StateMgmtUI_static:ActsAceEtsModuleStateMgmtUIStaticTest",
+    "ace_ets_module_StateMgmtV2_static:ActsAceEtsModuleStateMgmtV2StaticTest"
   ]
 }
 

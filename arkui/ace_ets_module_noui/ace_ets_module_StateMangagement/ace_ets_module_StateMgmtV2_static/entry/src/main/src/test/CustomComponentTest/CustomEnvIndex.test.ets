@@ -29,7 +29,7 @@ export default function CustomEnvIndex(): void {
     beforeAll(async (): Promise<void> => {
       console.info('[ARKUI_NEW] CustomEnvIndex beforeAll start');
       await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.customComponent.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV2.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
@@ -68,7 +68,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0100] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text0');
@@ -90,7 +90,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0200] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text1');
@@ -113,7 +113,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0300] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text2');
@@ -136,7 +136,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0400] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text3');
@@ -159,7 +159,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0500] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text5');
@@ -182,7 +182,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0600] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text6');
@@ -205,7 +205,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0700] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text7');
@@ -228,7 +228,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0800] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text8');
@@ -251,7 +251,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_0900] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text9');
@@ -274,7 +274,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_1000] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text10');
@@ -297,7 +297,7 @@ export default function CustomEnvIndex(): void {
      */
     it('SUB_ARKUI_CustomEnvIndex_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_CustomEnvIndex_1100] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text11');
