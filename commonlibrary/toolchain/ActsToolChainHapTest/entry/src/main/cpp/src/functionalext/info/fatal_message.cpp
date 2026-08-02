@@ -73,7 +73,7 @@ static void FatalMessage0020(void)
         set_fatal_message(msg);
         fatal_message = get_fatal_message();
         EXPECT_TRUE(strcmp(fatal_message->msg, msg) == 0);
-        exit(0);
+        _exit(0);
     }
     waitpid(fpid, &childRet, 0);
     EXPECT_TRUE(childRet == 0);
@@ -117,7 +117,7 @@ static void FatalMessage0030(void)
             set_fatal_message(msgParent);
             fatal_message = get_fatal_message();
             EXPECT_TRUE(strcmp(fatal_message->msg, msgParent) == 0);
-            exit(0);
+            _exit(0);
         } else {
             pidCParent = getpid();
             set_fatal_message(msgChild);
@@ -295,7 +295,7 @@ static int FatalMessageTestImpl(void)
         // keep the initial state of fatal_message.
         if ((childPid = fork()) == 0) {
             g_gFunArray[pos]();
-            exit(0);
+            _exit(0);
         }
         waitpid(childPid, &childRet, 0);
         EXPECT_TRUE(childRet == 0);

@@ -18,13 +18,11 @@
 #include "test.h"
 
 static pthread_t g_tid1;
+static pthread_t g_result;
 
 void *ThreadFunc(void *arg)
 {
-    pthread_t result = pthread_self();
-    if (g_tid1 != result) {
-        t_error("pthread_self_0100 pthread_self get result is %ld are not want %ld", result, g_tid1);
-    }
+    g_result = pthread_self();
     return nullptr;
 }
 
@@ -37,6 +35,9 @@ void PthreadSelf0100(void)
 {
     pthread_create(&g_tid1, nullptr, ThreadFunc, nullptr);
     pthread_join(g_tid1, nullptr);
+    if (g_tid1 != g_result) {
+        t_error("pthread_self_0100 pthread_self get result is %ld are not want %ld", g_result, g_tid1);
+    }
 }
 
 static int PthreadSelfTestImpl(int argc, char *argv[])

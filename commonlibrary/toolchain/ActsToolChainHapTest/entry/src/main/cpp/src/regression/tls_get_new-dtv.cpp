@@ -17,6 +17,7 @@
 #include <dlfcn.h>
 #include <pthread.h>
 #include "libc_test_shim.h"
+#include "lib_path.h"
 #define N 10
 
 static void CheckStatus(int* status, bool condition, const char* message)
@@ -57,10 +58,7 @@ int TlsGetNewDtvTest()
         CheckStatus(&status, !pthread_create(td + i, nullptr, Start, &status), "pthread_create");
     }
 
-    g_mod = dlopen("/data/storage/el1/bundle/libs/arm/libtls_get_new-dtv_dso.so", RTLD_NOW);
-    if (g_mod == nullptr) {
-        g_mod = dlopen("/data/storage/el1/bundle/libs/arm64/libtls_get_new-dtv_dso.so", RTLD_NOW);
-    }
+    g_mod = dlopen(LIB_PATH_PREFIX "libtls_get_new-dtv_dso.so", RTLD_NOW);
     if (g_mod == nullptr) {
         pthread_barrier_wait(&g_b);
         for (i = 0; i < N; i++) {

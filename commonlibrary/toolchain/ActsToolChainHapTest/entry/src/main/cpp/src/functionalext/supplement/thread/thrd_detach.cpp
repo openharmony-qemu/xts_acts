@@ -22,7 +22,7 @@ static int g_count = 0;
 
 static void ExceptionHandler(int sig)
 {
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 static int Threadfunc(void *arg)

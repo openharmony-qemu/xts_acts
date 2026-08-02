@@ -14,34 +14,29 @@
  */
 
 #include <cstdlib>
+#include <cstring>
+#include <cstdint>
 #include "functionalext.h"
 #include "include/src/functionalext/supplement/misc.h"
 
-constexpr int CHAR_GROUP_BASE = 6;
-constexpr int UPPERCASE_OFFSET = 12;
-constexpr int LOWERCASE_OFFSET = 38;
+static const char DIGITS[] =
+    "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+static constexpr int SHIFT_BITS_PER_CHAR = 6;
+static constexpr int MAX_SHIFT_BITS = 36;
 
 extern "C" long A64l(const char* s)
 {
-    if (s == nullptr) {
-        return 0;
-    }
-    long result = 0;
-    for (int i = 0; i < CHAR_GROUP_BASE && s[i] != '\0'; ++i) {
-        unsigned char ch = static_cast<unsigned char>(s[i]);
-        int value = -1;
-        if (ch >= '.' && ch <= '9') {
-            value = ch - '.';
-        } else if (ch >= 'A' && ch <= 'Z') {
-            value = ch - 'A' + UPPERCASE_OFFSET;
-        } else if (ch >= 'a' && ch <= 'z') {
-            value = ch - 'a' + LOWERCASE_OFFSET;
-        } else {
+    int e;
+    uint32_t x = 0;
+    for (e = 0; e < MAX_SHIFT_BITS && *s; e += SHIFT_BITS_PER_CHAR, s++) {
+        const char *d = strchr(DIGITS, *s);
+        if (!d) {
             break;
         }
-        result |= (static_cast<long>(value) << (CHAR_GROUP_BASE * i));
+        x |= static_cast<uint32_t>(d - DIGITS) << e;
     }
-    return result;
+    return static_cast<int32_t>(x);
 }
 
 #define VALUE_0 2

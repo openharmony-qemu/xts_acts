@@ -69,6 +69,9 @@ void SchedRrGetInterval0200(void)
  */
 void SchedRrGetIntervalTime640100(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     SchedRrGetInterval64Func schedRrGetInterval64 =
         reinterpret_cast<SchedRrGetInterval64Func>(dlsym(RTLD_DEFAULT, SCHED_RR_GET_INTERVAL64_SYMBOL));
     if (schedRrGetInterval64 == nullptr) {

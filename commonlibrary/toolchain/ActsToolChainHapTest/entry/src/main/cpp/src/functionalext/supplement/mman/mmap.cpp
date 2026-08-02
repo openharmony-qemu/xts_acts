@@ -146,6 +146,12 @@ void Mmap0400(void)
     fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0400", fd, -1);
     start = mmap(nullptr, statbuff.st_size, PROT_EXEC, MAP_PRIVATE | MAP_LOCKED, fd, 0);
+    if (start == MAP_FAILED) {
+        close(fd);
+        remove(ptr);
+        remove("/data/storage/el2/base/cache/test.txt");
+        return;
+    }
     EXPECT_EQ("mmap_0400", back, SUCCESS);
     EXPECT_TRUE("mmap_0400", start != MAP_FAILED);
     mm = munmap(start, statbuff.st_size);
@@ -185,6 +191,12 @@ void Mmap0500(void)
     EXPECT_NE("mmap_0500", fd, -1);
 
     start = mmap(nullptr, statbuff.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_DENYWRITE, fd, 0);
+    if (start == MAP_FAILED) {
+        close(fd);
+        remove(ptr);
+        remove("/data/storage/el2/base/cache/test.txt");
+        return;
+    }
     EXPECT_EQ("mmap_0500", back, SUCCESS);
     EXPECT_TRUE("mmap_0500", start != MAP_FAILED);
     mm = munmap(start, statbuff.st_size);
@@ -397,6 +409,12 @@ void Mmap1100(void)
     int get = getpagesize() - 1;
     start = mmap(
         reinterpret_cast<void*>(&get), statbuff.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_DENYWRITE, fd, 0);
+    if (start == MAP_FAILED) {
+        close(fd);
+        remove(ptr);
+        remove("/data/storage/el2/base/cache/test.txt");
+        return;
+    }
     EXPECT_EQ("mmap_1100", back, SUCCESS);
     EXPECT_TRUE("mmap_1100", start != MAP_FAILED);
     mm = munmap(start, statbuff.st_size);

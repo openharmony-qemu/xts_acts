@@ -1029,7 +1029,6 @@ add_library(
     src/functionalext/supplement/network/send.cpp
     src/functionalext/supplement/network/shutdown.cpp
     src/functionalext/supplement/linux/__ppoll_time64.cpp
-    src/functionalext/supplement/linux/clock_adjtime.cpp
     src/functionalext/supplement/linux/fallocate.cpp
     src/functionalext/supplement/linux/fgetxattr.cpp
     src/functionalext/supplement/linux/flock.cpp
@@ -1086,6 +1085,16 @@ add_library(TlsGetNewDtvDso SHARED lib/tls_get_new-dtv_dso.c)
 set_target_properties(TlsGetNewDtvDso PROPERTIES OUTPUT_NAME "tls_get_new-dtv_dso")
 
 target_compile_definitions(entry PRIVATE _GNU_SOURCE=1)
+
+set_source_files_properties(
+    src/functionalext/fortify/invalid_param.cpp
+    src/functionalext/fortify/invalid_param_b.cpp
+    src/functionalext/fortify/fcntl_ext.cpp
+    src/functionalext/fortify/pthread_fortify_test.cpp
+    src/functionalext/fortify/select_test.cpp
+    src/functionalext/fortify/poll.cpp
+    PROPERTIES COMPILE_DEFINITIONS "_FORTIFY_SOURCE=2"
+)
 
 set_source_files_properties(
     src/functional/search_hsearch.cpp

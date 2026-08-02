@@ -139,6 +139,9 @@ void Futimesat0400(void)
  */
 void FutimesatTime640200(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     FutimesatTime64Func futimesatTime64 =
         reinterpret_cast<FutimesatTime64Func>(dlsym(RTLD_DEFAULT, FUTIMESAT_TIME64_SYMBOL));
     if (futimesatTime64 == nullptr) {

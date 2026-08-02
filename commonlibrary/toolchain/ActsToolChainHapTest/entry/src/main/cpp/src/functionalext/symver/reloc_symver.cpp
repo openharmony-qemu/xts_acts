@@ -16,6 +16,7 @@
 #include <dlfcn.h>
 
 #include "dso_symver.h"
+#include "lib_path.h"
 
 /**
  * @tc.name      : reloc_symver_0100
@@ -27,7 +28,7 @@ static void RelocSymver0100(void)
 {
     symver_log("start");
 
-    void *so = dlopen("/data/storage/el1/bundle/libs/arm/libreloc_symver_dso.so", RTLD_NOW);
+    void *so = dlopen(LIB_PATH_PREFIX "libreloc_symver_dso.so", RTLD_NOW);
     if (so) {
         dlclose(so);
     } else {

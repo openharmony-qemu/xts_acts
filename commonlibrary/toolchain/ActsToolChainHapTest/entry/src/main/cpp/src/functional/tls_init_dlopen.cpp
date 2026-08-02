@@ -16,6 +16,7 @@
 #include <cstring>
 #include <dlfcn.h>
 #include "test.h"
+#include "lib_path.h"
 
 static int TlsInitDlopenTestImpl(int argc, char *argv[])
 {
@@ -25,7 +26,7 @@ static int TlsInitDlopenTestImpl(int argc, char *argv[])
     (void)argc;
     (void)argv;
 
-    h = dlopen("/data/storage/el1/bundle/libs/arm/libtls_init_dso.so", RTLD_NOW | RTLD_GLOBAL);
+    h = dlopen(LIB_PATH_PREFIX "libtls_init_dso.so", RTLD_NOW | RTLD_GLOBAL);
     if (!h) {
         t_error("dlopen failed: %s\n", dlerror());
     }
