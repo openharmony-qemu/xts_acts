@@ -458,6 +458,16 @@ export default function WorkerIntroductionTest(): void {
         currentWorker!.postMessage('create_child')
       })
       expect(childCreated).assertTrue()
+      // Cleanup: release the child Worker created by ParentWorker to avoid stress-run leaks
+      let childTerminated: boolean = await new Promise<boolean>((resolve: (value: boolean) => void) => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
+          if ((e.data as string) === 'child_terminated') {
+            resolve(true)
+          }
+        }
+        currentWorker!.postMessage('terminate_child')
+      })
+      expect(childTerminated).assertTrue()
     })
 
     /**
@@ -480,6 +490,16 @@ export default function WorkerIntroductionTest(): void {
         currentWorker!.postMessage('send_to_child:test_message')
       })
       expect(finalResult).assertEqual('final_result:test_message_processed')
+      // Cleanup: release the child Worker created by ParentWorker to avoid stress-run leaks
+      let childTerminated: boolean = await new Promise<boolean>((resolve: (value: boolean) => void) => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
+          if ((e.data as string) === 'child_terminated') {
+            resolve(true)
+          }
+        }
+        currentWorker!.postMessage('terminate_child')
+      })
+      expect(childTerminated).assertTrue()
     })
 
     /**

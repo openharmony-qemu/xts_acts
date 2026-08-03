@@ -31,9 +31,9 @@ async function suppWaitInTask(cv: ArkTSUtils.locks.ConditionVariable, result: Su
   result.value = 'task awakened'
 }
 
-/** TaskPool waiting-flag polls: sleep(50) * 100 ≈ 5s, avoid 1ms busy polling. */
-const SUPP_NOTIFY_MAX_RETRY: number = 100
-const SUPP_NOTIFY_RETRY_MS: number = 50
+/** TaskPool waiting-flag polls: sleep(100) * 50 ≈ 5s, avoid 1ms busy polling. */
+const SUPP_NOTIFY_MAX_RETRY: number = 50
+const SUPP_NOTIFY_RETRY_MS: number = 100
 
 export default function ConditionVariableSupplementTest(): void {
   if (!canIUse('SystemCapability.Utils.Lang')) {

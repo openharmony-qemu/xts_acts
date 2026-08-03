@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { taskpool, collections, ArkTSUtils } from '@kit.ArkTS';
-import { freezeObject, isObjectFrozen } from './freezeHelper';
+import { freezeObject, isObjectFrozen } from './FreezeHelper';
 
 @Sendable
 class ConfigData {
