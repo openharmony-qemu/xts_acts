@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
+import hilog from '@ohos.hilog';
 
 export default class MainAbility extends Ability {
   onCreate(want, launchParam) {

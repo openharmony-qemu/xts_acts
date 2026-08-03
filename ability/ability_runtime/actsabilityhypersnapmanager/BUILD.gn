@@ -17,6 +17,7 @@ group("actsabilityhypersnapmanager") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsabilityhypersnapmanagerstaticrely:ActsAbilityHyperSnapManagerStaticRely",
       "actsabilityhypersnapmanagerstatictest:ActsAbilityHyperSnapManagerStaticTest",
       "actsabilityhypersnapmanagertest:ActsAbilityHyperSnapManagerTest"
     ]

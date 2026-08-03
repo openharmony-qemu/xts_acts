@@ -36,7 +36,18 @@ let buttonClicked: boolean = false;
 let isOpen: boolean = false;
 let driver = Driver.create();
 
-let openDialog = async (dialogKey: string, text: string) => {
+let openDialog = async (dialogKey: string, text: string, done: Function) => {
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
+    }
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
   if(dialogKey == '选择打开方式'){
     let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
@@ -76,6 +87,8 @@ let openDialog = async (dialogKey: string, text: string) => {
           await buttons[buttons.length - 1].click();
           hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
           buttonClicked = true;
+          hilog.info(DOMAIN, LOG_TAG, 'current device is amsdialog');
+          done();
         } else {
           hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
         }
@@ -118,8 +131,19 @@ let openDialog = async (dialogKey: string, text: string) => {
   }
 }
 
-let closeDialog = async (dialogKey: string) => {
+let closeDialog = async (dialogKey: string, done: Function) => {
   hilog.info(DOMAIN, LOG_TAG, 'closeDialog start waitForComponent');
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
+    }
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -135,6 +159,8 @@ let closeDialog = async (dialogKey: string) => {
     if (buttons && buttons.length > 0) {
       await buttons[0].click();
       buttonClicked = true;
+      hilog.info(DOMAIN, LOG_TAG, 'current device is amsdialog');
+      done();
     }
   }
 }
@@ -183,6 +209,7 @@ let disallowOpen = async () => {
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
 }
+
 export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest() {
   describe('AbilityRuntimeCompletionHandlerStartAbilityForResultTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -277,7 +304,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       try {
         await allowOpen();
@@ -345,7 +372,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       try {
         await disallowOpen();
@@ -417,10 +444,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await openDialog('选择打开方式', 'CompletionHandlerRely');
+          await openDialog('选择打开方式', 'CompletionHandlerRely', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -489,10 +516,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await closeDialog('选择打开方式');
+          await closeDialog('选择打开方式', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 closeDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -550,10 +577,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await openDialog('暂无可用打开方式', '知道了');
+          await openDialog('暂无可用打开方式', '知道了', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -622,7 +649,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
           await allowOpen();
@@ -696,7 +723,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
           await disallowOpen();
@@ -762,7 +789,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800 end');
     })
