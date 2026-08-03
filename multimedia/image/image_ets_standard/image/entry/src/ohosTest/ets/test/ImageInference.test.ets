@@ -62,7 +62,7 @@ export default function inferenceTest() {
         done();
         return;
       }
-        let filePath: string = filesDir + '/' + 'flower.jpg';
+        let filePath: string = filesDir + '/' + 'flower.webp';
         let tsBefore: string = getTimestamp();
         let result: inferenceResult = await inferenceImage(filePath, MODEL_NAME, context);
         let tsAfter: string = getTimestamp();
