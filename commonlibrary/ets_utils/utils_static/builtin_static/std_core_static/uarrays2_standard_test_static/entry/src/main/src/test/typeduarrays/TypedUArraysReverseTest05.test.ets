@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0100
-     * @tc.name testTypedUArraysReversePart301_001
+     * @tc.name testTypedUArraysReverseTestFileE001
      * @tc.desc Verify Uint16Array reverse preserves byteLength 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(10);
@@ -49,13 +49,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0200
-     * @tc.name testTypedUArraysReversePart301_002
+     * @tc.name testTypedUArraysReverseTestFileE002
      * @tc.desc Verify Uint32Array reverse preserves byteLength 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(20);
@@ -63,13 +63,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0300
-     * @tc.name testTypedUArraysReversePart301_003
+     * @tc.name testTypedUArraysReverseTestFileE003
      * @tc.desc Verify Uint8ClampedArray reverse preserves byteLength 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(5);
@@ -77,13 +77,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0400
-     * @tc.name testTypedUArraysReversePart301_004
+     * @tc.name testTypedUArraysReverseTestFileE004
      * @tc.desc Verify BigUint64Array reverse preserves byteLength 40
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(40);
@@ -91,13 +91,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0500
-     * @tc.name testTypedUArraysReversePart301_005
+     * @tc.name testTypedUArraysReverseTestFileE005
      * @tc.desc Verify Uint8Array(0) reverse byteLength remains 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       arr.reverse();
       expect(arr.byteLength).assertEqual(0);
@@ -105,13 +105,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0600
-     * @tc.name testTypedUArraysReversePart301_006
+     * @tc.name testTypedUArraysReverseTestFileE006
      * @tc.desc Verify Uint8Array([42]) reverse byteLength remains 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(1);
@@ -119,13 +119,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0700
-     * @tc.name testTypedUArraysReversePart301_007
+     * @tc.name testTypedUArraysReverseTestFileE007
      * @tc.desc Verify Uint16Array([42]) reverse byteLength remains 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([42]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(2);
@@ -133,13 +133,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0800
-     * @tc.name testTypedUArraysReversePart301_008
+     * @tc.name testTypedUArraysReverseTestFileE008
      * @tc.desc Verify Uint32Array([42]) reverse byteLength remains 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([42]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(4);
@@ -147,13 +147,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0900
-     * @tc.name testTypedUArraysReversePart301_009
+     * @tc.name testTypedUArraysReverseTestFileE009
      * @tc.desc Verify BigUint64Array([42n]) reverse byteLength remains 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([42n]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(8);
@@ -161,13 +161,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1000
-     * @tc.name testTypedUArraysReversePart301_010
+     * @tc.name testTypedUArraysReverseTestFileE010
      * @tc.desc Verify Uint8Array reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteOffset).assertEqual(0);
@@ -175,13 +175,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1100
-     * @tc.name testTypedUArraysReversePart301_011
+     * @tc.name testTypedUArraysReverseTestFileE011
      * @tc.desc Verify Uint16Array reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteOffset).assertEqual(0);
@@ -189,13 +189,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1200
-     * @tc.name testTypedUArraysReversePart301_012
+     * @tc.name testTypedUArraysReverseTestFileE012
      * @tc.desc Verify Uint32Array reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteOffset).assertEqual(0);
@@ -203,13 +203,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1300
-     * @tc.name testTypedUArraysReversePart301_013
+     * @tc.name testTypedUArraysReverseTestFileE013
      * @tc.desc Verify Uint8ClampedArray reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteOffset).assertEqual(0);
@@ -217,13 +217,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1400
-     * @tc.name testTypedUArraysReversePart301_014
+     * @tc.name testTypedUArraysReverseTestFileE014
      * @tc.desc Verify BigUint64Array reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       arr.reverse();
       expect(arr.byteOffset).assertEqual(0);
@@ -231,13 +231,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1500
-     * @tc.name testTypedUArraysReversePart301_015
+     * @tc.name testTypedUArraysReverseTestFileE015
      * @tc.desc Verify Uint8Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Uint8Array(buf, 4, 8);
       view.reverse();
@@ -246,13 +246,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1600
-     * @tc.name testTypedUArraysReversePart301_016
+     * @tc.name testTypedUArraysReverseTestFileE016
      * @tc.desc Verify Uint16Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(32);
       const view = new Uint16Array(buf, 8, 4);
       view.reverse();
@@ -261,13 +261,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1700
-     * @tc.name testTypedUArraysReversePart301_017
+     * @tc.name testTypedUArraysReverseTestFileE017
      * @tc.desc Verify Uint32Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(64);
       const view = new Uint32Array(buf, 16, 8);
       view.reverse();
@@ -276,13 +276,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1800
-     * @tc.name testTypedUArraysReversePart301_018
+     * @tc.name testTypedUArraysReverseTestFileE018
      * @tc.desc Verify Uint8Array reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const buf = arr.buffer;
       arr.reverse();
@@ -291,13 +291,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1900
-     * @tc.name testTypedUArraysReversePart301_019
+     * @tc.name testTypedUArraysReverseTestFileE019
      * @tc.desc Verify Uint16Array reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const buf = arr.buffer;
       arr.reverse();
@@ -306,13 +306,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2000
-     * @tc.name testTypedUArraysReversePart301_020
+     * @tc.name testTypedUArraysReverseTestFileE020
      * @tc.desc Verify Uint32Array reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       const buf = arr.buffer;
       arr.reverse();
@@ -321,13 +321,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2100
-     * @tc.name testTypedUArraysReversePart301_021
+     * @tc.name testTypedUArraysReverseTestFileE021
      * @tc.desc Verify Uint8ClampedArray reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const buf = arr.buffer;
       arr.reverse();
@@ -336,13 +336,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2200
-     * @tc.name testTypedUArraysReversePart301_022
+     * @tc.name testTypedUArraysReverseTestFileE022
      * @tc.desc Verify BigUint64Array reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const buf = arr.buffer;
       arr.reverse();
@@ -351,13 +351,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2300
-     * @tc.name testTypedUArraysReversePart301_023
+     * @tc.name testTypedUArraysReverseTestFileE023
      * @tc.desc Verify Uint8Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Uint8Array(buf, 4, 8);
       view.reverse();
@@ -366,13 +366,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2400
-     * @tc.name testTypedUArraysReversePart301_024
+     * @tc.name testTypedUArraysReverseTestFileE024
      * @tc.desc Verify Uint16Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(32);
       const view = new Uint16Array(buf, 8, 4);
       view.reverse();
@@ -381,13 +381,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2500
-     * @tc.name testTypedUArraysReversePart301_025
+     * @tc.name testTypedUArraysReverseTestFileE025
      * @tc.desc Verify Uint32Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(64);
       const view = new Uint32Array(buf, 16, 8);
       view.reverse();
@@ -396,13 +396,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2600
-     * @tc.name testTypedUArraysReversePart301_026
+     * @tc.name testTypedUArraysReverseTestFileE026
      * @tc.desc Verify Uint8Array reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
@@ -410,13 +410,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2700
-     * @tc.name testTypedUArraysReversePart301_027
+     * @tc.name testTypedUArraysReverseTestFileE027
      * @tc.desc Verify Uint16Array reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
@@ -424,13 +424,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2800
-     * @tc.name testTypedUArraysReversePart301_028
+     * @tc.name testTypedUArraysReverseTestFileE028
      * @tc.desc Verify BigUint64Array reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
@@ -438,13 +438,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2900
-     * @tc.name testTypedUArraysReversePart301_029
+     * @tc.name testTypedUArraysReverseTestFileE029
      * @tc.desc Verify Uint8Array(0) reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
@@ -452,13 +452,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3000
-     * @tc.name testTypedUArraysReversePart301_030
+     * @tc.name testTypedUArraysReverseTestFileE030
      * @tc.desc Verify Uint8Array([99]) reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([99]);
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
@@ -466,13 +466,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3100
-     * @tc.name testTypedUArraysReversePart301_031
+     * @tc.name testTypedUArraysReverseTestFileE031
      * @tc.desc Verify Uint8Array reverse modifies element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr[0]).assertEqual(5);
@@ -484,13 +484,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3200
-     * @tc.name testTypedUArraysReversePart301_032
+     * @tc.name testTypedUArraysReverseTestFileE032
      * @tc.desc Verify Uint8Array reverse preserves length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.length).assertEqual(5);
@@ -498,13 +498,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3300
-     * @tc.name testTypedUArraysReversePart301_033
+     * @tc.name testTypedUArraysReverseTestFileE033
      * @tc.desc Verify Uint8Array reverse preserves byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(arr.byteLength).assertEqual(5);
@@ -517,41 +517,41 @@ export default function typedUArraysReverseTest05(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0001
-     * @tc.name testTypedUArraysReversePart301_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3400
+     * @tc.name testTypedUArraysReverseTestFileE034
      * @tc.desc Verify Uint16Array reverse preserves BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       arr.reverse();
       expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0002
-     * @tc.name testTypedUArraysReversePart301_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
+     * @tc.name testTypedUArraysReverseTestFileE035
      * @tc.desc Verify Uint8Array reverse returns same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = expect(arr.reverse()).assertEqual(arr);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3600
-     * @tc.name testTypedUArraysReversePart301_036
+     * @tc.name testTypedUArraysReverseTestFileE036
      * @tc.desc Verify shared buffer child view reverse affects parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const parent = new Uint8Array(buf);
       for (let i = 0; i < 16; i++) {
@@ -565,13 +565,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3700
-     * @tc.name testTypedUArraysReversePart301_037
+     * @tc.name testTypedUArraysReverseTestFileE037
      * @tc.desc Verify shared buffer parent reverse affects child
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const parent = new Uint8Array(buf);
       const child = new Uint8Array(buf, 0, 4);
@@ -581,13 +581,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3800
-     * @tc.name testTypedUArraysReversePart301_038
+     * @tc.name testTypedUArraysReverseTestFileE038
      * @tc.desc Verify adjacent views on same buffer reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const v1 = new Uint8Array(buf, 0, 4);
       for (let i = 0; i < 4; i++) {
@@ -604,13 +604,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3900
-     * @tc.name testTypedUArraysReversePart301_039
+     * @tc.name testTypedUArraysReverseTestFileE039
      * @tc.desc Verify buffer view reverse with offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Uint8Array(buf, 4, 4);
       for (let i = 0; i < 4; i++) {
@@ -623,13 +623,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_4000
-     * @tc.name testTypedUArraysReversePart301_040
+     * @tc.name testTypedUArraysReverseTestFileE040
      * @tc.desc Verify same buffer multiple views reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const a = new Uint8Array(buf, 0, 4);
       for (let i = 0; i < 4; i++) {
@@ -643,13 +643,13 @@ export default function typedUArraysReverseTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_4100
-     * @tc.name testTypedUArraysReversePart301_041
+     * @tc.name testTypedUArraysReverseTestFileE041
      * @tc.desc Verify child reverse affects overlapping parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReversePart301_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReverseTestFileE041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const parent = new Uint8Array(buf);
       for (let i = 0; i < 16; i++) {
