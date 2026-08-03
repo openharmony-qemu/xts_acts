@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import BuiltinsSendableBasicTypeTest from './sendable/BuiltinsSendableBasicTypeTest.test';
 import BuiltinsSendableDecoratorTest from './sendable/BuiltinsSendableDecoratorTest.test';
 import BuiltinsSendableFunctionTest from './sendable/BuiltinsSendableFunctionTest.test';
@@ -119,6 +118,11 @@ import BuiltinsPostGCStateTest from './sendable/BuiltinsPostGCStateTest.test';
 import BuiltinsSharedModuleGCTest2 from './sendable/BuiltinsSharedModuleGCTest2.test';
 import BuiltinsBatchCreateDestroyTest from './sendable/BuiltinsBatchCreateDestroyTest.test';
 import BuiltinsWorkerTaskPoolGCTest from './sendable/BuiltinsWorkerTaskPoolGCTest.test';
+import AsonSendableTest from './sendable/AsonSendableTest.test';
+import FreezeSendableTest from './sendable/FreezeSendableTest.test';
+import IsSendableTest from './sendable/IsSendableTest.test';
+import MakeObservedSendableTest from './sendable/MakeObservedSendableTest.test';
+import UseSharedModuleTest from './sendable/UseSharedModuleTest.test';
 
 export default function testsuite(): void {
   BuiltinsSendableBasicTypeTest()
@@ -227,4 +231,9 @@ export default function testsuite(): void {
   BuiltinsSharedModuleGCTest2()
   BuiltinsBatchCreateDestroyTest()
   BuiltinsWorkerTaskPoolGCTest()
+  AsonSendableTest()
+  FreezeSendableTest()
+  IsSendableTest()
+  MakeObservedSendableTest()
+  UseSharedModuleTest()
 }
