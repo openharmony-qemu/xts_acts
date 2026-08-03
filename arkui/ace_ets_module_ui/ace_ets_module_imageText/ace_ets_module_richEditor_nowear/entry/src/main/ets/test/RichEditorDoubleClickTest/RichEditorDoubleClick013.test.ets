@@ -95,8 +95,8 @@ export default function RichEditorDoubleClick013() {
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
       // 点击复制避免第按钮被遮挡
-      let copy = await driver.findComponent(ON.text('复制'));
-      await copy?.click();
+      let copy2 = await driver.findComponent(ON.text('复制'));
+      await copy2?.click();
       await CommonFunc.sleep(500);
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
