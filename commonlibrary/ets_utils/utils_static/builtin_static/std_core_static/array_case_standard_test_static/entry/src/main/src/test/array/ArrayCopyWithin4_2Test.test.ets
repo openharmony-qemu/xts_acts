@@ -1357,7 +1357,7 @@ export default function ArrayCopyWithin4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_7300
      * @tc.name testArrayCopywithinFour073
-     * @tc.desc Verify binary literal as target
+     * @tc.desc Verify binary literal 0b11 as target (no source params) for copyWithin
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1631,7 +1631,7 @@ export default function ArrayCopyWithin4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_8800
      * @tc.name testArrayCopywithinFour088
-     * @tc.desc Verify RegExp array elements copyWithin
+     * @tc.desc Verify RegExp array elements copyWithin with no source params (target=0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2

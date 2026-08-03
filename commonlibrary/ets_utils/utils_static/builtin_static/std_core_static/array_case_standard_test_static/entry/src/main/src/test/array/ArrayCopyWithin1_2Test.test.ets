@@ -581,14 +581,14 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3200
      * @tc.name testArrayCopywithinOne032
-     * @tc.desc Verify uninitialized array copyWithin
+     * @tc.desc Verify uninitialized int|undefined array copyWithin copies first element correctly
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
     it('testArrayCopywithinOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | undefined>(5);
+      const arr = Array.create<int | undefined>(1, 5);
       arr.copyWithin(0, 1, 4);
       expect(arr[0]).assertEqual(5);
     });
@@ -747,7 +747,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4100
      * @tc.name testArrayCopywithinOne041
-     * @tc.desc Verify reduceRight after copyWithin
+     * @tc.desc Verify chained reduceRight after copyWithin returns sum 21
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1157,7 +1157,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6500
      * @tc.name testArrayCopywithinOne065
-     * @tc.desc Verify byte element array copyWithin
+     * @tc.desc Verify byte element array copyWithin with end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1178,7 +1178,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6600
      * @tc.name testArrayCopywithinOne066
-     * @tc.desc Verify short element array copyWithin
+     * @tc.desc Verify short element array copyWithin with end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1199,7 +1199,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6700
      * @tc.name testArrayCopywithinOne067
-     * @tc.desc Verify boolean element array copyWithin
+     * @tc.desc Verify boolean element array copyWithin with end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1216,7 +1216,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6800
      * @tc.name testArrayCopywithinOne068
-     * @tc.desc Verify long element array copyWithin
+     * @tc.desc Verify long element array copyWithin with end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1235,7 +1235,7 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6900
      * @tc.name testArrayCopywithinOne069
-     * @tc.desc Verify bigint element array copyWithin
+     * @tc.desc Verify bigint element array copyWithin with end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1271,15 +1271,9 @@ export default function ArrayCopyWithin1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7100
      * @tc.name testArrayCopywithinOne071
-     * @tc.desc Verify uninitialized array copyWithin
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level Level 2
-     */
-
-    it('testArrayCopywithinOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+     * @tc.desc Verify uninitialized int|undefined array copyWithin accessing uncovered index throws RangeError
       try {
-        const arr = new Array<int | undefined>(5);
+        const arr = Array.create<int | undefined>(1, 5);
         arr.copyWithin(0, 1, 4);
         arr[4];
         expect().assertFail();

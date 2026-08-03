@@ -70,7 +70,7 @@ export default function ArrayCopyWithin3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0300
      * @tc.name testArrayCopyWithin3003
-     * @tc.desc Verify copyWithin returns the array instance itself
+     * @tc.desc Verify copyWithin(target, start) returns the array instance itself
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

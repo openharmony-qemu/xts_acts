@@ -416,7 +416,7 @@ export default function ArrayEveryTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEvery019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const seen: Array<number> = [];
       arr.every((v, i, a): boolean => {
         seen.push(v);
@@ -563,7 +563,7 @@ export default function ArrayEveryTest2(): void {
       const r1 = arr.every((v) => {
         return v > 0;
       });
-      const r2 = new Array<boolean>(r1).every((b) => b === true);
+      const r2 = Array.create<boolean>(1, r1).every((b) => b === true);
       expect(r2).assertTrue();
     });
 
@@ -857,7 +857,7 @@ export default function ArrayEveryTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEvery042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<Array<int>>>(new Array<Array<int>>(new Array<int>(1)), new Array<Array<int>>(new Array<int>(2)));
+      const arr = new Array<Array<Array<int>>>(new Array<Array<int>>(Array.create<int>(1, 1)), new Array<Array<int>>(Array.create<int>(1, 2)));
       const r = arr.every((a) => a.every((b) => b.every((c) => c > 0)));
       expect(r).assertTrue();
     });

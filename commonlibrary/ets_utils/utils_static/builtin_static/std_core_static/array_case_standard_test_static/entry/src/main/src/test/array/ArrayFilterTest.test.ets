@@ -145,7 +145,7 @@ export default function ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_0600
      * @tc.name testArrayFilter006
-     * @tc.desc Verify filter works with object arrays
+     * @tc.desc Verify filter with new Array objects of FilterPerson008
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -407,7 +407,7 @@ export default function ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2100
      * @tc.name testArrayFilter021
-     * @tc.desc Verify filter works with object arrays
+     * @tc.desc Verify filter with push-built objects of FilterPerson026
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -810,7 +810,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4200
      * @tc.name testArrayConstructor4042
-     * @tc.desc Verify initializer computes distance to center of array
+     * @tc.desc Verify initializer with absolute difference from center index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -828,7 +828,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4300
      * @tc.name testArrayConstructor4043
-     * @tc.desc Verify partial construction preserved when initializer throws
+     * @tc.desc Verify partial creation preserved when initializer throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -920,7 +920,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4900
      * @tc.name testArrayConstructor4049
-     * @tc.desc Verify initializer returns long positive and negative boundary
+     * @tc.desc Verify initializer creates bigint boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -934,7 +934,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5000
      * @tc.name testArrayConstructor4050
-     * @tc.desc Verify map after initializer-based construction
+     * @tc.desc Verify map after initializer-based creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +950,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5100
      * @tc.name testArrayConstructor4051
-     * @tc.desc Verify filter then reduce after initializer-based construction
+     * @tc.desc Verify filter then reduce after initializer-based creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -978,7 +978,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5300
      * @tc.name testArrayConstructor4053
-     * @tc.desc Verify some returns true for element > 10 after initializer
+     * @tc.desc Verify some returns true for threshold check after initializer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -991,14 +991,14 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5400
      * @tc.name testArrayConstructor4054
-     * @tc.desc Verify initialized vs single-numeric constructed arrays differ
+     * @tc.desc Verify initialized array differs from single-element Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor4054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Array<int>(3, (i: int): int => i);
-      const b = new Array<int>(3);
+      const b = Array.create<int>(1, 3);
       const aAllDefined = a.every((v: int): boolean => v !== undefined);
       const bAllUndefined = b.every((v: int): boolean => v === undefined);
       expect(aAllDefined).assertTrue();
@@ -1008,7 +1008,7 @@ export default function ArrayConstructor4_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5500
      * @tc.name testArrayConstructor4055
-     * @tc.desc Verify at method after initializer-based construction
+     * @tc.desc Verify at method after initializer-based creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

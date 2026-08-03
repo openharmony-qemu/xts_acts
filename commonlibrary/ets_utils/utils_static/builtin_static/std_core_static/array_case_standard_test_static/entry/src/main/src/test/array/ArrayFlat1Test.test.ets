@@ -117,7 +117,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_0500
      * @tc.name testArrayFlat1005
-     * @tc.desc Verify negative depth behaves like zero
+     * @tc.desc Verify negative depth -1 behaves like zero for shallow [1,[2,3]]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -221,12 +221,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1100
      * @tc.name testArrayFlat1011
-     * @tc.desc Verify negative depth behaves like zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFlat1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+     * @tc.desc Verify negative depth -1 behaves like zero for 3-level [[[1,2]],[[3,4]]]
       const nested: Array<Array<Array<int>>> = [[[1, 2]], [[3, 4]]];
       const result: Array<Array<Array<int>>> = nested.flat<Array<Array<int>>>(-1);
       expect(result.length).assertEqual(2);
@@ -253,7 +248,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1300
      * @tc.name testArrayFlat1013
-     * @tc.desc Verify object arrays flatten correctly
+     * @tc.desc Verify flat(1) correctly flattens structured object arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -273,7 +268,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1400
      * @tc.name testArrayFlat1014
-     * @tc.desc Verify null and undefined values are preserved
+     * @tc.desc Verify flat(1) preserves null and undefined in nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -306,7 +301,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1600
      * @tc.name testArrayFlat1016
-     * @tc.desc Verify flat results can be mapped immediately
+     * @tc.desc Verify flat(1) results can be mapped immediately with value*2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -322,7 +317,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1700
      * @tc.name testArrayFlat1017
-     * @tc.desc Verify flat and flatMap produce the same expanded sequence
+     * @tc.desc Verify flat(1) and flatMap produce the same expanded sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -340,7 +335,7 @@ export default function ArrayFlat1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_ONE_1800
      * @tc.name testArrayFlat1018
-     * @tc.desc Verify ReadonlyArray inputs can be flattened
+     * @tc.desc Verify flat(1) accepts ReadonlyArray-like input [1,[2,3]]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -115,7 +115,7 @@ export default function ArrayInvoke2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0500
      * @tc.name testArrayInvoke2005
-     * @tc.desc Verify a scientific-notation numeric argument converted to int is preserved as the only element
+     * @tc.desc Verify a scientific-notation numeric argument is preserved as the only element via Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

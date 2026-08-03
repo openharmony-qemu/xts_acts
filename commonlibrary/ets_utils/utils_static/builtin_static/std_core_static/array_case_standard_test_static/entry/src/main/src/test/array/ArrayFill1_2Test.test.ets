@@ -172,7 +172,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       arr.fill(new Map<string, int>(new Array<[string, int]>(['k', 2])), 0, 1);
       expect(arr[0].get('k')).assertEqual(2);
     });
@@ -389,7 +389,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0210
      * @tc.name testArrayFillOne021
-     * @tc.desc Verify literal vs new Array fill consistency
+     * @tc.desc Verify literal vs new Array(0,0,0) fill consistency with range 0-3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -921,7 +921,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0530
      * @tc.name testArrayFillOne053
-     * @tc.desc Verify new Array(5) fill partial
+     * @tc.desc Verify new Array(5, init) fill partial with assert on arr[0] and arr[1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -937,7 +937,7 @@ export default function ArrayFill1_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0540
      * @tc.name testArrayFillOne054
-     * @tc.desc Verify sparse extended then fill
+     * @tc.desc Verify sparse extended to 6 then fill all
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1649,7 +1649,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       arr.fill(new Map<string, int>(new Array<[string, int]>(['k', 2])));
       expect(arr[0].get('k')).assertEqual(2);
     });
@@ -1681,7 +1681,7 @@ export default function ArrayFill1_2Test(): void {
 
     it('testArrayFillOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new Set<int>(new Array<int>(1, 2));
-      const arr = new Array<Set<int>>(s);
+      const arr = Array.create<Set<int>>(1, s);
       arr.fill(new Set<int>(new Array<int>(9, 9)));
       expect(arr[0].has(9)).assertTrue();
     });

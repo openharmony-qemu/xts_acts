@@ -939,8 +939,8 @@ export default function ArrayAt1Test2(): void {
      */
 
     it('testArrayAt054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner1 = new Array<Array<int>>(new Array<int>(1));
-      const inner2 = new Array<Array<int>>(new Array<int>(2));
+      const inner1 = Array.create<Array<int>>(1, Array.create<int>(1, 1));
+      const inner2 = Array.create<Array<int>>(1, Array.create<int>(1, 2));
       const arr = new Array<Array<Array<int>>>(inner1, inner2);
       const first = arr.at(0);
       if (first != undefined) {
@@ -1032,8 +1032,8 @@ export default function ArrayAt1Test2(): void {
      */
 
     it('testArrayAt058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner1 = new Array<Array<int>>(new Array<int>(10, 20));
-      const inner2 = new Array<Array<int>>(new Array<int>(30, 40));
+      const inner1 = Array.create<Array<int>>(1, new Array<int>(10, 20));
+      const inner2 = Array.create<Array<int>>(1, new Array<int>(30, 40));
       const arr = new Array<Array<Array<int>>>(inner1, inner2);
       const first = arr.at(1);
       if (first != undefined) {
@@ -2090,7 +2090,7 @@ export default function ArrayAt1Test2(): void {
       const a1 = new Array<int>(1, 2);
       const a2 = new Array<int>(3, 4);
       const inner1 = new Array<Array<int>>(a1, a2);
-      const arr = new Array<Array<Array<int>>>(inner1);
+      const arr = Array.create<Array<Array<int>>>(1, inner1);
       const inner = arr.at(0);
       if (inner != undefined) {
         expect(inner.length).assertEqual(2);
@@ -2228,7 +2228,7 @@ export default function ArrayAt1Test2(): void {
 
     it('testArrayAt127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       const result = arr.at(0);
       if (result != undefined) {
         expect(result.get('k')).assertEqual(1);
@@ -2248,7 +2248,7 @@ export default function ArrayAt1Test2(): void {
 
     it('testArrayAt128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new Set<int>(new Array<int>(1, 2, 3));
-      const arr = new Array<Set<int>>(s);
+      const arr = Array.create<Set<int>>(1, s);
       const result = arr.at(0);
       if (result != undefined) {
         expect(result.has(2)).assertTrue();
@@ -2353,7 +2353,7 @@ export default function ArrayAt1Test2(): void {
       const node = new NodeWithNext();
       node.val = 1;
       node.next = null;
-      const arr = new Array<NodeWithNext>(node);
+      const arr = Array.create<NodeWithNext>(1, node);
       const result = arr.at(0);
       if (result != undefined) {
         expect(result.next).assertNull();

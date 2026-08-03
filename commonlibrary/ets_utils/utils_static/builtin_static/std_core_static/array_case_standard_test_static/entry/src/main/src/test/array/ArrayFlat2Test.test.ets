@@ -216,7 +216,7 @@ export default function ArrayFlat2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1100
      * @tc.name testArrayFlat2011
-     * @tc.desc Verify negative depth behaves like zero
+     * @tc.desc Verify negative depth -1 behaves like zero for 3-level [[[1,2]],[[3,4]]] via Flat2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -232,7 +232,7 @@ export default function ArrayFlat2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1200
      * @tc.name testArrayFlat2012
-     * @tc.desc Verify flat leaves the source array unchanged
+     * @tc.desc Verify flat(1) leaves the source array unchanged with nested array reference check
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -279,7 +279,7 @@ export default function ArrayFlat2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1500
      * @tc.name testArrayFlat2015
-     * @tc.desc Verify object arrays flatten correctly
+     * @tc.desc Verify flat(1) correctly flattens structured object arrays via Flat2 class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -299,7 +299,7 @@ export default function ArrayFlat2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1600
      * @tc.name testArrayFlat2016
-     * @tc.desc Verify NaN and Infinity values are preserved
+     * @tc.desc Verify flat(1) preserves NaN and Infinity in nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

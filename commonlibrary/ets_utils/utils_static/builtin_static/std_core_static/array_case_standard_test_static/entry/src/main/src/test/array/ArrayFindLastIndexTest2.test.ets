@@ -217,7 +217,7 @@ export default function ArrayFindLastIndexTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFindLastIndex008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('only');
+      const arr = Array.create<string>(1, 'only');
       expect(arr.findLastIndex((s: string): boolean => s.length > 0)).assertEqual(0);
       expect(arr.findLastIndex((s: string): boolean => s === 'missing')).assertEqual(-1);
     });
@@ -588,7 +588,7 @@ export default function ArrayFindLastIndexTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_3200
      * @tc.name testArrayFindLastIndex032
-     * @tc.desc Verify setting future element during reverse iteration
+     * @tc.desc Verify findLastIndex setting future element during reverse iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -718,7 +718,7 @@ export default function ArrayFindLastIndexTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_3900
      * @tc.name testArrayFindLastIndex039
-     * @tc.desc Verify counter on found mid-array in reverse
+     * @tc.desc Verify findLastIndex counter on found mid-array element in reverse order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -737,7 +737,7 @@ export default function ArrayFindLastIndexTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_4000
      * @tc.name testArrayFindLastIndex040
-     * @tc.desc Verify counter equals length when no match
+     * @tc.desc Verify findLastIndex counter equals length when predicate has no match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -857,7 +857,7 @@ export default function ArrayFindLastIndexTest2(): void {
     it('testArrayFindLastIndex047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1 = new Array<number>(1, 2);
       const inner2 = new Array<number>(3, 4, 5);
-      const inner3 = new Array<number>(6);
+      const inner3 = Array.create<number>(1, 6);
       const arr = new Array<Array<number>>(inner1, inner2, inner3);
       const idx = arr.findLastIndex((inner: Array<number>): boolean => inner.length === 1);
       expect(idx).assertEqual(2);

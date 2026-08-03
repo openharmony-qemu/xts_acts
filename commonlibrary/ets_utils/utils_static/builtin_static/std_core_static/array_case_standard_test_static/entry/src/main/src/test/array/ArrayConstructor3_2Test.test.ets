@@ -341,7 +341,7 @@ export default function ArrayConstructor3_2Test(): void {
 
     it('testArrayConstructorThree016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj = new ObjVal035(1);
-      const arr = new Array<ObjVal035>(obj);
+      const arr = Array.create<ObjVal035>(1, obj);
       const [first] = arr;
       first.val = 100;
       expect(obj.val).assertEqual(100);
@@ -747,7 +747,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4100
      * @tc.name testArrayConstructorThree041
-     * @tc.desc Verify sub-arrays with different lengths
+     * @tc.desc Verify sub-arrays lengths with mixed element extraction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -756,7 +756,7 @@ export default function ArrayConstructor3_2Test(): void {
     it('testArrayConstructorThree041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sub = new Array<int>(1, 2);
       const a1 = new Array<int>(3, 4, 5);
-      const a2 = new Array<int>(6);
+      const a2 = Array.create<int>(1, 6);
       const arr = new Array<Array<int>>(sub, a1, a2);
       expect(arr.length).assertEqual(3);
       expect(arr[0].length).assertEqual(2);
@@ -767,7 +767,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4200
      * @tc.name testArrayConstructorThree042
-     * @tc.desc Verify constructed values are equivalent element-wise
+     * @tc.desc Verify Arithmetic Progression values are equivalent element-wise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1013,7 +1013,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5700
      * @tc.name testArrayConstructorThree057
-     * @tc.desc Verify findLastIndex returns last matching index
+     * @tc.desc Verify spread creation of string array then join with separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1028,7 +1028,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5800
      * @tc.name testArrayConstructorThree058
-     * @tc.desc Verify spread construction of string array then join with separator
+     * @tc.desc Verify nested spread creation flattens correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1043,7 +1043,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5900
      * @tc.name testArrayConstructorThree059
-     * @tc.desc Verify nested spread construction flattens correctly
+     * @tc.desc Verify new Array with multiple int literal elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1059,7 +1059,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6000
      * @tc.name testArrayConstructorThree060
-     * @tc.desc Verify ascending byte sequence (0..5) constructs correctly
+     * @tc.desc Verify ascending byte sequence (0..5) using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1076,7 +1076,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6100
      * @tc.name testArrayConstructorThree061
-     * @tc.desc Verify short boundary values sequence constructs correctly
+     * @tc.desc Verify short boundary values sequence using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1093,7 +1093,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6200
      * @tc.name testArrayConstructorThree062
-     * @tc.desc Verify digit char sequence (c'0'..c'3') constructs correctly
+     * @tc.desc Verify digit char sequence (c'0'..c'3') using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1110,7 +1110,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6300
      * @tc.name testArrayConstructorThree063
-     * @tc.desc Verify business phone number strings construct correctly
+     * @tc.desc Verify business phone number strings using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1126,7 +1126,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6400
      * @tc.name testArrayConstructorThree064
-     * @tc.desc Verify mixed multi-type constructor arguments
+     * @tc.desc Verify mixed multi-type new Array arguments with null element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1144,7 +1144,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6500
      * @tc.name testArrayConstructorThree065
-     * @tc.desc Verify constructor with null elements in int|null array
+     * @tc.desc Verify null elements in int|null array using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,7 +1162,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6600
      * @tc.name testArrayConstructorThree066
-     * @tc.desc Verify constructor with undefined elements in int|undefined array
+     * @tc.desc Verify undefined elements in int|undefined array using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,7 +1179,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6700
      * @tc.name testArrayConstructorThree067
-     * @tc.desc Verify constructor with LinkedNode objects having null next
+     * @tc.desc Verify LinkedNode objects with null next using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1211,7 +1211,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6800
      * @tc.name testArrayConstructorThree068
-     * @tc.desc Verify constructor with LinkedNode|null elements
+     * @tc.desc Verify LinkedNode|null elements using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1231,7 +1231,7 @@ export default function ArrayConstructor3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_6900
      * @tc.name testArrayConstructorThree069
-     * @tc.desc Verify constructor with hex, octal, binary literals as elements
+     * @tc.desc Verify hex, octal, binary literals as elements using new Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -100,7 +100,7 @@ export default function ArrayEntriesTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const iter = arr.entries();
       iter.next();
       const r = iter.next();
@@ -116,7 +116,7 @@ export default function ArrayEntriesTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const iter = arr.entries();
       iter.next();
       let count = 0;
@@ -135,7 +135,7 @@ export default function ArrayEntriesTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const iter = arr.entries();
       iter.next();
       const rest = Array.from(iter, (x: [int, int], _i: int) => x);
@@ -1124,7 +1124,7 @@ export default function ArrayEntriesTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEntries051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const entry = arr.entries().next().value;
       if (entry != undefined) {
         expect(entry[0]).assertEqual(0);
@@ -1144,7 +1144,7 @@ export default function ArrayEntriesTest2(): void {
      */
     it('testArrayEntries052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj: ObjWithA = { a: 1 };
-      const arr = new Array<ObjWithA>(obj);
+      const arr = Array.create<ObjWithA>(1, obj);
       const entry = arr.entries().next().value as [int, ObjWithA];
       entry[1].a = 999;
       expect(arr[0].a).assertEqual(999);
@@ -1191,7 +1191,7 @@ export default function ArrayEntriesTest2(): void {
      * @tc.level Level 2
      */
     it('testArrayEntries055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       const iter = arr.entries();
       expect(typeof iter.next).assertEqual('function');
     });
@@ -1271,7 +1271,7 @@ export default function ArrayEntriesTest2(): void {
      */
     it('testArrayEntries060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d = new Date(2026, 0, 1);
-      const arr = new Array<Date>(d);
+      const arr = Array.create<Date>(1, d);
       const collected = Array.from(arr.entries());
       expect(collected.length).assertEqual(1);
       expect(collected[0][0]).assertEqual(0);
@@ -1408,7 +1408,7 @@ export default function ArrayEntriesTest2(): void {
      */
     it('testArrayEntries068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const m = new Map<string, int>(new Array<[string, int]>(['k', 1]));
-      const arr = new Array<Map<string, int>>(m);
+      const arr = Array.create<Map<string, int>>(1, m);
       const collected = Array.from(arr.entries());
       expect(collected.length).assertEqual(1);
       expect(collected[0][0]).assertEqual(0);
@@ -1425,7 +1425,7 @@ export default function ArrayEntriesTest2(): void {
      */
     it('testArrayEntries069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new Set<int>(new Array<int>(1, 2, 3));
-      const arr = new Array<Set<int>>(s);
+      const arr = Array.create<Set<int>>(1, s);
       const collected = Array.from(arr.entries());
       expect(collected.length).assertEqual(1);
       expect(collected[0][0]).assertEqual(0);

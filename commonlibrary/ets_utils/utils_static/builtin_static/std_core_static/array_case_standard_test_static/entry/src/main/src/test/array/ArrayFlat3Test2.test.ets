@@ -125,8 +125,8 @@ export default function ArrayFlat3Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat3003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<number>(42.5);
-      const arr = new Array<Array<number>>(inner);
+      const inner = Array.create<number>(1, 42.5);
+      const arr = Array.create<Array<number>>(1, inner);
       const result: Array<number> = arr.flat<number>();
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(42.5);
@@ -231,7 +231,7 @@ export default function ArrayFlat3Test2(): void {
      */
     it('testArrayFlat3009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const holder = new FlatThreeGenericHolder<number>();
-      holder.data = new Array<Array<number>>(new Array<number>(100, 200), new Array<number>(300));
+      holder.data = new Array<Array<number>>(new Array<number>(100, 200), Array.create<number>(1, 300));
       const result = holder.data.flat<number>();
       expect(result.length).assertEqual(3);
       expect(result[2]).assertEqual(300);
@@ -248,7 +248,7 @@ export default function ArrayFlat3Test2(): void {
     it('testArrayFlat3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p = new FlatThreePerson();
       p.id = 'ref';
-      const arr = new Array<Array<FlatThreePerson>>(new Array<FlatThreePerson>(p));
+      const arr = Array.create<Array<FlatThreePerson>>(1, Array.create<FlatThreePerson>(1, p));
       const result = arr.flat<FlatThreePerson>();
       expect(result[0]).assertEqual(p);
     });
@@ -264,7 +264,7 @@ export default function ArrayFlat3Test2(): void {
     it('testArrayFlat3011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dog = new FlatThreeDog();
       const cat = new FlatThreeCat();
-      const arr = new Array<Array<FlatThreeAnimal>>(new Array<FlatThreeAnimal>(dog), new Array<FlatThreeAnimal>(cat));
+      const arr = new Array<Array<FlatThreeAnimal>>(Array.create<FlatThreeAnimal>(1, dog), Array.create<FlatThreeAnimal>(1, cat));
       const result = arr.flat<FlatThreeAnimal>();
       expect(result.length).assertEqual(2);
       expect(result[0].type).assertEqual('dog');
@@ -297,7 +297,7 @@ export default function ArrayFlat3Test2(): void {
      */
     it('testArrayFlat3013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1, 2, 3);
-      const arr = new Array<Array<number>>(inner);
+      const arr = Array.create<Array<number>>(1, inner);
       const result = arr.flat<number>();
       expect(result.length).assertEqual(3);
       expect(result[1]).assertEqual(2);
@@ -360,7 +360,7 @@ export default function ArrayFlat3Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat3017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<bigint>>(new Array<bigint>(10n, 20n));
+      const arr = Array.create<Array<bigint>>(1, new Array<bigint>(10n, 20n));
       const result = arr.flat<bigint>();
       expect(result.length).assertEqual(2);
       expect(result[1]).assertEqual(20n);
@@ -410,7 +410,7 @@ export default function ArrayFlat3Test2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayFlat3020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(Double.NaN, Double.POSITIVE_INFINITY));
+      const arr = Array.create<Array<number>>(1, new Array<number>(Double.NaN, Double.POSITIVE_INFINITY));
       const result = arr.flat<number>();
       expect(result.length).assertEqual(2);
       expect(isNaN(result[0])).assertTrue();

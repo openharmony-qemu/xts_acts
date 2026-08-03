@@ -59,7 +59,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0100
      * @tc.name testArrayConstructor1001
-     * @tc.desc Verify a single numeric constructor argument creates a one-element array that preserves the value
+     * @tc.desc Verify a single numeric element creates a one-element array that preserves the value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -115,7 +115,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0500
      * @tc.name testArrayConstructor1005
-     * @tc.desc Verify a scientific-notation numeric argument converted to int is preserved as the only element
+     * @tc.desc Verify a scientific-notation numeric argument converted to int is preserved as the only element via Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -129,7 +129,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0600
      * @tc.name testArrayConstructor1006
-     * @tc.desc Verify an octal numeric argument is preserved as the only array element
+     * @tc.desc Verify octal literal 0o12 evaluates to 10 in a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -143,7 +143,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0700
      * @tc.name testArrayConstructor1007
-     * @tc.desc Verify a single numeric constructor call still returns a new Array instance
+     * @tc.desc Verify a single-element Array.create result is an Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -156,7 +156,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0800
      * @tc.name testArrayConstructor1008
-     * @tc.desc Verify array constructor supports different generic element types
+     * @tc.desc Verify multi-element new Array instances for different generic types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -173,7 +173,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_0900
      * @tc.name testArrayConstructor1009
-     * @tc.desc Verify the returned value is an Array instance
+     * @tc.desc Verify Array.create result is an Array instance for generic int type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -186,7 +186,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1000
      * @tc.name testArrayConstructor1010
-     * @tc.desc Verify array constructor preserves the declared generic type for assigned elements
+     * @tc.desc Verify the first element can be reassigned after single-item creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -201,7 +201,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1100
      * @tc.name testArrayConstructor1011
-     * @tc.desc Verify the first element can be reassigned after single-item construction
+     * @tc.desc Verify the single element can be reassigned directly after Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -217,7 +217,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1200
      * @tc.name testArrayConstructor1012
-     * @tc.desc Verify loop-based reassignment only processes the single constructed element
+     * @tc.desc Verify loop-based reassignment with i*2 on the single created element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -235,7 +235,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1300
      * @tc.name testArrayConstructor1013
-     * @tc.desc Verify a single numeric argument still creates an Array<int> instance
+     * @tc.desc Verify a single numeric element creates an Array<int> instance via Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +254,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1400
      * @tc.name testArrayConstructor1014
-     * @tc.desc Verify array constructor creates Array<number> instances
+     * @tc.desc Verify new Array creates arrays with multiple numeric elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -267,7 +267,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1500
      * @tc.name testArrayConstructor1015
-     * @tc.desc Verify array constructor creates arrays of custom class instances
+     * @tc.desc Verify new Array creates arrays of interface-based objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -283,7 +283,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1600
      * @tc.name testArrayConstructor1016
-     * @tc.desc Verify array constructor creates arrays of interface-based objects
+     * @tc.desc Verify new Array creates arrays of struct literal objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,7 +300,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1700
      * @tc.name testArrayConstructor1017
-     * @tc.desc Verify array constructor creates arrays with union element types
+     * @tc.desc Verify new Array creates arrays with union element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -316,7 +316,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1800
      * @tc.name testArrayConstructor1018
-     * @tc.desc Verify array constructor creates nested arrays
+     * @tc.desc Verify new Array creates nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -395,7 +395,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2200
      * @tc.name testArrayConstructor1022
-     * @tc.desc Verify single-element arrays can store and read one initialized value
+     * @tc.desc Verify a numeric Array.create result can be reassigned during later processing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -410,7 +410,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2300
      * @tc.name testArrayConstructor1023
-     * @tc.desc Verify a numeric constructor result can be reassigned during later processing
+     * @tc.desc Verify batch-style processing with i*i on the single created element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,7 +429,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2400
      * @tc.name testArrayConstructor1024
-     * @tc.desc Verify batch-style processing works on the single constructed element
+     * @tc.desc Verify batch-style processing with large size and modulo assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -454,7 +454,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2500
      * @tc.name testArrayConstructor1025
-     * @tc.desc Verify another negative numeric argument is preserved as the only array element
+     * @tc.desc Verify the single created element can be reassigned and read after loop-based initialization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,7 +468,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2600
      * @tc.name testArrayConstructor1026
-     * @tc.desc Verify the single constructed element can be reassigned and read after loop-based initialization
+     * @tc.desc Verify the single created element can be reassigned to zero after Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -484,7 +484,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2700
      * @tc.name testArrayConstructor1027
-     * @tc.desc Verify the single-numeric constructor differs from the multi-argument overload
+     * @tc.desc Verify single-element Array.create differs from the multi-argument new Array overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -504,7 +504,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2800
      * @tc.name testArrayConstructor1028
-     * @tc.desc Verify NaN is preserved as the only element in a single-number constructor call
+     * @tc.desc Verify NaN is preserved as the only element in a single-element Array.create call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -518,7 +518,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2900
      * @tc.name testArrayConstructor1029
-     * @tc.desc Verify Infinity is preserved as the only element in a single-number constructor call
+     * @tc.desc Verify positive Infinity is preserved as the only element in a single-element Array.create call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +532,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3000
      * @tc.name testArrayConstructor1030
-     * @tc.desc Verify negative Infinity is preserved as the only element in a single-number constructor call
+     * @tc.desc Verify negative Infinity is preserved as the only element in a single-element Array.create call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +546,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3100
      * @tc.name testArrayConstructor1031
-     * @tc.desc Verify negative zero remains distinguishable from positive zero in the single-number constructor
+     * @tc.desc Verify negative zero -0 remains distinguishable from positive zero in a single-element Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3300
      * @tc.name testArrayConstructor1033
-     * @tc.desc Verify Number.MIN_SAFE_INTEGER is preserved as the only element
+     * @tc.desc Verify Number.MIN_SAFE_INTEGER is preserved as the only element in a single-element Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -591,7 +591,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3400
      * @tc.name testArrayConstructor1034
-     * @tc.desc Verify Number.MIN_VALUE is preserved as the only element in the single-number constructor
+     * @tc.desc Verify Number.MIN_VALUE is preserved as the only element in a single-element Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -606,7 +606,7 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3500
      * @tc.name testArrayConstructor1035
-     * @tc.desc Verify Number.EPSILON is preserved as the only element in the single-number constructor
+     * @tc.desc Verify Number.EPSILON is preserved as the only element in a single-element Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
