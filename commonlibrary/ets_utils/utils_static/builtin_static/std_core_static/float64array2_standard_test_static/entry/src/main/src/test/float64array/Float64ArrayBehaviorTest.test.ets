@@ -32,10 +32,6 @@ function modifyArray(arr: Float64Array, idx: int, val: number): void {
   arr.$_set(idx, val);
 }
 
-function assertZeroSign(value: number, expectedReciprocal: number): void {
-  expect(1.0 / value).assertEqual(expectedReciprocal);
-}
-
 export default function Float64ArrayBehaviorTest(): void {
   describe('Float64ArrayBehaviorTest', (): void => {
     beforeAll((): void => {

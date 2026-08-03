@@ -1517,32 +1517,12 @@ export default function Float64ArrayIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0720
      * @tc.name testFloat64ArrayIterator072
-     * @tc.desc Verify constructor buffer offset not multiple of 8 RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayIterator072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(32);
-      try {
-        const arr: Float64Array = new Float64Array(buf, 2, 3);
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0730
-     * @tc.name testFloat64ArrayIterator073
      * @tc.desc Verify set with offset OOB throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(3);
       try {
         arr.set(3, 99.0);
@@ -1555,14 +1535,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0740
-     * @tc.name testFloat64ArrayIterator074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0730
+     * @tc.name testFloat64ArrayIterator073
      * @tc.desc Verify with maximum int index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const maxIndex: int = 2147483647;
       try {
@@ -1576,14 +1556,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0750
-     * @tc.name testFloat64ArrayIterator075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0740
+     * @tc.name testFloat64ArrayIterator074
      * @tc.desc Verify findLastIndex not found returns -1 (not error)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const r = arr.findLastIndex((v: number): boolean => v > 100.0);
       const actualResult = r;
@@ -1592,14 +1572,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0760
-     * @tc.name testFloat64ArrayIterator076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0750
+     * @tc.name testFloat64ArrayIterator075
      * @tc.desc Verify array still usable after caught forEach callback error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       try {
         arr.forEach((v: number): void => {
@@ -1619,14 +1599,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0770
-     * @tc.name testFloat64ArrayIterator077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0760
+     * @tc.name testFloat64ArrayIterator076
      * @tc.desc Verify array usable after caught map callback error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       try {
         arr.map((v: number): number => {
@@ -1650,14 +1630,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0780
-     * @tc.name testFloat64ArrayIterator078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0770
+     * @tc.name testFloat64ArrayIterator077
      * @tc.desc Verify constructor overflow length RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const bigLen: int = 2147483647;
         const arr: Float64Array = new Float64Array(bigLen);
@@ -1670,14 +1650,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0790
-     * @tc.name testFloat64ArrayIterator079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0780
+     * @tc.name testFloat64ArrayIterator078
      * @tc.desc Verify subarray(-1) wraps to last element length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-1);
       const actualLength = sub.length;
@@ -1692,14 +1672,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0800
-     * @tc.name testFloat64ArrayIterator080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0790
+     * @tc.name testFloat64ArrayIterator079
      * @tc.desc Verify subarray(-1) byteOffset is 24 (3*8 bytes)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-1);
       const actualByteOffset = sub.byteOffset;
@@ -1708,14 +1688,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0810
-     * @tc.name testFloat64ArrayIterator081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0800
+     * @tc.name testFloat64ArrayIterator080
      * @tc.desc Verify subarray(-4) = -length wraps to beginning length 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-4);
       const actualLength = sub.length;
@@ -1730,14 +1710,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0820
-     * @tc.name testFloat64ArrayIterator082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0810
+     * @tc.name testFloat64ArrayIterator081
      * @tc.desc Verify subarray(4) = length returns empty view length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(4);
       const actualLength = sub.length;
@@ -1746,14 +1726,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0830
-     * @tc.name testFloat64ArrayIterator083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0820
+     * @tc.name testFloat64ArrayIterator082
      * @tc.desc Verify subarray(999999) huge positive returns empty view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(999999);
       const actualLength = sub.length;
@@ -1762,14 +1742,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0840
-     * @tc.name testFloat64ArrayIterator084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0830
+     * @tc.name testFloat64ArrayIterator083
      * @tc.desc Verify subarray(-999999) huge negative clamped to 0 length 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-999999);
       const actualLength = sub.length;
@@ -1784,14 +1764,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0850
-     * @tc.name testFloat64ArrayIterator085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0840
+     * @tc.name testFloat64ArrayIterator084
      * @tc.desc Verify subarray(2, -1) positive begin negative end length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(2, -1);
       const actualLength = sub.length;
@@ -1800,14 +1780,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0860
-     * @tc.name testFloat64ArrayIterator086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0850
+     * @tc.name testFloat64ArrayIterator085
      * @tc.desc Verify subarray(-1, -2) begin > end returns empty view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-1, -2);
       const actualLength = sub.length;
@@ -1816,14 +1796,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0870
-     * @tc.name testFloat64ArrayIterator087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0860
+     * @tc.name testFloat64ArrayIterator086
      * @tc.desc Verify slice(-1) wraps to last element length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sl: Float64Array = arr.slice(-1);
       const actualLength = sl.length;
@@ -1832,14 +1812,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0880
-     * @tc.name testFloat64ArrayIterator088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0870
+     * @tc.name testFloat64ArrayIterator087
      * @tc.desc Verify slice(-1) new copy byteOffset is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sl: Float64Array = arr.slice(-1);
       const actualByteOffset = sl.byteOffset;
@@ -1848,14 +1828,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0890
-     * @tc.name testFloat64ArrayIterator089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0880
+     * @tc.name testFloat64ArrayIterator088
      * @tc.desc Verify slice(4) = length returns empty copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sl: Float64Array = arr.slice(4);
       const actualLength = sl.length;
@@ -1864,14 +1844,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0900
-     * @tc.name testFloat64ArrayIterator090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0890
+     * @tc.name testFloat64ArrayIterator089
      * @tc.desc Verify slice(2, 1) begin > end returns empty copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sl: Float64Array = arr.slice(2, 1);
       const actualLength = sl.length;
@@ -1880,14 +1860,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0910
-     * @tc.name testFloat64ArrayIterator091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0900
+     * @tc.name testFloat64ArrayIterator090
      * @tc.desc Verify slice(1, -1) positive begin negative end length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sl: Float64Array = arr.slice(1, -1);
       const actualLength = sl.length;
@@ -1896,14 +1876,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0920
-     * @tc.name testFloat64ArrayIterator092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0910
+     * @tc.name testFloat64ArrayIterator091
      * @tc.desc Verify subarray(4) byteOffset at end position (4*8=32)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(4);
       const actualByteOffset = sub.byteOffset;
@@ -1912,28 +1892,28 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0930
-     * @tc.name testFloat64ArrayIterator093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0920
+     * @tc.name testFloat64ArrayIterator092
      * @tc.desc Verify subarray(-4) shares buffer reference with parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const sub: Float64Array = arr.subarray(-4);
       expect(sub.buffer).assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0940
-     * @tc.name testFloat64ArrayIterator094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0930
+     * @tc.name testFloat64ArrayIterator093
      * @tc.desc Verify values iterator observes mutation before second next
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it: IterableIterator<number> = arr.values();
       const actualIteratorValue = it.next().value;
@@ -1946,14 +1926,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0950
-     * @tc.name testFloat64ArrayIterator095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0940
+     * @tc.name testFloat64ArrayIterator094
      * @tc.desc Verify values iterator returned value is snapshot before later write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(4.0, 5.0);
       const it: IterableIterator<number> = arr.values();
       const first = it.next().value;
@@ -1967,14 +1947,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0960
-     * @tc.name testFloat64ArrayIterator096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0950
+     * @tc.name testFloat64ArrayIterator095
      * @tc.desc Verify entries iterator observes mutation before next entry
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it = arr.entries();
       const first = it.next();
@@ -1992,14 +1972,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0970
-     * @tc.name testFloat64ArrayIterator097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0960
+     * @tc.name testFloat64ArrayIterator096
      * @tc.desc Verify keys iterator ignores value mutation and returns next index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(9.0, 8.0, 7.0);
       const it: IterableIterator<int> = arr.keys();
       const actualIteratorValue = it.next().value;
@@ -2012,14 +1992,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0980
-     * @tc.name testFloat64ArrayIterator098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0970
+     * @tc.name testFloat64ArrayIterator097
      * @tc.desc Verify subarray values iterator observes parent write to shared slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const child: Float64Array = parent.subarray(1);
       const it: IterableIterator<number> = child.values();
@@ -2030,14 +2010,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0990
-     * @tc.name testFloat64ArrayIterator099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0980
+     * @tc.name testFloat64ArrayIterator098
      * @tc.desc Verify parent values iterator observes subarray write to future slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const child: Float64Array = parent.subarray(1);
       const it: IterableIterator<number> = parent.values();
@@ -2051,14 +2031,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1000
-     * @tc.name testFloat64ArrayIterator100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0990
+     * @tc.name testFloat64ArrayIterator099
      * @tc.desc Verify values iterator remains exhausted after repeated next calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0);
       const it: IterableIterator<number> = arr.values();
       it.next();
@@ -2067,14 +2047,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1010
-     * @tc.name testFloat64ArrayIterator101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1000
+     * @tc.name testFloat64ArrayIterator100
      * @tc.desc Verify values iterator observes fill on unread tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it: IterableIterator<number> = arr.values();
       const actualIteratorValue = it.next().value;
@@ -2090,14 +2070,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1020
-     * @tc.name testFloat64ArrayIterator102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1010
+     * @tc.name testFloat64ArrayIterator101
      * @tc.desc Verify entries iterator observes reverse before unread entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it = arr.entries();
       const first = it.next();
@@ -2115,14 +2095,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1030
-     * @tc.name testFloat64ArrayIterator103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1020
+     * @tc.name testFloat64ArrayIterator102
      * @tc.desc Verify keys iterator sequence remains positional after reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it: IterableIterator<int> = arr.keys();
       const actualIteratorValue = it.next().value;
@@ -2135,14 +2115,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1040
-     * @tc.name testFloat64ArrayIterator104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1030
+     * @tc.name testFloat64ArrayIterator103
      * @tc.desc Verify values iterator observes copyWithin on unread slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(5.0, 6.0, 7.0);
       const it: IterableIterator<number> = arr.values();
       const actualIteratorValue = it.next().value;
@@ -2155,14 +2135,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1050
-     * @tc.name testFloat64ArrayIterator105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1040
+     * @tc.name testFloat64ArrayIterator104
      * @tc.desc Verify entries iterator observes sort before unread tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(3.0, 1.0, 2.0);
       const it = arr.entries();
       const first = it.next();
@@ -2177,14 +2157,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1060
-     * @tc.name testFloat64ArrayIterator106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1050
+     * @tc.name testFloat64ArrayIterator105
      * @tc.desc Verify values iterator observes bracket write to future element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       const actualIteratorValue = it.next().value;
@@ -2197,14 +2177,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1070
-     * @tc.name testFloat64ArrayIterator107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1060
+     * @tc.name testFloat64ArrayIterator106
      * @tc.desc Verify saved entry array is not rewritten by later source mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it = arr.entries();
       const entry = it.next();
@@ -2218,14 +2198,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1080
-     * @tc.name testFloat64ArrayIterator108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1070
+     * @tc.name testFloat64ArrayIterator107
      * @tc.desc Verify two values iterators have independent cursors and shared data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const a: IterableIterator<number> = arr.values();
       const b: IterableIterator<number> = arr.values();
@@ -2239,14 +2219,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1090
-     * @tc.name testFloat64ArrayIterator109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1080
+     * @tc.name testFloat64ArrayIterator108
      * @tc.desc Verify iterator over source is isolated from slice copy mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       const copy: Float64Array = arr.slice();
@@ -2257,14 +2237,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1100
-     * @tc.name testFloat64ArrayIterator110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1090
+     * @tc.name testFloat64ArrayIterator109
      * @tc.desc Verify iterator over source is isolated from toReversed copy mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       const rev: Float64Array = arr.toReversed();
@@ -2275,14 +2255,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1110
-     * @tc.name testFloat64ArrayIterator111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1100
+     * @tc.name testFloat64ArrayIterator110
      * @tc.desc Verify iterator observes valueOf alias mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const alias: Float64Array = arr.valueOf();
       const it: IterableIterator<number> = arr.values();
@@ -2293,28 +2273,28 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1120
-     * @tc.name testFloat64ArrayIterator112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1110
+     * @tc.name testFloat64ArrayIterator111
      * @tc.desc Verify values iterator reads NaN with NaN assertion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(NaN, 1.0);
       const it: IterableIterator<number> = arr.values();
       expect(it.next().value).assertNaN();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1130
-     * @tc.name testFloat64ArrayIterator113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1120
+     * @tc.name testFloat64ArrayIterator112
      * @tc.desc Verify entries iterator preserves infinity ordering
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(Infinity, -Infinity);
       const it = arr.entries();
       const first = it.next();
@@ -2328,14 +2308,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1140
-     * @tc.name testFloat64ArrayIterator114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1130
+     * @tc.name testFloat64ArrayIterator113
      * @tc.desc Verify values iterator observes subnormal write before read
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       arr.$_set(0, 5e-324);
@@ -2345,14 +2325,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1150
-     * @tc.name testFloat64ArrayIterator115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1140
+     * @tc.name testFloat64ArrayIterator114
      * @tc.desc Verify keys iterator increments through all positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(4.0, 5.0, 6.0);
       const it: IterableIterator<int> = arr.keys();
       const actualIteratorValue = it.next().value;
@@ -2367,14 +2347,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1160
-     * @tc.name testFloat64ArrayIterator116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1150
+     * @tc.name testFloat64ArrayIterator115
      * @tc.desc Verify source iterator is isolated from map result mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       const mapped: Float64Array = arr.map((v: number): number => v + 10.0);
@@ -2385,14 +2365,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1170
-     * @tc.name testFloat64ArrayIterator117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1160
+     * @tc.name testFloat64ArrayIterator116
      * @tc.desc Verify source iterator is isolated from filter result mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it: IterableIterator<number> = arr.values();
       const filtered: Float64Array = arr.filter((v: number): boolean => v > 1.0);
@@ -2403,14 +2383,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1180
-     * @tc.name testFloat64ArrayIterator118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1170
+     * @tc.name testFloat64ArrayIterator117
      * @tc.desc Verify iterator observes full fill before first read
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       arr.fill(8.0);
@@ -2423,14 +2403,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1190
-     * @tc.name testFloat64ArrayIterator119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1180
+     * @tc.name testFloat64ArrayIterator118
      * @tc.desc Verify iterator length boundary remains original after element writes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const it: IterableIterator<number> = arr.values();
       arr.$_set(1, 20.0);
@@ -2440,14 +2420,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1200
-     * @tc.name testFloat64ArrayIterator120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1190
+     * @tc.name testFloat64ArrayIterator119
      * @tc.desc Verify entries iterator index matches current slot after parent write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const it = arr.entries();
       it.next();
@@ -2462,14 +2442,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1210
-     * @tc.name testFloat64ArrayIterator121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1200
+     * @tc.name testFloat64ArrayIterator120
      * @tc.desc Verify values iterator observes overlapping copyWithin result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const it: IterableIterator<number> = arr.values();
       it.next();
@@ -2483,14 +2463,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1220
-     * @tc.name testFloat64ArrayIterator122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1210
+     * @tc.name testFloat64ArrayIterator121
      * @tc.desc Verify interleaved iterators share mutation but keep cursors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const a: IterableIterator<number> = arr.values();
       const b: IterableIterator<number> = arr.values();
@@ -2507,14 +2487,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1230
-     * @tc.name testFloat64ArrayIterator123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1220
+     * @tc.name testFloat64ArrayIterator122
      * @tc.desc Verify for-of observes mutation of not-yet-visited element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       let second: number = 0.0;
       let index: int = 0;
@@ -2533,14 +2513,14 @@ export default function Float64ArrayIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1240
-     * @tc.name testFloat64ArrayIterator124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1230
+     * @tc.name testFloat64ArrayIterator123
      * @tc.desc Verify subarray values chain iterator returns sliced view values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const iter: IterableIterator<number> = arr.subarray(1, 4).values();
       const actualIteratorValue = iter.next().value;

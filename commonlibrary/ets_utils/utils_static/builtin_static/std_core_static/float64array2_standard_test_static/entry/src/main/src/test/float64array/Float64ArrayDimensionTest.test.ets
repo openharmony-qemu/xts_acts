@@ -780,7 +780,7 @@ export default function Float64ArrayDimensionTest(): void {
       const sum: number = arr.reduceRight((acc: number, v: number): number => {
         return acc + v;
       }, 0.0);
-      expect(sum >= 2.0).assertTrue();
+      expect(sum).assertEqual(2.0);
     });
 
     /**
@@ -866,7 +866,7 @@ export default function Float64ArrayDimensionTest(): void {
       const sum: number = arr.reduceRight((acc: number, v: number): number => {
         return acc + v;
       }, 0.0);
-      expect(sum > 0.0).assertTrue();
+      expect(sum).assertEqual(1.5e-323);
     });
 
     /**
@@ -919,7 +919,7 @@ export default function Float64ArrayDimensionTest(): void {
       const r = arr.reduceRight((acc: number, v: number): number => {
         return acc - v;
       }, 0.0);
-      expect(r < 0.0).assertTrue();
+      expect(r).assertEqual(-10.0);
     });
 
     /**
@@ -1019,7 +1019,7 @@ export default function Float64ArrayDimensionTest(): void {
         }
         return false;
       });
-      expect(negCount > 0).assertTrue();
+      expect(negCount).assertEqual(1);
     });
 
     /**
@@ -1322,7 +1322,7 @@ export default function Float64ArrayDimensionTest(): void {
       const sum: number = arr.reduce((acc: number, v: number): number => {
         return acc + v;
       }, 0.0);
-      expect(sum > 0.0).assertTrue();
+      expect(sum).assertEqual(1e-323);
     });
 
     /**
@@ -1390,7 +1390,7 @@ export default function Float64ArrayDimensionTest(): void {
       const sum: number = arr.reduce((acc: number, v: number): number => {
         return acc + v;
       }, 0.0);
-      expect(sum > 0.0).assertTrue();
+      expect(sum).assertEqual(1.5e-323);
     });
 
     /**
