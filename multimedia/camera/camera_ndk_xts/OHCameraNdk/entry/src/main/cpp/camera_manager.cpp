@@ -278,11 +278,11 @@ Camera_ErrorCode NDKCamera::CreateSessionSetMode(void)
 {
     Camera_SceneMode *sceneModes = nullptr;
     Camera_CaptureSession* captureSession = nullptr;
-    const uint32_t MIN_REQUIRED_SCENE_MODES = 2;
-    const uint32_t MAX_REQUIRED_SCENE_MODES = 3;
+    const uint32_t minRequiredSceneModes = 2;
+    const uint32_t maxRequiredSceneModes = 3;
     uint32_t size = 0;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(cameras_, &sceneModes, &size);
-    if (size < MIN_REQUIRED_SCENE_MODES) {
+    if (size < minRequiredSceneModes) {
         LOG("OH_CameraManager_GetSupportedSceneModes failed");
         return ret;
     }
@@ -297,7 +297,7 @@ Camera_ErrorCode NDKCamera::CreateSessionSetMode(void)
         LOG("OH_CaptureSession_SetSessionMode failed");
         return ret;
     }
-    if (size == MAX_REQUIRED_SCENE_MODES) {
+    if (size == maxRequiredSceneModes) {
         ret = OH_CaptureSession_SetSessionMode(captureSession, SECURE_PHOTO);
     }
     
