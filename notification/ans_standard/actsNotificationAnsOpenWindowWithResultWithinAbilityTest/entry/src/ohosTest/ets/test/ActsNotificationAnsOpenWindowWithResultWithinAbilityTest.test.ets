@@ -240,7 +240,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
+            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
           }
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -275,13 +275,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button1.click()
           await sleep(100)
         }
-        await sleep(500)
-        let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('应用获取本机通知')));
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        //expect(scrollBar != null).assertTrue()
-        await scrollBar?.scrollToBottom()
-        await sleep(10000)
-        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('ZZZopenWindow')));
+        await sleep(1000)
+        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('全部')));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -304,7 +299,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
+            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
           }
           done()
         }).catch((e: Error) => {
