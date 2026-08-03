@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 
 /*
@@ -48,14 +48,14 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0001
-     * @tc.name testTypedUArraysProperty030201_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0100
+     * @tc.name testTypedUArraysPropertyTestFileH001
      * @tc.desc Verify length Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Uint8Array(Number.POSITIVE_INFINITY)
         expect().assertFail();
@@ -65,14 +65,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0002
-     * @tc.name testTypedUArraysProperty030201_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0200
+     * @tc.name testTypedUArraysPropertyTestFileH002
      * @tc.desc Verify length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Uint8Array(Number.MAX_SAFE_INTEGER)
         expect().assertFail();
@@ -83,27 +83,27 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0003
-     * @tc.name testTypedUArraysProperty030201_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0300
+     * @tc.name testTypedUArraysPropertyTestFileH003
      * @tc.desc Verify ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(new ArrayBuffer(8));
       expect(arr.length).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0004
-     * @tc.name testTypedUArraysProperty030201_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0400
+     * @tc.name testTypedUArraysPropertyTestFileH004
      * @tc.desc Verify offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(16);
         new Uint8Array(buf, -1, 4)
@@ -114,14 +114,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0005
-     * @tc.name testTypedUArraysProperty030201_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0500
+     * @tc.name testTypedUArraysPropertyTestFileH005
      * @tc.desc Verify offset buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(8);
         new Uint8Array(buf, 10, 4)
@@ -132,14 +132,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0006
-     * @tc.name testTypedUArraysProperty030201_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0600
+     * @tc.name testTypedUArraysPropertyTestFileH006
      * @tc.desc Verify length buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(8);
         new Uint8Array(buf, 0, 10)
@@ -150,14 +150,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0007
-     * @tc.name testTypedUArraysProperty030201_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0700
+     * @tc.name testTypedUArraysPropertyTestFileH007
      * @tc.desc Verify offset length buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(8);
         new Uint8Array(buf, 4, 8)
@@ -169,84 +169,84 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0008
-     * @tc.name testTypedUArraysProperty030201_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0800
+     * @tc.name testTypedUArraysPropertyTestFileH008
      * @tc.desc Verify NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, Number.NaN, 3]);
       expect(arr[1]).assertEqual(0);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0009
-     * @tc.name testTypedUArraysProperty030201_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0900
+     * @tc.name testTypedUArraysPropertyTestFileH009
      * @tc.desc Verify Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, Number.POSITIVE_INFINITY, 3]);
       expect(arr[1]).assertEqual(0);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0010
-     * @tc.name testTypedUArraysProperty030201_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1000
+     * @tc.name testTypedUArraysPropertyTestFileH010
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, -1, 3]);
       expect(arr[1]).assertEqual(255);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0011
-     * @tc.name testTypedUArraysProperty030201_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1100
+     * @tc.name testTypedUArraysPropertyTestFileH011
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 512, 3]);
       expect(arr[1]).assertEqual(0);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0012
-     * @tc.name testTypedUArraysProperty030201_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1200
+     * @tc.name testTypedUArraysPropertyTestFileH012
      * @tc.desc Verify length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([]);
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0013
-     * @tc.name testTypedUArraysProperty030201_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1300
+     * @tc.name testTypedUArraysPropertyTestFileH013
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([255]);
       expect(arr.length).assertEqual(1);
       expect(typeof arr[0]).assertEqual('number');
@@ -254,14 +254,14 @@ export default function typedUArraysPropertyTest08(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0014
-     * @tc.name testTypedUArraysProperty030201_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1400
+     * @tc.name testTypedUArraysPropertyTestFileH014
      * @tc.desc Verify subarray buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(20);
       const sub1 = arr.subarray(2, 10);
       const sub2 = sub1.subarray(2, 6);
@@ -269,14 +269,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0015
-     * @tc.name testTypedUArraysProperty030201_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1500
+     * @tc.name testTypedUArraysPropertyTestFileH015
      * @tc.desc Verify subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(20);
       const sub1 = arr.subarray(2, 10);
       const sub2 = sub1.subarray(2, 6);
@@ -284,14 +284,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0016
-     * @tc.name testTypedUArraysProperty030201_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1600
+     * @tc.name testTypedUArraysPropertyTestFileH016
      * @tc.desc Verify subarray byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(20);
       const sub1 = arr.subarray(2, 10);
       const sub2 = sub1.subarray(2, 6);
@@ -299,14 +299,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0017
-     * @tc.name testTypedUArraysProperty030201_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1700
+     * @tc.name testTypedUArraysPropertyTestFileH017
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const u8 = new Uint8Array(buf);
       const u16 = new Uint16Array(buf);
@@ -316,14 +316,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0018
-     * @tc.name testTypedUArraysProperty030201_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1800
+     * @tc.name testTypedUArraysPropertyTestFileH018
      * @tc.desc Verify offset Uint16Array Uint8Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const u8 = new Uint8Array(buf);
       const u16 = new Uint16Array(buf, 2, 3);
@@ -331,14 +331,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0019
-     * @tc.name testTypedUArraysProperty030201_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_1900
+     * @tc.name testTypedUArraysPropertyTestFileH019
      * @tc.desc Verify offset Uint32Array Uint8Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const u8 = new Uint8Array(buf);
       const u32 = new Uint32Array(buf, 4, 1);
@@ -346,14 +346,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0020
-     * @tc.name testTypedUArraysProperty030201_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2000
+     * @tc.name testTypedUArraysPropertyTestFileH020
      * @tc.desc Verify BigUint64Array Uint8Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const u8 = new Uint8Array(buf);
       const bu64 = new BigUint64Array(buf);
@@ -361,14 +361,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0021
-     * @tc.name testTypedUArraysProperty030201_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2100
+     * @tc.name testTypedUArraysPropertyTestFileH021
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const u8 = new Uint8Array(buf);
       const u32 = new Uint32Array(buf);
@@ -379,14 +379,14 @@ export default function typedUArraysPropertyTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_0022
-     * @tc.name testTypedUArraysProperty030201_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0201_2200
+     * @tc.name testTypedUArraysPropertyTestFileH022
      * @tc.desc Verify buffer ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030201_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileH022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Uint8Array(buf, 2, 4);
       expect(arr.buffer).assertEqual(buf);
