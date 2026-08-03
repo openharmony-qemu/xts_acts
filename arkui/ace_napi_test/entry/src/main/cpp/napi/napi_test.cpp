@@ -2303,7 +2303,7 @@ static napi_value napiCallThreadsafeFunction(napi_env env, napi_callback_info in
     void* context = nullptr;
     napi_status status = napi_get_threadsafe_function_context(func, &context);
     NAPI_ASSERT(env, status != napi_ok, "napi_get_threadsafe_function_context fail");
-    static int32_t gSendData = 0;
+    int32_t gSendData = 0;
     napi_call_threadsafe_function(func, &gSendData, blockMode);
     status = napi_call_threadsafe_function(func, &gSendData, blockMode);
     NAPI_ASSERT(env, status != napi_ok, "napi_call_threadsafe_function fail");
@@ -8183,7 +8183,7 @@ static napi_value releaseThreadsafeFunction(napi_env env, napi_callback_info inf
     void* context = nullptr;
     napi_status status = napi_get_threadsafe_function_context(func, &context);
     NAPI_ASSERT(env, status != napi_ok, "napi_get_threadsafe_function_context fail");
-    static int32_t gSendData = 0;
+    int32_t gSendData = 0;
     napi_call_threadsafe_function(func, &gSendData, blockMode);
     status = napi_call_threadsafe_function(func, &gSendData, blockMode);
     NAPI_ASSERT(env, status != napi_ok, "napi_call_threadsafe_function fail");
@@ -8385,7 +8385,7 @@ static napi_value napiCallThreadsafeFunctionNull(napi_env env, napi_callback_inf
     napi_threadsafe_function_call_mode blockMode = napi_tsfn_nonblocking;
     void* context = nullptr;
     napi_get_threadsafe_function_context(func, &context);
-    static int32_t gSendData = 0;
+    int32_t gSendData = 0;
     napi_status status = napi_call_threadsafe_function(func, &gSendData, blockMode);
     bool bRet = (status == napi_invalid_arg);
     napi_value retValue;
@@ -15926,7 +15926,7 @@ static napi_value NapiCallThreadsafeFunctionTest(napi_env env, napi_callback_inf
 {
     napi_status status;
     napi_threadsafe_function_call_mode blockMode = napi_tsfn_nonblocking;
-    static int32_t gSendData = 0;
+    int32_t gSendData = 0;
 
     //undefined
     napi_value undefined = nullptr;
