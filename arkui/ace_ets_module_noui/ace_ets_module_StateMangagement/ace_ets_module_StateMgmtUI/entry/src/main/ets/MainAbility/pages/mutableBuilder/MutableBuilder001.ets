@@ -36,16 +36,16 @@ function buttonBuilder001(p: MutableTextContent) {
 struct MutableBuilder001 {
   @State message: string = 'init';
   @State text: MutableBuilder<[MutableTextContent]> = mutableBuilder(textBuilder001); // 使用textBuilder001初始化
-
+  a: BuilderCallback = () => {
+    this.text = mutableBuilder(buttonBuilder001); // 点击Button，将textBuilder001替换为buttonBuilder001进行二次赋值
+  };
   build() {
     Column() {
       this.text.builder({ text: this.message })
-      Button('change').onClick(() => {
-        this.text = mutableBuilder(buttonBuilder001); // 点击Button，将textBuilder001替换为buttonBuilder001进行二次赋值
-      })
+      Button('change').onClick(this.a)
         .id('MutableBuilder001')
     }
     .height('90%')
-    
+
   }
 }
