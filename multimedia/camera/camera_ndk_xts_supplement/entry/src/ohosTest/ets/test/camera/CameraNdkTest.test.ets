@@ -1375,7 +1375,353 @@ export default function CameraNdkTest() {
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
-    
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00001
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00001
+     * @tc.desc        OH_MetadataOutput_AddMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY__00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY__00001'
+      let res = cameraObj.metadataOutputAddMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00002
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00002
+     * @tc.desc        OH_MetadataOutput_AddMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY__00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY__00002'
+      let res = cameraObj.metadataOutputAddMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00003
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00003
+     * @tc.desc        OH_MetadataOutput_AddMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_00003'
+      let res = cameraObj.metadataOutputAddMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00001
+     * @tc.name        SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00001
+     * @tc.desc        OH_MetadataOutput_RemoveMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES__00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES__00001'
+      let res = cameraObj.metadataOutputRemoveMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00002
+     * @tc.name        SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00002
+     * @tc.desc        OH_MetadataOutput_RemoveMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES__00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES__00002'
+      let res = cameraObj.metadataOutputRemoveMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00003
+     * @tc.name        SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00003
+     * @tc.desc        OH_MetadataOutput_RemoveMetadataObjectTypes --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_REMOVE_METADATA_OBJECT_TYPES_00003'
+      let res = cameraObj.metadataOutputRemoveMetadataObjectTypes(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_WITH_OBJECT_TYPES_SUPP_0100
+     * @tc.name     SUB_OH_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_WITH_OBJECT_TYPES_SUPP_0100
+     * @tc.desc     OH_CameraManager_CreateMetadataOutputWithObjectTypes -CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_WITH_OBJECT_TYPES_SUPP_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_WITH_OBJECT_TYPES_SUPP_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.OHCameraManagerCreateMetadataOutputWithObjectTypesSupp(1);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_VIDEO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100
+     * @tc.name     SUB_OH_VIDEO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100
+     * @tc.desc     OH_VideoOutput_GetVideoRotationWithoutDeviceDegree- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_VIDEO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_VIDEO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.OHVideoOutputGetVideoRotationWithoutDeviceDegreeSupp(1);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_PHOTO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100
+     * @tc.name     SUB_OH_PHOTO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100
+     * @tc.desc     OH_CaptureSession_DeleteSupportedEffectTypes- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_PHOTO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_PHOTO_OUTPUT_GET_VIDEO_ROTATION_WITHOUT_DEVICE_DEGREE_SUPP_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.OHPhotoOutputGetPhotoRotationWithoutDeviceDegreeSupp(1);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- boolean
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestOHCaptureSessionIsLockFocusTrackingSupported();
+      console.info(TAG, testName, result);
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWhenNotSupported();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWhenNotSupported();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestIsLockFocusTrackingSupportedWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestIsLockFocusTrackingSupportedWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingNormalValidPoint();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingRepeatLock();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTracking();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingRepeatUnlock();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
     /**
      * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
      * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
@@ -1457,6 +1803,22 @@ export default function CameraNdkTest() {
     });
     
     /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0200
+     * @tc.desc     OH_MetadataObjectExt_GetPitchAngle- the second param null
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0200";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtGetPitchAngle(CASE_INDEX_2);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
      * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100
      * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100
      * @tc.desc     OH_MetadataObjectExt_GetRightEyeBoundingBox- CAMERA_INVALID_ARGUMENT
@@ -1489,6 +1851,22 @@ export default function CameraNdkTest() {
     });
     
     /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0200
+     * @tc.desc     OH_MetadataObjectExt_GetRollAngle- the second param null
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0200";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtGetRollAngle(CASE_INDEX_2);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
      * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100
      * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100
      * @tc.desc     OH_MetadataObjectExt_GetTimestamp- CAMERA_INVALID_ARGUMENT
@@ -1500,6 +1878,22 @@ export default function CameraNdkTest() {
       let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetTimestamp(1);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0200
+     * @tc.desc     OH_MetadataObjectExt_GetTimestamp- the second param null
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0200";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtGetTimestamp(CASE_INDEX_2);
       console.info(TAG, testName, result);
       expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
@@ -1521,6 +1915,22 @@ export default function CameraNdkTest() {
     });
 
     /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0200
+     * @tc.desc     OH_MetadataObjectExt_GetYawAngle- the second param null
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0200";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtGetYawAngle(CASE_INDEX_2);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
      * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100
      * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100
      * @tc.desc     OH_MetadataObjectExt_Destroy
@@ -1531,7 +1941,7 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100', Level.LEVEL0, async () => {
       let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100";
       console.info(TAG, testName, "start");
-      let result = await cameraObj.TestOHMetadataObjectExtDestroy(1);
+      let result: boolean = await cameraObj.TestOHMetadataObjectExtDestroy(1);
       console.info(TAG, testName, result);
       expect(result).assertEqual(true);
     });
@@ -1547,10 +1957,25 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100', Level.LEVEL0, async () => {
       let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100";
       console.info(TAG, testName, "start");
-      let result = await cameraObj.TestOHMetadataObjectExtIsLockFocusTracked(1);
+      let result: boolean = await cameraObj.TestOHMetadataObjectExtIsLockFocusTracked(1);
       console.info(TAG, testName, result);
       expect(result === true || result === false).assertTrue();
     });
-    
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- boolean
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestOHCaptureSessionIsLockFocusTrackingSupported();
+      console.info(TAG, testName, result);
+      expect(result == true || result == false).assertTrue();
+    });
   })
 }
