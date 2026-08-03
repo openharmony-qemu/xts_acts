@@ -16,11 +16,12 @@
 #include <pthread.h>
 
 #include "test.h"
+#include "lib_path.h"
 
 #define THREAD_COUNT 5
 #define SLEEP_SECONDS 3
 
-static const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdl_multithread_test_dso.so";
+static const char* LIB_PATH = LIB_PATH_PREFIX "libdl_multithread_test_dso.so";
 static bool g_stop = false;
 
 static void* DlTest(void *arg)

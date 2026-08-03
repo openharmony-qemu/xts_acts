@@ -104,6 +104,9 @@ void Select0300(void)
  */
 void SelectTime640100(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     SelectTime64Func selectTime64 = reinterpret_cast<SelectTime64Func>(dlsym(RTLD_DEFAULT, SELECT_TIME64_SYMBOL));
     if (selectTime64 == nullptr) {
         t_error("SelectTime640100 dlsym __select_time64 failed\n");

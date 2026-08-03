@@ -16,6 +16,7 @@
 #include <dlfcn.h>
 #include <cstdio>
 #include "test.h"
+#include "lib_path.h"
 
 
 typedef int (* TestSVar)();
@@ -28,7 +29,7 @@ typedef int (* InspGVar)();
 
 static int DlcloseResetTestWithArgs(int argc, char *argv[])
 {
-    const char *libPath = "/data/storage/el1/bundle/libs/arm/libdlclose_reset_dso.so";
+    const char *libPath = LIB_PATH_PREFIX "libdlclose_reset_dso.so";
     void *h = nullptr;
     void *g = nullptr;
     TestSVar testSVar = nullptr;

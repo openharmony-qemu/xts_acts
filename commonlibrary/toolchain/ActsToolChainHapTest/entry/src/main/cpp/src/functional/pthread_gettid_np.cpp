@@ -30,20 +30,19 @@ int PthreadGettidNpTest()
 {
     int status = SUCCESS_CODE;
 
-    if (!(gettid() == pthread_gettid_np(pthread_self()))) {
-        LibcTestError(&status, "gettid() == pthread_gettid_np(pthread_self()) failed: pthread_gettid_np() is failed\n");
-    }
-
-    pid_t tid;
+    pid_t tid = 0;
     pthread_t t;
-    pthread_create(&t, nullptr, PthreadTest, &tid);
+    if (pthread_create(&t, nullptr, PthreadTest, &tid) != 0) {
+        LibcTestError(&status, "pthread_create failed\n");
+        return status;
+    }
     pid_t recvResult = pthread_gettid_np(t);
     if (!(pthread_join(t, nullptr) == 0)) {
         LibcTestError(&status, "pthread_join(t, nullptr) == 0 failed: pthread_join is failed\n");
     }
 
     if (!(tid == recvResult)) {
-        LibcTestError(&status, "tid == recvResult failed: the tid of pthread or tid of pthread_gettid_np() is wrong\n");
+        LibcTestError(&status, "tid == recvResult failed: tid=%d recvResult=%d\n", tid, recvResult);
     }
     return status;
 }

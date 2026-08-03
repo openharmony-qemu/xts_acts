@@ -57,6 +57,9 @@ void Timegm0100(void)
  */
 void TimegmTime640100(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     Timegm64Func timegm64 = reinterpret_cast<Timegm64Func>(dlsym(RTLD_DEFAULT, TIMEGM64_SYMBOL));
     if (timegm64 == nullptr) {
         t_error("TimegmTime640100 failed: dlsym __timegm_time64 failed\n");

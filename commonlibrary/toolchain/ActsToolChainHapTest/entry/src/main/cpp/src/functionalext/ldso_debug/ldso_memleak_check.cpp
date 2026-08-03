@@ -15,14 +15,12 @@
 
 #include <unistd.h>
 #include "functionalext.h"
+#include "lib_path.h"
 
 #define MAX_BUF 256
-static const char LIB_PATH_1[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_6.so";
-static const char LIB_PATH_1_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_6.so";
-static const char LIB_PATH_2[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_8.so";
-static const char LIB_PATH_2_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_8.so";
-static const char LIB_PATH_3[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_9.so";
-static const char LIB_PATH_3_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_9.so";
+static const char LIB_PATH_1[] = LIB_PATH_PREFIX "libldso_debug_test_lib_6.so";
+static const char LIB_PATH_2[] = LIB_PATH_PREFIX "libldso_debug_test_lib_8.so";
+static const char LIB_PATH_3[] = LIB_PATH_PREFIX "libldso_debug_test_lib_9.so";
 
 static bool FileExists(const char* path)
 {
@@ -64,7 +62,7 @@ static int CheckLoaded(char* so)
  */
 void LdsoMemleakCheck0100(void)
 {
-    const char* libPath1 = FileExists(LIB_PATH_1) ? LIB_PATH_1 : LIB_PATH_1_ARM64;
+    const char* libPath1 = LIB_PATH_1;
     if (!FileExists(libPath1)) {
         return;
     }
@@ -92,8 +90,8 @@ void LdsoMemleakCheck0100(void)
  */
 void LdsoMemleakCheck0200(void)
 {
-    const char* libPath2 = FileExists(LIB_PATH_2) ? LIB_PATH_2 : LIB_PATH_2_ARM64;
-    const char* libPath3 = FileExists(LIB_PATH_3) ? LIB_PATH_3 : LIB_PATH_3_ARM64;
+    const char* libPath2 = LIB_PATH_2;
+    const char* libPath3 = LIB_PATH_3;
     if (!FileExists(libPath2)) {
         return;
     }

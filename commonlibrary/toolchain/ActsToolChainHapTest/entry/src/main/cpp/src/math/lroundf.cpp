@@ -31,6 +31,7 @@ static int LroundfTestImpl(void)
     int i;
     int err = 0;
     struct FI* p;
+    static long (*volatile fn)(float) = lroundf;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -38,7 +39,7 @@ static int LroundfTestImpl(void)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
-        yi = lroundf(p->x);
+        yi = fn(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
         if (!Checkexcept(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s lroundf(%a)=%lld, want %s",

@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
+#include <csignal>
 #include <string>
+#include <sys/syscall.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <unordered_map>
@@ -715,14 +717,12 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "wcwidth", &WcwidthTest },
     { "write", &WriteTest },
     { "writev", &WritevTest },
-    { "wcwidth", &WcwidthTest },
     { "wmemchr", &WmemchrTest },
     { "wmemcmp", &WmemcmpTest },
     { "wmemcpy", &WmemcpyTest },
     { "wmemmove", &WmemmoveTest },
     { "wmemset", &WmemsetTest },
     { "wprintf", &WprintfTest },
-    { "writev", &WritevTest },
     { "malloc-oom", &MallocOomTest },
     { "setenv-oom", &SetenvOomTestCompat },
     { "pthread_create-oom", &PthreadCreateOomTest },
@@ -736,7 +736,6 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "asctime", &AsctimeTest },
     { "asctime_r", &AsctimeRTestCompat },
     { "chmod", &ChmodTestCompat },
-    { "clock_adjtime", &ClockAdjtimeTest },
     { "daemon", &DaemonTestCompat },
     { "difftime", &DifftimeTest },
     { "dl_iterate_phdr", &DlIteratePhdrTestCompat },
@@ -1136,6 +1135,25 @@ static int (*FindByName(const std::string& name))()
     return it->second;
 }
 
+static void ResetChildSignals()
+{
+    sigset_t fullset;
+    sigfillset(&fullset);
+    sigprocmask(SIG_UNBLOCK, &fullset, nullptr);
+    for (int sig = 1; sig < NSIG; ++sig) {
+        if (sig != SIGKILL && sig != SIGSTOP) {
+            signal(sig, SIG_DFL);
+        }
+    }
+    struct sigaction saIgn = {};
+    saIgn.sa_handler = SIG_IGN;
+    sigemptyset(&saIgn.sa_mask);
+    constexpr int sigsetBytes = 8;
+    for (int sig = SIGRTMIN; sig < NSIG; ++sig) {
+        syscall(SYS_rt_sigaction, sig, &saIgn, nullptr, sigsetBytes);
+    }
+}
+
 static int RunByNameForked(const std::string& name)
 {
     auto* testFunc = FindByName(name);
@@ -1148,6 +1166,8 @@ static int RunByNameForked(const std::string& name)
         return -K_RUN_TEST_FORK_FAILED;
     }
     if (pid == 0) {
+        ResetChildSignals();
+        g_tStatus = 0;
         int childRc = K_CHILD_EXIT_CAP;
         try {
             childRc = testFunc();

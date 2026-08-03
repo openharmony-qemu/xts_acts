@@ -31,6 +31,7 @@ static int LroundTestImpl(void)
     int i;
     int err = 0;
     struct DI* p;
+    static long (*volatile fn)(double) = lround;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -38,7 +39,7 @@ static int LroundTestImpl(void)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
-        yi = lround(p->x);
+        yi = fn(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
         if (!Checkexcept(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s lround(%a)=%lld, want %s",

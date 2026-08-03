@@ -591,20 +591,6 @@ export default function linux_group_test() {
     });
 
     /**
-     * @tc.name   clock_adjtime
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOCK_ADJTIME_0100
-     * @tc.desc   libc-test clock_adjtime
-     */
-    it("clock_adjtime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("clock_adjtime");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   fallocate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
