@@ -73,7 +73,6 @@
     "MainAbility/pages/LazyForEach/lazyForEachOnDatasetChangeNullUndefined",
     "MainAbility/pages/LazyForEach/LazyForEachCustomComponentFreezeMode",
     "MainAbility/pages/Repeat/RepeatReusableMemOptStrategy",
-    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy",
-    "MainAbility/pages/LazyForEach/LazyForEachDataReload"
+    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy"
   ]
 }
