@@ -1,0 +1,190 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
+import Utils from './Utils';
+import expfinitedktest from 'libexpfinitedktest.so';
+
+export default function ExpFiniteNdkTest() {
+  describe('ExpFiniteNdkTest', () => {
+
+    beforeEach(async () => { await Utils.sleep(50); });
+
+    // ==================== 正常参数测试 ====================
+
+    /**
+     * @tc.name   testExpFiniteNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0100
+     * @tc.desc   Verify __exp_finite calculates exponential values correctly (zero, positive, negative)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteNormal001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0200
+     * @tc.desc   Verify __exp_finite calculates large exponential values correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteNormal002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0300
+     * @tc.desc   Verify __exp_finite precision matches standard exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteNormal003();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    // ==================== 边界值测�?====================
+
+    /**
+     * @tc.name   testExpFiniteBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0400
+     * @tc.desc   Verify __exp_finite overflow boundary (large positive values)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteBoundary001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0500
+     * @tc.desc   Verify __exp_finite underflow boundary (large negative values)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteBoundary002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteBoundary003
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0600
+     * @tc.desc   Verify __exp_finite near overflow/underflow boundary values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteBoundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteBoundary003();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    // ==================== 异常参数测试 ====================
+
+    /**
+     * @tc.name   testExpFiniteAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0700
+     * @tc.desc   Verify __exp_finite handles NaN and Inf inputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteAbnormal001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    // ==================== 稳定性测�?====================
+
+    /**
+     * @tc.name   testExpFiniteStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0800
+     * @tc.desc   Verify __exp_finite returns consistent results on multiple calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExpFiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteStable001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteStable002
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0900
+     * @tc.desc   Verify __exp_finite handles massive number of calls without crash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExpFiniteStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteStable002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    // ==================== 多线程测�?====================
+
+    /**
+     * @tc.name   testExpFiniteThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_1000
+     * @tc.desc   Verify __exp_finite is thread-safe with concurrent calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExpFiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteThread001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testExpFiniteThread002
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_1100
+     * @tc.desc   Verify __exp_finite thread-safety with mixed parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExpFiniteThread002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let resNum: number = expfinitedktest.expFiniteThread002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+  });
+}

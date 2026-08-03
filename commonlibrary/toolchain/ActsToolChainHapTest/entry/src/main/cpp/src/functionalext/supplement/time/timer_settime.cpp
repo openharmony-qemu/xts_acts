@@ -34,7 +34,7 @@ static void Handler(int sig)
 
 static void ExceptionHandler(int sig)
 {
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 /**

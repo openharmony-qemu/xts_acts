@@ -26,7 +26,7 @@ static void DealAberrant(int code)
     if (code != SIGSEGV) {
         t_error("wcstoimax_0200 code is %d are not SIGSEGV", __func__, code);
     }
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 /**

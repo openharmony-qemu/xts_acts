@@ -31,7 +31,7 @@ int ExecleEnvTest(void)
 {
     // First check if we can even access a shell
     const char* shellPaths[] = { "/bin/sh",
-                                 "/system/bin/sh", // Android/HarmonyOS location
+                                 "/system/bin/sh",
                                  "/bin/bash",
                                  nullptr };
 

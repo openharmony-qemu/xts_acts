@@ -55,6 +55,7 @@ char *t_pathrel(char *buf, size_t n, char *argv0, char *p);
 void TFdfill(void);
 
 #define CLOCK_GETTIME64 clock_gettime
+#define TIME_T64_BYTES 8
 
 #ifdef __cplusplus
 }

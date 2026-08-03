@@ -21,7 +21,12 @@
 #include "filepath_util.h"
 #include "functionalext.h"
 
-extern "C" int __semtimedop_time64(int, struct sembuf *, size_t, const struct timespec *);
+#ifdef __arm__
+extern "C" int semtimedop_time64(int, struct sembuf *, size_t, const struct timespec *) __asm__("__semtimedop_time64");
+#define SEMTIMEDOP_TIME64 semtimedop_time64
+#else
+#define SEMTIMEDOP_TIME64 semtimedop
+#endif
 /**
  * @tc.name      : semtimedop_0100
  * @tc.desc      : System V semaphore operations
@@ -112,7 +117,7 @@ void Semtimedop0200(void)
 void SemtimedopTime640200(void)
 {
     errno = 0;
-    int result = __semtimedop_time64(-1, nullptr, -1, nullptr);
+    int result = SEMTIMEDOP_TIME64(-1, nullptr, -1, nullptr);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

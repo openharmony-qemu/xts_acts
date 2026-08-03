@@ -96,7 +96,7 @@ void Fwrite0400(void)
 
         // exec
         execl("/bin/sh", "/bin/sh", "-c", "/system/bin/bm get -u", NULL);
-        exit(0);
+        _exit(0);
     } else {
         // parent
         close(fds[pipeWrite]);

@@ -23,7 +23,7 @@ static const char *PATH = "/data/storage/el2/base/cache/";
 
 static void Handler(int sig)
 {
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 /**
