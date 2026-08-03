@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0100
-     * @tc.name testTypedUArraysOverall0102_001
+     * @tc.name testTypedUArraysOverallTestFileB001
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const parent = new Uint8Array(buf)
       const child = parent.subarray(2, 6)
@@ -50,13 +50,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0200
-     * @tc.name testTypedUArraysOverall0102_002
+     * @tc.name testTypedUArraysOverallTestFileB002
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const parent = new Uint8Array(buf)
       const child = parent.subarray(2, 6)
@@ -65,13 +65,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0300
-     * @tc.name testTypedUArraysOverall0102_003
+     * @tc.name testTypedUArraysOverallTestFileB003
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const v1 = new Uint8Array(buf, 0, 4)
       const v2 = new Uint8Array(buf, 4, 4)
@@ -80,13 +80,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0400
-     * @tc.name testTypedUArraysOverall0102_004
+     * @tc.name testTypedUArraysOverallTestFileB004
      * @tc.desc Verify subarray buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(8)
       const sub = arr.subarray(2, 6)
       expect(sub.buffer).assertEqual(arr.buffer)
@@ -94,27 +94,27 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0500
-     * @tc.name testTypedUArraysOverall0102_005
+     * @tc.name testTypedUArraysOverallTestFileB005
      * @tc.desc Verify slice buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(8)
       const sl = arr.slice(2, 6)
-      expect(sl.buffer === arr.buffer).assertFalse()
+      expect(sl.buffer).not().assertEqual(arr.buffer);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0600
-     * @tc.name testTypedUArraysOverall0102_006
+     * @tc.name testTypedUArraysOverallTestFileB006
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const arr = new Uint8Array(buf)
       expect(arr.buffer).assertEqual(buf)
@@ -122,13 +122,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0700
-     * @tc.name testTypedUArraysOverall0102_007
+     * @tc.name testTypedUArraysOverallTestFileB007
      * @tc.desc Verify byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16)
       const arr = new Uint8Array(buf, 4)
       expect(arr.byteOffset).assertEqual(4)
@@ -136,13 +136,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0800
-     * @tc.name testTypedUArraysOverall0102_008
+     * @tc.name testTypedUArraysOverallTestFileB008
      * @tc.desc Verify byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const arr = new Uint8Array(buf)
       expect(arr.byteLength).assertEqual(8)
@@ -150,26 +150,26 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_0900
-     * @tc.name testTypedUArraysOverall0102_009
+     * @tc.name testTypedUArraysOverallTestFileB009
      * @tc.desc Verify isView
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(8)
       expect(arr.byteLength).assertEqual(8)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1000
-     * @tc.name testTypedUArraysOverall0102_010
+     * @tc.name testTypedUArraysOverallTestFileB010
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const v1 = new Uint8Array(buf)
       const v2 = new Uint8Array(buf)
@@ -178,13 +178,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1100
-     * @tc.name testTypedUArraysOverall0102_011
+     * @tc.name testTypedUArraysOverallTestFileB011
      * @tc.desc Verify offset buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16)
       const v1 = new Uint8Array(buf, 0)
       const v2 = new Uint8Array(buf, 8)
@@ -193,13 +193,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1200
-     * @tc.name testTypedUArraysOverall0102_012
+     * @tc.name testTypedUArraysOverallTestFileB012
      * @tc.desc Verify buffer Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const v1 = new Uint8Array(buf)
       const v2 = new Uint16Array(buf)
@@ -208,13 +208,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1300
-     * @tc.name testTypedUArraysOverall0102_013
+     * @tc.name testTypedUArraysOverallTestFileB013
      * @tc.desc Verify buffer BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8)
       const v1 = new Uint8Array(buf)
       const v2 = new BigUint64Array(buf)
@@ -223,13 +223,13 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1400
-     * @tc.name testTypedUArraysOverall0102_014
+     * @tc.name testTypedUArraysOverallTestFileB014
      * @tc.desc Verify buffer subarray subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(16)
       const sub1 = arr.subarray(2, 10)
       const sub2 = sub1.subarray(2, 6)
@@ -238,168 +238,155 @@ export default function typedUArraysOverallTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1500
-     * @tc.name testTypedUArraysOverall0102_015
+     * @tc.name testTypedUArraysOverallTestFileB015
      * @tc.desc Verify BYTES_PER_ELEMENT Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1600
-     * @tc.name testTypedUArraysOverall0102_016
+     * @tc.name testTypedUArraysOverallTestFileB016
      * @tc.desc Verify BYTES_PER_ELEMENT Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1700
-     * @tc.name testTypedUArraysOverall0102_017
+     * @tc.name testTypedUArraysOverallTestFileB017
      * @tc.desc Verify BYTES_PER_ELEMENT Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1800
-     * @tc.name testTypedUArraysOverall0102_018
+     * @tc.name testTypedUArraysOverallTestFileB018
      * @tc.desc Verify BYTES_PER_ELEMENT BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_1900
-     * @tc.name testTypedUArraysOverall0102_019
+     * @tc.name testTypedUArraysOverallTestFileB019
      * @tc.desc Verify BYTES_PER_ELEMENT Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2000
-     * @tc.name testTypedUArraysOverall0102_020
-     * @tc.desc Verify name Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysOverall0102_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2100
-     * @tc.name testTypedUArraysOverall0102_021
+     * @tc.name testTypedUArraysOverallTestFileB020
      * @tc.desc Verify length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(10)
       expect(arr.length).assertEqual(10)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2200
-     * @tc.name testTypedUArraysOverall0102_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2100
+     * @tc.name testTypedUArraysOverallTestFileB021
      * @tc.desc Verify of 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.of()
       expect(arr.length).assertEqual(0)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2300
-     * @tc.name testTypedUArraysOverall0102_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2200
+     * @tc.name testTypedUArraysOverallTestFileB022
      * @tc.desc Verify of 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.of(42)
       expect(arr.length).assertEqual(1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2400
-     * @tc.name testTypedUArraysOverall0102_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2300
+     * @tc.name testTypedUArraysOverallTestFileB023
      * @tc.desc Verify of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.of(1, 2, 3)
       expect(arr.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2500
-     * @tc.name testTypedUArraysOverall0102_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2400
+     * @tc.name testTypedUArraysOverallTestFileB024
      * @tc.desc Verify from array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.from([1, 2, 3])
       expect(arr.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2600
-     * @tc.name testTypedUArraysOverall0102_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2500
+     * @tc.name testTypedUArraysOverallTestFileB025
      * @tc.desc Verify from typedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint8Array([4, 5, 6])
       const arr = Uint8Array.from(src)
       expect(arr.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2700
-     * @tc.name testTypedUArraysOverall0102_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0102_2600
+     * @tc.name testTypedUArraysOverallTestFileB026
      * @tc.desc Verify from iterable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysOverall0102_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysOverallTestFileB026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const iterable = [7, 8];
       const arr = Uint8Array.from(iterable)
       expect(arr.length).assertEqual(2)
     });
-
   });
 }

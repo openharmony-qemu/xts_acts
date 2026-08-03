@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysIndexOfTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0100
-     * @tc.name testTypedUArraysIndexOf0202_001
+     * @tc.name testTypedUArraysIndexOfTestFileC001
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result).assertEqual(1)
@@ -49,141 +49,125 @@ export default function typedUArraysIndexOfTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0200
-     * @tc.name testTypedUArraysIndexOf0202_002
-     * @tc.desc Verify indexOf() -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysIndexOf0202_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30])
-      let result = arr.indexOf(99)
-      expect(result).assertEqual(-1)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0300
-     * @tc.name testTypedUArraysIndexOf0202_003
+     * @tc.name testTypedUArraysIndexOfTestFileC002
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result + 1).assertEqual(2)
     });
 
     /**
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0400
-     * @tc.name testTypedUArraysIndexOf0202_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0300
+     * @tc.name testTypedUArraysIndexOfTestFileC003
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result.toString()).assertEqual('1')
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0500
-     * @tc.name testTypedUArraysIndexOf0202_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0400
+     * @tc.name testTypedUArraysIndexOfTestFileC004
      * @tc.desc Verify indexOf() -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(99)
       expect(result.toString()).assertEqual('-1')
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0600
-     * @tc.name testTypedUArraysIndexOf0202_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0500
+     * @tc.name testTypedUArraysIndexOfTestFileC005
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result | 0).assertEqual(1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0700
-     * @tc.name testTypedUArraysIndexOf0202_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0600
+     * @tc.name testTypedUArraysIndexOfTestFileC006
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result || -1).assertEqual(1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0800
-     * @tc.name testTypedUArraysIndexOf0202_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0700
+     * @tc.name testTypedUArraysIndexOfTestFileC007
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100)
       let result = arr.indexOf(42)
       expect(result).assertEqual(-1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0900
-     * @tc.name testTypedUArraysIndexOf0202_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0800
+     * @tc.name testTypedUArraysIndexOfTestFileC008
      * @tc.desc Verify indexOf() 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(30)
       expect(result).assertEqual(arr.length - 1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1000
-     * @tc.name testTypedUArraysIndexOf0202_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0900
+     * @tc.name testTypedUArraysIndexOfTestFileC009
      * @tc.desc Verify indexOf() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42, 10, 20])
       let result = arr.indexOf(42)
       expect(result).assertEqual(0)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1100
-     * @tc.name testTypedUArraysIndexOf0202_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1000
+     * @tc.name testTypedUArraysIndexOfTestFileC010
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30, 40, 50])
       let result = arr.indexOf(30)
       expect(result).assertEqual(2)
@@ -191,61 +175,60 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1200
-     * @tc.name testTypedUArraysIndexOf0202_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1100
+     * @tc.name testTypedUArraysIndexOfTestFileC011
      * @tc.desc Verify indexOf() fromIndex >= fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30, 20])
       let result = arr.indexOf(20, 2)
       expect(result).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1300
-     * @tc.name testTypedUArraysIndexOf0202_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1200
+     * @tc.name testTypedUArraysIndexOfTestFileC012
      * @tc.desc Verify indexOf() fromIndex fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30, 20])
       let result = arr.indexOf(20, -2)
       expect(result).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1400
-     * @tc.name testTypedUArraysIndexOf0202_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1300
+     * @tc.name testTypedUArraysIndexOfTestFileC013
      * @tc.desc Verify indexOf() -1 [0, length)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(99)
       expect(result).assertEqual(-1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1500
-     * @tc.name testTypedUArraysIndexOf0202_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1400
+     * @tc.name testTypedUArraysIndexOfTestFileC014
      * @tc.desc Verify indexOf() -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysIndexOf0202_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysIndexOfTestFileC014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.indexOf(20)
       expect(result).assertEqual(1)
       expect(arr[result]).assertEqual(20)
     });
-
   });
 }

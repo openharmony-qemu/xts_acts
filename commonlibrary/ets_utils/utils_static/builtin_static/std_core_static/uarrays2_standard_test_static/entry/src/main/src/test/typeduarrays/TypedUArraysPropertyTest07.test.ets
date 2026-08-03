@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 
 /*
@@ -262,11 +262,11 @@ export default function typedUArraysPropertyTest07(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysPropertyTestMindMapMerged016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new Uint8Array(1).length >= 0).assertTrue();
-      expect(new Uint8ClampedArray(1).length >= 0).assertTrue();
-      expect(new Uint16Array(1).length >= 0).assertTrue();
-      expect(new Uint32Array(1).length >= 0).assertTrue();
-      expect(new BigUint64Array(1).length >= 0).assertTrue();
+      expect(new Uint8Array(1).length).assertEqual(1);
+      expect(new Uint8ClampedArray(1).length).assertEqual(1);
+      expect(new Uint16Array(1).length).assertEqual(1);
+      expect(new Uint32Array(1).length).assertEqual(1);
+      expect(new BigUint64Array(1).length).assertEqual(1);
     });
 
     /**
@@ -331,7 +331,7 @@ export default function typedUArraysPropertyTest07(): void {
       expect(sliced.length).assertEqual(2);
       expect(sliced.byteLength).assertEqual(2);
       expect(sliced.byteOffset).assertEqual(0);
-      expect(sliced.buffer != parent.buffer).assertTrue();
+      expect(sliced.buffer).not().assertEqual(parent.buffer);
     });
 
     /**

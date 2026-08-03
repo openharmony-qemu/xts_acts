@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0100
-     * @tc.name testTypedUArraysJoin0102_001
+     * @tc.name testTypedUArraysJoinTestFileB001
      * @tc.desc Verify Uint8ClampedArray 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([255]);
       let result = arr.join("");
       expect(result).assertEqual("255");
@@ -49,13 +49,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0200
-     * @tc.name testTypedUArraysJoin0102_002
+     * @tc.name testTypedUArraysJoinTestFileB002
      * @tc.desc Verify Uint8ClampedArray -1 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([-1]);
       let result = arr.join("");
       expect(result).assertEqual("0");
@@ -63,13 +63,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0300
-     * @tc.name testTypedUArraysJoin0102_003
+     * @tc.name testTypedUArraysJoinTestFileB003
      * @tc.desc Verify Uint8ClampedArray 256 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([256]);
       let result = arr.join("");
       expect(result).assertEqual("255");
@@ -77,13 +77,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0400
-     * @tc.name testTypedUArraysJoin0102_004
+     * @tc.name testTypedUArraysJoinTestFileB004
      * @tc.desc Verify BigUint64Array 0n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n]);
       let result = arr.join("");
       expect(result).assertEqual("0");
@@ -91,13 +91,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0500
-     * @tc.name testTypedUArraysJoin0102_005
+     * @tc.name testTypedUArraysJoinTestFileB005
      * @tc.desc Verify BigUint64Array 1n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n]);
       let result = arr.join("");
       expect(result).assertEqual("1");
@@ -105,13 +105,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0600
-     * @tc.name testTypedUArraysJoin0102_006
+     * @tc.name testTypedUArraysJoinTestFileB006
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615')
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615')]);
       let result = arr.join("");
       expect(result).assertEqual("18446744073709551615");
@@ -119,13 +119,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0700
-     * @tc.name testTypedUArraysJoin0102_007
+     * @tc.name testTypedUArraysJoinTestFileB007
      * @tc.desc Verify Uint8Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       let result = arr.join();
       expect(result).assertEqual("");
@@ -133,13 +133,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0800
-     * @tc.name testTypedUArraysJoin0102_008
+     * @tc.name testTypedUArraysJoinTestFileB008
      * @tc.desc Verify Uint8Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       let result = arr.join("|");
       expect(result).assertEqual("");
@@ -147,13 +147,13 @@ export default function typedUArraysJoinTest02(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0102_0900
-     * @tc.name testTypedUArraysJoin0102_009
+     * @tc.name testTypedUArraysJoinTestFileB009
      * @tc.desc Verify Uint8Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoin0102_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileB009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       let result = arr.join("");
       expect(result).assertEqual("");

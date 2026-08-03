@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 import bigInt64ArrayBaselineTest from './typeduarrays/TypedUArraysBigInt64ArrayBaselineTest.test';
 import typedUArraysCopyWithinPartTest01 from './typeduarrays/TypedUArraysCopyWithinPartTest01.test';
@@ -123,7 +123,7 @@ import typedUArraysSetTest04 from './typeduarrays/TypedUArraysSetTest04.test';
 import typedUArraysSetTest05 from './typeduarrays/TypedUArraysSetTest05.test';
 import typedUArraysSlicePartTest01 from './typeduarrays/TypedUArraysSlicePartTest01.test';
 import typedUArraysSlicePartTest02 from './typeduarrays/TypedUArraysSlicePartTest02.test';
-import typedUArraysSliceTest01 from './typeduarrays/TypedUArraysSliceTest01.test';
+import typedUArraysConstructorTest01 from './typeduarrays/TypedUArraysConstructorTest01.test';
 
 export default function testsuite(): void {
   bigInt64ArrayBaselineTest();
@@ -249,5 +249,5 @@ export default function testsuite(): void {
   typedUArraysSetTest05();
   typedUArraysSlicePartTest01();
   typedUArraysSlicePartTest02();
-  typedUArraysSliceTest01();
+  typedUArraysConstructorTest01();
 }

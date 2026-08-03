@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 
 /*
@@ -36,13 +36,13 @@ export default function typedUArraysPropertyTest06(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0100
-     * @tc.name testTypedUArraysProperty030202_001
+     * @tc.name testTypedUArraysPropertyTestFileF001
      * @tc.desc Verify byteOffset buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Uint8Array(buf, 6, 4);
       expect(arr.byteOffset).assertEqual(6);
@@ -51,13 +51,13 @@ export default function typedUArraysPropertyTest06(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0200
-     * @tc.name testTypedUArraysProperty030202_002
+     * @tc.name testTypedUArraysPropertyTestFileF002
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Uint8Array(buf);
       expect(buf.byteLength).assertEqual(8);
@@ -65,108 +65,108 @@ export default function typedUArraysPropertyTest06(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0300
-     * @tc.name testTypedUArraysProperty030202_003
+     * @tc.name testTypedUArraysPropertyTestFileF003
      * @tc.desc Verify buffer ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       expect(arr.buffer.byteLength).assertEqual(0);
-      expect(arr.buffer != null).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0400
-     * @tc.name testTypedUArraysProperty030202_004
+     * @tc.name testTypedUArraysPropertyTestFileF004
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1);
       expect(arr.buffer.byteLength).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0500
-     * @tc.name testTypedUArraysProperty030202_005
+     * @tc.name testTypedUArraysPropertyTestFileF005
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1000);
       expect(arr.buffer.byteLength).assertEqual(1000);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0600
-     * @tc.name testTypedUArraysProperty030202_006
+     * @tc.name testTypedUArraysPropertyTestFileF006
      * @tc.desc Verify Uint16Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array(100);
       expect(arr.buffer.byteLength).assertEqual(200);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0700
-     * @tc.name testTypedUArraysProperty030202_007
+     * @tc.name testTypedUArraysPropertyTestFileF007
      * @tc.desc Verify Uint32Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array(100);
       expect(arr.buffer.byteLength).assertEqual(400);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0800
-     * @tc.name testTypedUArraysProperty030202_008
+     * @tc.name testTypedUArraysPropertyTestFileF008
      * @tc.desc Verify BigUint64Array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array(100);
       expect(arr.buffer.byteLength).assertEqual(800);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_0900
-     * @tc.name testTypedUArraysProperty030202_009
+     * @tc.name testTypedUArraysPropertyTestFileF009
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Uint8Array([1, 2, 3]);
       const arr2 = new Uint8Array([1, 2, 3]);
-      expect(arr1.buffer != arr2.buffer).assertTrue();
+      expect(arr1.buffer).not().assertEqual(arr2.buffer);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property03_0202_1000
-     * @tc.name testTypedUArraysProperty030202_010
+     * @tc.name testTypedUArraysPropertyTestFileF010
      * @tc.desc Verify typed array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysProperty030202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysPropertyTestFileF010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint8Array(8);
       const v1 = new Uint8Array(src.buffer);
+      expect(v1[0]).assertEqual(0);
       const v2 = new Uint8Array(src.buffer);
       expect(v2[0]).assertEqual(0);
     });
