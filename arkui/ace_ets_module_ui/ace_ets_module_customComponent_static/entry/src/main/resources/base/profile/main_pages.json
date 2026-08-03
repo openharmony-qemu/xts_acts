@@ -3,7 +3,6 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/CustomComponent/CustomComponentIndex",
     "MainAbility/pages/CustomComponent/CustomComponentLifecycleIndex",
-    "MainAbility/pages/CustomComponent/CustomEnvIndex",
     "MainAbility/pages/CustomComponent/CustomEnvKeyCreatePage",
     "MainAbility/pages/CustomComponent/CustomEnvKeyAbnormalPage"
   ]
