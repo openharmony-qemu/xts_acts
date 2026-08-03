@@ -45,6 +45,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
         afterAll((): void => {
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0010
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest001
@@ -62,10 +63,11 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0020
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest002
-         * @tc.desc Verify undefined predicate TypeError
+         * @tc.desc Verify undefined predicate throws ClassCastError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -79,6 +81,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0030
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest003
@@ -96,6 +99,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0040
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest004
@@ -113,6 +117,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0050
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest005
@@ -130,6 +135,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0060
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest006
@@ -147,6 +153,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0070
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest007
@@ -164,6 +171,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0080
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest008
@@ -182,6 +190,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0090
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest009
@@ -200,6 +209,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0100
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest010
@@ -218,6 +228,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0110
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest011
@@ -236,6 +247,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ClassCastError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0120
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest012
@@ -246,17 +258,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([10, 20, 30]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             throw new Error('first-element');
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
             expect(e.name).assertEqual('Error');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0130
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest013
@@ -268,7 +279,6 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         it('int32ArrayFindIndexPart03TestMindmapTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
           let visitedFirst: boolean = false;
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             if (i === 0) {
@@ -277,13 +287,13 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             throw new Error('second');
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
             expect(e.name).assertEqual('Error');
           }
           expect(visitedFirst).assertTrue();
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0140
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest014
@@ -303,11 +313,13 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return false;
           });
+            expect().assertFail();
           } catch (e) {
             expect(e.name).assertEqual('Error');
           }
           expect(count).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0150
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest015
@@ -327,11 +339,13 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return false;
           });
+            expect().assertFail();
           } catch (e) {
             expect(e.name).assertEqual('Error');
           }
           expect(count).assertEqual(arr.length);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0160
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest016
@@ -351,6 +365,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0170
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest017
@@ -370,6 +385,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('TypeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0180
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest018
@@ -389,6 +405,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('SyntaxError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0190
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest019
@@ -408,6 +425,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             expect(e.name).assertEqual('ReferenceError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0200
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest020
@@ -422,10 +440,12 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             arr.findIndex((v: number, i: int): boolean => {
             throw new MyFindIndexPart03CustomErr('custom');
           });
+            expect().assertFail();
           } catch (e) {
-            expect((e as Error).name).assertEqual('MyCustomError');
+            expect(e.name).assertEqual('MyCustomError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0210
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest021
@@ -441,11 +461,13 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             arr.findIndex((v: number, i: int): boolean => {
             throw new Error('oops');
           });
+            expect().assertFail();
           } catch (e) {
             expect(e.name).assertEqual('Error');
           }
           expect(arr.length).assertEqual(lenBefore);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0220
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest022
@@ -460,6 +482,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             arr.findIndex((v: number, i: int): boolean => {
             throw new Error('x');
           });
+            expect().assertFail();
           } catch (e) {
             expect(e.name).assertEqual('Error');
           }
@@ -467,6 +490,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(arr.$_get(1)).assertEqual(8);
           expect(arr.$_get(2)).assertEqual(9);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0230
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest023
@@ -478,21 +502,14 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         it('int32ArrayFindIndexPart03TestMindmapTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array(0);
           let called: boolean = false;
-          let result: int = -999;
-          let threw: boolean = false;
-          try {
-            result = arr.findIndex((v: number, i: int): boolean => {
+          let result: int = arr.findIndex((v: number, i: int): boolean => {
             called = true;
-            throw new Error('never');
+            return false;
           });
-          } catch (e) {
-            expect((e as Error).name).assertEqual('Error');
-            threw = true;
-          }
           expect(called).assertFalse();
-          expect(threw).assertFalse();
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0240
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest024
@@ -503,17 +520,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([77]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             throw new Error('single');
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
             expect(e.name).assertEqual('Error');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0250
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest025
@@ -525,7 +541,6 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         it('int32ArrayFindIndexPart03TestMindmapTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
           let result: int = -999;
-          let threw: boolean = false;
           try {
             result = arr.findIndex((v: number, i: int): boolean => {
             if (v === 3) {
@@ -533,45 +548,43 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return false;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
             expect(e.name).assertEqual('Error');
           }
-          expect(threw).assertTrue();
           expect(result).assertEqual(-999);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0260
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest026
-         * @tc.desc Verify return undefined falsy -1
+         * @tc.desc Verify returning non-boolean via cast throws ClassCastError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
         it('int32ArrayFindIndexPart03TestMindmapTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return undefined as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0270
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest027
-         * @tc.desc Verify N-1 undefined true
+         * @tc.desc Verify returning undefined via cast throws ClassCastError (non-last element)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
         it('int32ArrayFindIndexPart03TestMindmapTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([10, 20, 30]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
             if (i === a.length - 1) {
@@ -579,16 +592,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return undefined as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0280
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest028
-         * @tc.desc Verify undefined
+         * @tc.desc Verify returning undefined via cast at first element throws ClassCastError (multi-element)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -596,7 +609,6 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         it('int32ArrayFindIndexPart03TestMindmapTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
           let firstVisited: boolean = false;
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             if (i === 0) {
@@ -605,13 +617,13 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return v === 3;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
           expect(firstVisited).assertTrue();
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0290
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest029
@@ -622,17 +634,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return 0 as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0300
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest030
@@ -643,17 +654,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([10, 20, 30]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return 1 as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0310
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest031
@@ -664,17 +674,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([5, 6, 7]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return -1 as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0320
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest032
@@ -685,17 +694,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return '' as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0330
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest033
@@ -706,17 +714,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return 'yes' as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0340
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest034
@@ -727,17 +734,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([10, 20]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return Double.NaN as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0350
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest035
@@ -748,17 +754,16 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             return null as Object as boolean;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0360
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest036
@@ -769,7 +774,6 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
          */
         it('int32ArrayFindIndexPart03TestMindmapTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([0, 0, 0, 0]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int): boolean => {
             if (i === 2) {
@@ -777,12 +781,12 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
             }
             return false;
           });
+            expect().assertFail();
           } catch (e) {
-            threw = true;
-            expect((e as Error).name).assertEqual('ClassCastError');
+            expect(e.name).assertEqual('ClassCastError');
           }
-          expect(threw).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0370
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest037
@@ -798,6 +802,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0380
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest038
@@ -811,6 +816,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number, i: int): boolean => true);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0390
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest039
@@ -824,6 +830,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number, i: int): boolean => false);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0400
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest040
@@ -841,6 +848,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(callCount).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0410
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest041
@@ -854,6 +862,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int): boolean => true);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0420
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest042
@@ -867,6 +876,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number, i: int): boolean => true);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0430
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest043
@@ -881,6 +891,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number, i: int): boolean => true);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0440
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest044
@@ -901,6 +912,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(called).assertFalse();
           expect(empty.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0450
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest045
@@ -915,6 +927,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = empty.findIndex((v: number, i: int): boolean => true);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0460
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest046
@@ -928,6 +941,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 99);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0470
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest047
@@ -941,6 +955,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 0);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0480
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest048
@@ -954,6 +969,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -1);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0490
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest049
@@ -967,6 +983,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 1);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0500
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest050
@@ -980,6 +997,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 2147483647);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0510
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest051
@@ -993,6 +1011,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -2147483648);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0520
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest052
@@ -1010,6 +1029,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(count).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0530
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest053
@@ -1025,6 +1045,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 77);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0540
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest054
@@ -1038,6 +1059,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 5);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0550
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest055
@@ -1051,6 +1073,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 7);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0560
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest056
@@ -1064,6 +1087,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 0);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0570
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest057
@@ -1077,6 +1101,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -1);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0580
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest058
@@ -1090,6 +1115,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 2147483647);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0590
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest059
@@ -1103,6 +1129,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -2147483648);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0600
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest060
@@ -1117,6 +1144,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(result).assertEqual(4);
           expect(arr.$_get(4)).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0610
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest061
@@ -1136,6 +1164,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(result).assertEqual(0);
           expect(count).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0620
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest062
@@ -1155,6 +1184,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sawNegOne).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0630
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest063
@@ -1175,6 +1205,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sawNegLen).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0640
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest064
@@ -1195,6 +1226,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sawNegLen1).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0650
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest065
@@ -1215,6 +1247,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sawLen).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0660
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest066
@@ -1235,6 +1268,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sawLen1).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0670
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest067
@@ -1254,6 +1288,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(allInt).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0680
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest068
@@ -1277,6 +1312,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(maxIdx).assertEqual(99);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0690
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest069
@@ -1298,10 +1334,11 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(sequential).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0700
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest070
-         * @tc.desc Verify $_get(-1) undefined
+         * @tc.desc Verify $_get(-1) throws RangeError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1312,18 +1349,20 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
           try {
             a.$_get(-1);
+            expect().assertFail();
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return true;
         });
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0710
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest071
-         * @tc.desc Verify $_get(length) undefined
+         * @tc.desc Verify $_get(length) throws RangeError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1334,18 +1373,20 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
           try {
             a.$_get(a.length);
+            expect().assertFail();
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return true;
         });
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0720
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest072
-         * @tc.desc Verify $_get(length+1) undefined
+         * @tc.desc Verify $_get(length+1) throws RangeError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1356,18 +1397,20 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
           try {
             a.$_get(a.length + 1);
+            expect().assertFail();
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return true;
         });
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0730
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest073
-         * @tc.desc Verify $_set(length, val) no-op length
+         * @tc.desc Verify $_set(length, val) throws RangeError and length remains unchanged
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1379,42 +1422,43 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
           try {
             a.$_set(a.length, 0);
+            expect().assertFail();
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return true;
         });
           expect(arr.length).assertEqual(len0);
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0740
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest074
-         * @tc.desc Verify $_set(-1, val) no-op
+         * @tc.desc Verify $_set(-1, val) throws RangeError
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
         it('int32ArrayFindIndexPart03TestMindmapTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let arr: Int32Array = new Int32Array([1, 2, 3]);
-          let threw: boolean = false;
           try {
             arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
             a.$_set(-1, 0);
             return true;
           });
+            expect().assertFail();
           } catch (e) {
-            expect((e as Error).name).assertEqual('RangeError');
-            threw = true;
+            expect(e.name).assertEqual('RangeError');
           }
-          expect(threw).assertTrue();
           expect(arr.$_get(0)).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0750
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest075
-         * @tc.desc Verify i=0 $_get(i-1) $_get(-1) undefined
+         * @tc.desc Verify $_get(i - 1) throws RangeError when i is 0
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1425,18 +1469,20 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           arr.findIndex((v: number, i: int, a: Int32Array): boolean => {
           try {
             a.$_get(i - 1);
+            expect().assertFail();
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return true;
         });
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0760
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest076
-         * @tc.desc Verify i=length-1 $_get(i+1) $_get(length) undefined
+         * @tc.desc Verify $_get(i + 1) throws RangeError at last index
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1448,15 +1494,17 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           try {
             if (i === a.length - 1) {
             a.$_get(i + 1);
+            expect().assertFail();
             }
           } catch (e) {
             threwRangeError = true;
-            expect((e as Error).name).assertEqual('RangeError');
+            expect(e.name).assertEqual('RangeError');
           }
           return i === a.length - 1;
         });
           expect(threwRangeError).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0770
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest077
@@ -1476,6 +1524,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(result).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0780
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest078
@@ -1495,6 +1544,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(result).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0790
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest079
@@ -1515,6 +1565,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(result).assertEqual(1);
           expect(arr.$_get(0)).assertEqual(99);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0800
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest080
@@ -1536,6 +1587,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0810
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest081
@@ -1555,6 +1607,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(capturedV).assertEqual(1);
           expect(arr.$_get(0)).assertEqual(999);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0820
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest082
@@ -1577,6 +1630,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(result).assertEqual(1);
           expect(callCount).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0830
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest083
@@ -1592,6 +1646,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(result).assertEqual(0);
           expect(child.length).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0840
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest084
@@ -1614,6 +1669,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
         });
           expect(parent.$_get(2)).assertEqual(99);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0850
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest085
@@ -1632,27 +1688,24 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(cp.$_get(0)).assertEqual(888);
           expect(orig.$_get(0)).assertEqual(10);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0860
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest086
-         * @tc.desc Verify subarray findIndex array
+         * @tc.desc Verify findIndex on subarray uses subarray indices starting from 0
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
         it('int32ArrayFindIndexPart03TestMindmapTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          let parent: Int32Array = new Int32Array([1, 2, 3, 4, 5]);
-          let child: Int32Array = parent.subarray(1, 4);
-          let childLen: int = -1;
-          let sameAsParent: boolean = true;
-          child.findIndex((v: number, i: int, a: Int32Array): boolean => {
-          childLen = a.length;
-          sameAsParent = (a === parent);
-          return true;
+          let parent: Int32Array = new Int32Array([10, 20, 30, 40, 50]);
+          let child: Int32Array = parent.subarray(2, 5);
+          let result: int = child.findIndex((v: number, _i: int, _a: Int32Array): boolean => {
+            return v === 40;
+          });
+          expect(result).assertEqual(1);
         });
-          expect(childLen).assertEqual(3);
-          expect(sameAsParent).assertFalse();
-        });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0870
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest087
@@ -1666,6 +1719,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -2147483648);
           expect(result).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0880
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest088
@@ -1679,6 +1733,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v !== v);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0890
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest089
@@ -1692,6 +1747,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 0);
           expect(result).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0900
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest090
@@ -1705,6 +1761,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 0);
           expect(result).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0910
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest091
@@ -1718,6 +1775,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 0);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0920
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest092
@@ -1731,6 +1789,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -1);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0930
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest093
@@ -1744,6 +1803,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 3);
           expect(result).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0940
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest094
@@ -1757,6 +1817,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === -3);
           expect(result).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0950
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest095
@@ -1770,6 +1831,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v < 0);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0960
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest096
@@ -1783,6 +1845,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v > 0);
           expect(result).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0970
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest097
@@ -1798,6 +1861,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let r2: int = arr.findIndex(pred);
           expect(r1).assertEqual(r2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0980
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest098
@@ -1815,6 +1879,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           let result: int = arr.findIndex((v: number): boolean => v === 99);
           expect(result).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_0990
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest099
@@ -1834,6 +1899,7 @@ export default function int32ArrayFindIndexPart03TestMindmapTestTest(): void {
           expect(innerR).assertEqual(1);
           expect(result).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_FIND_INDEX_PART03_TEST_MINDMAP_1000
          * @tc.name int32ArrayFindIndexPart03TestMindmapTest100

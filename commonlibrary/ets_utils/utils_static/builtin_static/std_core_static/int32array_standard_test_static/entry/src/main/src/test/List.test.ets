@@ -47,6 +47,10 @@ import int32ArrayFindLastPart01Test from './Int32Array/Int32ArrayFindLastPart01T
 import int32ArrayFindLastPart02TestMindmapTestTest from './Int32Array/Int32ArrayFindLastPart02Test.test.ets';
 import int32ArrayFindLastPart03Test from './Int32Array/Int32ArrayFindLastPart03Test.test.ets';
 import int32ArrayFindLastPart04TestMindmapTestTest from './Int32Array/Int32ArrayFindLastPart04Test.test.ets';
+import int32ArrayFromPart03TestMindmapTestTest from './Int32Array/Int32ArrayFromPart03Test.test.ets';
+import int32ArrayFromPart07TestMindmapTestTest from './Int32Array/Int32ArrayFromPart07Test.test.ets';
+import int32ArrayIncludesPart02TestMindmapTestTest from './Int32Array/Int32ArrayIncludesPart02Test.test.ets';
+import int32ArrayIncludesPart04TestMindmapTestTest from './Int32Array/Int32ArrayIncludesPart04Test.test.ets';
 export default function testsuite(): void {
   int32ArrayAtPart01TestMindmapTestTest();
   int32ArrayAtPart02TestMindmapTestTest();
@@ -96,4 +100,8 @@ export default function testsuite(): void {
   int32ArrayFindLastPart02TestMindmapTestTest();
   int32ArrayFindLastPart03Test();
   int32ArrayFindLastPart04TestMindmapTestTest();
+  int32ArrayFromPart03TestMindmapTestTest();
+  int32ArrayFromPart07TestMindmapTestTest();
+  int32ArrayIncludesPart02TestMindmapTestTest();
+  int32ArrayIncludesPart04TestMindmapTestTest();
 }
