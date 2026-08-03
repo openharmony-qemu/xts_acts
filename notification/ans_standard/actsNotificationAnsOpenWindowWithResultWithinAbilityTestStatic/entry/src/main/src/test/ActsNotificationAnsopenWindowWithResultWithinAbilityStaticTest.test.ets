@@ -384,7 +384,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"AAAtest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
@@ -431,7 +431,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           await Utils.msSleep(500)
         } else {
           console.info(`${testNum} null button`);
-          expect(button).assertContain('AAAtest')
+          expect(button).assertContain('zzztest')
         }
         let buttonThree = await driver.findComponent(ON.text('确定'));
         console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
@@ -447,7 +447,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"AAAtest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError
