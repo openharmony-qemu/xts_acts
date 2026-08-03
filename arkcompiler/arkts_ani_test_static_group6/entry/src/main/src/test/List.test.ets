@@ -17,9 +17,28 @@
 import versionInfoTest from "./ActsVersionInfo.test";
 import boxUnBoxPrimitiveTest from "./BoxUnBoxPrimitive.test";
 import AttachThreadTest from './ActsAttachThread.test'
+import classOperationsTest from "./ActsClassOperations.test";
+import fieldAccessTest from "./ActsFieldAccess.test";
+import propertyAccessTest from "./ActsPropertyAccess.test";
+import methodCallTest from "./ActsMethodCall.test";
+import methodOverloadTest from "./ActsMethodOverload.test";
+import enumOperationsTest from "./ActsEnumOperations.test";
+import genericClassTest from "./ActsGenericClass.test";
 
 export default function testsuite() :void{
     versionInfoTest();
+    // ANI Box/Unbox test
     boxUnBoxPrimitiveTest();
+
+    // ANI Attach/Detach test
     AttachThreadTest();
+
+    // ANI Class/Interface Spec test
+    classOperationsTest();
+    fieldAccessTest();
+    propertyAccessTest();
+    methodCallTest();
+    methodOverloadTest();
+    enumOperationsTest();
+    genericClassTest();
 }
