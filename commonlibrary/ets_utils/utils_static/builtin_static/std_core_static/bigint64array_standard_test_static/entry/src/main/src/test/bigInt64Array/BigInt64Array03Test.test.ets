@@ -974,7 +974,7 @@ export default function BigInt64Array03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_0570
      * @tc.name testBigInt64ArrayThree0570
-     * @tc.desc Verify set throws IndexOutOfBoundsError when the offset is
+     * @tc.desc Verify set throws RangeError when the offset is
      * Number.MAX_SAFE_INTEGER.
      * @tc.size MediumTest
      * @tc.type Function
@@ -986,7 +986,7 @@ export default function BigInt64Array03Test(): void {
         arr.set([2n], 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("IndexOutOfBoundsError");
+        expect(e.name).assertEqual("RangeError");
       }
     });
 
