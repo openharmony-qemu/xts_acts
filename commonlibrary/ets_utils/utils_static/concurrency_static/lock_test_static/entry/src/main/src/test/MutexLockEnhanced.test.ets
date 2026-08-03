@@ -1,21 +1,21 @@
 'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
-import Utils from './Util';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import Utils from './Util.test';
 import { BaseClass, sleep } from '../utils/Model';
 
 export default function MutexLockEnhancedTest(): void {
@@ -35,7 +35,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedDeadlockCircularWait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedDeadlockCircularWait';
-        
+        console.info(`${TAG} test start`);
         let lockA = new Mutex();
         let lockB = new Mutex();
         let result = new AtomicReference<string>('');
@@ -74,7 +74,7 @@ export default function MutexLockEnhancedTest(): void {
         worker1.join();
         worker2.join();
 
-        
+        console.info(`${TAG} result: ${result.load()}`);
         expect(result.load().length).assertLargerOrEqual(4);
         expect(worker1Completed.load()).assertEqual(1);
         expect(worker2Completed.load()).assertEqual(1);
@@ -92,7 +92,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedSelfLock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedSelfLock';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let lockCount = new AtomicInt(0);
         let workerCompleted = new AtomicInt(0);
@@ -118,7 +118,7 @@ export default function MutexLockEnhancedTest(): void {
         }
 
         worker.join().Await();
-        
+        console.info(`${TAG} lock count: ${lockCount.load()}`);
         expect(lockCount.load()).assertEqual(2);
         expect(workerCompleted.load()).assertEqual(1);
         Done();
@@ -135,7 +135,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedNestedLocks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedNestedLocks';
-        
+        console.info(`${TAG} test start`);
         let lock1 = new Mutex();
         let lock2 = new Mutex();
         let lock3 = new Mutex();
@@ -152,7 +152,7 @@ export default function MutexLockEnhancedTest(): void {
         lock2.unlock();
         lock1.unlock();
 
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(3);
         Done();
       });
@@ -168,7 +168,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedMultiLockDeadlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedMultiLockDeadlock';
-        
+        console.info(`${TAG} test start`);
         let lockA = new Mutex();
         let lockB = new Mutex();
         let lockC = new Mutex();
@@ -208,7 +208,7 @@ export default function MutexLockEnhancedTest(): void {
         worker1.join();
         worker2.join();
 
-        
+        console.info(`${TAG} completed workers: ${resultCount.load()}`);
         expect(resultCount.load()).assertLargerOrEqual(2);
         expect(worker1Completed.load()).assertEqual(1);
         expect(worker2Completed.load()).assertEqual(1);
@@ -226,7 +226,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedDoubleUnlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedDoubleUnlock';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let errorCount = 0;
 
@@ -237,10 +237,10 @@ export default function MutexLockEnhancedTest(): void {
           lock.unlock();
         } catch (e) {
           errorCount++;
-          
+          console.info(`${TAG} caught expected error: ${e.message}`);
         }
 
-        
+        console.info(`${TAG} error count: ${errorCount}`);
         expect(errorCount).assertEqual(1);
         Done();
       });
@@ -256,7 +256,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedUnlockWithoutLock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedUnlockWithoutLock';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let errorCount = 0;
 
@@ -264,10 +264,10 @@ export default function MutexLockEnhancedTest(): void {
           lock.unlock();
         } catch (e) {
           errorCount++;
-          
+          console.info(`${TAG} caught expected error: ${e.message}`);
         }
 
-        
+        console.info(`${TAG} error count: ${errorCount}`);
         expect(errorCount).assertEqual(1);
         Done();
       });
@@ -283,7 +283,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedStateAfterException', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedStateAfterException';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let count = 0;
 
@@ -292,7 +292,7 @@ export default function MutexLockEnhancedTest(): void {
           count++;
           throw new Error("test exception");
         } catch (e) {
-          
+          console.info(`${TAG} caught exception: ${e.message}`);
         } finally {
           lock.unlock();
         }
@@ -301,7 +301,7 @@ export default function MutexLockEnhancedTest(): void {
         count++;
         lock.unlock();
 
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(2);
         Done();
       });
@@ -317,7 +317,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedExceptionInWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedExceptionInWorker';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let count = new AtomicInt(0);
         let exceptionHandled = new AtomicInt(0);
@@ -337,7 +337,7 @@ export default function MutexLockEnhancedTest(): void {
         try {
           job.Await();
         } catch (e) {
-          
+          console.info(`${TAG} worker exception: ${e.message}`);
           exceptionHandled.fetchAdd(1);
         }
 
@@ -347,7 +347,7 @@ export default function MutexLockEnhancedTest(): void {
         count.fetchAdd(1);
         lock.unlock();
 
-        
+        console.info(`${TAG} count: ${count.load()}, exception handled: ${exceptionHandled.load()}`);
         expect(count.load()).assertEqual(2);
         expect(exceptionHandled.load()).assertEqual(1);
         Done();
@@ -364,7 +364,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedEmptyCriticalSection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedEmptyCriticalSection';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let count = 0;
 
@@ -374,7 +374,7 @@ export default function MutexLockEnhancedTest(): void {
           count++;
         }
 
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(100);
         Done();
       });
@@ -390,7 +390,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedLockGuard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedLockGuard';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let count = 0;
 
@@ -412,7 +412,7 @@ export default function MutexLockEnhancedTest(): void {
           count++;
         });
 
-        
+        console.info(`${TAG} count: ${count}, exception caught: ${exceptionCaught}`);
         expect(count).assertEqual(3);
         expect(exceptionCaught).assertTrue();
         Done();
@@ -429,7 +429,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedWithTaskPool', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedWithTaskPool';
-        
+        console.info(`${TAG} test start`);
         let lock = new Mutex();
         let count = new AtomicInt(0);
         let taskCount = 10;
@@ -446,7 +446,7 @@ export default function MutexLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        
+        console.info(`${TAG} final count: ${count.load()}`);
         expect(count.load()).assertEqual(taskCount);
         Done();
       });
@@ -462,7 +462,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedMultipleLocksSameWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedMultipleLocksSameWorker';
-        
+        console.info(`${TAG} test start`);
         let lock1 = new Mutex();
         let lock2 = new Mutex();
         let lock3 = new Mutex();
@@ -485,7 +485,7 @@ export default function MutexLockEnhancedTest(): void {
         job.Await();
         worker.join().Await();
 
-        
+        console.info(`${TAG} result: ${result.load()}`);
         expect(result.load()).assertEqual('123');
         Done();
       });
@@ -501,7 +501,7 @@ export default function MutexLockEnhancedTest(): void {
     it('mutexLockEnhancedSequentialLocking', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedSequentialLocking';
-        
+        console.info(`${TAG} test start`);
         let locks: Mutex[] = [new Mutex(), new Mutex(), new Mutex()];
         let count = new AtomicInt(0);
         let workerCount = 5;
@@ -530,7 +530,7 @@ export default function MutexLockEnhancedTest(): void {
           await sleep(50);
         }
 
-        
+        console.info(`${TAG} final count: ${count.load()}`);
         expect(count.load()).assertEqual(workerCount);
         Done();
       });

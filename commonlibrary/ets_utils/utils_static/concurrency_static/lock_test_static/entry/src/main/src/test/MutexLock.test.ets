@@ -1,14 +1,14 @@
 'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -25,8 +25,9 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium";
-import Utils from './Util';
+} from "../../../hypium/index";
+import hilog from '@ohos.hilog'
+import Utils from './Util.test';
 
 async function noParamNoReturnTask(): Promise<void> {
   await new Promise<string>((resolve) => {
@@ -50,7 +51,7 @@ export default function MutexLockTest(): void {
     it('MutexTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest001';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         lock.lock()
@@ -62,7 +63,7 @@ export default function MutexLockTest(): void {
           lock.unlock()
         }
         await func()
-        
+        console.info(`${TAG} test start1`);
         await new Promise<void>((resolve) => {
           lock.lock()
           count++
@@ -70,7 +71,7 @@ export default function MutexLockTest(): void {
         }).then(() => {
           lock.unlock()
         })
-        
+        console.info(`${TAG} test start2`);
         let eaw = new EAWorker()
         eaw.start()
         eaw.run<void>(() => {
@@ -79,7 +80,7 @@ export default function MutexLockTest(): void {
           lock.unlock()
         }).Await()
         eaw.join().Await()
-        
+        console.info(`${TAG} test start3`);
         setTimeout(() => {
           lock.lock()
           count++
@@ -88,7 +89,7 @@ export default function MutexLockTest(): void {
         while (count < 5) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(5)
         Done()
       });
@@ -104,7 +105,7 @@ export default function MutexLockTest(): void {
     it('MutexTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest002';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         lock.lock()
@@ -138,7 +139,7 @@ export default function MutexLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(6)
         Done()
       });
@@ -154,7 +155,7 @@ export default function MutexLockTest(): void {
     it('MutexTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest003';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         let lock2 = new Mutex()
@@ -192,7 +193,7 @@ export default function MutexLockTest(): void {
         while (count < 6) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(6)
         Done()
       });
@@ -208,7 +209,7 @@ export default function MutexLockTest(): void {
     it('MutexTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest004';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         for (let i = 0; i < 1000; i++) {
@@ -222,7 +223,7 @@ export default function MutexLockTest(): void {
           lock.unlock()
         }
         await func()
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(1001)
         Done()
       });
@@ -239,7 +240,7 @@ export default function MutexLockTest(): void {
     it('MutexTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest005';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         lock.lock()
@@ -250,7 +251,7 @@ export default function MutexLockTest(): void {
           count++
           expect(e.message).assertContain('state is already unlocked')
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(1)
         Done()
       });
@@ -266,7 +267,7 @@ export default function MutexLockTest(): void {
     it('MutexTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest006';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         for (let i = 0; i < 100; i++) {
@@ -295,7 +296,7 @@ export default function MutexLockTest(): void {
         while (count < 111) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(111)
         Done()
       });
@@ -311,7 +312,7 @@ export default function MutexLockTest(): void {
     it('MutexTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest007';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         for (let i = 0; i < 10; i++) {
@@ -344,7 +345,7 @@ export default function MutexLockTest(): void {
         while (count < 20001) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(20001)
         Done()
       })
@@ -361,7 +362,7 @@ export default function MutexLockTest(): void {
     it('MutexTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest008';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         for (let i = 0; i < 10; i++) {
@@ -395,7 +396,7 @@ export default function MutexLockTest(): void {
         while (count < 21) {
           await Utils.msSleep(200)
         }
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(21)
         Done()
       });
@@ -412,7 +413,7 @@ export default function MutexLockTest(): void {
     it('MutexTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest009';
-        
+        console.info(`${TAG} test start`);
         let count = 0
         let lock = new Mutex()
         let lock2 = new Mutex()
@@ -435,7 +436,7 @@ export default function MutexLockTest(): void {
         lock3.unlock()
         lock2.unlock()
         lock.unlock()
-        
+        console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(6)
         Done()
       })

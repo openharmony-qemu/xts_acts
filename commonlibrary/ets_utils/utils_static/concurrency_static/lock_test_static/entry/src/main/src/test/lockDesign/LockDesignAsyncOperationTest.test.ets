@@ -15,7 +15,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util';
+import Utils from '../Util.test';
 
 // ==================== AsyncOperation classes ====================
 class AsyncLockData {

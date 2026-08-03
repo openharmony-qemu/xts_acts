@@ -15,7 +15,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium'
-import Utils from '../Util'
+import Utils from '../Util.test'
 
 export default function LockComboTest(): void {
   describe('LockComboTest', (): void => {

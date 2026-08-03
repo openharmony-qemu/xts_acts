@@ -1,11 +1,11 @@
 'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import CombLockFlatTest from './CombLock.test'
-import CombLockEnhancedFlatTest from './CombLockEnhanced.test'
-import MutexLockFlatTest from './MutexLock.test'
-import MutexLockEnhancedFlatTest from './MutexLockEnhanced.test'
-import RWLockFlatTest from './RWLock.test'
-import RWLockEnhancedFlatTest from './RWLockEnhanced.test'
+import MutexLockTest from "./MutexLock.test";
+import RWLockTest from "./RWLock.test";
+import CombLockTest from "./CombLock.test";
+import MutexLockEnhancedTest from "./MutexLockEnhanced.test";
+import RWLockEnhancedTest from "./RWLockEnhanced.test";
+import CombLockEnhancedTest from "./CombLockEnhanced.test";
 import LockDesignDistributedLockProcessTest from './lockDesign/LockDesignDistributedLockProcessTest.test'
 import LockDesignAsyncOperationTest from './lockDesign/LockDesignAsyncOperationTest.test'
 import LockDesignProducerConsumerTest from './lockDesign/LockDesignProducerConsumerTest.test'
@@ -32,7 +32,7 @@ import LockFactorConcurrentTest from './lockFactor/LockFactorConcurrentTest.test
 import LockFactorNestingTest from './lockFactor/LockFactorNestingTest.test'
 import LockFactorStressTest from './lockFactor/LockFactorStressTest.test'
 import MutexConstructorTest from './mutex/MutexConstructorTest.test'
-import MutexLockTest from './mutex/MutexLockTest.test'
+import MutexLockSubTest from './mutex/MutexLockTest.test'
 import MutexUnlockTest from './mutex/MutexUnlockTest.test'
 import ReadLockLockTest from './readLock/ReadLockLockTest.test'
 import ReadLockUnlockTest from './readLock/ReadLockUnlockTest.test'
@@ -41,14 +41,13 @@ import RWLockReadLockTest from './rwLock/RWLockReadLockTest.test'
 import RWLockWriteLockTest from './rwLock/RWLockWriteLockTest.test'
 import WriteLockLockTest from './writeLock/WriteLockLockTest.test'
 import WriteLockUnlockTest from './writeLock/WriteLockUnlockTest.test'
-
 export default function testsuite(): void {
-  CombLockFlatTest()
-  CombLockEnhancedFlatTest()
-  MutexLockFlatTest()
-  MutexLockEnhancedFlatTest()
-  RWLockFlatTest()
-  RWLockEnhancedFlatTest()
+  MutexLockTest()
+  RWLockTest()
+  CombLockTest()
+  MutexLockEnhancedTest()
+  RWLockEnhancedTest()
+  CombLockEnhancedTest()
   LockDesignDistributedLockProcessTest()
   LockDesignAsyncOperationTest()
   LockDesignProducerConsumerTest()
@@ -61,7 +60,7 @@ export default function testsuite(): void {
   LockFactorNestingTest()
   LockFactorStressTest()
   MutexConstructorTest()
-  MutexLockTest()
+  MutexLockSubTest()
   MutexUnlockTest()
   ReadLockLockTest()
   ReadLockUnlockTest()
@@ -70,5 +69,4 @@ export default function testsuite(): void {
   RWLockWriteLockTest()
   WriteLockLockTest()
   WriteLockUnlockTest()
-
 }

@@ -15,7 +15,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util';
+import Utils from '../Util.test';
 
 class ConnectionPool {
   connections: string[] = ['conn1', 'conn2', 'conn3', 'conn4', 'conn5'];
