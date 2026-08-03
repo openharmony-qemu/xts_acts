@@ -67,19 +67,20 @@ export default function RichEditorDoubleClick013() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_018 START');
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick013'));
-      let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 20);
+      await rich.click()
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
+      // 点击复制避免第按钮被遮挡
+      let copy = await driver.findComponent(ON.text('复制'));
+      await copy?.click();
+      await CommonFunc.sleep(500);
       let addTextSpan = await driver.findComponent(ON.id('addTextSpan'));
       await addTextSpan.click();
       await CommonFunc.sleep(500);
@@ -87,14 +88,16 @@ export default function RichEditorDoubleClick013() {
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
+      // 点击复制避免第按钮被遮挡
+      let copy = await driver.findComponent(ON.text('复制'));
+      await copy?.click();
+      await CommonFunc.sleep(500);
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
       await CommonFunc.sleep(500);

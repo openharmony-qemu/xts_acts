@@ -68,12 +68,8 @@ export default function RichEditorDoubleClick016() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick016'));
       await CommonFunc.sleep(500);
-      let pointCenter = await rich.getBoundsCenter();
-      await CommonFunc.sleep(500);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
@@ -86,10 +82,8 @@ export default function RichEditorDoubleClick016() {
       let changeOrientation = await driver.findComponent(ON.id('changeOrientation'));
       await changeOrientation.click();
       await CommonFunc.sleep(1500);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');

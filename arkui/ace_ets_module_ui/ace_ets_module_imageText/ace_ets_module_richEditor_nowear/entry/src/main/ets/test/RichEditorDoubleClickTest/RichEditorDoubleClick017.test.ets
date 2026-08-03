@@ -67,29 +67,22 @@ export default function RichEditorDoubleClick017() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024 START');
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick017'));
-      let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 20);
+      await rich.click();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let endPosition = await driver.findComponent(ON.id('endPosition'));
       let endPositionText = await endPosition.getText();
       await CommonFunc.sleep(500);
       expect(endPositionText).assertLarger(-1);
-      await driver.click(getBounds.left + 40, getBounds.top + 46);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 40, getBounds.top + 46);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       endPositionText = await endPosition.getText();
       await CommonFunc.sleep(500);
       expect(endPositionText).assertLarger(-1);
-      await driver.click(getBounds.left + 40, getBounds.top + 70);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 40, getBounds.top + 70);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       endPositionText = await endPosition.getText();
       await CommonFunc.sleep(500);
       expect(endPositionText).assertLarger(-1);
