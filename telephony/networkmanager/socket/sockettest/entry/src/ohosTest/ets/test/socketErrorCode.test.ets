@@ -989,7 +989,7 @@ export default function SocketErrorCodeTest01() {
      * @tc.level  LEVEL3
      */
     it('testLocalSocketServerGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testLocalSocketServerListen0100';
+      const caseName: string = 'testLocalSocketServerGetState0100';
       console.info(`${caseName}---Start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
