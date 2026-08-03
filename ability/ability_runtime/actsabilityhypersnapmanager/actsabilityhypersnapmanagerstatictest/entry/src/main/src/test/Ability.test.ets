@@ -163,14 +163,14 @@ export default function abilityTest() {
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then((data: commonEventManager.CommonEventSubscriber) => {
-          hilog.info(DOMAIN, 'testTag', `createSubscriber success.`);
+          hilog.info(0x0000, 'testTag', `createSubscriber success.`);
           subscriber = data;
           commonEventManager.subscribe(subscriber,
             (err: BusinessError<void>|null, eventData: commonEventManager.CommonEventData|undefined) => {
-              hilog.info(DOMAIN, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(eventData)}.`);
+              hilog.info(0x0000, 'testTag', `SubscribeCallBack CommonEventData: ${JSON.stringify(eventData)}.`);
               expect(eventData?.parameters?.['onAboutToCreateAbilityAsync']).assertEqual('onAboutToCreateAbilityAsync');
               commonEventManager.unsubscribe(subscriber, () => {
-                hilog.info(DOMAIN, 'testTag', 'UnSubscribeCallback');
+                hilog.info(0x0000, 'testTag', 'UnSubscribeCallback');
               });
               done();
             });
