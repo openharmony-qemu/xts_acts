@@ -5227,9 +5227,9 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
       }
     })
@@ -5270,9 +5270,9 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
       }
     })
@@ -5305,9 +5305,9 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
       }
     })
@@ -5400,9 +5400,9 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
       }
     })
@@ -5434,11 +5434,11 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
-      }
+      } 
     })
 
     /**
@@ -5466,9 +5466,9 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         if(!isSyscapSessionManagerSupported){
            expect(exception.code).assertEqual(801);
-           done();
+        }else{
+           expect().assertFail();
         }
-        expect().assertFail();
         done();
       }
     })
