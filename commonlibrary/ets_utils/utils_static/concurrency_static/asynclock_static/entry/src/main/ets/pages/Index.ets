@@ -13,13 +13,13 @@ struct MyStateSample {
   }
   build() {
     Column() {
-      Text('Hello World').fontSize($r('app.float.page_text_font_size'))
+      Text('Hello World').fontSize(20)
       Button(this.message).backgroundColor('#FFFF00FF')
         .onClick(() => {
           hilog.info(0x0000, 'testTag', 'On Click');
           this.changeValue();
         })
-      Text(this.stateVar).fontSize($r('app.float.page_text_font_size'))
+      Text(this.stateVar).fontSize(20)
       Child({ stateVar: this.stateVar })
     }
   }
@@ -29,6 +29,6 @@ struct MyStateSample {
 struct Child {
   stateVar: string = 'Child';
   build() {
-    Text(this.stateVar).fontSize($r('app.float.page_text_font_size'))
+    Text(this.stateVar).fontSize(20)
   }
 }
