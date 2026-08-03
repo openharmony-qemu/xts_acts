@@ -81,10 +81,10 @@ it('SUB_ACE_Row_flexGrow_Part_TEST_static_0100', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexGrow_Part_011: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_011');
-      let Row_flexGrow_Part_012: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_012');
-      let Row_flexGrow_Part_013: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_013');
-      let Row_flexGrow_Part_01: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_01');
+      let Row_flexGrow_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_011');
+      let Row_flexGrow_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_012');
+      let Row_flexGrow_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_013');
+      let Row_flexGrow_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexGrow_Part_011.top - Row_flexGrow_Part_01.top) - Math.round(Row_flexGrow_Part_01.bottom - Row_flexGrow_Part_011.bottom)) <= 1)
@@ -142,10 +142,10 @@ it('SUB_ACE_Row_flexGrow_Part_TEST_static_0200', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexGrow_Part_011: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_011');
-      let Row_flexGrow_Part_012: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_012');
-      let Row_flexGrow_Part_013: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_013');
-      let Row_flexGrow_Part_01: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_01');
+      let Row_flexGrow_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_011');
+      let Row_flexGrow_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_012');
+      let Row_flexGrow_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_013');
+      let Row_flexGrow_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_01');
       console.log('assert position')
 
       console.log('assert position')
@@ -204,10 +204,10 @@ it('SUB_ACE_Row_flexGrow_Part_TEST_static_0300', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexGrow_Part_011: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_011');
-      let Row_flexGrow_Part_012: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_012');
-      let Row_flexGrow_Part_013: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_013');
-      let Row_flexGrow_Part_01: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_01');
+      let Row_flexGrow_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_011');
+      let Row_flexGrow_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_012');
+      let Row_flexGrow_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_013');
+      let Row_flexGrow_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_01');
       console.log('assert position')
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexGrow_Part_011.top - Row_flexGrow_Part_01.top) - Math.round(Row_flexGrow_Part_01.bottom - Row_flexGrow_Part_011.bottom)) <= 1)
@@ -269,10 +269,10 @@ it('SUB_ACE_Row_flexGrow_Part_TEST_static_0400', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexGrow_Part_011: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_011');
-      let Row_flexGrow_Part_012: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_012');
-      let Row_flexGrow_Part_013: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_013');
-      let Row_flexGrow_Part_01: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_01');
+      let Row_flexGrow_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_011');
+      let Row_flexGrow_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_012');
+      let Row_flexGrow_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_013');
+      let Row_flexGrow_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexGrow_Part_011.top - Row_flexGrow_Part_01.top) - Math.round(Row_flexGrow_Part_01.bottom - Row_flexGrow_Part_011.bottom)) <= 1)
         .assertTrue();
@@ -323,10 +323,10 @@ it('SUB_ACE_Row_flexGrow_Part_TEST_static_0500', Level.LEVEL0, async (done: () =
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_static_0500] START');
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexGrow_Part_021: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_021');
-      let Row_flexGrow_Part_022: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_022');
-      let Row_flexGrow_Part_023: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_023');
-      let Row_flexGrow_Part_02: RectValue = await CommonFunc.getComponentRect('Row_flexGrow_Part' + '_02');
+      let Row_flexGrow_Part_021: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_021');
+      let Row_flexGrow_Part_022: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_022');
+      let Row_flexGrow_Part_023: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_023');
+      let Row_flexGrow_Part_02: RectValue = CommonFunc.getComponentRect('Row_flexGrow_Part_02');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexGrow_Part_021.top - Row_flexGrow_Part_02.top) - Math.round(Row_flexGrow_Part_02.bottom - Row_flexGrow_Part_021.bottom)) <= 1)
         .assertTrue();

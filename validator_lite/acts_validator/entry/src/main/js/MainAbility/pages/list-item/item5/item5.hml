@@ -15,27 +15,27 @@ limitations under the License.
 
 <div class="container">
   <div class="content-title">
-    <text style="width:60%;height:50px;text-align: center;">list-item</text>
+    <text style="width:150px;height:50px;text-align: center;font-size:16px;">list-item</text>
     <input type="button" value="?" class="backBtnHelp" onclick="help" />
   </div>
 
   <list
           id="list1"
-          style="left:15%;top:18%;width:70%;height:50%;border-width:2px;border-color:#1e90ff;flex-direction: column"
+          class="content-list"
           onclick="listClick"
           onscrollend="scrollEnd"
           >
-    <list-item style="width:300px;height:120px" for="{{listData}}">
-      <image src="{{$item}}" style="width:67px;height:67px" />
-      <text style="color: #ffa500;width:180px;height:50px">
+    <list-item class="list-row" for="{{listData}}">
+      <image src="{{$item}}" class="list-img" />
+      <text class="list-text">
         item--{{$idx}}
       </text>
     </list-item>
   </list>
 
   <div class="bottom-bt">
-    <input type="button" value="pass" class="button" onclick="changeResult(pass)" />
-    <input type="button" value="fail" class="button" onclick="changeResult(fail)" />
+    <input type="button" value="pass" class="button" onclick="changeResultPass" />
+    <input type="button" value="fail" class="button" onclick="changeResultFail" />
     <input type="button" value="返回" class="button" onclick="back" />
   </div>
 </div>

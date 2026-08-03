@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import rawmemchrndktest from 'librawmemchrndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function RawmemchrNdkTest() {
   describe('RawmemchrNdkTest', () => {
@@ -33,9 +32,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal005();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrNormal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrNormal006();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function RawmemchrNdkTest() {
      */
     // it('testRawmemchrAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     //   let resNum: number = rawmemchrndktest.rawmemchrAbnormal001();
-    //   let deviceType: string = deviceInfo.deviceType;
-    //   let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-    //   expect(isValid).assertTrue();
+    //   expect(resNum == 1).assertTrue();
       // done();
     // });
 
@@ -145,9 +130,7 @@ export default function RawmemchrNdkTest() {
      */
     // it('testRawmemchrAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     //   let resNum: number = rawmemchrndktest.rawmemchrAbnormal002();
-    //   let deviceType: string = deviceInfo.deviceType;
-    //   let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-    //   expect(isValid).assertTrue();
+    //   expect(resNum == 1).assertTrue();
       // done();
     // });
 
@@ -161,9 +144,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -193,9 +172,7 @@ export default function RawmemchrNdkTest() {
      */
     it('testRawmemchrThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = rawmemchrndktest.rawmemchrThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

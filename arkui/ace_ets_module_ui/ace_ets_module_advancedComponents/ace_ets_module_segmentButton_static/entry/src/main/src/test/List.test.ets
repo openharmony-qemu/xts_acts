@@ -35,6 +35,8 @@ import segmentButtonDirectionTest from './segmentButton/segmentbuttonDirection.t
 import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
 import SegmentButtonItemOptionsArrayTest from './segmentButton/SegmentButtonItemOptionsArray.test';
 import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnableStateAnimation.test';
+import BackgroundSystemMaterialV2Test from './capsuleSegmentButtonV2/BackgroundSystemMaterialV2Test.test';
+import BackgroundSystemMaterialTest from './segmentButton/BackgroundSystemMaterialTest.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -58,4 +60,6 @@ export default function testsuite() {
   SegmentBtnItemTest0010();
   SegmentButtonItemOptionsArrayTest();
   segmentButtonEnableStateAnimation();
+  BackgroundSystemMaterialV2Test();
+  BackgroundSystemMaterialTest();
 }

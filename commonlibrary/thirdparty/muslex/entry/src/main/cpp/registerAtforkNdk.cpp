@@ -79,7 +79,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value RegisterAtforkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     g_prepareCount = 0;
     g_parentCount = 0;
@@ -101,7 +101,7 @@ static napi_value RegisterAtforkNormal001(napi_env env, napi_callback_info info)
 static napi_value RegisterAtforkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -111,7 +111,7 @@ static napi_value RegisterAtforkNormal002(napi_env env, napi_callback_info info)
 static napi_value RegisterAtforkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     g_prepareCount = 0;
     int ret = CallRegisterAtfork(PrepareHandler, nullptr, nullptr);
@@ -131,7 +131,7 @@ static napi_value RegisterAtforkNormal003(napi_env env, napi_callback_info info)
 static napi_value RegisterAtforkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     g_parentCount = 0;
     int ret = CallRegisterAtfork(nullptr, ParentHandler, nullptr);
@@ -151,7 +151,7 @@ static napi_value RegisterAtforkNormal004(napi_env env, napi_callback_info info)
 static napi_value RegisterAtforkNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     g_childCount = 0;
     int ret = CallRegisterAtfork(nullptr, nullptr, ChildHandler);
@@ -173,7 +173,7 @@ static napi_value RegisterAtforkNormal005(napi_env env, napi_callback_info info)
 static napi_value RegisterAtforkAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pid_t pid = fork();
     if (pid == 0) {
@@ -193,11 +193,11 @@ static napi_value RegisterAtforkAbnormal001(napi_env env, napi_callback_info inf
 static napi_value RegisterAtforkBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 10;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 10;
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
         if (ret != 0) {
             pass = false;
@@ -213,11 +213,11 @@ static napi_value RegisterAtforkBoundary001(napi_env env, napi_callback_info inf
 static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
         if (ret != 0) {
             pass = false;
@@ -227,7 +227,9 @@ static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void RegisterAtforkWorker(std::atomic<bool>& hasError)
+/* ==================== Multi-thread Tests ==================== */
+
+static void RegisterAtforkThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
@@ -238,19 +240,19 @@ static void RegisterAtforkWorker(std::atomic<bool>& hasError)
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-009: Multi-thread safety */
 static napi_value RegisterAtforkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(RegisterAtforkWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            RegisterAtforkThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

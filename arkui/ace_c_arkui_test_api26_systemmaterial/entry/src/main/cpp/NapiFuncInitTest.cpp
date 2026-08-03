@@ -39,11 +39,21 @@ static napi_property_descriptor *GetMaterialCoreProps(size_t *count)
         MakeMaterialProp("testImmersiveMaterialSetGetStyle001", TestImmersiveMaterialSetGetStyle001),
         MakeMaterialProp("testImmersiveMaterialSetGetStyleInvalid001", TestImmersiveMaterialSetGetStyleInvalid001),
         MakeMaterialProp("testImmersiveMaterialSetGetColor001", TestImmersiveMaterialSetGetColor001),
+        MakeMaterialProp("testImmersiveMaterialGetMaterialColorNull001",
+            TestImmersiveMaterialGetMaterialColorNull001),
         MakeMaterialProp("testImmersiveMaterialSetGetApplyShadow001", TestImmersiveMaterialSetGetApplyShadow001),
+        MakeMaterialProp("testImmersiveMaterialSetApplyShadowNull001", TestImmersiveMaterialSetApplyShadowNull001),
+        MakeMaterialProp("testImmersiveMaterialGetApplyShadowNull001", TestImmersiveMaterialGetApplyShadowNull001),
         MakeMaterialProp("testImmersiveMaterialSetGetInteractive001", TestImmersiveMaterialSetGetInteractive001),
+        MakeMaterialProp("testImmersiveMaterialSetInteractiveNull001", TestImmersiveMaterialSetInteractiveNull001),
+        MakeMaterialProp("testImmersiveMaterialGetInteractiveNull001", TestImmersiveMaterialGetInteractiveNull001),
         MakeMaterialProp("testImmersiveMaterialGetInteractiveNotSet001", TestImmersiveMaterialGetInteractiveNotSet001),
         MakeMaterialProp("testLightEffectOptionsLifecycle001", TestLightEffectOptionsLifecycle001),
+        MakeMaterialProp("testLightEffectOptionsDestroyNull001", TestLightEffectOptionsDestroyNull001),
         MakeMaterialProp("testImmersiveMaterialSetGetLightEffect001", TestImmersiveMaterialSetGetLightEffect001),
+        MakeMaterialProp("testImmersiveMaterialSetLightEffectNull001", TestImmersiveMaterialSetLightEffectNull001),
+        MakeMaterialProp("testImmersiveMaterialGetLightEffectColorNull001",
+            TestImmersiveMaterialGetLightEffectColorNull001),
         MakeMaterialProp("testImmersiveMaterialGetLightEffectNotSet001", TestImmersiveMaterialGetLightEffectNotSet001),
         MakeMaterialProp("testImmersiveMaterialDestroyNull001", TestImmersiveMaterialDestroyNull001),
         MakeMaterialProp("testImmersiveMaterialSetMaterialColorBoundary001",
@@ -90,6 +100,45 @@ static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
             TestCustomDialogSetDisplayModeInSubWindow002),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
             TestCustomDialogSetDisplayModeInSubWindow003),
+        MakeMaterialProp("testDialogOpenCallbackErrorEnumValues001", TestDialogOpenCallbackErrorEnumValues001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackNullOptions001",
+            TestCustomDialogOpenDialogWithCallbackNullOptions001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackUserData001",
+            TestCustomDialogOpenDialogWithCallbackUserData001),
+        MakeMaterialProp("testCustomDialogOpenDialogWithCallbackValidOptions001",
+            TestCustomDialogOpenDialogWithCallbackValidOptions001),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
+
+static napi_property_descriptor *GetMaterialNullPointerProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
+        MakeMaterialProp("testGetNodeSnapshotSizeLimitationNull001", TestGetNodeSnapshotSizeLimitationNull001),
+        MakeMaterialProp("testRenderNodeUtilsSetRectShapeOptionValueNull001",
+            TestRenderNodeUtilsSetRectShapeOptionValueNull001),
+        MakeMaterialProp("testRenderNodeUtilsSetRoundRectShapeOptionValueNull001",
+            TestRenderNodeUtilsSetRoundRectShapeOptionValueNull001),
+        MakeMaterialProp("testRenderNodeUtilsDisposeBlurStyleOptionNull001",
+            TestRenderNodeUtilsDisposeBlurStyleOptionNull001),
+        MakeMaterialProp("testLinearGradientOptionsDestroyNull001", TestLinearGradientOptionsDestroyNull001),
+        MakeMaterialProp("testRadialGradientOptionsDestroyNull001", TestRadialGradientOptionsDestroyNull001),
+        MakeMaterialProp("testNativeWindowManagerGetKeyEventFilterNull001",
+            TestNativeWindowManagerGetKeyEventFilterNull001),
+        MakeMaterialProp("testNativeWindowManagerGetMouseEventFilterNull001",
+            TestNativeWindowManagerGetMouseEventFilterNull001),
+        MakeMaterialProp("testNativeWindowManagerGetTouchEventFilterNull001",
+            TestNativeWindowManagerGetTouchEventFilterNull001),
+        MakeMaterialProp("testFrameMetricsIsFirstDrawFrameNull001", TestFrameMetricsIsFirstDrawFrameNull001),
+        MakeMaterialProp("testFrameMetricsGetInputHandlingDurationNull001",
+            TestFrameMetricsGetInputHandlingDurationNull001),
+        MakeMaterialProp("testFrameMetricsGetLayoutMeasureDurationNull001",
+            TestFrameMetricsGetLayoutMeasureDurationNull001),
+        MakeMaterialProp("testFrameMetricsGetVsyncTimestampNull001", TestFrameMetricsGetVsyncTimestampNull001),
+        MakeMaterialProp("testLineSpacingStyleDestroyNull001", TestLineSpacingStyleDestroyNull001),
+        MakeMaterialProp("testFontConfigsGetFontWeightConfigsNull001", TestFontConfigsGetFontWeightConfigsNull001),
+        MakeMaterialProp("testTextControllerDestroyNull001", TestTextControllerDestroyNull001),
     };
     *count = sizeof(desc) / sizeof(desc[0]);
     return desc;
@@ -99,12 +148,17 @@ static bool DefineMaterialProps(napi_env env, napi_value exports)
 {
     size_t coreCount = 0;
     size_t dialogCount = 0;
+    size_t nullCount = 0;
     napi_property_descriptor *coreDesc = GetMaterialCoreProps(&coreCount);
     napi_property_descriptor *dialogDesc = GetMaterialDialogProps(&dialogCount);
+    napi_property_descriptor *nullDesc = GetMaterialNullPointerProps(&nullCount);
     if (napi_define_properties(env, exports, coreCount, coreDesc) != napi_ok) {
         return false;
     }
     if (napi_define_properties(env, exports, dialogCount, dialogDesc) != napi_ok) {
+        return false;
+    }
+    if (napi_define_properties(env, exports, nullCount, nullDesc) != napi_ok) {
         return false;
     }
     return true;

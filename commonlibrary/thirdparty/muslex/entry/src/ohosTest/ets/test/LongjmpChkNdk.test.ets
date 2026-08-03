@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import longjmpchkndktest from 'liblongjmpchkndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function LongjmpChkNdkTest() {
   describe('LongjmpChkNdkTest', () => {
@@ -33,9 +32,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function LongjmpChkNdkTest() {
      */
     it('testLongjmpChkThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = longjmpchkndktest.longjmpChkThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

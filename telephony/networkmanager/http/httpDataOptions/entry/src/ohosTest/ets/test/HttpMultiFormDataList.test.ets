@@ -560,7 +560,7 @@ export default function HttpMultiFormDataListTest() {
                     name: "multiTest",
                     remoteFileName: "xtsRemoteTest",
                     contentType: "image/png",
-                    filePath: "../../resources/base/media/icon.png",
+                    filePath: "invalid_path_that_does_not_exist.png",
                   },
                 ],
               }, (err: BusinessError, data: http.HttpResponse) => {
@@ -616,7 +616,7 @@ export default function HttpMultiFormDataListTest() {
                   name: "multiTest",
                   remoteFileName: "xtsRemoteTest",
                   contentType: "image/png",
-                  filePath: "../../resources/base/media/icon.png",
+                  filePath: "invalid_path_that_does_not_exist.png",
                 },
               ],
             }).then((data: http.HttpResponse) => {

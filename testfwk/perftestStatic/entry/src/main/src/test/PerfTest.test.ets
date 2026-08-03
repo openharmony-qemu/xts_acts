@@ -106,7 +106,7 @@ export default function perfTestTest() {
             await driver!.delayMs(3000)
             let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 let button = await driver!.findComponent(ON.text('ListPage'))
                 if (button != null) {
                     await driver!.delayMs(1000)
@@ -114,14 +114,14 @@ export default function perfTestTest() {
                     await driver!.delayMs(1000)
                 }
                 finish(true)
-                })().awaitSync()
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 await driver!.pressBack()
                 await driver!.delayMs(1000)
                 finish(true)
-                })().awaitSync()
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -163,7 +163,7 @@ export default function perfTestTest() {
             }
             let metrics: Array<PerfMetric> = [PerfMetric.LIST_SWIPE_FPS]
             let actionCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 let scroll = await driver!.findComponent(ON.type('Scroll'))
                 if (scroll != null) {
                     await driver!.delayMs(1000)
@@ -173,10 +173,10 @@ export default function perfTestTest() {
                     await driver!.delayMs(3000)
                 }
                 finish(true)
-                })().awaitSync()
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 let scroll = await driver!.findComponent(ON.type('Scroll'))
                 if (scroll != null) {
                     await driver!.delayMs(1000)
@@ -184,7 +184,7 @@ export default function perfTestTest() {
                     await driver!.delayMs(1000)
                 }
                 finish(true)
-                })().awaitSync()
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -217,10 +217,10 @@ export default function perfTestTest() {
             await driver!.delayMs(3000)
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
             let actionCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 await driver!.delayMs(1000)
                 finish(true)
-                })().awaitSync()
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -269,7 +269,7 @@ export default function perfTestTest() {
             }
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS, PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 await driver!.delayMs(1000)
                 let textCom1 = await driver!.findComponent(ON.text('push Page01'))
                 if (textCom1 != null) {
@@ -280,15 +280,15 @@ export default function perfTestTest() {
                     await driver!.delayMs(1000)
                 }
                 finish(true)
-                })().awaitSync()
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 await driver!.delayMs(1000)
                 await driver!.pressBack()
                 await driver!.delayMs(1000)
                 finish(true)
-                })().awaitSync()
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -347,22 +347,22 @@ export default function perfTestTest() {
             expect(btn1 != null).assertTrue();
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.APP_START_RESPONSE_TIME, PerfMetric.APP_START_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 if (btn1 != null) {
                     let point = await (btn1 as Component).getBoundsCenter()
                     await driver!.click(point.x , point.y - 50)
                     await driver!.delayMs(1000)
                 }
                 finish(true)
-                })().awaitSync()
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                (async () => {
+                waitForCompletion(async () => {
                 await driver!.delayMs(1000)
                 await stopApplication('com.perftestScene.acts')
                 await driver!.delayMs(1000)
                 finish(true)
-                })().awaitSync()
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,

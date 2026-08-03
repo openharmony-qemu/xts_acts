@@ -874,7 +874,7 @@ export default function ArrayFindIndexTest2(): void {
     it('testArrayFindIndex047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1 = new Array<number>(1, 2);
       const inner2 = new Array<number>(3, 4, 5);
-      const inner3 = new Array<number>(6);
+      const inner3 = Array.create<number>(1, 6);
       const arr = new Array<Array<number>>(inner1, inner2, inner3);
       const idx = arr.findIndex((inner: Array<number>): boolean => inner.length > 2);
       expect(idx).assertEqual(1);

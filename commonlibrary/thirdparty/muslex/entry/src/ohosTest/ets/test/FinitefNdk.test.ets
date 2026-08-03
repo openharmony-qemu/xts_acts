@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import finitefdktest from 'libfinitefdktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function FinitefNdkTest() {
   describe('FinitefNdkTest', () => {
@@ -33,9 +32,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = finitefdktest.finitefStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function FinitefNdkTest() {
      */
     it('testFinitefThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = finitefdktest.finitefThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

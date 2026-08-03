@@ -20,6 +20,8 @@ import { BusinessError } from '@ohos.base';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
+import { openCertificateManagerDialogTest } from './utils/common/common_function';
+
 function createUnit8Array(len: number){
   let buf = new ArrayBuffer(len);
   let uint8Array = new Uint8Array(buf);
@@ -123,21 +125,21 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.getPublicCertificate('');
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
       }
       try {
         await certManager.getPublicCertificate(null);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
       }
       try {
         await certManager.getPublicCertificate(undefined);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -156,7 +158,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.getPublicCertificate('aabb');
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -177,7 +179,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let uriObject = generateString(255-27);
       try {
         await certManager.getPublicCertificate(uri.replace("object", uriObject));
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
@@ -200,7 +202,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let uriObject = generateString(256-27);
       try {
         await certManager.getPublicCertificate(uri.replace("object", uriObject));
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0700 ： e.code = " + err.code);
@@ -220,21 +222,21 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.isAuthorizedApp('');
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
       }
       try {
         await certManager.isAuthorizedApp(null);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
       }
       try {
         await certManager.isAuthorizedApp(undefined);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -253,7 +255,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_PubCertJsApi_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await certManager.isAuthorizedApp('aabb');
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -272,7 +274,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_2000 started.");
       try {
         await certManager.isAuthorizedApp(generateString(255));
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -293,7 +295,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_3000 started.");
       try {
         await certManager.isAuthorizedApp(generateString(256));
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       catch (err) {
         expect(err.code).assertEqual(401);
@@ -393,20 +395,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         keyUri = cmResult.uri;
       }).catch((err: BusinessError) => {
         console.error("[Promise] installPrivateCertificate err: " + err.code);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       });
       try {
         let Result : certManager.CMResult = await certManager.getPrivateCertificates();
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010: Result = " + JSON.stringify(Result.credentialList));
       } catch (err) {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010: e.code " + err.code);
-        expect(null).assertFail()
+        expect(false).assertTrue()
       }
       if (keyUri != undefined) {
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
         console.error("SUB_Security_CertManager_PriCertJsApi_Func_0200 keyUri is undefined!");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       done();
     });
@@ -428,7 +430,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0100 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
@@ -453,7 +455,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -477,7 +479,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
@@ -501,7 +503,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -525,7 +527,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -553,7 +555,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.uninstallPrivateCertificate(keyUri);
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600 e.code = " + err.code);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       done();
     });
@@ -574,7 +576,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -601,7 +603,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
@@ -626,7 +628,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -651,7 +653,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
@@ -676,7 +678,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -701,7 +703,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -730,7 +732,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.uninstallPrivateCertificate(keyUri);
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600 e.code = " + err.code);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       done();
     });
@@ -752,7 +754,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1700: installPrivateCertificate success");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1700 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -772,7 +774,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let keyUri: string | undefined = generateString(256);
       try{
         await certManager.uninstallPrivateCertificate(keyUri);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -793,7 +795,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let keyUri: string | undefined = generateString(257);
       try{
         await certManager.uninstallPrivateCertificate(keyUri);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }catch(err){
         console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200 e.code = " + err.code);
         expect(err.code).assertEqual(401);
@@ -881,7 +883,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
             Uris.push(keyUri)
           }).catch((err: BusinessError) => {
             console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0030[Promise] installPrivateCertificate err: " + err.code);
-            expect(null).assertFail();
+            expect(false).assertTrue();
           });
         }
         let Result: certManager.CMResult = await certManager.getPrivateCertificates();
@@ -905,11 +907,11 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(credentialList.length).assertEqual(256);
         } else {
           console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0030: Result.credentialList is undefind ");
-          expect(null).assertFail();
+          expect(false).assertTrue();
         }
       } catch (err) {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0030: e.code = " + err.code);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       if (keyUri != undefined) {
         for (let i = 0; i < Uris.length; i++) {
@@ -918,7 +920,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         }
       } else {
         console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0030 keyUri is undefined!");
-        expect(null).assertFail();
+        expect(false).assertTrue();
       }
       done();
     });
@@ -937,35 +939,35 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         console.log(`Security_CertManager_OpenCertDialogCertJsApi_Func_0030 device support CertificateManagerDialog`)
         try {
           await certManagerDialog.openCertificateManagerDialog(null, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
           await certManagerDialog.openCertificateManagerDialog(context, null);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
           await certManagerDialog.openCertificateManagerDialog(undefined, certManagerDialog.CertificateDialogPageType.PAGE_MAIN);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
           await certManagerDialog.openCertificateManagerDialog(context, undefined);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         try {
           await certManagerDialog.openCertificateManagerDialog(context, 9);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           console.log("SUB_Security_CertManager_PubCertJsApi_Func_0201: e.code = " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
@@ -1024,7 +1026,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
       try {
         await certManagerDialog.openInstallCertificateDialog(null, certificateType, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1039,7 +1041,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       try {
         await certManagerDialog.openInstallCertificateDialog(undefined, certificateType, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1054,7 +1056,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1069,7 +1071,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, undefined)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1084,7 +1086,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, null, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1100,7 +1102,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
 
       try {
         await certManagerDialog.openInstallCertificateDialog(context, 999, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1115,7 +1117,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, null, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1131,7 +1133,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
 
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1162,7 +1164,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
       try {
         await certManagerDialog.openInstallCertificateDialog(null, certificateType, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (err.code == 29700004) {
           console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: e.code " + err.code);
@@ -1191,7 +1193,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
-        expect(null).assertFail()
+        expect(false).assertTrue()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
@@ -1202,6 +1204,60 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           } else {
             console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device don't supports CACertDialog. e.code " + err.code);
             expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
+          }
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0050
+     * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0050
+     * @tc.desc   certificateType is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0050 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await certManagerDialog.openInstallCertificateDialog(context, undefined, certificateScope, caCert);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0050 failed. code:${error.code}, message:${error.message}`);
+          expect(error.code).assertEqual(401);
+          expect(error.message).assertEqual("check argv vaild and init faild");
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060
+     * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060
+     * @tc.desc   certificateScope is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await certManagerDialog.openInstallCertificateDialog(context, certificateType, undefined, caCert);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0060 failed. code:${error.code}, message:${error.message}`);
+          if (error.code == 29700004) {
+            expect(error.code).assertEqual(29700004);
+          } else {
+            expect(error.code).assertEqual(401);
+            expect(error.message).assertEqual("check argv vaild and init faild");
           }
         }
       }
@@ -1339,7 +1395,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1348,7 +1404,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       } else {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1377,7 +1433,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1386,7 +1442,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       } else {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1415,7 +1471,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1424,7 +1480,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       } else {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1453,7 +1509,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1462,7 +1518,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       } else {
         try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
+          expect(false).assertTrue();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 failed. Code: ${error.code}, message: ${error.message}`);
@@ -1490,13 +1546,137 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       };
       try {
         await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (err) {
         let error: BusinessError = err as BusinessError;
         console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(17500011);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0040
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0040
+     * @tc.desc   pageType is invalid value 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0040 start');
+      const context: common.Context = GlobalContext.getContext();
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await certManagerDialog.openCertificateManagerDialog(context, 5 as certManagerDialog.CertificateDialogPageType);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(`SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0040 failed. code:${error.code}, message:${error.message}`);
+          expect(error.code).assertEqual(401);
+          expect(error.message).assertEqual("pageType invalid");
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050
+     * @tc.desc   normal test with PAGE_MAIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050 start');
+      const context: common.Context = GlobalContext.getContext();
+      let pageType = certManagerDialog.CertificateDialogPageType.PAGE_MAIN;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, pageType);
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050: Success in open certificate detail dialog");
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0050: Failed in open certificate detail dialog");
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060
+     * @tc.desc   normal test with PAGE_CA_CERTIFICATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060 start');
+      const context: common.Context = GlobalContext.getContext();
+      let pageType = certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, pageType);
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060: Success in open certificate detail dialog");
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0060: Failed in open certificate detail dialog");
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070
+     * @tc.desc   normal test with PAGE_CREDENTIAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070 start');
+      const context: common.Context = GlobalContext.getContext();
+      let pageType = certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, pageType);
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070: Success in open certificate detail dialog");
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0070: Failed in open certificate detail dialog");
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080
+     * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080
+     * @tc.desc   normal test with PAGE_INSTALL_CERTIFICATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080 start');
+      const context: common.Context = GlobalContext.getContext();
+      let pageType = certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE;
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          await openCertificateManagerDialogTest(context, pageType);
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080: Success in open certificate detail dialog");
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info("SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0080: Failed in open certificate detail dialog");
+          expect(false).assertTrue();
+        }
+      }
       done();
     });
   })

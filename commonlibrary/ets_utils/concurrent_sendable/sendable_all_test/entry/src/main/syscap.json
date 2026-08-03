@@ -1,0 +1,10 @@
+{
+    "devices": {
+        "default": [
+            "SystemCapability.Utils.Lang"
+        ],
+        "tablet": [
+            "SystemCapability.Utils.Lang"
+        ]
+    }
+}

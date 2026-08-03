@@ -1949,44 +1949,70 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testSetWindowMask_Function_Promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it("testSetWindowMask_Function_Promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msgStr = "testSetWindowMask_Function_Promise";
       console.log(msgStr + " begin")
-      let windowMask: Array<Array<number>> = new Array<Array<number>>()
-      for (let i = 0; i < 500; i++) {
-        let arr: Array<number> = new Array<number>(500);
-        for (let j = 0; j < 500; j++) {
-          if (i + j < 500) {
-            arr[j] = 0
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${msgStr} isSupport: ${isSupport}`);
+      let wnd: ohosWindow.Window | void;
+      try {
+        wnd = await windowStage.createSubWindow('nowWindowA');
+        console.log(msgStr + " createSubWindow OK ")
+        let windowLimits = (wnd as ohosWindow.Window).getWindowLimits();
+        let minWidth = Number(windowLimits.minWidth);
+        let minHeight = Number(windowLimits.minHeight);
+        console.info(`${msgStr} getWindowLimits minWidth: ${minWidth}, minHeight: ${minHeight}`);
+        let windowMask: Array<Array<number>> = new Array<Array<number>>()
+        for (let i = 0; i < minHeight; i++) {
+          let arr: Array<number> = new Array<number>(minWidth);
+          for (let j = 0; j < minWidth; j++) {
+            if (i + j < minWidth) {
+              arr[j] = 0
+            } else {
+              arr[j] = 1
+            }
+          }
+          windowMask.push(arr)
+        }
+        console.log(msgStr + " windowMask OK ")
+        await (wnd as ohosWindow.Window).resize(minWidth, minHeight);
+        console.log(msgStr + " resize OK ")
+        await (wnd as ohosWindow.Window).setWindowMask(windowMask).then(() => {
+          console.log(msgStr + ' Succeeded in setting the window mask.');
+        }).catch((err: BusinessError) => {
+          console.log(msgStr + ' Failed to set the window mask. Cause: ' + JSON.stringify(err));
+          if (err.code != 801) {
+            console.error(msgStr + 'Failed tosetWindowMask. Cause: ' + JSON.stringify(err));
+            expect().assertFail();
           } else {
-            arr[j] = 1
+            console.log(msgStr + '当前设备类型不支持该接口')
+            console.log(msgStr + JSON.stringify(err))
+            expect(err.code).assertEqual(801);
+          }
+        });
+        await (wnd as ohosWindow.Window).destroyWindow();
+        done();
+      } catch (err) {
+        console.error(`${msgStr}: Error: ${JSON.stringify(err)}`);
+        if (wnd) {
+          try {
+            await (wnd as ohosWindow.Window).destroyWindow();
+          } catch (e) {
+            console.error(`${msgStr}: Error destroying window: ${JSON.stringify(e)}`);
           }
         }
-        windowMask.push(arr)
-      }
-      console.log(msgStr + " windowMask OK ")
-      let wnd: ohosWindow.Window | void;
-      wnd = await windowStage.createSubWindow('nowWindowA').catch((err: BusinessError) => {
-        console.log(msgStr + ' Failed to createSubWindow. Cause: ' + JSON.stringify(err));
-        expect().assertFail();
-      })
-      console.log(msgStr + " createSubWindow OK ")
-      await (wnd as ohosWindow.Window).resize(500, 500);
-      console.log(msgStr + " resize OK ")
-      await (wnd as ohosWindow.Window).setWindowMask(windowMask).then(() => {
-        console.log(msgStr + ' Succeeded in setting the window mask.');
-      }).catch((err: BusinessError) => {
-        console.log(msgStr + ' Failed to set the window mask. Cause: ' + JSON.stringify(err));
-        if (err.code != 801) {
-          console.error(msgStr + 'Failed tosetWindowMask. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
+        if (!isSupport) {
+          if (err.code === 801) {
+            console.info(`${msgStr} Capability not supported.`);
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
         } else {
-          console.log(msgStr + '当前设备类型不支持该接口')
-          console.log(msgStr + JSON.stringify(err))
-          expect(err.code).assertEqual(801);
+          expect().assertFail();
         }
-      });
-      await (wnd as ohosWindow.Window).destroyWindow();
+        done();
+      }
     })
   })
 }

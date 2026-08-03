@@ -13,20 +13,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<div class="container" style="flex-direction:column; align-items:center">
+<div class="container">
     <div class="content-title">
-        <text style="width:60%;height:50px;text-align: center;">动画</text>
+        <text class="title-text">动画</text>
         <input type="button" value="?" class="backBtnHelp" onclick="help" />
     </div>
-    <div style="height:220px;" class="divFrame">
+    <div class="divFrame">
         <div class="divBlock divAnimationStyle" style="animation-name:{{animationName}}" onclick="changeAnimation">
         </div>
         <div class="divBlock divAnimationStyle" style="animation-name:{{animationName2}}" onclick="changeAnimation">
         </div>
     </div>
     <div class="bottom-bt">
-        <input type="button" value="pass" class="button" onclick="changeResult(pass)" />
-        <input type="button" value="fail" class="button" onclick="changeResult(fail)" />
+        <input type="button" value="pass" class="button" onclick="changeResultPass" />
+        <input type="button" value="fail" class="button" onclick="changeResultFail" />
         <input type="button" value="返回" class="button" onclick="back" />
     </div>
 </div>

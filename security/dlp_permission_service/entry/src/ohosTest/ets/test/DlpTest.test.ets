@@ -3827,6 +3827,5 @@ export default function dlpTest() {
         expect(dlpPermission.ActionType.OPEN).assertEqual(1);
         done();
       })
-
   })
 }

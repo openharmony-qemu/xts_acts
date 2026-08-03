@@ -95,11 +95,12 @@ export default function DigestAlgorithmSm3Jsunit() {
 
       try {
         let result = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalMd = cryptoFramework.createMd("SM3");
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
 
-          globalMd
+          await globalMd
             .update(ginBlob)
             .then<cryptoFramework.DataBlob>(() => {
               return globalMd.digest();
@@ -120,6 +121,7 @@ export default function DigestAlgorithmSm3Jsunit() {
               console.error("testMDDigestCallback catch error: " + err);
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
       } catch (err) {
@@ -141,10 +143,11 @@ export default function DigestAlgorithmSm3Jsunit() {
       let globalMd: cryptoFramework.Md;
       try {
         let result: boolean = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalMd = cryptoFramework.createMd("SM3");
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
-          globalMd
+          await globalMd
             .digest()
             .then((digestBlob: cryptoFramework.DataBlob) => {
               console.log(
@@ -160,6 +163,7 @@ export default function DigestAlgorithmSm3Jsunit() {
               console.error("testMDDigest catch err: " + err);
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
       } catch (err) {
@@ -337,10 +341,11 @@ export default function DigestAlgorithmSm3Jsunit() {
       };
       try {
         let result: boolean = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalHMAC = cryptoFramework.createMac("SM3");
           globalSymKeyGenerator =
             cryptoFramework.createSymKeyGenerator("AES128");
-          globalSymKeyGenerator
+          await globalSymKeyGenerator
             .generateSymKey()
             .then((symKey: cryptoFramework.SymKey) => {
               return globalHMAC!.init(symKey);
@@ -363,6 +368,7 @@ export default function DigestAlgorithmSm3Jsunit() {
             .catch((err: Error) => {
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
       } catch (err) {

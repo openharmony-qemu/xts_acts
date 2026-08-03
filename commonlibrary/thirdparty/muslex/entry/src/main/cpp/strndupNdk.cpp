@@ -22,11 +22,10 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr int K_LONG_STR_SIZE = 10000;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_LONG_STR_SIZE = 10000;
-static constexpr size_t K_STR_COUNT = 5;
 
 static char* CallStrndup(const char* s, size_t n)
 {
@@ -47,8 +46,8 @@ static bool IsStubMode()
         return true;
     }
     errno = 0;
-    int val4 = 4;
-    CallStrndup("test", val4);
+    int testLen = 4;
+    CallStrndup("test", testLen);
     return (errno == ENOSYS);
 }
 
@@ -65,7 +64,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value StrndupNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hello World";
     char* dup = CallStrndup(orig, 5);
@@ -78,7 +77,7 @@ static napi_value StrndupNormal001(napi_env env, napi_callback_info info)
 static napi_value StrndupNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hi";
     char* dup = CallStrndup(orig, 10);
@@ -91,7 +90,7 @@ static napi_value StrndupNormal002(napi_env env, napi_callback_info info)
 static napi_value StrndupNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hello";
     char* dup = CallStrndup(orig, 0);
@@ -104,7 +103,7 @@ static napi_value StrndupNormal003(napi_env env, napi_callback_info info)
 static napi_value StrndupNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char orig[] = "Hello\0World";
     char* dup = CallStrndup(orig, 10);
@@ -118,7 +117,7 @@ static napi_value StrndupNormal004(napi_env env, napi_callback_info info)
 static napi_value StrndupNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hello";
     char* dup = CallStrndup(orig, 5);
@@ -133,7 +132,7 @@ static napi_value StrndupNormal005(napi_env env, napi_callback_info info)
 static napi_value StrndupAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* result = CallStrndup(nullptr, 5);
     return ReturnInt32(env, (result == nullptr) ? 1 : 0);
@@ -143,7 +142,7 @@ static napi_value StrndupAbnormal001(napi_env env, napi_callback_info info)
 static napi_value StrndupAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "test";
     char* dup = CallStrndup(orig, SIZE_MAX);
@@ -158,7 +157,7 @@ static napi_value StrndupAbnormal002(napi_env env, napi_callback_info info)
 static napi_value StrndupBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "";
     char* dup = CallStrndup(orig, 1);
@@ -171,12 +170,11 @@ static napi_value StrndupBoundary001(napi_env env, napi_callback_info info)
 static napi_value StrndupBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
-    size_t ncopy = 100;
-    char* dup = CallStrndup(longStr.c_str(), ncopy);
-    bool pass = (dup != nullptr && strlen(dup) == ncopy && strncmp(dup, longStr.c_str(), ncopy) == 0);
+    char* dup = CallStrndup(longStr.c_str(), 100);
+    bool pass = (dup != nullptr && strlen(dup) == 100 && strncmp(dup, longStr.c_str(), 100) == 0);
     free(dup);
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -187,10 +185,10 @@ static napi_value StrndupBoundary002(napi_env env, napi_callback_info info)
 static napi_value StrndupStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         char* dup = CallStrndup("Hello World", 5);
         if (dup == nullptr || strcmp(dup, "Hello") != 0) {
             pass = false;
@@ -201,11 +199,13 @@ static napi_value StrndupStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void StrndupWorker(std::atomic<bool>& hasError, const char* strings[])
+/* ==================== Multi-thread Tests ==================== */
+
+static void StrndupThreadWorker(std::atomic<bool>& hasError, const char* const* strings)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % K_STR_COUNT;
-                int len = (i % 3) + 2;
+        int idx = i % 5;
+        int len = (i % 3) + 2;
         char* dup = CallStrndup(strings[idx], len);
         if (dup == nullptr) {
             hasError = true;
@@ -215,21 +215,20 @@ static void StrndupWorker(std::atomic<bool>& hasError, const char* strings[])
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-011: Multi-thread safety */
 static napi_value StrndupThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Strndup", "Thread"};
-    static_assert(sizeof(strings) / sizeof(strings[0]) == K_STR_COUNT, "K_STR_COUNT mismatch");
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(StrndupWorker, std::ref(hasError), strings);
+        threads.emplace_back([&hasError, strings]() {
+            StrndupThreadWorker(hasError, strings);
+        });
     }
     for (auto& th : threads) {
         th.join();

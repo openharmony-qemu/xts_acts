@@ -76,14 +76,14 @@ export default function DlpEnterpriseServicePermissionTest() {
         }
         done();
       })
-    /**
-     * @tc.name   SUB_SECURITY_DLP_getControlledAppLists_permission_0200
-     * @tc.number Test_getControlledAppLists_002
-     * @tc.desc   getControlledAppLists permission test, return 201 or 801.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+/**
+      * @tc.name   SUB_SECURITY_DLP_getControlledAppLists_permission_0200
+      * @tc.number Test_getControlledAppLists_002
+      * @tc.desc   getControlledAppLists permission test, return 201 or 801.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
     it('SUB_SECURITY_DLP_getControlledAppLists_permission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let curTag = TAG + "Test_getControlledAppLists_002";
@@ -97,6 +97,35 @@ export default function DlpEnterpriseServicePermissionTest() {
             expect(err.code).assertEqual(801);
           } else {
             console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
+            expect(err.code).assertEqual(201);
+          }
+        }
+        done();
+      })
+
+    /**
+      * @tc.name   SUB_SECURITY_DLP_processPluginCommand_permission_0300
+      * @tc.number Test_processPluginCommand_003
+      * @tc.desc   processPluginCommand permission test, return 201 or 801.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_SECURITY_DLP_processPluginCommand_permission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let curTag = TAG + "Test_processPluginCommand_003";
+        console.info(curTag, "start");
+        try {
+          let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_PLUGIN;
+          let message = "test";
+          await dlpPermission.processPluginCommand(code, message);
+          expect(null).assertFail();
+        } catch (err) {
+          if (err.code === 801) {
+            console.info(curTag, "processPluginCommand failed," + err.code + err.message);
+            expect(err.code).assertEqual(801);
+          } else {
+            console.info(curTag, "processPluginCommand failed," + err.code + err.message);
             expect(err.code).assertEqual(201);
           }
         }

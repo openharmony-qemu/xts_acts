@@ -22,9 +22,10 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr double FINITE_TEST = 3.14;
 
 static int CallIsnan(double x)
 {
@@ -62,7 +63,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value IsnanNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(NAN);
     return ReturnInt32(env, (ret != 0) ? 1 : 0);
@@ -72,7 +73,7 @@ static napi_value IsnanNormal001(napi_env env, napi_callback_info info)
 static napi_value IsnanNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(INFINITY);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -82,7 +83,7 @@ static napi_value IsnanNormal002(napi_env env, napi_callback_info info)
 static napi_value IsnanNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(-INFINITY);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -92,7 +93,7 @@ static napi_value IsnanNormal003(napi_env env, napi_callback_info info)
 static napi_value IsnanNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(0.0);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -102,10 +103,9 @@ static napi_value IsnanNormal004(napi_env env, napi_callback_info info)
 static napi_value IsnanNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    double finitetest = 3.14;
-    int ret = CallIsnan(finitetest);
+    int ret = CallIsnan(FINITE_TEST);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -113,10 +113,9 @@ static napi_value IsnanNormal005(napi_env env, napi_callback_info info)
 static napi_value IsnanNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    double finitetest = 3.14;
-    int ret = CallIsnan(-finitetest);
+    int ret = CallIsnan(-FINITE_TEST);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -126,7 +125,7 @@ static napi_value IsnanNormal006(napi_env env, napi_callback_info info)
 static napi_value IsnanBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(DBL_MAX);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -136,7 +135,7 @@ static napi_value IsnanBoundary001(napi_env env, napi_callback_info info)
 static napi_value IsnanBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnan(DBL_MIN);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -148,7 +147,7 @@ static napi_value IsnanBoundary002(napi_env env, napi_callback_info info)
 static napi_value IsnanAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     union { double f; uint64_t i; } snan;
     snan.i = 0x7FF4000000000000ULL;
@@ -160,7 +159,7 @@ static napi_value IsnanAbnormal001(napi_env env, napi_callback_info info)
 static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     union { double f; uint64_t i; } nan1;
@@ -182,16 +181,15 @@ static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info)
 static napi_value IsnanStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    double finitetest = 3.14;
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         if (CallIsnan(NAN) == 0) {
             pass = false;
             break;
         }
-        if (CallIsnan(finitetest) != 0) {
+        if (CallIsnan(FINITE_TEST) != 0) {
             pass = false;
             break;
         }
@@ -199,7 +197,7 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void IsnanWorker(std::atomic<bool>& hasError, const double* testVals, const int* expected)
+static void IsnanThreadWorker(std::atomic<bool>& hasError, double testVals[], int expected[])
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
@@ -215,17 +213,16 @@ static void IsnanWorker(std::atomic<bool>& hasError, const double* testVals, con
 static napi_value IsnanThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    double finitetest = 3.14;
-    double testVals[] = {NAN, INFINITY, -INFINITY, 0.0, finitetest};
+    double testVals[] = {NAN, INFINITY, -INFINITY, 0.0, FINITE_TEST};
     int expected[] = {1, 0, 0, 0, 0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
-            IsnanWorker(hasError, testVals, expected);
+            IsnanThreadWorker(hasError, const_cast<double*>(testVals), const_cast<int*>(expected));
         });
     }
     for (auto& th : threads) {

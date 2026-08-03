@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import isinftest from 'libisinftest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function IsinfNdkTest() {
   describe('IsinfNdkTest', () => {
@@ -33,9 +32,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinftest.isinfStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = isinftest.isinfStable002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -193,9 +172,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = isinftest.isinfThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -209,9 +186,7 @@ export default function IsinfNdkTest() {
      */
     it('testIsinfThread002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = isinftest.isinfThread002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

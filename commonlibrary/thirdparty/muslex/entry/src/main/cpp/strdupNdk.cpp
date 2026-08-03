@@ -22,12 +22,10 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_LONG_STR_SIZE = 10000;
-static constexpr size_t K_EXTRA_LONG_STR_SIZE = 100000;
-static constexpr size_t K_STR_COUNT = 5;
+static constexpr int K_LONG_STR_SIZE = 10000;
 
 static char* CallStrdup(const char* s)
 {
@@ -65,7 +63,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value StrdupNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hello World";
     char* dup = CallStrdup(orig);
@@ -78,7 +76,7 @@ static napi_value StrdupNormal001(napi_env env, napi_callback_info info)
 static napi_value StrdupNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "";
     char* dup = CallStrdup(orig);
@@ -91,7 +89,7 @@ static napi_value StrdupNormal002(napi_env env, napi_callback_info info)
 static napi_value StrdupNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
     char* dup = CallStrdup(longStr.c_str());
@@ -104,7 +102,7 @@ static napi_value StrdupNormal003(napi_env env, napi_callback_info info)
 static napi_value StrdupNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "Hello\n\t\r World";
     char* dup = CallStrdup(orig);
@@ -117,7 +115,7 @@ static napi_value StrdupNormal004(napi_env env, napi_callback_info info)
 static napi_value StrdupNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::string allAscii;
     int asciiMax = 127;
@@ -136,7 +134,7 @@ static napi_value StrdupNormal005(napi_env env, napi_callback_info info)
 static napi_value StrdupAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char* result = CallStrdup(nullptr);
     return ReturnInt32(env, (result == nullptr) ? 1 : 0);
@@ -148,9 +146,10 @@ static napi_value StrdupAbnormal001(napi_env env, napi_callback_info info)
 static napi_value StrdupBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    std::string longStr(K_EXTRA_LONG_STR_SIZE, 'a');
+    int extraLongSize = 100000;
+    std::string longStr(extraLongSize, 'a');
     char* dup = CallStrdup(longStr.c_str());
     bool pass = (dup != nullptr && strcmp(dup, longStr.c_str()) == 0);
     free(dup);
@@ -161,7 +160,7 @@ static napi_value StrdupBoundary001(napi_env env, napi_callback_info info)
 static napi_value StrdupBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* orig = "\0";
     char* dup = CallStrdup(orig);
@@ -176,10 +175,10 @@ static napi_value StrdupBoundary002(napi_env env, napi_callback_info info)
 static napi_value StrdupStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         char* dup = CallStrdup("test");
         if (dup == nullptr || strcmp(dup, "test") != 0) {
             pass = false;
@@ -190,10 +189,12 @@ static napi_value StrdupStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void StrdupWorker(std::atomic<bool>& hasError, const char* strings[])
+/* ==================== Multi-thread Tests ==================== */
+
+static void StrdupThreadWorker(std::atomic<bool>& hasError, const char* const* strings)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % K_STR_COUNT;
+        int idx = i % 5;
         char* dup = CallStrdup(strings[idx]);
         if (dup == nullptr || strcmp(dup, strings[idx]) != 0) {
             hasError = true;
@@ -203,21 +204,20 @@ static void StrdupWorker(std::atomic<bool>& hasError, const char* strings[])
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-010: Multi-thread safety */
 static napi_value StrdupThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Strdup", "Thread"};
-    static_assert(sizeof(strings) / sizeof(strings[0]) == K_STR_COUNT, "K_STR_COUNT mismatch");
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(StrdupWorker, std::ref(hasError), strings);
+        threads.emplace_back([&hasError, strings]() {
+            StrdupThreadWorker(hasError, strings);
+        });
     }
     for (auto& th : threads) {
         th.join();

@@ -12,6 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import CameraManagerTest from './CameraManager.test';
 import CameraInputTest from './CameraInput.test';
 import SessionTest from './Session.test';
@@ -20,12 +23,18 @@ import VideoTest from './Video.test';
 import PhotoTest from './PhotoTest.test';
 import Demo from './Demo1.test';
 
+let testContext: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  CameraManagerTest();
-  CameraInputTest();
-  SessionTest();
-  SessionTest2();
-  VideoTest();
-  PhotoTest();
-  Demo();
+  if (cameraDeviceArray.length != 0) {
+    CameraManagerTest();
+    CameraInputTest();
+    SessionTest();
+    SessionTest2();
+    VideoTest();
+    PhotoTest();
+    Demo();
+  }
 }

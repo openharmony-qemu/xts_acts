@@ -443,7 +443,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2400
      * @tc.name testArrayCopywithinThree024
-     * @tc.desc Verify byte element array copyWithin
+     * @tc.desc Verify byte element array copyWithin without end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -464,7 +464,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2500
      * @tc.name testArrayCopywithinThree025
-     * @tc.desc Verify short element array copyWithin
+     * @tc.desc Verify short element array copyWithin without end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -484,7 +484,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2600
      * @tc.name testArrayCopywithinThree026
-     * @tc.desc Verify long element array copyWithin
+     * @tc.desc Verify long element array copyWithin without end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -571,7 +571,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3100
      * @tc.name testArrayCopywithinThree031
-     * @tc.desc Verify boolean element array copyWithin
+     * @tc.desc Verify boolean element array copyWithin without end parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -603,7 +603,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3300
      * @tc.name testArrayCopywithinThree033
-     * @tc.desc Verify bigint element array copyWithin
+     * @tc.desc Verify long type array copyWithin using push (not bigint)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -658,7 +658,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3600
      * @tc.name testArrayCopywithinThree036
-     * @tc.desc Verify copyWithin correctly copy elements when target index uses hexadecimal literal 0x2, only specify source start index 1 and omit source end index
+     * @tc.desc Verify copyWithin with hex target 0x2 without end param
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -673,7 +673,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3700
      * @tc.name testArrayCopywithinThree037
-     * @tc.desc Verify octal literal as start
+     * @tc.desc Verify octal literal as start without end param
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -689,7 +689,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3800
      * @tc.name testArrayCopywithinThree038
-     * @tc.desc Verify binary literal as target
+     * @tc.desc Verify binary literal as target (0b10) without end param
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -891,7 +891,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5000
      * @tc.name testArrayCopywithinThree050
-     * @tc.desc Verify negative start index counts from end
+     * @tc.desc Verify negative start index without end param for copyWithin
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -977,14 +977,14 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5500
      * @tc.name testArrayCopywithinThree055
-     * @tc.desc Verify single element array copyWithin
+     * @tc.desc Verify single element array copyWithin without end param
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
     it('testArrayCopywithinThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       arr.copyWithin(0, 0);
       expect(arr[0]).assertEqual(42);
     });
@@ -1196,7 +1196,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6800
      * @tc.name testArrayCopywithinThree068
-     * @tc.desc Verify short array elements copyWithin
+     * @tc.desc Verify short boundary array elements copyWithin without end param
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2
@@ -1251,7 +1251,7 @@ export default function ArrayCopyWithin3_2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7100
      * @tc.name testArrayCopywithinThree071
-     * @tc.desc Verify RegExp array elements copyWithin
+     * @tc.desc Verify RegExp array elements copyWithin with source start=1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level Level 2

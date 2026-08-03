@@ -18,6 +18,8 @@ group("spec") {
   if (is_standard_system) {
     deps = [
       "etsspectest:ActsBaseSpecTest",
+      "etsspectest_1:ActsBaseSpec1Test",
+      "operatorspectest:ActsBaseOperatorSpecTest",
     ]
   }
 }

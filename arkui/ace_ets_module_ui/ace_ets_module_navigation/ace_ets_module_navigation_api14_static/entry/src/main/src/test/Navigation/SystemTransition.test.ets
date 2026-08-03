@@ -80,9 +80,9 @@ export default function SystemTransition() {
 it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('SystemTransition_0100 START');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(500);
 
       let btn1 = await driver.findComponent(ON.id('pageOneId'));

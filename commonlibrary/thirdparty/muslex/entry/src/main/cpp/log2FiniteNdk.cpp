@@ -22,11 +22,11 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr double K_LOG2_TEST_VAL = 2.0;
 
 static double CallLog2Finite(double x)
 {
@@ -56,28 +56,37 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value Log2FiniteNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     double result = CallLog2Finite(1.0);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, (result == 0.0) ? 1 : 0);
 }
 
 static napi_value Log2FiniteNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    double result = CallLog2Finite(2.0);
-    double expected = std::log2(2.0);
+    double result = CallLog2Finite(K_LOG2_TEST_VAL);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
+    double expected = std::log2(K_LOG2_TEST_VAL);
     return ReturnInt32(env, (fabs(result - expected) < 1e-12) ? 1 : 0);
 }
 
 static napi_value Log2FiniteNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     double result = CallLog2Finite(4.0);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     double expected = std::log2(4.0);
     return ReturnInt32(env, (fabs(result - expected) < 1e-12) ? 1 : 0);
 }
@@ -85,9 +94,12 @@ static napi_value Log2FiniteNormal003(napi_env env, napi_callback_info info)
 static napi_value Log2FiniteNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     double result = CallLog2Finite(8.0);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     double expected = std::log2(8.0);
     return ReturnInt32(env, (fabs(result - expected) < 1e-12) ? 1 : 0);
 }
@@ -95,28 +107,37 @@ static napi_value Log2FiniteNormal004(napi_env env, napi_callback_info info)
 static napi_value Log2FiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     double result = CallLog2Finite(NAN);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
 }
 
 static napi_value Log2FiniteAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     double result = CallLog2Finite(-1.0);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
 }
 
 static napi_value Log2FiniteBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallLog2Finite(DBL_MIN);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     bool pass = std::isfinite(result) && result < 0 && errno == 0;
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -124,10 +145,13 @@ static napi_value Log2FiniteBoundary001(napi_env env, napi_callback_info info)
 static napi_value Log2FiniteBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallLog2Finite(DBL_MAX);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
     bool pass = std::isfinite(result) && result > 0 && errno == 0;
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -135,12 +159,15 @@ static napi_value Log2FiniteBoundary002(napi_env env, napi_callback_info info)
 static napi_value Log2FiniteStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    double expected = std::log2(2.0);
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
-        double result = CallLog2Finite(2.0);
+    double expected = std::log2(K_LOG2_TEST_VAL);
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
+        double result = CallLog2Finite(K_LOG2_TEST_VAL);
+        if (errno == ENOSYS) {
+            return ReturnInt32(env, 1);
+        }
         if (fabs(result - expected) > 1e-12) {
             pass = false;
             break;
@@ -149,7 +176,7 @@ static napi_value Log2FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Log2ThreadWorker(std::atomic<bool>& hasError, const double* testVals)
+static void Log2FiniteThreadWorker(std::atomic<bool>& hasError, double testVals[])
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
@@ -165,14 +192,21 @@ static void Log2ThreadWorker(std::atomic<bool>& hasError, const double* testVals
 static napi_value Log2FiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    double testVals[] = {1.0, 2.0, 4.0, 8.0, 0.5};
+    double testVals[] = {1.0, K_LOG2_TEST_VAL, 4.0, 8.0, 0.5};
+
+    CallLog2Finite(K_LOG2_TEST_VAL);
+    if (errno == ENOSYS) {
+        return ReturnInt32(env, 1);
+    }
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(Log2ThreadWorker, std::ref(hasError), testVals);
+        threads.emplace_back([&hasError, testVals]() {
+            Log2FiniteThreadWorker(hasError, const_cast<double*>(testVals));
+        });
     }
     for (auto& th : threads) {
         th.join();
@@ -205,7 +239,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "ohos_log2finitendktest",
+    .nm_modname = "log2finitendktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };

@@ -77,4 +77,12 @@ export default {
         getApp().data.keyList[this.title] = result;
         this.back();
     },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };

@@ -111,7 +111,7 @@ export default function InjectOfflineResourcesTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)
         await Utils.msSleep(500);
-        let num: byte = 3
+        let num: int = 3
         Utils.registerEvent("testMODULE_JS", Type.of(num) + ' ' + num, 20003, done);
         num = 2
         Utils.registerEvent("testCLASSIC_JS", Type.of(num) + ' ' + num, 20004, done);

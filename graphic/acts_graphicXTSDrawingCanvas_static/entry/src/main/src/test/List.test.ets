@@ -22,8 +22,9 @@ import drawingTsCanvasPart6Test from "./CanvasPart6.test";
 import drawingTsCanvasPart7Test from "./CanvasPart7.test";
 import drawingTsCanvasPart8Test from "./CanvasPart8.test";
 import drawingTsCanvasPart9Test from "./CanvasPart9.test";
+import drawingTsCanvasPart10Test from "./CanvasPart10.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   drawingTsCanvasTest();
   drawingTsCanvasPart2Test();
   drawingTsCanvasPart3Test();
@@ -33,4 +34,5 @@ export default function testsuite() {
   drawingTsCanvasPart7Test();
   drawingTsCanvasPart8Test();
   drawingTsCanvasPart9Test();
+  drawingTsCanvasPart10Test();
 }

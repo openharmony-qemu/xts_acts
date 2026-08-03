@@ -169,9 +169,9 @@ static async pushPage(obj: PageConfig) {
     await Utils.sleep(1000);
   }
 
-  static async getComponentRect(key: string): Promise<RectValue> {
+  static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await Utils.sleep(1000)
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -203,9 +203,9 @@ static async pushPage(obj: PageConfig) {
     } as RectValue
   }
 
-  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
+  static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(1000)
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -238,19 +238,19 @@ static async pushPage(obj: PageConfig) {
     Utils.performTouch(x, y, x, y, TouchType.Up);
   }
 
-  static async performTouchDownUp(id: string): Promise<boolean> {
-    let down = await Utils.performTouchComponentCenter(id, TouchType.Down)
+  static performTouchDownUp(id: string): boolean {
+    let down = Utils.performTouchComponentCenter(id, TouchType.Down)
     if (down) {
-      let up = await Utils.performTouchComponentCenter(id, TouchType.Up)
+      let up = Utils.performTouchComponentCenter(id, TouchType.Up)
       return up
     }
 
     return false;
   }
 
-  static async performTouchComponentCenter(id: string, type: TouchType): Promise<boolean> {
+  static performTouchComponentCenter(id: string, type: TouchType): boolean {
     console.info('performTouchComponent id : ' + id);
-    return Utils.performTouchRectCenter(0, 0, await Utils.getComponentRect(id), type);
+    return Utils.performTouchRectCenter(0, 0, Utils.getComponentRect(id), type);
   }
 
   static performTouchRectCenter(rootX: number, rootY: number, rect: RectValue, type: TouchType): boolean {
@@ -327,12 +327,12 @@ static async pushPage(obj: PageConfig) {
     return result
   }
 
-  static async performMouseEvent(id: string, button: MouseButton, action: MouseAction): Promise<boolean> {
+  static performMouseEvent(id: string, button: MouseButton, action: MouseAction): boolean {
     console.info('performMouseEvent id : ' + id);
     console.info('performMouseEvent button : ' + button);
     console.info('performMouseEvent action : ' + action);
 
-    let targetComponentRect = await Utils.getComponentRect(id);
+    let targetComponentRect = Utils.getComponentRect(id);
     let screenX = (targetComponentRect.right + targetComponentRect.left) * 0.5;
     let screenY = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
     let x = (targetComponentRect.right + targetComponentRect.left) * 0.5;

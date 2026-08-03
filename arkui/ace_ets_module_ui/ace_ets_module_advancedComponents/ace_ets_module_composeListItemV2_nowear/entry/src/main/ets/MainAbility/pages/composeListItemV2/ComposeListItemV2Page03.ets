@@ -60,6 +60,7 @@ struct ComposeListItemV2Page02 {
   @Local contentItemV2Options:ContentItemV2Options = {
     iconStyle: IconTypeV2.NORMAL_ICON,
     icon: $r('sys.symbol.phone'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Blue]),
     primaryText: '',
     secondaryText: 'operate image',
     description: ''

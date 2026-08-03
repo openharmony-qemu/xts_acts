@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import librestracemovendktest from 'librestracemovendktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function ResTraceMoveNdkTest() {
   describe('ResTraceMoveNdkTest', () => {
@@ -33,9 +32,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function ResTraceMoveNdkTest() {
      */
     it('testresTraceMoveThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestracemovendktest.resTraceMoveThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

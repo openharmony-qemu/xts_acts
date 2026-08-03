@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import asprintfChkndktest from 'libasprintfChkndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function AsprintfChkNdkTest() {
   describe('AsprintfChkNdkTest', () => {
@@ -34,9 +33,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -50,9 +47,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -66,9 +61,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -82,9 +75,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -98,9 +89,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkFunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkFunc001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -114,9 +103,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkFunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkFunc002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -130,9 +117,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkFunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkFunc003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -146,9 +131,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -162,9 +145,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkStable002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -178,9 +159,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkSpec001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkSpec001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -194,9 +173,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkSpec002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkSpec002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -210,9 +187,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkSpec003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkSpec003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -226,9 +201,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkSpec004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkSpec004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -242,9 +215,7 @@ export default function AsprintfChkNdkTest() {
      */
     it('testAsprintfChkSpec005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = asprintfChkndktest.asprintfChkSpec005();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

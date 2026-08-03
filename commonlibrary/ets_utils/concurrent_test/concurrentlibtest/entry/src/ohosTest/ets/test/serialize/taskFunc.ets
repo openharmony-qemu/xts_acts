@@ -79,6 +79,43 @@ export function traverseContainAllContainers(clas: TestClassWithContainers): Tes
   clas.list.add('3');
   clas.list.remove('2');
 
+  for (const val of clas.arrayList) {
+    console.info(`Container ArrayList iterator next: ${val}`);
+  }
+  const hashMapKeys = clas.hashMap.keys();
+  let hashMapKeyNext = hashMapKeys.next();
+  while (!hashMapKeyNext.done) {
+    console.info(`Container HashMap keys iterator next: ${hashMapKeyNext.value}`);
+    hashMapKeyNext = hashMapKeys.next();
+  }
+  for (const entry of clas.hashMap) {
+    console.info(`Container HashMap [Symbol.iterator] next: ${entry}`);
+  }
+  const hashSetValues = clas.hashSet.values();
+  let hashSetValueNext = hashSetValues.next();
+  while (!hashSetValueNext.done) {
+    console.info(`Container HashSet values iterator next: ${hashSetValueNext.value}`);
+    hashSetValueNext = hashSetValues.next();
+  }
+  for (const val of clas.hashSet) {
+    console.info(`Container HashSet [Symbol.iterator] next: ${val}`);
+  }
+  const treeSetValues = clas.treeSet.values();
+  let treeSetValueNext = treeSetValues.next();
+  while (!treeSetValueNext.done) {
+    console.info(`Container TreeSet values iterator next: ${treeSetValueNext.value}`);
+    treeSetValueNext = treeSetValues.next();
+  }
+  for (const val of clas.treeSet) {
+    console.info(`Container TreeSet [Symbol.iterator] next: ${val}`);
+  }
+  for (const val of clas.linkedList) {
+    console.info(`Container LinkedList iterator next: ${val}`);
+  }
+  for (const val of clas.list) {
+    console.info(`Container List iterator next: ${val}`);
+  }
+
   return clas
 }
 @Sendable
@@ -120,6 +157,9 @@ function traverseArrayListAllInterfaces(list: ArrayList<number>): ArrayList<numb
   list.increaseCapacityTo(20);
   list.trimToCurrentLength();
   const elem0 = list[0];
+  for (const val of list) {
+    console.info(`ArrayList iterator next: ${val}`);
+  }
   list.clear();
   list.add(1);
   list.add(2);
@@ -145,6 +185,24 @@ function traverseHashMapAllInterfaces(map: HashMap<string, number>): HashMap<str
   const keys = map.keys();
   const values = map.values();
   const entries = map.entries();
+  let keyNext = keys.next();
+  while (!keyNext.done) {
+    console.info(`HashMap keys iterator next: ${keyNext.value}`);
+    keyNext = keys.next();
+  }
+  let valueNext = values.next();
+  while (!valueNext.done) {
+    console.info(`HashMap values iterator next: ${valueNext.value}`);
+    valueNext = values.next();
+  }
+  let entryNext = entries.next();
+  while (!entryNext.done) {
+    console.info(`HashMap entries iterator next: ${entryNext.value}`);
+    entryNext = entries.next();
+  }
+  for (const entry of map) {
+    console.info(`HashMap [Symbol.iterator] next: ${entry}`);
+  }
   const len1 = map.length;
   map.forEach((value?: number, key?: string) => {
     console.info(`HashMap forEach: ${key} - ${value}`);
@@ -167,6 +225,19 @@ function traverseHashSetAllInterfaces(set: HashSet<number>): HashSet<number> {
   set.remove(1);
   const values = set.values();
   const entries = set.entries();
+  let valueNext = values.next();
+  while (!valueNext.done) {
+    console.info(`HashSet values iterator next: ${valueNext.value}`);
+    valueNext = values.next();
+  }
+  let entryNext = entries.next();
+  while (!entryNext.done) {
+    console.info(`HashSet entries iterator next: ${entryNext.value}`);
+    entryNext = entries.next();
+  }
+  for (const val of set) {
+    console.info(`HashSet [Symbol.iterator] next: ${val}`);
+  }
   set.forEach((value?: number, key?: number) => {
     console.info(`HashSet forEach: ${value}`);
   });
@@ -194,6 +265,19 @@ function traverseTreeSetAllInterfaces(set: TreeSet<number>): TreeSet<number> {
   set.popLast();
   const values = set.values();
   const entries = set.entries();
+  let valueNext = values.next();
+  while (!valueNext.done) {
+    console.info(`TreeSet values iterator next: ${valueNext.value}`);
+    valueNext = values.next();
+  }
+  let entryNext = entries.next();
+  while (!entryNext.done) {
+    console.info(`TreeSet entries iterator next: ${entryNext.value}`);
+    entryNext = entries.next();
+  }
+  for (const val of set) {
+    console.info(`TreeSet [Symbol.iterator] next: ${val}`);
+  }
   set.forEach((value?: number, key?: number) => {
     console.info(`TreeSet forEach: ${value}`);
   });
@@ -235,6 +319,9 @@ function traverseLinkedListAllInterfaces(list: LinkedList<number>): LinkedList<n
   const cloned = list.clone();
   const arr = list.convertToArray();
   const len1 = list.length;
+  for (const val of list) {
+    console.info(`LinkedList iterator next: ${val}`);
+  }
   list.clear();
   list.add(1);
   list.add(2);
@@ -267,6 +354,9 @@ function traverseListAllInterfaces(list: List<number>): List<number> {
   list.replaceAllElements((value: number, index?: number): number => value + 1);
   const arr = list.convertToArray();
   const len1 = list.length;
+  for (const val of list) {
+    console.info(`List iterator next: ${val}`);
+  }
   list.clear();
   list.add(10);
   list.add(20);

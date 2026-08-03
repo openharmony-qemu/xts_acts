@@ -92,7 +92,7 @@ it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1: RectValue = await CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -150,7 +150,7 @@ it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promi
       message.notify({ name: 'index', value: 1 })
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let listItem_2: RectValue = await CommonFunc.getComponentRect('getListItemRect1_listItem_2') as RectValue;
+      let listItem_2: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_2') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -373,7 +373,7 @@ it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1: RectValue = await CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -430,7 +430,7 @@ it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_1: RectValue = await CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
+      let listItem_1: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);

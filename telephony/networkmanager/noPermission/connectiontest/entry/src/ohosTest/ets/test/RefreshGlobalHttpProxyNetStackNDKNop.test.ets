@@ -37,13 +37,13 @@ export default function RefreshGlobalHttpProxyNetStackNDKNopTest() {
     it('testNetworkManagerRefreshGlobalHttpProxy201_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testNetworkManagerRefreshGlobalHttpProxy201_0100";
       console.info(`${caseName} test start`);
-      if (!testNapi || typeof testNapi.TestRefreshGlobalHttpProxy201 !== 'function') {
-        console.info(`${caseName} TestRefreshGlobalHttpProxy201 not available, skipping test`);
+      if (!testNapi || typeof testNapi.ReFreshGlobalHttpProxy !== 'function') {
+        console.info(`${caseName} ReFreshGlobalHttpProxy not available, skipping test`);
         ExpectTrue(true);
         console.info(`${caseName}---End`);
         return;
       }
-      const statusCode: number = testNapi.TestRefreshGlobalHttpProxy201();
+      const statusCode: number = testNapi.ReFreshGlobalHttpProxy("ERROR_201");
       ExpectTrue(statusCode === 201);
       console.info(`${caseName} statusCode: ${statusCode}, expected: 201`);
       console.info(`${caseName}---End`);

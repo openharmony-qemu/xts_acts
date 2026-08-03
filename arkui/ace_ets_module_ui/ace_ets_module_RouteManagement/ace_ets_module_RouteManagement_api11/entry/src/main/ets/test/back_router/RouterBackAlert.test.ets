@@ -65,7 +65,7 @@ export default function RouterBackAlert() {
       }
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(500);
 
       let btn1: Component = await driver.findComponent(ON.id('push1Id'));
@@ -144,7 +144,7 @@ export default function RouterBackAlert() {
       }
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(500);
 
       let btn1: Component = await driver.findComponent(ON.id('push2Id'));

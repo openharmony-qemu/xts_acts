@@ -77,6 +77,23 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           await button.click()
           await sleep(500)
         }
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(1000)
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
+          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
+        let scrollBar1 = await driver.findComponent(ON.text('桌面角标'))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
+        expect(scrollBar1 != null).assertTrue()
+        await scrollBar1.scrollToTop()
         await sleep(500)
         let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
@@ -89,14 +106,14 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         await sleep(500)
         let button4 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-        if (button4 !== null) {
+        if (button4 != null) {
           console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          await sleep(1000);
+          await sleep(2000)
           await button4.click()
-          await sleep(100)
+          console.info(testNum + `button44 is ${JSON.stringify(button4)}`);
         }
-        await sleep(500)
-        notificationManager.getNotificationSetting().then((data) => {
+        await sleep(1500)
+        await notificationManager.getNotificationSetting().then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} getNotificationSetting success, data: ${JSON.stringify(data)}`);     
           expect(data.bannerEnabled).assertEqual(false)

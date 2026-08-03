@@ -24,7 +24,7 @@ class MyText extends ExtendableText {
   }
 
   width(): this {
-    super.width('70%');
+    super.width('40%');
     return this;
   }
 
@@ -49,6 +49,9 @@ struct ExtendableTextBuiltIn {
         .fontSize(30)
         .width()
         .height('50%')
+      MyText(undefined)
+        .id('ExtendableText_003')
+        .height('5%')
     }
   }
 }

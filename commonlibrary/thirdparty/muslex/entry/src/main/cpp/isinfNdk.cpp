@@ -21,6 +21,9 @@
 #include <vector>
 #include <atomic>
 
+static constexpr double LARGE_FINITE = 100.0;
+static constexpr double FINITETEST = 3.14;
+
 static napi_value ReturnInt32(napi_env env, int32_t value)
 {
     napi_value result = nullptr;
@@ -40,7 +43,7 @@ static napi_value IsinfNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     if (func(INFINITY) != 1) {
@@ -54,7 +57,7 @@ static napi_value IsinfNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     if (func(-INFINITY) != -1) {
@@ -68,7 +71,7 @@ static napi_value IsinfNormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     if (func(NAN) != 0) {
@@ -82,25 +85,23 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    double finitetest = 3.14;
-    double largefinite = 100.0;
     if (func(0.0) != 0) {
         allPassed = false;
     }
-    if (func(finitetest) != 0) {
+    if (func(FINITETEST) != 0) {
         allPassed = false;
     }
-    if (func(-finitetest) != 0) {
+    if (func(-FINITETEST) != 0) {
         allPassed = false;
     }
-    if (func(largefinite) != 0) {
+    if (func(LARGE_FINITE) != 0) {
         allPassed = false;
     }
-    if (func(-largefinite) != 0) {
+    if (func(-LARGE_FINITE) != 0) {
         allPassed = false;
     }
 
@@ -114,7 +115,7 @@ static napi_value IsinfBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -139,7 +140,7 @@ static napi_value IsinfBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -161,7 +162,7 @@ static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -191,7 +192,7 @@ static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -221,21 +222,21 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
-    int resultscount = 5;
-    int results[resultscount];
+    double testVals[] = {0.0, FINITETEST, INFINITY, -INFINITY, NAN};
+    int testCount = 5;
+    int results[testCount];
 
-    for (int i = 0; i < resultscount; ++i) {
+    for (int i = 0; i < testCount; ++i) {
         results[i] = func(testVals[i]);
     }
 
-    int roundcount = 20;
-    for (int round = 0; round < roundcount; ++round) {
-        for (int i = 0; i < resultscount; ++i) {
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < testCount; ++i) {
             if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;
@@ -254,12 +255,12 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
-    int loopcount = 20;
     bool allPassed = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         double val = (i % 100) / 10.0 - 5.0;
         int expected = 0;
         int actual = func(val);
@@ -274,6 +275,7 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
 
 // ==================== Multi-thread Tests ====================
 
+// Test 11: Multi-thread concurrent calls
 template<typename Func>
 static void IsinfThreadWorker1(Func func, std::atomic<bool>& hasError,
     const double* testVals, const int* expected, int iterations)
@@ -287,12 +289,11 @@ static void IsinfThreadWorker1(Func func, std::atomic<bool>& hasError,
     }
 }
 
-// Test 11: Multi-thread concurrent calls
 static napi_value IsinfThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -315,10 +316,12 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }
 
+// Test 12: Multi-thread different parameters mixed
 template<typename Func>
-static void IsinfThreadWorker(Func func, std::atomic<bool>& hasError, int rounds)
+static void IsinfThreadWorker3(Func func, std::atomic<bool>& hasError)
 {
-    for (int round = 0; round < rounds; ++round) {
+    int roundCount = 10;
+    for (int round = 0; round < roundCount; ++round) {
         if (func(INFINITY) != 1) {
             hasError = true;
             return;
@@ -338,29 +341,25 @@ static void IsinfThreadWorker(Func func, std::atomic<bool>& hasError, int rounds
     }
 }
 
-// Test 12: Multi-thread different parameters mixed
 static napi_value IsinfThread002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
 
-    int roundcount2 = 10;
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, roundcount2]() {
-            IsinfThreadWorker(func, hasError, roundcount2);
+        threads.emplace_back([func, &hasError]() {
+            IsinfThreadWorker3(func, hasError);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }
-
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }
 

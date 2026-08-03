@@ -453,7 +453,6 @@ static napi_value OHNativeVSyncCreateForAssociatedWindowAbNormal01(napi_env env,
     OH_NativeVSync_Destroy(nativeVSync2);
     OH_NativeVSync_Destroy(nativeVSync3);
     OH_NativeImage_Destroy(&image);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     return result;
 }
 
@@ -497,7 +496,6 @@ static napi_value OHNativeVSyncCreateForAssociatedWindowAbNormal02(napi_env env,
     OH_NativeVSync_Destroy(nativeVSync2);
     OH_NativeVSync_Destroy(nativeVSync3);
     OH_NativeImage_Destroy(&image);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     return result;
 }
 

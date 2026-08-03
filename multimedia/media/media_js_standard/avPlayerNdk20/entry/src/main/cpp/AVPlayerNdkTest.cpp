@@ -546,6 +546,20 @@ static napi_value AVPlayerBufferingType0100(napi_env env, napi_callback_info inf
     return retValue;
 }
 
+static napi_value AVPlayerErrorCode0100(napi_env env, napi_callback_info info)
+{
+    int32_t res = 1;
+    int32_t outPutOk = 0;
+    int32_t noImage = 1;
+    if (OH_VideoOutputResult::OH_VIDEO_OUTPUT_OK == outPutOk &&
+        OH_VideoOutputResult::OH_VIDEO_OUTPUT_NO_IMAGE == noImage) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 
 napi_property_descriptor desc[] = {
     {"OH_AVPlayer_SetURLSource0100", nullptr, OH_AVPlayer_SetURLSource0100, nullptr, nullptr, nullptr, napi_default,
@@ -602,6 +616,7 @@ napi_property_descriptor desc[] = {
     {"AVPlaybackSpeed0102", nullptr, AVPlaybackSpeed0102, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AVPlaybackSpeed0103", nullptr, AVPlaybackSpeed0103, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AVPlayerBufferingType0100", nullptr, AVPlayerBufferingType0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AVPlayerErrorCode0100", nullptr, AVPlayerErrorCode0100, nullptr, nullptr, nullptr, napi_default, nullptr},
 
 };
 

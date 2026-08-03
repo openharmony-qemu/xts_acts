@@ -3900,6 +3900,65 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_setFloatingBallVisibilityInApp_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_VISIBILITY_0100
+     * @tc.desc   test setFloatingBallVisibilityInApp with null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setFloatingBallVisibilityInApp_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_setFloatingBallVisibilityInApp_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      let floatingBallController: floatingBall.FloatingBallController | undefined;
+      let isSupport = true;
+      try {
+        floatingBallController = await floatingBall.create(config)
+        await floatingBallController.startFloatingBall(startParams);
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801 && !isFloatingBallEnabled) {
+          isSupport = false;
+        }
+      }
+
+      if (isSupport) {
+        try {
+          await floatingBallController?.setFloatingBallVisibilityInApp(null);
+          console.info(msgStr + 'Succeeded');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+        }
+        try {
+          await floatingBallController?.setFloatingBallVisibilityInApp(undefined);
+          console.info(msgStr + 'Succeeded2.');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+          await floatingBallController?.stopFloatingBall();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
      * @tc.name   test_restoreMainWindow_ability
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
      * @tc.desc   test_restoreMainWindow_ability

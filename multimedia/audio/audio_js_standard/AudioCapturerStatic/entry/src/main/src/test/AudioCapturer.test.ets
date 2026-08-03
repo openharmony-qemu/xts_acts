@@ -5522,7 +5522,7 @@ export default function audioCapturer() {
           }
 
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(false).assertTrue();
         } finally {
           if (audioCapturer) {

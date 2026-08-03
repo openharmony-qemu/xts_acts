@@ -654,5 +654,172 @@ export default function ActsBackgroundProcessManagerNewTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_021 end-------')
             })
 
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200
+         * @tc.desc   setProcessPriority second param is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setProcessPriority(pid, null);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 401){
+                        expect(error.code == 401).assertTrue();
+                        done();
+                    }else{
+                        expect(false).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2200 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300
+         * @tc.desc   setProcessPriority second param is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setProcessPriority(pid, undefined);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 401){
+                        expect(error.code == 401).assertTrue();
+                        done();
+                    }else{
+                        expect(false).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2300 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400
+         * @tc.desc   setProcessPriority second param is out of enum range 
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setProcessPriority(pid, 121);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 401){
+                        expect(error.code == 401).assertTrue();
+                        done();
+                    }else{
+                        expect(false).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_2400 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500
+         * @tc.desc   setPowerSaveMode second param is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setPowerSaveMode(pid, null);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 31800002){
+                        expect(error.code == 31800002).assertTrue();
+                        done();
+                    }else{
+                        expect(error.code == 801).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2500 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600
+         * @tc.desc   setPowerSaveMode second param is undifined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setPowerSaveMode(pid, undefined);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 31800002){
+                        expect(error.code == 31800002).assertTrue();
+                        done();
+                    }else{
+                        expect(error.code == 801).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2600 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700
+         * @tc.desc   setPowerSaveMode second param is out of enum range 
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700 begin-------');
+
+                try{
+                    let pid = 33333;
+                    backgroundProcessManager.setPowerSaveMode(pid, 121);
+                    done();
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code == 31800002){
+                        expect(error.code == 31800002).assertTrue();
+                        done();
+                    }else{
+                        expect(error.code == 801).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700 end-------')
+        })
     })
 }

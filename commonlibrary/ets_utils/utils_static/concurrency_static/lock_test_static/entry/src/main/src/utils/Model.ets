@@ -3,20 +3,23 @@
 
 export class Event {
   constructor() {
-    this.state = new AtomicInt(0);
+    this.promise = new Promise<boolean>((resolve: (val: boolean) => void) => {
+      this.resolveFn = resolve;
+    })
   }
 
   public Wait(): boolean {
-    while (this.state.load() == 0) {
-    }
-    return this.state.load() > 0;
+    return waitForCompletion<boolean>(() => {
+      return this.promise;
+    });
   }
 
-  public Fire(val: boolean = true): void {
-    this.state.store(val ? 1 : -1);
+  public Fire(val: boolean = true) {
+    this.resolveFn!(val);
   }
 
-  private state: AtomicInt;
+  private promise: Promise<boolean>;
+  private resolveFn: ((val: boolean) => void) | null = null;
 }
 
 export class BaseClass {

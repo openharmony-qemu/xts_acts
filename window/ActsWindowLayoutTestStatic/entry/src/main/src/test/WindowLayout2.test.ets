@@ -38,7 +38,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
     return new Promise<window.WindowStage>((resolve, reject) => {
-        (async () => {
+        waitForCompletion(async () => {
             let want: Want = {
                 bundleName: "com.example.actswindowtest.static",
                 abilityName: 'StartAbility'
@@ -59,7 +59,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
             await Utils.msSleep(1000)
             let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
             resolve(windowStageStart);
-        })().awaitSync()
+        })
     })
 }
 async function terminateAbility(caseName: string) {

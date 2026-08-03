@@ -82,7 +82,7 @@ it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('Recoverable_0100 START');
       await CommonFunc.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(200);
 
       let strJson = inspector.getInspectorByKey('testNavigation');
@@ -110,7 +110,7 @@ it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('Recoverable_0200 START');
       await CommonFunc.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(200);
 
       let btn1 = await driver.findComponent(ON.id('update'));

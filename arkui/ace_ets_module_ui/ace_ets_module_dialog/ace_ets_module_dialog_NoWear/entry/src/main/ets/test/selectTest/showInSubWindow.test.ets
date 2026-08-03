@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 
 const SLEEP_TIME = 1000;
+const SLEEP_LONG_TIME = 1500;
 const UI_EVENT_CLICK: number = 10;
 
 export default function showInSubWindowValueTest() {
@@ -53,6 +54,7 @@ export default function showInSubWindowValueTest() {
       await Utils.sleep(SLEEP_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
       expect(obj.$attrs.showInSubWindow).assertEqual('false');
+      await Utils.sleep(SLEEP_TIME);
       console.info('showInSubWindow_value_0001 END');
       done();
     });
@@ -68,11 +70,12 @@ export default function showInSubWindowValueTest() {
     it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showInSubWindow_value_0002 START');
-      await Utils.sleep(SLEEP_TIME);
+      await Utils.sleep(SLEEP_LONG_TIME);
       expect(sendEventByKey('showInSubWindow_button', UI_EVENT_CLICK, '')).assertTrue();
-      await Utils.sleep(SLEEP_TIME);
-      let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
+      await Utils.sleep(SLEEP_LONG_TIME);
+      let obj: ESObject = await Utils.parseInspectorKey('showInSubWindow_select');
       expect(obj.$attrs.showInSubWindow).assertEqual('true');
+      await Utils.sleep(SLEEP_LONG_TIME);
       console.info('showInSubWindow_value_0002 END');
       done();
     });
@@ -88,17 +91,19 @@ export default function showInSubWindowValueTest() {
     it('showInSubWindow_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showInSubWindow_value_0003 START');
-      let resource: ESObject = Utils.parseInspectorKey('resource');
-      let showInSubWindowValue: string = JSON.stringify(resource.$attrs.content);
-      await Utils.sleep(SLEEP_TIME);
+      await Utils.sleep(SLEEP_LONG_TIME);
+      let resource: ESObject = await Utils.parseInspectorKey('resource');
+      let showInSubWindowValue: string = await JSON.stringify(resource.$attrs.content);
+      await Utils.sleep(SLEEP_LONG_TIME);
       expect(sendEventByKey('showInSubWindow_button', UI_EVENT_CLICK, '')).assertTrue();
-      await Utils.sleep(SLEEP_TIME);
+      await Utils.sleep(SLEEP_LONG_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
       if (showInSubWindowValue === '"false"') {
         expect(obj.$attrs.showInSubWindow).assertEqual('false');
       } else {
         expect(obj.$attrs.showInSubWindow).assertEqual('true');
       }
+      await Utils.sleep(SLEEP_LONG_TIME);
       console.info('showInSubWindow_value_0003 END');
       done();
     });
@@ -114,6 +119,7 @@ export default function showInSubWindowValueTest() {
     it('showInSubWindow_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showInSubWindow_value_0004 START');
+      await Utils.sleep(SLEEP_TIME);
       let resource: ESObject = Utils.parseInspectorKey('resource');
       let showInSubWindowValue: string = JSON.stringify(resource.$attrs.content);
       await Utils.sleep(SLEEP_TIME);

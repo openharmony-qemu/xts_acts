@@ -17,10 +17,12 @@ import fontTest from "./Font.test";
 import fontPart2Test from './FontPart2.test'
 import fontPart3Test from './FontPart3.test'
 import FontPart4 from './FontPart4.test';
+import FontPart5 from './FontPart5.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   fontTest();
   fontPart2Test();
   fontPart3Test();
   FontPart4();
+  FontPart5();
 }

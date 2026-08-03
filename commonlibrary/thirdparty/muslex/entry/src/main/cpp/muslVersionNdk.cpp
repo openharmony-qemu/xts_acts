@@ -20,7 +20,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -55,7 +54,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value MuslVersionNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     return ReturnInt32(env, (ver != nullptr) ? 1 : 0);
@@ -64,7 +63,7 @@ static napi_value MuslVersionNormal001(napi_env env, napi_callback_info info)
 static napi_value MuslVersionNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     if (!ver) {
@@ -77,7 +76,7 @@ static napi_value MuslVersionNormal002(napi_env env, napi_callback_info info)
 static napi_value MuslVersionNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver1 = CallMuslVersion();
     const char* ver2 = CallMuslVersion();
@@ -90,7 +89,7 @@ static napi_value MuslVersionNormal003(napi_env env, napi_callback_info info)
 static napi_value MuslVersionNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -98,7 +97,7 @@ static napi_value MuslVersionNormal004(napi_env env, napi_callback_info info)
 static napi_value MuslVersionAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     return ReturnInt32(env, (ver != nullptr) ? 1 : 0);
@@ -107,10 +106,10 @@ static napi_value MuslVersionAbnormal001(napi_env env, napi_callback_info info)
 static napi_value MuslVersionAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         const char* ver = CallMuslVersion();
         if (!ver) {
             return ReturnInt32(env, 0);
@@ -122,7 +121,7 @@ static napi_value MuslVersionAbnormal002(napi_env env, napi_callback_info info)
 static napi_value MuslVersionBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     if (!ver) {
@@ -134,7 +133,7 @@ static napi_value MuslVersionBoundary001(napi_env env, napi_callback_info info)
 static napi_value MuslVersionBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     if (!ver) {
@@ -146,7 +145,7 @@ static napi_value MuslVersionBoundary002(napi_env env, napi_callback_info info)
 static napi_value MuslVersionStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -173,12 +172,14 @@ static void MuslVersionThreadWorker(std::atomic<bool>& hasError)
 static napi_value MuslVersionThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(MuslVersionThreadWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            MuslVersionThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

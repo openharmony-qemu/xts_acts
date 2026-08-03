@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import router from '@system.router';
+import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
@@ -62,10 +62,10 @@ export default function() {
         it('testStepperComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/stepper/router/index'
+                url: 'pages/stepper/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push stepper page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push stepper page error " + JSON.stringify(result));
@@ -91,10 +91,10 @@ export default function() {
             console.info('testButtonComponent START');
             let result;
             let options = {
-                uri: 'pages/button/router/index'
+                url: 'pages/button/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push button page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push button page error " + JSON.stringify(result));
@@ -119,10 +119,10 @@ export default function() {
             console.info('testButtonComponent START');
             let result;
             let options = {
-                uri: 'pages/input/router/index'
+                url: 'pages/input/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push button page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push button page error " + JSON.stringify(result));
@@ -146,10 +146,10 @@ export default function() {
             console.info('testSliderComponent START');
             let result;
             let options = {
-                uri: 'pages/slider/router/index'
+                url: 'pages/slider/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push button page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push button page error " + JSON.stringify(result));
@@ -172,10 +172,10 @@ export default function() {
         it('testTextComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/text/router/index'
+                url: 'pages/text/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -197,10 +197,10 @@ export default function() {
             console.info('testLabelComponent START');
             let result;
             let options = {
-                uri: 'pages/label/router/index'
+                url: 'pages/label/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -221,10 +221,10 @@ export default function() {
         it('testMarqueeComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/marquee/router/index'
+                url: 'pages/marquee/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -245,10 +245,10 @@ export default function() {
         it('testDividerComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/divider/router/index'
+                url: 'pages/divider/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -269,10 +269,10 @@ export default function() {
         it('testGetImageComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/image/router/index'
+                url: 'pages/image/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -293,10 +293,10 @@ export default function() {
         it('testGetMenuComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/menu/router/index'
+                url: 'pages/menu/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -320,10 +320,10 @@ export default function() {
         it('testRatingComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/rating/router/index'
+                url: 'pages/rating/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -344,10 +344,10 @@ export default function() {
         it('testSearchComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/search/router/index'
+                url: 'pages/search/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -368,10 +368,10 @@ export default function() {
         it('testToolbarComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/toolbar/router/index'
+                url: 'pages/toolbar/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -392,10 +392,10 @@ export default function() {
         it('testTextareaComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/textarea/router/index'
+                url: 'pages/textarea/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -416,10 +416,10 @@ export default function() {
         it('testSpanComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/span/router/index'
+                url: 'pages/span/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -440,10 +440,10 @@ export default function() {
         it('testSwitchComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/switch/router/index'
+                url: 'pages/switch/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -464,10 +464,10 @@ export default function() {
         it('testToggleComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/toggle/router/index'
+                url: 'pages/toggle/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -488,10 +488,10 @@ export default function() {
         it('testOptionComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/option/router/index'
+                url: 'pages/option/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -512,10 +512,10 @@ export default function() {
         it('testOptionComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/option/router1/index'
+                url: 'pages/option/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -536,10 +536,10 @@ export default function() {
         it('testOptionComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/option/router2/index'
+                url: 'pages/option/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -560,10 +560,10 @@ export default function() {
         it('testOptionComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/option/router3/index'
+                url: 'pages/option/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -584,10 +584,10 @@ export default function() {
         it('testOptionComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/option/router4/index'
+                url: 'pages/option/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -609,10 +609,10 @@ export default function() {
         it('testPickerComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router/index'
+                url: 'pages/picker/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -634,10 +634,10 @@ export default function() {
         it('testPickerComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router1/index'
+                url: 'pages/picker/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -657,10 +657,10 @@ export default function() {
         it('testPickerComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router2/index'
+                url: 'pages/picker/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -680,10 +680,10 @@ export default function() {
         it('testPickerComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router3/index'
+                url: 'pages/picker/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -703,10 +703,10 @@ export default function() {
         it('testPickerComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router4/index'
+                url: 'pages/picker/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -726,10 +726,10 @@ export default function() {
         it('testPickerComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router5/index'
+                url: 'pages/picker/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -749,10 +749,10 @@ export default function() {
         it('testPickerComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router6/index'
+                url: 'pages/picker/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -772,10 +772,10 @@ export default function() {
         it('testPickerComponent7', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router7/index'
+                url: 'pages/picker/router7/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -795,10 +795,10 @@ export default function() {
         it('testPickerComponent8', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/picker/router8/index'
+                url: 'pages/picker/router8/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -820,10 +820,10 @@ export default function() {
         it('testPieceComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router/index'
+                url: 'pages/piece/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -844,10 +844,10 @@ export default function() {
         it('testPieceComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router1/index'
+                url: 'pages/piece/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -867,10 +867,10 @@ export default function() {
         it('testPieceComponent01', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router01/index'
+                url: 'pages/piece/router01/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -891,10 +891,10 @@ export default function() {
         it('testPieceComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router2/index'
+                url: 'pages/piece/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -915,10 +915,10 @@ export default function() {
         it('testPieceComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router4/index'
+                url: 'pages/piece/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -939,10 +939,10 @@ export default function() {
         it('testPieceComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router5/index'
+                url: 'pages/piece/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -964,10 +964,10 @@ export default function() {
         it('testPieceComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router6/index'
+                url: 'pages/piece/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -988,10 +988,10 @@ export default function() {
         it('testPieceComponent7', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/piece/router7/index'
+                url: 'pages/piece/router7/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -1012,10 +1012,10 @@ export default function() {
         it('testProgressComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/progress/router/index'
+                url: 'pages/progress/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -1036,10 +1036,10 @@ export default function() {
         it('testQrcodeComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/qrcode/router/index'
+                url: 'pages/qrcode/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -1060,10 +1060,10 @@ export default function() {
         it('testSelectComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/select/router/index'
+                url: 'pages/select/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
             } catch (err) {
                 result = err
             }
@@ -1084,10 +1084,10 @@ export default function() {
         it('testBadgeComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router/index'
+                url: 'pages/badge/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1110,10 +1110,10 @@ export default function() {
         it('testBadgeComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router1/index'
+                url: 'pages/badge/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1135,10 +1135,10 @@ export default function() {
         it('testBadgeComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router2/index'
+                url: 'pages/badge/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1160,10 +1160,10 @@ export default function() {
         it('testBadgeComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router3/index'
+                url: 'pages/badge/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1185,10 +1185,10 @@ export default function() {
         it('testBadgeComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router4/index'
+                url: 'pages/badge/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1210,10 +1210,10 @@ export default function() {
         it('testBadgeComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router5/index'
+                url: 'pages/badge/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1235,10 +1235,10 @@ export default function() {
         it('testBadgeComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/badge/router6/index'
+                url: 'pages/badge/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push badge page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push badge page error " + JSON.stringify(result));
@@ -1261,10 +1261,10 @@ export default function() {
         it('testDialogComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/dialog/router/index'
+                url: 'pages/dialog/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push dialog page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push dialog page error " + JSON.stringify(result));
@@ -1286,10 +1286,10 @@ export default function() {
         it('testDialogComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/dialog/router1/index'
+                url: 'pages/dialog/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push dialog page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push dialog page error " + JSON.stringify(result));
@@ -1312,10 +1312,10 @@ export default function() {
         it('testDialogComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/dialog/router2/index'
+                url: 'pages/dialog/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push dialog page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push dialog page error " + JSON.stringify(result));
@@ -1338,10 +1338,10 @@ export default function() {
         it('testDialogComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/dialog/router3/index'
+                url: 'pages/dialog/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push dialog page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push dialog page error " + JSON.stringify(result));
@@ -1364,10 +1364,10 @@ export default function() {
         it('testDivComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/div/router/index'
+                url: 'pages/div/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push div page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push div page error " + JSON.stringify(result));
@@ -1390,10 +1390,10 @@ export default function() {
         it('testFormComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/form/router/index'
+                url: 'pages/form/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push form page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push form page error " + JSON.stringify(result));
@@ -1416,10 +1416,10 @@ export default function() {
         it('testListComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router/index'
+                url: 'pages/list/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1441,10 +1441,10 @@ export default function() {
         it('testListComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router1/index'
+                url: 'pages/list/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1466,10 +1466,10 @@ export default function() {
         it('testListComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router2/index'
+                url: 'pages/list/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1491,10 +1491,10 @@ export default function() {
         it('testListComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router3/index'
+                url: 'pages/list/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1516,10 +1516,10 @@ export default function() {
         it('testListComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router4/index'
+                url: 'pages/list/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1541,10 +1541,10 @@ export default function() {
         it('testListComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router5/index'
+                url: 'pages/list/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1566,10 +1566,10 @@ export default function() {
         it('testListComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/list/router6/index'
+                url: 'pages/list/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push list page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push list page error " + JSON.stringify(result));
@@ -1592,10 +1592,10 @@ export default function() {
         it('testListItemComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router/index'
+                url: 'pages/listItem/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1618,10 +1618,10 @@ export default function() {
         it('testListItemComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router1/index'
+                url: 'pages/listItem/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1644,10 +1644,10 @@ export default function() {
         it('testListItemComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router2/index'
+                url: 'pages/listItem/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1671,10 +1671,10 @@ export default function() {
         it('testListItemComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router3/index'
+                url: 'pages/listItem/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1698,10 +1698,10 @@ export default function() {
         it('testListItemComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router4/index'
+                url: 'pages/listItem/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1725,10 +1725,10 @@ export default function() {
         it('testListItemComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router5/index'
+                url: 'pages/listItem/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1751,10 +1751,10 @@ export default function() {
         it('testListItemComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router6/index'
+                url: 'pages/listItem/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1777,10 +1777,10 @@ export default function() {
         it('testListItemComponent7', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router7/index'
+                url: 'pages/listItem/router7/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1803,10 +1803,10 @@ export default function() {
         it('testListItemComponent8', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItem/router8/index'
+                url: 'pages/listItem/router8/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItem page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItem page error " + JSON.stringify(result));
@@ -1831,10 +1831,10 @@ export default function() {
         it('testListItemGroupComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/listItemGroup/router/index'
+                url: 'pages/listItemGroup/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push listItemGroup page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push listItemGroup page error " + JSON.stringify(result));
@@ -1857,10 +1857,10 @@ export default function() {
         it('testPanelComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/panel/router/index'
+                url: 'pages/panel/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push panel page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push panel page error " + JSON.stringify(result));
@@ -1883,10 +1883,10 @@ export default function() {
         it('testPopupComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/popup/router/index'
+                url: 'pages/popup/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push popup page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push popup page error " + JSON.stringify(result));
@@ -1909,10 +1909,10 @@ export default function() {
         it('testStackComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/stack/router/index'
+                url: 'pages/stack/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push stack page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push stack page error " + JSON.stringify(result));
@@ -1935,10 +1935,10 @@ export default function() {
         it('testSwiperComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/swiper/router/index'
+                url: 'pages/swiper/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push swiper page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push swiper page error " + JSON.stringify(result));
@@ -1962,10 +1962,10 @@ export default function() {
         it('testRefreshComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router/index'
+                url: 'pages/refresh/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -1988,10 +1988,10 @@ export default function() {
         it('testRefreshComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router1/index'
+                url: 'pages/refresh/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2014,10 +2014,10 @@ export default function() {
         it('testRefreshComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router2/index'
+                url: 'pages/refresh/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2039,10 +2039,10 @@ export default function() {
         it('testRefreshComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router3/index'
+                url: 'pages/refresh/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2064,10 +2064,10 @@ export default function() {
         it('testRefreshComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router4/index'
+                url: 'pages/refresh/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2089,10 +2089,10 @@ export default function() {
         it('testRefreshComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router5/index'
+                url: 'pages/refresh/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2114,10 +2114,10 @@ export default function() {
         it('testRefreshComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router6/index'
+                url: 'pages/refresh/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2139,10 +2139,10 @@ export default function() {
         it('testRefreshComponent7', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router7/index'
+                url: 'pages/refresh/router7/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2164,10 +2164,10 @@ export default function() {
         it('testRefreshComponent8', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/refresh/router8/index'
+                url: 'pages/refresh/router8/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push refresh page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push refresh page error " + JSON.stringify(result));
@@ -2190,10 +2190,10 @@ export default function() {
         it('testImageAnimatorComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router/index'
+                url: 'pages/imageAnimator/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2216,10 +2216,10 @@ export default function() {
         it('testImageAnimatorComponent1', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router1/index'
+                url: 'pages/imageAnimator/router1/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2242,10 +2242,10 @@ export default function() {
         it('testImageAnimatorComponent2', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router2/index'
+                url: 'pages/imageAnimator/router2/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2268,10 +2268,10 @@ export default function() {
         it('testImageAnimatorComponent3', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router3/index'
+                url: 'pages/imageAnimator/router3/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2294,10 +2294,10 @@ export default function() {
         it('testImageAnimatorComponent4', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router4/index'
+                url: 'pages/imageAnimator/router4/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2320,10 +2320,10 @@ export default function() {
         it('testImageAnimatorComponent5', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router5/index'
+                url: 'pages/imageAnimator/router5/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2346,10 +2346,10 @@ export default function() {
         it('testImageAnimatorComponent6', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/imageAnimator/router6/index'
+                url: 'pages/imageAnimator/router6/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push imageAnimator page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push imageAnimator page error " + JSON.stringify(result));
@@ -2373,10 +2373,10 @@ export default function() {
         it('testTabsComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/tabs/router/index'
+                url: 'pages/tabs/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push tabs page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push tabs page error " + JSON.stringify(result));
@@ -2399,10 +2399,10 @@ export default function() {
         it('testTabBarComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/tab-bar/router/index'
+                url: 'pages/tab-bar/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push tab-bar page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push tab-bar page error " + JSON.stringify(result));
@@ -2425,10 +2425,10 @@ export default function() {
         it('testTabContentComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/tab-content/router/index'
+                url: 'pages/tab-content/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push tab-content page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push tab-content page error " + JSON.stringify(result));
@@ -2451,10 +2451,10 @@ export default function() {
         it('testGridContainerComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/gridContainer/router/index'
+                url: 'pages/gridContainer/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push gridContainer page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push gridContainer page error " + JSON.stringify(result));
@@ -2477,10 +2477,10 @@ export default function() {
         it('testGridRowComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/gridRow/router/index'
+                url: 'pages/gridRow/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push gridRow page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push gridRow page error " + JSON.stringify(result));
@@ -2503,10 +2503,10 @@ export default function() {
         it('testGridColComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/gridCol/router/index'
+                url: 'pages/gridCol/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push gridCol page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push gridCol page error " + JSON.stringify(result));
@@ -2529,10 +2529,10 @@ export default function() {
         it('testCanvasComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/canvas/router/index'
+                url: 'pages/canvas/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push canvas page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push canvas page error " + JSON.stringify(result));
@@ -2555,10 +2555,10 @@ export default function() {
         it('testCanvasRenderingContext2DComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/obj_CanvasRenderingContext2D/router/index'
+                url: 'pages/obj_CanvasRenderingContext2D/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push obj_CanvasRenderingContext2D page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push obj_CanvasRenderingContext2D page error " + JSON.stringify(result));
@@ -2581,10 +2581,10 @@ export default function() {
         it('testObjImageComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/obj_Image/router/index'
+                url: 'pages/obj_Image/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push obj_Image page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push obj_Image page error " + JSON.stringify(result));
@@ -2607,10 +2607,10 @@ export default function() {
         it('testCanvasGradientComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/obj_CanvasGradient/router/index'
+                url: 'pages/obj_CanvasGradient/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push obj_CanvasGradient page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push obj_CanvasGradient page error " + JSON.stringify(result));
@@ -2633,10 +2633,10 @@ export default function() {
         it('testImageDataComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/obj_ImageData/router/index'
+                url: 'pages/obj_ImageData/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push obj_ImageData page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push obj_ImageData page error " + JSON.stringify(result));
@@ -2659,10 +2659,10 @@ export default function() {
         it('testPath2DComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/obj_Path2D/router/index'
+                url: 'pages/obj_Path2D/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push obj_Path2D page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push obj_Path2D page error " + JSON.stringify(result));
@@ -2685,10 +2685,10 @@ export default function() {
         it('testCameraComponent', Level.LEVEL0, async function(done) {
             let result;
             let options = {
-                uri: 'pages/camera/router/index'
+                url: 'pages/camera/router/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push camera page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push camera page error " + JSON.stringify(result));

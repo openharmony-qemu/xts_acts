@@ -24,6 +24,7 @@ group("concurrent_test") {
       "concurrentcollectionstest:ActsConcurrentCollectionsTest",
       "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
       "concurrentlibtest:ActsConcurrentLibTest",
+      "concurrent_guide:ActsConcurrentGuideTest",
       "concurrentmoduletest:ActsConcurrentModuleTest",
       "processtest:ActsProcessTest",
       "promisetest:ActsPromiseTest",

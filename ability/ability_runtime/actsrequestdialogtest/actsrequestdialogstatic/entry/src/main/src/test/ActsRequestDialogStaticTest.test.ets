@@ -80,7 +80,7 @@ export default function ActsRequestDialogStaticTest() {
       expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          (async () => {
+          waitForCompletion(async () => {
             if (err) {
               console.info(`====>ACTS_requestDialog_static_0100 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
             }
@@ -97,7 +97,7 @@ export default function ActsRequestDialogStaticTest() {
               });
               done();
             }
-          })().awaitSync()
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -142,7 +142,7 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          (async () => {
+          waitForCompletion(async () => {
             if (err) {
               console.info(`====>ACTS_requestDialog_static_0200 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
             }
@@ -163,7 +163,7 @@ export default function ActsRequestDialogStaticTest() {
               });
               done();
             }
-          })().awaitSync()
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -305,7 +305,7 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          (async () => {
+          waitForCompletion(async () => {
             if (err) {
               console.info(`====>ACTS_requestDialog_static_0600 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
             }
@@ -322,7 +322,7 @@ export default function ActsRequestDialogStaticTest() {
               });
               done();
             }
-          })().awaitSync()
+          })
         }
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
@@ -365,7 +365,7 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          (async () => {
+          waitForCompletion(async () => {
             if (err) {
               console.info(`====>ACTS_requestDialog_static_0700 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
             }
@@ -386,7 +386,7 @@ export default function ActsRequestDialogStaticTest() {
               });
               done();
             }
-          })().awaitSync()
+          })
         }
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {

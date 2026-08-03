@@ -175,7 +175,7 @@ export default function ArrayGetTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(42);
     });
@@ -423,7 +423,7 @@ export default function ArrayGetTest2(): void {
     it('testArrayGet022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p = new GetPerson();
       p.id = 'ref';
-      const arr = new Array<GetPerson>(p);
+      const arr = Array.create<GetPerson>(1, p);
       expect(arr[0]).assertEqual(p);
     });
 
@@ -438,7 +438,7 @@ export default function ArrayGetTest2(): void {
     it('testArrayGet023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p = new GetPerson();
       p.id = 'original';
-      const arr = new Array<GetPerson>(p);
+      const arr = Array.create<GetPerson>(1, p);
       const fetched = arr[0];
       fetched.id = 'modified';
       expect(arr[0].id).assertEqual('modified');
@@ -613,7 +613,7 @@ export default function ArrayGetTest2(): void {
      */
     it('testArrayGet035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1, 2, 3);
-      const outer = new Array<Array<number>>(inner);
+      const outer = Array.create<Array<number>>(1, inner);
       const fetched = outer[0];
       expect(fetched).assertEqual(inner);
       expect(fetched[1]).assertEqual(2);
@@ -680,7 +680,7 @@ export default function ArrayGetTest2(): void {
      * @tc.level LEVEL2
      */
     it('testArrayGet039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       for (let i = 0; i < 100000; i++) {
         expect(arr[0]).assertEqual(42);
       }

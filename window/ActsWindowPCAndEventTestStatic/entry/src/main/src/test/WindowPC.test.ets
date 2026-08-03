@@ -53,7 +53,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        Utils.msSleep(1000).awaitSync()
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -355,7 +355,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testRecoverPromiseErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -374,7 +374,7 @@ export default function WindowPCTest() {
                         expect(false).assertTrue();
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error): void => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -433,7 +433,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testMinimizeCallbackErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -465,7 +465,7 @@ export default function WindowPCTest() {
                         expect(false).assertTrue();
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -489,7 +489,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testMinimizePromiseErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -509,7 +509,7 @@ export default function WindowPCTest() {
                         expect(false).assertTrue();
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -534,7 +534,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testMaximizePromiseErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -556,7 +556,7 @@ export default function WindowPCTest() {
                         expect(false).assertTrue();
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -590,19 +590,19 @@ export default function WindowPCTest() {
                 await win!.showWindow();
                 await Utils.msSleep(300);
                 win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
                         await (win! as window.Window).destroyWindow();
                         expect(false).assertTrue();
                         done()
-                    })().awaitSync()
+                    })
                 }).catch((err: Error) :PromiseLike<void>|undefined => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300004);
                     await (win! as window.Window).destroyWindow();
                     done()
-                    })().awaitSync()
+                    })
                 });
             } catch (err) {
                 err = err as BusinessError;
@@ -893,7 +893,7 @@ export default function WindowPCTest() {
                 expect(false).assertTrue();
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.error(domain, tag,`${caseName} Unauthorized operation. Cause code: ${err.code}, message: ${err.message}`);
                 if(err.code === 801){
                     done();
@@ -902,7 +902,7 @@ export default function WindowPCTest() {
                     await subWindowClass.destroyWindow();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
         /**
@@ -1016,16 +1016,16 @@ export default function WindowPCTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in creating the float window.`);
                 try {
                     window.createWindow(config2).then((data:window.Window) => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         subWindowClass = data;
                         await subWindowClass!.setRelativePositionToParentWindowEnabled(true);
                         hilog.info(domain, tag,caseName + 'float window succeed in calling setRelativePositionToParentWindowEnabled');
                         await subWindowClass!.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
                         await subWindowClass!.destroyWindow();
                         if (err.code === 801) {
@@ -1036,7 +1036,7 @@ export default function WindowPCTest() {
                             expect(err.message!=null).assertTrue();
                             done();
                         }
-                        })().awaitSync()
+                        })
                     });
                 } catch (e) {
                     hilog.error(domain, tag,`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
@@ -1074,7 +1074,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1098,14 +1098,14 @@ export default function WindowPCTest() {
                         expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error) :PromiseLike<void>|undefined=> {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1149,7 +1149,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(false).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1165,14 +1165,14 @@ export default function WindowPCTest() {
                         expect(Math.abs(mainWindowProperties.windowRect.top-subWindowProperties.windowRect.top)).assertLarger(0);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1212,7 +1212,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1236,14 +1236,14 @@ export default function WindowPCTest() {
                         expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1283,7 +1283,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1307,14 +1307,14 @@ export default function WindowPCTest() {
                         expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft)));
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1354,7 +1354,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_END).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1378,14 +1378,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1425,7 +1425,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.START).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1449,14 +1449,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1496,7 +1496,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.CENTER).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1520,14 +1520,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1567,7 +1567,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.END).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1591,14 +1591,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((mainTop + mainHeight/2)-(subTop+subHeight/2))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1638,7 +1638,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_START).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1662,14 +1662,14 @@ export default function WindowPCTest() {
                         expect( Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1709,7 +1709,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1733,14 +1733,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1780,7 +1780,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_END).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1804,14 +1804,14 @@ export default function WindowPCTest() {
                         expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1851,7 +1851,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, 100).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1875,14 +1875,14 @@ export default function WindowPCTest() {
                         expect(subTop).assertEqual(mainTop + 100);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1922,7 +1922,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, -100).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -1946,14 +1946,14 @@ export default function WindowPCTest() {
                         expect(subTop).assertEqual(Math.abs(mainTop - 100));
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -1993,7 +1993,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, 100).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -2017,14 +2017,14 @@ export default function WindowPCTest() {
                         expect(subTop).assertEqual(mainTop + 100);
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -2064,7 +2064,7 @@ export default function WindowPCTest() {
             try {
                 if(isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, -100).then(() => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.info(domain, tag,caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
                         let windowRect = mainWindow.getWindowProperties().windowRect;
                         hilog.info(domain, tag,`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
@@ -2088,14 +2088,14 @@ export default function WindowPCTest() {
                         expect(subTop).assertEqual(Math.abs(mainTop - 100));
                         await windowClass.destroyWindow();
                         done();
-                        })().awaitSync()
+                        })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        (async () => {
+                        waitForCompletion(async () => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         await windowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                        })().awaitSync()
+                        })
                     })
                 } else {
                     await windowClass.destroyWindow();
@@ -2538,14 +2538,14 @@ export default function WindowPCTest() {
             let windowClass:window.Window = await windowStage!.createSubWindow('testSetWindowShadowEnabledwithUnsupportedSubwindow');
             try {
                 windowClass.setWindowShadowEnabled(true).then(() => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${caseName} Succeeded in calling setWindowShadowEnabled.`);
                         await windowClass.destroyWindow()
                         expect(false).assertTrue();
                         done()
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     hilog.error(domain, tag,`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
                     await windowClass.destroyWindow()
                     expect(err.message!=null).assertTrue();
@@ -2555,7 +2555,7 @@ export default function WindowPCTest() {
                         expect(err.code).assertEqual(1300004);
                         done();
                     }
-                    })().awaitSync()
+                    })
                 });
             } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
@@ -2588,13 +2588,13 @@ export default function WindowPCTest() {
             console.log(`${caseName} subWindowId: ${JSON.stringify(subWindowId)}`);
             try {
                 window.shiftAppWindowTouchEvent(subWindowId, 20000, 123).then(() => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         await subWindowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                    })().awaitSync()
+                    })
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
-                    (async () => {
+                    waitForCompletion(async () => {
                     console.error(msgStr+'shiftAppWindowTouchEvent : ' + err.code + ',message:' + err.message)
                     await subWindowClass.destroyWindow();
                     if (err.code === 801) {
@@ -2603,7 +2603,7 @@ export default function WindowPCTest() {
                         expect(err.code).assertEqual(1300002);
                         done();
                     }
-                    })().awaitSync()
+                    })
                 })
             } catch (err) {
                 err = err as BusinessError;
@@ -2671,7 +2671,7 @@ export default function WindowPCTest() {
                     await terminateAbility(message);
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
                     await terminateAbility(message);
                     if (err.code === 801) {
@@ -2682,7 +2682,7 @@ export default function WindowPCTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    })().awaitSync()
+                    })
                 });
             } catch (err) {
                 console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -4259,7 +4259,7 @@ export default function WindowPCTest() {
      */
     it('testSetDecorButtonStyleErrCode1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        (async () => {
+        waitForCompletion(async () => {
         let caseName: string = 'testSetDecorButtonStyleErrCode1300002_static';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
@@ -4298,7 +4298,7 @@ export default function WindowPCTest() {
             done();
           }
         }
-        })().awaitSync()
+        })
       })
 
     /**
@@ -4324,7 +4324,7 @@ export default function WindowPCTest() {
         hilog.info(domain, tag, `${caseName} Succeeded in creating the float window.`);
         try {
           window.createWindow(config).then((data: window.Window) => {
-            (async () => {
+            waitForCompletion(async () => {
             subWindowClass = data;
             hilog.info(domain, tag,
               caseName + 'float window succeed in calling setRelativePositionToParentWindowEnabled');
@@ -4344,7 +4344,7 @@ export default function WindowPCTest() {
             subWindowClass!.setDecorButtonStyle(style);
             expect(false).assertTrue();
             done();
-            })().awaitSync()
+            })
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag,
               `${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
@@ -4502,7 +4502,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4523,7 +4523,7 @@ export default function WindowPCTest() {
                             done();
                         }
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -4547,7 +4547,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4563,7 +4563,7 @@ export default function WindowPCTest() {
                         expect(e.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -4678,7 +4678,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testOnWindowTitleButtonRectChangeErrCode1300002_static_0300')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4695,7 +4695,7 @@ export default function WindowPCTest() {
                         expect(e!.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -4721,7 +4721,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4746,7 +4746,7 @@ export default function WindowPCTest() {
                         }
                         done();
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -4770,7 +4770,7 @@ export default function WindowPCTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testSetDecorButtonStyleErrCode1300002_static_0100')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4789,7 +4789,7 @@ export default function WindowPCTest() {
                         expect(e!.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));

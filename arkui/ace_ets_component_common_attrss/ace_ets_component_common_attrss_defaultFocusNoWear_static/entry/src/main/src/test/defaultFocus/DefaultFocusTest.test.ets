@@ -82,17 +82,17 @@ export default function DefaultFocusTest() {
 
       if ('SetTrue' == data.testValue.describe) {
         //Confirm if the focus is on the target component
-        let firstComponent: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.textComponentKey);
+        let firstComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.textComponentKey);
         console.info('[' + data.caseTag + '] firstComponent.$attrs.content: ' +
         firstComponent.getElement('$attrs').getString('content'));
         expect(firstComponent.getElement('$attrs').getString('content')).assertEqual('onFocus');
         // Confirm if the focus is on the reference component
-        let firstReferenceComponent: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+        let firstReferenceComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
         console.info('[' + data.caseTag + '] firstReferenceComponent.$attrs.label: ' +
         firstReferenceComponent.getElement('$attrs').getString('label'));
         expect(firstReferenceComponent.getElement('$attrs').getString('label')).assertEqual('');
         // Confirm target component attribute values
-        let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
+        let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
         console.info('[' + data.caseTag + '] DefaultFocus is ' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus') + ' ');
         expect(viewObj.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(true);
@@ -110,18 +110,18 @@ export default function DefaultFocusTest() {
         console.info('[' + data.caseTag + '] Press Tab.');
 
         //Confirm if the focus is on the target component
-        let secondComponent: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.textComponentKey);
+        let secondComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.textComponentKey);
         console.info('[' + data.caseTag + '] secondComponent.$attrs.content: ' +
         secondComponent.getElement('$attrs').getString('content'));
         expect(secondComponent.getElement('$attrs').getString('content')).assertEqual('onFocus')
         //Confirm if the focus is on the reference component
         let secondReferenceComponent: jsonx.JsonElement =
-          await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+          Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
         console.info('[' + data.caseTag + '] secondReferenceComponent.$attrs.label: ' +
         secondReferenceComponent.getElement('$attrs').getString('label'));
         expect(secondReferenceComponent.getElement('$attrs').getString('label')).assertEqual('');
         // Confirm target component attribute values
-        viewObj = await Utils.getComponentByKey(data.pageConfig.componentKey);
+        viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
         console.info('[' + data.caseTag + '] DefaultFocus is ' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus') + ' ');
         expect(viewObj.getElement('$attrs').getBoolean('defaultFocus')).assertEqual(true);
@@ -130,12 +130,12 @@ export default function DefaultFocusTest() {
         console.log('setValue is:  ' + data.testValue.setValue)
         //Confirm if the focus is on the target component
         await Utils.sleep(2000);
-        let component: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.textComponentKey);
+        let component: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.textComponentKey);
         console.info('[' + data.caseTag + '] component.$attrs.content: ' +
         component.getElement('$attrs').getString('content'));
         expect(component.getElement('$attrs').getString('content')).assertEqual('');
 
-        let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
+        let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
         await Utils.sleep(2000);
         console.info('[' + data.caseTag + '] DefaultFocus is ' +
         viewObj.getElement('$attrs').getBoolean('defaultFocus'));

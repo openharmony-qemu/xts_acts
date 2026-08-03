@@ -29,7 +29,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext | null = null;
 
 function msSleep(count: int) {
-  Utils.msSleep(count).awaitSync();
+  waitForCompletion(async ()=> { await Utils.msSleep(count); });
 }
 
 export default function ApplicationContextGetIsPreloadTest() {

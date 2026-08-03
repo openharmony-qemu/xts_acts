@@ -755,7 +755,7 @@ export default function ArrayCreateTest2(): void {
      */
 
     it('testArrayCreateTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<Array<int>>(new Array<int>(1));
+      const inner = Array.create<Array<int>>(1, Array.create<int>(1, 1));
       const arr = Array.create<Array<Array<int>>>(2, inner);
       expect(arr[0][0][0]).assertEqual(1);
       expect(arr[1][0][0]).assertEqual(1);
@@ -897,7 +897,7 @@ export default function ArrayCreateTest2(): void {
 
     it('testArrayCreateTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(3, 7);
-      const arr2 = new Array<int>(3);
+      const arr2 = Array.create<int>(1, 3);
       arr2.fill(7);
       expect(arr1[0]).assertEqual(arr2[0]);
     });
@@ -1199,7 +1199,7 @@ export default function ArrayCreateTest2(): void {
      */
 
     it('testArrayCreateTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<Array<int>>(new Array<int>(1));
+      const inner = Array.create<Array<int>>(1, Array.create<int>(1, 1));
       const arr = Array.create<Array<Array<int>>>(2, inner);
       expect(arr.length).assertEqual(2);
       expect(arr[0][0][0]).assertEqual(1);

@@ -53,9 +53,9 @@ struct imageAddApi2 {
   } as ImageAIOptions
 
   onPageShow() {
-    (async ()=>{
+    waitForCompletion(async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'))
-    })().awaitSync()
+    })
   }
 
   build() {

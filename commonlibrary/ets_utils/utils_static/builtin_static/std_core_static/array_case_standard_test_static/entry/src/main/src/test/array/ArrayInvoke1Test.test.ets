@@ -612,7 +612,7 @@ export default function ArrayInvoke1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2900
      * @tc.name testArrayInvoke1029
-     * @tc.desc Verify default construction differs from passing a single numeric argument
+     * @tc.desc Verify invoke with no args differs from passing a single numeric argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

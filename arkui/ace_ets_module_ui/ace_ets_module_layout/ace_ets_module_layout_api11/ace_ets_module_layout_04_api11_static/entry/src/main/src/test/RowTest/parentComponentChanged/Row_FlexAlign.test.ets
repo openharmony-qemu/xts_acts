@@ -83,13 +83,13 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
       console.log('Row rect_value is:' + JSON.stringify(Row));
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
       console.log('Text2 rect_value is:' + JSON.stringify(Text2));
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Text3 rect_value is:' + JSON.stringify(Text3));
 
@@ -142,10 +142,10 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
@@ -198,10 +198,10 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
@@ -255,10 +255,10 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
@@ -314,10 +314,10 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
@@ -376,10 +376,10 @@ export default function Row_FlexAlign() {
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_ParentComponentChanged_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));

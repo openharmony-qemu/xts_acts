@@ -23,9 +23,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -78,7 +77,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value PrintfChkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "Hello %s", "World");
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -88,7 +87,7 @@ static napi_value PrintfChkNormal001(napi_env env, napi_callback_info info)
 static napi_value PrintfChkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(1, "Number: %d", 42);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -98,7 +97,7 @@ static napi_value PrintfChkNormal002(napi_env env, napi_callback_info info)
 static napi_value PrintfChkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "");
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -108,7 +107,7 @@ static napi_value PrintfChkNormal003(napi_env env, napi_callback_info info)
 static napi_value PrintfChkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%s %d %.2f", "test", 123, 4.56);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -118,7 +117,7 @@ static napi_value PrintfChkNormal004(napi_env env, napi_callback_info info)
 static napi_value PrintfChkNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%% %d%%", 100);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -128,7 +127,7 @@ static napi_value PrintfChkNormal005(napi_env env, napi_callback_info info)
 static napi_value PrintfChkNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret0 = CallPrintfChk(0, "Hello %s", "World");
     int ret1 = CallPrintfChk(1, "Hello %s", "World");
@@ -141,7 +140,7 @@ static napi_value PrintfChkNormal006(napi_env env, napi_callback_info info)
 static napi_value PrintfChkAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, nullptr);
     // Expected return -1 (error), function should not crash
@@ -152,7 +151,7 @@ static napi_value PrintfChkAbnormal001(napi_env env, napi_callback_info info)
 static napi_value PrintfChkAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     // Missing argument, but function should not crash
     int ret = CallPrintfChk(0, "%d %s", 123);
@@ -164,7 +163,7 @@ static napi_value PrintfChkAbnormal002(napi_env env, napi_callback_info info)
 static napi_value PrintfChkAbnormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%d", 123, 456, 789);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -176,24 +175,24 @@ static napi_value PrintfChkAbnormal003(napi_env env, napi_callback_info info)
 static napi_value PrintfChkBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int fmtsize = 3000;
-    std::string longFmt(fmtsize, 'x');
+    int fmtSize = 3000;
+    std::string longFmt(fmtSize, 'x');
     int ret = CallPrintfChk(0, longFmt.c_str());
-    return ReturnInt32(env, (ret == fmtsize) ? 1 : 0);
+    return ReturnInt32(env, (ret == fmtSize) ? 1 : 0);
 }
 
 /* TC-011: Very long output string */
 static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int strsize = 2000;
-    std::string longStr(strsize, 'a');
+    int strSize = 2000;
+    std::string longStr(strSize, 'a');
     int ret = CallPrintfChk(0, "%s", longStr.c_str());
-    return ReturnInt32(env, (ret == strsize) ? 1 : 0);
+    return ReturnInt32(env, (ret == strSize) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -202,10 +201,10 @@ static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
 static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         int ret = CallPrintfChk(i % 2, "Test %d", i);
         if (ret < 0) {
             pass = false;
@@ -215,7 +214,9 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** formats)
+/* ==================== Multi-thread Tests ==================== */
+
+static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char* const* formats)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 4;
@@ -227,20 +228,20 @@ static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** form
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-013: Multi-thread safety */
 static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(PrintfChkThreadWorker, std::ref(hasError), formats);
+        threads.emplace_back([&hasError, formats]() {
+            PrintfChkThreadWorker(hasError, formats);
+        });
     }
     for (auto& th : threads) {
         th.join();

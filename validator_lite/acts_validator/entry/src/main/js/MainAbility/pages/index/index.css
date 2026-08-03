@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 .container {
-  left: 0px;
-  top: 0px;
+
   width: 100%;
-  height: 454px;
+  height: 100%;
 }
 
 .listItem {
@@ -38,7 +37,7 @@
 }
 
 .buttonStyle {
-  width: 240px;
+  width: 60%;
   height: 60px;
 
 }

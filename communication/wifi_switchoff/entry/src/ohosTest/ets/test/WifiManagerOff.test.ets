@@ -30,34 +30,35 @@ let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
 function sleep(delay: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay));
 }
-async function tryToDisableWifi() {
-  try {
-    if (wifiManager.isWifiActive()) {
-      console.info('[wifi_js] wifi turn on:' + JSON.stringify(wifiManager.isWifiActive()));
-      wifiManager.disableWifi();
-    } else {
-      console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
+async function tryToDisableWifi(){
+  if(wifiManager.isWifiActive()){
+    console.info("wifi_test disable wifi:" + wifiManager.disableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (!wifiManager.isWifiActive()) {
+        console.info("WiFi已成功关闭");
+        break;
+      }
+      console.info("等待WiFi关闭中...");
+      await sleep(100);
     }
-  } catch (error) {
-    console.error('[wifi_js] switch error.code:' + JSON.stringify(error.code) + 'error.message:' +
-      JSON.stringify(error.message));
   }
+  console.info("wifi_test/wifi status:" + wifiManager.isWifiActive());
 }
 
-async function tryToEnableWifi() {
-  try {
-    if (wifiManager.isWifiActive()) {
-      console.info('[wifi_js] wifi turn on:' + JSON.stringify(wifiManager.isWifiActive()));
-    } else {
-      console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
-      wifiManager.enableWifi();
+async function tryToEnableWifi(){
+  if(!wifiManager.isWifiActive()){
+    console.info("wifi_test enable wifi:" + wifiManager.enableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (wifiManager.isWifiActive()) {
+        console.info("WiFi已成功开启");
+        break;
+      }
+      console.info("等待WiFi开启中...");
+      await sleep(100);
     }
-  } catch (error) {
-    console.error('[wifi_js] switch error.code:' + JSON.stringify(error.code) + 'error.message:' +
-      JSON.stringify(error.message));
   }
+  console.info("wifi_test/wifi status:" + wifiManager.isWifiActive());
 }
-
 async function clickRequestPermission(text: string) {
   console.info('[bluetooth_js] clickRequestPermission start');
   let driver = Driver.create();
@@ -373,6 +374,33 @@ export default function wifiManagerOffTest() {
         } catch (error) {
           console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
           expect(Number(error.code) === 2501001).assertTrue();
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200
+     * @tc.number SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200
+     * @tc.desc   Test connectToCandidateConfig API - verify 2501001 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'SUB_COMMUNICATION_WIFIMANAGER_SWITCHOFF_1200';
+        console.info(`${caseName} test start`);
+        try {
+          let settings:wifiManager.ConnectSettings = {
+            networkId: 0,
+            withUserAction: true
+          };
+          await wifiManager.connectToCandidateConfig(settings);
+          console.log(`${caseName} get result success`);
+          expect().assertFail();
+        } catch (error) {
+          console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
+          expect(error.code).assertEqual(2501001);
         }
         console.info(`${caseName} test end`);
         done();

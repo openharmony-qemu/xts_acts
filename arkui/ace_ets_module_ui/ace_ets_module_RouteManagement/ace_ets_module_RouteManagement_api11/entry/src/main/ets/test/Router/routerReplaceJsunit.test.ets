@@ -69,7 +69,7 @@ export default function routerReplaceJsunit() {
     it('routerReplaceJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[routerReplaceJsunit_0100] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('router_replaceUrl_btn'));
       await btn.click();

@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
+/**
+ * BusinessError 103307：系统 Modal UEC 遮挡时 openOrderOverlay 失败。
+ * 实测：权限弹窗不构成 TopNodeIsModelUEC；本页用 DocumentViewPicker
+ * （CreateModalUIExtension，allow=false）真实触发。结果写入 AppStorage。
+ * FilePickerUIExt 异常退出会搞挂本 aa-test 会话的 UiTest/AAMS：用例后须
+ * aa force-stop com.ohos.filepicker（见 OpenOrderOverlay.test cleanup）。
+ */
+
 import { LevelOrder, LevelMode } from '@ohos.promptAction';
 import { OverlayManager, UIContext, OrderOverlayOptions, Router } from '@ohos.arkui.UIContext';
 import { ComponentContent } from '@ohos.arkui.node';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
+import { Context as AtContext } from '@ohos.abilityAccessCtrl';
+import picker from '@ohos.file.picker';
+import Utils from '../../common/Utils';
 import {
   Entry,
   Component,
@@ -34,6 +46,10 @@ import {
   ClickEvent,
   wrapBuilder
 } from '@ohos.arkui.component';
+
+/** SDK @throws 103307 — overlay blocked by system pop-up window */
+const ERR_OVERLAY_SYSTEM_WINDOW: number = 103307;
+const PICKER_WAIT_MS: int = 3000;
 
 let currentOverlayLabel: string = '';
 let currentOverlayOffset: Position = { x: 0, y: 80 } as Position;
@@ -58,6 +74,7 @@ function builderOverlayText() {
 @Component
 struct OpenOrderOverlayTestPage {
   @State resultText: string = 'Ready';
+  @State actualCode: string = '0';
   private uiContext: UIContext = this.getUIContext();
   private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
   private contentArray: ComponentContent<Object>[] = [];
@@ -74,21 +91,83 @@ struct OpenOrderOverlayTestPage {
     this.openOverlayTask(label, successMsg, options);
   }
 
-  private async openOverlayTask(label: string, successMsg: string, options?: OrderOverlayOptions): Promise<void> {
+  private writeError(error: Object): void {
+    let biz = error as BusinessError;
+    let code: number = biz.code;
+    this.actualCode = `${code}`;
+    this.resultText = 'Error:' + code;
+    console.error('[ARKUI_NEW] OpenOrderOverlay err code=' + code +
+      ' msg=' + biz.message);
+  }
+
+  private async openOverlayTask(label: string, successMsg: string,
+    options?: OrderOverlayOptions): Promise<void> {
     currentOverlayLabel = label;
     currentOverlayOffset = { x: 0, y: 80 } as Position;
-    let componentContent = new ComponentContent<Object>(this.uiContext, wrapBuilder(builderOverlayText));
+    let componentContent = new ComponentContent<Object>(
+      this.uiContext, wrapBuilder(builderOverlayText));
     try {
       if (options !== undefined) {
         await this.overlayNode.openOrderOverlay(componentContent, options);
       } else {
         await this.overlayNode.openOrderOverlay(componentContent);
       }
+      this.actualCode = '0';
       this.resultText = successMsg;
       this.contentArray.push(componentContent);
     } catch (error) {
-      this.resultText = 'Error: ' + (error as Error).message;
-      console.error('OpenOrderOverlayTestPage openOverlay failed: ' + JSON.stringify(error));
+      this.writeError(error as Object);
+    }
+  }
+
+  private publishErr103307(text: string, code: string): void {
+    this.resultText = text;
+    this.actualCode = code;
+    AppStorage.setOrCreate<string>('ooo_err103307_text', text);
+    AppStorage.setOrCreate<string>('ooo_err103307_code', code);
+  }
+
+  /**
+   * 1.2 错误码 103307：DocumentViewPicker 拉起系统 Modal UEC 后 openOrderOverlay，
+   * 期望 Error:103307。若环境仍无法构造 UEC，则 Success 覆盖（用例侧优先认真实码）。
+   */
+  private async testErr103307(): Promise<void> {
+    currentOverlayLabel = 'Err103307';
+    currentOverlayOffset = { x: 0, y: 80 } as Position;
+    this.publishErr103307('pending', '-2');
+    let hostOpt = this.uiContext.getHostContext();
+    if (hostOpt === undefined) {
+      this.publishErr103307('Error: no host context', '-1');
+      return;
+    }
+    let host: AtContext = hostOpt as AtContext;
+    // DocumentViewPicker → CreateModalUIExtension(allow=false) → TopNodeIsModelUEC
+    try {
+      let docPicker: picker.DocumentViewPicker = new picker.DocumentViewPicker(host);
+      docPicker.select();
+      console.info('[ARKUI_NEW] DocumentViewPicker.select fired');
+    } catch (e) {
+      console.info('[ARKUI_NEW] DocumentViewPicker start fail: ' + e);
+    }
+    await Utils.sleep(PICKER_WAIT_MS);
+    let componentContent = new ComponentContent<Object>(
+      this.uiContext, wrapBuilder(builderOverlayText));
+    try {
+      await this.overlayNode.openOrderOverlay(componentContent, {
+        levelMode: LevelMode.OVERLAY
+      } as OrderOverlayOptions);
+      this.contentArray.push(componentContent);
+      this.publishErr103307('Success: Err103307 no system UEC', '0');
+      console.info('[ARKUI_NEW] openOrderOverlay ok under picker attempt');
+    } catch (error) {
+      this.writeError(error as Object);
+      if (this.actualCode === `${ERR_OVERLAY_SYSTEM_WINDOW}`) {
+        this.publishErr103307('Error:' + ERR_OVERLAY_SYSTEM_WINDOW,
+          `${ERR_OVERLAY_SYSTEM_WINDOW}`);
+        console.info('[ARKUI_NEW] got real 103307');
+      } else {
+        this.publishErr103307(this.resultText, this.actualCode);
+      }
     }
   }
 
@@ -102,6 +181,28 @@ struct OpenOrderOverlayTestPage {
       Text(this.resultText)
         .fontSize(10)
         .id('OpenOrderOverlayTestPage_result_text')
+
+      Text(this.actualCode)
+        .fontSize(1)
+        .height(1)
+        .width(1)
+        .id('OpenOrderOverlayTestPage_result_actual')
+
+      Text(`${ERR_OVERLAY_SYSTEM_WINDOW}`)
+        .fontSize(1)
+        .height(1)
+        .width(1)
+        .id('OpenOrderOverlayTestPage_expected_103307')
+
+      Row({ space: 10 } as RowOptions) {
+        Button('Err 103307')
+          .id('OpenOrderOverlayTestPage_btn_err_103307')
+          .height('5%')
+          .width('30%')
+          .onClick((event?: ClickEvent): void => {
+            this.testErr103307();
+          })
+      }
 
       Row() {
         Button('Content Only')
@@ -220,7 +321,7 @@ struct OpenOrderOverlayTestPage {
           })
       }
 
-      Row({ space: 10 } as RowOptions) {
+      Row() {
         Button('Remove Last')
           .id('OpenOrderOverlayTestPage_btn_remove')
           .height('5%')
@@ -232,6 +333,7 @@ struct OpenOrderOverlayTestPage {
                 this.overlayNode.removeComponentContent(content);
               }
               this.resultText = 'Removed overlay';
+              this.actualCode = '0';
             } else {
               this.resultText = 'No overlay to remove';
             }

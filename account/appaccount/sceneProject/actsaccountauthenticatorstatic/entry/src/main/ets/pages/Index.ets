@@ -43,7 +43,7 @@ struct Index {
   }
 
   aboutToAppear(){
-    (async () => {
+    waitForCompletion(async () => {
       console.info('====>ServiceAbility onStart');
       let accountMgr = account_appAccount.createAppAccountManager();
       hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 01 onStart');
@@ -70,7 +70,7 @@ struct Index {
         hilog.error(0x0000, tag, '====>context is undefined====');
       }
       hilog.info(0x0000, 'testTag', '====>ServiceAbility onStart end');
-    })().awaitSync();
+    });
   }
 
   build() {

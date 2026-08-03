@@ -24,6 +24,7 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_FLAG_MOD = 2;
 
 static bool CallSetPthreadExtFuncPolicy(int flag)
 {
@@ -54,7 +55,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value SetPthreadExtFuncPolicyNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(0);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -63,7 +64,7 @@ static napi_value SetPthreadExtFuncPolicyNormal001(napi_env env, napi_callback_i
 static napi_value SetPthreadExtFuncPolicyNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(1);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -72,7 +73,7 @@ static napi_value SetPthreadExtFuncPolicyNormal002(napi_env env, napi_callback_i
 static napi_value SetPthreadExtFuncPolicyNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(1);
     auto& loader = LibcFunctionLoader::GetInstance();
@@ -88,7 +89,7 @@ static napi_value SetPthreadExtFuncPolicyNormal003(napi_env env, napi_callback_i
 static napi_value SetPthreadExtFuncPolicyNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -96,7 +97,7 @@ static napi_value SetPthreadExtFuncPolicyNormal004(napi_env env, napi_callback_i
 static napi_value SetPthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(-1);
     return ReturnInt32(env, 1);
@@ -105,7 +106,7 @@ static napi_value SetPthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback
 static napi_value SetPthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(INT_MAX);
     CallSetPthreadExtFuncPolicy(0);
@@ -115,7 +116,7 @@ static napi_value SetPthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback
 static napi_value SetPthreadExtFuncPolicyBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(0);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -124,7 +125,7 @@ static napi_value SetPthreadExtFuncPolicyBoundary001(napi_env env, napi_callback
 static napi_value SetPthreadExtFuncPolicyBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(1);
     CallSetPthreadExtFuncPolicy(0);
@@ -134,12 +135,11 @@ static napi_value SetPthreadExtFuncPolicyBoundary002(napi_env env, napi_callback
 static napi_value SetPthreadExtFuncPolicyStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        int val2 = 2;
-        CallSetPthreadExtFuncPolicy(i % val2);
+        CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
     }
     CallSetPthreadExtFuncPolicy(0);
     return ReturnInt32(env, pass ? 1 : 0);
@@ -148,15 +148,14 @@ static napi_value SetPthreadExtFuncPolicyStable001(napi_env env, napi_callback_i
 static napi_value SetPthreadExtFuncPolicyThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int val2 = 2;
-                CallSetPthreadExtFuncPolicy(i % val2);
+                CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
             }
         });
     }

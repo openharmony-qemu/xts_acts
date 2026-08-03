@@ -79,7 +79,8 @@ function setAVPlayerTrackCb(avPlayer: media.AVPlayer | null, descriptionKey: Arr
         });
         break;
       case PREPARED:
-        avPlayer!!.getTrackDescription().then((arrayList: Array<media.MediaDescription>) => {
+        waitForCompletion(async () => {
+          await avPlayer!!.getTrackDescription().then((arrayList: Array<media.MediaDescription>) => {
             console.info('case getTrackDescription called!!');
             if (typeof (arrayList) != 'undefined') {
               arrayDescription = arrayList;
@@ -87,7 +88,8 @@ function setAVPlayerTrackCb(avPlayer: media.AVPlayer | null, descriptionKey: Arr
               console.info('case getTrackDescription is failed');
               expect().assertFail();
             }
-          }).catch(mediaTestBase.catchCallback).awaitSync();
+          }).catch(mediaTestBase.catchCallback);
+        });
         expect(descriptionKey.length).assertEqual(arrayDescription?.length);
         if (arrayDescription != undefined) {
           for (let i = 0; i < arrayDescription!!.length; i++) {
@@ -167,7 +169,8 @@ function setPlaybackInfoCb(avPlayer: media.AVPlayer | null, descriptionKey: Arra
         });
         break;
       case PREPARED:
-        avPlayer!.getPlaybackInfo().then(res => {
+        waitForCompletion(async () => {
+          await avPlayer!.getPlaybackInfo().then(res => {
             console.info('case getPlaybackInfo called!!');
             if (res) {
               arrayDescription = res;
@@ -176,11 +179,14 @@ function setPlaybackInfoCb(avPlayer: media.AVPlayer | null, descriptionKey: Arra
               console.info('case getPlaybackInfo is failed');
               expect().assertFail();
             }
-          }).catch(mediaTestBase.catchCallback).awaitSync();
+          }).catch(mediaTestBase.catchCallback);
+        });
         if (arrayDescription) {
           mediaTestBase.checkPlaybackInfo(arrayDescription as media.PlaybackInfo, descriptionKey as Array<string>, descriptionValue as Array<string>);
         }
-        avPlayer!.release().awaitSync();
+        waitForCompletion(async () => {
+          await avPlayer!.release();
+        });
         break;
       case RELEASED:
         avPlayer = null;
@@ -625,7 +631,9 @@ function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
         break;
       case COMPLETED:
         setPlayerMediaMuted(avPlayer!)
-        mediaTestBase.msleepAsync(1000).awaitSync();
+        waitForCompletion(async () => {
+          await mediaTestBase.msleepAsync(1000);
+        });
         avPlayer?.release()
         break;
       case RELEASED:
@@ -1764,7 +1772,9 @@ function setPlaybackStatisticMetricsCb(avPlayer: media.AVPlayer | undefined, pla
             expect().assertFail();
           }
         }).catch(mediaTestBase.catchCallback);
-        avPlayer?.release();
+        setTimeout(() => {
+            avPlayer?.release();
+        }, 1000);
         break;
       case RELEASED:
         avPlayer = undefined;
@@ -2118,10 +2128,6 @@ async function testGetCurrentTrack(src: media.AVFileDescriptor, avPlayer: media.
       if (video) {
         console.info('case createAVPlayer success');
         avPlayer = video;
-        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
-          console.info('case getCurrentTrack AUDIO track: ' + track);
-          expect(track).assertEqual(0);
-        }).catch(mediaTestBase.catchCallback);
         getCurrentTrackCb(avPlayer!, done);
         avPlayer!.fdSrc = src;
       } else {

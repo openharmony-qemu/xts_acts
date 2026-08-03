@@ -31,14 +31,16 @@ struct SelectionContainerControllerTest {
   @Builder closeMenuBuilder() {
     Column() {
       Text('CustomMenuClose')
-        .padding(10)
+        .fontSize(8)
+        .fontColor('#33ff00')
     }
   }
 
   @Builder clearMenuBuilder() {
     Column() {
       Text('CustomMenuClear')
-        .padding(10)
+        .fontSize(8)
+        .fontColor('#33ff00')
     }
   }
 
@@ -60,16 +62,20 @@ struct SelectionContainerControllerTest {
       Text(`selectionCleared: ${this.selectionClearedFlag}`)
         .id('text_selection_cleared_flag')
         .height('5%')
+        .fontColor('#ff00ff')
 
       Text(`clearMenuHide: ${this.clearMenuHideFlag}`)
         .id('text_clear_menuhide_flag')
         .height('5%')
+        .fontColor('#ff00ff')
       SelectionContainer({ controller: this.clearSelectionController }) {
         Column() {
           Text('ClearSelectionText1')
             .copyOption(CopyOptions.InApp)
+            .fontColor('#5500ff')
           Text('ClearSelectionText2')
             .copyOption(CopyOptions.InApp)
+            .fontColor('#5500ff')
         }
       }
       .id('selectioncontainer_clearselection')
@@ -105,10 +111,6 @@ struct SelectionContainerControllerTest {
         })
       .width('100%')
       .border({ width: 1, color: '#DCDCDC' })
-
-
-
-
 
       SelectionContainer(null) {
         Column() {

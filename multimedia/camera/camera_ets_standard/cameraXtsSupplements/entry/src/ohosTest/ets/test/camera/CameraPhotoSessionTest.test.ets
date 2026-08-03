@@ -1257,5 +1257,113 @@ export default function CameraPhotoSessionTest() {
         done();
       }
     })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200
+     * @tc.desc   enableAutoExtendedGainmapDelivery false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+
+        let isSupport: boolean =mPhotoOutput.isAutoExtendedGainmapDeliverySupported();
+        console.info(TAG, testName + `isAutoExtendedGainmapDeliverySupported = ${isSupport}`);
+        if (isSupport) {
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(false);
+          console.info(TAG, testName + ` enable success`);
+        } else {
+          console.info(TAG, testName + ` the device does not support extended gainmap delivery`);
+        }
+      } catch (error) {
+        console.error(TAG, `${testName} failed. err: ${error.code}, msg: ${error.message}`);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300
+     * @tc.desc   enableAutoExtendedGainmapDelivery false. if not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0300';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+
+        let isSupport: boolean =mPhotoOutput.isAutoExtendedGainmapDeliverySupported();
+        console.info(TAG, testName + `isAutoExtendedGainmapDeliverySupported = ${isSupport}`);
+        if (isSupport === false) {
+          try {
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(false);
+          console.info(TAG, testName + ` enable success`);
+          expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName, JSON.stringify(error), error.code);
+            expect(error.code).assertEqual('7400102');
+          }
+        } else {
+          console.info(TAG, testName + ` the device does is support extended gainmap delivery`);
+        }
+      } catch (error) {
+        console.error(TAG, `${testName} failed. err: ${error.code}, msg: ${error.message}`);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400
+     * @tc.desc   enableAutoExtendedGainmapDelivery true. if not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOENABLEAUTOEXTENDEDGAINMAPDELIVERY_0400';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+
+        let isSupport: boolean =mPhotoOutput.isAutoExtendedGainmapDeliverySupported();
+        console.info(TAG, testName + `isAutoExtendedGainmapDeliverySupported = ${isSupport}`);
+        if (isSupport === false) {
+          try {
+          mPhotoOutput.enableAutoExtendedGainmapDelivery(true);
+          console.info(TAG, testName + ` enable success`);
+          expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName, JSON.stringify(error), error.code);
+            expect(error.code).assertEqual('7400102');
+          }
+        } else {
+          console.info(TAG, testName + ` the device does is support extended gainmap delivery`);
+        }
+      } catch (error) {
+        console.error(TAG, `${testName} failed. err: ${error.code}, msg: ${error.message}`);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
+    });
   })
 }

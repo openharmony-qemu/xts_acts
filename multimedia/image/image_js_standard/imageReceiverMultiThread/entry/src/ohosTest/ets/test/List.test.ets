@@ -13,10 +13,21 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import multiThreadTest from './imageMultiThread.test'
 import ImageReceiverTest from './ImageReceiver.test'
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function List() {
-    multiThreadTest();
-    ImageReceiverTest();
+    if (cameraDeviceArray.length === 0) {
+        multiThreadTest(); 
+    } else {
+        multiThreadTest();
+        ImageReceiverTest();
+    }
 }

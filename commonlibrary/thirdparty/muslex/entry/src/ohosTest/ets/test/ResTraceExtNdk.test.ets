@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import librestraceextndktest from 'librestraceextndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function RestraceExtNdkTest() {
   describe('RestraceExtNdkTest', () => {
@@ -33,9 +32,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function RestraceExtNdkTest() {
      */
     it('testrestraceExtThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = librestraceextndktest.restraceExtThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

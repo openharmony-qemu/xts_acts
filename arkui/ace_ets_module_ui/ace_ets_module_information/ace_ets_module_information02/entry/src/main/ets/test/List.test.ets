@@ -32,7 +32,9 @@ import ProgressScaleCountTest from './ProgressTest/ProgressScaleCountTest.test';
 import ProgressStyleTest from './ProgressTest/ProgressStyleTest.test';
 import LoadingProgressPropertiesNullUndefinedTest from './ProgressTest/LoadingProgressPropertiesNullUndefinedTest.test';
 import ProgressPropertiesNullUndefinedTest from './ProgressTest/ProgressPropertiesNullUndefinedTest.test';
+import ProgressModifierTest from './ProgressTest/ProgressModifier.test';
 
+import TextClockModifierTest from './TextClockTest/TextClockModifier.test';
 import TextClockApiTest from './TextClockTest/TextClockApiTest.test';
 import TextClockJsunit from './TextClockTest/TextClockJsunit.test';
 import TextClockJsunit2 from './TextClockTest/TextClockJsunit2.test';
@@ -42,6 +44,7 @@ import TextClockFormatTest from './TextClockTest/TextClockFormat.test';
 import TextClockNodeTest from './TextClockTest/TextClockNodeTest.test';
 import TextClockPropertiesNullUndefinedTest from './TextClockTest/TextClockPropertiesNullUndefined.test';
 
+import TextTimerModifierTest from './TextTimerTest/TextTimerModifier.test';
 import TextTimerApiTest from './TextTimerTest/TextTimerApiTest.test';
 import TextTimerJsunit from './TextTimerTest/TextTimerJsunit.test';
 import TextTimerJsunit2 from './TextTimerTest/TextTimerJsunit2.test';
@@ -73,6 +76,7 @@ export default function testsuite() {
     ProgressStyleTest()
     LoadingProgressPropertiesNullUndefinedTest()
     ProgressPropertiesNullUndefinedTest()
+    ProgressModifierTest()
     // TextClockTest
     TextClockApiTest()
     TextClockJsunit()
@@ -82,7 +86,9 @@ export default function testsuite() {
     TextClockFormatTest()
     TextClockNodeTest()
     TextClockPropertiesNullUndefinedTest()
+    TextClockModifierTest()
     // TextTimerTest
+    TextTimerModifierTest()
     TextTimerApiTest()
     TextTimerJsunit()
     TextTimerJsunit2()

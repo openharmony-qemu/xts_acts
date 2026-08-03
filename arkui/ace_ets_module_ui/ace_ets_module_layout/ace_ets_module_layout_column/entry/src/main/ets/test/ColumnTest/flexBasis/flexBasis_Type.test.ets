@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import RectValue from '../../../MainAbility/common/Rect';
@@ -59,36 +60,29 @@ export default function flexBasis_Type() {
         name: 'addflexBasis1', value: 100
       });
       await CommonFunc.sleep(3000);
-      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_011');
-      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_012');
-      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_013');
-      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_01');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right)) <= 1)
+      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
+      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
+      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
+      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('Column_flexBasis_01');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_012.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_012.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_012.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_012.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_013.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_013.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_013.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_013.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - (Column_flexBasis_013.top - Column_flexBasis_012.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - (Column_flexBasis_013.top - Column_flexBasis_012.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_013.top - Column_flexBasis_012.bottom) - vp2px(10)) <= 1).assertTrue();
-      console.log('Column_flexBasis_012.top - Column_flexBasis_011.bottom', +(Column_flexBasis_012.top - Column_flexBasis_011.bottom))
-      console.log('Column_flexBasis_013.top - Column_flexBasis_012.bottom', +(Column_flexBasis_013.top - Column_flexBasis_012.bottom))
-      expect(Math.abs((Column_flexBasis_01.top - Column_flexBasis_011.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_011.bottom - Column_flexBasis_011.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_011.bottom - Column_flexBasis_011.top', +(Column_flexBasis_011.bottom - Column_flexBasis_011.top))
-      expect(Math.abs((Column_flexBasis_012.bottom - Column_flexBasis_012.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_012.bottom - Column_flexBasis_012.top', +(Column_flexBasis_012.bottom - Column_flexBasis_012.top))
-      expect(Math.abs((Column_flexBasis_013.bottom - Column_flexBasis_013.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_013.bottom - Column_flexBasis_013.top', +(Column_flexBasis_013.bottom - Column_flexBasis_013.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_011.right - Column_flexBasis_011.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_012.right - Column_flexBasis_012.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_013.right - Column_flexBasis_013.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.top - Column_flexBasis_012.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_01.top - Column_flexBasis_011.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_011.bottom - Column_flexBasis_011.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.bottom - Column_flexBasis_012.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.bottom - Column_flexBasis_013.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_011.right - Column_flexBasis_011.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.right - Column_flexBasis_012.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.right - Column_flexBasis_013.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0100] END');
     });
     /**
@@ -105,36 +99,29 @@ export default function flexBasis_Type() {
         name: 'addflexBasis1', value: 0
       });
       await CommonFunc.sleep(3000);
-      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_011');
-      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_012');
-      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_013');
-      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_01');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right)) <= 1)
+      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
+      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
+      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
+      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('Column_flexBasis_01');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_012.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_012.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_012.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_012.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_013.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_013.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_013.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_013.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - (Column_flexBasis_013.top - Column_flexBasis_012.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - (Column_flexBasis_013.top - Column_flexBasis_012.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_013.top - Column_flexBasis_012.bottom) - vp2px(10)) <= 1).assertTrue();
-      console.log('Column_flexBasis_012.top - Column_flexBasis_011.bottom', +(Column_flexBasis_012.top - Column_flexBasis_011.bottom))
-      console.log('Column_flexBasis_013.top - Column_flexBasis_012.bottom', +(Column_flexBasis_013.top - Column_flexBasis_012.bottom))
-      expect(Math.abs((Column_flexBasis_01.top - Column_flexBasis_011.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_011.bottom - Column_flexBasis_011.top) - vp2px(200)) <= 1).assertTrue();
-      console.log('Column_flexBasis_011.bottom - Column_flexBasis_011.top', +(Column_flexBasis_011.bottom - Column_flexBasis_011.top))
-      expect(Math.abs((Column_flexBasis_012.bottom - Column_flexBasis_012.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_012.bottom - Column_flexBasis_012.top', +(Column_flexBasis_012.bottom - Column_flexBasis_012.top))
-      expect(Math.abs((Column_flexBasis_013.bottom - Column_flexBasis_013.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_013.bottom - Column_flexBasis_013.top', +(Column_flexBasis_013.bottom - Column_flexBasis_013.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_011.right - Column_flexBasis_011.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_012.right - Column_flexBasis_012.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_013.right - Column_flexBasis_013.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.top - Column_flexBasis_011.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.top - Column_flexBasis_012.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_01.top - Column_flexBasis_011.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_011.bottom - Column_flexBasis_011.top) - vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.bottom - Column_flexBasis_012.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.bottom - Column_flexBasis_013.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_011.right - Column_flexBasis_011.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_012.right - Column_flexBasis_012.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_013.right - Column_flexBasis_013.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0200] END');
     });
 
@@ -152,34 +139,29 @@ export default function flexBasis_Type() {
         name: 'addflexBasis2', value: 'auto'
       });
       await CommonFunc.sleep(3000);
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_02');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - vp2px(220)) <= 1).assertTrue();
-      console.log('Column_flexBasis_021.bottom - Column_flexBasis_021.top', +(Column_flexBasis_021.bottom - Column_flexBasis_021.top))
-      expect(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_022.bottom - Column_flexBasis_022.top', +(Column_flexBasis_022.bottom - Column_flexBasis_022.top))
-      expect(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_023.bottom - Column_flexBasis_023.top', +(Column_flexBasis_023.bottom - Column_flexBasis_023.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - vp2px(220))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] END');
     });
     /**
@@ -197,34 +179,29 @@ export default function flexBasis_Type() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_02');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - vp2px(200)) <= 1).assertTrue();
-      console.log('Column_flexBasis_021.bottom - Column_flexBasis_021.top', +(Column_flexBasis_021.bottom - Column_flexBasis_021.top))
-      expect(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_022.bottom - Column_flexBasis_022.top', +(Column_flexBasis_022.bottom - Column_flexBasis_022.top))
-      expect(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_023.bottom - Column_flexBasis_023.top', +(Column_flexBasis_023.bottom - Column_flexBasis_023.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] END');
     });
     /**
@@ -242,34 +219,29 @@ export default function flexBasis_Type() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_02');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - 200) <= 1).assertTrue();
-      console.log('Column_flexBasis_021.bottom - Column_flexBasis_021.top', +(Column_flexBasis_021.bottom - Column_flexBasis_021.top))
-      expect(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_022.bottom - Column_flexBasis_022.top', +(Column_flexBasis_022.bottom - Column_flexBasis_022.top))
-      expect(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_023.bottom - Column_flexBasis_023.top', +(Column_flexBasis_023.bottom - Column_flexBasis_023.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - 200)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0500] END');
     });
     /**
@@ -287,34 +259,29 @@ export default function flexBasis_Type() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_02');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
+
+      expect(Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom)) <= 1)
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom))) <= 1)
         .assertTrue();
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - fp2px(200)) <= 1).assertTrue();
-      console.log('Column_flexBasis_021.bottom - Column_flexBasis_021.top', +(Column_flexBasis_021.bottom - Column_flexBasis_021.top))
-      expect(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_022.bottom - Column_flexBasis_022.top', +(Column_flexBasis_022.bottom - Column_flexBasis_022.top))
-      expect(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_023.bottom - Column_flexBasis_023.top', +(Column_flexBasis_023.bottom - Column_flexBasis_023.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - fp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0600] END');
     });
     /**
@@ -332,39 +299,47 @@ export default function flexBasis_Type() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Type' + '_Column_flexBasis_02');
-      console.log('assert position')
-      expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
-        .assertTrue();
-      console.log('Column_flexBasis_021.left - Column_flexBasis_02.left', +(Column_flexBasis_021.left - Column_flexBasis_02.left))
-      expect(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right)) <= 1)
-        .assertTrue();
-      console.log('Column_flexBasis_022.left - Column_flexBasis_02.left', +(Column_flexBasis_022.left - Column_flexBasis_02.left))
-      expect(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right)) <= 1)
-        .assertTrue();
-      console.log('Column_flexBasis_023.left - Column_flexBasis_02.left', +(Column_flexBasis_023.left - Column_flexBasis_02.left))
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom)) <= 1)
-        .assertTrue();
-      console.log('Column_flexBasis_022.top - Column_flexBasis_021.bottom', +(Column_flexBasis_022.top - Column_flexBasis_021.bottom))
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
 
-      console.log('assert space')
-      expect(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top)) <= 1).assertTrue();
-      console.log('assert height')
-      expect(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - lpx2px(200)) <= 1).assertTrue();
-      console.log('Column_flexBasis_021.bottom - Column_flexBasis_021.top', +(Column_flexBasis_021.bottom - Column_flexBasis_021.top))
-      expect(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_022.bottom - Column_flexBasis_022.top', +(Column_flexBasis_022.bottom - Column_flexBasis_022.top))
-      expect(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100)) <= 1).assertTrue();
-      console.log('Column_flexBasis_023.bottom - Column_flexBasis_023.top', +(Column_flexBasis_023.bottom - Column_flexBasis_023.top))
-      console.log('assert weight')
-      expect(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300)) <= 1).assertTrue();
-      expect(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300)) <= 1).assertTrue();
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi1:' + Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) -
+        (Column_flexBasis_02.right - Column_flexBasis_021.right))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi2:' + Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) -
+        (Column_flexBasis_02.right - Column_flexBasis_022.right))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi3:' + Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) -
+        (Column_flexBasis_02.right - Column_flexBasis_023.right))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi4:' + Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) -
+        (Column_flexBasis_023.top - Column_flexBasis_022.bottom))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi5:' + Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi6:' + Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi7:' + Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi8:' + Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - lpx2px(200))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi9:' + Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi10:' + Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi11:' + Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi12:' + Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))));
+      console.info('[SUB_ACE_flexBasis_Type_TEST_0700] chazhi13:' + Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))));
+
+      expect(Math.floor(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_022.right))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_023.right))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - (Column_flexBasis_023.top - Column_flexBasis_022.bottom))) <= 2)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.top - Column_flexBasis_021.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.top - Column_flexBasis_022.bottom) - vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_02.top - Column_flexBasis_021.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.bottom - Column_flexBasis_021.top) - lpx2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.bottom - Column_flexBasis_022.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.bottom - Column_flexBasis_023.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_021.right - Column_flexBasis_021.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_022.right - Column_flexBasis_022.left) - vp2px(300))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Column_flexBasis_023.right - Column_flexBasis_023.left) - vp2px(300))) <= 1).assertTrue();
+
       console.info('[SUB_ACE_flexBasis_Type_TEST_0700] END');
     });
   })

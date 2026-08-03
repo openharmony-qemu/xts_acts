@@ -5,6 +5,7 @@
     "MainAbility/pages/EditCommon/EditDecorationThicknessScale",
     "MainAbility/pages/UIContext/SetTextSelectionClearPolicy",
     "MainAbility/pages/WithEnv/TextSymbolWithEnvFontScale",
-    "MainAbility/pages/TextMenuItemId/TextMenuItemId"
+    "MainAbility/pages/TextMenuItemId/TextMenuItemId",
+    "MainAbility/pages/UIContext/DisableMenuItems"
   ]
 }

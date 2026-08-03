@@ -22,7 +22,7 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -62,7 +62,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value IsnanfNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(NAN);
     return ReturnInt32(env, (ret != 0) ? 1 : 0);
@@ -72,7 +72,7 @@ static napi_value IsnanfNormal001(napi_env env, napi_callback_info info)
 static napi_value IsnanfNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(INFINITY);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -82,7 +82,7 @@ static napi_value IsnanfNormal002(napi_env env, napi_callback_info info)
 static napi_value IsnanfNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(-INFINITY);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -92,7 +92,7 @@ static napi_value IsnanfNormal003(napi_env env, napi_callback_info info)
 static napi_value IsnanfNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(0.0f);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -102,7 +102,7 @@ static napi_value IsnanfNormal004(napi_env env, napi_callback_info info)
 static napi_value IsnanfNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(3.14f);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -112,7 +112,7 @@ static napi_value IsnanfNormal005(napi_env env, napi_callback_info info)
 static napi_value IsnanfNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(-3.14f);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -124,7 +124,7 @@ static napi_value IsnanfNormal006(napi_env env, napi_callback_info info)
 static napi_value IsnanfBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(FLT_MAX);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -134,7 +134,7 @@ static napi_value IsnanfBoundary001(napi_env env, napi_callback_info info)
 static napi_value IsnanfBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallIsnanf(FLT_MIN);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -146,7 +146,7 @@ static napi_value IsnanfBoundary002(napi_env env, napi_callback_info info)
 static napi_value IsnanfAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     union { float f; uint32_t i; } snan;
     snan.i = 0x7FA00000;
@@ -158,7 +158,7 @@ static napi_value IsnanfAbnormal001(napi_env env, napi_callback_info info)
 static napi_value IsnanfAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     union { float f; uint32_t i; } nan1;
@@ -180,10 +180,10 @@ static napi_value IsnanfAbnormal002(napi_env env, napi_callback_info info)
 static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         if (CallIsnanf(NAN) == 0) {
             pass = false;
             break;
@@ -196,8 +196,7 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-/* TC-012: Multi-thread safety */
-static void IsnanfWorker(std::atomic<bool>& hasError, const float* testVals, const int* expected)
+static void IsnanfThreadWorker(std::atomic<bool>& hasError, float testVals[], int expected[])
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
@@ -209,10 +208,11 @@ static void IsnanfWorker(std::atomic<bool>& hasError, const float* testVals, con
     }
 }
 
+/* TC-012: Multi-thread safety */
 static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
@@ -221,7 +221,7 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
-            IsnanfWorker(hasError, testVals, expected);
+            IsnanfThreadWorker(hasError, const_cast<float*>(testVals), const_cast<int*>(expected));
         });
     }
     for (auto& th : threads) {

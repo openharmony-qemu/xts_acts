@@ -38,8 +38,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：在方框内上下滑动',
-        result: '预期结果：方框中的元素随滑动变化',
+                step: '操作步骤：在方框内上下滑动',
+                result: '预期结果：方框中的元素随滑动变化',
         url: 'pages/list-item/item5/item5',
         itemIndex: this.itemIndex
       }
@@ -60,6 +60,14 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 
   scrollEnd(endState, endComponentIndex) {
     console.log(

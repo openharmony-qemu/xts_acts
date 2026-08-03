@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import router from '@system.router';
+import router from '@ohos.router';
 import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
@@ -34,7 +34,7 @@ export default function undo() {
             let backToIndexPromise = new Promise((resolve, reject) => {
                 setTimeout(() => {
                     router.back({
-                        uri: 'pages/index/index'
+                        url: 'pages/index/index'
                     });
                     resolve();
                 }, 500);
@@ -58,10 +58,10 @@ export default function undo() {
 
             let result;
             let options = {
-                uri: 'pages/textArea/prop/index'
+                url: 'pages/textArea/prop/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push textAreaProps page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push textAreaProps page error " + JSON.stringify(result));

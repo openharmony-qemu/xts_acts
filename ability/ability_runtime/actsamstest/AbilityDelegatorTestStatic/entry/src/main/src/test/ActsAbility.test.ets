@@ -40,11 +40,11 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
+      let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";	 
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"]; 
+      if(user !== undefined){ 
+          cmd += ' -u ' + user; 
+      } 
       abilityDelegator?.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(2000)
@@ -314,21 +314,25 @@ export default function abilityDelegatorStage() {
       abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
-        try {
-          await abilityDelegator?.startAbility({});
-          expect(false).assertTrue();
-          done();
-        } catch (err) {
-          expect(err?.code).assertEqual(16000019);
-          let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";
-          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-          if(user !== undefined){
-              cmd += ' -u ' + user;
-          }
-          abilityDelegator?.executeShellCommand(cmd)
-          await Utils.msSleep(2000)
-          done();
-        }
+        abilityDelegator?.startAbility({}, (err: BusinessError<void> | null):void => {
+          waitForCompletion(async () => {
+            hilog.info(0x0000, 'testTag EntryAbility', 'startAbility callback err ' + JSON.stringify(err?.code));
+            if (err) {
+              expect(err?.code).assertEqual(16000019);
+              let cmd = "aa start -a EntryAbility -b com.acts.abilitydelegatortest.static";
+              let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              abilityDelegator?.executeShellCommand(cmd)
+              await Utils.msSleep(2000)
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        });
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 failed ' + JSON.stringify(error));

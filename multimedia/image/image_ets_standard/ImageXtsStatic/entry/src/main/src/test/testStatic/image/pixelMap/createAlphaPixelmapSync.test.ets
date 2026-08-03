@@ -96,15 +96,15 @@ export default function createAlphaPixelmapSyncTest(): void {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0200
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0200
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0200
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0200
      * @tc.desc       createAlphaPixelmapSync cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0200', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0200';
+    it('SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0200', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0200';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -127,15 +127,15 @@ export default function createAlphaPixelmapSyncTest(): void {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0300
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0300
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0300
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0300
      * @tc.desc       createAlphaPixelmapSync cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0300', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_static_0300';
+    it('SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0300', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_ALPHA_PIXELMAP_SYNC_static_0300';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);

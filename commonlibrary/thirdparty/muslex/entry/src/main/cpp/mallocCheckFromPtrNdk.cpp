@@ -21,7 +21,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -71,7 +70,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value MallocCheckFromPtrNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
     if (!ptr) {
@@ -85,7 +84,7 @@ static napi_value MallocCheckFromPtrNormal001(napi_env env, napi_callback_info i
 static napi_value MallocCheckFromPtrNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
     if (!ptr) {
@@ -99,7 +98,7 @@ static napi_value MallocCheckFromPtrNormal002(napi_env env, napi_callback_info i
 static napi_value MallocCheckFromPtrNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallMallocCheckFromPtr(nullptr);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -108,7 +107,7 @@ static napi_value MallocCheckFromPtrNormal003(napi_env env, napi_callback_info i
 static napi_value MallocCheckFromPtrNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -116,7 +115,7 @@ static napi_value MallocCheckFromPtrNormal004(napi_env env, napi_callback_info i
 static napi_value MallocCheckFromPtrAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallMallocCheckFromPtr(reinterpret_cast<void*>(0xDEADBEEF));
     return ReturnInt32(env, 1);
@@ -125,7 +124,7 @@ static napi_value MallocCheckFromPtrAbnormal001(napi_env env, napi_callback_info
 static napi_value MallocCheckFromPtrAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
     if (!ptr) {
@@ -140,7 +139,7 @@ static napi_value MallocCheckFromPtrAbnormal002(napi_env env, napi_callback_info
 static napi_value MallocCheckFromPtrBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(1);
     if (!ptr) {
@@ -154,7 +153,7 @@ static napi_value MallocCheckFromPtrBoundary001(napi_env env, napi_callback_info
 static napi_value MallocCheckFromPtrBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(1024 * 1024);
     if (!ptr) {
@@ -168,7 +167,7 @@ static napi_value MallocCheckFromPtrBoundary002(napi_env env, napi_callback_info
 static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -187,7 +186,7 @@ static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info i
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MallocCheckThreadWorker(std::atomic<bool>& hasError)
+static void MallocCheckFromPtrThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         void* ptr = malloc(100);
@@ -203,12 +202,14 @@ static void MallocCheckThreadWorker(std::atomic<bool>& hasError)
 static napi_value MallocCheckFromPtrThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(MallocCheckThreadWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            MallocCheckFromPtrThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

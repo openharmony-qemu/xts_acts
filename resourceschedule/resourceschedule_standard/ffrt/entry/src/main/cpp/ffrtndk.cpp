@@ -1290,13 +1290,13 @@ static napi_value QueueApiTest002(napi_env env, napi_callback_info info)
     }
 
     int a = 0;
-    ffrt_queue_submit(queue_handle, ffrt_create_function_wrapper(OnePlusForTest, nullptr, &a,
-        ffrt_function_kind_queue), nullptr);
-
-    usleep(SLEEP_TIME);
+    ffrt_task_handle_t handle = ffrt_queue_submit_h(queue_handle, ffrt_create_function_wrapper(OnePlusForTest,
+        nullptr, &a, ffrt_function_kind_queue), nullptr);
+    ffrt_queue_wait(handle);
     if (a != 1) {
         result = 1;
     }
+    ffrt_task_handle_destroy(handle);
 
     // 销毁队列
     ffrt_queue_attr_destroy(&queue_attr);

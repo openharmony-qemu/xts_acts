@@ -17,10 +17,7 @@ import { beforeAll, afterEach, describe, expect, it, TestType, Size, Level } fro
 import napitest from 'libentry.so';
 import { taskpool, collections, ArrayList, LinkedList, Queue, Stack, lang, ArkTSUtils,
   TreeMap, TreeSet, LightWeightMap, LightWeightSet, PlainArray } from '@kit.ArkTS';
-
-export const sleep = (ms: number | undefined) => {
-  return new Promise<void>(resolve => setTimeout(resolve, ms));
-}
+import { sleep } from './Utils';
 
 let obj: lang.ISendable;
 let arr: lang.ISendable;

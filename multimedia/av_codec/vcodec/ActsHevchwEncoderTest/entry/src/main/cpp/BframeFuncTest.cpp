@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,13 +47,9 @@ namespace OHOS {
 namespace Media {
 class HwEncBFuncTest {
 public:
-    // SetUpTestCase: Called before all test cases
     static void SetUpTestCase(void);
-    // TearDownTestCase: Called after all test case
     static void TearDownTestCase(void);
-    // SetUp: Called before each test cases
     void SetUp(void);
-    // TearDown: Called after each test cases
     void TearDown(void);
 
 protected:
@@ -83,160 +79,148 @@ void TearDown()
 }
 } //BframeFuncTest
 
-int VIDEO_HW_ENCODE_B_FUNC_001()
+napi_value VIDEO_HW_ENCODE_B_FUNC_001(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    if (!bsupport) {
-        return 0;
-    }
+    if (!bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_01.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE; //0
+    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_B_FUNC_002()
+napi_value VIDEO_HW_ENCODE_B_FUNC_002(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    if (!bsupport) {
-        return 0;
-    }
+    if (!bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_02.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE; //1
+    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_B_FUNC_003()
+napi_value VIDEO_HW_ENCODE_B_FUNC_003(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    if (!bsupport) {
-        return 0;
-    }
+    if (!bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE; //0
+    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_B_FUNC_004()
+napi_value VIDEO_HW_ENCODE_B_FUNC_004(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported || !bsupport) {
-        return 0;
-    }
+    if (!isSupported || !bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->bEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE; //1
+    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_B_FUNC_005()
+napi_value VIDEO_HW_ENCODE_B_FUNC_005(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported || !bsupport) {
-        return 0;
-    }
+    if (!isSupported || !bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO; //-1
+    vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_B_FUNC_006()
+napi_value VIDEO_HW_ENCODE_B_FUNC_006(napi_env env, napi_callback_info info)
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported || !bsupport) {
-        return 0;
-    }
+    if (!isSupported || !bsupport) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
@@ -244,20 +228,20 @@ int VIDEO_HW_ENCODE_B_FUNC_006()
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED; //100
+    vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    EXPECT_NE(nullptr, gFormat);
+    if (gFormat == nullptr) { return CreateIntInt32Result(env, -1); }
     int32_t ret1 = vEncSample->GetBframes(gFormat);
-    EXPECT_GT(ret1, 0);
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (ret1 <= 0) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoderSqr() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 } // namespace Media
 } // namespace OHOS

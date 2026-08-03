@@ -556,7 +556,7 @@ napi_value RegisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_i
     int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterMouseEventFilterInvaildWindowId: %{public}d", result);
-    if (result == INVAILD_WINDOW_ID) {
+    if (result == INVAILD_WINDOW_ID && result == INVALID_WINDOW_ID) {
         napi_create_int32(env, 1, &retValue);
         return retValue;
     } else if (result == SERVICE_ERROR) {

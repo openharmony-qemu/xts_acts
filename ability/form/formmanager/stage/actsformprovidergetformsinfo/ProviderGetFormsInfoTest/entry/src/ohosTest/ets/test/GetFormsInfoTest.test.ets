@@ -665,6 +665,56 @@ export default function abilityTest() {
             }
             hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
           });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500
+             * @tc.desc   createFormBindingData with string parameter covered test
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+            try {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData with string`);
+              let bindingData = formBindingData.createFormBindingData('{"name":"test","value":"21°"}');
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(!!bindingData).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+          });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600
+             * @tc.desc   createFormBindingData with empty string parameter covered test
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+            try {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData with empty string`);
+              let bindingData = formBindingData.createFormBindingData('');
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(!!bindingData).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+          });
     })
 
     let checkResultArray = (TAG: string, expectInfos: Array<formInfo.FormInfo>, result:Array<formInfo.FormInfo>) => {
@@ -696,6 +746,10 @@ export default function abilityTest() {
         expect(JSON.stringify(expectInfo.supportDimensions)).assertEqual(JSON.stringify(result.supportDimensions));
         expect(JSON.stringify(expectInfo.customizeData)).assertEqual(JSON.stringify(result.customizeData));
         expect(JSON.stringify(expectInfo.supportedShapes)).assertEqual(JSON.stringify(result.supportedShapes));
+        expect(expectInfo.displayNameId).assertEqual(result.displayNameId);
+        expect(expectInfo.isDynamic).assertEqual(result.isDynamic);
+        expect(expectInfo.transparencyEnabled).assertEqual(result.transparencyEnabled);
+        expect(expectInfo.updateEnabled).assertEqual(result.updateEnabled);
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest end`);
     }
 }

@@ -106,7 +106,7 @@ struct ComposeListItemV2OperateExample {
 
   build(): void {
     Scroll() {
-      Column({ space: 8 } as ColumnOptions) {
+      Column({ space: 2 } as ColumnOptions) {
         Text('OperateItemV2 Test')
           .fontSize(16)
           .fontWeight(FontWeight.Bold)
@@ -174,7 +174,6 @@ struct ComposeListItemV2OperateExample {
 
       }
       .width('100%')
-      .padding(10)
     }
     .width('100%')
     .height('100%')

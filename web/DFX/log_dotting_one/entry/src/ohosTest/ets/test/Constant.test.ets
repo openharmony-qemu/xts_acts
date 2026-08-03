@@ -13,5 +13,5 @@
  * limitations under the License.
  */
 export class CommonConstants {
-  static readonly TEST_URL: string = 'http://www.example.com';
+  static readonly TEST_URL: string = 'index.html';
 }

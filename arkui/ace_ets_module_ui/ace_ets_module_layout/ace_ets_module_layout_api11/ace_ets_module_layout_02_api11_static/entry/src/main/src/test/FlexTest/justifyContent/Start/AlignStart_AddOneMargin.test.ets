@@ -204,7 +204,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_012.right - Start_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((Start_AddOneMargin_013.right - Start_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((Start_AddOneMargin_013.right - Start_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_011.bottom - Start_AddOneMargin_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();

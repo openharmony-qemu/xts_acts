@@ -560,7 +560,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2700
      * @tc.name testArrayConstructor2027
-     * @tc.desc Verify default construction differs from passing a single numeric argument
+     * @tc.desc Verify default new Array() differs from Array.create single numeric element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

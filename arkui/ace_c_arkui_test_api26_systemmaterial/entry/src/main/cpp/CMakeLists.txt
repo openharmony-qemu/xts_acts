@@ -5,6 +5,9 @@ project(SystemMaterialCapiXts)
 set(NATIVE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DOHOS_PLATFORM)
 
+# OpenDialogWithCallback error codes: declare via CustomDialogApi26Compat.h.
+# Do NOT prepend static SDK usr/include — it breaks C++ standard headers (nullptr_t).
+
 include_directories(
     ${NATIVE_ROOT}
     ${NATIVE_ROOT}/include
@@ -13,8 +16,10 @@ include_directories(
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     systemMaterial/ImmersiveMaterialTest.cpp
+    systemMaterial/NullPointerApisTest.cpp
     systemMaterial/CustomDialogMaterialTest.cpp
     systemMaterial/CustomDialogDisplayModeTest.cpp
+    systemMaterial/CustomDialogOpenCallbackTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
 )
 
@@ -28,5 +33,5 @@ find_library(libnapi-lib ace_napi.z)
 find_library(libuv-lib uv)
 
 target_link_libraries(nativefunc PUBLIC
-    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so
+    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so libnative_window_manager.so
     ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})

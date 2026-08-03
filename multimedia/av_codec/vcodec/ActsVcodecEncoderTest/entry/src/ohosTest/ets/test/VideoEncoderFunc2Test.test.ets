@@ -111,7 +111,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3100Test start');
-      let result: number = await testNapi.runFunc2Test(33);
+      let result: number = await testNapi.VideoEncodeSyncFunc0040Test();
       expect(result).assertEqual(0);
     });
 
@@ -125,7 +125,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3200Test start');
-      let result: number = await testNapi.runFunc2Test(34);
+      let result: number = await testNapi.VideoEncodeSyncFunc0050Test();
       expect(result).assertEqual(0);
     });
 
@@ -139,7 +139,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3300Test start');
-      let result: number = await testNapi.runFunc2Test(35);
+      let result: number = await testNapi.VideoEncodeSyncFunc0070Test();
       expect(result).assertEqual(0);
     });
 
@@ -153,7 +153,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3400', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3400Test start');
-      let result: number = await testNapi.runFunc2Test(36);
+      let result: number = await testNapi.VideoEncodeSyncFunc0080Test();
       expect(result).assertEqual(0);
     });
 
@@ -167,7 +167,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3500', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3500Test start');
-      let result: number = await testNapi.runFunc2Test(37);
+      let result: number = await testNapi.VideoEncodeSyncFunc0090Test();
       expect(result).assertEqual(0);
     });
 
@@ -181,7 +181,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3600', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3600Test start');
-      let result: number = await testNapi.runFunc2Test(38);
+      let result: number = await testNapi.VideoEncodeSyncFunc0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -195,7 +195,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3700Test start');
-      let result: number = await testNapi.runFunc2Test(39);
+      let result: number = await testNapi.VideoEncodeSyncFunc0110Test();
       expect(result).assertEqual(0);
     });
 
@@ -209,7 +209,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3800Test start');
-      let result: number = await testNapi.runFunc2Test(40);
+      let result: number = await testNapi.VideoEncodeSyncFunc0120Test();
       expect(result).assertEqual(0);
     });
 
@@ -223,7 +223,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_3900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_3900Test start');
-      let result: number = await testNapi.runFunc2Test(41);
+      let result: number = await testNapi.VideoEncodeSyncFunc0130Test();
       expect(result).assertEqual(0);
     });
 
@@ -237,7 +237,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4000', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4000Test start');
-      let result: number = await testNapi.runFunc2Test(42);
+      let result: number = await testNapi.VideoEncodeSyncFunc0140Test();
       expect(result).assertEqual(0);
     });
 
@@ -251,7 +251,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4100Test start');
-      let result: number = await testNapi.runFunc2Test(43);
+      let result: number = await testNapi.VideoEncodeSyncFunc0150Test();
       expect(result).assertEqual(0);
     });
 
@@ -265,7 +265,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4200Test start');
-      let result: number = await testNapi.runFunc2Test(44);
+      let result: number = await testNapi.VideoEncodeSyncFunc0160Test();
       expect(result).assertEqual(0);
     });
 
@@ -279,7 +279,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4300Test start');
-      let result: number = await testNapi.runFunc2Test(45);
+      let result: number = await testNapi.VideoEncodeSyncFunc0210Test();
       expect(result).assertEqual(0);
     });
 
@@ -293,7 +293,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4400', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4400Test start');
-      let result: number = await testNapi.runFunc2Test(46);
+      let result: number = await testNapi.VideoEncodeSyncFunc0220Test();
       expect(result).assertEqual(0);
     });
 
@@ -307,7 +307,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4500', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4500Test start');
-      let result: number = await testNapi.runFunc2Test(47);
+      let result: number = await testNapi.VideoEncodeSyncFunc0230Test();
       expect(result).assertEqual(0);
     });
 
@@ -321,7 +321,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4600', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4600Test start');
-      let result: number = await testNapi.runFunc2Test(48);
+      let result: number = await testNapi.VideoEncodeSyncFunc0240Test();
       expect(result).assertEqual(0);
     });
 
@@ -335,7 +335,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4700Test start');
-      let result: number = await testNapi.runFunc2Test(49);
+      let result: number = await testNapi.VideoEncodeSyncFunc0360Test();
       expect(result).assertEqual(0);
     });
 
@@ -349,7 +349,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4800Test start');
-      let result: number = await testNapi.runFunc2Test(50);
+      let result: number = await testNapi.VideoEncodeSyncFunc0370Test();
       expect(result).assertEqual(0);
     });
 
@@ -363,7 +363,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_4900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_4900Test start');
-      let result: number = await testNapi.runFunc2Test(51);
+      let result: number = await testNapi.VideoEncodeSyncFunc0380Test();
       expect(result).assertEqual(0);
     });
 
@@ -377,7 +377,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5000', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5000Test start');
-      let result: number = await testNapi.runFunc2Test(52);
+      let result: number = await testNapi.VideoEncodeSyncFunc0390Test();
       expect(result).assertEqual(0);
     });
 
@@ -391,7 +391,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5100Test start');
-      let result: number = await testNapi.runFunc2Test(53);
+      let result: number = await testNapi.VideoEncodeSyncFunc0400Test();
       expect(result).assertEqual(0);
     });
 
@@ -405,7 +405,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_CAPABILITY_8700Test start');
-      let result: number = await testNapi.runFunc2Test(54);
+      let result: number = await testNapi.VideoEncodeSyncFunc0410Test();
       expect(result).assertEqual(0);
     });
 
@@ -419,7 +419,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_CAPABILITY_8800Test start');
-      let result: number = await testNapi.runFunc2Test(55);
+      let result: number = await testNapi.VideoEncodeRgba10101020010Test();
       expect(result).assertEqual(0);
     });
 
@@ -433,7 +433,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_CAPABILITY_8900Test start');
-      let result: number = await testNapi.runFunc2Test(56);
+      let result: number = await testNapi.VideoEncodeRgba10101020020Test();
       expect(result).assertEqual(0);
     });
 
@@ -447,7 +447,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9000', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_CAPABILITY_9000Test start');
-      let result: number = await testNapi.runFunc2Test(57);
+      let result: number = await testNapi.VideoEncodeRgba10101020030Test();
       expect(result).assertEqual(0);
     });
 
@@ -461,7 +461,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5500', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5500Test start');
-      let result: number = await testNapi.runFunc2Test(58);
+      let result: number = await testNapi.VideoEncodeRgba10101020040Test();
       expect(result).assertEqual(0);
     });
 
@@ -475,7 +475,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5600Test', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5600Test start');
-      let result: number = await testNapi.runFunc2Test(59);
+      let result: number = await testNapi.VideoEncodeRgba10101020110Test();
       expect(result).assertEqual(0);
     });
 
@@ -489,7 +489,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5700Test start');
-      let result: number = await testNapi.runFunc2Test(60);
+      let result: number = await testNapi.VideoEncodeRgba10101020130Test();
       expect(result).assertEqual(0);
     });
 
@@ -503,7 +503,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5800Test start');
-      let result: number = await testNapi.runFunc2Test(61);
+      let result: number = await testNapi.VideoEncodeRgba10101020150Test();
       expect(result).assertEqual(0);
     });
 
@@ -517,7 +517,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_5900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_HEVC_CAPABILITY_5900Test start');
-      let result: number = await testNapi.runFunc2Test(62);
+      let result: number = await testNapi.VideoEncodeRgba10101020170Test();
       expect(result).assertEqual(0);
     });
 
@@ -531,7 +531,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0010Test start');
-      let result: number = await testNapi.runFunc2Test(30);
+      let result: number = await testNapi.VideoEncodeSyncFunc0010Test();
       expect(result).assertEqual(0);
     });
 
@@ -545,7 +545,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0020Test start');
-      let result: number = await testNapi.runFunc2Test(31);
+      let result: number = await testNapi.VideoEncodeSyncFunc0020Test();
       expect(result).assertEqual(0);
     });
 
@@ -559,7 +559,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0030Test start');
-      let result: number = await testNapi.runFunc2Test(32);
+      let result: number = await testNapi.VideoEncodeSyncFunc0030Test();
       expect(result).assertEqual(0);
     });
 
@@ -573,7 +573,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0400', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0040Test start');
-      let result: number = await testNapi.runFunc2Test(33);
+      let result: number = await testNapi.VideoEncodeSyncFunc0040Test();
       expect(result).assertEqual(0);
     });
 
@@ -587,7 +587,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0500', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0050Test start');
-      let result: number = await testNapi.runFunc2Test(34);
+      let result: number = await testNapi.VideoEncodeSyncFunc0050Test();
       expect(result).assertEqual(0);
     });
 
@@ -601,7 +601,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0070Test start');
-      let result: number = await testNapi.runFunc2Test(35);
+      let result: number = await testNapi.VideoEncodeSyncFunc0070Test();
       expect(result).assertEqual(0);
     });
 
@@ -615,7 +615,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0080Test start');
-      let result: number = await testNapi.runFunc2Test(36);
+      let result: number = await testNapi.VideoEncodeSyncFunc0080Test();
       expect(result).assertEqual(0);
     });
 
@@ -629,7 +629,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_0900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0090Test start');
-      let result: number = await testNapi.runFunc2Test(37);
+      let result: number = await testNapi.VideoEncodeSyncFunc0090Test();
       expect(result).assertEqual(0);
     });
 
@@ -643,7 +643,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_1000', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0100Test start');
-      let result: number = await testNapi.runFunc2Test(38);
+      let result: number = await testNapi.VideoEncodeSyncFunc0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -657,7 +657,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_TWO_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0110Test start');
-      let result: number = await testNapi.runFunc2Test(39);
+      let result: number = await testNapi.VideoEncodeSyncFunc0110Test();
       expect(result).assertEqual(0);
     });
 
@@ -671,7 +671,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_THREE_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0120Test start');
-      let result: number = await testNapi.runFunc2Test(40);
+      let result: number = await testNapi.VideoEncodeSyncFunc0120Test();
       expect(result).assertEqual(0);
     });
 
@@ -685,7 +685,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FOUR_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0130Test start');
-      let result: number = await testNapi.runFunc2Test(41);
+      let result: number = await testNapi.VideoEncodeSyncFunc0130Test();
       expect(result).assertEqual(0);
     });
 
@@ -699,7 +699,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FIVE_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0140Test start');
-      let result: number = await testNapi.runFunc2Test(42);
+      let result: number = await testNapi.VideoEncodeSyncFunc0140Test();
       expect(result).assertEqual(0);
     });
 
@@ -713,7 +713,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_SIX_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0150Test start');
-      let result: number = await testNapi.runFunc2Test(43);
+      let result: number = await testNapi.VideoEncodeSyncFunc0150Test();
       expect(result).assertEqual(0);
     });
 
@@ -727,7 +727,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_SEVEN_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0160Test start');
-      let result: number = await testNapi.runFunc2Test(44);
+      let result: number = await testNapi.VideoEncodeSyncFunc0160Test();
       expect(result).assertEqual(0);
     });
 
@@ -741,7 +741,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_TWO_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0210Test start');
-      let result: number = await testNapi.runFunc2Test(45);
+      let result: number = await testNapi.VideoEncodeSyncFunc0210Test();
       expect(result).assertEqual(0);
     });
 
@@ -755,7 +755,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_THREE_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0220Test start');
-      let result: number = await testNapi.runFunc2Test(46);
+      let result: number = await testNapi.VideoEncodeSyncFunc0220Test();
       expect(result).assertEqual(0);
     });
 
@@ -769,7 +769,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FOUR_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0230Test start');
-      let result: number = await testNapi.runFunc2Test(47);
+      let result: number = await testNapi.VideoEncodeSyncFunc0230Test();
       expect(result).assertEqual(0);
     });
 
@@ -783,7 +783,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FIVE_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0240Test start');
-      let result: number = await testNapi.runFunc2Test(48);
+      let result: number = await testNapi.VideoEncodeSyncFunc0240Test();
       expect(result).assertEqual(0);
     });
 
@@ -797,7 +797,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_ONE_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0360Test start');
-      let result: number = await testNapi.runFunc2Test(49);
+      let result: number = await testNapi.VideoEncodeSyncFunc0360Test();
       expect(result).assertEqual(0);
     });
 
@@ -811,7 +811,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_TWO_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0370Test start');
-      let result: number = await testNapi.runFunc2Test(50);
+      let result: number = await testNapi.VideoEncodeSyncFunc0370Test();
       expect(result).assertEqual(0);
     });
 
@@ -825,7 +825,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_THREE_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0380Test start');
-      let result: number = await testNapi.runFunc2Test(51);
+      let result: number = await testNapi.VideoEncodeSyncFunc0380Test();
       expect(result).assertEqual(0);
     });
 
@@ -839,7 +839,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FOUR_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0390Test start');
-      let result: number = await testNapi.runFunc2Test(52);
+      let result: number = await testNapi.VideoEncodeSyncFunc0390Test();
       expect(result).assertEqual(0);
     });
 
@@ -853,7 +853,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_FIVE_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0400Test start');
-      let result: number = await testNapi.runFunc2Test(53);
+      let result: number = await testNapi.VideoEncodeSyncFunc0400Test();
       expect(result).assertEqual(0);
     });
 
@@ -867,7 +867,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_FUNC_PART_ONE_0400', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_SYNC_FUNC_0410Test start');
-      let result: number = await testNapi.runFunc2Test(54);
+      let result: number = await testNapi.VideoEncodeSyncFunc0410Test();
       expect(result).assertEqual(0);
     });
 
@@ -881,7 +881,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0010Test start');
-      let result: number = await testNapi.runFunc2Test(55);
+      let result: number = await testNapi.VideoEncodeRgba10101020010Test();
       expect(result).assertEqual(0);
     });
 
@@ -895,7 +895,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0020Test start');
-      let result: number = await testNapi.runFunc2Test(56);
+      let result: number = await testNapi.VideoEncodeRgba10101020020Test();
       expect(result).assertEqual(0);
     });
 
@@ -909,7 +909,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_0300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0030Test start');
-      let result: number = await testNapi.runFunc2Test(57);
+      let result: number = await testNapi.VideoEncodeRgba10101020030Test();
       expect(result).assertEqual(0);
     });
 
@@ -923,7 +923,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_0400', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0040Test start');
-      let result: number = await testNapi.runFunc2Test(58);
+      let result: number = await testNapi.VideoEncodeRgba10101020040Test();
       expect(result).assertEqual(0);
     });
 
@@ -937,7 +937,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0110Test start');
-      let result: number = await testNapi.runFunc2Test(59);
+      let result: number = await testNapi.VideoEncodeRgba10101020110Test();
       expect(result).assertEqual(0);
     });
 
@@ -951,7 +951,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1300', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0130Test start');
-      let result: number = await testNapi.runFunc2Test(60);
+      let result: number = await testNapi.VideoEncodeRgba10101020130Test();
       expect(result).assertEqual(0);
     });
 
@@ -965,7 +965,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1500', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0150Test start');
-      let result: number = await testNapi.runFunc2Test(61);
+      let result: number = await testNapi.VideoEncodeRgba10101020150Test();
       expect(result).assertEqual(0);
     });
 
@@ -979,7 +979,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1700', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0170Test start');
-      let result: number = await testNapi.runFunc2Test(62);
+      let result: number = await testNapi.VideoEncodeRgba10101020170Test();
       expect(result).assertEqual(0);
     });
 
@@ -993,7 +993,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1800', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0180Test start');
-      let result: number = await testNapi.runFunc2Test(63);
+      let result: number = await testNapi.VideoEncodeRgba10101020180Test();
       expect(result).assertEqual(0);
     });
 
@@ -1007,7 +1007,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_RGBA1010102_1900', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_RGBA1010102_0190Test start');
-      let result: number = await testNapi.runFunc2Test(64);
+      let result: number = await testNapi.VideoEncodeRgba10101020190Test();
       expect(result).assertEqual(0);
     });
 
@@ -1021,7 +1021,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_PIXE_FORMAT_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_PIXE_FORMAT_0010Test start');
-      let result: number = await testNapi.runFunc2Test(65);
+      let result: number = await testNapi.VideoEncodeSyncFormat0010Test();
       expect(result).assertEqual(0);
     });
 
@@ -1035,7 +1035,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ANOTHER_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODE_ANOTHER_0010Test start');
-      let result: number = await testNapi.runFunc2Test(66);
+      let result: number = await testNapi.VideoEncodeAnother0010Test();
       expect(result).assertEqual(0);
     });
 
@@ -1049,7 +1049,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0100', Level.LEVEL2, async () => {
       console.info('VIDEO_CAPABILITY_CONFIG_0010Test start');
-      let result: number = await testNapi.runFunc2Test(67);
+      let result: number = await testNapi.CapabilityConfig0010();
       expect(result).assertEqual(0);
     });
 
@@ -1063,7 +1063,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0200', Level.LEVEL2, async () => {
       console.info('VIDEO_CAPABILITY_CONFIG_0020Test start');
-      let result: number = await testNapi.runFunc2Test(68);
+      let result: number = await testNapi.VideoCapabilityConfig0020Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -1076,7 +1076,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0010', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODER_SET_XPS_0010 start');
-      let result: number = await testNapi.runFunc2Test(69);
+      let result: number = await testNapi.VideoEncoderSetXPS0010Test();
       expect(result).assertEqual(0);
     });
 
@@ -1090,7 +1090,7 @@ export default function VideoEncoderFunc2Test() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0020', Level.LEVEL2, async () => {
       console.info('VIDEO_ENCODER_SET_XPS_0020 start');
-      let result: number = await testNapi.runFunc2Test(70);
+      let result: number = await testNapi.VideoEncoderSetXPS0020Test();
       expect(result).assertEqual(0);
     });
   });

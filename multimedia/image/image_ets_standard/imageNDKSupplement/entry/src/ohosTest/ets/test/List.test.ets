@@ -12,6 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import ImageEffectFilterRenderSuppTest from './ImageEffectFilterRenderSupp.test';
 import ImageEffectFilterSuppTest from './ImageEffectFilterSupp.test';
 import ImageEffectSuppTest from './ImageEffectSupp.test';
@@ -40,7 +44,6 @@ import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 import OHImageEffectSetOutputTexture from './OHImageEffectSetOutputTexture.test';
 import OHImageEffectStartTest from './OHImageEffectStart.test';
-import OHPictureMetadata from './OHPictureMetadata.test';
 import PixelMapGetIsEditableTest from './OHPixelMapGetIsEditable.test';
 import PixelMapIsSupportAlphaTest from './OHPixelMapIsSupportAlpha.test';
 import PixelMapSetAlphaAbleTest from './OHPixelMapSetAlphaAble.test';
@@ -60,51 +63,101 @@ import OHImageSourceNativeSupplementTest from './OHImageSourceNativeSupplement.t
 import ImageOHImageSourceInfoCreate from './ImageOHImageSourceInfoCreate.test';
 import ImageReceiverSuppTest from './ImageReceiverSupp.test';
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  ImageEffectSuppTest();
-  OHEffectBufferInfoSetTimestampTest();
-  OHEffectBufferInfoGetTimestampTest();
-  OHEffectBufferInfoSetTextureIdTest();
-  OHEffectBufferInfoGetTextureIdTest();
-  ImageEffectFilterSuppTest();
-  ImageEffectFilterRenderSuppTest();
-  imageFrameworkPixelMapNativeCreateSuppTest();
-  imageFrameworkImageSourceNativeCreateSuppTest();
-  ImageErrorSuppTest();
-  ImageEffectInfoSupplementTest();
-  PixelMapInitNativePixelMap();
-  OHImagePackerCreateTest();
-  OHImagePixelMapCreateTest();
-  ImageInitImageNativeSuppTest();
-  ImageReceiverNativeTest();
-  PixelMapNativeTest();
-  ImageEffectsSuppTest();
-  AccessPixelsSuppTest();
-  ImageSourceSuppTest();
-  OHEffectBufferInfoSetInfoTest();
-  OHImageEffectRestoreTest();
-  OHImageSizeTest();
-  OHPixelmapNativeCreatePixelmapNativeTest();
-  ImageEffectErrorCodeSuppTest();
-  OHPixelMapSupplementTest();
-  ImagePixelmapTest();
-  PixelMapGetIsEditableTest();
-  PixelMapIsSupportAlphaTest();
-  PixelMapSetAlphaAbleTest();
-  PixelMapSetDensityTest();
-  OHImageEffectStartTest();
-  OHImageEffectSetOutputTexture();
-  OHPictureMetadata();
-  IRNdkErrCodeSupplementTest();
-  ImageResultIRNdkErrCodeTest();
-  IRNdkErrCode();
-  OHImageNdkFrameworkTest();
-  OHImageSourceNativeSupp();
-  imageFrameworkImageSourceNativeModifySuppTest();
-  PixelMapNativeCropTest();
-  ImagePackerNativeTest();
-  ImagePictureNativeTest();
-  OHImageSourceNativeSupplementTest()
-  ImageOHImageSourceInfoCreate();
-  ImageReceiverSuppTest();
+  if (cameraDeviceArray.length === 0) {
+    ImageEffectSuppTest();
+    OHEffectBufferInfoSetTimestampTest();
+    OHEffectBufferInfoGetTimestampTest();
+    OHEffectBufferInfoSetTextureIdTest();
+    OHEffectBufferInfoGetTextureIdTest();
+    ImageEffectFilterSuppTest();
+    ImageEffectFilterRenderSuppTest();
+    imageFrameworkPixelMapNativeCreateSuppTest();
+    imageFrameworkImageSourceNativeCreateSuppTest();
+    ImageErrorSuppTest();
+    ImageEffectInfoSupplementTest();
+    PixelMapInitNativePixelMap();
+    OHImagePackerCreateTest();
+    OHImagePixelMapCreateTest();
+    ImageInitImageNativeSuppTest();
+    ImageReceiverNativeTest();
+    PixelMapNativeTest();
+    ImageEffectsSuppTest();
+    AccessPixelsSuppTest();
+    ImageSourceSuppTest();
+    OHEffectBufferInfoSetInfoTest();
+    OHImageEffectRestoreTest();
+    OHImageSizeTest();
+    OHPixelmapNativeCreatePixelmapNativeTest();
+    ImageEffectErrorCodeSuppTest();
+    OHPixelMapSupplementTest();
+    ImagePixelmapTest();
+    PixelMapGetIsEditableTest();
+    PixelMapIsSupportAlphaTest();
+    PixelMapSetAlphaAbleTest();
+    PixelMapSetDensityTest();
+    OHImageEffectStartTest();
+    OHImageEffectSetOutputTexture();
+    IRNdkErrCodeSupplementTest();
+    ImageResultIRNdkErrCodeTest();
+    IRNdkErrCode();
+    OHImageNdkFrameworkTest();
+    OHImageSourceNativeSupp();
+    imageFrameworkImageSourceNativeModifySuppTest();
+    PixelMapNativeCropTest();
+    ImagePackerNativeTest();
+    ImagePictureNativeTest();
+    OHImageSourceNativeSupplementTest()
+    ImageReceiverSuppTest();
+  } else {
+    ImageEffectSuppTest();
+    OHEffectBufferInfoSetTimestampTest();
+    OHEffectBufferInfoGetTimestampTest();
+    OHEffectBufferInfoSetTextureIdTest();
+    OHEffectBufferInfoGetTextureIdTest();
+    ImageEffectFilterSuppTest();
+    ImageEffectFilterRenderSuppTest();
+    imageFrameworkPixelMapNativeCreateSuppTest();
+    imageFrameworkImageSourceNativeCreateSuppTest();
+    ImageErrorSuppTest();
+    ImageEffectInfoSupplementTest();
+    PixelMapInitNativePixelMap();
+    OHImagePackerCreateTest();
+    OHImagePixelMapCreateTest();
+    ImageInitImageNativeSuppTest();
+    ImageReceiverNativeTest();
+    PixelMapNativeTest();
+    ImageEffectsSuppTest();
+    AccessPixelsSuppTest();
+    ImageSourceSuppTest();
+    OHEffectBufferInfoSetInfoTest();
+    OHImageEffectRestoreTest();
+    OHImageSizeTest();
+    OHPixelmapNativeCreatePixelmapNativeTest();
+    ImageEffectErrorCodeSuppTest();
+    OHPixelMapSupplementTest();
+    ImagePixelmapTest();
+    PixelMapGetIsEditableTest();
+    PixelMapIsSupportAlphaTest();
+    PixelMapSetAlphaAbleTest();
+    PixelMapSetDensityTest();
+    OHImageEffectStartTest();
+    OHImageEffectSetOutputTexture();
+    IRNdkErrCodeSupplementTest();
+    ImageResultIRNdkErrCodeTest();
+    IRNdkErrCode();
+    OHImageNdkFrameworkTest();
+    OHImageSourceNativeSupp();
+    imageFrameworkImageSourceNativeModifySuppTest();
+    PixelMapNativeCropTest();
+    ImagePackerNativeTest();
+    ImagePictureNativeTest();
+    OHImageSourceNativeSupplementTest()
+    ImageOHImageSourceInfoCreate();
+    ImageReceiverSuppTest();
+  }
 }

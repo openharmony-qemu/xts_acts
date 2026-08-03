@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libsetrestraceidndktest from 'libsetrestraceidndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function SetResTraceIdNdkTest() {
   describe('SetResTraceIdNdkTest', () => {
@@ -33,9 +32,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function SetResTraceIdNdkTest() {
      */
     it('testsetResTraceIdThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetrestraceidndktest.setResTraceIdThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

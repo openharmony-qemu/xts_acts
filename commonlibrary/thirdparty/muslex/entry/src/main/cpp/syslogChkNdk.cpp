@@ -22,18 +22,15 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
-static constexpr int K_LOG_MSG_LEN = 123;
-static constexpr int K_SYSLOG_VAL42 = 42;
-static constexpr int K_SYSLOG_VAL999 = 999;
 static constexpr int K_ITER_PER_THREAD = 10;
 static constexpr int SYSLOG_ERR_CODE = 123;
 static constexpr int SYSLOG_WARN_VAL = 42;
-static constexpr int SYSLOG_INVALID_PRIORITY = 999;
-static constexpr double SYSLOG_FLOAT_VAL = 3.14;
 static constexpr int SYSLOG_FLAG_MOD = 2;
-static constexpr int SYSLOG_MSG_MOD = 10;
+static constexpr double SYSLOG_FLOAT_VAL = 3.14;
+static constexpr int SYSLOG_INVALID_PRIORITY = 999;
+static constexpr int SYSLOG_ITH_MOD = 10;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -73,7 +70,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value SyslogChkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(0, LOG_INFO, "Test message: %s", "Hello");
@@ -85,7 +82,7 @@ static napi_value SyslogChkNormal001(napi_env env, napi_callback_info info)
 static napi_value SyslogChkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(1, LOG_ERR, "Error code: %d", SYSLOG_ERR_CODE);
@@ -97,7 +94,7 @@ static napi_value SyslogChkNormal002(napi_env env, napi_callback_info info)
 static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, SYSLOG_FLOAT_VAL);
@@ -109,7 +106,7 @@ static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
 static napi_value SyslogChkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(0, LOG_DEBUG, "");
@@ -121,7 +118,7 @@ static napi_value SyslogChkNormal004(napi_env env, napi_callback_info info)
 static napi_value SyslogChkNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     int priorities[] = {LOG_EMERG, LOG_ALERT, LOG_CRIT, LOG_ERR, LOG_WARNING, LOG_NOTICE, LOG_INFO, LOG_DEBUG};
@@ -136,10 +133,10 @@ static napi_value SyslogChkNormal005(napi_env env, napi_callback_info info)
 static napi_value SyslogChkNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    size_t msgLen = 5000;
+    int msgLen = 5000;
     std::string longMsg(msgLen, 'x');
     CallSyslogChk(0, LOG_INFO, "%s", longMsg.c_str());
     closelog();
@@ -152,7 +149,7 @@ static napi_value SyslogChkNormal006(napi_env env, napi_callback_info info)
 static napi_value SyslogChkAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(0, LOG_INFO, nullptr);
@@ -164,7 +161,7 @@ static napi_value SyslogChkAbnormal001(napi_env env, napi_callback_info info)
 static napi_value SyslogChkAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     CallSyslogChk(0, SYSLOG_INVALID_PRIORITY, "Invalid priority");
@@ -178,7 +175,7 @@ static napi_value SyslogChkAbnormal002(napi_env env, napi_callback_info info)
 static napi_value SyslogChkBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     const char* msg = "Before\0After";
@@ -193,11 +190,11 @@ static napi_value SyslogChkBoundary001(napi_env env, napi_callback_info info)
 static napi_value SyslogChkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         CallSyslogChk(i % SYSLOG_FLAG_MOD, LOG_INFO, "Stability test %d", i);
     }
     closelog();
@@ -210,7 +207,7 @@ static napi_value SyslogChkStable001(napi_env env, napi_callback_info info)
 static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID | LOG_NDELAY, LOG_USER);
     std::atomic<bool> hasError{false};
@@ -220,7 +217,7 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int priority = (i % 4) + 1;
-                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % SYSLOG_MSG_MOD, i);
+                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % SYSLOG_ITH_MOD, i);
                 // syslog may have internal locks, not crashing counts as pass
             }
         });

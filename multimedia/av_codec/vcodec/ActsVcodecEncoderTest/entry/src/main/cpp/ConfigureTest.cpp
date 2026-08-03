@@ -23,6 +23,7 @@
 #include "videoenc_api11_sample.h"
 #include "avcodec_codec_name.h"
 #include "include/OhosCommonTest.h"
+#include <napi/native_api.h>
 
 static OH_AVCodec *venc_ = nullptr;
 static OH_AVFormat *format = nullptr;
@@ -83,265 +84,280 @@ static void TearDown()
     }
 }
 
-int VideoEncodeHevcCapability1800Test()
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+napi_value VideoEncodeHevcCapability1800Test(napi_env env, napi_callback_info info)
 {
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap_hevc);
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoWidthRangeForHeight(cap_hevc, DEFAULT_HEIGHT, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability4000Test()
+napi_value VideoEncodeCapability4000Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoWidthRangeForHeight(cap, DEFAULT_HEIGHT, &range);
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability4400Test()
+napi_value VideoEncodeCapability4400Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoHeightRangeForWidth(cap, DEFAULT_WIDTH, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability4410Test()
+napi_value VideoEncodeCapability4410Test(napi_env env, napi_callback_info info)
 {
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap_hevc);
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoHeightRangeForWidth(cap_hevc, DEFAULT_WIDTH, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability4700Test()
+napi_value VideoEncodeCapability4700Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoWidthRange(cap, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability4710Test()
+napi_value VideoEncodeCapability4710Test(napi_env env, napi_callback_info info)
 {
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap_hevc);
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoWidthRange(cap_hevc, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability5000Test()
+napi_value VideoEncodeCapability5000Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoHeightRange(cap, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
-int VideoEncodeCapability5010Test()
+napi_value VideoEncodeCapability5010Test(napi_env env, napi_callback_info info)
 {
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap_hevc);
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoHeightRange(cap_hevc, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GE(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
+        if (0 > range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.maxVal + 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_VideoEncoder_Destroy(venc_);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, range.minVal - 1);
-        EXPECT_NE(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        TestTearDownConfigure();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
-int VideoEncodeCapability5020Test()
+napi_value VideoEncodeCapability5020Test(napi_env env, napi_callback_info info)
 {
     bool isSupportedCBRHQ = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CBR_HIGH_QUALITY);
     auto vEncSample = make_unique<VEncAPI11Sample>();
     if (isSupportedCBRHQ) {
         OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
         if (!venc) {
-            return 1;
+            return CreateIntInt32Result(env, 1);
         }
         OH_AVFormat *format = OH_AVFormat_Create();
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, vEncSample->DEFAULT_WIDTH);
@@ -354,21 +370,21 @@ int VideoEncodeCapability5020Test()
         OH_VideoEncoder_Destroy(venc);
         OH_AVFormat_Destroy(format);
         if (ret != AV_ERR_OK) {
-            return 1;
+            return CreateIntInt32Result(env, 1);
         }
-        return 0;
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
-int VideoEncodeCapability5030Test()
+napi_value VideoEncodeCapability5030Test(napi_env env, napi_callback_info info)
 {
     bool isSupportedCBRHQ = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CBR_HIGH_QUALITY);
     auto vEncSample = make_unique<VEncAPI11Sample>();
     if (isSupportedCBRHQ) {
         OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
         if (!venc) {
-            return 1;
+            return CreateIntInt32Result(env, 1);
         }
         OH_AVFormat *format = OH_AVFormat_Create();
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, vEncSample->DEFAULT_WIDTH);
@@ -382,11 +398,11 @@ int VideoEncodeCapability5030Test()
         OH_VideoEncoder_Destroy(venc);
         OH_AVFormat_Destroy(format);
         if (ret != AV_ERR_INVALID_VAL) {
-            return 1;
+            return CreateIntInt32Result(env, 1);
         }
-        return 0;
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 

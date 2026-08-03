@@ -1,0 +1,35 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/ReuseV2/ReuseV20030",
+    "MainAbility/pages/ArrayLike/ArrayLikeString",
+    "MainAbility/pages/AddMonitor/AddMonitorErrorCode",
+    "MainAbility/pages/AddMonitor/AddMonitorNoPath",
+    "MainAbility/pages/AddMonitor/AddMonitorSetPath",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Int",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Boolean",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2String",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Set",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Map",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Array",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Date",
+    "MainAbility/pages/AddMonitor/AddMonitorParentChild",
+    "MainAbility/pages/AddMonitor/AddMonitorTwoDimensionalArray",
+    "MainAbility/pages/SyncMonitor/SyncMonitorNotWildcards",
+    "MainAbility/pages/SyncMonitor/SyncMonitorWildcards",
+    "MainAbility/pages/PersistenceV2/PersistenceV2Api",
+    "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
+    "MainAbility/pages/PersistenceV2/PersistenceV2DefaultSubCreators",
+    "MainAbility/pages/PersistenceV2/PersistenceV2AbnormalDefaultSubCreators",
+    "MainAbility/pages/Monitor/MonitorWildcards",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcard",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined",
+    "MainAbility/pages/AppStorageV2/AppStorageV2Api",
+    "MainAbility/pages/Dump/DumpObject",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcard2",
+    "MainAbility/pages/Env/EnvBreakpoint",
+    "MainAbility/pages/Env/EnvBreakpoint2",
+    "MainAbility/pages/CustomComponent/CustomEnvIndex"
+    
+  ]
+}

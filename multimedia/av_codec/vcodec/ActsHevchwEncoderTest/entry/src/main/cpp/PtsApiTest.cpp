@@ -42,13 +42,9 @@ namespace OHOS {
 namespace Media {
 class HwEncApiNdkTest {
 public:
-    // SetUpTestCase: Called before all test cases
     static void SetUpTestCase(void);
-    // TearDownTestCase: Called after all test case
     static void TearDownTestCase(void);
-    // SetUp: Called before each test cases
     void SetUp(void);
-    // TearDown: Called after each test cases
     void TearDown(void);
 };
 
@@ -70,12 +66,10 @@ void TearDown()
 }
 } // PtsApiTest
 
-int VIDEO_HW_ENCODE_PTS_FUNC_001()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_001(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -87,24 +81,22 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_PTS_FUNC_002()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_002(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -117,24 +109,22 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_PTS_FUNC_003()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_003(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -146,25 +136,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_PTS_FUNC_004()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_004(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -176,25 +164,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_PTS_FUNC_005()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_005(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -206,25 +192,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VIDEO_HW_ENCODE_PTS_FUNC_006()
+napi_value VIDEO_HW_ENCODE_PTS_FUNC_006(napi_env env, napi_callback_info info)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported) {
-        return 0;
-    }
+    if (!isSupported) { return CreateIntInt32Result(env, 0); }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
@@ -236,17 +220,17 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
-    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
-    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    if (vEncSample->CreateVideoEncoder(CODEC_NAME) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     vEncSample->WaitForEOS();
-    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
+    if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 } // namespace Media
 } // namespace OHOS

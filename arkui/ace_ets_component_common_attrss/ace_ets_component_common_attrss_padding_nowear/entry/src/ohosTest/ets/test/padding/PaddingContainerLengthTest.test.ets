@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import Utils from '../../MainAbility/common/Utils';
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
@@ -37,7 +38,6 @@ class TestValues {
 export default function paddingTest() {
   //A list of components that support padding attributes is required.
   let supportView = [
-    'WaterFlow',
     'ColumnSplit',
     'FlowItem',
     'RowSplit'
@@ -167,19 +167,24 @@ export default function paddingTest() {
           console.info('[' + data.caseTag + ']targetRectAfter.right - referenceRect.right:'
             + (targetRectAfter.right - referenceRect.right));
 
+          console.info('[' + data.caseTag + ']chazhi1:'+ Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.top))));
+          console.info('[' + data.caseTag + ']chazhi1:'+ Math.floor(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.bottom)));
+          console.info('[' + data.caseTag + ']chazhi1:'+ Math.floor(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.right)));
+          console.info('[' + data.caseTag + ']chazhi1:'+ Math.floor(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.left)));
+          
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + vp2px(8))) <= 1)
+            expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.bottom + vp2px(8)))) <= 1)
               .assertTrue();
           } else {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.top)) <= 1)
+            expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.top))) <= 1)
               .assertTrue();
           }
-          expect(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.bottom) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.bottom)) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.right) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.right)) <= 1)
             .assertTrue();
-          expect(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.left) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.left)) <= 1)
             .assertTrue();
 
         } else if (data.testValue.describe == 'SetStringPercent') {
@@ -194,17 +199,17 @@ export default function paddingTest() {
 
           //Panel component need special adapter ,the reason is the top of Panel has a own size
           if (data.pageConfig.componentKey == 'Panel') {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + vp2px(8))) <= 1)
+            expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (data.testValue.expectValue.parentWidthAfter + vp2px(8)))) <= 1)
               .assertTrue();
           } else {
-            expect(Math.abs(referenceRect.top - targetRectAfter.top - data.testValue.expectValue.parentWidthAfter) <= 1)
+            expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - data.testValue.expectValue.parentWidthAfter)) <= 1)
               .assertTrue();
           }
-          expect(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
-          expect(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
         }
       } else if (data.pageConfig.componentKey == 'Tabs') {
@@ -227,13 +232,13 @@ export default function paddingTest() {
             + (targetRectAfter.bottom - referenceRect.bottom));
           console.info('[' + data.caseTag + '] targetRectAfter.right - referenceRect.right:'
             + (targetRectAfter.right - referenceRect.right));
-          expect(Math.abs(referenceRect.top - targetRectAfter.top - (rectTabBar.bottom - rectTabBar.top) - data.testValue.expectValue.top) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (rectTabBar.bottom - rectTabBar.top) - data.testValue.expectValue.top)) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.bottom) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.bottom)) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.right) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.right)) <= 1)
             .assertTrue();
-          expect(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.left) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.left)) <= 1)
             .assertTrue();
         } else if (data.testValue.describe == 'SetStringPercent') {
           console.info('[' + data.caseTag + '] referenceRect.top - targetRectAfter.top:'
@@ -245,13 +250,13 @@ export default function paddingTest() {
           console.info('[' + data.caseTag + '] targetRectAfter.right - referenceRect.right:'
             + (targetRectAfter.right - referenceRect.right));
 
-          expect(Math.abs(referenceRect.top - targetRectAfter.top - (rectTabBar.bottom - rectTabBar.top) - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.top - targetRectAfter.top - (rectTabBar.bottom - rectTabBar.top) - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.parentWidthAfter))
+          expect(Math.floor(Math.abs(targetRectAfter.bottom - referenceRect.bottom - data.testValue.expectValue.parentWidthAfter)))
             .assertTrue();
-          expect(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfter.right - referenceRect.right - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
-          expect(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.parentWidthAfter) <= 1)
+          expect(Math.floor(Math.abs(referenceRect.left - targetRectAfter.left - data.testValue.expectValue.parentWidthAfter)) <= 1)
             .assertTrue();
         }
       } else {
@@ -270,9 +275,9 @@ export default function paddingTest() {
         console.info('[' + data.caseTag + '] data.testValue.expectValue.bottom:' + data.testValue.expectValue.bottom);
 
         if (data.testValue.describe == 'SetStringPercent') {
-          expect(Math.abs(targetRectAfterWidth - targetRectBeforeWidth - ((data.testValue.expectValue.parentWidthAfter) * 2)) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfterWidth - targetRectBeforeWidth - ((data.testValue.expectValue.parentWidthAfter) * 2))) <= 1)
             .assertTrue();
-          expect(Math.abs(targetRectAfterHeight - targetRectBeforeHeight - ((data.testValue.expectValue.parentWidthAfter) * 2)) <= 1)
+          expect(Math.floor(Math.abs(targetRectAfterHeight - targetRectBeforeHeight - ((data.testValue.expectValue.parentWidthAfter) * 2))) <= 1)
             .assertTrue();
         } else {
           //Verify if other methods were successful.

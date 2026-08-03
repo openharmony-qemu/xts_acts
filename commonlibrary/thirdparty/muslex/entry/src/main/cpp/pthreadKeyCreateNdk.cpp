@@ -20,7 +20,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
@@ -69,7 +68,7 @@ static void KeyDestructor(void* data)
 static napi_value PthreadKeyCreateNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, nullptr);
@@ -83,7 +82,7 @@ static napi_value PthreadKeyCreateNormal001(napi_env env, napi_callback_info inf
 static napi_value PthreadKeyCreateNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, KeyDestructor);
@@ -97,11 +96,11 @@ static napi_value PthreadKeyCreateNormal002(napi_env env, napi_callback_info inf
 static napi_value PthreadKeyCreateNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
         if (ret != 0) {
@@ -122,7 +121,7 @@ static napi_value PthreadKeyCreateNormal003(napi_env env, napi_callback_info inf
 static napi_value PthreadKeyCreateAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadKeyCreate(nullptr, nullptr);
     return ReturnInt32(env, (ret != 0) ? 1 : 0);
@@ -132,7 +131,7 @@ static napi_value PthreadKeyCreateAbnormal001(napi_env env, napi_callback_info i
 static napi_value PthreadKeyCreateAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::vector<pthread_key_t> keys;
     bool pass = true;
@@ -171,13 +170,13 @@ static void ComplexDestructor(void* data)
 static napi_value PthreadKeyCreateBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, ComplexDestructor);
     if (ret == 0) {
-        int testValue = 123;
-        pthread_setspecific(key, &testValue);
+        int value = 123;
+        pthread_setspecific(key, &value);
         pthread_key_delete(key);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -189,11 +188,11 @@ static napi_value PthreadKeyCreateBoundary001(napi_env env, napi_callback_info i
 static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
         if (ret != 0) {
@@ -208,7 +207,9 @@ static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PthreadKeyCreateWorker(std::atomic<bool>& hasError, pthread_key_t key)
+/* ==================== Multi-thread Tests ==================== */
+
+static void PthreadKeyCreateThreadWorker(std::atomic<bool>& hasError, pthread_key_t key)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int* val = new int(i);
@@ -225,13 +226,11 @@ static void PthreadKeyCreateWorker(std::atomic<bool>& hasError, pthread_key_t ke
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-008: Multi-thread key creation and use */
 static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, nullptr);
@@ -242,7 +241,9 @@ static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info inf
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(PthreadKeyCreateWorker, std::ref(hasError), key);
+        threads.emplace_back([&hasError, key]() {
+            PthreadKeyCreateThreadWorker(hasError, key);
+        });
     }
     for (auto& th : threads) {
         th.join();

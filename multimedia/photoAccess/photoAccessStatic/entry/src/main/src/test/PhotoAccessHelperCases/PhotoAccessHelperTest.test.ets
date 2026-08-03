@@ -88,9 +88,9 @@ export default function PhotoAccessHelperTest() {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
           let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-          (async () => {
+          waitForCompletion(async () => {
             photoAsset = await fetchResult!.getFirstObject();
-          })().awaitSync()
+          })
           keyNumCallback++
           if (keyNumCallback == columns.length - 1) {
             keyNumCallback = 0
@@ -150,9 +150,9 @@ export default function PhotoAccessHelperTest() {
         if (fetchResult != undefined) {
           console.info('fetchResult success');
           let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-          (async () => {
+          waitForCompletion(async () => {
             photoAsset = await fetchResult!.getFirstObject();
-          })().awaitSync()
+          })
           if (photoAsset != undefined) {
             console.info('photoAsset.displayName : ' + photoAsset!.displayName);
             console.info('photoAsset.uri : ' + photoAsset!.uri);
@@ -392,9 +392,9 @@ export default function PhotoAccessHelperTest() {
           console.info('fetchResult success1');
           try {
             let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-            (async () => {
+            waitForCompletion(async () => {
               photoAsset = await fetchResult!.getFirstObject();
-            })().awaitSync()
+            })
             console.info('fetchResult success2');
             if (photoAsset != undefined) {
               getPhotoAssetAttrs(photoAsset as photoAccessHelper.PhotoAsset)
@@ -443,9 +443,9 @@ export default function PhotoAccessHelperTest() {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
           let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-          (async () => {
+          waitForCompletion(async () => {
             photoAsset = await fetchResult!.getFirstObject();
-          })().awaitSync()
+          })
           let photoAssetKey: photoAccessHelper.MemberType = photoAsset!.get(columns[keyNum1].toString());
           expect(photoAssetKey).not().assertUndefined()
           console.log(`photoAssetKey ${columns[keyNum1]} is : ${photoAssetKey}`)
@@ -504,9 +504,9 @@ export default function PhotoAccessHelperTest() {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
           let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-          (async () => {
+          waitForCompletion(async () => {
             photoAsset = await fetchResult!.getFirstObject();
-          })().awaitSync()
+          })
           let titleStr: string = photoAccessHelper.PhotoKeys.TITLE.toString();
           photoAsset!.set(titleStr, 'newTitle');
           let result = photoAsset!.get(titleStr);
@@ -550,9 +550,9 @@ export default function PhotoAccessHelperTest() {
         if (fetchResult != undefined) {
           console.log(`commitModify fetchResult != undefined  `)
           let photoAsset: photoAccessHelper.PhotoAsset | undefined;
-          (async () => {
+          waitForCompletion(async () => {
             photoAsset = await fetchResult!.getFirstObject();
-          })().awaitSync()
+          })
           console.log(`commitModify getFirstObject success  `)
           for (let i = 0; i < columns.length; i++) {
             let keyStr1: string = columns[i].toString();

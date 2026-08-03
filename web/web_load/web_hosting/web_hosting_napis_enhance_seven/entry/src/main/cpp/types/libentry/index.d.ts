@@ -1,5 +1,5 @@
 /*
-   * Copyright (c) 2024 Huawei Device Co., Ltd.
+   * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
    * * Licensed under the Apache License, Version 2.0 (the "License");
    * * you may not use this file except in compliance with the License.
    * * You may obtain a copy of the License at
@@ -26,3 +26,14 @@ export const getSaveCookieSyncThreadResult: () => number;
 export const getSaveCookieAsyncCallbackResult: () => number;
 export const lazyInitializeWebEngineInCookieManagerSetTrue: () => number;
 export const lazyInitializeWebEngineInCookieManagerSetFalse: () => number;
+export const fetchCookieSyncPartitioned: (url:string, incognito:boolean, includeHttpOnly:boolean,
+  includePartitionedCookies:boolean) => number;
+export const getFetchCookieSyncPartitionedValue: () => string;
+export const fetchCookieSyncPartitionedInvalidParam: (url:string, incognito:boolean, includeHttpOnly:boolean,
+  includePartitionedCookies:boolean) => number;
+export const fetchCookieAsyncPartitioned: (url:string, incognito:boolean, includeHttpOnly:boolean,
+  includePartitionedCookies:boolean) => number;
+export const fetchCookieAsyncPartitionedNullCallback: (url:string, incognito:boolean, includeHttpOnly:boolean,
+  includePartitionedCookies:boolean) => number;
+export const getFetchCookieAsyncPartitionedCode: () => number;
+export const getFetchCookieAsyncPartitionedValue: () => string;

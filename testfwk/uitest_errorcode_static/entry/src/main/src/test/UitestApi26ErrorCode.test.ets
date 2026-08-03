@@ -96,7 +96,9 @@ export default function uitestApi26ErrorTest(): void {
         await driver!.clickAtWithOptions(point, options)
         expect().assertFail();
       } catch (err) {
+        console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
+        expect((err as BusinessError).message).assertContain('Pressure must ranges form 0 to 1');
       }
       console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall end`);
     });
@@ -180,7 +182,9 @@ export default function uitestApi26ErrorTest(): void {
         await driver!.longClickAtWithOptions({x: 100, y: 100}, options)
         expect().assertFail();
       } catch (err) {
+        console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
+        expect((err as BusinessError).message).assertContain('Duration must be at least 1500ms');
       }
       console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall end`);
     });
@@ -301,7 +305,9 @@ export default function uitestApi26ErrorTest(): void {
         expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative error is: ${JSON.stringify(err)}`)
+        console.log(`${TestTag}, testDriverSwipeBetweenSpeedNegative_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative end`);
     });
@@ -385,8 +391,10 @@ export default function uitestApi26ErrorTest(): void {
         await driver!.dragBetweenWithOptions({x: 100, y: 100}, {x: 200, y: 200}, options)
         expect().assertFail();
       } catch (err) {
-        console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed error is: ${JSON.stringify(err)}`)
+        console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed_static error is: ${JSON.stringify(err)}`)
+        console.log(`${TestTag}, testDriverDragBetweenWithNegativeSpeed_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.info(`${TestTag}, testDriverDragBetweenWithNegativeSpeed end`);
     });
@@ -535,8 +543,10 @@ export default function uitestApi26ErrorTest(): void {
         await driver!.dumpLayout(savePath, 0);
         expect().assertFalse();
       } catch (err) {
-        console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath_static error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(17000007);
+        expect((err as BusinessError).message).assertContain('Invalid file path');
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath end`);
     });
@@ -635,7 +645,7 @@ export default function uitestApi26ErrorTest(): void {
      * @tc.level  LEVEL3
      */
     it('testDriverMouseDragErrorSpeedNegative_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative start`);
+      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative_static start`);
       const from: Point = { x: 500, y: 1000 };
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { speed: -100 };
@@ -643,10 +653,12 @@ export default function uitestApi26ErrorTest(): void {
         await driver!.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative_static error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
-      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative end`);
+      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative_static end`);
     });
 
     /**
@@ -760,5 +772,6 @@ export default function uitestApi26ErrorTest(): void {
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });
+
   })
 }

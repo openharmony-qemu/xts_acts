@@ -89,7 +89,7 @@ it('SwipeRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('SwipeRecognizer_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let colum = await CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
+      let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
       await driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(),

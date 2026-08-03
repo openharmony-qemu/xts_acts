@@ -14,7 +14,9 @@
  */
 
 import WorkerTest from './WorkerTest.test.js'
+import WorkerCoverageTest from './WorkerCoverageTest.test.js'
 
 export default function List() {
     WorkerTest()
+    WorkerCoverageTest()
 }

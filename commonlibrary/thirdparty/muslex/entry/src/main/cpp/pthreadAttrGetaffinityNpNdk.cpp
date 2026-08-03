@@ -23,7 +23,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -87,7 +86,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value PthreadAttrGetaffinityNpNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -107,7 +106,7 @@ static napi_value PthreadAttrGetaffinityNpNormal001(napi_env env, napi_callback_
 static napi_value PthreadAttrGetaffinityNpNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -126,7 +125,7 @@ static napi_value PthreadAttrGetaffinityNpNormal002(napi_env env, napi_callback_
 static napi_value PthreadAttrGetaffinityNpNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -144,7 +143,7 @@ static napi_value PthreadAttrGetaffinityNpNormal003(napi_env env, napi_callback_
 static napi_value PthreadAttrGetaffinityNpNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -152,7 +151,7 @@ static napi_value PthreadAttrGetaffinityNpNormal004(napi_env env, napi_callback_
 static napi_value PthreadAttrGetaffinityNpAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
     if (!set) {
@@ -167,7 +166,7 @@ static napi_value PthreadAttrGetaffinityNpAbnormal001(napi_env env, napi_callbac
 static napi_value PthreadAttrGetaffinityNpAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -180,7 +179,7 @@ static napi_value PthreadAttrGetaffinityNpAbnormal002(napi_env env, napi_callbac
 static napi_value PthreadAttrGetaffinityNpBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -197,7 +196,7 @@ static napi_value PthreadAttrGetaffinityNpBoundary001(napi_env env, napi_callbac
 static napi_value PthreadAttrGetaffinityNpBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -219,7 +218,7 @@ static napi_value PthreadAttrGetaffinityNpBoundary002(napi_env env, napi_callbac
 static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
@@ -242,7 +241,7 @@ static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void GetaffinityWorker(std::atomic<bool>& hasError)
+static void PthreadAttrGetaffinityNpThreadWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         pthread_attr_t attr;
@@ -262,12 +261,14 @@ static void GetaffinityWorker(std::atomic<bool>& hasError)
 static napi_value PthreadAttrGetaffinityNpThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(GetaffinityWorker, std::ref(hasError));
+        threads.emplace_back([&hasError]() {
+            PthreadAttrGetaffinityNpThreadWorker(hasError);
+        });
     }
     for (auto& th : threads) {
         th.join();

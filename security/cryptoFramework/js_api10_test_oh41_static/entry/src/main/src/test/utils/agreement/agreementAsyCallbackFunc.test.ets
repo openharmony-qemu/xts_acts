@@ -22,18 +22,20 @@ import * as keyGenCallbackFunc from '../keyGenerate/asyKeyGenCallbackFunc.test';
 async function normalProcess(cipherAlgName: string, isSpec:boolean, spec: cpFw.AsyKeySpec, algName: string): Promise<boolean> {
   let agreementKeyPair: cpFw.KeyPair;
   let agreement = cpFw.createKeyAgreement(cipherAlgName);
-  agreementKeyPair = await keyGenCallbackFunc.genKeyPair(isSpec, spec, algName);
   return new Promise<boolean>((resolve, reject) => {
-    console.log("[Callback] genKeyPair agreement success.");
-        agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey, (err: BusinessError<void>|null) => {
-            if (err) { // success: error is null, failed: data is undefined
-              console.log("[Callback] agreementCallbackNormalProcess agreement fail.");
-              reject(err as Error);
-            } else {
-              console.log("[Callback] agreementCallbackNormalProcess agreement success.");
-              resolve(true);
-            }
-          });
+    waitForCompletion(async () => {
+      agreementKeyPair = await keyGenCallbackFunc.genKeyPair(isSpec, spec, algName);
+      console.log("[Callback] genKeyPair agreement success.");
+      agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey, (err: BusinessError<void>|null) => {
+        if (err) { // success: error is null, failed: data is undefined
+          console.log("[Callback] agreementCallbackNormalProcess agreement fail.");
+          reject(err as Error);
+        } else {
+          console.log("[Callback] agreementCallbackNormalProcess agreement success.");
+          resolve(true);
+        }
+      });
+    })
   });
 }
 

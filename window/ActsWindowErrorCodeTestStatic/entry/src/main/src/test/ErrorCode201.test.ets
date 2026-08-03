@@ -52,7 +52,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        Utils.msSleep(1000).awaitSync()
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -613,20 +613,20 @@ export default function ErrorCode201(): void {
         let windowClass2: window.Window = windowStageStart.getMainWindowSync();
         let res = windowClass2.getWindowProperties()
         window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
-            (async () => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, caseName + 'Succeeded in calling getVisibleWindowInfo.');
             expect(false).assertTrue();
             await terminateAbility(caseName);
             done();
-            })().awaitSync()
+            })
         }).catch((err: Error): PromiseLike<void> | undefined => {
-            (async () => {
+            waitForCompletion(async () => {
             hilog.error(domain, tag,
             caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err.code));
             expect(err.code === 201).assertTrue();
             await terminateAbility(caseName);
             done()
-            })().awaitSync()
+            })
         });
         } catch (err) {
         

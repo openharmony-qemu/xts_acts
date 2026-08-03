@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import hilogbaseprintndktest from 'libhilogbaseprintndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function HilogBasePrintNdkTest() {
   describe('HilogBasePrintNdkTest', () => {
@@ -33,9 +32,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function HilogBasePrintNdkTest() {
      */
     it('testHilogBasePrintThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && (resNum == 0 || resNum == 1));
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
   });

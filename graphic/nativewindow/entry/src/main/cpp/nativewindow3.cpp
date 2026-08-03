@@ -22,6 +22,7 @@
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
 #include "ace/xcomponent/native_interface_xcomponent.h"
+#include "common/native_common.h"
 #include "common/log_common.h"
 
 #define SUCCESS 0
@@ -44,6 +45,7 @@
 #define CONSTANT_6 6
 #define CONSTANT_7 7
 #define CONSTANT_8 8
+#define CONSTANT_10 10
 #define CONSTANT_60 60
 #define CONSTANT_2999 2999
 #define CONSTANT_3000 3000
@@ -269,7 +271,7 @@ napi_value testNativeWindowCleanCacheWhenBufferRequested(napi_env env, napi_call
         .w = 0x100,
         .h = 0x100,
     };
-    Region region{.rects = &rect};
+    Region region{.rects = &rect, .rectNumber = CONSTANT_1};
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
     if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ret, &result);
@@ -1299,6 +1301,241 @@ napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_i
     }
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowSetGet3DMetadataValueNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t bufferSize;
+    uint8_t *getMetadata = nullptr;
+    OH_NativeBuffer_VideoDimensionType videoDimensionType[] = {
+        OH_VIDEO_DIM_TYPE_2D,
+        OH_VIDEO_DIM_TYPE_3D_SBS,
+        OH_VIDEO_DIM_TYPE_3D_TAB
+    };
+    for (int i = 0; i < sizeof(videoDimensionType) / sizeof(videoDimensionType[0]); i++) {
+        uint8_t setMetadata = videoDimensionType[i];
+        int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+            nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+        if (errorCode != NATIVE_ERROR_OK) {
+            napi_create_int32(env, CONSTANT_1, &result);
+            return result;
+        }
+        errorCode = OH_NativeWindow_Get3DMetadataValue(nativeWindow, OH_VIDEO_DIM_TYPE, &bufferSize, &getMetadata);
+        if (errorCode != NATIVE_ERROR_OK) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        if (bufferSize != sizeof(OH_VIDEO_DIM_TYPE) && *getMetadata != setMetadata) {
+            napi_create_int32(env, CONSTANT_3, &result);
+            return result;
+        }
+    }
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowSet3DMetadataValueNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1. invalid nativeWindow
+    OH_NativeImage *nativeImage = OH_ConsumerSurface_Create();
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    OH_NativeImage_Destroy(&nativeImage);
+    uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_3D_SBS);
+    int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    InitNativeWindow* initNative = new InitNativeWindow();
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    // 2. nativewindow is null
+    errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nullptr, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    // 3. setMetadata is null
+    errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), nullptr);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    return result;
+}
+
+napi_value testNativeWindowSet3DMetadataValueAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_3D_SBS);
+    int32_t bufferSize;
+    uint8_t *getMetadata = nullptr;
+    // 1. size <= 0
+    int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, CONSTANT_0, &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, -CONSTANT_1, &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    // 2. size = MAX_SIZE
+    errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, INT_MAX, &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    // 3. size != sizeof(OH_VIDEO_DIM_TYPE)
+    errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE) + CONSTANT_1, &setMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_4, &result);
+        return result;
+    }
+    // 4. 异常设置后 Get 应返回无效参数，验证 Set 失败未写入
+    errorCode = OH_NativeWindow_Get3DMetadataValue(nativeWindow, OH_VIDEO_DIM_TYPE, &bufferSize, &getMetadata);
+    if (errorCode != NATIVE_ERROR_OK && *getMetadata == OH_VIDEO_DIM_TYPE_2D) {
+        napi_create_int32(env, CONSTANT_5, &result);
+        return result;
+    }
+    napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    return result;
+}
+
+napi_value testNativeWindowGet3DMetadataValueNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1. invalid nativeWindow
+    OH_NativeImage *nativeImage = OH_ConsumerSurface_Create();
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    OH_NativeImage_Destroy(&nativeImage);
+    int32_t bufferSize;
+    uint8_t *getMetadata = nullptr;
+    int32_t errorCode = OH_NativeWindow_Get3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, &bufferSize, &getMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    InitNativeWindow* initNative = new InitNativeWindow();
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    // 2. nativeWindow is null
+    errorCode = OH_NativeWindow_Get3DMetadataValue(
+        nullptr, OH_VIDEO_DIM_TYPE, &bufferSize, &getMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    // 3. size (bufferSize pointer) is null
+    errorCode = OH_NativeWindow_Get3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, nullptr, &getMetadata);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    // 4. getMetadata is null
+    errorCode = OH_NativeWindow_Get3DMetadataValue(
+        nativeWindow, OH_VIDEO_DIM_TYPE, &bufferSize, nullptr);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_4, &result);
+        return result;
+    }
+    napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    return result;
+}
+
+napi_value testNativeWindowGet3DMetadataValueAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_3D_SBS);
+    int32_t bufferSize;
+    uint8_t *getMetadata = nullptr;
+    // 1. set接口传非OH_VIDEO_DIM_TYPE
+    int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(CONSTANT_2), sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+    if (errorCode != NATIVE_ERROR_UNSUPPORTED) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    // 2. get接口传非OH_VIDEO_DIM_TYPE
+    errorCode = OH_NativeWindow_Get3DMetadataValue(
+        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(CONSTANT_2), &bufferSize, &getMetadata);
+    if (errorCode != NATIVE_ERROR_UNSUPPORTED) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    napi_create_int32(env, NATIVE_ERROR_UNSUPPORTED, &result);
+    return result;
+}
+
+napi_value testNativeWindowSetGet3DMetadataValueMultipleCalls(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_3D_SBS);
+    int32_t bufferSize;
+    uint8_t *getMetadata = nullptr;
+    for (int i = 0; i < CONSTANT_10; i++) {
+        int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+            nativeWindow, OH_VIDEO_DIM_TYPE, sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+        if (errorCode != NATIVE_ERROR_OK) {
+            napi_create_int32(env, CONSTANT_1, &result);
+            return result;
+        }
+        errorCode = OH_NativeWindow_Get3DMetadataValue(
+            nativeWindow, OH_VIDEO_DIM_TYPE, &bufferSize, &getMetadata);
+        if (errorCode != NATIVE_ERROR_OK) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+    }
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 

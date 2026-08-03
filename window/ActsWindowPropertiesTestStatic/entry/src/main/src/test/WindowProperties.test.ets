@@ -32,6 +32,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
 import { canIUse } from '@internal.full.global'
+import { Driver, Point, ON } from '@ohos.UiTest';
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -55,7 +56,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        Utils.msSleep(1000).awaitSync()
+        waitForCompletion(() => Utils.msSleep(1000))
         hilog.info(domain, tag, `${caseName}  get windowStageStart start .`);
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.`+windowStageStart);
@@ -113,6 +114,435 @@ export default function WindowPropertiesTest() {
             //isPCStatus === '0' PC设备状态栏dock融合
             hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
         })
+        /**
+     * @tc.name   testSetTouchableAreas_singleRect_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0100
+     * @tc.desc   设置单个可触摸区域，验证接口调用成功，并通过触摸透传验证热区生效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTouchableAreas_singleRect_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_singleRect_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+
+        let subWindow: window.Window | undefined;
+        let driver: Driver = Driver.create();
+
+        try {
+          let mainWindow: window.Window = windowStage!.getMainWindowSync();
+          let mainRect = mainWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'mainWindow rect: ' + JSON.stringify(mainRect));
+
+          let button = await driver.findComponent(ON.id('indexButton'));
+          if (!button) {
+            hilog.error(domain, tag, msgStr + 'Failed to find indexButton');
+            expect(false).assertTrue();
+            done();
+            return;
+          }
+          let buttonBounds = await button.getBounds();
+          let clickX = Double.toInt(Math.floor((buttonBounds.left + buttonBounds.right) / 2));
+          let clickY = Double.toInt(Math.floor((buttonBounds.top + buttonBounds.bottom) / 2));
+          hilog.info(domain, tag, msgStr + 'indexButton bounds: ' + JSON.stringify(buttonBounds) + ', click position: (' + clickX + ', ' + clickY + ')');
+
+          subWindow = await windowStage!.createSubWindow('subWindow_testTouchable');
+          await subWindow.setUIContent('pages/Index2');
+          await Utils.msSleep(500);
+
+          await subWindow.moveWindowTo(mainRect.left, mainRect.top);
+          await subWindow.resize(mainRect.width, mainRect.height);
+          await subWindow.showWindow();
+
+          let subRect = subWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'subWindow moved to match mainWindow, rect: ' + JSON.stringify(subRect));
+
+          let touchableRects: Array<window.Rect> = [
+            { 
+              left: Double.toInt(Math.floor(subRect.width / 2)), 
+              top: subRect.top, 
+              width: Double.toInt(Math.floor(subRect.width / 2)), 
+              height: subRect.height 
+            }
+          ];
+          hilog.info(domain, tag, msgStr + 'touchableRects (right half): ' + JSON.stringify(touchableRects));
+
+          await subWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          await Utils.msSleep(500);
+
+          let initialState = AppStorage.get<string>('index_stateVar') ?? '';
+          hilog.info(domain, tag, msgStr + 'Initial stateVar: ' + initialState);
+
+          hilog.info(domain, tag, msgStr + 'Clicking outside touchable area (left half) at (' + clickX + ', ' + clickY + ')');
+
+          await driver.click(clickX, clickY);
+          await Utils.msSleep(1000);
+
+          let afterClickState = AppStorage.get<string>('index_stateVar') ?? '';
+          hilog.info(domain, tag, msgStr + 'After click stateVar: ' + afterClickState);
+
+          expect(afterClickState.length).assertLarger(initialState.length);
+          hilog.info(domain, tag, msgStr + 'Test passed: touch event was penetrated to main window button');
+
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        } finally {
+          try {
+            if (subWindow) {
+              await subWindow.destroyWindow();
+              hilog.info(domain, tag, msgStr + 'subWindow destroyed');
+            }
+          } catch (e) {
+            hilog.error(domain, tag, msgStr + 'Failed to destroy subWindow: ' + JSON.stringify(e));
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_multipleRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0200
+     * @tc.desc   设置多个可触摸区域（3个），验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_multipleRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_multipleRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
+        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
+        
+        let touchableRects: Array<window.Rect> = [
+          { 
+            left: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            top: Double.toInt(Math.floor(currentWindowRect.height / 3)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          },
+          { 
+            left: 0,
+            top: Double.toInt(Math.floor(currentWindowRect.height / 6)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 4)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          },
+          { 
+            left: Double.toInt(Math.floor(currentWindowRect.width * 2 / 3)),
+            top: Double.toInt(Math.floor(currentWindowRect.height * 2 / 3)),
+            width: Double.toInt(Math.floor(currentWindowRect.width / 3)),
+            height: Double.toInt(Math.floor(currentWindowRect.height / 3))
+          }
+        ];
+        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+        
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_maxRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0300
+     * @tc.desc   设置最大数量可触摸区域（10个），验证接口调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_maxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_maxRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let currentWindowRect = mainWindow.getWindowProperties().windowRect;
+        hilog.info(domain, tag, msgStr + 'currentWindowRect: ' + JSON.stringify(currentWindowRect));
+        
+        let rectWidth = Double.toInt(Math.floor(currentWindowRect.width / 10));
+        let rectHeight = Double.toInt(Math.floor(currentWindowRect.height / 10));
+        let touchableRects: Array<window.Rect> = [];
+        
+        for (let i = 0; i < 10; i++) {
+          touchableRects.push({
+            left: Double.toInt(Math.floor(currentWindowRect.width * i / 10)),
+            top: Double.toInt(Math.floor(currentWindowRect.height * i / 10)),
+            width: rectWidth,
+            height: rectHeight
+          });
+        }
+        hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+        
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_emptyArray_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0400
+     * @tc.desc   设置空数组，验证恢复为默认状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_emptyArray_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_emptyArray_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_fullWindow_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0500
+     * @tc.desc   设置完整窗口区域，验证等同于默认状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_fullWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_fullWindow_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let windowRect = mainWindow.getWindowProperties().windowRect;
+        let touchableRects: Array<window.Rect> = [
+          { left: 0, top: 0, width: windowRect.width, height: windowRect.height }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_exceedMaxRects_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0600
+     * @tc.desc   设置超过最大数量（11个）的可触摸区域，验证1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_exceedMaxRects_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_exceedMaxRects_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [];
+        for (let i = 0; i < 11; i++) {
+          touchableRects.push({ left: i * 30, top: i * 30, width: 50, height: 50 });
+        }
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 1300016) {
+            hilog.info(domain, tag, msgStr + 'Expected error 1300016.');
+            expect(exception.code).assertEqual(1300016);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_outOfWindowRange_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0700
+     * @tc.desc   设置超出窗口范围的可触摸区域，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_outOfWindowRange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_outOfWindowRange_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: -100, top: 0, width: 200, height: 200 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 401) {
+            hilog.info(domain, tag, msgStr + 'Expected error 401.');
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_negativeWidthHeight_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_0800
+     * @tc.desc   设置宽/高为负值的可触摸区域，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_negativeWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_negativeWidthHeight_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: 100, top: 100, width: -200, height: 200 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.error(domain, tag, msgStr + 'Should not succeed.');
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          if (exception.code === 401) {
+            hilog.info(domain, tag, msgStr + 'Expected error 401.');
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_zeroWidthHeight_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1200
+     * @tc.desc   设置宽/高为0的可触摸区域，验证调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_zeroWidthHeight_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_zeroWidthHeight_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let touchableRects: Array<window.Rect> = [
+          { left: 0, top: 0, width: 0, height: 0 }
+        ];
+        try {
+          await mainWindow.setTouchableAreas(touchableRects);
+          hilog.info(domain, tag, msgStr + 'Succeeded in setting touchable areas.');
+          done();
+        } catch (exception) {
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testSetTouchableAreas_windowDestroyed_static
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_STATIC_1300
+     * @tc.desc   窗口销毁后调用，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testSetTouchableAreas_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testSetTouchableAreas_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          let testWindowRect = testWindow.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'testWindowRect: ' + JSON.stringify(testWindowRect));
+          
+          let rectWidth = Double.toInt(Math.floor(testWindowRect.width / 3));
+          let rectHeight = Double.toInt(Math.floor(testWindowRect.height / 3));
+          let rectLeft = Double.toInt(Math.floor(testWindowRect.width / 3));
+          let rectTop = Double.toInt(Math.floor(testWindowRect.height / 3));
+          
+          let touchableRects: Array<window.Rect> = [
+            { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
+          ];
+          hilog.info(domain, tag, msgStr + 'touchableRects: ' + JSON.stringify(touchableRects));
+          
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            await testWindow.setTouchableAreas(touchableRects);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
         /**
          * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
          * @tc.name       test_testSetCustomDensity_1300002_static
@@ -997,7 +1427,7 @@ export default function WindowPropertiesTest() {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    (subWin! as window.Window).destroyWindow().awaitSync()
+                    waitForCompletion(() => (subWin! as window.Window).destroyWindow())
                     try {
                         subWin!.onWindowVisibilityChange((res: boolean) => {
                         });
@@ -1033,7 +1463,7 @@ export default function WindowPropertiesTest() {
             let subWin: window.Window
             windowStage!.createSubWindow('testOnWindowVisibilityChangeErrCode1300002_SubWindow_Promise')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -1050,7 +1480,7 @@ export default function WindowPropertiesTest() {
                         expect(e!.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -1075,7 +1505,7 @@ export default function WindowPropertiesTest() {
                 let win: window.Window
                 windowStage!.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100')
                     .then((data:window.Window)=>{
-                        (async () => {
+                        waitForCompletion(async () => {
                         win = data;
                         expect(!!win).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -1090,7 +1520,7 @@ export default function WindowPropertiesTest() {
                             expect(false).assertTrue();
                             done();
                         }
-                        })().awaitSync()
+                        })
                     })
                     .catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(0x0000, '[ANI]',
@@ -1152,11 +1582,11 @@ export default function WindowPropertiesTest() {
                     }
                     try {
                         (win as window.Window).offWindowVisibilityChange();
-                        (win as window.Window).destroyWindow().awaitSync()
+                        waitForCompletion(() => (win as window.Window).destroyWindow())
                         done();
                     } catch (exception) {
                         exception = exception as BusinessError;
-                        (win as window.Window).destroyWindow().awaitSync()
+                        waitForCompletion(() => (win as window.Window).destroyWindow())
                         console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done();
@@ -1265,7 +1695,7 @@ export default function WindowPropertiesTest() {
             let subWin: window.Window
             windowStage!.createSubWindow('testOnSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -1282,7 +1712,7 @@ export default function WindowPropertiesTest() {
                         expect(e!.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -1306,7 +1736,7 @@ export default function WindowPropertiesTest() {
             let subWin: window.Window
             windowStage!.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -1323,7 +1753,7 @@ export default function WindowPropertiesTest() {
                         expect(e!.code).assertEqual(1300002);
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -1801,19 +2231,19 @@ export default function WindowPropertiesTest() {
                 let windowClass2:window.Window = windowStageStart.getMainWindowSync();
                 let res = windowClass2.getWindowProperties()
                 window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     hilog.info(domain, tag,caseName + 'Succeeded in calling getVisibleWindowInfo.');
                     expect(false).assertTrue();
                     await terminateAbility(caseName);
                     done();
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
                     expect(err.code === 201 || err.code === 801).assertTrue();
                     await terminateAbility(caseName);
                     done()
-                    })().awaitSync()
+                    })
                 });
             } catch (err) {
                 err = err as BusinessError;
@@ -1859,15 +2289,15 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in resizing the system sub window.`);
                 await Utils.msSleep(1000);
                 window.getWindowsByCoordinate(displayId).then((data:Array<window.Window>) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     await subWindowClass.destroyWindow();
                     hilog.info(domain, tag,`${caseName} The window displayId is: ` + displayId);
                     hilog.info(domain, tag,`${caseName} Succeeded in getting window from point. Data: ` + JSON.stringify(data));
                     expect(data.length).assertEqual(2);
                     done();
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     await subWindowClass.destroyWindow();
                     hilog.error(domain, tag,`${caseName} Failed to get window from point. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code === 801) {
@@ -1878,7 +2308,7 @@ export default function WindowPropertiesTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                    })().awaitSync()
+                    })
                 });
             }catch(err) {
                 err = err as BusinessError;
@@ -2024,7 +2454,7 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 done();
             }).catch((err: Error) :PromiseLike<void>|undefined=> {
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code === 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled.`);
@@ -2038,7 +2468,7 @@ export default function WindowPropertiesTest() {
                     await subWindowClass.destroyWindow();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
         /**
@@ -2067,7 +2497,7 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code === 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled.`);
@@ -2081,7 +2511,7 @@ export default function WindowPropertiesTest() {
                     expect(err.message!==null).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
         /**
@@ -2170,7 +2600,7 @@ export default function WindowPropertiesTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testIsGestureBackEnabledErrCode1300002_SubWindow_Promise')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + data);
@@ -2187,7 +2617,7 @@ export default function WindowPropertiesTest() {
                         expect(e.message!==null).assertTrue();
                         done()
                     }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -2244,7 +2674,7 @@ export default function WindowPropertiesTest() {
             };
             let tempWnd: window.Window;;
             window.createWindow(windowConfig).then((data:window.Window) => {
-                (async () => {
+                waitForCompletion(async () => {
                 tempWnd = data;
                 expect(!!tempWnd).assertTrue();
                 hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -2267,7 +2697,7 @@ export default function WindowPropertiesTest() {
                         done();
                     }
                 });
-                })().awaitSync()
+                })
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag,msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 expect(false).assertTrue();
@@ -2529,12 +2959,12 @@ export default function WindowPropertiesTest() {
                 promise.then((data:window.Window) => {
                     subWindowClass = data;
                     hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-                    subWindowClass!.destroyWindow().awaitSync()
+                    waitForCompletion(() => subWindowClass!.destroyWindow())
                     let promise2 = subWindowClass!.snapshotIgnorePrivacy();
                     promise2.then((pixelMap:image.PixelMap) => {
                         let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
                         hilog.info(domain, tag,`${msgStr} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
-                        subWindowClass!.destroyWindow().awaitSync()
+                        waitForCompletion(() => subWindowClass!.destroyWindow())
                         expect(false).assertTrue();
                         done();
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -2557,7 +2987,7 @@ export default function WindowPropertiesTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(err.message!==null).assertTrue();
-                    subWindowClass!.destroyWindow().awaitSync()
+                    waitForCompletion(() => subWindowClass!.destroyWindow())
                     if (err.code === 801) {
                         hilog.info(domain, tag,msgStr + '此设备不支持');
                         done();
@@ -2838,7 +3268,7 @@ export default function WindowPropertiesTest() {
                     await subWindowClass!.destroyWindow();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code)+',errMessage: '+ err.message);
-                    subWindowClass!.destroyWindow().awaitSync()
+                    waitForCompletion(() => subWindowClass!.destroyWindow())
                     if (err.code === 801) {
                         hilog.info(domain, tag,`${caseName} The current device type does not support to setWindowCornerRadius`);
                         expect(err.message!==null).assertTrue();
@@ -3077,7 +3507,7 @@ export default function WindowPropertiesTest() {
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(801);
-                    subWin!.destroyWindow().awaitSync()
+                    waitForCompletion(() => subWin!.destroyWindow())
                     done();
                 });
             } catch (err) {
@@ -4389,7 +4819,7 @@ export default function WindowPropertiesTest() {
         let subWin: window.Window | undefined = undefined;
         windowStage!.createSubWindow('testGetWindowDensityInfoErrCode1300002_SubWindow_Promise')
           .then((data: window.Window) => {
-            (async () => {
+            waitForCompletion(async () => {
               subWin = data;
               expect(!!subWin).assertTrue();
               hilog.info(domain, tag, msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -4406,7 +4836,7 @@ export default function WindowPropertiesTest() {
                 expect(e.message !== null).assertTrue();
                 done()
               }
-            })().awaitSync()
+            })
           })
           .catch((err: Error): PromiseLike<void> | undefined => {
             hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -5985,6 +6415,341 @@ export default function WindowPropertiesTest() {
             }
         })
 
-    })
 
+    // ==================== isInWindowPostureMode / onWindowPostureModeChange / offWindowPostureModeChange 静态测试用例 ====================
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_normal_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0100
+     * @tc.desc   查询当前窗口是否处于桌面姿态模式，结合FoldStatus、getLiveCreaseRegion、getWindowStatus等条件验证返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_normal_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_normal_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let isSupport: boolean = canIUse('SystemCapability.Window.SessionManager');
+          hilog.info(domain, tag, msgStr + 'isSupport: ' + isSupport);
+          if (!isSupport) {
+            hilog.info(domain, tag, msgStr + 'SystemCapability.Window.SessionManager not supported.');
+            done();
+            return;
+          }
+
+          let isHalfFolded: boolean = false;
+          let isCreaseWidthGreater: boolean = false;
+          let isFullScreenOrMaximize: boolean = false;
+          let isCreaseInWindow: boolean = false;
+          let creaseTop: number = 0;
+          let creaseHeight: number = 0;
+
+          try {
+            let foldStatus: display.FoldStatus = display.getFoldStatus();
+            hilog.info(domain, tag, msgStr + 'foldStatus: ' + foldStatus);
+            isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getFoldStatus not supported.');
+          }
+
+          try {
+            let defaultDisplay: display.Display = display.getDefaultDisplaySync();
+            let creaseRegion: display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
+            hilog.info(domain, tag, msgStr + 'creaseRegion: ' + JSON.stringify(creaseRegion));
+            if (creaseRegion.creaseRects.length > 0) {
+              let creaseRect = creaseRegion.creaseRects[0];
+              hilog.info(domain, tag, msgStr + 'creaseRect: ' + JSON.stringify(creaseRect));
+              isCreaseWidthGreater = creaseRect.width > creaseRect.height;
+              creaseTop = creaseRect.top;
+              creaseHeight = creaseRect.height;
+            }
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getLiveCreaseRegion not supported.');
+          }
+
+          try {
+            let windowStatus: window.WindowStatusType = win!.getWindowStatus();
+            hilog.info(domain, tag, msgStr + 'windowStatus: ' + windowStatus);
+            isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+              windowStatus === window.WindowStatusType.MAXIMIZE;
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getWindowStatus not supported.');
+          }
+
+          let windowRect: window.Rect = win!.getWindowProperties().windowRect;
+          hilog.info(domain, tag, msgStr + 'windowRect: ' + JSON.stringify(windowRect));
+          isCreaseInWindow = (windowRect.top + windowRect.height) > (creaseTop + creaseHeight);
+
+          let expectedResult: boolean = isHalfFolded && isCreaseWidthGreater && isFullScreenOrMaximize && isCreaseInWindow;
+          hilog.info(domain, tag, msgStr + 'isHalfFolded: ' + isHalfFolded + ', isCreaseWidthGreater: ' + isCreaseWidthGreater + ', isFullScreenOrMaximize: ' + isFullScreenOrMaximize + ', isCreaseInWindow: ' + isCreaseInWindow);
+          hilog.info(domain, tag, msgStr + 'expectedResult: ' + expectedResult);
+
+          let result: boolean = win!.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'result: ' + result);
+          expect(result).assertEqual(expectedResult);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0200
+     * @tc.desc   窗口销毁后调用isInWindowPostureMode，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testIsInWindowPostureMode_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testIsInWindowPostureMode_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            testWindow.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testIsInWindowPostureMode_returnValue_static
+     * @tc.number SUB_WINDOW_ISINWINDOWPOSTUREMODE_STATIC_0600
+     * @tc.desc   调用isInWindowPostureMode，断言返回值为true或false，满足返回值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsInWindowPostureMode_returnValue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testIsInWindowPostureMode_returnValue_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let isSupport: boolean = canIUse('SystemCapability.Window.SessionManager');
+          hilog.info(domain, tag, msgStr + 'isSupport: ' + isSupport);
+          if (!isSupport) {
+            hilog.info(domain, tag, msgStr + 'SystemCapability.Window.SessionManager not supported.');
+            done();
+            return;
+          }
+          let result: boolean = win!.isInWindowPostureMode(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'result: ' + result);
+          expect(result === true || result === false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offTwice_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0200
+     * @tc.desc   调用2次on监听，调用2次off分别取消每个监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offTwice_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnOffWindowPostureModeChange_offTwice_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          const callback1: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback1 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          const callback2: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback2 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 1.');
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 2.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling listener 1.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling listener 2.');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnOffWindowPostureModeChange_offAll_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0300
+     * @tc.desc   调用2次on监听，调用off接口（不传callback）取消全部监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowPostureModeChange_offAll_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnOffWindowPostureModeChange_offAll_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          const callback1: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback1 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          const callback2: Callback<boolean> = (isInPostureMode: boolean): void => {
+            hilog.info(domain, tag, msgStr + 'callback2 triggered. isInPostureMode: ' + isInPostureMode);
+          };
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback1);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 1.');
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback2);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener 2.');
+          win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+          hilog.info(domain, tag, msgStr + 'Succeeded in disabling all listeners.');
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0400
+     * @tc.desc   窗口销毁后调用onWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWindowPostureModeChange_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnWindowPostureModeChange_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testOnWindowPostureModeChange_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            const callback: Callback<boolean> = (isInPostureMode: boolean): void => {
+              hilog.info(domain, tag, msgStr + 'callback triggered. isInPostureMode: ' + isInPostureMode);
+            };
+            testWindow.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOffWindowPostureModeChange_windowDestroyed_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0500
+     * @tc.desc   窗口销毁后调用offWindowPostureModeChange，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowPostureModeChange_windowDestroyed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOffWindowPostureModeChange_windowDestroyed_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let config: window.Configuration = {
+          name: 'testOffWindowPostureModeChange_windowDestroyed_static',
+          windowType: window.WindowType.TYPE_DIALOG,
+          decorEnabled: true,
+          ctx: context!
+        };
+        try {
+          let testWindow = await window.createWindow(config);
+          await testWindow.destroyWindow();
+          await Utils.msSleep(500);
+          try {
+            testWindow.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE);
+            hilog.error(domain, tag, msgStr + 'Should not succeed.');
+            expect(false).assertTrue();
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+            if (exception.code === 1300002) {
+              hilog.info(domain, tag, msgStr + 'Expected error 1300002.');
+              expect(exception.code).assertEqual(1300002);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+
+    })
+    
+ 
 }

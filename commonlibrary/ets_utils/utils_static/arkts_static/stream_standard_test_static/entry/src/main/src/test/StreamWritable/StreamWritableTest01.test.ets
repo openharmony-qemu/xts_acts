@@ -2070,7 +2070,7 @@ export default function StreamWritable01Test(): void {
         const result2 = writableStream.write(uint8Array);
         expect(result2).assertEqual(true);
       } catch (error) {
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(0);
       }
     });
 

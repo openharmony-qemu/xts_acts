@@ -24,7 +24,7 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -92,7 +92,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value VfprintfChkNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -107,7 +107,7 @@ static napi_value VfprintfChkNormal001(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -122,7 +122,7 @@ static napi_value VfprintfChkNormal002(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -137,7 +137,7 @@ static napi_value VfprintfChkNormal003(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -152,7 +152,7 @@ static napi_value VfprintfChkNormal004(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkNormal005(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -169,7 +169,7 @@ static napi_value VfprintfChkNormal005(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkNormal006(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -186,7 +186,7 @@ static napi_value VfprintfChkNormal006(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
@@ -209,7 +209,7 @@ static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -225,7 +225,7 @@ static napi_value VfprintfChkAbnormal002(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkAbnormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -241,7 +241,7 @@ static napi_value VfprintfChkAbnormal003(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkAbnormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
@@ -258,34 +258,34 @@ static napi_value VfprintfChkAbnormal004(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
         return ReturnInt32(env, 0);
     }
-    size_t fmtLen = 3000;
-    std::string longFmt(fmtLen, 'x');
+    int fmtSize = 3000;
+    std::string longFmt(fmtSize, 'x');
     int ret = VfprintfHelper(tmp, 0, longFmt.c_str());
     if (fclose(tmp) != 0) {}
-    return ReturnInt32(env, (ret == static_cast<int>(fmtLen)) ? 1 : 0);
+    return ReturnInt32(env, (ret == fmtSize) ? 1 : 0);
 }
 
 /* TC-012: Very long output string */
 static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
     if (!tmp) {
         return ReturnInt32(env, 0);
     }
-    size_t outLen = 2000;
-    std::string longStr(outLen, 'a');
+    int strSize = 2000;
+    std::string longStr(strSize, 'a');
     int ret = VfprintfHelper(tmp, 0, "%s", longStr.c_str());
     if (fclose(tmp) != 0) {}
-    return ReturnInt32(env, (ret == static_cast<int>(outLen)) ? 1 : 0);
+    return ReturnInt32(env, (ret == strSize) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -294,10 +294,10 @@ static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
 static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         FILE* tmp = CreateSandboxTempFile();
         if (!tmp) {
             pass = false;
@@ -313,7 +313,9 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void VfprintfChkWorker(std::atomic<bool>& hasError, const char* formats[])
+/* ==================== Multi-thread Tests ==================== */
+
+static void VfprintfChkThreadWorker(std::atomic<bool>& hasError, const char* const* formats)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         FILE* tmp = CreateSandboxTempFile();
@@ -331,20 +333,20 @@ static void VfprintfChkWorker(std::atomic<bool>& hasError, const char* formats[]
     }
 }
 
-/* ==================== Multi-thread Tests ==================== */
-
 /* TC-014: Multi-thread safety with different files */
 static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(VfprintfChkWorker, std::ref(hasError), formats);
+        threads.emplace_back([&hasError, formats]() {
+            VfprintfChkThreadWorker(hasError, formats);
+        });
     }
     for (auto& th : threads) {
         th.join();

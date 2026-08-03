@@ -354,5 +354,85 @@ export default function CApiGameDeviceEventTest() {
       expect(ret).assertEqual(401);
     });
 
+    /**
+     * @tc.name   OH_GameDevice_DeviceEvent_GetChangedType03
+     * @tc.number OH_GameDevice_DeviceEvent_GetChangedType03
+     * @tc.desc   get changed type failed when statusChangedType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceEvent_GetChangedType03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceEventGetChangedType03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceEvent_GetDeviceInfo03
+     * @tc.number OH_GameDevice_DeviceEvent_GetDeviceInfo03
+     * @tc.desc   get deviceInfo failed when deviceInfo is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceEvent_GetDeviceInfo03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceEventGetDeviceInfo03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetProduct03
+     * @tc.number OH_GameDevice_DeviceInfo_GetProduct03
+     * @tc.desc   GetProduct failed when product is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetProduct03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetProduct03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetVersion03
+     * @tc.number OH_GameDevice_DeviceInfo_GetVersion03
+     * @tc.desc   GetVersion failed when version is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetVersion03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetVersion03();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceType03
+     * @tc.number OH_GameDevice_DeviceInfo_GetDeviceType03
+     * @tc.desc   GetDeviceType failed when deviceType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetDeviceType03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetDeviceType03();
+      expect(ret).assertEqual(401);
+    });
+
   })
 }

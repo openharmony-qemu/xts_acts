@@ -12,38 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON, Component } from '@ohos.UiTest';
-import promptAction from '@ohos.promptAction';
-import { router } from '@kit.ArkUI';
-import Utils from '../../MainAbility/common/Utils';
+import router from '@ohos.router';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function PromptActionOpenToastTest() {
-  const driver = Driver.create();
 
-  beforeEach(async (done: Function) => {
-    console.info('PromptActionOpenToastTest beforeEach start');
-    let options: router.RouterOptions = {
-      url: 'MainAbility/pages/promptaction/PromptActionOpenToastTest',
-    }
-    try {
-      router.clear();
-      let pages = router.getState();
-      console.info('get PromptActionOpenToastTest state pages:' + JSON.stringify(pages));
-      if (!('AlertDialogLife' == pages.name)) {
-        console.info('get PromptActionOpenToastTest pages.name:' + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        await Utils.sleep(2500);
-        console.info('push PromptActionOpenToastTest page result:' + JSON.stringify(result));
+export default function PromptActionOpenToastTest() {
+  describe('PromptActionOpenToastTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("PromptActionOpenToastTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/promptaction/PromptActionOpenToastTest',
       }
-    } catch (err) {
-      console.error('push PromptActionOpenToastTest page error:' + err);
-    }
-    console.info('PromptActionOpenToastTest beforeEach end');
-    done();
-  });
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get PromptActionOpenToastTest state pages: " + JSON.stringify(pages));
+        if (!("PromptActionOpenToastTest" == pages.name)) {
+          console.info("get PromptActionOpenToastTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push PromptActionOpenToastTest page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push PromptActionOpenToastTest page error: " + err);
+        expect().assertFail();
+      }
+      done()
+    });
 
     /**
      * @tc.name   promptActionOpenToastBottomEmpty_0100
@@ -56,7 +53,7 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastBottomEmpty_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastBottomEmpty_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('btn_toast_bottom_empty'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -64,10 +61,10 @@ export default function PromptActionOpenToastTest() {
       // Verify test result from page state
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastBottomEmpty_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: bottom empty string: SUCCESS');
+      console.info("[promptActionOpenToastBottomEmpty_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: bottom empty string: SUCCESS');
+                                  // Test Result: bottom empty string: SUCCESS
       console.info('[promptActionOpenToastBottomEmpty_0100] END');
     })
 
@@ -82,16 +79,17 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastShowModeDefault_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastShowModeDefault_0100] START'); 
       await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('btn_toast_showmode_default'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastShowModeDefault_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: showMode DEFAULT: SUCCESS');
+      console.info("[promptActionOpenToastShowModeDefault_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: showMode DEFAULT: SUCCESS');
+                                  // Test Result: showMode DEFAULT: SUCCESS
       console.info('[promptActionOpenToastShowModeDefault_0100] END');
       
     })
@@ -107,16 +105,17 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastShowModeTopMost_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastShowModeTopMost_0100] START');
       await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
       const button = await driver.findComponent(ON.id('btn_toast_showmode_topmost'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
-
-      console.info("[promptActionOpenToastShowModeTopMost_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: showMode TOP_MOST: SUCCESS');
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
+      console.info("[promptActionOpenToastShowModeTopMost_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: showMode TOP_MOST: SUCCESS');
+                                //   "Test Result: showMode TOP_MOST: SUCCESS"
       console.info('[promptActionOpenToastShowModeTopMost_0100] END');
       
     })
@@ -132,17 +131,17 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastEnableHoverModeTrue_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastEnableHoverModeTrue_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       const button = await driver.findComponent(ON.id('btn_toast_enablehovermode_true'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastEnableHoverModeTrue_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: enableHoverMode true: SUCCESS');
+      console.info("[promptActionOpenToastEnableHoverModeTrue_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: enableHoverMode true: SUCCESS');
       console.info('[promptActionOpenToastEnableHoverModeTrue_0100] END');
       
     })
@@ -158,17 +157,17 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastEnableHoverModeFalse_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastEnableHoverModeFalse_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       const button = await driver.findComponent(ON.id('btn_toast_enablehovermode_false'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastEnableHoverModeFalse_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: enableHoverMode false: SUCCESS');
+      console.info("[promptActionOpenToastEnableHoverModeFalse_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: enableHoverMode false: SUCCESS');
       console.info('[promptActionOpenToastEnableHoverModeFalse_0100] END');
       
     })
@@ -184,17 +183,17 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastOptionsNull_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastOptionsNull_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       const button = await driver.findComponent(ON.id('btn_toast_options_null'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastOptionsNull_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: options null: FAILED');
+      console.info("[promptActionOpenToastOptionsNull_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: options null: FAILED');
       console.info('[promptActionOpenToastOptionsNull_0100] END');
     })
 
@@ -209,18 +208,18 @@ export default function PromptActionOpenToastTest() {
     it('promptActionOpenToastOptionsUndefined_0100', Level.LEVEL1, async () => {
       console.info('[promptActionOpenToastOptionsUndefined_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       const button = await driver.findComponent(ON.id('btn_toast_options_undefined'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionOpenToastOptionsUndefined_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: options undefined: FAILED');
+      console.info("[promptActionOpenToastOptionsUndefined_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: options undefined: FAILED');
       console.info('[promptActionOpenToastOptionsUndefined_0100] END');
     })
-  
+  })
 }

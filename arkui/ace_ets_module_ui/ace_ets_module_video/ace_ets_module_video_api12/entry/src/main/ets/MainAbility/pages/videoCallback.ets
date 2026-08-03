@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import events_emitter from '@ohos.events.emitter';
 
-// xxx.ets
 @Entry
 @Component
 struct videoCallbackTest {
@@ -26,15 +26,15 @@ struct videoCallbackTest {
   controller: VideoController = new VideoController()
 
   build() {
-    Column() {
+    Column({space:3}) {
       Video({
         src: this.videoSrc,
         previewUri: this.previewUri,
         currentProgressRate: this.curRate,
         controller: this.controller
       })
-        .width('100%')
-        .height('50%')
+        .width(180)
+        .height(120)
         .autoPlay(this.isAutoPlay)
         .controls(this.showControls)
         .onStart(() => {
@@ -93,16 +93,16 @@ struct videoCallbackTest {
 
       Row() {
         Button('start').key('start').onClick(() => {
-          this.controller.start() // 开始播放
-        }).margin(5)
+          this.controller.start()
+        }).width(65).height(20)
         Button('pause').key('pause').onClick(() => {
-          this.controller.pause() // 暂停播放
-        }).margin(5)
+          this.controller.pause()
+        }).width(65).height(20)
         Button('stop').key('stop').onClick(() => {
-          this.controller.stop() // 结束播放
-        }).margin(5)
+          this.controller.stop()
+        }).width(65).height(20)
       }
-    }
+    }.width('100%').height('100%')
   }
 }
 

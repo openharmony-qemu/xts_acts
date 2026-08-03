@@ -26,7 +26,7 @@ const EVENT_ID_SET_SUITE_KEY = 124001;
 let driver = Driver.create();
 
 export default function webViewRegisterScrollCallbackTest() {
-  describe('webViewRegisterScrollCallbackTest', async () => {
+  describe('webViewRegisterScrollCallbackTest', () => {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);

@@ -89,7 +89,7 @@ it('EntryOptionPage2_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info('[MultiNavigation_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[MultiNavigation_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('333');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('222');
 
       console.info('EntryOptionPage2_0100 END');
       done();

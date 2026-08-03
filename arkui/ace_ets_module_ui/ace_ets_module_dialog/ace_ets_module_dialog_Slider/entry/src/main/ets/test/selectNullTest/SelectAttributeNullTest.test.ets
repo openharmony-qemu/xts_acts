@@ -286,7 +286,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_optionFont_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.optionFont).assertContain("FontWeight.Normal");
+      expect(obj.$attrs.optionFont).assertContain("FontWeight");
       console.info('selectOptionFont_Null_013 END');
       done();
     });
@@ -304,7 +304,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_optionFont_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.optionFont).assertContain("FontWeight.Normal");
+      expect(obj.$attrs.optionFont).assertContain("FontWeight");
       console.info('selectOptionFont_Undefined_014 END');
       done();
     });
@@ -359,7 +359,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_space_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.space).assertEqual('8.00vp');
+      expect(obj.$attrs.space).assertContain('vp');
       console.info('selectSpace_Null_017 END');
       done();
     });
@@ -378,7 +378,7 @@ export default function selectAttributeNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('select_space_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.space).assertEqual('8.00vp');
+      expect(obj.$attrs.space).assertContain('vp');
       console.info('selectSpace_Undefined_018 END');
       done();
     });

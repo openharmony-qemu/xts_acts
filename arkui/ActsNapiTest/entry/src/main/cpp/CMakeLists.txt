@@ -22,6 +22,9 @@ target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so)
 add_library(napiString SHARED ./napi/napiString.cpp)
 target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so)
 
+add_library(napiComplexScenarios SHARED ./napi/napiComplexScenarios.cpp)
+target_link_libraries(napiComplexScenarios PUBLIC securec libace_napi.z.so libuv.so)
+
 # napi callback risk probe library
 add_library(napicallbackriskndktest SHARED
     napicallbackrisk/callback_risk_init.cpp
@@ -45,3 +48,9 @@ target_link_libraries(napispecdiffbatch3ndktest PUBLIC libace_napi.z.so libhilog
 
 add_library(napispecdiffbatch4ndktest SHARED napispecdiff/batch4/napispecdiffbatch4.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch4ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napicoveragesamplendktest SHARED napi_coverage_sample/napi_coverage_sample.cpp common/native_common.h)
+target_link_libraries(napicoveragesamplendktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(malloccoveragesamplendktest SHARED malloc_coverage_sample/malloc_coverage_sample.cpp common/native_common.h)
+target_link_libraries(malloccoveragesamplendktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)

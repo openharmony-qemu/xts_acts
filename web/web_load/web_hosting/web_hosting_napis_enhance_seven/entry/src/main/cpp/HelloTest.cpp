@@ -20,6 +20,7 @@
 #include "web/arkweb_scheme_handler.h"
 #include "web/arkweb_interface.h"
 #include "web/native_interface_arkweb.h"
+#include "web/arkweb_error_code.h"
 #include <thread>
 
 #undef LOG_TAG
@@ -27,6 +28,10 @@
 
 int32_t g_testSaveCookieSyncThreadResult = -1;
 int32_t g_testSaveCookieAsyncCallback = -1;
+int32_t g_fetchCookieSyncPartitionedCode = -1;
+std::string g_fetchCookieSyncPartitionedValue;
+int32_t g_fetchCookieAsyncPartitionedCode = -1;
+std::string g_fetchCookieAsyncPartitionedValue;
 
 char *GetStringValue(napi_env env, napi_value value)
 {
@@ -205,6 +210,145 @@ static napi_value SaveCookieSync(napi_env env, napi_callback_info info)
     return resultCode;
 }
 
+static napi_value FetchCookieSyncPartitioned(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char *url = GetStringValue(env, args[0]);
+    bool incognito = GetBoolValue(env, args[1]);
+    bool includeHttpOnly = GetBoolValue(env, args[2]);
+    bool includePartitionedCookies = GetBoolValue(env, args[3]);
+    OH_LOG_INFO(LOG_APP,
+        "FetchCookieSyncPartitioned url:%{public}s incognito:%{public}d includeHttpOnly:%{public}d "
+        "includePartitionedCookies:%{public}d",
+        url, incognito, includeHttpOnly, includePartitionedCookies);
+
+    // Ensure CookieManager is initialized before calling free functions.
+    (void)OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COOKIE_MANAGER);
+
+    char *cookieValue = nullptr;
+    ArkWeb_ErrorCode resultCode = OH_ArkWebCookieManager_FetchCookieSync(url, incognito, includeHttpOnly,
+        includePartitionedCookies, &cookieValue);
+    g_fetchCookieSyncPartitionedCode = static_cast<int32_t>(resultCode);
+    if (cookieValue != nullptr) {
+        g_fetchCookieSyncPartitionedValue = cookieValue;
+        OH_ArkWeb_ReleaseString(cookieValue);
+    } else {
+        g_fetchCookieSyncPartitionedValue.clear();
+    }
+    OH_LOG_INFO(LOG_APP, "FetchCookieSyncPartitioned code:%{public}d cookie:%{public}s",
+        g_fetchCookieSyncPartitionedCode, g_fetchCookieSyncPartitionedValue.c_str());
+
+    delete[] url;
+    napi_value result;
+    napi_create_int32(env, g_fetchCookieSyncPartitionedCode, &result);
+    return result;
+}
+
+static napi_value GetFetchCookieSyncPartitionedValue(napi_env env, napi_callback_info info)
+{
+    napi_value resultValue;
+    napi_create_string_utf8(env, g_fetchCookieSyncPartitionedValue.c_str(), NAPI_AUTO_LENGTH, &resultValue);
+    return resultValue;
+}
+
+static napi_value FetchCookieSyncPartitionedInvalidParam(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char *url = GetStringValue(env, args[0]);
+    bool incognito = GetBoolValue(env, args[1]);
+    bool includeHttpOnly = GetBoolValue(env, args[2]);
+    bool includePartitionedCookies = GetBoolValue(env, args[3]);
+
+    (void)OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COOKIE_MANAGER);
+    ArkWeb_ErrorCode resultCode = OH_ArkWebCookieManager_FetchCookieSync(url, incognito, includeHttpOnly,
+        includePartitionedCookies, nullptr);
+    OH_LOG_INFO(LOG_APP, "FetchCookieSyncPartitionedInvalidParam code:%{public}d", resultCode);
+
+    delete[] url;
+    napi_value result;
+    napi_create_int32(env, static_cast<int32_t>(resultCode), &result);
+    return result;
+}
+
+static void OnCookieFetchCallback(ArkWeb_ErrorCode errorCode, char *cookieValue)
+{
+    OH_LOG_INFO(LOG_APP, "OnCookieFetchCallback errorCode:%{public}d", errorCode);
+    g_fetchCookieAsyncPartitionedCode = static_cast<int32_t>(errorCode);
+    if (cookieValue != nullptr) {
+        g_fetchCookieAsyncPartitionedValue = cookieValue;
+        OH_ArkWeb_ReleaseString(cookieValue);
+    } else {
+        g_fetchCookieAsyncPartitionedValue.clear();
+    }
+    OH_LOG_INFO(LOG_APP, "OnCookieFetchCallback cookie:%{public}s", g_fetchCookieAsyncPartitionedValue.c_str());
+}
+
+static napi_value FetchCookieAsyncPartitioned(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char *url = GetStringValue(env, args[0]);
+    bool incognito = GetBoolValue(env, args[1]);
+    bool includeHttpOnly = GetBoolValue(env, args[2]);
+    bool includePartitionedCookies = GetBoolValue(env, args[3]);
+    OH_LOG_INFO(LOG_APP,
+        "FetchCookieAsyncPartitioned url:%{public}s incognito:%{public}d includeHttpOnly:%{public}d "
+        "includePartitionedCookies:%{public}d",
+        url, incognito, includeHttpOnly, includePartitionedCookies);
+
+    (void)OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COOKIE_MANAGER);
+    g_fetchCookieAsyncPartitionedCode = -1;
+    g_fetchCookieAsyncPartitionedValue.clear();
+    OH_ArkWebCookieManager_FetchCookieAsync(url, incognito, includeHttpOnly, includePartitionedCookies,
+        OnCookieFetchCallback);
+    delete[] url;
+
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
+static napi_value FetchCookieAsyncPartitionedNullCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char *url = GetStringValue(env, args[0]);
+    bool incognito = GetBoolValue(env, args[1]);
+    bool includeHttpOnly = GetBoolValue(env, args[2]);
+    bool includePartitionedCookies = GetBoolValue(env, args[3]);
+
+    OH_ArkWebCookieManager_FetchCookieAsync(url, incognito, includeHttpOnly, includePartitionedCookies, nullptr);
+    delete[] url;
+
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
+static napi_value GetFetchCookieAsyncPartitionedCode(napi_env env, napi_callback_info info)
+{
+    napi_value resultValue;
+    napi_create_int32(env, g_fetchCookieAsyncPartitionedCode, &resultValue);
+    return resultValue;
+}
+
+static napi_value GetFetchCookieAsyncPartitionedValue(napi_env env, napi_callback_info info)
+{
+    napi_value resultValue;
+    napi_create_string_utf8(env, g_fetchCookieAsyncPartitionedValue.c_str(), NAPI_AUTO_LENGTH, &resultValue);
+    return resultValue;
+}
+
 static napi_value LazyInitializeWebEngineInCookieManagerSetTrue(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "LazyInitializeWebEngineInCookieManagerSetTrue  start");
@@ -244,6 +388,20 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"lazyInitializeWebEngineInCookieManagerSetFalse", nullptr, LazyInitializeWebEngineInCookieManagerSetFalse,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fetchCookieSyncPartitioned", nullptr, FetchCookieSyncPartitioned, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"getFetchCookieSyncPartitionedValue", nullptr, GetFetchCookieSyncPartitionedValue, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fetchCookieSyncPartitionedInvalidParam", nullptr, FetchCookieSyncPartitionedInvalidParam, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"fetchCookieAsyncPartitioned", nullptr, FetchCookieAsyncPartitioned, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"fetchCookieAsyncPartitionedNullCallback", nullptr, FetchCookieAsyncPartitionedNullCallback, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getFetchCookieAsyncPartitionedCode", nullptr, GetFetchCookieAsyncPartitionedCode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getFetchCookieAsyncPartitionedValue", nullptr, GetFetchCookieAsyncPartitionedValue, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

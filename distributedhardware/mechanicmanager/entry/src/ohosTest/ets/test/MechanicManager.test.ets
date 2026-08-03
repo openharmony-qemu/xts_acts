@@ -1068,16 +1068,16 @@ export default function MechanicManagerAPI() {
     });
 
     /**
-     * @tc.name   SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100
-     * @tc.number SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100
+     * @tc.name   SUB_DH_mechanicManager_isControlSupported_0100
+     * @tc.number SUB_DH_mechanicManager_isControlSupported_0100
      * @tc.desc   Device supports embodied control of devices,isControlSupported接口正常调用
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 3
      */
-    it('SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DH_mechanicManager_isControlSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        const LOG_NAME = `SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100`;
+        const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0100`;
         console.info(`======>${LOG_NAME} begin======`);
         try {
           let mechDeviceType = mechanicManager.MechDeviceType.GIMBAL_DEVICE;
@@ -1085,11 +1085,85 @@ export default function MechanicManagerAPI() {
           console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
           expect(isControlSupported == true || isControlSupported == false).assertTrue();
         } catch (error) {
-          console.info(`SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100 failed, code is ${error.code}, message is ${error.message}`);
+          console.info(`SUB_DH_mechanicManager_isControlSupported_0100 failed, code is ${error.code}, message is ${error.message}`);
           expect(Number(error.code) === 33300001).assertTrue();
         }
         console.info(`======>${LOG_NAME} end======`);
         done();
       });
+
+
+    /**
+     * @tc.name   SUB_DH_mechanicManager_isControlSupported_0200
+     * @tc.number SUB_DH_mechanicManager_isControlSupported_0200
+     * @tc.desc   Device supports embodied control of devices,isControlSupported参数为undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_DH_mechanicManager_isControlSupported_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0200`;
+        console.info(`======>${LOG_NAME} begin======`);
+        try {
+          let isControlSupported = mechanicManager.isControlSupported(undefined);
+          console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
+          expect(isControlSupported == false).assertTrue();
+        } catch (error) {
+          console.info(`SUB_DH_mechanicManager_isControlSupported_0200 failed, code is ${error.code}, message is ${error.message}`);
+          expect(Number(error.code) === 33300001).assertTrue();
+        }
+        console.info(`======>${LOG_NAME} end======`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DH_mechanicManager_isControlSupported_0300
+     * @tc.number SUB_DH_mechanicManager_isControlSupported_0300
+     * @tc.desc   Device supports embodied control of devices,isControlSupported参数为null
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_DH_mechanicManager_isControlSupported_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0300`;
+        console.info(`======>${LOG_NAME} begin======`);
+        try {
+          let isControlSupported = mechanicManager.isControlSupported(null);
+          console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
+          expect(isControlSupported == false).assertTrue();
+        } catch (error) {
+          console.info(`SUB_DH_mechanicManager_isControlSupported_0300 failed, code is ${error.code}, message is ${error.message}`);
+          expect(Number(error.code) === 33300001).assertTrue();
+        }
+        console.info(`======>${LOG_NAME} end======`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DH_mechanicManager_isControlSupported_0400
+     * @tc.number SUB_DH_mechanicManager_isControlSupported_0400
+     * @tc.desc   Device supports embodied control of devices,isControlSupported参数为API定义之外的枚举
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_DH_mechanicManager_isControlSupported_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0400`;
+        console.info(`======>${LOG_NAME} begin======`);
+        try {
+          let isControlSupported = mechanicManager.isControlSupported(-1);
+          console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
+          expect(isControlSupported == false).assertTrue();
+        } catch (error) {
+          console.info(`SUB_DH_mechanicManager_isControlSupported_0400 failed, code is ${error.code}, message is ${error.message}`);
+          expect(Number(error.code) === 33300001).assertTrue();
+        }
+        console.info(`======>${LOG_NAME} end======`);
+        done();
+      });
+
   })
 }

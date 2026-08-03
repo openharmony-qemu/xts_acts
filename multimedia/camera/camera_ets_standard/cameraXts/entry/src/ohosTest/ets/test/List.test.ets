@@ -1,3 +1,6 @@
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import CameraInputTest from './CameraInput/CameraInput.test';
 import cameraStatusTest from './CameraManager/cameraStatus.test';
 import createCameraInputTest from './CameraManager/createCameraInput.test';
@@ -39,45 +42,66 @@ import MiniCapabilityTest from './MiniCapability.test';
 import VideoSessionManualControlTest from './VideoSession/VideoSessionManualControl.test'
 import MetadataOutputTest from './CameraOutput/MetadataOutput.test'
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  CameraNoPermissionTest();
-  getCameraManagerTest();
-  getSupportedCamerasTest();
-  getSupportedSceneModesTest();
-  getSupportedOutputCapabilityTest();
-  createSessionTest();
-  cameraStatusTest();
-  createCameraInputTest();
-  createPreviewOutputTest();
-  createPhotoOutputTest();
-  createVideoOutputTest();
-  createMetadataOutputTest();
-  CameraInputTest();
-  CameraPhotoSessionTest();
-  CameraPhotoSessionBackTest();
-  CameraVideoSessionTest();
-  CameraVideoSessionBackTest();
-  CameraSessionControlCenterTest();
-  CameraSessionFlashTest();
-  CameraSessionFocusTest();
-  CameraSessionZoomTest();
-  PhotoOutputTest();
-  PreviewOutputTest();
-  VideoOutputTest();
-  getSupportedOutputCapabilityBackTest();
-  cameraStatusBackTest();
-  createCameraInputBackTest();
-  createPhotoOutputBackTest();
-  createVideoOutputBackTest();
-  createMetadataOutputBackTest();
-  CameraInputBackTest();
-  CameraSessionFlashBackTest();
-  CameraSessionFocusBackTest();
-  CameraSessionZoomBackTest();
-  PreviewOutputBackTest();
-  PhotoOutputBackTest();
-  VideoOutputBackTest();
-  MiniCapabilityTest();
-  VideoSessionManualControlTest();
-  MetadataOutputTest();
+  if (cameraDeviceArray.length === 0) {
+    getCameraManagerTest();
+    getSupportedSceneModesTest();
+    getSupportedOutputCapabilityTest();
+    createSessionTest();
+    CameraSessionControlCenterTest();
+    getSupportedOutputCapabilityBackTest();
+    cameraStatusBackTest();
+    createPhotoOutputBackTest();
+    createVideoOutputBackTest();
+    createMetadataOutputBackTest();
+    CameraInputBackTest();
+    PreviewOutputBackTest();
+    PhotoOutputBackTest();
+    VideoOutputBackTest();
+  } else {
+    CameraNoPermissionTest();
+    getCameraManagerTest();
+    getSupportedCamerasTest();
+    getSupportedSceneModesTest();
+    getSupportedOutputCapabilityTest();
+    createSessionTest();
+    cameraStatusTest();
+    createCameraInputTest();
+    createPreviewOutputTest();
+    createPhotoOutputTest();
+    createVideoOutputTest();
+    createMetadataOutputTest();
+    CameraInputTest();
+    CameraPhotoSessionTest();
+    CameraPhotoSessionBackTest();
+    CameraVideoSessionTest();
+    CameraVideoSessionBackTest();
+    CameraSessionControlCenterTest();
+    CameraSessionFlashTest();
+    CameraSessionFocusTest();
+    CameraSessionZoomTest();
+    PhotoOutputTest();
+    PreviewOutputTest();
+    VideoOutputTest();
+    getSupportedOutputCapabilityBackTest();
+    cameraStatusBackTest();
+    createCameraInputBackTest();
+    createPhotoOutputBackTest();
+    createVideoOutputBackTest();
+    createMetadataOutputBackTest();
+    CameraInputBackTest();
+    CameraSessionFlashBackTest();
+    CameraSessionFocusBackTest();
+    CameraSessionZoomBackTest();
+    PreviewOutputBackTest();
+    PhotoOutputBackTest();
+    VideoOutputBackTest();
+    MiniCapabilityTest();
+    VideoSessionManualControlTest();
+    MetadataOutputTest();
+  }
 }

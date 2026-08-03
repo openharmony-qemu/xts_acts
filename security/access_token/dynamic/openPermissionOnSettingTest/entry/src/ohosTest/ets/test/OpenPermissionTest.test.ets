@@ -87,7 +87,7 @@ export default function OpenPermissionTest() {
       let atManager = abilityAccessCtrl.createAtManager();
       let context: Context = getContext(globalThis) as common.UIAbilityContext;
       try {
-        atManager.openPermissionOnSetting(context, 'ohos.permission.CUSTOM_SCREEN_RECORDING').then((data: abilityAccessCtrl.SelectedResult) => {
+        atManager.openPermissionOnSetting(context, 'ohos.permission.ACCESS_USER_FULL_DISK').then((data: abilityAccessCtrl.SelectedResult) => {
           console.info('Test_openPermissionOnSetting_0200 data:' + data);
           done();
         }).catch((err: BusinessError) => {

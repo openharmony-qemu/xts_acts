@@ -47,13 +47,11 @@ struct ExtendableStackBuiltIn {
     Column() {
       MyStack({ alignContent: Alignment.Bottom }) {
         Text('Hello World')
-          .width('90%')
-          .height('100%')
+          .height('5%')
           .backgroundColor(0xd2cab3)
           .align(Alignment.Top)
         Text('Hello ArkUI')
-          .width('70%')
-          .height('60%')
+          .height('5%')
           .backgroundColor(0xc1cbac)
           .align(Alignment.Top)
       }

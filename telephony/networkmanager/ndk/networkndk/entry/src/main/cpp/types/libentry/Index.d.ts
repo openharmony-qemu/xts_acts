@@ -16,6 +16,4 @@
 import {connection} from '@kit.NetworkKit'
 
 export const add: (a: number, b: number) => number;
-export const ReFreshGlobalHttpProxy: (userData?: number, callback?: Function) => number;
-export const TestRefreshGlobalHttpProxy401: (errorCodeType: number) => number;
-export const TestRefreshGlobalHttpProxy201: () => number;
+export const ReFreshGlobalHttpProxy: (param?: number | string, callback?: Function) => number;

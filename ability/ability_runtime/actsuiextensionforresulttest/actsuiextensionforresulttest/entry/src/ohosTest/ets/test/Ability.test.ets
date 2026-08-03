@@ -203,7 +203,7 @@ export default function abilityTest() {
             }, (err) => {
               console.info('====>start Another Ability err:' + JSON.stringify(err));
             })
-          }, 800);
+          }, 1500);
         })
     })
 
@@ -252,7 +252,7 @@ export default function abilityTest() {
               .catch((err: BusinessError) => {
                 console.info('====>AsyncCallback_0400 pkill ng' + JSON.stringify(err));
               })
-          }, 500)
+          }, 1500)
         })
     })
 

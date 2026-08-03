@@ -28,11 +28,19 @@ napi_value TestImmersiveMaterialCreateDestroy001(napi_env env, napi_callback_inf
 napi_value TestImmersiveMaterialSetGetStyle001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetStyleInvalid001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetColor001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialGetMaterialColorNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetApplyShadow001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialSetApplyShadowNull001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialGetApplyShadowNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetInteractive001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialSetInteractiveNull001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialGetInteractiveNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialGetInteractiveNotSet001(napi_env env, napi_callback_info info);
 napi_value TestLightEffectOptionsLifecycle001(napi_env env, napi_callback_info info);
+napi_value TestLightEffectOptionsDestroyNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetLightEffect001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialSetLightEffectNull001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialGetLightEffectColorNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialGetLightEffectNotSet001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialDestroyNull001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetMaterialColorBoundary001(napi_env env, napi_callback_info info);
@@ -62,6 +70,28 @@ napi_value TestDialogDisplayModeEnumValues001(napi_env env, napi_callback_info i
 napi_value TestCustomDialogSetDisplayModeInSubWindow001(napi_env env, napi_callback_info info);
 napi_value TestCustomDialogSetDisplayModeInSubWindow002(napi_env env, napi_callback_info info);
 napi_value TestCustomDialogSetDisplayModeInSubWindow003(napi_env env, napi_callback_info info);
+
+napi_value TestDialogOpenCallbackErrorEnumValues001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackNullOptions001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackUserData001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogOpenDialogWithCallbackValidOptions001(napi_env env, napi_callback_info info);
+
+napi_value TestGetNodeSnapshotSizeLimitationNull001(napi_env env, napi_callback_info info);
+napi_value TestRenderNodeUtilsSetRectShapeOptionValueNull001(napi_env env, napi_callback_info info);
+napi_value TestRenderNodeUtilsSetRoundRectShapeOptionValueNull001(napi_env env, napi_callback_info info);
+napi_value TestRenderNodeUtilsDisposeBlurStyleOptionNull001(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientOptionsDestroyNull001(napi_env env, napi_callback_info info);
+napi_value TestRadialGradientOptionsDestroyNull001(napi_env env, napi_callback_info info);
+napi_value TestNativeWindowManagerGetKeyEventFilterNull001(napi_env env, napi_callback_info info);
+napi_value TestNativeWindowManagerGetMouseEventFilterNull001(napi_env env, napi_callback_info info);
+napi_value TestNativeWindowManagerGetTouchEventFilterNull001(napi_env env, napi_callback_info info);
+napi_value TestFrameMetricsIsFirstDrawFrameNull001(napi_env env, napi_callback_info info);
+napi_value TestFrameMetricsGetInputHandlingDurationNull001(napi_env env, napi_callback_info info);
+napi_value TestFrameMetricsGetLayoutMeasureDurationNull001(napi_env env, napi_callback_info info);
+napi_value TestFrameMetricsGetVsyncTimestampNull001(napi_env env, napi_callback_info info);
+napi_value TestLineSpacingStyleDestroyNull001(napi_env env, napi_callback_info info);
+napi_value TestFontConfigsGetFontWeightConfigsNull001(napi_env env, napi_callback_info info);
+napi_value TestTextControllerDestroyNull001(napi_env env, napi_callback_info info);
 
 } // namespace ArkUICapiTest
 

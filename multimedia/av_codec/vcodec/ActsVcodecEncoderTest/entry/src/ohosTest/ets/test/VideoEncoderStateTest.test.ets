@@ -105,7 +105,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0100', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0100Test start');
-      let result: number = await testNapi.runStateTest(0);
+      let result: number = await testNapi.VideoEncodeState0100Test();
       expect(result).assertEqual(0);
     });
 
@@ -119,7 +119,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_PART_ONE_0100', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0101Test start');
-      let result: number = await testNapi.runStateTest(1);
+      let result: number = await testNapi.VideoEncodeState0101Test();
       expect(result).assertEqual(0);
     });
 
@@ -133,7 +133,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0200', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0200Test start');
-      let result: number = await testNapi.runStateTest(2);
+      let result: number = await testNapi.VideoEncodeState0200Test();
       expect(result).assertEqual(0);
     });
 
@@ -147,7 +147,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0300', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0300Test start');
-      let result: number = await testNapi.runStateTest(3);
+      let result: number = await testNapi.VideoEncodeState0300Test();
       expect(result).assertEqual(0);
     });
 
@@ -161,7 +161,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0400', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0400Test start');
-      let result: number = await testNapi.runStateTest(4);
+      let result: number = await testNapi.VideoEncodeState0400Test();
       expect(result).assertEqual(0);
     });
 
@@ -175,7 +175,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0500', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0500Test start');
-      let result: number = await testNapi.runStateTest(5);
+      let result: number = await testNapi.VideoEncodeState0500Test();
       expect(result).assertEqual(0);
     });
 
@@ -189,7 +189,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0600', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0600Test start');
-      let result: number = await testNapi.runStateTest(6);
+      let result: number = await testNapi.VideoEncodeState0600Test();
       expect(result).assertEqual(0);
     });
 
@@ -203,7 +203,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0700', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0700Test start');
-      let result: number = await testNapi.runStateTest(7);
+      let result: number = await testNapi.VideoEncodeState0700Test();
       expect(result).assertEqual(0);
     });
 
@@ -217,7 +217,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0800', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0800Test start');
-      let result: number = await testNapi.runStateTest(8);
+      let result: number = await testNapi.VideoEncodeState0800Test();
       expect(result).assertEqual(0);
     });
 
@@ -231,7 +231,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_0900', Level.LEVEL2, async () => {
       console.info('VideoEncodeState0900Test start');
-      let result: number = await testNapi.runStateTest(9);
+      let result: number = await testNapi.VideoEncodeState0900Test();
       expect(result).assertEqual(0);
     });
 
@@ -245,7 +245,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1000', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1000Test start');
-      let result: number = await testNapi.runStateTest(10);
+      let result: number = await testNapi.VideoEncodeState1000Test();
       expect(result).assertEqual(0);
     });
 
@@ -259,7 +259,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1100', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1100Test start');
-      let result: number = await testNapi.runStateTest(11);
+      let result: number = await testNapi.VideoEncodeState1100Test();
       expect(result).assertEqual(0);
     });
 
@@ -273,7 +273,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1200', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1200Test start');
-      let result: number = await testNapi.runStateTest(12);
+      let result: number = await testNapi.VideoEncodeState1200Test();
       expect(result).assertEqual(0);
     });
 
@@ -287,7 +287,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1300', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1300Test start');
-      let result: number = await testNapi.runStateTest(13);
+      let result: number = await testNapi.VideoEncodeState1300Test();
       expect(result).assertEqual(0);
     });
 
@@ -301,7 +301,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1400', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1400Test start');
-      let result: number = await testNapi.runStateTest(14);
+      let result: number = await testNapi.VideoEncodeState1400Test();
       expect(result).assertEqual(0);
     });
 
@@ -315,7 +315,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1500', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1500Test start');
-      let result: number = await testNapi.runStateTest(15);
+      let result: number = await testNapi.VideoEncodeState1500Test();
       expect(result).assertEqual(0);
     });
 
@@ -329,7 +329,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1600', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1600Test start');
-      let result: number = await testNapi.runStateTest(16);
+      let result: number = await testNapi.VideoEncodeState1600Test();
       expect(result).assertEqual(0);
     });
 
@@ -343,7 +343,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1700', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1700Test start');
-      let result: number = await testNapi.runStateTest(17);
+      let result: number = await testNapi.VideoEncodeState1700Test();
       expect(result).assertEqual(0);
     });
 
@@ -357,7 +357,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1800', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1800Test start');
-      let result: number = await testNapi.runStateTest(18);
+      let result: number = await testNapi.VideoEncodeState1800Test();
       expect(result).assertEqual(0);
     });
 
@@ -371,7 +371,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_1900', Level.LEVEL2, async () => {
       console.info('VideoEncodeState1900Test start');
-      let result: number = await testNapi.runStateTest(19);
+      let result: number = await testNapi.VideoEncodeState1900Test();
       expect(result).assertEqual(0);
     });
 
@@ -385,7 +385,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2000', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2000Test start');
-      let result: number = await testNapi.runStateTest(20);
+      let result: number = await testNapi.VideoEncodeState2000Test();
       expect(result).assertEqual(0);
     });
 
@@ -399,7 +399,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2100', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2100Test start');
-      let result: number = await testNapi.runStateTest(21);
+      let result: number = await testNapi.VideoEncodeState2100Test();
       expect(result).assertEqual(0);
     });
 
@@ -413,7 +413,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2200', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2200Test start');
-      let result: number = await testNapi.runStateTest(22);
+      let result: number = await testNapi.VideoEncodeState2200Test();
       expect(result).assertEqual(0);
     });
 
@@ -427,7 +427,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2300', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2300Test start');
-      let result: number = await testNapi.runStateTest(23);
+      let result: number = await testNapi.VideoEncodeState2300Test();
       expect(result).assertEqual(0);
     });
 
@@ -441,7 +441,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2400', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2400Test start');
-      let result: number = await testNapi.runStateTest(24);
+      let result: number = await testNapi.VideoEncodeState2400Test();
       expect(result).assertEqual(0);
     });
 
@@ -455,7 +455,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2500', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2500Test start');
-      let result: number = await testNapi.runStateTest(25);
+      let result: number = await testNapi.VideoEncodeState2500Test();
       expect(result).assertEqual(0);
     });
 
@@ -469,7 +469,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2600', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2600Test start');
-      let result: number = await testNapi.runStateTest(26);
+      let result: number = await testNapi.VideoEncodeState2600Test();
       expect(result).assertEqual(0);
     });
 
@@ -483,7 +483,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2700', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2700Test start');
-      let result: number = await testNapi.runStateTest(27);
+      let result: number = await testNapi.VideoEncodeState2700Test();
       expect(result).assertEqual(0);
     });
 
@@ -497,7 +497,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2800', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2800Test start');
-      let result: number = await testNapi.runStateTest(28);
+      let result: number = await testNapi.VideoEncodeState2800Test();
       expect(result).assertEqual(0);
     });
 
@@ -511,7 +511,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_2900', Level.LEVEL2, async () => {
       console.info('VideoEncodeState2900Test start');
-      let result: number = await testNapi.runStateTest(29);
+      let result: number = await testNapi.VideoEncodeState2900Test();
       expect(result).assertEqual(0);
     });
 
@@ -525,7 +525,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3000', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3000Test start');
-      let result: number = await testNapi.runStateTest(30);
+      let result: number = await testNapi.VideoEncodeState3000Test();
       expect(result).assertEqual(0);
     });
 
@@ -539,7 +539,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3100', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3100Test start');
-      let result: number = await testNapi.runStateTest(31);
+      let result: number = await testNapi.VideoEncodeState3100Test();
       expect(result).assertEqual(0);
     });
 
@@ -553,7 +553,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3200', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3200Test start');
-      let result: number = await testNapi.runStateTest(32);
+      let result: number = await testNapi.VideoEncodeState3200Test();
       expect(result).assertEqual(0);
     });
 
@@ -567,7 +567,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3300', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3300Test start');
-      let result: number = await testNapi.runStateTest(33);
+      let result: number = await testNapi.VideoEncodeState3300Test();
       expect(result).assertEqual(0);
     });
 
@@ -581,7 +581,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3400', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3400Test start');
-      let result: number = await testNapi.runStateTest(34);
+      let result: number = await testNapi.VideoEncodeState3400Test();
       expect(result).assertEqual(0);
     });
 
@@ -595,7 +595,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3500', Level.LEVEL1, async () => {
       console.info('VideoEncodeState3500Test start');
-      let result: number = await testNapi.runStateTest(35);
+      let result: number = await testNapi.VideoEncodeState3500Test();
       expect(result).assertEqual(0);
     });
 
@@ -609,7 +609,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3600', Level.LEVEL2, async () => {
       console.info('VideoEncodeState3600Test start');
-      let result: number = await testNapi.runStateTest(36);
+      let result: number = await testNapi.VideoEncodeState3600Test();
       expect(result).assertEqual(0);
     });
 
@@ -623,7 +623,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3700', Level.LEVEL1, async () => {
       console.info('VideoEncodeState3700Test start');
-      let result: number = await testNapi.runStateTest(37);
+      let result: number = await testNapi.VideoEncodeState3700Test();
       expect(result).assertEqual(0);
     });
 
@@ -637,7 +637,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3800', Level.LEVEL1, async () => {
       console.info('VideoEncodeState3800Test start');
-      let result: number = await testNapi.runStateTest(38);
+      let result: number = await testNapi.VideoEncodeState3800Test();
       expect(result).assertEqual(0);
     });
 
@@ -651,7 +651,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_3900', Level.LEVEL1, async () => {
       console.info('VideoEncodeState3900Test start');
-      let result: number = await testNapi.runStateTest(39);
+      let result: number = await testNapi.VideoEncodeState3900Test();
       expect(result).assertEqual(0);
     });
 
@@ -665,7 +665,7 @@ export default function VideoEncoderStateTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_STATE_4000', Level.LEVEL1, async () => {
       console.info('VideoEncodeState4000Test start');
-      let result: number = await testNapi.runStateTest(40);
+      let result: number = await testNapi.VideoEncodeState4000Test();
       expect(result).assertEqual(0);
     });
   });

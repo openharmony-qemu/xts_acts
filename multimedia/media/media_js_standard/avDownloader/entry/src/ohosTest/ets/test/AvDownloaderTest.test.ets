@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
+import connection from '@ohos.net.connection';
+import { http } from '@kit.NetworkKit';
 import media from '@ohos.multimedia.media';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = 'AVDownloaderTest';
-const TEST_URL = 'http://1.95.223.57/vod/www/faststart/720p_2m.mp4';
+const TEST_URL = 'https://vod.vmall.com/asset/078eee7b11b89e58aaddeaed5d77fa46/16400054614d016d0618d62e817865f0.mp4';
 
 let avDownloaderManager: media.AVDownloaderManager | null = null;
 
@@ -35,6 +37,41 @@ async function createAVDownloaderManager(): Promise<media.AVDownloaderManager | 
     console.error(`${TAG}: createAVDownloaderManager failed, err: ${err}`);
     return null;
   }
+}
+
+async function getNetId(): Promise<number> {
+  try {
+    let netHandle = await connection.getDefaultNet();
+    return netHandle.netId; // netId为0表示无网络
+  } catch (e) {
+    console.error(`${TAG}: getDefaultNet failed, err: ${e}`);
+    return -1;
+  }
+}
+
+async function checkConnectivity(url: string, timeoutMs: number = 5000): Promise<boolean> {
+  const httpRequest = http.createHttp();
+  try {
+    const response = await httpRequest.request(url, {
+      method: http.RequestMethod.HEAD, // 只请求头部，更轻量
+      connectTimeout: timeoutMs,
+      readTimeout: timeoutMs,
+    });
+    console.info(`${TAG}: HEAD: ${JSON.stringify(response)}`);
+    return response.responseCode >= 200 && response.responseCode < 400;
+  } catch (err) {
+    console.info(`${TAG}: HEAD failed: ${JSON.stringify(err)}`);
+    return false;
+  } finally {
+    httpRequest.destroy();
+  }
+}
+
+async function hasNetwork(): Promise<boolean> {
+  const netId = await getNetId();
+  const reachable = await checkConnectivity(TEST_URL);
+  console.info(`${TAG}: hasNetwork, netId: ${netId}, reachable: ${reachable}`);
+  return reachable;
 }
 
 export default function AvDownloaderTest() {
@@ -258,7 +295,12 @@ export default function AvDownloaderTest() {
     })
 
     it('getTaskStatus_001', Level.Level1, async (done: Function) => {
-      console.info(`${TAG}: getTaskStatus_001 start`);
+      let hasNet = await hasNetwork();
+      console.info(`${TAG}: getTaskStatus_001 start, hasNet: ${hasNet}`);
+      if (!hasNet) {
+        done();
+        return;
+      }
       try {
         expect(avDownloaderManager != null).assertTrue();
         let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
@@ -508,7 +550,7 @@ export default function AvDownloaderTest() {
         expect(avDownloaderManager != null).assertTrue();
         if (avDownloaderManager != null) {
           let statusReceived: boolean = false;
-          let callback: (taskId: string, state: string) => void = (taskId: string, state: string) => {
+          let callback: media.OnAVDownloadTaskStateHandle = (taskId: string, state: media.AVDownloadTaskState) => {
             console.info(`${TAG}: offStatusChange_001 callback taskId: ${taskId}, state: ${state}`);
             statusReceived = true;
           };
@@ -883,6 +925,38 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('allowsCellularAccess_003', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: allowsCellularAccess_003 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.allowsCellularAccess(null);
+          console.info(`${TAG}: allowsCellularAccess_003 set true success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: allowsCellularAccess_003 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    it('allowsCellularAccess_004', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: allowsCellularAccess_004 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.allowsCellularAccess(undefined);
+          console.info(`${TAG}: allowsCellularAccess_004 set true success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: allowsCellularAccess_004 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
     it('release_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: release_001 start`);
       try {
@@ -901,23 +975,32 @@ export default function AvDownloaderTest() {
     })
 
     it('pauseDownloadTask_001', Level.Level1, async (done: Function) => {
-      console.info(`${TAG}: pauseDownloadTask_001 start`);
+      let hasNet = await hasNetwork();
+      console.info(`${TAG}: pauseDownloadTask_001 start, hasNet: ${hasNet}`);
       try {
         expect(avDownloaderManager != null).assertTrue();
         let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
         expect(mediaSource != null).assertTrue();
         if (mediaSource != null && avDownloaderManager != null) {
           let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
-          console.info(`${TAG}: pauseDownloadTask_001 taskId: ${taskId}`);
           await sleep(1000);
+          console.info(`${TAG}: pauseDownloadTask_001 taskId: ${taskId}`);
           avDownloaderManager.pauseDownloadTask(taskId);
           console.info(`${TAG}: pauseDownloadTask_001 success`);
-          expect(taskId != null).assertTrue();
+          if (hasNet) {
+            expect(taskId != null).assertTrue();
+          } else {
+            expect().assertFail();
+          }
         }
         done();
       } catch (err) {
         console.error(`${TAG}: pauseDownloadTask_001 failed, err: ${err}`);
-        expect().assertFail();
+        if (hasNet) {
+          expect().assertFail();
+        } else {
+          expect(true).assertTrue();
+        }
         done();
       }
     })
@@ -1028,7 +1111,12 @@ export default function AvDownloaderTest() {
     })
 
     it('removeDownloadTask_001', Level.Level1, async (done: Function) => {
-      console.info(`${TAG}: removeDownloadTask_001 start`);
+      let hasNet = await hasNetwork();
+      console.info(`${TAG}: removeDownloadTask_001 start, hasNet: ${hasNet}`);
+      if (!hasNet) {
+        done();
+        return;
+      }
       try {
         expect(avDownloaderManager != null).assertTrue();
         let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
@@ -1130,7 +1218,8 @@ export default function AvDownloaderTest() {
     })
 
     it('resumeDownloadTask_001', Level.Level1, async (done: Function) => {
-      console.info(`${TAG}: resumeDownloadTask_001 start`);
+      let hasNet = await hasNetwork();
+      console.info(`${TAG}: resumeDownloadTask_001 start, hasNet: ${hasNet}`);
       try {
         expect(avDownloaderManager != null).assertTrue();
         let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
@@ -1142,12 +1231,20 @@ export default function AvDownloaderTest() {
           avDownloaderManager.pauseDownloadTask(taskId);
           avDownloaderManager.resumeDownloadTask(taskId);
           console.info(`${TAG}: resumeDownloadTask_001 success`);
-          expect(taskId != null).assertTrue();
+          if (hasNet) {
+            expect(taskId != null).assertTrue();
+          } else {
+            expect().assertFail();
+          }
         }
         done();
       } catch (err) {
         console.error(`${TAG}: resumeDownloadTask_001 failed, err: ${err}`);
-        expect().assertFail();
+        if (hasNet) {
+          expect().assertFail();
+        } else {
+          expect(true).assertTrue();
+        }
         done();
       }
     })

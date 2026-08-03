@@ -19,6 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 184501;
 let driver: Driver = Driver.create();
@@ -27,6 +28,7 @@ let driver: Driver = Driver.create();
 @Component
 struct webViewScrollBy {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitScrollByOne";
   @State res: boolean = false;
   @State xNum: number = 0;
@@ -44,6 +46,10 @@ struct webViewScrollBy {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -67,7 +73,7 @@ struct webViewScrollBy {
           switch (this.str) {
             case "emitScrollByOne": {
               this.isPageEnd = -1
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1
               this.controller.loadUrl($rawfile('theScroll.html'))
@@ -99,7 +105,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByTwo": {
               this.isPageEnd = -1
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1
               this.controller.loadUrl($rawfile('theScroll.html'));
@@ -131,7 +137,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByThree": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.controller.loadUrl($rawfile('theScroll.html'));
               this.xNum = 0;
@@ -156,7 +162,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByFour": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
@@ -183,7 +189,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByFive": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
@@ -216,7 +222,7 @@ struct webViewScrollBy {
             }
             case "emitScrollBySix": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
@@ -248,7 +254,7 @@ struct webViewScrollBy {
             }
             case "emitScrollBySeven": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
@@ -275,7 +281,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByEight": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
@@ -303,7 +309,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByNine": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
@@ -335,7 +341,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByTen": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
@@ -369,7 +375,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByEleven": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
@@ -399,7 +405,7 @@ struct webViewScrollBy {
             }
             case "emitScrollByTwelve": {
               this.isPageEnd = -1;
-              this.controller.loadUrl('www.example.com')
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));

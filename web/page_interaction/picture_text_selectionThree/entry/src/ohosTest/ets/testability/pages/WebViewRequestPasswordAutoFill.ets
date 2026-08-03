@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 import { waitForExist} from '../../test/WaitTest.test';
 import { pasteboard } from '@kit.BasicServicesKit';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183004;
 const TAG = 'ContextMenu';
 
@@ -25,6 +26,7 @@ const TAG = 'ContextMenu';
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State str:string = ''
@@ -46,6 +48,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -130,7 +136,7 @@ struct WebComponent {
         }
       })
 
-      Web({ src:  'https://13842654826.github.io/demo/editor.html', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('editor.html'), controller: this.controller })
 	    .enableAutoFill(true)
       // 触发自定义弹窗
         .onContextMenuShow((event) => {

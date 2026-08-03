@@ -6,7 +6,6 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Startup.SystemInfo",
                     "SystemCapability.Ability.AbilityRuntime.Core"
                 ]
             }

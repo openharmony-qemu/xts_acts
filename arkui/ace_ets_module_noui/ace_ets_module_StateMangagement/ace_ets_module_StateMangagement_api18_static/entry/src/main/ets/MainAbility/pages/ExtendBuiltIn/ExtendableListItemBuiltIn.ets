@@ -17,6 +17,12 @@
 import { ExtendableListItem, ListItemOptions, Length, LayoutPolicy, ListDividerOptions, List, Entry, Component, Text, State, ForEach, TextAlign, ListItem, Color } from '@kit.ArkUI';
 
 class MyListItem extends ExtendableListItem {
+  setListItemOptions(value?: ListItemOptions): this{
+    super.setListItemOptions(value);
+    // 添加自定义行为，如打印日志
+    console.info('MyListItem: setListItemOptions');
+    return this;
+  }
   width(): this {
     super.width('50%');
     return this;
@@ -51,9 +57,9 @@ struct ExtendableListItemBuiltIn {
         MyListItem() {
           Text(item.toString())
             .id('ExtendableListItem_001')
+            .height('5%')
             .fontSize(16)
             .textAlign(TextAlign.Center)
-            .size({ height: 100, width: '100%' })
             .onClick(() => {
               this.arr[0] += 'a';
             })

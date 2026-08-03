@@ -32,15 +32,19 @@ struct MyStateSample {
     
     AppStorage.setOrCreate<double>('SystemDensity', this.SystemDensity);
     AppStorage.setOrCreate<long>('DisplayId', this.DisplayId);
+    AppStorage.setOrCreate<string>('index_stateVar', this.stateVar);
   }
   
   changeValue() {
-    this.stateVar+='~'
+    this.stateVar+='~';
+    AppStorage.setOrCreate<string>('index_stateVar', this.stateVar);
+    hilog.info(0x0000, 'testTag', 'Button clicked, stateVar: ' + this.stateVar);
   }
   build() {
     Column(undefined) {
       Text('Hello World').fontSize(20)
       Button(this.message).backgroundColor('#FFFF00FF')
+        .id('indexButton')
         .onClick((e: ClickEvent) => {
           hilog.info(0x0000, 'testTag', 'On Click');
           this.changeValue();

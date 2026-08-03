@@ -17,6 +17,7 @@ group("ability_runtime") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsappmemoryoptimizerteststatic:ActsAppMemoryOptimizerStaticTest",
       "actsabilitystartselfulabilitytest:ActsAbilityStartSelfulAbilityTest",
       "aacommand:aacommand",
       "abilitybase:abilitybase",
@@ -116,6 +117,7 @@ group("ability_runtime") {
       "actsstartrunnertest:ActsStartRunnerTest",
       "actsstartuiserviceextensiontest:ActsStartuiServiceExtension",
       "actsstartupruleoptimizetest:actsstartupruleoptimizetest",
+      "actsappmemoryoptimizertest:actsappmemoryoptimizertest",
       "actsstserviceabilityclientcase:ActsStServiceAbilityClientCaseTest",
       "actssupportfunction:actssupportfunction",
       "actssystemapitest:ActsSystemAPITest",

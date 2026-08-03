@@ -24,10 +24,12 @@ import ActsDataPanelTest from './DatapPnelTest/ActsDataPanelTest.test';
 import DatalPanelUIJsunit from './DatapPnelTest/DatalPanelUIJsunit.test';
 import DataPanelContentModifierTest from './DatapPnelTest/DataPanelContentModifier.test';
 import DataPanelTest from './DatapPnelTest/DataPanelTest.test';
+import DataPanelAttributeModifierTest from './DatapPnelTest/DataPanelAttributeModifier.test';
 import DataPanelCloseEffectTest from './DatapPnelTest/DataPanelCloseEffect.test';
 import DataPanelPropertiesNullUndefinedTest from './DatapPnelTest/DataPanelPropertiesNullUndefinedTest.test';
 import PanelPropertiesNullUndefinedTest from './DatapPnelTest/PanelPropertiesNullUndefinedTest.test';
 
+import GaugeAttributeModifierTest from './GaugeTest/GaugeAttributeModifier.test';
 import Gauge3Jsunit from './GaugeTest/Gauge3Jsunit.test';
 import GaugeColorsTest from './GaugeTest/GaugeColorsTest.test';
 import GaugeJsunitTest from './GaugeTest/GaugeJsunitTest.test';
@@ -36,12 +38,14 @@ import GaugeUxTest from './GaugeTest/GaugeUxTest.test';
 import GaugeContentModifier from './GaugeTest/GaugeContentModifier.test';
 import GaugePropertiesNullUndefinedTest from './GaugeTest/GaugePropertiesNullUndefinedTest.test';
 
+import PatternLockAttributeModifierTest from './PatternLockTest/PatternLockAttributeModifier.test';
 import PatternLock11Jsunit from './PatternLockTest/PatternLock11Jsunit.test';
 import PatternLockActivateCircleStyle1 from './PatternLockTest/PatternLockActivateCircleStyle1.test';
 import PatternLockJsunit from './PatternLockTest/PatternLockJsunit.test';
 import PatternLockPropertiesNullUndefinedTest from './PatternLockTest/PatternLockPropertiesNullUndefined.test';
 import PatternLockEnableForegroundTest from './PatternLockTest/PatternLockEnableForeground.test';
 
+import QRCodeAttributeModifierTest from './QRCodeTest/QRCodeAttributeModifier.test';
 import QRCodeApiTest from './QRCodeTest/QRCodeApiTest.test';
 import QRCodeAttrTest from './QRCodeTest/QRCodeAttrTest.test';
 import QRCodeJsunitTest from './QRCodeTest/QRCodeJsunitTest.test';
@@ -64,10 +68,12 @@ export default function testsuite() {
     DatalPanelUIJsunit()
     DataPanelContentModifierTest()
     DataPanelTest()
+    DataPanelAttributeModifierTest()
     DataPanelCloseEffectTest()
     DataPanelPropertiesNullUndefinedTest()
     PanelPropertiesNullUndefinedTest()
     // GaugeTest
+    GaugeAttributeModifierTest()
     Gauge3Jsunit()
     GaugeColorsTest()
     GaugeJsunitTest()
@@ -76,12 +82,14 @@ export default function testsuite() {
     GaugeContentModifier()
     GaugePropertiesNullUndefinedTest()
     // PatternLockTest
+    PatternLockAttributeModifierTest()
     PatternLock11Jsunit()
     PatternLockActivateCircleStyle1()
     PatternLockJsunit()
     PatternLockPropertiesNullUndefinedTest()
     PatternLockEnableForegroundTest()
     // QRCodeTest
+    QRCodeAttributeModifierTest()
     QRCodeApiTest()
     QRCodeAttrTest()
     QRCodeJsunitTest()

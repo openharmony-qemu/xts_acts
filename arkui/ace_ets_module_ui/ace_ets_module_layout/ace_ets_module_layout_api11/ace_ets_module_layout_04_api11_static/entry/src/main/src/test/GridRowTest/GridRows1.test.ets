@@ -69,8 +69,8 @@ it('GridRows1_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[GridRows1_static_001] START');
 
       await CommonFunc.sleep(1000);
-      let row1 = await CommonFunc.getComponentRect('GridRows1_1');
-      let row2 = await CommonFunc.getComponentRect('GridRows1_5');
+      let row1 = CommonFunc.getComponentRect('GridRows1_1');
+      let row2 = CommonFunc.getComponentRect('GridRows1_5');
       await CommonFunc.sleep(2000);
 
       console.info("[GridRows1_static_001] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
@@ -97,8 +97,8 @@ it('GridRows1_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(2000);
 
       await CommonFunc.sleep(1000);
-      let row1 = await CommonFunc.getComponentRect('GridRows1_1');
-      let row2 = await CommonFunc.getComponentRect('GridRows1_5');
+      let row1 = CommonFunc.getComponentRect('GridRows1_1');
+      let row2 = CommonFunc.getComponentRect('GridRows1_5');
       await CommonFunc.sleep(2000);
 
       console.info("[GridRows1_static_002] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
@@ -124,8 +124,8 @@ it('GridRows1_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(2000);
 
       await CommonFunc.sleep(1000);
-      let row1 = await CommonFunc.getComponentRect('GridRows1_1');
-      let row2 = await CommonFunc.getComponentRect('GridRows1_5');
+      let row1 = CommonFunc.getComponentRect('GridRows1_1');
+      let row2 = CommonFunc.getComponentRect('GridRows1_5');
       await CommonFunc.sleep(2000);
 
       console.info("[GridRows1_static_003] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
@@ -152,8 +152,8 @@ it('GridRows1_static_004', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(2000);
 
       await CommonFunc.sleep(1000);
-      let row1 = await CommonFunc.getComponentRect('GridRows1_1');
-      let row2 = await CommonFunc.getComponentRect('GridRows1_2');
+      let row1 = CommonFunc.getComponentRect('GridRows1_1');
+      let row2 = CommonFunc.getComponentRect('GridRows1_2');
       await CommonFunc.sleep(2000);
 
       console.info("[GridRows1_static_004] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );

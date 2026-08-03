@@ -1,0 +1,16 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/appStorage/StorageDecoratorsCover",
+    "MainAbility/pages/appStorage/StorageWatchNullArgsCover",
+    "MainAbility/pages/entry/EntryOptionsCover",
+    "MainAbility/pages/env/EnvDecoratorCover",
+    "MainAbility/pages/env/CustomEnvCover",
+    "MainAbility/pages/decorators/DecoratorNullArgsCover",
+    "MainAbility/pages/decorators/ProvideConsumeNullArgsCover",
+    "MainAbility/pages/decorators/PreviewExtendCover",
+    "MainAbility/pages/monitor/MonitorValueCover",
+    "MainAbility/pages/reuse/ReuseOptionsCover",
+    "MainAbility/pages/lifecycle/LifecycleReuseCover"
+  ]
+}

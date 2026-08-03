@@ -85,9 +85,9 @@ it('testRowTextDisplayPriority01_static_01', Level.LEVEL0, async (done: () => vo
         name: 'thirdTextDisplayPriority', value: 3
       });
       await CommonFunc.sleep(3000);
-      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextDisplayPriority' + '_Container01');
+      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextDisplayPriority_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');
@@ -125,11 +125,11 @@ it('testRowTextDisplayPriority02_static_02', Level.LEVEL0, async (done: () => vo
         name: 'thirdTextDisplayPriority', value: 3
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority1');
-      let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextDisplayPriority' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextDisplayPriority' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority1');
+      let secondText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextDisplayPriority_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

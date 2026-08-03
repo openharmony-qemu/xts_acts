@@ -854,7 +854,801 @@ export default function graphicTextNewAPI() {
       }
     })
 
+    /**
+     * @tc.name   testSetTextHighContrastNull
+     * @tc.number SUB_GRAPHIC_text_testSetTextHighContrastNull_0100
+     * @tc.desc   Test setTextHighContrast property set to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextHighContrastNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextHighContrastNull===="
+      try {
+        text.setTextHighContrast(null);
+        console.info(msgStr + ' setTextHighContrast success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextHighContrast error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
 
+    /**
+     * @tc.name   testSetTextHighContrastUndefined
+     * @tc.number SUB_GRAPHIC_text_testSetTextHighContrastUndefined_0100
+     * @tc.desc   Test setTextHighContrast property set to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextHighContrastUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextHighContrastUndefined===="
+      try {
+        text.setTextHighContrast(undefined);
+        console.info(msgStr + ' setTextHighContrast success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextHighContrast error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetTextUndefinedGlyphDisplayNull
+     * @tc.number SUB_GRAPHIC_text_setTextUndefinedGlyphDisplayNull_0100
+     * @tc.desc   Test setTextUndefinedGlyphDisplay property set to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextUndefinedGlyphDisplayNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr = "==== www data testSetTextUndefinedGlyphDisplayNull===="
+      try {
+        text.setTextUndefinedGlyphDisplay(null);
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetTextUndefinedGlyphDisplayUndefined
+     * @tc.number SUB_GRAPHIC_text_setTextUndefinedGlyphDisplayUndefined_0100
+     * @tc.desc   Test setTextUndefinedGlyphDisplay property set to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetTextUndefinedGlyphDisplayUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr  = "==== www data testSetTextUndefinedGlyphDisplayUndefined===="
+      try {
+        text.setTextUndefinedGlyphDisplay(undefined);
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay success ');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(msgStr + ' setTextUndefinedGlyphDisplay error ', err.code);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   getRectsForRangeNull
+     * @tc.number SUB_GRAPHIC_Text_getRectsForRange_null_0100
+     * @tc.desc   Paragraph getRectsForRange null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getRectsForRangeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data getRectsForRangeNull';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          const range: text.Range = { start: 0, end: 4 };
+          const rects = paragraph.getRectsForRange(
+            range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE
+          );
+          try {
+            const rects = paragraph.getRectsForRange(range, null, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          try {
+            const rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, null);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err.code);
+          expect(true).assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   getRectsForRangeUndefined
+     * @tc.number SUB_GRAPHIC_Text_getRectsForRange_undefined_0100
+     * @tc.desc   Paragraph getRectsForRange undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getRectsForRangeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data getRectsForRangeUndefined';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          const range: text.Range = { start: 0, end: 4 };
+          try {
+            const rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, undefined);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          try {
+            const rects = paragraph.getRectsForRange(range, undefined, text.RectHeightStyle.INCLUDE_LINE_SPACE_MIDDLE);
+            console.info(`${msgStr} success `, rects);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} getRectsForRangeHeightStyleIncludeLineSpaceMiddle error `, err);
+          expect(true).assertFail();
+          done();
+        }
+      });
+    /**
+     * @tc.name   testGetActualTextRangeNull
+     * @tc.number SUB_GRAPHIC_Text_testGetActualTextRange_Null_0100
+     * @tc.desc   Paragraph getActualTextRange lineNumber parameter null test 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetActualTextRangeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data testGetActualTextRangeNull';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          try {
+            const result = paragraph.getActualTextRange(0, null);
+            console.info(`${msgStr} success `, result);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err);
+          expect().assertFail();
+          done();
+        }
+      });
+      
+    /**
+     * @tc.name   testGetActualTextRangeUndefined
+     * @tc.number SUB_GRAPHIC_Text_testGetActualTextRange_Undefined_0100
+     * @tc.desc   Paragraph getActualTextRange lineNumber parameter undefined test 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetActualTextRangeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msgStr = 'www data testGetActualTextRangeUndefined';
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          try {
+            const result = paragraph.getActualTextRange(0, undefined);
+            console.info(`${msgStr} success `, result);
+          } catch (err) {
+            console.info(`${msgStr} error `, err.code);
+            expect().assertFail();
+          }
+          done();
+        } catch (err) {
+          console.info(`${msgStr} error `, err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name    getCharacterRangeForGlyphRange_InvalidEncoding_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_getCharacterRangeForGlyphRange_InvalidEncoding_001
+     * @tc.desc    Test getCharacterRangeForGlyphRange with invalid encoding (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getCharacterRangeForGlyphRange_InvalidEncoding_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const glyphRange: text.Range = { start: 0, end: 1 };
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getCharacterRangeForGlyphRange(glyphRange, -1);
+          console.info('www data getCharacterRangeForGlyphRange_InvalidEncoding_001 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getCharacterRangeForGlyphRange_InvalidEncoding_001 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getCharacterRangeForGlyphRange_InvalidEncoding_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_getCharacterRangeForGlyphRange_InvalidEncoding_002
+     * @tc.desc    Test getCharacterRangeForGlyphRange with invalid encoding (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getCharacterRangeForGlyphRange_InvalidEncoding_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const glyphRange: text.Range = { start: 0, end: 1 };
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getCharacterRangeForGlyphRange(glyphRange, 9999);
+          console.info('www data getCharacterRangeForGlyphRange_InvalidEncoding_002 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getCharacterRangeForGlyphRange_InvalidEncoding_002 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getGlyphRangeForCharacterRange_InvalidEncoding_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_getGlyphRangeForCharacterRange_InvalidEncoding_001
+     * @tc.desc    Test getGlyphRangeForCharacterRange with invalid encoding (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getGlyphRangeForCharacterRange_InvalidEncoding_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const characterRange: text.Range = { start: 0, end: 1 };
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getGlyphRangeForCharacterRange(characterRange, -1);
+          console.info('www data getGlyphRangeForCharacterRange_InvalidEncoding_001 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getGlyphRangeForCharacterRange_InvalidEncoding_001 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getGlyphRangeForCharacterRange_InvalidEncoding_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_getGlyphRangeForCharacterRange_InvalidEncoding_002
+     * @tc.desc    Test getGlyphRangeForCharacterRange with invalid encoding (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getGlyphRangeForCharacterRange_InvalidEncoding_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const characterRange: text.Range = { start: 0, end: 1 };
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getGlyphRangeForCharacterRange(characterRange, 9999);
+          console.info('www data getGlyphRangeForCharacterRange_InvalidEncoding_002 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getGlyphRangeForCharacterRange_InvalidEncoding_002 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getCharacterPositionAtCoordinate_InvalidEncoding_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_getCharacterPositionAtCoordinate_InvalidEncoding_001
+     * @tc.desc    Test getCharacterPositionAtCoordinate with invalid encoding (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getCharacterPositionAtCoordinate_InvalidEncoding_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getCharacterPositionAtCoordinate(0, 0, -1);
+          console.info('www data getCharacterPositionAtCoordinate_InvalidEncoding_001 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getCharacterPositionAtCoordinate_InvalidEncoding_001 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getCharacterPositionAtCoordinate_InvalidEncoding_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_getCharacterPositionAtCoordinate_InvalidEncoding_002
+     * @tc.desc    Test getCharacterPositionAtCoordinate with invalid encoding (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getCharacterPositionAtCoordinate_InvalidEncoding_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          paragraph.getCharacterPositionAtCoordinate(0, 0, 9999);
+          console.info('www data getCharacterPositionAtCoordinate_InvalidEncoding_002 success ');
+          expect().assertFail();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getCharacterPositionAtCoordinate_InvalidEncoding_002 error ' + err.code);
+          expect(err.code).assertEqual(25900001);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    setTextHighContrast_InvalidValue_001
+     * @tc.number  SUB_GRAPHIC_Text_setTextHighContrast_InvalidValue_001
+     * @tc.desc    Test setTextHighContrast with invalid action (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('setTextHighContrast_InvalidValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.setTextHighContrast(-1);
+          console.info('www data setTextHighContrast_InvalidValue_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data setTextHighContrast_InvalidValue_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    setTextHighContrast_InvalidValue_002
+     * @tc.number  SUB_GRAPHIC_Text_setTextHighContrast_InvalidValue_002
+     * @tc.desc    Test setTextHighContrast with invalid action (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('setTextHighContrast_InvalidValue_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.setTextHighContrast(9999);
+          console.info('www data setTextHighContrast_InvalidValue_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data setTextHighContrast_InvalidValue_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    setTextUndefinedGlyphDisplay_InvalidValue_001
+     * @tc.number  SUB_GRAPHIC_Text_setTextUndefinedGlyphDisplay_InvalidValue_001
+     * @tc.desc    Test setTextUndefinedGlyphDisplay with invalid noGlyphShow (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('setTextUndefinedGlyphDisplay_InvalidValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.setTextUndefinedGlyphDisplay(-1);
+          console.info('www data setTextUndefinedGlyphDisplay_InvalidValue_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data setTextUndefinedGlyphDisplay_InvalidValue_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    setTextUndefinedGlyphDisplay_InvalidValue_002
+     * @tc.number  SUB_GRAPHIC_Text_setTextUndefinedGlyphDisplay_InvalidValue_002
+     * @tc.desc    Test setTextUndefinedGlyphDisplay with invalid noGlyphShow (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('setTextUndefinedGlyphDisplay_InvalidValue_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.setTextUndefinedGlyphDisplay(9999);
+          console.info('www data setTextUndefinedGlyphDisplay_InvalidValue_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data setTextUndefinedGlyphDisplay_InvalidValue_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    updateDecoration_InvalidTextDecoration_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_updateDecoration_InvalidTextDecoration_001
+     * @tc.desc    Test updateDecoration with invalid textDecoration (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('updateDecoration_InvalidTextDecoration_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.updateDecoration({
+            textDecoration: -1,
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            decorationStyle: text.TextDecorationStyle.SOLID,
+            decorationThicknessScale: 1.0
+          });
+          paragraph.layoutSync(600);
+          console.info('www data updateDecoration_InvalidTextDecoration_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data updateDecoration_InvalidTextDecoration_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    updateDecoration_InvalidTextDecoration_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_updateDecoration_InvalidTextDecoration_002
+     * @tc.desc    Test updateDecoration with invalid textDecoration (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('updateDecoration_InvalidTextDecoration_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.updateDecoration({
+            textDecoration: 9999,
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            decorationStyle: text.TextDecorationStyle.SOLID,
+            decorationThicknessScale: 1.0
+          });
+          paragraph.layoutSync(600);
+          console.info('www data updateDecoration_InvalidTextDecoration_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data updateDecoration_InvalidTextDecoration_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    updateDecoration_InvalidDecorationStyle_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_updateDecoration_InvalidDecorationStyle_001
+     * @tc.desc    Test updateDecoration with invalid decorationStyle (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('updateDecoration_InvalidDecorationStyle_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.updateDecoration({
+            textDecoration: text.TextDecorationType.LINE_THROUGH,
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            decorationStyle: -1,
+            decorationThicknessScale: 1.0
+          });
+          paragraph.layoutSync(600);
+          console.info('www data updateDecoration_InvalidDecorationStyle_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data updateDecoration_InvalidDecorationStyle_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    updateDecoration_InvalidDecorationStyle_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_updateDecoration_InvalidDecorationStyle_002
+     * @tc.desc    Test updateDecoration with invalid decorationStyle (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('updateDecoration_InvalidDecorationStyle_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.updateDecoration({
+            textDecoration: text.TextDecorationType.LINE_THROUGH,
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            decorationStyle: 9999,
+            decorationThicknessScale: 1.0
+          });
+          paragraph.layoutSync(600);
+          console.info('www data updateDecoration_InvalidDecorationStyle_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data updateDecoration_InvalidDecorationStyle_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getFontPathsByType_InvalidValue_001
+     * @tc.number  SUB_GRAPHIC_Text_getFontPathsByType_InvalidValue_001
+     * @tc.desc    Test getFontPathsByType with invalid fontType (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getFontPathsByType_InvalidValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.getFontPathsByType(-1);
+          console.info('www data getFontPathsByType_InvalidValue_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getFontPathsByType_InvalidValue_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    getFontPathsByType_InvalidValue_002
+     * @tc.number  SUB_GRAPHIC_Text_getFontPathsByType_InvalidValue_002
+     * @tc.desc    Test getFontPathsByType with invalid fontType (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('getFontPathsByType_InvalidValue_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = new text.FontCollection();
+          const fontFamilies: Array<string> = ["Clock_01"];
+          const myTextStyle: text.TextStyle = { fontFamilies: fontFamilies };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          text.getFontPathsByType(9999);
+          console.info('www data getFontPathsByType_InvalidValue_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getFontPathsByType_InvalidValue_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    createTruncatedLine_InvalidEllipsisMode_001
+     * @tc.number  SUB_GRAPHIC_TextLine_createTruncatedLine_InvalidEllipsisMode_001
+     * @tc.desc    Test createTruncatedLine with invalid ellipsisMode (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('createTruncatedLine_InvalidEllipsisMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+
+          const lines: text.TextLine[] = paragraph.getTextLines();
+          const truncatedLine: text.TextLine = lines[0].createTruncatedLine(100, -1, '...');
+          console.info('www data createTruncatedLine_InvalidEllipsisMode_001 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data createTruncatedLine_InvalidEllipsisMode_001 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name    createTruncatedLine_InvalidEllipsisMode_002
+     * @tc.number  SUB_GRAPHIC_TextLine_createTruncatedLine_InvalidEllipsisMode_002
+     * @tc.desc    Test createTruncatedLine with invalid ellipsisMode (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('createTruncatedLine_InvalidEllipsisMode_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+          const paragraphStyle: text.ParagraphStyle = { align: text.TextAlign.LEFT };
+          const textStyle: text.TextStyle = { fontSize: 20 };
+          const paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle);
+          paragraphBuilder.addText('Test Text');
+          const paragraph: text.Paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+
+          const lines: text.TextLine[] = paragraph.getTextLines();
+          const truncatedLine: text.TextLine = lines[0].createTruncatedLine(100, 9999, '...');
+          console.info('www data createTruncatedLine_InvalidEllipsisMode_002 success ');
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data createTruncatedLine_InvalidEllipsisMode_002 error ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      })
 
   })
 }

@@ -80,10 +80,10 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_static_0100', Level.LEVEL0
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Absent_TEST_0100] START');
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Absent_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent' + '_bt1');
-      let RelativeContainer_AnchorPoint_Absent_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent' + '_tx2');
-      let RelativeContainer_AnchorPoint_Absent_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent' + '_r1');
-      let RelativeContainer_AnchorPoint_Absent_row1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent' + '_row1');
+      let RelativeContainer_AnchorPoint_Absent_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_bt1');
+      let RelativeContainer_AnchorPoint_Absent_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_tx2');
+      let RelativeContainer_AnchorPoint_Absent_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_r1');
+      let RelativeContainer_AnchorPoint_Absent_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Absent_row1');
       console.log('assert position')
       expect(Math.abs(RelativeContainer_AnchorPoint_Absent_r1.left - RelativeContainer_AnchorPoint_Absent_row1.left) <= 1)
         .assertTrue();

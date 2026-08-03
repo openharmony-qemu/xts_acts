@@ -38,7 +38,7 @@ export default function enableMediaNetworkProxyTestJsunit() {
       } catch (err) {
         console.error('push EnableMediaNetworkProxy page error: ' + err);
       }
-      await waitForComponents('enableMediaNetworkProxyButton');
+      await waitForComponents('EnableMediaNetworkProxy_Button');
       done();
     });
 
@@ -54,47 +54,83 @@ export default function enableMediaNetworkProxyTestJsunit() {
 
     /**
      * @tc.number SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TRUE_0100
-     * @tc.name   enableMediaNetworkProxyTrue
+     * @tc.name   SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TRUE_0100
      * @tc.desc   enableMediaNetworkProxy(true) applies without error (HLS).
      */
-    it('enableMediaNetworkProxyTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TRUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('enableMediaNetworkProxyTrue', 132860);
         Utils.registerBaseEvent('enableMediaNetworkProxyTrue', 'true', 132870, done,
           (backData: events_emitter.EventData, expected: Object) => {
             expect(backData?.data?.ACTION).assertEqual(expected);
           });
-        await Utils.waitAndClickComponent(driver, 'enableMediaNetworkProxyButton');
+        await Utils.waitAndClickComponent(driver, 'EnableMediaNetworkProxy_Button');
       });
 
     /**
      * @tc.number SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_FALSE_0100
-     * @tc.name   enableMediaNetworkProxyFalse
+     * @tc.name   SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_FALSE_0100
      * @tc.desc   enableMediaNetworkProxy(false) applies without error.
      */
-    it('enableMediaNetworkProxyFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_FALSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('enableMediaNetworkProxyFalse', 132860);
         Utils.registerBaseEvent('enableMediaNetworkProxyFalse', 'false', 132870, done,
           (backData: events_emitter.EventData, expected: Object) => {
             expect(backData?.data?.ACTION).assertEqual(expected);
           });
-        await Utils.waitAndClickComponent(driver, 'enableMediaNetworkProxyButton');
+        await Utils.waitAndClickComponent(driver, 'EnableMediaNetworkProxy_Button');
       });
 
     /**
      * @tc.number SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TOGGLE_0100
-     * @tc.name   enableMediaNetworkProxyToggle
+     * @tc.name   SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TOGGLE_0100
      * @tc.desc   Toggle proxy true then false ends with false.
      */
-    it('enableMediaNetworkProxyToggle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_TOGGLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('enableMediaNetworkProxyToggle', 132860);
         Utils.registerBaseEvent('enableMediaNetworkProxyToggle', 'false', 132870, done,
           (backData: events_emitter.EventData, expected: Object) => {
             expect(backData?.data?.ACTION).assertEqual(expected);
           });
-        await Utils.waitAndClickComponent(driver, 'enableMediaNetworkProxyButton');
+        await Utils.waitAndClickComponent(driver, 'EnableMediaNetworkProxy_Button');
+      });
+
+    /**
+     * @tc.number SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_NULL_0100
+     * @tc.name   SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_NULL_0100
+     * @tc.desc   enableMediaNetworkProxy(null) applies without throwing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('enableMediaNetworkProxyNull', 132860);
+        Utils.registerBaseEvent('enableMediaNetworkProxyNull', 'null', 132870, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected);
+          });
+        await Utils.waitAndClickComponent(driver, 'EnableMediaNetworkProxy_Button');
+      });
+
+    /**
+     * @tc.number SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_UNDEFINED_0100
+     * @tc.name   SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_UNDEFINED_0100
+     * @tc.desc   enableMediaNetworkProxy(undefined) applies without throwing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_WEB_ENABLE_MEDIA_NETWORK_PROXY_UNDEFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('enableMediaNetworkProxyUndefined', 132860);
+        Utils.registerBaseEvent('enableMediaNetworkProxyUndefined', 'undefined', 132870, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected);
+          });
+        await Utils.waitAndClickComponent(driver, 'EnableMediaNetworkProxy_Button');
       });
   });
 }

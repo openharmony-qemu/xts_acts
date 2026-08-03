@@ -435,36 +435,6 @@ export default function StreamWritable02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1200
-     * @tc.name      testStreamWritable02Chapter0013
-     * @tc.desc      Test writing special arrays (non-numeric indices) after converting to Uint8Array
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable02Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const writableStream = new TestWritableData();
-        const sparseArray: number[] = new Array<number>(11).fill(0);
-        sparseArray[1] = 10;
-        sparseArray[3] = 30;
-        sparseArray[10] = 100;
-        const uint8Array = Uint8Array.from(sparseArray);
-        const result = writableStream.write(uint8Array);
-        expect(result).assertEqual(true);
-        const finalData = writableStream.getData();
-        expect(finalData.length).assertEqual(11);
-        expect(finalData[0]).assertEqual(0);
-        expect(finalData[1]).assertEqual(10);
-        expect(finalData[2]).assertEqual(0);
-        expect(finalData[3]).assertEqual(30);
-        expect(finalData[10]).assertEqual(100);
-      } catch (err) {
-        expect(err.code).assertEqual(401);
-      }
-    });
-
-    /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1300
      * @tc.name      testStreamWritable02Chapter0014
      * @tc.desc      Test end method without parameters

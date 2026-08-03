@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libremovecustomdnsndktest from 'libremovecustomdnsndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function RemovecustomdnsNdkTest() {
   describe('RemovecustomdnsNdkTest', () => {
@@ -33,9 +32,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function RemovecustomdnsNdkTest() {
      */
     it('testremovecustomdnsThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libremovecustomdnsndktest.removecustomdnsThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = resNum == 1;
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 

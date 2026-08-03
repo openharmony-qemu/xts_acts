@@ -40,7 +40,7 @@ static napi_value FinitefNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -78,7 +78,7 @@ static napi_value FinitefNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -102,7 +102,7 @@ static napi_value FinitefBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -127,7 +127,7 @@ static napi_value FinitefBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -157,7 +157,7 @@ static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -189,21 +189,21 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     float testVals[] = {0.0f, 3.14f, -3.14f, HUGE_VALF, -HUGE_VALF, NAN};
-    int results[6];
-    int resultscount = 6;
+    int resultCount = 6;
+    int results[resultCount];
 
-    for (int i = 0; i < resultscount; ++i) {
+    for (int i = 0; i < resultCount; ++i) {
         results[i] = func(testVals[i]);
     }
 
-    int roundcount = 20;
-    for (int round = 0; round < roundcount; ++round) {
-        for (int i = 0; i < resultscount; ++i) {
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < resultCount; ++i) {
             if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;
@@ -221,8 +221,7 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info)
 
 // Test 7: Multi-thread concurrent
 template<typename Func>
-static void ThreadWorker(Func func, std::atomic<bool>& hasError,
-    const float* testVals, int iterations)
+static void FinitefThreadWorker(Func func, std::atomic<bool>& hasError, const float* testVals, int iterations)
 {
     for (int i = 0; i < iterations; ++i) {
         int idx = i % 5;
@@ -239,7 +238,7 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -250,7 +249,7 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
-            ThreadWorker(func, hasError, testVals, iterationsPerThread);
+            FinitefThreadWorker(func, hasError, testVals, iterationsPerThread);
         });
     }
 

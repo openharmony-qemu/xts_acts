@@ -127,5 +127,25 @@ export default function ExtendableRowBuiltInTest() {
       console.info('[ExtendableRowBuiltIn_Border_0300] END');
       done();
     });
+
+    /**
+     * @tc.name: ExtendableRowBuiltIn_Undefined_0400
+     * @tc.number: SUB_ARKUI_EXTENDABLE_ROW_UNDEFINED_0400
+     * @tc.desc: Test ExtendableRow border property
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     * @tc.level: Level1
+     */
+    it('ExtendableRowBuiltIn_Undefined_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ExtendableRowBuiltIn_Undefined_0400] START');
+      await CommonFunc.sleep(1000);
+      let strJson: string = inspector.getInspectorByKey('ExtendableRow_002');
+      await CommonFunc.sleep(1000);
+      let obj = JSON.parseJsonElement(strJson).getElement('$attrs');
+      let space = obj.getString('space');
+      expect(space).assertEqual('0.00px');
+      console.info('[ExtendableRowBuiltIn_Undefined_0400] END');
+      done();
+    });
   });
 }

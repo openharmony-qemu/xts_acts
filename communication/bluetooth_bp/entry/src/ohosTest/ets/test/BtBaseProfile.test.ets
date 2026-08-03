@@ -205,13 +205,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801' || err.code === '2900004') {
           console.info('[bluetooth_js]getConnectionState is not support or profile not support');
           expect(err.code === '801' || err.code === '2900004').assertTrue();
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         };
       }
@@ -371,13 +373,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
           console.info('[bluetooth_js]getConnectionState is not support');
           expect(err.code).assertEqual('801');
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         };
       }
@@ -479,13 +483,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
           console.info('[bluetooth_js]getConnectionState is not support');
           expect(err.code).assertEqual('801');
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         }
       }
@@ -1082,6 +1088,56 @@ export default function btBaseProfileTest() {
         if (err.code === '801') {
           console.info("设备 is not support.");
           expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100
+     * @tc.desc   Test PanRole enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_PANROLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let ROLE_PANNAP = bluetooth.PanRole.ROLE_PANNAP;
+            console.info("[bluetooth_js]PanRole ROLE_PANNAP: " + ROLE_PANNAP);
+            expect(ROLE_PANNAP).assertEqual(0);
+
+            let ROLE_PANU = bluetooth.PanRole.ROLE_PANU;
+            console.info("[bluetooth_js]PanRole ROLE_PANU: " + ROLE_PANU);
+            expect(ROLE_PANU).assertEqual(1);
+        } catch (err) {
+            console.info("bluetooth PanRole  errCode:" + err.code + ",bluetooth PanRole errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100
+     * @tc.desc 测试 PanProfile 的 createHfpHfProfile 方法
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     * @co.authored.by.agent
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_HFP_CREATEHFPHFPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let hfProfile: hfp.HandsFreeHfProfile = hfp.createHfpHfProfile();
+        console.info('[bt_arkts] createHfpHfProfile result is ' + JSON.stringify(hfProfile));
+        expect(typeof hfProfile).not().assertEqual(undefined);
+      } catch (err) {
+        console.info("[bt_arkts] createHfpHfProfile error: " + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         };

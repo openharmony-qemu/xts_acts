@@ -186,10 +186,10 @@ async function testChangeTrack(fd: media.AVFileDescriptor, preparedOp: () => Pro
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state, reason) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state, preparedOp, playedOp, stoppedOp);
-    })().awaitSync()
+    })
   });
   avPlayer!!.onTrackChange((index, isSelection) => {
     console.info(`case trackChange called, index is ${index}, isSelection is ${isSelection}`);
@@ -259,6 +259,7 @@ export default function AVPlayerSelectTrackTest() {
         await changeAudioTrack();
         avPlayer!!.selectTrack(selectedTrack as int, media.SwitchMode.SEGMENT);
         await getCurrentAudioTrack();
+        await mediaTestBase.msleepAsync(2000);
         console.log("playedOperation currentTrack is " + currentTrack + " ;selectedTrack is " + selectedTrack)
         expect(currentTrack).assertEqual(selectedTrack);
       }
@@ -292,6 +293,7 @@ export default function AVPlayerSelectTrackTest() {
         await changeAudioTrack();
         avPlayer!!.selectTrack(selectedTrack as int, media.SwitchMode.CLOSEST);
         await getCurrentAudioTrack();
+        await mediaTestBase.msleepAsync(2000);
         expect(currentTrack).assertEqual(selectedTrack);
       }
 

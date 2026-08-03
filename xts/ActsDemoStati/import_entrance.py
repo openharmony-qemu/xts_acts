@@ -1,376 +1,332 @@
+#!/usr/bin/env python3
+"""
+Smart File Organizer
+====================
+A Python script to automatically organize files in a directory based on their extensions.
+
+Features:
+- Configurable file categories via JSON config.
+- Dry-run mode to preview changes.
+- Detailed logging.
+- Command-line interface.
+- Error handling for common issues (permissions, locked files).
+
+Usage:
+    python file_organizer.py --source ./Downloads --config config.json --dry-run
+    python file_organizer.py --source ./Downloads
+"""
+
 import os
+import sys
 import json
-import re
-from collections import OrderedDict
+import shutil
+import logging
+import argparse
+import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
+# ================= Configuration Constants =================
 
-all_ets_paths = []
+DEFAULT_CONFIG = {
+    "images": ["jpg", "jpeg", "png", "gif", "bmp", "svg", "webp"],
+    "documents": ["pdf", "doc", "docx", "txt", "rtf", "odt", "xls", "xlsx", "ppt", "pptx"],
+    "videos": ["mp4", "avi", "mkv", "mov", "wmv", "flv"],
+    "audio": ["mp3", "wav", "aac", "flac", "ogg", "wma"],
+    "archives": ["zip", "rar", "7z", "tar", "gz", "bz2"],
+    "code": ["py", "js", "html", "css", "java", "cpp", "c", "h", "json", "xml", "yaml", "yml"],
+    "executables": ["exe", "msi", "dmg", "apk", "deb"],
+    "others": []  # Files not matching any category go here
+}
 
-def task_deduplication(ets_path):
+DEFAULT_LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+LOG_FILE_NAME = "organizer.log"
+
+# ================= Logger Setup =================
+
+def setup_logger(log_file: str = LOG_FILE_NAME, verbose: bool = False) -> logging.Logger:
+    """
+    Set up the logger to write to both file and console.
     
-    is_boooo = False
-    out_dir = r"./"
+    Args:
+        log_file: Path to the log file.
+        verbose: If True, log DEBUG level; otherwise INFO.
+        
+    Returns:
+        Configured logger instance.
+    """
+    logger = logging.getLogger("FileOrganizer")
+    logger.setLevel(logging.DEBUG)
+    
+    # Prevent adding multiple handlers if called multiple times
+    if logger.handlers:
+        return logger
 
-    f123 = os.path.join(out_dir, "123.txt")
-    f124 = os.path.join(out_dir, "124.json")
-    f125 = os.path.join(out_dir, "125.json")
-    f126 = os.path.join(out_dir, "126.txt")
+    # File Handler
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(logging.Formatter(DEFAULT_LOG_FORMAT))
+    logger.addHandler(file_handler)
 
-    # ---------- 1. extract import ... from ... ----------
-    with open(ets_path, "r", encoding="utf-8") as f:
-        content = f.read()
+    # Console Handler
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.DEBUG if verbose else logging.INFO)
+    console_handler.setFormatter(logging.Formatter(DEFAULT_LOG_FORMAT))
+    logger.addHandler(console_handler)
 
-    content = re.sub(r"/\*.*?\*/", "", content, flags=re.DOTALL)
-    content = re.sub(r"//.*", "", content)
+    return logger
 
-    imports = re.findall(
-        r"import\s+(.*?)\s+from\s+['\"]([^'\"]+)['\"]",
-        content,
-        flags=re.DOTALL,
+# ================= Configuration Manager =================
+
+class ConfigManager:
+    """Handles loading and validating configuration."""
+    
+    def __init__(self, config_path: Optional[str] = None):
+        self.config_path = config_path
+        self.categories: Dict[str, List[str]] = {}
+        self.load_config()
+
+    def load_config(self):
+        """Load configuration from JSON file or use defaults."""
+        if self.config_path and os.path.exists(self.config_path):
+            try:
+                with open(self.config_path, 'r', encoding='utf-8') as f:
+                    self.categories = json.load(f)
+                logging.info(f"Configuration loaded from {self.config_path}")
+            except json.JSONDecodeError as e:
+                logging.error(f"Invalid JSON in config file: {e}")
+                self.categories = DEFAULT_CONFIG
+            except Exception as e:
+                logging.error(f"Error reading config file: {e}")
+                self.categories = DEFAULT_CONFIG
+        else:
+            logging.info("Using default configuration.")
+            self.categories = DEFAULT_CONFIG
+
+    def get_category_for_extension(self, ext: str) -> str:
+        """
+        Determine the category for a given file extension.
+        
+        Args:
+            ext: File extension without the dot (e.g., 'jpg').
+            
+        Returns:
+            Category name (e.g., 'images') or 'others'.
+        """
+        ext_lower = ext.lower()
+        for category, extensions in self.categories.items():
+            if ext_lower in extensions:
+                return category
+        return "others"
+
+# ================= File Organizer Core =================
+
+class FileOrganizer:
+    """Core logic for organizing files."""
+    
+    def __init__(self, source_dir: str, config_manager: ConfigManager, dry_run: bool = False):
+        self.source_dir = Path(source_dir).resolve()
+        self.config_manager = config_manager
+        self.dry_run = dry_run
+        self.logger = logging.getLogger("FileOrganizer")
+        self.stats = {
+            "processed": 0,
+            "moved": 0,
+            "skipped": 0,
+            "errors": 0
+        }
+
+    def validate_source(self) -> bool:
+        """Check if the source directory exists and is readable."""
+        if not self.source_dir.exists():
+            self.logger.error(f"Source directory does not exist: {self.source_dir}")
+            return False
+        if not self.source_dir.is_dir():
+            self.logger.error(f"Source path is not a directory: {self.source_dir}")
+            return False
+        if not os.access(self.source_dir, os.R_OK):
+            self.logger.error(f"No read permission for: {self.source_dir}")
+            return False
+        return True
+
+    def get_files_to_process(self) -> List[Path]:
+        """
+        Get a list of files in the source directory (non-recursive).
+        Excludes hidden files and directories.
+        """
+        files = []
+        try:
+            for item in self.source_dir.iterdir():
+                if item.is_file() and not item.name.startswith('.'):
+                    files.append(item)
+        except PermissionError:
+            self.logger.error(f"Permission denied accessing: {self.source_dir}")
+        return files
+
+    def move_file(self, file_path: Path, target_dir: Path) -> bool:
+        """
+        Move a file to the target directory.
+        
+        Args:
+            file_path: Path to the source file.
+            target_dir: Path to the destination directory.
+            
+        Returns:
+            True if successful, False otherwise.
+        """
+        target_path = target_dir / file_path.name
+        
+        # Handle duplicate filenames
+        if target_path.exists():
+            stem = file_path.stem
+            suffix = file_path.suffix
+            counter = 1
+            while target_path.exists():
+                new_name = f"{stem}_{counter}{suffix}"
+                target_path = target_dir / new_name
+                counter += 1
+            self.logger.warning(f"Duplicate file renamed: {file_path.name} -> {target_path.name}")
+
+        try:
+            if self.dry_run:
+                self.logger.info(f"[DRY RUN] Would move: {file_path.name} -> {target_dir.name}/")
+                self.stats["moved"] += 1
+                return True
+            else:
+                shutil.move(str(file_path), str(target_path))
+                self.logger.info(f"Moved: {file_path.name} -> {target_dir.name}/")
+                self.stats["moved"] += 1
+                return True
+        except shutil.Error as e:
+            self.logger.error(f"Shutil error moving {file_path.name}: {e}")
+            self.stats["errors"] += 1
+            return False
+        except PermissionError:
+            self.logger.error(f"Permission denied moving {file_path.name}")
+            self.stats["errors"] += 1
+            return False
+        except Exception as e:
+            self.logger.error(f"Unexpected error moving {file_path.name}: {e}")
+            self.stats["errors"] += 1
+            return False
+
+    def organize(self):
+        """Main method to execute the organization process."""
+        if not self.validate_source():
+            return
+
+        self.logger.info(f"Starting organization for: {self.source_dir}")
+        if self.dry_run:
+            self.logger.warning("=== DRY RUN MODE: No files will be moved ===")
+
+        files = self.get_files_to_process()
+        self.logger.info(f"Found {len(files)} files to process.")
+
+        for file_path in files:
+            self.stats["processed"] += 1
+            ext = file_path.suffix.lstrip('.')
+            
+            if not ext:
+                self.logger.debug(f"Skipping file with no extension: {file_path.name}")
+                self.stats["skipped"] += 1
+                continue
+
+            category = self.config_manager.get_category_for_extension(ext)
+            target_dir = self.source_dir / category
+
+            # Create target directory if it doesn't exist
+            if not self.dry_run:
+                target_dir.mkdir(parents=True, exist_ok=True)
+            else:
+                # In dry run, we just log that the dir would be created
+                if not target_dir.exists():
+                    self.logger.debug(f"[DRY RUN] Would create directory: {target_dir.name}")
+
+            self.move_file(file_path, target_dir)
+
+        self.print_summary()
+
+    def print_summary(self):
+        """Print a summary of the operation."""
+        self.logger.info("="*30)
+        self.logger.info("Operation Summary:")
+        self.logger.info(f"  Processed: {self.stats['processed']}")
+        self.logger.info(f"  Moved:     {self.stats['moved']}")
+        self.logger.info(f"  Skipped:   {self.stats['skipped']}")
+        self.logger.info(f"  Errors:    {self.stats['errors']}")
+        self.logger.info("="*30)
+
+# ================= CLI Interface =================
+
+def parse_arguments() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Smart File Organizer - Automatically organize files by extension.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s --source ./Downloads
+  %(prog)s --source ./Downloads --config my_config.json --dry-run
+  %(prog)s --source ./Downloads --verbose
+        """
+    )
+    
+    parser.add_argument(
+        "--source", "-s",
+        type=str,
+        required=True,
+        help="Path to the directory to organize."
+    )
+    
+    parser.add_argument(
+        "--config", "-c",
+        type=str,
+        default=None,
+        help="Path to a JSON configuration file. Uses defaults if not provided."
+    )
+    
+    parser.add_argument(
+        "--dry-run", "-d",
+        action="store_true",
+        help="Preview changes without moving any files."
+    )
+    
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Enable verbose logging (DEBUG level)."
     )
 
-    lines = []
-    for value, key in imports:
-        value = " ".join(value.split())
-        value = value.strip().strip(",").strip()
-        lines.append(f"import {value} from '{key}';")
+    return parser.parse_args()
 
-    with open(f123, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
-    # print(f"[1] {len(lines)} imports -> 123.txt")
+# ================= Main Entry Point =================
 
-    # ---------- 2. parse into [{value, key}] -> 124.json ----------
-    records = []
-    for line in lines:
-        m = re.match(r"^import\s+(.*?)\s+from\s+['\"]([^'\"]+)['\"];?\s*$", line.strip())
-        if m:
-            value = m.group(1).strip()
-            key = m.group(2).strip()
-            records.append({"value": value, "key": key})
-
-    with open(f124, "w", encoding="utf-8") as f:
-        json.dump(records, f, ensure_ascii=False, indent=2)
-    # print(f"[2] {len(records)} records -> 124.json")
-
-    # ---------- 3. deduplicate ----------
-    seen = set()
-    deduped = []
-    needed_changes_bool = False
-    for r in records:
-        sig = (r["key"], r["value"])
-        if sig not in seen:
-            seen.add(sig)
-            deduped.append(r)
-        else:
-            # print(f"Repeat data   == {sig}")
-            needed_changes_bool = True
-
-    with open(f124, "w", encoding="utf-8") as f:
-        json.dump(deduped, f, ensure_ascii=False, indent=2)
-    # print(f"[3] dedup {len(records)} -> {len(deduped)} -> 124.json")
-
-    # ---------- 4. merge same key ----------
-    by_key = OrderedDict()
-    for r in deduped:
-        res = by_key.setdefault(r["key"], []).append(r["value"])
+def main():
+    """Main entry point for the script."""
+    args = parse_arguments()
     
-    # print(f'-----------------------------01 {by_key} ')
-
-    def parse_value(v):
-        tmp_needed_changes_bool = False
-        v = v.strip()
-        v = re.sub(r"\s*,\s*", ",", v)
-        v = re.sub(r"\s+", " ", v)
-        v = v.replace("\uff0c", ",")
-        v = v.replace("'", "")
-        parts = [p.strip() for p in v.split(",")]
-        parts = [p for p in parts if p]
-        v = ", ".join(parts)
-
-        default_part = None
-        brace_part = ""
-        brace_m = re.search(r"(\{.*?\})", v)
-        if brace_m:
-            before = v[:brace_m.start()].strip().strip(",").strip()
-            after = v[brace_m.end():].strip().strip(",").strip()
-            brace_content = brace_m.group(1)
-            if before:
-                default_part = before
-            if after:
-                if default_part:
-                    default_part = default_part + ", " + after
-                else:
-                    default_part = after
-            brace_part = brace_content
-        else:
-            default_part = v
-
-        named_set = set()
-        named_ordered = []
-        if brace_part:
-            inner = brace_part.strip("{}").strip()
-            if inner:
-                items = [x.strip() for x in inner.split(",")]
-                items = [x for x in items if x]
-                for item in items:
-                    if item not in named_set:
-                        named_set.add(item)
-                        named_ordered.append(item)
-                    else:
-                        tmp_needed_changes_bool = True
-
-        return default_part, named_ordered, tmp_needed_changes_bool
-
-    merged_result = []
-    for key, values in by_key.items():
-        default_parts = []
-        all_named = OrderedDict()
-
-        for v in values:
-            # print('--------------------------------------01')
-            # print(len(v))
-            default_part, named_items, tmp_needed_changes_bool = parse_value(v)
-            # print(default_part)
-            # print(named_items)
-            needed_changes_bool = tmp_needed_changes_bool or needed_changes_bool
-            # print(f'------------------------{needed_changes_bool}')
-            if default_part:
-                for part in default_part.split(","):
-                    part = part.strip()
-                    if part and part not in default_parts:
-                        default_parts.append(part)
-                    else:
-                        needed_changes_bool = True
-            for item in named_items:
-                if item not in all_named:
-                    all_named[item] = None
-                else:
-                    needed_changes_bool = True
-
-        merged = ""
-        if default_parts:
-            merged = ", ".join(default_parts)
-            # if len(default_parts) > 1 or "type" in default_parts:
-            if len(default_parts) > 1 or "type" in merged or  "as" in merged:
-                # print(default_parts)
-                is_boooo = True
-        if all_named:
-            # print(all_named)
-            brace_str = ", ".join(all_named.keys())
-            if merged:
-                # print(f'---------------------------111------- {merged}')
-                if 'type' in merged:
-                    merged += f" {{ {brace_str} }}"
-                else:
-                    merged += f", {{ {brace_str} }}"
-            else:
-                merged = f"{{ {brace_str} }}"
-
-        merged_result.append({"value": merged, "key": key})
-
-    with open(f125, "w", encoding="utf-8") as f:
-        json.dump(merged_result, f, ensure_ascii=False, indent=2, sort_keys=False)
-    print(f"[4] merged {len(merged_result)} records -> 125.json")
-
-    for r in merged_result:
-        print(f"     key={r['key']}  value={r['value']}")
+    # Setup Logger
+    logger = setup_logger(verbose=args.verbose)
     
-    if  needed_changes_bool:
-        
-        # ---------- 5. convert 125.json -> import statements -> 126.txt ----------
-        import_lines = []
-        for item in merged_result:
-            value = item["value"]
-            key = item["key"]
-            import_lines.append(f"import {value} from '{key}';")
-
-        with open(f126, "w", encoding="utf-8") as f:
-            f.write("\n".join(import_lines) + "\n")
-        # print(f"[5] {len(import_lines)} import statements -> 126.txt")
-
-        # ---------- 6. replace imports in original .ets file ----------
-        with open(ets_path, "r", encoding="utf-8") as f:
-            original = f.read()
-
-        import_blocks = list(re.finditer(
-            r"import\s+.*?from\s+['\"][^'\"]+['\"]\s*;?\s*",
-            original,
-            flags=re.DOTALL,
-        ))
-        
-        if import_blocks:
-            start = import_blocks[0].start()
-            end = import_blocks[-1].end()
-            before = original[:start]
-            after = original[end:]
-            new_imports = "\n".join(import_lines) + "\n"
-            result_content = before + new_imports + after.lstrip("\n")
-            
-            if is_boooo:
-                pass
-                #  with open(ets_path, "w", encoding="utf-8") as f:
-                #     print(new_imports)
-                #     f.write(result_content)
-                all_ets_paths.append(ets_path)
-                print('11111111111111111111111111111111111')
-            else:
-                print('2222222222222222222222222222222222222222')
-                with open(ets_path, "w", encoding="utf-8") as f:
-                    print(new_imports)
-                    f.write(result_content)
-                    print(f"[6] Replaced path {ets_path}")
-                    
-    with open(f124, 'r', encoding='utf-8') as file1, \
-             open(f125, 'r', encoding='utf-8') as file2:
-            
-            data1 = json.load(file1)
-            data2 = json.load(file2)
-            # if data1 == data2 and needed_changes_bool == False:
-            #if compare_dict_arrays(data1,data2) and needed_changes_bool == False:   
-
-    is_boooo = False     
-   
-    return needed_changes_bool
-
-
-def remove_spaces_in_dict(d):
-    """递归去除字典中所有字符串值的空格"""
-    for key, value in d.items():
-        if isinstance(value, str):
-            d[key] = remove_comma_if_second_last(value.replace(" ", ""))  # 去除字符串中的空格
-        elif isinstance(value, dict):
-            remove_spaces_in_dict(value)  # 递归处理嵌套字典
-        elif isinstance(value, list):
-            for i in range(len(value)):
-                if isinstance(value[i], str):
-                    value[i] = value[i].replace(" ", "")  # 去除列表中字符串的空格
-                elif isinstance(value[i], dict):
-                    remove_spaces_in_dict(value[i])  # 递归处理列表中的字典
-
-def remove_comma_if_second_last(s):
-    if len(s) >= 2 and s[-2] == ',':
-        result = s[:len(s)-2] + s[-1]
-        return result
-    else:
-        return s 
-
-def compare_dict_arrays(arr1, arr2):
-    """对比两个字典数组是否相等（去除空格后）"""
-    # 深拷贝字典数组，避免修改原数据
-    from copy import deepcopy
-    arr1_cleaned = deepcopy(arr1)
-    arr2_cleaned = deepcopy(arr2)
-
-    # 去除所有字典中的空格
-    for d in arr1_cleaned:
-        remove_spaces_in_dict(d)
-    for d in arr2_cleaned:
-        remove_spaces_in_dict(d)
-
-    # 对比清理后的数组
-    return arr1_cleaned== arr2_cleaned
-
-def task_01(dir_path):
-    """
-    遍历文件夹，打印所有.ets和.ts文件的路径
-    :param root_dir: 要遍历的根目录
-    """
-    needed_changes = set()
-    for root, dirs, files in os.walk(dir_path):
-        for file in files:
-            if file.endswith(('.ets', '.ts')):  # 检查.ets或.ts文件
-                file_path = os.path.join(root, file)
-                print(file_path)
-                if task_deduplication(file_path):
-                  needed_changes.add(file_path)
-            
-    return needed_changes
-
-def find_dirs_with_static_suite(root_dir):
-    """
-    在 root_dir 下查找所有包含 'static_suite' 的 BUILD.gn 文件，
-    并返回这些文件所在的唯一目录列表。
-    """
-    if not os.path.isdir(root_dir):
-        # print(f"错误: 目录 '{root_dir}' 不存在或不是目录。")
-        return []
-    matching_dirs = {}
-    # 使用 os.walk 遍历目录
-    for dirpath, dirnames, filenames in os.walk(root_dir):
-        if 'BUILD.gn' in filenames:
-            file_path = os.path.join(dirpath, 'BUILD.gn')
-            try:
-                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-                    content = f.read()
-                    if 'static_suite' in content:
-                        res = task_01(dirpath)
-                        if res:
-                            matching_dirs[dirpath] = list(res)
-            
-            except Exception as e:
-                # print(f"警告: 无法读取文件 {file_path}: {e}")
-                pass
-
-    return matching_dirs
-
-def delete_specific_files():
-    """
-    删除当前文件夹下的指定文件
-    """
-    files_to_delete = ['./123.txt', './124.json', './125.json', './126.txt']
-    deleted_count = 0
+    # Load Configuration
+    config_manager = ConfigManager(config_path=args.config)
     
-    for filename in files_to_delete:
-        # try:
-            os.remove(filename)
-            # print(f"已删除: {filename}")
-            deleted_count += 1
-        # except FileNotFoundError:
-            # print(f"文件不存在: {filename}")
-        # except Exception as e:
-            # print(f"删除失败 {filename}: {e}")
+    # Initialize Organizer
+    organizer = FileOrganizer(
+        source_dir=args.source,
+        config_manager=config_manager,
+        dry_run=args.dry_run
+    )
     
-    # print(f"总共删除了 {deleted_count} 个文件")
+    # Execute
+    try:
+        organizer.organize()
+    except KeyboardInterrupt:
+        logger.info("Operation cancelled by user.")
+        sys.exit(0)
+    except Exception as e:
+        logger.critical(f"Fatal error: {e}", exc_info=True)
+        sys.exit(1)
 
-if __name__ == '__main__':
-    res = find_dirs_with_static_suite('../titi/xts_acts')
-    # delete_specific_files()
-    with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(res, f, ensure_ascii=False, indent=4)
-
-    with open('default_data.json', 'w', encoding='utf-8') as f:
-        json.dump(all_ets_paths, f, ensure_ascii=False, indent=4)
-    wb = Workbook()
-    ws = wb.active
-
-    # 写入数据
-    row = 1
-    for key, values in res.items():
-        # 写入 Key 到第一列
-        ws.cell(row=row, column=1, value=key)
-        
-        # 合并 Key 的行
-        if len(values) > 1:
-            ws.merge_cells(start_row=row, end_row=row + len(values) - 1, start_column=1, end_column=1)
-        
-        # 写入 Value 到第二列
-        for i, value in enumerate(values):
-            ws.cell(row=row + i, column=2, value=value)
-        
-        # 调整行数
-        row += len(values)
-
-    # 设置单元格对齐方式
-    for cell in ws['A']:
-        cell.alignment = Alignment(horizontal='center', vertical='center')
-    for cell in ws['B']:
-        cell.alignment = Alignment(horizontal='center', vertical='center')
-
-    # 自动调整列宽
-    ws.column_dimensions[get_column_letter(1)].width = 15
-    ws.column_dimensions[get_column_letter(2)].width = 15
-
-    # 保存 Excel 文件
-    wb.save("./output.xlsx")
-
-
+if __name__ == "__main__":
+    main()

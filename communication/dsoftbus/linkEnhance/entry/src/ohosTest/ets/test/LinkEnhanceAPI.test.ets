@@ -858,7 +858,51 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0300----------------");
     });
     /**
-     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400
+     * @tc.desc   connection.on('disconnected')接口注册多个callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400----------------");
+      try {
+        let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "demo");
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400 connection is" + connection);
+        try {
+          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400 disconnected_on start");
+          let callback1 = (number: number): void => {
+            console.info(logTag + 'callback1 disconnected reason = ' + number);
+          };
+          let callback2 = (number: number): void => {
+            console.info(logTag + 'callback2 disconnected reason = ' + number);
+          };
+          let callback3 = (number: number): void => {
+            console.info(logTag + 'callback3 disconnected reason = ' + number);
+          };
+          connection.on('disconnected', callback1);
+          connection.on('disconnected', callback2);
+          connection.on('disconnected', callback3);
+          connection.off('disconnected', callback1);
+          connection.off('disconnected', callback2);
+          connection.off('disconnected', callback3);
+        }catch (error) {
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400 error.code is " + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400 error.message is " + error.message);
+          expect().assertFail();
+        }finally {
+          connection.close();
+          console.info(logTag + "reclaim done");
+        }
+      }catch (error) {
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400 createConnection error.code is:" + error.code);
+        expect().assertFail();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0400----------------");
+    });
+    /**
+      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100
      * @tc.desc   linkEnhance.connection.off(type:'connectResult')接口入参callback为null
      * @tc.type   FUNCTION
@@ -1422,6 +1466,50 @@ export default function LinkEnhanceAPI() {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200 createServer error.code is:" + error.code);
     }
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200----------------");
+    });
+    /**
+      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300
+      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300
+      * @tc.desc   server.on('serverStopped')接口注册多个callback
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300----------------");
+      try {
+        let server: linkEnhance.Server = linkEnhance.createServer("demo");
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300 server is" + server);
+        try {
+          console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300 serverStopped_on start");
+          let callback1 = (reason: number): void => {
+            console.info(logTag + 'callback1 serverStopped reason = ' + reason);
+          };
+          let callback2 = (reason: number): void => {
+            console.info(logTag + 'callback2 serverStopped reason = ' + reason);
+          };
+          let callback3 = (reason: number): void => {
+            console.info(logTag + 'callback3 serverStopped reason = ' + reason);
+          };
+          server.on('serverStopped', callback1);
+          server.on('serverStopped', callback2);
+          server.on('serverStopped', callback3);
+          server.off('serverStopped', callback1);
+          server.off('serverStopped', callback2);
+          server.off('serverStopped', callback3);
+        }catch (error) {
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300 error.code is " + error.code);
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300 error.message is " + error.message);
+          expect().assertFail();
+        }finally {
+          server.close();
+          console.info(logTag + "reclaim done");
+        }
+      }catch (error) {
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300 createServer error.code is:" + error.code);
+        expect().assertFail();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0300----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100

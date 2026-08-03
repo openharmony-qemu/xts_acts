@@ -23,6 +23,7 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183112;
 let driver = Driver.create();
 const TAG = 'ContextMenu';
@@ -31,6 +32,7 @@ const TAG = 'ContextMenu';
 @Component
 struct webViewController {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private result: WebContextMenuResult | undefined = undefined;
   @State linkUrl: string = '';
   @State offsetX: number = 0;
@@ -53,6 +55,10 @@ struct webViewController {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -158,7 +164,7 @@ struct webViewController {
                 this.flag = 3;
                 console.log('emitContextMenuMediaTypeImage9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("image.html"))
+                this.controller.loadUrl(this.mServer.getAssetUrl('image.html'))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeImage IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
@@ -177,7 +183,7 @@ struct webViewController {
                 this.flag = 4;
                 console.log('emitContextMenuMediaTypeAudio9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("audio.html"))
+                this.controller.loadUrl($rawfile('audio.html'))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeAudio IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
@@ -194,7 +200,7 @@ struct webViewController {
                 this.flag = 5;
                 console.log('emitContextMenuMediaTypeCanvas9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile("canvas.html"))
+                this.controller.loadUrl(this.mServer.getAssetUrl('canvas.html'))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeCanvas IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
@@ -210,7 +216,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: 'https://www.baidu.com', controller: this.controller })
+      Web({ src: $rawfile("text.html"), controller: this.controller })
         .key('ContextMenuMediaTypeButton')
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);

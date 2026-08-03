@@ -44,9 +44,9 @@ struct RichEditorSetStyledString013 {
 
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    (async ()=>{
+    waitForCompletion(async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })().awaitSync()
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
