@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -34,112 +34,112 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0001
-     * @tc.name testTypedUArraysFindIndex001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0100
+     * @tc.name testTypedUArraysFindIndexFileB001
      * @tc.desc Verify 0 findIndex Uint8ClampedArray TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([]);
       let result = arr.findIndex((v) => v === 1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5100
-     * @tc.name testTypedUArraysFindIndex051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0200
+     * @tc.name testTypedUArraysFindIndexFileB002
      * @tc.desc Verify findIndex -1 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([]);
       let result = arr.findIndex((v) => v === 1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5200
-     * @tc.name testTypedUArraysFindIndex052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0300
+     * @tc.name testTypedUArraysFindIndexFileB003
      * @tc.desc Verify findIndex -1 BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([]);
       let result = arr.findIndex((v) => v === 1n);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5300
-     * @tc.name testTypedUArraysFindIndex053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0400
+     * @tc.name testTypedUArraysFindIndexFileB004
      * @tc.desc Verify 0 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([99, 1, 2]);
       let result = arr.findIndex((v) => v === 99);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5400
-     * @tc.name testTypedUArraysFindIndex054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0500
+     * @tc.name testTypedUArraysFindIndexFileB005
      * @tc.desc Verify len-1 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 99]);
       let result = arr.findIndex((v) => v === 99);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5500
-     * @tc.name testTypedUArraysFindIndex055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0600
+     * @tc.name testTypedUArraysFindIndexFileB006
      * @tc.desc Verify 0 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([42]);
       let result = arr.findIndex((v) => v === 42);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5600
-     * @tc.name testTypedUArraysFindIndex056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0700
+     * @tc.name testTypedUArraysFindIndexFileB007
      * @tc.desc Verify -1 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([42]);
       let result = arr.findIndex((v) => v === 99);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5700
-     * @tc.name testTypedUArraysFindIndex057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0800
+     * @tc.name testTypedUArraysFindIndexFileB008
      * @tc.desc Verify Uint8ClampedArray 0 255 predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0, 127, 255]);
       let zeroIdx = arr.findIndex((v) => v === 0);
       let maxIdx = arr.findIndex((v) => v === 255);
@@ -148,112 +148,112 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5800
-     * @tc.name testTypedUArraysFindIndex058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_0900
+     * @tc.name testTypedUArraysFindIndexFileB009
      * @tc.desc Verify BigUint64Array BigUint64 predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, BigInt('9223372036854775808'), BigInt('18446744073709551615')]);
       let result = arr.findIndex((_v, i) => i === 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_5900
-     * @tc.name testTypedUArraysFindIndex059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1000
+     * @tc.name testTypedUArraysFindIndexFileB010
      * @tc.desc Verify Uint8Array 255 predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 128, 255]);
       let maxIdx = arr.findIndex((v) => v === 255);
       expect(maxIdx).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6000
-     * @tc.name testTypedUArraysFindIndex060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1100
+     * @tc.name testTypedUArraysFindIndexFileB011
      * @tc.desc Verify Uint16Array 65535 predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0, 32768, 65535]);
       let maxIdx = arr.findIndex((v) => v === 65535);
       expect(maxIdx).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6100
-     * @tc.name testTypedUArraysFindIndex061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1200
+     * @tc.name testTypedUArraysFindIndexFileB012
      * @tc.desc Verify Uint32Array 4294967295 predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0, 2147483648, 4294967295]);
       let maxIdx = arr.findIndex((v) => v === 4294967295);
       expect(maxIdx).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6200
-     * @tc.name testTypedUArraysFindIndex062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1300
+     * @tc.name testTypedUArraysFindIndexFileB013
      * @tc.desc Verify predicate this thisArg Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30, 40]);
       let result: number = arr.findIndex((v: number) => v >= 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6300
-     * @tc.name testTypedUArraysFindIndex063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1400
+     * @tc.name testTypedUArraysFindIndexFileB014
      * @tc.desc Verify predicate findIndex Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([10, 20, 30, 40, 50]);
       let result: number = arr.findIndex((v: number) => v > 25);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6400
-     * @tc.name testTypedUArraysFindIndex064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1500
+     * @tc.name testTypedUArraysFindIndexFileB015
      * @tc.desc Verify predicate true 0 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([5, 10, 15]);
       let result = arr.findIndex((v) => v === 5);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6500
-     * @tc.name testTypedUArraysFindIndex065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1600
+     * @tc.name testTypedUArraysFindIndexFileB016
      * @tc.desc Verify predicate falsy 0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let count = 0;
       arr.forEach((v) => { if (v >= 0) { count++; } });
@@ -261,14 +261,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6600
-     * @tc.name testTypedUArraysFindIndex066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1700
+     * @tc.name testTypedUArraysFindIndexFileB017
      * @tc.desc Verify predicate falsy Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       let count = 0;
       arr.forEach((v) => { if (v >= 0) { count++; } });
@@ -276,42 +276,42 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6700
-     * @tc.name testTypedUArraysFindIndex067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1800
+     * @tc.name testTypedUArraysFindIndexFileB018
      * @tc.desc Verify predicate truthy Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
       let result = arr.findIndex((v) => v >= 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6800
-     * @tc.name testTypedUArraysFindIndex068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_1900
+     * @tc.name testTypedUArraysFindIndexFileB019
      * @tc.desc Verify predicate truthy BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.findIndex((v) => v >= 0n);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_6900
-     * @tc.name testTypedUArraysFindIndex069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2000
+     * @tc.name testTypedUArraysFindIndexFileB020
      * @tc.desc Verify predicate array Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = arr.findIndex((v, i, a) => {
         if (i === 0) a[1] = 99;
@@ -321,14 +321,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7000
-     * @tc.name testTypedUArraysFindIndex070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2100
+     * @tc.name testTypedUArraysFindIndexFileB021
      * @tc.desc Verify predicate 0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([5, 10, 15]);
       let result = arr.findIndex((v, i, a) => {
         if (i === 0) a[1] = 0;
@@ -338,14 +338,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7100
-     * @tc.name testTypedUArraysFindIndex071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2200
+     * @tc.name testTypedUArraysFindIndexFileB022
      * @tc.desc Verify predicate Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40, 50]);
       const threshold = 35;
       let result = arr.findIndex((v) => v > threshold);
@@ -353,14 +353,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7200
-     * @tc.name testTypedUArraysFindIndex072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2300
+     * @tc.name testTypedUArraysFindIndexFileB023
      * @tc.desc Verify predicate Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 6, 9]);
       let result = arr.findIndex((v, i, a) => {
         if (i === 2) a[0] = 99;
@@ -370,28 +370,28 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7300
-     * @tc.name testTypedUArraysFindIndex073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2400
+     * @tc.name testTypedUArraysFindIndexFileB024
      * @tc.desc Verify BigUint64Array predicate BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([100n, 200n, 300n]);
       let result = arr.findIndex((v) => v === 200n);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7400
-     * @tc.name testTypedUArraysFindIndex074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2500
+     * @tc.name testTypedUArraysFindIndexFileB025
      * @tc.desc Verify predicate Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([5, 5, 5, 5]);
       let count = 0;
       let result = arr.findIndex((v) => { count++; return v === 5; });
@@ -400,14 +400,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7500
-     * @tc.name testTypedUArraysFindIndex075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2600
+     * @tc.name testTypedUArraysFindIndexFileB026
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 0, 0, 0]);
       let count = 0;
       let result = arr.findIndex((v) => { count++; return v === 99; });
@@ -416,14 +416,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7600
-     * @tc.name testTypedUArraysFindIndex076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2700
+     * @tc.name testTypedUArraysFindIndexFileB027
      * @tc.desc Verify predicate Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 80, 60, 40, 20]);
       let result = arr.findIndex((v) => v === 40);
       expect(result).assertEqual(3);
@@ -433,14 +433,14 @@ export default function typedUArraysFindIndex02(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7700
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7800
-     * @tc.name testTypedUArraysFindIndex078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2800
+     * @tc.name testTypedUArraysFindIndexFileB028
      * @tc.desc Verify Uint8ClampedArray predicate 0-255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(3);
       arr[0] = 255;
       arr[1] = 0;
@@ -453,28 +453,28 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_7900
-     * @tc.name testTypedUArraysFindIndex079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_2900
+     * @tc.name testTypedUArraysFindIndexFileB029
      * @tc.desc Verify Uint8ClampedArray predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([100]);
       let result = arr.findIndex((v) => v === 100);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8000
-     * @tc.name testTypedUArraysFindIndex080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3000
+     * @tc.name testTypedUArraysFindIndexFileB030
      * @tc.desc Verify Uint8Array 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 127, 128, 255]);
       for (let i = 0; i < arr.length; i++) {
         let idx = arr.findIndex((v) => v === arr[i.toInt()])
@@ -483,84 +483,84 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8100
-     * @tc.name testTypedUArraysFindIndex081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3100
+     * @tc.name testTypedUArraysFindIndexFileB031
      * @tc.desc Verify Uint16Array 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([65535, 0, 65535]);
       let firstIdx = arr.findIndex((v) => v === 65535);
       expect(firstIdx).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8200
-     * @tc.name testTypedUArraysFindIndex082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3200
+     * @tc.name testTypedUArraysFindIndexFileB032
      * @tc.desc Verify Uint32Array 4294967295
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0, 4294967295, 0]);
       let idx = arr.findIndex((v) => v === 4294967295);
       expect(idx).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8300
-     * @tc.name testTypedUArraysFindIndex083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3300
+     * @tc.name testTypedUArraysFindIndexFileB033
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615') predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615'), 0n, BigInt('18446744073709551615')]);
       let idx = arr.findIndex((v, i) => i === 2);
       expect(idx).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8400
-     * @tc.name testTypedUArraysFindIndex084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3400
+     * @tc.name testTypedUArraysFindIndexFileB034
      * @tc.desc Verify predicate boolean truthy 1 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = arr.findIndex((v) => v === 2);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8500
-     * @tc.name testTypedUArraysFindIndex085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3500
+     * @tc.name testTypedUArraysFindIndexFileB035
      * @tc.desc Verify predicate undefined Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       let result = arr.findIndex((v) => v > 10);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8600
-     * @tc.name testTypedUArraysFindIndex086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3600
+     * @tc.name testTypedUArraysFindIndexFileB036
      * @tc.desc Verify subarray findIndex Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new Uint8Array([10, 20, 30, 40, 50]);
       const sub = buf.subarray(1, 4);
       let result = sub.findIndex((v) => v === 30);
@@ -568,14 +568,14 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8700
-     * @tc.name testTypedUArraysFindIndex087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3700
+     * @tc.name testTypedUArraysFindIndexFileB037
      * @tc.desc Verify slice findIndex Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300, 400]);
       const sliced = arr.slice(1, 3);
       let result = sliced.findIndex((v) => v === 300);
@@ -583,60 +583,60 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8800
-     * @tc.name testTypedUArraysFindIndex088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3800
+     * @tc.name testTypedUArraysFindIndexFileB038
      * @tc.desc Verify BigUint64Array from findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = BigUint64Array.from([1n, 2n, 3n, 4n, 5n]);
       let result = arr.findIndex((v) => v === 4n);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_8900
-     * @tc.name testTypedUArraysFindIndex089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_3900
+     * @tc.name testTypedUArraysFindIndexFileB039
      * @tc.desc Verify Uint8ClampedArray predicate value Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([100]);
-      arr.findIndex((v) => {
-        expect(typeof v).assertEqual("number");
+      const result = arr.findIndex((v) => {
         return true;
       });
+      expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9000
-     * @tc.name testTypedUArraysFindIndex090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4000
+     * @tc.name testTypedUArraysFindIndexFileB040
      * @tc.desc Verify BigUint64Array predicate value BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([100n]);
-      arr.findIndex((v) => {
-        expect(typeof v).assertEqual("bigint");
+      const result = arr.findIndex((v) => {
         return true;
       });
+      expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9100
-     * @tc.name testTypedUArraysFindIndex091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4100
+     * @tc.name testTypedUArraysFindIndexFileB041
      * @tc.desc Verify findIndex Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let r1 = arr.findIndex((v) => v === 4);
       expect(r1).assertEqual(3);
@@ -645,98 +645,98 @@ export default function typedUArraysFindIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9200
-     * @tc.name testTypedUArraysFindIndex092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4200
+     * @tc.name testTypedUArraysFindIndexFileB042
      * @tc.desc Verify predicate index Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.findIndex((v, i) => v >= 0 && i === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9300
-     * @tc.name testTypedUArraysFindIndex093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4300
+     * @tc.name testTypedUArraysFindIndexFileB043
      * @tc.desc Verify predicate array Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40, 50]);
       let result = arr.findIndex((v, i, a) => v >= 0 && i >= 0 && a.length === 5);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9400
-     * @tc.name testTypedUArraysFindIndex094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4400
+     * @tc.name testTypedUArraysFindIndexFileB044
      * @tc.desc Verify predicate value index Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([5, 15, 25, 35, 45]);
       let result = arr.findIndex((v) => v === 35);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9500
-     * @tc.name testTypedUArraysFindIndex095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4500
+     * @tc.name testTypedUArraysFindIndexFileB045
      * @tc.desc Verify BigUint64Array predicate Object.is BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([5n, 10n, 15n, 20n]);
       let result = arr.findIndex((v) => v === 15n);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9600
-     * @tc.name testTypedUArraysFindIndex096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4600
+     * @tc.name testTypedUArraysFindIndexFileB046
      * @tc.desc Verify BigUint64Array predicate Number BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([5n, 10n, 15n]);
       let result = arr.findIndex((v) => v === 99n);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9700
-     * @tc.name testTypedUArraysFindIndex097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4700
+     * @tc.name testTypedUArraysFindIndexFileB047
      * @tc.desc Verify Uint8Array of findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.of(10, 20, 30, 40);
       let result = arr.findIndex((v) => v === 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_9800
-     * @tc.name testTypedUArraysFindIndex098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDINDEX_4800
+     * @tc.name testTypedUArraysFindIndexFileB048
      * @tc.desc Verify predicate findIndex Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindIndex098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindIndexFileB048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40, 50]);
       let result: number = arr.findIndex((v: number) => v > 25);
       expect(result).assertEqual(2);
