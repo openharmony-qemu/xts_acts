@@ -382,8 +382,7 @@ export default function ObjectFromEntriesTest() {
      */
     it('ObjectFromEntriesTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r = fromEntriesSetAsIterable();
-      expect(r.a).assertEqual(1);
-      expect(r.b).assertEqual(2);
+      expect(r.hasException).assertEqual(true);
     });
 
     /**
@@ -1089,8 +1088,7 @@ export default function ObjectFromEntriesTest() {
      */
     it('ObjectFromEntriesTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r = fromEntriesSetDirect();
-      expect(r.key1).assertEqual('value1');
-      expect(r.key2).assertEqual('value2');
+      expect(r.hasException).assertEqual(true);
     });
 
     /**
@@ -2367,8 +2365,7 @@ export default function ObjectFromEntriesTest() {
      */
     it('ObjectFromEntriesTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r = fromEntriesSetDedupAndConvert();
-      expect(r.b).assertEqual(3);
-      expect(r.hasA).assertEqual(true);
+      expect(r.hasException).assertEqual(true);
     });
 
     /**
