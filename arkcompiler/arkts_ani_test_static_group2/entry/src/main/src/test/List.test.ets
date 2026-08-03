@@ -20,6 +20,7 @@ import enumOperationsTest from "./ActsEnumOperations.test";
 import vmOpsTest from "./ActsVmOps.test"
 import exceptionTest from "./ActsException.test"
 import fixedArrayTest from "./ActsFixedArray.test"
+import valueArrayTest from "./ActsValueArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
@@ -29,6 +30,7 @@ export default function testsuite(): void {
     enumOperationsTest();
     vmOpsTest();
     fixedArrayTest();
+    valueArrayTest();
     promiseTest();
     exceptionTest();
     weakGlobalReferencesTest();

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ ani_string test_OptDirectGetString(ani_env *env, [[maybe_unused]] ani_object obj
     return result;
 }
 ani_int test_OptQuickProcessArray(ani_env *env,
-    [[maybe_unused]] ani_object object, ani_fixedarray_boolean arr, ani_int length)
+    [[maybe_unused]] ani_object object, ani_valuearray_boolean arr, ani_int length)
 {
     std::cout << "TC_OPT_003 test_OptQuickProcessArray called, length: "
               << length << std::endl;
@@ -73,8 +73,8 @@ ani_int test_OptQuickProcessArray(ani_env *env,
         return -1;
     }
     ani_size actualLength = 0;
-    ani_status status = env->FixedArray_GetLength(arr, &actualLength);
-    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 FixedArray_GetLength failed")) {
+    ani_status status = env->ValueArray_GetLength(arr, &actualLength);
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 ValueArray_GetLength failed")) {
         return -1;
     }
     ani_size readLength = static_cast<ani_size>(length);
@@ -82,8 +82,8 @@ ani_int test_OptQuickProcessArray(ani_env *env,
         readLength = actualLength;
     }
     std::vector<ani_boolean> values(readLength);
-    status = env->FixedArray_GetRegion_Boolean(arr, 0, readLength, values.data());
-    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 FixedArray_GetRegion_Boolean failed")) {
+    status = env->ValueArray_GetRegion_Boolean(arr, 0, readLength, values.data());
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 ValueArray_GetRegion_Boolean failed")) {
         return -1;
     }
     ani_int trueCount = 0;
