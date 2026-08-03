@@ -12,12 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 export const OH_UdmfData_GetPrimaryPlainText_0001: () => number;
 export const OH_UdmfData_GetPrimaryPlainText_0003: () => number;
 export const OH_UdmfData_GetPrimaryPlainText_0005: () => number;
-export const OH_UdmfData_GetPrimaryPlainText_0006: () => number; //err
+export const OH_UdmfData_GetPrimaryPlainText_0006: () => number;
 export const OH_UdmfData_GetPrimaryPlainText_0007: () => number;
 export const OH_UdmfData_GetPrimaryHtml_0001: () => number;
 export const OH_UdmfData_GetPrimaryHtml_0003: () => number;
@@ -79,20 +77,3 @@ export const OH_UdmfRecordProvider_SetData0100: () => number;
 export const OH_UdmfRecordProvider_SetData0200: () => number;
 export const OH_UdmfRecord_SetProvider0100: () => number;
 export const OH_UdmfRecord_SetProvider0200: () => number;
-export const OH_UdmfOptions_GetKey_004: () => number;
-export const OH_UdmfOptions_GetIntention_003: () => number;
-export const OH_Udmf_SetUnifiedDataByOptions_013: () => number;
-export const OH_Udmf_GetDataElementAt_001: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0001: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0002: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0003: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0004: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0005: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0006: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0007: () => number;
-export const OH_UdmfData_Udmf_ListenerStatus_0008: () => number;
-export const OH_UdmfData_AddRecord_001 () => number;
-export const OH_UdmfData_AddRecord_002: () => number;
-export const OH_UdmfData_AddRecord_003: () => number;
-export const OH_UdmfData_UdmfProgressInfo_GetStatus_001: () => number;
-export const OH_UdmfData_UdmfProgressInfo_GetProgress_001: () => number;
