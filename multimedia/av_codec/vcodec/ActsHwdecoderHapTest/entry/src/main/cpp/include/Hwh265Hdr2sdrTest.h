@@ -16,10 +16,9 @@
 #ifndef HWH265_HDR2SDR_TEST_H
 #define HWH265_HDR2SDR_TEST_H
 
-namespace OHOS {
-namespace Media {
-int HEVC_HW_HDR2SDR_FUNC_002();
-} // namespace Media
-} // namespace OHOS
+#include "napi/native_api.h"
+int HevcHwHdr2sdrFunc002Test();
+
+void InitHwdecHdr2sdrTest();
 
 #endif // HWH265_HDR2SDR_TEST_H
