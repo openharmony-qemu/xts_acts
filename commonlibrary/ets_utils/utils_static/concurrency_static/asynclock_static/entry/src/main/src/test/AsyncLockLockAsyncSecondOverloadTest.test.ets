@@ -1,0 +1,803 @@
+'use static'
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+
+class CustomError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "CustomError";
+  }
+}
+
+interface GeneratedObjectLiteralInterface_1 {
+  value: number;
+}
+
+interface GeneratedObjectLiteralInterface_2 {
+  value: number;
+}
+
+interface ResultObj {
+  id: number;
+}
+
+export default function AsyncLockLockAsyncSecondOverloadTest(): void {
+  describe('AsyncLockLockAsyncSecondOverloadTest', (): void => {
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0100
+     * @tc.desc    Verify lockAsync with callback and EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let executed = false;
+      let p1 = lock.lockAsync<void>(() => {
+        executed = true;
+      }, AsyncLockMode.EXCLUSIVE);
+      await p1
+      expect(executed).assertTrue();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0200
+     * @tc.desc    Verify normal function callback with EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number = await lock.lockAsync<number>(() => {
+        return 100;
+      }, AsyncLockMode.EXCLUSIVE);
+      expect(result).assertEqual(100);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0300
+     * @tc.desc    Verify arrow function callback with SHARED mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "test", AsyncLockMode.SHARED);
+      expect(result).assertEqual("test");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0400
+     * @tc.desc    Verify void callback with EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let executed = false;
+      let result: void = await lock.lockAsync<void>(() => {
+        executed = true;
+      }, AsyncLockMode.EXCLUSIVE);
+      expect(executed).assertTrue();
+      expect(result).assertUndefined();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0500
+     * @tc.desc    Verify callback returning null with SHARED mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string | null = await lock.lockAsync<string | null>(() => null, AsyncLockMode.SHARED);
+      expect(result).assertNull();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0600
+     * @tc.desc    Verify SHARED mode parameter
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let executed = false;
+
+      await lock.lockAsync<void>(() => {
+        executed = true;
+      }, AsyncLockMode.SHARED);
+
+      expect(executed).assertTrue();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0700
+     * @tc.desc    Verify callback with SHARED mode combination
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "shared_result", AsyncLockMode.SHARED);
+      expect(result).assertEqual("shared_result");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0800
+     * @tc.desc    Verify callback with EXCLUSIVE mode combination
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "exclusive_result", AsyncLockMode.EXCLUSIVE);
+      expect(result).assertEqual("exclusive_result");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload0900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_0900
+     * @tc.desc    Verify returns Promise<T>
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let p: Promise<void> = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+      expect(p).not().assertNull();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1000
+     * @tc.desc    Verify await returns callback result
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "result", AsyncLockMode.SHARED);
+      expect(result).assertEqual("result");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1100
+     * @tc.desc    Verify successful return in SHARED mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number = await lock.lockAsync<number>(() => 100, AsyncLockMode.SHARED);
+      expect(result).assertEqual(100);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1200
+     * @tc.desc    Verify successful return in EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number = await lock.lockAsync<number>(() => 200, AsyncLockMode.EXCLUSIVE);
+      expect(result).assertEqual(200);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1300
+     * @tc.desc    Verify lock auto releases after callback completes
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      await lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+      let state = lock.query();
+      expect(state.held.length).assertEqual(0);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1400
+     * @tc.desc    Verify returns void in SHARED mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: void = await lock.lockAsync<void>(() => {}, AsyncLockMode.SHARED);
+      expect(result).assertUndefined();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1500
+     * @tc.desc    Verify returns void in EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: void = await lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+      expect(result).assertUndefined();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1600
+     * @tc.desc    Verify returns empty array
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number[] = await lock.lockAsync<number[]>(() => [], AsyncLockMode.EXCLUSIVE);
+      expect(result.length).assertEqual(0);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1700
+     * @tc.desc    Verify return value type is Promise
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let p = lock.lockAsync<number>(() => 100, AsyncLockMode.SHARED);
+      let result = await p;
+      expect(result).assertEqual(100);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1800
+     * @tc.desc    Verify generic T type correctness
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let numResult: number = await lock.lockAsync<number>(() => 1, AsyncLockMode.EXCLUSIVE);
+      let strResult: string = await lock.lockAsync<string>(() => "s", AsyncLockMode.SHARED);
+      expect(typeof numResult).assertEqual("number");
+      expect(typeof strResult).assertEqual("string");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload1900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_1900
+     * @tc.desc    Verify returns MAX_VALUE
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number = await lock.lockAsync<number>(() => Number.MAX_VALUE, AsyncLockMode.EXCLUSIVE);
+      expect(result).assertEqual(Number.MAX_VALUE);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2000
+     * @tc.desc    Verify returns very long string
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "a".repeat(10000), AsyncLockMode.SHARED);
+      expect(result.length).assertEqual(10000);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2100
+     * @tc.desc    Verify callback throwing Error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      try {
+        await lock.lockAsync<void>(() => {
+          throw new Error("callback error");
+        }, AsyncLockMode.EXCLUSIVE);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+        expect(error.message).not().assertNull();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2200
+     * @tc.desc    Verify callback throwing custom Error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+
+      let lock = new AsyncLock();
+      try {
+        await lock.lockAsync<void>(() => {
+          throw new CustomError("custom error");
+        }, AsyncLockMode.SHARED);
+      } catch (error) {
+        expect(error instanceof CustomError).assertTrue();
+        expect(error.message).not().assertNull();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2300
+     * @tc.desc    Verify Promise rejected when callback throws exception
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let p: Promise<void> = lock.lockAsync<void>(() => {
+        throw new Error("reject");
+      }, AsyncLockMode.EXCLUSIVE);
+      try {
+        await p;
+        expect().assertFail();
+      } catch (error) {
+        expect(error).not().assertNull();
+        expect(error.message).not().assertNull();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2400
+     * @tc.desc    Verify using catch to handle rejection
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      await lock.lockAsync<void>(() => {
+        throw new Error("catch test");
+      }, AsyncLockMode.SHARED).catch((error:Error) => {
+        expect(error).not().assertNull();
+      });
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2500
+     * @tc.desc    Verify multiple SHARED locks can execute concurrently
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let results: number[] = [];
+      await Promise.all([
+        lock.lockAsync<void>(() => { results.push(1); }, AsyncLockMode.SHARED),
+        lock.lockAsync<void>(() => { results.push(2); }, AsyncLockMode.SHARED)
+      ]);
+      expect(results.length).assertEqual(2);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2600
+     * @tc.desc    Verify SHARED lock for shared reading
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let data: GeneratedObjectLiteralInterface_1 = { value: 100 };
+      let results: number[] = await Promise.all([
+        lock.lockAsync<number>(() => data.value, AsyncLockMode.SHARED),
+        lock.lockAsync<number>(() => data.value, AsyncLockMode.SHARED)
+      ]);
+      expect(results[0]).assertEqual(100);
+      expect(results[1]).assertEqual(100);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2700
+     * @tc.desc    Verify EXCLUSIVE lock executes exclusively
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let order: int[] = [];
+      await lock.lockAsync<void>(() => { order.push(1); }, AsyncLockMode.EXCLUSIVE);
+      await lock.lockAsync<void>(() => { order.push(2); }, AsyncLockMode.EXCLUSIVE);
+      expect(order).assertDeepEquals([1, 2]);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2800
+     * @tc.desc    Verify EXCLUSIVE lock for write scenarios
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let data: GeneratedObjectLiteralInterface_2 = { value: 0 };
+      await lock.lockAsync<void>(() => { data.value = 100; }, AsyncLockMode.EXCLUSIVE);
+      expect(data.value).assertEqual(100);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload2900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_2900
+     * @tc.desc    Verify await lockAsync in SHARED mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let test: () => Promise<string> = async (): Promise<string> => {
+        return await lock.lockAsync<string>(() => "test", AsyncLockMode.SHARED);
+      };
+      let r = await test();
+      expect(r).assertEqual("test");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3000
+     * @tc.desc    Verify await lockAsync in EXCLUSIVE mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let test: () => Promise<string> = async (): Promise<string> => {
+        return await lock.lockAsync<string>(() => "test", AsyncLockMode.EXCLUSIVE);
+      };
+      let r: string = await test();
+      expect(r).assertEqual("test");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3100
+     * @tc.desc    Verify then chaining
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result = await lock.lockAsync<string>(() => "test", AsyncLockMode.SHARED);
+      expect(result).assertEqual("test");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3200
+     * @tc.desc    Verify catch chaining
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      await lock.lockAsync<void>(() => {
+        throw new Error("catch");
+      }, AsyncLockMode.EXCLUSIVE).catch((error:Error) => {
+        expect(error).not().assertNull();
+      });
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3300
+     * @tc.desc    Verify multiple concurrent SHARED locks
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let promises: Promise<number>[] = [
+        lock.lockAsync<number>(() => 1, AsyncLockMode.SHARED),
+        lock.lockAsync<number>(() => 2, AsyncLockMode.SHARED),
+        lock.lockAsync<number>(() => 3, AsyncLockMode.SHARED)
+      ];
+      let results: number[] = await Promise.all(promises);
+      expect(results.length).assertEqual(3);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3400
+     * @tc.desc    Verify multiple concurrent EXCLUSIVE locks queue
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let order: number[] = [];
+
+      await Promise.all([
+        lock.lockAsync<void>(() => { order.push(1); }, AsyncLockMode.EXCLUSIVE),
+        lock.lockAsync<void>(() => { order.push(2); }, AsyncLockMode.EXCLUSIVE),
+        lock.lockAsync<void>(() => { order.push(3); }, AsyncLockMode.EXCLUSIVE)
+      ]);
+
+      expect(order[0]).assertEqual(1);
+      expect(order[1]).assertEqual(2);
+      expect(order[2]).assertEqual(3);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3500
+     * @tc.desc    Verify lockAsync with generic type number
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number = await lock.lockAsync<number>(() => 123, AsyncLockMode.EXCLUSIVE);
+      expect(typeof result).assertEqual("number");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3600
+     * @tc.desc    Verify lockAsync with generic type string
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: string = await lock.lockAsync<string>(() => "test", AsyncLockMode.SHARED);
+      expect(typeof result).assertEqual("string");
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3700
+     * @tc.desc    Verify lockAsync with generic type void
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: void = await lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+      expect(result).assertUndefined();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3800
+     * @tc.desc    Verify lockAsync with generic type array
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result: number[] = await lock.lockAsync<number[]>(() => [1, 2, 3], AsyncLockMode.SHARED);
+      expect(Array.isArray(result)).assertTrue();
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload3900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_3900
+     * @tc.desc    Verify lockAsync with generic type object
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncSecondOverload3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let result = await lock.lockAsync<ResultObj>(() => ({ id: 1 }), AsyncLockMode.EXCLUSIVE);
+      expect(result.id).assertEqual(1);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload4000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4000
+     * @tc.desc    Verify SHARED lock held state
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      await lock.lockAsync<void>(() => {
+        let state = lock.query();
+        expect(state.held.length).assertLarger(0);
+      }, AsyncLockMode.SHARED);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload4100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4100
+     * @tc.desc    Verify multiple SHARED locks state
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+
+      let promise1 = lock.lockAsync<number>(() => {
+        let state = lock.query();
+        let len = state.held.length;
+        return len !== undefined ? len : 0;
+      }, AsyncLockMode.SHARED);
+
+      let promise2 = lock.lockAsync<void>(() => {}, AsyncLockMode.SHARED);
+
+      let results = await Promise.all([promise1, promise2]);
+      let heldCount = results[0];
+
+      expect(heldCount).assertLarger(0);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload4200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4200
+     * @tc.desc    Verify EXCLUSIVE lock held state
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      await lock.lockAsync<void>(() => {
+        let state = lock.query();
+        expect(state.held.length).assertEqual(1);
+      }, AsyncLockMode.EXCLUSIVE);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload4300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4300
+     * @tc.desc    Verify SHARED mode concurrent performance
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let count = 0;
+      await Promise.all([
+        lock.lockAsync<void>(() => { count++; }, AsyncLockMode.SHARED),
+        lock.lockAsync<void>(() => { count++; }, AsyncLockMode.SHARED),
+        lock.lockAsync<void>(() => { count++; }, AsyncLockMode.SHARED)
+      ]);
+      expect(count).assertEqual(3);
+      Done();
+    });
+
+    /**
+     * @tc.name    testAsyncLockLockAsyncSecondOverload4400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4400
+     * @tc.desc    Verify EXCLUSIVE mode sequential performance
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockLockAsyncSecondOverload4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+      let lock = new AsyncLock();
+      let count = 0;
+      for (let i: number = 0; i < 10; i++) {
+        await lock.lockAsync<void>(() => { count++; }, AsyncLockMode.EXCLUSIVE);
+      }
+      expect(count).assertEqual(10);
+      Done();
+    });
+  })
+}
