@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 export default function AsyncLockRequestTest(): void {
   describe('AsyncLockRequestTest', (): void => {
@@ -30,7 +30,7 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lockName = "testLock";
       let lock = AsyncLock.request(lockName);
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -43,7 +43,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("requiredName");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -56,7 +56,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("onlyOneParam");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -314,7 +314,6 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lockName = "isAvailableLock";
       let lock = AsyncLock.request(lockName);
-      expect(typeof lock.query).assertEqual("function");
       expect(lock instanceof AsyncLock).assertTrue();
     });
 
@@ -340,14 +339,14 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockRequest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockRequest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = AsyncLock.request("useLock");
       let called = false;
       await lock.lockAsync<void>(() => {
         called = true;
       });
       expect(called).assertTrue();
-      Done()
+
     });
 
     /**
@@ -430,7 +429,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("nonNull");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
       expect(typeof lock).assertEqual("object");
     });
 
@@ -480,7 +479,7 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let lock = AsyncLock.request("normalCall");
-        expect(typeof lock.query).assertEqual("function");
+        expect(lock instanceof AsyncLock).assertTrue();
       } catch (error) {
         expect(error).not().assertNull();
         expect(error.message).not().assertNull();
@@ -497,7 +496,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -510,7 +509,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("staticMethod");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -565,7 +564,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("nonExistingLock");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -623,7 +622,7 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockRequest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let requestLock = async (): Promise<AsyncLock> => {
         return AsyncLock.request("concurrentLock");
       };
@@ -635,7 +634,7 @@ export default function AsyncLockRequestTest(): void {
       for (let lock of locks) {
         expect(lock === locks[0]).assertTrue();
       }
-      Done()
+
     });
 
     /**
@@ -646,7 +645,7 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockRequest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let locks = await Promise.all([
         AsyncLock.request("lock1"),
         AsyncLock.request("lock2"),
@@ -656,7 +655,7 @@ export default function AsyncLockRequestTest(): void {
       expect(locks[0] === locks[1]).assertFalse();
       expect(locks[0] === locks[2]).assertFalse();
       expect(locks[1] === locks[2]).assertFalse();
-      Done()
+
     });
 
     /**
@@ -667,13 +666,13 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockRequest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let getLock: () => Promise<AsyncLock> = async (): Promise<AsyncLock> => {
         return AsyncLock.request("asyncLock");
       };
       let lock = await getLock();
-      expect(typeof lock.query).assertEqual("function");
-      Done()
+      expect(lock instanceof AsyncLock).assertTrue();
+
     });
 
     /**
@@ -684,13 +683,13 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockRequest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("outerLock");
       let innerLock = await lock.lockAsync<AsyncLock>(() => {
         return AsyncLock.request("innerLock");
       });
       expect(innerLock.name).assertEqual("innerLock");
-      Done()
+
     });
 
     /**
@@ -843,7 +842,7 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("contextTest");
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -870,7 +869,7 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let lock = AsyncLock.request(true as string);
-        expect(typeof lock.query).assertEqual("function");
+        expect(lock instanceof AsyncLock).assertTrue();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
         expect(error.message).not().assertNull();
@@ -888,7 +887,7 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let lock = AsyncLock.request({} as string);
-        expect(typeof lock.query).assertEqual("function");
+        expect(lock instanceof AsyncLock).assertTrue();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
         expect(error.message).not().assertNull();

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 export default function AsyncLockStatePropertyTest(): void {
   describe('AsyncLockStatePropertyTest', (): void => {
@@ -160,13 +160,13 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
       }, AsyncLockMode.EXCLUSIVE);
-      Done()
+
     });
 
     /**
@@ -264,13 +264,13 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockStateProperty1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {});
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
-      Done()
+
     });
 
     /**
@@ -313,7 +313,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let stateBefore = lock.query();
       expect(stateBefore.held.length).assertEqual(0);
@@ -321,7 +321,7 @@ export default function AsyncLockStatePropertyTest(): void {
         let stateDuring = lock.query();
         expect(stateDuring.held.length).assertLarger(0);
       });
-      Done()
+
     });
 
     /**
@@ -332,12 +332,12 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {});
       let stateAfter = lock.query();
       expect(stateAfter.held.length).assertEqual(0);
-      Done()
+
     });
 
     /**
@@ -384,7 +384,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockStateProperty2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -392,7 +392,7 @@ export default function AsyncLockStatePropertyTest(): void {
         for (let info of state.held) { heldCount++ }
         expect(heldCount).assertLarger(0);
       });
-      Done()
+
     });
 
     /**
@@ -403,7 +403,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldInfo");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -413,7 +413,7 @@ export default function AsyncLockStatePropertyTest(): void {
           expect(state.held[0].contextId).assertLarger(0);
         }
       });
-      Done()
+
     });
 
     /**
@@ -424,7 +424,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockStateProperty2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = new AsyncLock();
       await Promise.all([
         lock.lockAsync<void>(() => {}, AsyncLockMode.SHARED),
@@ -433,7 +433,7 @@ export default function AsyncLockStatePropertyTest(): void {
           expect(state.held.length > 0).assertTrue();
         }, AsyncLockMode.SHARED)
       ]);
-      Done()
+
     });
 
     /**
@@ -444,7 +444,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       lock.lockAsync<void>(async () => {
         await new Promise<void>(resolve => {setTimeout(resolve, 1000)});
@@ -453,7 +453,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       let length = state.pending.length;
       expect(typeof length).assertEqual("int");
-      Done()
+
     });
 
     /**
@@ -464,7 +464,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockStateProperty2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = new AsyncLock();
       lock.lockAsync<void>(async () => {
         await new Promise<void>(resolve => {setTimeout(resolve, 1000)});
@@ -472,7 +472,7 @@ export default function AsyncLockStatePropertyTest(): void {
       lock.lockAsync<void>(() => {});
       let state = lock.query();
       expect(state.pending.length).assertLarger(0);
-      Done()
+
     });
 
     /**
@@ -483,7 +483,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let monitorHeld: () => Promise<Int> = async (): Promise<Int> => {
         let state = lock.query();
@@ -498,7 +498,7 @@ export default function AsyncLockStatePropertyTest(): void {
       });
       let heldCountAfter = await monitorHeld();
       expect(heldCountAfter).assertEqual(0);
-      Done()
+
     });
 
     /**
@@ -509,7 +509,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let monitorPending: () => Promise<Int> = async (): Promise<Int> => {
         let state = lock.query();
@@ -517,7 +517,7 @@ export default function AsyncLockStatePropertyTest(): void {
       };
       let pendingCountBefore = await monitorPending();
       expect(pendingCountBefore).assertEqual(0);
-      Done()
+
     });
 
     /**
@@ -528,7 +528,7 @@ export default function AsyncLockStatePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockStateProperty3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -538,7 +538,7 @@ export default function AsyncLockStatePropertyTest(): void {
         expect(typeof state.held !== 'undefined').assertTrue();
         expect(typeof state.pending !== 'undefined').assertTrue();
       });
-      Done()
+
     });
 
   });

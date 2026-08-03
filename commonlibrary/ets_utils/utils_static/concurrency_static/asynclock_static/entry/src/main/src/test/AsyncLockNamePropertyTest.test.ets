@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 export default function AsyncLockNamePropertyTest(): void {
   describe('AsyncLockNamePropertyTest', (): void => {
@@ -298,14 +298,14 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockNameProperty2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let getLockName = async (): Promise<string> => {
         let lock = AsyncLock.request('asyncLock');
         return lock.name;
       };
       let name = await getLockName();
       expect(name).assertEqual('asyncLock');
-      Done()
+
     });
 
     /**
@@ -316,13 +316,13 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockNameProperty2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = AsyncLock.request('callbackLock');
       let result = await lock.lockAsync<string>(() => {
         return lock.name;
       });
       expect(result).assertEqual('callbackLock');
-      Done()
+
     });
 
     /**
@@ -474,7 +474,7 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockNameProperty3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lockNames = ['lock1', 'lock2', 'lock3'];
       let promises = lockNames.map(async (name): Promise<string> => {
         let lock = AsyncLock.request(name);
@@ -484,7 +484,7 @@ export default function AsyncLockNamePropertyTest(): void {
       expect(results[0]).assertEqual('lock1');
       expect(results[1]).assertEqual('lock2');
       expect(results[2]).assertEqual('lock3');
-      Done()
+
     });
 
   });

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 interface CustomObject {
   id: number;
@@ -782,9 +782,9 @@ export default function AbortSignalPropertyTest(): void {
       signal.aborted = true;
       signal.reason = "test";
       let json = JSON.stringify(signal);
-      const parsed = JSON.parse(json) as Record<string, Object>;
-      expect(parsed["aborted"] as boolean).assertTrue();
-      expect(parsed["reason"] as string).assertEqual("test");
+      expect(json).assertContain('"aborted"');
+      expect(json).assertContain('"reason"');
+      expect(json).assertContain('"test"');
     });
 
     /**

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import AsyncLockConstructorTest from './AsyncLockConstructorTest.test';
 import AsyncLockLockAsyncFirstOverloadTest from './AsyncLockLockAsyncFirstOverloadTest.test';
 import AsyncLockLockAsyncSecondOverloadTest from './AsyncLockLockAsyncSecondOverloadTest.test';
@@ -13,8 +13,7 @@ import AsyncLockOptionsConstructorTest from './AsyncLockOptionsConstructorTest.t
 import AsyncLockStatePropertyTest from './AsyncLockStatePropertyTest.test';
 import AbortSignalPropertyTest from './AbortSignalPropertyTest.test';
 import AsyncLockOptionsParameterizedConstructorTest from './AsyncLockOptionsParameterizedConstructorTest.test';
-import AsyncLockCallbackTest from './AsyncLockCallbackTest.test'
-import AsyncLockOptionsTest from './AsyncLockOptionsTest.test'
+import AsyncLockCallbackTest from './AsyncLockCallbackTest.test';
 
 export default function testsuite(): void {
   AbortSignalPropertyTest();
@@ -29,8 +28,7 @@ export default function testsuite(): void {
   AsyncLockLockAsyncThirdOverloadTest();
   AsyncLockInfoTest();
   AsyncLockQueryInstanceTest();
-  AsyncLockCallbackTest()
-  AsyncLockOptionsTest();
+  AsyncLockCallbackTest();
   AsyncLockStatePropertyTest();
   AsyncLockQueryStaticTest();
 

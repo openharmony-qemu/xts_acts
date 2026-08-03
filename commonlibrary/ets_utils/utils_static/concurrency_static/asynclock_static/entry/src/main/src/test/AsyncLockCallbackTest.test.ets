@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 interface OptionalIdResult {
   id?: number;
 }
@@ -275,7 +275,7 @@ export default function AsyncLockCallbackTest(): void {
       try {
         await lock.lockAsync<int>(callback);
         expect().assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error instanceof Error).assertTrue();
         expect(error.message).assertEqual("callback error");
       }
@@ -297,7 +297,7 @@ export default function AsyncLockCallbackTest(): void {
       try {
         await lock.lockAsync<int>(callback);
         expect().assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error instanceof CustomError).assertTrue();
         expect(error.message).assertEqual("custom callback error");
       }
@@ -319,7 +319,7 @@ export default function AsyncLockCallbackTest(): void {
       try {
         await lock.lockAsync<int>(callback);
         expect().assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error instanceof Error).assertTrue();
         expect(error.message).assertEqual("async error");
       }
@@ -341,7 +341,7 @@ export default function AsyncLockCallbackTest(): void {
       try {
         await lock.lockAsync<int>(callback);
         expect().assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error instanceof Error).assertTrue();
         expect(error.message).assertEqual("async throw");
       }
@@ -359,7 +359,7 @@ export default function AsyncLockCallbackTest(): void {
       const callback = () => {
         try {
           return 100;
-        } catch (e: Error) {
+        } catch (e) {
           return -1;
         }
       };
@@ -380,7 +380,7 @@ export default function AsyncLockCallbackTest(): void {
       const callback = () => {
         try {
           throw new Error("inner error");
-        } catch (_e: Error) {
+        } catch (_e) {
           return -1;
         }
       };
@@ -442,7 +442,7 @@ export default function AsyncLockCallbackTest(): void {
         try {
           await Promise.reject(new Error("reject"));
           return 0;
-        } catch (_e: Error) {
+        } catch (_e) {
           return -1;
         }
       };

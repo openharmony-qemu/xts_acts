@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 export default function AsyncLockConstructorTest(): void {
   describe('AsyncLockConstructorTest', (): void => {
@@ -29,7 +29,7 @@ export default function AsyncLockConstructorTest(): void {
      */
     it('testAsyncLockConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = new AsyncLock();
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
@@ -42,7 +42,6 @@ export default function AsyncLockConstructorTest(): void {
      */
     it('testAsyncLockConstructor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = new AsyncLock();
-      expect(typeof lock.query).assertEqual("function");
       expect(lock instanceof AsyncLock).assertTrue();
     });
 
@@ -102,10 +101,6 @@ export default function AsyncLockConstructorTest(): void {
       expect(typeof name).assertEqual('string');
     });
 
-
-
-
-
     /**
      * @tc.name    testAsyncLockConstructor0700
      * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_0700
@@ -121,10 +116,6 @@ export default function AsyncLockConstructorTest(): void {
       }
       expect(locks.length).assertEqual(100);
     });
-
-
-
-
 
     /**
      * @tc.name    testAsyncLockConstructor0800
@@ -279,7 +270,7 @@ export default function AsyncLockConstructorTest(): void {
      */
     it('testAsyncLockConstructor1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request('namedLock');
-      expect(typeof lock.query).assertEqual("function");
+      expect(lock instanceof AsyncLock).assertTrue();
       expect(lock.name).assertEqual('namedLock');
     });
 
@@ -375,10 +366,6 @@ export default function AsyncLockConstructorTest(): void {
       }
       expect(locks.length).assertEqual(100);
     });
-
-
-
-
 
     /**
      * @tc.name    testAsyncLockConstructor2400

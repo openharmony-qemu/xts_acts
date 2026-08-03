@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 interface LockData {
   id: number;
@@ -71,7 +71,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockOptionsConstructor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockOptionsConstructor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let executed = false;
@@ -81,7 +81,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
       }, AsyncLockMode.EXCLUSIVE, options);
 
       expect(executed).assertTrue();
-      Done()
+
     });
 
     /**
@@ -123,12 +123,6 @@ export default function AsyncLockOptionsConstructorTest(): void {
       expect(options.timeout).assertEqual(0);
     });
 
-
-
-
-
-
-
     /**
      * @tc.name    testAsyncLockOptionsConstructor0800
      * @tc.number  SUB_ASYNCLOCK_OPTIONS_CONSTRUCTOR_TEST_0800
@@ -144,20 +138,6 @@ export default function AsyncLockOptionsConstructorTest(): void {
       }
       expect(optionsArray.length).assertEqual(100);
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * @tc.name    testAsyncLockOptionsConstructor0900
@@ -216,7 +196,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
 
     /**
      * @tc.name    testAsyncLockOptionsConstructor1200
-     * @tc.number  SUB_ASYNC_LOCK_OPTIONS_CONSTRUCTOR_TEST_2810
+     * @tc.number  SUB_ASYNCLOCK_OPTIONS_CONSTRUCTOR_TEST_1200
      * @tc.desc    Verify Parameterized constructors are suitable for scenarios where known fixed values need to be configured.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
@@ -232,14 +212,6 @@ export default function AsyncLockOptionsConstructorTest(): void {
       expect(options.timeout).assertEqual(3000);
     });
 
-
-
-
-
-
-
-
-
     /**
      * @tc.name    testAsyncLockOptionsConstructor1300
      * @tc.number  SUB_ASYNCLOCK_OPTIONS_CONSTRUCTOR_TEST_1300
@@ -248,7 +220,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockOptionsConstructor1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockOptionsConstructor1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       options.isAvailable = true;
@@ -260,7 +232,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
       }, AsyncLockMode.EXCLUSIVE, options);
 
       expect(executed).assertTrue();
-      Done()
+
     });
 
     /**
@@ -271,14 +243,14 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockOptionsConstructor1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       await expect(Promise.all([
         lock.lockAsync<void, void>(() => {}, AsyncLockMode.SHARED, options),
         lock.lockAsync<void, void>(() => {}, AsyncLockMode.SHARED, options)
       ])).assertPromiseIsResolved();
-      Done()
+
     });
 
     /**
@@ -289,13 +261,13 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockOptionsConstructor1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
       options.signal = s;
       await expect(lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options)).assertPromiseIsResolved();
-      Done()
+
     });
 
     /**
@@ -306,7 +278,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockOptionsConstructor1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
@@ -321,12 +293,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
         expect(error.message).not().assertNull();
       }
       expect(rejected).assertFalse();
-      Done()
+
     });
-
-
-
-
 
     /**
      * @tc.name    testAsyncLockOptionsConstructor1700

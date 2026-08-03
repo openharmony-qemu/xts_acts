@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium';
+import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 interface GeneratedTypeLiteralInterface_1 {
   lockName: string;
@@ -138,14 +138,14 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request('heldLock');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         let hasHeld = states.some(s => s.held.length > 0);
         expect(hasHeld).assertTrue();
       });
-      Done()
+
     });
 
     /**
@@ -417,7 +417,7 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryAll2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let states = await Promise.all([
         Promise.resolve(AsyncLock.queryAll()),
         Promise.resolve(AsyncLock.queryAll()),
@@ -427,7 +427,7 @@ export default function AsyncLockQueryAllTest(): void {
       for (let s of states) {
         expect(Array.isArray(s)).assertTrue();
       }
-      Done()
+
     });
 
     /**
@@ -438,13 +438,13 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryAll2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = AsyncLock.request('duringLock');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
-      Done()
+
     });
 
     /**
@@ -455,13 +455,13 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let getAllStates: () => Promise<AsyncLockState[]> = async (): Promise<AsyncLockState[]> => {
         return AsyncLock.queryAll();
       };
       let states = await getAllStates();
       expect(Array.isArray(states)).assertTrue();
-      Done()
+
     });
 
     /**
@@ -472,13 +472,13 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request('callbackAll');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
-      Done()
+
     });
 
     /**
@@ -503,14 +503,14 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request('duringExec');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         let hasHeld = states.some(s => s.held.length > 0);
         expect(hasHeld).assertTrue();
       });
-      Done()
+
     });
 
     /**
@@ -521,14 +521,14 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request('afterExec');
       await lock.lockAsync<void>(() => {});
       let states = AsyncLock.queryAll();
       let targetState = states.find(s => s.held.length === 0);
       expect(Array.isArray(states)).assertTrue();
       expect(targetState).not().assertUndefined();
-      Done()
+
     });
 
     /**
@@ -560,8 +560,6 @@ export default function AsyncLockQueryAllTest(): void {
       expect(states.length).assertLarger(0);
     });
 
-
-
     /**
      * @tc.name    testAsyncLockQueryAll3500
      * @tc.number  SUB_ASYNCLOCK_QUERY_ALL_TEST_3500
@@ -570,7 +568,7 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('testAsyncLockQueryAll3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock1 = AsyncLock.request('monitorLock1');
       let capturedStates: Array<GeneratedTypeLiteralInterface_1> = [];
 
@@ -582,7 +580,7 @@ export default function AsyncLockQueryAllTest(): void {
       await monitorLocks();
 
       expect(capturedStates.length).assertEqual(0);
-      Done()
+
     });
 
     /**
