@@ -55,7 +55,7 @@ export default function ConditionVariableSupplementTest(): void {
       try {
         await cv.waitFor(100)
         completed = true
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ConditionVariableSupplementTest0100 unexpected error: ' + err.message)
         expect(err instanceof Error).assertTrue()
         expect().assertFail()
@@ -79,7 +79,7 @@ export default function ConditionVariableSupplementTest(): void {
         cv.notifyOne()
         cv.notifyAll()
         completed = true
-      } catch (err: Error) {
+      } catch (err) {
         expect(err instanceof Error).assertTrue()
         expect().assertFail()
         return
@@ -127,7 +127,7 @@ export default function ConditionVariableSupplementTest(): void {
         }
         cv.notifyOne()
         await execPromise
-      } catch (err: Error) {
+      } catch (err) {
         expect(err instanceof Error).assertTrue()
         expect().assertFail()
         return
