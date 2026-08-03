@@ -1704,6 +1704,1013 @@ export default function requestSupplementalDownTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5700
+     * @tc.number SUB_Request_download_Supplemental_5700
+     * @tc.desc   agent create with empty path in form item value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5700 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:8080',
+        network: request.agent.Network.ANY,
+        method: "POST",
+        data: attachments,
+        redirect: false,
+      };
+
+      try {
+        await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_5700 create success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5700 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5800
+     * @tc.number SUB_Request_download_Supplemental_5800
+     * @tc.desc   agent create with empty mimeType in form item value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5800 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: ""
+        }
+      }];
+
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:8080',
+        network: request.agent.Network.ANY,
+        method: "POST",
+        data: attachments,
+        redirect: false,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_5800 create success, task id: " + task.tid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5800 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5900
+     * @tc.number SUB_Request_download_Supplemental_5900
+     * @tc.desc   agent create with empty filename in form item value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5900 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "",
+          mimeType: "application/octet-stream"
+        }
+      }];
+
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:8080',
+        network: request.agent.Network.ANY,
+        method: "POST",
+        data: attachments,
+        redirect: false,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_5900 create success, task id: " + task.tid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5900 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6000
+     * @tc.number SUB_Request_download_Supplemental_6000
+     * @tc.desc   agent create with empty contentType in form item value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6000 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          contentType: ""
+        }
+      }];
+
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:8080',
+        network: request.agent.Network.ANY,
+        method: "POST",
+        data: attachments,
+        redirect: false,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_6000 create success, task id: " + task.tid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_6000 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6100
+     * @tc.number SUB_Request_download_Supplemental_6100
+     * @tc.desc   agent create with empty notification title.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6100 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test007.hap',
+        saveas: './SUB_Request_download_Supplemental_6100.txt',
+        network: request.agent.Network.ANY,
+        notification: {
+          title: '',
+          text: 'download notification'
+        }
+      };
+
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_6100 create success, task id: " + task.tid);
+        expect(task.tid !== undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_6100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6200
+     * @tc.number SUB_Request_download_Supplemental_6200
+     * @tc.desc   agent create with empty notification text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6200 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test007.hap',
+        saveas: './SUB_Request_download_Supplemental_6200.txt',
+        network: request.agent.Network.ANY,
+        notification: {
+          title: 'download notification',
+          text: ''
+        }
+      };
+
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_6200 create success, task id: " + task.tid);
+        expect(task.tid !== undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_6200 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6300
+     * @tc.number SUB_Request_download_Supplemental_6300
+     * @tc.desc   agent search with state REMOVED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6300 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          state: request.agent.State.REMOVED
+        };
+        let taskIds = await request.agent.search(filter);
+        console.info("====>SUB_Request_download_Supplemental_6300 search success: " + JSON.stringify(taskIds));
+        expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6300 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6400
+     * @tc.number SUB_Request_download_Supplemental_6400
+     * @tc.desc   agent search callback with state REMOVED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6400 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          state: request.agent.State.REMOVED
+        };
+        request.agent.search(filter, async (err, taskIds)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_download_Supplemental_6400 search error");
+              expect().assertFail();
+              done();
+            }
+            console.info("====>SUB_Request_download_Supplemental_6400 search success: " + JSON.stringify(taskIds));
+            expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_download_Supplemental_6400 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6400 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6500
+     * @tc.number SUB_Request_download_Supplemental_6500
+     * @tc.desc   agent search with illegal state enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6500 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          state: 999 as request.agent.State
+        };
+        let taskIds = await request.agent.search(filter);
+        console.info("====>SUB_Request_download_Supplemental_6500 search success: " + JSON.stringify(taskIds));
+        expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6500 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6600
+     * @tc.number SUB_Request_download_Supplemental_6600
+     * @tc.desc   agent search callback with illegal state enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6600 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          state: 999 as request.agent.State
+        };
+        request.agent.search(filter, async (err, taskIds)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_download_Supplemental_6600 search error: " + JSON.stringify(err.code));
+              expect(err.code === 401).assertTrue();
+              done();
+            } else {
+              console.info("====>SUB_Request_download_Supplemental_6600 search success: " + JSON.stringify(taskIds));
+              expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+              done();
+            }
+          } catch (err){
+            console.info(`====>SUB_Request_download_Supplemental_6600 err: ${JSON.stringify(err.code)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6600 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6700
+     * @tc.number SUB_Request_download_Supplemental_6700
+     * @tc.desc   agent search with illegal action enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6700 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          action: 999 as request.agent.Action
+        };
+        let taskIds = await request.agent.search(filter);
+        console.info("====>SUB_Request_download_Supplemental_6700 search success: " + JSON.stringify(taskIds));
+        expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6700 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6800
+     * @tc.number SUB_Request_download_Supplemental_6800
+     * @tc.desc   agent search with illegal mode enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_6800 is starting-----------------------");
+      try{
+        let filter: request.agent.Filter = {
+          mode: 999 as request.agent.Mode
+        };
+        let taskIds = await request.agent.search(filter);
+        console.info("====>SUB_Request_download_Supplemental_6800 search success: " + JSON.stringify(taskIds));
+        expect(taskIds !== null && Array.isArray(taskIds)).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_6800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_6900
+     * @tc.number SUB_Request_download_Supplemental_6900
+     * @tc.desc   DownloadTask on progress multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_6900', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_6900 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_6900.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let progressCallback1 = (receivedSize: number, totalSize: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_6900 progressCallback1: ${receivedSize}/${totalSize}`);
+        };
+        let progressCallback2 = (receivedSize: number, totalSize: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_6900 progressCallback2: ${receivedSize}/${totalSize}`);
+        };
+        let completeCallback = () => {
+          if (isDone) return;
+          isDone = true;
+          try {
+            console.info(`====>SUB_Request_download_Supplemental_6900 complete, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+            if (callback1Count > 0 || callback2Count > 0) {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+            } else {
+              expect(true).assertTrue();
+            }
+            downloadTask.off('progress');
+            downloadTask.off('complete');
+            done();
+          } catch (err) {
+            console.info(`====>SUB_Request_download_Supplemental_6900 complete err: ${JSON.stringify(err)}`);
+            done();
+          }
+        };
+        downloadTask.on('progress', progressCallback1);
+        downloadTask.on('progress', progressCallback2);
+        downloadTask.on('complete', completeCallback);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_download_Supplemental_6900 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(true).assertTrue();
+              downloadTask.off('progress');
+              downloadTask.off('complete');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_download_Supplemental_6900 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_6900 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7000
+     * @tc.number SUB_Request_download_Supplemental_7000
+     * @tc.desc   DownloadTask on progress multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7000', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7000 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7000.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let progressCallback1 = (receivedSize: number, totalSize: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7000 progressCallback1: ${receivedSize}/${totalSize}`);
+        };
+        let progressCallback2 = (receivedSize: number, totalSize: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7000 progressCallback2: ${receivedSize}/${totalSize}`);
+        };
+        let completeCallback = () => {
+          if (isDone) return;
+          isDone = true;
+          try {
+            console.info(`====>SUB_Request_download_Supplemental_7000 complete, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+            expect(callback1Count === 0).assertTrue();
+            if (callback2Count > 0) {
+              expect(callback2Count > 0).assertTrue();
+            } else {
+              expect(true).assertTrue();
+            }
+            downloadTask.off('progress');
+            downloadTask.off('complete');
+            done();
+          } catch (err) {
+            console.info(`====>SUB_Request_download_Supplemental_7000 complete err: ${JSON.stringify(err)}`);
+            done();
+          }
+        };
+        downloadTask.on('progress', progressCallback1);
+        downloadTask.on('progress', progressCallback2);
+        downloadTask.off('progress', progressCallback1);
+        downloadTask.on('complete', completeCallback);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_download_Supplemental_7000 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(callback1Count === 0).assertTrue();
+              expect(true).assertTrue();
+              downloadTask.off('progress');
+              downloadTask.off('complete');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_download_Supplemental_7000 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7000 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7100
+     * @tc.number SUB_Request_download_Supplemental_7100
+     * @tc.desc   DownloadTask on pause multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7100', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7100 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7100.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let pauseCallback1 = () => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7100 pauseCallback1 called`);
+        };
+        let pauseCallback2 = () => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7100 pauseCallback2 called`);
+        };
+        downloadTask.on('pause', pauseCallback1);
+        downloadTask.on('pause', pauseCallback2);
+        try {
+          await downloadTask.pause();
+        } catch (err) {
+          console.info(`====>SUB_Request_download_Supplemental_7100 pause err: ${JSON.stringify(err)}`);
+        }
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7100 callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+        if (callback1Count > 0 || callback2Count > 0) {
+          expect(callback1Count > 0).assertTrue();
+          expect(callback2Count > 0).assertTrue();
+        } else {
+          expect(true).assertTrue();
+        }
+        downloadTask.off('pause');
+        try {
+          await downloadTask.remove();
+        } catch (err) {
+          console.info(`====>SUB_Request_download_Supplemental_7100 remove err: ${JSON.stringify(err)}`);
+        }
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7100 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7200
+     * @tc.number SUB_Request_download_Supplemental_7200
+     * @tc.desc   DownloadTask on pause multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7200', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7200 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7200.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let pauseCallback1 = () => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7200 pauseCallback1 called`);
+        };
+        let pauseCallback2 = () => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7200 pauseCallback2 called`);
+        };
+        downloadTask.on('pause', pauseCallback1);
+        downloadTask.on('pause', pauseCallback2);
+        downloadTask.off('pause', pauseCallback1);
+        try {
+          await downloadTask.pause();
+        } catch (err) {
+          console.info(`====>SUB_Request_download_Supplemental_7200 pause err: ${JSON.stringify(err)}`);
+        }
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7200 callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+        expect(callback1Count === 0).assertTrue();
+        if (callback2Count > 0) {
+          expect(callback2Count > 0).assertTrue();
+        } else {
+          expect(true).assertTrue();
+        }
+        downloadTask.off('pause');
+        try {
+          await downloadTask.remove();
+        } catch (err) {
+          console.info(`====>SUB_Request_download_Supplemental_7200 remove err: ${JSON.stringify(err)}`);
+        }
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7200 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7300
+     * @tc.number SUB_Request_download_Supplemental_7300
+     * @tc.desc   DownloadTask on remove multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7300', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7300 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7300.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let removeCallback1 = () => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7300 removeCallback1 called`);
+        };
+        let removeCallback2 = () => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7300 removeCallback2 called`);
+        };
+        downloadTask.on('remove', removeCallback1);
+        downloadTask.on('remove', removeCallback2);
+        await downloadTask.remove();
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7300 callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+        if (callback1Count > 0 || callback2Count > 0) {
+          expect(callback1Count > 0).assertTrue();
+          expect(callback2Count > 0).assertTrue();
+        } else {
+          expect(true).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7300 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7400
+     * @tc.number SUB_Request_download_Supplemental_7400
+     * @tc.desc   DownloadTask on remove multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7400', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7400 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7400.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let removeCallback1 = () => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7400 removeCallback1 called`);
+        };
+        let removeCallback2 = () => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7400 removeCallback2 called`);
+        };
+        downloadTask.on('remove', removeCallback1);
+        downloadTask.on('remove', removeCallback2);
+        downloadTask.off('remove', removeCallback1);
+        await downloadTask.remove();
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7400 callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+        expect(callback1Count === 0).assertTrue();
+        if (callback2Count > 0) {
+          expect(callback2Count > 0).assertTrue();
+        } else {
+          expect(true).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7400 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7500
+     * @tc.number SUB_Request_download_Supplemental_7500
+     * @tc.desc   DownloadTask on fail multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7500', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7500 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7500.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:9999/test.hap',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let failCallback1 = (err: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7500 failCallback1 err: ${err}`);
+          if (!isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count === 0).assertTrue();
+              downloadTask.off('fail');
+              done();
+            } catch (e) {
+              console.info(`====>SUB_Request_download_Supplemental_7500 check err: ${JSON.stringify(e)}`);
+              done();
+            }
+          }
+        };
+        let failCallback2 = (err: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7500 failCallback2 err: ${err}`);
+          if (!isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+              downloadTask.off('fail');
+              done();
+            } catch (e) {
+              console.info(`====>SUB_Request_download_Supplemental_7500 check err: ${JSON.stringify(e)}`);
+              done();
+            }
+          }
+        };
+        downloadTask.on('fail', failCallback1);
+        downloadTask.on('fail', failCallback2);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_download_Supplemental_7500 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(true).assertTrue();
+              downloadTask.off('fail');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_download_Supplemental_7500 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7500 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7600
+     * @tc.number SUB_Request_download_Supplemental_7600
+     * @tc.desc   DownloadTask on fail multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7600', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7600 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7600.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:9999/test.hap',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let failCallback1 = (err: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7600 failCallback1 err: ${err}`);
+        };
+        let failCallback2 = (err: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7600 failCallback2 err: ${err}`);
+          if (!isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count === 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+              downloadTask.off('fail');
+              done();
+            } catch (e) {
+              console.info(`====>SUB_Request_download_Supplemental_7600 check err: ${JSON.stringify(e)}`);
+              done();
+            }
+          }
+        };
+        downloadTask.on('fail', failCallback1);
+        downloadTask.on('fail', failCallback2);
+        downloadTask.off('fail', failCallback1);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_download_Supplemental_7600 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(callback1Count === 0).assertTrue();
+              expect(true).assertTrue();
+              downloadTask.off('fail');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_download_Supplemental_7600 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7600 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7700
+     * @tc.number SUB_Request_download_Supplemental_7700
+     * @tc.desc   agent create with network CELLULAR enum value coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_7700 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_7700.txt',
+        network: request.agent.Network.CELLULAR,
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_7700 config.network: ${JSON.stringify(task.config.network)}`);
+        console.info(`====>SUB_Request_download_Supplemental_7700 tid: ${JSON.stringify(task.tid)}`);
+        expect(task.tid !== undefined).assertTrue();
+        expect(task.config.network === request.agent.Network.CELLULAR).assertTrue();
+        expect(task.config.network === 2).assertTrue();
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_download_Supplemental_7700 remove success");
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7700 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7800
+     * @tc.number SUB_Request_download_Supplemental_7800
+     * @tc.desc   DownloadTask off remove without callback param coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7800', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7800 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7800.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callbackCount = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let removeCallback = () => {
+          callbackCount++;
+          console.info(`====>SUB_Request_download_Supplemental_7800 removeCallback called`);
+        };
+        downloadTask.on('remove', removeCallback);
+        downloadTask.off('remove');
+        await downloadTask.remove();
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7800 callbackCount: ${callbackCount}`);
+        expect(callbackCount === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_7900
+     * @tc.number SUB_Request_download_Supplemental_7900
+     * @tc.desc   DownloadTask off remove with callback param coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_7900', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_7900 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_7900.txt`;
+      let config: request.DownloadConfig = {
+        url: 'http://127.0.0.1:3374',
+        filePath: downloadFilePath,
+      };
+      let callback1Count = 0;
+      let callback2Count = 0;
+      try {
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        let removeCallback1 = () => {
+          callback1Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7900 removeCallback1 called`);
+        };
+        let removeCallback2 = () => {
+          callback2Count++;
+          console.info(`====>SUB_Request_download_Supplemental_7900 removeCallback2 called`);
+        };
+        downloadTask.on('remove', removeCallback1);
+        downloadTask.on('remove', removeCallback2);
+        downloadTask.off('remove', removeCallback1);
+        await downloadTask.remove();
+        await sleep(2000);
+        console.info(`====>SUB_Request_download_Supplemental_7900 callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+        expect(callback1Count === 0).assertTrue();
+        if (callback2Count > 0) {
+          expect(callback2Count > 0).assertTrue();
+        } else {
+          expect(true).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_7900 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
   });
 };

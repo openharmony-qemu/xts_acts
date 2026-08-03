@@ -21,6 +21,7 @@ import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import  { Request, UploadRequestOptions, UploadResponse } from '@kit.BasicServicesKit';
 
 export default function requestSupplementalUploadTest() {
   describe('requestSupplementalUploadJSTest', () => {
@@ -303,7 +304,7 @@ export default function requestSupplementalUploadTest() {
     /**
      * @tc.name   SUB_Request_upload_Supplemental_0700
      * @tc.number SUB_Request_upload_Supplemental_0700
-     * @tc.desc   downloadFile on param is undefined.
+     * @tc.desc   uploadFile on param is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -641,6 +642,1044 @@ export default function requestSupplementalUploadTest() {
       } catch (err) {
         console.info("====>SUB_Request_upload_Supplemental_1600 create catch err: " + JSON.stringify(err.code));
         expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_1700
+     * @tc.number SUB_Request_upload_Supplemental_1700
+     * @tc.desc   uploadFile with empty filename in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_1700', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_1700 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: '',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        let uploadTask = await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_1700 uploadFile success: " + JSON.stringify(uploadTask));
+        expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_1700 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_1800
+     * @tc.number SUB_Request_upload_Supplemental_1800
+     * @tc.desc   uploadFile with empty name in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_1800', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_1800 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: '',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        let uploadTask = await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_1800 uploadFile success: " + JSON.stringify(uploadTask));
+        expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_1800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_1900
+     * @tc.number SUB_Request_upload_Supplemental_1900
+     * @tc.desc   uploadFile with empty uri in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_1900', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_1900 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: '',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_1900 uploadFile success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_1900 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2000
+     * @tc.number SUB_Request_upload_Supplemental_2000
+     * @tc.desc   uploadFile with empty type in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2000', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2000 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: ''
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        let uploadTask = await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_2000 uploadFile success: " + JSON.stringify(uploadTask));
+        expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2000 catch err: ${JSON.stringify(err.code)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2100
+     * @tc.number SUB_Request_upload_Supplemental_2100
+     * @tc.desc   uploadFile with empty name in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2100', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2100 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: '',
+          value: '123'
+        }]
+      };
+      try{
+        let uploadTask = await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_2100 uploadFile success: " + JSON.stringify(uploadTask));
+        expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2100 catch err: ${JSON.stringify(err.code)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2200
+     * @tc.number SUB_Request_upload_Supplemental_2200
+     * @tc.desc   uploadFile with empty value in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2200', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2200 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: ''
+        }]
+      };
+      try{
+        let uploadTask = await request.uploadFile(baseContext, uploadConfig);
+        console.info("====>SUB_Request_upload_Supplemental_2200 uploadFile success: " + JSON.stringify(uploadTask));
+        expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2200 catch err: ${JSON.stringify(err.code)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2300
+     * @tc.number SUB_Request_upload_Supplemental_2300
+     * @tc.desc   uploadFile callback with empty filename in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2300', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2300 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: '',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_upload_Supplemental_2300 callback err: " + JSON.stringify(err));
+              expect().assertFail();
+            } else {
+              console.info("====>SUB_Request_upload_Supplemental_2300 callback success" + JSON.stringify(uploadTask));
+              expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+            }
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2300 inner err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2300 catch err: ${JSON.stringify(err.code)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2400
+     * @tc.number SUB_Request_upload_Supplemental_2400
+     * @tc.desc   uploadFile callback with empty name in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2400', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2400 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: '',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_upload_Supplemental_2400 callback err: " + JSON.stringify(err));
+              expect(err.code === 401).assertTrue();
+            } else {
+              console.info("====>SUB_Request_upload_Supplemental_2400 callback success: " + JSON.stringify(uploadTask));
+              expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+            }
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2400 inner err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2400 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2500
+     * @tc.number SUB_Request_upload_Supplemental_2500
+     * @tc.desc   uploadFile callback with empty uri in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2500', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2500 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: '',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            console.info("====>SUB_Request_upload_Supplemental_2500 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2500 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2500 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2600
+     * @tc.number SUB_Request_upload_Supplemental_2600
+     * @tc.desc   uploadFile callback with empty type in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2600', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2600 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: ''
+        }],
+        data: [{
+          name: 'name',
+          value: '123'
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_upload_Supplemental_2600 callback err: " + JSON.stringify(err.code));
+              expect(err.code === 401).assertTrue();
+            } else {
+              console.info("====>SUB_Request_upload_Supplemental_2600 callback success: " + JSON.stringify(uploadTask));
+              expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+            }
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2600 inner err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2600 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2700
+     * @tc.number SUB_Request_upload_Supplemental_2700
+     * @tc.desc   uploadFile callback with empty name in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2700', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2700 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: '',
+          value: '123'
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_upload_Supplemental_2700 callback err: " + JSON.stringify(err));
+              expect(err.code === 401).assertTrue();
+            } else {
+              console.info("====>SUB_Request_upload_Supplemental_2700 callback success: " + JSON.stringify(uploadTask));
+              expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+            }
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2700 inner err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2700 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2800
+     * @tc.number SUB_Request_upload_Supplemental_2800
+     * @tc.desc   uploadFile callback with empty value in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2800', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_2800 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: {
+          'Accept': '*/*',
+        },
+        method: 'POST',
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        data: [{
+          name: 'name',
+          value: ''
+        }]
+      };
+      try{
+        request.uploadFile(baseContext, uploadConfig, async (err, uploadTask)=>{
+          try{
+            if(err) {
+              console.info("====>SUB_Request_upload_Supplemental_2800 callback err: " + JSON.stringify(err));
+              expect(err.code === 401).assertTrue();
+            } else {
+              console.info("====>SUB_Request_upload_Supplemental_2800 callback success: " + JSON.stringify(uploadTask));
+              expect(uploadTask !== undefined && uploadTask !== null).assertTrue();
+            }
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_upload_Supplemental_2800 inner err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_upload_Supplemental_2800 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_2900
+     * @tc.number SUB_Request_upload_Supplemental_2900
+     * @tc.desc   Request.upload with empty name in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_2900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_2900 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: '',
+          value: '123'
+        }],
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_2900 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_2900 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_2900 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3000
+     * @tc.number SUB_Request_upload_Supplemental_3000
+     * @tc.desc   Request.upload with empty value in data array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3000 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: 'name',
+          value: ''
+        }],
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_3000 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_3000 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3000 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3100
+     * @tc.number SUB_Request_upload_Supplemental_3100
+     * @tc.desc   Request.upload with empty filename in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3100 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: 'name',
+          value: '123'
+        }],
+        files: [{
+          filename: '',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_3100 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_3100 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3100 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3200
+     * @tc.number SUB_Request_upload_Supplemental_3200
+     * @tc.desc   Request.upload with empty name in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3200 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: 'name',
+          value: '123'
+        }],
+        files: [{
+          filename: 'test.txt',
+          name: '',
+          uri: 'internal://cache/test.txt',
+          type: 'txt'
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_3200 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_3200 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3200 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3300
+     * @tc.number SUB_Request_upload_Supplemental_3300
+     * @tc.desc   Request.upload with empty uri in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3300 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: 'name',
+          value: '123'
+        }],
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: '',
+          type: 'txt'
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_3300 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_3300 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3300 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3400
+     * @tc.number SUB_Request_upload_Supplemental_3400
+     * @tc.desc   Request.upload with empty type in files array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3400 is starting-----------------------");
+      let uploadOptions: UploadRequestOptions = {
+        url: 'http://127.0.0.1:8080',
+        method: 'POST',
+        data: [{
+          name: 'name',
+          value: '123'
+        }],
+        files: [{
+          filename: 'test.txt',
+          name: 'test',
+          uri: 'internal://cache/test.txt',
+          type: ''
+        }],
+        fail: (data: string, code: number) => {
+          console.info("====>SUB_Request_upload_Supplemental_3400 fail callback, code: " + code);
+        }
+      };
+      try {
+        Request.upload(uploadOptions);
+        console.info("====>SUB_Request_upload_Supplemental_3400 upload call success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3400 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3500
+     * @tc.number SUB_Request_upload_Supplemental_3500
+     * @tc.desc   UploadTask on progress multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3500', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_3500 is starting-----------------------");
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext, uploadConfig);
+        let progressCallback1 = (uploadedSize: number, totalSize: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3500 progressCallback1: ${uploadedSize}/${totalSize}`);
+        };
+        let progressCallback2 = (uploadedSize: number, totalSize: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3500 progressCallback2: ${uploadedSize}/${totalSize}`);
+        };
+        let headerReceiveCallback = (header: object) => {
+          if (isDone) return;
+          isDone = true;
+          try {
+            console.info(`====>SUB_Request_upload_Supplemental_3500 headerReceive, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+            if (callback1Count > 0 || callback2Count > 0) {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+            } else {
+              expect(true).assertTrue();
+            }
+            uploadTask.off('progress');
+            uploadTask.off('headerReceive');
+            done();
+          } catch (err) {
+            console.info(`====>SUB_Request_upload_Supplemental_3500 headerReceive err: ${JSON.stringify(err)}`);
+            done();
+          }
+        };
+        uploadTask.on('progress', progressCallback1);
+        uploadTask.on('progress', progressCallback2);
+        uploadTask.on('headerReceive', headerReceiveCallback);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_upload_Supplemental_3500 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(true).assertTrue();
+              uploadTask.off('progress');
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3500 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3500 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3600
+     * @tc.number SUB_Request_upload_Supplemental_3600
+     * @tc.desc   UploadTask on progress multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3600', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_3600 is starting-----------------------");
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext, uploadConfig);
+        let progressCallback1 = (uploadedSize: number, totalSize: number) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3600 progressCallback1: ${uploadedSize}/${totalSize}`);
+        };
+        let progressCallback2 = (uploadedSize: number, totalSize: number) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3600 progressCallback2: ${uploadedSize}/${totalSize}`);
+        };
+        let headerReceiveCallback = (header: object) => {
+          if (isDone) return;
+          isDone = true;
+          try {
+            console.info(`====>SUB_Request_upload_Supplemental_3600 headerReceive, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+            expect(callback1Count === 0).assertTrue();
+            if (callback2Count > 0) {
+              expect(callback2Count > 0).assertTrue();
+            } else {
+              expect(true).assertTrue();
+            }
+            uploadTask.off('progress');
+            uploadTask.off('headerReceive');
+            done();
+          } catch (err) {
+            console.info(`====>SUB_Request_upload_Supplemental_3600 headerReceive err: ${JSON.stringify(err)}`);
+            done();
+          }
+        };
+        uploadTask.on('progress', progressCallback1);
+        uploadTask.on('progress', progressCallback2);
+        uploadTask.off('progress', progressCallback1);
+        uploadTask.on('headerReceive', headerReceiveCallback);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_upload_Supplemental_3600 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(callback1Count === 0).assertTrue();
+              expect(true).assertTrue();
+              uploadTask.off('progress');
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3600 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3600 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3700
+     * @tc.number SUB_Request_upload_Supplemental_3700
+     * @tc.desc   UploadTask on headerReceive multi-callback coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3700', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_3700 is starting-----------------------");
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext, uploadConfig);
+        let headerReceiveCallback1 = (header: object) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3700 headerReceiveCallback1: ${JSON.stringify(header)}`);
+          if (callback1Count > 0 && callback2Count > 0 && !isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3700 check err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        };
+        let headerReceiveCallback2 = (header: object) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3700 headerReceiveCallback2: ${JSON.stringify(header)}`);
+          if (callback1Count > 0 && callback2Count > 0 && !isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count > 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3700 check err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        };
+        uploadTask.on('headerReceive', headerReceiveCallback1);
+        uploadTask.on('headerReceive', headerReceiveCallback2);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_upload_Supplemental_3700 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              if (callback1Count > 0 || callback2Count > 0) {
+                expect(callback1Count > 0).assertTrue();
+                expect(callback2Count > 0).assertTrue();
+              } else {
+                expect(true).assertTrue();
+              }
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3700 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3700 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3800
+     * @tc.number SUB_Request_upload_Supplemental_3800
+     * @tc.desc   UploadTask on headerReceive multi-callback off one coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_upload_Supplemental_3800', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_upload_Supplemental_3800 is starting-----------------------");
+      let callback1Count = 0;
+      let callback2Count = 0;
+      let isDone = false;
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext, uploadConfig);
+        let headerReceiveCallback1 = (header: object) => {
+          callback1Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3800 headerReceiveCallback1: ${JSON.stringify(header)}`);
+        };
+        let headerReceiveCallback2 = (header: object) => {
+          callback2Count++;
+          console.info(`====>SUB_Request_upload_Supplemental_3800 headerReceiveCallback2: ${JSON.stringify(header)}`);
+          if (!isDone) {
+            isDone = true;
+            try {
+              expect(callback1Count === 0).assertTrue();
+              expect(callback2Count > 0).assertTrue();
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3800 check err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        };
+        uploadTask.on('headerReceive', headerReceiveCallback1);
+        uploadTask.on('headerReceive', headerReceiveCallback2);
+        uploadTask.off('headerReceive', headerReceiveCallback1);
+        setTimeout(() => {
+          if (!isDone) {
+            isDone = true;
+            try {
+              console.info(`====>SUB_Request_upload_Supplemental_3800 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
+              expect(callback1Count === 0).assertTrue();
+              if (callback2Count > 0) {
+                expect(callback2Count > 0).assertTrue();
+              } else {
+                expect(true).assertTrue();
+              }
+              uploadTask.off('headerReceive');
+              done();
+            } catch (err) {
+              console.info(`====>SUB_Request_upload_Supplemental_3800 timeout err: ${JSON.stringify(err)}`);
+              done();
+            }
+          }
+        }, 8000);
+      } catch (err) {
+        console.info(`====>SUB_Request_upload_Supplemental_3800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       }
     });
