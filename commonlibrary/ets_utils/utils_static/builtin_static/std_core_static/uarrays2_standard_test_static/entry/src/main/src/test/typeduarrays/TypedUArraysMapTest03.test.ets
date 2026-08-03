@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0100
-     * @tc.name testTypedUArraysMapPart201_001
+     * @tc.name testTypedUArraysMapTestFileC001
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => v * 2)
       expect(typeof result).assertEqual("object")
@@ -49,13 +49,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0200
-     * @tc.name testTypedUArraysMapPart201_002
+     * @tc.name testTypedUArraysMapTestFileC002
      * @tc.desc Verify Uint16Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300])
       let result = arr.map((v) => v + 1)
       expect(typeof result).assertEqual("object")
@@ -63,13 +63,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0300
-     * @tc.name testTypedUArraysMapPart201_003
+     * @tc.name testTypedUArraysMapTestFileC003
      * @tc.desc Verify Uint32Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000])
       let result = arr.map((v) => v - 1)
       expect(typeof result).assertEqual("object")
@@ -77,13 +77,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0400
-     * @tc.name testTypedUArraysMapPart201_004
+     * @tc.name testTypedUArraysMapTestFileC004
      * @tc.desc Verify Uint8ClampedArray map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([50, 100, 150])
       let result = arr.map((v) => v / 2)
       expect(typeof result).assertEqual("object")
@@ -91,13 +91,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0500
-     * @tc.name testTypedUArraysMapPart201_005
+     * @tc.name testTypedUArraysMapTestFileC005
      * @tc.desc Verify BigUint64Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => v * 2n)
       expect(typeof result).assertEqual("object")
@@ -105,13 +105,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0600
-     * @tc.name testTypedUArraysMapPart201_006
+     * @tc.name testTypedUArraysMapTestFileC006
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0)
       let result = arr.map((v) => v)
       expect(typeof result).assertEqual("object")
@@ -119,13 +119,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0700
-     * @tc.name testTypedUArraysMapPart201_007
+     * @tc.name testTypedUArraysMapTestFileC007
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42])
       let result = arr.map((v) => v * 2)
       expect(typeof result).assertEqual("object")
@@ -133,13 +133,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0800
-     * @tc.name testTypedUArraysMapPart201_008
+     * @tc.name testTypedUArraysMapTestFileC008
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100)
       let result = arr.map((v) => v)
       expect(typeof result).assertEqual("object")
@@ -147,13 +147,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0900
-     * @tc.name testTypedUArraysMapPart201_009
+     * @tc.name testTypedUArraysMapTestFileC009
      * @tc.desc Verify Uint32Array map instanceof Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000]);
       let result = arr.map((v) => v - 1);
       expect(typeof result).assertEqual("object");
@@ -161,13 +161,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1000
-     * @tc.name testTypedUArraysMapPart201_010
+     * @tc.name testTypedUArraysMapTestFileC010
      * @tc.desc Verify BigUint64Array map instanceof BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.map((v) => v * 2n);
       expect(typeof result).assertEqual("object");
@@ -175,13 +175,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1100
-     * @tc.name testTypedUArraysMapPart201_011
+     * @tc.name testTypedUArraysMapTestFileC011
      * @tc.desc Verify Uint8ClampedArray map instanceof Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([50, 100, 150]);
       let result = arr.map((v) => v / 2);
       expect(typeof result).assertEqual("object");
@@ -189,13 +189,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1200
-     * @tc.name testTypedUArraysMapPart201_012
+     * @tc.name testTypedUArraysMapTestFileC012
      * @tc.desc Verify Uint16Array map instanceof Uint32Array false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300]);
       let result = arr.map((v) => v + 1);
       expect(result).not().assertInstanceOf("Uint32Array");
@@ -203,13 +203,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1300
-     * @tc.name testTypedUArraysMapPart201_013
+     * @tc.name testTypedUArraysMapTestFileC013
      * @tc.desc Verify Uint32Array map instanceof Uint16Array false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000]);
       let result = arr.map((v) => v - 1);
       expect(result).not().assertInstanceOf("Uint16Array");
@@ -217,13 +217,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1400
-     * @tc.name testTypedUArraysMapPart201_014
+     * @tc.name testTypedUArraysMapTestFileC014
      * @tc.desc Verify Uint8Array map instanceof Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       let result = arr.map((v) => v);
       expect(result.length).assertEqual(0);
@@ -231,13 +231,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1500
-     * @tc.name testTypedUArraysMapPart201_015
+     * @tc.name testTypedUArraysMapTestFileC015
      * @tc.desc Verify BigUint64Array map instanceof BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array(0);
       let result = arr.map((v) => v);
       expect(result.length).assertEqual(0);
@@ -245,13 +245,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1600
-     * @tc.name testTypedUArraysMapPart201_016
+     * @tc.name testTypedUArraysMapTestFileC016
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => v * 2)
       expect(result === arr).assertEqual(false)
@@ -259,13 +259,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1700
-     * @tc.name testTypedUArraysMapPart201_017
+     * @tc.name testTypedUArraysMapTestFileC017
      * @tc.desc Verify Uint16Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300])
       let result = arr.map((v) => v + 1)
       expect(result === arr).assertEqual(false)
@@ -273,13 +273,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1800
-     * @tc.name testTypedUArraysMapPart201_018
+     * @tc.name testTypedUArraysMapTestFileC018
      * @tc.desc Verify Uint32Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000])
       let result = arr.map((v) => v - 1)
       expect(result === arr).assertEqual(false)
@@ -287,13 +287,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1900
-     * @tc.name testTypedUArraysMapPart201_019
+     * @tc.name testTypedUArraysMapTestFileC019
      * @tc.desc Verify BigUint64Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => v * 2n)
       expect(result === arr).assertEqual(false)
@@ -301,13 +301,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2000
-     * @tc.name testTypedUArraysMapPart201_020
+     * @tc.name testTypedUArraysMapTestFileC020
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0)
       let result = arr.map((v) => v)
       expect(result === arr).assertEqual(false)
@@ -315,13 +315,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2100
-     * @tc.name testTypedUArraysMapPart201_021
+     * @tc.name testTypedUArraysMapTestFileC021
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42])
       let result = arr.map((v) => v * 2)
       expect(result === arr).assertEqual(false)
@@ -329,13 +329,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2200
-     * @tc.name testTypedUArraysMapPart201_022
+     * @tc.name testTypedUArraysMapTestFileC022
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5])
       let result = arr.map((v) => v)
       expect(result === arr).assertEqual(false)
@@ -343,13 +343,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2300
-     * @tc.name testTypedUArraysMapPart201_023
+     * @tc.name testTypedUArraysMapTestFileC023
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => v * 2)
       expect(result[0]).assertEqual(2)
@@ -359,13 +359,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2400
-     * @tc.name testTypedUArraysMapPart201_024
+     * @tc.name testTypedUArraysMapTestFileC024
      * @tc.desc Verify Uint8Array map 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30])
       let result = arr.map((v) => v + 1)
       expect(result[0]).assertEqual(11)
@@ -375,13 +375,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2500
-     * @tc.name testTypedUArraysMapPart201_025
+     * @tc.name testTypedUArraysMapTestFileC025
      * @tc.desc Verify Uint16Array map 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300])
       let result = arr.map((v) => v * 2)
       expect(result[0]).assertEqual(200)
@@ -391,13 +391,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2600
-     * @tc.name testTypedUArraysMapPart201_026
+     * @tc.name testTypedUArraysMapTestFileC026
      * @tc.desc Verify Uint32Array map 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000])
       let result = arr.map((v) => v + 1)
       expect(result[0]).assertEqual(1001)
@@ -407,13 +407,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2700
-     * @tc.name testTypedUArraysMapPart201_027
+     * @tc.name testTypedUArraysMapTestFileC027
      * @tc.desc Verify Uint8ClampedArray map 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([100, 200, 255]);
       let result = arr.map((v) => v / 2);
       expect(result[0]).assertEqual(50);
@@ -423,13 +423,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2800
-     * @tc.name testTypedUArraysMapPart201_028
+     * @tc.name testTypedUArraysMapTestFileC028
      * @tc.desc Verify BigUint64Array map 2n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => v * 2n)
       expect(result[0]).assertEqual(2n)
@@ -439,13 +439,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2900
-     * @tc.name testTypedUArraysMapPart201_029
+     * @tc.name testTypedUArraysMapTestFileC029
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5])
       let result = arr.map((v) => v)
       expect(result[0]).assertEqual(1)
@@ -457,13 +457,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3000
-     * @tc.name testTypedUArraysMapPart201_030
+     * @tc.name testTypedUArraysMapTestFileC030
      * @tc.desc Verify Uint8Array map 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => 0)
       expect(result[0]).assertEqual(0)
@@ -473,13 +473,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3100
-     * @tc.name testTypedUArraysMapPart201_031
+     * @tc.name testTypedUArraysMapTestFileC031
      * @tc.desc Verify Uint8Array map 255 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => 255)
       expect(result[0]).assertEqual(255)
@@ -489,13 +489,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3200
-     * @tc.name testTypedUArraysMapPart201_032
+     * @tc.name testTypedUArraysMapTestFileC032
      * @tc.desc Verify Uint16Array map 65535 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3])
       let result = arr.map((v) => 65535)
       expect(result[0]).assertEqual(65535)
@@ -505,13 +505,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3300
-     * @tc.name testTypedUArraysMapPart201_033
+     * @tc.name testTypedUArraysMapTestFileC033
      * @tc.desc Verify Uint32Array map 4294967295 4294967295
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3])
       let result = arr.map((v) => 4294967295)
       expect(result[0]).assertEqual(4294967295)
@@ -521,13 +521,13 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3400
-     * @tc.name testTypedUArraysMapPart201_034
+     * @tc.name testTypedUArraysMapTestFileC034
      * @tc.desc Verify BigUint64Array map BigInt('18446744073709551615')
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => BigInt('18446744073709551615'))
       expect(result[0]).assertEqual(BigInt('18446744073709551615'))
@@ -537,41 +537,27 @@ export default function typedUArraysMapTest03(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3500
-     * @tc.name testTypedUArraysMapPart201_035
+     * @tc.name testTypedUArraysMapTestFileC035
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array(0)
-      let result = arr.map((v) => v)
-      expect(result.length).assertEqual(0)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3600
-     * @tc.name testTypedUArraysMapPart201_036
-     * @tc.desc Verify Uint8Array map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysMapPart201_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42])
       let result = arr.map((v) => v * 2)
       expect(result[0]).assertEqual(84)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3700
-     * @tc.name testTypedUArraysMapPart201_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3600
+     * @tc.name testTypedUArraysMapTestFileC036
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint8Array([0, 0, 0])
       let result = arr.map((v) => v * 2)
       expect(result[0]).assertEqual(0)
@@ -580,14 +566,14 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3800
-     * @tc.name testTypedUArraysMapPart201_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3700
+     * @tc.name testTypedUArraysMapTestFileC037
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([7, 7, 7])
       let result = arr.map((v) => v * 3)
       expect(result[0]).assertEqual(21)
@@ -596,14 +582,14 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3900
-     * @tc.name testTypedUArraysMapPart201_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3800
+     * @tc.name testTypedUArraysMapTestFileC038
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysMapTestFileC038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => 0xFF)
       expect(result[0]).assertEqual(255)
@@ -612,14 +598,14 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4000
-     * @tc.name testTypedUArraysMapPart201_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3900
+     * @tc.name testTypedUArraysMapTestFileC039
      * @tc.desc Verify Uint16Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint16Array([1, 2, 3])
       let result = arr.map((v) => 0xFFFF)
       expect(result[0]).assertEqual(65535)
@@ -628,14 +614,14 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4100
-     * @tc.name testTypedUArraysMapPart201_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4000
+     * @tc.name testTypedUArraysMapTestFileC040
      * @tc.desc Verify Uint32Array map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint32Array([1, 2, 3])
       let result = arr.map((v) => 0xFFFFFFFF)
       expect(result[0]).assertEqual(4294967295)
@@ -644,132 +630,115 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4200
-     * @tc.name testTypedUArraysMapPart201_042
-     * @tc.desc Verify BigUint64Array map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysMapPart201_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
-      const arr = new BigUint64Array([1n, 2n, 3n])
-      let result = arr.map((v) => BigInt('18446744073709551615'))
-      expect(result[0]).assertEqual(BigInt('18446744073709551615'))
-      expect(result[1]).assertEqual(BigInt('18446744073709551615'))
-      expect(result[2]).assertEqual(BigInt('18446744073709551615'))
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4300
-     * @tc.name testTypedUArraysMapPart201_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4100
+     * @tc.name testTypedUArraysMapTestFileC041
      * @tc.desc Verify Uint8Array map length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5])
       let result = arr.map((v) => v * 2)
       expect(result.length).assertEqual(5)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4400
-     * @tc.name testTypedUArraysMapPart201_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4200
+     * @tc.name testTypedUArraysMapTestFileC042
      * @tc.desc Verify Uint16Array map length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint16Array([100, 200, 300]);
       let result = arr.map((v) => v + 1);
       expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4500
-     * @tc.name testTypedUArraysMapPart201_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4300
+     * @tc.name testTypedUArraysMapTestFileC043
      * @tc.desc Verify Uint32Array map length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint32Array([1000, 2000, 3000])
       let result = arr.map((v) => v - 1)
       expect(result.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4600
-     * @tc.name testTypedUArraysMapPart201_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4400
+     * @tc.name testTypedUArraysMapTestFileC044
      * @tc.desc Verify BigUint64Array map length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => v * 2n)
       expect(result.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4700
-     * @tc.name testTypedUArraysMapPart201_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4500
+     * @tc.name testTypedUArraysMapTestFileC045
      * @tc.desc Verify Uint8ClampedArray map length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint8ClampedArray([50, 100, 150])
       let result = arr.map((v) => v / 2)
       expect(result.length).assertEqual(3)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4800
-     * @tc.name testTypedUArraysMapPart201_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4600
+     * @tc.name testTypedUArraysMapTestFileC046
      * @tc.desc Verify Uint8Array map length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint8Array(0)
       let result = arr.map((v) => v)
       expect(result.length).assertEqual(0)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4900
-     * @tc.name testTypedUArraysMapPart201_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4700
+     * @tc.name testTypedUArraysMapTestFileC047
      * @tc.desc Verify Uint8Array map length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint8Array([42])
       let result = arr.map((v) => v * 2)
       expect(result.length).assertEqual(1)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_5000
-     * @tc.name testTypedUArraysMapPart201_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4800
+     * @tc.name testTypedUArraysMapTestFileC048
      * @tc.desc Verify Uint16Array map length 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysMapPart201_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
+    it('testTypedUArraysMapTestFileC048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new Uint16Array(10)
       let result = arr.map((v) => v + 1)
       expect(result.length).assertEqual(10)
     });
-
   });
 }
