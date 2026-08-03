@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,135 +35,135 @@ export default function typedUArraysReduceRightTest05(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0100
-     * @tc.name testTypedUArraysReduceRight01001
+     * @tc.name testTypedUArraysReduceRightTestFileE001
      * @tc.desc Verify reduceRight TypeError on empty Uint8Array without initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([]);
       try {
         arr.reduceRight((prev, curr, idx, array) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4300
-     * @tc.name testTypedUArraysReduceRight01043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0200
+     * @tc.name testTypedUArraysReduceRightTestFileE002
      * @tc.desc Verify reduceRight - BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.reduceRight((prev, curr) => prev - curr);
       expect(result).assertEqual(0n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4400
-     * @tc.name testTypedUArraysReduceRight01044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0300
+     * @tc.name testTypedUArraysReduceRightTestFileE003
      * @tc.desc Verify reduceRight TypeError Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([]);
       try {
         arr.reduceRight((prev, curr) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4500
-     * @tc.name testTypedUArraysReduceRight01045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0400
+     * @tc.name testTypedUArraysReduceRightTestFileE004
      * @tc.desc Verify reduceRight TypeError Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([]);
       try {
         arr.reduceRight((prev, curr) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4600
-     * @tc.name testTypedUArraysReduceRight01046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0500
+     * @tc.name testTypedUArraysReduceRightTestFileE005
      * @tc.desc Verify reduceRight TypeError Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([]);
       try {
         arr.reduceRight((prev, curr) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4700
-     * @tc.name testTypedUArraysReduceRight01047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0600
+     * @tc.name testTypedUArraysReduceRightTestFileE006
      * @tc.desc Verify reduceRight TypeError Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([]);
       try {
         arr.reduceRight((prev, curr) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4800
-     * @tc.name testTypedUArraysReduceRight01048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0700
+     * @tc.name testTypedUArraysReduceRightTestFileE007
      * @tc.desc Verify reduceRight TypeError BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([]);
       try {
         arr.reduceRight((prev, curr) => prev + curr);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4900
-     * @tc.name testTypedUArraysReduceRight01049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0800
+     * @tc.name testTypedUArraysReduceRightTestFileE008
      * @tc.desc Verify reduceRight on single-element Uint8Array returns the element without calling callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
       let called = false;
       const result = arr.reduceRight((prev, curr) => {
@@ -175,266 +175,266 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5000
-     * @tc.name testTypedUArraysReduceRight01050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_0900
+     * @tc.name testTypedUArraysReduceRightTestFileE009
      * @tc.desc Verify reduceRight on empty BigUint64Array with initialValue returns initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([]);
       let result = arr.reduceRight((prev, curr) => prev + curr, 42n);
       expect(result).assertEqual(42n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5100
-     * @tc.name testTypedUArraysReduceRight01051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1000
+     * @tc.name testTypedUArraysReduceRightTestFileE010
      * @tc.desc Verify reduceRight Uint8Array 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([255, 1]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(256);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5200
-     * @tc.name testTypedUArraysReduceRight01052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1100
+     * @tc.name testTypedUArraysReduceRightTestFileE011
      * @tc.desc Verify reduceRight Uint8Array 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 0, 0]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5300
-     * @tc.name testTypedUArraysReduceRight01053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1200
+     * @tc.name testTypedUArraysReduceRightTestFileE012
      * @tc.desc Verify reduceRight Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([255, 255]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(510);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5400
-     * @tc.name testTypedUArraysReduceRight01054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1300
+     * @tc.name testTypedUArraysReduceRightTestFileE013
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615'), 1n]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
-      expect(result).assertEqual(0n);
+      expect(result).assertEqual(18446744073709551616n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5500
-     * @tc.name testTypedUArraysReduceRight01055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1400
+     * @tc.name testTypedUArraysReduceRightTestFileE014
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1000000000000n, 2000000000000n]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
       expect(result).assertEqual(3000000000000n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5600
-     * @tc.name testTypedUArraysReduceRight01056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1500
+     * @tc.name testTypedUArraysReduceRightTestFileE015
      * @tc.desc Verify reduceRight BigUint64Array BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = arr.reduceRight((prev, curr) => prev * curr);
       expect(result).assertEqual(120n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5700
-     * @tc.name testTypedUArraysReduceRight01057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1600
+     * @tc.name testTypedUArraysReduceRightTestFileE016
      * @tc.desc Verify reduceRight Uint16Array 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([65535, 1]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(65536);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5800
-     * @tc.name testTypedUArraysReduceRight01058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1700
+     * @tc.name testTypedUArraysReduceRightTestFileE017
      * @tc.desc Verify reduceRight Uint32Array 4294967295
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([4294967295, 1]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(4294967296);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_5900
-     * @tc.name testTypedUArraysReduceRight01059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1800
+     * @tc.name testTypedUArraysReduceRightTestFileE018
      * @tc.desc Verify reduceRight Uint8Array -
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = arr.reduceRight((prev: string, curr: number): string => prev + curr + "", "");
       expect(result).assertEqual("321");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6000
-     * @tc.name testTypedUArraysReduceRight01060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_1900
+     * @tc.name testTypedUArraysReduceRightTestFileE019
      * @tc.desc Verify reduceRight BigUint64Array -
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.reduceRight((prev: string, curr: bigint): string => prev + String(curr), "");
       expect(result).assertEqual("321");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6100
-     * @tc.name testTypedUArraysReduceRight01061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2000
+     * @tc.name testTypedUArraysReduceRightTestFileE020
      * @tc.desc Verify reduceRight Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const result = arr.reduceRight((prev, curr, idx, array) => prev * curr) * 1;
       expect(result).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6200
-     * @tc.name testTypedUArraysReduceRight01062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2100
+     * @tc.name testTypedUArraysReduceRightTestFileE021
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
       let result = arr.reduceRight((prev, curr) => prev * curr);
       expect(result).assertEqual(24n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6300
-     * @tc.name testTypedUArraysReduceRight01063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2200
+     * @tc.name testTypedUArraysReduceRightTestFileE022
      * @tc.desc Verify reduceRight Uint8Array max
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 5, 30, 15]);
       let result = arr.reduceRight((prev, curr) => prev > curr ? prev : curr);
       expect(result).assertEqual(30);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6400
-     * @tc.name testTypedUArraysReduceRight01064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2300
+     * @tc.name testTypedUArraysReduceRightTestFileE023
      * @tc.desc Verify reduceRight BigUint64Array max
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([10n, 20n, 5n, 30n, 15n]);
       let result = arr.reduceRight((prev, curr) => prev > curr ? prev : curr);
       expect(result).assertEqual(30n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6500
-     * @tc.name testTypedUArraysReduceRight01065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2400
+     * @tc.name testTypedUArraysReduceRightTestFileE024
      * @tc.desc Verify reduceRight Uint8Array min
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 5, 30, 15]);
       let result = arr.reduceRight((prev, curr) => prev < curr ? prev : curr);
       expect(result).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6600
-     * @tc.name testTypedUArraysReduceRight01066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2500
+     * @tc.name testTypedUArraysReduceRightTestFileE025
      * @tc.desc Verify reduceRight Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300, 400]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(1000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6700
-     * @tc.name testTypedUArraysReduceRight01067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2600
+     * @tc.name testTypedUArraysReduceRightTestFileE026
      * @tc.desc Verify reduceRight Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000, 4000]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(10000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6800
-     * @tc.name testTypedUArraysReduceRight01068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2700
+     * @tc.name testTypedUArraysReduceRightTestFileE027
      * @tc.desc Verify reduceRight reduce Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       const reduceResult = arr.reduce((prev, curr) => prev - curr);
       const reduceRightResult = arr.reduceRight((prev, curr) => prev - curr);
@@ -443,14 +443,14 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_6900
-     * @tc.name testTypedUArraysReduceRight01069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2800
+     * @tc.name testTypedUArraysReduceRightTestFileE028
      * @tc.desc Verify reduceRight BigUint64Array reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const reduceResult = arr.reduce((prev, curr) => prev - curr);
       const reduceRightResult = arr.reduceRight((prev, curr) => prev - curr);
@@ -458,56 +458,56 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7000
-     * @tc.name testTypedUArraysReduceRight01070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_2900
+     * @tc.name testTypedUArraysReduceRightTestFileE029
      * @tc.desc Verify reduceRight Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([5, 10]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
       expect(result).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7100
-     * @tc.name testTypedUArraysReduceRight01071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3000
+     * @tc.name testTypedUArraysReduceRightTestFileE030
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([5n, 10n]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
       expect(result).assertEqual(15n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7200
-     * @tc.name testTypedUArraysReduceRight01072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3100
+     * @tc.name testTypedUArraysReduceRightTestFileE031
      * @tc.desc Verify reduceRight Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
       expect(result).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7300
-     * @tc.name testTypedUArraysReduceRight01073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3200
+     * @tc.name testTypedUArraysReduceRightTestFileE032
      * @tc.desc Verify reduceRight Uint8Array 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let steps: string[] = [];
       arr.reduceRight((prev, curr, idx, array) => {
@@ -519,98 +519,98 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7400
-     * @tc.name testTypedUArraysReduceRight01074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3300
+     * @tc.name testTypedUArraysReduceRightTestFileE033
      * @tc.desc Verify reduceRight Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4]);
       let result = arr.reduceRight((prev, curr) => prev - curr);
       expect(result).assertEqual(-2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7500
-     * @tc.name testTypedUArraysReduceRight01075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3400
+     * @tc.name testTypedUArraysReduceRightTestFileE034
      * @tc.desc Verify reduceRight Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4]);
       let result = arr.reduceRight((prev, curr) => prev - curr) + 100;
       expect(result).assertEqual(98);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7600
-     * @tc.name testTypedUArraysReduceRight01076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3500
+     * @tc.name testTypedUArraysReduceRightTestFileE035
      * @tc.desc Verify reduceRight Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
       let result = arr.reduceRight((prev, curr) => prev + curr) + 0.0;
       expect(result).assertEqual(55);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7700
-     * @tc.name testTypedUArraysReduceRight01077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3600
+     * @tc.name testTypedUArraysReduceRightTestFileE036
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n]);
       let result = arr.reduceRight((prev, curr) => prev + curr);
       expect(result).assertEqual(55n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7800
-     * @tc.name testTypedUArraysReduceRight01078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3700
+     * @tc.name testTypedUArraysReduceRightTestFileE037
      * @tc.desc Verify reduceRight Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const result = arr.reduceRight((prev, curr, idx, array) => prev + curr) + 100;
       expect(result).assertEqual(115);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_7900
-     * @tc.name testTypedUArraysReduceRight01079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3800
+     * @tc.name testTypedUArraysReduceRightTestFileE038
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1000000000000n, 2000000000000n]);
       let result = arr.reduceRight((prev, curr) => prev + curr, 5000000000000n);
       expect(result).assertEqual(8000000000000n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_8000
-     * @tc.name testTypedUArraysReduceRight01080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_3900
+     * @tc.name testTypedUArraysReduceRightTestFileE039
      * @tc.desc Verify reduceRight Uint8Array prev
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30, 40]);
       let firstPrev: number = -1;
       arr.reduceRight((prev, curr) => {
@@ -621,14 +621,14 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_8100
-     * @tc.name testTypedUArraysReduceRight01081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4000
+     * @tc.name testTypedUArraysReduceRightTestFileE040
      * @tc.desc Verify reduceRight Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40]);
       let callCount = 0;
       let firstCurr: number = -1;
@@ -642,14 +642,14 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_8200
-     * @tc.name testTypedUArraysReduceRight01082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4100
+     * @tc.name testTypedUArraysReduceRightTestFileE041
      * @tc.desc Verify reduceRight BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([10n, 20n, 30n, 40n]);
       let callCount = 0;
       let firstCurr: bigint = 0n;
@@ -663,14 +663,14 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_8300
-     * @tc.name testTypedUArraysReduceRight01083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4200
+     * @tc.name testTypedUArraysReduceRightTestFileE042
      * @tc.desc Verify reduceRight Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const result = arr.reduceRight((prev: Array<number>, curr: number): Array<number> => {
         prev.push(curr);
@@ -687,14 +687,14 @@ export default function typedUArraysReduceRightTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_8400
-     * @tc.name testTypedUArraysReduceRight01084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT01_4300
+     * @tc.name testTypedUArraysReduceRightTestFileE043
      * @tc.desc Verify reduceRight Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysReduceRight01084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysReduceRightTestFileE043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30]);
       let result = arr.reduceRight((prev: string, curr: number): string => prev + "-" + curr, "");
       expect(result).assertEqual("-30-20-10");
