@@ -29,39 +29,33 @@ struct PromptActionShowDialogTest {
         Text('PromptAction ShowDialog Test Page')
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
 
         Text('Test Result: ' + this.dialogTestResult)
           .fontSize(16)
-          .margin({ bottom: 10 })
           .id('dialog_test_result')
 
         Text('Last Error: ' + this.lastError)
           .fontSize(14)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
           .id('dialog_last_error')
 
         Text('Dialog Index: ' + this.dialogIndex)
           .fontSize(14)
           .fontColor(Color.Blue)
-          .margin({ bottom: 20 })
           .id('dialog_index')
 
-        Divider().margin({ bottom: 20 })
+        Divider()
 
         // ========== buttons 测试 ==========
         Text('=== buttons Property Tests ===')
           .fontSize(16)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
 
         // Test buttons with empty array
         Button('Test buttons=[]')
           .id('btn_dialog_buttons_empty')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -88,7 +82,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_buttons_primary_true')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -118,7 +111,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_buttons_primary_false')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -153,7 +145,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_showinsubwindow_true')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -181,7 +172,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_showinsubwindow_false')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -215,7 +205,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_enablehovermode_true')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -243,7 +232,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_enablehovermode_false')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -277,7 +265,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_options_null')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;
@@ -301,7 +288,6 @@ struct PromptActionShowDialogTest {
           .id('btn_dialog_options_undefined')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               this.dialogIndex++;

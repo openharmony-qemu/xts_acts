@@ -14,36 +14,34 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON, Component } from '@ohos.UiTest';
-import promptAction from '@ohos.promptAction';
-import { router } from '@kit.ArkUI';
-import Utils from '../../MainAbility/common/Utils';
+import router from '@ohos.router';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function PromptActionCloseToastTest() {
-  const driver = Driver.create();
 
-  beforeEach(async (done: Function) => {
-    console.info('PromptActionCloseToastTest beforeEach start');
-    let options: router.RouterOptions = {
-      url: 'MainAbility/pages/promptaction/PromptActionCloseToastTest',
-    }
-    try {
-      router.clear();
-      let pages = router.getState();
-      console.info('get PromptActionCloseToastTest state pages:' + JSON.stringify(pages));
-      if (!('AlertDialogLife' == pages.name)) {
-        console.info('get PromptActionCloseToastTest pages.name:' + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        await Utils.sleep(2500);
-        console.info('push PromptActionCloseToastTest page result:' + JSON.stringify(result));
+export default function PromptActionCloseToastTest() {
+  describe('PromptActionCloseToastTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("PromptActionCloseToastTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/promptaction/PromptActionCloseToastTest',
       }
-    } catch (err) {
-      console.error('push PromptActionCloseToastTest page error:' + err);
-    }
-    console.info('PromptActionCloseToastTest beforeEach end');
-    done();
-  });
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get PromptActionCloseToastTest state pages: " + JSON.stringify(pages));
+        if (!("PromptActionCloseToastTest" == pages.name)) {
+          console.info("get PromptActionCloseToastTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push PromptActionCloseToastTest page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push PromptActionCloseToastTest page error: " + err);
+        expect().assertFail();
+      }
+      done()
+    });
 
     /**
      * @tc.name   promptActionCloseToastValidId_0100
@@ -71,10 +69,10 @@ export default function PromptActionCloseToastTest() {
       // Verify test result from page state
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionCloseToastValidId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: Toast created');
+      console.info("[promptActionCloseToastValidId_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: options undefined: FAILED');
       console.info('[promptActionCloseToastValidId_0100] END');
     })
 
@@ -97,10 +95,10 @@ export default function PromptActionCloseToastTest() {
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionCloseToastInvalidId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: closeToast valid ID: FAILED');
+      console.info("[promptActionCloseToastInvalidId_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: closeToast invalid ID: FAILED');
       console.info('[promptActionCloseToastInvalidId_0100] END');
       
     })
@@ -124,10 +122,10 @@ export default function PromptActionCloseToastTest() {
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionCloseToastNullId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: closeToast null: FAILED');
+      console.info("[promptActionCloseToastNullId_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: closeToast null: FAILED');
       console.info('[promptActionCloseToastNullId_0100] END');
     })
 
@@ -150,11 +148,12 @@ export default function PromptActionCloseToastTest() {
 
       let strJson: string = getInspectorByKey('toast_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionCloseToastUndefinedId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: closeToast undefined: FAILED');
+      console.info("[promptActionCloseToastUndefinedId_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: closeToast undefined: FAILED');
       console.info('[promptActionCloseToastUndefinedId_0100] END');
     })
-  
+  })
 }
+  

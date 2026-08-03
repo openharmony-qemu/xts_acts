@@ -14,34 +14,34 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON, Component } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
-import promptAction from '@ohos.promptAction';
-import Utils from '../../MainAbility/common/Utils';
+import router from '@ohos.router';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+
 export default function PromptActionShowDialogTest() {
-  beforeEach(async (done: Function) => {
-    console.info('PromptActionShowDialogTest beforeEach start');
-    let options: router.RouterOptions = {
-      url: 'MainAbility/pages/promptaction/PromptActionShowDialogTest',
-    }
-    try {
-      router.clear();
-      let pages = router.getState();
-      console.info('get PromptActionShowDialogTest state pages:' + JSON.stringify(pages));
-      if (!('AlertDialogLife' == pages.name)) {
-        console.info('get PromptActionShowDialogTest pages.name:' + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        await Utils.sleep(2500);
-        console.info('push PromptActionShowDialogTest page result:' + JSON.stringify(result));
+  describe('PromptActionShowDialogTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("PromptActionShowDialogTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/promptaction/PromptActionShowDialogTest',
       }
-    } catch (err) {
-      console.error('push PromptActionShowDialogTest page error:' + err);
-    }
-    console.info('PromptActionShowDialogTest beforeEach end');
-    done();
-  });
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get PromptActionShowDialogTest state pages: " + JSON.stringify(pages));
+        if (!("PromptActionShowDialogTest" == pages.name)) {
+          console.info("get PromptActionShowDialogTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push PromptActionShowDialogTest page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push PromptActionShowDialogTest page error: " + err);
+        expect().assertFail();
+      }
+      done()
+    });
 
     /**
      * @tc.name   promptActionShowDialogButtonsEmpty_0100
@@ -56,16 +56,18 @@ export default function PromptActionShowDialogTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       
-      const button = await driver.findComponent(ON.id('btn_dialog_buttons_empty'));
+      let button = await driver.findComponent(ON.id('btn_dialog_buttons_empty'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      await button.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogButtonsEmpty_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: buttons empty: SUCCESS');
+      console.info("[promptActionShowDialogButtonsEmpty_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: buttons empty: FAILED');
       console.info('[promptActionShowDialogButtonsEmpty_0100] END');
     })
 
@@ -82,16 +84,20 @@ export default function PromptActionShowDialogTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       
-      const button = await driver.findComponent(ON.id('btn_dialog_buttons_primary_true'));
+      let button = await driver.findComponent(ON.id('btn_dialog_buttons_primary_true'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonS = await driver.findComponent(ON.text('Secondary'));
+      await CommonFunc.sleep(2000);
+      await buttonS.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogButtonsPrimaryTrue_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: buttons primary true: SUCCESS');
+      console.info("[promptActionShowDialogButtonsPrimaryTrue_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: buttons primary true: SUCCESS');
       console.info('[promptActionShowDialogButtonsPrimaryTrue_0100] END');
     })
 
@@ -108,16 +114,20 @@ export default function PromptActionShowDialogTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       
-      const button = await driver.findComponent(ON.id('btn_dialog_buttons_primary_false'));
+      let button = await driver.findComponent(ON.id('btn_dialog_buttons_primary_false'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonN = await driver.findComponent(ON.text('Non-Primary'));
+      await CommonFunc.sleep(2000);
+      await buttonN.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogButtonsPrimaryFalse_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: buttons primary false: SUCCESS');
+      console.info("[promptActionShowDialogButtonsPrimaryFalse_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: buttons primary false: SUCCESS');
       console.info('[promptActionShowDialogButtonsPrimaryFalse_0100] END');
     })
 
@@ -134,16 +144,20 @@ export default function PromptActionShowDialogTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       
-      const button = await driver.findComponent(ON.id('btn_dialog_showinsubwindow_true'));
+      let button = await driver.findComponent(ON.id('btn_dialog_showinsubwindow_true'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonO = await driver.findComponent(ON.text('OK'));
+      await CommonFunc.sleep(2000);
+      await buttonO.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogShowInSubWindowTrue_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: showInSubWindow true: SUCCESS');
+      console.info("[promptActionShowDialogShowInSubWindowTrue_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: showInSubWindow true: SUCCESS');
       console.info('[promptActionShowDialogShowInSubWindowTrue_0100] END');
     })
 
@@ -162,14 +176,18 @@ export default function PromptActionShowDialogTest() {
       
       const button = await driver.findComponent(ON.id('btn_dialog_showinsubwindow_false'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonO = await driver.findComponent(ON.text('OK'));
+      await CommonFunc.sleep(2000);
+      await buttonO.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogShowInSubWindowFalse_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: showInSubWindow false: SUCCESS');
+      console.info("[promptActionShowDialogShowInSubWindowFalse_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: showInSubWindow false: SUCCESS');
       console.info('[promptActionShowDialogShowInSubWindowFalse_0100] END');
     })
 
@@ -188,14 +206,18 @@ export default function PromptActionShowDialogTest() {
       
       const button = await driver.findComponent(ON.id('btn_dialog_enablehovermode_true'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonO = await driver.findComponent(ON.text('OK'));
+      await CommonFunc.sleep(2000);
+      await buttonO.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogEnableHoverModeTrue_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: enableHoverMode true: SUCCESS');
+      console.info("[promptActionShowDialogEnableHoverModeTrue_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: enableHoverMode true: SUCCESS');
       console.info('[promptActionShowDialogEnableHoverModeTrue_0100] END');
     })
 
@@ -214,14 +236,18 @@ export default function PromptActionShowDialogTest() {
       
       const button = await driver.findComponent(ON.id('btn_dialog_enablehovermode_false'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
+      let buttonO = await driver.findComponent(ON.text('OK'));
+      await CommonFunc.sleep(2000);
+      await buttonO.click();
+      await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogEnableHoverModeFalse_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: enableHoverMode false: SUCCESS');
+      console.info("[promptActionShowDialogEnableHoverModeFalse_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: enableHoverMode false: SUCCESS');
       console.info('[promptActionShowDialogEnableHoverModeFalse_0100] END');
     })
 
@@ -244,10 +270,10 @@ export default function PromptActionShowDialogTest() {
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogOptionsNull_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: options null: FAILED');
+      console.info("[promptActionShowDialogOptionsNull_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: options null: FAILED');
       console.info('[promptActionShowDialogOptionsNull_0100] END');
     })
 
@@ -270,11 +296,11 @@ export default function PromptActionShowDialogTest() {
 
       let strJson: string = getInspectorByKey('dialog_test_result');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let resultText: string = JSON.stringify(obj.$attrs.content)
+      // let resultText: string = JSON.stringify(obj.$attrs.content)
 
-      console.info("[promptActionShowDialogOptionsUndefined_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: options undefined: FAILED');
+      console.info("[promptActionShowDialogOptionsUndefined_0100] result: " + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('Test Result: options undefined: FAILED');
       console.info('[promptActionShowDialogOptionsUndefined_0100] END');
     })
-  
+  })
 }

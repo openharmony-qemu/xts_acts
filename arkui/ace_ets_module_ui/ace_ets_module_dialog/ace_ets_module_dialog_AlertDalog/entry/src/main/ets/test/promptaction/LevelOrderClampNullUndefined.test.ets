@@ -12,41 +12,38 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
-import { router } from '@kit.ArkUI';
-import Utils from '../../MainAbility/common/Utils';
-import { Driver, ON, } from '@ohos.UiTest';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import router from '@ohos.router';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function LevelOrderClampNullUndefinedTest() {
-describe('LevelOrderClampNullUndefinedTest', () => {
-	beforeEach(async (done: Function) => {
-	console.info('AdvancedPopupTest beforeEach start');
-	let options: router.RouterOptions = {
-		url: 'MainAbility/pages/promptaction/LevelOrderClampNullUndefined',
-	}
-	try {
-		router.clear();
-		let pages = router.getState();
-		let result = await router.replaceUrl(options);
-		console.info('get LevelOrderClampNullUndefinedTest state pages:' + JSON.stringify(pages));
-		if (!('LevelOrderClampNullUndefined' == pages.name)) {
-		console.info('get LevelOrderClampNullUndefinedTest pages.name:' + JSON.stringify(pages.name));
-		await Utils.sleep(2500);
-		console.info('push LevelOrderClampNullUndefinedTest page result:' + JSON.stringify(result));
-		}
-	} catch (err) {
-		console.error('push LevelOrderClampNullUndefinedTest page error:' + err);
-	}
-	console.info('LevelOrderClampNullUndefinedTest beforeEach end');
-	done();
-	});
-	afterAll(async (done:Function)=>{
-	AppStorage.delete('setLevelOrderNull')
-	AppStorage.delete('setLevelOrderUndefined')
-	done();
-	})
+  describe('LevelOrderClampNullUndefinedTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("LevelOrderClampNullUndefinedTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/promptaction/LevelOrderClampNullUndefined',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get LevelOrderClampNullUndefinedTest state pages: " + JSON.stringify(pages));
+        if (!("LevelOrderClampNullUndefined" == pages.name)) {
+          console.info("get LevelOrderClampNullUndefinedTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push LevelOrderClampNullUndefinedTest page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push LevelOrderClampNullUndefinedTest page error: " + err);
+        expect().assertFail();
+      }
+      done()
+    });
 
-	/**
+    /**
 	* @tc.name   LevelOrderClampNullUndefinedTest_001
 	* @tc.number LevelOrderClampNullUndefinedTest_001
 	* @tc.desc   To test the LevelOrder null
@@ -55,20 +52,21 @@ describe('LevelOrderClampNullUndefinedTest', () => {
 	* @tc.level  LEVEL2
 	*/
 	it('LevelOrderClampNullUndefinedTest_001', Level.LEVEL2, async (done: Function) => {
-	await Utils.sleep(1000);
-	console.log('LevelOrderClampNullUndefinedTest_001 START')
-	let driver: Driver = Driver.create();
-	let btn = await driver.findComponent(ON.id('OpenToastLevelOrderNull'));
-	// id closeToast
-	await Utils.sleep(200);
-	await btn.click()
+		await CommonFunc.sleep(1000);
+		console.log('LevelOrderClampNullUndefinedTest_001 START')
+		let driver: Driver = Driver.create();
+		let btn = await driver.findComponent(ON.id('OpenToastLevelOrderNull'));
+		// id closeToast
+		await CommonFunc.sleep(200);
+		await btn.click()
 
-	expect(AppStorage.get('setLevelOrderNull')).assertEqual(true)
-	let closeBtn = await driver.findComponent(ON.id('OpenToastLevelOrderNull'));
-	await closeBtn.click()
-	console.log('LevelOrderClampNullUndefinedTest_001 END')
-	done();
+		expect(AppStorage.get('setLevelOrderNull')).assertEqual(true)
+		let closeBtn = await driver.findComponent(ON.id('OpenToastLevelOrderNull'));
+		await closeBtn.click()
+		console.log('LevelOrderClampNullUndefinedTest_001 END')
+		done();
 	});
+
 	/**
 	* @tc.name   LevelOrderClampNullUndefinedTest_002
 	* @tc.number LevelOrderClampNullUndefinedTest_002
@@ -78,20 +76,20 @@ describe('LevelOrderClampNullUndefinedTest', () => {
 	* @tc.level  LEVEL2
 	*/
 	it('LevelOrderClampNullUndefinedTest_002', Level.LEVEL2, async (done: Function) => {
-	await Utils.sleep(1000);
-	console.log('LevelOrderClampNullUndefinedTest_002 START')
-	let driver: Driver = Driver.create();
-	let btn = await driver.findComponent(ON.id('OpenToastLevelOrderUndefined'));
-	await Utils.sleep(200);
-	await btn.click()
-	
-	expect(AppStorage.get('setLevelOrderUndefined')).assertEqual(true)
-	await Utils.sleep(1000);
-	let closeBtn = await driver.findComponent(ON.id('closeToast'));
-	await closeBtn.click()
-	await Utils.sleep(1000);
-	console.log('LevelOrderClampNullUndefinedTest_002 END')
-	done();
+		await CommonFunc.sleep(1000);
+		console.log('LevelOrderClampNullUndefinedTest_002 START')
+		let driver: Driver = Driver.create();
+		let btn = await driver.findComponent(ON.id('OpenToastLevelOrderUndefined'));
+		await CommonFunc.sleep(200);
+		await btn.click()
+		
+		expect(AppStorage.get('setLevelOrderUndefined')).assertEqual(true)
+		await CommonFunc.sleep(1000);
+		let closeBtn = await driver.findComponent(ON.id('closeToast'));
+		await closeBtn.click()
+		await CommonFunc.sleep(1000);
+		console.log('LevelOrderClampNullUndefinedTest_002 END')
+		done();
 	});
-})
+  })
 }
