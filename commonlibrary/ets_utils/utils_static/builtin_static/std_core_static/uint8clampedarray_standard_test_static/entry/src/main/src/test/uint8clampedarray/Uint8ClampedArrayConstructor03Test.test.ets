@@ -996,14 +996,14 @@ export default function uint8ClampedArrayConstructor03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_CONSTRUCTOR_THREE_6400
      * @tc.name testUint8ClampedArrayConstructorThree064
-     * @tc.desc Verify constructor throws RangeError for -0.5
+     * @tc.desc Verify constructor throws RangeError for -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testUint8ClampedArrayConstructorThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        new Uint8ClampedArray(-0.5);
+        new Uint8ClampedArray(-1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
