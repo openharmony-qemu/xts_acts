@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { DialogPresenter, dialog, DialogResult } from '@kit.ArkUI';
+import { DialogPresenter } from '@ohos.arkui.UIContext';
+import dialog, { DialogResult } from '@ohos.arkui.dialog';
 
 @Entry
 @Component
@@ -68,10 +69,12 @@ struct DialogStyleSheets {
               this.lastAction = 'SheetDelete';
             }
           };
+          let sheetMsg: dialog.DialogMessage = { content: 'SheetMessage' };
+          let sheets: dialog.DialogSheet[] = [sheetCopy, sheetShare, sheetDelete];
           let opts: dialog.DialogStyleOptions = {
             title: 'SheetTitle',
-            message: { content: 'SheetMessage' },
-            sheets: [sheetCopy, sheetShare, sheetDelete]
+            message: sheetMsg,
+            sheets: sheets
           };
           try {
             let result: DialogResult = await this.presenter().present(opts);
@@ -85,23 +88,24 @@ struct DialogStyleSheets {
             this.lastError = String(err);
             this.coverFlag = 'sheets_invoked';
             this.lastAction = 'sheetsCover';
+            let fbMsg: dialog.DialogMessage = { content: 'SheetMessage' };
+            let fbBtn1: dialog.DialogButton = {
+              value: 'SheetCopy',
+              action: () => {
+                this.lastAction = 'SheetCopy';
+              }
+            };
+            let fbBtn2: dialog.DialogButton = {
+              value: 'SheetShare',
+              action: () => {
+                this.lastAction = 'SheetShare';
+              }
+            };
+            let fbButtons: dialog.DialogButton[] = [fbBtn1, fbBtn2];
             let fallback: dialog.DialogStyleOptions = {
               title: 'SheetTitle',
-              message: { content: 'SheetMessage' },
-              buttons: [
-                {
-                  value: 'SheetCopy',
-                  action: () => {
-                    this.lastAction = 'SheetCopy';
-                  }
-                },
-                {
-                  value: 'SheetShare',
-                  action: () => {
-                    this.lastAction = 'SheetShare';
-                  }
-                }
-              ]
+              message: fbMsg,
+              buttons: fbButtons
             };
             try {
               let result2: DialogResult = await this.presenter().present(fallback);
@@ -118,26 +122,27 @@ struct DialogStyleSheets {
         .id('btn_style_sheets_buttons')
         .onClick(async () => {
           this.lastError = 'none';
+          let sheetBtnMsg: dialog.DialogMessage = { content: 'SheetBtnMessage' };
+          let sheetItemA: dialog.DialogSheet = {
+            title: 'SheetItemA',
+            action: () => {
+              this.lastAction = 'SheetItemA';
+            }
+          };
+          let sheetCancel: dialog.DialogButton = {
+            value: 'SheetCancel',
+            action: () => {
+              this.lastAction = 'SheetCancel';
+            }
+          };
+          let sheetItems: dialog.DialogSheet[] = [sheetItemA];
+          let sheetBtns: dialog.DialogButton[] = [sheetCancel];
           let opts: dialog.DialogStyleOptions = {
             title: 'SheetBtnTitle',
-            message: { content: 'SheetBtnMessage' },
+            message: sheetBtnMsg,
             gridCount: 4,
-            sheets: [
-              {
-                title: 'SheetItemA',
-                action: () => {
-                  this.lastAction = 'SheetItemA';
-                }
-              }
-            ],
-            buttons: [
-              {
-                value: 'SheetCancel',
-                action: () => {
-                  this.lastAction = 'SheetCancel';
-                }
-              }
-            ]
+            sheets: sheetItems,
+            buttons: sheetBtns
           };
           try {
             let result: DialogResult = await this.presenter().present(opts);
@@ -149,24 +154,25 @@ struct DialogStyleSheets {
           } catch (err) {
             this.lastError = String(err);
             this.coverFlag = 'sheet_btn_invoked';
+            let fbMsg2: dialog.DialogMessage = { content: 'SheetBtnMessage' };
+            let fbCancel: dialog.DialogButton = {
+              value: 'SheetCancel',
+              action: () => {
+                this.lastAction = 'SheetCancel';
+              }
+            };
+            let fbItemA: dialog.DialogButton = {
+              value: 'SheetItemA',
+              action: () => {
+                this.lastAction = 'SheetItemA';
+              }
+            };
+            let fbButtons2: dialog.DialogButton[] = [fbCancel, fbItemA];
             let fallback: dialog.DialogStyleOptions = {
               title: 'SheetBtnTitle',
-              message: { content: 'SheetBtnMessage' },
+              message: fbMsg2,
               gridCount: 4,
-              buttons: [
-                {
-                  value: 'SheetCancel',
-                  action: () => {
-                    this.lastAction = 'SheetCancel';
-                  }
-                },
-                {
-                  value: 'SheetItemA',
-                  action: () => {
-                    this.lastAction = 'SheetItemA';
-                  }
-                }
-              ]
+              buttons: fbButtons2
             };
             try {
               let result2: DialogResult = await this.presenter().present(fallback);
@@ -183,18 +189,19 @@ struct DialogStyleSheets {
         .id('btn_style_sheets_grid')
         .onClick(async () => {
           this.lastError = 'none';
+          let gridMsg: dialog.DialogMessage = { content: 'GridMessage' };
+          let gridOk: dialog.DialogButton = {
+            value: 'GridOK',
+            action: () => {
+              this.lastAction = 'GridOK';
+            }
+          };
+          let gridButtons: dialog.DialogButton[] = [gridOk];
           let opts: dialog.DialogStyleOptions = {
             title: 'GridTitle',
-            message: { content: 'GridMessage' },
+            message: gridMsg,
             gridCount: 6,
-            buttons: [
-              {
-                value: 'GridOK',
-                action: () => {
-                  this.lastAction = 'GridOK';
-                }
-              }
-            ]
+            buttons: gridButtons
           };
           try {
             let result: DialogResult = await this.presenter().present(opts);

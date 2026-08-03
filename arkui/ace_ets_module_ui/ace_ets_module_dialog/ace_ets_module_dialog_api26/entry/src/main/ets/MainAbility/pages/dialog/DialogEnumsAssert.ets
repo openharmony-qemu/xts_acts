@@ -17,7 +17,7 @@ import {
   DialogState,
   DialogBaseAlignment,
   DialogButtonOrientation,
-} from '@kit.ArkUI';
+} from '@ohos.arkui.dialog';
 
 @Entry
 @Component

@@ -13,14 +13,13 @@
  * limitations under the License.
  */
 
-import {
-  DialogPresenter,
+import { DialogPresenter } from '@ohos.arkui.UIContext';
+import dialog, {
   DialogBaseController,
   DialogState,
   DialogResult,
   DialogDismissal,
-  dialog,
-} from '@kit.ArkUI';
+} from '@ohos.arkui.dialog';
 
 @Entry
 @Component
@@ -68,18 +67,19 @@ struct DialogBaseControllerLife {
         .onClick(async () => {
           this.controller = new DialogBaseController();
           this.stateBefore = this.stateName(this.controller.getState());
+          let ctrlMsg: dialog.DialogMessage = { content: 'CtrlMessage' };
+          let ctrlOk: dialog.DialogButton = {
+            value: 'CtrlOK',
+            action: () => {
+              this.lastAction = 'CtrlOK';
+            }
+          };
+          let ctrlButtons: dialog.DialogButton[] = [ctrlOk];
           let opts: dialog.DialogStyleOptions = {
             title: 'CtrlTitle',
-            message: { content: 'CtrlMessage' },
+            message: ctrlMsg,
             controller: this.controller,
-            buttons: [
-              {
-                value: 'CtrlOK',
-                action: () => {
-                  this.lastAction = 'CtrlOK';
-                }
-              }
-            ]
+            buttons: ctrlButtons
           };
           let result: DialogResult = await this.presenter().present(opts);
           this.dialogId = result.dialogId;
@@ -89,9 +89,17 @@ struct DialogBaseControllerLife {
         .id('btn_ctrl_auto_close')
         .onClick(async () => {
           this.controller = new DialogBaseController();
+          let autoMsg: dialog.DialogMessage = { content: 'AutoCloseMessage' };
+          let autoOk: dialog.DialogButton = {
+            value: 'AutoCloseOK',
+            action: () => {
+              this.lastAction = 'AutoCloseOK';
+            }
+          };
+          let autoButtons: dialog.DialogButton[] = [autoOk];
           let opts: dialog.DialogStyleOptions = {
             title: 'AutoCloseTitle',
-            message: { content: 'AutoCloseMessage' },
+            message: autoMsg,
             controller: this.controller,
             onDidAppear: () => {
               this.stateAfter = this.stateName(this.controller.getState());
@@ -99,14 +107,7 @@ struct DialogBaseControllerLife {
               this.lastAction = 'closed';
               this.stateAfter = this.stateName(this.controller.getState());
             },
-            buttons: [
-              {
-                value: 'AutoCloseOK',
-                action: () => {
-                  this.lastAction = 'AutoCloseOK';
-                }
-              }
-            ]
+            buttons: autoButtons
           };
           let result: DialogResult = await this.presenter().present(opts);
           this.dialogId = result.dialogId;
@@ -114,30 +115,31 @@ struct DialogBaseControllerLife {
       Button('onWillDismiss')
         .id('btn_ctrl_will_dismiss')
         .onClick(async () => {
+          let willMsg: dialog.DialogMessage = { content: 'WillDismissMessage' };
+          let willOk: dialog.DialogButton = {
+            value: 'WillDismissOK',
+            action: () => {
+              this.lastAction = 'WillDismissOK';
+            }
+          };
+          let willButtons: dialog.DialogButton[] = [willOk];
           let opts: dialog.DialogStyleOptions = {
             title: 'WillDismissTitle',
-            message: { content: 'WillDismissMessage' },
+            message: willMsg,
             autoCancel: true,
             onWillDismiss: (dismissal: DialogDismissal) => {
               this.dismissReason = String(dismissal.reason);
               this.lastAction = 'willDismiss';
               dismissal.dismiss();
             },
-            buttons: [
-              {
-                value: 'WillDismissOK',
-                action: () => {
-                  this.lastAction = 'WillDismissOK';
-                }
-              }
-            ]
+            buttons: willButtons
           };
           await this.presenter().present(opts);
         })
       Button('construct getState only')
         .id('btn_ctrl_construct')
         .onClick(() => {
-          let c = new DialogBaseController();
+          let c: DialogBaseController = new DialogBaseController();
           this.stateBefore = this.stateName(c.getState());
           this.lastAction = 'constructed';
         })

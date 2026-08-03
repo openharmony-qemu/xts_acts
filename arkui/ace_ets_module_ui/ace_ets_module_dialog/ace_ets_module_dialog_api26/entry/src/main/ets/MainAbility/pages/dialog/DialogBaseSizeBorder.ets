@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { DialogPresenter, LengthMetrics } from '@kit.ArkUI';
+import { DialogPresenter } from '@ohos.arkui.UIContext';
+import { LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component

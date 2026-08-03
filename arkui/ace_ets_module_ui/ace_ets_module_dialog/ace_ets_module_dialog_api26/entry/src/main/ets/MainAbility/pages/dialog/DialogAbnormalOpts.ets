@@ -13,12 +13,9 @@
  * limitations under the License.
  */
 
-import {
-  DialogPresenter,
-  DialogButtonOrientation,
-  LevelMode,
-  dialog,
-} from '@kit.ArkUI';
+import { DialogPresenter } from '@ohos.arkui.UIContext';
+import dialog, { DialogButtonOrientation } from '@ohos.arkui.dialog';
+import { LevelMode } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -32,16 +29,20 @@ struct DialogAbnormalOpts {
   }
 
   private baseOpts(title: string, msg: string, ok: string, act: string): dialog.DialogStyleOptions {
-    return {
-      title: title,
-      message: { content: msg },
-      buttons: [{
-        value: ok,
-        action: () => {
-          this.lastAction = act;
-        }
-      }]
+    let message: dialog.DialogMessage = { content: msg };
+    let button: dialog.DialogButton = {
+      value: ok,
+      action: () => {
+        this.lastAction = act;
+      }
     };
+    let buttons: dialog.DialogButton[] = [button];
+    let opts: dialog.DialogStyleOptions = {
+      title: title,
+      message: message,
+      buttons: buttons
+    };
+    return opts;
   }
 
   private async runProbe(tag: string, opts: dialog.DialogStyleOptions): Promise<void> {
@@ -166,15 +167,17 @@ struct DialogAbnormalOpts {
               content: 'AbnWordBreakMsg',
               wordBreak: undefined
             };
+            let button: dialog.DialogButton = {
+              value: 'AbnOK_wordBreak',
+              action: () => {
+                this.lastAction = 'wordBreak_undefined';
+              }
+            };
+            let buttons: dialog.DialogButton[] = [button];
             let opts: dialog.DialogStyleOptions = {
               title: 'AbnWBTitle',
               message: msg,
-              buttons: [{
-                value: 'AbnOK_wordBreak',
-                action: () => {
-                  this.lastAction = 'wordBreak_undefined';
-                }
-              }]
+              buttons: buttons
             };
             await this.runProbe('wordBreak', opts);
           })
