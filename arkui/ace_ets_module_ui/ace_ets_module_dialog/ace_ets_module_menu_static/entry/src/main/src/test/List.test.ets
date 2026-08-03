@@ -41,6 +41,11 @@ import GridStyleTest from './GridStyleTest/GridStyleTest.test'
 import BindMenuWithResponseTest from './BindContextMenuTest/BindMenuWithResponse.test'
 import BindContextMenuResponseTypeTest from './BindContextMenuTest/BindContextMenuResponseType.test'
 import SubMenuBuilderTest from './OpenMenuTest/SubMenuBuilderTest.test'
+import BindContextMenuByIsShowOptionsTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowOptions.test'
+import BindContextMenuByIsShowBlurMaskBgTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskBg.test'
+import BindContextMenuByIsShowBlurMaskMaskTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskMask.test'
+import BindContextMenuByIsShowBlurMaskTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMask.test'
+import BindContextMenuByIsShowNullUndefinedTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowNullUndefined.test'
 
 export default function testsuite(): void {
   maskTest();
@@ -71,4 +76,9 @@ export default function testsuite(): void {
   BindMenuWithResponseTest();
   BindContextMenuResponseTypeTest();
   SubMenuBuilderTest();
+  BindContextMenuByIsShowOptionsTest();
+  BindContextMenuByIsShowBlurMaskBgTest();
+  BindContextMenuByIsShowBlurMaskMaskTest();
+  BindContextMenuByIsShowBlurMaskTest();
+  BindContextMenuByIsShowNullUndefinedTest();
 }
