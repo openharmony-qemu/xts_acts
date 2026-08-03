@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -153,7 +153,6 @@ export default function typedUArraysIndexOfTest01(): void {
      */
     it('testTypedUArraysIndexOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([10n, 20n, 30n]);
-      // verify indexOf searchElement: a Number passed for a BigInt element does not match (type-mismatch rejection)
       expect(arr.indexOf(0)).assertEqual(-1);
     });
 
@@ -218,7 +217,6 @@ export default function typedUArraysIndexOfTest01(): void {
      */
     it('testTypedUArraysIndexOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void => {
       const arr = new BigUint64Array([10n, 20n, 30n]);
-      // verify BigUint64Array.indexOf: searchElement not present returns -1
       expect(arr.indexOf(99n)).assertEqual(-1);
     });
 
