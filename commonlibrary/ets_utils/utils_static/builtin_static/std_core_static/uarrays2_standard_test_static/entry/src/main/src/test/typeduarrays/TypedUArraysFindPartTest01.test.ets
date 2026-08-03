@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,509 +35,489 @@ export default function typedUArraysFindPartTest01(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0100
-     * @tc.name testTypedUArraysFindPart101_001
+     * @tc.name testTypedUArraysFindPartTestFileA001
      * @tc.desc Verify find 0 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 0);
       expect(result).assertUndefined();
     });
-    
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5000
-     * @tc.name testTypedUArraysFindPart101_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0200
+     * @tc.name testTypedUArraysFindPartTestFileA002
      * @tc.desc Verify Uint8Array 0xFF Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 0xFF);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5100
-     * @tc.name testTypedUArraysFindPart101_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0300
+     * @tc.name testTypedUArraysFindPartTestFileA003
      * @tc.desc Verify Uint8Array 0x80 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 0x80);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5200
-     * @tc.name testTypedUArraysFindPart101_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0400
+     * @tc.name testTypedUArraysFindPartTestFileA004
      * @tc.desc Verify Uint8Array -1 255 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 255);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5300
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5400
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5500
-     * @tc.name testTypedUArraysFindPart101_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0500
+     * @tc.name testTypedUArraysFindPartTestFileA005
      * @tc.desc Verify Uint8Array 0o377 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 0o377);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5600
-     * @tc.name testTypedUArraysFindPart101_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0600
+     * @tc.name testTypedUArraysFindPartTestFileA006
      * @tc.desc Verify Uint8Array 0b11111111 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 0b11111111);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5700
-     * @tc.name testTypedUArraysFindPart101_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0700
+     * @tc.name testTypedUArraysFindPartTestFileA007
      * @tc.desc Verify Uint16Array 0 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0, 100, 200]);
       let result = arr.find((value) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5800
-     * @tc.name testTypedUArraysFindPart101_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0800
+     * @tc.name testTypedUArraysFindPartTestFileA008
      * @tc.desc Verify Uint16Array 1 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 100, 200]);
       let result = arr.find((value) => value === 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_5900
-     * @tc.name testTypedUArraysFindPart101_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0900
+     * @tc.name testTypedUArraysFindPartTestFileA009
      * @tc.desc Verify Uint16Array 32767 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([32767, 40000, 65535]);
       let result = arr.find((value) => value === 32767);
       expect(result).assertEqual(32767);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6000
-     * @tc.name testTypedUArraysFindPart101_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1000
+     * @tc.name testTypedUArraysFindPartTestFileA010
      * @tc.desc Verify Uint16Array 65535 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 65535]);
       let result = arr.find((value) => value === 65535);
       expect(result).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6100
-     * @tc.name testTypedUArraysFindPart101_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1100
+     * @tc.name testTypedUArraysFindPartTestFileA011
      * @tc.desc Verify Uint16Array 0xFFFF Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0x1000, 0x8000, 0xFFFF]);
       let result = arr.find((value) => value === 0xFFFF);
       expect(result).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6200
-     * @tc.name testTypedUArraysFindPart101_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1200
+     * @tc.name testTypedUArraysFindPartTestFileA012
      * @tc.desc Verify Uint16Array 0x8000 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0x4000, 0x8000, 0xC000]);
       let result = arr.find((value) => value === 0x8000);
       expect(result).assertEqual(32768);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6300
-     * @tc.name testTypedUArraysFindPart101_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1300
+     * @tc.name testTypedUArraysFindPartTestFileA013
      * @tc.desc Verify Uint16Array -1 65535 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([-1, 100, 200]);
       let result = arr.find((value) => value === 65535);
       expect(result).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6400
-     * @tc.name testTypedUArraysFindPart101_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1400
+     * @tc.name testTypedUArraysFindPartTestFileA014
      * @tc.desc Verify Uint16Array 65536 0 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([65536, 100, 200]);
       let result = arr.find((value) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6500
-     * @tc.name testTypedUArraysFindPart101_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1500
+     * @tc.name testTypedUArraysFindPartTestFileA015
      * @tc.desc Verify Uint16Array 0x10000 0 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0x10000, 100, 200]);
       let result = arr.find((value) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6600
-     * @tc.name testTypedUArraysFindPart101_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1600
+     * @tc.name testTypedUArraysFindPartTestFileA016
      * @tc.desc Verify Uint32Array 0 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0, 1000, 2000]);
       let result = arr.find((value) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6700
-     * @tc.name testTypedUArraysFindPart101_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1700
+     * @tc.name testTypedUArraysFindPartTestFileA017
      * @tc.desc Verify Uint32Array 1 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 1000, 2000]);
       let result = arr.find((value) => value === 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6800
-     * @tc.name testTypedUArraysFindPart101_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1800
+     * @tc.name testTypedUArraysFindPartTestFileA018
      * @tc.desc Verify Uint32Array 2147483647 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([2147483647, 3000000000, 4294967295]);
       let result = arr.find((value) => value === 2147483647);
       expect(result).assertEqual(2147483647);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_6900
-     * @tc.name testTypedUArraysFindPart101_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1900
+     * @tc.name testTypedUArraysFindPartTestFileA019
      * @tc.desc Verify Uint32Array 4294967295 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 4294967295]);
       let result = arr.find((value) => value === 4294967295);
       expect(result).assertEqual(4294967295);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7000
-     * @tc.name testTypedUArraysFindPart101_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2000
+     * @tc.name testTypedUArraysFindPartTestFileA020
      * @tc.desc Verify Uint32Array 0xFFFFFFFF Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0x10000000, 0x80000000, 0xFFFFFFFF]);
       let result = arr.find((value) => value === 0xFFFFFFFF);
       expect(result).assertEqual(4294967295);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7100
-     * @tc.name testTypedUArraysFindPart101_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2100
+     * @tc.name testTypedUArraysFindPartTestFileA021
      * @tc.desc Verify Uint32Array 0x80000000 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0x40000000, 0x80000000, 0xC0000000]);
       let result = arr.find((value) => value === 0x80000000);
       expect(result).assertEqual(2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7200
-     * @tc.name testTypedUArraysFindPart101_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2200
+     * @tc.name testTypedUArraysFindPartTestFileA022
      * @tc.desc Verify Uint32Array -1 4294967295 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([-1, 1000, 2000]);
       let result = arr.find((value) => value === 4294967295);
       expect(result).assertEqual(4294967295);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7300
-     * @tc.name testTypedUArraysFindPart101_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2300
+     * @tc.name testTypedUArraysFindPartTestFileA023
      * @tc.desc Verify Uint32Array 4294967296 0 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([4294967296, 1000, 2000]);
       let result = arr.find((value) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7400
-     * @tc.name testTypedUArraysFindPart101_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2400
+     * @tc.name testTypedUArraysFindPartTestFileA024
      * @tc.desc Verify BigUint64Array 0n BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, 100n, 200n]);
       let result = arr.find((value) => value === 0n);
       expect(result).assertEqual(0n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7500
-     * @tc.name testTypedUArraysFindPart101_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2500
+     * @tc.name testTypedUArraysFindPartTestFileA025
      * @tc.desc Verify BigUint64Array 1n BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 100n, 200n]);
       let result = arr.find((value) => value === 1n);
       expect(result).assertEqual(1n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7600
-     * @tc.name testTypedUArraysFindPart101_076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2600
+     * @tc.name testTypedUArraysFindPartTestFileA026
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615') BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615'), 100n, 200n]);
       let result = arr.find((value) => value === BigInt('18446744073709551615'));
-      expect(result).assertUndefined();
+      expect(result).assertEqual(BigInt('18446744073709551615'));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7700
-     * @tc.name testTypedUArraysFindPart101_077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2700
+     * @tc.name testTypedUArraysFindPartTestFileA027
      * @tc.desc Verify BigUint64Array BigInt('0x7FFFFFFFFFFFFFFF') BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('0x4000000000000000'), BigInt('0x7FFFFFFFFFFFFFFF'), BigInt('0xFFFFFFFFFFFFFFFF')]);
       let result = arr.find((value) => value === BigInt('0x7FFFFFFFFFFFFFFF'));
       expect(result).assertEqual(BigInt('9223372036854775807'));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7800
-     * @tc.name testTypedUArraysFindPart101_078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2800
+     * @tc.name testTypedUArraysFindPartTestFileA028
      * @tc.desc Verify BigUint64Array BigInt('0xFFFFFFFFFFFFFFFF') BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([100n, 200n, BigInt('0xFFFFFFFFFFFFFFFF')]);
       let result = arr.find((value) => value === BigInt('0xFFFFFFFFFFFFFFFF'));
-      expect(result).assertUndefined();
+      expect(result).assertEqual(BigInt('18446744073709551615'));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_7900
-     * @tc.name testTypedUArraysFindPart101_079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2900
+     * @tc.name testTypedUArraysFindPartTestFileA029
      * @tc.desc Verify find undefined Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 1);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8000
-     * @tc.name testTypedUArraysFindPart101_080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3000
+     * @tc.name testTypedUArraysFindPartTestFileA030
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 42);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8100
-     * @tc.name testTypedUArraysFindPart101_081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3100
+     * @tc.name testTypedUArraysFindPartTestFileA031
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 99);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8200
-     * @tc.name testTypedUArraysFindPart101_082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3200
+     * @tc.name testTypedUArraysFindPartTestFileA032
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 7);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8300
-     * @tc.name testTypedUArraysFindPart101_083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3300
+     * @tc.name testTypedUArraysFindPartTestFileA033
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 8);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8400
-     * @tc.name testTypedUArraysFindPart101_084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3400
+     * @tc.name testTypedUArraysFindPartTestFileA034
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value > 200);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8500
-     * @tc.name testTypedUArraysFindPart101_085
-     * @tc.desc Verify Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysFindPart101_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr.find((value) => value === 0x80);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8600
-     * @tc.name testTypedUArraysFindPart101_086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3500
+     * @tc.name testTypedUArraysFindPartTestFileA035
      * @tc.desc Verify 100 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
       for (let i = 0; i < 100; i++) {
         arr[i.toInt()] = i;
@@ -547,48 +527,14 @@ export default function typedUArraysFindPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8700
-     * @tc.name testTypedUArraysFindPart101_087
-     * @tc.desc Verify 1000 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysFindPart101_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr.find((value) => value === 0);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8800
-     * @tc.name testTypedUArraysFindPart101_088
-     * @tc.desc Verify Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysFindPart101_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr.find((value) => value === 255);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_8900
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9100
-     * @tc.name testTypedUArraysFindPart101_091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3600
+     * @tc.name testTypedUArraysFindPartTestFileA036
      * @tc.desc Verify 1 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1);
       arr[0] = 99;
       let result = arr.find((value) => value === 99);
@@ -596,14 +542,14 @@ export default function typedUArraysFindPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9200
-     * @tc.name testTypedUArraysFindPart101_092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3700
+     * @tc.name testTypedUArraysFindPartTestFileA037
      * @tc.desc Verify 10 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(10);
       for (let i = 0; i < 10; i++) {
         arr[i.toInt()] = i * 20;
@@ -613,14 +559,14 @@ export default function typedUArraysFindPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9300
-     * @tc.name testTypedUArraysFindPart101_093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3800
+     * @tc.name testTypedUArraysFindPartTestFileA038
      * @tc.desc Verify 100 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
       for (let i = 0; i < 100; i++) {
         arr[i.toInt()] = i;
@@ -630,84 +576,84 @@ export default function typedUArraysFindPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9400
-     * @tc.name testTypedUArraysFindPart101_094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3900
+     * @tc.name testTypedUArraysFindPartTestFileA039
      * @tc.desc Verify find Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value > 15);
       expect(typeof result).assertEqual('number');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9500
-     * @tc.name testTypedUArraysFindPart101_095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_4000
+     * @tc.name testTypedUArraysFindPartTestFileA040
      * @tc.desc Verify find BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([100n, 200n, 300n]);
       let result = arr.find((value) => value > 150n);
       expect(typeof result).assertEqual('bigint');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9600
-     * @tc.name testTypedUArraysFindPart101_096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_4100
+     * @tc.name testTypedUArraysFindPartTestFileA041
      * @tc.desc Verify find undefined Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value > 100);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9700
-     * @tc.name testTypedUArraysFindPart101_097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_4200
+     * @tc.name testTypedUArraysFindPartTestFileA042
      * @tc.desc Verify find undefined BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.find((value) => value > 100n);
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9800
-     * @tc.name testTypedUArraysFindPart101_098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_4300
+     * @tc.name testTypedUArraysFindPartTestFileA043
      * @tc.desc Verify find Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 20);
       expect(result).assertEqual(arr[1]);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_9900
-     * @tc.name testTypedUArraysFindPart101_099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_4400
+     * @tc.name testTypedUArraysFindPartTestFileA044
      * @tc.desc Verify find Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysFindPart101_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysFindPartTestFileA044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       let result = arr.find((value) => value === 20);
       const val0 = arr[0];

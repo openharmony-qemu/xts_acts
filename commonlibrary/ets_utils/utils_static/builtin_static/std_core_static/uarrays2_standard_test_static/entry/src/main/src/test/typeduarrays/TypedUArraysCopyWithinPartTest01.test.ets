@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,27 +34,27 @@ export default function typedUArraysCopyWithinPartTest01(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0100
-     * @tc.name testTypedUArraysCopyWithinPart101_001
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA001
      * @tc.desc Verify copyWithin 0 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.copyWithin(0, 0);
       expect(ret).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5000
-     * @tc.name testTypedUArraysCopyWithinPart101_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0200
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA002
      * @tc.desc Verify target=0b10 - BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = arr.copyWithin(2, 3);
       const val84 = result[2];
@@ -64,14 +64,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5100
-     * @tc.name testTypedUArraysCopyWithinPart101_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0300
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA003
      * @tc.desc Verify target=-length/2 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
       let result = arr.copyWithin(-5, 0);
       const val86 = result[5];
@@ -87,14 +87,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5200
-     * @tc.name testTypedUArraysCopyWithinPart101_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0400
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA004
      * @tc.desc Verify target=length/2 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
       let result = arr.copyWithin(5, 0);
       const val91 = result[5];
@@ -110,14 +110,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5300
-     * @tc.name testTypedUArraysCopyWithinPart101_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0500
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA005
      * @tc.desc Verify target=0x3 - Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0x3, 0);
       const val96 = result[3];
@@ -127,14 +127,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5600
-     * @tc.name testTypedUArraysCopyWithinPart101_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0600
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA006
      * @tc.desc Verify target=-3 - Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(-3, 0);
       const val102 = result[2];
@@ -146,14 +146,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5700
-     * @tc.name testTypedUArraysCopyWithinPart101_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0700
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA007
      * @tc.desc Verify target=-4 - Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(-4, 0);
       const val105 = result[1];
@@ -167,14 +167,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5800
-     * @tc.name testTypedUArraysCopyWithinPart101_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0800
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA008
      * @tc.desc Verify target=-5 - Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(-5, 0);
       const val109 = result[0];
@@ -190,14 +190,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_5900
-     * @tc.name testTypedUArraysCopyWithinPart101_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_0900
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA009
      * @tc.desc Verify target=-6 - BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = arr.copyWithin(-6, 0);
       const val114 = result[0];
@@ -213,14 +213,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6000
-     * @tc.name testTypedUArraysCopyWithinPart101_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1000
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA010
      * @tc.desc Verify target=0x4 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0x4, 0);
       const val119 = result[4];
@@ -236,14 +236,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6100
-     * @tc.name testTypedUArraysCopyWithinPart101_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1100
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA011
      * @tc.desc Verify target=0o4 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0o4, 0);
       const val124 = result[4];
@@ -259,14 +259,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6200
-     * @tc.name testTypedUArraysCopyWithinPart101_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1200
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA012
      * @tc.desc Verify target=0b100 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0b100, 0);
       const val129 = result[4];
@@ -282,14 +282,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6300
-     * @tc.name testTypedUArraysCopyWithinPart101_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1300
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA013
      * @tc.desc Verify start=0 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(3, 0);
       const val134 = result[3];
@@ -299,14 +299,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6400
-     * @tc.name testTypedUArraysCopyWithinPart101_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1400
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA014
      * @tc.desc Verify start=1 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 1);
       const val136 = result[0];
@@ -318,14 +318,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6500
-     * @tc.name testTypedUArraysCopyWithinPart101_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1500
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA015
      * @tc.desc Verify start=2 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 2);
       const val139 = result[0];
@@ -337,14 +337,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6600
-     * @tc.name testTypedUArraysCopyWithinPart101_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1600
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA016
      * @tc.desc Verify start=length-1 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 4);
       const val142 = result[0];
@@ -352,14 +352,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6700
-     * @tc.name testTypedUArraysCopyWithinPart101_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1700
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA017
      * @tc.desc Verify start=length - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 5);
       const val143 = result[0];
@@ -369,14 +369,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6800
-     * @tc.name testTypedUArraysCopyWithinPart101_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1800
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA018
      * @tc.desc Verify start=length+1 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 6);
       const val145 = result[0];
@@ -384,14 +384,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_6900
-     * @tc.name testTypedUArraysCopyWithinPart101_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_1900
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA019
      * @tc.desc Verify start=-1 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -1);
       const val146 = result[0];
@@ -407,14 +407,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7000
-     * @tc.name testTypedUArraysCopyWithinPart101_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2000
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA020
      * @tc.desc Verify start=-2 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -2);
       const val151 = result[0];
@@ -430,14 +430,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7100
-     * @tc.name testTypedUArraysCopyWithinPart101_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2100
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA021
      * @tc.desc Verify start=-3 - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -3);
       const val156 = result[0];
@@ -453,14 +453,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7200
-     * @tc.name testTypedUArraysCopyWithinPart101_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2200
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA022
      * @tc.desc Verify start=-length - Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(2, -arr.length);
       const val161 = result[2];
@@ -470,14 +470,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7300
-     * @tc.name testTypedUArraysCopyWithinPart101_073
-     * @tc.desc Verify start=-length-1 - 0 Uint8Array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2300
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA023
+     * @tc.desc Verify copyWithin normalizes a start index below negative length to zero for Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -arr.length - 1);
       const val163 = result[0];
@@ -489,17 +489,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7400
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_7500
-     * @tc.name testTypedUArraysCopyWithinPart101_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2400
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA024
      * @tc.desc Verify start= - length Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -arr.length);
       const val169 = result[0];
@@ -507,23 +504,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8100
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8200
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8300
-     * @tc.name testTypedUArraysCopyWithinPart101_083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2500
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA025
      * @tc.desc Verify start=1 - Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40, 50]);
       let result = arr.copyWithin(0, 1);
       const val186 = result[0];
@@ -535,14 +523,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8400
-     * @tc.name testTypedUArraysCopyWithinPart101_084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2600
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA026
      * @tc.desc Verify start=-1 - Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300, 400, 500]);
       let result = arr.copyWithin(0, -1);
       const val189 = result[0];
@@ -558,14 +546,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8500
-     * @tc.name testTypedUArraysCopyWithinPart101_085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2700
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA027
      * @tc.desc Verify start=-2 - BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = arr.copyWithin(0, -2);
       const val194 = result[0];
@@ -581,14 +569,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8600
-     * @tc.name testTypedUArraysCopyWithinPart101_086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2800
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA028
      * @tc.desc Verify start=0x7FFF - Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 0);
       const val199 = result[0];
@@ -596,29 +584,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8700
-     * @tc.name testTypedUArraysCopyWithinPart101_087
-     * @tc.desc Verify start=0x8000 - Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysCopyWithinPart101_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([1, 2, 3, 4, 5]);
-      let result = arr.copyWithin(0, 0);
-      const val200 = result[0];
-      expect(val200).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8800
-     * @tc.name testTypedUArraysCopyWithinPart101_088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_2900
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA029
      * @tc.desc Verify start=0xFFFFFFFF - Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 0);
       const val201 = result[0];
@@ -626,14 +599,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_8900
-     * @tc.name testTypedUArraysCopyWithinPart101_089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3000
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA030
      * @tc.desc Verify start=0x3 - Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, 3);
       const val202 = result[0];
@@ -649,60 +622,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9000
-     * @tc.name testTypedUArraysCopyWithinPart101_090
-     * @tc.desc Verify start=0o3 - Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysCopyWithinPart101_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      let result = arr.copyWithin(0, 3);
-      const val207 = result[0];
-      expect(val207).assertEqual(4);
-      const val208 = result[1];
-      expect(val208).assertEqual(5);
-      const val209 = result[2];
-      expect(val209).assertEqual(3);
-      const val210 = result[3];
-      expect(val210).assertEqual(4);
-      const val211 = result[4];
-      expect(val211).assertEqual(5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9100
-     * @tc.name testTypedUArraysCopyWithinPart101_091
-     * @tc.desc Verify start=0b11 - Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysCopyWithinPart101_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      let result = arr.copyWithin(0, 3);
-      const val212 = result[0];
-      expect(val212).assertEqual(4);
-      const val213 = result[1];
-      expect(val213).assertEqual(5);
-      const val214 = result[2];
-      expect(val214).assertEqual(3);
-      const val215 = result[3];
-      expect(val215).assertEqual(4);
-      const val216 = result[4];
-      expect(val216).assertEqual(5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9200
-     * @tc.name testTypedUArraysCopyWithinPart101_092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3100
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA031
      * @tc.desc Verify start=-4 - Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -4);
       const val217 = result[0];
@@ -718,14 +645,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9300
-     * @tc.name testTypedUArraysCopyWithinPart101_093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3200
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA032
      * @tc.desc Verify start=-5 - Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -5);
       const val222 = result[0];
@@ -741,14 +668,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9400
-     * @tc.name testTypedUArraysCopyWithinPart101_094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3300
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA033
      * @tc.desc Verify start=-6 - Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       let result = arr.copyWithin(0, -6);
       const val227 = result[0];
@@ -760,14 +687,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9500
-     * @tc.name testTypedUArraysCopyWithinPart101_095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3400
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA034
      * @tc.desc Verify start=-7 - BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = arr.copyWithin(0, -7);
       const val230 = result[0];
@@ -779,23 +706,14 @@ export default function typedUArraysCopyWithinPartTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9700
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9800
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_9900
-     * @tc.name testTypedUArraysCopyWithinPart101_099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART101_3500
+     * @tc.name testTypedUArraysCopyWithinPartTestFileA035
      * @tc.desc Verify start=0x1 - Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysCopyWithinPart101_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysCopyWithinPartTestFileA035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40, 50]);
       let result = arr.copyWithin(0, 1);
       const val248 = result[0];
