@@ -21,8 +21,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { resourceManager } from '@kit.LocalizationKit';
 import common from '@ohos.app.ability.common';
 
-const Tag = 'audio_ndk_test:';
-const TEST_PASS = 0; // success result
+const Tag = 'audio_ndk_test:'
+const TEST_PASS = 0;  // success result
 
 export class AudioData {
   streamRendererUsageNum: number;
