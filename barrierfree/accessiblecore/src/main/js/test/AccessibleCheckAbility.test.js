@@ -257,7 +257,6 @@ describe('AccessibleCheckAbility', function () {
 
         accessibility.isSeniorModeEnabled().then((result) => {
             console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300 result: ${result}`);
-            expect(typeof (result)).assertEqual('boolean');
             expect(result).assertEqual(false);
             done();
         }).catch((err) => {
@@ -413,20 +412,18 @@ describe('AccessibleCheckAbility', function () {
         console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100');
           let callbackdata = (data) => {
               console.info(domain, tag, 'on SeniorMode state changed');
+              expect(typeof(data)).assertEqual('boolean');
           }
-          let result = false;
           try {
               accessibility.onSeniorModeStateChange(callbackdata);
               accessibility.offSeniorModeStateChange(callbackdata);
               accessibility.offSeniorModeStateChange();
-              result = true;
+              done();
           } catch (error) {
               hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100 failed. code: ${error.code}, msg: ${error.message}`);
               expect(null).assertFail();
               done();
           }
-          expect(result).assertEqual(true);
-          done();
       })
 
     /**
