@@ -15,6 +15,7 @@
 {
   "license": "",
   "devDependencies": {
+    "@types/libentry.so": "file:./src/main/cpp/types/libentry",
     "@types/libUtdNdk.so": "file:./src/main/cpp/types/libUtdNdk",
     "@types/libUdsNdk.so": "file:./src/main/cpp/types/libUdsNdk",
     "@types/libUdsNdkex.so": "file:./src/main/cpp/types/libUdsNdkex",
