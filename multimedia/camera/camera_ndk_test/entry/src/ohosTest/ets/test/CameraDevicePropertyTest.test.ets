@@ -234,6 +234,7 @@ function PhysicalcaptureSessionstart() {
   return false;
 }
 
+
 function createPreviewOutput() {
 
   cameraObj.getSupportedFullOutputCapability();
@@ -252,7 +253,7 @@ function createPreviewOutput() {
       break;
     }
   }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }
@@ -801,6 +802,19 @@ export default function CameraDevicePropertyTest() {
     it('testOHAutomotiveCameraPosition_0300', Level.LEVEL0, () => {
       let ret: number = cameraObj.enumTestAutomotiveCameraPosition();
       expect(ret).assertEqual(CAMERA_OK);
+    })
+
+    /**
+     * @tc.name   testOHAutomotiveCameraPosition_0400
+     * @tc.number SUB_Multimedia_Camera_AutomotiveCameraPosition_Func_0300
+     * @tc.desc   Test OH_CameraDevice_GetAutomotiveCameraPosition with null parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHAutomotiveCameraPosition_0400', Level.LEVEL0, () => {
+      let ret: number = cameraObj.getAutomotiveCameraPositionErrorParameter();
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
   })
 }
