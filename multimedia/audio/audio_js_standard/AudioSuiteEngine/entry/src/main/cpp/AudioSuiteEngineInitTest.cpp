@@ -9038,14 +9038,14 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100(n
             result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
             OH_AudioConverter_Destroy(converter);
             if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_BUFFER_TOO_SMALL) {
-                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
                 LOG("AudioConverter_Process_006 success");
                 return res;
             }
         }
         OH_AudioConverter_Destroy(converter);
     }
-    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
     LOG("AudioConverter_Process_006 fail, result: %{public}d", result);
     return res;
 }
