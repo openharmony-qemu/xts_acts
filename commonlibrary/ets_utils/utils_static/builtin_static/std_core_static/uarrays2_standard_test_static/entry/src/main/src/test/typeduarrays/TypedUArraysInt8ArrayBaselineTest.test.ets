@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -125,13 +125,13 @@ export default function int8ArrayBaselineTest(): void {
       const arr = new Int8Array([1, 2, 3]);
       try {
         const val7 = arr[5];
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
       try {
         const val8 = arr[-1];
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
@@ -377,7 +377,7 @@ export default function int8ArrayBaselineTest(): void {
      * @tc.level Level 2
      */
     it('testInt8ArrayBaseline022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Int8Array.BYTES_PER_ELEMENT === 1).assertTrue();
+      expect(Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
