@@ -69,6 +69,10 @@ const int NAPI_ARGS_LENGTH = 2;
 const uint32_t NAPI_NATIVE_VALUE1 = 11;
 const uint32_t NAPI_NATIVE_VALUE2 = 22;
 static constexpr int INT_ARG_100 = 100;
+static constexpr size_t SENDABLE_ARRAYBUFFER_LENGTH = 1024;
+static constexpr size_t SENDABLE_TYPEDARRAY_OFFSET = 0;
+static constexpr size_t SENDABLE_WRAP_STRING_LENGTH = 256;
+static constexpr size_t SENDABLE_NATIVE_BINDING_SIZE = 1024;
 
 
 struct CallbackData {
@@ -422,12 +426,11 @@ static napi_value openAndCloseEscapableHandleScope(napi_env env, napi_callback_i
 static napi_value createReference(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-
     napi_create_int32(env, TAG_NUMBER, &result);
     NAPI_CALL(env, napi_create_reference(env, result, 1, &test_reference));
-    napi_value value;        
-    NAPI_CALL(env, napi_create_int32(env, 0, &value));
-    return value;
+    napi_value _value;
+    NAPI_CALL(env, napi_create_int32(env, 0, &_value));
+    return _value;
 }
 
 static napi_value getAndDeleteReference(napi_env env, napi_callback_info info)
@@ -1293,7 +1296,7 @@ static napi_value NapiCreateSendableArrayWithLength(napi_env env, napi_callback_
 
 static napi_value NapiCreateSendableArrayBuffer(napi_env env, napi_callback_info info)
 {
-    static size_t length = 1024;
+    size_t length = SENDABLE_ARRAYBUFFER_LENGTH;
     void* data;
     napi_value result = nullptr;
     napi_create_sendable_arraybuffer(env, length, &data, &result);
@@ -1305,8 +1308,8 @@ static napi_value NapiCreateSendableArrayBuffer(napi_env env, napi_callback_info
 
 static napi_value NapiCreateSendableTypedArray(napi_env env, napi_callback_info info)
 {
-    static size_t length = 1024;
-    static size_t offset = 0;
+    size_t length = SENDABLE_ARRAYBUFFER_LENGTH;
+    size_t offset = SENDABLE_TYPEDARRAY_OFFSET;
     void* data;
     napi_value arraybuffer = nullptr;
     napi_create_sendable_arraybuffer(env, length, &data, &arraybuffer);
@@ -1325,7 +1328,7 @@ static napi_value NapiWrapSendable(napi_env env, napi_callback_info info)
     napi_value args[2];
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    static size_t length = 256;
+    size_t length = SENDABLE_WRAP_STRING_LENGTH;
     char* data = new char[length];
     size_t size = 0;
     napi_get_value_string_utf8(env, args[1], data, length - 1, &size);
@@ -1346,12 +1349,12 @@ static napi_value NapiWrapSendableWithSize(napi_env env, napi_callback_info info
     napi_value args[2];
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-    static size_t length = 256;
+    size_t length = SENDABLE_WRAP_STRING_LENGTH;
     char* data = new char[length];
     size_t size = 0;
     napi_get_value_string_utf8(env, args[1], data, length - 1, &size);
 
-    static size_t nativeBindingSize = 1024;
+    size_t nativeBindingSize = SENDABLE_NATIVE_BINDING_SIZE;
     napi_wrap_sendable_with_size(
         env, args[0], (void*)data,
         [](napi_env env, void* data, void* hint) {
