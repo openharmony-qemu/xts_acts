@@ -5438,7 +5438,7 @@ export default function windowImmersiveTest() {
            expect().assertFail();
         }
         done();
-      }
+      } 
     })
 
     /**
