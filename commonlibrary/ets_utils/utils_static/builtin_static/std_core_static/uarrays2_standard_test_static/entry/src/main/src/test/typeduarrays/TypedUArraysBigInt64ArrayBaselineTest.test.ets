@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -154,6 +154,8 @@ export default function bigInt64ArrayBaselineTest(): void {
       const entries = Array.from(arr.entries());
       expect(entries.length).assertEqual(3);
       const entryValue = entries[0];
+      expect(entryValue[0]).assertEqual(0);
+      expect(entryValue[1]).assertEqual(1n);
     });
 
     /**
