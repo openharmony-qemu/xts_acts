@@ -274,6 +274,36 @@ Camera_ErrorCode NDKCamera::CreateCameraInputWithPositionAndType(Camera_Position
 
     return ret_;
 }
+Camera_ErrorCode NDKCamera::CreateSessionSetMode(void)
+{
+    Camera_SceneMode *sceneModes = nullptr;
+    Camera_CaptureSession* captureSession = nullptr;
+    const uint32_t MIN_REQUIRED_SCENE_MODES = 2;
+    const uint32_t MAX_REQUIRED_SCENE_MODES = 3;
+    uint32_t size = 0;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(cameras_, &sceneModes, &size);
+    if (size < MIN_REQUIRED_SCENE_MODES) {
+        LOG("OH_CameraManager_GetSupportedSceneModes failed");
+        return ret;
+    }
+    ret = OH_CameraManager_CreateCaptureSession(cameraManager_, &captureSession);
+    ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_PHOTO);
+    if  (ret != 0) {
+        LOG("OH_CaptureSession_SetSessionMode failed");
+        return ret;
+    }
+    ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_VIDEO);
+    if  (ret != 0) {
+        LOG("OH_CaptureSession_SetSessionMode failed");
+        return ret;
+    }
+    if (size == MAX_REQUIRED_SCENE_MODES) {
+        ret = OH_CaptureSession_SetSessionMode(captureSession, SECURE_PHOTO);
+    }
+    
+    OH_CaptureSession_Release(captureSession);
+    return ret;
+}
 Camera_ErrorCode NDKCamera::CreateSession(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {

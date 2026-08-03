@@ -86,6 +86,7 @@ public:
     Camera_ErrorCode CameraManagerDeleteSupportedCameras(int useCaseCode);                // 删除支持的相机。
     Camera_ErrorCode CreateCameraInput(int useCaseCode);                                  // 创建相机输入实例。
     Camera_ErrorCode CreateSession(int useCaseCode);                                      // 创建捕获会话实例。
+    Camera_ErrorCode CreateSessionSetMode(void);                                          // 创建会话并设置相机模式。
     Camera_ErrorCode CreateMetadataOutput(int useCaseCode);                               // 创建捕获会话实例。
     Camera_ErrorCode CameraInputOpen(int useCaseCode);                                    // 打开相机。
     Camera_ErrorCode CameraInputClose(int useCaseCode);                                   // 关闭相机。
