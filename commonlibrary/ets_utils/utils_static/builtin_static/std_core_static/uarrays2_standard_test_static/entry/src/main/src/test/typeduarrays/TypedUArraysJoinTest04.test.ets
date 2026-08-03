@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -35,13 +35,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0100
-     * @tc.name testTypedUArraysJoinPart202_001
+     * @tc.name testTypedUArraysJoinTestFileD001
      * @tc.desc Verify buffer join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const arr1 = new Uint8Array(buffer, 0, 4);
       const arr2 = new Uint8Array(buffer, 4, 4);
@@ -53,13 +53,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0200
-     * @tc.name testTypedUArraysJoinPart202_002
+     * @tc.name testTypedUArraysJoinTestFileD002
      * @tc.desc Verify Uint8Array buffer join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       const arr = new Uint8Array(buffer);
       arr.join();
@@ -72,13 +72,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0300
-     * @tc.name testTypedUArraysJoinPart202_003
+     * @tc.name testTypedUArraysJoinTestFileD003
      * @tc.desc Verify Uint16Array buffer join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const arr = new Uint16Array(buffer);
       arr.join();
@@ -96,14 +96,14 @@ export default function typedUArraysJoinTest04(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0500
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0001
-     * @tc.name testTypedUArraysJoinPart202_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0400
+     * @tc.name testTypedUArraysJoinTestFileD004
      * @tc.desc Verify BigUint64Array buffer join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const arr = new BigUint64Array(buffer);
       arr.join();
@@ -115,14 +115,14 @@ export default function typedUArraysJoinTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0002
-     * @tc.name testTypedUArraysJoinPart202_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0500
+     * @tc.name testTypedUArraysJoinTestFileD005
      * @tc.desc Verify join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sub = arr.subarray(1, 4);
       sub.join("-");
@@ -140,13 +140,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0600
-     * @tc.name testTypedUArraysJoinPart202_006
+     * @tc.name testTypedUArraysJoinTestFileD006
      * @tc.desc Verify slice join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sliced = arr.slice(1, 4);
       sliced.join("|");
@@ -164,13 +164,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0700
-     * @tc.name testTypedUArraysJoinPart202_007
+     * @tc.name testTypedUArraysJoinTestFileD007
      * @tc.desc Verify buffer Uint8Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       const arr = new Uint8Array(buffer);
       let result = arr.join(",");
@@ -179,13 +179,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0800
-     * @tc.name testTypedUArraysJoinPart202_008
+     * @tc.name testTypedUArraysJoinTestFileD008
      * @tc.desc Verify buffer Uint16Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       const arr = new Uint16Array(buffer);
       let result = arr.join("|");
@@ -194,13 +194,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0900
-     * @tc.name testTypedUArraysJoinPart202_009
+     * @tc.name testTypedUArraysJoinTestFileD009
      * @tc.desc Verify buffer Uint32Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       const arr = new Uint32Array(buffer);
       let result = arr.join("-");
@@ -209,13 +209,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1000
-     * @tc.name testTypedUArraysJoinPart202_010
+     * @tc.name testTypedUArraysJoinTestFileD010
      * @tc.desc Verify buffer Uint8ClampedArray join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       const arr = new Uint8ClampedArray(buffer);
       let result = arr.join("");
@@ -227,13 +227,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1100
-     * @tc.name testTypedUArraysJoinPart202_011
+     * @tc.name testTypedUArraysJoinTestFileD011
      * @tc.desc Verify join length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sub = arr.subarray(1, 4);
       sub.join("-");
@@ -242,13 +242,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1200
-     * @tc.name testTypedUArraysJoinPart202_012
+     * @tc.name testTypedUArraysJoinTestFileD012
      * @tc.desc Verify slice join length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sliced = arr.slice(1, 4);
       sliced.join("|");
@@ -256,14 +256,14 @@ export default function typedUArraysJoinTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0003
-     * @tc.name testTypedUArraysJoinPart202_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1300
+     * @tc.name testTypedUArraysJoinTestFileD013
      * @tc.desc Verify buffer Uint8Array join byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const arr = new Uint8Array(buffer);
       arr.join();
@@ -278,13 +278,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1400
-     * @tc.name testTypedUArraysJoinPart202_014
+     * @tc.name testTypedUArraysJoinTestFileD014
      * @tc.desc Verify buffer BigUint64Array join byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const arr = new BigUint64Array(buffer);
       arr.join();
@@ -293,13 +293,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1500
-     * @tc.name testTypedUArraysJoinPart202_015
+     * @tc.name testTypedUArraysJoinTestFileD015
      * @tc.desc Verify join byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sub = arr.subarray(1, 4);
       sub.join("-");
@@ -308,13 +308,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1600
-     * @tc.name testTypedUArraysJoinPart202_016
+     * @tc.name testTypedUArraysJoinTestFileD016
      * @tc.desc Verify slice join slice byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sliced = arr.slice(1, 4);
       sliced.join("|");
@@ -322,14 +322,14 @@ export default function typedUArraysJoinTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0004
-     * @tc.name testTypedUArraysJoinPart202_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1700
+     * @tc.name testTypedUArraysJoinTestFileD017
      * @tc.desc Verify buffer Uint16Array join byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const arr = new Uint16Array(buffer, 4, 3);
       arr.join();
@@ -337,14 +337,14 @@ export default function typedUArraysJoinTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_0005
-     * @tc.name testTypedUArraysJoinPart202_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1800
+     * @tc.name testTypedUArraysJoinTestFileD018
      * @tc.desc Verify buffer Uint32Array join byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const arr = new Uint32Array(buffer, 0, 2);
       arr.join();
@@ -353,13 +353,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_1900
-     * @tc.name testTypedUArraysJoinPart202_019
+     * @tc.name testTypedUArraysJoinTestFileD019
      * @tc.desc Verify join byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sub = arr.subarray(1, 4);
       sub.join("-");
@@ -368,13 +368,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2000
-     * @tc.name testTypedUArraysJoinPart202_020
+     * @tc.name testTypedUArraysJoinTestFileD020
      * @tc.desc Verify slice join slice byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sliced = arr.slice(1, 4);
       sliced.join("|");
@@ -383,13 +383,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2100
-     * @tc.name testTypedUArraysJoinPart202_021
+     * @tc.name testTypedUArraysJoinTestFileD021
      * @tc.desc Verify buffer Uint8Array join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       const arr = new Uint8Array(buffer);
       arr.join();
@@ -406,13 +406,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2200
-     * @tc.name testTypedUArraysJoinPart202_022
+     * @tc.name testTypedUArraysJoinTestFileD022
      * @tc.desc Verify join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0x11, 0x22, 0x33, 0x44, 0x55]);
       const sub = arr.subarray(1, 4);
       sub.join("-");
@@ -430,13 +430,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2300
-     * @tc.name testTypedUArraysJoinPart202_023
+     * @tc.name testTypedUArraysJoinTestFileD023
      * @tc.desc Verify slice join buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0x11, 0x22, 0x33, 0x44, 0x55]);
       const sliced = arr.slice(1, 4);
       sliced.join("|");
@@ -454,13 +454,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2400
-     * @tc.name testTypedUArraysJoinPart202_024
+     * @tc.name testTypedUArraysJoinTestFileD024
      * @tc.desc Verify join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5, 6]);
       const sub1 = arr.subarray(0, 3);
       const sub2 = arr.subarray(3, 6);
@@ -472,13 +472,13 @@ export default function typedUArraysJoinTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN_PART202_2500
-     * @tc.name testTypedUArraysJoinPart202_025
+     * @tc.name testTypedUArraysJoinTestFileD025
      * @tc.desc Verify join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysJoinPart202_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysJoinTestFileD025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const sub1 = arr.subarray(0, 3);
       const sub2 = arr.subarray(2, 5);

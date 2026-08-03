@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -230,7 +230,7 @@ export default function int16ArrayBaselineTest(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayBaseline013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Int16Array.BYTES_PER_ELEMENT === 2).assertTrue();
+      expect(Int16Array.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
