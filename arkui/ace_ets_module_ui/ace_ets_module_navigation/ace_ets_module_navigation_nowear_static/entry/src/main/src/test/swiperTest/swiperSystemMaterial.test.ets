@@ -15,7 +15,6 @@
  */
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,13 +26,13 @@ export default function swiperSystemMaterial() {
   describe('swiperSystemMaterial', () => {
     beforeAll(async (): Promise<void> => {
       console.info('swiperSystemMaterial beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.navigation.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.navigation.nowear.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {
       console.info('swiperSystemMaterial beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/SwiperController/swiperSystemMaterial',
+        url: 'MainAbility/pages/swiper/swiperSystemMaterial',
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;

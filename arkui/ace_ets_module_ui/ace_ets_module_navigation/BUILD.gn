@@ -44,6 +44,7 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation_nowear_api18_static:ActsAceEtsModuleNavigationNoWearApi18StaticTest",
       "ace_ets_module_stepper_nowear:ActsAceEtsModuleStepperNoWearTest",
       "ace_ets_module_navigation_nowear:ActsAceEtsModuleNavigationNoWearTest",
+      "ace_ets_module_swiper_nowear:ActsAceEtsModuleSwiperNoWearTest",
       "ace_ets_module_sidebarContainer_nowear:ActsAceEtsModuleSideBarContainerNoWearTest",
       "ace_ets_module_navigation1:ActsAceEtsModuleNavigation1Test",
       "ace_ets_module_navigation2:ActsAceEtsModuleNavigation2Test",
@@ -61,7 +62,8 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation_api13_static:ActsAceEtsModuleNavigationApi13StaticTest",
       "ace_ets_module_navigation_api14_static:ActsAceEtsModuleNavigationApi14StaticTest",
       "ace_ets_module_navigation_api15_static:ActsAceEtsModuleNavigationApi15StaticTest",
-      "ace_ets_module_navigation_static:ActsAceEtsModuleNavigationStaticTest"
+      "ace_ets_module_navigation_static:ActsAceEtsModuleNavigationStaticTest",
+      "ace_ets_module_navigation_nowear_static:ActsAceEtsModuleNavigationNoWearStaticTest"
     ]
   }
 }

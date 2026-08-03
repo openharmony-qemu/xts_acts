@@ -31,13 +31,13 @@ export default function navigationMaterial() {
   describe('navigationMaterial', () => {
     beforeAll(async (): Promise<void> => {
       console.info('navigationMaterial beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.navigation.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.navigation.nowear.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {
       console.info('navigationMaterial beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/navigationMaterial',
+        url: 'MainAbility/pages/navigation/navigationMaterial',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

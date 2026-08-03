@@ -8,10 +8,8 @@
     "MainAbility/pages/toolBarItemDebugLine/toolBarItemDebugLine",
     "MainAbility/pages/Navigation/NavScrollEffectOptions",
     "MainAbility/pages/Navigation/NavigationModeRatio",
-    "MainAbility/pages/Navigation/navigationMaterial",
     "MainAbility/pages/navigationNavDestination/configurationNav",
     "MainAbility/pages/Graphics/colorLengthMetrics",
-    "MainAbility/pages/SwiperController/swiperIndicatorIcon",
-    "MainAbility/pages/SwiperController/swiperSystemMaterial"
+    "MainAbility/pages/SwiperController/swiperIndicatorIcon"
   ]
 }

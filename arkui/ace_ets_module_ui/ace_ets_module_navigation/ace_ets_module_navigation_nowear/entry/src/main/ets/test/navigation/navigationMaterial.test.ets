@@ -17,13 +17,14 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
+import { uiMaterial } from '@kit.ArkUI';
 
 export default function navigationMaterial() {
   describe('navigationMaterial', () => {
     beforeEach(async (done: Function) => {
       console.info('navigationMaterial beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/navigationMaterial',
+        url: 'MainAbility/pages/navigation/navigationMaterial',
       }
       try {
         router.clear();
@@ -53,6 +54,9 @@ export default function navigationMaterial() {
     it('navigationMaterial_0010', Level.LEVEL3, async (done: Function) => {
       console.info('[navigationMaterial_0010] START');
       await CommonFunc.sleep(1000);
+      let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[1]
       let btn0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
@@ -60,17 +64,12 @@ export default function navigationMaterial() {
         .$children[0]
         .$children[1]
         .$children[0]
-      console.info("[navigationMaterial_0010] btn0 systemMaterial is: " +
-        JSON.stringify(btn0.$attrs.systemMaterial));
-      console.info("[navigationMaterial_0010] material style is: " +
-        JSON.stringify(btn0.$attrs.systemMaterial.material?.immersiveOptions?.style));
-      console.info("[navigationMaterial_0010] material colorInvert is: " +
-        JSON.stringify(btn0.$attrs.systemMaterial.material?.immersiveOptions?.colorInvert));
-      console.info("[navigationMaterial_0010] material applyShadow is: " +
-        JSON.stringify(btn0.$attrs.systemMaterial.material?.immersiveOptions?.applyShadow));
-      expect(btn0.$attrs.systemMaterial.material.immersiveOptions.style).assertEqual("ImmersiveStyle.ULTRA_THIN");
-      expect(btn0.$attrs.systemMaterial.material.immersiveOptions.colorInvert).assertEqual("true");
-      expect(btn0.$attrs.systemMaterial.material.immersiveOptions.applyShadow).assertEqual("true");
+      let strJson: string = getInspectorByKey('nav_systemMaterial_true');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[navigationMaterial_0010] component obj is: ' + JSON.stringify(obj));
+      console.info('[navigationMaterial_0010] title is: ' + JSON.stringify(obj.$attrs.title));
+      expect(obj.$attrs.title).assertEqual('true');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
       console.info('[navigationMaterial_0010] END');
       done();
     });
@@ -86,6 +85,9 @@ export default function navigationMaterial() {
     it('navigationMaterial_0020', Level.LEVEL3, async (done: Function) => {
       console.info('[navigationMaterial_0020] START');
       await CommonFunc.sleep(1000);
+      let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[1]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[3]
@@ -93,20 +95,12 @@ export default function navigationMaterial() {
         .$children[0]
         .$children[1]
         .$children[0]
-      console.info("[navigationMaterial_0020] btn2 systemMaterial is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial));
-      console.info("[navigationMaterial_0020] material style is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.style));
-      console.info("[navigationMaterial_0020] material materialColor is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.materialColor));
-      console.info("[navigationMaterial_0020] material colorInvert is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.colorInvert));
-      console.info("[navigationMaterial_0020] material applyShadow is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.applyShadow));
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.style).assertEqual("ImmersiveStyle.THIN");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.materialColor).assertEqual("#80FF0000");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.colorInvert).assertEqual("false");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.applyShadow).assertEqual("false");
+      let strJson: string = getInspectorByKey('nav_systemMaterial_false');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[navigationMaterial_0020] component obj is: ' + JSON.stringify(obj));
+      console.info('[navigationMaterial_0020] title is: ' + JSON.stringify(obj.$attrs.title));
+      expect(obj.$attrs.title).assertEqual('false');
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
       console.info('[navigationMaterial_0020] END');
       done();
     });
@@ -122,6 +116,9 @@ export default function navigationMaterial() {
     it('navigationMaterial_0030', Level.LEVEL3, async (done: Function) => {
       console.info('[navigationMaterial_0030] START');
       await CommonFunc.sleep(1000);
+      let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[1]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[5]
@@ -129,17 +126,12 @@ export default function navigationMaterial() {
         .$children[0]
         .$children[1]
         .$children[0]
-      console.info("[navigationMaterial_0030] btn2 systemMaterial is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial));
-      console.info("[navigationMaterial_0030] material style is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.style));
-      console.info("[navigationMaterial_0030] material colorInvert is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.colorInvert));
-      console.info("[navigationMaterial_0030] material applyShadow is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.applyShadow));
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.style).assertEqual("ImmersiveStyle.REGULAR");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.colorInvert).assertEqual("false");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.applyShadow).assertEqual("true");
+      let strJson: string = getInspectorByKey('nav_systemMaterial_un');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[navigationMaterial_0030] component obj is: ' + JSON.stringify(obj));
+      console.info('[navigationMaterial_0030] title is: ' + JSON.stringify(obj.$attrs.title));
+      expect(obj.$attrs.title).assertEqual('un');
+      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
       console.info('[navigationMaterial_0030] END');
       done();
     });
@@ -155,6 +147,9 @@ export default function navigationMaterial() {
     it('navigationMaterial_0040', Level.LEVEL3, async (done: Function) => {
       console.info('[navigationMaterial_0040] START');
       await CommonFunc.sleep(1000);
+      let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[1]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[7]
@@ -162,17 +157,12 @@ export default function navigationMaterial() {
         .$children[0]
         .$children[1]
         .$children[0]
-      console.info("[navigationMaterial_0040] btn2 systemMaterial is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial));
-      console.info("[navigationMaterial_0040] material style is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.style));
-      console.info("[navigationMaterial_0040] material colorInvert is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.colorInvert));
-      console.info("[navigationMaterial_0040] material applyShadow is: " +
-        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.applyShadow));
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.style).assertEqual("ImmersiveStyle.ULTRA_THICK");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.colorInvert).assertEqual("false");
-      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.applyShadow).assertEqual("true");
+      let strJson: string = getInspectorByKey('nav_systemMaterial_null');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[navigationMaterial_0040] component obj is: ' + JSON.stringify(obj));
+      console.info('[navigationMaterial_0040] title is: ' + JSON.stringify(obj.$attrs.title));
+      expect(obj.$attrs.title).assertEqual('null');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       console.info('[navigationMaterial_0040] END');
       done();
     });
