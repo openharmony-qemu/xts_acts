@@ -3925,7 +3925,7 @@ static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetColorTintRangeWithParamNull(napi_env env, napi_callback_info info) 
+static napi_value GetColorTintRangeWithParamNull(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
