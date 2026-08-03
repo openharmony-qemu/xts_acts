@@ -1264,10 +1264,10 @@ export default function adminManagerTest() {
         let res2: Array<Want> = await adminManager.getAdmins();
         let otherAdmin2: Want | undefined = res2.find((admin: Want) => admin.bundleName == OTHER_WANT.bundleName);
         expect(otherAdmin2?.parameters?.enableSource == 4).assertTrue();
+        await adminManager.disableAdmin(OTHER_WANT);
       } catch (error) {
         expect(Number(error.code) === 801).assertTrue();
       } finally {
-        await adminManager.disableAdmin(OTHER_WANT);
         await adminManager.disableAdmin(SELFWANT);
       }
       done();
@@ -2754,10 +2754,9 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2783,10 +2782,9 @@ export default function adminManagerTest() {
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2812,10 +2810,9 @@ export default function adminManagerTest() {
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2842,10 +2839,9 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2902,10 +2898,9 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2932,10 +2927,9 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -2965,7 +2959,7 @@ export default function adminManagerTest() {
       } catch (error) {
         expect(false).assertTrue();
       } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+        await adminManager.disableAdmin(SELFWANT);
       }
       done();
     })
@@ -3057,11 +3051,11 @@ export default function adminManagerTest() {
             expect(res[i].parameters?.adminType == 2).assertTrue();
           }
         }
+        await adminManager.disableAdmin(OTHER_WANT);
       } catch (error) {
-        expect(false).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
-        await adminManager.disableAdmin(OTHER_WANT);
       }
       done();
     })
@@ -3094,11 +3088,10 @@ export default function adminManagerTest() {
             expect(res[i].parameters?.enableSource == 0).assertTrue();
           }
         }
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
         await adminManager.disableAdmin(OTHER_WANT);
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -3106,53 +3099,12 @@ export default function adminManagerTest() {
     /**
      * @tc.name   test_enableAdmin_enableSource_014
      * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_014
-     * @tc.desc   test re-enable admin with different enableSource, verify getAdmins returns updated enableSource
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_enableAdmin_enableSource_014", Level.LEVEL2, async (done: Function) => {
-      let wantSource1: Want = {
-        bundleName: SELFWANT.bundleName,
-        abilityName: SELFWANT.abilityName,
-        parameters: {
-          enableSource: 0
-        }
-      };
-      let wantSource2: Want = {
-        bundleName: SELFWANT.bundleName,
-        abilityName: SELFWANT.abilityName,
-        parameters: {
-          enableSource: 4
-        }
-      };
-      try {
-        await adminManager.enableAdmin(wantSource1, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-        let res1: Array<Want> = await adminManager.getAdmins();
-        let selfAdmin1: Want | undefined = res1.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin1?.parameters?.enableSource == 0).assertTrue();
-        await adminManager.disableAdmin(SELFWANT);
-        await adminManager.enableAdmin(wantSource2, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-        let res2: Array<Want> = await adminManager.getAdmins();
-        let selfAdmin2: Want | undefined = res2.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin2?.parameters?.enableSource == 4).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   test_enableAdmin_enableSource_015
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_015
      * @tc.desc   test enableAdmin with enableSource DEPLOY and adminType BYOD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_015", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_014", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3166,10 +3118,38 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 0).assertTrue();
+        await adminManager.disableAdmin(SELFWANT);
       } catch (error) {
         expect(false).assertTrue();
-      } finally {
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_enableAdmin_enableSource_015
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_015
+     * @tc.desc   test enableAdmin with enableSource SUPER_ADMIN and adminType NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableAdmin_enableSource_015", Level.LEVEL2, async (done: Function) => {
+      let wantTemp: Want = {
+        bundleName: SELFWANT.bundleName,
+        abilityName: SELFWANT.abilityName,
+        parameters: {
+          enableSource: 1
+        }
+      };
+      try {
+        await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let res: Array<Want> = await adminManager.getAdmins();
+        let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
+        expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
+        expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -3177,7 +3157,7 @@ export default function adminManagerTest() {
     /**
      * @tc.name   test_enableAdmin_enableSource_016
      * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_016
-     * @tc.desc   test enableAdmin with enableSource SUPER_ADMIN and adminType NORMAL
+     * @tc.desc   test enableAdmin with enableSource SUPER_ADMIN and adminType BYOD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -3191,15 +3171,14 @@ export default function adminManagerTest() {
         }
       };
       try {
-        await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let res: Array<Want> = await adminManager.getAdmins();
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
+        expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -3207,42 +3186,12 @@ export default function adminManagerTest() {
     /**
      * @tc.name   test_enableAdmin_enableSource_017
      * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_017
-     * @tc.desc   test enableAdmin with enableSource SUPER_ADMIN and adminType BYOD
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_enableAdmin_enableSource_017", Level.LEVEL2, async (done: Function) => {
-      let wantTemp: Want = {
-        bundleName: SELFWANT.bundleName,
-        abilityName: SELFWANT.abilityName,
-        parameters: {
-          enableSource: 1
-        }
-      };
-      try {
-        await adminManager.enableAdmin(wantTemp, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-        let res: Array<Want> = await adminManager.getAdmins();
-        let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
-        expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
-        expect(selfAdmin?.parameters?.enableSource == 1).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   test_enableAdmin_enableSource_018
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_018
      * @tc.desc   test enableAdmin with enableSource SELF and adminType SUPER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_018", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_017", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3256,23 +3205,22 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 2).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.name   test_enableAdmin_enableSource_019
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_019
+     * @tc.name   test_enableAdmin_enableSource_018
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_018
      * @tc.desc   test enableAdmin with enableSource REPLACE and adminType BYOD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_019", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_018", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3286,23 +3234,22 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 2).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 3).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.name   test_enableAdmin_enableSource_020
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_020
+     * @tc.name   test_enableAdmin_enableSource_019
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_019
      * @tc.desc   test enableAdmin with enableSource USER and adminType NORMAL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_020", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_019", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3316,23 +3263,22 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 0).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableAdmin(SELFWANT);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.name   test_enableAdmin_enableSource_021
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_021
+     * @tc.name   test_enableAdmin_enableSource_020
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_020
      * @tc.desc   test enableAdmin with enableSource USER and adminType SUPER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_021", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_020", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3346,23 +3292,22 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 4).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      } finally {
         await adminManager.disableSuperAdmin(wantTemp.bundleName);
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.name   test_enableAdmin_enableSource_022
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_022
+     * @tc.name   test_enableAdmin_enableSource_021
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_021
      * @tc.desc   test enableAdmin with enableSource over range (value 5) and adminType SUPER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_022", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_021", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3376,23 +3321,22 @@ export default function adminManagerTest() {
         let selfAdmin: Want | undefined = res.find((admin: Want) => admin.bundleName == SELFWANT.bundleName);
         expect(selfAdmin?.parameters?.adminType == 1).assertTrue();
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
-      } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
-      } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      } catch (error) {
+        expect(false).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.name   test_enableAdmin_enableSource_023
-     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_023
+     * @tc.name   test_enableAdmin_enableSource_022
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_022
      * @tc.desc   test enableAdmin with enableSource over range (value 5) and adminType BYOD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_enableAdmin_enableSource_023", Level.LEVEL2, async (done: Function) => {
+    it("test_enableAdmin_enableSource_022", Level.LEVEL2, async (done: Function) => {
       let wantTemp: Want = {
         bundleName: SELFWANT.bundleName,
         abilityName: SELFWANT.abilityName,
@@ -3408,9 +3352,49 @@ export default function adminManagerTest() {
         expect(selfAdmin?.parameters?.enableSource == 5).assertTrue();
         await adminManager.disableAdmin(wantTemp);
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       }
       done();
     })
+
+    /**	 
+      * @tc.name   test_enableAdmin_enableSource_023	 
+      * @tc.number SUB_CUSTOMIZATION_EDM_ENABLEADMIN_ENABLESOURCE_023 
+      * @tc.desc   test re-enable admin with different enableSource, verify getAdmins returns updated enableSource 
+      * @tc.type   FUNCTION 
+      * @tc.size   MEDIUMTEST 
+      * @tc.level  LEVEL2 
+      */ 
+     it("test_enableAdmin_enableSource_023", Level.LEVEL2, async (done: Function) => { 
+       let wantSource1: Want = { 
+         bundleName: SELFWANT.bundleName, 
+         abilityName: SELFWANT.abilityName, 
+         parameters: { 
+           enableSource: 0 
+         } 
+       }; 
+       let wantSource2: Want = { 
+         bundleName: SELFWANT.bundleName, 
+         abilityName: SELFWANT.abilityName, 
+         parameters: { 
+           enableSource: 4 
+         } 
+       }; 
+       try { 
+         await adminManager.enableAdmin(wantSource1, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL); 
+         let res1: Array<Want> = await adminManager.getAdmins(); 
+         let selfAdmin1: Want | undefined = res1.find((admin: Want) => admin.bundleName == SELFWANT.bundleName); 
+         expect(selfAdmin1?.parameters?.enableSource == 0).assertTrue(); 
+         await adminManager.disableAdmin(SELFWANT); 
+         await adminManager.enableAdmin(wantSource2, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL); 
+         let res2: Array<Want> = await adminManager.getAdmins(); 
+         let selfAdmin2: Want | undefined = res2.find((admin: Want) => admin.bundleName == SELFWANT.bundleName); 
+         expect(selfAdmin2?.parameters?.enableSource == 4).assertTrue();
+         await adminManager.disableAdmin(SELFWANT); 
+       } catch (error) { 
+         expect(Number(error.code) === 401).assertTrue(); 
+       }
+       done(); 
+     })
   })
 }
