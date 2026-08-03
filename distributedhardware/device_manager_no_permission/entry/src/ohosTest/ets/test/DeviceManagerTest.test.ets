@@ -89,5 +89,97 @@ export default function DeviceManagerTest() {
           done()
         }
       });
+
+    /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceNameC0100
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_C_0100
+     * @tc.desc   testing ERR_OK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceNameC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0100 start====");
+          let result: number = devicemanagerndktest.GetLocalDeviceNameCErrorCodeOK();
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0100 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceNameC0100 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
+
+    /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceNameC0200
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_C_0200
+     * @tc.desc   testing ERR_INVALID_PARAMETER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceNameC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0200 start====");
+          let result: number = devicemanagerndktest.FirstGetLocalDeviceNameCErrorCode401();
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0200 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceNameC0200 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
+
+    /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceNameC0300
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_C_0300
+     * @tc.desc   testing ERR_INVALID_PARAMETER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceNameC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0300 start====");
+          let result: number = devicemanagerndktest.SecondGetLocalDeviceNameCErrorCode401();
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0300 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceNameC0300 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
+
+    /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceNameC0400
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_C_0400
+     * @tc.desc   testing ERR_INVALID_PARAMETER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceNameC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0400 start====");
+          let result: number = devicemanagerndktest.ThirdGetLocalDeviceNameCErrorCode401();
+          console.info("====>testDistributedServiceKitGetLocalDeviceNameC0400 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceNameC0400 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
   })
 }
