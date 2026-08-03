@@ -63,9 +63,11 @@
                 "ln -s /data/local/tmp/libdeqp_spirv.z.so /system/lib/libdeqp_spirv.z.so",
                 "ln -s /data/local/tmp/libdeqp_spvremapper.z.so /system/lib/libdeqp_spvremapper.z.so",
                 "ln -s /data/local/tmp/libdeqp_amber.z.so /system/lib/libdeqp_amber.z.so",
-                "ln -s /data/local/tmp/libskia_canvaskit.z.so /system/lib/libskia_canvaskit.z.so"
+                "ln -s /data/local/tmp/libskia_canvaskit.z.so /system/lib/libskia_canvaskit.z.so",
+                "echo 200000 200000 > /sys/kernel/debug/hvgr0/cq/cq_unbind_timeout"
             ],
             "teardown-localcommand": [
+                "hdc shell echo 2500 3000 > /sys/kernel/debug/hvgr0/cq/cq_unbind_timeout",
                 "python testcases/vulkandata/genlocal.py ActsVulkanRayqueryTest ray-query.txt"
             ]
         }
