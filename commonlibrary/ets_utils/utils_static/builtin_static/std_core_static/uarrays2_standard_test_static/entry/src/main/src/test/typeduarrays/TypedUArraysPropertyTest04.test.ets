@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 
 /*
@@ -56,7 +56,7 @@ export default function typedUArraysPropertyTest04(): void {
      */
     it('testTypedUArraysProperty002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1);
-      expect(arr.buffer != null).assertTrue();
+      expect(arr.buffer.byteLength).assertEqual(1);
     });
 
 
@@ -70,7 +70,7 @@ export default function typedUArraysPropertyTest04(): void {
      */
     it('testTypedUArraysProperty003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(1);
-      expect(arr.length >= 0).assertTrue();
+      expect(arr.length).assertEqual(1);
     });
 
     /**
@@ -96,7 +96,7 @@ export default function typedUArraysPropertyTest04(): void {
      */
     it('testTypedUArraysProperty005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
-      expect(arr.buffer != null).assertTrue();
+      expect(arr.buffer.byteLength).assertEqual(0);
     });
 
 
@@ -110,7 +110,7 @@ export default function typedUArraysPropertyTest04(): void {
      */
     it('testTypedUArraysProperty006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
-      expect(arr.length >= 0).assertTrue();
+      expect(arr.length).assertEqual(0);
     });
 
     /**
