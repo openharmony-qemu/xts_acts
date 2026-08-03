@@ -79,9 +79,9 @@ export default function MultiEntry() {
 it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0100 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
@@ -116,9 +116,9 @@ it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0200 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('replacePathByNameId'));
@@ -149,9 +149,9 @@ it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0300 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
@@ -187,9 +187,9 @@ it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0400 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
@@ -222,9 +222,9 @@ it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0500 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
@@ -257,9 +257,9 @@ it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0600 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
@@ -292,9 +292,9 @@ it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0700 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));

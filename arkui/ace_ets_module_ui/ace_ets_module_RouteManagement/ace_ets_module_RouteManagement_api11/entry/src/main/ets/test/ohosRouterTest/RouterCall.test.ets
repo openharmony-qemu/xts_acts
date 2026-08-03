@@ -58,7 +58,7 @@ export default function RouterCall() {
       console.info('RouterCall_0400 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('401Btn2'));
@@ -85,7 +85,7 @@ export default function RouterCall() {
       console.info('RouterCall_0500 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('100002Btn2'));
@@ -112,7 +112,7 @@ export default function RouterCall() {
       console.info('RouterCall_0600 START');
       await Utils.sleep(1000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await driver.delayMs(1000);
 
       let btn1: Component = await driver.findComponent(ON.text('routerCallbackPush100003'));

@@ -52,7 +52,8 @@ export default function RouterUrlErrorJsunit() {
     it('RouterUrlErrorJsunit_0100', Level.LEVEL2, async  (done:Function) =>{
       console.info('RouterUrlErrorJsunit_0100 START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('RouterUrlErrorButton'));
       await button.click();
       await CommonFunc.sleep(2000);
