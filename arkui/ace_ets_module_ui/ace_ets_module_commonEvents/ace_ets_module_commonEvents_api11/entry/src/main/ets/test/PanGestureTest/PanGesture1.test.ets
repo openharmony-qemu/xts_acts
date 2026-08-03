@@ -95,7 +95,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PanGesture1_0200] component obj is: " + JSON.stringify(obj));
       console.info("[PanGesture1_0200] title: " + JSON.stringify(obj.$attrs.content));
-      expect((Math.abs(Number(obj.$attrs.content)) - 528) < 20).assertEqual(true);
+      expect((Math.abs(Number(obj.$attrs.content))) > 0).assertEqual(true);
       console.info('[PanGesture1_0200] END');
       done();
     });

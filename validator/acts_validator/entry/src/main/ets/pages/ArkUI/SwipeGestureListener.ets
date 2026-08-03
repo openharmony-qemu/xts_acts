@@ -151,7 +151,7 @@ struct SwipeGestureExample {
         .border({ width: 3 })
         .width('80%')
         .height('30%')
-        .margin('5%')
+        .margin('1%')
         .gesture(
           SwipeGesture({
             fingers: 1,
@@ -174,7 +174,7 @@ struct SwipeGestureExample {
         Button('点击添加监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.addGlobalGestureListener(GestureListenerType.SWIPE,
@@ -185,14 +185,14 @@ struct SwipeGestureExample {
         Button('点击移除监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.removeGlobalGestureListener(GestureListenerType.SWIPE, swipePressGesture);
             console.info('aaa --- 移除监听')
           })
       }
-      .height('70%')
+      .height('65%')
       .width('100%')
       .backgroundColor(Color.White)
 

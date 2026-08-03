@@ -152,7 +152,7 @@ struct PinchGestureExample {
         .width('80%')
         .padding('5%')
         .border({ width: 3 })
-        .margin('5%')
+        .margin('1%')
         .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
         .gesture(
           PinchGesture({ fingers: 2, distance: 5, isFingerCountLimited: true })
@@ -173,7 +173,7 @@ struct PinchGestureExample {
         Button('点击添加监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.addGlobalGestureListener(GestureListenerType.PINCH,
@@ -184,14 +184,14 @@ struct PinchGestureExample {
         Button('点击移除监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.removeGlobalGestureListener(GestureListenerType.PINCH, pinchGesture);
             console.info('aaa --- 移除监听')
           })
       }
-      .height('70%')
+      .height('65%')
       .width('100%')
       .backgroundColor(Color.White)
 
