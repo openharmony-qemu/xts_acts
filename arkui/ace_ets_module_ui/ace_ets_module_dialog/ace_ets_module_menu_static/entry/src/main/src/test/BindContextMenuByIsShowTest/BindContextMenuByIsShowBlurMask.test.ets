@@ -117,7 +117,7 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_policy_all_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_policy_all_0300', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurPolicy_01');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurPolicy_01', '0');
@@ -125,7 +125,6 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurPolicy_02', '1');
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurPolicy_03');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurPolicy_03', '2');
-      done();
     });
 
     /**
@@ -136,7 +135,7 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_colorMode_all_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_colorMode_all_0400', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurColorMode_01');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurColorMode_01', '0');
@@ -144,7 +143,6 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurColorMode_02', '1');
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurColorMode_03');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurColorMode_03', '2');
-      done();
     });
 
     /**
@@ -155,13 +153,12 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_adaptiveColor_all_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_blurOptions_adaptiveColor_all_0500', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurAdaptiveColor_01');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurAdaptiveColor_01', '0');
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnBlurAdaptiveColor_02');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtBlurAdaptiveColor_02', '1');
-      done();
     });
 
     /**
@@ -172,13 +169,12 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundEffect_adaptiveColor_all_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundEffect_adaptiveColor_all_0600', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnEffectAdaptiveColor_01');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtEffectAdaptiveColor_01', '0');
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnEffectAdaptiveColor_02');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtEffectAdaptiveColor_02', '1');
-      done();
     });
 
     /**
@@ -189,7 +185,7 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundEffect_policy_all_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundEffect_policy_all_0700', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnEffectPolicy_01');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtEffectPolicy_01', '0');
@@ -197,7 +193,6 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
       assertTextKey('BindContextMenuByIsShowBlurMask_txtEffectPolicy_02', '1');
       await clickShowAndDismiss('BindContextMenuByIsShowBlurMask_btnEffectPolicy_03');
       assertTextKey('BindContextMenuByIsShowBlurMask_txtEffectPolicy_03', '2');
-      done();
     });
   });
 }

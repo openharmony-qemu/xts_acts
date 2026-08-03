@@ -97,11 +97,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_enableArrow_true_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_enableArrow_true_0100', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnEnableArrow_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtEnableArrow_01', 'true');
-      done();
     });
 
     /**
@@ -112,11 +111,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_enableArrow_false_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_enableArrow_false_0200', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnEnableArrow_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtEnableArrow_02', 'false');
-      done();
     });
 
     /**
@@ -127,11 +125,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_enableHoverMode_true_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_enableHoverMode_true_0300', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnEnableHoverMode_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtEnableHoverMode_01', 'true');
-      done();
     });
 
     /**
@@ -142,11 +139,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_enableHoverMode_false_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_enableHoverMode_false_0400', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnEnableHoverMode_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtEnableHoverMode_02', 'false');
-      done();
     });
 
     /**
@@ -157,11 +153,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_preview_none_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_preview_none_0500', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreview_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtPreview_01', '0');
-      done();
     });
 
     /**
@@ -172,11 +167,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_preview_image_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_preview_image_0600', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreview_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtPreview_02', '1');
-      done();
     });
 
     /**
@@ -187,11 +181,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_preview_builder_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_preview_builder_0700', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreview_03');
       assertTextKey('BindContextMenuByIsShowOptions_txtPreview_03', 'builder');
-      done();
     });
 
     /**
@@ -202,11 +195,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_previewAnimationOptions_scale_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_previewAnimationOptions_scale_0800', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreviewAnimation_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtPreviewAnimation_01', 'scale');
-      done();
     });
 
     /**
@@ -217,11 +209,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_hoverScaleInterruption_false_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_hoverScaleInterruption_false_0900', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnHoverScaleInterruption_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtHoverScaleInterruption_01', 'false');
-      done();
     });
 
     /**
@@ -232,11 +223,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_hoverScaleInterruption_true_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_hoverScaleInterruption_true_1000', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnHoverScaleInterruption_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtHoverScaleInterruption_02', 'true');
-      done();
     });
 
     /**
@@ -247,11 +237,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_disabled_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_disabled_1100', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnHapticFeedback_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtHapticFeedback_01', '0');
-      done();
     });
 
     /**
@@ -262,11 +251,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_enabled_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_enabled_1200', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnHapticFeedback_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtHapticFeedback_02', '1');
-      done();
     });
 
     /**
@@ -277,11 +265,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_auto_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_hapticFeedback_auto_1300', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnHapticFeedback_03');
       assertTextKey('BindContextMenuByIsShowOptions_txtHapticFeedback_03', '2');
-      done();
     });
 
     /**
@@ -292,11 +279,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_auto_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_auto_1400', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnModalMode_01');
       assertTextContains('BindContextMenuByIsShowOptions_txtModalMode_01', 'AUTO');
-      done();
     });
 
     /**
@@ -307,11 +293,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_none_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_none_1500', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnModalMode_02');
       assertTextContains('BindContextMenuByIsShowOptions_txtModalMode_02', 'NONE');
-      done();
     });
 
     /**
@@ -322,11 +307,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_target_window_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_modalMode_target_window_1600', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnModalMode_03');
       assertTextContains('BindContextMenuByIsShowOptions_txtModalMode_03', 'TARGET');
-      done();
     });
 
     /**
@@ -337,11 +321,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_auto_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_auto_1700', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreviewScaleMode_01');
       assertTextContains('BindContextMenuByIsShowOptions_txtPreviewScaleMode_01', 'AUTO');
-      done();
     });
 
     /**
@@ -352,11 +335,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_constant_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_constant_1800', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreviewScaleMode_02');
       assertTextContains('BindContextMenuByIsShowOptions_txtPreviewScaleMode_02', 'CONSTANT');
-      done();
     });
 
     /**
@@ -367,11 +349,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_maintain_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_previewScaleMode_maintain_1900', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnPreviewScaleMode_03');
       assertTextContains('BindContextMenuByIsShowOptions_txtPreviewScaleMode_03', 'MAINTAIN');
-      done();
     });
 
     /**
@@ -382,11 +363,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_availableLayoutArea_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_availableLayoutArea_2000', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnAvailableLayoutArea_01');
       assertTextContains('BindContextMenuByIsShowOptions_txtAvailableLayoutArea_01', 'SAFE_AREA');
-      done();
     });
 
     /**
@@ -397,11 +377,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_keyboardAvoidMode_none_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_keyboardAvoidMode_none_2100', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnKeyboardAvoidMode_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtKeyboardAvoidMode_01', '0');
-      done();
     });
 
     /**
@@ -412,11 +391,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_keyboardAvoidMode_translate_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_keyboardAvoidMode_translate_2200', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnKeyboardAvoidMode_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtKeyboardAvoidMode_02', '1');
-      done();
     });
 
     /**
@@ -427,11 +405,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_colorMode_follow_system_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_colorMode_follow_system_2300', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnColorMode_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtColorMode_01', '0');
-      done();
     });
 
     /**
@@ -442,11 +419,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_colorMode_follow_target_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_colorMode_follow_target_2400', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnColorMode_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtColorMode_02', '1');
-      done();
     });
 
     /**
@@ -457,11 +433,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_mask_true_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_mask_true_2500', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnMask_01');
       assertTextKey('BindContextMenuByIsShowOptions_txtMask_01', 'true');
-      done();
     });
 
     /**
@@ -472,11 +447,10 @@ export default function BindContextMenuByIsShowOptionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_mask_false_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_mask_false_2600', Level.LEVEL1, async () => {
       await navigatePage();
       await clickShowAndDismiss('BindContextMenuByIsShowOptions_btnMask_02');
       assertTextKey('BindContextMenuByIsShowOptions_txtMask_02', 'false');
-      done();
     });
   });
 }

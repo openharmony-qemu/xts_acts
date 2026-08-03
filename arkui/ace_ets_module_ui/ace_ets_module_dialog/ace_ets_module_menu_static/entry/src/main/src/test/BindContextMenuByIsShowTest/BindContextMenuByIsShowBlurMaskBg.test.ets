@@ -118,7 +118,7 @@ export default function BindContextMenuByIsShowBlurMaskBgTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0100', Level.LEVEL1, async () => {
       await navigatePage();
       let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra',
         'None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
@@ -126,7 +126,6 @@ export default function BindContextMenuByIsShowBlurMaskBgTest(): void {
         await clickShowAndDismiss(bgBlurBtnId(i));
         assertTextKey(bgBlurTxtId(i), ids[i]);
       }
-      done();
     });
   });
 }
