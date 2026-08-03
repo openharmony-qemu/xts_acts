@@ -64,7 +64,7 @@ bool g_mark = false;
 static std::string g_filePath = "/data/storage/el2/base/haps/entry_test/files/test_44100_2.wav";
 FILE *g_file = nullptr;
 bool g_readEnd = false;
-const int32_t TEST_PASS = 0; // success result
+const int32_t TEST_PASS = 0; //  success result
 const int32_t TEST_FAIL = 1; // fail result
 
 static OH_AudioCapturer *g_audioCapturer;

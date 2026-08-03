@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import resourceManager from '@ohos.resourceManager';
+import resourceManager from '@ohos.resourceManager';//resourceManager
 export const AudioLowLatencyOut: () => number;
 export const audioCreateEngine: () => number;
 export const AudioWorkGroupSet: () => number;
