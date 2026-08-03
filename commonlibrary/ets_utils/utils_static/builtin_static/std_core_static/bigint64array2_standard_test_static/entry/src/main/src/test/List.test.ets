@@ -1,6 +1,45 @@
 'use static';
 
-import ability from './Ability.test';
+import BigInt64ArrayCopyWithinTest from "./bigint64array2/BigInt64ArrayCopyWithinTest.test";
+import BigInt64ArraySlice01Test from "./bigint64array2/BigInt64ArraySlice01Test.test";
+import BigInt64ArraySlice02Test from "./bigint64array2/BigInt64ArraySlice02Test.test";
+import BigInt64ArraySome01Test from "./bigint64array2/BigInt64ArraySome01Test.test";
+import BigInt64ArraySome02Test from "./bigint64array2/BigInt64ArraySome02Test.test";
+import BigInt64ArraySortTest from "./bigint64array2/BigInt64ArraySortTest.test";
+import BigInt64ArraySubarray01Test from "./bigint64array2/BigInt64ArraySubarray01Test.test";
+import BigInt64ArraySubarray02Test from "./bigint64array2/BigInt64ArraySubarray02Test.test";
+import BigInt64ArraySubarray03Test from "./bigint64array2/BigInt64ArraySubarray03Test.test";
+import BigInt64ArrayToLocaleStringTest from "./bigint64array2/BigInt64ArrayToLocaleStringTest.test";
+import BigInt64ArrayToReversed01Test from "./bigint64array2/BigInt64ArrayToReversed01Test.test";
+import BigInt64ArrayToReversed02Test from "./bigint64array2/BigInt64ArrayToReversed02Test.test";
+import BigInt64ArrayToSortedTest from "./bigint64array2/BigInt64ArrayToSortedTest.test";
+import BigInt64ArrayToStringTest from "./bigint64array2/BigInt64ArrayToStringTest.test";
+import BigInt64ArrayValueOfTest from "./bigint64array2/BigInt64ArrayValueOfTest.test";
+import BigInt64ArrayValues01Test from "./bigint64array2/BigInt64ArrayValues01Test.test";
+import BigInt64ArrayValues02Test from "./bigint64array2/BigInt64ArrayValues02Test.test";
+import BigInt64ArrayValues03Test from "./bigint64array2/BigInt64ArrayValues03Test.test";
+import BigInt64ArrayValues04Test from "./bigint64array2/BigInt64ArrayValues04Test.test";
+import BigInt64ArrayWithTest from "./bigint64array2/BigInt64ArrayWithTest.test";
+
 export default function testsuite(): void {
-  ability();
+  BigInt64ArrayCopyWithinTest();
+  BigInt64ArraySlice01Test();
+  BigInt64ArraySlice02Test();
+  BigInt64ArraySome01Test();
+  BigInt64ArraySome02Test();
+  BigInt64ArraySortTest();
+  BigInt64ArraySubarray01Test();
+  BigInt64ArraySubarray02Test();
+  BigInt64ArraySubarray03Test();
+  BigInt64ArrayToLocaleStringTest();
+  BigInt64ArrayToReversed01Test();
+  BigInt64ArrayToReversed02Test();
+  BigInt64ArrayToSortedTest();
+  BigInt64ArrayToStringTest();
+  BigInt64ArrayValueOfTest();
+  BigInt64ArrayValues01Test();
+  BigInt64ArrayValues02Test();
+  BigInt64ArrayValues03Test();
+  BigInt64ArrayValues04Test();
+  BigInt64ArrayWithTest();
 }
