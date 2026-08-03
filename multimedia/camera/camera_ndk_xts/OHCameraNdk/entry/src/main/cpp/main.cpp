@@ -327,6 +327,19 @@ static napi_value OHCameraManagerCreateCaptureSession(napi_env env, napi_callbac
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHCameraManagerCreateSessionSetMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    Camera_ErrorCode code = g_ndkCamera->CreateSessionSetMode();
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value CameraManagerDeleteSupportedCameraOutputCapability(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1622,6 +1635,8 @@ napi_property_descriptor desc1[] = {
     {"oHCreateCameraInputWithPositionAndType", nullptr, OHCreateCameraInputWithPositionAndType, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"oHCameraManagerCreateCaptureSession", nullptr, OHCameraManagerCreateCaptureSession, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHCameraManagerCreateSessionSetMode", nullptr, OHCameraManagerCreateSessionSetMode, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"oHCameraManagerDeleteSupportedCameraOutputCapability", nullptr,
      CameraManagerDeleteSupportedCameraOutputCapability, nullptr, nullptr, nullptr, napi_default, nullptr},
