@@ -850,6 +850,9 @@ export default function SocketErrorCodeTest01() {
       try {
         let client: socket.LocalSocket = socket.constructLocalSocketInstance();
         client.on('error', undefined);
+        console.info(`${caseName} error: Expected exception but none was thrown`);
+        expectTrue(false, `${caseName} should throw error 401`);
+        done();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         expectTrue(Number(err.code) === 401);
