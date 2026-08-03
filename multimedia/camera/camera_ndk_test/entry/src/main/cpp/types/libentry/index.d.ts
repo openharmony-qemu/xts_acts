@@ -681,6 +681,8 @@ export const waitForExposureFinish: () => boolean;
 
 export const getColorTintRange: () => number;
 
+export const getColorTintRangeWithParamNull: (index: number) => number;
+
 export const setColorTint: (index: number) => number;
 
 export const getColorTint: (index: number) => number;

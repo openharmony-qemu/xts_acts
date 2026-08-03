@@ -1155,6 +1155,7 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400', Level.LEVEL1, async () => {
       let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400"
+      let CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED = 7400114
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -1175,13 +1176,13 @@ export default function cameraJSUnitOutput() {
             cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, true)
           } catch (err) {
             console.info(`setLogViewAssist enable, err: ${JSON.stringify(err)}`)
-            expect(err.code == 801).assertTrue()
+            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
           }
           try {
             cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, false)
           } catch (err) {
             console.info(`setLogViewAssist disable, err: ${JSON.stringify(err)}`)
-            expect(err.code == 801).assertTrue()
+            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
           }
         }
         console.info(`${caseName} PASSED`)
