@@ -1515,6 +1515,214 @@ export default function CameraNdkTest() {
     });
 
     /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- boolean
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestOHCaptureSessionIsLockFocusTrackingSupported();
+      console.info(TAG, testName, result);
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWhenNotSupported();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWhenNotSupported();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestIsLockFocusTrackingSupportedWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0500";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestIsLockFocusTrackingSupportedWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingNormalValidPoint();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400
+     * @tc.desc     OH_CaptureSession_lockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_LOCKFOCustracking_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingRepeatLock();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0100";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTracking();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0200";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWithNullptr();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0300";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestUnlockFocusTrackingWithUnconfiguredSession();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400
+     * @tc.name     SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400
+     * @tc.desc     OH_CaptureSession_unlockFocusTracking- CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_UNLOCKFOCustracking_0400";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestLockFocusTrackingRepeatUnlock();
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
      * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
      * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
      * @tc.desc     OH_MetadataObjectExt_GetBoundingBox- CAMERA_INVALID_ARGUMENT
@@ -1752,6 +1960,22 @@ export default function CameraNdkTest() {
       let result: boolean = await cameraObj.TestOHMetadataObjectExtIsLockFocusTracked(1);
       console.info(TAG, testName, result);
       expect(result === true || result === false).assertTrue();
+    });
+
+    /**
+     * @tc.number   SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600
+     * @tc.name     SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600
+     * @tc.desc     OH_CaptureSession_IsLockFocusTrackingSupported- boolean
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600', Level.LEVEL0, async () => {
+      let testName = "SUB_OH_CAPTURESESSION_ISLOCKFOCustrackingSUPPORTED_0600";
+      console.info(TAG, testName, "start");
+      let result = cameraObj.TestOHCaptureSessionIsLockFocusTrackingSupported();
+      console.info(TAG, testName, result);
+      expect(result == true || result == false).assertTrue();
     });
   })
 }
