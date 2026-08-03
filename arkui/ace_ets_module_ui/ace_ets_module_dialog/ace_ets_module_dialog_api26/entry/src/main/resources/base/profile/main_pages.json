@@ -1,0 +1,31 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/popup/PopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupCommonOptionsColorMode",
+    "MainAbility/pages/popup/PopupOptionsLevelMode",
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode",
+    "MainAbility/pages/menu/ContextMenuByResponseType",
+    "MainAbility/pages/menu/ContextMenuWithResponse",
+    "MainAbility/pages/menu/ContextMenuByIsShow",
+    "MainAbility/pages/menu/ContextMenuGridStyle",
+    "MainAbility/pages/menu/MenuItemSubMenuBuilder",
+    "MainAbility/pages/select/SelectMenuBackground",
+    "MainAbility/pages/dialog/DisplayModeInSubWindow",
+    "MainAbility/pages/dialog/DialogStyleAlert",
+    "MainAbility/pages/dialog/DialogStyleSheets",
+    "MainAbility/pages/dialog/DialogBaseOptionsLayout",
+    "MainAbility/pages/dialog/DialogBaseOptionsVisual",
+    "MainAbility/pages/dialog/DialogBaseControllerLife",
+    "MainAbility/pages/dialog/DialogCustomPresent",
+    "MainAbility/pages/dialog/DialogEnumsAssert",
+    "MainAbility/pages/dialog/DialogButtonMatrix",
+    "MainAbility/pages/dialog/DialogLifeCallbacks",
+    "MainAbility/pages/dialog/DialogBaseSizeBorder",
+    "MainAbility/pages/dialog/DialogEnumsAssertExtra",
+    "MainAbility/pages/dialog/DialogAlignWordBreak",
+    "MainAbility/pages/dialog/DialogAlignWordBreakExtra",
+    "MainAbility/pages/dialog/DialogAbnormalOpts",
+    "MainAbility/pages/dialog/DialogAbnormalOptsExtra"
+  ]
+}
