@@ -1,4 +1,4 @@
-import modelPredict from './model';
+import modelPredict from './Model';
 import { image } from '@kit.ImageKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
