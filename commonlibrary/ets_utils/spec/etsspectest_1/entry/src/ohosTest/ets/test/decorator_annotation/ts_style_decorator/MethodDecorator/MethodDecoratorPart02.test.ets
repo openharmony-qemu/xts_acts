@@ -215,23 +215,23 @@ class MethodDecoratorVoidReturnCase {
   }
 }
 
-const accessibilityTrace: MethodDecoratorTrace = new MethodDecoratorTrace()
-function accessibilityMethodDecorator(_target: Object, key: string, _descriptor: Object): void {
-  accessibilityTrace.record('accessibility', key)
+const visibilityTrace: MethodDecoratorTrace = new MethodDecoratorTrace()
+function visibilityMethodDecorator(_target: Object, key: string, _descriptor: Object): void {
+  visibilityTrace.record('visibility', key)
 }
 
-class MethodDecoratorAccessibilityCase {
-  @accessibilityMethodDecorator
+class MethodDecoratorVisibilityCase {
+  @visibilityMethodDecorator
   public publicMethod(): string {
     return 'public'
   }
 
-  @accessibilityMethodDecorator
+  @visibilityMethodDecorator
   protected protectedMethod(): string {
     return 'protected'
   }
 
-  @accessibilityMethodDecorator
+  @visibilityMethodDecorator
   private privateMethod(): string {
     return 'private'
   }
@@ -847,18 +847,18 @@ export default function MethodDecoratorPart02Test() {
 
     /**
      * @tc.number    SUB_DECORATOR_METHOD_PASS_1400
-     * @tc.name      testClassMethodDecoratorAccessibility0001
-     * @tc.desc      Verify method decorator does not change method accessibility.
+     * @tc.name      testClassMethodDecoratorVisibility0001
+     * @tc.desc      Verify method decorator does not change method visibility.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testClassMethodDecoratorAccessibility0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const obj: MethodDecoratorAccessibilityCase = new MethodDecoratorAccessibilityCase()
+    it('testClassMethodDecoratorVisibility0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const obj: MethodDecoratorVisibilityCase = new MethodDecoratorVisibilityCase()
       const publicResult: string = obj.publicMethod()
       const privateResult: string = obj.callPrivate()
-      expect(accessibilityTrace.value).assertEqual('accessibility')
-      expect(accessibilityTrace.count).assertEqual(3)
+      expect(visibilityTrace.value).assertEqual('visibility')
+      expect(visibilityTrace.count).assertEqual(3)
       expect(publicResult).assertEqual('public')
       expect(privateResult).assertEqual('private')
     })

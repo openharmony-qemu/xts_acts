@@ -436,7 +436,7 @@ export default function PropertyDecoratorTest() {
     /**
      * @tc.number    SUB_MODULE_DECORATOR_PROPERTY_1400
      * @tc.name      testClassPropertyDecoratorDecoratorKeepsVisibility0014
-     * @tc.desc      Verify a property decorator does not change field accessibility.
+     * @tc.desc      Verify a property decorator does not change field visibility.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
