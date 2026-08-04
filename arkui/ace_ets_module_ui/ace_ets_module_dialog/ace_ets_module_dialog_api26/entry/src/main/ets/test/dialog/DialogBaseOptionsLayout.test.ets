@@ -13,48 +13,31 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function DialogBaseOptionsLayout() {
   describe('DialogBaseOptionsLayout', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogBaseOptionsLayout beforeEach');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/dialog/DialogBaseOptionsLayout'
-      };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'DialogBaseOptionsLayout') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push DialogBaseOptionsLayout error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('DialogBaseOptionsLayout', 'MainAbility/pages/dialog/DialogBaseOptionsLayout');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(800);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack();
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
       console.info('[ARKUI_DYN] DialogBaseOptionsLayout afterEach');
+    });
+
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] DialogBaseOptionsLayout afterAll');
     });
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100
      * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100
-     * @tc.desc DialogBaseAlignment.TOP present and confirm
+     * @tc.desc DialogBaseOptionsLayout matrix scan (11 steps)
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level 2
@@ -62,322 +45,129 @@ export default function DialogBaseOptionsLayout() {
     it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_TOP'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignTOP'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_TOP') >= 0).assertTrue();
+
+      // step 1: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_TOP');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignTOP');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_TOP = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_TOP !== null) {
+        let t_btn_align_TOP = await lab_btn_align_TOP.getText();
+        expect(t_btn_align_TOP.indexOf('AlignOK_TOP') >= 0).assertTrue();
+      }
+
+      // step 2: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_CENTER');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignCENTER');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_CENTER = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_CENTER !== null) {
+        let t_btn_align_CENTER = await lab_btn_align_CENTER.getText();
+        expect(t_btn_align_CENTER.indexOf('AlignOK_CENTER') >= 0).assertTrue();
+      }
+
+      // step 3: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_BOTTOM');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignBOTTOM');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_BOTTOM = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_BOTTOM !== null) {
+        let t_btn_align_BOTTOM = await lab_btn_align_BOTTOM.getText();
+        expect(t_btn_align_BOTTOM.indexOf('AlignOK_BOTTOM') >= 0).assertTrue();
+      }
+
+      // step 4: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_DEFAULT');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignDEFAULT');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_DEFAULT = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_DEFAULT !== null) {
+        let t_btn_align_DEFAULT = await lab_btn_align_DEFAULT.getText();
+        expect(t_btn_align_DEFAULT.indexOf('AlignOK_DEFAULT') >= 0).assertTrue();
+      }
+
+      // step 5: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_TOP_START');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignTOP_START');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_TOP_START = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_TOP_START !== null) {
+        let t_btn_align_TOP_START = await lab_btn_align_TOP_START.getText();
+        expect(t_btn_align_TOP_START.indexOf('AlignOK_TOP_START') >= 0).assertTrue();
+      }
+
+      // step 6: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_TOP_END');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignTOP_END');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_TOP_END = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_TOP_END !== null) {
+        let t_btn_align_TOP_END = await lab_btn_align_TOP_END.getText();
+        expect(t_btn_align_TOP_END.indexOf('AlignOK_TOP_END') >= 0).assertTrue();
+      }
+
+      // step 7: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_CENTER_START');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignCENTER_START');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_CENTER_START = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_CENTER_START !== null) {
+        let t_btn_align_CENTER_START = await lab_btn_align_CENTER_START.getText();
+        expect(t_btn_align_CENTER_START.indexOf('AlignOK_CENTER_START') >= 0).assertTrue();
+      }
+
+      // step 8: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_CENTER_END');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignCENTER_END');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_CENTER_END = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_CENTER_END !== null) {
+        let t_btn_align_CENTER_END = await lab_btn_align_CENTER_END.getText();
+        expect(t_btn_align_CENTER_END.indexOf('AlignOK_CENTER_END') >= 0).assertTrue();
+      }
+
+      // step 9: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_BOTTOM_START');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignBOTTOM_START');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_BOTTOM_START = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_BOTTOM_START !== null) {
+        let t_btn_align_BOTTOM_START = await lab_btn_align_BOTTOM_START.getText();
+        expect(t_btn_align_BOTTOM_START.indexOf('AlignOK_BOTTOM_START') >= 0).assertTrue();
+      }
+
+      // step 10: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000
+      await DialogApi26TestHelper.clickId(driver, 'btn_align_BOTTOM_END');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AlignBOTTOM_END');
+      await DialogApi26TestHelper.dismissByText(driver, 'AlignOK');
+
+      let lab_btn_align_BOTTOM_END = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_align_BOTTOM_END !== null) {
+        let t_btn_align_BOTTOM_END = await lab_btn_align_BOTTOM_END.getText();
+        expect(t_btn_align_BOTTOM_END.indexOf('AlignOK_BOTTOM_END') >= 0).assertTrue();
+      }
+
+      // step 11: SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100
+      await DialogApi26TestHelper.clickId(driver, 'btn_layout_mask');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'MaskRectTitle');
+      await DialogApi26TestHelper.dismissByText(driver, 'MaskOK');
+
+      let lab_btn_layout_mask = await driver.findComponent(ON.id('base_layout_action'));
+      if (lab_btn_layout_mask !== null) {
+        let t_btn_layout_mask = await lab_btn_layout_mask.getText();
+        expect(t_btn_layout_mask.indexOf('MaskOK') >= 0).assertTrue();
+      }
+
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0100 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200
-     * @tc.desc DialogBaseAlignment.CENTER present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_CENTER'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignCENTER'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_CENTER') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0200 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300
-     * @tc.desc DialogBaseAlignment.BOTTOM present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_BOTTOM'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignBOTTOM'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_BOTTOM') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0300 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400
-     * @tc.desc DialogBaseAlignment.DEFAULT present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_DEFAULT'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignDEFAULT'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_DEFAULT') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0400 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500
-     * @tc.desc DialogBaseAlignment.TOP_START present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_TOP_START'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignTOP_START'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_TOP_START') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0500 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600
-     * @tc.desc DialogBaseAlignment.TOP_END present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_TOP_END'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignTOP_END'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_TOP_END') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0600 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700
-     * @tc.desc DialogBaseAlignment.CENTER_START present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_CENTER_START'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignCENTER_START'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_CENTER_START') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0700 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800
-     * @tc.desc DialogBaseAlignment.CENTER_END present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_CENTER_END'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignCENTER_END'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_CENTER_END') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0800 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900
-     * @tc.desc DialogBaseAlignment.BOTTOM_START present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_BOTTOM_START'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignBOTTOM_START'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_BOTTOM_START') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_0900 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000
-     * @tc.desc DialogBaseAlignment.BOTTOM_END present and confirm
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_align_BOTTOM_END'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('AlignBOTTOM_END'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('AlignOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('AlignOK_BOTTOM_END') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1000 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100
-     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100
-     * @tc.desc maskRect width height offset border options
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_layout_mask'));
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.findComponent(ON.text('MaskRectTitle'));
-      expect(node !== null).assertTrue();
-      let act = await driver.findComponent(ON.text('MaskOK'));
-      expect(act !== null).assertTrue();
-      await act.click();
-      await CommonFunc.sleep(800);
-      let label = await driver.findComponent(ON.id('base_layout_action'));
-      expect(label !== null).assertTrue();
-      let txt = await label.getText();
-      expect(txt.indexOf('MaskOK') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseOptionsLayout_1100 END');
       done();
     });
 
