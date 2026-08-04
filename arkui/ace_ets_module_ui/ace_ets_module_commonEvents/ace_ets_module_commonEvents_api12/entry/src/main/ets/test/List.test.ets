@@ -74,9 +74,6 @@ import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 
 export default function testsuite() {
-  PanGestureExample01Test();
-  PanGestureExample02Test();
-  PanGestureExample03Test();
   APIPreDragStatusTest();
   APIshouldBuiltInRecognizerParallelWith();
   addGestureApplyGesture();
@@ -95,16 +92,18 @@ export default function testsuite() {
   initializeModifierTest();
   addParallelGestureTest1();
   clearGestureTest();
-
+  
   getModifierKeyState2Test();
   getModifierKeyState3Test();
-  getModifierKeyStateTest();
   TapGestureBasicClickTest();
   TapGestureBasicDoubleClickTest();
   LongPressGestureLongClickTest();
   TapGestureBasicClickMouseTest();
   TapGestureBasicDoubleClickMouseTest();
   LongPressGestureLongClickMouseTest();
+  PanGestureExample01Test();
+  PanGestureExample02Test();
+  PanGestureExample03Test();
   RotationGestureBasic01Test();
   RotationGestureBasic02Test();
   PinchGestureBasic01Test();
@@ -126,7 +125,7 @@ export default function testsuite() {
   gestureDefine3();
   gestureDefine4();
   gestureDefine10();
-  
+  getModifierKeyStateTest();
   
 
 }
