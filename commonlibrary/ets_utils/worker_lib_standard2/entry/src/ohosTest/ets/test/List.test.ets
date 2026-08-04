@@ -14,10 +14,8 @@
  */
 import ActsWorkerTest from './WorkerTest.test'
 import WorkerAtFront from './WorkerAtFront.test';
-import ActsWorkerTestContainer from './WorkerTestContainer.test';
 
 export default function testsuite() {
-  ActsWorkerTestContainer();
   ActsWorkerTest();
   WorkerAtFront();
 }
